@@ -1715,6 +1715,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      *         The requested resource is not found. Make sure that the request URI is correct.
      * @throws TooManyRequestsException
      *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
      * @sample AmazonApiGateway.DeleteDomainName
      */
     @Override

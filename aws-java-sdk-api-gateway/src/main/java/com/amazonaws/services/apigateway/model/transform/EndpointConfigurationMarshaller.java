@@ -30,6 +30,8 @@ public class EndpointConfigurationMarshaller {
 
     private static final MarshallingInfo<List> TYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("types").build();
+    private static final MarshallingInfo<List> VPCENDPOINTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcEndpointIds").build();
 
     private static final EndpointConfigurationMarshaller instance = new EndpointConfigurationMarshaller();
 
@@ -48,6 +50,7 @@ public class EndpointConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(endpointConfiguration.getTypes(), TYPES_BINDING);
+            protocolMarshaller.marshall(endpointConfiguration.getVpcEndpointIds(), VPCENDPOINTIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

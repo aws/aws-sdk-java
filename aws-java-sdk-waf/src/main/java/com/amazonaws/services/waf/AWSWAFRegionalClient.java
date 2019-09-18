@@ -6583,7 +6583,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * <ol>
      * <li>
      * <p>
-     * Create an Amazon Kinesis Data Firehose .
+     * Create an Amazon Kinesis Data Firehose.
      * </p>
      * <p>
      * Create the data firehose with a PUT source and in the region that you are operating. However, if you are

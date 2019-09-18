@@ -52,6 +52,10 @@ public class ResourceShareAssociationJsonUnmarshaller implements Unmarshaller<Re
                     context.nextToken();
                     resourceShareAssociation.setResourceShareArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resourceShareName", targetDepth)) {
+                    context.nextToken();
+                    resourceShareAssociation.setResourceShareName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("associatedEntity", targetDepth)) {
                     context.nextToken();
                     resourceShareAssociation.setAssociatedEntity(context.getUnmarshaller(String.class).unmarshall(context));

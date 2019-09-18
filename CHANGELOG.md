@@ -1,3 +1,16 @@
+# __1.11.634__ __2019-09-18__
+## __AWS Resource Access Manager__
+  - ### Features
+    - AWS RAM provides a new ListPendingInvitationResources API action that lists the resources in a resource share that is shared with you but that the invitation is still pending for
+
+## __AWS WAF Regional__
+  - ### Features
+    - Lowering the threshold for Rate Based rule from 2000 to 100.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Amazon API Gateway simplifies accessing PRIVATE APIs by allowing you to associate one or more Amazon Virtual Private Cloud (VPC) Endpoints to a private API. API Gateway will create and manage DNS alias records necessary for easily invoking the private APIs. With this feature, you can leverage private APIs in web applications hosted within your VPCs.
+
 # __1.11.633__ __2019-09-17__
 ## __AWS Identity and Access Management__
   - ### Features

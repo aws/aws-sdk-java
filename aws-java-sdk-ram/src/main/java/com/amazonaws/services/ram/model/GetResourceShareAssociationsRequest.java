@@ -39,19 +39,20 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
     private java.util.List<String> resourceShareArns;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is
+     * <code>PRINCIPAL</code>.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The principal.
+     * The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * </p>
      */
     private String principal;
     /**
      * <p>
-     * The status of the association.
+     * The association status.
      * </p>
      */
     private String associationStatus;
@@ -200,11 +201,13 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is
+     * <code>PRINCIPAL</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type
+     *        is <code>PRINCIPAL</code>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -213,10 +216,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is
+     * <code>PRINCIPAL</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type
+     *         is <code>PRINCIPAL</code>.
      */
 
     public String getResourceArn() {
@@ -225,11 +230,13 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is
+     * <code>PRINCIPAL</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type
+     *        is <code>PRINCIPAL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +247,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The principal.
+     * The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * </p>
      * 
      * @param principal
-     *        The principal.
+     *        The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      */
 
     public void setPrincipal(String principal) {
@@ -253,10 +260,10 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The principal.
+     * The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * </p>
      * 
-     * @return The principal.
+     * @return The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      */
 
     public String getPrincipal() {
@@ -265,11 +272,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The principal.
+     * The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * </p>
      * 
      * @param principal
-     *        The principal.
+     *        The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +287,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the association.
+     * The association status.
      * </p>
      * 
      * @param associationStatus
-     *        The status of the association.
+     *        The association status.
      * @see ResourceShareAssociationStatus
      */
 
@@ -294,10 +301,10 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the association.
+     * The association status.
      * </p>
      * 
-     * @return The status of the association.
+     * @return The association status.
      * @see ResourceShareAssociationStatus
      */
 
@@ -307,11 +314,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the association.
+     * The association status.
      * </p>
      * 
      * @param associationStatus
-     *        The status of the association.
+     *        The association status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationStatus
      */
@@ -323,11 +330,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the association.
+     * The association status.
      * </p>
      * 
      * @param associationStatus
-     *        The status of the association.
+     *        The association status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationStatus
      */

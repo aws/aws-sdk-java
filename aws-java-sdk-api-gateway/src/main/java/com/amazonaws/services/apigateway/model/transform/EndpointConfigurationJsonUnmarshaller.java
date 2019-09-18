@@ -52,6 +52,10 @@ public class EndpointConfigurationJsonUnmarshaller implements Unmarshaller<Endpo
                     context.nextToken();
                     endpointConfiguration.setTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("vpcEndpointIds", targetDepth)) {
+                    context.nextToken();
+                    endpointConfiguration.setVpcEndpointIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

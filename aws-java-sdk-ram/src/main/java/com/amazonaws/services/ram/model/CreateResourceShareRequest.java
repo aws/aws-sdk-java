@@ -52,7 +52,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * Indicates whether principals outside your organization can be associated with a resource share.
+     * Indicates whether principals outside your AWS organization can be associated with a resource share.
      * </p>
      */
     private Boolean allowExternalPrincipals;
@@ -323,11 +323,11 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates whether principals outside your organization can be associated with a resource share.
+     * Indicates whether principals outside your AWS organization can be associated with a resource share.
      * </p>
      * 
      * @param allowExternalPrincipals
-     *        Indicates whether principals outside your organization can be associated with a resource share.
+     *        Indicates whether principals outside your AWS organization can be associated with a resource share.
      */
 
     public void setAllowExternalPrincipals(Boolean allowExternalPrincipals) {
@@ -336,10 +336,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates whether principals outside your organization can be associated with a resource share.
+     * Indicates whether principals outside your AWS organization can be associated with a resource share.
      * </p>
      * 
-     * @return Indicates whether principals outside your organization can be associated with a resource share.
+     * @return Indicates whether principals outside your AWS organization can be associated with a resource share.
      */
 
     public Boolean getAllowExternalPrincipals() {
@@ -348,11 +348,11 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates whether principals outside your organization can be associated with a resource share.
+     * Indicates whether principals outside your AWS organization can be associated with a resource share.
      * </p>
      * 
      * @param allowExternalPrincipals
-     *        Indicates whether principals outside your organization can be associated with a resource share.
+     *        Indicates whether principals outside your AWS organization can be associated with a resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,10 +363,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates whether principals outside your organization can be associated with a resource share.
+     * Indicates whether principals outside your AWS organization can be associated with a resource share.
      * </p>
      * 
-     * @return Indicates whether principals outside your organization can be associated with a resource share.
+     * @return Indicates whether principals outside your AWS organization can be associated with a resource share.
      */
 
     public Boolean isAllowExternalPrincipals() {

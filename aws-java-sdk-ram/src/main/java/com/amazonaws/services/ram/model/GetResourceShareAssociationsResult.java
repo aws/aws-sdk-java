@@ -25,7 +25,7 @@ public class GetResourceShareAssociationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the association.
+     * Information about the associations.
      * </p>
      */
     private java.util.List<ResourceShareAssociation> resourceShareAssociations;
@@ -39,10 +39,10 @@ public class GetResourceShareAssociationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the association.
+     * Information about the associations.
      * </p>
      * 
-     * @return Information about the association.
+     * @return Information about the associations.
      */
 
     public java.util.List<ResourceShareAssociation> getResourceShareAssociations() {
@@ -51,11 +51,11 @@ public class GetResourceShareAssociationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the association.
+     * Information about the associations.
      * </p>
      * 
      * @param resourceShareAssociations
-     *        Information about the association.
+     *        Information about the associations.
      */
 
     public void setResourceShareAssociations(java.util.Collection<ResourceShareAssociation> resourceShareAssociations) {
@@ -69,7 +69,7 @@ public class GetResourceShareAssociationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the association.
+     * Information about the associations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class GetResourceShareAssociationsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param resourceShareAssociations
-     *        Information about the association.
+     *        Information about the associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class GetResourceShareAssociationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the association.
+     * Information about the associations.
      * </p>
      * 
      * @param resourceShareAssociations
-     *        Information about the association.
+     *        Information about the associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

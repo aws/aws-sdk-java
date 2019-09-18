@@ -36,6 +36,12 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
     private String resourceShareArn;
     /**
      * <p>
+     * The name of the resource share.
+     * </p>
+     */
+    private String resourceShareName;
+    /**
+     * <p>
      * The associated entity. For resource associations, this is the ARN of the resource. For principal associations,
      * this is the ID of an AWS account or the ARN of an OU or organization from AWS Organizations.
      * </p>
@@ -73,7 +79,8 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.
+     * Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource
+     * share.
      * </p>
      */
     private Boolean external;
@@ -115,6 +122,46 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     public ResourceShareAssociation withResourceShareArn(String resourceShareArn) {
         setResourceShareArn(resourceShareArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the resource share.
+     * </p>
+     * 
+     * @param resourceShareName
+     *        The name of the resource share.
+     */
+
+    public void setResourceShareName(String resourceShareName) {
+        this.resourceShareName = resourceShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the resource share.
+     * </p>
+     * 
+     * @return The name of the resource share.
+     */
+
+    public String getResourceShareName() {
+        return this.resourceShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the resource share.
+     * </p>
+     * 
+     * @param resourceShareName
+     *        The name of the resource share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceShareAssociation withResourceShareName(String resourceShareName) {
+        setResourceShareName(resourceShareName);
         return this;
     }
 
@@ -405,12 +452,13 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.
+     * Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource
+     * share.
      * </p>
      * 
      * @param external
-     *        Indicates whether the principal belongs to the same organization as the AWS account that owns the resource
-     *        share.
+     *        Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the
+     *        resource share.
      */
 
     public void setExternal(Boolean external) {
@@ -419,10 +467,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.
+     * Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource
+     * share.
      * </p>
      * 
-     * @return Indicates whether the principal belongs to the same organization as the AWS account that owns the
+     * @return Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the
      *         resource share.
      */
 
@@ -432,12 +481,13 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.
+     * Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource
+     * share.
      * </p>
      * 
      * @param external
-     *        Indicates whether the principal belongs to the same organization as the AWS account that owns the resource
-     *        share.
+     *        Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the
+     *        resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,10 +498,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization as the AWS account that owns the resource share.
+     * Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the resource
+     * share.
      * </p>
      * 
-     * @return Indicates whether the principal belongs to the same organization as the AWS account that owns the
+     * @return Indicates whether the principal belongs to the same AWS organization as the AWS account that owns the
      *         resource share.
      */
 
@@ -473,6 +524,8 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
         sb.append("{");
         if (getResourceShareArn() != null)
             sb.append("ResourceShareArn: ").append(getResourceShareArn()).append(",");
+        if (getResourceShareName() != null)
+            sb.append("ResourceShareName: ").append(getResourceShareName()).append(",");
         if (getAssociatedEntity() != null)
             sb.append("AssociatedEntity: ").append(getAssociatedEntity()).append(",");
         if (getAssociationType() != null)
@@ -504,6 +557,10 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
         if (other.getResourceShareArn() == null ^ this.getResourceShareArn() == null)
             return false;
         if (other.getResourceShareArn() != null && other.getResourceShareArn().equals(this.getResourceShareArn()) == false)
+            return false;
+        if (other.getResourceShareName() == null ^ this.getResourceShareName() == null)
+            return false;
+        if (other.getResourceShareName() != null && other.getResourceShareName().equals(this.getResourceShareName()) == false)
             return false;
         if (other.getAssociatedEntity() == null ^ this.getAssociatedEntity() == null)
             return false;
@@ -542,6 +599,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceShareArn() == null) ? 0 : getResourceShareArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceShareName() == null) ? 0 : getResourceShareName().hashCode());
         hashCode = prime * hashCode + ((getAssociatedEntity() == null) ? 0 : getAssociatedEntity().hashCode());
         hashCode = prime * hashCode + ((getAssociationType() == null) ? 0 : getAssociationType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

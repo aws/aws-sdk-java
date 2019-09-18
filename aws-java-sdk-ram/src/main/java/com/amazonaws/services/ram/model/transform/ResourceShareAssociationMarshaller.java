@@ -29,6 +29,8 @@ public class ResourceShareAssociationMarshaller {
 
     private static final MarshallingInfo<String> RESOURCESHAREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceShareArn").build();
+    private static final MarshallingInfo<String> RESOURCESHARENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceShareName").build();
     private static final MarshallingInfo<String> ASSOCIATEDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedEntity").build();
     private static final MarshallingInfo<String> ASSOCIATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +63,7 @@ public class ResourceShareAssociationMarshaller {
 
         try {
             protocolMarshaller.marshall(resourceShareAssociation.getResourceShareArn(), RESOURCESHAREARN_BINDING);
+            protocolMarshaller.marshall(resourceShareAssociation.getResourceShareName(), RESOURCESHARENAME_BINDING);
             protocolMarshaller.marshall(resourceShareAssociation.getAssociatedEntity(), ASSOCIATEDENTITY_BINDING);
             protocolMarshaller.marshall(resourceShareAssociation.getAssociationType(), ASSOCIATIONTYPE_BINDING);
             protocolMarshaller.marshall(resourceShareAssociation.getStatus(), STATUS_BINDING);

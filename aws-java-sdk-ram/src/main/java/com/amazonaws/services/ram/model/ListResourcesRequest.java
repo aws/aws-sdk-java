@@ -41,6 +41,10 @@ public class ListResourcesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The resource type.
      * </p>
+     * <p>
+     * Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code> |
+     * <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code>
+     * </p>
      */
     private String resourceType;
     /**
@@ -172,9 +176,16 @@ public class ListResourcesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The resource type.
      * </p>
+     * <p>
+     * Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code> |
+     * <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code>
+     * </p>
      * 
      * @param resourceType
-     *        The resource type.
+     *        The resource type.</p>
+     *        <p>
+     *        Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code> |
+     *        <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code>
      */
 
     public void setResourceType(String resourceType) {
@@ -185,8 +196,15 @@ public class ListResourcesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The resource type.
      * </p>
+     * <p>
+     * Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code> |
+     * <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code>
+     * </p>
      * 
-     * @return The resource type.
+     * @return The resource type.</p>
+     *         <p>
+     *         Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code> |
+     *         <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code>
      */
 
     public String getResourceType() {
@@ -197,9 +215,16 @@ public class ListResourcesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The resource type.
      * </p>
+     * <p>
+     * Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code> |
+     * <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code>
+     * </p>
      * 
      * @param resourceType
-     *        The resource type.
+     *        The resource type.</p>
+     *        <p>
+     *        Valid values: <code>route53resolver:ResolverRule</code> | <code>ec2:TransitGateway</code> |
+     *        <code>ec2:Subnet</code> | <code>license-manager:LicenseConfiguration</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

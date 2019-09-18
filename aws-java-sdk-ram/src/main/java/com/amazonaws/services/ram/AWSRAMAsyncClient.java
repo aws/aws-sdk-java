@@ -28,30 +28,12 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * Use AWS Resource Access Manager to share AWS resources between AWS accounts. To share a resource, you create a
  * resource share, associate the resource with the resource share, and specify the principals that can access the
- * resource. The following principals are supported:
+ * resources associated with the resource share. The following principals are supported: AWS accounts, organizational
+ * units (OU) from AWS Organizations, and organizations from AWS Organizations.
  * </p>
- * <ul>
- * <li>
  * <p>
- * The ID of an AWS account
- * </p>
- * </li>
- * <li>
- * <p>
- * The Amazon Resource Name (ARN) of an OU from AWS Organizations
- * </p>
- * </li>
- * <li>
- * <p>
- * The Amazon Resource Name (ARN) of an organization from AWS Organizations
- * </p>
- * </li>
- * </ul>
- * <p>
- * If you specify an AWS account that doesn't exist in the same organization as the account that owns the resource
- * share, the owner of the specified account receives an invitation to accept the resource share. After the owner
- * accepts the invitation, they can access the resources in the resource share. An administrator of the specified
- * account can use IAM policies to restrict access resources in the resource share.
+ * For more information, see the <a href="https://docs.aws.amazon.com/ram/latest/userguide/">AWS Resource Access Manager
+ * User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -404,6 +386,40 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
 
                 try {
                     result = executeGetResourceShares(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPendingInvitationResourcesResult> listPendingInvitationResourcesAsync(ListPendingInvitationResourcesRequest request) {
+
+        return listPendingInvitationResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPendingInvitationResourcesResult> listPendingInvitationResourcesAsync(
+            final ListPendingInvitationResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPendingInvitationResourcesRequest, ListPendingInvitationResourcesResult> asyncHandler) {
+        final ListPendingInvitationResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPendingInvitationResourcesResult>() {
+            @Override
+            public ListPendingInvitationResourcesResult call() throws Exception {
+                ListPendingInvitationResourcesResult result = null;
+
+                try {
+                    result = executeListPendingInvitationResources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

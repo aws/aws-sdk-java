@@ -28,30 +28,12 @@ import com.amazonaws.services.ram.model.*;
  * <p>
  * Use AWS Resource Access Manager to share AWS resources between AWS accounts. To share a resource, you create a
  * resource share, associate the resource with the resource share, and specify the principals that can access the
- * resource. The following principals are supported:
+ * resources associated with the resource share. The following principals are supported: AWS accounts, organizational
+ * units (OU) from AWS Organizations, and organizations from AWS Organizations.
  * </p>
- * <ul>
- * <li>
  * <p>
- * The ID of an AWS account
- * </p>
- * </li>
- * <li>
- * <p>
- * The Amazon Resource Name (ARN) of an OU from AWS Organizations
- * </p>
- * </li>
- * <li>
- * <p>
- * The Amazon Resource Name (ARN) of an organization from AWS Organizations
- * </p>
- * </li>
- * </ul>
- * <p>
- * If you specify an AWS account that doesn't exist in the same organization as the account that owns the resource
- * share, the owner of the specified account receives an invitation to accept the resource share. After the owner
- * accepts the invitation, they can access the resources in the resource share. An administrator of the specified
- * account can use IAM policies to restrict access resources in the resource share.
+ * For more information, see the <a href="https://docs.aws.amazon.com/ram/latest/userguide/">AWS Resource Access Manager
+ * User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -220,7 +202,10 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Enables resource sharing within your organization.
+     * Enables resource sharing within your AWS Organization.
+     * </p>
+     * <p>
+     * The caller must be the master account for the AWS Organization.
      * </p>
      * 
      * @param enableSharingWithAwsOrganizationRequest
@@ -235,7 +220,10 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Enables resource sharing within your organization.
+     * Enables resource sharing within your AWS Organization.
+     * </p>
+     * <p>
+     * The caller must be the master account for the AWS Organization.
      * </p>
      * 
      * @param enableSharingWithAwsOrganizationRequest
@@ -255,7 +243,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the policies for the specifies resources.
+     * Gets the policies for the specified resources that you own and have shared.
      * </p>
      * 
      * @param getResourcePoliciesRequest
@@ -268,7 +256,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the policies for the specifies resources.
+     * Gets the policies for the specified resources that you own and have shared.
      * </p>
      * 
      * @param getResourcePoliciesRequest
@@ -286,7 +274,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the associations for the specified resource share.
+     * Gets the resources or principals for the resource shares that you own.
      * </p>
      * 
      * @param getResourceShareAssociationsRequest
@@ -301,7 +289,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the associations for the specified resource share.
+     * Gets the resources or principals for the resource shares that you own.
      * </p>
      * 
      * @param getResourceShareAssociationsRequest
@@ -321,7 +309,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the specified invitations for resource sharing.
+     * Gets the invitations for resource sharing that you've received.
      * </p>
      * 
      * @param getResourceShareInvitationsRequest
@@ -335,7 +323,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the specified invitations for resource sharing.
+     * Gets the invitations for resource sharing that you've received.
      * </p>
      * 
      * @param getResourceShareInvitationsRequest
@@ -354,7 +342,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the specified resource shares or all of your resource shares.
+     * Gets the resource shares that you own or the resource shares that are shared with you.
      * </p>
      * 
      * @param getResourceSharesRequest
@@ -367,7 +355,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the specified resource shares or all of your resource shares.
+     * Gets the resource shares that you own or the resource shares that are shared with you.
      * </p>
      * 
      * @param getResourceSharesRequest
@@ -385,7 +373,42 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Lists the principals with access to the specified resource.
+     * Lists the resources in a resource share that is shared with you but that the invitation is still pending for.
+     * </p>
+     * 
+     * @param listPendingInvitationResourcesRequest
+     * @return A Java Future containing the result of the ListPendingInvitationResources operation returned by the
+     *         service.
+     * @sample AWSRAMAsync.ListPendingInvitationResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPendingInvitationResourcesResult> listPendingInvitationResourcesAsync(
+            ListPendingInvitationResourcesRequest listPendingInvitationResourcesRequest);
+
+    /**
+     * <p>
+     * Lists the resources in a resource share that is shared with you but that the invitation is still pending for.
+     * </p>
+     * 
+     * @param listPendingInvitationResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPendingInvitationResources operation returned by the
+     *         service.
+     * @sample AWSRAMAsyncHandler.ListPendingInvitationResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPendingInvitationResourcesResult> listPendingInvitationResourcesAsync(
+            ListPendingInvitationResourcesRequest listPendingInvitationResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPendingInvitationResourcesRequest, ListPendingInvitationResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the principals that you have shared resources with or the principals that have shared resources with you.
      * </p>
      * 
      * @param listPrincipalsRequest
@@ -398,7 +421,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Lists the principals with access to the specified resource.
+     * Lists the principals that you have shared resources with or the principals that have shared resources with you.
      * </p>
      * 
      * @param listPrincipalsRequest
@@ -416,7 +439,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Lists the resources that the specified principal can access.
+     * Lists the resources that you added to a resource shares or the resources that are shared with you.
      * </p>
      * 
      * @param listResourcesRequest
@@ -429,7 +452,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Lists the resources that the specified principal can access.
+     * Lists the resources that you added to a resource shares or the resources that are shared with you.
      * </p>
      * 
      * @param listResourcesRequest
@@ -482,7 +505,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Adds the specified tags to the specified resource share.
+     * Adds the specified tags to the specified resource share that you own.
      * </p>
      * 
      * @param tagResourceRequest
@@ -495,7 +518,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Adds the specified tags to the specified resource share.
+     * Adds the specified tags to the specified resource share that you own.
      * </p>
      * 
      * @param tagResourceRequest
@@ -513,7 +536,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Removes the specified tags from the specified resource share.
+     * Removes the specified tags from the specified resource share that you own.
      * </p>
      * 
      * @param untagResourceRequest
@@ -526,7 +549,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Removes the specified tags from the specified resource share.
+     * Removes the specified tags from the specified resource share that you own.
      * </p>
      * 
      * @param untagResourceRequest
@@ -544,7 +567,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Updates the specified resource share.
+     * Updates the specified resource share that you own.
      * </p>
      * 
      * @param updateResourceShareRequest
@@ -557,7 +580,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Updates the specified resource share.
+     * Updates the specified resource share that you own.
      * </p>
      * 
      * @param updateResourceShareRequest

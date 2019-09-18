@@ -27,4 +27,5 @@ notifications:
 install: /bin/true
 sudo: required
 dist: precise
+before_script: sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'
 script: mvn install -Dhttps.protocols=TLSv1.2 -pl ${MODULES_TO_SKIP}

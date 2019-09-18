@@ -25,10 +25,8 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * If you have more <code>IPSet</code> objects than the number that you specified for <code>Limit</code> in the
-     * request, the response includes a <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code> value from the response in the
-     * <code>NextMarker</code> value in the next request.
+     * To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request
+     * use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.
      * </p>
      */
     private String nextMarker;
@@ -41,17 +39,13 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * If you have more <code>IPSet</code> objects than the number that you specified for <code>Limit</code> in the
-     * request, the response includes a <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code> value from the response in the
-     * <code>NextMarker</code> value in the next request.
+     * To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request
+     * use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.
      * </p>
      * 
      * @param nextMarker
-     *        If you have more <code>IPSet</code> objects than the number that you specified for <code>Limit</code> in
-     *        the request, the response includes a <code>NextMarker</code> value. To list more <code>IPSet</code>
-     *        objects, submit another <code>ListIPSets</code> request, and specify the <code>NextMarker</code> value
-     *        from the response in the <code>NextMarker</code> value in the next request.
+     *        To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next
+     *        request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -60,16 +54,12 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * If you have more <code>IPSet</code> objects than the number that you specified for <code>Limit</code> in the
-     * request, the response includes a <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code> value from the response in the
-     * <code>NextMarker</code> value in the next request.
+     * To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request
+     * use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.
      * </p>
      * 
-     * @return If you have more <code>IPSet</code> objects than the number that you specified for <code>Limit</code> in
-     *         the request, the response includes a <code>NextMarker</code> value. To list more <code>IPSet</code>
-     *         objects, submit another <code>ListIPSets</code> request, and specify the <code>NextMarker</code> value
-     *         from the response in the <code>NextMarker</code> value in the next request.
+     * @return To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next
+     *         request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.
      */
 
     public String getNextMarker() {
@@ -78,17 +68,13 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * If you have more <code>IPSet</code> objects than the number that you specified for <code>Limit</code> in the
-     * request, the response includes a <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code> value from the response in the
-     * <code>NextMarker</code> value in the next request.
+     * To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request
+     * use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.
      * </p>
      * 
      * @param nextMarker
-     *        If you have more <code>IPSet</code> objects than the number that you specified for <code>Limit</code> in
-     *        the request, the response includes a <code>NextMarker</code> value. To list more <code>IPSet</code>
-     *        objects, submit another <code>ListIPSets</code> request, and specify the <code>NextMarker</code> value
-     *        from the response in the <code>NextMarker</code> value in the next request.
+     *        To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next
+     *        request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
