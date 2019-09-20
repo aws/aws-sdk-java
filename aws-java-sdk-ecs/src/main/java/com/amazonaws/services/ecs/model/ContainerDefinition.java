@@ -762,7 +762,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The FireLens configuration for the container. This is used to specify and configure a log router for container
-     * logs.
+     * logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private FirelensConfiguration firelensConfiguration;
@@ -6361,12 +6363,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The FireLens configuration for the container. This is used to specify and configure a log router for container
-     * logs.
+     * logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param firelensConfiguration
      *        The FireLens configuration for the container. This is used to specify and configure a log router for
-     *        container logs.
+     *        container logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log
+     *        Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setFirelensConfiguration(FirelensConfiguration firelensConfiguration) {
@@ -6376,11 +6382,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The FireLens configuration for the container. This is used to specify and configure a log router for container
-     * logs.
+     * logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The FireLens configuration for the container. This is used to specify and configure a log router for
-     *         container logs.
+     *         container logs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log
+     *         Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public FirelensConfiguration getFirelensConfiguration() {
@@ -6390,12 +6400,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The FireLens configuration for the container. This is used to specify and configure a log router for container
-     * logs.
+     * logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param firelensConfiguration
      *        The FireLens configuration for the container. This is used to specify and configure a log router for
-     *        container logs.
+     *        container logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log
+     *        Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

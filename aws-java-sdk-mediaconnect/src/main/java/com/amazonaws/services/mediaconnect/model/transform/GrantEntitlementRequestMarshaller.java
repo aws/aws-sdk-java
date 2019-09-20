@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GrantEntitlementRequestMarshaller {
 
+    private static final MarshallingInfo<Integer> DATATRANSFERSUBSCRIBERFEEPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTransferSubscriberFeePercent").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -53,6 +55,7 @@ public class GrantEntitlementRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(grantEntitlementRequest.getDataTransferSubscriberFeePercent(), DATATRANSFERSUBSCRIBERFEEPERCENT_BINDING);
             protocolMarshaller.marshall(grantEntitlementRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(grantEntitlementRequest.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(grantEntitlementRequest.getName(), NAME_BINDING);

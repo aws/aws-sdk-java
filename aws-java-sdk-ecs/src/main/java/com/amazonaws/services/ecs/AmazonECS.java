@@ -1429,6 +1429,8 @@ public interface AmazonECS {
      *         valid.
      * @throws AccessDeniedException
      *         You do not have authorization to perform the requested action.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
      * @sample AmazonECS.SubmitTaskStateChange
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange" target="_top">AWS API
      *      Documentation</a>

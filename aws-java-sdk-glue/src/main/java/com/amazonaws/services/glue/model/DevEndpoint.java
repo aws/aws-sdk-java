@@ -119,6 +119,25 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private String workerType;
     /**
      * <p>
+     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     * indicates the version supported for running your ETL scripts on development endpoints.
+     * </p>
+     * <p>
+     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
+     * </p>
+     * <p>
+     * Development endpoints that are created without specifying a Glue version default to Glue 0.9.
+     * </p>
+     * <p>
+     * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are
+     * provided, the version defaults to Python 2.
+     * </p>
+     */
+    private String glueVersion;
+    /**
+     * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.
      * </p>
      * <p>
@@ -225,7 +244,29 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * A map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * <p>
-     * Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as a valid argument.
+     * Valid arguments are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"--enable-glue-datacatalog": ""</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"GLUE_PYTHON_VERSION": "3"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"GLUE_PYTHON_VERSION": "2"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are
+     * provided, the version defaults to Python 2.
      * </p>
      */
     private java.util.Map<String, String> arguments;
@@ -898,6 +939,124 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     public DevEndpoint withWorkerType(WorkerType workerType) {
         this.workerType = workerType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     * indicates the version supported for running your ETL scripts on development endpoints.
+     * </p>
+     * <p>
+     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
+     * </p>
+     * <p>
+     * Development endpoints that are created without specifying a Glue version default to Glue 0.9.
+     * </p>
+     * <p>
+     * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are
+     * provided, the version defaults to Python 2.
+     * </p>
+     * 
+     * @param glueVersion
+     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     *        indicates the version supported for running your ETL scripts on development endpoints. </p>
+     *        <p>
+     *        For more information about the available AWS Glue versions and corresponding Spark and Python versions,
+     *        see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *        guide.
+     *        </p>
+     *        <p>
+     *        Development endpoints that are created without specifying a Glue version default to Glue 0.9.
+     *        </p>
+     *        <p>
+     *        You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     *        parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments
+     *        are provided, the version defaults to Python 2.
+     */
+
+    public void setGlueVersion(String glueVersion) {
+        this.glueVersion = glueVersion;
+    }
+
+    /**
+     * <p>
+     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     * indicates the version supported for running your ETL scripts on development endpoints.
+     * </p>
+     * <p>
+     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
+     * </p>
+     * <p>
+     * Development endpoints that are created without specifying a Glue version default to Glue 0.9.
+     * </p>
+     * <p>
+     * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are
+     * provided, the version defaults to Python 2.
+     * </p>
+     * 
+     * @return Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python
+     *         version indicates the version supported for running your ETL scripts on development endpoints. </p>
+     *         <p>
+     *         For more information about the available AWS Glue versions and corresponding Spark and Python versions,
+     *         see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *         guide.
+     *         </p>
+     *         <p>
+     *         Development endpoints that are created without specifying a Glue version default to Glue 0.9.
+     *         </p>
+     *         <p>
+     *         You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     *         parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments
+     *         are provided, the version defaults to Python 2.
+     */
+
+    public String getGlueVersion() {
+        return this.glueVersion;
+    }
+
+    /**
+     * <p>
+     * Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     * indicates the version supported for running your ETL scripts on development endpoints.
+     * </p>
+     * <p>
+     * For more information about the available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
+     * </p>
+     * <p>
+     * Development endpoints that are created without specifying a Glue version default to Glue 0.9.
+     * </p>
+     * <p>
+     * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are
+     * provided, the version defaults to Python 2.
+     * </p>
+     * 
+     * @param glueVersion
+     *        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version
+     *        indicates the version supported for running your ETL scripts on development endpoints. </p>
+     *        <p>
+     *        For more information about the available AWS Glue versions and corresponding Spark and Python versions,
+     *        see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
+     *        guide.
+     *        </p>
+     *        <p>
+     *        Development endpoints that are created without specifying a Glue version default to Glue 0.9.
+     *        </p>
+     *        <p>
+     *        You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     *        parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments
+     *        are provided, the version defaults to Python 2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DevEndpoint withGlueVersion(String glueVersion) {
+        setGlueVersion(glueVersion);
         return this;
     }
 
@@ -1616,12 +1775,56 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * A map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * <p>
-     * Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as a valid argument.
+     * Valid arguments are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"--enable-glue-datacatalog": ""</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"GLUE_PYTHON_VERSION": "3"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"GLUE_PYTHON_VERSION": "2"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are
+     * provided, the version defaults to Python 2.
      * </p>
      * 
      * @return A map of arguments used to configure the <code>DevEndpoint</code>.</p>
      *         <p>
-     *         Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as a valid argument.
+     *         Valid arguments are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"--enable-glue-datacatalog": ""</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"GLUE_PYTHON_VERSION": "3"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"GLUE_PYTHON_VERSION": "2"</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     *         parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments
+     *         are provided, the version defaults to Python 2.
      */
 
     public java.util.Map<String, String> getArguments() {
@@ -1633,13 +1836,57 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * A map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * <p>
-     * Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as a valid argument.
+     * Valid arguments are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"--enable-glue-datacatalog": ""</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"GLUE_PYTHON_VERSION": "3"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"GLUE_PYTHON_VERSION": "2"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are
+     * provided, the version defaults to Python 2.
      * </p>
      * 
      * @param arguments
      *        A map of arguments used to configure the <code>DevEndpoint</code>.</p>
      *        <p>
-     *        Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as a valid argument.
+     *        Valid arguments are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"--enable-glue-datacatalog": ""</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"GLUE_PYTHON_VERSION": "3"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"GLUE_PYTHON_VERSION": "2"</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     *        parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments
+     *        are provided, the version defaults to Python 2.
      */
 
     public void setArguments(java.util.Map<String, String> arguments) {
@@ -1651,13 +1898,57 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * A map of arguments used to configure the <code>DevEndpoint</code>.
      * </p>
      * <p>
-     * Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as a valid argument.
+     * Valid arguments are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"--enable-glue-datacatalog": ""</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"GLUE_PYTHON_VERSION": "3"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"GLUE_PYTHON_VERSION": "2"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are
+     * provided, the version defaults to Python 2.
      * </p>
      * 
      * @param arguments
      *        A map of arguments used to configure the <code>DevEndpoint</code>.</p>
      *        <p>
-     *        Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as a valid argument.
+     *        Valid arguments are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"--enable-glue-datacatalog": ""</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"GLUE_PYTHON_VERSION": "3"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"GLUE_PYTHON_VERSION": "2"</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can specify a version of Python support for development endpoints by using the <code>Arguments</code>
+     *        parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments
+     *        are provided, the version defaults to Python 2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1719,6 +2010,8 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getWorkerType() != null)
             sb.append("WorkerType: ").append(getWorkerType()).append(",");
+        if (getGlueVersion() != null)
+            sb.append("GlueVersion: ").append(getGlueVersion()).append(",");
         if (getNumberOfWorkers() != null)
             sb.append("NumberOfWorkers: ").append(getNumberOfWorkers()).append(",");
         if (getNumberOfNodes() != null)
@@ -1802,6 +2095,10 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWorkerType() != null && other.getWorkerType().equals(this.getWorkerType()) == false)
             return false;
+        if (other.getGlueVersion() == null ^ this.getGlueVersion() == null)
+            return false;
+        if (other.getGlueVersion() != null && other.getGlueVersion().equals(this.getGlueVersion()) == false)
+            return false;
         if (other.getNumberOfWorkers() == null ^ this.getNumberOfWorkers() == null)
             return false;
         if (other.getNumberOfWorkers() != null && other.getNumberOfWorkers().equals(this.getNumberOfWorkers()) == false)
@@ -1876,6 +2173,7 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPublicAddress() == null) ? 0 : getPublicAddress().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getWorkerType() == null) ? 0 : getWorkerType().hashCode());
+        hashCode = prime * hashCode + ((getGlueVersion() == null) ? 0 : getGlueVersion().hashCode());
         hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());

@@ -48,6 +48,24 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * The image used for the container.
+     * </p>
+     */
+    private String image;
+    /**
+     * <p>
+     * The container image manifest digest.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise
+     * it is omitted.
+     * </p>
+     * </note>
+     */
+    private String imageDigest;
+    /**
+     * <p>
      * The ID of the Docker container.
      * </p>
      */
@@ -239,6 +257,116 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     public Container withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The image used for the container.
+     * </p>
+     * 
+     * @param image
+     *        The image used for the container.
+     */
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    /**
+     * <p>
+     * The image used for the container.
+     * </p>
+     * 
+     * @return The image used for the container.
+     */
+
+    public String getImage() {
+        return this.image;
+    }
+
+    /**
+     * <p>
+     * The image used for the container.
+     * </p>
+     * 
+     * @param image
+     *        The image used for the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withImage(String image) {
+        setImage(image);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container image manifest digest.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise
+     * it is omitted.
+     * </p>
+     * </note>
+     * 
+     * @param imageDigest
+     *        The container image manifest digest.</p> <note>
+     *        <p>
+     *        The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR,
+     *        otherwise it is omitted.
+     *        </p>
+     */
+
+    public void setImageDigest(String imageDigest) {
+        this.imageDigest = imageDigest;
+    }
+
+    /**
+     * <p>
+     * The container image manifest digest.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise
+     * it is omitted.
+     * </p>
+     * </note>
+     * 
+     * @return The container image manifest digest.</p> <note>
+     *         <p>
+     *         The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR,
+     *         otherwise it is omitted.
+     *         </p>
+     */
+
+    public String getImageDigest() {
+        return this.imageDigest;
+    }
+
+    /**
+     * <p>
+     * The container image manifest digest.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise
+     * it is omitted.
+     * </p>
+     * </note>
+     * 
+     * @param imageDigest
+     *        The container image manifest digest.</p> <note>
+     *        <p>
+     *        The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR,
+     *        otherwise it is omitted.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withImageDigest(String imageDigest) {
+        setImageDigest(imageDigest);
         return this;
     }
 
@@ -878,6 +1006,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
             sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getImage() != null)
+            sb.append("Image: ").append(getImage()).append(",");
+        if (getImageDigest() != null)
+            sb.append("ImageDigest: ").append(getImageDigest()).append(",");
         if (getRuntimeId() != null)
             sb.append("RuntimeId: ").append(getRuntimeId()).append(",");
         if (getLastStatus() != null)
@@ -927,6 +1059,14 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getImage() == null ^ this.getImage() == null)
+            return false;
+        if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
+            return false;
+        if (other.getImageDigest() == null ^ this.getImageDigest() == null)
+            return false;
+        if (other.getImageDigest() != null && other.getImageDigest().equals(this.getImageDigest()) == false)
             return false;
         if (other.getRuntimeId() == null ^ this.getRuntimeId() == null)
             return false;
@@ -987,6 +1127,8 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContainerArn() == null) ? 0 : getContainerArn().hashCode());
         hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        hashCode = prime * hashCode + ((getImageDigest() == null) ? 0 : getImageDigest().hashCode());
         hashCode = prime * hashCode + ((getRuntimeId() == null) ? 0 : getRuntimeId().hashCode());
         hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());

@@ -48,6 +48,10 @@ public class EntitlementJsonUnmarshaller implements Unmarshaller<Entitlement, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("dataTransferSubscriberFeePercent", targetDepth)) {
+                    context.nextToken();
+                    entitlement.setDataTransferSubscriberFeePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     entitlement.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

@@ -48,6 +48,10 @@ public class SourceJsonUnmarshaller implements Unmarshaller<Source, JsonUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("dataTransferSubscriberFeePercent", targetDepth)) {
+                    context.nextToken();
+                    source.setDataTransferSubscriberFeePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("decryption", targetDepth)) {
                     context.nextToken();
                     source.setDecryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));

@@ -88,6 +88,10 @@ public class DevEndpointJsonUnmarshaller implements Unmarshaller<DevEndpoint, Js
                     context.nextToken();
                     devEndpoint.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GlueVersion", targetDepth)) {
+                    context.nextToken();
+                    devEndpoint.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("NumberOfWorkers", targetDepth)) {
                     context.nextToken();
                     devEndpoint.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));

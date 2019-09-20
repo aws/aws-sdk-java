@@ -48,6 +48,10 @@ public class GrantEntitlementRequestJsonUnmarshaller implements Unmarshaller<Gra
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("dataTransferSubscriberFeePercent", targetDepth)) {
+                    context.nextToken();
+                    grantEntitlementRequest.setDataTransferSubscriberFeePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     grantEntitlementRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

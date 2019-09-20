@@ -84,6 +84,10 @@ public class CreateDevEndpointResultJsonUnmarshaller implements Unmarshaller<Cre
                     context.nextToken();
                     createDevEndpointResult.setWorkerType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GlueVersion", targetDepth)) {
+                    context.nextToken();
+                    createDevEndpointResult.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("NumberOfWorkers", targetDepth)) {
                     context.nextToken();
                     createDevEndpointResult.setNumberOfWorkers(context.getUnmarshaller(Integer.class).unmarshall(context));

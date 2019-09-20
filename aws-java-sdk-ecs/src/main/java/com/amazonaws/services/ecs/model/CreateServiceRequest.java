@@ -60,7 +60,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service.
+     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -156,8 +159,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
-     * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * <code>awsvpc</code> network mode or if the service is configured to use service discovery, an external deployment
+     * controller, or multiple target groups in which case you should not specify a role here. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
@@ -494,7 +498,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service.
+     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -536,7 +543,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      *         Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
-     *         the service.
+     *         the service. The service-linked role is required for services that make use of multiple target groups.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *         Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <p>
      *         If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to
@@ -591,7 +601,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service.
+     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -633,7 +646,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
-     *        the service.
+     *        the service. The service-linked role is required for services that make use of multiple target groups. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -690,7 +706,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service.
+     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -737,7 +756,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
-     *        the service.
+     *        the service. The service-linked role is required for services that make use of multiple target groups. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -796,7 +818,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service.
+     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -838,7 +863,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
      *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
-     *        the service.
+     *        the service. The service-linked role is required for services that make use of multiple target groups. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -1280,8 +1308,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
-     * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * <code>awsvpc</code> network mode or if the service is configured to use service discovery, an external deployment
+     * controller, or multiple target groups in which case you should not specify a role here. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
@@ -1303,8 +1332,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If your account has already created the Amazon ECS service-linked role, that role is used by default for
      *        your service unless you specify a role here. The service-linked role is required if your task definition
-     *        uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
-     *        information, see <a
+     *        uses the <code>awsvpc</code> network mode or if the service is configured to use service discovery, an
+     *        external deployment controller, or multiple target groups in which case you should not specify a role
+     *        here. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
@@ -1333,8 +1363,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
-     * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * <code>awsvpc</code> network mode or if the service is configured to use service discovery, an external deployment
+     * controller, or multiple target groups in which case you should not specify a role here. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
@@ -1355,8 +1386,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         If your account has already created the Amazon ECS service-linked role, that role is used by default for
      *         your service unless you specify a role here. The service-linked role is required if your task definition
-     *         uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
-     *         information, see <a
+     *         uses the <code>awsvpc</code> network mode or if the service is configured to use service discovery, an
+     *         external deployment controller, or multiple target groups in which case you should not specify a role
+     *         here. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      *         Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
@@ -1385,8 +1417,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
-     * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * <code>awsvpc</code> network mode or if the service is configured to use service discovery, an external deployment
+     * controller, or multiple target groups in which case you should not specify a role here. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
@@ -1408,8 +1441,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If your account has already created the Amazon ECS service-linked role, that role is used by default for
      *        your service unless you specify a role here. The service-linked role is required if your task definition
-     *        uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
-     *        information, see <a
+     *        uses the <code>awsvpc</code> network mode or if the service is configured to use service discovery, an
+     *        external deployment controller, or multiple target groups in which case you should not specify a role
+     *        here. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>

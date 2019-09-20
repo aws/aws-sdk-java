@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GrantEntitlementRequest implements Serializable, Cloneable, StructuredPojo {
 
+    /** Percentage from 0-100 of the data transfer cost to be billed to the subscriber. */
+    private Integer dataTransferSubscriberFeePercent;
     /**
      * A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and
      * will not be seen by the subscriber or end user.
@@ -40,6 +42,40 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
      * allowed to create their own flows using your content as the source.
      */
     private java.util.List<String> subscribers;
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * 
+     * @param dataTransferSubscriberFeePercent
+     *        Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+
+    public void setDataTransferSubscriberFeePercent(Integer dataTransferSubscriberFeePercent) {
+        this.dataTransferSubscriberFeePercent = dataTransferSubscriberFeePercent;
+    }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * 
+     * @return Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+
+    public Integer getDataTransferSubscriberFeePercent() {
+        return this.dataTransferSubscriberFeePercent;
+    }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * 
+     * @param dataTransferSubscriberFeePercent
+     *        Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GrantEntitlementRequest withDataTransferSubscriberFeePercent(Integer dataTransferSubscriberFeePercent) {
+        setDataTransferSubscriberFeePercent(dataTransferSubscriberFeePercent);
+        return this;
+    }
 
     /**
      * A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and
@@ -231,6 +267,8 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDataTransferSubscriberFeePercent() != null)
+            sb.append("DataTransferSubscriberFeePercent: ").append(getDataTransferSubscriberFeePercent()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEncryption() != null)
@@ -253,6 +291,11 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
         if (obj instanceof GrantEntitlementRequest == false)
             return false;
         GrantEntitlementRequest other = (GrantEntitlementRequest) obj;
+        if (other.getDataTransferSubscriberFeePercent() == null ^ this.getDataTransferSubscriberFeePercent() == null)
+            return false;
+        if (other.getDataTransferSubscriberFeePercent() != null
+                && other.getDataTransferSubscriberFeePercent().equals(this.getDataTransferSubscriberFeePercent()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -277,6 +320,7 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDataTransferSubscriberFeePercent() == null) ? 0 : getDataTransferSubscriberFeePercent().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

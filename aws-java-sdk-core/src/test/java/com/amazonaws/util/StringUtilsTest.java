@@ -179,4 +179,15 @@ public class StringUtilsTest {
         Assert.assertFalse(StringUtils.hasValue(null));
         Assert.assertFalse(StringUtils.hasValue(""));
     }
+
+    @Test
+    public void findFirstOccurrence() {
+        Assert.assertEquals((Character) ':', StringUtils.findFirstOccurrence("abc:def/ghi:jkl/mno", ':', '/'));
+        Assert.assertEquals((Character) ':', StringUtils.findFirstOccurrence("abc:def/ghi:jkl/mno", '/', ':'));
+    }
+
+    @Test
+    public void findFirstOccurrence_NoMatch() {
+        Assert.assertNull(StringUtils.findFirstOccurrence("abc", ':'));
+    }
 }

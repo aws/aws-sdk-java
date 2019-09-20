@@ -181,7 +181,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch
      * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
      * current.
      * </p>
@@ -1342,7 +1342,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch
      * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
      * current.
      * </p>
@@ -1350,7 +1350,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * @param version
      *        The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event,
      *        the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch
-     *        Events, you can compare the version of a task reported by the Amazon ECS API actionss with the version
+     *        Events, you can compare the version of a task reported by the Amazon ECS API actions with the version
      *        reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the
      *        version in your event stream is current.
      */
@@ -1363,14 +1363,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch
      * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
      * current.
      * </p>
      * 
      * @return The version counter for the task. Every time a task experiences a change that triggers a CloudWatch
      *         event, the version counter is incremented. If you are replicating your Amazon ECS task state with
-     *         CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actionss with the
+     *         CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actions with the
      *         version reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that
      *         the version in your event stream is current.
      */
@@ -1383,7 +1383,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch
      * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
      * current.
      * </p>
@@ -1391,7 +1391,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * @param version
      *        The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event,
      *        the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch
-     *        Events, you can compare the version of a task reported by the Amazon ECS API actionss with the version
+     *        Events, you can compare the version of a task reported by the Amazon ECS API actions with the version
      *        reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the
      *        version in your event stream is current.
      * @return Returns a reference to this object so that method calls can be chained together.

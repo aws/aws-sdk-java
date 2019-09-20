@@ -48,6 +48,10 @@ public class ListedEntitlementJsonUnmarshaller implements Unmarshaller<ListedEnt
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("dataTransferSubscriberFeePercent", targetDepth)) {
+                    context.nextToken();
+                    listedEntitlement.setDataTransferSubscriberFeePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("entitlementArn", targetDepth)) {
                     context.nextToken();
                     listedEntitlement.setEntitlementArn(context.getUnmarshaller(String.class).unmarshall(context));

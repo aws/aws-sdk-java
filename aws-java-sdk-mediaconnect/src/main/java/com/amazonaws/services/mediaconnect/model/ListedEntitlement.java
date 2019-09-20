@@ -26,10 +26,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListedEntitlement implements Serializable, Cloneable, StructuredPojo {
 
+    /** Percentage from 0-100 of the data transfer cost to be billed to the subscriber. */
+    private Integer dataTransferSubscriberFeePercent;
     /** The ARN of the entitlement. */
     private String entitlementArn;
     /** The name of the entitlement. */
     private String entitlementName;
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * 
+     * @param dataTransferSubscriberFeePercent
+     *        Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+
+    public void setDataTransferSubscriberFeePercent(Integer dataTransferSubscriberFeePercent) {
+        this.dataTransferSubscriberFeePercent = dataTransferSubscriberFeePercent;
+    }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * 
+     * @return Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+
+    public Integer getDataTransferSubscriberFeePercent() {
+        return this.dataTransferSubscriberFeePercent;
+    }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * 
+     * @param dataTransferSubscriberFeePercent
+     *        Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListedEntitlement withDataTransferSubscriberFeePercent(Integer dataTransferSubscriberFeePercent) {
+        setDataTransferSubscriberFeePercent(dataTransferSubscriberFeePercent);
+        return this;
+    }
 
     /**
      * The ARN of the entitlement.
@@ -111,6 +147,8 @@ public class ListedEntitlement implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDataTransferSubscriberFeePercent() != null)
+            sb.append("DataTransferSubscriberFeePercent: ").append(getDataTransferSubscriberFeePercent()).append(",");
         if (getEntitlementArn() != null)
             sb.append("EntitlementArn: ").append(getEntitlementArn()).append(",");
         if (getEntitlementName() != null)
@@ -129,6 +167,11 @@ public class ListedEntitlement implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof ListedEntitlement == false)
             return false;
         ListedEntitlement other = (ListedEntitlement) obj;
+        if (other.getDataTransferSubscriberFeePercent() == null ^ this.getDataTransferSubscriberFeePercent() == null)
+            return false;
+        if (other.getDataTransferSubscriberFeePercent() != null
+                && other.getDataTransferSubscriberFeePercent().equals(this.getDataTransferSubscriberFeePercent()) == false)
+            return false;
         if (other.getEntitlementArn() == null ^ this.getEntitlementArn() == null)
             return false;
         if (other.getEntitlementArn() != null && other.getEntitlementArn().equals(this.getEntitlementArn()) == false)
@@ -145,6 +188,7 @@ public class ListedEntitlement implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDataTransferSubscriberFeePercent() == null) ? 0 : getDataTransferSubscriberFeePercent().hashCode());
         hashCode = prime * hashCode + ((getEntitlementArn() == null) ? 0 : getEntitlementArn().hashCode());
         hashCode = prime * hashCode + ((getEntitlementName() == null) ? 0 : getEntitlementName().hashCode());
         return hashCode;

@@ -36,6 +36,12 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
     private String containerName;
     /**
      * <p>
+     * The container image SHA 256 digest.
+     * </p>
+     */
+    private String imageDigest;
+    /**
+     * <p>
      * The ID of the Docker container.
      * </p>
      */
@@ -102,6 +108,46 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
 
     public ContainerStateChange withContainerName(String containerName) {
         setContainerName(containerName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container image SHA 256 digest.
+     * </p>
+     * 
+     * @param imageDigest
+     *        The container image SHA 256 digest.
+     */
+
+    public void setImageDigest(String imageDigest) {
+        this.imageDigest = imageDigest;
+    }
+
+    /**
+     * <p>
+     * The container image SHA 256 digest.
+     * </p>
+     * 
+     * @return The container image SHA 256 digest.
+     */
+
+    public String getImageDigest() {
+        return this.imageDigest;
+    }
+
+    /**
+     * <p>
+     * The container image SHA 256 digest.
+     * </p>
+     * 
+     * @param imageDigest
+     *        The container image SHA 256 digest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerStateChange withImageDigest(String imageDigest) {
+        setImageDigest(imageDigest);
         return this;
     }
 
@@ -352,6 +398,8 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getContainerName() != null)
             sb.append("ContainerName: ").append(getContainerName()).append(",");
+        if (getImageDigest() != null)
+            sb.append("ImageDigest: ").append(getImageDigest()).append(",");
         if (getRuntimeId() != null)
             sb.append("RuntimeId: ").append(getRuntimeId()).append(",");
         if (getExitCode() != null)
@@ -379,6 +427,10 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
         if (other.getContainerName() == null ^ this.getContainerName() == null)
             return false;
         if (other.getContainerName() != null && other.getContainerName().equals(this.getContainerName()) == false)
+            return false;
+        if (other.getImageDigest() == null ^ this.getImageDigest() == null)
+            return false;
+        if (other.getImageDigest() != null && other.getImageDigest().equals(this.getImageDigest()) == false)
             return false;
         if (other.getRuntimeId() == null ^ this.getRuntimeId() == null)
             return false;
@@ -409,6 +461,7 @@ public class ContainerStateChange implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getContainerName() == null) ? 0 : getContainerName().hashCode());
+        hashCode = prime * hashCode + ((getImageDigest() == null) ? 0 : getImageDigest().hashCode());
         hashCode = prime * hashCode + ((getRuntimeId() == null) ? 0 : getRuntimeId().hashCode());
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getNetworkBindings() == null) ? 0 : getNetworkBindings().hashCode());

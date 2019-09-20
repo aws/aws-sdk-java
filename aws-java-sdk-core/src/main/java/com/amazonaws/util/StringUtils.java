@@ -323,4 +323,23 @@ public class StringUtils {
     public static boolean beginsWithIgnoreCase(final String data, final String seq) {
       return data.regionMatches(true, 0, seq, 0, seq.length());
     }
+
+    /**
+     * Searches a string for the first occurrence of a character specified by a list of characters.
+     * @param s The string to search.
+     * @param charsToMatch A list of characters to search the string for.
+     * @return The character that was first matched in the string or null if none of the characters were found.
+     */
+    public static Character findFirstOccurrence(String s, char ...charsToMatch) {
+        int lowestIndex = Integer.MAX_VALUE;
+
+        for (char toMatch : charsToMatch) {
+            int currentIndex = s.indexOf(toMatch);
+            if (currentIndex != -1 && currentIndex < lowestIndex) {
+                lowestIndex = currentIndex;
+            }
+        }
+
+        return lowestIndex == Integer.MAX_VALUE ? null : s.charAt(lowestIndex);
+    }
 }

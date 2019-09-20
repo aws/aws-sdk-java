@@ -48,6 +48,10 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("dataTransferSubscriberFeePercent", targetDepth)) {
+                    context.nextToken();
+                    output.setDataTransferSubscriberFeePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     output.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
