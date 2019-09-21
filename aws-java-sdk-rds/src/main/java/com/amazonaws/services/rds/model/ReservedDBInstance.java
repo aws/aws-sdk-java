@@ -117,6 +117,17 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * </p>
      */
     private String reservedDBInstanceArn;
+    /**
+     * <p>
+     * The unique identifier for the lease associated with the reserved DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     * </p>
+     * </note>
+     */
+    private String leaseId;
 
     /**
      * <p>
@@ -764,6 +775,70 @@ public class ReservedDBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The unique identifier for the lease associated with the reserved DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     * </p>
+     * </note>
+     * 
+     * @param leaseId
+     *        The unique identifier for the lease associated with the reserved DB instance.</p> <note>
+     *        <p>
+     *        AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     *        </p>
+     */
+
+    public void setLeaseId(String leaseId) {
+        this.leaseId = leaseId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the lease associated with the reserved DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     * </p>
+     * </note>
+     * 
+     * @return The unique identifier for the lease associated with the reserved DB instance.</p> <note>
+     *         <p>
+     *         AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     *         </p>
+     */
+
+    public String getLeaseId() {
+        return this.leaseId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the lease associated with the reserved DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     * </p>
+     * </note>
+     * 
+     * @param leaseId
+     *        The unique identifier for the lease associated with the reserved DB instance.</p> <note>
+     *        <p>
+     *        AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservedDBInstance withLeaseId(String leaseId) {
+        setLeaseId(leaseId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -804,7 +879,9 @@ public class ReservedDBInstance implements Serializable, Cloneable {
         if (getRecurringCharges() != null)
             sb.append("RecurringCharges: ").append(getRecurringCharges()).append(",");
         if (getReservedDBInstanceArn() != null)
-            sb.append("ReservedDBInstanceArn: ").append(getReservedDBInstanceArn());
+            sb.append("ReservedDBInstanceArn: ").append(getReservedDBInstanceArn()).append(",");
+        if (getLeaseId() != null)
+            sb.append("LeaseId: ").append(getLeaseId());
         sb.append("}");
         return sb.toString();
     }
@@ -880,6 +957,10 @@ public class ReservedDBInstance implements Serializable, Cloneable {
             return false;
         if (other.getReservedDBInstanceArn() != null && other.getReservedDBInstanceArn().equals(this.getReservedDBInstanceArn()) == false)
             return false;
+        if (other.getLeaseId() == null ^ this.getLeaseId() == null)
+            return false;
+        if (other.getLeaseId() != null && other.getLeaseId().equals(this.getLeaseId()) == false)
+            return false;
         return true;
     }
 
@@ -903,6 +984,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
         hashCode = prime * hashCode + ((getReservedDBInstanceArn() == null) ? 0 : getReservedDBInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getLeaseId() == null) ? 0 : getLeaseId().hashCode());
         return hashCode;
     }
 

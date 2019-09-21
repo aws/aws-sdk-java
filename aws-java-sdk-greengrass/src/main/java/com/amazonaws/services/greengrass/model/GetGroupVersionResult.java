@@ -29,9 +29,9 @@ public class GetGroupVersionResult extends com.amazonaws.AmazonWebServiceResult<
     private String creationTimestamp;
     /** Information about the group version definition. */
     private GroupVersion definition;
-    /** The ID of the group version. */
+    /** The ID of the group that the version is associated with. */
     private String id;
-    /** The unique ID for the version of the group. */
+    /** The ID of the group version. */
     private String version;
 
     /**
@@ -137,10 +137,10 @@ public class GetGroupVersionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * The ID of the group version.
+     * The ID of the group that the version is associated with.
      * 
      * @param id
-     *        The ID of the group version.
+     *        The ID of the group that the version is associated with.
      */
 
     public void setId(String id) {
@@ -148,9 +148,9 @@ public class GetGroupVersionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * The ID of the group version.
+     * The ID of the group that the version is associated with.
      * 
-     * @return The ID of the group version.
+     * @return The ID of the group that the version is associated with.
      */
 
     public String getId() {
@@ -158,10 +158,10 @@ public class GetGroupVersionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * The ID of the group version.
+     * The ID of the group that the version is associated with.
      * 
      * @param id
-     *        The ID of the group version.
+     *        The ID of the group that the version is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,10 +171,10 @@ public class GetGroupVersionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * The unique ID for the version of the group.
+     * The ID of the group version.
      * 
      * @param version
-     *        The unique ID for the version of the group.
+     *        The ID of the group version.
      */
 
     public void setVersion(String version) {
@@ -182,9 +182,9 @@ public class GetGroupVersionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * The unique ID for the version of the group.
+     * The ID of the group version.
      * 
-     * @return The unique ID for the version of the group.
+     * @return The ID of the group version.
      */
 
     public String getVersion() {
@@ -192,10 +192,10 @@ public class GetGroupVersionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * The unique ID for the version of the group.
+     * The ID of the group version.
      * 
      * @param version
-     *        The unique ID for the version of the group.
+     *        The ID of the group version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,6 +27,8 @@ public class CreateSoftwareUpdateJobResult extends com.amazonaws.AmazonWebServic
     private String iotJobArn;
     /** The IoT Job Id corresponding to this update. */
     private String iotJobId;
+    /** The software version installed on the device or devices after the update. */
+    private String platformSoftwareVersion;
 
     /**
      * The IoT Job ARN corresponding to this update.
@@ -97,6 +99,40 @@ public class CreateSoftwareUpdateJobResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * The software version installed on the device or devices after the update.
+     * 
+     * @param platformSoftwareVersion
+     *        The software version installed on the device or devices after the update.
+     */
+
+    public void setPlatformSoftwareVersion(String platformSoftwareVersion) {
+        this.platformSoftwareVersion = platformSoftwareVersion;
+    }
+
+    /**
+     * The software version installed on the device or devices after the update.
+     * 
+     * @return The software version installed on the device or devices after the update.
+     */
+
+    public String getPlatformSoftwareVersion() {
+        return this.platformSoftwareVersion;
+    }
+
+    /**
+     * The software version installed on the device or devices after the update.
+     * 
+     * @param platformSoftwareVersion
+     *        The software version installed on the device or devices after the update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSoftwareUpdateJobResult withPlatformSoftwareVersion(String platformSoftwareVersion) {
+        setPlatformSoftwareVersion(platformSoftwareVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -111,7 +147,9 @@ public class CreateSoftwareUpdateJobResult extends com.amazonaws.AmazonWebServic
         if (getIotJobArn() != null)
             sb.append("IotJobArn: ").append(getIotJobArn()).append(",");
         if (getIotJobId() != null)
-            sb.append("IotJobId: ").append(getIotJobId());
+            sb.append("IotJobId: ").append(getIotJobId()).append(",");
+        if (getPlatformSoftwareVersion() != null)
+            sb.append("PlatformSoftwareVersion: ").append(getPlatformSoftwareVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -134,6 +172,10 @@ public class CreateSoftwareUpdateJobResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getIotJobId() != null && other.getIotJobId().equals(this.getIotJobId()) == false)
             return false;
+        if (other.getPlatformSoftwareVersion() == null ^ this.getPlatformSoftwareVersion() == null)
+            return false;
+        if (other.getPlatformSoftwareVersion() != null && other.getPlatformSoftwareVersion().equals(this.getPlatformSoftwareVersion()) == false)
+            return false;
         return true;
     }
 
@@ -144,6 +186,7 @@ public class CreateSoftwareUpdateJobResult extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getIotJobArn() == null) ? 0 : getIotJobArn().hashCode());
         hashCode = prime * hashCode + ((getIotJobId() == null) ? 0 : getIotJobId().hashCode());
+        hashCode = prime * hashCode + ((getPlatformSoftwareVersion() == null) ? 0 : getPlatformSoftwareVersion().hashCode());
         return hashCode;
     }
 

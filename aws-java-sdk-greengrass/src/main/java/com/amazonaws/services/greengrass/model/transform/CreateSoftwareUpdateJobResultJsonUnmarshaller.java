@@ -56,6 +56,10 @@ public class CreateSoftwareUpdateJobResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     createSoftwareUpdateJobResult.setIotJobId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PlatformSoftwareVersion", targetDepth)) {
+                    context.nextToken();
+                    createSoftwareUpdateJobResult.setPlatformSoftwareVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

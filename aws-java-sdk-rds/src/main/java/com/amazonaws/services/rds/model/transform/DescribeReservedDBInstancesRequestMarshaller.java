@@ -70,6 +70,10 @@ public class DescribeReservedDBInstancesRequestMarshaller implements
             request.addParameter("MultiAZ", StringUtils.fromBoolean(describeReservedDBInstancesRequest.getMultiAZ()));
         }
 
+        if (describeReservedDBInstancesRequest.getLeaseId() != null) {
+            request.addParameter("LeaseId", StringUtils.fromString(describeReservedDBInstancesRequest.getLeaseId()));
+        }
+
         if (!describeReservedDBInstancesRequest.getFilters().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<Filter>) describeReservedDBInstancesRequest.getFilters()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedDBInstancesRequest

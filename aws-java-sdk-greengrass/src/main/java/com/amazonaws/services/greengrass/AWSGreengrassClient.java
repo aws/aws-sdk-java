@@ -4413,8 +4413,9 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
-     * Add resource tags to a Greengrass Resource. Valid resources are Group, Connector, Core, Device, Function, Logger,
-     * Subscription, and Resource Defintions, and also BulkDeploymentIds.
+     * Adds tags to a Greengrass resource. Valid resources are 'Group', 'ConnectorDefinition', 'CoreDefinition',
+     * 'DeviceDefinition', 'FunctionDefinition', 'LoggerDefinition', 'SubscriptionDefinition', 'ResourceDefinition', and
+     * 'BulkDeployment'.
      * 
      * @param tagResourceRequest
      *        A map of the key-value pairs for the resource tag.
