@@ -2282,6 +2282,43 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the
+     * specified action type.
+     * </p>
+     * 
+     * @param describeNodeConfigurationOptionsRequest
+     * @return A Java Future containing the result of the DescribeNodeConfigurationOptions operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.DescribeNodeConfigurationOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNodeConfigurationOptionsResult> describeNodeConfigurationOptionsAsync(
+            DescribeNodeConfigurationOptionsRequest describeNodeConfigurationOptionsRequest);
+
+    /**
+     * <p>
+     * Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the
+     * specified action type.
+     * </p>
+     * 
+     * @param describeNodeConfigurationOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeNodeConfigurationOptions operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeNodeConfigurationOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNodeConfigurationOptionsResult> describeNodeConfigurationOptionsAsync(
+            DescribeNodeConfigurationOptionsRequest describeNodeConfigurationOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeNodeConfigurationOptionsRequest, DescribeNodeConfigurationOptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find
      * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.

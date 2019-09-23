@@ -22,6 +22,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The result of a SQL statement.
  * </p>
  * 
+ * <pre>
+ * <code> &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt; </code>
+ * </pre>
+ * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/SqlStatementResult" target="_top">AWS API
  *      Documentation</a>
  */

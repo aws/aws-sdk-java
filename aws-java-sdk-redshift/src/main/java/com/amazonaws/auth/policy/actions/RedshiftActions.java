@@ -117,6 +117,8 @@ public enum RedshiftActions implements Action {
     DescribeHsmConfigurations("redshift:DescribeHsmConfigurations"),
     /** Action for the DescribeLoggingStatus operation. */
     DescribeLoggingStatus("redshift:DescribeLoggingStatus"),
+    /** Action for the DescribeNodeConfigurationOptions operation. */
+    DescribeNodeConfigurationOptions("redshift:DescribeNodeConfigurationOptions"),
     /** Action for the DescribeOrderableClusterOptions operation. */
     DescribeOrderableClusterOptions("redshift:DescribeOrderableClusterOptions"),
     /** Action for the DescribeReservedNodeOfferings operation. */

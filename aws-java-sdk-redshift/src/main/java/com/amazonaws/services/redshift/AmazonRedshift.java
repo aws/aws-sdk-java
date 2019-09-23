@@ -1454,6 +1454,25 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the
+     * specified action type.
+     * </p>
+     * 
+     * @param describeNodeConfigurationOptionsRequest
+     * @return Result of the DescribeNodeConfigurationOptions operation returned by the service.
+     * @throws ClusterSnapshotNotFoundException
+     *         The snapshot identifier does not refer to an existing cluster snapshot.
+     * @throws InvalidClusterSnapshotStateException
+     *         The specified cluster snapshot is not in the <code>available</code> state, or other accounts are
+     *         authorized to access the snapshot.
+     * @sample AmazonRedshift.DescribeNodeConfigurationOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeNodeConfigurationOptionsResult describeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest describeNodeConfigurationOptionsRequest);
+
+    /**
+     * <p>
      * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find
      * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.

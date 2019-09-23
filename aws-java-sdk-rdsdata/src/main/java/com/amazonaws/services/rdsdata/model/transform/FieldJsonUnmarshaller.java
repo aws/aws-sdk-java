@@ -48,6 +48,10 @@ public class FieldJsonUnmarshaller implements Unmarshaller<Field, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("arrayValue", targetDepth)) {
+                    context.nextToken();
+                    field.setArrayValue(ArrayValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("blobValue", targetDepth)) {
                     context.nextToken();
                     field.setBlobValue(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));

@@ -30,6 +30,12 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * An array of values.
+     * </p>
+     */
+    private ArrayValue arrayValue;
+    /**
+     * <p>
      * A value of BLOB data type.
      * </p>
      */
@@ -64,6 +70,46 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String stringValue;
+
+    /**
+     * <p>
+     * An array of values.
+     * </p>
+     * 
+     * @param arrayValue
+     *        An array of values.
+     */
+
+    public void setArrayValue(ArrayValue arrayValue) {
+        this.arrayValue = arrayValue;
+    }
+
+    /**
+     * <p>
+     * An array of values.
+     * </p>
+     * 
+     * @return An array of values.
+     */
+
+    public ArrayValue getArrayValue() {
+        return this.arrayValue;
+    }
+
+    /**
+     * <p>
+     * An array of values.
+     * </p>
+     * 
+     * @param arrayValue
+     *        An array of values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Field withArrayValue(ArrayValue arrayValue) {
+        setArrayValue(arrayValue);
+        return this;
+    }
 
     /**
      * <p>
@@ -368,6 +414,8 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArrayValue() != null)
+            sb.append("ArrayValue: ").append(getArrayValue()).append(",");
         if (getBlobValue() != null)
             sb.append("BlobValue: ").append(getBlobValue()).append(",");
         if (getBooleanValue() != null)
@@ -394,6 +442,10 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Field == false)
             return false;
         Field other = (Field) obj;
+        if (other.getArrayValue() == null ^ this.getArrayValue() == null)
+            return false;
+        if (other.getArrayValue() != null && other.getArrayValue().equals(this.getArrayValue()) == false)
+            return false;
         if (other.getBlobValue() == null ^ this.getBlobValue() == null)
             return false;
         if (other.getBlobValue() != null && other.getBlobValue().equals(this.getBlobValue()) == false)
@@ -426,6 +478,7 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArrayValue() == null) ? 0 : getArrayValue().hashCode());
         hashCode = prime * hashCode + ((getBlobValue() == null) ? 0 : getBlobValue().hashCode());
         hashCode = prime * hashCode + ((getBooleanValue() == null) ? 0 : getBooleanValue().hashCode());
         hashCode = prime * hashCode + ((getDoubleValue() == null) ? 0 : getDoubleValue().hashCode());

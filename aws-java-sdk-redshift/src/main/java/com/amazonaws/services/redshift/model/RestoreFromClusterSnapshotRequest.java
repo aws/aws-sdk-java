@@ -327,6 +327,12 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String snapshotScheduleIdentifier;
+    /**
+     * <p>
+     * The number of nodes specified when provisioning the restored cluster.
+     * </p>
+     */
+    private Integer numberOfNodes;
 
     /**
      * <p>
@@ -2386,6 +2392,46 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The number of nodes specified when provisioning the restored cluster.
+     * </p>
+     * 
+     * @param numberOfNodes
+     *        The number of nodes specified when provisioning the restored cluster.
+     */
+
+    public void setNumberOfNodes(Integer numberOfNodes) {
+        this.numberOfNodes = numberOfNodes;
+    }
+
+    /**
+     * <p>
+     * The number of nodes specified when provisioning the restored cluster.
+     * </p>
+     * 
+     * @return The number of nodes specified when provisioning the restored cluster.
+     */
+
+    public Integer getNumberOfNodes() {
+        return this.numberOfNodes;
+    }
+
+    /**
+     * <p>
+     * The number of nodes specified when provisioning the restored cluster.
+     * </p>
+     * 
+     * @param numberOfNodes
+     *        The number of nodes specified when provisioning the restored cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withNumberOfNodes(Integer numberOfNodes) {
+        setNumberOfNodes(numberOfNodes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2446,7 +2492,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         if (getMaintenanceTrackName() != null)
             sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
         if (getSnapshotScheduleIdentifier() != null)
-            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier());
+            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier()).append(",");
+        if (getNumberOfNodes() != null)
+            sb.append("NumberOfNodes: ").append(getNumberOfNodes());
         sb.append("}");
         return sb.toString();
     }
@@ -2564,6 +2612,10 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getSnapshotScheduleIdentifier() != null && other.getSnapshotScheduleIdentifier().equals(this.getSnapshotScheduleIdentifier()) == false)
             return false;
+        if (other.getNumberOfNodes() == null ^ this.getNumberOfNodes() == null)
+            return false;
+        if (other.getNumberOfNodes() != null && other.getNumberOfNodes().equals(this.getNumberOfNodes()) == false)
+            return false;
         return true;
     }
 
@@ -2597,6 +2649,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
         return hashCode;
     }
 

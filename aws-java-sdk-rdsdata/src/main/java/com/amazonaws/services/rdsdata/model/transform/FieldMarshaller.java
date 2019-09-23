@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FieldMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ARRAYVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayValue").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> BLOBVALUE_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blobValue").build();
     private static final MarshallingInfo<Boolean> BOOLEANVALUE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -56,6 +58,7 @@ public class FieldMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(field.getArrayValue(), ARRAYVALUE_BINDING);
             protocolMarshaller.marshall(field.getBlobValue(), BLOBVALUE_BINDING);
             protocolMarshaller.marshall(field.getBooleanValue(), BOOLEANVALUE_BINDING);
             protocolMarshaller.marshall(field.getDoubleValue(), DOUBLEVALUE_BINDING);

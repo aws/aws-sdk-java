@@ -305,6 +305,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("NextMaintenanceWindowStartTime", targetDepth)) {
+                    cluster.setNextMaintenanceWindowStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ResizeInfo", targetDepth)) {
                     cluster.setResizeInfo(ResizeInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

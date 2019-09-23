@@ -1,3 +1,12 @@
+# __1.11.637__ __2019-09-23__
+## __AWS RDS DataService__
+  - ### Features
+    - RDS Data API now supports Amazon Aurora Serverless PostgreSQL databases.
+
+## __Amazon Redshift__
+  - ### Features
+    - Adds API operation DescribeNodeConfigurationOptions and associated data structures.
+
 # __1.11.636__ __2019-09-20__
 ## __AWS Greengrass__
   - ### Features

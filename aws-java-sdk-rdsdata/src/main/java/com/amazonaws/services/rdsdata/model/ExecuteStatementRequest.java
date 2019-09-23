@@ -67,6 +67,12 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
     private String resourceArn;
     /**
      * <p>
+     * Options that control how the result set is returned.
+     * </p>
+     */
+    private ResultSetOptions resultSetOptions;
+    /**
+     * <p>
      * The name of the database schema.
      * </p>
      */
@@ -402,6 +408,46 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Options that control how the result set is returned.
+     * </p>
+     * 
+     * @param resultSetOptions
+     *        Options that control how the result set is returned.
+     */
+
+    public void setResultSetOptions(ResultSetOptions resultSetOptions) {
+        this.resultSetOptions = resultSetOptions;
+    }
+
+    /**
+     * <p>
+     * Options that control how the result set is returned.
+     * </p>
+     * 
+     * @return Options that control how the result set is returned.
+     */
+
+    public ResultSetOptions getResultSetOptions() {
+        return this.resultSetOptions;
+    }
+
+    /**
+     * <p>
+     * Options that control how the result set is returned.
+     * </p>
+     * 
+     * @param resultSetOptions
+     *        Options that control how the result set is returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteStatementRequest withResultSetOptions(ResultSetOptions resultSetOptions) {
+        setResultSetOptions(resultSetOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the database schema.
      * </p>
      * 
@@ -603,6 +649,8 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getResultSetOptions() != null)
+            sb.append("ResultSetOptions: ").append(getResultSetOptions()).append(",");
         if (getSchema() != null)
             sb.append("Schema: ").append(getSchema()).append(",");
         if (getSecretArn() != null)
@@ -645,6 +693,10 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getResultSetOptions() == null ^ this.getResultSetOptions() == null)
+            return false;
+        if (other.getResultSetOptions() != null && other.getResultSetOptions().equals(this.getResultSetOptions()) == false)
+            return false;
         if (other.getSchema() == null ^ this.getSchema() == null)
             return false;
         if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
@@ -674,6 +726,7 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIncludeResultMetadata() == null) ? 0 : getIncludeResultMetadata().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResultSetOptions() == null) ? 0 : getResultSetOptions().hashCode());
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         hashCode = prime * hashCode + ((getSql() == null) ? 0 : getSql().hashCode());

@@ -882,6 +882,21 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeNodeConfigurationOptionsResult> describeNodeConfigurationOptionsAsync(
+            DescribeNodeConfigurationOptionsRequest request) {
+
+        return describeNodeConfigurationOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNodeConfigurationOptionsResult> describeNodeConfigurationOptionsAsync(
+            DescribeNodeConfigurationOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeNodeConfigurationOptionsRequest, DescribeNodeConfigurationOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOrderableClusterOptionsResult> describeOrderableClusterOptionsAsync(
             DescribeOrderableClusterOptionsRequest request) {
 

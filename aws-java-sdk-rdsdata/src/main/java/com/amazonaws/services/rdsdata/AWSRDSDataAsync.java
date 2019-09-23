@@ -25,6 +25,7 @@ import com.amazonaws.services.rdsdata.model.*;
  * {@link com.amazonaws.services.rdsdata.AbstractAWSRDSDataAsync} instead.
  * </p>
  * <p>
+ * <p>
  * <fullname>Amazon RDS Data Service</fullname>
  * <p>
  * Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster. To run these
@@ -35,6 +36,12 @@ import com.amazonaws.services.rdsdata.model.*;
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
  * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
+ * <note>
+ * <p>
+ * If you have questions or comments related to the Data API, send email to <a
+ * href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.
+ * </p>
+ * </note></p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSRDSDataAsync extends AWSRDSData {
@@ -99,20 +106,9 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * Starts a SQL transaction.
      * </p>
      * 
-     * <important>
-     * <p>
-     * A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after
-     * 24 hours.
-     * </p>
-     * <p>
-     * A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before
-     * it's committed, it's rolled back automatically.
-     * </p>
-     * <p>
-     * DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a
-     * separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code> enabled.
-     * </p>
-     * </important>
+     * <pre>
+     * <code> &lt;important&gt; &lt;p&gt;A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.&lt;/p&gt; &lt;p&gt;A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.&lt;/p&gt; &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a separate &lt;code&gt;ExecuteStatement&lt;/code&gt; call with &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt; &lt;/important&gt; </code>
+     * </pre>
      * 
      * @param beginTransactionRequest
      *        The request parameters represent the input of a request to start a SQL transaction.
@@ -128,20 +124,9 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * Starts a SQL transaction.
      * </p>
      * 
-     * <important>
-     * <p>
-     * A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after
-     * 24 hours.
-     * </p>
-     * <p>
-     * A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before
-     * it's committed, it's rolled back automatically.
-     * </p>
-     * <p>
-     * DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a
-     * separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code> enabled.
-     * </p>
-     * </important>
+     * <pre>
+     * <code> &lt;important&gt; &lt;p&gt;A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.&lt;/p&gt; &lt;p&gt;A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.&lt;/p&gt; &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a separate &lt;code&gt;ExecuteStatement&lt;/code&gt; call with &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt; &lt;/important&gt; </code>
+     * </pre>
      * 
      * @param beginTransactionRequest
      *        The request parameters represent the input of a request to start a SQL transaction.

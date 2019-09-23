@@ -461,6 +461,12 @@ public class Cluster implements Serializable, Cloneable {
     private String expectedNextSnapshotScheduleTimeStatus;
     /**
      * <p>
+     * The date and time in UTC when system maintenance can begin.
+     * </p>
+     */
+    private java.util.Date nextMaintenanceWindowStartTime;
+    /**
+     * <p>
      * Returns the following:
      * </p>
      * <ul>
@@ -3623,6 +3629,46 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The date and time in UTC when system maintenance can begin.
+     * </p>
+     * 
+     * @param nextMaintenanceWindowStartTime
+     *        The date and time in UTC when system maintenance can begin.
+     */
+
+    public void setNextMaintenanceWindowStartTime(java.util.Date nextMaintenanceWindowStartTime) {
+        this.nextMaintenanceWindowStartTime = nextMaintenanceWindowStartTime;
+    }
+
+    /**
+     * <p>
+     * The date and time in UTC when system maintenance can begin.
+     * </p>
+     * 
+     * @return The date and time in UTC when system maintenance can begin.
+     */
+
+    public java.util.Date getNextMaintenanceWindowStartTime() {
+        return this.nextMaintenanceWindowStartTime;
+    }
+
+    /**
+     * <p>
+     * The date and time in UTC when system maintenance can begin.
+     * </p>
+     * 
+     * @param nextMaintenanceWindowStartTime
+     *        The date and time in UTC when system maintenance can begin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withNextMaintenanceWindowStartTime(java.util.Date nextMaintenanceWindowStartTime) {
+        setNextMaintenanceWindowStartTime(nextMaintenanceWindowStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * Returns the following:
      * </p>
      * <ul>
@@ -3830,6 +3876,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("ExpectedNextSnapshotScheduleTime: ").append(getExpectedNextSnapshotScheduleTime()).append(",");
         if (getExpectedNextSnapshotScheduleTimeStatus() != null)
             sb.append("ExpectedNextSnapshotScheduleTimeStatus: ").append(getExpectedNextSnapshotScheduleTimeStatus()).append(",");
+        if (getNextMaintenanceWindowStartTime() != null)
+            sb.append("NextMaintenanceWindowStartTime: ").append(getNextMaintenanceWindowStartTime()).append(",");
         if (getResizeInfo() != null)
             sb.append("ResizeInfo: ").append(getResizeInfo());
         sb.append("}");
@@ -4027,6 +4075,11 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getExpectedNextSnapshotScheduleTimeStatus() != null
                 && other.getExpectedNextSnapshotScheduleTimeStatus().equals(this.getExpectedNextSnapshotScheduleTimeStatus()) == false)
             return false;
+        if (other.getNextMaintenanceWindowStartTime() == null ^ this.getNextMaintenanceWindowStartTime() == null)
+            return false;
+        if (other.getNextMaintenanceWindowStartTime() != null
+                && other.getNextMaintenanceWindowStartTime().equals(this.getNextMaintenanceWindowStartTime()) == false)
+            return false;
         if (other.getResizeInfo() == null ^ this.getResizeInfo() == null)
             return false;
         if (other.getResizeInfo() != null && other.getResizeInfo().equals(this.getResizeInfo()) == false)
@@ -4083,6 +4136,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSnapshotScheduleState() == null) ? 0 : getSnapshotScheduleState().hashCode());
         hashCode = prime * hashCode + ((getExpectedNextSnapshotScheduleTime() == null) ? 0 : getExpectedNextSnapshotScheduleTime().hashCode());
         hashCode = prime * hashCode + ((getExpectedNextSnapshotScheduleTimeStatus() == null) ? 0 : getExpectedNextSnapshotScheduleTimeStatus().hashCode());
+        hashCode = prime * hashCode + ((getNextMaintenanceWindowStartTime() == null) ? 0 : getNextMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getResizeInfo() == null) ? 0 : getResizeInfo().hashCode());
         return hashCode;
     }

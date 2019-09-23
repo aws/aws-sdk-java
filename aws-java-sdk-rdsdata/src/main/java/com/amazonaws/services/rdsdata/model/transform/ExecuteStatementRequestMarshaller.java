@@ -38,6 +38,8 @@ public class ExecuteStatementRequestMarshaller {
             .marshallLocationName("parameters").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
+    private static final MarshallingInfo<StructuredPojo> RESULTSETOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resultSetOptions").build();
     private static final MarshallingInfo<String> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("schema").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class ExecuteStatementRequestMarshaller {
             protocolMarshaller.marshall(executeStatementRequest.getIncludeResultMetadata(), INCLUDERESULTMETADATA_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(executeStatementRequest.getResultSetOptions(), RESULTSETOPTIONS_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getSchema(), SCHEMA_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getSecretArn(), SECRETARN_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getSql(), SQL_BINDING);

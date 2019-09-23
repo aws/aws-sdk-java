@@ -36,6 +36,10 @@ public class ExecuteStatementResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * Values for fields generated during the request.
      * </p>
+     * 
+     * <pre>
+     * <code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
+     * </pre>
      */
     private java.util.List<Field> generatedFields;
     /**
@@ -126,7 +130,13 @@ public class ExecuteStatementResult extends com.amazonaws.AmazonWebServiceResult
      * Values for fields generated during the request.
      * </p>
      * 
-     * @return Values for fields generated during the request.
+     * <pre>
+     * <code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
+     * </pre>
+     * 
+     * @return Values for fields generated during the request.</p>
+     * 
+     * <pre><code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
      */
 
     public java.util.List<Field> getGeneratedFields() {
@@ -138,8 +148,14 @@ public class ExecuteStatementResult extends com.amazonaws.AmazonWebServiceResult
      * Values for fields generated during the request.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
+     * </pre>
+     * 
      * @param generatedFields
-     *        Values for fields generated during the request.
+     *        Values for fields generated during the request.</p>
+     * 
+     * <pre><code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
      */
 
     public void setGeneratedFields(java.util.Collection<Field> generatedFields) {
@@ -155,6 +171,10 @@ public class ExecuteStatementResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * Values for fields generated during the request.
      * </p>
+     * 
+     * <pre>
+     * <code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
+     * </pre>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGeneratedFields(java.util.Collection)} or {@link #withGeneratedFields(java.util.Collection)} if you
@@ -162,7 +182,10 @@ public class ExecuteStatementResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param generatedFields
-     *        Values for fields generated during the request.
+     *        Values for fields generated during the request.</p>
+     * 
+     *        <pre>
+     * <code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,8 +204,15 @@ public class ExecuteStatementResult extends com.amazonaws.AmazonWebServiceResult
      * Values for fields generated during the request.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
+     * </pre>
+     * 
      * @param generatedFields
-     *        Values for fields generated during the request.
+     *        Values for fields generated during the request.</p>
+     * 
+     *        <pre>
+     * <code> &lt;note&gt; &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt; &lt;/note&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

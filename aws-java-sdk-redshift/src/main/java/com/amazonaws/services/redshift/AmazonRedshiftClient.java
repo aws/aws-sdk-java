@@ -3546,6 +3546,66 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the
+     * specified action type.
+     * </p>
+     * 
+     * @param describeNodeConfigurationOptionsRequest
+     * @return Result of the DescribeNodeConfigurationOptions operation returned by the service.
+     * @throws ClusterSnapshotNotFoundException
+     *         The snapshot identifier does not refer to an existing cluster snapshot.
+     * @throws InvalidClusterSnapshotStateException
+     *         The specified cluster snapshot is not in the <code>available</code> state, or other accounts are
+     *         authorized to access the snapshot.
+     * @sample AmazonRedshift.DescribeNodeConfigurationOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNodeConfigurationOptionsResult describeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNodeConfigurationOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNodeConfigurationOptionsResult executeDescribeNodeConfigurationOptions(
+            DescribeNodeConfigurationOptionsRequest describeNodeConfigurationOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNodeConfigurationOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNodeConfigurationOptionsRequest> request = null;
+        Response<DescribeNodeConfigurationOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNodeConfigurationOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeNodeConfigurationOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNodeConfigurationOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeNodeConfigurationOptionsResult> responseHandler = new StaxResponseHandler<DescribeNodeConfigurationOptionsResult>(
+                    new DescribeNodeConfigurationOptionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find
      * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.

@@ -50,6 +50,7 @@ import com.amazonaws.services.rdsdata.model.transform.*;
  * Client for accessing AWS RDS DataService. All service calls made using this client are blocking, and will not return
  * until the service call completes.
  * <p>
+ * <p>
  * <fullname>Amazon RDS Data Service</fullname>
  * <p>
  * Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster. To run these
@@ -60,6 +61,12 @@ import com.amazonaws.services.rdsdata.model.transform.*;
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
  * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
+ * <note>
+ * <p>
+ * If you have questions or comments related to the Data API, send email to <a
+ * href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.
+ * </p>
+ * </note></p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -171,14 +178,14 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
      * @return Result of the BatchExecuteStatement operation returned by the service.
      * @throws BadRequestException
      *         There is an error in the call or in a SQL statement.
-     * @throws ForbiddenException
-     *         There are insufficient privileges to make the call.
-     * @throws InternalServerErrorException
-     *         An internal error occurred.
-     * @throws ServiceUnavailableErrorException
-     *         The service specified by the <code>resourceArn</code> parameter is not available.
      * @throws StatementTimeoutException
      *         The execution of the SQL statement timed out.
+     * @throws InternalServerErrorException
+     *         An internal error occurred.
+     * @throws ForbiddenException
+     *         There are insufficient privileges to make the call.
+     * @throws ServiceUnavailableErrorException
+     *         The service specified by the <code>resourceArn</code> parameter is not available.
      * @sample AWSRDSData.BatchExecuteStatement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement" target="_top">AWS
      *      API Documentation</a>
@@ -231,34 +238,23 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
      * Starts a SQL transaction.
      * </p>
      * 
-     * <important>
-     * <p>
-     * A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after
-     * 24 hours.
-     * </p>
-     * <p>
-     * A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before
-     * it's committed, it's rolled back automatically.
-     * </p>
-     * <p>
-     * DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a
-     * separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code> enabled.
-     * </p>
-     * </important>
+     * <pre>
+     * <code> &lt;important&gt; &lt;p&gt;A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.&lt;/p&gt; &lt;p&gt;A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.&lt;/p&gt; &lt;p&gt;DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a separate &lt;code&gt;ExecuteStatement&lt;/code&gt; call with &lt;code&gt;continueAfterTimeout&lt;/code&gt; enabled.&lt;/p&gt; &lt;/important&gt; </code>
+     * </pre>
      * 
      * @param beginTransactionRequest
      *        The request parameters represent the input of a request to start a SQL transaction.
      * @return Result of the BeginTransaction operation returned by the service.
      * @throws BadRequestException
      *         There is an error in the call or in a SQL statement.
-     * @throws ForbiddenException
-     *         There are insufficient privileges to make the call.
-     * @throws InternalServerErrorException
-     *         An internal error occurred.
-     * @throws ServiceUnavailableErrorException
-     *         The service specified by the <code>resourceArn</code> parameter is not available.
      * @throws StatementTimeoutException
      *         The execution of the SQL statement timed out.
+     * @throws InternalServerErrorException
+     *         An internal error occurred.
+     * @throws ForbiddenException
+     *         There are insufficient privileges to make the call.
+     * @throws ServiceUnavailableErrorException
+     *         The service specified by the <code>resourceArn</code> parameter is not available.
      * @sample AWSRDSData.BeginTransaction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction" target="_top">AWS API
      *      Documentation</a>
@@ -315,14 +311,14 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
      * @return Result of the CommitTransaction operation returned by the service.
      * @throws BadRequestException
      *         There is an error in the call or in a SQL statement.
-     * @throws ForbiddenException
-     *         There are insufficient privileges to make the call.
      * @throws InternalServerErrorException
      *         An internal error occurred.
-     * @throws NotFoundException
-     *         The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.
+     * @throws ForbiddenException
+     *         There are insufficient privileges to make the call.
      * @throws ServiceUnavailableErrorException
      *         The service specified by the <code>resourceArn</code> parameter is not available.
+     * @throws NotFoundException
+     *         The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.
      * @sample AWSRDSData.CommitTransaction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction" target="_top">AWS API
      *      Documentation</a>
@@ -385,10 +381,10 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
      * @return Result of the ExecuteSql operation returned by the service.
      * @throws BadRequestException
      *         There is an error in the call or in a SQL statement.
-     * @throws ForbiddenException
-     *         There are insufficient privileges to make the call.
      * @throws InternalServerErrorException
      *         An internal error occurred.
+     * @throws ForbiddenException
+     *         There are insufficient privileges to make the call.
      * @throws ServiceUnavailableErrorException
      *         The service specified by the <code>resourceArn</code> parameter is not available.
      * @sample AWSRDSData.ExecuteSql
@@ -458,14 +454,14 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
      * @return Result of the ExecuteStatement operation returned by the service.
      * @throws BadRequestException
      *         There is an error in the call or in a SQL statement.
-     * @throws ForbiddenException
-     *         There are insufficient privileges to make the call.
-     * @throws InternalServerErrorException
-     *         An internal error occurred.
-     * @throws ServiceUnavailableErrorException
-     *         The service specified by the <code>resourceArn</code> parameter is not available.
      * @throws StatementTimeoutException
      *         The execution of the SQL statement timed out.
+     * @throws InternalServerErrorException
+     *         An internal error occurred.
+     * @throws ForbiddenException
+     *         There are insufficient privileges to make the call.
+     * @throws ServiceUnavailableErrorException
+     *         The service specified by the <code>resourceArn</code> parameter is not available.
      * @sample AWSRDSData.ExecuteStatement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement" target="_top">AWS API
      *      Documentation</a>
@@ -522,14 +518,14 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
      * @return Result of the RollbackTransaction operation returned by the service.
      * @throws BadRequestException
      *         There is an error in the call or in a SQL statement.
-     * @throws ForbiddenException
-     *         There are insufficient privileges to make the call.
      * @throws InternalServerErrorException
      *         An internal error occurred.
-     * @throws NotFoundException
-     *         The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.
+     * @throws ForbiddenException
+     *         There are insufficient privileges to make the call.
      * @throws ServiceUnavailableErrorException
      *         The service specified by the <code>resourceArn</code> parameter is not available.
+     * @throws NotFoundException
+     *         The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.
      * @sample AWSRDSData.RollbackTransaction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction" target="_top">AWS
      *      API Documentation</a>
