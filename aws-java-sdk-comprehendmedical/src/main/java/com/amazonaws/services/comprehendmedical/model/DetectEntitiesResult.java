@@ -27,8 +27,8 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      */
     private java.util.List<Entity> entities;
@@ -40,24 +40,31 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<UnmappedAttribute> unmappedAttributes;
     /**
      * <p>
-     * If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to fetch the
-     * next page of entities.
+     * If the result of the previous request to <code>DetectEntities</code> was truncated, include the
+     * <code>PaginationToken</code> to fetch the next page of entities.
      * </p>
      */
     private String paginationToken;
+    /**
+     * <p>
+     * The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this
+     * information to track the model used for a particular batch of documents.
+     * </p>
+     */
+    private String modelVersion;
 
     /**
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      * 
      * @return The collection of medical entities extracted from the input text and their associated information. For
      *         each entity, the response provides the entity text, the entity category, where the entity text begins and
-     *         ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes
-     *         and traits of the entity are also returned.
+     *         ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis.
+     *         Attributes and traits of the entity are also returned.
      */
 
     public java.util.List<Entity> getEntities() {
@@ -68,15 +75,15 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      * 
      * @param entities
      *        The collection of medical entities extracted from the input text and their associated information. For
      *        each entity, the response provides the entity text, the entity category, where the entity text begins and
-     *        ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes
-     *        and traits of the entity are also returned.
+     *        ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis.
+     *        Attributes and traits of the entity are also returned.
      */
 
     public void setEntities(java.util.Collection<Entity> entities) {
@@ -92,8 +99,8 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -104,8 +111,8 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * @param entities
      *        The collection of medical entities extracted from the input text and their associated information. For
      *        each entity, the response provides the entity text, the entity category, where the entity text begins and
-     *        ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes
-     *        and traits of the entity are also returned.
+     *        ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis.
+     *        Attributes and traits of the entity are also returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,15 +130,15 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      * 
      * @param entities
      *        The collection of medical entities extracted from the input text and their associated information. For
      *        each entity, the response provides the entity text, the entity category, where the entity text begins and
-     *        ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes
-     *        and traits of the entity are also returned.
+     *        ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis.
+     *        Attributes and traits of the entity are also returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,13 +219,13 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to fetch the
-     * next page of entities.
+     * If the result of the previous request to <code>DetectEntities</code> was truncated, include the
+     * <code>PaginationToken</code> to fetch the next page of entities.
      * </p>
      * 
      * @param paginationToken
-     *        If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to
-     *        fetch the next page of entities.
+     *        If the result of the previous request to <code>DetectEntities</code> was truncated, include the
+     *        <code>PaginationToken</code> to fetch the next page of entities.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -227,12 +234,12 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to fetch the
-     * next page of entities.
+     * If the result of the previous request to <code>DetectEntities</code> was truncated, include the
+     * <code>PaginationToken</code> to fetch the next page of entities.
      * </p>
      * 
-     * @return If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to
-     *         fetch the next page of entities.
+     * @return If the result of the previous request to <code>DetectEntities</code> was truncated, include the
+     *         <code>PaginationToken</code> to fetch the next page of entities.
      */
 
     public String getPaginationToken() {
@@ -241,18 +248,64 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to fetch the
-     * next page of entities.
+     * If the result of the previous request to <code>DetectEntities</code> was truncated, include the
+     * <code>PaginationToken</code> to fetch the next page of entities.
      * </p>
      * 
      * @param paginationToken
-     *        If the result of the previous request to DetectEntities was truncated, include the Paginationtoken to
-     *        fetch the next page of entities.
+     *        If the result of the previous request to <code>DetectEntities</code> was truncated, include the
+     *        <code>PaginationToken</code> to fetch the next page of entities.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetectEntitiesResult withPaginationToken(String paginationToken) {
         setPaginationToken(paginationToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this
+     * information to track the model used for a particular batch of documents.
+     * </p>
+     * 
+     * @param modelVersion
+     *        The version of the model used to analyze the documents. The version number looks like X.X.X. You can use
+     *        this information to track the model used for a particular batch of documents.
+     */
+
+    public void setModelVersion(String modelVersion) {
+        this.modelVersion = modelVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this
+     * information to track the model used for a particular batch of documents.
+     * </p>
+     * 
+     * @return The version of the model used to analyze the documents. The version number looks like X.X.X. You can use
+     *         this information to track the model used for a particular batch of documents.
+     */
+
+    public String getModelVersion() {
+        return this.modelVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this
+     * information to track the model used for a particular batch of documents.
+     * </p>
+     * 
+     * @param modelVersion
+     *        The version of the model used to analyze the documents. The version number looks like X.X.X. You can use
+     *        this information to track the model used for a particular batch of documents.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectEntitiesResult withModelVersion(String modelVersion) {
+        setModelVersion(modelVersion);
         return this;
     }
 
@@ -273,7 +326,9 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getUnmappedAttributes() != null)
             sb.append("UnmappedAttributes: ").append(getUnmappedAttributes()).append(",");
         if (getPaginationToken() != null)
-            sb.append("PaginationToken: ").append(getPaginationToken());
+            sb.append("PaginationToken: ").append(getPaginationToken()).append(",");
+        if (getModelVersion() != null)
+            sb.append("ModelVersion: ").append(getModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -300,6 +355,10 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getPaginationToken() != null && other.getPaginationToken().equals(this.getPaginationToken()) == false)
             return false;
+        if (other.getModelVersion() == null ^ this.getModelVersion() == null)
+            return false;
+        if (other.getModelVersion() != null && other.getModelVersion().equals(this.getModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -311,6 +370,7 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getEntities() == null) ? 0 : getEntities().hashCode());
         hashCode = prime * hashCode + ((getUnmappedAttributes() == null) ? 0 : getUnmappedAttributes().hashCode());
         hashCode = prime * hashCode + ((getPaginationToken() == null) ? 0 : getPaginationToken().hashCode());
+        hashCode = prime * hashCode + ((getModelVersion() == null) ? 0 : getModelVersion().hashCode());
         return hashCode;
     }
 

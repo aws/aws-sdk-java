@@ -40,7 +40,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private String languageCode;
     /**
      * <p>
-     * The sample rate of the audio track in the input media file in Hertz.
+     * The sample rate, in Hertz, of the audio track in the input media file.
      * </p>
      * <p>
      * If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the
@@ -52,12 +52,6 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The format of the input media file.
-     * </p>
-     * <p>
-     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
-     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
-     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     * <code>InternalFailureException</code> exception.
      * </p>
      */
     private String mediaFormat;
@@ -90,6 +84,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String outputBucketName;
+
+    private String outputEncryptionKMSKeyId;
     /**
      * <p>
      * A <code>Settings</code> object that provides optional settings for a transcription job.
@@ -204,7 +200,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate of the audio track in the input media file in Hertz.
+     * The sample rate, in Hertz, of the audio track in the input media file.
      * </p>
      * <p>
      * If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the
@@ -213,7 +209,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate of the audio track in the input media file in Hertz. </p>
+     *        The sample rate, in Hertz, of the audio track in the input media file. </p>
      *        <p>
      *        If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify
      *        the sample rate, it must match the sample rate detected by Amazon Transcribe. In most cases, you should
@@ -227,7 +223,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate of the audio track in the input media file in Hertz.
+     * The sample rate, in Hertz, of the audio track in the input media file.
      * </p>
      * <p>
      * If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the
@@ -235,7 +231,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe determine the sample rate.
      * </p>
      * 
-     * @return The sample rate of the audio track in the input media file in Hertz. </p>
+     * @return The sample rate, in Hertz, of the audio track in the input media file. </p>
      *         <p>
      *         If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify
      *         the sample rate, it must match the sample rate detected by Amazon Transcribe. In most cases, you should
@@ -249,7 +245,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate of the audio track in the input media file in Hertz.
+     * The sample rate, in Hertz, of the audio track in the input media file.
      * </p>
      * <p>
      * If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the
@@ -258,7 +254,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate of the audio track in the input media file in Hertz. </p>
+     *        The sample rate, in Hertz, of the audio track in the input media file. </p>
      *        <p>
      *        If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify
      *        the sample rate, it must match the sample rate detected by Amazon Transcribe. In most cases, you should
@@ -276,20 +272,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The format of the input media file.
      * </p>
-     * <p>
-     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
-     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
-     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     * <code>InternalFailureException</code> exception.
-     * </p>
      * 
      * @param mediaFormat
-     *        The format of the input media file.</p>
-     *        <p>
-     *        If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format
-     *        is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you
-     *        specify the format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     *        <code>InternalFailureException</code> exception.
+     *        The format of the input media file.
      * @see MediaFormat
      */
 
@@ -301,19 +286,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The format of the input media file.
      * </p>
-     * <p>
-     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
-     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
-     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     * <code>InternalFailureException</code> exception.
-     * </p>
      * 
-     * @return The format of the input media file.</p>
-     *         <p>
-     *         If you do not specify the format of the media file, Amazon Transcribe determines the format. If the
-     *         format is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception.
-     *         If you specify the format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     *         <code>InternalFailureException</code> exception.
+     * @return The format of the input media file.
      * @see MediaFormat
      */
 
@@ -325,20 +299,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The format of the input media file.
      * </p>
-     * <p>
-     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
-     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
-     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     * <code>InternalFailureException</code> exception.
-     * </p>
      * 
      * @param mediaFormat
-     *        The format of the input media file.</p>
-     *        <p>
-     *        If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format
-     *        is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you
-     *        specify the format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     *        <code>InternalFailureException</code> exception.
+     *        The format of the input media file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MediaFormat
      */
@@ -352,20 +315,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The format of the input media file.
      * </p>
-     * <p>
-     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
-     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
-     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     * <code>InternalFailureException</code> exception.
-     * </p>
      * 
      * @param mediaFormat
-     *        The format of the input media file.</p>
-     *        <p>
-     *        If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format
-     *        is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you
-     *        specify the format, it must match the format detected by Amazon Transcribe, otherwise you get an
-     *        <code>InternalFailureException</code> exception.
+     *        The format of the input media file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MediaFormat
      */
@@ -555,6 +507,32 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * @param outputEncryptionKMSKeyId
+     */
+
+    public void setOutputEncryptionKMSKeyId(String outputEncryptionKMSKeyId) {
+        this.outputEncryptionKMSKeyId = outputEncryptionKMSKeyId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getOutputEncryptionKMSKeyId() {
+        return this.outputEncryptionKMSKeyId;
+    }
+
+    /**
+     * @param outputEncryptionKMSKeyId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withOutputEncryptionKMSKeyId(String outputEncryptionKMSKeyId) {
+        setOutputEncryptionKMSKeyId(outputEncryptionKMSKeyId);
+        return this;
+    }
+
+    /**
      * <p>
      * A <code>Settings</code> object that provides optional settings for a transcription job.
      * </p>
@@ -618,6 +596,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             sb.append("Media: ").append(getMedia()).append(",");
         if (getOutputBucketName() != null)
             sb.append("OutputBucketName: ").append(getOutputBucketName()).append(",");
+        if (getOutputEncryptionKMSKeyId() != null)
+            sb.append("OutputEncryptionKMSKeyId: ").append(getOutputEncryptionKMSKeyId()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings());
         sb.append("}");
@@ -658,6 +638,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getOutputBucketName() != null && other.getOutputBucketName().equals(this.getOutputBucketName()) == false)
             return false;
+        if (other.getOutputEncryptionKMSKeyId() == null ^ this.getOutputEncryptionKMSKeyId() == null)
+            return false;
+        if (other.getOutputEncryptionKMSKeyId() != null && other.getOutputEncryptionKMSKeyId().equals(this.getOutputEncryptionKMSKeyId()) == false)
+            return false;
         if (other.getSettings() == null ^ this.getSettings() == null)
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
@@ -676,6 +660,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getMediaFormat() == null) ? 0 : getMediaFormat().hashCode());
         hashCode = prime * hashCode + ((getMedia() == null) ? 0 : getMedia().hashCode());
         hashCode = prime * hashCode + ((getOutputBucketName() == null) ? 0 : getOutputBucketName().hashCode());
+        hashCode = prime * hashCode + ((getOutputEncryptionKMSKeyId() == null) ? 0 : getOutputEncryptionKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }

@@ -56,6 +56,10 @@ public class DescribeLocationS3ResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeLocationS3Result.setLocationUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("S3StorageClass", targetDepth)) {
+                    context.nextToken();
+                    describeLocationS3Result.setS3StorageClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("S3Config", targetDepth)) {
                     context.nextToken();
                     describeLocationS3Result.setS3Config(S3ConfigJsonUnmarshaller.getInstance().unmarshall(context));

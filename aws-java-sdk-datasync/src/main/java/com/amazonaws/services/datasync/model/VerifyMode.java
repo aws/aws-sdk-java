@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum VerifyMode {
 
     POINT_IN_TIME_CONSISTENT("POINT_IN_TIME_CONSISTENT"),
+    ONLY_FILES_TRANSFERRED("ONLY_FILES_TRANSFERRED"),
     NONE("NONE");
 
     private String value;

@@ -47,10 +47,26 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
      * </p>
      * <p>
+     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * </p>
+     * <p>
      * NONE: Skip verification.
      * </p>
      */
     private String verifyMode;
+    /**
+     * <p>
+     * A value that determines whether files at the destination should be overwritten or preserved when copying files.
+     * If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the destination
+     * file differs from the source file. If you modify files in the destination and you sync the files, you can use
+     * this value to protect against overwriting those changes.
+     * </p>
+     * <p>
+     * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
+     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * </p>
+     */
+    private String overwriteMode;
     /**
      * <p>
      * A file metadata value that shows the last time a file was accessed (that is, when the file was read or written
@@ -134,7 +150,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
-     * preserved.
+     * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
+     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
+     * in the <i>AWS DataSync User Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -210,6 +228,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
      * </p>
      * <p>
+     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * </p>
+     * <p>
      * NONE: Skip verification.
      * </p>
      * 
@@ -221,6 +242,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     *        </p>
+     *        <p>
+     *        ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
      *        </p>
      *        <p>
      *        NONE: Skip verification.
@@ -243,6 +267,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
      * </p>
      * <p>
+     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * </p>
+     * <p>
      * NONE: Skip verification.
      * </p>
      * 
@@ -253,6 +280,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     *         </p>
+     *         <p>
+     *         ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
      *         </p>
      *         <p>
      *         NONE: Skip verification.
@@ -275,6 +305,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
      * </p>
      * <p>
+     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * </p>
+     * <p>
      * NONE: Skip verification.
      * </p>
      * 
@@ -286,6 +319,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     *        </p>
+     *        <p>
+     *        ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
      *        </p>
      *        <p>
      *        NONE: Skip verification.
@@ -310,6 +346,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
      * </p>
      * <p>
+     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * </p>
+     * <p>
      * NONE: Skip verification.
      * </p>
      * 
@@ -323,6 +362,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
      *        </p>
      *        <p>
+     *        ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     *        </p>
+     *        <p>
      *        NONE: Skip verification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifyMode
@@ -330,6 +372,117 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     public Options withVerifyMode(VerifyMode verifyMode) {
         this.verifyMode = verifyMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that determines whether files at the destination should be overwritten or preserved when copying files.
+     * If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the destination
+     * file differs from the source file. If you modify files in the destination and you sync the files, you can use
+     * this value to protect against overwriting those changes.
+     * </p>
+     * <p>
+     * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
+     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * </p>
+     * 
+     * @param overwriteMode
+     *        A value that determines whether files at the destination should be overwritten or preserved when copying
+     *        files. If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the
+     *        destination file differs from the source file. If you modify files in the destination and you sync the
+     *        files, you can use this value to protect against overwriting those changes. </p>
+     *        <p>
+     *        Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
+     *        information, see <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * @see OverwriteMode
+     */
+
+    public void setOverwriteMode(String overwriteMode) {
+        this.overwriteMode = overwriteMode;
+    }
+
+    /**
+     * <p>
+     * A value that determines whether files at the destination should be overwritten or preserved when copying files.
+     * If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the destination
+     * file differs from the source file. If you modify files in the destination and you sync the files, you can use
+     * this value to protect against overwriting those changes.
+     * </p>
+     * <p>
+     * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
+     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * </p>
+     * 
+     * @return A value that determines whether files at the destination should be overwritten or preserved when copying
+     *         files. If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the
+     *         destination file differs from the source file. If you modify files in the destination and you sync the
+     *         files, you can use this value to protect against overwriting those changes. </p>
+     *         <p>
+     *         Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
+     *         information, see <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * @see OverwriteMode
+     */
+
+    public String getOverwriteMode() {
+        return this.overwriteMode;
+    }
+
+    /**
+     * <p>
+     * A value that determines whether files at the destination should be overwritten or preserved when copying files.
+     * If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the destination
+     * file differs from the source file. If you modify files in the destination and you sync the files, you can use
+     * this value to protect against overwriting those changes.
+     * </p>
+     * <p>
+     * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
+     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * </p>
+     * 
+     * @param overwriteMode
+     *        A value that determines whether files at the destination should be overwritten or preserved when copying
+     *        files. If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the
+     *        destination file differs from the source file. If you modify files in the destination and you sync the
+     *        files, you can use this value to protect against overwriting those changes. </p>
+     *        <p>
+     *        Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
+     *        information, see <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OverwriteMode
+     */
+
+    public Options withOverwriteMode(String overwriteMode) {
+        setOverwriteMode(overwriteMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that determines whether files at the destination should be overwritten or preserved when copying files.
+     * If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the destination
+     * file differs from the source file. If you modify files in the destination and you sync the files, you can use
+     * this value to protect against overwriting those changes.
+     * </p>
+     * <p>
+     * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
+     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * </p>
+     * 
+     * @param overwriteMode
+     *        A value that determines whether files at the destination should be overwritten or preserved when copying
+     *        files. If set to <code>NEVER</code> a destination file will not be replaced by a source file, even if the
+     *        destination file differs from the source file. If you modify files in the destination and you sync the
+     *        files, you can use this value to protect against overwriting those changes. </p>
+     *        <p>
+     *        Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
+     *        information, see <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OverwriteMode
+     */
+
+    public Options withOverwriteMode(OverwriteMode overwriteMode) {
+        this.overwriteMode = overwriteMode.toString();
         return this;
     }
 
@@ -1008,7 +1161,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
-     * preserved.
+     * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
+     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
+     * in the <i>AWS DataSync User Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1022,7 +1177,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param preserveDeletedFiles
      *        A value that specifies whether files in the destination that don't exist in the source file system should
-     *        be preserved. </p>
+     *        be preserved. This option can affect your storage cost. If your task deletes objects, you might incur
+     *        minimum storage duration charges for certain storage classes. For detailed information, see
+     *        <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.</p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1041,7 +1198,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
-     * preserved.
+     * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
+     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
+     * in the <i>AWS DataSync User Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1054,7 +1213,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return A value that specifies whether files in the destination that don't exist in the source file system should
-     *         be preserved. </p>
+     *         be preserved. This option can affect your storage cost. If your task deletes objects, you might incur
+     *         minimum storage duration charges for certain storage classes. For detailed information, see
+     *         <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.</p>
      *         <p>
      *         Default value: PRESERVE.
      *         </p>
@@ -1073,7 +1234,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
-     * preserved.
+     * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
+     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
+     * in the <i>AWS DataSync User Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1087,7 +1250,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param preserveDeletedFiles
      *        A value that specifies whether files in the destination that don't exist in the source file system should
-     *        be preserved. </p>
+     *        be preserved. This option can affect your storage cost. If your task deletes objects, you might incur
+     *        minimum storage duration charges for certain storage classes. For detailed information, see
+     *        <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.</p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1108,7 +1273,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
-     * preserved.
+     * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
+     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
+     * in the <i>AWS DataSync User Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1122,7 +1289,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param preserveDeletedFiles
      *        A value that specifies whether files in the destination that don't exist in the source file system should
-     *        be preserved. </p>
+     *        be preserved. This option can affect your storage cost. If your task deletes objects, you might incur
+     *        minimum storage duration charges for certain storage classes. For detailed information, see
+     *        <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.</p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1562,6 +1731,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getVerifyMode() != null)
             sb.append("VerifyMode: ").append(getVerifyMode()).append(",");
+        if (getOverwriteMode() != null)
+            sb.append("OverwriteMode: ").append(getOverwriteMode()).append(",");
         if (getAtime() != null)
             sb.append("Atime: ").append(getAtime()).append(",");
         if (getMtime() != null)
@@ -1595,6 +1766,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         if (other.getVerifyMode() == null ^ this.getVerifyMode() == null)
             return false;
         if (other.getVerifyMode() != null && other.getVerifyMode().equals(this.getVerifyMode()) == false)
+            return false;
+        if (other.getOverwriteMode() == null ^ this.getOverwriteMode() == null)
+            return false;
+        if (other.getOverwriteMode() != null && other.getOverwriteMode().equals(this.getOverwriteMode()) == false)
             return false;
         if (other.getAtime() == null ^ this.getAtime() == null)
             return false;
@@ -1637,6 +1812,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVerifyMode() == null) ? 0 : getVerifyMode().hashCode());
+        hashCode = prime * hashCode + ((getOverwriteMode() == null) ? 0 : getOverwriteMode().hashCode());
         hashCode = prime * hashCode + ((getAtime() == null) ? 0 : getAtime().hashCode());
         hashCode = prime * hashCode + ((getMtime() == null) ? 0 : getMtime().hashCode());
         hashCode = prime * hashCode + ((getUid() == null) ? 0 : getUid().hashCode());

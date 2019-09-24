@@ -39,6 +39,8 @@ public class StartTranscriptionJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Media").build();
     private static final MarshallingInfo<String> OUTPUTBUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputBucketName").build();
+    private static final MarshallingInfo<String> OUTPUTENCRYPTIONKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputEncryptionKMSKeyId").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Settings").build();
 
@@ -64,6 +66,7 @@ public class StartTranscriptionJobRequestMarshaller {
             protocolMarshaller.marshall(startTranscriptionJobRequest.getMediaFormat(), MEDIAFORMAT_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getMedia(), MEDIA_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getOutputBucketName(), OUTPUTBUCKETNAME_BINDING);
+            protocolMarshaller.marshall(startTranscriptionJobRequest.getOutputEncryptionKMSKeyId(), OUTPUTENCRYPTIONKMSKEYID_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getSettings(), SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -1,3 +1,16 @@
+# __1.11.638__ __2019-09-24__
+## __AWS Comprehend Medical__
+  - ### Features
+    - Use Amazon Comprehend Medical to analyze medical text stored in the specified Amazon S3 bucket. Use the console to create and manage batch analysis jobs, or use the batch APIs to detect both medical entities and protected health information (PHI). The batch APIs start, stop, list, and retrieve information about batch analysis jobs. This release also includes DetectEntitiesV2 operation which returns the Acuity and Direction entities as attributes instead of types.
+
+## __AWS DataSync__
+  - ### Features
+    - Added S3StorageClass, OverwriteMode sync option, and ONLY_FILES_TRANSFERRED setting for the VerifyMode sync option.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this update Amazon Transcribe enables you to provide an AWS KMS key to encrypt your transcription output.
+
 # __1.11.637__ __2019-09-23__
 ## __AWS RDS DataService__
   - ### Features

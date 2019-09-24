@@ -52,6 +52,10 @@ public class OptionsJsonUnmarshaller implements Unmarshaller<Options, JsonUnmars
                     context.nextToken();
                     options.setVerifyMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OverwriteMode", targetDepth)) {
+                    context.nextToken();
+                    options.setOverwriteMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Atime", targetDepth)) {
                     context.nextToken();
                     options.setAtime(context.getUnmarshaller(String.class).unmarshall(context));

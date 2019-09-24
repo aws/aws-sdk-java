@@ -61,6 +61,10 @@ public class DetectEntitiesResultJsonUnmarshaller implements Unmarshaller<Detect
                     context.nextToken();
                     detectEntitiesResult.setPaginationToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelVersion", targetDepth)) {
+                    context.nextToken();
+                    detectEntitiesResult.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

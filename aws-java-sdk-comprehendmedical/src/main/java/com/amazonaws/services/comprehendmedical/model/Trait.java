@@ -36,7 +36,7 @@ public class Trait implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of this trait.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.
      * </p>
      */
     private Float score;
@@ -102,11 +102,11 @@ public class Trait implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of this trait.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical has in the accuracy of this trait.
+     *        The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.
      */
 
     public void setScore(Float score) {
@@ -115,10 +115,10 @@ public class Trait implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of this trait.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.
      * </p>
      * 
-     * @return The level of confidence that Comprehend Medical has in the accuracy of this trait.
+     * @return The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.
      */
 
     public Float getScore() {
@@ -127,11 +127,11 @@ public class Trait implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of this trait.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical has in the accuracy of this trait.
+     *        The level of confidence that Amazon Comprehend Medical has in the accuracy of this trait.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -51,8 +51,8 @@ import com.amazonaws.services.comprehendmedical.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain insight
- * in your documents.
+ * Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain
+ * insight in your documents.
  * </p>
  */
 @ThreadSafe
@@ -78,20 +78,26 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.comprehendmedical.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehendmedical.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.comprehendmedical.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.comprehendmedical.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.comprehendmedical.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TextSizeLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.comprehendmedical.model.transform.TextSizeLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehendmedical.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehendmedical.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehendmedical.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidEncodingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.comprehendmedical.model.transform.InvalidEncodingExceptionUnmarshaller.getInstance()))
@@ -145,6 +151,144 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Gets the properties associated with a medical entities detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeEntitiesDetectionV2JobRequest
+     * @return Result of the DescribeEntitiesDetectionV2Job operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.DescribeEntitiesDetectionV2Job
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeEntitiesDetectionV2Job"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEntitiesDetectionV2JobResult describeEntitiesDetectionV2Job(DescribeEntitiesDetectionV2JobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEntitiesDetectionV2Job(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEntitiesDetectionV2JobResult executeDescribeEntitiesDetectionV2Job(DescribeEntitiesDetectionV2JobRequest describeEntitiesDetectionV2JobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEntitiesDetectionV2JobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEntitiesDetectionV2JobRequest> request = null;
+        Response<DescribeEntitiesDetectionV2JobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEntitiesDetectionV2JobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEntitiesDetectionV2JobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEntitiesDetectionV2Job");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEntitiesDetectionV2JobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEntitiesDetectionV2JobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the properties associated with a protected health information (PHI) detection job. Use this operation to get
+     * the status of a detection job.
+     * </p>
+     * 
+     * @param describePHIDetectionJobRequest
+     * @return Result of the DescribePHIDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.DescribePHIDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribePHIDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribePHIDetectionJobResult describePHIDetectionJob(DescribePHIDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePHIDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribePHIDetectionJobResult executeDescribePHIDetectionJob(DescribePHIDetectionJobRequest describePHIDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePHIDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePHIDetectionJobRequest> request = null;
+        Response<DescribePHIDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePHIDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describePHIDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePHIDetectionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePHIDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribePHIDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The <code>DetectEntities</code> operation is deprecated. You should use the <a>DetectEntitiesV2</a> operation
+     * instead.
+     * </p>
+     * <p>
      * Inspects the clinical text for a variety of medical entities and returns specific information about them such as
      * entity category, location, and confidence score on that information .
      * </p>
@@ -154,7 +298,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         The Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again. Contact customer support for more information about a service limit increase.
@@ -171,6 +316,7 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DetectEntitiesResult detectEntities(DetectEntitiesRequest request) {
         request = beforeClientExecution(request);
         return executeDetectEntities(request);
@@ -214,7 +360,86 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Inspects the clinical text for personal health information (PHI) entities and entity category, location, and
+     * Inspects the clinical text for a variety of medical entities and returns specific information about them such as
+     * entity category, location, and confidence score on that information.
+     * </p>
+     * <p>
+     * The <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a> operation. This new action uses a
+     * different model for determining the entities in your medical text and changes the way that some entities are
+     * returned in the output. You should use the <code>DetectEntitiesV2</code> operation in all new applications.
+     * </p>
+     * <p>
+     * The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code> entities
+     * as attributes instead of types. It does not return the <code>Quality</code> or <code>Quantity</code> entities.
+     * </p>
+     * 
+     * @param detectEntitiesV2Request
+     * @return Result of the DetectEntitiesV2 operation returned by the service.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ServiceUnavailableException
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws InvalidEncodingException
+     *         The input text was not in valid UTF-8 character encoding. Check your text then retry your request.
+     * @throws TextSizeLimitExceededException
+     *         The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller
+     *         document and then retry your request.
+     * @sample AWSComprehendMedical.DetectEntitiesV2
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntitiesV2"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DetectEntitiesV2Result detectEntitiesV2(DetectEntitiesV2Request request) {
+        request = beforeClientExecution(request);
+        return executeDetectEntitiesV2(request);
+    }
+
+    @SdkInternalApi
+    final DetectEntitiesV2Result executeDetectEntitiesV2(DetectEntitiesV2Request detectEntitiesV2Request) {
+
+        ExecutionContext executionContext = createExecutionContext(detectEntitiesV2Request);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetectEntitiesV2Request> request = null;
+        Response<DetectEntitiesV2Result> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetectEntitiesV2RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectEntitiesV2Request));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectEntitiesV2");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DetectEntitiesV2Result>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetectEntitiesV2ResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Inspects the clinical text for protected health information (PHI) entities and entity category, location, and
      * confidence score on that information.
      * </p>
      * 
@@ -223,7 +448,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         The Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again. Contact customer support for more information about a service limit increase.
@@ -271,6 +497,392 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
             HttpResponseHandler<AmazonWebServiceResponse<DetectPHIResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetectPHIResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of medical entity detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEntitiesDetectionV2JobsRequest
+     * @return Result of the ListEntitiesDetectionV2Jobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ValidationException
+     *         The filter that you specified for the operation is invalid. Check the filter values that you entered and
+     *         try your request again.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.ListEntitiesDetectionV2Jobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListEntitiesDetectionV2Jobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEntitiesDetectionV2JobsResult listEntitiesDetectionV2Jobs(ListEntitiesDetectionV2JobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEntitiesDetectionV2Jobs(request);
+    }
+
+    @SdkInternalApi
+    final ListEntitiesDetectionV2JobsResult executeListEntitiesDetectionV2Jobs(ListEntitiesDetectionV2JobsRequest listEntitiesDetectionV2JobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEntitiesDetectionV2JobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEntitiesDetectionV2JobsRequest> request = null;
+        Response<ListEntitiesDetectionV2JobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEntitiesDetectionV2JobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listEntitiesDetectionV2JobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEntitiesDetectionV2Jobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEntitiesDetectionV2JobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListEntitiesDetectionV2JobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of protected health information (PHI) detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listPHIDetectionJobsRequest
+     * @return Result of the ListPHIDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ValidationException
+     *         The filter that you specified for the operation is invalid. Check the filter values that you entered and
+     *         try your request again.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.ListPHIDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListPHIDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPHIDetectionJobsResult listPHIDetectionJobs(ListPHIDetectionJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPHIDetectionJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListPHIDetectionJobsResult executeListPHIDetectionJobs(ListPHIDetectionJobsRequest listPHIDetectionJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPHIDetectionJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPHIDetectionJobsRequest> request = null;
+        Response<ListPHIDetectionJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPHIDetectionJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPHIDetectionJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPHIDetectionJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPHIDetectionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPHIDetectionJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an asynchronous medical entity detection job for a collection of documents. Use the
+     * <code>DescribeEntitiesDetectionV2Job</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startEntitiesDetectionV2JobRequest
+     * @return Result of the StartEntitiesDetectionV2Job operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StartEntitiesDetectionV2Job
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartEntitiesDetectionV2Job"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartEntitiesDetectionV2JobResult startEntitiesDetectionV2Job(StartEntitiesDetectionV2JobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartEntitiesDetectionV2Job(request);
+    }
+
+    @SdkInternalApi
+    final StartEntitiesDetectionV2JobResult executeStartEntitiesDetectionV2Job(StartEntitiesDetectionV2JobRequest startEntitiesDetectionV2JobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startEntitiesDetectionV2JobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartEntitiesDetectionV2JobRequest> request = null;
+        Response<StartEntitiesDetectionV2JobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartEntitiesDetectionV2JobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startEntitiesDetectionV2JobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartEntitiesDetectionV2Job");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartEntitiesDetectionV2JobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartEntitiesDetectionV2JobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an asynchronous job to detect protected health information (PHI). Use the
+     * <code>DescribePHIDetectionJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startPHIDetectionJobRequest
+     * @return Result of the StartPHIDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StartPHIDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartPHIDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartPHIDetectionJobResult startPHIDetectionJob(StartPHIDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartPHIDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StartPHIDetectionJobResult executeStartPHIDetectionJob(StartPHIDetectionJobRequest startPHIDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startPHIDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartPHIDetectionJobRequest> request = null;
+        Response<StartPHIDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartPHIDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startPHIDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartPHIDetectionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartPHIDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartPHIDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a medical entities detection job in progress.
+     * </p>
+     * 
+     * @param stopEntitiesDetectionV2JobRequest
+     * @return Result of the StopEntitiesDetectionV2Job operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StopEntitiesDetectionV2Job
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopEntitiesDetectionV2Job"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopEntitiesDetectionV2JobResult stopEntitiesDetectionV2Job(StopEntitiesDetectionV2JobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopEntitiesDetectionV2Job(request);
+    }
+
+    @SdkInternalApi
+    final StopEntitiesDetectionV2JobResult executeStopEntitiesDetectionV2Job(StopEntitiesDetectionV2JobRequest stopEntitiesDetectionV2JobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopEntitiesDetectionV2JobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopEntitiesDetectionV2JobRequest> request = null;
+        Response<StopEntitiesDetectionV2JobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopEntitiesDetectionV2JobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopEntitiesDetectionV2JobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopEntitiesDetectionV2Job");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopEntitiesDetectionV2JobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopEntitiesDetectionV2JobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a protected health information (PHI) detection job in progress.
+     * </p>
+     * 
+     * @param stopPHIDetectionJobRequest
+     * @return Result of the StopPHIDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StopPHIDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopPHIDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopPHIDetectionJobResult stopPHIDetectionJob(StopPHIDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopPHIDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StopPHIDetectionJobResult executeStopPHIDetectionJob(StopPHIDetectionJobRequest stopPHIDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopPHIDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopPHIDetectionJobRequest> request = null;
+        Response<StopPHIDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopPHIDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopPHIDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopPHIDetectionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopPHIDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopPHIDetectionJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

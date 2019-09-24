@@ -56,6 +56,10 @@ public class DetectPHIResultJsonUnmarshaller implements Unmarshaller<DetectPHIRe
                     context.nextToken();
                     detectPHIResult.setPaginationToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelVersion", targetDepth)) {
+                    context.nextToken();
+                    detectPHIResult.setModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -404,7 +404,9 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
      * examples section.
      * </p>
      * <p>
-     * For more information, see Configuring Amazon S3 Location Settings in the <i>AWS DataSync User Guide.</i>
+     * For more information, see
+     * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location in the
+     * <i>AWS DataSync User Guide.</i>
      * </p>
      * 
      * @param createLocationS3Request

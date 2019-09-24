@@ -78,11 +78,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String vpcEndpointId;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
-     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
-     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
-     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
-     * must be able to route to all these four ENIs.
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
+     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
+     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
+     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
+     * agent must be able to route to all these four network interfaces.
      * </p>
      */
     private java.util.List<String> subnetArns;
@@ -433,18 +433,19 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
-     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
-     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
-     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
-     * must be able to route to all these four ENIs.
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
+     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
+     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
+     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
+     * agent must be able to route to all these four network interfaces.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces
-     *         (ENIs) for each data transfer task. The agent that runs a task must be private. When you start a task
-     *         that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then
-     *         the task is also private. In this case, DataSync creates four ENIs for each task in your subnet. For a
-     *         data transfer to work, the agent must be able to route to all these four ENIs.
+     * @return The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces
+     *         for each data transfer task. The agent that runs a task must be private. When you start a task that is
+     *         associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the
+     *         task is also private. In this case, DataSync creates four network interfaces for each task in your
+     *         subnet. For a data transfer to work, the agent must be able to route to all these four network
+     *         interfaces.
      */
 
     public java.util.List<String> getSubnetArns() {
@@ -453,19 +454,19 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
-     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
-     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
-     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
-     * must be able to route to all these four ENIs.
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
+     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
+     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
+     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
+     * agent must be able to route to all these four network interfaces.
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces
-     *        (ENIs) for each data transfer task. The agent that runs a task must be private. When you start a task that
-     *        is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the
-     *        task is also private. In this case, DataSync creates four ENIs for each task in your subnet. For a data
-     *        transfer to work, the agent must be able to route to all these four ENIs.
+     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces
+     *        for each data transfer task. The agent that runs a task must be private. When you start a task that is
+     *        associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task
+     *        is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For
+     *        a data transfer to work, the agent must be able to route to all these four network interfaces.
      */
 
     public void setSubnetArns(java.util.Collection<String> subnetArns) {
@@ -479,11 +480,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
-     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
-     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
-     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
-     * must be able to route to all these four ENIs.
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
+     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
+     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
+     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
+     * agent must be able to route to all these four network interfaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -492,11 +493,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces
-     *        (ENIs) for each data transfer task. The agent that runs a task must be private. When you start a task that
-     *        is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the
-     *        task is also private. In this case, DataSync creates four ENIs for each task in your subnet. For a data
-     *        transfer to work, the agent must be able to route to all these four ENIs.
+     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces
+     *        for each data transfer task. The agent that runs a task must be private. When you start a task that is
+     *        associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task
+     *        is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For
+     *        a data transfer to work, the agent must be able to route to all these four network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,19 +513,19 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces (ENIs)
-     * for each data transfer task. The agent that runs a task must be private. When you start a task that is associated
-     * with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private.
-     * In this case, DataSync creates four ENIs for each task in your subnet. For a data transfer to work, the agent
-     * must be able to route to all these four ENIs.
+     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
+     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
+     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
+     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
+     * agent must be able to route to all these four network interfaces.
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create Elastic Network Interfaces
-     *        (ENIs) for each data transfer task. The agent that runs a task must be private. When you start a task that
-     *        is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the
-     *        task is also private. In this case, DataSync creates four ENIs for each task in your subnet. For a data
-     *        transfer to work, the agent must be able to route to all these four ENIs.
+     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces
+     *        for each data transfer task. The agent that runs a task must be private. When you start a task that is
+     *        associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task
+     *        is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For
+     *        a data transfer to work, the agent must be able to route to all these four network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

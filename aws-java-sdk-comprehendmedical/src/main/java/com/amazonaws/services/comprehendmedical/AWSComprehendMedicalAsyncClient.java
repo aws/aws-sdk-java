@@ -26,8 +26,8 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain insight
- * in your documents.
+ * Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain
+ * insight in your documents.
  * </p>
  */
 @ThreadSafe
@@ -64,12 +64,81 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEntitiesDetectionV2JobResult> describeEntitiesDetectionV2JobAsync(DescribeEntitiesDetectionV2JobRequest request) {
+
+        return describeEntitiesDetectionV2JobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntitiesDetectionV2JobResult> describeEntitiesDetectionV2JobAsync(
+            final DescribeEntitiesDetectionV2JobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEntitiesDetectionV2JobRequest, DescribeEntitiesDetectionV2JobResult> asyncHandler) {
+        final DescribeEntitiesDetectionV2JobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEntitiesDetectionV2JobResult>() {
+            @Override
+            public DescribeEntitiesDetectionV2JobResult call() throws Exception {
+                DescribeEntitiesDetectionV2JobResult result = null;
+
+                try {
+                    result = executeDescribeEntitiesDetectionV2Job(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePHIDetectionJobResult> describePHIDetectionJobAsync(DescribePHIDetectionJobRequest request) {
+
+        return describePHIDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePHIDetectionJobResult> describePHIDetectionJobAsync(final DescribePHIDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePHIDetectionJobRequest, DescribePHIDetectionJobResult> asyncHandler) {
+        final DescribePHIDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePHIDetectionJobResult>() {
+            @Override
+            public DescribePHIDetectionJobResult call() throws Exception {
+                DescribePHIDetectionJobResult result = null;
+
+                try {
+                    result = executeDescribePHIDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<DetectEntitiesResult> detectEntitiesAsync(DetectEntitiesRequest request) {
 
         return detectEntitiesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DetectEntitiesResult> detectEntitiesAsync(final DetectEntitiesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetectEntitiesRequest, DetectEntitiesResult> asyncHandler) {
         final DetectEntitiesRequest finalRequest = beforeClientExecution(request);
@@ -81,6 +150,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
 
                 try {
                     result = executeDetectEntities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectEntitiesV2Result> detectEntitiesV2Async(DetectEntitiesV2Request request) {
+
+        return detectEntitiesV2Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectEntitiesV2Result> detectEntitiesV2Async(final DetectEntitiesV2Request request,
+            final com.amazonaws.handlers.AsyncHandler<DetectEntitiesV2Request, DetectEntitiesV2Result> asyncHandler) {
+        final DetectEntitiesV2Request finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectEntitiesV2Result>() {
+            @Override
+            public DetectEntitiesV2Result call() throws Exception {
+                DetectEntitiesV2Result result = null;
+
+                try {
+                    result = executeDetectEntitiesV2(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -114,6 +216,204 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
 
                 try {
                     result = executeDetectPHI(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEntitiesDetectionV2JobsResult> listEntitiesDetectionV2JobsAsync(ListEntitiesDetectionV2JobsRequest request) {
+
+        return listEntitiesDetectionV2JobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEntitiesDetectionV2JobsResult> listEntitiesDetectionV2JobsAsync(final ListEntitiesDetectionV2JobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEntitiesDetectionV2JobsRequest, ListEntitiesDetectionV2JobsResult> asyncHandler) {
+        final ListEntitiesDetectionV2JobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEntitiesDetectionV2JobsResult>() {
+            @Override
+            public ListEntitiesDetectionV2JobsResult call() throws Exception {
+                ListEntitiesDetectionV2JobsResult result = null;
+
+                try {
+                    result = executeListEntitiesDetectionV2Jobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPHIDetectionJobsResult> listPHIDetectionJobsAsync(ListPHIDetectionJobsRequest request) {
+
+        return listPHIDetectionJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPHIDetectionJobsResult> listPHIDetectionJobsAsync(final ListPHIDetectionJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPHIDetectionJobsRequest, ListPHIDetectionJobsResult> asyncHandler) {
+        final ListPHIDetectionJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPHIDetectionJobsResult>() {
+            @Override
+            public ListPHIDetectionJobsResult call() throws Exception {
+                ListPHIDetectionJobsResult result = null;
+
+                try {
+                    result = executeListPHIDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEntitiesDetectionV2JobResult> startEntitiesDetectionV2JobAsync(StartEntitiesDetectionV2JobRequest request) {
+
+        return startEntitiesDetectionV2JobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEntitiesDetectionV2JobResult> startEntitiesDetectionV2JobAsync(final StartEntitiesDetectionV2JobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartEntitiesDetectionV2JobRequest, StartEntitiesDetectionV2JobResult> asyncHandler) {
+        final StartEntitiesDetectionV2JobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartEntitiesDetectionV2JobResult>() {
+            @Override
+            public StartEntitiesDetectionV2JobResult call() throws Exception {
+                StartEntitiesDetectionV2JobResult result = null;
+
+                try {
+                    result = executeStartEntitiesDetectionV2Job(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPHIDetectionJobResult> startPHIDetectionJobAsync(StartPHIDetectionJobRequest request) {
+
+        return startPHIDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPHIDetectionJobResult> startPHIDetectionJobAsync(final StartPHIDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartPHIDetectionJobRequest, StartPHIDetectionJobResult> asyncHandler) {
+        final StartPHIDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartPHIDetectionJobResult>() {
+            @Override
+            public StartPHIDetectionJobResult call() throws Exception {
+                StartPHIDetectionJobResult result = null;
+
+                try {
+                    result = executeStartPHIDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopEntitiesDetectionV2JobResult> stopEntitiesDetectionV2JobAsync(StopEntitiesDetectionV2JobRequest request) {
+
+        return stopEntitiesDetectionV2JobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopEntitiesDetectionV2JobResult> stopEntitiesDetectionV2JobAsync(final StopEntitiesDetectionV2JobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopEntitiesDetectionV2JobRequest, StopEntitiesDetectionV2JobResult> asyncHandler) {
+        final StopEntitiesDetectionV2JobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopEntitiesDetectionV2JobResult>() {
+            @Override
+            public StopEntitiesDetectionV2JobResult call() throws Exception {
+                StopEntitiesDetectionV2JobResult result = null;
+
+                try {
+                    result = executeStopEntitiesDetectionV2Job(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopPHIDetectionJobResult> stopPHIDetectionJobAsync(StopPHIDetectionJobRequest request) {
+
+        return stopPHIDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopPHIDetectionJobResult> stopPHIDetectionJobAsync(final StopPHIDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopPHIDetectionJobRequest, StopPHIDetectionJobResult> asyncHandler) {
+        final StopPHIDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopPHIDetectionJobResult>() {
+            @Override
+            public StopPHIDetectionJobResult call() throws Exception {
+                StopPHIDetectionJobResult result = null;
+
+                try {
+                    result = executeStopPHIDetectionJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

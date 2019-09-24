@@ -51,7 +51,7 @@ public class Entity implements Serializable, Cloneable, StructuredPojo {
     private Integer endOffset;
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of the detection.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * </p>
      */
     private Float score;
@@ -226,11 +226,11 @@ public class Entity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of the detection.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical has in the accuracy of the detection.
+     *        The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      */
 
     public void setScore(Float score) {
@@ -239,10 +239,10 @@ public class Entity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of the detection.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * </p>
      * 
-     * @return The level of confidence that Comprehend Medical has in the accuracy of the detection.
+     * @return The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      */
 
     public Float getScore() {
@@ -251,11 +251,11 @@ public class Entity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of the detection.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical has in the accuracy of the detection.
+     *        The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

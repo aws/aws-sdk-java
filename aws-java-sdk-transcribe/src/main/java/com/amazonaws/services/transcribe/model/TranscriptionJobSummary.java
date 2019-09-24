@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a summary of information about a transcription job. .
+ * Provides a summary of information about a transcription job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJobSummary" target="_top">AWS

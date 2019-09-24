@@ -38,6 +38,16 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String locationUri;
+    /**
+     * <p>
+     * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     * destination. For more information about S3 storage classes, see <a
+     * href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple Storage
+     * Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.
+     * </p>
+     */
+    private String s3StorageClass;
 
     private S3Config s3Config;
     /**
@@ -128,6 +138,97 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     * destination. For more information about S3 storage classes, see <a
+     * href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple Storage
+     * Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.
+     * </p>
+     * 
+     * @param s3StorageClass
+     *        The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     *        destination. For more information about S3 storage classes, see <a
+     *        href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple
+     *        Storage Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage
+     *        cost. For detailed information, see <a>using-storage-classes</a>.
+     * @see S3StorageClass
+     */
+
+    public void setS3StorageClass(String s3StorageClass) {
+        this.s3StorageClass = s3StorageClass;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     * destination. For more information about S3 storage classes, see <a
+     * href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple Storage
+     * Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.
+     * </p>
+     * 
+     * @return The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     *         destination. For more information about S3 storage classes, see <a
+     *         href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple
+     *         Storage Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage
+     *         cost. For detailed information, see <a>using-storage-classes</a>.
+     * @see S3StorageClass
+     */
+
+    public String getS3StorageClass() {
+        return this.s3StorageClass;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     * destination. For more information about S3 storage classes, see <a
+     * href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple Storage
+     * Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.
+     * </p>
+     * 
+     * @param s3StorageClass
+     *        The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     *        destination. For more information about S3 storage classes, see <a
+     *        href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple
+     *        Storage Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage
+     *        cost. For detailed information, see <a>using-storage-classes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see S3StorageClass
+     */
+
+    public DescribeLocationS3Result withS3StorageClass(String s3StorageClass) {
+        setS3StorageClass(s3StorageClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     * destination. For more information about S3 storage classes, see <a
+     * href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple Storage
+     * Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.
+     * </p>
+     * 
+     * @param s3StorageClass
+     *        The Amazon S3 storage class that you chose to store your files in when this location is used as a task
+     *        destination. For more information about S3 storage classes, see <a
+     *        href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a> in the <i>Amazon Simple
+     *        Storage Service Developer Guide</i>. Some storage classes have behaviors that can affect your S3 storage
+     *        cost. For detailed information, see <a>using-storage-classes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see S3StorageClass
+     */
+
+    public DescribeLocationS3Result withS3StorageClass(S3StorageClass s3StorageClass) {
+        this.s3StorageClass = s3StorageClass.toString();
+        return this;
+    }
+
+    /**
      * @param s3Config
      */
 
@@ -209,6 +310,8 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
             sb.append("LocationArn: ").append(getLocationArn()).append(",");
         if (getLocationUri() != null)
             sb.append("LocationUri: ").append(getLocationUri()).append(",");
+        if (getS3StorageClass() != null)
+            sb.append("S3StorageClass: ").append(getS3StorageClass()).append(",");
         if (getS3Config() != null)
             sb.append("S3Config: ").append(getS3Config()).append(",");
         if (getCreationTime() != null)
@@ -235,6 +338,10 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getLocationUri() != null && other.getLocationUri().equals(this.getLocationUri()) == false)
             return false;
+        if (other.getS3StorageClass() == null ^ this.getS3StorageClass() == null)
+            return false;
+        if (other.getS3StorageClass() != null && other.getS3StorageClass().equals(this.getS3StorageClass()) == false)
+            return false;
         if (other.getS3Config() == null ^ this.getS3Config() == null)
             return false;
         if (other.getS3Config() != null && other.getS3Config().equals(this.getS3Config()) == false)
@@ -253,6 +360,7 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
 
         hashCode = prime * hashCode + ((getLocationArn() == null) ? 0 : getLocationArn().hashCode());
         hashCode = prime * hashCode + ((getLocationUri() == null) ? 0 : getLocationUri().hashCode());
+        hashCode = prime * hashCode + ((getS3StorageClass() == null) ? 0 : getS3StorageClass().hashCode());
         hashCode = prime * hashCode + ((getS3Config() == null) ? 0 : getS3Config().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;

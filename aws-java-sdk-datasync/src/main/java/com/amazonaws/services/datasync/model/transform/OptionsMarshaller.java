@@ -29,6 +29,8 @@ public class OptionsMarshaller {
 
     private static final MarshallingInfo<String> VERIFYMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerifyMode").build();
+    private static final MarshallingInfo<String> OVERWRITEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverwriteMode").build();
     private static final MarshallingInfo<String> ATIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Atime").build();
     private static final MarshallingInfo<String> MTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class OptionsMarshaller {
 
         try {
             protocolMarshaller.marshall(options.getVerifyMode(), VERIFYMODE_BINDING);
+            protocolMarshaller.marshall(options.getOverwriteMode(), OVERWRITEMODE_BINDING);
             protocolMarshaller.marshall(options.getAtime(), ATIME_BINDING);
             protocolMarshaller.marshall(options.getMtime(), MTIME_BINDING);
             protocolMarshaller.marshall(options.getUid(), UID_BINDING);

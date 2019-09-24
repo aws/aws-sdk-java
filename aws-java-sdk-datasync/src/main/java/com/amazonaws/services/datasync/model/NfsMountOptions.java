@@ -30,24 +30,98 @@ public class NfsMountOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the NFS server.
+     * The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the
+     * version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS
+     * server.
      * </p>
+     * <p>
+     * You can specify the following NFS versions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for
+     * asynchronous writes on the server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version
+     * that supports delegations and pseudo filesystems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports
+     * sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available
+     * in version 4.0.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String version;
 
     /**
      * <p>
-     * The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the NFS server.
+     * The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the
+     * version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS
+     * server.
      * </p>
+     * <p>
+     * You can specify the following NFS versions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for
+     * asynchronous writes on the server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version
+     * that supports delegations and pseudo filesystems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports
+     * sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available
+     * in version 4.0.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param version
-     *        The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a
-     *        version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version
-     *        based on negotiation with the NFS server.
+     *        The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to
+     *        use the version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     *        <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the
+     *        NFS server.</p>
+     *        <p>
+     *        You can specify the following NFS versions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows
+     *        for asynchronous writes on the server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol
+     *        version that supports delegations and pseudo filesystems.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that
+     *        supports sessions, directory delegations, and parallel data processing. Version 4.1 also includes all
+     *        features available in version 4.0.
+     *        </p>
+     *        </li>
      * @see NfsVersion
      */
 
@@ -57,14 +131,63 @@ public class NfsMountOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the NFS server.
+     * The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the
+     * version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS
+     * server.
      * </p>
+     * <p>
+     * You can specify the following NFS versions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for
+     * asynchronous writes on the server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version
+     * that supports delegations and pseudo filesystems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports
+     * sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available
+     * in version 4.0.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a
-     *         version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version
-     *         based on negotiation with the NFS server.
+     * @return The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to
+     *         use the version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     *         <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the
+     *         NFS server.</p>
+     *         <p>
+     *         You can specify the following NFS versions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows
+     *         for asynchronous writes on the server.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol
+     *         version that supports delegations and pseudo filesystems.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that
+     *         supports sessions, directory delegations, and parallel data processing. Version 4.1 also includes all
+     *         features available in version 4.0.
+     *         </p>
+     *         </li>
      * @see NfsVersion
      */
 
@@ -74,15 +197,64 @@ public class NfsMountOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the NFS server.
+     * The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the
+     * version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS
+     * server.
      * </p>
+     * <p>
+     * You can specify the following NFS versions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for
+     * asynchronous writes on the server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version
+     * that supports delegations and pseudo filesystems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports
+     * sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available
+     * in version 4.0.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param version
-     *        The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a
-     *        version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version
-     *        based on negotiation with the NFS server.
+     *        The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to
+     *        use the version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     *        <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the
+     *        NFS server.</p>
+     *        <p>
+     *        You can specify the following NFS versions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows
+     *        for asynchronous writes on the server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol
+     *        version that supports delegations and pseudo filesystems.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that
+     *        supports sessions, directory delegations, and parallel data processing. Version 4.1 also includes all
+     *        features available in version 4.0.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NfsVersion
      */
@@ -94,15 +266,64 @@ public class NfsMountOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a version,
-     * DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on
-     * negotiation with the NFS server.
+     * The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to use the
+     * version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the NFS
+     * server.
      * </p>
+     * <p>
+     * You can specify the following NFS versions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows for
+     * asynchronous writes on the server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol version
+     * that supports delegations and pseudo filesystems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that supports
+     * sessions, directory delegations, and parallel data processing. Version 4.1 also includes all features available
+     * in version 4.0.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param version
-     *        The specific NFS version that you want DataSync to use to mount your NFS share. If you don't specify a
-     *        version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically selects a version
-     *        based on negotiation with the NFS server.
+     *        The specific NFS version that you want DataSync to use to mount your NFS share. If the server refuses to
+     *        use the version specified, the sync will fail. If you don't specify a version, DataSync defaults to
+     *        <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based on negotiation with the
+     *        NFS server.</p>
+     *        <p>
+     *        You can specify the following NFS versions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol version that allows
+     *        for asynchronous writes on the server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly protocol
+     *        version that supports delegations and pseudo filesystems.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol version that
+     *        supports sessions, directory delegations, and parallel data processing. Version 4.1 also includes all
+     *        features available in version 4.0.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NfsVersion
      */
