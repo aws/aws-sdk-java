@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Default implementation of the {@linkplain com.amazonaws.Request} interface.
@@ -53,7 +54,7 @@ public class DefaultRequest<T> implements Request<T> {
     private Map<String, List<String>> parameters = new LinkedHashMap<String, List<String>>();
 
     /** Map of the headers included in this request */
-    private Map<String, String> headers = new HashMap<String, String>();
+    private Map<String, String> headers = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
 
     /** The service endpoint to which this request should be sent */
     private URI endpoint;
