@@ -65,6 +65,22 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<IpSet> ipSets;
     /**
      * <p>
+     * The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP
+     * addresses.
+     * </p>
+     * <p>
+     * The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
+     * followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * </p>
+     * <p>
+     * For more information about the default DNS name, see <a href=
+     * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     * >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     */
+    private String dnsName;
+    /**
+     * <p>
      * Describes the deployment status of the accelerator.
      * </p>
      */
@@ -375,6 +391,106 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP
+     * addresses.
+     * </p>
+     * <p>
+     * The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
+     * followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * </p>
+     * <p>
+     * For more information about the default DNS name, see <a href=
+     * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     * >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param dnsName
+     *        The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static
+     *        IP addresses. </p>
+     *        <p>
+     *        The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
+     *        followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     *        </p>
+     *        <p>
+     *        For more information about the default DNS name, see <a href=
+     *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     *        >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *        Guide</i>.
+     */
+
+    public void setDnsName(String dnsName) {
+        this.dnsName = dnsName;
+    }
+
+    /**
+     * <p>
+     * The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP
+     * addresses.
+     * </p>
+     * <p>
+     * The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
+     * followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * </p>
+     * <p>
+     * For more information about the default DNS name, see <a href=
+     * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     * >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @return The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's
+     *         static IP addresses. </p>
+     *         <p>
+     *         The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
+     *         followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     *         </p>
+     *         <p>
+     *         For more information about the default DNS name, see <a href=
+     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     *         >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *         Guide</i>.
+     */
+
+    public String getDnsName() {
+        return this.dnsName;
+    }
+
+    /**
+     * <p>
+     * The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP
+     * addresses.
+     * </p>
+     * <p>
+     * The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
+     * followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * </p>
+     * <p>
+     * For more information about the default DNS name, see <a href=
+     * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     * >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param dnsName
+     *        The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static
+     *        IP addresses. </p>
+     *        <p>
+     *        The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
+     *        followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     *        </p>
+     *        <p>
+     *        For more information about the default DNS name, see <a href=
+     *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     *        >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Accelerator withDnsName(String dnsName) {
+        setDnsName(dnsName);
+        return this;
+    }
+
+    /**
+     * <p>
      * Describes the deployment status of the accelerator.
      * </p>
      * 
@@ -534,6 +650,8 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getIpSets() != null)
             sb.append("IpSets: ").append(getIpSets()).append(",");
+        if (getDnsName() != null)
+            sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreatedTime() != null)
@@ -574,6 +692,10 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIpSets() != null && other.getIpSets().equals(this.getIpSets()) == false)
             return false;
+        if (other.getDnsName() == null ^ this.getDnsName() == null)
+            return false;
+        if (other.getDnsName() != null && other.getDnsName().equals(this.getDnsName()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -599,6 +721,7 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getIpSets() == null) ? 0 : getIpSets().hashCode());
+        hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());

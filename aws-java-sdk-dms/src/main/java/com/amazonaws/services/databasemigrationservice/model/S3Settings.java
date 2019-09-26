@@ -246,7 +246,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -258,8 +258,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more information
-     * about how these settings work together, see <a href=
+     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
+     * more information about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      * Guide.</i>.
@@ -275,7 +275,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * inserted, updated, or deleted at the source database for a CDC load to the target.
      * </p>
      * <p>
-     * If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
+     * If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
      * database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded depends
      * on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to
      * <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the
@@ -288,33 +288,77 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> in
-     * versions 3.1.4 and later.
+     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
+     * parameters in versions 3.1.4 and later.
      * </p>
      * </note>
      */
     private Boolean cdcInsertsOnly;
     /**
      * <p>
-     * A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS DMS includes an additional
-     * column in the migrated data when you set <code>timestampColumnName</code> to a non-blank value.
+     * A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an
+     * Amazon S3 target.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * For a full load, each row of the timestamp column contains a timestamp for when the data was transferred from the
-     * source to the target by DMS. For a CDC load, each row of the timestamp column contains the timestamp for the
-     * commit of that row in the source database. The format for the timestamp column value is
-     * <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. For CDC, the microsecond precision depends on the commit timestamp
-     * supported by DMS for the source database. When the <code>AddColumnName</code> setting is set to <code>true</code>
-     * , DMS also includes the name for the timestamp column that you set as the nonblank value of
-     * <code>timestampColumnName</code>.
+     * DMS includes an additional <code>STRING</code> column in the .csv or .parquet object files of your migrated data
+     * when you set <code>TimestampColumnName</code> to a nonblank value.
+     * </p>
+     * <p>
+     * For a full load, each row of this timestamp column contains a timestamp for when the data was transferred from
+     * the source to the target by DMS.
+     * </p>
+     * <p>
+     * For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the commit of
+     * that row in the source database.
+     * </p>
+     * <p>
+     * The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default, the
+     * precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on the commit
+     * timestamp supported by DMS for the source database.
+     * </p>
+     * <p>
+     * When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for the
+     * timestamp column that you set with <code>TimestampColumnName</code>.
      * </p>
      */
     private String timestampColumnName;
+    /**
+     * <p>
+     * A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an Amazon S3
+     * object file in .parquet format.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * <p>
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
+     * them with microsecond precision.
+     * </p>
+     * <p>
+     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
+     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
+     * to query or process the data with Athena or AWS Glue.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * precision.
+     * </p>
+     * <p>
+     * Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp column
+     * value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     * </p>
+     * </note>
+     */
+    private Boolean parquetTimestampInMillisecond;
 
     /**
      * <p>
@@ -2204,7 +2248,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -2216,8 +2260,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more information
-     * about how these settings work together, see <a href=
+     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
+     * more information about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      * Guide.</i>.
@@ -2228,7 +2272,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
      *        files only to indicate how the rows were added to the source database.</p> <note>
      *        <p>
-     *        AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     *        AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
@@ -2240,8 +2284,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more
-     *        information about how these settings work together, see <a href=
+     *        This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only.
+     *        For more information about how these settings work together, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      *        Guide.</i>.
@@ -2259,7 +2303,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -2271,8 +2315,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more information
-     * about how these settings work together, see <a href=
+     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
+     * more information about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      * Guide.</i>.
@@ -2282,7 +2326,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @return A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
      *         files only to indicate how the rows were added to the source database.</p> <note>
      *         <p>
-     *         AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     *         AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      *         </p>
      *         </note>
      *         <p>
@@ -2294,8 +2338,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more
-     *         information about how these settings work together, see <a href=
+     *         This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only.
+     *         For more information about how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      *         Guide.</i>.
@@ -2313,7 +2357,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -2325,8 +2369,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more information
-     * about how these settings work together, see <a href=
+     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
+     * more information about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      * Guide.</i>.
@@ -2337,7 +2381,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
      *        files only to indicate how the rows were added to the source database.</p> <note>
      *        <p>
-     *        AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     *        AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
@@ -2349,8 +2393,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more
-     *        information about how these settings work together, see <a href=
+     *        This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only.
+     *        For more information about how these settings work together, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      *        Guide.</i>.
@@ -2370,7 +2414,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
@@ -2382,8 +2426,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more information
-     * about how these settings work together, see <a href=
+     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
+     * more information about how these settings work together, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      * Guide.</i>.
@@ -2393,7 +2437,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @return A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
      *         files only to indicate how the rows were added to the source database.</p> <note>
      *         <p>
-     *         AWS DMS supports <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     *         AWS DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
      *         </p>
      *         </note>
      *         <p>
@@ -2405,8 +2449,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         This setting works together with <code>CdcInsertsOnly</code> for output to .csv files only. For more
-     *         information about how these settings work together, see <a href=
+     *         This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only.
+     *         For more information about how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      *         Guide.</i>.
@@ -2425,7 +2469,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * inserted, updated, or deleted at the source database for a CDC load to the target.
      * </p>
      * <p>
-     * If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
+     * If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
      * database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded depends
      * on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to
      * <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the
@@ -2438,8 +2482,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> in
-     * versions 3.1.4 and later.
+     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
+     * parameters in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -2449,7 +2493,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        .parquet record contains the letter I (INSERT), U (UPDATE), or D (DELETE). These values indicate whether
      *        the row was inserted, updated, or deleted at the source database for a CDC load to the target.</p>
      *        <p>
-     *        If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
+     *        If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
      *        database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded
      *        depends on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to
      *        <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the
@@ -2462,8 +2506,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and
-     *        <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     *        AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and
+     *        <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      *        </p>
      */
 
@@ -2479,7 +2523,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * inserted, updated, or deleted at the source database for a CDC load to the target.
      * </p>
      * <p>
-     * If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
+     * If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
      * database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded depends
      * on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to
      * <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the
@@ -2492,8 +2536,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> in
-     * versions 3.1.4 and later.
+     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
+     * parameters in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -2503,7 +2547,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         whether the row was inserted, updated, or deleted at the source database for a CDC load to the
      *         target.</p>
      *         <p>
-     *         If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the
+     *         If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the
      *         source database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are
      *         recorded depends on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code>
      *         is set to <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT
@@ -2516,8 +2560,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and
-     *         <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     *         AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and
+     *         <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      *         </p>
      */
 
@@ -2533,7 +2577,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * inserted, updated, or deleted at the source database for a CDC load to the target.
      * </p>
      * <p>
-     * If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
+     * If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
      * database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded depends
      * on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to
      * <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the
@@ -2546,8 +2590,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> in
-     * versions 3.1.4 and later.
+     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
+     * parameters in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -2557,7 +2601,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        .parquet record contains the letter I (INSERT), U (UPDATE), or D (DELETE). These values indicate whether
      *        the row was inserted, updated, or deleted at the source database for a CDC load to the target.</p>
      *        <p>
-     *        If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
+     *        If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
      *        database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded
      *        depends on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to
      *        <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the
@@ -2570,8 +2614,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and
-     *        <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     *        AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and
+     *        <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2589,7 +2633,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * inserted, updated, or deleted at the source database for a CDC load to the target.
      * </p>
      * <p>
-     * If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
+     * If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the source
      * database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are recorded depends
      * on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to
      * <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT operation at the
@@ -2602,8 +2646,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> in
-     * versions 3.1.4 and later.
+     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
+     * parameters in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -2613,7 +2657,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         whether the row was inserted, updated, or deleted at the source database for a CDC load to the
      *         target.</p>
      *         <p>
-     *         If <code>cdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the
+     *         If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only INSERTs from the
      *         source database are migrated to the .csv or .parquet file. For .csv format only, how these INSERTs are
      *         recorded depends on the value of <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code>
      *         is set to <code>true</code>, the first field of every CDC record is set to I to indicate the INSERT
@@ -2626,8 +2670,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS supports this interaction between <code>CdcInsertsOnly</code> and
-     *         <code>IncludeOpForFullLoad</code> in versions 3.1.4 and later.
+     *         AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and
+     *         <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
      *         </p>
      */
 
@@ -2637,40 +2681,63 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS DMS includes an additional
-     * column in the migrated data when you set <code>timestampColumnName</code> to a non-blank value.
+     * A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an
+     * Amazon S3 target.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * For a full load, each row of the timestamp column contains a timestamp for when the data was transferred from the
-     * source to the target by DMS. For a CDC load, each row of the timestamp column contains the timestamp for the
-     * commit of that row in the source database. The format for the timestamp column value is
-     * <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. For CDC, the microsecond precision depends on the commit timestamp
-     * supported by DMS for the source database. When the <code>AddColumnName</code> setting is set to <code>true</code>
-     * , DMS also includes the name for the timestamp column that you set as the nonblank value of
-     * <code>timestampColumnName</code>.
+     * DMS includes an additional <code>STRING</code> column in the .csv or .parquet object files of your migrated data
+     * when you set <code>TimestampColumnName</code> to a nonblank value.
+     * </p>
+     * <p>
+     * For a full load, each row of this timestamp column contains a timestamp for when the data was transferred from
+     * the source to the target by DMS.
+     * </p>
+     * <p>
+     * For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the commit of
+     * that row in the source database.
+     * </p>
+     * <p>
+     * The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default, the
+     * precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on the commit
+     * timestamp supported by DMS for the source database.
+     * </p>
+     * <p>
+     * When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for the
+     * timestamp column that you set with <code>TimestampColumnName</code>.
      * </p>
      * 
      * @param timestampColumnName
-     *        A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS DMS includes an
-     *        additional column in the migrated data when you set <code>timestampColumnName</code> to a non-blank value.
-     *        </p> <note>
+     *        A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data
+     *        for an Amazon S3 target.</p> <note>
      *        <p>
-     *        AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+     *        AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
-     *        For a full load, each row of the timestamp column contains a timestamp for when the data was transferred
-     *        from the source to the target by DMS. For a CDC load, each row of the timestamp column contains the
-     *        timestamp for the commit of that row in the source database. The format for the timestamp column value is
-     *        <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. For CDC, the microsecond precision depends on the commit
-     *        timestamp supported by DMS for the source database. When the <code>AddColumnName</code> setting is set to
-     *        <code>true</code>, DMS also includes the name for the timestamp column that you set as the nonblank value
-     *        of <code>timestampColumnName</code>.
+     *        DMS includes an additional <code>STRING</code> column in the .csv or .parquet object files of your
+     *        migrated data when you set <code>TimestampColumnName</code> to a nonblank value.
+     *        </p>
+     *        <p>
+     *        For a full load, each row of this timestamp column contains a timestamp for when the data was transferred
+     *        from the source to the target by DMS.
+     *        </p>
+     *        <p>
+     *        For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the
+     *        commit of that row in the source database.
+     *        </p>
+     *        <p>
+     *        The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default,
+     *        the precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on
+     *        the commit timestamp supported by DMS for the source database.
+     *        </p>
+     *        <p>
+     *        When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for
+     *        the timestamp column that you set with <code>TimestampColumnName</code>.
      */
 
     public void setTimestampColumnName(String timestampColumnName) {
@@ -2679,39 +2746,62 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS DMS includes an additional
-     * column in the migrated data when you set <code>timestampColumnName</code> to a non-blank value.
+     * A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an
+     * Amazon S3 target.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * For a full load, each row of the timestamp column contains a timestamp for when the data was transferred from the
-     * source to the target by DMS. For a CDC load, each row of the timestamp column contains the timestamp for the
-     * commit of that row in the source database. The format for the timestamp column value is
-     * <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. For CDC, the microsecond precision depends on the commit timestamp
-     * supported by DMS for the source database. When the <code>AddColumnName</code> setting is set to <code>true</code>
-     * , DMS also includes the name for the timestamp column that you set as the nonblank value of
-     * <code>timestampColumnName</code>.
+     * DMS includes an additional <code>STRING</code> column in the .csv or .parquet object files of your migrated data
+     * when you set <code>TimestampColumnName</code> to a nonblank value.
+     * </p>
+     * <p>
+     * For a full load, each row of this timestamp column contains a timestamp for when the data was transferred from
+     * the source to the target by DMS.
+     * </p>
+     * <p>
+     * For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the commit of
+     * that row in the source database.
+     * </p>
+     * <p>
+     * The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default, the
+     * precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on the commit
+     * timestamp supported by DMS for the source database.
+     * </p>
+     * <p>
+     * When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for the
+     * timestamp column that you set with <code>TimestampColumnName</code>.
      * </p>
      * 
-     * @return A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS DMS includes an
-     *         additional column in the migrated data when you set <code>timestampColumnName</code> to a non-blank
-     *         value. </p> <note>
+     * @return A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data
+     *         for an Amazon S3 target.</p> <note>
      *         <p>
-     *         AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+     *         AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      *         </p>
      *         </note>
      *         <p>
-     *         For a full load, each row of the timestamp column contains a timestamp for when the data was transferred
-     *         from the source to the target by DMS. For a CDC load, each row of the timestamp column contains the
-     *         timestamp for the commit of that row in the source database. The format for the timestamp column value is
-     *         <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. For CDC, the microsecond precision depends on the commit
-     *         timestamp supported by DMS for the source database. When the <code>AddColumnName</code> setting is set to
-     *         <code>true</code>, DMS also includes the name for the timestamp column that you set as the nonblank value
-     *         of <code>timestampColumnName</code>.
+     *         DMS includes an additional <code>STRING</code> column in the .csv or .parquet object files of your
+     *         migrated data when you set <code>TimestampColumnName</code> to a nonblank value.
+     *         </p>
+     *         <p>
+     *         For a full load, each row of this timestamp column contains a timestamp for when the data was transferred
+     *         from the source to the target by DMS.
+     *         </p>
+     *         <p>
+     *         For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the
+     *         commit of that row in the source database.
+     *         </p>
+     *         <p>
+     *         The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default,
+     *         the precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on
+     *         the commit timestamp supported by DMS for the source database.
+     *         </p>
+     *         <p>
+     *         When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for
+     *         the timestamp column that you set with <code>TimestampColumnName</code>.
      */
 
     public String getTimestampColumnName() {
@@ -2720,46 +2810,321 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS DMS includes an additional
-     * column in the migrated data when you set <code>timestampColumnName</code> to a non-blank value.
+     * A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data for an
+     * Amazon S3 target.
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * <p>
-     * For a full load, each row of the timestamp column contains a timestamp for when the data was transferred from the
-     * source to the target by DMS. For a CDC load, each row of the timestamp column contains the timestamp for the
-     * commit of that row in the source database. The format for the timestamp column value is
-     * <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. For CDC, the microsecond precision depends on the commit timestamp
-     * supported by DMS for the source database. When the <code>AddColumnName</code> setting is set to <code>true</code>
-     * , DMS also includes the name for the timestamp column that you set as the nonblank value of
-     * <code>timestampColumnName</code>.
+     * DMS includes an additional <code>STRING</code> column in the .csv or .parquet object files of your migrated data
+     * when you set <code>TimestampColumnName</code> to a nonblank value.
+     * </p>
+     * <p>
+     * For a full load, each row of this timestamp column contains a timestamp for when the data was transferred from
+     * the source to the target by DMS.
+     * </p>
+     * <p>
+     * For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the commit of
+     * that row in the source database.
+     * </p>
+     * <p>
+     * The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default, the
+     * precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on the commit
+     * timestamp supported by DMS for the source database.
+     * </p>
+     * <p>
+     * When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for the
+     * timestamp column that you set with <code>TimestampColumnName</code>.
      * </p>
      * 
      * @param timestampColumnName
-     *        A value that includes a timestamp column in the Amazon S3 target endpoint data. AWS DMS includes an
-     *        additional column in the migrated data when you set <code>timestampColumnName</code> to a non-blank value.
-     *        </p> <note>
+     *        A value that when nonblank causes AWS DMS to add a column with timestamp information to the endpoint data
+     *        for an Amazon S3 target.</p> <note>
      *        <p>
-     *        AWS DMS supports <code>TimestampColumnName</code> in versions 3.1.4 and later.
+     *        AWS DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.
      *        </p>
      *        </note>
      *        <p>
-     *        For a full load, each row of the timestamp column contains a timestamp for when the data was transferred
-     *        from the source to the target by DMS. For a CDC load, each row of the timestamp column contains the
-     *        timestamp for the commit of that row in the source database. The format for the timestamp column value is
-     *        <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. For CDC, the microsecond precision depends on the commit
-     *        timestamp supported by DMS for the source database. When the <code>AddColumnName</code> setting is set to
-     *        <code>true</code>, DMS also includes the name for the timestamp column that you set as the nonblank value
-     *        of <code>timestampColumnName</code>.
+     *        DMS includes an additional <code>STRING</code> column in the .csv or .parquet object files of your
+     *        migrated data when you set <code>TimestampColumnName</code> to a nonblank value.
+     *        </p>
+     *        <p>
+     *        For a full load, each row of this timestamp column contains a timestamp for when the data was transferred
+     *        from the source to the target by DMS.
+     *        </p>
+     *        <p>
+     *        For a change data capture (CDC) load, each row of the timestamp column contains the timestamp for the
+     *        commit of that row in the source database.
+     *        </p>
+     *        <p>
+     *        The string format for this timestamp column value is <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default,
+     *        the precision of this value is in microseconds. For a CDC load, the rounding of the precision depends on
+     *        the commit timestamp supported by DMS for the source database.
+     *        </p>
+     *        <p>
+     *        When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also includes a name for
+     *        the timestamp column that you set with <code>TimestampColumnName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3Settings withTimestampColumnName(String timestampColumnName) {
         setTimestampColumnName(timestampColumnName);
         return this;
+    }
+
+    /**
+     * <p>
+     * A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an Amazon S3
+     * object file in .parquet format.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * <p>
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
+     * them with microsecond precision.
+     * </p>
+     * <p>
+     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
+     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
+     * to query or process the data with Athena or AWS Glue.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * precision.
+     * </p>
+     * <p>
+     * Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp column
+     * value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @param parquetTimestampInMillisecond
+     *        A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an
+     *        Amazon S3 object file in .parquet format.</p> <note>
+     *        <p>
+     *        AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS
+     *        writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision.
+     *        Otherwise, DMS writes them with microsecond precision.
+     *        </p>
+     *        <p>
+     *        Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
+     *        values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted
+     *        only if you plan to query or process the data with Athena or AWS Glue.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with
+     *        microsecond precision.
+     *        </p>
+     *        <p>
+     *        Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp
+     *        column value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     *        </p>
+     */
+
+    public void setParquetTimestampInMillisecond(Boolean parquetTimestampInMillisecond) {
+        this.parquetTimestampInMillisecond = parquetTimestampInMillisecond;
+    }
+
+    /**
+     * <p>
+     * A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an Amazon S3
+     * object file in .parquet format.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * <p>
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
+     * them with microsecond precision.
+     * </p>
+     * <p>
+     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
+     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
+     * to query or process the data with Athena or AWS Glue.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * precision.
+     * </p>
+     * <p>
+     * Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp column
+     * value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @return A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an
+     *         Amazon S3 object file in .parquet format.</p> <note>
+     *         <p>
+     *         AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS
+     *         writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision.
+     *         Otherwise, DMS writes them with microsecond precision.
+     *         </p>
+     *         <p>
+     *         Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
+     *         values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted
+     *         only if you plan to query or process the data with Athena or AWS Glue.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with
+     *         microsecond precision.
+     *         </p>
+     *         <p>
+     *         Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp
+     *         column value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     *         </p>
+     */
+
+    public Boolean getParquetTimestampInMillisecond() {
+        return this.parquetTimestampInMillisecond;
+    }
+
+    /**
+     * <p>
+     * A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an Amazon S3
+     * object file in .parquet format.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * <p>
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
+     * them with microsecond precision.
+     * </p>
+     * <p>
+     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
+     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
+     * to query or process the data with Athena or AWS Glue.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * precision.
+     * </p>
+     * <p>
+     * Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp column
+     * value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @param parquetTimestampInMillisecond
+     *        A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an
+     *        Amazon S3 object file in .parquet format.</p> <note>
+     *        <p>
+     *        AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS
+     *        writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision.
+     *        Otherwise, DMS writes them with microsecond precision.
+     *        </p>
+     *        <p>
+     *        Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
+     *        values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted
+     *        only if you plan to query or process the data with Athena or AWS Glue.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with
+     *        microsecond precision.
+     *        </p>
+     *        <p>
+     *        Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp
+     *        column value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withParquetTimestampInMillisecond(Boolean parquetTimestampInMillisecond) {
+        setParquetTimestampInMillisecond(parquetTimestampInMillisecond);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an Amazon S3
+     * object file in .parquet format.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * </note>
+     * <p>
+     * When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS writes all
+     * <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision. Otherwise, DMS writes
+     * them with microsecond precision.
+     * </p>
+     * <p>
+     * Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code> values.
+     * Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted only if you plan
+     * to query or process the data with Athena or AWS Glue.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with microsecond
+     * precision.
+     * </p>
+     * <p>
+     * Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp column
+     * value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @return A value that specifies the precision of any <code>TIMESTAMP</code> column values that are written to an
+     *         Amazon S3 object file in .parquet format.</p> <note>
+     *         <p>
+     *         AWS DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions 3.1.4 and later.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or <code>y</code>, AWS DMS
+     *         writes all <code>TIMESTAMP</code> columns in a .parquet formatted file with millisecond precision.
+     *         Otherwise, DMS writes them with microsecond precision.
+     *         </p>
+     *         <p>
+     *         Currently, Amazon Athena and AWS Glue can handle only millisecond precision for <code>TIMESTAMP</code>
+     *         values. Set this parameter to <code>true</code> for S3 endpoint object files that are .parquet formatted
+     *         only if you plan to query or process the data with Athena or AWS Glue.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         AWS DMS writes any <code>TIMESTAMP</code> column values written to an S3 file in .csv format with
+     *         microsecond precision.
+     *         </p>
+     *         <p>
+     *         Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string format of the timestamp
+     *         column value that is inserted by setting the <code>TimestampColumnName</code> parameter.
+     *         </p>
+     */
+
+    public Boolean isParquetTimestampInMillisecond() {
+        return this.parquetTimestampInMillisecond;
     }
 
     /**
@@ -2811,7 +3176,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         if (getCdcInsertsOnly() != null)
             sb.append("CdcInsertsOnly: ").append(getCdcInsertsOnly()).append(",");
         if (getTimestampColumnName() != null)
-            sb.append("TimestampColumnName: ").append(getTimestampColumnName());
+            sb.append("TimestampColumnName: ").append(getTimestampColumnName()).append(",");
+        if (getParquetTimestampInMillisecond() != null)
+            sb.append("ParquetTimestampInMillisecond: ").append(getParquetTimestampInMillisecond());
         sb.append("}");
         return sb.toString();
     }
@@ -2902,6 +3269,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimestampColumnName() != null && other.getTimestampColumnName().equals(this.getTimestampColumnName()) == false)
             return false;
+        if (other.getParquetTimestampInMillisecond() == null ^ this.getParquetTimestampInMillisecond() == null)
+            return false;
+        if (other.getParquetTimestampInMillisecond() != null
+                && other.getParquetTimestampInMillisecond().equals(this.getParquetTimestampInMillisecond()) == false)
+            return false;
         return true;
     }
 
@@ -2929,6 +3301,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIncludeOpForFullLoad() == null) ? 0 : getIncludeOpForFullLoad().hashCode());
         hashCode = prime * hashCode + ((getCdcInsertsOnly() == null) ? 0 : getCdcInsertsOnly().hashCode());
         hashCode = prime * hashCode + ((getTimestampColumnName() == null) ? 0 : getTimestampColumnName().hashCode());
+        hashCode = prime * hashCode + ((getParquetTimestampInMillisecond() == null) ? 0 : getParquetTimestampInMillisecond().hashCode());
         return hashCode;
     }
 

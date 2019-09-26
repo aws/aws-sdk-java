@@ -38,6 +38,8 @@ public class AcceleratorMarshaller {
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<List> IPSETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IpSets").build();
+    private static final MarshallingInfo<String> DNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DnsName").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -66,6 +68,7 @@ public class AcceleratorMarshaller {
             protocolMarshaller.marshall(accelerator.getIpAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(accelerator.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(accelerator.getIpSets(), IPSETS_BINDING);
+            protocolMarshaller.marshall(accelerator.getDnsName(), DNSNAME_BINDING);
             protocolMarshaller.marshall(accelerator.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(accelerator.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(accelerator.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);

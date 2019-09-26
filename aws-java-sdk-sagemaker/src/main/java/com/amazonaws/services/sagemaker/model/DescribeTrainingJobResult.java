@@ -125,6 +125,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
+     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.
      * </p>
      * </li>
@@ -162,11 +167,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <li>
      * <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      * </p>
      * </li>
      * <li>
@@ -939,6 +939,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
+     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.
      * </p>
      * </li>
@@ -976,11 +981,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <li>
      * <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      * </p>
      * </li>
      * <li>
@@ -1056,6 +1056,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3
      *        location.
      *        </p>
@@ -1094,11 +1099,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        <li>
      *        <p>
      *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      *        </p>
      *        </li>
      *        <li>
@@ -1180,6 +1180,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
+     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.
      * </p>
      * </li>
@@ -1217,11 +1222,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <li>
      * <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      * </p>
      * </li>
      * <li>
@@ -1296,6 +1296,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
+     *         <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3
      *         location.
      *         </p>
@@ -1334,11 +1339,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         <li>
      *         <p>
      *         <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      *         </p>
      *         </li>
      *         <li>
@@ -1420,6 +1420,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
+     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.
      * </p>
      * </li>
@@ -1457,11 +1462,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <li>
      * <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      * </p>
      * </li>
      * <li>
@@ -1537,6 +1537,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3
      *        location.
      *        </p>
@@ -1575,11 +1580,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        <li>
      *        <p>
      *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      *        </p>
      *        </li>
      *        <li>
@@ -1663,6 +1663,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
+     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.
      * </p>
      * </li>
@@ -1700,11 +1705,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <li>
      * <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      * </p>
      * </li>
      * <li>
@@ -1780,6 +1780,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3
      *        location.
      *        </p>
@@ -1818,11 +1823,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        <li>
      *        <p>
      *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Interrupted</code> - The job stopped because the managed spot training instances were interrupted.
      *        </p>
      *        </li>
      *        <li>

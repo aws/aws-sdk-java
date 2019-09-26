@@ -85,7 +85,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      */
@@ -469,7 +469,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -477,7 +477,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
      *        test mode. This indicates some features might not work as expected.</p> <note>
      *        <p>
-     *        AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     *        AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      *        </p>
      * @see ReleaseStatusValues
      */
@@ -493,14 +493,14 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
      * @return The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta
      *         or test mode. This indicates some features might not work as expected.</p> <note>
      *         <p>
-     *         AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     *         AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      *         </p>
      * @see ReleaseStatusValues
      */
@@ -516,7 +516,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -524,7 +524,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
      *        test mode. This indicates some features might not work as expected.</p> <note>
      *        <p>
-     *        AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     *        AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReleaseStatusValues
@@ -542,7 +542,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     * AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      * </p>
      * </note>
      * 
@@ -550,7 +550,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      *        The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or
      *        test mode. This indicates some features might not work as expected.</p> <note>
      *        <p>
-     *        AWS DMS supports <code>ReleaseStatus</code> in versions 3.1.4 and later.
+     *        AWS DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReleaseStatusValues

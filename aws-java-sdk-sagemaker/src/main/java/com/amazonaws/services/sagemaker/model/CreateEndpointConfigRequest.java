@@ -51,6 +51,24 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
      * the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
+     * <note>
+     * <p>
+     * Nitro-based instances do not support encryption with AWS KMS. If any of the models that you specify in the
+     * <code>ProductionVariants</code> parameter use nitro-based instances, do not specify a value for the
+     * <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based
+     * instances, the call to <code>CreateEndpointConfig</code> fails.
+     * </p>
+     * <p>
+     * For a list of nitro-based instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * </p>
+     * <p>
+     * For more information about storage volumes on nitro-based instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe on Linux
+     * Instances</a>.
+     * </p>
+     * </note>
      */
     private String kmsKeyId;
 
@@ -266,10 +284,44 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
      * the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
+     * <note>
+     * <p>
+     * Nitro-based instances do not support encryption with AWS KMS. If any of the models that you specify in the
+     * <code>ProductionVariants</code> parameter use nitro-based instances, do not specify a value for the
+     * <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based
+     * instances, the call to <code>CreateEndpointConfig</code> fails.
+     * </p>
+     * <p>
+     * For a list of nitro-based instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * </p>
+     * <p>
+     * For more information about storage volumes on nitro-based instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe on Linux
+     * Instances</a>.
+     * </p>
+     * </note>
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
-     *        data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     *        data on the storage volume attached to the ML compute instance that hosts the endpoint.</p> <note>
+     *        <p>
+     *        Nitro-based instances do not support encryption with AWS KMS. If any of the models that you specify in the
+     *        <code>ProductionVariants</code> parameter use nitro-based instances, do not specify a value for the
+     *        <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any
+     *        nitro-based instances, the call to <code>CreateEndpointConfig</code> fails.
+     *        </p>
+     *        <p>
+     *        For a list of nitro-based instances, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Nitro-based Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *        </p>
+     *        <p>
+     *        For more information about storage volumes on nitro-based instances, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe on
+     *        Linux Instances</a>.
+     *        </p>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -281,9 +333,43 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
      * the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
+     * <note>
+     * <p>
+     * Nitro-based instances do not support encryption with AWS KMS. If any of the models that you specify in the
+     * <code>ProductionVariants</code> parameter use nitro-based instances, do not specify a value for the
+     * <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based
+     * instances, the call to <code>CreateEndpointConfig</code> fails.
+     * </p>
+     * <p>
+     * For a list of nitro-based instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * </p>
+     * <p>
+     * For more information about storage volumes on nitro-based instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe on Linux
+     * Instances</a>.
+     * </p>
+     * </note>
      * 
      * @return The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
-     *         data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     *         data on the storage volume attached to the ML compute instance that hosts the endpoint.</p> <note>
+     *         <p>
+     *         Nitro-based instances do not support encryption with AWS KMS. If any of the models that you specify in
+     *         the <code>ProductionVariants</code> parameter use nitro-based instances, do not specify a value for the
+     *         <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any
+     *         nitro-based instances, the call to <code>CreateEndpointConfig</code> fails.
+     *         </p>
+     *         <p>
+     *         For a list of nitro-based instances, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *         >Nitro-based Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *         </p>
+     *         <p>
+     *         For more information about storage volumes on nitro-based instances, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe on
+     *         Linux Instances</a>.
+     *         </p>
      */
 
     public String getKmsKeyId() {
@@ -295,10 +381,44 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
      * the storage volume attached to the ML compute instance that hosts the endpoint.
      * </p>
+     * <note>
+     * <p>
+     * Nitro-based instances do not support encryption with AWS KMS. If any of the models that you specify in the
+     * <code>ProductionVariants</code> parameter use nitro-based instances, do not specify a value for the
+     * <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based
+     * instances, the call to <code>CreateEndpointConfig</code> fails.
+     * </p>
+     * <p>
+     * For a list of nitro-based instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * </p>
+     * <p>
+     * For more information about storage volumes on nitro-based instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe on Linux
+     * Instances</a>.
+     * </p>
+     * </note>
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
-     *        data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     *        data on the storage volume attached to the ML compute instance that hosts the endpoint.</p> <note>
+     *        <p>
+     *        Nitro-based instances do not support encryption with AWS KMS. If any of the models that you specify in the
+     *        <code>ProductionVariants</code> parameter use nitro-based instances, do not specify a value for the
+     *        <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any
+     *        nitro-based instances, the call to <code>CreateEndpointConfig</code> fails.
+     *        </p>
+     *        <p>
+     *        For a list of nitro-based instances, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Nitro-based Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *        </p>
+     *        <p>
+     *        For more information about storage volumes on nitro-based instances, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">Amazon EBS and NVMe on
+     *        Linux Instances</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
