@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.641-SNAPSHOT</version>
+    <version>1.11.641</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -2019,7 +2019,7 @@
                               <label>Search</label>
                           </span>
 
-                          <form id="nav-search-form" target="_parent" method="get" action="http://docs.aws.amazon.com/search/doc-search.html#facet_doc_guide=API+Reference&facet_doc_product=AWS+SDK+for+Java">
+                          <form id="nav-search-form" target="_parent" method="get" action="https://docs.aws.amazon.com/search/doc-search.html#facet_doc_guide=API+Reference&facet_doc_product=AWS+SDK+for+Java">
                               <div id="nav-searchfield-outer" class="nav-sprite">
                                   <div class="nav-searchfield-inner nav-sprite">
                                       <div id="nav-searchfield-width">
@@ -2105,7 +2105,7 @@
                       //-->
                       &lt;/script>
                       &lt;noscript>
-                      &lt;img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="" />
+                      &lt;img src="https://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="" />
                   &lt;/noscript>
                   &lt;!--/DO NOT REMOVE/-->
                   &lt;!-- End SiteCatalyst code version: H.25.2. -->

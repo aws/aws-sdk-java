@@ -78,7 +78,17 @@ public class AbstractAWSAmplify implements AWSAmplify {
     }
 
     @Override
+    public GenerateAccessLogsResult generateAccessLogs(GenerateAccessLogsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAppResult getApp(GetAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetArtifactUrlResult getArtifactUrl(GetArtifactUrlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +114,11 @@ public class AbstractAWSAmplify implements AWSAmplify {
 
     @Override
     public ListAppsResult listApps(ListAppsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListArtifactsResult listArtifacts(ListArtifactsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

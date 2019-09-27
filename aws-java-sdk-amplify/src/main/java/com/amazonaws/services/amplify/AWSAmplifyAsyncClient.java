@@ -392,6 +392,39 @@ public class AWSAmplifyAsyncClient extends AWSAmplifyClient implements AWSAmplif
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateAccessLogsResult> generateAccessLogsAsync(GenerateAccessLogsRequest request) {
+
+        return generateAccessLogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateAccessLogsResult> generateAccessLogsAsync(final GenerateAccessLogsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateAccessLogsRequest, GenerateAccessLogsResult> asyncHandler) {
+        final GenerateAccessLogsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateAccessLogsResult>() {
+            @Override
+            public GenerateAccessLogsResult call() throws Exception {
+                GenerateAccessLogsResult result = null;
+
+                try {
+                    result = executeGenerateAccessLogs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest request) {
 
         return getAppAsync(request, null);
@@ -409,6 +442,39 @@ public class AWSAmplifyAsyncClient extends AWSAmplifyClient implements AWSAmplif
 
                 try {
                     result = executeGetApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetArtifactUrlResult> getArtifactUrlAsync(GetArtifactUrlRequest request) {
+
+        return getArtifactUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetArtifactUrlResult> getArtifactUrlAsync(final GetArtifactUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetArtifactUrlRequest, GetArtifactUrlResult> asyncHandler) {
+        final GetArtifactUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetArtifactUrlResult>() {
+            @Override
+            public GetArtifactUrlResult call() throws Exception {
+                GetArtifactUrlResult result = null;
+
+                try {
+                    result = executeGetArtifactUrl(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -574,6 +640,39 @@ public class AWSAmplifyAsyncClient extends AWSAmplifyClient implements AWSAmplif
 
                 try {
                     result = executeListApps(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(ListArtifactsRequest request) {
+
+        return listArtifactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(final ListArtifactsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListArtifactsRequest, ListArtifactsResult> asyncHandler) {
+        final ListArtifactsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListArtifactsResult>() {
+            @Override
+            public ListArtifactsResult call() throws Exception {
+                ListArtifactsResult result = null;
+
+                try {
+                    result = executeListArtifacts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

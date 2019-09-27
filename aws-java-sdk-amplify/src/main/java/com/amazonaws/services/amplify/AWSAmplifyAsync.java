@@ -364,6 +364,41 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
+     * Retrieve website access logs for a specific time range via a pre-signed URL. Optionally, deliver the logs to a
+     * given S3 bucket.
+     * </p>
+     * 
+     * @param generateAccessLogsRequest
+     *        Request structure for the generate access logs request.
+     * @return A Java Future containing the result of the GenerateAccessLogs operation returned by the service.
+     * @sample AWSAmplifyAsync.GenerateAccessLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GenerateAccessLogsResult> generateAccessLogsAsync(GenerateAccessLogsRequest generateAccessLogsRequest);
+
+    /**
+     * <p>
+     * Retrieve website access logs for a specific time range via a pre-signed URL. Optionally, deliver the logs to a
+     * given S3 bucket.
+     * </p>
+     * 
+     * @param generateAccessLogsRequest
+     *        Request structure for the generate access logs request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GenerateAccessLogs operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.GenerateAccessLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GenerateAccessLogsResult> generateAccessLogsAsync(GenerateAccessLogsRequest generateAccessLogsRequest,
+            com.amazonaws.handlers.AsyncHandler<GenerateAccessLogsRequest, GenerateAccessLogsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves an existing Amplify App by appId.
      * </p>
      * 
@@ -394,6 +429,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      */
     java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest getAppRequest,
             com.amazonaws.handlers.AsyncHandler<GetAppRequest, GetAppResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves artifact info that corresponds to a artifactId.
+     * </p>
+     * 
+     * @param getArtifactUrlRequest
+     *        Request structure for the get artifact request.
+     * @return A Java Future containing the result of the GetArtifactUrl operation returned by the service.
+     * @sample AWSAmplifyAsync.GetArtifactUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetArtifactUrlResult> getArtifactUrlAsync(GetArtifactUrlRequest getArtifactUrlRequest);
+
+    /**
+     * <p>
+     * Retrieves artifact info that corresponds to a artifactId.
+     * </p>
+     * 
+     * @param getArtifactUrlRequest
+     *        Request structure for the get artifact request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetArtifactUrl operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.GetArtifactUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetArtifactUrlResult> getArtifactUrlAsync(GetArtifactUrlRequest getArtifactUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<GetArtifactUrlRequest, GetArtifactUrlResult> asyncHandler);
 
     /**
      * <p>
@@ -559,6 +627,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      */
     java.util.concurrent.Future<ListAppsResult> listAppsAsync(ListAppsRequest listAppsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAppsRequest, ListAppsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List artifacts with an app, a branch, a job and an artifact type.
+     * </p>
+     * 
+     * @param listArtifactsRequest
+     *        Request structure for the list artifacts request.
+     * @return A Java Future containing the result of the ListArtifacts operation returned by the service.
+     * @sample AWSAmplifyAsync.ListArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(ListArtifactsRequest listArtifactsRequest);
+
+    /**
+     * <p>
+     * List artifacts with an app, a branch, a job and an artifact type.
+     * </p>
+     * 
+     * @param listArtifactsRequest
+     *        Request structure for the list artifacts request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListArtifacts operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.ListArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(ListArtifactsRequest listArtifactsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListArtifactsRequest, ListArtifactsResult> asyncHandler);
 
     /**
      * <p>

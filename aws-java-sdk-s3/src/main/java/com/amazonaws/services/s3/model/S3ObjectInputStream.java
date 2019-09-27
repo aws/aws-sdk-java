@@ -125,8 +125,8 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     /**
      * {@inheritDoc}
      *
-     * Delegates to {@link S3ObjectInputStream#abort()} if there is any data
-     * remaining in the stream. Otherwise, it safely closes the stream.
+     * If the stream still contains unread data, the underlying HTTP request
+     * will aborted.
      *
      * @see S3ObjectInputStream#abort()
      * @see com.amazonaws.services.s3.internal.S3AbortableInputStream

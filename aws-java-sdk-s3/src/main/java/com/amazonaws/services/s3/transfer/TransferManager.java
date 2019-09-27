@@ -51,6 +51,8 @@ import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.model.PresignedUrlDownloadConfig;
 import com.amazonaws.services.s3.model.PresignedUrlDownloadRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
@@ -73,6 +75,7 @@ import com.amazonaws.services.s3.transfer.internal.TransferStateChangeListener;
 import com.amazonaws.services.s3.transfer.internal.UploadCallable;
 import com.amazonaws.services.s3.transfer.internal.UploadImpl;
 import com.amazonaws.services.s3.transfer.internal.UploadMonitor;
+import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.VersionInfoUtils;
 import java.io.File;
 import java.io.IOException;
@@ -1286,17 +1289,24 @@ public class TransferManager {
      */
     private ObjectMetadata getObjectMetadataUsingRange(final PresignedUrlDownloadRequest request) {
         PresignedUrlDownloadRequest copy = request.clone();
-
+        S3Object s3Object = null;
         try {
-            return s3.download(copy.withRange(0, 1))
-                     .getS3Object()
-                     .getObjectMetadata();
+            s3Object = s3.download(copy.withRange(0, 0))
+                     .getS3Object();
+
+            return s3Object.getObjectMetadata();
         } catch (AmazonS3Exception exception) {
             // This handles error case when trying a range GET on object with zero size
             if (exception.getStatusCode() == 416 && "InvalidRange".equals(exception.getErrorCode())) {
                 return null;
             }
             throw exception;
+        } finally {
+            if (s3Object != null) {
+                S3ObjectInputStream objectContent = s3Object.getObjectContent();
+                IOUtils.drainInputStream(objectContent);
+                IOUtils.closeQuietly(objectContent, log);
+            }
         }
     }
 

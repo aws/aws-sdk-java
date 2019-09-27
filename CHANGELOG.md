@@ -1,3 +1,16 @@
+# __1.11.641__ __2019-09-27__
+## __AWS Amplify__
+  - ### Features
+    - This release adds access logs APIs and artifact APIs for AWS Amplify Console.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) removes FirelensConfiguration from the DescribeTask output during the FireLens public preview.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fix connection leak when using `TransferManager` to download a presigned URL. Fixes [#2088](https://github.com/aws/aws-sdk-java/issues/2088)
+
 # __1.11.640__ __2019-09-26__
 ## __AWS CodePipeline__
   - ### Features

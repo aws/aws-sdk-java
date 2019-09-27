@@ -55,6 +55,8 @@ public class UpdateBranchRequestMarshaller {
             .marshallLocationName("ttl").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<Boolean> ENABLEPULLREQUESTPREVIEW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enablePullRequestPreview").build();
 
     private static final UpdateBranchRequestMarshaller instance = new UpdateBranchRequestMarshaller();
 
@@ -85,6 +87,7 @@ public class UpdateBranchRequestMarshaller {
             protocolMarshaller.marshall(updateBranchRequest.getBuildSpec(), BUILDSPEC_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getTtl(), TTL_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(updateBranchRequest.getEnablePullRequestPreview(), ENABLEPULLREQUESTPREVIEW_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

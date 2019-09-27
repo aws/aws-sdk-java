@@ -70,6 +70,12 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
      * </p>
      */
     private String buildSpec;
+    /**
+     * <p>
+     * Enables Pull Request Preview for auto created branch.
+     * </p>
+     */
+    private Boolean enablePullRequestPreview;
 
     /**
      * <p>
@@ -416,6 +422,58 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Enables Pull Request Preview for auto created branch.
+     * </p>
+     * 
+     * @param enablePullRequestPreview
+     *        Enables Pull Request Preview for auto created branch.
+     */
+
+    public void setEnablePullRequestPreview(Boolean enablePullRequestPreview) {
+        this.enablePullRequestPreview = enablePullRequestPreview;
+    }
+
+    /**
+     * <p>
+     * Enables Pull Request Preview for auto created branch.
+     * </p>
+     * 
+     * @return Enables Pull Request Preview for auto created branch.
+     */
+
+    public Boolean getEnablePullRequestPreview() {
+        return this.enablePullRequestPreview;
+    }
+
+    /**
+     * <p>
+     * Enables Pull Request Preview for auto created branch.
+     * </p>
+     * 
+     * @param enablePullRequestPreview
+     *        Enables Pull Request Preview for auto created branch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoBranchCreationConfig withEnablePullRequestPreview(Boolean enablePullRequestPreview) {
+        setEnablePullRequestPreview(enablePullRequestPreview);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables Pull Request Preview for auto created branch.
+     * </p>
+     * 
+     * @return Enables Pull Request Preview for auto created branch.
+     */
+
+    public Boolean isEnablePullRequestPreview() {
+        return this.enablePullRequestPreview;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -440,7 +498,9 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
         if (getEnableBasicAuth() != null)
             sb.append("EnableBasicAuth: ").append(getEnableBasicAuth()).append(",");
         if (getBuildSpec() != null)
-            sb.append("BuildSpec: ").append(getBuildSpec());
+            sb.append("BuildSpec: ").append(getBuildSpec()).append(",");
+        if (getEnablePullRequestPreview() != null)
+            sb.append("EnablePullRequestPreview: ").append(getEnablePullRequestPreview());
         sb.append("}");
         return sb.toString();
     }
@@ -483,6 +543,10 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
             return false;
         if (other.getBuildSpec() != null && other.getBuildSpec().equals(this.getBuildSpec()) == false)
             return false;
+        if (other.getEnablePullRequestPreview() == null ^ this.getEnablePullRequestPreview() == null)
+            return false;
+        if (other.getEnablePullRequestPreview() != null && other.getEnablePullRequestPreview().equals(this.getEnablePullRequestPreview()) == false)
+            return false;
         return true;
     }
 
@@ -498,6 +562,7 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getBasicAuthCredentials() == null) ? 0 : getBasicAuthCredentials().hashCode());
         hashCode = prime * hashCode + ((getEnableBasicAuth() == null) ? 0 : getEnableBasicAuth().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());
+        hashCode = prime * hashCode + ((getEnablePullRequestPreview() == null) ? 0 : getEnablePullRequestPreview().hashCode());
         return hashCode;
     }
 

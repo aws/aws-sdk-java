@@ -77,6 +77,10 @@ public class AutoBranchCreationConfigJsonUnmarshaller implements Unmarshaller<Au
                     context.nextToken();
                     autoBranchCreationConfig.setBuildSpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("enablePullRequestPreview", targetDepth)) {
+                    context.nextToken();
+                    autoBranchCreationConfig.setEnablePullRequestPreview(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

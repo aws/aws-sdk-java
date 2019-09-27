@@ -60,8 +60,6 @@ public class ContainerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("memoryReservation").build();
     private static final MarshallingInfo<List> GPUIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("gpuIds").build();
-    private static final MarshallingInfo<StructuredPojo> FIRELENSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firelensConfiguration").build();
 
     private static final ContainerMarshaller instance = new ContainerMarshaller();
 
@@ -95,7 +93,6 @@ public class ContainerMarshaller {
             protocolMarshaller.marshall(container.getMemory(), MEMORY_BINDING);
             protocolMarshaller.marshall(container.getMemoryReservation(), MEMORYRESERVATION_BINDING);
             protocolMarshaller.marshall(container.getGpuIds(), GPUIDS_BINDING);
-            protocolMarshaller.marshall(container.getFirelensConfiguration(), FIRELENSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

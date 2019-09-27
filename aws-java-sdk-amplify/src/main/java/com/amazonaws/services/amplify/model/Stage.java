@@ -23,7 +23,8 @@ public enum Stage {
     PRODUCTION("PRODUCTION"),
     BETA("BETA"),
     DEVELOPMENT("DEVELOPMENT"),
-    EXPERIMENTAL("EXPERIMENTAL");
+    EXPERIMENTAL("EXPERIMENTAL"),
+    PULL_REQUEST("PULL_REQUEST");
 
     private String value;
 

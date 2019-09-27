@@ -158,6 +158,19 @@ public class AbstractAWSAmplifyAsync extends AbstractAWSAmplify implements AWSAm
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateAccessLogsResult> generateAccessLogsAsync(GenerateAccessLogsRequest request) {
+
+        return generateAccessLogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateAccessLogsResult> generateAccessLogsAsync(GenerateAccessLogsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GenerateAccessLogsRequest, GenerateAccessLogsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest request) {
 
         return getAppAsync(request, null);
@@ -166,6 +179,19 @@ public class AbstractAWSAmplifyAsync extends AbstractAWSAmplify implements AWSAm
     @Override
     public java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAppRequest, GetAppResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetArtifactUrlResult> getArtifactUrlAsync(GetArtifactUrlRequest request) {
+
+        return getArtifactUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetArtifactUrlResult> getArtifactUrlAsync(GetArtifactUrlRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetArtifactUrlRequest, GetArtifactUrlResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -231,6 +257,19 @@ public class AbstractAWSAmplifyAsync extends AbstractAWSAmplify implements AWSAm
     @Override
     public java.util.concurrent.Future<ListAppsResult> listAppsAsync(ListAppsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAppsRequest, ListAppsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(ListArtifactsRequest request) {
+
+        return listArtifactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(ListArtifactsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListArtifactsRequest, ListArtifactsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

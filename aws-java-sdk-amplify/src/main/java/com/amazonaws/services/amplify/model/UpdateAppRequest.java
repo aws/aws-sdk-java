@@ -108,10 +108,30 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.List<String> autoBranchCreationPatterns;
     /**
      * <p>
-     * Automated branch creation config for the Amplify App.
+     * Automated branch creation branchConfig for the Amplify App.
      * </p>
      */
     private AutoBranchCreationConfig autoBranchCreationConfig;
+    /**
+     * <p>
+     * Repository for an Amplify App
+     * </p>
+     */
+    private String repository;
+    /**
+     * <p>
+     * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy
+     * key. OAuth token is not stored.
+     * </p>
+     */
+    private String oauthToken;
+    /**
+     * <p>
+     * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
+     * read-only deploy key. Token is not stored.
+     * </p>
+     */
+    private String accessToken;
 
     /**
      * <p>
@@ -771,11 +791,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation config for the Amplify App.
+     * Automated branch creation branchConfig for the Amplify App.
      * </p>
      * 
      * @param autoBranchCreationConfig
-     *        Automated branch creation config for the Amplify App.
+     *        Automated branch creation branchConfig for the Amplify App.
      */
 
     public void setAutoBranchCreationConfig(AutoBranchCreationConfig autoBranchCreationConfig) {
@@ -784,10 +804,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation config for the Amplify App.
+     * Automated branch creation branchConfig for the Amplify App.
      * </p>
      * 
-     * @return Automated branch creation config for the Amplify App.
+     * @return Automated branch creation branchConfig for the Amplify App.
      */
 
     public AutoBranchCreationConfig getAutoBranchCreationConfig() {
@@ -796,16 +816,148 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation config for the Amplify App.
+     * Automated branch creation branchConfig for the Amplify App.
      * </p>
      * 
      * @param autoBranchCreationConfig
-     *        Automated branch creation config for the Amplify App.
+     *        Automated branch creation branchConfig for the Amplify App.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAppRequest withAutoBranchCreationConfig(AutoBranchCreationConfig autoBranchCreationConfig) {
         setAutoBranchCreationConfig(autoBranchCreationConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Repository for an Amplify App
+     * </p>
+     * 
+     * @param repository
+     *        Repository for an Amplify App
+     */
+
+    public void setRepository(String repository) {
+        this.repository = repository;
+    }
+
+    /**
+     * <p>
+     * Repository for an Amplify App
+     * </p>
+     * 
+     * @return Repository for an Amplify App
+     */
+
+    public String getRepository() {
+        return this.repository;
+    }
+
+    /**
+     * <p>
+     * Repository for an Amplify App
+     * </p>
+     * 
+     * @param repository
+     *        Repository for an Amplify App
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withRepository(String repository) {
+        setRepository(repository);
+        return this;
+    }
+
+    /**
+     * <p>
+     * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy
+     * key. OAuth token is not stored.
+     * </p>
+     * 
+     * @param oauthToken
+     *        OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only
+     *        deploy key. OAuth token is not stored.
+     */
+
+    public void setOauthToken(String oauthToken) {
+        this.oauthToken = oauthToken;
+    }
+
+    /**
+     * <p>
+     * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy
+     * key. OAuth token is not stored.
+     * </p>
+     * 
+     * @return OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only
+     *         deploy key. OAuth token is not stored.
+     */
+
+    public String getOauthToken() {
+        return this.oauthToken;
+    }
+
+    /**
+     * <p>
+     * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy
+     * key. OAuth token is not stored.
+     * </p>
+     * 
+     * @param oauthToken
+     *        OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only
+     *        deploy key. OAuth token is not stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withOauthToken(String oauthToken) {
+        setOauthToken(oauthToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
+     * read-only deploy key. Token is not stored.
+     * </p>
+     * 
+     * @param accessToken
+     *        Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
+     *        read-only deploy key. Token is not stored.
+     */
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    /**
+     * <p>
+     * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
+     * read-only deploy key. Token is not stored.
+     * </p>
+     * 
+     * @return Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
+     *         read-only deploy key. Token is not stored.
+     */
+
+    public String getAccessToken() {
+        return this.accessToken;
+    }
+
+    /**
+     * <p>
+     * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
+     * read-only deploy key. Token is not stored.
+     * </p>
+     * 
+     * @param accessToken
+     *        Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
+     *        read-only deploy key. Token is not stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withAccessToken(String accessToken) {
+        setAccessToken(accessToken);
         return this;
     }
 
@@ -848,7 +1000,13 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getAutoBranchCreationPatterns() != null)
             sb.append("AutoBranchCreationPatterns: ").append(getAutoBranchCreationPatterns()).append(",");
         if (getAutoBranchCreationConfig() != null)
-            sb.append("AutoBranchCreationConfig: ").append(getAutoBranchCreationConfig());
+            sb.append("AutoBranchCreationConfig: ").append(getAutoBranchCreationConfig()).append(",");
+        if (getRepository() != null)
+            sb.append("Repository: ").append(getRepository()).append(",");
+        if (getOauthToken() != null)
+            sb.append("OauthToken: ").append(getOauthToken()).append(",");
+        if (getAccessToken() != null)
+            sb.append("AccessToken: ").append(getAccessToken());
         sb.append("}");
         return sb.toString();
     }
@@ -919,6 +1077,18 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getAutoBranchCreationConfig() != null && other.getAutoBranchCreationConfig().equals(this.getAutoBranchCreationConfig()) == false)
             return false;
+        if (other.getRepository() == null ^ this.getRepository() == null)
+            return false;
+        if (other.getRepository() != null && other.getRepository().equals(this.getRepository()) == false)
+            return false;
+        if (other.getOauthToken() == null ^ this.getOauthToken() == null)
+            return false;
+        if (other.getOauthToken() != null && other.getOauthToken().equals(this.getOauthToken()) == false)
+            return false;
+        if (other.getAccessToken() == null ^ this.getAccessToken() == null)
+            return false;
+        if (other.getAccessToken() != null && other.getAccessToken().equals(this.getAccessToken()) == false)
+            return false;
         return true;
     }
 
@@ -941,6 +1111,9 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getEnableAutoBranchCreation() == null) ? 0 : getEnableAutoBranchCreation().hashCode());
         hashCode = prime * hashCode + ((getAutoBranchCreationPatterns() == null) ? 0 : getAutoBranchCreationPatterns().hashCode());
         hashCode = prime * hashCode + ((getAutoBranchCreationConfig() == null) ? 0 : getAutoBranchCreationConfig().hashCode());
+        hashCode = prime * hashCode + ((getRepository() == null) ? 0 : getRepository().hashCode());
+        hashCode = prime * hashCode + ((getOauthToken() == null) ? 0 : getOauthToken().hashCode());
+        hashCode = prime * hashCode + ((getAccessToken() == null) ? 0 : getAccessToken().hashCode());
         return hashCode;
     }
 
