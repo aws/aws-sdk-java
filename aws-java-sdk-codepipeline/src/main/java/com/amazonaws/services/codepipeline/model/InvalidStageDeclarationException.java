@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified stage declaration was specified in an invalid format.
+ * The stage declaration was specified in an invalid format.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

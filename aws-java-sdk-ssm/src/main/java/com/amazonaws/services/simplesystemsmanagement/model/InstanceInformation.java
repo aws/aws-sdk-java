@@ -54,9 +54,9 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     private String agentVersion;
     /**
      * <p>
-     * Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows Server
-     * use the EC2Config service to process SSM requests. For this reason, this field does not indicate whether or not
-     * the latest version is installed on Windows managed instances.
+     * Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field does not
+     * indicate whether or not the latest version is installed on Windows managed instances, because some older versions
+     * of Windows Server use the EC2Config service to process SSM requests.
      * </p>
      */
     private Boolean isLatestVersion;
@@ -341,15 +341,15 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows Server
-     * use the EC2Config service to process SSM requests. For this reason, this field does not indicate whether or not
-     * the latest version is installed on Windows managed instances.
+     * Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field does not
+     * indicate whether or not the latest version is installed on Windows managed instances, because some older versions
+     * of Windows Server use the EC2Config service to process SSM requests.
      * </p>
      * 
      * @param isLatestVersion
-     *        Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows
-     *        Server use the EC2Config service to process SSM requests. For this reason, this field does not indicate
-     *        whether or not the latest version is installed on Windows managed instances.
+     *        Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field
+     *        does not indicate whether or not the latest version is installed on Windows managed instances, because
+     *        some older versions of Windows Server use the EC2Config service to process SSM requests.
      */
 
     public void setIsLatestVersion(Boolean isLatestVersion) {
@@ -358,14 +358,14 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows Server
-     * use the EC2Config service to process SSM requests. For this reason, this field does not indicate whether or not
-     * the latest version is installed on Windows managed instances.
+     * Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field does not
+     * indicate whether or not the latest version is installed on Windows managed instances, because some older versions
+     * of Windows Server use the EC2Config service to process SSM requests.
      * </p>
      * 
-     * @return Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows
-     *         Server use the EC2Config service to process SSM requests. For this reason, this field does not indicate
-     *         whether or not the latest version is installed on Windows managed instances.
+     * @return Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field
+     *         does not indicate whether or not the latest version is installed on Windows managed instances, because
+     *         some older versions of Windows Server use the EC2Config service to process SSM requests.
      */
 
     public Boolean getIsLatestVersion() {
@@ -374,15 +374,15 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows Server
-     * use the EC2Config service to process SSM requests. For this reason, this field does not indicate whether or not
-     * the latest version is installed on Windows managed instances.
+     * Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field does not
+     * indicate whether or not the latest version is installed on Windows managed instances, because some older versions
+     * of Windows Server use the EC2Config service to process SSM requests.
      * </p>
      * 
      * @param isLatestVersion
-     *        Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows
-     *        Server use the EC2Config service to process SSM requests. For this reason, this field does not indicate
-     *        whether or not the latest version is installed on Windows managed instances.
+     *        Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field
+     *        does not indicate whether or not the latest version is installed on Windows managed instances, because
+     *        some older versions of Windows Server use the EC2Config service to process SSM requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,14 +393,14 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows Server
-     * use the EC2Config service to process SSM requests. For this reason, this field does not indicate whether or not
-     * the latest version is installed on Windows managed instances.
+     * Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field does not
+     * indicate whether or not the latest version is installed on Windows managed instances, because some older versions
+     * of Windows Server use the EC2Config service to process SSM requests.
      * </p>
      * 
-     * @return Indicates whether latest version of SSM Agent is running on your instance. Some older versions of Windows
-     *         Server use the EC2Config service to process SSM requests. For this reason, this field does not indicate
-     *         whether or not the latest version is installed on Windows managed instances.
+     * @return Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance. This field
+     *         does not indicate whether or not the latest version is installed on Windows managed instances, because
+     *         some older versions of Windows Server use the EC2Config service to process SSM requests.
      */
 
     public Boolean isLatestVersion() {

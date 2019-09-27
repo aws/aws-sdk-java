@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A response to a <code>PollForThirdPartyJobs </code>request returned by AWS CodePipeline when there is a job to be
- * worked upon by a partner action.
+ * A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be
+ * worked on by a partner action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJob" target="_top">AWS API

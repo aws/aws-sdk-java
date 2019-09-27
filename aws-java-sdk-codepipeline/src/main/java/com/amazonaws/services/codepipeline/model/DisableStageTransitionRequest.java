@@ -42,15 +42,15 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
     private String stageName;
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
-     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
-     * the actions in that stage (outbound).
+     * Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in
+     * that stage (inbound), or prevented from transitioning from the stage after they have been processed by the
+     * actions in that stage (outbound).
      * </p>
      */
     private String transitionType;
     /**
      * <p>
-     * The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests. This
+     * The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This
      * message is displayed in the pipeline console UI.
      * </p>
      */
@@ -138,13 +138,13 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
-     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
-     * the actions in that stage (outbound).
+     * Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in
+     * that stage (inbound), or prevented from transitioning from the stage after they have been processed by the
+     * actions in that stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     *        Specifies whether artifacts are prevented from transitioning into the stage and being processed by the
      *        actions in that stage (inbound), or prevented from transitioning from the stage after they have been
      *        processed by the actions in that stage (outbound).
      * @see StageTransitionType
@@ -156,13 +156,13 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
-     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
-     * the actions in that stage (outbound).
+     * Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in
+     * that stage (inbound), or prevented from transitioning from the stage after they have been processed by the
+     * actions in that stage (outbound).
      * </p>
      * 
-     * @return Specifies whether artifacts will be prevented from transitioning into the stage and being processed by
-     *         the actions in that stage (inbound), or prevented from transitioning from the stage after they have been
+     * @return Specifies whether artifacts are prevented from transitioning into the stage and being processed by the
+     *         actions in that stage (inbound), or prevented from transitioning from the stage after they have been
      *         processed by the actions in that stage (outbound).
      * @see StageTransitionType
      */
@@ -173,13 +173,13 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
-     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
-     * the actions in that stage (outbound).
+     * Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in
+     * that stage (inbound), or prevented from transitioning from the stage after they have been processed by the
+     * actions in that stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     *        Specifies whether artifacts are prevented from transitioning into the stage and being processed by the
      *        actions in that stage (inbound), or prevented from transitioning from the stage after they have been
      *        processed by the actions in that stage (outbound).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -193,13 +193,13 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
-     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
-     * the actions in that stage (outbound).
+     * Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in
+     * that stage (inbound), or prevented from transitioning from the stage after they have been processed by the
+     * actions in that stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     *        Specifies whether artifacts are prevented from transitioning into the stage and being processed by the
      *        actions in that stage (inbound), or prevented from transitioning from the stage after they have been
      *        processed by the actions in that stage (outbound).
      * @see StageTransitionType
@@ -211,13 +211,13 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
-     * actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by
-     * the actions in that stage (outbound).
+     * Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in
+     * that stage (inbound), or prevented from transitioning from the stage after they have been processed by the
+     * actions in that stage (outbound).
      * </p>
      * 
      * @param transitionType
-     *        Specifies whether artifacts will be prevented from transitioning into the stage and being processed by the
+     *        Specifies whether artifacts are prevented from transitioning into the stage and being processed by the
      *        actions in that stage (inbound), or prevented from transitioning from the stage after they have been
      *        processed by the actions in that stage (outbound).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -231,13 +231,13 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests. This
+     * The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This
      * message is displayed in the pipeline console UI.
      * </p>
      * 
      * @param reason
-     *        The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests.
-     *        This message is displayed in the pipeline console UI.
+     *        The reason given to the user that a stage is disabled, such as waiting for manual approval or manual
+     *        tests. This message is displayed in the pipeline console UI.
      */
 
     public void setReason(String reason) {
@@ -246,11 +246,11 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests. This
+     * The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This
      * message is displayed in the pipeline console UI.
      * </p>
      * 
-     * @return The reason given to the user why a stage is disabled, such as waiting for manual approval or manual
+     * @return The reason given to the user that a stage is disabled, such as waiting for manual approval or manual
      *         tests. This message is displayed in the pipeline console UI.
      */
 
@@ -260,13 +260,13 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests. This
+     * The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This
      * message is displayed in the pipeline console UI.
      * </p>
      * 
      * @param reason
-     *        The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests.
-     *        This message is displayed in the pipeline console UI.
+     *        The reason given to the user that a stage is disabled, such as waiting for manual approval or manual
+     *        tests. This message is displayed in the pipeline console UI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,6 +32,12 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private Long version;
+    /**
+     * <p>
+     * The tier assigned to the parameter.
+     * </p>
+     */
+    private String tier;
 
     /**
      * <p>
@@ -92,6 +98,65 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The tier assigned to the parameter.
+     * </p>
+     * 
+     * @param tier
+     *        The tier assigned to the parameter.
+     * @see ParameterTier
+     */
+
+    public void setTier(String tier) {
+        this.tier = tier;
+    }
+
+    /**
+     * <p>
+     * The tier assigned to the parameter.
+     * </p>
+     * 
+     * @return The tier assigned to the parameter.
+     * @see ParameterTier
+     */
+
+    public String getTier() {
+        return this.tier;
+    }
+
+    /**
+     * <p>
+     * The tier assigned to the parameter.
+     * </p>
+     * 
+     * @param tier
+     *        The tier assigned to the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ParameterTier
+     */
+
+    public PutParameterResult withTier(String tier) {
+        setTier(tier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tier assigned to the parameter.
+     * </p>
+     * 
+     * @param tier
+     *        The tier assigned to the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ParameterTier
+     */
+
+    public PutParameterResult withTier(ParameterTier tier) {
+        this.tier = tier.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -104,7 +169,9 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getTier() != null)
+            sb.append("Tier: ").append(getTier());
         sb.append("}");
         return sb.toString();
     }
@@ -123,6 +190,10 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getTier() == null ^ this.getTier() == null)
+            return false;
+        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false)
+            return false;
         return true;
     }
 
@@ -132,6 +203,7 @@ public class PutParameterResult extends com.amazonaws.AmazonWebServiceResult<com
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         return hashCode;
     }
 

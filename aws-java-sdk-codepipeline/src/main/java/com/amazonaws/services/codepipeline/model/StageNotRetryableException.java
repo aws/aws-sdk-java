@@ -16,9 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified stage can't be retried because the pipeline structure or stage state changed after the stage was not
- * completed; the stage contains no failed actions; one or more actions are still in progress; or another retry attempt
- * is already in progress.
+ * Unable to retry. The pipeline structure or stage state might have changed while actions awaited retry, or the stage
+ * contains no failed actions.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

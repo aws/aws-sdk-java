@@ -30,27 +30,27 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web
-     * Services (AWS) user account.
+     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user
+     * account.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The version number of the pipeline. If you do not specify a version, defaults to the most current version.
+     * The version number of the pipeline. If you do not specify a version, defaults to the current version.
      * </p>
      */
     private Integer version;
 
     /**
      * <p>
-     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web
-     * Services (AWS) user account.
+     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user
+     * account.
      * </p>
      * 
      * @param name
-     *        The name of the pipeline for which you want to get information. Pipeline names must be unique under an
-     *        Amazon Web Services (AWS) user account.
+     *        The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS
+     *        user account.
      */
 
     public void setName(String name) {
@@ -59,12 +59,12 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web
-     * Services (AWS) user account.
+     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user
+     * account.
      * </p>
      * 
      * @return The name of the pipeline for which you want to get information. Pipeline names must be unique under an
-     *         Amazon Web Services (AWS) user account.
+     *         AWS user account.
      */
 
     public String getName() {
@@ -73,13 +73,13 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an Amazon Web
-     * Services (AWS) user account.
+     * The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user
+     * account.
      * </p>
      * 
      * @param name
-     *        The name of the pipeline for which you want to get information. Pipeline names must be unique under an
-     *        Amazon Web Services (AWS) user account.
+     *        The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS
+     *        user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The version number of the pipeline. If you do not specify a version, defaults to the most current version.
+     * The version number of the pipeline. If you do not specify a version, defaults to the current version.
      * </p>
      * 
      * @param version
-     *        The version number of the pipeline. If you do not specify a version, defaults to the most current version.
+     *        The version number of the pipeline. If you do not specify a version, defaults to the current version.
      */
 
     public void setVersion(Integer version) {
@@ -103,11 +103,10 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The version number of the pipeline. If you do not specify a version, defaults to the most current version.
+     * The version number of the pipeline. If you do not specify a version, defaults to the current version.
      * </p>
      * 
-     * @return The version number of the pipeline. If you do not specify a version, defaults to the most current
-     *         version.
+     * @return The version number of the pipeline. If you do not specify a version, defaults to the current version.
      */
 
     public Integer getVersion() {
@@ -116,11 +115,11 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The version number of the pipeline. If you do not specify a version, defaults to the most current version.
+     * The version number of the pipeline. If you do not specify a version, defaults to the current version.
      * </p>
      * 
      * @param version
-     *        The version number of the pipeline. If you do not specify a version, defaults to the most current version.
+     *        The version number of the pipeline. If you do not specify a version, defaults to the current version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

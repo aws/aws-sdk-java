@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents information about an artifact that will be worked upon by actions in the pipeline.
+ * Represents information about an artifact that is worked on by actions in the pipeline.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/Artifact" target="_top">AWS API

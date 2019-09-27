@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag is a key/value pair that is used to manage the resource.
+ * A tag is a key-value pair that is used to manage the resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/Tag" target="_top">AWS API

@@ -39,15 +39,15 @@ public class ActionTypeSettings implements Serializable, Cloneable, StructuredPo
      * <p>
      * The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external
      * system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of
-     * the action display within the pipeline.
+     * the action display in the pipeline.
      * </p>
      */
     private String entityUrlTemplate;
     /**
      * <p>
      * The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the
-     * external system, such as console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS
-     * CodePipeline console and provides a link to the execution entity of the external action.
+     * external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the
+     * AWS CodePipeline console and provides a link to the execution entity of the external action.
      * </p>
      */
     private String executionUrlTemplate;
@@ -109,13 +109,13 @@ public class ActionTypeSettings implements Serializable, Cloneable, StructuredPo
      * <p>
      * The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external
      * system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of
-     * the action display within the pipeline.
+     * the action display in the pipeline.
      * </p>
      * 
      * @param entityUrlTemplate
      *        The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the
      *        external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is
-     *        provided as part of the action display within the pipeline.
+     *        provided as part of the action display in the pipeline.
      */
 
     public void setEntityUrlTemplate(String entityUrlTemplate) {
@@ -126,12 +126,12 @@ public class ActionTypeSettings implements Serializable, Cloneable, StructuredPo
      * <p>
      * The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external
      * system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of
-     * the action display within the pipeline.
+     * the action display in the pipeline.
      * </p>
      * 
      * @return The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the
      *         external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is
-     *         provided as part of the action display within the pipeline.
+     *         provided as part of the action display in the pipeline.
      */
 
     public String getEntityUrlTemplate() {
@@ -142,13 +142,13 @@ public class ActionTypeSettings implements Serializable, Cloneable, StructuredPo
      * <p>
      * The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external
      * system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of
-     * the action display within the pipeline.
+     * the action display in the pipeline.
      * </p>
      * 
      * @param entityUrlTemplate
      *        The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the
      *        external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is
-     *        provided as part of the action display within the pipeline.
+     *        provided as part of the action display in the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,14 +160,14 @@ public class ActionTypeSettings implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the
-     * external system, such as console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS
-     * CodePipeline console and provides a link to the execution entity of the external action.
+     * external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the
+     * AWS CodePipeline console and provides a link to the execution entity of the external action.
      * </p>
      * 
      * @param executionUrlTemplate
      *        The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for
-     *        the external system, such as console page for AWS CodeDeploy. This link is shown on the pipeline view page
-     *        in the AWS CodePipeline console and provides a link to the execution entity of the external action.
+     *        the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view
+     *        page in the AWS CodePipeline console and provides a link to the execution entity of the external action.
      */
 
     public void setExecutionUrlTemplate(String executionUrlTemplate) {
@@ -177,12 +177,12 @@ public class ActionTypeSettings implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the
-     * external system, such as console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS
-     * CodePipeline console and provides a link to the execution entity of the external action.
+     * external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the
+     * AWS CodePipeline console and provides a link to the execution entity of the external action.
      * </p>
      * 
      * @return The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for
-     *         the external system, such as console page for AWS CodeDeploy. This link is shown on the pipeline view
+     *         the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view
      *         page in the AWS CodePipeline console and provides a link to the execution entity of the external action.
      */
 
@@ -193,14 +193,14 @@ public class ActionTypeSettings implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the
-     * external system, such as console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS
-     * CodePipeline console and provides a link to the execution entity of the external action.
+     * external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the
+     * AWS CodePipeline console and provides a link to the execution entity of the external action.
      * </p>
      * 
      * @param executionUrlTemplate
      *        The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for
-     *        the external system, such as console page for AWS CodeDeploy. This link is shown on the pipeline view page
-     *        in the AWS CodePipeline console and provides a link to the execution entity of the external action.
+     *        the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view
+     *        page in the AWS CodePipeline console and provides a link to the execution entity of the external action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

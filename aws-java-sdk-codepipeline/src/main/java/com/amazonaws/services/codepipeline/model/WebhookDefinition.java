@@ -56,7 +56,7 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
     private java.util.List<WebhookFilterRule> filters;
     /**
      * <p>
-     * Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+     * Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
      * </p>
      * <ul>
      * <li>
@@ -68,13 +68,13 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted in the
+     * IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the
      * authentication configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     * UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      * </p>
      * </li>
      * </ul>
@@ -296,7 +296,7 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+     * Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
      * </p>
      * <ul>
      * <li>
@@ -308,19 +308,19 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted in the
+     * IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the
      * authentication configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     * UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param authentication
-     *        Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.</p>
+     *        Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -331,13 +331,13 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted
+     *        IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted
      *        in the authentication configuration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     *        UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      *        </p>
      *        </li>
      * @see WebhookAuthenticationType
@@ -349,7 +349,7 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+     * Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
      * </p>
      * <ul>
      * <li>
@@ -361,18 +361,18 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted in the
+     * IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the
      * authentication configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     * UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.</p>
+     * @return Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -383,13 +383,13 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted
+     *         IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted
      *         in the authentication configuration.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     *         UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      *         </p>
      *         </li>
      * @see WebhookAuthenticationType
@@ -401,7 +401,7 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+     * Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
      * </p>
      * <ul>
      * <li>
@@ -413,19 +413,19 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted in the
+     * IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the
      * authentication configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     * UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param authentication
-     *        Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.</p>
+     *        Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -436,13 +436,13 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted
+     *        IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted
      *        in the authentication configuration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     *        UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -456,7 +456,7 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.
+     * Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.
      * </p>
      * <ul>
      * <li>
@@ -468,19 +468,19 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted in the
+     * IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the
      * authentication configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     * UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param authentication
-     *        Supported options are GITHUB_HMAC, IP and UNAUTHENTICATED.</p>
+     *        Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -491,13 +491,13 @@ public class WebhookDefinition implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        IP will reject webhooks trigger requests unless they originate from an IP within the IP range whitelisted
+     *        IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted
      *        in the authentication configuration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNAUTHENTICATED will accept all webhook trigger requests regardless of origin.
+     *        UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

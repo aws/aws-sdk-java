@@ -36,12 +36,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS
- * CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information,
- * see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
- * Guide</a>.
+ * CodePipeline. Some functionality for your pipeline can only be configured through the API. For more information, see
+ * the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide</a>.
  * </p>
  * <p>
- * You can use the AWS CodePipeline API to work with pipelines, stages, actions, and transitions, as described below.
+ * You can use the AWS CodePipeline API to work with pipelines, stages, actions, and transitions.
  * </p>
  * <p>
  * <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of stages,
@@ -53,7 +52,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreatePipeline</a>, which creates a uniquely-named pipeline.
+ * <a>CreatePipeline</a>, which creates a uniquely named pipeline.
  * </p>
  * </li>
  * <li>
@@ -80,7 +79,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a>ListActionExecutions</a>, which returns action-level details for past executions. The details include full stage
- * and action-level details, including individual action duration, status, any errors which occurred during the
+ * and action-level details, including individual action duration, status, any errors that occurred during the
  * execution, and input and output artifact location details.
  * </p>
  * </li>
@@ -96,7 +95,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact through the pipeline.
+ * <a>StartPipelineExecution</a>, which runs the most recent revision of an artifact through the pipeline.
  * </p>
  * </li>
  * <li>
@@ -107,21 +106,20 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </ul>
  * <p>
  * Pipelines include <i>stages</i>. Each stage contains one or more actions that must complete before the next stage
- * begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will
- * remain stopped until either a new version of an artifact appears in the source location, or a user takes action to
- * re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status
- * of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire
- * structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages
- * and actions, also refer to the <a
- * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
+ * begins. A stage results in success or failure. If a stage fails, the pipeline stops at that stage and remains stopped
+ * until either a new version of an artifact appears in the source location, or a user takes action to rerun the most
+ * recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status of a pipeline,
+ * including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire structure of the
+ * pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, see
+ * <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>
  * <p>
- * Pipeline stages include <i>actions</i>, which are categorized into categories such as source or build actions
- * performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline
- * from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define
- * and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and
- * <a>GetPipelineState</a>. Valid action categories are:
+ * Pipeline stages include <i>actions</i> that are categorized into categories such as source or build actions performed
+ * in a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source
+ * such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact
+ * with actions when working with pipeline operations such as <a>CreatePipeline</a> and <a>GetPipelineState</a>. Valid
+ * action categories are:
  * </p>
  * <ul>
  * <li>
@@ -179,8 +177,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * For third-party integrators or developers who want to create their own integrations with AWS CodePipeline, the
- * expected sequence varies from the standard API user. In order to integrate with AWS CodePipeline, developers will
- * need to work with the following items:
+ * expected sequence varies from the standard API user. To integrate with AWS CodePipeline, developers need to work with
+ * the following items:
  * </p>
  * <p>
  * <b>Jobs</b>, which are instances of an action. For example, a job for a source action might import a revision of an
@@ -192,22 +190,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job,
+ * <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetJobDetails</a>, which returns the details of a job,
+ * <a>GetJobDetails</a>, which returns the details of a job.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PollForJobs</a>, which determines whether there are any jobs to act upon,
+ * <a>PollForJobs</a>, which determines whether there are any jobs to act on.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PutJobFailureResult</a>, which provides details of a job failure, and
+ * <a>PutJobFailureResult</a>, which provides details of a job failure.
  * </p>
  * </li>
  * <li>
@@ -226,22 +224,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job,
+ * <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner action,
+ * <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner action.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act upon,
+ * <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act on.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and
+ * <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure.
  * </p>
  * </li>
  * <li>

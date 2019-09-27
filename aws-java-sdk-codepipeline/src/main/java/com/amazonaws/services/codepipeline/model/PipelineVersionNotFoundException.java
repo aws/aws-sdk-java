@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified pipeline version was specified in an invalid format or cannot be found.
+ * The pipeline version was specified in an invalid format or cannot be found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

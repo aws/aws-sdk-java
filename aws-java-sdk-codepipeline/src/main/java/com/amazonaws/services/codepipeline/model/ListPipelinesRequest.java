@@ -30,21 +30,21 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An identifier that was returned from the previous list pipelines call, which can be used to return the next set
-     * of pipelines in the list.
+     * An identifier that was returned from the previous list pipelines call. It can be used to return the next set of
+     * pipelines in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An identifier that was returned from the previous list pipelines call, which can be used to return the next set
-     * of pipelines in the list.
+     * An identifier that was returned from the previous list pipelines call. It can be used to return the next set of
+     * pipelines in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list pipelines call, which can be used to return the
-     *        next set of pipelines in the list.
+     *        An identifier that was returned from the previous list pipelines call. It can be used to return the next
+     *        set of pipelines in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -53,12 +53,12 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An identifier that was returned from the previous list pipelines call, which can be used to return the next set
-     * of pipelines in the list.
+     * An identifier that was returned from the previous list pipelines call. It can be used to return the next set of
+     * pipelines in the list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous list pipelines call, which can be used to return the
-     *         next set of pipelines in the list.
+     * @return An identifier that was returned from the previous list pipelines call. It can be used to return the next
+     *         set of pipelines in the list.
      */
 
     public String getNextToken() {
@@ -67,13 +67,13 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An identifier that was returned from the previous list pipelines call, which can be used to return the next set
-     * of pipelines in the list.
+     * An identifier that was returned from the previous list pipelines call. It can be used to return the next set of
+     * pipelines in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list pipelines call, which can be used to return the
-     *        next set of pipelines in the list.
+     *        An identifier that was returned from the previous list pipelines call. It can be used to return the next
+     *        set of pipelines in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

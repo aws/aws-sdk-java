@@ -32,8 +32,8 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * If the amount of returned information is significantly large, an identifier is also returned and can be used in a
-     * subsequent API call to return the next page of the list. However, the ListTagsforResource call lists all
-     * available tags in one call and does not use pagination.
+     * subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in
+     * one call and does not use pagination.
      * </p>
      */
     private String nextToken;
@@ -111,14 +111,14 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * If the amount of returned information is significantly large, an identifier is also returned and can be used in a
-     * subsequent API call to return the next page of the list. However, the ListTagsforResource call lists all
-     * available tags in one call and does not use pagination.
+     * subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in
+     * one call and does not use pagination.
      * </p>
      * 
      * @param nextToken
      *        If the amount of returned information is significantly large, an identifier is also returned and can be
-     *        used in a subsequent API call to return the next page of the list. However, the ListTagsforResource call
-     *        lists all available tags in one call and does not use pagination.
+     *        used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all
+     *        available tags in one call and does not use pagination.
      */
 
     public void setNextToken(String nextToken) {
@@ -128,13 +128,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * If the amount of returned information is significantly large, an identifier is also returned and can be used in a
-     * subsequent API call to return the next page of the list. However, the ListTagsforResource call lists all
-     * available tags in one call and does not use pagination.
+     * subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in
+     * one call and does not use pagination.
      * </p>
      * 
      * @return If the amount of returned information is significantly large, an identifier is also returned and can be
-     *         used in a subsequent API call to return the next page of the list. However, the ListTagsforResource call
-     *         lists all available tags in one call and does not use pagination.
+     *         used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all
+     *         available tags in one call and does not use pagination.
      */
 
     public String getNextToken() {
@@ -144,14 +144,14 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * If the amount of returned information is significantly large, an identifier is also returned and can be used in a
-     * subsequent API call to return the next page of the list. However, the ListTagsforResource call lists all
-     * available tags in one call and does not use pagination.
+     * subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in
+     * one call and does not use pagination.
      * </p>
      * 
      * @param nextToken
      *        If the amount of returned information is significantly large, an identifier is also returned and can be
-     *        used in a subsequent API call to return the next page of the list. However, the ListTagsforResource call
-     *        lists all available tags in one call and does not use pagination.
+     *        used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all
+     *        available tags in one call and does not use pagination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

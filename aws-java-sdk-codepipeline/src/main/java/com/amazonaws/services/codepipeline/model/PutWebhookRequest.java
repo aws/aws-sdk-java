@@ -28,8 +28,8 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the
-     * action name. Give the webhook a unique name which identifies the webhook being defined. You may choose to name
-     * the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.
+     * action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the
+     * pipeline and action it targets so that you can easily recognize what it's used for later.
      * </p>
      */
     private WebhookDefinition webhook;
@@ -43,15 +43,14 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the
-     * action name. Give the webhook a unique name which identifies the webhook being defined. You may choose to name
-     * the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.
+     * action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the
+     * pipeline and action it targets so that you can easily recognize what it's used for later.
      * </p>
      * 
      * @param webhook
      *        The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name,
-     *        and the action name. Give the webhook a unique name which identifies the webhook being defined. You may
-     *        choose to name the webhook after the pipeline and action it targets so that you can easily recognize what
-     *        it's used for later.
+     *        and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook
+     *        after the pipeline and action it targets so that you can easily recognize what it's used for later.
      */
 
     public void setWebhook(WebhookDefinition webhook) {
@@ -61,14 +60,14 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the
-     * action name. Give the webhook a unique name which identifies the webhook being defined. You may choose to name
-     * the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.
+     * action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the
+     * pipeline and action it targets so that you can easily recognize what it's used for later.
      * </p>
      * 
      * @return The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name,
-     *         and the action name. Give the webhook a unique name which identifies the webhook being defined. You may
-     *         choose to name the webhook after the pipeline and action it targets so that you can easily recognize what
-     *         it's used for later.
+     *         and the action name. Give the webhook a unique name that helps you identify it. You might name the
+     *         webhook after the pipeline and action it targets so that you can easily recognize what it's used for
+     *         later.
      */
 
     public WebhookDefinition getWebhook() {
@@ -78,15 +77,14 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the
-     * action name. Give the webhook a unique name which identifies the webhook being defined. You may choose to name
-     * the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.
+     * action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the
+     * pipeline and action it targets so that you can easily recognize what it's used for later.
      * </p>
      * 
      * @param webhook
      *        The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name,
-     *        and the action name. Give the webhook a unique name which identifies the webhook being defined. You may
-     *        choose to name the webhook after the pipeline and action it targets so that you can easily recognize what
-     *        it's used for later.
+     *        and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook
+     *        after the pipeline and action it targets so that you can easily recognize what it's used for later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

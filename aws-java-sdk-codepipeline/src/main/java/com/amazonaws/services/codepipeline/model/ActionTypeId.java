@@ -31,7 +31,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     * action. Valid categories are limited to one of the values below.
+     * action. Valid categories are limited to one of the following values.
      * </p>
      */
     private String category;
@@ -45,7 +45,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * specified as CodeDeploy. For more information, see <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
      * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
@@ -61,12 +61,12 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     * action. Valid categories are limited to one of the values below.
+     * action. Valid categories are limited to one of the following values.
      * </p>
      * 
      * @param category
      *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     *        action. Valid categories are limited to one of the values below.
+     *        action. Valid categories are limited to one of the following values.
      * @see ActionCategory
      */
 
@@ -77,11 +77,11 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     * action. Valid categories are limited to one of the values below.
+     * action. Valid categories are limited to one of the following values.
      * </p>
      * 
      * @return A category defines what kind of action can be taken in the stage, and constrains the provider type for
-     *         the action. Valid categories are limited to one of the values below.
+     *         the action. Valid categories are limited to one of the following values.
      * @see ActionCategory
      */
 
@@ -92,12 +92,12 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     * action. Valid categories are limited to one of the values below.
+     * action. Valid categories are limited to one of the following values.
      * </p>
      * 
      * @param category
      *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     *        action. Valid categories are limited to one of the values below.
+     *        action. Valid categories are limited to one of the following values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
@@ -110,12 +110,12 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     * action. Valid categories are limited to one of the values below.
+     * action. Valid categories are limited to one of the following values.
      * </p>
      * 
      * @param category
      *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     *        action. Valid categories are limited to one of the values below.
+     *        action. Valid categories are limited to one of the following values.
      * @see ActionCategory
      */
 
@@ -126,12 +126,12 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     * action. Valid categories are limited to one of the values below.
+     * action. Valid categories are limited to one of the following values.
      * </p>
      * 
      * @param category
      *        A category defines what kind of action can be taken in the stage, and constrains the provider type for the
-     *        action. Valid categories are limited to one of the values below.
+     *        action. Valid categories are limited to one of the following values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
@@ -218,7 +218,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * specified as CodeDeploy. For more information, see <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
      * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
@@ -226,8 +226,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * @param provider
      *        The provider of the service being called by the action. Valid providers are determined by the action
      *        category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *        which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
-     *        href=
+     *        which would be specified as CodeDeploy. For more information, see <a href=
      *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
      *        >Valid Action Types and Providers in CodePipeline</a>.
      */
@@ -240,15 +239,14 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * specified as CodeDeploy. For more information, see <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
      * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @return The provider of the service being called by the action. Valid providers are determined by the action
      *         category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *         which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
-     *         href=
+     *         which would be specified as CodeDeploy. For more information, see <a href=
      *         "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
      *         >Valid Action Types and Providers in CodePipeline</a>.
      */
@@ -261,7 +259,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * specified as CodeDeploy. For more information, see <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
      * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
@@ -269,8 +267,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * @param provider
      *        The provider of the service being called by the action. Valid providers are determined by the action
      *        category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *        which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
-     *        href=
+     *        which would be specified as CodeDeploy. For more information, see <a href=
      *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
      *        >Valid Action Types and Providers in CodePipeline</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -266,7 +266,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
-     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String tier;
@@ -1518,7 +1518,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
-     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param tier
@@ -1605,7 +1605,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information about configuring the default tier option, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *        Default Parameter Tier</a> in the AWS Systems Manager User Guide.
+     *        Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see ParameterTier
      */
 
@@ -1698,7 +1698,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
-     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The parameter tier to assign to a parameter.</p>
@@ -1784,7 +1784,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For more information about configuring the default tier option, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *         Default Parameter Tier</a> in the AWS Systems Manager User Guide.
+     *         Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see ParameterTier
      */
 
@@ -1877,7 +1877,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
-     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param tier
@@ -1964,7 +1964,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information about configuring the default tier option, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *        Default Parameter Tier</a> in the AWS Systems Manager User Guide.
+     *        Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterTier
      */
@@ -2059,7 +2059,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
-     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param tier
@@ -2146,7 +2146,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information about configuring the default tier option, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *        Default Parameter Tier</a> in the AWS Systems Manager User Guide.
+     *        Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see ParameterTier
      */
 
@@ -2239,7 +2239,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
-     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param tier
@@ -2326,7 +2326,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information about configuring the default tier option, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *        Default Parameter Tier</a> in the AWS Systems Manager User Guide.
+     *        Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterTier
      */

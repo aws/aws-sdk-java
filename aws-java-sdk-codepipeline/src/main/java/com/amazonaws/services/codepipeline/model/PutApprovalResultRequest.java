@@ -55,7 +55,7 @@ public class PutApprovalResultRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The system-generated token used to identify a unique approval request. The token for each open approval request
-     * can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request
+     * can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval request
      * corresponding to this token is still valid.
      * </p>
      */
@@ -224,13 +224,13 @@ public class PutApprovalResultRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The system-generated token used to identify a unique approval request. The token for each open approval request
-     * can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request
+     * can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval request
      * corresponding to this token is still valid.
      * </p>
      * 
      * @param token
      *        The system-generated token used to identify a unique approval request. The token for each open approval
-     *        request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval
+     *        request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
      *        request corresponding to this token is still valid.
      */
 
@@ -241,12 +241,12 @@ public class PutApprovalResultRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The system-generated token used to identify a unique approval request. The token for each open approval request
-     * can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request
+     * can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval request
      * corresponding to this token is still valid.
      * </p>
      * 
      * @return The system-generated token used to identify a unique approval request. The token for each open approval
-     *         request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the
+     *         request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the
      *         approval request corresponding to this token is still valid.
      */
 
@@ -257,13 +257,13 @@ public class PutApprovalResultRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The system-generated token used to identify a unique approval request. The token for each open approval request
-     * can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request
+     * can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval request
      * corresponding to this token is still valid.
      * </p>
      * 
      * @param token
      *        The system-generated token used to identify a unique approval request. The token for each open approval
-     *        request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval
+     *        request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
      *        request corresponding to this token is still valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

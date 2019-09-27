@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The next token was specified in an invalid format. Make sure that the next token you provided is the token returned
- * by a previous call.
+ * The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by
+ * a previous call.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

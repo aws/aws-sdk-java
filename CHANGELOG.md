@@ -1,3 +1,12 @@
+# __1.11.640__ __2019-09-26__
+## __AWS CodePipeline__
+  - ### Features
+    - Documentation updates for CodePipeline
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release updates the AWS Systems Manager Parameter Store PutParameter and LabelParameterVersion APIs to return the "Tier" of parameter created/updated and the "parameter version" labeled respectively. 
+
 # __1.11.639__ __2019-09-25__
 ## __AWS Database Migration Service__
   - ### Features

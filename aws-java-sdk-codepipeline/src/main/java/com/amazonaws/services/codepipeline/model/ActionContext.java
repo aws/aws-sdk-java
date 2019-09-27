@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the context of an action within the stage of a pipeline to a job worker.
+ * Represents the context of an action in the stage of a pipeline to a job worker.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionContext" target="_top">AWS API
@@ -30,7 +30,7 @@ public class ActionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the action within the context of a job.
+     * The name of the action in the context of a job.
      * </p>
      */
     private String name;
@@ -43,11 +43,11 @@ public class ActionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the action within the context of a job.
+     * The name of the action in the context of a job.
      * </p>
      * 
      * @param name
-     *        The name of the action within the context of a job.
+     *        The name of the action in the context of a job.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class ActionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the action within the context of a job.
+     * The name of the action in the context of a job.
      * </p>
      * 
-     * @return The name of the action within the context of a job.
+     * @return The name of the action in the context of a job.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class ActionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the action within the context of a job.
+     * The name of the action in the context of a job.
      * </p>
      * 
      * @param name
-     *        The name of the action within the context of a job.
+     *        The name of the action in the context of a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

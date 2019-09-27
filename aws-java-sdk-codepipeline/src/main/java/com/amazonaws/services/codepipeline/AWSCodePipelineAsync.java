@@ -31,12 +31,11 @@ import com.amazonaws.services.codepipeline.model.*;
  * </p>
  * <p>
  * This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS
- * CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information,
- * see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
- * Guide</a>.
+ * CodePipeline. Some functionality for your pipeline can only be configured through the API. For more information, see
+ * the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide</a>.
  * </p>
  * <p>
- * You can use the AWS CodePipeline API to work with pipelines, stages, actions, and transitions, as described below.
+ * You can use the AWS CodePipeline API to work with pipelines, stages, actions, and transitions.
  * </p>
  * <p>
  * <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of stages,
@@ -48,7 +47,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreatePipeline</a>, which creates a uniquely-named pipeline.
+ * <a>CreatePipeline</a>, which creates a uniquely named pipeline.
  * </p>
  * </li>
  * <li>
@@ -75,7 +74,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * <li>
  * <p>
  * <a>ListActionExecutions</a>, which returns action-level details for past executions. The details include full stage
- * and action-level details, including individual action duration, status, any errors which occurred during the
+ * and action-level details, including individual action duration, status, any errors that occurred during the
  * execution, and input and output artifact location details.
  * </p>
  * </li>
@@ -91,7 +90,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * <li>
  * <p>
- * <a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact through the pipeline.
+ * <a>StartPipelineExecution</a>, which runs the most recent revision of an artifact through the pipeline.
  * </p>
  * </li>
  * <li>
@@ -102,21 +101,20 @@ import com.amazonaws.services.codepipeline.model.*;
  * </ul>
  * <p>
  * Pipelines include <i>stages</i>. Each stage contains one or more actions that must complete before the next stage
- * begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will
- * remain stopped until either a new version of an artifact appears in the source location, or a user takes action to
- * re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status
- * of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire
- * structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages
- * and actions, also refer to the <a
- * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
+ * begins. A stage results in success or failure. If a stage fails, the pipeline stops at that stage and remains stopped
+ * until either a new version of an artifact appears in the source location, or a user takes action to rerun the most
+ * recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status of a pipeline,
+ * including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire structure of the
+ * pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, see
+ * <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>
  * <p>
- * Pipeline stages include <i>actions</i>, which are categorized into categories such as source or build actions
- * performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline
- * from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define
- * and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and
- * <a>GetPipelineState</a>. Valid action categories are:
+ * Pipeline stages include <i>actions</i> that are categorized into categories such as source or build actions performed
+ * in a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source
+ * such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact
+ * with actions when working with pipeline operations such as <a>CreatePipeline</a> and <a>GetPipelineState</a>. Valid
+ * action categories are:
  * </p>
  * <ul>
  * <li>
@@ -174,8 +172,8 @@ import com.amazonaws.services.codepipeline.model.*;
  * </p>
  * <p>
  * For third-party integrators or developers who want to create their own integrations with AWS CodePipeline, the
- * expected sequence varies from the standard API user. In order to integrate with AWS CodePipeline, developers will
- * need to work with the following items:
+ * expected sequence varies from the standard API user. To integrate with AWS CodePipeline, developers need to work with
+ * the following items:
  * </p>
  * <p>
  * <b>Jobs</b>, which are instances of an action. For example, a job for a source action might import a revision of an
@@ -187,22 +185,22 @@ import com.amazonaws.services.codepipeline.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job,
+ * <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetJobDetails</a>, which returns the details of a job,
+ * <a>GetJobDetails</a>, which returns the details of a job.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PollForJobs</a>, which determines whether there are any jobs to act upon,
+ * <a>PollForJobs</a>, which determines whether there are any jobs to act on.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PutJobFailureResult</a>, which provides details of a job failure, and
+ * <a>PutJobFailureResult</a>, which provides details of a job failure.
  * </p>
  * </li>
  * <li>
@@ -221,22 +219,22 @@ import com.amazonaws.services.codepipeline.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job,
+ * <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner action,
+ * <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner action.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act upon,
+ * <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act on.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and
+ * <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure.
  * </p>
  * </li>
  * <li>
@@ -251,8 +249,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about a specified job and whether that job has been received by the job worker. Only used for
-     * custom actions.
+     * Returns information about a specified job and whether that job has been received by the job worker. Used for
+     * custom actions only.
      * </p>
      * 
      * @param acknowledgeJobRequest
@@ -266,8 +264,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about a specified job and whether that job has been received by the job worker. Only used for
-     * custom actions.
+     * Returns information about a specified job and whether that job has been received by the job worker. Used for
+     * custom actions only.
      * </p>
      * 
      * @param acknowledgeJobRequest
@@ -286,7 +284,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Confirms a job worker has received the specified job. Only used for partner actions.
+     * Confirms a job worker has received the specified job. Used for partner actions only.
      * </p>
      * 
      * @param acknowledgeThirdPartyJobRequest
@@ -300,7 +298,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Confirms a job worker has received the specified job. Only used for partner actions.
+     * Confirms a job worker has received the specified job. Used for partner actions only.
      * </p>
      * 
      * @param acknowledgeThirdPartyJobRequest
@@ -401,8 +399,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will fail after the action is
-     * marked for deletion. Only used for custom actions.
+     * Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails after the action is marked
+     * for deletion. Used for custom actions only.
      * </p>
      * <important>
      * <p>
@@ -425,8 +423,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will fail after the action is
-     * marked for deletion. Only used for custom actions.
+     * Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails after the action is marked
+     * for deletion. Used for custom actions only.
      * </p>
      * <important>
      * <p>
@@ -488,9 +486,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline from starting a
-     * pipeline every time an external event occurs. The API will return successfully when trying to delete a webhook
-     * that is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will
-     * have a different URL.
+     * pipeline every time an external event occurs. The API returns successfully when trying to delete a webhook that
+     * is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will have a
+     * different URL.
      * </p>
      * 
      * @param deleteWebhookRequest
@@ -504,9 +502,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline from starting a
-     * pipeline every time an external event occurs. The API will return successfully when trying to delete a webhook
-     * that is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will
-     * have a different URL.
+     * pipeline every time an external event occurs. The API returns successfully when trying to delete a webhook that
+     * is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will have a
+     * different URL.
      * </p>
      * 
      * @param deleteWebhookRequest
@@ -525,7 +523,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Removes the connection between the webhook that was created by CodePipeline and the external tool with events to
-     * be detected. Currently only supported for webhooks that target an action type of GitHub.
+     * be detected. Currently supported only for webhooks that target an action type of GitHub.
      * </p>
      * 
      * @param deregisterWebhookWithThirdPartyRequest
@@ -541,7 +539,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Removes the connection between the webhook that was created by CodePipeline and the external tool with events to
-     * be detected. Currently only supported for webhooks that target an action type of GitHub.
+     * be detected. Currently supported only for webhooks that target an action type of GitHub.
      * </p>
      * 
      * @param deregisterWebhookWithThirdPartyRequest
@@ -627,13 +625,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about a job. Only used for custom actions.
+     * Returns information about a job. Used for custom actions only.
      * </p>
      * <important>
      * <p>
      * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
      * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * Additionally, this API returns any secret values defined for the action.
+     * This API also returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -648,13 +646,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about a job. Only used for custom actions.
+     * Returns information about a job. Used for custom actions only.
      * </p>
      * <important>
      * <p>
      * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
      * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * Additionally, this API returns any secret values defined for the action.
+     * This API also returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -791,13 +789,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Requests the details of a job for a third party action. Only used for partner actions.
+     * Requests the details of a job for a third party action. Used for partner actions only.
      * </p>
      * <important>
      * <p>
      * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
      * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * Additionally, this API returns any secret values defined for the action.
+     * This API also returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -812,13 +810,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Requests the details of a job for a third party action. Only used for partner actions.
+     * Requests the details of a job for a third party action. Used for partner actions only.
      * </p>
      * <important>
      * <p>
      * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
      * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * Additionally, this API returns any secret values defined for the action.
+     * This API also returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -968,7 +966,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Gets the set of key/value pairs (metadata) that are used to manage the resource.
+     * Gets the set of key-value pairs (metadata) that are used to manage the resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -981,7 +979,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Gets the set of key/value pairs (metadata) that are used to manage the resource.
+     * Gets the set of key-value pairs (metadata) that are used to manage the resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -999,8 +997,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Gets a listing of all the webhooks in this region for this account. The output lists all webhooks and includes
-     * the webhook URL and ARN, as well the configuration for each webhook.
+     * Gets a listing of all the webhooks in this AWS Region for this account. The output lists all webhooks and
+     * includes the webhook URL and ARN and the configuration for each webhook.
      * </p>
      * 
      * @param listWebhooksRequest
@@ -1013,8 +1011,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Gets a listing of all the webhooks in this region for this account. The output lists all webhooks and includes
-     * the webhook URL and ARN, as well the configuration for each webhook.
+     * Gets a listing of all the webhooks in this AWS Region for this account. The output lists all webhooks and
+     * includes the webhook URL and ARN and the configuration for each webhook.
      * </p>
      * 
      * @param listWebhooksRequest
@@ -1032,7 +1030,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code> is only valid for
+     * Returns information about any jobs for AWS CodePipeline to act on. <code>PollForJobs</code> is valid only for
      * action types with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner
      * field, the <code>PollForJobs</code> action returns an error.
      * </p>
@@ -1040,7 +1038,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * <p>
      * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
      * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * Additionally, this API returns any secret values defined for the action.
+     * This API also returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -1055,7 +1053,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code> is only valid for
+     * Returns information about any jobs for AWS CodePipeline to act on. <code>PollForJobs</code> is valid only for
      * action types with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner
      * field, the <code>PollForJobs</code> action returns an error.
      * </p>
@@ -1063,7 +1061,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * <p>
      * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
      * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * Additionally, this API returns any secret values defined for the action.
+     * This API also returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -1083,7 +1081,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Determines whether there are any third party jobs for a job worker to act on. Only used for partner actions.
+     * Determines whether there are any third party jobs for a job worker to act on. Used for partner actions only.
      * </p>
      * <important>
      * <p>
@@ -1103,7 +1101,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Determines whether there are any third party jobs for a job worker to act on. Only used for partner actions.
+     * Determines whether there are any third party jobs for a job worker to act on. Used for partner actions only.
      * </p>
      * <important>
      * <p>
@@ -1196,7 +1194,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Represents the failure of a job as returned to the pipeline by a job worker. Only used for custom actions.
+     * Represents the failure of a job as returned to the pipeline by a job worker. Used for custom actions only.
      * </p>
      * 
      * @param putJobFailureResultRequest
@@ -1210,7 +1208,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Represents the failure of a job as returned to the pipeline by a job worker. Only used for custom actions.
+     * Represents the failure of a job as returned to the pipeline by a job worker. Used for custom actions only.
      * </p>
      * 
      * @param putJobFailureResultRequest
@@ -1229,7 +1227,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Represents the success of a job as returned to the pipeline by a job worker. Only used for custom actions.
+     * Represents the success of a job as returned to the pipeline by a job worker. Used for custom actions only.
      * </p>
      * 
      * @param putJobSuccessResultRequest
@@ -1243,7 +1241,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Represents the success of a job as returned to the pipeline by a job worker. Only used for custom actions.
+     * Represents the success of a job as returned to the pipeline by a job worker. Used for custom actions only.
      * </p>
      * 
      * @param putJobSuccessResultRequest
@@ -1262,8 +1260,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Represents the failure of a third party job as returned to the pipeline by a job worker. Only used for partner
-     * actions.
+     * Represents the failure of a third party job as returned to the pipeline by a job worker. Used for partner actions
+     * only.
      * </p>
      * 
      * @param putThirdPartyJobFailureResultRequest
@@ -1279,8 +1277,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Represents the failure of a third party job as returned to the pipeline by a job worker. Only used for partner
-     * actions.
+     * Represents the failure of a third party job as returned to the pipeline by a job worker. Used for partner actions
+     * only.
      * </p>
      * 
      * @param putThirdPartyJobFailureResultRequest
@@ -1301,8 +1299,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Represents the success of a third party job as returned to the pipeline by a job worker. Only used for partner
-     * actions.
+     * Represents the success of a third party job as returned to the pipeline by a job worker. Used for partner actions
+     * only.
      * </p>
      * 
      * @param putThirdPartyJobSuccessResultRequest
@@ -1318,8 +1316,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Represents the success of a third party job as returned to the pipeline by a job worker. Only used for partner
-     * actions.
+     * Represents the success of a third party job as returned to the pipeline by a job worker. Used for partner actions
+     * only.
      * </p>
      * 
      * @param putThirdPartyJobSuccessResultRequest
@@ -1416,7 +1414,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Resumes the pipeline execution by retrying the last failed actions in a stage.
+     * Resumes the pipeline execution by retrying the last failed actions in a stage. You can retry a stage immediately
+     * if any of the actions in the stage fail. When you retry, all actions that are still in progress continue working,
+     * and failed actions are triggered again.
      * </p>
      * 
      * @param retryStageExecutionRequest
@@ -1430,7 +1430,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Resumes the pipeline execution by retrying the last failed actions in a stage.
+     * Resumes the pipeline execution by retrying the last failed actions in a stage. You can retry a stage immediately
+     * if any of the actions in the stage fail. When you retry, all actions that are still in progress continue working,
+     * and failed actions are triggered again.
      * </p>
      * 
      * @param retryStageExecutionRequest
@@ -1547,8 +1549,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure
-     * in conjunction with <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the
-     * pipeline increases the version number of the pipeline by 1.
+     * and <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the pipeline increases
+     * the version number of the pipeline by 1.
      * </p>
      * 
      * @param updatePipelineRequest
@@ -1563,8 +1565,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure
-     * in conjunction with <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the
-     * pipeline increases the version number of the pipeline by 1.
+     * and <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the pipeline increases
+     * the version number of the pipeline by 1.
      * </p>
      * 
      * @param updatePipelineRequest

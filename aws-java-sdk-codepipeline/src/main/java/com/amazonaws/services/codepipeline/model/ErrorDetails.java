@@ -30,7 +30,7 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The system ID or error number code of the error.
+     * The system ID or number code of the error.
      * </p>
      */
     private String code;
@@ -43,11 +43,11 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The system ID or error number code of the error.
+     * The system ID or number code of the error.
      * </p>
      * 
      * @param code
-     *        The system ID or error number code of the error.
+     *        The system ID or number code of the error.
      */
 
     public void setCode(String code) {
@@ -56,10 +56,10 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The system ID or error number code of the error.
+     * The system ID or number code of the error.
      * </p>
      * 
-     * @return The system ID or error number code of the error.
+     * @return The system ID or number code of the error.
      */
 
     public String getCode() {
@@ -68,11 +68,11 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The system ID or error number code of the error.
+     * The system ID or number code of the error.
      * </p>
      * 
      * @param code
-     *        The system ID or error number code of the error.
+     *        The system ID or number code of the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

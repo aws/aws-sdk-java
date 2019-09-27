@@ -14,6 +14,7 @@
  */
 package com.amazonaws.test;
 
+import com.amazonaws.test.retry.RetryRule;
 import java.io.InputStream;
 
 import org.junit.BeforeClass;
@@ -25,6 +26,7 @@ import com.amazonaws.auth.PropertiesFileCredentialsProvider;
 import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.util.IOUtils;
+import org.junit.Rule;
 
 public abstract class AWSIntegrationTestBase {
 
@@ -44,6 +46,9 @@ public abstract class AWSIntegrationTestBase {
             new ProfileCredentialsProvider(TEST_CREDENTIALS_PROFILE_NAME), new EnvironmentVariableCredentialsProvider(),
             new SystemPropertiesCredentialsProvider());
 
+    @Rule
+    public RetryRule retry = new RetryRule(3);
+
     /**
      * Before of super class is guaranteed to be called before that of a subclass so the following
      * is safe. http://junit-team.github.io/junit/javadoc/latest/org/junit/Before.html
@@ -56,6 +61,10 @@ public abstract class AWSIntegrationTestBase {
             } catch (Exception ignored) {
             }
         }
+    }
+
+    protected void setRetryRule(RetryRule retry) {
+        this.retry = retry;
     }
 
     /**

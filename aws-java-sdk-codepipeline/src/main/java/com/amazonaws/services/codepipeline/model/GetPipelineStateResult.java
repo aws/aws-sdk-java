@@ -38,7 +38,7 @@ public class GetPipelineStateResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * <note>
      * <p>
-     * A newly-created pipeline is always assigned a version number of <code>1</code>.
+     * A newly created pipeline is always assigned a version number of <code>1</code>.
      * </p>
      * </note>
      */
@@ -109,14 +109,14 @@ public class GetPipelineStateResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * <note>
      * <p>
-     * A newly-created pipeline is always assigned a version number of <code>1</code>.
+     * A newly created pipeline is always assigned a version number of <code>1</code>.
      * </p>
      * </note>
      * 
      * @param pipelineVersion
      *        The version number of the pipeline.</p> <note>
      *        <p>
-     *        A newly-created pipeline is always assigned a version number of <code>1</code>.
+     *        A newly created pipeline is always assigned a version number of <code>1</code>.
      *        </p>
      */
 
@@ -130,13 +130,13 @@ public class GetPipelineStateResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * <note>
      * <p>
-     * A newly-created pipeline is always assigned a version number of <code>1</code>.
+     * A newly created pipeline is always assigned a version number of <code>1</code>.
      * </p>
      * </note>
      * 
      * @return The version number of the pipeline.</p> <note>
      *         <p>
-     *         A newly-created pipeline is always assigned a version number of <code>1</code>.
+     *         A newly created pipeline is always assigned a version number of <code>1</code>.
      *         </p>
      */
 
@@ -150,14 +150,14 @@ public class GetPipelineStateResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * <note>
      * <p>
-     * A newly-created pipeline is always assigned a version number of <code>1</code>.
+     * A newly created pipeline is always assigned a version number of <code>1</code>.
      * </p>
      * </note>
      * 
      * @param pipelineVersion
      *        The version number of the pipeline.</p> <note>
      *        <p>
-     *        A newly-created pipeline is always assigned a version number of <code>1</code>.
+     *        A newly created pipeline is always assigned a version number of <code>1</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -30,8 +30,8 @@ public class ArtifactRevision implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of an artifact. This name might be system-generated, such as "MyApp", or might be defined by the user
-     * when an action is created.
+     * The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an
+     * action is created.
      * </p>
      */
     private String name;
@@ -72,13 +72,13 @@ public class ArtifactRevision implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of an artifact. This name might be system-generated, such as "MyApp", or might be defined by the user
-     * when an action is created.
+     * The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an
+     * action is created.
      * </p>
      * 
      * @param name
-     *        The name of an artifact. This name might be system-generated, such as "MyApp", or might be defined by the
-     *        user when an action is created.
+     *        The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when
+     *        an action is created.
      */
 
     public void setName(String name) {
@@ -87,12 +87,12 @@ public class ArtifactRevision implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of an artifact. This name might be system-generated, such as "MyApp", or might be defined by the user
-     * when an action is created.
+     * The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an
+     * action is created.
      * </p>
      * 
-     * @return The name of an artifact. This name might be system-generated, such as "MyApp", or might be defined by the
-     *         user when an action is created.
+     * @return The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user
+     *         when an action is created.
      */
 
     public String getName() {
@@ -101,13 +101,13 @@ public class ArtifactRevision implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of an artifact. This name might be system-generated, such as "MyApp", or might be defined by the user
-     * when an action is created.
+     * The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an
+     * action is created.
      * </p>
      * 
      * @param name
-     *        The name of an artifact. This name might be system-generated, such as "MyApp", or might be defined by the
-     *        user when an action is created.
+     *        The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when
+     *        an action is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

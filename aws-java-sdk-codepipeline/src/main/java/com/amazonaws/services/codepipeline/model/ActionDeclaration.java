@@ -85,8 +85,8 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
     private java.util.List<InputArtifact> inputArtifacts;
     /**
      * <p>
-     * The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for
-     * the pipeline.
+     * The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the
+     * pipeline.
      * </p>
      */
     private String roleArn;
@@ -534,13 +534,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for
-     * the pipeline.
+     * The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the
+     * pipeline.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn
-     *        for the pipeline.
+     *        The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for
+     *        the pipeline.
      */
 
     public void setRoleArn(String roleArn) {
@@ -549,12 +549,12 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for
-     * the pipeline.
+     * The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the
+     * pipeline.
      * </p>
      * 
-     * @return The ARN of the IAM service role that will perform the declared action. This is assumed through the
-     *         roleArn for the pipeline.
+     * @return The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn
+     *         for the pipeline.
      */
 
     public String getRoleArn() {
@@ -563,13 +563,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for
-     * the pipeline.
+     * The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the
+     * pipeline.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn
-     *        for the pipeline.
+     *        The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for
+     *        the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

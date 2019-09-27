@@ -14,6 +14,7 @@
  */
 package com.amazonaws.test;
 
+import com.amazonaws.test.retry.RetryRule;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,6 +29,7 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.test.util.InputStreamUtils;
 import com.amazonaws.test.util.SdkAsserts;
 import com.amazonaws.util.IOUtils;
+import org.junit.Rule;
 
 public abstract class AWSTestBase {
 
@@ -51,6 +53,9 @@ public abstract class AWSTestBase {
             new ProfileCredentialsProvider(TEST_CREDENTIALS_PROFILE_NAME), new EnvironmentVariableCredentialsProvider(),
             new SystemPropertiesCredentialsProvider());
 
+    @Rule
+    public RetryRule retry = new RetryRule(3);
+
     /**
      * @deprecated Extend from {@link AWSIntegrationTestBase} to access credentials
      */
@@ -62,6 +67,10 @@ public abstract class AWSTestBase {
             } catch (Exception ignored) {
             }
         }
+    }
+
+    protected void setRetryRule(RetryRule rule) {
+        this.retry = rule;
     }
 
     /**

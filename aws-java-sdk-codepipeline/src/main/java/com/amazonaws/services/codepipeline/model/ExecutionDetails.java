@@ -43,7 +43,7 @@ public class ExecutionDetails implements Serializable, Cloneable, StructuredPojo
     private String externalExecutionId;
     /**
      * <p>
-     * The percentage of work completed on the action, represented on a scale of zero to one hundred percent.
+     * The percentage of work completed on the action, represented on a scale of 0 to 100 percent.
      * </p>
      */
     private Integer percentComplete;
@@ -136,11 +136,11 @@ public class ExecutionDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The percentage of work completed on the action, represented on a scale of zero to one hundred percent.
+     * The percentage of work completed on the action, represented on a scale of 0 to 100 percent.
      * </p>
      * 
      * @param percentComplete
-     *        The percentage of work completed on the action, represented on a scale of zero to one hundred percent.
+     *        The percentage of work completed on the action, represented on a scale of 0 to 100 percent.
      */
 
     public void setPercentComplete(Integer percentComplete) {
@@ -149,10 +149,10 @@ public class ExecutionDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The percentage of work completed on the action, represented on a scale of zero to one hundred percent.
+     * The percentage of work completed on the action, represented on a scale of 0 to 100 percent.
      * </p>
      * 
-     * @return The percentage of work completed on the action, represented on a scale of zero to one hundred percent.
+     * @return The percentage of work completed on the action, represented on a scale of 0 to 100 percent.
      */
 
     public Integer getPercentComplete() {
@@ -161,11 +161,11 @@ public class ExecutionDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The percentage of work completed on the action, represented on a scale of zero to one hundred percent.
+     * The percentage of work completed on the action, represented on a scale of 0 to 100 percent.
      * </p>
      * 
      * @param percentComplete
-     *        The percentage of work completed on the action, represented on a scale of zero to one hundred percent.
+     *        The percentage of work completed on the action, represented on a scale of 0 to 100 percent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

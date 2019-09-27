@@ -30,8 +30,8 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     * <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
+     * The property used to configure acceptance of webhooks in an IP address range. For IP, only the
+     * <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.
      * </p>
      */
     private String allowedIPRange;
@@ -45,13 +45,13 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     * <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
+     * The property used to configure acceptance of webhooks in an IP address range. For IP, only the
+     * <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.
      * </p>
      * 
      * @param allowedIPRange
-     *        The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     *        <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
+     *        The property used to configure acceptance of webhooks in an IP address range. For IP, only the
+     *        <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.
      */
 
     public void setAllowedIPRange(String allowedIPRange) {
@@ -60,12 +60,12 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     * <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
+     * The property used to configure acceptance of webhooks in an IP address range. For IP, only the
+     * <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.
      * </p>
      * 
-     * @return The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     *         <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
+     * @return The property used to configure acceptance of webhooks in an IP address range. For IP, only the
+     *         <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.
      */
 
     public String getAllowedIPRange() {
@@ -74,13 +74,13 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     * <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
+     * The property used to configure acceptance of webhooks in an IP address range. For IP, only the
+     * <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.
      * </p>
      * 
      * @param allowedIPRange
-     *        The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
-     *        <code>AllowedIPRange</code> property must be set, and this property must be set to a valid CIDR range.
+     *        The property used to configure acceptance of webhooks in an IP address range. For IP, only the
+     *        <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

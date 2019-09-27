@@ -44,7 +44,7 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A map of property names and values. For an action type with no queryable properties, this value must be null or
      * an empty map. For an action type with a queryable property, you must supply that property as a key in the map.
-     * Only jobs whose action configuration matches the mapped value will be returned.
+     * Only jobs whose action configuration matches the mapped value are returned.
      * </p>
      */
     private java.util.Map<String, String> queryParam;
@@ -133,12 +133,12 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A map of property names and values. For an action type with no queryable properties, this value must be null or
      * an empty map. For an action type with a queryable property, you must supply that property as a key in the map.
-     * Only jobs whose action configuration matches the mapped value will be returned.
+     * Only jobs whose action configuration matches the mapped value are returned.
      * </p>
      * 
      * @return A map of property names and values. For an action type with no queryable properties, this value must be
      *         null or an empty map. For an action type with a queryable property, you must supply that property as a
-     *         key in the map. Only jobs whose action configuration matches the mapped value will be returned.
+     *         key in the map. Only jobs whose action configuration matches the mapped value are returned.
      */
 
     public java.util.Map<String, String> getQueryParam() {
@@ -149,13 +149,13 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A map of property names and values. For an action type with no queryable properties, this value must be null or
      * an empty map. For an action type with a queryable property, you must supply that property as a key in the map.
-     * Only jobs whose action configuration matches the mapped value will be returned.
+     * Only jobs whose action configuration matches the mapped value are returned.
      * </p>
      * 
      * @param queryParam
      *        A map of property names and values. For an action type with no queryable properties, this value must be
      *        null or an empty map. For an action type with a queryable property, you must supply that property as a key
-     *        in the map. Only jobs whose action configuration matches the mapped value will be returned.
+     *        in the map. Only jobs whose action configuration matches the mapped value are returned.
      */
 
     public void setQueryParam(java.util.Map<String, String> queryParam) {
@@ -166,13 +166,13 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A map of property names and values. For an action type with no queryable properties, this value must be null or
      * an empty map. For an action type with a queryable property, you must supply that property as a key in the map.
-     * Only jobs whose action configuration matches the mapped value will be returned.
+     * Only jobs whose action configuration matches the mapped value are returned.
      * </p>
      * 
      * @param queryParam
      *        A map of property names and values. For an action type with no queryable properties, this value must be
      *        null or an empty map. For an action type with a queryable property, you must supply that property as a key
-     *        in the map. Only jobs whose action configuration matches the mapped value will be returned.
+     *        in the map. Only jobs whose action configuration matches the mapped value are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
