@@ -83,9 +83,41 @@ public class AmazonRDSWaiters {
 
         return new WaiterBuilder<DescribeDBSnapshotsRequest, DescribeDBSnapshotsResult>()
                 .withSdkFunction(new DescribeDBSnapshotsFunction(client))
-                .withAcceptors(new DBSnapshotDeleted.IsDeletedMatcher(), new DBSnapshotDeleted.IsDBSnapshotNotFoundMatcher(),
+                .withAcceptors(new DBSnapshotDeleted.IsTrueMatcher(), new DBSnapshotDeleted.IsDBSnapshotNotFoundMatcher(),
                         new DBSnapshotDeleted.IsCreatingMatcher(), new DBSnapshotDeleted.IsModifyingMatcher(), new DBSnapshotDeleted.IsRebootingMatcher(),
                         new DBSnapshotDeleted.IsResettingmastercredentialsMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a DBClusterSnapshotAvailable waiter by using custom parameters waiterParameters and other parameters
+     * defined in the waiters specification, and then polls until it determines whether the resource entered the desired
+     * state or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeDBClusterSnapshotsRequest> dBClusterSnapshotAvailable() {
+
+        return new WaiterBuilder<DescribeDBClusterSnapshotsRequest, DescribeDBClusterSnapshotsResult>()
+                .withSdkFunction(new DescribeDBClusterSnapshotsFunction(client))
+                .withAcceptors(new DBClusterSnapshotAvailable.IsAvailableMatcher(), new DBClusterSnapshotAvailable.IsDeletedMatcher(),
+                        new DBClusterSnapshotAvailable.IsDeletingMatcher(), new DBClusterSnapshotAvailable.IsFailedMatcher(),
+                        new DBClusterSnapshotAvailable.IsIncompatiblerestoreMatcher(), new DBClusterSnapshotAvailable.IsIncompatibleparametersMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a DBClusterSnapshotDeleted waiter by using custom parameters waiterParameters and other parameters defined
+     * in the waiters specification, and then polls until it determines whether the resource entered the desired state
+     * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeDBClusterSnapshotsRequest> dBClusterSnapshotDeleted() {
+
+        return new WaiterBuilder<DescribeDBClusterSnapshotsRequest, DescribeDBClusterSnapshotsResult>()
+                .withSdkFunction(new DescribeDBClusterSnapshotsFunction(client))
+                .withAcceptors(new DBClusterSnapshotDeleted.IsTrueMatcher(), new DBClusterSnapshotDeleted.IsDBClusterSnapshotNotFoundFaultMatcher(),
+                        new DBClusterSnapshotDeleted.IsCreatingMatcher(), new DBClusterSnapshotDeleted.IsModifyingMatcher(),
+                        new DBClusterSnapshotDeleted.IsRebootingMatcher(), new DBClusterSnapshotDeleted.IsResettingmastercredentialsMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }
@@ -99,7 +131,7 @@ public class AmazonRDSWaiters {
 
         return new WaiterBuilder<DescribeDBInstancesRequest, DescribeDBInstancesResult>()
                 .withSdkFunction(new DescribeDBInstancesFunction(client))
-                .withAcceptors(new DBInstanceDeleted.IsDeletedMatcher(), new DBInstanceDeleted.IsDBInstanceNotFoundMatcher(),
+                .withAcceptors(new DBInstanceDeleted.IsTrueMatcher(), new DBInstanceDeleted.IsDBInstanceNotFoundMatcher(),
                         new DBInstanceDeleted.IsCreatingMatcher(), new DBInstanceDeleted.IsModifyingMatcher(), new DBInstanceDeleted.IsRebootingMatcher(),
                         new DBInstanceDeleted.IsResettingmastercredentialsMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))

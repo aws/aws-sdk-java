@@ -87,9 +87,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Random;
 import java.util.Set;
-import java.util.UUID;
 
 import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
 import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
@@ -2441,12 +2439,24 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         Class<Object> clazz = (Class<Object>)objectToWrite.getClass();
         String tableName = getTableName(clazz, objectToWrite, config);
         Map<String, AttributeValue> attributeValues = new HashMap<String, AttributeValue>();
-
         final DynamoDBMapperTableModel<Object> model = getTableModel(clazz, config);
+        VersionAttributeConditionExpressionGenerator versionAttributeConditionExpressionGenerator =
+                new VersionAttributeConditionExpressionGenerator();
         for (final DynamoDBMapperFieldModel<Object,Object> field : model.fields()) {
             AttributeValue currentValue = null;
             if (field.versioned()) {
-                throw new SdkClientException("Versioned attributes are not supported on TransactionWrite API");
+                if (writeExpression != null) {
+                    throw new SdkClientException("A transactional write operation may not also specify a condition " +
+                                                         "expression if a versioned attribute is present on the " +
+                                                         "model of the item.");
+                } else {
+                    Object fieldValue = field.get(objectToWrite);
+                    versionAttributeConditionExpressionGenerator
+                            .appendVersionAttributeToConditionExpression(field,
+                                                                         fieldValue);
+                    currentValue = field.convert(field.generate(field.get(objectToWrite)));
+                    inMemoryUpdates.add(new ValueUpdate(field, currentValue, objectToWrite));
+                }
             } else if (canGenerate(model, objectToWrite, SaveBehavior.CLOBBER, field)) {
                 currentValue = field.convert(field.generate(field.get(objectToWrite)));
                 inMemoryUpdates.add(new ValueUpdate(field, currentValue, objectToWrite));
@@ -2458,6 +2468,11 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             } else if (currentValue != null) {
                 attributeValues.put(field.name(), currentValue);
             }
+        }
+        DynamoDBTransactionWriteExpression versionAttributeConditionExpression =
+                versionAttributeConditionExpressionGenerator.getVersionAttributeConditionExpression();
+        if (versionAttributeConditionExpression.getConditionExpression() != null) {
+            writeExpression = versionAttributeConditionExpression;
         }
         AttributeTransformer.Parameters<?> parameters =
                 toParameters(attributeValues, clazz, tableName, config);

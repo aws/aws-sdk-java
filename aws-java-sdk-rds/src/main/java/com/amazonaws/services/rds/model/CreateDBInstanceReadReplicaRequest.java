@@ -454,6 +454,24 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * The Active Directory directory ID to create the DB instance in.
+     * </p>
+     * <p>
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
+     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * </p>
+     */
+    private String domainIAMRoleName;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -3477,6 +3495,119 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The Active Directory directory ID to create the DB instance in.
+     * </p>
+     * <p>
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
+     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param domain
+     *        The Active Directory directory ID to create the DB instance in.</p>
+     *        <p>
+     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *        the DB instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
+     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * The Active Directory directory ID to create the DB instance in.
+     * </p>
+     * <p>
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
+     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return The Active Directory directory ID to create the DB instance in.</p>
+     *         <p>
+     *         For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *         the DB instance. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
+     *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * The Active Directory directory ID to create the DB instance in.
+     * </p>
+     * <p>
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
+     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param domain
+     *        The Active Directory directory ID to create the DB instance in.</p>
+     *        <p>
+     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *        the DB instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
+     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * </p>
+     * 
+     * @param domainIAMRoleName
+     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     */
+
+    public void setDomainIAMRoleName(String domainIAMRoleName) {
+        this.domainIAMRoleName = domainIAMRoleName;
+    }
+
+    /**
+     * <p>
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * </p>
+     * 
+     * @return Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     */
+
+    public String getDomainIAMRoleName() {
+        return this.domainIAMRoleName;
+    }
+
+    /**
+     * <p>
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * </p>
+     * 
+     * @param domainIAMRoleName
+     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDomainIAMRoleName(String domainIAMRoleName) {
+        setDomainIAMRoleName(domainIAMRoleName);
+        return this;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -3578,6 +3709,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("UseDefaultProcessorFeatures: ").append(getUseDefaultProcessorFeatures()).append(",");
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
+        if (getDomainIAMRoleName() != null)
+            sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -3708,6 +3843,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
+        if (other.getDomainIAMRoleName() == null ^ this.getDomainIAMRoleName() == null)
+            return false;
+        if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -3748,6 +3891,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getUseDefaultProcessorFeatures() == null) ? 0 : getUseDefaultProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

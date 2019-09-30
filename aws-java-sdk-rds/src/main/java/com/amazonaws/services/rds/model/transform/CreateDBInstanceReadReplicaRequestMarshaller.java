@@ -209,6 +209,14 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getDeletionProtection()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomain()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainIAMRoleName()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceRegion()));
         }

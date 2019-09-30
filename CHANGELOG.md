@@ -1,3 +1,20 @@
+# __1.11.642__ __2019-09-30__
+## __AWS WAF__
+  - ### Features
+    - Lowering the threshold for Rate Based rule from 2000 to 100.
+
+## __Amazon DynamoDB Mapper__
+  - ### Features
+    - Adding limited support for optimistic locking on items of TransactionWriteItems API
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds support for creating a Read Replica with Active Directory domain information. This release updates RDS API to indicate whether an OrderableDBInstanceOption supports Kerberos Authentication.
+
+## __AmazonMQ__
+  - ### Features
+    - Amazon MQ now includes the ability to scale your brokers by changing the host instance type. See the hostInstanceType property of UpdateBrokerInput (https://docs.aws.amazon.com/amazon-mq/latest/api-reference/brokers-broker-id.html#brokers-broker-id-model-updatebrokerinput), and pendingHostInstanceType property of DescribeBrokerOutput (https://docs.aws.amazon.com/amazon-mq/latest/api-reference/brokers-broker-id.html#brokers-broker-id-model-describebrokeroutput).
+
 # __1.11.641__ __2019-09-27__
 ## __AWS Amplify__
   - ### Features

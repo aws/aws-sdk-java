@@ -174,6 +174,11 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                     orderableDBInstanceOption.setSupportsStorageAutoscaling(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportsKerberosAuthentication", targetDepth)) {
+                    orderableDBInstanceOption.setSupportsKerberosAuthentication(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return orderableDBInstanceOption;

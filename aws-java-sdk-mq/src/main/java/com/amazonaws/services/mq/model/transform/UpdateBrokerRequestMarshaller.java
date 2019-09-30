@@ -36,6 +36,8 @@ public class UpdateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
     private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineVersion").build();
+    private static final MarshallingInfo<String> HOSTINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostInstanceType").build();
     private static final MarshallingInfo<StructuredPojo> LOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logs").build();
     private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -61,6 +63,7 @@ public class UpdateBrokerRequestMarshaller {
             protocolMarshaller.marshall(updateBrokerRequest.getBrokerId(), BROKERID_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getEngineVersion(), ENGINEVERSION_BINDING);
+            protocolMarshaller.marshall(updateBrokerRequest.getHostInstanceType(), HOSTINSTANCETYPE_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getLogs(), LOGS_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);
         } catch (Exception e) {

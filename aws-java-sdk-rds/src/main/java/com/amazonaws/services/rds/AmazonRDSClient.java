@@ -1366,6 +1366,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         Availability Zone.
      * @throws GlobalClusterNotFoundException
      * @throws InvalidGlobalClusterStateException
+     * @throws DomainNotFoundException
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.CreateDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1798,6 +1800,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an AWS KMS key.
+     * @throws DomainNotFoundException
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.CreateDBInstanceReadReplica
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica"
      *      target="_top">AWS API Documentation</a>
@@ -5534,6 +5538,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The DB instance isn't in a valid state.
      * @throws DBClusterAlreadyExistsException
      *         The user already has a DB cluster with the given identifier.
+     * @throws DomainNotFoundException
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.ModifyDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -7118,6 +7124,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         An error occurred accessing an AWS KMS key.
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws DomainNotFoundException
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws InsufficientStorageClusterCapacityException
      *         There is insufficient storage available for the current action. You might be able to resolve this error
      *         by updating your subnet group to use different Availability Zones that have more storage available.
@@ -7230,6 +7238,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The specified option group could not be found.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an AWS KMS key.
+     * @throws DomainNotFoundException
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws DBClusterParameterGroupNotFoundException
      *         <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
      * @sample AmazonRDS.RestoreDBClusterFromSnapshot
@@ -7340,6 +7350,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws StorageQuotaExceededException
      *         The request would result in the user exceeding the allowed amount of storage available across all DB
      *         instances.
+     * @throws DomainNotFoundException
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws DBClusterParameterGroupNotFoundException
      *         <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
      * @sample AmazonRDS.RestoreDBClusterToPointInTime

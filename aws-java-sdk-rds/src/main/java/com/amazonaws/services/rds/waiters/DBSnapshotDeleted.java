@@ -31,18 +31,18 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 class DBSnapshotDeleted {
 
-    static class IsDeletedMatcher extends WaiterAcceptor<DescribeDBSnapshotsResult> {
+    static class IsTrueMatcher extends WaiterAcceptor<DescribeDBSnapshotsResult> {
         private static final JsonNode expectedResult;
 
         static {
             try {
-                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"deleted\"");
+                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("true");
             } catch (IOException ioe) {
                 throw new RuntimeException(ioe);
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("DBSnapshots")), new JmesPathField("Status"));
+        private static final JmesPathExpression ast = new OpEquals(new JmesPathLengthFunction(new JmesPathField("DBSnapshots")), new JmesPathLiteral("0"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine
@@ -56,7 +56,7 @@ class DBSnapshotDeleted {
         public boolean matches(DescribeDBSnapshotsResult result) {
             JsonNode queryNode = ObjectMapperSingleton.getObjectMapper().valueToTree(result);
             JsonNode finalResult = ast.accept(new JmesPathEvaluationVisitor(), queryNode);
-            return AcceptorPathMatcher.pathAll(expectedResult, finalResult);
+            return AcceptorPathMatcher.path(expectedResult, finalResult);
         }
 
         /**

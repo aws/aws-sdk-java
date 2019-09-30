@@ -64,6 +64,10 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                     context.nextToken();
                     updateBrokerResult.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("hostInstanceType", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("logs", targetDepth)) {
                     context.nextToken();
                     updateBrokerResult.setLogs(LogsJsonUnmarshaller.getInstance().unmarshall(context));

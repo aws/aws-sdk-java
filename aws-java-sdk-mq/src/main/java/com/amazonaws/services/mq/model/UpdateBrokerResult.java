@@ -34,6 +34,11 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
      * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     private String engineVersion;
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    private String hostInstanceType;
     /** The list of information about logs to be enabled for the specified broker. */
     private Logs logs;
     /** The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers. */
@@ -192,6 +197,46 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * 
+     * @param hostInstanceType
+     *        The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+
+    public void setHostInstanceType(String hostInstanceType) {
+        this.hostInstanceType = hostInstanceType;
+    }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * 
+     * @return The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+
+    public String getHostInstanceType() {
+        return this.hostInstanceType;
+    }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * 
+     * @param hostInstanceType
+     *        The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerResult withHostInstanceType(String hostInstanceType) {
+        setHostInstanceType(hostInstanceType);
+        return this;
+    }
+
+    /**
      * The list of information about logs to be enabled for the specified broker.
      * 
      * @param logs
@@ -307,6 +352,8 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getHostInstanceType() != null)
+            sb.append("HostInstanceType: ").append(getHostInstanceType()).append(",");
         if (getLogs() != null)
             sb.append("Logs: ").append(getLogs()).append(",");
         if (getSecurityGroups() != null)
@@ -341,6 +388,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getHostInstanceType() == null ^ this.getHostInstanceType() == null)
+            return false;
+        if (other.getHostInstanceType() != null && other.getHostInstanceType().equals(this.getHostInstanceType()) == false)
+            return false;
         if (other.getLogs() == null ^ this.getLogs() == null)
             return false;
         if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
@@ -361,6 +412,7 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getBrokerId() == null) ? 0 : getBrokerId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;

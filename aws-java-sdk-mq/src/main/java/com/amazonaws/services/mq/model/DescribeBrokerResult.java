@@ -70,6 +70,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     private String pendingEngineVersion;
     /** The list of pending security groups to authorize connections to brokers. */
     private java.util.List<String> pendingSecurityGroups;
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    private String pendingHostInstanceType;
     /** Required. Enables connections from applications outside of the VPC that hosts the broker's subnets. */
     private Boolean publiclyAccessible;
     /** The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers. */
@@ -813,6 +818,46 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * 
+     * @param pendingHostInstanceType
+     *        The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+
+    public void setPendingHostInstanceType(String pendingHostInstanceType) {
+        this.pendingHostInstanceType = pendingHostInstanceType;
+    }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * 
+     * @return The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+
+    public String getPendingHostInstanceType() {
+        return this.pendingHostInstanceType;
+    }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * 
+     * @param pendingHostInstanceType
+     *        The host instance type of the broker to upgrade to. For a list of supported instance types, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withPendingHostInstanceType(String pendingHostInstanceType) {
+        setPendingHostInstanceType(pendingHostInstanceType);
+        return this;
+    }
+
+    /**
      * Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
      * 
      * @param publiclyAccessible
@@ -1159,6 +1204,8 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("PendingEngineVersion: ").append(getPendingEngineVersion()).append(",");
         if (getPendingSecurityGroups() != null)
             sb.append("PendingSecurityGroups: ").append(getPendingSecurityGroups()).append(",");
+        if (getPendingHostInstanceType() != null)
+            sb.append("PendingHostInstanceType: ").append(getPendingHostInstanceType()).append(",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getSecurityGroups() != null)
@@ -1251,6 +1298,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getPendingSecurityGroups() != null && other.getPendingSecurityGroups().equals(this.getPendingSecurityGroups()) == false)
             return false;
+        if (other.getPendingHostInstanceType() == null ^ this.getPendingHostInstanceType() == null)
+            return false;
+        if (other.getPendingHostInstanceType() != null && other.getPendingHostInstanceType().equals(this.getPendingHostInstanceType()) == false)
+            return false;
         if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
         if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
@@ -1296,6 +1347,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getMaintenanceWindowStartTime() == null) ? 0 : getMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getPendingEngineVersion() == null) ? 0 : getPendingEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getPendingSecurityGroups() == null) ? 0 : getPendingSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getPendingHostInstanceType() == null) ? 0 : getPendingHostInstanceType().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());

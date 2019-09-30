@@ -514,9 +514,22 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String cACertificateIdentifier;
     /**
      * <p>
-     * The Active Directory Domain to move the instance to. Specify <code>none</code> to remove the instance from its
-     * current domain. The domain must be created prior to this operation. Currently only a Microsoft SQL Server
-     * instance can be created in a Active Directory Domain.
+     * The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance
+     * from its current domain. The domain must be created prior to this operation. Currently, only Microsoft SQL Server
+     * and Oracle DB instances can be created in an Active Directory Domain.
+     * </p>
+     * <p>
+     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
+     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
+     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
     private String domain;
@@ -3963,15 +3976,40 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory Domain to move the instance to. Specify <code>none</code> to remove the instance from its
-     * current domain. The domain must be created prior to this operation. Currently only a Microsoft SQL Server
-     * instance can be created in a Active Directory Domain.
+     * The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance
+     * from its current domain. The domain must be created prior to this operation. Currently, only Microsoft SQL Server
+     * and Oracle DB instances can be created in an Active Directory Domain.
+     * </p>
+     * <p>
+     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
+     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
+     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory Domain to move the instance to. Specify <code>none</code> to remove the instance from
-     *        its current domain. The domain must be created prior to this operation. Currently only a Microsoft SQL
-     *        Server instance can be created in a Active Directory Domain.
+     *        The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the
+     *        instance from its current domain. The domain must be created prior to this operation. Currently, only
+     *        Microsoft SQL Server and Oracle DB instances can be created in an Active Directory Domain. </p>
+     *        <p>
+     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
+     *        that connect to the DB instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
+     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
+     *        Guide</i>.
+     *        </p>
+     *        <p>
+     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *        the DB instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
+     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -3980,14 +4018,39 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory Domain to move the instance to. Specify <code>none</code> to remove the instance from its
-     * current domain. The domain must be created prior to this operation. Currently only a Microsoft SQL Server
-     * instance can be created in a Active Directory Domain.
+     * The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance
+     * from its current domain. The domain must be created prior to this operation. Currently, only Microsoft SQL Server
+     * and Oracle DB instances can be created in an Active Directory Domain.
+     * </p>
+     * <p>
+     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
+     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
+     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return The Active Directory Domain to move the instance to. Specify <code>none</code> to remove the instance
-     *         from its current domain. The domain must be created prior to this operation. Currently only a Microsoft
-     *         SQL Server instance can be created in a Active Directory Domain.
+     * @return The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the
+     *         instance from its current domain. The domain must be created prior to this operation. Currently, only
+     *         Microsoft SQL Server and Oracle DB instances can be created in an Active Directory Domain. </p>
+     *         <p>
+     *         For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
+     *         that connect to the DB instance. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
+     *         Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
+     *         Guide</i>.
+     *         </p>
+     *         <p>
+     *         For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *         the DB instance. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
+     *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public String getDomain() {
@@ -3996,15 +4059,40 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory Domain to move the instance to. Specify <code>none</code> to remove the instance from its
-     * current domain. The domain must be created prior to this operation. Currently only a Microsoft SQL Server
-     * instance can be created in a Active Directory Domain.
+     * The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance
+     * from its current domain. The domain must be created prior to this operation. Currently, only Microsoft SQL Server
+     * and Oracle DB instances can be created in an Active Directory Domain.
+     * </p>
+     * <p>
+     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
+     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
+     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory Domain to move the instance to. Specify <code>none</code> to remove the instance from
-     *        its current domain. The domain must be created prior to this operation. Currently only a Microsoft SQL
-     *        Server instance can be created in a Active Directory Domain.
+     *        The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the
+     *        instance from its current domain. The domain must be created prior to this operation. Currently, only
+     *        Microsoft SQL Server and Oracle DB instances can be created in an Active Directory Domain. </p>
+     *        <p>
+     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
+     *        that connect to the DB instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
+     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
+     *        Guide</i>.
+     *        </p>
+     *        <p>
+     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *        the DB instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
+     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
