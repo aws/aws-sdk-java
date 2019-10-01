@@ -15,7 +15,7 @@ phases:
   build:
     commands:
     - RELEASE_VERSION=`mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec`
-    - SONATYPE_URL="https://oss.sonatype.org/service/local/repositories/releases/content/com/amazonaws/aws-java-sdk/$RELEASE_VERSION/"
+    - SONATYPE_URL="https://aws.oss.sonatype.org/service/local/repositories/releases/content/com/amazonaws/aws-java-sdk/$RELEASE_VERSION/"
     - |
       if ! curl -f --head $SONATYPE_URL; then
         mkdir -p $CREDENTIALS

@@ -601,6 +601,37 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
 
     /**
      * <p>
+     * Returns a list of certificate authority (CA) certificates provided by Amazon RDS for this AWS account.
+     * </p>
+     * 
+     * @param describeCertificatesRequest
+     * @return A Java Future containing the result of the DescribeCertificates operation returned by the service.
+     * @sample AmazonDocDBAsync.DescribeCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(DescribeCertificatesRequest describeCertificatesRequest);
+
+    /**
+     * <p>
+     * Returns a list of certificate authority (CA) certificates provided by Amazon RDS for this AWS account.
+     * </p>
+     * 
+     * @param describeCertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCertificates operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.DescribeCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(DescribeCertificatesRequest describeCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
      * <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the
      * specified DB cluster parameter group.

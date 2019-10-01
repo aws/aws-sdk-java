@@ -141,7 +141,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * slash (/), double quote ("), or the "at" symbol (@).
      * </p>
      * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Constraints: Must contain from 8 to 100 characters.
      * </p>
      */
     private String masterUserPassword;
@@ -957,14 +957,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * slash (/), double quote ("), or the "at" symbol (@).
      * </p>
      * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Constraints: Must contain from 8 to 100 characters.
      * </p>
      * 
      * @param masterUserPassword
      *        The password for the master database user. This password can contain any printable ASCII character except
      *        forward slash (/), double quote ("), or the "at" symbol (@).</p>
      *        <p>
-     *        Constraints: Must contain from 8 to 41 characters.
+     *        Constraints: Must contain from 8 to 100 characters.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -977,13 +977,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * slash (/), double quote ("), or the "at" symbol (@).
      * </p>
      * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Constraints: Must contain from 8 to 100 characters.
      * </p>
      * 
      * @return The password for the master database user. This password can contain any printable ASCII character except
      *         forward slash (/), double quote ("), or the "at" symbol (@).</p>
      *         <p>
-     *         Constraints: Must contain from 8 to 41 characters.
+     *         Constraints: Must contain from 8 to 100 characters.
      */
 
     public String getMasterUserPassword() {
@@ -996,14 +996,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * slash (/), double quote ("), or the "at" symbol (@).
      * </p>
      * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Constraints: Must contain from 8 to 100 characters.
      * </p>
      * 
      * @param masterUserPassword
      *        The password for the master database user. This password can contain any printable ASCII character except
      *        forward slash (/), double quote ("), or the "at" symbol (@).</p>
      *        <p>
-     *        Constraints: Must contain from 8 to 41 characters.
+     *        Constraints: Must contain from 8 to 100 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

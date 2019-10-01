@@ -139,6 +139,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String newDBInstanceIdentifier;
     /**
      * <p>
+     * Indicates the certificate that needs to be associated with the instance.
+     * </p>
+     */
+    private String cACertificateIdentifier;
+    /**
+     * <p>
      * A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after
      * a failure of the existing primary instance.
      * </p>
@@ -870,6 +876,46 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Indicates the certificate that needs to be associated with the instance.
+     * </p>
+     * 
+     * @param cACertificateIdentifier
+     *        Indicates the certificate that needs to be associated with the instance.
+     */
+
+    public void setCACertificateIdentifier(String cACertificateIdentifier) {
+        this.cACertificateIdentifier = cACertificateIdentifier;
+    }
+
+    /**
+     * <p>
+     * Indicates the certificate that needs to be associated with the instance.
+     * </p>
+     * 
+     * @return Indicates the certificate that needs to be associated with the instance.
+     */
+
+    public String getCACertificateIdentifier() {
+        return this.cACertificateIdentifier;
+    }
+
+    /**
+     * <p>
+     * Indicates the certificate that needs to be associated with the instance.
+     * </p>
+     * 
+     * @param cACertificateIdentifier
+     *        Indicates the certificate that needs to be associated with the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBInstanceRequest withCACertificateIdentifier(String cACertificateIdentifier) {
+        setCACertificateIdentifier(cACertificateIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
      * A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after
      * a failure of the existing primary instance.
      * </p>
@@ -971,6 +1017,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getNewDBInstanceIdentifier() != null)
             sb.append("NewDBInstanceIdentifier: ").append(getNewDBInstanceIdentifier()).append(",");
+        if (getCACertificateIdentifier() != null)
+            sb.append("CACertificateIdentifier: ").append(getCACertificateIdentifier()).append(",");
         if (getPromotionTier() != null)
             sb.append("PromotionTier: ").append(getPromotionTier());
         sb.append("}");
@@ -1011,6 +1059,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getNewDBInstanceIdentifier() != null && other.getNewDBInstanceIdentifier().equals(this.getNewDBInstanceIdentifier()) == false)
             return false;
+        if (other.getCACertificateIdentifier() == null ^ this.getCACertificateIdentifier() == null)
+            return false;
+        if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false)
+            return false;
         if (other.getPromotionTier() == null ^ this.getPromotionTier() == null)
             return false;
         if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false)
@@ -1029,6 +1081,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getNewDBInstanceIdentifier() == null) ? 0 : getNewDBInstanceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode());
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
         return hashCode;
     }

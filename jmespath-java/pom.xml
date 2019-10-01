@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.643-SNAPSHOT</version>
+    <version>1.11.643</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>jmespath-java</artifactId>
@@ -101,7 +101,7 @@
 		      <extensions>true</extensions>
 		      <configuration>
 			  <serverId>sonatype-nexus-staging</serverId>
-			  <nexusUrl>https://oss.sonatype.org</nexusUrl>
+			  <nexusUrl>https://aws.oss.sonatype.org</nexusUrl>
 		      </configuration>
 		  </plugin>
 	      </plugins>

@@ -99,6 +99,11 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDBClusterParameterGroupsResult describeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

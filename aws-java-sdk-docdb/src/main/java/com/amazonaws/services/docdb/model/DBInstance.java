@@ -127,9 +127,8 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * Specifies the availability options for the DB instance. A value of <code>true</code> specifies an internet-facing
-     * instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP address.
+     * Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     * <code>PubliclyAccessible</code> is always <code>false</code>.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -148,7 +147,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String dBClusterIdentifier;
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Specifies whether or not the DB instance is encrypted.
      * </p>
      */
     private Boolean storageEncrypted;
@@ -165,6 +164,12 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private String dbiResourceId;
+    /**
+     * <p>
+     * The identifier of the CA certificate for this DB instance.
+     * </p>
+     */
+    private String cACertificateIdentifier;
     /**
      * <p>
      * A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after
@@ -893,16 +898,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the availability options for the DB instance. A value of <code>true</code> specifies an internet-facing
-     * instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP address.
+     * Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     * <code>PubliclyAccessible</code> is always <code>false</code>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the availability options for the DB instance. A value of <code>true</code> specifies an
-     *        internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A
-     *        value of <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP
-     *        address.
+     *        Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     *        <code>PubliclyAccessible</code> is always <code>false</code>.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -911,15 +913,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the availability options for the DB instance. A value of <code>true</code> specifies an internet-facing
-     * instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP address.
+     * Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     * <code>PubliclyAccessible</code> is always <code>false</code>.
      * </p>
      * 
-     * @return Specifies the availability options for the DB instance. A value of <code>true</code> specifies an
-     *         internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A
-     *         value of <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP
-     *         address.
+     * @return Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     *         <code>PubliclyAccessible</code> is always <code>false</code>.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -928,16 +927,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the availability options for the DB instance. A value of <code>true</code> specifies an internet-facing
-     * instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP address.
+     * Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     * <code>PubliclyAccessible</code> is always <code>false</code>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the availability options for the DB instance. A value of <code>true</code> specifies an
-     *        internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A
-     *        value of <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP
-     *        address.
+     *        Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     *        <code>PubliclyAccessible</code> is always <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -948,15 +944,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the availability options for the DB instance. A value of <code>true</code> specifies an internet-facing
-     * instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP address.
+     * Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     * <code>PubliclyAccessible</code> is always <code>false</code>.
      * </p>
      * 
-     * @return Specifies the availability options for the DB instance. A value of <code>true</code> specifies an
-     *         internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP address. A
-     *         value of <code>false</code> specifies an internal instance with a DNS name that resolves to a private IP
-     *         address.
+     * @return Not supported. Amazon DocumentDB does not currently support public endpoints. The value of
+     *         <code>PubliclyAccessible</code> is always <code>false</code>.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -1081,11 +1074,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Specifies whether or not the DB instance is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB instance is encrypted.
+     *        Specifies whether or not the DB instance is encrypted.
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -1094,10 +1087,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Specifies whether or not the DB instance is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB instance is encrypted.
+     * @return Specifies whether or not the DB instance is encrypted.
      */
 
     public Boolean getStorageEncrypted() {
@@ -1106,11 +1099,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Specifies whether or not the DB instance is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB instance is encrypted.
+     *        Specifies whether or not the DB instance is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1121,10 +1114,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB instance is encrypted.
+     * Specifies whether or not the DB instance is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB instance is encrypted.
+     * @return Specifies whether or not the DB instance is encrypted.
      */
 
     public Boolean isStorageEncrypted() {
@@ -1217,6 +1210,46 @@ public class DBInstance implements Serializable, Cloneable {
 
     public DBInstance withDbiResourceId(String dbiResourceId) {
         setDbiResourceId(dbiResourceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the CA certificate for this DB instance.
+     * </p>
+     * 
+     * @param cACertificateIdentifier
+     *        The identifier of the CA certificate for this DB instance.
+     */
+
+    public void setCACertificateIdentifier(String cACertificateIdentifier) {
+        this.cACertificateIdentifier = cACertificateIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier of the CA certificate for this DB instance.
+     * </p>
+     * 
+     * @return The identifier of the CA certificate for this DB instance.
+     */
+
+    public String getCACertificateIdentifier() {
+        return this.cACertificateIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier of the CA certificate for this DB instance.
+     * </p>
+     * 
+     * @param cACertificateIdentifier
+     *        The identifier of the CA certificate for this DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withCACertificateIdentifier(String cACertificateIdentifier) {
+        setCACertificateIdentifier(cACertificateIdentifier);
         return this;
     }
 
@@ -1432,6 +1465,8 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getDbiResourceId() != null)
             sb.append("DbiResourceId: ").append(getDbiResourceId()).append(",");
+        if (getCACertificateIdentifier() != null)
+            sb.append("CACertificateIdentifier: ").append(getCACertificateIdentifier()).append(",");
         if (getPromotionTier() != null)
             sb.append("PromotionTier: ").append(getPromotionTier()).append(",");
         if (getDBInstanceArn() != null)
@@ -1540,6 +1575,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false)
             return false;
+        if (other.getCACertificateIdentifier() == null ^ this.getCACertificateIdentifier() == null)
+            return false;
+        if (other.getCACertificateIdentifier() != null && other.getCACertificateIdentifier().equals(this.getCACertificateIdentifier()) == false)
+            return false;
         if (other.getPromotionTier() == null ^ this.getPromotionTier() == null)
             return false;
         if (other.getPromotionTier() != null && other.getPromotionTier().equals(this.getPromotionTier()) == false)
@@ -1582,6 +1621,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode());
+        hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode());
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceArn() == null) ? 0 : getDBInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());

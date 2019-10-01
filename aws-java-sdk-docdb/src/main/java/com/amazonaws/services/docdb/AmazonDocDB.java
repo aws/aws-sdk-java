@@ -447,6 +447,21 @@ public interface AmazonDocDB {
 
     /**
      * <p>
+     * Returns a list of certificate authority (CA) certificates provided by Amazon RDS for this AWS account.
+     * </p>
+     * 
+     * @param describeCertificatesRequest
+     * @return Result of the DescribeCertificates operation returned by the service.
+     * @throws CertificateNotFoundException
+     *         <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+     * @sample AmazonDocDB.DescribeCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest describeCertificatesRequest);
+
+    /**
+     * <p>
      * Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
      * <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the
      * specified DB cluster parameter group.

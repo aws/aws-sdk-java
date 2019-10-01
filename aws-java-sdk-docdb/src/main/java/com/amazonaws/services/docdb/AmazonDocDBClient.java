@@ -1128,6 +1128,61 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
+     * Returns a list of certificate authority (CA) certificates provided by Amazon RDS for this AWS account.
+     * </p>
+     * 
+     * @param describeCertificatesRequest
+     * @return Result of the DescribeCertificates operation returned by the service.
+     * @throws CertificateNotFoundException
+     *         <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+     * @sample AmazonDocDB.DescribeCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeCertificatesResult describeCertificates(DescribeCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCertificates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCertificatesResult executeDescribeCertificates(DescribeCertificatesRequest describeCertificatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCertificatesRequest> request = null;
+        Response<DescribeCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCertificatesRequestMarshaller().marshall(super.beforeMarshalling(describeCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeCertificatesResult> responseHandler = new StaxResponseHandler<DescribeCertificatesResult>(
+                    new DescribeCertificatesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
      * <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the
      * specified DB cluster parameter group.

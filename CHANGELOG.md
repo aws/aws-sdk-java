@@ -1,3 +1,8 @@
+# __1.11.643__ __2019-10-01__
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - This release provides support for describe and modify CA certificates.
+
 # __1.11.642__ __2019-09-30__
 ## __AWS WAF__
   - ### Features

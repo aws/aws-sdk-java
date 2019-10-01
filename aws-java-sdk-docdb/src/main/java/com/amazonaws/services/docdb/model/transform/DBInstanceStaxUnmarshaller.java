@@ -165,6 +165,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("CACertificateIdentifier", targetDepth)) {
+                    dBInstance.setCACertificateIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("PromotionTier", targetDepth)) {
                     dBInstance.setPromotionTier(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

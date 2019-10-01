@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.643-SNAPSHOT</version>
+  <version>1.11.643</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -351,7 +351,7 @@
             <extensions>true</extensions>
             <configuration>
               <serverId>sonatype-nexus-staging</serverId>
-              <nexusUrl>https://oss.sonatype.org</nexusUrl>
+              <nexusUrl>https://aws.oss.sonatype.org</nexusUrl>
             </configuration>
           </plugin>
         </plugins>

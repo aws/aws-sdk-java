@@ -58,7 +58,7 @@ public class DBSubnetGroup implements Serializable, Cloneable {
     private java.util.List<Subnet> subnets;
     /**
      * <p>
-     * The Amazon Resource Identifier (ARN) for the DB subnet group.
+     * The Amazon Resource Name (ARN) for the DB subnet group.
      * </p>
      */
     private String dBSubnetGroupArn;
@@ -295,11 +295,11 @@ public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Identifier (ARN) for the DB subnet group.
+     * The Amazon Resource Name (ARN) for the DB subnet group.
      * </p>
      * 
      * @param dBSubnetGroupArn
-     *        The Amazon Resource Identifier (ARN) for the DB subnet group.
+     *        The Amazon Resource Name (ARN) for the DB subnet group.
      */
 
     public void setDBSubnetGroupArn(String dBSubnetGroupArn) {
@@ -308,10 +308,10 @@ public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Identifier (ARN) for the DB subnet group.
+     * The Amazon Resource Name (ARN) for the DB subnet group.
      * </p>
      * 
-     * @return The Amazon Resource Identifier (ARN) for the DB subnet group.
+     * @return The Amazon Resource Name (ARN) for the DB subnet group.
      */
 
     public String getDBSubnetGroupArn() {
@@ -320,11 +320,11 @@ public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Identifier (ARN) for the DB subnet group.
+     * The Amazon Resource Name (ARN) for the DB subnet group.
      * </p>
      * 
      * @param dBSubnetGroupArn
-     *        The Amazon Resource Identifier (ARN) for the DB subnet group.
+     *        The Amazon Resource Name (ARN) for the DB subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

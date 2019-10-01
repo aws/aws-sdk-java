@@ -64,6 +64,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("NewDBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getNewDBInstanceIdentifier()));
         }
 
+        if (modifyDBInstanceRequest.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getCACertificateIdentifier()));
+        }
+
         if (modifyDBInstanceRequest.getPromotionTier() != null) {
             request.addParameter("PromotionTier", StringUtils.fromInteger(modifyDBInstanceRequest.getPromotionTier()));
         }
