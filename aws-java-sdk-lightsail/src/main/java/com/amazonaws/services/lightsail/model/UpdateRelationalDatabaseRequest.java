@@ -69,7 +69,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -114,7 +114,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -362,7 +362,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -394,7 +394,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -432,7 +432,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -463,7 +463,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         Specified in Universal Coordinated Time (UTC).
+     *         Specified in Coordinated Universal Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -501,7 +501,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -533,7 +533,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -583,7 +583,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -620,7 +620,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -663,7 +663,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -699,7 +699,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         Specified in Universal Coordinated Time (UTC).
+     *         Specified in Coordinated Universal Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -742,7 +742,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -779,7 +779,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>

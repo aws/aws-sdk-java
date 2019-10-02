@@ -54,7 +54,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The region and Availability Zone.
+     * The AWS Region and Availability Zone.
      * </p>
      */
     private ResourceLocation location;
@@ -296,11 +296,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region and Availability Zone.
+     * The AWS Region and Availability Zone.
      * </p>
      * 
      * @param location
-     *        The region and Availability Zone.
+     *        The AWS Region and Availability Zone.
      */
 
     public void setLocation(ResourceLocation location) {
@@ -309,10 +309,10 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region and Availability Zone.
+     * The AWS Region and Availability Zone.
      * </p>
      * 
-     * @return The region and Availability Zone.
+     * @return The AWS Region and Availability Zone.
      */
 
     public ResourceLocation getLocation() {
@@ -321,11 +321,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region and Availability Zone.
+     * The AWS Region and Availability Zone.
      * </p>
      * 
      * @param location
-     *        The region and Availability Zone.
+     *        The AWS Region and Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

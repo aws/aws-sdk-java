@@ -31,6 +31,12 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String diskName;
+    /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     */
+    private Boolean forceDeleteAddOns;
 
     /**
      * <p>
@@ -73,6 +79,58 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     * 
+     * @param forceDeleteAddOns
+     *        A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     */
+
+    public void setForceDeleteAddOns(Boolean forceDeleteAddOns) {
+        this.forceDeleteAddOns = forceDeleteAddOns;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     * 
+     * @return A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     */
+
+    public Boolean getForceDeleteAddOns() {
+        return this.forceDeleteAddOns;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     * 
+     * @param forceDeleteAddOns
+     *        A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDiskRequest withForceDeleteAddOns(Boolean forceDeleteAddOns) {
+        setForceDeleteAddOns(forceDeleteAddOns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     * 
+     * @return A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     */
+
+    public Boolean isForceDeleteAddOns() {
+        return this.forceDeleteAddOns;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +143,9 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDiskName() != null)
-            sb.append("DiskName: ").append(getDiskName());
+            sb.append("DiskName: ").append(getDiskName()).append(",");
+        if (getForceDeleteAddOns() != null)
+            sb.append("ForceDeleteAddOns: ").append(getForceDeleteAddOns());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +164,10 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDiskName() != null && other.getDiskName().equals(this.getDiskName()) == false)
             return false;
+        if (other.getForceDeleteAddOns() == null ^ this.getForceDeleteAddOns() == null)
+            return false;
+        if (other.getForceDeleteAddOns() != null && other.getForceDeleteAddOns().equals(this.getForceDeleteAddOns()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +177,7 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDiskName() == null) ? 0 : getDiskName().hashCode());
+        hashCode = prime * hashCode + ((getForceDeleteAddOns() == null) ? 0 : getForceDeleteAddOns().hashCode());
         return hashCode;
     }
 

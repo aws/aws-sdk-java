@@ -104,6 +104,10 @@ public class InstanceSnapshotJsonUnmarshaller implements Unmarshaller<InstanceSn
                     context.nextToken();
                     instanceSnapshot.setFromBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("isFromAutoSnapshot", targetDepth)) {
+                    context.nextToken();
+                    instanceSnapshot.setIsFromAutoSnapshot(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("sizeInGb", targetDepth)) {
                     context.nextToken();
                     instanceSnapshot.setSizeInGb(context.getUnmarshaller(Integer.class).unmarshall(context));

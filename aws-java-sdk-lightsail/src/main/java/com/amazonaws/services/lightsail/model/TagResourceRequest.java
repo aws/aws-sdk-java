@@ -33,6 +33,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceName;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the resource to which you want to add a tag.
+     * </p>
+     */
+    private String resourceArn;
+    /**
+     * <p>
      * The tag key and optional value.
      * </p>
      */
@@ -75,6 +81,46 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public TagResourceRequest withResourceName(String resourceName) {
         setResourceName(resourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource to which you want to add a tag.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the resource to which you want to add a tag.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource to which you want to add a tag.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the resource to which you want to add a tag.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource to which you want to add a tag.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the resource to which you want to add a tag.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TagResourceRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
         return this;
     }
 
@@ -162,6 +208,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getResourceName() != null)
             sb.append("ResourceName: ").append(getResourceName()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -182,6 +230,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -195,6 +247,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -114,6 +114,12 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String fromInstanceArn;
+    /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     */
+    private Boolean isFromAutoSnapshot;
 
     /**
      * <p>
@@ -768,6 +774,58 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     * 
+     * @param isFromAutoSnapshot
+     *        A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     */
+
+    public void setIsFromAutoSnapshot(Boolean isFromAutoSnapshot) {
+        this.isFromAutoSnapshot = isFromAutoSnapshot;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     */
+
+    public Boolean getIsFromAutoSnapshot() {
+        return this.isFromAutoSnapshot;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     * 
+     * @param isFromAutoSnapshot
+     *        A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskSnapshot withIsFromAutoSnapshot(Boolean isFromAutoSnapshot) {
+        setIsFromAutoSnapshot(isFromAutoSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     */
+
+    public Boolean isFromAutoSnapshot() {
+        return this.isFromAutoSnapshot;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -806,7 +864,9 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
         if (getFromInstanceName() != null)
             sb.append("FromInstanceName: ").append(getFromInstanceName()).append(",");
         if (getFromInstanceArn() != null)
-            sb.append("FromInstanceArn: ").append(getFromInstanceArn());
+            sb.append("FromInstanceArn: ").append(getFromInstanceArn()).append(",");
+        if (getIsFromAutoSnapshot() != null)
+            sb.append("IsFromAutoSnapshot: ").append(getIsFromAutoSnapshot());
         sb.append("}");
         return sb.toString();
     }
@@ -877,6 +937,10 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFromInstanceArn() != null && other.getFromInstanceArn().equals(this.getFromInstanceArn()) == false)
             return false;
+        if (other.getIsFromAutoSnapshot() == null ^ this.getIsFromAutoSnapshot() == null)
+            return false;
+        if (other.getIsFromAutoSnapshot() != null && other.getIsFromAutoSnapshot().equals(this.getIsFromAutoSnapshot()) == false)
+            return false;
         return true;
     }
 
@@ -899,6 +963,7 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFromDiskArn() == null) ? 0 : getFromDiskArn().hashCode());
         hashCode = prime * hashCode + ((getFromInstanceName() == null) ? 0 : getFromInstanceName().hashCode());
         hashCode = prime * hashCode + ((getFromInstanceArn() == null) ? 0 : getFromInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getIsFromAutoSnapshot() == null) ? 0 : getIsFromAutoSnapshot().hashCode());
         return hashCode;
     }
 

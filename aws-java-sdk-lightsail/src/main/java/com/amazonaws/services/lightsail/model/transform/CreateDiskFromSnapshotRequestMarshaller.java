@@ -38,6 +38,14 @@ public class CreateDiskFromSnapshotRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sizeInGb").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> ADDONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("addOns").build();
+    private static final MarshallingInfo<String> SOURCEDISKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceDiskName").build();
+    private static final MarshallingInfo<String> RESTOREDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("restoreDate").build();
+    private static final MarshallingInfo<Boolean> USELATESTRESTORABLEAUTOSNAPSHOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useLatestRestorableAutoSnapshot").build();
 
     private static final CreateDiskFromSnapshotRequestMarshaller instance = new CreateDiskFromSnapshotRequestMarshaller();
 
@@ -60,6 +68,10 @@ public class CreateDiskFromSnapshotRequestMarshaller {
             protocolMarshaller.marshall(createDiskFromSnapshotRequest.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(createDiskFromSnapshotRequest.getSizeInGb(), SIZEINGB_BINDING);
             protocolMarshaller.marshall(createDiskFromSnapshotRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDiskFromSnapshotRequest.getAddOns(), ADDONS_BINDING);
+            protocolMarshaller.marshall(createDiskFromSnapshotRequest.getSourceDiskName(), SOURCEDISKNAME_BINDING);
+            protocolMarshaller.marshall(createDiskFromSnapshotRequest.getRestoreDate(), RESTOREDATE_BINDING);
+            protocolMarshaller.marshall(createDiskFromSnapshotRequest.getUseLatestRestorableAutoSnapshot(), USELATESTRESTORABLEAUTOSNAPSHOT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

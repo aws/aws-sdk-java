@@ -33,11 +33,11 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String diskName;
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     * Availability Zone as the Lightsail instance where you want to create the disk.
+     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     * Availability Zone as the Lightsail instance to which you want to attach the disk.
      * </p>
      * <p>
-     * Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
+     * Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      */
     private String availabilityZone;
@@ -56,6 +56,12 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     */
+    private java.util.List<AddOnRequest> addOns;
 
     /**
      * <p>
@@ -99,18 +105,19 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     * Availability Zone as the Lightsail instance where you want to create the disk.
+     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     * Availability Zone as the Lightsail instance to which you want to attach the disk.
      * </p>
      * <p>
-     * Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
+     * Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     *        Availability Zone as the Lightsail instance where you want to create the disk.</p>
+     *        The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     *        Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
      *        <p>
-     *        Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
+     *        Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently
+     *        available.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -119,17 +126,18 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     * Availability Zone as the Lightsail instance where you want to create the disk.
+     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     * Availability Zone as the Lightsail instance to which you want to attach the disk.
      * </p>
      * <p>
-     * Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
+     * Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
-     * @return The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     *         Availability Zone as the Lightsail instance where you want to create the disk.</p>
+     * @return The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     *         Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
      *         <p>
-     *         Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
+     *         Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently
+     *         available.
      */
 
     public String getAvailabilityZone() {
@@ -138,18 +146,19 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     * Availability Zone as the Lightsail instance where you want to create the disk.
+     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     * Availability Zone as the Lightsail instance to which you want to attach the disk.
      * </p>
      * <p>
-     * Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
+     * Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     *        Availability Zone as the Lightsail instance where you want to create the disk.</p>
+     *        The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     *        Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
      *        <p>
-     *        Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
+     *        Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently
+     *        available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,6 +298,76 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     * 
+     * @return An array of objects that represent the add-ons to enable for the new disk.
+     */
+
+    public java.util.List<AddOnRequest> getAddOns() {
+        return addOns;
+    }
+
+    /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects that represent the add-ons to enable for the new disk.
+     */
+
+    public void setAddOns(java.util.Collection<AddOnRequest> addOns) {
+        if (addOns == null) {
+            this.addOns = null;
+            return;
+        }
+
+        this.addOns = new java.util.ArrayList<AddOnRequest>(addOns);
+    }
+
+    /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddOns(java.util.Collection)} or {@link #withAddOns(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects that represent the add-ons to enable for the new disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDiskRequest withAddOns(AddOnRequest... addOns) {
+        if (this.addOns == null) {
+            setAddOns(new java.util.ArrayList<AddOnRequest>(addOns.length));
+        }
+        for (AddOnRequest ele : addOns) {
+            this.addOns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects that represent the add-ons to enable for the new disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDiskRequest withAddOns(java.util.Collection<AddOnRequest> addOns) {
+        setAddOns(addOns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -307,7 +386,9 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getSizeInGb() != null)
             sb.append("SizeInGb: ").append(getSizeInGb()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAddOns() != null)
+            sb.append("AddOns: ").append(getAddOns());
         sb.append("}");
         return sb.toString();
     }
@@ -338,6 +419,10 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAddOns() == null ^ this.getAddOns() == null)
+            return false;
+        if (other.getAddOns() != null && other.getAddOns().equals(this.getAddOns()) == false)
+            return false;
         return true;
     }
 
@@ -350,6 +435,7 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getSizeInGb() == null) ? 0 : getSizeInGb().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAddOns() == null) ? 0 : getAddOns().hashCode());
         return hashCode;
     }
 

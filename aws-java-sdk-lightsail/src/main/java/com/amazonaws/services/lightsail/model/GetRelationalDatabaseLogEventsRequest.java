@@ -50,7 +50,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -75,7 +75,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -96,9 +96,11 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the
      * log.
      * </p>
+     * <note>
      * <p>
-     * Default: <code>false</code>
+     * For PostgreSQL, the default value of <code>false</code> is the only option available.
      * </p>
+     * </note>
      */
     private Boolean startFromHead;
     /**
@@ -215,7 +217,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -237,7 +239,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      *        <ul>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -265,7 +267,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -286,7 +288,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      *         <ul>
      *         <li>
      *         <p>
-     *         Specified in Universal Coordinated Time (UTC).
+     *         Specified in Coordinated Universal Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -314,7 +316,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -336,7 +338,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      *        <ul>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -366,7 +368,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -388,7 +390,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      *        <ul>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -416,7 +418,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -437,7 +439,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      *         <ul>
      *         <li>
      *         <p>
-     *         Specified in Universal Coordinated Time (UTC).
+     *         Specified in Coordinated Universal Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -465,7 +467,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -487,7 +489,7 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      *        <ul>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -513,16 +515,19 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the
      * log.
      * </p>
+     * <note>
      * <p>
-     * Default: <code>false</code>
+     * For PostgreSQL, the default value of <code>false</code> is the only option available.
      * </p>
+     * </note>
      * 
      * @param startFromHead
      *        Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log
      *        event starts from the head of the log. If <code>false</code> is specified, the log event starts from the
-     *        tail of the log.</p>
+     *        tail of the log.</p> <note>
      *        <p>
-     *        Default: <code>false</code>
+     *        For PostgreSQL, the default value of <code>false</code> is the only option available.
+     *        </p>
      */
 
     public void setStartFromHead(Boolean startFromHead) {
@@ -535,15 +540,18 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the
      * log.
      * </p>
+     * <note>
      * <p>
-     * Default: <code>false</code>
+     * For PostgreSQL, the default value of <code>false</code> is the only option available.
      * </p>
+     * </note>
      * 
      * @return Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the
      *         log event starts from the head of the log. If <code>false</code> is specified, the log event starts from
-     *         the tail of the log.</p>
+     *         the tail of the log.</p> <note>
      *         <p>
-     *         Default: <code>false</code>
+     *         For PostgreSQL, the default value of <code>false</code> is the only option available.
+     *         </p>
      */
 
     public Boolean getStartFromHead() {
@@ -556,16 +564,19 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the
      * log.
      * </p>
+     * <note>
      * <p>
-     * Default: <code>false</code>
+     * For PostgreSQL, the default value of <code>false</code> is the only option available.
      * </p>
+     * </note>
      * 
      * @param startFromHead
      *        Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log
      *        event starts from the head of the log. If <code>false</code> is specified, the log event starts from the
-     *        tail of the log.</p>
+     *        tail of the log.</p> <note>
      *        <p>
-     *        Default: <code>false</code>
+     *        For PostgreSQL, the default value of <code>false</code> is the only option available.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -580,15 +591,18 @@ public class GetRelationalDatabaseLogEventsRequest extends com.amazonaws.AmazonW
      * starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the
      * log.
      * </p>
+     * <note>
      * <p>
-     * Default: <code>false</code>
+     * For PostgreSQL, the default value of <code>false</code> is the only option available.
      * </p>
+     * </note>
      * 
      * @return Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the
      *         log event starts from the head of the log. If <code>false</code> is specified, the log event starts from
-     *         the tail of the log.</p>
+     *         the tail of the log.</p> <note>
      *         <p>
-     *         Default: <code>false</code>
+     *         For PostgreSQL, the default value of <code>false</code> is the only option available.
+     *         </p>
      */
 
     public Boolean isStartFromHead() {

@@ -110,7 +110,7 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -599,7 +599,7 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -631,7 +631,7 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
      *        </li>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -669,7 +669,7 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -700,7 +700,7 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
      *         </li>
      *         <li>
      *         <p>
-     *         Specified in Universal Coordinated Time (UTC).
+     *         Specified in Coordinated Universal Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -738,7 +738,7 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
      * </li>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -770,7 +770,7 @@ public class CreateRelationalDatabaseFromSnapshotRequest extends com.amazonaws.A
      *        </li>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>

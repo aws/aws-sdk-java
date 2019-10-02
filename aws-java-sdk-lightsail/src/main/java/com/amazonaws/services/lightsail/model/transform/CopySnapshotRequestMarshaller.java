@@ -29,6 +29,12 @@ public class CopySnapshotRequestMarshaller {
 
     private static final MarshallingInfo<String> SOURCESNAPSHOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceSnapshotName").build();
+    private static final MarshallingInfo<String> SOURCERESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceResourceName").build();
+    private static final MarshallingInfo<String> RESTOREDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("restoreDate").build();
+    private static final MarshallingInfo<Boolean> USELATESTRESTORABLEAUTOSNAPSHOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useLatestRestorableAutoSnapshot").build();
     private static final MarshallingInfo<String> TARGETSNAPSHOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetSnapshotName").build();
     private static final MarshallingInfo<String> SOURCEREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +57,9 @@ public class CopySnapshotRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(copySnapshotRequest.getSourceSnapshotName(), SOURCESNAPSHOTNAME_BINDING);
+            protocolMarshaller.marshall(copySnapshotRequest.getSourceResourceName(), SOURCERESOURCENAME_BINDING);
+            protocolMarshaller.marshall(copySnapshotRequest.getRestoreDate(), RESTOREDATE_BINDING);
+            protocolMarshaller.marshall(copySnapshotRequest.getUseLatestRestorableAutoSnapshot(), USELATESTRESTORABLEAUTOSNAPSHOT_BINDING);
             protocolMarshaller.marshall(copySnapshotRequest.getTargetSnapshotName(), TARGETSNAPSHOTNAME_BINDING);
             protocolMarshaller.marshall(copySnapshotRequest.getSourceRegion(), SOURCEREGION_BINDING);
         } catch (Exception e) {

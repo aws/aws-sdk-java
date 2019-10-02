@@ -42,6 +42,8 @@ public class DiskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> ADDONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("addOns").build();
     private static final MarshallingInfo<Integer> SIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sizeInGb").build();
     private static final MarshallingInfo<Boolean> ISSYSTEMDISK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -84,6 +86,7 @@ public class DiskMarshaller {
             protocolMarshaller.marshall(disk.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(disk.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(disk.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(disk.getAddOns(), ADDONS_BINDING);
             protocolMarshaller.marshall(disk.getSizeInGb(), SIZEINGB_BINDING);
             protocolMarshaller.marshall(disk.getIsSystemDisk(), ISSYSTEMDISK_BINDING);
             protocolMarshaller.marshall(disk.getIops(), IOPS_BINDING);

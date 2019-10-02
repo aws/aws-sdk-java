@@ -35,6 +35,10 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
      * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.
+     * </p>
      */
     private String diskSnapshotName;
     /**
@@ -62,6 +66,79 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     */
+    private java.util.List<AddOnRequest> addOns;
+    /**
+     * <p>
+     * The name of the source disk from which the source automatic snapshot was created.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The
+     * <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     */
+    private String sourceDiskName;
+    /**
+     * <p>
+     * The date of the automatic snapshot to use for the new disk.
+     * </p>
+     * <p>
+     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be specified in <code>YYYY-MM-DD</code> format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter.
+     * The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually
+     * exclusive.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     */
+    private String restoreDate;
+    /**
+     * <p>
+     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     */
+    private Boolean useLatestRestorableAutoSnapshot;
 
     /**
      * <p>
@@ -107,9 +184,17 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
      * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.
+     * </p>
      * 
      * @param diskSnapshotName
-     *        The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
+     *        The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage
+     *        disk.</p>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>source disk name</code> parameter. The
+     *        <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.
      */
 
     public void setDiskSnapshotName(String diskSnapshotName) {
@@ -120,8 +205,16 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
      * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.
+     * </p>
      * 
-     * @return The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
+     * @return The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage
+     *         disk.</p>
+     *         <p>
+     *         This parameter cannot be defined together with the <code>source disk name</code> parameter. The
+     *         <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.
      */
 
     public String getDiskSnapshotName() {
@@ -132,9 +225,17 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
      * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.
+     * </p>
      * 
      * @param diskSnapshotName
-     *        The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
+     *        The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage
+     *        disk.</p>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>source disk name</code> parameter. The
+     *        <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,6 +436,531 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     * 
+     * @return An array of objects that represent the add-ons to enable for the new disk.
+     */
+
+    public java.util.List<AddOnRequest> getAddOns() {
+        return addOns;
+    }
+
+    /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects that represent the add-ons to enable for the new disk.
+     */
+
+    public void setAddOns(java.util.Collection<AddOnRequest> addOns) {
+        if (addOns == null) {
+            this.addOns = null;
+            return;
+        }
+
+        this.addOns = new java.util.ArrayList<AddOnRequest>(addOns);
+    }
+
+    /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddOns(java.util.Collection)} or {@link #withAddOns(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects that represent the add-ons to enable for the new disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDiskFromSnapshotRequest withAddOns(AddOnRequest... addOns) {
+        if (this.addOns == null) {
+            setAddOns(new java.util.ArrayList<AddOnRequest>(addOns.length));
+        }
+        for (AddOnRequest ele : addOns) {
+            this.addOns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects that represent the add-ons to enable for the new disk.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects that represent the add-ons to enable for the new disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDiskFromSnapshotRequest withAddOns(java.util.Collection<AddOnRequest> addOns) {
+        setAddOns(addOns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the source disk from which the source automatic snapshot was created.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The
+     * <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @param sourceDiskName
+     *        The name of the source disk from which the source automatic snapshot was created.</p>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The
+     *        <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *        the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        >Lightsail Dev Guide</a>.
+     *        </p>
+     */
+
+    public void setSourceDiskName(String sourceDiskName) {
+        this.sourceDiskName = sourceDiskName;
+    }
+
+    /**
+     * <p>
+     * The name of the source disk from which the source automatic snapshot was created.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The
+     * <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @return The name of the source disk from which the source automatic snapshot was created.</p>
+     *         <p>
+     *         This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The
+     *         <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *         the <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *         >Lightsail Dev Guide</a>.
+     *         </p>
+     */
+
+    public String getSourceDiskName() {
+        return this.sourceDiskName;
+    }
+
+    /**
+     * <p>
+     * The name of the source disk from which the source automatic snapshot was created.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The
+     * <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @param sourceDiskName
+     *        The name of the source disk from which the source automatic snapshot was created.</p>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The
+     *        <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *        the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        >Lightsail Dev Guide</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDiskFromSnapshotRequest withSourceDiskName(String sourceDiskName) {
+        setSourceDiskName(sourceDiskName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date of the automatic snapshot to use for the new disk.
+     * </p>
+     * <p>
+     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be specified in <code>YYYY-MM-DD</code> format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter.
+     * The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually
+     * exclusive.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @param restoreDate
+     *        The date of the automatic snapshot to use for the new disk.</p>
+     *        <p>
+     *        Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
+     *        snapshots.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be specified in <code>YYYY-MM-DD</code> format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code>
+     *        parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters
+     *        are mutually exclusive.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *        the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        >Lightsail Dev Guide</a>.
+     *        </p>
+     */
+
+    public void setRestoreDate(String restoreDate) {
+        this.restoreDate = restoreDate;
+    }
+
+    /**
+     * <p>
+     * The date of the automatic snapshot to use for the new disk.
+     * </p>
+     * <p>
+     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be specified in <code>YYYY-MM-DD</code> format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter.
+     * The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually
+     * exclusive.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @return The date of the automatic snapshot to use for the new disk.</p>
+     *         <p>
+     *         Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
+     *         snapshots.
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be specified in <code>YYYY-MM-DD</code> format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code>
+     *         parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters
+     *         are mutually exclusive.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *         the <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *         >Lightsail Dev Guide</a>.
+     *         </p>
+     */
+
+    public String getRestoreDate() {
+        return this.restoreDate;
+    }
+
+    /**
+     * <p>
+     * The date of the automatic snapshot to use for the new disk.
+     * </p>
+     * <p>
+     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be specified in <code>YYYY-MM-DD</code> format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter.
+     * The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually
+     * exclusive.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @param restoreDate
+     *        The date of the automatic snapshot to use for the new disk.</p>
+     *        <p>
+     *        Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
+     *        snapshots.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be specified in <code>YYYY-MM-DD</code> format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code>
+     *        parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters
+     *        are mutually exclusive.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *        the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        >Lightsail Dev Guide</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDiskFromSnapshotRequest withRestoreDate(String restoreDate) {
+        setRestoreDate(restoreDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @param useLatestRestorableAutoSnapshot
+     *        A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     *        <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
+     *        exclusive.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *        the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        >Lightsail Dev Guide</a>.
+     *        </p>
+     */
+
+    public void setUseLatestRestorableAutoSnapshot(Boolean useLatestRestorableAutoSnapshot) {
+        this.useLatestRestorableAutoSnapshot = useLatestRestorableAutoSnapshot;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @return A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *         <p>
+     *         This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     *         <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
+     *         exclusive.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *         the <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *         >Lightsail Dev Guide</a>.
+     *         </p>
+     */
+
+    public Boolean getUseLatestRestorableAutoSnapshot() {
+        return this.useLatestRestorableAutoSnapshot;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @param useLatestRestorableAutoSnapshot
+     *        A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     *        <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
+     *        exclusive.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *        the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        >Lightsail Dev Guide</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDiskFromSnapshotRequest withUseLatestRestorableAutoSnapshot(Boolean useLatestRestorableAutoSnapshot) {
+        setUseLatestRestorableAutoSnapshot(useLatestRestorableAutoSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * </p>
+     * <p>
+     * This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
+     * </p>
+     * <note>
+     * <p>
+     * Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * 
+     * @return A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *         <p>
+     *         This parameter cannot be defined together with the <code>restore date</code> parameter. The
+     *         <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
+     *         exclusive.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Define this parameter only when creating a new disk from an automatic snapshot. For more information, see
+     *         the <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *         >Lightsail Dev Guide</a>.
+     *         </p>
+     */
+
+    public Boolean isUseLatestRestorableAutoSnapshot() {
+        return this.useLatestRestorableAutoSnapshot;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,7 +981,15 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
         if (getSizeInGb() != null)
             sb.append("SizeInGb: ").append(getSizeInGb()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAddOns() != null)
+            sb.append("AddOns: ").append(getAddOns()).append(",");
+        if (getSourceDiskName() != null)
+            sb.append("SourceDiskName: ").append(getSourceDiskName()).append(",");
+        if (getRestoreDate() != null)
+            sb.append("RestoreDate: ").append(getRestoreDate()).append(",");
+        if (getUseLatestRestorableAutoSnapshot() != null)
+            sb.append("UseLatestRestorableAutoSnapshot: ").append(getUseLatestRestorableAutoSnapshot());
         sb.append("}");
         return sb.toString();
     }
@@ -390,6 +1024,23 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAddOns() == null ^ this.getAddOns() == null)
+            return false;
+        if (other.getAddOns() != null && other.getAddOns().equals(this.getAddOns()) == false)
+            return false;
+        if (other.getSourceDiskName() == null ^ this.getSourceDiskName() == null)
+            return false;
+        if (other.getSourceDiskName() != null && other.getSourceDiskName().equals(this.getSourceDiskName()) == false)
+            return false;
+        if (other.getRestoreDate() == null ^ this.getRestoreDate() == null)
+            return false;
+        if (other.getRestoreDate() != null && other.getRestoreDate().equals(this.getRestoreDate()) == false)
+            return false;
+        if (other.getUseLatestRestorableAutoSnapshot() == null ^ this.getUseLatestRestorableAutoSnapshot() == null)
+            return false;
+        if (other.getUseLatestRestorableAutoSnapshot() != null
+                && other.getUseLatestRestorableAutoSnapshot().equals(this.getUseLatestRestorableAutoSnapshot()) == false)
+            return false;
         return true;
     }
 
@@ -403,6 +1054,10 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getSizeInGb() == null) ? 0 : getSizeInGb().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAddOns() == null) ? 0 : getAddOns().hashCode());
+        hashCode = prime * hashCode + ((getSourceDiskName() == null) ? 0 : getSourceDiskName().hashCode());
+        hashCode = prime * hashCode + ((getRestoreDate() == null) ? 0 : getRestoreDate().hashCode());
+        hashCode = prime * hashCode + ((getUseLatestRestorableAutoSnapshot() == null) ? 0 : getUseLatestRestorableAutoSnapshot().hashCode());
         return hashCode;
     }
 

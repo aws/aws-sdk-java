@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the snapshot of the virtual private server, or <i>instance</i>.
+ * Describes an instance snapshot.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceSnapshot" target="_top">AWS API
@@ -117,6 +117,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String fromBundleId;
+    /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     */
+    private Boolean isFromAutoSnapshot;
     /**
      * <p>
      * The size in GB of the SSD.
@@ -854,6 +860,58 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     * 
+     * @param isFromAutoSnapshot
+     *        A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     */
+
+    public void setIsFromAutoSnapshot(Boolean isFromAutoSnapshot) {
+        this.isFromAutoSnapshot = isFromAutoSnapshot;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     */
+
+    public Boolean getIsFromAutoSnapshot() {
+        return this.isFromAutoSnapshot;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     * 
+     * @param isFromAutoSnapshot
+     *        A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceSnapshot withIsFromAutoSnapshot(Boolean isFromAutoSnapshot) {
+        setIsFromAutoSnapshot(isFromAutoSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether the snapshot was created from an automatic snapshot.
+     */
+
+    public Boolean isFromAutoSnapshot() {
+        return this.isFromAutoSnapshot;
+    }
+
+    /**
+     * <p>
      * The size in GB of the SSD.
      * </p>
      * 
@@ -932,6 +990,8 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
             sb.append("FromBlueprintId: ").append(getFromBlueprintId()).append(",");
         if (getFromBundleId() != null)
             sb.append("FromBundleId: ").append(getFromBundleId()).append(",");
+        if (getIsFromAutoSnapshot() != null)
+            sb.append("IsFromAutoSnapshot: ").append(getIsFromAutoSnapshot()).append(",");
         if (getSizeInGb() != null)
             sb.append("SizeInGb: ").append(getSizeInGb());
         sb.append("}");
@@ -1004,6 +1064,10 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getFromBundleId() != null && other.getFromBundleId().equals(this.getFromBundleId()) == false)
             return false;
+        if (other.getIsFromAutoSnapshot() == null ^ this.getIsFromAutoSnapshot() == null)
+            return false;
+        if (other.getIsFromAutoSnapshot() != null && other.getIsFromAutoSnapshot().equals(this.getIsFromAutoSnapshot()) == false)
+            return false;
         if (other.getSizeInGb() == null ^ this.getSizeInGb() == null)
             return false;
         if (other.getSizeInGb() != null && other.getSizeInGb().equals(this.getSizeInGb()) == false)
@@ -1030,6 +1094,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getFromInstanceArn() == null) ? 0 : getFromInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getFromBlueprintId() == null) ? 0 : getFromBlueprintId().hashCode());
         hashCode = prime * hashCode + ((getFromBundleId() == null) ? 0 : getFromBundleId().hashCode());
+        hashCode = prime * hashCode + ((getIsFromAutoSnapshot() == null) ? 0 : getIsFromAutoSnapshot().hashCode());
         hashCode = prime * hashCode + ((getSizeInGb() == null) ? 0 : getSizeInGb().hashCode());
         return hashCode;
     }

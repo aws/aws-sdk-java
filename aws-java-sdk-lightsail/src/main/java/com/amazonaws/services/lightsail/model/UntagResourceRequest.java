@@ -33,6 +33,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String resourceName;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.
+     * </p>
+     */
+    private String resourceArn;
+    /**
+     * <p>
      * The tag keys to delete from the specified resource.
      * </p>
      */
@@ -75,6 +81,46 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public UntagResourceRequest withResourceName(String resourceName) {
         setResourceName(resourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UntagResourceRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
         return this;
     }
 
@@ -162,6 +208,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getResourceName() != null)
             sb.append("ResourceName: ").append(getResourceName()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getTagKeys() != null)
             sb.append("TagKeys: ").append(getTagKeys());
         sb.append("}");
@@ -182,6 +230,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         if (other.getTagKeys() == null ^ this.getTagKeys() == null)
             return false;
         if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false)
@@ -195,6 +247,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
         return hashCode;
     }

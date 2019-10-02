@@ -36,6 +36,8 @@ public class CreateDiskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sizeInGb").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> ADDONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("addOns").build();
 
     private static final CreateDiskRequestMarshaller instance = new CreateDiskRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreateDiskRequestMarshaller {
             protocolMarshaller.marshall(createDiskRequest.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(createDiskRequest.getSizeInGb(), SIZEINGB_BINDING);
             protocolMarshaller.marshall(createDiskRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDiskRequest.getAddOns(), ADDONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

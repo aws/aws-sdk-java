@@ -56,6 +56,8 @@ public class DiskSnapshotMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fromInstanceName").build();
     private static final MarshallingInfo<String> FROMINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fromInstanceArn").build();
+    private static final MarshallingInfo<Boolean> ISFROMAUTOSNAPSHOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isFromAutoSnapshot").build();
 
     private static final DiskSnapshotMarshaller instance = new DiskSnapshotMarshaller();
 
@@ -87,6 +89,7 @@ public class DiskSnapshotMarshaller {
             protocolMarshaller.marshall(diskSnapshot.getFromDiskArn(), FROMDISKARN_BINDING);
             protocolMarshaller.marshall(diskSnapshot.getFromInstanceName(), FROMINSTANCENAME_BINDING);
             protocolMarshaller.marshall(diskSnapshot.getFromInstanceArn(), FROMINSTANCEARN_BINDING);
+            protocolMarshaller.marshall(diskSnapshot.getIsFromAutoSnapshot(), ISFROMAUTOSNAPSHOT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

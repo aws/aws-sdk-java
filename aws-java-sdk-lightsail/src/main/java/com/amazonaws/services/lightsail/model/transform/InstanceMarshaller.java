@@ -48,6 +48,8 @@ public class InstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blueprintName").build();
     private static final MarshallingInfo<String> BUNDLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("bundleId").build();
+    private static final MarshallingInfo<List> ADDONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("addOns").build();
     private static final MarshallingInfo<Boolean> ISSTATICIP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isStaticIp").build();
     private static final MarshallingInfo<String> PRIVATEIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -93,6 +95,7 @@ public class InstanceMarshaller {
             protocolMarshaller.marshall(instance.getBlueprintId(), BLUEPRINTID_BINDING);
             protocolMarshaller.marshall(instance.getBlueprintName(), BLUEPRINTNAME_BINDING);
             protocolMarshaller.marshall(instance.getBundleId(), BUNDLEID_BINDING);
+            protocolMarshaller.marshall(instance.getAddOns(), ADDONS_BINDING);
             protocolMarshaller.marshall(instance.getIsStaticIp(), ISSTATICIP_BINDING);
             protocolMarshaller.marshall(instance.getPrivateIpAddress(), PRIVATEIPADDRESS_BINDING);
             protocolMarshaller.marshall(instance.getPublicIpAddress(), PUBLICIPADDRESS_BINDING);

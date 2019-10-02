@@ -56,8 +56,15 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).
-     * Use the get blueprints operation to return a list of available images (or <i>blueprints</i>).
+     * Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).
      * </p>
+     * <note>
+     * <p>
+     * Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with
+     * existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when
+     * they become outdated due to operating system updates or new application releases.
+     * </p>
+     * </note>
      */
     private String blueprintId;
     /**
@@ -98,6 +105,12 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * An array of objects representing the add-ons to enable for the new instance.
+     * </p>
+     */
+    private java.util.List<AddOnRequest> addOns;
 
     /**
      * <p>
@@ -302,13 +315,25 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).
-     * Use the get blueprints operation to return a list of available images (or <i>blueprints</i>).
+     * Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).
      * </p>
+     * <note>
+     * <p>
+     * Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with
+     * existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when
+     * they become outdated due to operating system updates or new application releases.
+     * </p>
+     * </note>
      * 
      * @param blueprintId
      *        The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
-     *        <code>app_lamp_7_0</code>). Use the get blueprints operation to return a list of available images (or
-     *        <i>blueprints</i>).
+     *        <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available
+     *        images (or <i>blueprints</i>).</p> <note>
+     *        <p>
+     *        Use active blueprints when creating new instances. Inactive blueprints are listed to support customers
+     *        with existing instances and are not necessarily available to create new instances. Blueprints are marked
+     *        inactive when they become outdated due to operating system updates or new application releases.
+     *        </p>
      */
 
     public void setBlueprintId(String blueprintId) {
@@ -318,12 +343,24 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).
-     * Use the get blueprints operation to return a list of available images (or <i>blueprints</i>).
+     * Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).
      * </p>
+     * <note>
+     * <p>
+     * Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with
+     * existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when
+     * they become outdated due to operating system updates or new application releases.
+     * </p>
+     * </note>
      * 
      * @return The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
-     *         <code>app_lamp_7_0</code>). Use the get blueprints operation to return a list of available images (or
-     *         <i>blueprints</i>).
+     *         <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available
+     *         images (or <i>blueprints</i>).</p> <note>
+     *         <p>
+     *         Use active blueprints when creating new instances. Inactive blueprints are listed to support customers
+     *         with existing instances and are not necessarily available to create new instances. Blueprints are marked
+     *         inactive when they become outdated due to operating system updates or new application releases.
+     *         </p>
      */
 
     public String getBlueprintId() {
@@ -333,13 +370,25 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).
-     * Use the get blueprints operation to return a list of available images (or <i>blueprints</i>).
+     * Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).
      * </p>
+     * <note>
+     * <p>
+     * Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with
+     * existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when
+     * they become outdated due to operating system updates or new application releases.
+     * </p>
+     * </note>
      * 
      * @param blueprintId
      *        The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or
-     *        <code>app_lamp_7_0</code>). Use the get blueprints operation to return a list of available images (or
-     *        <i>blueprints</i>).
+     *        <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available
+     *        images (or <i>blueprints</i>).</p> <note>
+     *        <p>
+     *        Use active blueprints when creating new instances. Inactive blueprints are listed to support customers
+     *        with existing instances and are not necessarily available to create new instances. Blueprints are marked
+     *        inactive when they become outdated due to operating system updates or new application releases.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,6 +668,76 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * An array of objects representing the add-ons to enable for the new instance.
+     * </p>
+     * 
+     * @return An array of objects representing the add-ons to enable for the new instance.
+     */
+
+    public java.util.List<AddOnRequest> getAddOns() {
+        return addOns;
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons to enable for the new instance.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons to enable for the new instance.
+     */
+
+    public void setAddOns(java.util.Collection<AddOnRequest> addOns) {
+        if (addOns == null) {
+            this.addOns = null;
+            return;
+        }
+
+        this.addOns = new java.util.ArrayList<AddOnRequest>(addOns);
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons to enable for the new instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddOns(java.util.Collection)} or {@link #withAddOns(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons to enable for the new instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesRequest withAddOns(AddOnRequest... addOns) {
+        if (this.addOns == null) {
+            setAddOns(new java.util.ArrayList<AddOnRequest>(addOns.length));
+        }
+        for (AddOnRequest ele : addOns) {
+            this.addOns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons to enable for the new instance.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons to enable for the new instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesRequest withAddOns(java.util.Collection<AddOnRequest> addOns) {
+        setAddOns(addOns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -645,7 +764,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
         if (getKeyPairName() != null)
             sb.append("KeyPairName: ").append(getKeyPairName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAddOns() != null)
+            sb.append("AddOns: ").append(getAddOns());
         sb.append("}");
         return sb.toString();
     }
@@ -692,6 +813,10 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAddOns() == null ^ this.getAddOns() == null)
+            return false;
+        if (other.getAddOns() != null && other.getAddOns().equals(this.getAddOns()) == false)
+            return false;
         return true;
     }
 
@@ -708,6 +833,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getKeyPairName() == null) ? 0 : getKeyPairName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAddOns() == null) ? 0 : getAddOns().hashCode());
         return hashCode;
     }
 

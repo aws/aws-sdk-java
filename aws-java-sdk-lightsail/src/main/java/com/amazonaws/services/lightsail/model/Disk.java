@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a system disk or an block storage disk.
+ * Describes a system disk or a block storage disk.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Disk" target="_top">AWS API
@@ -72,6 +72,12 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * An array of objects representing the add-ons enabled on the disk.
+     * </p>
+     */
+    private java.util.List<AddOn> addOns;
     /**
      * <p>
      * The size of the disk in GB.
@@ -502,6 +508,76 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     public Disk withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons enabled on the disk.
+     * </p>
+     * 
+     * @return An array of objects representing the add-ons enabled on the disk.
+     */
+
+    public java.util.List<AddOn> getAddOns() {
+        return addOns;
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons enabled on the disk.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons enabled on the disk.
+     */
+
+    public void setAddOns(java.util.Collection<AddOn> addOns) {
+        if (addOns == null) {
+            this.addOns = null;
+            return;
+        }
+
+        this.addOns = new java.util.ArrayList<AddOn>(addOns);
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons enabled on the disk.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddOns(java.util.Collection)} or {@link #withAddOns(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons enabled on the disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Disk withAddOns(AddOn... addOns) {
+        if (this.addOns == null) {
+            setAddOns(new java.util.ArrayList<AddOn>(addOns.length));
+        }
+        for (AddOn ele : addOns) {
+            this.addOns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons enabled on the disk.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons enabled on the disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Disk withAddOns(java.util.Collection<AddOn> addOns) {
+        setAddOns(addOns);
         return this;
     }
 
@@ -1011,6 +1087,8 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getAddOns() != null)
+            sb.append("AddOns: ").append(getAddOns()).append(",");
         if (getSizeInGb() != null)
             sb.append("SizeInGb: ").append(getSizeInGb()).append(",");
         if (getIsSystemDisk() != null)
@@ -1071,6 +1149,10 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAddOns() == null ^ this.getAddOns() == null)
+            return false;
+        if (other.getAddOns() != null && other.getAddOns().equals(this.getAddOns()) == false)
+            return false;
         if (other.getSizeInGb() == null ^ this.getSizeInGb() == null)
             return false;
         if (other.getSizeInGb() != null && other.getSizeInGb().equals(this.getSizeInGb()) == false)
@@ -1122,6 +1204,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAddOns() == null) ? 0 : getAddOns().hashCode());
         hashCode = prime * hashCode + ((getSizeInGb() == null) ? 0 : getSizeInGb().hashCode());
         hashCode = prime * hashCode + ((getIsSystemDisk() == null) ? 0 : getIsSystemDisk().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());

@@ -64,7 +64,9 @@ public enum OperationType {
     UpdateRelationalDatabaseParameters("UpdateRelationalDatabaseParameters"),
     StartRelationalDatabase("StartRelationalDatabase"),
     RebootRelationalDatabase("RebootRelationalDatabase"),
-    StopRelationalDatabase("StopRelationalDatabase");
+    StopRelationalDatabase("StopRelationalDatabase"),
+    EnableAddOn("EnableAddOn"),
+    DisableAddOn("DisableAddOn");
 
     private String value;
 

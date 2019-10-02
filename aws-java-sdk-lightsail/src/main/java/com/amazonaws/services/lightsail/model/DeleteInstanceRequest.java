@@ -31,6 +31,12 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String instanceName;
+    /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     */
+    private Boolean forceDeleteAddOns;
 
     /**
      * <p>
@@ -73,6 +79,58 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     * 
+     * @param forceDeleteAddOns
+     *        A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     */
+
+    public void setForceDeleteAddOns(Boolean forceDeleteAddOns) {
+        this.forceDeleteAddOns = forceDeleteAddOns;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     * 
+     * @return A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     */
+
+    public Boolean getForceDeleteAddOns() {
+        return this.forceDeleteAddOns;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     * 
+     * @param forceDeleteAddOns
+     *        A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteInstanceRequest withForceDeleteAddOns(Boolean forceDeleteAddOns) {
+        setForceDeleteAddOns(forceDeleteAddOns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * </p>
+     * 
+     * @return A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     */
+
+    public Boolean isForceDeleteAddOns() {
+        return this.forceDeleteAddOns;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +143,9 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: ").append(getInstanceName());
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
+        if (getForceDeleteAddOns() != null)
+            sb.append("ForceDeleteAddOns: ").append(getForceDeleteAddOns());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +164,10 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getInstanceName() != null && other.getInstanceName().equals(this.getInstanceName()) == false)
             return false;
+        if (other.getForceDeleteAddOns() == null ^ this.getForceDeleteAddOns() == null)
+            return false;
+        if (other.getForceDeleteAddOns() != null && other.getForceDeleteAddOns().equals(this.getForceDeleteAddOns()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +177,7 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
+        hashCode = prime * hashCode + ((getForceDeleteAddOns() == null) ? 0 : getForceDeleteAddOns().hashCode());
         return hashCode;
     }
 

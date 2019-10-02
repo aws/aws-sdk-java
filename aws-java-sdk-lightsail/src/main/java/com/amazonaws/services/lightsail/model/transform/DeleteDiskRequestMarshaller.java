@@ -29,6 +29,8 @@ public class DeleteDiskRequestMarshaller {
 
     private static final MarshallingInfo<String> DISKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("diskName").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETEADDONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceDeleteAddOns").build();
 
     private static final DeleteDiskRequestMarshaller instance = new DeleteDiskRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteDiskRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteDiskRequest.getDiskName(), DISKNAME_BINDING);
+            protocolMarshaller.marshall(deleteDiskRequest.getForceDeleteAddOns(), FORCEDELETEADDONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

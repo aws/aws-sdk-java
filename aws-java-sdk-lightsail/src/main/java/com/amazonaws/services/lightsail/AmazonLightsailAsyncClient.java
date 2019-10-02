@@ -993,6 +993,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAutoSnapshotResult> deleteAutoSnapshotAsync(DeleteAutoSnapshotRequest request) {
+
+        return deleteAutoSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAutoSnapshotResult> deleteAutoSnapshotAsync(final DeleteAutoSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAutoSnapshotRequest, DeleteAutoSnapshotResult> asyncHandler) {
+        final DeleteAutoSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAutoSnapshotResult>() {
+            @Override
+            public DeleteAutoSnapshotResult call() throws Exception {
+                DeleteAutoSnapshotResult result = null;
+
+                try {
+                    result = executeDeleteAutoSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDiskResult> deleteDiskAsync(DeleteDiskRequest request) {
 
         return deleteDiskAsync(request, null);
@@ -1494,6 +1527,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAddOnResult> disableAddOnAsync(DisableAddOnRequest request) {
+
+        return disableAddOnAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAddOnResult> disableAddOnAsync(final DisableAddOnRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableAddOnRequest, DisableAddOnResult> asyncHandler) {
+        final DisableAddOnRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableAddOnResult>() {
+            @Override
+            public DisableAddOnResult call() throws Exception {
+                DisableAddOnResult result = null;
+
+                try {
+                    result = executeDisableAddOn(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadDefaultKeyPairResult> downloadDefaultKeyPairAsync(DownloadDefaultKeyPairRequest request) {
 
         return downloadDefaultKeyPairAsync(request, null);
@@ -1511,6 +1577,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeDownloadDefaultKeyPair(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAddOnResult> enableAddOnAsync(EnableAddOnRequest request) {
+
+        return enableAddOnAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAddOnResult> enableAddOnAsync(final EnableAddOnRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableAddOnRequest, EnableAddOnResult> asyncHandler) {
+        final EnableAddOnRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableAddOnResult>() {
+            @Override
+            public EnableAddOnResult call() throws Exception {
+                EnableAddOnResult result = null;
+
+                try {
+                    result = executeEnableAddOn(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1577,6 +1676,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeGetActiveNames(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAutoSnapshotsResult> getAutoSnapshotsAsync(GetAutoSnapshotsRequest request) {
+
+        return getAutoSnapshotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAutoSnapshotsResult> getAutoSnapshotsAsync(final GetAutoSnapshotsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAutoSnapshotsRequest, GetAutoSnapshotsResult> asyncHandler) {
+        final GetAutoSnapshotsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAutoSnapshotsResult>() {
+            @Override
+            public GetAutoSnapshotsResult call() throws Exception {
+                GetAutoSnapshotsResult result = null;
+
+                try {
+                    result = executeGetAutoSnapshots(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

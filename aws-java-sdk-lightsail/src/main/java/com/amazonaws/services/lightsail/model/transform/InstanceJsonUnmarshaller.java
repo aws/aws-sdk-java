@@ -88,6 +88,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("addOns", targetDepth)) {
+                    context.nextToken();
+                    instance.setAddOns(new ListUnmarshaller<AddOn>(AddOnJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("isStaticIp", targetDepth)) {
                     context.nextToken();
                     instance.setIsStaticIp(context.getUnmarshaller(Boolean.class).unmarshall(context));

@@ -53,7 +53,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -78,7 +78,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -255,7 +255,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -277,7 +277,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -305,7 +305,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -326,7 +326,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         Specified in Universal Coordinated Time (UTC).
+     *         Specified in Coordinated Universal Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -354,7 +354,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -376,7 +376,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -406,7 +406,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -428,7 +428,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -456,7 +456,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -477,7 +477,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         Specified in Universal Coordinated Time (UTC).
+     *         Specified in Coordinated Universal Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -505,7 +505,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Specified in Universal Coordinated Time (UTC).
+     * Specified in Coordinated Universal Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -527,7 +527,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Specified in Universal Coordinated Time (UTC).
+     *        Specified in Coordinated Universal Time (UTC).
      *        </p>
      *        </li>
      *        <li>

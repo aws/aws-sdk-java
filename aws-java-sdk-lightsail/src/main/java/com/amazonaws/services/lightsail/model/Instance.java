@@ -93,6 +93,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String bundleId;
     /**
      * <p>
+     * An array of objects representing the add-ons enabled on the instance.
+     * </p>
+     */
+    private java.util.List<AddOn> addOns;
+    /**
+     * <p>
      * A Boolean value indicating whether this instance has a static IP assigned to it.
      * </p>
      */
@@ -638,6 +644,76 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * An array of objects representing the add-ons enabled on the instance.
+     * </p>
+     * 
+     * @return An array of objects representing the add-ons enabled on the instance.
+     */
+
+    public java.util.List<AddOn> getAddOns() {
+        return addOns;
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons enabled on the instance.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons enabled on the instance.
+     */
+
+    public void setAddOns(java.util.Collection<AddOn> addOns) {
+        if (addOns == null) {
+            this.addOns = null;
+            return;
+        }
+
+        this.addOns = new java.util.ArrayList<AddOn>(addOns);
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons enabled on the instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddOns(java.util.Collection)} or {@link #withAddOns(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons enabled on the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withAddOns(AddOn... addOns) {
+        if (this.addOns == null) {
+            setAddOns(new java.util.ArrayList<AddOn>(addOns.length));
+        }
+        for (AddOn ele : addOns) {
+            this.addOns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects representing the add-ons enabled on the instance.
+     * </p>
+     * 
+     * @param addOns
+     *        An array of objects representing the add-ons enabled on the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withAddOns(java.util.Collection<AddOn> addOns) {
+        setAddOns(addOns);
+        return this;
+    }
+
+    /**
+     * <p>
      * A Boolean value indicating whether this instance has a static IP assigned to it.
      * </p>
      * 
@@ -1043,6 +1119,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             sb.append("BlueprintName: ").append(getBlueprintName()).append(",");
         if (getBundleId() != null)
             sb.append("BundleId: ").append(getBundleId()).append(",");
+        if (getAddOns() != null)
+            sb.append("AddOns: ").append(getAddOns()).append(",");
         if (getIsStaticIp() != null)
             sb.append("IsStaticIp: ").append(getIsStaticIp()).append(",");
         if (getPrivateIpAddress() != null)
@@ -1115,6 +1193,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBundleId() != null && other.getBundleId().equals(this.getBundleId()) == false)
             return false;
+        if (other.getAddOns() == null ^ this.getAddOns() == null)
+            return false;
+        if (other.getAddOns() != null && other.getAddOns().equals(this.getAddOns()) == false)
+            return false;
         if (other.getIsStaticIp() == null ^ this.getIsStaticIp() == null)
             return false;
         if (other.getIsStaticIp() != null && other.getIsStaticIp().equals(this.getIsStaticIp()) == false)
@@ -1169,6 +1251,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBlueprintId() == null) ? 0 : getBlueprintId().hashCode());
         hashCode = prime * hashCode + ((getBlueprintName() == null) ? 0 : getBlueprintName().hashCode());
         hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
+        hashCode = prime * hashCode + ((getAddOns() == null) ? 0 : getAddOns().hashCode());
         hashCode = prime * hashCode + ((getIsStaticIp() == null) ? 0 : getIsStaticIp().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPublicIpAddress() == null) ? 0 : getPublicIpAddress().hashCode());

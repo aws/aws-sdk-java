@@ -29,6 +29,8 @@ public class DeleteInstanceRequestMarshaller {
 
     private static final MarshallingInfo<String> INSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceName").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETEADDONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceDeleteAddOns").build();
 
     private static final DeleteInstanceRequestMarshaller instance = new DeleteInstanceRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteInstanceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteInstanceRequest.getInstanceName(), INSTANCENAME_BINDING);
+            protocolMarshaller.marshall(deleteInstanceRequest.getForceDeleteAddOns(), FORCEDELETEADDONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
