@@ -119,10 +119,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <dt>REMOTE_DEBUG_ENABLED</dt>
      * <dd>
      * <p>
-     * Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
+     * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </dd>
      * <dt>INSTANCE_ARN</dt>
@@ -294,10 +298,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <dt>REMOTE_DEBUG_ENABLED</dt>
      * <dd>
      * <p>
-     * Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
+     * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </dd>
      * <dt>INSTANCE_ARN</dt>
@@ -415,10 +423,15 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        <dt>REMOTE_DEBUG_ENABLED</dt>
      *        <dd>
      *        <p>
-     *        Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     *        <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      *        </p>
      *        <p>
      *        <i>Supported operators</i>: <code>EQUALS</code>
+     *        </p>
+     *        <p>
+     *        <i>This filter will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </dd>
      *        <dt>INSTANCE_ARN</dt>
@@ -540,10 +553,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <dt>REMOTE_DEBUG_ENABLED</dt>
      * <dd>
      * <p>
-     * Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
+     * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </dd>
      * <dt>INSTANCE_ARN</dt>
@@ -660,10 +677,15 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *         <dt>REMOTE_DEBUG_ENABLED</dt>
      *         <dd>
      *         <p>
-     *         Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     *         <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      *         </p>
      *         <p>
      *         <i>Supported operators</i>: <code>EQUALS</code>
+     *         </p>
+     *         <p>
+     *         <i>This filter will be ignored, as remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      *         </p>
      *         </dd>
      *         <dt>INSTANCE_ARN</dt>
@@ -785,10 +807,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <dt>REMOTE_DEBUG_ENABLED</dt>
      * <dd>
      * <p>
-     * Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
+     * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </dd>
      * <dt>INSTANCE_ARN</dt>
@@ -906,10 +932,15 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        <dt>REMOTE_DEBUG_ENABLED</dt>
      *        <dd>
      *        <p>
-     *        Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     *        <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      *        </p>
      *        <p>
      *        <i>Supported operators</i>: <code>EQUALS</code>
+     *        </p>
+     *        <p>
+     *        <i>This filter will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </dd>
      *        <dt>INSTANCE_ARN</dt>
@@ -1033,10 +1064,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <dt>REMOTE_DEBUG_ENABLED</dt>
      * <dd>
      * <p>
-     * Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
+     * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </dd>
      * <dt>INSTANCE_ARN</dt>
@@ -1154,10 +1189,15 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        <dt>REMOTE_DEBUG_ENABLED</dt>
      *        <dd>
      *        <p>
-     *        Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     *        <i>Ignored.</i>Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      *        </p>
      *        <p>
      *        <i>Supported operators</i>: <code>EQUALS</code>
+     *        </p>
+     *        <p>
+     *        <i>This filter will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </dd>
      *        <dt>INSTANCE_ARN</dt>

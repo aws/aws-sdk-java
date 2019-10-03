@@ -190,8 +190,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * >Service-Linked Roles for Application Auto Scaling</a>.
      * </p>
      * <p>
-     * For resources that are not supported using a service-linked role, this parameter is required, and it must specify
-     * the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
+     * For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.
      * </p>
      */
     private String roleARN;
@@ -1525,8 +1525,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * >Service-Linked Roles for Application Auto Scaling</a>.
      * </p>
      * <p>
-     * For resources that are not supported using a service-linked role, this parameter is required, and it must specify
-     * the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
+     * For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.
      * </p>
      * 
      * @param roleARN
@@ -1535,9 +1535,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
      *        >Service-Linked Roles for Application Auto Scaling</a>.</p>
      *        <p>
-     *        For resources that are not supported using a service-linked role, this parameter is required, and it must
-     *        specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
-     *        behalf.
+     *        For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows
+     *        Application Auto Scaling to modify the scalable target on your behalf.
      */
 
     public void setRoleARN(String roleARN) {
@@ -1552,8 +1551,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * >Service-Linked Roles for Application Auto Scaling</a>.
      * </p>
      * <p>
-     * For resources that are not supported using a service-linked role, this parameter is required, and it must specify
-     * the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
+     * For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.
      * </p>
      * 
      * @return Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable
@@ -1561,9 +1560,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
      *         >Service-Linked Roles for Application Auto Scaling</a>.</p>
      *         <p>
-     *         For resources that are not supported using a service-linked role, this parameter is required, and it must
-     *         specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
-     *         behalf.
+     *         For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows
+     *         Application Auto Scaling to modify the scalable target on your behalf.
      */
 
     public String getRoleARN() {
@@ -1578,8 +1576,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * >Service-Linked Roles for Application Auto Scaling</a>.
      * </p>
      * <p>
-     * For resources that are not supported using a service-linked role, this parameter is required, and it must specify
-     * the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
+     * For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.
      * </p>
      * 
      * @param roleARN
@@ -1588,9 +1586,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
      *        >Service-Linked Roles for Application Auto Scaling</a>.</p>
      *        <p>
-     *        For resources that are not supported using a service-linked role, this parameter is required, and it must
-     *        specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
-     *        behalf.
+     *        For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows
+     *        Application Auto Scaling to modify the scalable target on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

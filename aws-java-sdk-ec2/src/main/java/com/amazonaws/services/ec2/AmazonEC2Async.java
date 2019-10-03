@@ -5418,6 +5418,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the queued purchases for the specified Reserved Instances.
+     * </p>
+     * 
+     * @param deleteQueuedReservedInstancesRequest
+     * @return A Java Future containing the result of the DeleteQueuedReservedInstances operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteQueuedReservedInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQueuedReservedInstancesResult> deleteQueuedReservedInstancesAsync(
+            DeleteQueuedReservedInstancesRequest deleteQueuedReservedInstancesRequest);
+
+    /**
+     * <p>
+     * Deletes the queued purchases for the specified Reserved Instances.
+     * </p>
+     * 
+     * @param deleteQueuedReservedInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteQueuedReservedInstances operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteQueuedReservedInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQueuedReservedInstancesResult> deleteQueuedReservedInstancesAsync(
+            DeleteQueuedReservedInstancesRequest deleteQueuedReservedInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteQueuedReservedInstancesRequest, DeleteQueuedReservedInstancesResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified route from the specified route table.
      * </p>
      * 
@@ -15598,6 +15633,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <a>DescribeReservedInstances</a>.
      * </p>
      * <p>
+     * To queue a purchase for a future date and time, specify a purchase time. If you do not specify a purchase time,
+     * the default is the current time.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
      * Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -15624,6 +15663,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings that match your
      * specifications. After you've purchased a Reserved Instance, you can check for your new Reserved Instance with
      * <a>DescribeReservedInstances</a>.
+     * </p>
+     * <p>
+     * To queue a purchase for a future date and time, specify a purchase time. If you do not specify a purchase time,
+     * the default is the current time.
      * </p>
      * <p>
      * For more information, see <a

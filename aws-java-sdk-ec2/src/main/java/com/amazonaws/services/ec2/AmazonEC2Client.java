@@ -6899,6 +6899,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Deletes the queued purchases for the specified Reserved Instances.
+     * </p>
+     * 
+     * @param deleteQueuedReservedInstancesRequest
+     * @return Result of the DeleteQueuedReservedInstances operation returned by the service.
+     * @sample AmazonEC2.DeleteQueuedReservedInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteQueuedReservedInstancesResult deleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteQueuedReservedInstances(request);
+    }
+
+    @SdkInternalApi
+    final DeleteQueuedReservedInstancesResult executeDeleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest deleteQueuedReservedInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteQueuedReservedInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteQueuedReservedInstancesRequest> request = null;
+        Response<DeleteQueuedReservedInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteQueuedReservedInstancesRequestMarshaller().marshall(super.beforeMarshalling(deleteQueuedReservedInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueuedReservedInstances");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteQueuedReservedInstancesResult> responseHandler = new StaxResponseHandler<DeleteQueuedReservedInstancesResult>(
+                    new DeleteQueuedReservedInstancesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified route from the specified route table.
      * </p>
      * 
@@ -19639,6 +19692,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings that match your
      * specifications. After you've purchased a Reserved Instance, you can check for your new Reserved Instance with
      * <a>DescribeReservedInstances</a>.
+     * </p>
+     * <p>
+     * To queue a purchase for a future date and time, specify a purchase time. If you do not specify a purchase time,
+     * the default is the current time.
      * </p>
      * <p>
      * For more information, see <a

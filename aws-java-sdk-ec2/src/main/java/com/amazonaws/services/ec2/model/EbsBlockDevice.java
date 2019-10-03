@@ -28,7 +28,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is deleted on instance termination.
+     * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      */
     private Boolean deleteOnTermination;
@@ -123,11 +125,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is deleted on instance termination.
+     * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      * 
      * @param deleteOnTermination
-     *        Indicates whether the EBS volume is deleted on instance termination.
+     *        Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     *        >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
      */
 
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
@@ -136,10 +142,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is deleted on instance termination.
+     * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      * 
-     * @return Indicates whether the EBS volume is deleted on instance termination.
+     * @return Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     *         >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User
+     *         Guide.
      */
 
     public Boolean getDeleteOnTermination() {
@@ -148,11 +159,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is deleted on instance termination.
+     * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      * 
      * @param deleteOnTermination
-     *        Indicates whether the EBS volume is deleted on instance termination.
+     *        Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     *        >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,10 +178,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is deleted on instance termination.
+     * Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     * >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User Guide.
      * </p>
      * 
-     * @return Indicates whether the EBS volume is deleted on instance termination.
+     * @return Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination"
+     *         >Preserving Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute Cloud User
+     *         Guide.
      */
 
     public Boolean isDeleteOnTermination() {

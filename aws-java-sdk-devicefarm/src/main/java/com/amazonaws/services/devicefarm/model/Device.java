@@ -158,6 +158,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      */
     private Boolean remoteDebugEnabled;
     /**
@@ -1198,9 +1202,17 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param remoteDebugEnabled
-     *        This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     *        This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      */
 
     public void setRemoteDebugEnabled(Boolean remoteDebugEnabled) {
@@ -1211,8 +1223,16 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
-     * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public Boolean getRemoteDebugEnabled() {
@@ -1223,9 +1243,17 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param remoteDebugEnabled
-     *        This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     *        This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1238,8 +1266,16 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
-     * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public Boolean isRemoteDebugEnabled() {

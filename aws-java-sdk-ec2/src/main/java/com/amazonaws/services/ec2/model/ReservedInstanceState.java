@@ -23,7 +23,9 @@ public enum ReservedInstanceState {
     PaymentPending("payment-pending"),
     Active("active"),
     PaymentFailed("payment-failed"),
-    Retired("retired");
+    Retired("retired"),
+    Queued("queued"),
+    QueuedDeleted("queued-deleted");
 
     private String value;
 

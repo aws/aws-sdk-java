@@ -88,6 +88,12 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
      * </p>
      */
     private java.util.Map<String, LogPublishingOption> logPublishingOptions;
+    /**
+     * <p>
+     * Options to specify configuration that will be applied to the domain endpoint.
+     * </p>
+     */
+    private DomainEndpointOptions domainEndpointOptions;
 
     /**
      * <p>
@@ -546,6 +552,46 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Options to specify configuration that will be applied to the domain endpoint.
+     * </p>
+     * 
+     * @param domainEndpointOptions
+     *        Options to specify configuration that will be applied to the domain endpoint.
+     */
+
+    public void setDomainEndpointOptions(DomainEndpointOptions domainEndpointOptions) {
+        this.domainEndpointOptions = domainEndpointOptions;
+    }
+
+    /**
+     * <p>
+     * Options to specify configuration that will be applied to the domain endpoint.
+     * </p>
+     * 
+     * @return Options to specify configuration that will be applied to the domain endpoint.
+     */
+
+    public DomainEndpointOptions getDomainEndpointOptions() {
+        return this.domainEndpointOptions;
+    }
+
+    /**
+     * <p>
+     * Options to specify configuration that will be applied to the domain endpoint.
+     * </p>
+     * 
+     * @param domainEndpointOptions
+     *        Options to specify configuration that will be applied to the domain endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateElasticsearchDomainConfigRequest withDomainEndpointOptions(DomainEndpointOptions domainEndpointOptions) {
+        setDomainEndpointOptions(domainEndpointOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -574,7 +620,9 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         if (getAccessPolicies() != null)
             sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
         if (getLogPublishingOptions() != null)
-            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions());
+            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions()).append(",");
+        if (getDomainEndpointOptions() != null)
+            sb.append("DomainEndpointOptions: ").append(getDomainEndpointOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -625,6 +673,10 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
             return false;
         if (other.getLogPublishingOptions() != null && other.getLogPublishingOptions().equals(this.getLogPublishingOptions()) == false)
             return false;
+        if (other.getDomainEndpointOptions() == null ^ this.getDomainEndpointOptions() == null)
+            return false;
+        if (other.getDomainEndpointOptions() != null && other.getDomainEndpointOptions().equals(this.getDomainEndpointOptions()) == false)
+            return false;
         return true;
     }
 
@@ -642,6 +694,7 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
+        hashCode = prime * hashCode + ((getDomainEndpointOptions() == null) ? 0 : getDomainEndpointOptions().hashCode());
         return hashCode;
     }
 

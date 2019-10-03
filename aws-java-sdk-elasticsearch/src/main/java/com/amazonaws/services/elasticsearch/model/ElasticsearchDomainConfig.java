@@ -97,6 +97,12 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
      * </p>
      */
     private LogPublishingOptionsStatus logPublishingOptions;
+    /**
+     * <p>
+     * Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.
+     * </p>
+     */
+    private DomainEndpointOptionsStatus domainEndpointOptions;
 
     /**
      * <p>
@@ -575,6 +581,46 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param domainEndpointOptions
+     *        Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.
+     */
+
+    public void setDomainEndpointOptions(DomainEndpointOptionsStatus domainEndpointOptions) {
+        this.domainEndpointOptions = domainEndpointOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @return Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.
+     */
+
+    public DomainEndpointOptionsStatus getDomainEndpointOptions() {
+        return this.domainEndpointOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param domainEndpointOptions
+     *        Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainConfig withDomainEndpointOptions(DomainEndpointOptionsStatus domainEndpointOptions) {
+        setDomainEndpointOptions(domainEndpointOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -607,7 +653,9 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
-            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions());
+            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions()).append(",");
+        if (getDomainEndpointOptions() != null)
+            sb.append("DomainEndpointOptions: ").append(getDomainEndpointOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -666,6 +714,10 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getLogPublishingOptions() != null && other.getLogPublishingOptions().equals(this.getLogPublishingOptions()) == false)
             return false;
+        if (other.getDomainEndpointOptions() == null ^ this.getDomainEndpointOptions() == null)
+            return false;
+        if (other.getDomainEndpointOptions() != null && other.getDomainEndpointOptions().equals(this.getDomainEndpointOptions()) == false)
+            return false;
         return true;
     }
 
@@ -685,6 +737,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
+        hashCode = prime * hashCode + ((getDomainEndpointOptions() == null) ? 0 : getDomainEndpointOptions().hashCode());
         return hashCode;
     }
 

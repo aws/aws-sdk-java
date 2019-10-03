@@ -49,6 +49,8 @@ public class ElasticsearchDomainConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdvancedOptions").build();
     private static final MarshallingInfo<StructuredPojo> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingOptions").build();
+    private static final MarshallingInfo<StructuredPojo> DOMAINENDPOINTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainEndpointOptions").build();
 
     private static final ElasticsearchDomainConfigMarshaller instance = new ElasticsearchDomainConfigMarshaller();
 
@@ -77,6 +79,7 @@ public class ElasticsearchDomainConfigMarshaller {
             protocolMarshaller.marshall(elasticsearchDomainConfig.getNodeToNodeEncryptionOptions(), NODETONODEENCRYPTIONOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainConfig.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainConfig.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainConfig.getDomainEndpointOptions(), DOMAINENDPOINTOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

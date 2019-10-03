@@ -119,6 +119,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * and remains active until all instances launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active until it expires or is canceled.
      * </p>
+     * <p>
+     * The specified start date and time cannot be equal to the current date and time. You must specify a start date and
+     * time that occurs after the current date and time.
+     * </p>
      */
     private java.util.Date validFrom;
     /**
@@ -743,12 +747,19 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * and remains active until all instances launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active until it expires or is canceled.
      * </p>
+     * <p>
+     * The specified start date and time cannot be equal to the current date and time. You must specify a start date and
+     * time that occurs after the current date and time.
+     * </p>
      * 
      * @param validFrom
      *        The start date of the request. If this is a one-time request, the request becomes active at this date and
      *        time and remains active until all instances launch, the request expires, or the request is canceled. If
      *        the request is persistent, the request becomes active at this date and time and remains active until it
-     *        expires or is canceled.
+     *        expires or is canceled.</p>
+     *        <p>
+     *        The specified start date and time cannot be equal to the current date and time. You must specify a start
+     *        date and time that occurs after the current date and time.
      */
 
     public void setValidFrom(java.util.Date validFrom) {
@@ -761,11 +772,18 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * and remains active until all instances launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active until it expires or is canceled.
      * </p>
+     * <p>
+     * The specified start date and time cannot be equal to the current date and time. You must specify a start date and
+     * time that occurs after the current date and time.
+     * </p>
      * 
      * @return The start date of the request. If this is a one-time request, the request becomes active at this date and
      *         time and remains active until all instances launch, the request expires, or the request is canceled. If
      *         the request is persistent, the request becomes active at this date and time and remains active until it
-     *         expires or is canceled.
+     *         expires or is canceled.</p>
+     *         <p>
+     *         The specified start date and time cannot be equal to the current date and time. You must specify a start
+     *         date and time that occurs after the current date and time.
      */
 
     public java.util.Date getValidFrom() {
@@ -778,12 +796,19 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * and remains active until all instances launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active until it expires or is canceled.
      * </p>
+     * <p>
+     * The specified start date and time cannot be equal to the current date and time. You must specify a start date and
+     * time that occurs after the current date and time.
+     * </p>
      * 
      * @param validFrom
      *        The start date of the request. If this is a one-time request, the request becomes active at this date and
      *        time and remains active until all instances launch, the request expires, or the request is canceled. If
      *        the request is persistent, the request becomes active at this date and time and remains active until it
-     *        expires or is canceled.
+     *        expires or is canceled.</p>
+     *        <p>
+     *        The specified start date and time cannot be equal to the current date and time. You must specify a start
+     *        date and time that occurs after the current date and time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

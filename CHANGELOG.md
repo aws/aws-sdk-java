@@ -1,3 +1,20 @@
+# __1.11.645__ __2019-10-03__
+## __AWS Device Farm__
+  - ### Features
+    - Documentation updates for devicefarm
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release allows customers to purchase regional EC2 RIs on a future date.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service now supports configuring additional options for domain endpoint, such as whether to require HTTPS for all traffic.
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for Application Auto Scaling
+
 # __1.11.644__ __2019-10-02__
 ## __Amazon Lightsail__
   - ### Features

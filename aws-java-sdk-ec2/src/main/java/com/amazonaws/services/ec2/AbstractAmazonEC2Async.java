@@ -1544,6 +1544,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteQueuedReservedInstancesResult> deleteQueuedReservedInstancesAsync(DeleteQueuedReservedInstancesRequest request) {
+
+        return deleteQueuedReservedInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueuedReservedInstancesResult> deleteQueuedReservedInstancesAsync(DeleteQueuedReservedInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteQueuedReservedInstancesRequest, DeleteQueuedReservedInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(DeleteRouteRequest request) {
 
         return deleteRouteAsync(request, null);

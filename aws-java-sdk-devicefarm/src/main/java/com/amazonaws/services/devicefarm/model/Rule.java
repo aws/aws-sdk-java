@@ -154,6 +154,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
      * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
+     * </p>
      * </dd>
      * </dl>
      */
@@ -298,6 +302,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
      * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
+     * </p>
      * </dd>
      * </dl>
      * 
@@ -427,6 +435,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <i>Supported operators</i>: <code>EQUALS</code>
+     *        </p>
+     *        <p>
+     *        <i>This filter will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </dd>
      * @see DeviceAttribute
@@ -562,6 +575,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
      * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
+     * </p>
      * </dd>
      * </dl>
      * 
@@ -690,6 +707,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         <i>Supported operators</i>: <code>EQUALS</code>
+     *         </p>
+     *         <p>
+     *         <i>This filter will be ignored, as remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      *         </p>
      *         </dd>
      * @see DeviceAttribute
@@ -825,6 +847,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
      * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
+     * </p>
      * </dd>
      * </dl>
      * 
@@ -954,6 +980,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <i>Supported operators</i>: <code>EQUALS</code>
+     *        </p>
+     *        <p>
+     *        <i>This filter will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1091,6 +1122,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
      * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
+     * </p>
      * </dd>
      * </dl>
      * 
@@ -1220,6 +1255,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <i>Supported operators</i>: <code>EQUALS</code>
+     *        </p>
+     *        <p>
+     *        <i>This filter will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </dd>
      * @see DeviceAttribute
@@ -1355,6 +1395,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <i>Supported operators</i>: <code>EQUALS</code>
      * </p>
+     * <p>
+     * <i>This filter will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
+     * </p>
      * </dd>
      * </dl>
      * 
@@ -1484,6 +1528,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <i>Supported operators</i>: <code>EQUALS</code>
+     *        </p>
+     *        <p>
+     *        <i>This filter will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

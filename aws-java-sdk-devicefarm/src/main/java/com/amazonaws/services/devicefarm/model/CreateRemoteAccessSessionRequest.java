@@ -48,14 +48,23 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     private String instanceArn;
     /**
      * <p>
-     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
-     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices
+     * in your remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
      * </p>
      */
     private String sshPublicKey;
     /**
      * <p>
      * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
      * </p>
      */
     private Boolean remoteDebugEnabled;
@@ -82,6 +91,10 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
      * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
      * <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
      * </p>
      */
     private String clientId;
@@ -254,14 +267,23 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
-     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices
+     * in your remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
      * </p>
      * 
      * @param sshPublicKey
-     *        The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
-     *        remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
-     *        <code>true</code>.
+     *        <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for connecting to remote
+     *        devices in your remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set
+     *        to <code>true</code>.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      */
 
     public void setSshPublicKey(String sshPublicKey) {
@@ -270,13 +292,22 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
-     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices
+     * in your remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
      * </p>
      * 
-     * @return The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
-     *         remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
-     *         <code>true</code>.
+     * @return <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for connecting to remote
+     *         devices in your remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set
+     *         to <code>true</code>.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public String getSshPublicKey() {
@@ -285,14 +316,23 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
-     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices
+     * in your remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
      * </p>
      * 
      * @param sshPublicKey
-     *        The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
-     *        remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
-     *        <code>true</code>.
+     *        <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to use for connecting to remote
+     *        devices in your remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set
+     *        to <code>true</code>.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,10 +345,18 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param remoteDebugEnabled
      *        Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
-     *        session.
+     *        session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      */
 
     public void setRemoteDebugEnabled(Boolean remoteDebugEnabled) {
@@ -319,9 +367,17 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @return Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
-     *         session.
+     *         session.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public Boolean getRemoteDebugEnabled() {
@@ -332,10 +388,18 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param remoteDebugEnabled
      *        Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
-     *        session.
+     *        session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,9 +412,17 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @return Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
-     *         session.
+     *         session.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public Boolean isRemoteDebugEnabled() {
@@ -495,11 +567,19 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
      * <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param clientId
      *        Unique identifier for the client. If you want access to multiple devices on the same client, you should
      *        pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
-     *        required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     *        required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      */
 
     public void setClientId(String clientId) {
@@ -512,10 +592,18 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
      * <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @return Unique identifier for the client. If you want access to multiple devices on the same client, you should
      *         pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
-     *         required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     *         required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public String getClientId() {
@@ -528,11 +616,19 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
      * <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param clientId
      *        Unique identifier for the client. If you want access to multiple devices on the same client, you should
      *        pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
-     *        required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     *        required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

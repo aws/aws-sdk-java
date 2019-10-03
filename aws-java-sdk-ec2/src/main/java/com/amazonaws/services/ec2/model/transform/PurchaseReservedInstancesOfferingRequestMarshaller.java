@@ -63,6 +63,10 @@ public class PurchaseReservedInstancesOfferingRequestMarshaller implements
             }
         }
 
+        if (purchaseReservedInstancesOfferingRequest.getPurchaseTime() != null) {
+            request.addParameter("PurchaseTime", StringUtils.fromDate(purchaseReservedInstancesOfferingRequest.getPurchaseTime()));
+        }
+
         return request;
     }
 

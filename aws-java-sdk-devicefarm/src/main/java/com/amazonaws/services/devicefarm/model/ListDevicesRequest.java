@@ -99,6 +99,8 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>This attribute will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </li>
      * <li>
@@ -318,6 +320,8 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>This attribute will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </li>
      * <li>
@@ -449,7 +453,9 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
-     *         "FALSE".
+     *         "FALSE". <i>This attribute will be ignored, as remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -585,6 +591,8 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>This attribute will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </li>
      * <li>
@@ -717,7 +725,9 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
-     *        "FALSE".
+     *        "FALSE". <i>This attribute will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </li>
      *        <li>
@@ -858,6 +868,8 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>This attribute will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </li>
      * <li>
@@ -995,7 +1007,9 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
-     *        "FALSE".
+     *        "FALSE". <i>This attribute will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </li>
      *        <li>
@@ -1138,6 +1152,8 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
+     * <i>This attribute will be ignored, as remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</i>
      * </p>
      * </li>
      * <li>
@@ -1270,7 +1286,9 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
-     *        "FALSE".
+     *        "FALSE". <i>This attribute will be ignored, as remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      *        </p>
      *        </li>
      *        <li>

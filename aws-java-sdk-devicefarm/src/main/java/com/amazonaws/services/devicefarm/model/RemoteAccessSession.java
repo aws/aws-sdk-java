@@ -176,6 +176,10 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      */
     private Boolean remoteDebugEnabled;
     /**
@@ -195,12 +199,20 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging
      * is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      */
     private String hostAddress;
     /**
      * <p>
      * Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for
      * the remote access session.
+     * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
      * </p>
      */
     private String clientId;
@@ -229,6 +241,10 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote
      * access session.
+     * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
      * </p>
      */
     private String deviceUdid;
@@ -1570,9 +1586,17 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param remoteDebugEnabled
-     *        This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
+     *        This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      */
 
     public void setRemoteDebugEnabled(Boolean remoteDebugEnabled) {
@@ -1583,8 +1607,16 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
-     * @return This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
+     * @return This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public Boolean getRemoteDebugEnabled() {
@@ -1595,9 +1627,17 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param remoteDebugEnabled
-     *        This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
+     *        This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1610,8 +1650,16 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
-     * @return This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
+     * @return This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public Boolean isRemoteDebugEnabled() {
@@ -1715,10 +1763,18 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging
      * is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param hostAddress
      *        IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote
-     *        debugging is enabled for the remote access session.
+     *        debugging is enabled for the remote access session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      */
 
     public void setHostAddress(String hostAddress) {
@@ -1730,9 +1786,17 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging
      * is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @return IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote
-     *         debugging is enabled for the remote access session.
+     *         debugging is enabled for the remote access session.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public String getHostAddress() {
@@ -1744,10 +1808,18 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging
      * is enabled for the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param hostAddress
      *        IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote
-     *        debugging is enabled for the remote access session.
+     *        debugging is enabled for the remote access session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1761,10 +1833,18 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for
      * the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param clientId
      *        Unique identifier of your client for the remote access session. Only returned if remote debugging is
-     *        enabled for the remote access session.
+     *        enabled for the remote access session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      */
 
     public void setClientId(String clientId) {
@@ -1776,9 +1856,17 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for
      * the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @return Unique identifier of your client for the remote access session. Only returned if remote debugging is
-     *         enabled for the remote access session.
+     *         enabled for the remote access session.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public String getClientId() {
@@ -1790,10 +1878,18 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for
      * the remote access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param clientId
      *        Unique identifier of your client for the remote access session. Only returned if remote debugging is
-     *        enabled for the remote access session.
+     *        enabled for the remote access session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1990,10 +2086,18 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote
      * access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param deviceUdid
      *        Unique device identifier for the remote device. Only returned if remote debugging is enabled for the
-     *        remote access session.
+     *        remote access session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      */
 
     public void setDeviceUdid(String deviceUdid) {
@@ -2005,9 +2109,17 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote
      * access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @return Unique device identifier for the remote device. Only returned if remote debugging is enabled for the
-     *         remote access session.
+     *         remote access session.</p>
+     *         <p>
+     *         <i>Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *         supported</a>.</i>
      */
 
     public String getDeviceUdid() {
@@ -2019,10 +2131,18 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote
      * access session.
      * </p>
+     * <p>
+     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i>
+     * </p>
      * 
      * @param deviceUdid
      *        Unique device identifier for the remote device. Only returned if remote debugging is enabled for the
-     *        remote access session.
+     *        remote access session.</p>
+     *        <p>
+     *        <i>Remote debugging is <a
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     *        supported</a>.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

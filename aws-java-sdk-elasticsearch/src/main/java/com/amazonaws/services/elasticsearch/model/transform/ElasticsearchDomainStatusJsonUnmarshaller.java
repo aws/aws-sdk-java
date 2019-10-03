@@ -135,6 +135,10 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setServiceSoftwareOptions(ServiceSoftwareOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DomainEndpointOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setDomainEndpointOptions(DomainEndpointOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -3918,6 +3918,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteQueuedReservedInstancesResult> deleteQueuedReservedInstancesAsync(DeleteQueuedReservedInstancesRequest request) {
+
+        return deleteQueuedReservedInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueuedReservedInstancesResult> deleteQueuedReservedInstancesAsync(
+            final DeleteQueuedReservedInstancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteQueuedReservedInstancesRequest, DeleteQueuedReservedInstancesResult> asyncHandler) {
+        final DeleteQueuedReservedInstancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteQueuedReservedInstancesResult>() {
+            @Override
+            public DeleteQueuedReservedInstancesResult call() throws Exception {
+                DeleteQueuedReservedInstancesResult result = null;
+
+                try {
+                    result = executeDeleteQueuedReservedInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(DeleteRouteRequest request) {
 
         return deleteRouteAsync(request, null);

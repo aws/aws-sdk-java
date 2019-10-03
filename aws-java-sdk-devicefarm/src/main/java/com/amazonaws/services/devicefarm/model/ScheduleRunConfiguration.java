@@ -73,7 +73,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
     private Radios radios;
     /**
      * <p>
-     * A list of auxiliary apps for the run.
+     * A list of Upload ARNs for app packages that will be installed alongside your app.
      * </p>
      */
     private java.util.List<String> auxiliaryApps;
@@ -403,10 +403,10 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of auxiliary apps for the run.
+     * A list of Upload ARNs for app packages that will be installed alongside your app.
      * </p>
      * 
-     * @return A list of auxiliary apps for the run.
+     * @return A list of Upload ARNs for app packages that will be installed alongside your app.
      */
 
     public java.util.List<String> getAuxiliaryApps() {
@@ -415,11 +415,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of auxiliary apps for the run.
+     * A list of Upload ARNs for app packages that will be installed alongside your app.
      * </p>
      * 
      * @param auxiliaryApps
-     *        A list of auxiliary apps for the run.
+     *        A list of Upload ARNs for app packages that will be installed alongside your app.
      */
 
     public void setAuxiliaryApps(java.util.Collection<String> auxiliaryApps) {
@@ -433,7 +433,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of auxiliary apps for the run.
+     * A list of Upload ARNs for app packages that will be installed alongside your app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -442,7 +442,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param auxiliaryApps
-     *        A list of auxiliary apps for the run.
+     *        A list of Upload ARNs for app packages that will be installed alongside your app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,11 +458,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of auxiliary apps for the run.
+     * A list of Upload ARNs for app packages that will be installed alongside your app.
      * </p>
      * 
      * @param auxiliaryApps
-     *        A list of auxiliary apps for the run.
+     *        A list of Upload ARNs for app packages that will be installed alongside your app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

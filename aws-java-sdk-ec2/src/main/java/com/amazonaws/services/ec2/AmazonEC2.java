@@ -2487,6 +2487,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the queued purchases for the specified Reserved Instances.
+     * </p>
+     * 
+     * @param deleteQueuedReservedInstancesRequest
+     * @return Result of the DeleteQueuedReservedInstances operation returned by the service.
+     * @sample AmazonEC2.DeleteQueuedReservedInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteQueuedReservedInstancesResult deleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest deleteQueuedReservedInstancesRequest);
+
+    /**
+     * <p>
      * Deletes the specified route from the specified route table.
      * </p>
      * 
@@ -6893,6 +6906,10 @@ public interface AmazonEC2 {
      * Use <a>DescribeReservedInstancesOfferings</a> to get a list of Reserved Instance offerings that match your
      * specifications. After you've purchased a Reserved Instance, you can check for your new Reserved Instance with
      * <a>DescribeReservedInstances</a>.
+     * </p>
+     * <p>
+     * To queue a purchase for a future date and time, specify a purchase time. If you do not specify a purchase time,
+     * the default is the current time.
      * </p>
      * <p>
      * For more information, see <a

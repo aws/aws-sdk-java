@@ -30,7 +30,7 @@ public class ListRemoteAccessSessionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.
+     * The Amazon Resource Name (ARN) of the project about which you are requesting information.
      * </p>
      */
     private String arn;
@@ -44,11 +44,11 @@ public class ListRemoteAccessSessionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.
+     * The Amazon Resource Name (ARN) of the project about which you are requesting information.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.
+     *        The Amazon Resource Name (ARN) of the project about which you are requesting information.
      */
 
     public void setArn(String arn) {
@@ -57,10 +57,10 @@ public class ListRemoteAccessSessionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.
+     * The Amazon Resource Name (ARN) of the project about which you are requesting information.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.
+     * @return The Amazon Resource Name (ARN) of the project about which you are requesting information.
      */
 
     public String getArn() {
@@ -69,11 +69,11 @@ public class ListRemoteAccessSessionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.
+     * The Amazon Resource Name (ARN) of the project about which you are requesting information.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.
+     *        The Amazon Resource Name (ARN) of the project about which you are requesting information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
