@@ -330,7 +330,6 @@ public class S3EventNotification {
 
         private final String awsRegion;
         private final String eventName;
-        private final S3Event s3Event;
         private final String eventSource;
         private DateTime eventTime;
         private final String eventVersion;
@@ -363,37 +362,11 @@ public class S3EventNotification {
                  userIdentity,
                  null);
         }
-        
-        public S3EventNotificationRecord(
-                String awsRegion,
-                String eventName,
-                S3Event s3Event,
-                String eventSource,
-                String eventTime,
-                String eventVersion,
-                RequestParametersEntity requestParameters,
-                ResponseElementsEntity responseElements,
-                S3Entity s3,
-                UserIdentityEntity userIdentity)
-        {
-            this(awsRegion,
-                 eventName,
-                 s3Event,
-                 eventSource,
-                 eventTime,
-                 eventVersion,
-                 requestParameters,
-                 responseElements,
-                 s3,
-                 userIdentity,
-                 null);
-        }
 
         @JsonCreator
         public S3EventNotificationRecord(
                 @JsonProperty(value = "awsRegion") String awsRegion,
                 @JsonProperty(value = "eventName") String eventName,
-                @JsonProperty(value = "s3Event") S3Event s3Event,
                 @JsonProperty(value = "eventSource") String eventSource,
                 @JsonProperty(value = "eventTime") String eventTime,
                 @JsonProperty(value = "eventVersion") String eventVersion,
@@ -406,7 +379,6 @@ public class S3EventNotification {
             this.awsRegion = awsRegion;
             this.eventName = eventName;
             this.eventSource = eventSource;
-            this.s3Event = S3Event.fromValue(eventName);
 
             if (eventTime != null)
             {
@@ -428,9 +400,9 @@ public class S3EventNotification {
         public String getEventName() {
             return eventName;
         }
-        
-        public S3Event getS3Event() {
-        	return s3Event;
+
+        public S3Event getEventNameAsEnum() {
+        	return S3Event.fromValue(eventName);
         }
 
         public String getEventSource() {
