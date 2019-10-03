@@ -15,9 +15,6 @@
 
 package com.amazonaws.services.s3.model;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * A enum class for all Amazon S3 events.
  */
@@ -47,7 +44,7 @@ public enum S3Event {
     ;
 
     private final String event;
-	private static final String S3_PREFIX = "S3:";
+	private static final String S3_PREFIX = "s3:";
 
     private S3Event(String event) {
         this.event = event;
@@ -57,22 +54,27 @@ public enum S3Event {
     public String toString() {
         return this.event;
     }
-    
-	private static final Map<String, S3Event> stringToEnum = new HashMap<>();
 
-	static {
-		for(S3Event s3Event : S3Event.values()) {
-			stringToEnum.put(s3Event.toString().toUpperCase(), s3Event);
-		}
-	}
+    /**
+     *
+     * @param value
+     *        real value
+     * @return S3Event corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
+     */
+    public static S3Event fromValue(String value) {
+        if (value == null || "".equals(value)) {
+            throw new IllegalArgumentException("Value cannot be null or empty!");
+        }
 
-	public static S3Event fromString(String key) {
-		S3Event s3Event = stringToEnum.get(key.toUpperCase());
-		if (s3Event == null) {
-			// the S3 record returned for an event differs slightly from the value in the enum
-			// so here we try to match the value adding the s3: prefix
-			s3Event = stringToEnum.get(S3_PREFIX.concat(key.toUpperCase()));
-		}
-		return s3Event;
-	}
+        for (S3Event enumEntry : S3Event.values()) {
+            if (enumEntry.toString().equals(value) || enumEntry.toString().equals(S3_PREFIX.concat(value))) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+    }
 }

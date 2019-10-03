@@ -344,6 +344,29 @@ public class S3EventNotification {
         public S3EventNotificationRecord(
                 String awsRegion,
                 String eventName,
+                String eventSource,
+                String eventTime,
+                String eventVersion,
+                RequestParametersEntity requestParameters,
+                ResponseElementsEntity responseElements,
+                S3Entity s3,
+                UserIdentityEntity userIdentity)
+        {
+            this(awsRegion,
+                 eventName,
+                 eventSource,
+                 eventTime,
+                 eventVersion,
+                 requestParameters,
+                 responseElements,
+                 s3,
+                 userIdentity,
+                 null);
+        }
+        
+        public S3EventNotificationRecord(
+                String awsRegion,
+                String eventName,
                 S3Event s3Event,
                 String eventSource,
                 String eventTime,
@@ -383,7 +406,7 @@ public class S3EventNotification {
             this.awsRegion = awsRegion;
             this.eventName = eventName;
             this.eventSource = eventSource;
-            this.s3Event = S3Event.fromString(eventName);
+            this.s3Event = S3Event.fromValue(eventName);
 
             if (eventTime != null)
             {
