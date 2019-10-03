@@ -401,6 +401,10 @@ public class S3EventNotification {
             return eventName;
         }
 
+        public S3Event getEventNameAsEnum() {
+        	return S3Event.fromValue(eventName);
+        }
+
         public String getEventSource() {
             return eventSource;
         }

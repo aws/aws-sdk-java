@@ -44,6 +44,7 @@ public enum S3Event {
     ;
 
     private final String event;
+	private static final String S3_PREFIX = "s3:";
 
     private S3Event(String event) {
         this.event = event;
@@ -52,5 +53,28 @@ public enum S3Event {
     @Override
     public String toString() {
         return this.event;
+    }
+
+    /**
+     *
+     * @param value
+     *        real value
+     * @return S3Event corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
+     */
+    public static S3Event fromValue(String value) {
+        if (value == null || "".equals(value)) {
+            throw new IllegalArgumentException("Value cannot be null or empty!");
+        }
+
+        for (S3Event enumEntry : S3Event.values()) {
+            if (enumEntry.toString().equals(value) || enumEntry.toString().equals(S3_PREFIX.concat(value))) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
     }
 }
