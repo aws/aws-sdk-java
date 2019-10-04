@@ -9,7 +9,7 @@
       "OutputPath":"$.parallel.output",
       "ResultPath":"$.parallel.result",
       "Parameters":"foo",
-      "Next":"WaitForTimestamp",
+      "Next":"MapState",
       "Comment":"This is a parallel state",
       "Branches":[
         {
@@ -69,6 +69,48 @@
         }
       ],
       "Type":"Parallel"
+    },
+    "MapState":{
+      "ItemsPath":"$.map.items",
+      "InputPath":"$.map.input",
+      "OutputPath":"$.map.output",
+      "ResultPath":"$.map.result",
+      "MaxConcurrency":10,
+      "Parameters":"foo",
+      "Next":"WaitForTimestamp",
+      "Comment":"This is a map state",
+      "Iterator": {
+        "StartAt":"IteratorStart",
+        "Comment":"Iterator start",
+        "States":{
+          "IteratorStart":{
+            "InputPath":"$.succeed.input",
+            "OutputPath":"$.succeed.output",
+            "Comment":"Succeed state",
+            "Type":"Succeed"
+          }
+        }
+      },
+      "Retry":[
+        {
+          "ErrorEquals":[
+            "States.ALL"
+          ],
+          "IntervalSeconds":5,
+          "MaxAttempts":3,
+          "BackoffRate":1.2
+        }
+      ],
+      "Catch":[
+        {
+          "ResultPath":"$.catcher.result",
+          "Next":"EndState",
+          "ErrorEquals":[
+            "States.ALL"
+          ]
+        }
+      ],
+      "Type":"Map"
     },
     "WaitForTimestamp":{
       "Timestamp":"2100-07-07T06:43:30.000Z",

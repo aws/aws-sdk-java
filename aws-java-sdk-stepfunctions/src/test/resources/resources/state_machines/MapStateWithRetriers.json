@@ -1,0 +1,39 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Map",
+      "ItemsPath": "$.items",
+      "MaxConcurrency" : 10,
+      "End": true,
+      "Iterator": {
+        "StartAt": "IteratorState",
+        "Comment": "Iterator state machine",
+        "States": {
+          "IteratorState": {
+            "Type": "Succeed"
+          }
+        }
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Foo",
+            "Bar"
+          ],
+          "IntervalSeconds": 10,
+          "BackoffRate": 1.0,
+          "MaxAttempts": 3
+        },
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 10,
+          "BackoffRate": 1.0,
+          "MaxAttempts": 3
+        }
+      ]
+    }
+  }
+}

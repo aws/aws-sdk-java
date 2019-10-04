@@ -49,4 +49,8 @@ public abstract class StateVisitor<T> {
         return null;
     }
 
+    public T visit(MapState mapState) {
+        return null;
+    }
+
 }

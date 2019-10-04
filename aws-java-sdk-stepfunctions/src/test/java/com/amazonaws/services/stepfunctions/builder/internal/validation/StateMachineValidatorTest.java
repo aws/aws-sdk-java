@@ -16,6 +16,7 @@ package com.amazonaws.services.stepfunctions.builder.internal.validation;
 
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.and;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.branch;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.iterator;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.catcher;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choice;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choiceState;
@@ -24,6 +25,7 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.e
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.failState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.next;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.parallelState;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.mapState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.passState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.retrier;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.seconds;
@@ -658,6 +660,79 @@ public class StateMachineValidatorTest {
                         .transition(end())
                         .catcher(catcher()
                                          .transition(next("NoSuchState"))))
+                .build();
+    }
+
+    @Test(expected = ValidationException.class)
+    public void mapStateWithNoIterator_IsNotValid() {
+        stateMachine()
+                .startAt("Initial")
+                .state("Initial", mapState()
+                        .transition(end()))
+                .build();
+    }
+
+    @Test(expected = ValidationException.class)
+    public void mapStateWithInvalidTransition_IsNotValid() {
+        stateMachine()
+                .startAt("Initial")
+                .state("Initial", mapState()
+                        .iterator(iterator()
+                                .startAt("InitialBranchState")
+                                .state("InitialBranchState", succeedState()))
+                        .transition(next("NoSuchState")))
+                .build();
+    }
+
+    @Test(expected = ValidationException.class)
+    public void mapStateIteratorStartAtStateInvalid_IsNotValid() {
+        stateMachine()
+                .startAt("Initial")
+                .state("Initial", mapState()
+                        .iterator(iterator()
+                                .startAt("NoSuchState")
+                                .state("InitialBranchState", succeedState()))
+                        .transition(end()))
+                .build();
+    }
+
+    @Test(expected = ValidationException.class)
+    public void mapStateInvalidIteratorState_IsNotValid() {
+        stateMachine()
+                .startAt("Initial")
+                .state("Initial", mapState()
+                        .iterator(iterator()
+                                .startAt("InitialBranchState")
+                                .state("InitialBranchState", failState()))
+                        .transition(end()))
+                .build();
+    }
+
+    @Test(expected = ValidationException.class)
+    public void mapStateInvalidRetrier_IsNotValid() {
+        stateMachine()
+                .startAt("Initial")
+                .state("Initial", mapState()
+                        .iterator(iterator()
+                                .startAt("InitialBranchState")
+                                .state("InitialBranchState", succeedState()))
+                        .transition(end())
+                        .retrier(retrier()
+                                .intervalSeconds(-1)))
+                .build();
+    }
+
+    @Test(expected = ValidationException.class)
+    public void mapStateInvalidCatcher_IsNotValid() {
+        stateMachine()
+                .startAt("Initial")
+                .state("Initial", mapState()
+                        .iterator(iterator()
+                                .startAt("InitialBranchState")
+                                .state("InitialBranchState", succeedState()))
+                        .transition(end())
+                        .catcher(catcher()
+                                .transition(next("NoSuchState"))))
                 .build();
     }
 }

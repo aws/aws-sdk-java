@@ -17,6 +17,7 @@ package com.amazonaws.services.stepfunctions.builder;
 import static com.amazonaws.services.stepfunctions.builder.StatesAsserts.assertStateMachineMatches;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.and;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.branch;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.iterator;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.catcher;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choice;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choiceState;
@@ -31,6 +32,7 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.n
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.not;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.or;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.parallelState;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.mapState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.passState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.retrier;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.seconds;
@@ -496,6 +498,89 @@ public class StepFunctionBuilderTest {
                 .build();
 
         assertStateMachineMatches("ParallelStateWithCatchers.json", stateMachine);
+    }
+
+    @Test
+    public void simpleMapState() {
+        final StateMachine stateMachine = stateMachine()
+                .startAt("InitialState")
+                .state("InitialState", mapState()
+                        .comment("My map state")
+                        .itemsPath("$.items")
+                        .inputPath("$.input")
+                        .outputPath("$.output")
+                        .resultPath("$.result")
+                        .maxConcurrency(50)
+                        .parameters("{\"foo.$\": \"$.val\"}")
+                        .transition(next("NextState"))
+                        .iterator(
+                                iterator()
+                                        .comment("Iterator state machine")
+                                        .startAt("IteratorState")
+                                        .state("IteratorState", succeedState())
+                        ))
+                .state("NextState", succeedState())
+                .build();
+
+        assertStateMachineMatches("SimpleMapState.json", stateMachine);
+    }
+
+    @Test
+    public void mapStateWithRetriers() {
+        final StateMachine stateMachine = stateMachine()
+                .startAt("InitialState")
+                .state("InitialState", mapState()
+                        .itemsPath("$.items")
+                        .maxConcurrency(10)
+                        .transition(end())
+                        .iterator(
+                                iterator()
+                                        .comment("Iterator state machine")
+                                        .startAt("IteratorState")
+                                        .state("IteratorState", succeedState()))
+                        .retriers(retrier()
+                                        .errorEquals("Foo", "Bar")
+                                        .intervalSeconds(10)
+                                        .backoffRate(1.0)
+                                        .maxAttempts(3),
+                                retrier()
+                                        .retryOnAllErrors()
+                                        .intervalSeconds(10)
+                                        .backoffRate(1.0)
+                                        .maxAttempts(3)
+                        ))
+                .build();
+
+        assertStateMachineMatches("MapStateWithRetriers.json", stateMachine);
+    }
+
+    @Test
+    public void mapStateWithCatchers() {
+        final StateMachine stateMachine = stateMachine()
+                .startAt("InitialState")
+                .state("InitialState", mapState()
+                        .itemsPath("$.items")
+                        .maxConcurrency(10)
+                        .transition(end())
+                        .iterator(
+                                iterator()
+                                        .comment("Iterator state machine")
+                                        .startAt("IteratorState")
+                                        .state("IteratorState", succeedState()))
+                        .catchers(catcher()
+                                        .errorEquals("Foo", "Bar")
+                                        .transition(next("RecoveryState"))
+                                        .resultPath("$.result"),
+                                catcher()
+                                        .catchAll()
+                                        .transition(next("OtherRecoveryState"))
+                                        .resultPath("$.result")
+                        ))
+                .state("RecoveryState", succeedState())
+                .state("OtherRecoveryState", succeedState())
+                .build();
+
+        assertStateMachineMatches("MapStateWithCatchers.json", stateMachine);
     }
 
     @Test

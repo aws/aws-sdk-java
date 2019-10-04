@@ -35,6 +35,7 @@ import com.amazonaws.services.stepfunctions.builder.conditions.TimestampGreaterT
 import com.amazonaws.services.stepfunctions.builder.conditions.TimestampLessThanCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.TimestampLessThanOrEqualCondition;
 import com.amazonaws.services.stepfunctions.builder.states.Branch;
+import com.amazonaws.services.stepfunctions.builder.states.Iterator;
 import com.amazonaws.services.stepfunctions.builder.states.Catcher;
 import com.amazonaws.services.stepfunctions.builder.states.Choice;
 import com.amazonaws.services.stepfunctions.builder.states.ChoiceState;
@@ -42,6 +43,7 @@ import com.amazonaws.services.stepfunctions.builder.states.EndTransition;
 import com.amazonaws.services.stepfunctions.builder.states.FailState;
 import com.amazonaws.services.stepfunctions.builder.states.NextStateTransition;
 import com.amazonaws.services.stepfunctions.builder.states.ParallelState;
+import com.amazonaws.services.stepfunctions.builder.states.MapState;
 import com.amazonaws.services.stepfunctions.builder.states.PassState;
 import com.amazonaws.services.stepfunctions.builder.states.Retrier;
 import com.amazonaws.services.stepfunctions.builder.states.SucceedState;
@@ -94,6 +96,27 @@ public final class StepFunctionBuilder {
      */
     public static Branch.Builder branch() {
         return Branch.builder();
+    }
+
+    /**
+     * State that allows for applying the same {@link Iterator} to multiple input elements.
+     * The Map State (identified by "Type": "Map") causes the interpreter to process all the elements of an array,
+     * potentially in parallel, with the processing of each element independent of the others.
+     *
+     * @return Builder used to configure a {@link MapState}.
+     * @see <a href="https://states-language.net/spec.html#map-state">https://states-language.net/spec.html#map-state</a>
+     */
+    public static MapState.Builder mapState() {
+        return MapState.builder();
+    }
+
+    /**
+     * An iterator to apply against a list of inputs. See {@link MapState}.
+     *
+     * @return Builder used to configure a {@link Iterator}.
+     */
+    public static Iterator.Builder iterator() {
+        return Iterator.builder();
     }
 
     /**

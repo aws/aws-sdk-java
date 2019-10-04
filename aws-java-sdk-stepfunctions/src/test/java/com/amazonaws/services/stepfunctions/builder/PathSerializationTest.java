@@ -15,6 +15,7 @@
 package com.amazonaws.services.stepfunctions.builder;
 
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.branch;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.iterator;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.catcher;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choice;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choiceState;
@@ -22,6 +23,7 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.e
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.eq;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.next;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.parallelState;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.mapState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.passState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.seconds;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.stateMachine;
@@ -119,6 +121,56 @@ public class PathSerializationTest {
                         .transition(end()))
                 .build();
         assertStateMachineMatches("ParallelStateWithNonNullPaths.json", stateMachine);
+    }
+
+    @Test
+    public void mapStateWithNoPathsProvided_DoesNotHavePathFieldsInJson() {
+        final StateMachine stateMachine = stateMachine()
+                .startAt("InitialState")
+                .state("InitialState", mapState()
+                        .iterator(iterator()
+                                .startAt("IteratorState")
+                                .state("IteratorState", succeedState()))
+                        .transition(end()))
+                .build();
+        assertStateMachineMatches("MapStateWithNoExplicitPaths.json", stateMachine);
+    }
+
+    @Test
+    public void mapStateWithExplicitNullPaths_HasExplicitJsonNullInJson() {
+        final StateMachine stateMachine = stateMachine()
+                .startAt("InitialState")
+                .state("InitialState", mapState()
+                        .iterator(iterator()
+                                .startAt("IteratorState")
+                                .state("IteratorState", succeedState()))
+                        .itemsPath(null)
+                        .inputPath(null)
+                        .outputPath(null)
+                        .resultPath(null)
+                        .parameters(null)
+                        .transition(end()))
+                .build();
+        assertStateMachineMatches("MapStateWithExplicitNullPaths.json", stateMachine);
+    }
+
+    @Test
+    public void mapStateWithNonNullPaths_HasCorrectPathsInJson() {
+        final StateMachine stateMachine = stateMachine()
+                .startAt("InitialState")
+                .state("InitialState", mapState()
+                        .iterator(iterator()
+                                .startAt("IteratorState")
+                                .state("IteratorState", succeedState()))
+                        .itemsPath("$.items")
+                        .inputPath("$.input")
+                        .outputPath("$.output")
+                        .resultPath("$.result")
+                        .parameters("[42, \"foo\", {}]")
+                        .maxConcurrency(10)
+                        .transition(end()))
+                .build();
+        assertStateMachineMatches("MapStateWithNonNullPaths.json", stateMachine);
     }
 
     @Test

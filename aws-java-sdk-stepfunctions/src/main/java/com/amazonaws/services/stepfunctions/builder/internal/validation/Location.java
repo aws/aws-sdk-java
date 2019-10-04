@@ -22,6 +22,7 @@ enum Location {
     State,
     Choice,
     Branch,
+    Iterator,
     Catcher,
     Retrier,
     Unknown;

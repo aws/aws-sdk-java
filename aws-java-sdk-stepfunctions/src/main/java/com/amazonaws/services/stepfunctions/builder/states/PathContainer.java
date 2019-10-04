@@ -29,7 +29,7 @@ import com.fasterxml.jackson.databind.node.TextNode;
 import java.io.IOException;
 
 /**
- * Container for the InputPath, OutputPath, and ResultPath fields to handle serialization concerns.
+ * Container for the InputPath, OutputPath, ResultPath, and ItemsPath fields to handle serialization concerns.
  */
 @SdkInternalApi
 final class PathContainer {
@@ -46,6 +46,10 @@ final class PathContainer {
     @JsonSerialize(using = PathSerializer.class)
     private final JsonNode resultPath;
 
+    @JsonProperty(PropertyNames.ITEMS_PATH)
+    @JsonSerialize(using = PathSerializer.class)
+    private final JsonNode itemsPath;
+
     @JsonProperty(PropertyNames.PARAMETERS)
     @JsonSerialize(using = PathSerializer.class)
     private final JsonNode parameters;
@@ -54,6 +58,7 @@ final class PathContainer {
         this.inputPath = builder.inputPath;
         this.outputPath = builder.outputPath;
         this.resultPath = builder.resultPath;
+        this.itemsPath = builder.itemsPath;
         this.parameters = builder.parameters;
     }
 
@@ -70,6 +75,11 @@ final class PathContainer {
     @JsonIgnore
     public String getResultPath() {
         return nodeToString(resultPath);
+    }
+
+    @JsonIgnore
+    public String getItemsPath() {
+        return nodeToString(itemsPath);
     }
 
     @JsonIgnore
@@ -102,6 +112,8 @@ final class PathContainer {
 
         private JsonNode resultPath;
 
+        private JsonNode itemsPath;
+
         private JsonNode parameters;
 
         protected Builder() {
@@ -122,6 +134,12 @@ final class PathContainer {
         @JsonProperty(PropertyNames.RESULT_PATH)
         public Builder resultPath(String resultPath) {
             this.resultPath = resolvePath(resultPath);
+            return this;
+        }
+
+        @JsonProperty(PropertyNames.ITEMS_PATH)
+        public Builder itemsPath(String itemsPath) {
+            this.itemsPath = resolvePath(itemsPath);
             return this;
         }
 

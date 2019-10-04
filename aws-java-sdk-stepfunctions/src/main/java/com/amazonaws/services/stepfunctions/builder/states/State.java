@@ -45,6 +45,11 @@ public interface State {
     String PARALLEL = "Parallel";
 
     /**
+     * Type identifier for a {@link MapState}.
+     */
+    String MAP = "Map";
+
+    /**
      * Type identifier for a {@link PassState}.
      */
     String PASS = "Pass";
@@ -86,6 +91,7 @@ public interface State {
             @JsonSubTypes.Type(value = ChoiceState.Builder.class, name = CHOICE),
             @JsonSubTypes.Type(value = FailState.Builder.class, name = FAIL),
             @JsonSubTypes.Type(value = ParallelState.Builder.class, name = PARALLEL),
+            @JsonSubTypes.Type(value = MapState.Builder.class, name = MAP),
             @JsonSubTypes.Type(value = PassState.Builder.class, name = PASS),
             @JsonSubTypes.Type(value = SucceedState.Builder.class, name = SUCCEED),
             @JsonSubTypes.Type(value = TaskState.Builder.class, name = TASK),
