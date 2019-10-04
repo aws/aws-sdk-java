@@ -33,6 +33,11 @@ public class AbstractAWSMediaPackage implements AWSMediaPackage {
     }
 
     @Override
+    public CreateHarvestJobResult createHarvestJob(CreateHarvestJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateOriginEndpointResult createOriginEndpoint(CreateOriginEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,12 +58,22 @@ public class AbstractAWSMediaPackage implements AWSMediaPackage {
     }
 
     @Override
+    public DescribeHarvestJobResult describeHarvestJob(DescribeHarvestJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeOriginEndpointResult describeOriginEndpoint(DescribeOriginEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListChannelsResult listChannels(ListChannelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListHarvestJobsResult listHarvestJobs(ListHarvestJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

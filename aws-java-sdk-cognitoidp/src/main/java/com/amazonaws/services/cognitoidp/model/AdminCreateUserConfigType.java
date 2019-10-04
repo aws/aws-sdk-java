@@ -55,7 +55,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * </p>
      * <p>
      * See also <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
      * >Customizing User Invitation Messages</a>.
      * </p>
      */
@@ -212,7 +212,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * </p>
      * <p>
      * See also <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
      * >Customizing User Invitation Messages</a>.
      * </p>
      * 
@@ -220,7 +220,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      *        The message template to be used for the welcome message to new users.</p>
      *        <p>
      *        See also <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
      *        >Customizing User Invitation Messages</a>.
      */
 
@@ -234,14 +234,14 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * </p>
      * <p>
      * See also <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
      * >Customizing User Invitation Messages</a>.
      * </p>
      * 
      * @return The message template to be used for the welcome message to new users.</p>
      *         <p>
      *         See also <a href=
-     *         "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
      *         >Customizing User Invitation Messages</a>.
      */
 
@@ -255,7 +255,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * </p>
      * <p>
      * See also <a href=
-     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
      * >Customizing User Invitation Messages</a>.
      * </p>
      * 
@@ -263,7 +263,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      *        The message template to be used for the welcome message to new users.</p>
      *        <p>
      *        See also <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
      *        >Customizing User Invitation Messages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

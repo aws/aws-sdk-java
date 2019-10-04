@@ -36,7 +36,7 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
     private Boolean enabled;
     /**
      * <p>
-     * The preferred MFA method.
+     * Specifies whether software token MFA is the preferred MFA method.
      * </p>
      */
     private Boolean preferredMfa;
@@ -95,11 +95,11 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The preferred MFA method.
+     * Specifies whether software token MFA is the preferred MFA method.
      * </p>
      * 
      * @param preferredMfa
-     *        The preferred MFA method.
+     *        Specifies whether software token MFA is the preferred MFA method.
      */
 
     public void setPreferredMfa(Boolean preferredMfa) {
@@ -108,10 +108,10 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The preferred MFA method.
+     * Specifies whether software token MFA is the preferred MFA method.
      * </p>
      * 
-     * @return The preferred MFA method.
+     * @return Specifies whether software token MFA is the preferred MFA method.
      */
 
     public Boolean getPreferredMfa() {
@@ -120,11 +120,11 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The preferred MFA method.
+     * Specifies whether software token MFA is the preferred MFA method.
      * </p>
      * 
      * @param preferredMfa
-     *        The preferred MFA method.
+     *        Specifies whether software token MFA is the preferred MFA method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,10 +135,10 @@ public class SoftwareTokenMfaSettingsType implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The preferred MFA method.
+     * Specifies whether software token MFA is the preferred MFA method.
      * </p>
      * 
-     * @return The preferred MFA method.
+     * @return Specifies whether software token MFA is the preferred MFA method.
      */
 
     public Boolean isPreferredMfa() {

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +33,8 @@ public class GetUserAttributeVerificationCodeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessToken").build();
     private static final MarshallingInfo<String> ATTRIBUTENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeName").build();
+    private static final MarshallingInfo<Map> CLIENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientMetadata").build();
 
     private static final GetUserAttributeVerificationCodeRequestMarshaller instance = new GetUserAttributeVerificationCodeRequestMarshaller();
 
@@ -50,6 +54,7 @@ public class GetUserAttributeVerificationCodeRequestMarshaller {
         try {
             protocolMarshaller.marshall(getUserAttributeVerificationCodeRequest.getAccessToken(), ACCESSTOKEN_BINDING);
             protocolMarshaller.marshall(getUserAttributeVerificationCodeRequest.getAttributeName(), ATTRIBUTENAME_BINDING);
+            protocolMarshaller.marshall(getUserAttributeVerificationCodeRequest.getClientMetadata(), CLIENTMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

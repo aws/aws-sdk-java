@@ -41,6 +41,19 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateHarvestJobResult> createHarvestJobAsync(CreateHarvestJobRequest request) {
+
+        return createHarvestJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHarvestJobResult> createHarvestJobAsync(CreateHarvestJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateHarvestJobRequest, CreateHarvestJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOriginEndpointResult> createOriginEndpointAsync(CreateOriginEndpointRequest request) {
 
         return createOriginEndpointAsync(request, null);
@@ -93,6 +106,19 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeHarvestJobResult> describeHarvestJobAsync(DescribeHarvestJobRequest request) {
+
+        return describeHarvestJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHarvestJobResult> describeHarvestJobAsync(DescribeHarvestJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeHarvestJobRequest, DescribeHarvestJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOriginEndpointResult> describeOriginEndpointAsync(DescribeOriginEndpointRequest request) {
 
         return describeOriginEndpointAsync(request, null);
@@ -114,6 +140,19 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     @Override
     public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHarvestJobsResult> listHarvestJobsAsync(ListHarvestJobsRequest request) {
+
+        return listHarvestJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHarvestJobsResult> listHarvestJobsAsync(ListHarvestJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListHarvestJobsRequest, ListHarvestJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -36,7 +36,7 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
     private String accessToken;
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      * </p>
      */
     private java.util.List<MFAOptionType> mFAOptions;
@@ -83,10 +83,10 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      * </p>
      * 
-     * @return Specifies the options for MFA (e.g., email or phone number).
+     * @return You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      */
 
     public java.util.List<MFAOptionType> getMFAOptions() {
@@ -95,11 +95,11 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      * </p>
      * 
      * @param mFAOptions
-     *        Specifies the options for MFA (e.g., email or phone number).
+     *        You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      */
 
     public void setMFAOptions(java.util.Collection<MFAOptionType> mFAOptions) {
@@ -113,7 +113,7 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param mFAOptions
-     *        Specifies the options for MFA (e.g., email or phone number).
+     *        You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      * </p>
      * 
      * @param mFAOptions
-     *        Specifies the options for MFA (e.g., email or phone number).
+     *        You can use this parameter only to set an SMS configuration that uses SMS for delivery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

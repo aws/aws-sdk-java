@@ -103,7 +103,9 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private String userStatus;
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
+     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
+     * type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a> response instead.
      * </p>
      */
     private java.util.List<MFAOptionType> mFAOptions;
@@ -115,7 +117,8 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private String preferredMfaSetting;
     /**
      * <p>
-     * The list of the user's MFA settings.
+     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      */
     private java.util.List<String> userMFASettingList;
@@ -822,10 +825,15 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
+     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
+     * type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a> response instead.
      * </p>
      * 
-     * @return Specifies the options for MFA (e.g., email or phone number).
+     * @return <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
+     *         configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
+     *         information about either type of MFA configuration, use the
+     *         <a>AdminGetUserResponse$UserMFASettingList</a> response instead.
      */
 
     public java.util.List<MFAOptionType> getMFAOptions() {
@@ -834,11 +842,16 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
+     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
+     * type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a> response instead.
      * </p>
      * 
      * @param mFAOptions
-     *        Specifies the options for MFA (e.g., email or phone number).
+     *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
+     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
+     *        information about either type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a>
+     *        response instead.
      */
 
     public void setMFAOptions(java.util.Collection<MFAOptionType> mFAOptions) {
@@ -852,7 +865,9 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
+     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
+     * type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a> response instead.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -861,7 +876,10 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param mFAOptions
-     *        Specifies the options for MFA (e.g., email or phone number).
+     *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
+     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
+     *        information about either type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a>
+     *        response instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -877,11 +895,16 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Specifies the options for MFA (e.g., email or phone number).
+     * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
+     * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
+     * type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a> response instead.
      * </p>
      * 
      * @param mFAOptions
-     *        Specifies the options for MFA (e.g., email or phone number).
+     *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
+     *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
+     *        information about either type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a>
+     *        response instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -932,10 +955,12 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of the user's MFA settings.
+     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
-     * @return The list of the user's MFA settings.
+     * @return The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *         and <code>SOFTWARE_TOKEN_MFA</code>.
      */
 
     public java.util.List<String> getUserMFASettingList() {
@@ -944,11 +969,13 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of the user's MFA settings.
+     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
      * @param userMFASettingList
-     *        The list of the user's MFA settings.
+     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        and <code>SOFTWARE_TOKEN_MFA</code>.
      */
 
     public void setUserMFASettingList(java.util.Collection<String> userMFASettingList) {
@@ -962,7 +989,8 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of the user's MFA settings.
+     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -971,7 +999,8 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param userMFASettingList
-     *        The list of the user's MFA settings.
+     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        and <code>SOFTWARE_TOKEN_MFA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -987,11 +1016,13 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of the user's MFA settings.
+     * The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and
+     * <code>SOFTWARE_TOKEN_MFA</code>.
      * </p>
      * 
      * @param userMFASettingList
-     *        The list of the user's MFA settings.
+     *        The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code>
+     *        and <code>SOFTWARE_TOKEN_MFA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

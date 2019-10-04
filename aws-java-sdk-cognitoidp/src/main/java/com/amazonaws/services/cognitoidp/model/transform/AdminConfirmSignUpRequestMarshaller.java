@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +33,8 @@ public class AdminConfirmSignUpRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<Map> CLIENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientMetadata").build();
 
     private static final AdminConfirmSignUpRequestMarshaller instance = new AdminConfirmSignUpRequestMarshaller();
 
@@ -50,6 +54,7 @@ public class AdminConfirmSignUpRequestMarshaller {
         try {
             protocolMarshaller.marshall(adminConfirmSignUpRequest.getUserPoolId(), USERPOOLID_BINDING);
             protocolMarshaller.marshall(adminConfirmSignUpRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(adminConfirmSignUpRequest.getClientMetadata(), CLIENTMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

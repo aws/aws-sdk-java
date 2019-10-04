@@ -19,7 +19,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the different settings for multi-factor authentication (MFA).
+ * <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for
+ * TOTP software token MFA configurations.
+ * </p>
+ * <p>
+ * To set either type of MFA configuration, use the <a>AdminSetUserMFAPreference</a> or <a>SetUserMFAPreference</a>
+ * actions.
+ * </p>
+ * <p>
+ * To look up information about either type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a>
+ * or <a>GetUserResponse$UserMFASettingList</a> responses.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/MFAOptionType" target="_top">AWS API
@@ -30,24 +39,27 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delivery medium (email message or SMS message) to send the MFA code.
+     * The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery
+     * medium value.
      * </p>
      */
     private String deliveryMedium;
     /**
      * <p>
-     * The attribute name of the MFA option type.
+     * The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
      * </p>
      */
     private String attributeName;
 
     /**
      * <p>
-     * The delivery medium (email message or SMS message) to send the MFA code.
+     * The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery
+     * medium value.
      * </p>
      * 
      * @param deliveryMedium
-     *        The delivery medium (email message or SMS message) to send the MFA code.
+     *        The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code>
+     *        delivery medium value.
      * @see DeliveryMediumType
      */
 
@@ -57,10 +69,12 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delivery medium (email message or SMS message) to send the MFA code.
+     * The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery
+     * medium value.
      * </p>
      * 
-     * @return The delivery medium (email message or SMS message) to send the MFA code.
+     * @return The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code>
+     *         delivery medium value.
      * @see DeliveryMediumType
      */
 
@@ -70,11 +84,13 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delivery medium (email message or SMS message) to send the MFA code.
+     * The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery
+     * medium value.
      * </p>
      * 
      * @param deliveryMedium
-     *        The delivery medium (email message or SMS message) to send the MFA code.
+     *        The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code>
+     *        delivery medium value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMediumType
      */
@@ -86,11 +102,13 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delivery medium (email message or SMS message) to send the MFA code.
+     * The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery
+     * medium value.
      * </p>
      * 
      * @param deliveryMedium
-     *        The delivery medium (email message or SMS message) to send the MFA code.
+     *        The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code>
+     *        delivery medium value.
      * @see DeliveryMediumType
      */
 
@@ -100,11 +118,13 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delivery medium (email message or SMS message) to send the MFA code.
+     * The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery
+     * medium value.
      * </p>
      * 
      * @param deliveryMedium
-     *        The delivery medium (email message or SMS message) to send the MFA code.
+     *        The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code>
+     *        delivery medium value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMediumType
      */
@@ -116,11 +136,11 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute name of the MFA option type.
+     * The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
      * </p>
      * 
      * @param attributeName
-     *        The attribute name of the MFA option type.
+     *        The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
      */
 
     public void setAttributeName(String attributeName) {
@@ -129,10 +149,10 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute name of the MFA option type.
+     * The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
      * </p>
      * 
-     * @return The attribute name of the MFA option type.
+     * @return The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
      */
 
     public String getAttributeName() {
@@ -141,11 +161,11 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute name of the MFA option type.
+     * The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
      * </p>
      * 
      * @param attributeName
-     *        The attribute name of the MFA option type.
+     *        The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

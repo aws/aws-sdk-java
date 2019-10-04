@@ -25,16 +25,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The user pool ID for the user pool where you want to set the user's password.
+     * </p>
+     */
     private String userPoolId;
-
+    /**
+     * <p>
+     * The user name of the user whose password you wish to set.
+     * </p>
+     */
     private String username;
-
+    /**
+     * <p>
+     * The password for the user.
+     * </p>
+     */
     private String password;
-
+    /**
+     * <p>
+     * <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
+     * </p>
+     */
     private Boolean permanent;
 
     /**
+     * <p>
+     * The user pool ID for the user pool where you want to set the user's password.
+     * </p>
+     * 
      * @param userPoolId
+     *        The user pool ID for the user pool where you want to set the user's password.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -42,7 +64,11 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The user pool ID for the user pool where you want to set the user's password.
+     * </p>
+     * 
+     * @return The user pool ID for the user pool where you want to set the user's password.
      */
 
     public String getUserPoolId() {
@@ -50,7 +76,12 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The user pool ID for the user pool where you want to set the user's password.
+     * </p>
+     * 
      * @param userPoolId
+     *        The user pool ID for the user pool where you want to set the user's password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +91,12 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The user name of the user whose password you wish to set.
+     * </p>
+     * 
      * @param username
+     *        The user name of the user whose password you wish to set.
      */
 
     public void setUsername(String username) {
@@ -68,7 +104,11 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The user name of the user whose password you wish to set.
+     * </p>
+     * 
+     * @return The user name of the user whose password you wish to set.
      */
 
     public String getUsername() {
@@ -76,7 +116,12 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The user name of the user whose password you wish to set.
+     * </p>
+     * 
      * @param username
+     *        The user name of the user whose password you wish to set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +131,12 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The password for the user.
+     * </p>
+     * 
      * @param password
+     *        The password for the user.
      */
 
     public void setPassword(String password) {
@@ -94,7 +144,11 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The password for the user.
+     * </p>
+     * 
+     * @return The password for the user.
      */
 
     public String getPassword() {
@@ -102,7 +156,12 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The password for the user.
+     * </p>
+     * 
      * @param password
+     *        The password for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +171,12 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
+     * </p>
+     * 
      * @param permanent
+     *        <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
      */
 
     public void setPermanent(Boolean permanent) {
@@ -120,7 +184,11 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
+     * </p>
+     * 
+     * @return <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
      */
 
     public Boolean getPermanent() {
@@ -128,7 +196,12 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
+     * </p>
+     * 
      * @param permanent
+     *        <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +211,11 @@ public class AdminSetUserPasswordRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
+     * </p>
+     * 
+     * @return <code>True</code> if the password is permanent, <code>False</code> if it is temporary.
      */
 
     public Boolean isPermanent() {

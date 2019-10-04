@@ -175,7 +175,8 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values, custom
+     * scopes created in Resource Servers are also supported.
      * </p>
      */
     private java.util.List<String> allowedOAuthScopes;
@@ -1474,11 +1475,13 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values, custom
+     * scopes created in Resource Servers are also supported.
      * </p>
      * 
      * @return A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     *         <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     *         <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values,
+     *         custom scopes created in Resource Servers are also supported.
      */
 
     public java.util.List<String> getAllowedOAuthScopes() {
@@ -1488,12 +1491,14 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values, custom
+     * scopes created in Resource Servers are also supported.
      * </p>
      * 
      * @param allowedOAuthScopes
      *        A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     *        <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     *        <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values,
+     *        custom scopes created in Resource Servers are also supported.
      */
 
     public void setAllowedOAuthScopes(java.util.Collection<String> allowedOAuthScopes) {
@@ -1508,7 +1513,8 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values, custom
+     * scopes created in Resource Servers are also supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1518,7 +1524,8 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param allowedOAuthScopes
      *        A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     *        <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     *        <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values,
+     *        custom scopes created in Resource Servers are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1535,12 +1542,14 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     * <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values, custom
+     * scopes created in Resource Servers are also supported.
      * </p>
      * 
      * @param allowedOAuthScopes
      *        A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>"phone"</code>,
-     *        <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>.
+     *        <code>"email"</code>, <code>"openid"</code>, and <code>"Cognito"</code>. In addition to these values,
+     *        custom scopes created in Resource Servers are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

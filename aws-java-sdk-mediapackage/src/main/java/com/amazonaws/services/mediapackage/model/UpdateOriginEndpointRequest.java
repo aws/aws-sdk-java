@@ -40,6 +40,12 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
 
     private MssPackage mssPackage;
     /**
+     * Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may
+     * by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+     * requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+     */
+    private String origination;
+    /**
      * Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback
      * will be disabled for the OriginEndpoint.
      */
@@ -259,6 +265,77 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may
+     * by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+     * requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+     * 
+     * @param origination
+     *        Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the
+     *        OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the
+     *        OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily
+     *        disabling origination
+     * @see Origination
+     */
+
+    public void setOrigination(String origination) {
+        this.origination = origination;
+    }
+
+    /**
+     * Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may
+     * by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+     * requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+     * 
+     * @return Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the
+     *         OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the
+     *         OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily
+     *         disabling origination
+     * @see Origination
+     */
+
+    public String getOrigination() {
+        return this.origination;
+    }
+
+    /**
+     * Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may
+     * by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+     * requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+     * 
+     * @param origination
+     *        Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the
+     *        OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the
+     *        OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily
+     *        disabling origination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Origination
+     */
+
+    public UpdateOriginEndpointRequest withOrigination(String origination) {
+        setOrigination(origination);
+        return this;
+    }
+
+    /**
+     * Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may
+     * by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
+     * requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
+     * 
+     * @param origination
+     *        Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the
+     *        OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the
+     *        OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily
+     *        disabling origination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Origination
+     */
+
+    public UpdateOriginEndpointRequest withOrigination(Origination origination) {
+        this.origination = origination.toString();
+        return this;
+    }
+
+    /**
      * Maximum duration (in seconds) of content to retain for startover playback. If not specified, startover playback
      * will be disabled for the OriginEndpoint.
      * 
@@ -426,6 +503,8 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("ManifestName: ").append(getManifestName()).append(",");
         if (getMssPackage() != null)
             sb.append("MssPackage: ").append(getMssPackage()).append(",");
+        if (getOrigination() != null)
+            sb.append("Origination: ").append(getOrigination()).append(",");
         if (getStartoverWindowSeconds() != null)
             sb.append("StartoverWindowSeconds: ").append(getStartoverWindowSeconds()).append(",");
         if (getTimeDelaySeconds() != null)
@@ -474,6 +553,10 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getMssPackage() != null && other.getMssPackage().equals(this.getMssPackage()) == false)
             return false;
+        if (other.getOrigination() == null ^ this.getOrigination() == null)
+            return false;
+        if (other.getOrigination() != null && other.getOrigination().equals(this.getOrigination()) == false)
+            return false;
         if (other.getStartoverWindowSeconds() == null ^ this.getStartoverWindowSeconds() == null)
             return false;
         if (other.getStartoverWindowSeconds() != null && other.getStartoverWindowSeconds().equals(this.getStartoverWindowSeconds()) == false)
@@ -501,6 +584,7 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getManifestName() == null) ? 0 : getManifestName().hashCode());
         hashCode = prime * hashCode + ((getMssPackage() == null) ? 0 : getMssPackage().hashCode());
+        hashCode = prime * hashCode + ((getOrigination() == null) ? 0 : getOrigination().hashCode());
         hashCode = prime * hashCode + ((getStartoverWindowSeconds() == null) ? 0 : getStartoverWindowSeconds().hashCode());
         hashCode = prime * hashCode + ((getTimeDelaySeconds() == null) ? 0 : getTimeDelaySeconds().hashCode());
         hashCode = prime * hashCode + ((getWhitelist() == null) ? 0 : getWhitelist().hashCode());

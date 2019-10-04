@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -44,6 +45,8 @@ public class SignUpRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
     private static final MarshallingInfo<StructuredPojo> USERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextData").build();
+    private static final MarshallingInfo<Map> CLIENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientMetadata").build();
 
     private static final SignUpRequestMarshaller instance = new SignUpRequestMarshaller();
 
@@ -69,6 +72,7 @@ public class SignUpRequestMarshaller {
             protocolMarshaller.marshall(signUpRequest.getValidationData(), VALIDATIONDATA_BINDING);
             protocolMarshaller.marshall(signUpRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
             protocolMarshaller.marshall(signUpRequest.getUserContextData(), USERCONTEXTDATA_BINDING);
+            protocolMarshaller.marshall(signUpRequest.getClientMetadata(), CLIENTMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

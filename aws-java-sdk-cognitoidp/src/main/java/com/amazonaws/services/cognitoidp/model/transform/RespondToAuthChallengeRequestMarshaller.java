@@ -41,6 +41,8 @@ public class RespondToAuthChallengeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
     private static final MarshallingInfo<StructuredPojo> USERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextData").build();
+    private static final MarshallingInfo<Map> CLIENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientMetadata").build();
 
     private static final RespondToAuthChallengeRequestMarshaller instance = new RespondToAuthChallengeRequestMarshaller();
 
@@ -64,6 +66,7 @@ public class RespondToAuthChallengeRequestMarshaller {
             protocolMarshaller.marshall(respondToAuthChallengeRequest.getChallengeResponses(), CHALLENGERESPONSES_BINDING);
             protocolMarshaller.marshall(respondToAuthChallengeRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
             protocolMarshaller.marshall(respondToAuthChallengeRequest.getUserContextData(), USERCONTEXTDATA_BINDING);
+            protocolMarshaller.marshall(respondToAuthChallengeRequest.getClientMetadata(), CLIENTMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

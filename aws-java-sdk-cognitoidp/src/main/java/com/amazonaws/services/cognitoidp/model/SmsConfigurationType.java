@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The SMS configuration type.
+ * The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service
+ * to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by
+ * using an AWS IAM role that you provide for your AWS account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsConfigurationType" target="_top">AWS
@@ -30,24 +32,32 @@ public class SmsConfigurationType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the ARN of the IAM
+     * role in your AWS account which Cognito will use to send SMS messages.
      * </p>
      */
     private String snsCallerArn;
     /**
      * <p>
-     * The external ID.
+     * The external ID is a value that we recommend you use to add security to your IAM role which is used to call
+     * Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the Cognito User
+     * Pool will include it when attempting to assume your IAM role, so that you can set your roles trust policy to
+     * require the <code>ExternalID</code>. If you use the Cognito Management Console to create a role for SMS MFA,
+     * Cognito will create a role with the required permissions and a trust policy that demonstrates use of the
+     * <code>ExternalId</code>.
      * </p>
      */
     private String externalId;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the ARN of the IAM
+     * role in your AWS account which Cognito will use to send SMS messages.
      * </p>
      * 
      * @param snsCallerArn
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the ARN of
+     *        the IAM role in your AWS account which Cognito will use to send SMS messages.
      */
 
     public void setSnsCallerArn(String snsCallerArn) {
@@ -56,10 +66,12 @@ public class SmsConfigurationType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the ARN of the IAM
+     * role in your AWS account which Cognito will use to send SMS messages.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the ARN of
+     *         the IAM role in your AWS account which Cognito will use to send SMS messages.
      */
 
     public String getSnsCallerArn() {
@@ -68,11 +80,13 @@ public class SmsConfigurationType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the ARN of the IAM
+     * role in your AWS account which Cognito will use to send SMS messages.
      * </p>
      * 
      * @param snsCallerArn
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller. This is the ARN of
+     *        the IAM role in your AWS account which Cognito will use to send SMS messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +97,21 @@ public class SmsConfigurationType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The external ID.
+     * The external ID is a value that we recommend you use to add security to your IAM role which is used to call
+     * Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the Cognito User
+     * Pool will include it when attempting to assume your IAM role, so that you can set your roles trust policy to
+     * require the <code>ExternalID</code>. If you use the Cognito Management Console to create a role for SMS MFA,
+     * Cognito will create a role with the required permissions and a trust policy that demonstrates use of the
+     * <code>ExternalId</code>.
      * </p>
      * 
      * @param externalId
-     *        The external ID.
+     *        The external ID is a value that we recommend you use to add security to your IAM role which is used to
+     *        call Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the
+     *        Cognito User Pool will include it when attempting to assume your IAM role, so that you can set your roles
+     *        trust policy to require the <code>ExternalID</code>. If you use the Cognito Management Console to create a
+     *        role for SMS MFA, Cognito will create a role with the required permissions and a trust policy that
+     *        demonstrates use of the <code>ExternalId</code>.
      */
 
     public void setExternalId(String externalId) {
@@ -96,10 +120,20 @@ public class SmsConfigurationType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The external ID.
+     * The external ID is a value that we recommend you use to add security to your IAM role which is used to call
+     * Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the Cognito User
+     * Pool will include it when attempting to assume your IAM role, so that you can set your roles trust policy to
+     * require the <code>ExternalID</code>. If you use the Cognito Management Console to create a role for SMS MFA,
+     * Cognito will create a role with the required permissions and a trust policy that demonstrates use of the
+     * <code>ExternalId</code>.
      * </p>
      * 
-     * @return The external ID.
+     * @return The external ID is a value that we recommend you use to add security to your IAM role which is used to
+     *         call Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the
+     *         Cognito User Pool will include it when attempting to assume your IAM role, so that you can set your roles
+     *         trust policy to require the <code>ExternalID</code>. If you use the Cognito Management Console to create
+     *         a role for SMS MFA, Cognito will create a role with the required permissions and a trust policy that
+     *         demonstrates use of the <code>ExternalId</code>.
      */
 
     public String getExternalId() {
@@ -108,11 +142,21 @@ public class SmsConfigurationType implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The external ID.
+     * The external ID is a value that we recommend you use to add security to your IAM role which is used to call
+     * Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the Cognito User
+     * Pool will include it when attempting to assume your IAM role, so that you can set your roles trust policy to
+     * require the <code>ExternalID</code>. If you use the Cognito Management Console to create a role for SMS MFA,
+     * Cognito will create a role with the required permissions and a trust policy that demonstrates use of the
+     * <code>ExternalId</code>.
      * </p>
      * 
      * @param externalId
-     *        The external ID.
+     *        The external ID is a value that we recommend you use to add security to your IAM role which is used to
+     *        call Amazon SNS to send SMS messages for your user pool. If you provide an <code>ExternalId</code>, the
+     *        Cognito User Pool will include it when attempting to assume your IAM role, so that you can set your roles
+     *        trust policy to require the <code>ExternalID</code>. If you use the Cognito Management Console to create a
+     *        role for SMS MFA, Cognito will create a role with the required permissions and a trust policy that
+     *        demonstrates use of the <code>ExternalId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

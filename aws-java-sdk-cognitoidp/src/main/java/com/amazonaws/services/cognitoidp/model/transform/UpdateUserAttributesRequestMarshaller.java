@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -32,6 +33,8 @@ public class UpdateUserAttributesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserAttributes").build();
     private static final MarshallingInfo<String> ACCESSTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessToken").build();
+    private static final MarshallingInfo<Map> CLIENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientMetadata").build();
 
     private static final UpdateUserAttributesRequestMarshaller instance = new UpdateUserAttributesRequestMarshaller();
 
@@ -51,6 +54,7 @@ public class UpdateUserAttributesRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateUserAttributesRequest.getUserAttributes(), USERATTRIBUTES_BINDING);
             protocolMarshaller.marshall(updateUserAttributesRequest.getAccessToken(), ACCESSTOKEN_BINDING);
+            protocolMarshaller.marshall(updateUserAttributesRequest.getClientMetadata(), CLIENTMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

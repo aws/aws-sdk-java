@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.event;
 
+import com.amazonaws.services.s3.model.S3Event;
 import java.util.List;
 
 import com.amazonaws.util.SdkHttpUtils;
@@ -401,8 +402,9 @@ public class S3EventNotification {
             return eventName;
         }
 
+        @JsonIgnore
         public S3Event getEventNameAsEnum() {
-        	return S3Event.fromValue(eventName);
+            return S3Event.fromValue(eventName);
         }
 
         public String getEventSource() {

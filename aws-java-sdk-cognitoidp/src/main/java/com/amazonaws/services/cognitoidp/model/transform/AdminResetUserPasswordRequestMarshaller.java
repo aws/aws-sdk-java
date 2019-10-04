@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +33,8 @@ public class AdminResetUserPasswordRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<Map> CLIENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientMetadata").build();
 
     private static final AdminResetUserPasswordRequestMarshaller instance = new AdminResetUserPasswordRequestMarshaller();
 
@@ -50,6 +54,7 @@ public class AdminResetUserPasswordRequestMarshaller {
         try {
             protocolMarshaller.marshall(adminResetUserPasswordRequest.getUserPoolId(), USERPOOLID_BINDING);
             protocolMarshaller.marshall(adminResetUserPasswordRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(adminResetUserPasswordRequest.getClientMetadata(), CLIENTMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -47,6 +47,8 @@ public class OriginEndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manifestName").build();
     private static final MarshallingInfo<StructuredPojo> MSSPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mssPackage").build();
+    private static final MarshallingInfo<String> ORIGINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("origination").build();
     private static final MarshallingInfo<Integer> STARTOVERWINDOWSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startoverWindowSeconds").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -83,6 +85,7 @@ public class OriginEndpointMarshaller {
             protocolMarshaller.marshall(originEndpoint.getId(), ID_BINDING);
             protocolMarshaller.marshall(originEndpoint.getManifestName(), MANIFESTNAME_BINDING);
             protocolMarshaller.marshall(originEndpoint.getMssPackage(), MSSPACKAGE_BINDING);
+            protocolMarshaller.marshall(originEndpoint.getOrigination(), ORIGINATION_BINDING);
             protocolMarshaller.marshall(originEndpoint.getStartoverWindowSeconds(), STARTOVERWINDOWSECONDS_BINDING);
             protocolMarshaller.marshall(originEndpoint.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(originEndpoint.getTimeDelaySeconds(), TIMEDELAYSECONDS_BINDING);

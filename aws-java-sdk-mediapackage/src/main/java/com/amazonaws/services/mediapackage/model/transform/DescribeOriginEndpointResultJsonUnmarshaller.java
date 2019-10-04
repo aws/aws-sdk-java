@@ -84,6 +84,10 @@ public class DescribeOriginEndpointResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeOriginEndpointResult.setMssPackage(MssPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("origination", targetDepth)) {
+                    context.nextToken();
+                    describeOriginEndpointResult.setOrigination(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("startoverWindowSeconds", targetDepth)) {
                     context.nextToken();
                     describeOriginEndpointResult.setStartoverWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -365,6 +365,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a new maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based
+     * on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the
+     * number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+     * duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window
+     * tasks can start after 5 PM.
+     * </p>
+     * </note>
      * 
      * @param createMaintenanceWindowRequest
      * @return A Java Future containing the result of the CreateMaintenanceWindow operation returned by the service.
@@ -378,6 +387,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a new maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based
+     * on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the
+     * number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+     * duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window
+     * tasks can start after 5 PM.
+     * </p>
+     * </note>
      * 
      * @param createMaintenanceWindowRequest
      * @param asyncHandler
@@ -4299,6 +4317,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
      * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * <p>
+     * AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS Tools for PowerShell on
+     * Windows local machines.
+     * </p>
      * </note>
      * 
      * @param startSessionRequest
@@ -4320,6 +4342,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * be installed on the client machine making the call. For information, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
      * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS Tools for PowerShell on
+     * Windows local machines.
      * </p>
      * </note>
      * 
@@ -4556,6 +4582,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Updates an existing maintenance window. Only specified parameters are modified.
      * </p>
+     * <note>
+     * <p>
+     * The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based
+     * on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the
+     * number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+     * duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window
+     * tasks can start after 5 PM.
+     * </p>
+     * </note>
      * 
      * @param updateMaintenanceWindowRequest
      * @return A Java Future containing the result of the UpdateMaintenanceWindow operation returned by the service.
@@ -4569,6 +4604,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Updates an existing maintenance window. Only specified parameters are modified.
      * </p>
+     * <note>
+     * <p>
+     * The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based
+     * on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the
+     * number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+     * duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window
+     * tasks can start after 5 PM.
+     * </p>
+     * </note>
      * 
      * @param updateMaintenanceWindowRequest
      * @param asyncHandler

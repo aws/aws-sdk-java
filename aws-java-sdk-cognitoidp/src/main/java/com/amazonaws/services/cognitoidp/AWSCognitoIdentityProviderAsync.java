@@ -77,7 +77,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Adds the specified user to the specified group.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminAddUserToGroupRequest
@@ -93,7 +93,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Adds the specified user to the specified group.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminAddUserToGroupRequest
@@ -114,7 +114,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Confirms user registration as an admin without using a confirmation code. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminConfirmSignUpRequest
@@ -131,7 +131,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Confirms user registration as an admin without using a confirmation code. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminConfirmSignUpRequest
@@ -226,7 +226,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Deletes a user as an administrator. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminDeleteUserRequest
@@ -243,7 +243,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Deletes a user as an administrator. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminDeleteUserRequest
@@ -265,7 +265,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Deletes the user attributes in a user pool as an administrator. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminDeleteUserAttributesRequest
@@ -283,7 +283,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Deletes the user attributes in a user pool as an administrator. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminDeleteUserAttributesRequest
@@ -392,10 +392,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Disables the specified user as an administrator. Works on any user.
+     * Disables the specified user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminDisableUserRequest
@@ -409,10 +409,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Disables the specified user as an administrator. Works on any user.
+     * Disables the specified user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminDisableUserRequest
@@ -434,7 +434,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Enables the specified user as an administrator. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminEnableUserRequest
@@ -451,7 +451,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Enables the specified user as an administrator. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminEnableUserRequest
@@ -473,7 +473,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Forgets the device, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminForgetDeviceRequest
@@ -490,7 +490,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Forgets the device, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminForgetDeviceRequest
@@ -512,7 +512,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Gets the device, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminGetDeviceRequest
@@ -529,7 +529,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Gets the device, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminGetDeviceRequest
@@ -551,7 +551,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Gets the specified user by user name in a user pool as an administrator. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminGetUserRequest
@@ -568,7 +568,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Gets the specified user by user name in a user pool as an administrator. Works on any user.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminGetUserRequest
@@ -590,7 +590,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Initiates the authentication flow, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminInitiateAuthRequest
@@ -607,7 +607,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Initiates the authentication flow, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminInitiateAuthRequest
@@ -702,7 +702,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Lists devices, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminListDevicesRequest
@@ -719,7 +719,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Lists devices, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminListDevicesRequest
@@ -741,7 +741,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Lists the groups that the user belongs to.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminListGroupsForUserRequest
@@ -757,7 +757,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Lists the groups that the user belongs to.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminListGroupsForUserRequest
@@ -809,7 +809,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Removes the specified user from the specified group.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminRemoveUserFromGroupRequest
@@ -825,7 +825,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Removes the specified user from the specified group.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminRemoveUserFromGroupRequest
@@ -854,7 +854,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * message to the end user with the code to change their password.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminResetUserPasswordRequest
@@ -879,7 +879,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * message to the end user with the code to change their password.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminResetUserPasswordRequest
@@ -901,7 +901,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Responds to an authentication challenge, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminRespondToAuthChallengeRequest
@@ -919,7 +919,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Responds to an authentication challenge, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminRespondToAuthChallengeRequest
@@ -939,7 +939,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Sets the user's multi-factor authentication (MFA) preference.
+     * Sets the user's multi-factor authentication (MFA) preference, including which MFA options are enabled and if any
+     * are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a
+     * user if multiple factors are enabled. If multiple options are enabled and no preference is set, a challenge to
+     * choose an MFA option will be returned during sign in.
      * </p>
      * 
      * @param adminSetUserMFAPreferenceRequest
@@ -953,7 +956,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Sets the user's multi-factor authentication (MFA) preference.
+     * Sets the user's multi-factor authentication (MFA) preference, including which MFA options are enabled and if any
+     * are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a
+     * user if multiple factors are enabled. If multiple options are enabled and no preference is set, a challenge to
+     * choose an MFA option will be returned during sign in.
      * </p>
      * 
      * @param adminSetUserMFAPreferenceRequest
@@ -971,6 +977,20 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
             com.amazonaws.handlers.AsyncHandler<AdminSetUserMFAPreferenceRequest, AdminSetUserMFAPreferenceResult> asyncHandler);
 
     /**
+     * <p>
+     * Sets the specified user's password in a user pool as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * The password can be temporary or permanent. If it is temporary, the user status will be placed into the
+     * <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in, the InitiateAuth/AdminInitiateAuth
+     * response will contain the <code>NEW_PASSWORD_REQUIRED</code> challenge. If the user does not sign in before it
+     * expires, the user will not be able to sign in and their password will need to be reset by an administrator.
+     * </p>
+     * <p>
+     * Once the user has set a new password, or the password is permanent, the user status will be set to
+     * <code>Confirmed</code>.
+     * </p>
+     * 
      * @param adminSetUserPasswordRequest
      * @return A Java Future containing the result of the AdminSetUserPassword operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminSetUserPassword
@@ -980,6 +1000,20 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     java.util.concurrent.Future<AdminSetUserPasswordResult> adminSetUserPasswordAsync(AdminSetUserPasswordRequest adminSetUserPasswordRequest);
 
     /**
+     * <p>
+     * Sets the specified user's password in a user pool as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * The password can be temporary or permanent. If it is temporary, the user status will be placed into the
+     * <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in, the InitiateAuth/AdminInitiateAuth
+     * response will contain the <code>NEW_PASSWORD_REQUIRED</code> challenge. If the user does not sign in before it
+     * expires, the user will not be able to sign in and their password will need to be reset by an administrator.
+     * </p>
+     * <p>
+     * Once the user has set a new password, or the password is permanent, the user status will be set to
+     * <code>Confirmed</code>.
+     * </p>
+     * 
      * @param adminSetUserPasswordRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -995,14 +1029,13 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Sets all the user settings for a specified user name. Works on any user.
-     * </p>
-     * <p>
-     * Requires developer credentials.
+     * <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to
+     * configure TOTP software token MFA. To configure either type of MFA, use the <a>AdminSetUserMFAPreference</a>
+     * action instead.
      * </p>
      * 
      * @param adminSetUserSettingsRequest
-     *        Represents the request to set user settings as an administrator.
+     *        You can use this parameter to set an MFA configuration that uses the SMS delivery medium.
      * @return A Java Future containing the result of the AdminSetUserSettings operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminSetUserSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings"
@@ -1012,14 +1045,13 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Sets all the user settings for a specified user name. Works on any user.
-     * </p>
-     * <p>
-     * Requires developer credentials.
+     * <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to
+     * configure TOTP software token MFA. To configure either type of MFA, use the <a>AdminSetUserMFAPreference</a>
+     * action instead.
      * </p>
      * 
      * @param adminSetUserSettingsRequest
-     *        Represents the request to set user settings as an administrator.
+     *        You can use this parameter to set an MFA configuration that uses the SMS delivery medium.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1074,7 +1106,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Updates the device status as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminUpdateDeviceStatusRequest
@@ -1091,7 +1123,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Updates the device status as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminUpdateDeviceStatusRequest
@@ -1119,7 +1151,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * In addition to updating user attributes, this API can also be used to mark phone and email as verified.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminUpdateUserAttributesRequest
@@ -1143,7 +1175,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * In addition to updating user attributes, this API can also be used to mark phone and email as verified.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminUpdateUserAttributesRequest
@@ -1166,7 +1198,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Signs out users from all devices, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminUserGlobalSignOutRequest
@@ -1183,7 +1215,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Signs out users from all devices, as an administrator.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param adminUserGlobalSignOutRequest
@@ -1370,7 +1402,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Creates a new group in the specified user pool.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param createGroupRequest
@@ -1386,7 +1418,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Creates a new group in the specified user pool.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param createGroupRequest
@@ -1599,7 +1631,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Deletes a group. Currently only groups with no members can be deleted.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param deleteGroupRequest
@@ -1615,7 +1647,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Deletes a group. Currently only groups with no members can be deleted.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param deleteGroupRequest
@@ -2228,7 +2260,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Gets a group.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param getGroupRequest
@@ -2244,7 +2276,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Gets a group.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param getGroupRequest
@@ -2568,7 +2600,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Lists the groups associated with a user pool.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param listGroupsRequest
@@ -2584,7 +2616,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Lists the groups associated with a user pool.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param listGroupsRequest
@@ -2844,7 +2876,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Lists the users in the specified group.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param listUsersInGroupRequest
@@ -2860,7 +2892,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Lists the users in the specified group.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param listUsersInGroupRequest
@@ -3048,7 +3080,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Set the user's multi-factor authentication (MFA) method preference.
+     * Set the user's multi-factor authentication (MFA) method preference, including which MFA factors are enabled and
+     * if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to
+     * authenticate a user if multiple factors are enabled. If multiple options are enabled and no preference is set, a
+     * challenge to choose an MFA option will be returned during sign in.
      * </p>
      * 
      * @param setUserMFAPreferenceRequest
@@ -3061,7 +3096,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Set the user's multi-factor authentication (MFA) method preference.
+     * Set the user's multi-factor authentication (MFA) method preference, including which MFA factors are enabled and
+     * if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to
+     * authenticate a user if multiple factors are enabled. If multiple options are enabled and no preference is set, a
+     * challenge to choose an MFA option will be returned during sign in.
      * </p>
      * 
      * @param setUserMFAPreferenceRequest
@@ -3079,7 +3117,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Set the user pool MFA configuration.
+     * Set the user pool multi-factor authentication (MFA) configuration.
      * </p>
      * 
      * @param setUserPoolMfaConfigRequest
@@ -3092,7 +3130,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Set the user pool MFA configuration.
+     * Set the user pool multi-factor authentication (MFA) configuration.
      * </p>
      * 
      * @param setUserPoolMfaConfigRequest
@@ -3110,8 +3148,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Sets the user settings like multi-factor authentication (MFA). If MFA is to be removed for a particular attribute
-     * pass the attribute with code delivery as null. If null list is passed, all MFA options are removed.
+     * <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to
+     * configure TOTP software token MFA. To configure either type of MFA, use the <a>SetUserMFAPreference</a> action
+     * instead.
      * </p>
      * 
      * @param setUserSettingsRequest
@@ -3125,8 +3164,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Sets the user settings like multi-factor authentication (MFA). If MFA is to be removed for a particular attribute
-     * pass the attribute with code delivery as null. If null list is passed, all MFA options are removed.
+     * <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to
+     * configure TOTP software token MFA. To configure either type of MFA, use the <a>SetUserMFAPreference</a> action
+     * instead.
      * </p>
      * 
      * @param setUserSettingsRequest
@@ -3407,7 +3447,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Updates the specified group with the specified attributes.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param updateGroupRequest
@@ -3423,7 +3463,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Updates the specified group with the specified attributes.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * Calling this action requires developer credentials.
      * </p>
      * 
      * @param updateGroupRequest

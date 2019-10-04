@@ -93,6 +93,39 @@ public class AWSMediaPackageAsyncClient extends AWSMediaPackageClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateHarvestJobResult> createHarvestJobAsync(CreateHarvestJobRequest request) {
+
+        return createHarvestJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHarvestJobResult> createHarvestJobAsync(final CreateHarvestJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateHarvestJobRequest, CreateHarvestJobResult> asyncHandler) {
+        final CreateHarvestJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateHarvestJobResult>() {
+            @Override
+            public CreateHarvestJobResult call() throws Exception {
+                CreateHarvestJobResult result = null;
+
+                try {
+                    result = executeCreateHarvestJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOriginEndpointResult> createOriginEndpointAsync(CreateOriginEndpointRequest request) {
 
         return createOriginEndpointAsync(request, null);
@@ -225,6 +258,39 @@ public class AWSMediaPackageAsyncClient extends AWSMediaPackageClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeHarvestJobResult> describeHarvestJobAsync(DescribeHarvestJobRequest request) {
+
+        return describeHarvestJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHarvestJobResult> describeHarvestJobAsync(final DescribeHarvestJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHarvestJobRequest, DescribeHarvestJobResult> asyncHandler) {
+        final DescribeHarvestJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeHarvestJobResult>() {
+            @Override
+            public DescribeHarvestJobResult call() throws Exception {
+                DescribeHarvestJobResult result = null;
+
+                try {
+                    result = executeDescribeHarvestJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOriginEndpointResult> describeOriginEndpointAsync(DescribeOriginEndpointRequest request) {
 
         return describeOriginEndpointAsync(request, null);
@@ -275,6 +341,39 @@ public class AWSMediaPackageAsyncClient extends AWSMediaPackageClient implements
 
                 try {
                     result = executeListChannels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHarvestJobsResult> listHarvestJobsAsync(ListHarvestJobsRequest request) {
+
+        return listHarvestJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHarvestJobsResult> listHarvestJobsAsync(final ListHarvestJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListHarvestJobsRequest, ListHarvestJobsResult> asyncHandler) {
+        final ListHarvestJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListHarvestJobsResult>() {
+            @Override
+            public ListHarvestJobsResult call() throws Exception {
+                ListHarvestJobsResult result = null;
+
+                try {
+                    result = executeListHarvestJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -60,6 +60,35 @@ public interface AWSMediaPackageAsync extends AWSMediaPackage {
             com.amazonaws.handlers.AsyncHandler<CreateChannelRequest, CreateChannelResult> asyncHandler);
 
     /**
+     * Creates a new HarvestJob record.
+     * 
+     * @param createHarvestJobRequest
+     *        Configuration parameters used to create a new HarvestJob.
+     * @return A Java Future containing the result of the CreateHarvestJob operation returned by the service.
+     * @sample AWSMediaPackageAsync.CreateHarvestJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateHarvestJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHarvestJobResult> createHarvestJobAsync(CreateHarvestJobRequest createHarvestJobRequest);
+
+    /**
+     * Creates a new HarvestJob record.
+     * 
+     * @param createHarvestJobRequest
+     *        Configuration parameters used to create a new HarvestJob.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateHarvestJob operation returned by the service.
+     * @sample AWSMediaPackageAsyncHandler.CreateHarvestJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateHarvestJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHarvestJobResult> createHarvestJobAsync(CreateHarvestJobRequest createHarvestJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateHarvestJobRequest, CreateHarvestJobResult> asyncHandler);
+
+    /**
      * Creates a new OriginEndpoint record.
      * 
      * @param createOriginEndpointRequest
@@ -170,6 +199,33 @@ public interface AWSMediaPackageAsync extends AWSMediaPackage {
             com.amazonaws.handlers.AsyncHandler<DescribeChannelRequest, DescribeChannelResult> asyncHandler);
 
     /**
+     * Gets details about an existing HarvestJob.
+     * 
+     * @param describeHarvestJobRequest
+     * @return A Java Future containing the result of the DescribeHarvestJob operation returned by the service.
+     * @sample AWSMediaPackageAsync.DescribeHarvestJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeHarvestJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHarvestJobResult> describeHarvestJobAsync(DescribeHarvestJobRequest describeHarvestJobRequest);
+
+    /**
+     * Gets details about an existing HarvestJob.
+     * 
+     * @param describeHarvestJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHarvestJob operation returned by the service.
+     * @sample AWSMediaPackageAsyncHandler.DescribeHarvestJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeHarvestJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHarvestJobResult> describeHarvestJobAsync(DescribeHarvestJobRequest describeHarvestJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHarvestJobRequest, DescribeHarvestJobResult> asyncHandler);
+
+    /**
      * Gets details about an existing OriginEndpoint.
      * 
      * @param describeOriginEndpointRequest
@@ -222,6 +278,33 @@ public interface AWSMediaPackageAsync extends AWSMediaPackage {
      */
     java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler);
+
+    /**
+     * Returns a collection of HarvestJob records.
+     * 
+     * @param listHarvestJobsRequest
+     * @return A Java Future containing the result of the ListHarvestJobs operation returned by the service.
+     * @sample AWSMediaPackageAsync.ListHarvestJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListHarvestJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHarvestJobsResult> listHarvestJobsAsync(ListHarvestJobsRequest listHarvestJobsRequest);
+
+    /**
+     * Returns a collection of HarvestJob records.
+     * 
+     * @param listHarvestJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHarvestJobs operation returned by the service.
+     * @sample AWSMediaPackageAsyncHandler.ListHarvestJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListHarvestJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHarvestJobsResult> listHarvestJobsAsync(ListHarvestJobsRequest listHarvestJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHarvestJobsRequest, ListHarvestJobsResult> asyncHandler);
 
     /**
      * Returns a collection of OriginEndpoint records.

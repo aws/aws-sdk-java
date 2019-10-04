@@ -64,6 +64,30 @@ public interface AWSMediaPackage {
     CreateChannelResult createChannel(CreateChannelRequest createChannelRequest);
 
     /**
+     * Creates a new HarvestJob record.
+     * 
+     * @param createHarvestJobRequest
+     *        Configuration parameters used to create a new HarvestJob.
+     * @return Result of the CreateHarvestJob operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackage.CreateHarvestJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateHarvestJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateHarvestJobResult createHarvestJob(CreateHarvestJobRequest createHarvestJobRequest);
+
+    /**
      * Creates a new OriginEndpoint record.
      * 
      * @param createOriginEndpointRequest
@@ -157,6 +181,29 @@ public interface AWSMediaPackage {
     DescribeChannelResult describeChannel(DescribeChannelRequest describeChannelRequest);
 
     /**
+     * Gets details about an existing HarvestJob.
+     * 
+     * @param describeHarvestJobRequest
+     * @return Result of the DescribeHarvestJob operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackage.DescribeHarvestJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeHarvestJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeHarvestJobResult describeHarvestJob(DescribeHarvestJobRequest describeHarvestJobRequest);
+
+    /**
      * Gets details about an existing OriginEndpoint.
      * 
      * @param describeOriginEndpointRequest
@@ -201,6 +248,29 @@ public interface AWSMediaPackage {
      *      Documentation</a>
      */
     ListChannelsResult listChannels(ListChannelsRequest listChannelsRequest);
+
+    /**
+     * Returns a collection of HarvestJob records.
+     * 
+     * @param listHarvestJobsRequest
+     * @return Result of the ListHarvestJobs operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackage.ListHarvestJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListHarvestJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListHarvestJobsResult listHarvestJobs(ListHarvestJobsRequest listHarvestJobsRequest);
 
     /**
      * Returns a collection of OriginEndpoint records.

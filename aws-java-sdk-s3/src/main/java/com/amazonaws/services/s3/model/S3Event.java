@@ -44,7 +44,7 @@ public enum S3Event {
     ;
 
     private final String event;
-	private static final String S3_PREFIX = "s3:";
+    private static final String S3_PREFIX = "s3:";
 
     private S3Event(String event) {
         this.event = event;

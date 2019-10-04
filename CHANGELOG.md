@@ -1,3 +1,16 @@
+# __1.11.646__ __2019-10-04__
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - New Harvest Job APIs to export segment-accurate content windows from MediaPackage Origin Endpoints to S3. See https://docs.aws.amazon.com/mediapackage/latest/ug/harvest-jobs.html for more info
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - This release adds ClientMetadata input parameter to multiple Cognito User Pools operations, making this parameter available to the customer configured lambda triggers as applicable. 
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Documentation updates for Systems Manager / StartSession.
+
 # __1.11.645__ __2019-10-03__
 ## __AWS Device Farm__
   - ### Features

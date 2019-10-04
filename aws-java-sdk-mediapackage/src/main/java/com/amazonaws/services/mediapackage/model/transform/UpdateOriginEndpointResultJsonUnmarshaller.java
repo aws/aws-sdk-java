@@ -84,6 +84,10 @@ public class UpdateOriginEndpointResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     updateOriginEndpointResult.setMssPackage(MssPackageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("origination", targetDepth)) {
+                    context.nextToken();
+                    updateOriginEndpointResult.setOrigination(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("startoverWindowSeconds", targetDepth)) {
                     context.nextToken();
                     updateOriginEndpointResult.setStartoverWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
