@@ -1,3 +1,20 @@
+# __1.11.648__ __2019-10-08__
+## __AWS DataSync__
+  - ### Features
+    - Add Sync options to enable/disable TaskQueueing
+
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for organizations
+
+## __Amazon EventBridge__
+  - ### Features
+    - Documentation updates for Amazon EventBridge.
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - With this release, you can use Amazon Kinesis Firehose delivery streams to deliver streaming data to Amazon Elasticsearch Service version 7.x clusters. For technical documentation, look for CreateDeliveryStream operation in Amazon Kinesis Firehose API reference.
+
 # __1.11.647__ __2019-10-07__
 ## __AWS Direct Connect__
   - ### Features

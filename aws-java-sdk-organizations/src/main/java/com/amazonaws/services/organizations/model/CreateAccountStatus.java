@@ -100,6 +100,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
      * </p>
      * </li>
@@ -504,6 +510,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
      * </p>
      * </li>
@@ -533,6 +545,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
      *        already exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
+     *        this Region already includes an account with that email address.
      *        </p>
      *        </li>
      *        <li>
@@ -577,6 +595,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
      * </p>
      * </li>
@@ -605,6 +629,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *         <p>
      *         EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email
      *         address already exists.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
+     *         this Region already includes an account with that email address.
      *         </p>
      *         </li>
      *         <li>
@@ -649,6 +679,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
      * </p>
      * </li>
@@ -678,6 +714,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
      *        already exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
+     *        this Region already includes an account with that email address.
      *        </p>
      *        </li>
      *        <li>
@@ -724,6 +766,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
      * </p>
      * </li>
@@ -753,6 +801,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
      *        already exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
+     *        this Region already includes an account with that email address.
      *        </p>
      *        </li>
      *        <li>
@@ -797,6 +851,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
      * </p>
      * </li>
@@ -826,6 +886,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
      *        already exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could not be created because
+     *        this Region already includes an account with that email address.
      *        </p>
      *        </li>
      *        <li>

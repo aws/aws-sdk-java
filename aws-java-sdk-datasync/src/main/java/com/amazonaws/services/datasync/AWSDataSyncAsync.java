@@ -189,7 +189,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a Network File System (NFS) file system.
+     * Defines a file system on a Network File System (NFS) server that can be read from or written to
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -203,7 +203,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a Network File System (NFS) file system.
+     * Defines a file system on a Network File System (NFS) server that can be read from or written to
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -277,7 +277,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a Server Message Block (SMB) file system.
+     * Defines a file system on an Server Message Block (SMB) server that can be read from or written to
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -291,7 +291,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a Server Message Block (SMB) file system.
+     * Defines a file system on an Server Message Block (SMB) server that can be read from or written to
      * </p>
      * 
      * @param createLocationSmbRequest

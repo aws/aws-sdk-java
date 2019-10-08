@@ -288,6 +288,16 @@ public class AwsClientBuilderTest {
     }
 
     @Test
+    public void customRegionUrlEncodesString() {
+        AmazonConcreteClient client = new ConcreteSyncBuilder()
+            .withRegion("http://my-host.com/?")
+            .build();
+
+        assertEquals(URI.create("https://mockprefix.http%3A%2F%2Fmy-host.com%2F%3F.amazonaws.com"),
+                     client.getEndpoint());
+    }
+
+    @Test
     public void endpointAndSigningRegionCanBeUsedInPlaceOfSetRegion() {
         AmazonConcreteClient client = new ConcreteSyncBuilder()
                 .withEndpointConfiguration(new EndpointConfiguration("https://mockprefix.ap-southeast-2.amazonaws.com", "us-east-1"))

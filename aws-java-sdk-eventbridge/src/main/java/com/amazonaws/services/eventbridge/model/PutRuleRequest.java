@@ -29,6 +29,9 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The name of the rule that you're creating or updating.
      * </p>
+     * <p>
+     * A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * </p>
      */
     private String name;
     /**
@@ -80,9 +83,14 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The name of the rule that you're creating or updating.
      * </p>
+     * <p>
+     * A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * </p>
      * 
      * @param name
-     *        The name of the rule that you're creating or updating.
+     *        The name of the rule that you're creating or updating.</p>
+     *        <p>
+     *        A rule can't have the same name as another rule in the same Region or on the same event bus.
      */
 
     public void setName(String name) {
@@ -93,8 +101,13 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The name of the rule that you're creating or updating.
      * </p>
+     * <p>
+     * A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * </p>
      * 
-     * @return The name of the rule that you're creating or updating.
+     * @return The name of the rule that you're creating or updating.</p>
+     *         <p>
+     *         A rule can't have the same name as another rule in the same Region or on the same event bus.
      */
 
     public String getName() {
@@ -105,9 +118,14 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The name of the rule that you're creating or updating.
      * </p>
+     * <p>
+     * A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * </p>
      * 
      * @param name
-     *        The name of the rule that you're creating or updating.
+     *        The name of the rule that you're creating or updating.</p>
+     *        <p>
+     *        A rule can't have the same name as another rule in the same Region or on the same event bus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -71,6 +71,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run
      * time.
      * </p>
+     * <p>
+     * For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
+     * </p>
      */
     private String typeName;
     /**
@@ -371,11 +374,16 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run
      * time.
      * </p>
+     * <p>
+     * For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
+     * </p>
      * 
      * @param typeName
      *        The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
      *        specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *        error during run time.
+     *        error during run time.</p>
+     *        <p>
+     *        For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -388,10 +396,15 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run
      * time.
      * </p>
+     * <p>
+     * For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
+     * </p>
      * 
      * @return The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
      *         specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *         error during run time.
+     *         error during run time.</p>
+     *         <p>
+     *         For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
      */
 
     public String getTypeName() {
@@ -404,11 +417,16 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run
      * time.
      * </p>
+     * <p>
+     * For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
+     * </p>
      * 
      * @param typeName
      *        The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
      *        specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *        error during run time.
+     *        error during run time.</p>
+     *        <p>
+     *        For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

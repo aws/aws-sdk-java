@@ -22,6 +22,7 @@ public enum TaskStatus {
 
     AVAILABLE("AVAILABLE"),
     CREATING("CREATING"),
+    QUEUED("QUEUED"),
     RUNNING("RUNNING"),
     UNAVAILABLE("UNAVAILABLE");
 

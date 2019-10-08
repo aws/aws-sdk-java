@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TaskExecutionStatus {
 
+    QUEUED("QUEUED"),
     LAUNCHING("LAUNCHING"),
     PREPARING("PREPARING"),
     TRANSFERRING("TRANSFERRING"),

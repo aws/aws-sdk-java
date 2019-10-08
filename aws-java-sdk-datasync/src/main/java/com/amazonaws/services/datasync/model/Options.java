@@ -215,6 +215,17 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long bytesPerSecond;
+    /**
+     * <p>
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
+     * , the tasks will queued. The default is <code>Enabled</code>.
+     * </p>
+     * <p>
+     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * see <a>task-queue</a>.
+     * </p>
+     */
+    private String taskQueueing;
 
     /**
      * <p>
@@ -1718,6 +1729,101 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
+     * , the tasks will queued. The default is <code>Enabled</code>.
+     * </p>
+     * <p>
+     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * see <a>task-queue</a>.
+     * </p>
+     * 
+     * @param taskQueueing
+     *        A value that determines whether tasks should be queued before executing the tasks. If set to
+     *        <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p>
+     *        <p>
+     *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
+     *        information see <a>task-queue</a>.
+     * @see TaskQueueing
+     */
+
+    public void setTaskQueueing(String taskQueueing) {
+        this.taskQueueing = taskQueueing;
+    }
+
+    /**
+     * <p>
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
+     * , the tasks will queued. The default is <code>Enabled</code>.
+     * </p>
+     * <p>
+     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * see <a>task-queue</a>.
+     * </p>
+     * 
+     * @return A value that determines whether tasks should be queued before executing the tasks. If set to
+     *         <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p>
+     *         <p>
+     *         If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
+     *         information see <a>task-queue</a>.
+     * @see TaskQueueing
+     */
+
+    public String getTaskQueueing() {
+        return this.taskQueueing;
+    }
+
+    /**
+     * <p>
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
+     * , the tasks will queued. The default is <code>Enabled</code>.
+     * </p>
+     * <p>
+     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * see <a>task-queue</a>.
+     * </p>
+     * 
+     * @param taskQueueing
+     *        A value that determines whether tasks should be queued before executing the tasks. If set to
+     *        <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p>
+     *        <p>
+     *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
+     *        information see <a>task-queue</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskQueueing
+     */
+
+    public Options withTaskQueueing(String taskQueueing) {
+        setTaskQueueing(taskQueueing);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
+     * , the tasks will queued. The default is <code>Enabled</code>.
+     * </p>
+     * <p>
+     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * see <a>task-queue</a>.
+     * </p>
+     * 
+     * @param taskQueueing
+     *        A value that determines whether tasks should be queued before executing the tasks. If set to
+     *        <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p>
+     *        <p>
+     *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
+     *        information see <a>task-queue</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskQueueing
+     */
+
+    public Options withTaskQueueing(TaskQueueing taskQueueing) {
+        this.taskQueueing = taskQueueing.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1748,7 +1854,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         if (getPosixPermissions() != null)
             sb.append("PosixPermissions: ").append(getPosixPermissions()).append(",");
         if (getBytesPerSecond() != null)
-            sb.append("BytesPerSecond: ").append(getBytesPerSecond());
+            sb.append("BytesPerSecond: ").append(getBytesPerSecond()).append(",");
+        if (getTaskQueueing() != null)
+            sb.append("TaskQueueing: ").append(getTaskQueueing());
         sb.append("}");
         return sb.toString();
     }
@@ -1803,6 +1911,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBytesPerSecond() != null && other.getBytesPerSecond().equals(this.getBytesPerSecond()) == false)
             return false;
+        if (other.getTaskQueueing() == null ^ this.getTaskQueueing() == null)
+            return false;
+        if (other.getTaskQueueing() != null && other.getTaskQueueing().equals(this.getTaskQueueing()) == false)
+            return false;
         return true;
     }
 
@@ -1821,6 +1933,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPreserveDevices() == null) ? 0 : getPreserveDevices().hashCode());
         hashCode = prime * hashCode + ((getPosixPermissions() == null) ? 0 : getPosixPermissions().hashCode());
         hashCode = prime * hashCode + ((getBytesPerSecond() == null) ? 0 : getBytesPerSecond().hashCode());
+        hashCode = prime * hashCode + ((getTaskQueueing() == null) ? 0 : getTaskQueueing().hashCode());
         return hashCode;
     }
 

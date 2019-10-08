@@ -36,7 +36,7 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
     private java.util.Date time;
     /**
      * <p>
-     * The event source that is generating the evntry.
+     * The event source that is generating the evntry. This field is required.
      * </p>
      */
     private String source;
@@ -49,13 +49,14 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
     private java.util.List<String> resources;
     /**
      * <p>
-     * A free-form string used to decide which fields to expect in the event detail.
+     * A free-form string used to decide which fields to expect in the event detail. This field is required.
      * </p>
      */
     private String detailType;
     /**
      * <p>
-     * A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
+     * This field is required.
      * </p>
      */
     private String detail;
@@ -102,11 +103,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The event source that is generating the evntry.
+     * The event source that is generating the evntry. This field is required.
      * </p>
      * 
      * @param source
-     *        The event source that is generating the evntry.
+     *        The event source that is generating the evntry. This field is required.
      */
 
     public void setSource(String source) {
@@ -115,10 +116,10 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The event source that is generating the evntry.
+     * The event source that is generating the evntry. This field is required.
      * </p>
      * 
-     * @return The event source that is generating the evntry.
+     * @return The event source that is generating the evntry. This field is required.
      */
 
     public String getSource() {
@@ -127,11 +128,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The event source that is generating the evntry.
+     * The event source that is generating the evntry. This field is required.
      * </p>
      * 
      * @param source
-     *        The event source that is generating the evntry.
+     *        The event source that is generating the evntry. This field is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +221,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A free-form string used to decide which fields to expect in the event detail.
+     * A free-form string used to decide which fields to expect in the event detail. This field is required.
      * </p>
      * 
      * @param detailType
-     *        A free-form string used to decide which fields to expect in the event detail.
+     *        A free-form string used to decide which fields to expect in the event detail. This field is required.
      */
 
     public void setDetailType(String detailType) {
@@ -233,10 +234,10 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A free-form string used to decide which fields to expect in the event detail.
+     * A free-form string used to decide which fields to expect in the event detail. This field is required.
      * </p>
      * 
-     * @return A free-form string used to decide which fields to expect in the event detail.
+     * @return A free-form string used to decide which fields to expect in the event detail. This field is required.
      */
 
     public String getDetailType() {
@@ -245,11 +246,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A free-form string used to decide which fields to expect in the event detail.
+     * A free-form string used to decide which fields to expect in the event detail. This field is required.
      * </p>
      * 
      * @param detailType
-     *        A free-form string used to decide which fields to expect in the event detail.
+     *        A free-form string used to decide which fields to expect in the event detail. This field is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,12 +261,13 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
+     * This field is required.
      * </p>
      * 
      * @param detail
-     *        A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested
-     *        subobjects.
+     *        A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
+     *        subobjects. This field is required.
      */
 
     public void setDetail(String detail) {
@@ -274,11 +276,12 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
+     * This field is required.
      * </p>
      * 
-     * @return A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested
-     *         subobjects.
+     * @return A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
+     *         subobjects. This field is required.
      */
 
     public String getDetail() {
@@ -287,12 +290,13 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
+     * This field is required.
      * </p>
      * 
      * @param detail
-     *        A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested
-     *        subobjects.
+     *        A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
+     *        subobjects. This field is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

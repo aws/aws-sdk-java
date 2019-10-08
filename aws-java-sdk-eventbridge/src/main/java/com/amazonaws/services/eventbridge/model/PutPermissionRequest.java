@@ -46,8 +46,8 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each rule contains an
-     * <code>account</code> field with a specific account ID to receive events from. Rules with an account field don't
-     * match any events sent from other accounts.
+     * <code>account</code> field with a specific account ID to receive events from. Rules that have an account field
+     * match events sent only from accounts that are listed in the rule's <code>account</code> field.
      * </p>
      */
     private String principal;
@@ -171,8 +171,8 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each rule contains an
-     * <code>account</code> field with a specific account ID to receive events from. Rules with an account field don't
-     * match any events sent from other accounts.
+     * <code>account</code> field with a specific account ID to receive events from. Rules that have an account field
+     * match events sent only from accounts that are listed in the rule's <code>account</code> field.
      * </p>
      * 
      * @param principal
@@ -181,8 +181,9 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match
      *        undesirable events. To create more secure rules, make sure that the event pattern for each rule contains
-     *        an <code>account</code> field with a specific account ID to receive events from. Rules with an account
-     *        field don't match any events sent from other accounts.
+     *        an <code>account</code> field with a specific account ID to receive events from. Rules that have an
+     *        account field match events sent only from accounts that are listed in the rule's <code>account</code>
+     *        field.
      */
 
     public void setPrincipal(String principal) {
@@ -197,8 +198,8 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each rule contains an
-     * <code>account</code> field with a specific account ID to receive events from. Rules with an account field don't
-     * match any events sent from other accounts.
+     * <code>account</code> field with a specific account ID to receive events from. Rules that have an account field
+     * match events sent only from accounts that are listed in the rule's <code>account</code> field.
      * </p>
      * 
      * @return The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify "*"
@@ -206,8 +207,9 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match
      *         undesirable events. To create more secure rules, make sure that the event pattern for each rule contains
-     *         an <code>account</code> field with a specific account ID to receive events from. Rules with an account
-     *         field don't match any events sent from other accounts.
+     *         an <code>account</code> field with a specific account ID to receive events from. Rules that have an
+     *         account field match events sent only from accounts that are listed in the rule's <code>account</code>
+     *         field.
      */
 
     public String getPrincipal() {
@@ -222,8 +224,8 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each rule contains an
-     * <code>account</code> field with a specific account ID to receive events from. Rules with an account field don't
-     * match any events sent from other accounts.
+     * <code>account</code> field with a specific account ID to receive events from. Rules that have an account field
+     * match events sent only from accounts that are listed in the rule's <code>account</code> field.
      * </p>
      * 
      * @param principal
@@ -232,8 +234,9 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match
      *        undesirable events. To create more secure rules, make sure that the event pattern for each rule contains
-     *        an <code>account</code> field with a specific account ID to receive events from. Rules with an account
-     *        field don't match any events sent from other accounts.
+     *        an <code>account</code> field with a specific account ID to receive events from. Rules that have an
+     *        account field match events sent only from accounts that are listed in the rule's <code>account</code>
+     *        field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

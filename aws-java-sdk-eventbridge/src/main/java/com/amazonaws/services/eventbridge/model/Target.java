@@ -38,7 +38,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the target.
+     * A name for the target. Use a string that will help you identify the target. Each target associated with a rule
+     * must have an <code>Id</code> unique for that rule.
      * </p>
      */
     private String id;
@@ -120,11 +121,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the target.
+     * A name for the target. Use a string that will help you identify the target. Each target associated with a rule
+     * must have an <code>Id</code> unique for that rule.
      * </p>
      * 
      * @param id
-     *        The ID of the target.
+     *        A name for the target. Use a string that will help you identify the target. Each target associated with a
+     *        rule must have an <code>Id</code> unique for that rule.
      */
 
     public void setId(String id) {
@@ -133,10 +136,12 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the target.
+     * A name for the target. Use a string that will help you identify the target. Each target associated with a rule
+     * must have an <code>Id</code> unique for that rule.
      * </p>
      * 
-     * @return The ID of the target.
+     * @return A name for the target. Use a string that will help you identify the target. Each target associated with a
+     *         rule must have an <code>Id</code> unique for that rule.
      */
 
     public String getId() {
@@ -145,11 +150,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the target.
+     * A name for the target. Use a string that will help you identify the target. Each target associated with a rule
+     * must have an <code>Id</code> unique for that rule.
      * </p>
      * 
      * @param id
-     *        The ID of the target.
+     *        A name for the target. Use a string that will help you identify the target. Each target associated with a
+     *        rule must have an <code>Id</code> unique for that rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

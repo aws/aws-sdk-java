@@ -63,7 +63,8 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     private String indexName;
     /**
      * <p>
-     * The Elasticsearch type name.
+     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's
+     * no value for <code>TypeName</code>.
      * </p>
      */
     private String typeName;
@@ -323,11 +324,13 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Elasticsearch type name.
+     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's
+     * no value for <code>TypeName</code>.
      * </p>
      * 
      * @param typeName
-     *        The Elasticsearch type name.
+     *        The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x,
+     *        there's no value for <code>TypeName</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -336,10 +339,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Elasticsearch type name.
+     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's
+     * no value for <code>TypeName</code>.
      * </p>
      * 
-     * @return The Elasticsearch type name.
+     * @return The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x,
+     *         there's no value for <code>TypeName</code>.
      */
 
     public String getTypeName() {
@@ -348,11 +353,13 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Elasticsearch type name.
+     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's
+     * no value for <code>TypeName</code>.
      * </p>
      * 
      * @param typeName
-     *        The Elasticsearch type name.
+     *        The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x,
+     *        there's no value for <code>TypeName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -211,7 +211,7 @@
       "asyncReturnType" : "CreateLocationNfsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an endpoint for a Network File System (NFS) file system.</p>",
+      "documentation" : "<p>Defines a file system on a Network File System (NFS) server that can be read from or written to</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -291,7 +291,7 @@
       "asyncReturnType" : "CreateLocationSmbResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an endpoint for a Server Message Block (SMB) file system.</p>",
+      "documentation" : "<p>Defines a file system on an Server Message Block (SMB) server that can be read from or written to</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -27261,6 +27261,73 @@
           "variableSetterType" : "Long"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "TaskQueueing",
+        "c2jShape" : "TaskQueueing",
+        "deprecated" : false,
+        "documentation" : "<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>",
+        "enumType" : "TaskQueueing",
+        "fluentSetterDocumentation" : "/**<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>\n@param taskQueueing A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskQueueing*/",
+        "fluentSetterMethodName" : "withTaskQueueing",
+        "getterDocumentation" : "/**<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>\n@return A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.\n@see TaskQueueing*/",
+        "getterMethodName" : "getTaskQueueing",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "TaskQueueing",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TaskQueueing",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "TaskQueueing",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>\n@param taskQueueing A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.\n@see TaskQueueing*/",
+        "setterMethodName" : "setTaskQueueing",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "taskQueueing",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>\n@param taskQueueing A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskQueueing*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "taskQueueing",
+          "variableType" : "String",
+          "documentation" : "<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Atime" : {
@@ -27802,6 +27869,74 @@
             "variableName" : "preserveDevices",
             "variableType" : "String",
             "documentation" : "<p>A value that determines whether AWS DataSync should preserve the metadata of block and character devices in the source file system, and recreate the files with that device name and metadata on the destination.</p> <note> <p>AWS DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return an end-of-file (EOF) marker.</p> </note> <p>Default value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p> <p>PRESERVE: Preserve character and block device metadata. This option isn't currently supported for Amazon EFS. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TaskQueueing" : {
+          "c2jName" : "TaskQueueing",
+          "c2jShape" : "TaskQueueing",
+          "deprecated" : false,
+          "documentation" : "<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>",
+          "enumType" : "TaskQueueing",
+          "fluentSetterDocumentation" : "/**<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>\n@param taskQueueing A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskQueueing*/",
+          "fluentSetterMethodName" : "withTaskQueueing",
+          "getterDocumentation" : "/**<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>\n@return A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.\n@see TaskQueueing*/",
+          "getterMethodName" : "getTaskQueueing",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "TaskQueueing",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TaskQueueing",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "TaskQueueing",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>\n@param taskQueueing A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.\n@see TaskQueueing*/",
+          "setterMethodName" : "setTaskQueueing",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "taskQueueing",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>\n@param taskQueueing A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskQueueing*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "taskQueueing",
+            "variableType" : "String",
+            "documentation" : "<p>A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information see <a>task-queue</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -32649,6 +32784,9 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
+        "name" : "QUEUED",
+        "value" : "QUEUED"
+      }, {
         "name" : "LAUNCHING",
         "value" : "LAUNCHING"
       }, {
@@ -33144,6 +33282,53 @@
       },
       "wrapper" : false
     },
+    "TaskQueueing" : {
+      "c2jName" : "TaskQueueing",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "ENABLED",
+        "value" : "ENABLED"
+      }, {
+        "name" : "DISABLED",
+        "value" : "DISABLED"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "TaskQueueing",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "TaskQueueing",
+        "variableName" : "taskQueueing",
+        "variableType" : "TaskQueueing",
+        "documentation" : null,
+        "simpleType" : "TaskQueueing",
+        "variableSetterType" : "TaskQueueing"
+      },
+      "wrapper" : false
+    },
     "TaskStatus" : {
       "c2jName" : "TaskStatus",
       "customization" : {
@@ -33160,6 +33345,9 @@
       }, {
         "name" : "CREATING",
         "value" : "CREATING"
+      }, {
+        "name" : "QUEUED",
+        "value" : "QUEUED"
       }, {
         "name" : "RUNNING",
         "value" : "RUNNING"

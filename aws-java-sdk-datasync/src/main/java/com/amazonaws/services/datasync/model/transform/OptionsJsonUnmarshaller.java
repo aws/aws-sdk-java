@@ -88,6 +88,10 @@ public class OptionsJsonUnmarshaller implements Unmarshaller<Options, JsonUnmars
                     context.nextToken();
                     options.setBytesPerSecond(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("TaskQueueing", targetDepth)) {
+                    context.nextToken();
+                    options.setTaskQueueing(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

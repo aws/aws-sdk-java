@@ -50,13 +50,16 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
     private java.util.List<String> resources;
     /**
      * <p>
-     * Free-form string used to decide which fields to expect in the event detail.
+     * Free-form string used to decide which fields to expect in the event detail. This field is required.
      * </p>
      */
     private String detailType;
     /**
      * <p>
-     * A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
+     * </p>
+     * <p>
+     * This field is required.
      * </p>
      */
     private String detail;
@@ -234,11 +237,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide which fields to expect in the event detail.
+     * Free-form string used to decide which fields to expect in the event detail. This field is required.
      * </p>
      * 
      * @param detailType
-     *        Free-form string used to decide which fields to expect in the event detail.
+     *        Free-form string used to decide which fields to expect in the event detail. This field is required.
      */
 
     public void setDetailType(String detailType) {
@@ -247,10 +250,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide which fields to expect in the event detail.
+     * Free-form string used to decide which fields to expect in the event detail. This field is required.
      * </p>
      * 
-     * @return Free-form string used to decide which fields to expect in the event detail.
+     * @return Free-form string used to decide which fields to expect in the event detail. This field is required.
      */
 
     public String getDetailType() {
@@ -259,11 +262,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide which fields to expect in the event detail.
+     * Free-form string used to decide which fields to expect in the event detail. This field is required.
      * </p>
      * 
      * @param detailType
-     *        Free-form string used to decide which fields to expect in the event detail.
+     *        Free-form string used to decide which fields to expect in the event detail. This field is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,12 +277,17 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
+     * </p>
+     * <p>
+     * This field is required.
      * </p>
      * 
      * @param detail
-     *        A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested
-     *        subobjects.
+     *        A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
+     *        subobjects.</p>
+     *        <p>
+     *        This field is required.
      */
 
     public void setDetail(String detail) {
@@ -288,11 +296,16 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
+     * </p>
+     * <p>
+     * This field is required.
      * </p>
      * 
-     * @return A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested
-     *         subobjects.
+     * @return A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
+     *         subobjects.</p>
+     *         <p>
+     *         This field is required.
      */
 
     public String getDetail() {
@@ -301,12 +314,17 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
+     * </p>
+     * <p>
+     * This field is required.
      * </p>
      * 
      * @param detail
-     *        A valid JSON string. There is no other schema imposed. The JSON string can contain fields and nested
-     *        subobjects.
+     *        A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
+     *        subobjects.</p>
+     *        <p>
+     *        This field is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

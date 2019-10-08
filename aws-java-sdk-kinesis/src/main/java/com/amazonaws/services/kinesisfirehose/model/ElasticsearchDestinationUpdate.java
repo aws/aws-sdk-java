@@ -71,6 +71,11 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during
      * runtime.
      * </p>
+     * <p>
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
+     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
+     * with a new index name, provide an empty string for <code>TypeName</code>.
+     * </p>
      */
     private String typeName;
     /**
@@ -359,11 +364,20 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during
      * runtime.
      * </p>
+     * <p>
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
+     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
+     * with a new index name, provide an empty string for <code>TypeName</code>.
+     * </p>
      * 
      * @param typeName
      *        The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
      *        specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *        error during runtime.
+     *        error during runtime.</p>
+     *        <p>
+     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
+     *        still delivers data to Elasticsearch with the old index name and type name. If you want to update your
+     *        delivery stream with a new index name, provide an empty string for <code>TypeName</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -376,10 +390,19 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during
      * runtime.
      * </p>
+     * <p>
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
+     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
+     * with a new index name, provide an empty string for <code>TypeName</code>.
+     * </p>
      * 
      * @return The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
      *         specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *         error during runtime.
+     *         error during runtime.</p>
+     *         <p>
+     *         If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
+     *         still delivers data to Elasticsearch with the old index name and type name. If you want to update your
+     *         delivery stream with a new index name, provide an empty string for <code>TypeName</code>.
      */
 
     public String getTypeName() {
@@ -392,11 +415,20 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during
      * runtime.
      * </p>
+     * <p>
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
+     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
+     * with a new index name, provide an empty string for <code>TypeName</code>.
+     * </p>
      * 
      * @param typeName
      *        The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
      *        specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *        error during runtime.
+     *        error during runtime.</p>
+     *        <p>
+     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
+     *        still delivers data to Elasticsearch with the old index name and type name. If you want to update your
+     *        delivery stream with a new index name, provide an empty string for <code>TypeName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
