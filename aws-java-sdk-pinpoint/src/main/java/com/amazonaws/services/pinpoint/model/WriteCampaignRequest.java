@@ -103,6 +103,8 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    private TemplateConfiguration templateConfiguration;
     /**
      * <p>
      * The custom description of a variation of the campaign to use for A/B testing.
@@ -682,6 +684,32 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     }
 
     /**
+     * @param templateConfiguration
+     */
+
+    public void setTemplateConfiguration(TemplateConfiguration templateConfiguration) {
+        this.templateConfiguration = templateConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public TemplateConfiguration getTemplateConfiguration() {
+        return this.templateConfiguration;
+    }
+
+    /**
+     * @param templateConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteCampaignRequest withTemplateConfiguration(TemplateConfiguration templateConfiguration) {
+        setTemplateConfiguration(templateConfiguration);
+        return this;
+    }
+
+    /**
      * <p>
      * The custom description of a variation of the campaign to use for A/B testing.
      * </p>
@@ -797,6 +825,8 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
             sb.append("SegmentVersion: ").append(getSegmentVersion()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getTemplateConfiguration() != null)
+            sb.append("TemplateConfiguration: ").append(getTemplateConfiguration()).append(",");
         if (getTreatmentDescription() != null)
             sb.append("TreatmentDescription: ").append(getTreatmentDescription()).append(",");
         if (getTreatmentName() != null)
@@ -863,6 +893,10 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTemplateConfiguration() == null ^ this.getTemplateConfiguration() == null)
+            return false;
+        if (other.getTemplateConfiguration() != null && other.getTemplateConfiguration().equals(this.getTemplateConfiguration()) == false)
+            return false;
         if (other.getTreatmentDescription() == null ^ this.getTreatmentDescription() == null)
             return false;
         if (other.getTreatmentDescription() != null && other.getTreatmentDescription().equals(this.getTreatmentDescription()) == false)
@@ -891,6 +925,7 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getSegmentId() == null) ? 0 : getSegmentId().hashCode());
         hashCode = prime * hashCode + ((getSegmentVersion() == null) ? 0 : getSegmentVersion().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTemplateConfiguration() == null) ? 0 : getTemplateConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTreatmentDescription() == null) ? 0 : getTreatmentDescription().hashCode());
         hashCode = prime * hashCode + ((getTreatmentName() == null) ? 0 : getTreatmentName().hashCode());
         return hashCode;

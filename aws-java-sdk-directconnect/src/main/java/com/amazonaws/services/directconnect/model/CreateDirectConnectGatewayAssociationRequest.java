@@ -42,6 +42,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
      * <p>
+     * This parameter is required when you create an association to a transit gateway.
+     * </p>
+     * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
      * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
@@ -140,12 +143,18 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
      * <p>
+     * This parameter is required when you create an association to a transit gateway.
+     * </p>
+     * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
      * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @return The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     *         <p>
+     *         This parameter is required when you create an association to a transit gateway.
+     *         </p>
      *         <p>
      *         For information about how to set the prefixes, see <a href=
      *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
@@ -164,6 +173,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
      * <p>
+     * This parameter is required when you create an association to a transit gateway.
+     * </p>
+     * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
      * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
@@ -171,6 +183,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * 
      * @param addAllowedPrefixesToDirectConnectGateway
      *        The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     *        <p>
+     *        This parameter is required when you create an association to a transit gateway.
+     *        </p>
      *        <p>
      *        For information about how to set the prefixes, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
@@ -191,6 +206,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
      * <p>
+     * This parameter is required when you create an association to a transit gateway.
+     * </p>
+     * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
      * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
@@ -204,6 +222,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * 
      * @param addAllowedPrefixesToDirectConnectGateway
      *        The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     *        <p>
+     *        This parameter is required when you create an association to a transit gateway.
+     *        </p>
      *        <p>
      *        For information about how to set the prefixes, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
@@ -228,6 +249,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * The Amazon VPC prefixes to advertise to the Direct Connect gateway
      * </p>
      * <p>
+     * This parameter is required when you create an association to a transit gateway.
+     * </p>
+     * <p>
      * For information about how to set the prefixes, see <a href=
      * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"
      * >Allowed Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.
@@ -235,6 +259,9 @@ public class CreateDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * 
      * @param addAllowedPrefixesToDirectConnectGateway
      *        The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     *        <p>
+     *        This parameter is required when you create an association to a transit gateway.
+     *        </p>
      *        <p>
      *        For information about how to set the prefixes, see <a href=
      *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes"

@@ -36,6 +36,8 @@ public class LocationMarshaller {
             .marshallLocationName("region").build();
     private static final MarshallingInfo<List> AVAILABLEPORTSPEEDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availablePortSpeeds").build();
+    private static final MarshallingInfo<List> AVAILABLEPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availableProviders").build();
 
     private static final LocationMarshaller instance = new LocationMarshaller();
 
@@ -57,6 +59,7 @@ public class LocationMarshaller {
             protocolMarshaller.marshall(location.getLocationName(), LOCATIONNAME_BINDING);
             protocolMarshaller.marshall(location.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(location.getAvailablePortSpeeds(), AVAILABLEPORTSPEEDS_BINDING);
+            protocolMarshaller.marshall(location.getAvailableProviders(), AVAILABLEPROVIDERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

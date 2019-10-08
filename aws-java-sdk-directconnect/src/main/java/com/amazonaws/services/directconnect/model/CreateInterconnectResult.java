@@ -138,10 +138,16 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
     private String hasLogicalRedundancy;
     /**
      * <p>
-     * Any tags assigned to the interconnect.
+     * The tags associated with the interconnect.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The name of the service provider associated with the interconnect.
+     * </p>
+     */
+    private String providerName;
 
     /**
      * <p>
@@ -1078,10 +1084,10 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Any tags assigned to the interconnect.
+     * The tags associated with the interconnect.
      * </p>
      * 
-     * @return Any tags assigned to the interconnect.
+     * @return The tags associated with the interconnect.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1093,11 +1099,11 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Any tags assigned to the interconnect.
+     * The tags associated with the interconnect.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the interconnect.
+     *        The tags associated with the interconnect.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1111,7 +1117,7 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Any tags assigned to the interconnect.
+     * The tags associated with the interconnect.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1120,7 +1126,7 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the interconnect.
+     *        The tags associated with the interconnect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1136,16 +1142,56 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Any tags assigned to the interconnect.
+     * The tags associated with the interconnect.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the interconnect.
+     *        The tags associated with the interconnect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateInterconnectResult withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the interconnect.
+     * </p>
+     * 
+     * @param providerName
+     *        The name of the service provider associated with the interconnect.
+     */
+
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the interconnect.
+     * </p>
+     * 
+     * @return The name of the service provider associated with the interconnect.
+     */
+
+    public String getProviderName() {
+        return this.providerName;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the interconnect.
+     * </p>
+     * 
+     * @param providerName
+     *        The name of the service provider associated with the interconnect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInterconnectResult withProviderName(String providerName) {
+        setProviderName(providerName);
         return this;
     }
 
@@ -1186,7 +1232,9 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
         if (getHasLogicalRedundancy() != null)
             sb.append("HasLogicalRedundancy: ").append(getHasLogicalRedundancy()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getProviderName() != null)
+            sb.append("ProviderName: ").append(getProviderName());
         sb.append("}");
         return sb.toString();
     }
@@ -1253,6 +1301,10 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getProviderName() == null ^ this.getProviderName() == null)
+            return false;
+        if (other.getProviderName() != null && other.getProviderName().equals(this.getProviderName()) == false)
+            return false;
         return true;
     }
 
@@ -1274,6 +1326,7 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getAwsDeviceV2() == null) ? 0 : getAwsDeviceV2().hashCode());
         hashCode = prime * hashCode + ((getHasLogicalRedundancy() == null) ? 0 : getHasLogicalRedundancy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getProviderName() == null) ? 0 : getProviderName().hashCode());
         return hashCode;
     }
 

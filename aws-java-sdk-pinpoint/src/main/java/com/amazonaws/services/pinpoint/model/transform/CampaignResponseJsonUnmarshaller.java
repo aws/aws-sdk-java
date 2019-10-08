@@ -126,6 +126,10 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                     campaignResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    context.nextToken();
+                    campaignResponse.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setTreatmentDescription(context.getUnmarshaller(String.class).unmarshall(context));

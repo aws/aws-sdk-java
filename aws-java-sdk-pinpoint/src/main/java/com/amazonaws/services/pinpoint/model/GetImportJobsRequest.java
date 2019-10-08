@@ -35,7 +35,7 @@ public class GetImportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported by the App Metrics and Campaign Metrics resources.
+     * supported by the Application Metrics and Campaign Metrics resources.
      * </p>
      */
     private String pageSize;
@@ -95,12 +95,12 @@ public class GetImportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported by the App Metrics and Campaign Metrics resources.
+     * supported by the Application Metrics and Campaign Metrics resources.
      * </p>
      * 
      * @param pageSize
      *        The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *        not supported by the App Metrics and Campaign Metrics resources.
+     *        not supported by the Application Metrics and Campaign Metrics resources.
      */
 
     public void setPageSize(String pageSize) {
@@ -110,11 +110,11 @@ public class GetImportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported by the App Metrics and Campaign Metrics resources.
+     * supported by the Application Metrics and Campaign Metrics resources.
      * </p>
      * 
      * @return The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *         not supported by the App Metrics and Campaign Metrics resources.
+     *         not supported by the Application Metrics and Campaign Metrics resources.
      */
 
     public String getPageSize() {
@@ -124,12 +124,12 @@ public class GetImportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported by the App Metrics and Campaign Metrics resources.
+     * supported by the Application Metrics and Campaign Metrics resources.
      * </p>
      * 
      * @param pageSize
      *        The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *        not supported by the App Metrics and Campaign Metrics resources.
+     *        not supported by the Application Metrics and Campaign Metrics resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

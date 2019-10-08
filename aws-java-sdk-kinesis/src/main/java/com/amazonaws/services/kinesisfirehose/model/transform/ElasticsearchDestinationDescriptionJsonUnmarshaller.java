@@ -56,6 +56,10 @@ public class ElasticsearchDestinationDescriptionJsonUnmarshaller implements Unma
                     context.nextToken();
                     elasticsearchDestinationDescription.setDomainARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ClusterEndpoint", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDestinationDescription.setClusterEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("IndexName", targetDepth)) {
                     context.nextToken();
                     elasticsearchDestinationDescription.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));

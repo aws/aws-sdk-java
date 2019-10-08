@@ -43,8 +43,9 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     private String languageCode;
     /**
      * <p>
-     * The phone number from the pool or messaging service to send the message from. Although it isn't required, we
-     * recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * The long code to send the voice message from. This value should be one of the dedicated long codes that's
+     * assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164
+     * format, for example +12065550100, to ensure prompt and accurate delivery of the message.
      * </p>
      */
     private String originationNumber;
@@ -151,13 +152,15 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number from the pool or messaging service to send the message from. Although it isn't required, we
-     * recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * The long code to send the voice message from. This value should be one of the dedicated long codes that's
+     * assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164
+     * format, for example +12065550100, to ensure prompt and accurate delivery of the message.
      * </p>
      * 
      * @param originationNumber
-     *        The phone number from the pool or messaging service to send the message from. Although it isn't required,
-     *        we recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     *        The long code to send the voice message from. This value should be one of the dedicated long codes that's
+     *        assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in
+     *        E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.
      */
 
     public void setOriginationNumber(String originationNumber) {
@@ -166,12 +169,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number from the pool or messaging service to send the message from. Although it isn't required, we
-     * recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * The long code to send the voice message from. This value should be one of the dedicated long codes that's
+     * assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164
+     * format, for example +12065550100, to ensure prompt and accurate delivery of the message.
      * </p>
      * 
-     * @return The phone number from the pool or messaging service to send the message from. Although it isn't required,
-     *         we recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * @return The long code to send the voice message from. This value should be one of the dedicated long codes that's
+     *         assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in
+     *         E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.
      */
 
     public String getOriginationNumber() {
@@ -180,13 +185,15 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number from the pool or messaging service to send the message from. Although it isn't required, we
-     * recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     * The long code to send the voice message from. This value should be one of the dedicated long codes that's
+     * assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164
+     * format, for example +12065550100, to ensure prompt and accurate delivery of the message.
      * </p>
      * 
      * @param originationNumber
-     *        The phone number from the pool or messaging service to send the message from. Although it isn't required,
-     *        we recommend that you specify the phone number in E.164 format to ensure prompt and accurate delivery.
+     *        The long code to send the voice message from. This value should be one of the dedicated long codes that's
+     *        assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in
+     *        E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

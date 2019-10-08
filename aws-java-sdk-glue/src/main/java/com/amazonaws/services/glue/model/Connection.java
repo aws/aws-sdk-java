@@ -129,6 +129,30 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * hostname matching is enforced for the JDBC connection on the client. The default is false.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS Glue uses
+     * this root certificate to validate the customer’s certificate when connecting to the customer database. AWS Glue
+     * only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM
+     * format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue validates the
+     * Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms
+     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key
+     * Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to
+     * skip AWS Glue’s validation of the customer certificate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or
+     * distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the
+     * <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.Map<String, String> connectionProperties;
@@ -444,6 +468,30 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * hostname matching is enforced for the JDBC connection on the client. The default is false.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS Glue uses
+     * this root certificate to validate the customer’s certificate when connecting to the customer database. AWS Glue
+     * only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM
+     * format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue validates the
+     * Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms
+     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key
+     * Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to
+     * skip AWS Glue’s validation of the customer certificate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or
+     * distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the
+     * <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return These key-value pairs define parameters for the connection:</p>
@@ -518,6 +566,31 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer
      *         (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS
+     *         Glue uses this root certificate to validate the customer’s certificate when connecting to the customer
+     *         database. AWS Glue only handles X.509 certificates. The certificate provided must be DER-encoded and
+     *         supplied in Base64 encoding PEM format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue
+     *         validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only
+     *         permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For
+     *         the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this
+     *         property to <code>true</code> to skip AWS Glue’s validation of the customer certificate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or
+     *         distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the
+     *         <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the
+     *         <code>hostNameInCertificate</code>.
      *         </p>
      *         </li>
      */
@@ -603,6 +676,30 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * hostname matching is enforced for the JDBC connection on the client. The default is false.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS Glue uses
+     * this root certificate to validate the customer’s certificate when connecting to the customer database. AWS Glue
+     * only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM
+     * format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue validates the
+     * Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms
+     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key
+     * Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to
+     * skip AWS Glue’s validation of the customer certificate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or
+     * distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the
+     * <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -678,6 +775,31 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer
      *        (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS Glue
+     *        uses this root certificate to validate the customer’s certificate when connecting to the customer
+     *        database. AWS Glue only handles X.509 certificates. The certificate provided must be DER-encoded and
+     *        supplied in Base64 encoding PEM format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue validates
+     *        the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted
+     *        algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject
+     *        Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to
+     *        <code>true</code> to skip AWS Glue’s validation of the customer certificate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or
+     *        distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the
+     *        <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the
+     *        <code>hostNameInCertificate</code>.
      *        </p>
      *        </li>
      */
@@ -763,6 +885,30 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * hostname matching is enforced for the JDBC connection on the client. The default is false.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS Glue uses
+     * this root certificate to validate the customer’s certificate when connecting to the customer database. AWS Glue
+     * only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM
+     * format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue validates the
+     * Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms
+     * for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key
+     * Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to
+     * skip AWS Glue’s validation of the customer certificate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or
+     * distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the
+     * <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -838,6 +984,31 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer
      *        (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS Glue
+     *        uses this root certificate to validate the customer’s certificate when connecting to the customer
+     *        database. AWS Glue only handles X.509 certificates. The certificate provided must be DER-encoded and
+     *        supplied in Base64 encoding PEM format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue validates
+     *        the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted
+     *        algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject
+     *        Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to
+     *        <code>true</code> to skip AWS Glue’s validation of the customer certificate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or
+     *        distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the
+     *        <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the
+     *        <code>hostNameInCertificate</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

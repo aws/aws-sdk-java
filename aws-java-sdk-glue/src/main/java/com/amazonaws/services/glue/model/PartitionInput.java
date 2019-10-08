@@ -33,6 +33,11 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
      * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
      * for a valid input.
      * </p>
+     * <p>
+     * The values for the keys for the new partition must be passed as an array of String objects that must be ordered
+     * in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue will add the values
+     * to the wrong keys.
+     * </p>
      */
     private java.util.List<String> values;
     /**
@@ -65,9 +70,18 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
      * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
      * for a valid input.
      * </p>
+     * <p>
+     * The values for the keys for the new partition must be passed as an array of String objects that must be ordered
+     * in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue will add the values
+     * to the wrong keys.
+     * </p>
      * 
      * @return The values of the partition. Although this parameter is not required by the SDK, you must specify this
-     *         parameter for a valid input.
+     *         parameter for a valid input.</p>
+     *         <p>
+     *         The values for the keys for the new partition must be passed as an array of String objects that must be
+     *         ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue
+     *         will add the values to the wrong keys.
      */
 
     public java.util.List<String> getValues() {
@@ -79,10 +93,19 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
      * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
      * for a valid input.
      * </p>
+     * <p>
+     * The values for the keys for the new partition must be passed as an array of String objects that must be ordered
+     * in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue will add the values
+     * to the wrong keys.
+     * </p>
      * 
      * @param values
      *        The values of the partition. Although this parameter is not required by the SDK, you must specify this
-     *        parameter for a valid input.
+     *        parameter for a valid input.</p>
+     *        <p>
+     *        The values for the keys for the new partition must be passed as an array of String objects that must be
+     *        ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue will
+     *        add the values to the wrong keys.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -100,6 +123,11 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
      * for a valid input.
      * </p>
      * <p>
+     * The values for the keys for the new partition must be passed as an array of String objects that must be ordered
+     * in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue will add the values
+     * to the wrong keys.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
@@ -107,7 +135,11 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param values
      *        The values of the partition. Although this parameter is not required by the SDK, you must specify this
-     *        parameter for a valid input.
+     *        parameter for a valid input.</p>
+     *        <p>
+     *        The values for the keys for the new partition must be passed as an array of String objects that must be
+     *        ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue will
+     *        add the values to the wrong keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,10 +158,19 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
      * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
      * for a valid input.
      * </p>
+     * <p>
+     * The values for the keys for the new partition must be passed as an array of String objects that must be ordered
+     * in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue will add the values
+     * to the wrong keys.
+     * </p>
      * 
      * @param values
      *        The values of the partition. Although this parameter is not required by the SDK, you must specify this
-     *        parameter for a valid input.
+     *        parameter for a valid input.</p>
+     *        <p>
+     *        The values for the keys for the new partition must be passed as an array of String objects that must be
+     *        ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise AWS Glue will
+     *        add the values to the wrong keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

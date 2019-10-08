@@ -52,6 +52,12 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> availablePortSpeeds;
+    /**
+     * <p>
+     * The name of the service provider for the location.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> availableProviders;
 
     /**
      * <p>
@@ -250,6 +256,79 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the service provider for the location.
+     * </p>
+     * 
+     * @return The name of the service provider for the location.
+     */
+
+    public java.util.List<String> getAvailableProviders() {
+        if (availableProviders == null) {
+            availableProviders = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return availableProviders;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider for the location.
+     * </p>
+     * 
+     * @param availableProviders
+     *        The name of the service provider for the location.
+     */
+
+    public void setAvailableProviders(java.util.Collection<String> availableProviders) {
+        if (availableProviders == null) {
+            this.availableProviders = null;
+            return;
+        }
+
+        this.availableProviders = new com.amazonaws.internal.SdkInternalList<String>(availableProviders);
+    }
+
+    /**
+     * <p>
+     * The name of the service provider for the location.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailableProviders(java.util.Collection)} or {@link #withAvailableProviders(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param availableProviders
+     *        The name of the service provider for the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Location withAvailableProviders(String... availableProviders) {
+        if (this.availableProviders == null) {
+            setAvailableProviders(new com.amazonaws.internal.SdkInternalList<String>(availableProviders.length));
+        }
+        for (String ele : availableProviders) {
+            this.availableProviders.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider for the location.
+     * </p>
+     * 
+     * @param availableProviders
+     *        The name of the service provider for the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Location withAvailableProviders(java.util.Collection<String> availableProviders) {
+        setAvailableProviders(availableProviders);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -268,7 +347,9 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
         if (getAvailablePortSpeeds() != null)
-            sb.append("AvailablePortSpeeds: ").append(getAvailablePortSpeeds());
+            sb.append("AvailablePortSpeeds: ").append(getAvailablePortSpeeds()).append(",");
+        if (getAvailableProviders() != null)
+            sb.append("AvailableProviders: ").append(getAvailableProviders());
         sb.append("}");
         return sb.toString();
     }
@@ -299,6 +380,10 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAvailablePortSpeeds() != null && other.getAvailablePortSpeeds().equals(this.getAvailablePortSpeeds()) == false)
             return false;
+        if (other.getAvailableProviders() == null ^ this.getAvailableProviders() == null)
+            return false;
+        if (other.getAvailableProviders() != null && other.getAvailableProviders().equals(this.getAvailableProviders()) == false)
+            return false;
         return true;
     }
 
@@ -311,6 +396,7 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocationName() == null) ? 0 : getLocationName().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getAvailablePortSpeeds() == null) ? 0 : getAvailablePortSpeeds().hashCode());
+        hashCode = prime * hashCode + ((getAvailableProviders() == null) ? 0 : getAvailableProviders().hashCode());
         return hashCode;
     }
 

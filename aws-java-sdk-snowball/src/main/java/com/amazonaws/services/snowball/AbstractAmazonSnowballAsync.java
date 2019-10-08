@@ -184,6 +184,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetSoftwareUpdatesResult> getSoftwareUpdatesAsync(GetSoftwareUpdatesRequest request) {
+
+        return getSoftwareUpdatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSoftwareUpdatesResult> getSoftwareUpdatesAsync(GetSoftwareUpdatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSoftwareUpdatesRequest, GetSoftwareUpdatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListClusterJobsResult> listClusterJobsAsync(ListClusterJobsRequest request) {
 
         return listClusterJobsAsync(request, null);

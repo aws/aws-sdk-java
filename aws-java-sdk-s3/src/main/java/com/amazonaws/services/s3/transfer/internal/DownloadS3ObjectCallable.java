@@ -63,14 +63,13 @@ public class DownloadS3ObjectCallable implements Callable<Long> {
             S3Object object = serviceCall.call();
 
             objectContent = object.getObjectContent();
-            byte[] buffer = new byte[BUFFER_SIZE];
+
+            final byte[] buffer = new byte[BUFFER_SIZE];
             int bytesRead;
 
-            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(BUFFER_SIZE);
-
+            final ByteBuffer byteBuffer = ByteBuffer.wrap(buffer);
             while ((bytesRead = objectContent.read(buffer)) > -1) {
-                byteBuffer.put(buffer, 0, bytesRead);
-                byteBuffer.flip();
+                byteBuffer.limit(bytesRead);
 
                 while (byteBuffer.hasRemaining()) {
                     channel.write(byteBuffer);

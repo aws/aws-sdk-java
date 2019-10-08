@@ -53,6 +53,8 @@ public class WriteCampaignRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentVersion").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> TEMPLATECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateConfiguration").build();
     private static final MarshallingInfo<String> TREATMENTDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TreatmentDescription").build();
     private static final MarshallingInfo<String> TREATMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -86,6 +88,7 @@ public class WriteCampaignRequestMarshaller {
             protocolMarshaller.marshall(writeCampaignRequest.getSegmentId(), SEGMENTID_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getSegmentVersion(), SEGMENTVERSION_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(writeCampaignRequest.getTemplateConfiguration(), TEMPLATECONFIGURATION_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getTreatmentDescription(), TREATMENTDESCRIPTION_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getTreatmentName(), TREATMENTNAME_BINDING);
         } catch (Exception e) {

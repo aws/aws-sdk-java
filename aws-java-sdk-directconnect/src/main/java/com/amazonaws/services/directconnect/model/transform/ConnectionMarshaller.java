@@ -60,6 +60,8 @@ public class ConnectionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hasLogicalRedundancy").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> PROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("providerName").build();
 
     private static final ConnectionMarshaller instance = new ConnectionMarshaller();
 
@@ -93,6 +95,7 @@ public class ConnectionMarshaller {
             protocolMarshaller.marshall(connection.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
             protocolMarshaller.marshall(connection.getHasLogicalRedundancy(), HASLOGICALREDUNDANCY_BINDING);
             protocolMarshaller.marshall(connection.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(connection.getProviderName(), PROVIDERNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -58,18 +58,22 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String connectionId;
     /**
      * <p>
-     * The tags to assign to the link aggregation group (LAG).
+     * The tags to associate with the LAG.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
-     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
-     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * The tags to associate with the automtically created LAGs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> childConnectionTags;
+    /**
+     * <p>
+     * The name of the service provider associated with the LAG.
+     * </p>
+     */
+    private String providerName;
 
     /**
      * <p>
@@ -279,10 +283,10 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to assign to the link aggregation group (LAG).
+     * The tags to associate with the LAG.
      * </p>
      * 
-     * @return The tags to assign to the link aggregation group (LAG).
+     * @return The tags to associate with the LAG.
      */
 
     public java.util.List<Tag> getTags() {
@@ -294,11 +298,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to assign to the link aggregation group (LAG).
+     * The tags to associate with the LAG.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the link aggregation group (LAG).
+     *        The tags to associate with the LAG.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -312,7 +316,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to assign to the link aggregation group (LAG).
+     * The tags to associate with the LAG.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -321,7 +325,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the link aggregation group (LAG).
+     *        The tags to associate with the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,11 +341,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to assign to the link aggregation group (LAG).
+     * The tags to associate with the LAG.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the link aggregation group (LAG).
+     *        The tags to associate with the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,14 +356,10 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
-     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
-     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * The tags to associate with the automtically created LAGs.
      * </p>
      * 
-     * @return The tags to assign to the child connections of the LAG. Only newly created child connections as the
-     *         result of creating a LAG connection are assigned the provided tags. The tags are not assigned to an
-     *         existing connection that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * @return The tags to associate with the automtically created LAGs.
      */
 
     public java.util.List<Tag> getChildConnectionTags() {
@@ -371,15 +371,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
-     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
-     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * The tags to associate with the automtically created LAGs.
      * </p>
      * 
      * @param childConnectionTags
-     *        The tags to assign to the child connections of the LAG. Only newly created child connections as the result
-     *        of creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing
-     *        connection that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     *        The tags to associate with the automtically created LAGs.
      */
 
     public void setChildConnectionTags(java.util.Collection<Tag> childConnectionTags) {
@@ -393,9 +389,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
-     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
-     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * The tags to associate with the automtically created LAGs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -404,9 +398,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param childConnectionTags
-     *        The tags to assign to the child connections of the LAG. Only newly created child connections as the result
-     *        of creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing
-     *        connection that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     *        The tags to associate with the automtically created LAGs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,20 +414,56 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags to assign to the child connections of the LAG. Only newly created child connections as the result of
-     * creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing connection
-     * that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     * The tags to associate with the automtically created LAGs.
      * </p>
      * 
      * @param childConnectionTags
-     *        The tags to assign to the child connections of the LAG. Only newly created child connections as the result
-     *        of creating a LAG connection are assigned the provided tags. The tags are not assigned to an existing
-     *        connection that is provided via the “connectionId” parameter that will be migrated to the LAG.
+     *        The tags to associate with the automtically created LAGs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateLagRequest withChildConnectionTags(java.util.Collection<Tag> childConnectionTags) {
         setChildConnectionTags(childConnectionTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the LAG.
+     * </p>
+     * 
+     * @param providerName
+     *        The name of the service provider associated with the LAG.
+     */
+
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the LAG.
+     * </p>
+     * 
+     * @return The name of the service provider associated with the LAG.
+     */
+
+    public String getProviderName() {
+        return this.providerName;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the LAG.
+     * </p>
+     * 
+     * @param providerName
+     *        The name of the service provider associated with the LAG.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagRequest withProviderName(String providerName) {
+        setProviderName(providerName);
         return this;
     }
 
@@ -464,7 +492,9 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getChildConnectionTags() != null)
-            sb.append("ChildConnectionTags: ").append(getChildConnectionTags());
+            sb.append("ChildConnectionTags: ").append(getChildConnectionTags()).append(",");
+        if (getProviderName() != null)
+            sb.append("ProviderName: ").append(getProviderName());
         sb.append("}");
         return sb.toString();
     }
@@ -507,6 +537,10 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getChildConnectionTags() != null && other.getChildConnectionTags().equals(this.getChildConnectionTags()) == false)
             return false;
+        if (other.getProviderName() == null ^ this.getProviderName() == null)
+            return false;
+        if (other.getProviderName() != null && other.getProviderName().equals(this.getProviderName()) == false)
+            return false;
         return true;
     }
 
@@ -522,6 +556,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getConnectionId() == null) ? 0 : getConnectionId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getChildConnectionTags() == null) ? 0 : getChildConnectionTags().hashCode());
+        hashCode = prime * hashCode + ((getProviderName() == null) ? 0 : getProviderName().hashCode());
         return hashCode;
     }
 

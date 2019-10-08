@@ -46,18 +46,19 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     private String bucketARN;
     /**
      * <p>
-     * The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can specify an
-     * extra prefix to be added in front of the time format prefix. If the prefix ends with a slash, it appears as a
-     * folder in the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon S3 Object Name
-     * Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
+     * The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify
+     * a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     * Objects</a>.
      * </p>
      */
     private String prefix;
     /**
      * <p>
      * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name.
+     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     * Objects</a>.
      * </p>
      */
     private String errorOutputPrefix;
@@ -197,19 +198,17 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can specify an
-     * extra prefix to be added in front of the time format prefix. If the prefix ends with a slash, it appears as a
-     * folder in the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon S3 Object Name
-     * Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
+     * The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify
+     * a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     * Objects</a>.
      * </p>
      * 
      * @param prefix
-     *        The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can
-     *        specify an extra prefix to be added in front of the time format prefix. If the prefix ends with a slash,
-     *        it appears as a folder in the S3 bucket. For more information, see <a
-     *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon S3 Object
-     *        Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
+     *        The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also
+     *        specify a custom prefix, as described in <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      */
 
     public void setPrefix(String prefix) {
@@ -218,18 +217,16 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can specify an
-     * extra prefix to be added in front of the time format prefix. If the prefix ends with a slash, it appears as a
-     * folder in the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon S3 Object Name
-     * Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
+     * The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify
+     * a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     * Objects</a>.
      * </p>
      * 
-     * @return The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can
-     *         specify an extra prefix to be added in front of the time format prefix. If the prefix ends with a slash,
-     *         it appears as a folder in the S3 bucket. For more information, see <a
-     *         href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon S3 Object
-     *         Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
+     * @return The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also
+     *         specify a custom prefix, as described in <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *         Objects</a>.
      */
 
     public String getPrefix() {
@@ -238,19 +235,17 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can specify an
-     * extra prefix to be added in front of the time format prefix. If the prefix ends with a slash, it appears as a
-     * folder in the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon S3 Object Name
-     * Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
+     * The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify
+     * a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     * Objects</a>.
      * </p>
      * 
      * @param prefix
-     *        The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can
-     *        specify an extra prefix to be added in front of the time format prefix. If the prefix ends with a slash,
-     *        it appears as a folder in the S3 bucket. For more information, see <a
-     *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon S3 Object
-     *        Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
+     *        The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also
+     *        specify a custom prefix, as described in <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,12 +257,16 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name.
+     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
      *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name.
+     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
+     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
+     *        S3 Objects</a>.
      */
 
     public void setErrorOutputPrefix(String errorOutputPrefix) {
@@ -277,11 +276,15 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name.
+     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     * Objects</a>.
      * </p>
      * 
      * @return A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *         prefix appears immediately following the bucket name.
+     *         prefix appears immediately following the bucket name. For information about how to specify this prefix,
+     *         see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
+     *         S3 Objects</a>.
      */
 
     public String getErrorOutputPrefix() {
@@ -291,12 +294,16 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name.
+     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
      *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name.
+     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
+     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
+     *        S3 Objects</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

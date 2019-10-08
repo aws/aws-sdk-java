@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     *        The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * @return The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
      */
 
     public String getResourceArn() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     * The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the application, campaign, or segment.
+     *        The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

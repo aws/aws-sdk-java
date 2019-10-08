@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Specifies a field to sort by and a sort order.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SortCriterion" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the field on which to sort.
+     * </p>
+     */
     private String fieldName;
-
+    /**
+     * <p>
+     * An ascending or descending sort.
+     * </p>
+     */
     private String sort;
 
     /**
+     * <p>
+     * The name of the field on which to sort.
+     * </p>
+     * 
      * @param fieldName
+     *        The name of the field on which to sort.
      */
 
     public void setFieldName(String fieldName) {
@@ -38,7 +55,11 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the field on which to sort.
+     * </p>
+     * 
+     * @return The name of the field on which to sort.
      */
 
     public String getFieldName() {
@@ -46,7 +67,12 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the field on which to sort.
+     * </p>
+     * 
      * @param fieldName
+     *        The name of the field on which to sort.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An ascending or descending sort.
+     * </p>
+     * 
      * @param sort
+     *        An ascending or descending sort.
      * @see Sort
      */
 
@@ -65,7 +96,11 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * An ascending or descending sort.
+     * </p>
+     * 
+     * @return An ascending or descending sort.
      * @see Sort
      */
 
@@ -74,7 +109,12 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An ascending or descending sort.
+     * </p>
+     * 
      * @param sort
+     *        An ascending or descending sort.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Sort
      */
@@ -85,7 +125,12 @@ public class SortCriterion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An ascending or descending sort.
+     * </p>
+     * 
      * @param sort
+     *        An ascending or descending sort.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Sort
      */

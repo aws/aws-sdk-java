@@ -56,6 +56,10 @@ public class EmailContentJsonUnmarshaller implements Unmarshaller<EmailContent, 
                     context.nextToken();
                     emailContent.setRaw(RawMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Template", targetDepth)) {
+                    context.nextToken();
+                    emailContent.setTemplate(TemplateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -32,10 +32,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <p>
  * AWS Snowball is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data
- * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The commands described here
- * provide access to the same functionality that is available in the AWS Snowball Management Console, which enables you
- * to create and manage jobs for Snowball and Snowball Edge devices. To transfer data locally with a device, you'll need
- * to use the Snowball client or the Amazon S3 API adapter for Snowball.
+ * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
+ * here provide access to the same functionality that is available in the AWS Snowball Management Console, which enables
+ * you to create and manage jobs for Snowball. To transfer data locally with a Snowball device, you'll need to use the
+ * Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
+ * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -628,6 +629,39 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
 
                 try {
                     result = executeGetSnowballUsage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSoftwareUpdatesResult> getSoftwareUpdatesAsync(GetSoftwareUpdatesRequest request) {
+
+        return getSoftwareUpdatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSoftwareUpdatesResult> getSoftwareUpdatesAsync(final GetSoftwareUpdatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSoftwareUpdatesRequest, GetSoftwareUpdatesResult> asyncHandler) {
+        final GetSoftwareUpdatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSoftwareUpdatesResult>() {
+            @Override
+            public GetSoftwareUpdatesResult call() throws Exception {
+                GetSoftwareUpdatesResult result = null;
+
+                try {
+                    result = executeGetSoftwareUpdates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -62,7 +62,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using
-     * the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key
+     * the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key
      * Management Service (KMS) API action.
      * </p>
      */
@@ -70,7 +70,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
      * Access Management (IAM) API action.
      * </p>
      */
@@ -130,8 +130,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterId;
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      */
     private String snowballType;
@@ -398,13 +398,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using
-     * the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key
+     * the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key
      * Management Service (KMS) API action.
      * </p>
      * 
      * @param kmsKeyARN
      *        The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created
-     *        using the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     *        using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      *        AWS Key Management Service (KMS) API action.
      */
 
@@ -415,12 +415,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using
-     * the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key
+     * the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key
      * Management Service (KMS) API action.
      * </p>
      * 
      * @return The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created
-     *         using the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     *         using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      *         AWS Key Management Service (KMS) API action.
      */
 
@@ -431,13 +431,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using
-     * the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key
+     * the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key
      * Management Service (KMS) API action.
      * </p>
      * 
      * @param kmsKeyARN
      *        The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created
-     *        using the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     *        using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      *        AWS Key Management Service (KMS) API action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -450,13 +450,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
      * Access Management (IAM) API action.
      * </p>
      * 
      * @param roleARN
      *        The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using
-     *        the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS
+     *        the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS
      *        Identity and Access Management (IAM) API action.
      */
 
@@ -467,13 +467,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
      * Access Management (IAM) API action.
      * </p>
      * 
      * @return The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created
-     *         using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     *         AWS Identity and Access Management (IAM) API action.
+     *         using the <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS
+     *         Identity and Access Management (IAM) API action.
      */
 
     public String getRoleARN() {
@@ -483,13 +484,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
      * Access Management (IAM) API action.
      * </p>
      * 
      * @param roleARN
      *        The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using
-     *        the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS
+     *        the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS
      *        Identity and Access Management (IAM) API action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1008,13 +1009,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -1024,12 +1025,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
-     * @return The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     *         <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * @return The type of AWS Snowball device to use for this job. Currently, the only supported device type for
+     *         cluster jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -1039,13 +1040,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1057,13 +1058,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -1073,13 +1074,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
+     * is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
-     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */

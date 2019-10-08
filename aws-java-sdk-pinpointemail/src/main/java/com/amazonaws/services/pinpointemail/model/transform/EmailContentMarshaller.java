@@ -31,6 +31,8 @@ public class EmailContentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Simple").build();
     private static final MarshallingInfo<StructuredPojo> RAW_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Raw").build();
+    private static final MarshallingInfo<StructuredPojo> TEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Template").build();
 
     private static final EmailContentMarshaller instance = new EmailContentMarshaller();
 
@@ -50,6 +52,7 @@ public class EmailContentMarshaller {
         try {
             protocolMarshaller.marshall(emailContent.getSimple(), SIMPLE_BINDING);
             protocolMarshaller.marshall(emailContent.getRaw(), RAW_BINDING);
+            protocolMarshaller.marshall(emailContent.getTemplate(), TEMPLATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

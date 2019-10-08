@@ -20,7 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes hints for the buffering to perform before delivering data to the destination. These options are treated as
- * hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal.
+ * hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The
+ * <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for
+ * one of them, you must also provide a value for the other.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/BufferingHints" target="_top">AWS API
@@ -31,12 +33,13 @@ public class BufferingHints implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is
-     * 5.
+     * Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default value
+     * is 5. This parameter is optional but if you specify a value for it, you must also specify a value for
+     * <code>IntervalInSeconds</code>, and vice versa.
      * </p>
      * <p>
      * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
-     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value should be 10 MiB
      * or higher.
      * </p>
      */
@@ -44,29 +47,32 @@ public class BufferingHints implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The
-     * default value is 300.
+     * default value is 300. This parameter is optional but if you specify a value for it, you must also specify a value
+     * for <code>SizeInMBs</code>, and vice versa.
      * </p>
      */
     private Integer intervalInSeconds;
 
     /**
      * <p>
-     * Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is
-     * 5.
+     * Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default value
+     * is 5. This parameter is optional but if you specify a value for it, you must also specify a value for
+     * <code>IntervalInSeconds</code>, and vice versa.
      * </p>
      * <p>
      * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
-     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value should be 10 MiB
      * or higher.
      * </p>
      * 
      * @param sizeInMBs
-     *        Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
-     *        value is 5.</p>
+     *        Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default
+     *        value is 5. This parameter is optional but if you specify a value for it, you must also specify a value
+     *        for <code>IntervalInSeconds</code>, and vice versa.</p>
      *        <p>
      *        We recommend setting this parameter to a value greater than the amount of data you typically ingest into
-     *        the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should
-     *        be 10 MB or higher.
+     *        the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value
+     *        should be 10 MiB or higher.
      */
 
     public void setSizeInMBs(Integer sizeInMBs) {
@@ -75,21 +81,23 @@ public class BufferingHints implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is
-     * 5.
+     * Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default value
+     * is 5. This parameter is optional but if you specify a value for it, you must also specify a value for
+     * <code>IntervalInSeconds</code>, and vice versa.
      * </p>
      * <p>
      * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
-     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value should be 10 MiB
      * or higher.
      * </p>
      * 
-     * @return Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
-     *         value is 5.</p>
+     * @return Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default
+     *         value is 5. This parameter is optional but if you specify a value for it, you must also specify a value
+     *         for <code>IntervalInSeconds</code>, and vice versa.</p>
      *         <p>
      *         We recommend setting this parameter to a value greater than the amount of data you typically ingest into
-     *         the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value
-     *         should be 10 MB or higher.
+     *         the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value
+     *         should be 10 MiB or higher.
      */
 
     public Integer getSizeInMBs() {
@@ -98,22 +106,24 @@ public class BufferingHints implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is
-     * 5.
+     * Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default value
+     * is 5. This parameter is optional but if you specify a value for it, you must also specify a value for
+     * <code>IntervalInSeconds</code>, and vice versa.
      * </p>
      * <p>
      * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
-     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value should be 10 MiB
      * or higher.
      * </p>
      * 
      * @param sizeInMBs
-     *        Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
-     *        value is 5.</p>
+     *        Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default
+     *        value is 5. This parameter is optional but if you specify a value for it, you must also specify a value
+     *        for <code>IntervalInSeconds</code>, and vice versa.</p>
      *        <p>
      *        We recommend setting this parameter to a value greater than the amount of data you typically ingest into
-     *        the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should
-     *        be 10 MB or higher.
+     *        the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value
+     *        should be 10 MiB or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,12 +135,14 @@ public class BufferingHints implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The
-     * default value is 300.
+     * default value is 300. This parameter is optional but if you specify a value for it, you must also specify a value
+     * for <code>SizeInMBs</code>, and vice versa.
      * </p>
      * 
      * @param intervalInSeconds
      *        Buffer incoming data for the specified period of time, in seconds, before delivering it to the
-     *        destination. The default value is 300.
+     *        destination. The default value is 300. This parameter is optional but if you specify a value for it, you
+     *        must also specify a value for <code>SizeInMBs</code>, and vice versa.
      */
 
     public void setIntervalInSeconds(Integer intervalInSeconds) {
@@ -140,11 +152,13 @@ public class BufferingHints implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The
-     * default value is 300.
+     * default value is 300. This parameter is optional but if you specify a value for it, you must also specify a value
+     * for <code>SizeInMBs</code>, and vice versa.
      * </p>
      * 
      * @return Buffer incoming data for the specified period of time, in seconds, before delivering it to the
-     *         destination. The default value is 300.
+     *         destination. The default value is 300. This parameter is optional but if you specify a value for it, you
+     *         must also specify a value for <code>SizeInMBs</code>, and vice versa.
      */
 
     public Integer getIntervalInSeconds() {
@@ -154,12 +168,14 @@ public class BufferingHints implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The
-     * default value is 300.
+     * default value is 300. This parameter is optional but if you specify a value for it, you must also specify a value
+     * for <code>SizeInMBs</code>, and vice versa.
      * </p>
      * 
      * @param intervalInSeconds
      *        Buffer incoming data for the specified period of time, in seconds, before delivering it to the
-     *        destination. The default value is 300.
+     *        destination. The default value is 300. This parameter is optional but if you specify a value for it, you
+     *        must also specify a value for <code>SizeInMBs</code>, and vice versa.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

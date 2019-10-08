@@ -42,6 +42,8 @@ public class CreateLagRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> CHILDCONNECTIONTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("childConnectionTags").build();
+    private static final MarshallingInfo<String> PROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("providerName").build();
 
     private static final CreateLagRequestMarshaller instance = new CreateLagRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateLagRequestMarshaller {
             protocolMarshaller.marshall(createLagRequest.getConnectionId(), CONNECTIONID_BINDING);
             protocolMarshaller.marshall(createLagRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createLagRequest.getChildConnectionTags(), CHILDCONNECTIONTAGS_BINDING);
+            protocolMarshaller.marshall(createLagRequest.getProviderName(), PROVIDERNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

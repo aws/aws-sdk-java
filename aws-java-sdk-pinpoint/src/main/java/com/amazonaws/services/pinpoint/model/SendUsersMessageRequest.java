@@ -45,6 +45,12 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
     private DirectMessageConfiguration messageConfiguration;
     /**
      * <p>
+     * The message template to use for the message.
+     * </p>
+     */
+    private TemplateConfiguration templateConfiguration;
+    /**
+     * <p>
      * The unique identifier for tracing the message. This identifier is visible to message recipients.
      * </p>
      */
@@ -175,6 +181,46 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The message template to use for the message.
+     * </p>
+     * 
+     * @param templateConfiguration
+     *        The message template to use for the message.
+     */
+
+    public void setTemplateConfiguration(TemplateConfiguration templateConfiguration) {
+        this.templateConfiguration = templateConfiguration;
+    }
+
+    /**
+     * <p>
+     * The message template to use for the message.
+     * </p>
+     * 
+     * @return The message template to use for the message.
+     */
+
+    public TemplateConfiguration getTemplateConfiguration() {
+        return this.templateConfiguration;
+    }
+
+    /**
+     * <p>
+     * The message template to use for the message.
+     * </p>
+     * 
+     * @param templateConfiguration
+     *        The message template to use for the message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendUsersMessageRequest withTemplateConfiguration(TemplateConfiguration templateConfiguration) {
+        setTemplateConfiguration(templateConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique identifier for tracing the message. This identifier is visible to message recipients.
      * </p>
      * 
@@ -299,6 +345,8 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
             sb.append("Context: ").append(getContext()).append(",");
         if (getMessageConfiguration() != null)
             sb.append("MessageConfiguration: ").append(getMessageConfiguration()).append(",");
+        if (getTemplateConfiguration() != null)
+            sb.append("TemplateConfiguration: ").append(getTemplateConfiguration()).append(",");
         if (getTraceId() != null)
             sb.append("TraceId: ").append(getTraceId()).append(",");
         if (getUsers() != null)
@@ -325,6 +373,10 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
             return false;
         if (other.getMessageConfiguration() != null && other.getMessageConfiguration().equals(this.getMessageConfiguration()) == false)
             return false;
+        if (other.getTemplateConfiguration() == null ^ this.getTemplateConfiguration() == null)
+            return false;
+        if (other.getTemplateConfiguration() != null && other.getTemplateConfiguration().equals(this.getTemplateConfiguration()) == false)
+            return false;
         if (other.getTraceId() == null ^ this.getTraceId() == null)
             return false;
         if (other.getTraceId() != null && other.getTraceId().equals(this.getTraceId()) == false)
@@ -343,6 +395,7 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getMessageConfiguration() == null) ? 0 : getMessageConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTemplateConfiguration() == null) ? 0 : getTemplateConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTraceId() == null) ? 0 : getTraceId().hashCode());
         hashCode = prime * hashCode + ((getUsers() == null) ? 0 : getUsers().hashCode());
         return hashCode;

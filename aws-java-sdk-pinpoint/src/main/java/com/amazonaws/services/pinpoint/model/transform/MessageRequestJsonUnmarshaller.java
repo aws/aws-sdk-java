@@ -67,6 +67,10 @@ public class MessageRequestJsonUnmarshaller implements Unmarshaller<MessageReque
                     context.nextToken();
                     messageRequest.setMessageConfiguration(DirectMessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    context.nextToken();
+                    messageRequest.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("TraceId", targetDepth)) {
                     context.nextToken();
                     messageRequest.setTraceId(context.getUnmarshaller(String.class).unmarshall(context));

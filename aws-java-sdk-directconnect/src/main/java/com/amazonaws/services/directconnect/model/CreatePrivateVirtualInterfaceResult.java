@@ -73,6 +73,9 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      * <p>
      * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * </p>
+     * <p>
+     * The valid values are 1-2147483647.
+     * </p>
      */
     private Integer asn;
     /**
@@ -223,7 +226,7 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
     private String awsDeviceV2;
     /**
      * <p>
-     * Any tags assigned to the virtual interface.
+     * The tags associated with the virtual interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -512,9 +515,14 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      * <p>
      * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * </p>
+     * <p>
+     * The valid values are 1-2147483647.
+     * </p>
      * 
      * @param asn
-     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+     *        <p>
+     *        The valid values are 1-2147483647.
      */
 
     public void setAsn(Integer asn) {
@@ -525,8 +533,13 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      * <p>
      * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * </p>
+     * <p>
+     * The valid values are 1-2147483647.
+     * </p>
      * 
-     * @return The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * @return The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+     *         <p>
+     *         The valid values are 1-2147483647.
      */
 
     public Integer getAsn() {
@@ -537,9 +550,14 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      * <p>
      * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * </p>
+     * <p>
+     * The valid values are 1-2147483647.
+     * </p>
      * 
      * @param asn
-     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+     *        <p>
+     *        The valid values are 1-2147483647.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1848,10 +1866,10 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Any tags assigned to the virtual interface.
+     * The tags associated with the virtual interface.
      * </p>
      * 
-     * @return Any tags assigned to the virtual interface.
+     * @return The tags associated with the virtual interface.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1863,11 +1881,11 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Any tags assigned to the virtual interface.
+     * The tags associated with the virtual interface.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the virtual interface.
+     *        The tags associated with the virtual interface.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1881,7 +1899,7 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Any tags assigned to the virtual interface.
+     * The tags associated with the virtual interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1890,7 +1908,7 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the virtual interface.
+     *        The tags associated with the virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1906,11 +1924,11 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Any tags assigned to the virtual interface.
+     * The tags associated with the virtual interface.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the virtual interface.
+     *        The tags associated with the virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

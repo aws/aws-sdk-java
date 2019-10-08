@@ -2021,8 +2021,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes the specified Direct Connect gateway. You must first delete all virtual interfaces that are attached to
-     * the Direct Connect gateway and disassociate all virtual private gateways that are associated with the Direct
-     * Connect gateway.
+     * the Direct Connect gateway and disassociate all virtual private gateways associated with the Direct Connect
+     * gateway.
      * </p>
      * 
      * @param deleteDirectConnectGatewayRequest
@@ -2082,6 +2082,11 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes the association between the specified Direct Connect gateway and virtual private gateway.
+     * </p>
+     * <p>
+     * We recommend that you specify the <code>associationID</code> to delete the association. Alternatively, if you own
+     * virtual gateway and a Direct Connect gateway association, you can specify the <code>virtualGatewayId</code> and
+     * <code>directConnectGatewayId</code> to delete an association.
      * </p>
      * 
      * @param deleteDirectConnectGatewayAssociationRequest

@@ -27,10 +27,11 @@ import com.amazonaws.services.snowball.model.*;
  * <p>
  * <p>
  * AWS Snowball is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data
- * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The commands described here
- * provide access to the same functionality that is available in the AWS Snowball Management Console, which enables you
- * to create and manage jobs for Snowball and Snowball Edge devices. To transfer data locally with a device, you'll need
- * to use the Snowball client or the Amazon S3 API adapter for Snowball.
+ * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
+ * here provide access to the same functionality that is available in the AWS Snowball Management Console, which enables
+ * you to create and manage jobs for Snowball. To transfer data locally with a Snowball device, you'll need to use the
+ * Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
+ * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -499,6 +500,37 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
+     * Returns an Amazon S3 presigned URL for an update file associated with a specified <code>JobId</code>.
+     * </p>
+     * 
+     * @param getSoftwareUpdatesRequest
+     * @return A Java Future containing the result of the GetSoftwareUpdates operation returned by the service.
+     * @sample AmazonSnowballAsync.GetSoftwareUpdates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSoftwareUpdates" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSoftwareUpdatesResult> getSoftwareUpdatesAsync(GetSoftwareUpdatesRequest getSoftwareUpdatesRequest);
+
+    /**
+     * <p>
+     * Returns an Amazon S3 presigned URL for an update file associated with a specified <code>JobId</code>.
+     * </p>
+     * 
+     * @param getSoftwareUpdatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSoftwareUpdates operation returned by the service.
+     * @sample AmazonSnowballAsyncHandler.GetSoftwareUpdates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSoftwareUpdates" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSoftwareUpdatesResult> getSoftwareUpdatesAsync(GetSoftwareUpdatesRequest getSoftwareUpdatesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSoftwareUpdatesRequest, GetSoftwareUpdatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code>
      * object is for a job in the specified cluster and contains a job's state, a job's ID, and other information.
      * </p>
@@ -568,10 +600,9 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
     /**
      * <p>
      * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS
-     * account that would be supported for use on <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>
-     * devices. For more information on compatible AMIs, see <a
-     * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute
-     * Instances</a> in the <i>AWS Snowball Developer Guide</i>.
+     * account that would be supported for use on a Snowball Edge device. Currently, supported AMIs are based on the
+     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
+     * available on the AWS Marketplace.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -585,10 +616,9 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
     /**
      * <p>
      * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS
-     * account that would be supported for use on <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>
-     * devices. For more information on compatible AMIs, see <a
-     * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute
-     * Instances</a> in the <i>AWS Snowball Developer Guide</i>.
+     * account that would be supported for use on a Snowball Edge device. Currently, supported AMIs are based on the
+     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
+     * available on the AWS Marketplace.
      * </p>
      * 
      * @param listCompatibleImagesRequest

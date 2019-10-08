@@ -59,7 +59,7 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
     private Integer vlan;
     /**
      * <p>
-     * The tags to assign to the hosted connection.
+     * The tags associated with the connection.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -278,10 +278,10 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The tags to assign to the hosted connection.
+     * The tags associated with the connection.
      * </p>
      * 
-     * @return The tags to assign to the hosted connection.
+     * @return The tags associated with the connection.
      */
 
     public java.util.List<Tag> getTags() {
@@ -293,11 +293,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The tags to assign to the hosted connection.
+     * The tags associated with the connection.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the hosted connection.
+     *        The tags associated with the connection.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -311,7 +311,7 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The tags to assign to the hosted connection.
+     * The tags associated with the connection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -320,7 +320,7 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the hosted connection.
+     *        The tags associated with the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,11 +336,11 @@ public class AllocateHostedConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The tags to assign to the hosted connection.
+     * The tags associated with the connection.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the hosted connection.
+     *        The tags associated with the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

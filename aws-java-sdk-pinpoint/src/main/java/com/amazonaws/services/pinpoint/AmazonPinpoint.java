@@ -151,7 +151,33 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a new export job for an application.
+     * Creates a message template that you can use in messages that are sent through the email channel.
+     * </p>
+     * 
+     * @param createEmailTemplateRequest
+     * @return Result of the CreateEmailTemplate operation returned by the service.
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @sample AmazonPinpoint.CreateEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateEmailTemplateResult createEmailTemplate(CreateEmailTemplateRequest createEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Creates an export job for an application.
      * </p>
      * 
      * @param createExportJobRequest
@@ -179,7 +205,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a new import job for an application.
+     * Creates an import job for an application.
      * </p>
      * 
      * @param createImportJobRequest
@@ -204,6 +230,32 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     CreateImportJobResult createImportJob(CreateImportJobRequest createImportJobRequest);
+
+    /**
+     * <p>
+     * Creates a message template that you can use in messages that are sent through a push notification channel.
+     * </p>
+     * 
+     * @param createPushTemplateRequest
+     * @return Result of the CreatePushTemplate operation returned by the service.
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @sample AmazonPinpoint.CreatePushTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreatePushTemplateResult createPushTemplate(CreatePushTemplateRequest createPushTemplateRequest);
 
     /**
      * <p>
@@ -233,6 +285,32 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     CreateSegmentResult createSegment(CreateSegmentRequest createSegmentRequest);
+
+    /**
+     * <p>
+     * Creates a message template that you can use in messages that are sent through the SMS channel.
+     * </p>
+     * 
+     * @param createSmsTemplateRequest
+     * @return Result of the CreateSmsTemplate operation returned by the service.
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @sample AmazonPinpoint.CreateSmsTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateSmsTemplateResult createSmsTemplate(CreateSmsTemplateRequest createSmsTemplateRequest);
 
     /**
      * <p>
@@ -488,6 +566,34 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
+     * Deletes a message template that was designed for use in messages that were sent through the email channel.
+     * </p>
+     * 
+     * @param deleteEmailTemplateRequest
+     * @return Result of the DeleteEmailTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.DeleteEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteEmailTemplateResult deleteEmailTemplate(DeleteEmailTemplateRequest deleteEmailTemplateRequest);
+
+    /**
+     * <p>
      * Deletes an endpoint from an application.
      * </p>
      * 
@@ -572,6 +678,35 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
+     * Deletes a message template that was designed for use in messages that were sent through a push notification
+     * channel.
+     * </p>
+     * 
+     * @param deletePushTemplateRequest
+     * @return Result of the DeletePushTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.DeletePushTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeletePushTemplateResult deletePushTemplate(DeletePushTemplateRequest deletePushTemplateRequest);
+
+    /**
+     * <p>
      * Deletes a segment from an application.
      * </p>
      * 
@@ -625,6 +760,34 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest deleteSmsChannelRequest);
+
+    /**
+     * <p>
+     * Deletes a message template that was designed for use in messages that were sent through the SMS channel.
+     * </p>
+     * 
+     * @param deleteSmsTemplateRequest
+     * @return Result of the DeleteSmsTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.DeleteSmsTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSmsTemplateResult deleteSmsTemplate(DeleteSmsTemplateRequest deleteSmsTemplateRequest);
 
     /**
      * <p>
@@ -936,7 +1099,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves information about the status and settings of the Baidu Cloud Push channel for an application.
+     * Retrieves information about the status and settings of the Baidu channel for an application.
      * </p>
      * 
      * @param getBaiduChannelRequest
@@ -1190,6 +1353,35 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
+     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
+     * email channel.
+     * </p>
+     * 
+     * @param getEmailTemplateRequest
+     * @return Result of the GetEmailTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetEmailTemplateResult getEmailTemplate(GetEmailTemplateRequest getEmailTemplateRequest);
+
+    /**
+     * <p>
      * Retrieves information about the settings and attributes of a specific endpoint for an application.
      * </p>
      * 
@@ -1383,6 +1575,35 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     GetImportJobsResult getImportJobs(GetImportJobsRequest getImportJobsRequest);
+
+    /**
+     * <p>
+     * Retrieves the content and settings for a message template that you can use in messages that are sent through a
+     * push notification channel.
+     * </p>
+     * 
+     * @param getPushTemplateRequest
+     * @return Result of the GetPushTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetPushTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPushTemplateResult getPushTemplate(GetPushTemplateRequest getPushTemplateRequest);
 
     /**
      * <p>
@@ -1586,6 +1807,35 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
+     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
+     * SMS channel.
+     * </p>
+     * 
+     * @param getSmsTemplateRequest
+     * @return Result of the GetSmsTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetSmsTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSmsTemplateResult getSmsTemplate(GetSmsTemplateRequest getSmsTemplateRequest);
+
+    /**
+     * <p>
      * Retrieves information about all the endpoints that are associated with a specific user ID.
      * </p>
      * 
@@ -1642,7 +1892,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves all the tags (keys and values) that are associated with an application, campaign, or segment.
+     * Retrieves all the tags (keys and values) that are associated with an application, campaign, message template, or
+     * segment.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1652,6 +1903,34 @@ public interface AmazonPinpoint {
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Retrieves information about all the message templates that are associated with your Amazon Pinpoint account.
+     * </p>
+     * 
+     * @param listTemplatesRequest
+     * @return Result of the ListTemplates operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.ListTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTemplatesResult listTemplates(ListTemplatesRequest listTemplatesRequest);
 
     /**
      * <p>
@@ -1826,7 +2105,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Adds one or more tags (keys and values) to an application, campaign, or segment.
+     * Adds one or more tags (keys and values) to an application, campaign, message template, or segment.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1839,7 +2118,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Removes one or more tags (keys and values) from an application, campaign, or segment.
+     * Removes one or more tags (keys and values) from an application, campaign, message template, or segment.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1852,7 +2131,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the ADM channel settings for an application.
+     * Enables the ADM channel for an application or updates the status and settings of the ADM channel for an
+     * application.
      * </p>
      * 
      * @param updateAdmChannelRequest
@@ -1880,7 +2160,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the APNs channel settings for an application.
+     * Enables the APNs channel for an application or updates the status and settings of the APNs channel for an
+     * application.
      * </p>
      * 
      * @param updateApnsChannelRequest
@@ -1908,7 +2189,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the APNs sandbox channel settings for an application.
+     * Enables the APNs sandbox channel for an application or updates the status and settings of the APNs sandbox
+     * channel for an application.
      * </p>
      * 
      * @param updateApnsSandboxChannelRequest
@@ -1936,7 +2218,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the APNs VoIP channel settings for an application.
+     * Enables the APNs VoIP channel for an application or updates the status and settings of the APNs VoIP channel for
+     * an application.
      * </p>
      * 
      * @param updateApnsVoipChannelRequest
@@ -1964,7 +2247,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the settings for the APNs VoIP sandbox channel for an application.
+     * Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the APNs VoIP
+     * sandbox channel for an application.
      * </p>
      * 
      * @param updateApnsVoipSandboxChannelRequest
@@ -2020,7 +2304,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the settings of the Baidu channel for an application.
+     * Enables the Baidu channel for an application or updates the status and settings of the Baidu channel for an
+     * application.
      * </p>
      * 
      * @param updateBaiduChannelRequest
@@ -2076,7 +2361,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the status and settings of the email channel for an application.
+     * Enables the email channel for an application or updates the status and settings of the email channel for an
+     * application.
      * </p>
      * 
      * @param updateEmailChannelRequest
@@ -2101,6 +2387,34 @@ public interface AmazonPinpoint {
      *      API Documentation</a>
      */
     UpdateEmailChannelResult updateEmailChannel(UpdateEmailChannelRequest updateEmailChannelRequest);
+
+    /**
+     * <p>
+     * Updates an existing message template that you can use in messages that are sent through the email channel.
+     * </p>
+     * 
+     * @param updateEmailTemplateRequest
+     * @return Result of the UpdateEmailTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.UpdateEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateEmailTemplateResult updateEmailTemplate(UpdateEmailTemplateRequest updateEmailTemplateRequest);
 
     /**
      * <p>
@@ -2164,7 +2478,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the status and settings of the GCM channel for an application.
+     * Enables the GCM channel for an application or updates the status and settings of the GCM channel for an
+     * application.
      * </p>
      * 
      * @param updateGcmChannelRequest
@@ -2189,6 +2504,35 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest);
+
+    /**
+     * <p>
+     * Updates an existing message template that you can use in messages that are sent through a push notification
+     * channel.
+     * </p>
+     * 
+     * @param updatePushTemplateRequest
+     * @return Result of the UpdatePushTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.UpdatePushTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdatePushTemplateResult updatePushTemplate(UpdatePushTemplateRequest updatePushTemplateRequest);
 
     /**
      * <p>
@@ -2221,7 +2565,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the status and settings of the SMS channel for an application.
+     * Enables the SMS channel for an application or updates the status and settings of the SMS channel for an
+     * application.
      * </p>
      * 
      * @param updateSmsChannelRequest
@@ -2249,7 +2594,36 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates the status and settings of the voice channel for an application.
+     * Updates an existing message template that you can use in messages that are sent through the SMS channel.
+     * </p>
+     * 
+     * @param updateSmsTemplateRequest
+     * @return Result of the UpdateSmsTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.UpdateSmsTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateSmsTemplateResult updateSmsTemplate(UpdateSmsTemplateRequest updateSmsTemplateRequest);
+
+    /**
+     * <p>
+     * Enables the voice channel for an application or updates the status and settings of the voice channel for an
+     * application.
      * </p>
      * 
      * @param updateVoiceChannelRequest

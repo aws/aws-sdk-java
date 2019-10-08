@@ -52,10 +52,11 @@ import com.amazonaws.services.snowball.model.transform.*;
  * <p>
  * <p>
  * AWS Snowball is a petabyte-scale data transport solution that uses secure devices to transfer large amounts of data
- * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The commands described here
- * provide access to the same functionality that is available in the AWS Snowball Management Console, which enables you
- * to create and manage jobs for Snowball and Snowball Edge devices. To transfer data locally with a device, you'll need
- * to use the Snowball client or the Amazon S3 API adapter for Snowball.
+ * between your on-premises data centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
+ * here provide access to the same functionality that is available in the AWS Snowball Management Console, which enables
+ * you to create and manage jobs for Snowball. To transfer data locally with a Snowball device, you'll need to use the
+ * Snowball client or the Amazon S3 API adapter for Snowball. For more information, see the <a
+ * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -1063,6 +1064,64 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Returns an Amazon S3 presigned URL for an update file associated with a specified <code>JobId</code>.
+     * </p>
+     * 
+     * @param getSoftwareUpdatesRequest
+     * @return Result of the GetSoftwareUpdates operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @throws InvalidJobStateException
+     *         The action can't be performed because the job's current state doesn't allow that action to be performed.
+     * @sample AmazonSnowball.GetSoftwareUpdates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSoftwareUpdates" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSoftwareUpdatesResult getSoftwareUpdates(GetSoftwareUpdatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSoftwareUpdates(request);
+    }
+
+    @SdkInternalApi
+    final GetSoftwareUpdatesResult executeGetSoftwareUpdates(GetSoftwareUpdatesRequest getSoftwareUpdatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSoftwareUpdatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSoftwareUpdatesRequest> request = null;
+        Response<GetSoftwareUpdatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSoftwareUpdatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSoftwareUpdatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSoftwareUpdates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSoftwareUpdatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSoftwareUpdatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code>
      * object is for a job in the specified cluster and contains a job's state, a job's ID, and other information.
      * </p>
@@ -1182,10 +1241,9 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your AWS
-     * account that would be supported for use on <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>
-     * devices. For more information on compatible AMIs, see <a
-     * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute
-     * Instances</a> in the <i>AWS Snowball Developer Guide</i>.
+     * account that would be supported for use on a Snowball Edge device. Currently, supported AMIs are based on the
+     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
+     * available on the AWS Marketplace.
      * </p>
      * 
      * @param listCompatibleImagesRequest

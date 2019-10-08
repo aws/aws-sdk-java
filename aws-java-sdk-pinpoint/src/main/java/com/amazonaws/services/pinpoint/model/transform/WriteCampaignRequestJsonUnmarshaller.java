@@ -98,6 +98,10 @@ public class WriteCampaignRequestJsonUnmarshaller implements Unmarshaller<WriteC
                     writeCampaignRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    context.nextToken();
+                    writeCampaignRequest.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
                     context.nextToken();
                     writeCampaignRequest.setTreatmentDescription(context.getUnmarshaller(String.class).unmarshall(context));

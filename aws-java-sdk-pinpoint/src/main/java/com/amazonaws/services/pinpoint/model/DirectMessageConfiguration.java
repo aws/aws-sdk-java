@@ -58,7 +58,7 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
     private DefaultMessage defaultMessage;
     /**
      * <p>
-     * The default push notification message for all push channels.
+     * The default push notification message for all push notification channels.
      * </p>
      */
     private DefaultPushNotificationMessage defaultPushNotificationMessage;
@@ -269,11 +269,11 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default push notification message for all push channels.
+     * The default push notification message for all push notification channels.
      * </p>
      * 
      * @param defaultPushNotificationMessage
-     *        The default push notification message for all push channels.
+     *        The default push notification message for all push notification channels.
      */
 
     public void setDefaultPushNotificationMessage(DefaultPushNotificationMessage defaultPushNotificationMessage) {
@@ -282,10 +282,10 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default push notification message for all push channels.
+     * The default push notification message for all push notification channels.
      * </p>
      * 
-     * @return The default push notification message for all push channels.
+     * @return The default push notification message for all push notification channels.
      */
 
     public DefaultPushNotificationMessage getDefaultPushNotificationMessage() {
@@ -294,11 +294,11 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default push notification message for all push channels.
+     * The default push notification message for all push notification channels.
      * </p>
      * 
      * @param defaultPushNotificationMessage
-     *        The default push notification message for all push channels.
+     *        The default push notification message for all push notification channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -82,6 +82,12 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private RawMessage raw;
+    /**
+     * <p>
+     * The template to use for the email message.
+     * </p>
+     */
+    private Template template;
 
     /**
      * <p>
@@ -398,6 +404,46 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The template to use for the email message.
+     * </p>
+     * 
+     * @param template
+     *        The template to use for the email message.
+     */
+
+    public void setTemplate(Template template) {
+        this.template = template;
+    }
+
+    /**
+     * <p>
+     * The template to use for the email message.
+     * </p>
+     * 
+     * @return The template to use for the email message.
+     */
+
+    public Template getTemplate() {
+        return this.template;
+    }
+
+    /**
+     * <p>
+     * The template to use for the email message.
+     * </p>
+     * 
+     * @param template
+     *        The template to use for the email message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailContent withTemplate(Template template) {
+        setTemplate(template);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -412,7 +458,9 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
         if (getSimple() != null)
             sb.append("Simple: ").append(getSimple()).append(",");
         if (getRaw() != null)
-            sb.append("Raw: ").append(getRaw());
+            sb.append("Raw: ").append(getRaw()).append(",");
+        if (getTemplate() != null)
+            sb.append("Template: ").append(getTemplate());
         sb.append("}");
         return sb.toString();
     }
@@ -435,6 +483,10 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRaw() != null && other.getRaw().equals(this.getRaw()) == false)
             return false;
+        if (other.getTemplate() == null ^ this.getTemplate() == null)
+            return false;
+        if (other.getTemplate() != null && other.getTemplate().equals(this.getTemplate()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +497,7 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getSimple() == null) ? 0 : getSimple().hashCode());
         hashCode = prime * hashCode + ((getRaw() == null) ? 0 : getRaw().hashCode());
+        hashCode = prime * hashCode + ((getTemplate() == null) ? 0 : getTemplate().hashCode());
         return hashCode;
     }
 

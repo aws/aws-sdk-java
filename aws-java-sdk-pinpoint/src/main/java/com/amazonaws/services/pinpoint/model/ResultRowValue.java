@@ -55,9 +55,7 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param key
-     *        <p>
      *        The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
-     *        </p>
      */
 
     public void setKey(String key) {
@@ -69,9 +67,7 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
      * </p>
      * 
-     * @return <p>
-     *         The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
-     *         </p>
+     * @return The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
      */
 
     public String getKey() {
@@ -84,9 +80,7 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param key
-     *        <p>
      *        The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +142,9 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param value
-     *        <p>
      *        In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object,
      *        the value for the field that was used to group data in a result set that contains multiple results (Values
      *        objects).
-     *        </p>
      */
 
     public void setValue(String value) {
@@ -165,11 +157,9 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * for the field that was used to group data in a result set that contains multiple results (Values objects).
      * </p>
      * 
-     * @return <p>
-     *         In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object,
+     * @return In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object,
      *         the value for the field that was used to group data in a result set that contains multiple results
      *         (Values objects).
-     *         </p>
      */
 
     public String getValue() {
@@ -183,11 +173,9 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param value
-     *        <p>
      *        In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object,
      *        the value for the field that was used to group data in a result set that contains multiple results (Values
      *        objects).
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

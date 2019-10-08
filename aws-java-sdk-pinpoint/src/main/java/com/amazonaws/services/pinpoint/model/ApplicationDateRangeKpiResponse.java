@@ -37,7 +37,7 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
     private String applicationId;
     /**
      * <p>
-     * The last date or date and time of the date range that was used to filter the query results, in ISO 8601 format.
+     * The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format.
      * The date range is inclusive.
      * </p>
      */
@@ -47,7 +47,8 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
      * lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
+     * Guide</a>.
      * </p>
      */
     private String kpiName;
@@ -61,13 +62,13 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
     /**
      * <p>
      * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
-     * null for the App Metrics resource. The App Metrics resource returns all results in a single page.
+     * null for the Application Metrics resource. The Application Metrics resource returns all results in a single page.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The first date or date and time of the date range that was used to filter the query results, in ISO 8601 format.
+     * The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format.
      * The date range is inclusive.
      * </p>
      */
@@ -115,12 +116,12 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The last date or date and time of the date range that was used to filter the query results, in ISO 8601 format.
+     * The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format.
      * The date range is inclusive.
      * </p>
      * 
      * @param endTime
-     *        The last date or date and time of the date range that was used to filter the query results, in ISO 8601
+     *        The last date and time of the date range that was used to filter the query results, in extended ISO 8601
      *        format. The date range is inclusive.
      */
 
@@ -130,11 +131,11 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The last date or date and time of the date range that was used to filter the query results, in ISO 8601 format.
+     * The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format.
      * The date range is inclusive.
      * </p>
      * 
-     * @return The last date or date and time of the date range that was used to filter the query results, in ISO 8601
+     * @return The last date and time of the date range that was used to filter the query results, in extended ISO 8601
      *         format. The date range is inclusive.
      */
 
@@ -144,12 +145,12 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The last date or date and time of the date range that was used to filter the query results, in ISO 8601 format.
+     * The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format.
      * The date range is inclusive.
      * </p>
      * 
      * @param endTime
-     *        The last date or date and time of the date range that was used to filter the query results, in ISO 8601
+     *        The last date and time of the date range that was used to filter the query results, in extended ISO 8601
      *        format. The date range is inclusive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -164,14 +165,16 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
      * lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
+     * Guide</a>.
      * </p>
      * 
      * @param kpiName
      *        The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *        retrieved for. This value describes the associated metric and consists of two or more terms, which are
      *        comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the
-     *        <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
+     *        <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
+     *        Developer Guide</a>.
      */
 
     public void setKpiName(String kpiName) {
@@ -183,13 +186,15 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
      * lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
+     * Guide</a>.
      * </p>
      * 
      * @return The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *         retrieved for. This value describes the associated metric and consists of two or more terms, which are
      *         comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     *         the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
+     *         the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
+     *         Developer Guide</a>.
      */
 
     public String getKpiName() {
@@ -201,14 +206,16 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
      * lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
+     * Guide</a>.
      * </p>
      * 
      * @param kpiName
      *        The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *        retrieved for. This value describes the associated metric and consists of two or more terms, which are
      *        comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the
-     *        <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.
+     *        <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
+     *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,12 +273,13 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
     /**
      * <p>
      * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
-     * null for the App Metrics resource. The App Metrics resource returns all results in a single page.
+     * null for the Application Metrics resource. The Application Metrics resource returns all results in a single page.
      * </p>
      * 
      * @param nextToken
      *        The string to use in a subsequent request to get the next page of results in a paginated response. This
-     *        value is null for the App Metrics resource. The App Metrics resource returns all results in a single page.
+     *        value is null for the Application Metrics resource. The Application Metrics resource returns all results
+     *        in a single page.
      */
 
     public void setNextToken(String nextToken) {
@@ -281,12 +289,12 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
     /**
      * <p>
      * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
-     * null for the App Metrics resource. The App Metrics resource returns all results in a single page.
+     * null for the Application Metrics resource. The Application Metrics resource returns all results in a single page.
      * </p>
      * 
      * @return The string to use in a subsequent request to get the next page of results in a paginated response. This
-     *         value is null for the App Metrics resource. The App Metrics resource returns all results in a single
-     *         page.
+     *         value is null for the Application Metrics resource. The Application Metrics resource returns all results
+     *         in a single page.
      */
 
     public String getNextToken() {
@@ -296,12 +304,13 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
     /**
      * <p>
      * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
-     * null for the App Metrics resource. The App Metrics resource returns all results in a single page.
+     * null for the Application Metrics resource. The Application Metrics resource returns all results in a single page.
      * </p>
      * 
      * @param nextToken
      *        The string to use in a subsequent request to get the next page of results in a paginated response. This
-     *        value is null for the App Metrics resource. The App Metrics resource returns all results in a single page.
+     *        value is null for the Application Metrics resource. The Application Metrics resource returns all results
+     *        in a single page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,12 +321,12 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The first date or date and time of the date range that was used to filter the query results, in ISO 8601 format.
+     * The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format.
      * The date range is inclusive.
      * </p>
      * 
      * @param startTime
-     *        The first date or date and time of the date range that was used to filter the query results, in ISO 8601
+     *        The first date and time of the date range that was used to filter the query results, in extended ISO 8601
      *        format. The date range is inclusive.
      */
 
@@ -327,11 +336,11 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The first date or date and time of the date range that was used to filter the query results, in ISO 8601 format.
+     * The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format.
      * The date range is inclusive.
      * </p>
      * 
-     * @return The first date or date and time of the date range that was used to filter the query results, in ISO 8601
+     * @return The first date and time of the date range that was used to filter the query results, in extended ISO 8601
      *         format. The date range is inclusive.
      */
 
@@ -341,12 +350,12 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The first date or date and time of the date range that was used to filter the query results, in ISO 8601 format.
+     * The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format.
      * The date range is inclusive.
      * </p>
      * 
      * @param startTime
-     *        The first date or date and time of the date range that was used to filter the query results, in ISO 8601
+     *        The first date and time of the date range that was used to filter the query results, in extended ISO 8601
      *        format. The date range is inclusive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

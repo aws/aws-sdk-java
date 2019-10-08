@@ -159,10 +159,16 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
     private String hasLogicalRedundancy;
     /**
      * <p>
-     * Any tags assigned to link aggregation group (LAG).
+     * The tags associated with the LAG.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The name of the service provider associated with the LAG.
+     * </p>
+     */
+    private String providerName;
 
     /**
      * <p>
@@ -1270,10 +1276,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Any tags assigned to link aggregation group (LAG).
+     * The tags associated with the LAG.
      * </p>
      * 
-     * @return Any tags assigned to link aggregation group (LAG).
+     * @return The tags associated with the LAG.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1285,11 +1291,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Any tags assigned to link aggregation group (LAG).
+     * The tags associated with the LAG.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to link aggregation group (LAG).
+     *        The tags associated with the LAG.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1303,7 +1309,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Any tags assigned to link aggregation group (LAG).
+     * The tags associated with the LAG.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1312,7 +1318,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to link aggregation group (LAG).
+     *        The tags associated with the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1328,16 +1334,56 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Any tags assigned to link aggregation group (LAG).
+     * The tags associated with the LAG.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to link aggregation group (LAG).
+     *        The tags associated with the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Lag withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the LAG.
+     * </p>
+     * 
+     * @param providerName
+     *        The name of the service provider associated with the LAG.
+     */
+
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the LAG.
+     * </p>
+     * 
+     * @return The name of the service provider associated with the LAG.
+     */
+
+    public String getProviderName() {
+        return this.providerName;
+    }
+
+    /**
+     * <p>
+     * The name of the service provider associated with the LAG.
+     * </p>
+     * 
+     * @param providerName
+     *        The name of the service provider associated with the LAG.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Lag withProviderName(String providerName) {
+        setProviderName(providerName);
         return this;
     }
 
@@ -1384,7 +1430,9 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
         if (getHasLogicalRedundancy() != null)
             sb.append("HasLogicalRedundancy: ").append(getHasLogicalRedundancy()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getProviderName() != null)
+            sb.append("ProviderName: ").append(getProviderName());
         sb.append("}");
         return sb.toString();
     }
@@ -1463,6 +1511,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getProviderName() == null ^ this.getProviderName() == null)
+            return false;
+        if (other.getProviderName() != null && other.getProviderName().equals(this.getProviderName()) == false)
+            return false;
         return true;
     }
 
@@ -1487,6 +1539,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJumboFrameCapable() == null) ? 0 : getJumboFrameCapable().hashCode());
         hashCode = prime * hashCode + ((getHasLogicalRedundancy() == null) ? 0 : getHasLogicalRedundancy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getProviderName() == null) ? 0 : getProviderName().hashCode());
         return hashCode;
     }
 

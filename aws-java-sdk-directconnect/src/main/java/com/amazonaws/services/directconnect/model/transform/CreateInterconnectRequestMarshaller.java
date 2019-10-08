@@ -38,6 +38,8 @@ public class CreateInterconnectRequestMarshaller {
             .marshallLocationName("lagId").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> PROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("providerName").build();
 
     private static final CreateInterconnectRequestMarshaller instance = new CreateInterconnectRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateInterconnectRequestMarshaller {
             protocolMarshaller.marshall(createInterconnectRequest.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(createInterconnectRequest.getLagId(), LAGID_BINDING);
             protocolMarshaller.marshall(createInterconnectRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createInterconnectRequest.getProviderName(), PROVIDERNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

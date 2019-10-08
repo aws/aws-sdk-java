@@ -60,6 +60,10 @@ public class WriteTreatmentResourceJsonUnmarshaller implements Unmarshaller<Writ
                     context.nextToken();
                     writeTreatmentResource.setSizePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    context.nextToken();
+                    writeTreatmentResource.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
                     context.nextToken();
                     writeTreatmentResource.setTreatmentDescription(context.getUnmarshaller(String.class).unmarshall(context));

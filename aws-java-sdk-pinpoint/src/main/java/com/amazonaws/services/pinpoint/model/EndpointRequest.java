@@ -71,7 +71,13 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
     private String effectiveDate;
     /**
      * <p>
-     * Not used.
+     * Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are
+     * sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.
+     * </p>
+     * <p>
+     * Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing
+     * endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the
+     * same address specified by the Address property.
      * </p>
      */
     private String endpointStatus;
@@ -428,11 +434,22 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Not used.
+     * Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are
+     * sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.
+     * </p>
+     * <p>
+     * Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing
+     * endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the
+     * same address specified by the Address property.
      * </p>
      * 
      * @param endpointStatus
-     *        Not used.
+     *        Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE,
+     *        messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
+     *        <p>
+     *        Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing
+     *        endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that
+     *        has the same address specified by the Address property.
      */
 
     public void setEndpointStatus(String endpointStatus) {
@@ -441,10 +458,21 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Not used.
+     * Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are
+     * sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.
+     * </p>
+     * <p>
+     * Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing
+     * endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the
+     * same address specified by the Address property.
      * </p>
      * 
-     * @return Not used.
+     * @return Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE,
+     *         messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
+     *         <p>
+     *         Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing
+     *         endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that
+     *         has the same address specified by the Address property.
      */
 
     public String getEndpointStatus() {
@@ -453,11 +481,22 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Not used.
+     * Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are
+     * sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.
+     * </p>
+     * <p>
+     * Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing
+     * endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the
+     * same address specified by the Address property.
      * </p>
      * 
      * @param endpointStatus
-     *        Not used.
+     *        Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE,
+     *        messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
+     *        <p>
+     *        Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing
+     *        endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that
+     *        has the same address specified by the Address property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

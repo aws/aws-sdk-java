@@ -99,8 +99,8 @@ public class MessageResult implements Serializable, Cloneable, StructuredPojo {
     private String statusMessage;
     /**
      * <p>
-     * For push notifications that are sent through the GCM channel, specifies whether the token was updated as part of
-     * delivering the message.
+     * For push notifications that are sent through the GCM channel, specifies whether the endpoint's device
+     * registration token was updated as part of delivering the message.
      * </p>
      */
     private String updatedToken;
@@ -750,13 +750,13 @@ public class MessageResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For push notifications that are sent through the GCM channel, specifies whether the token was updated as part of
-     * delivering the message.
+     * For push notifications that are sent through the GCM channel, specifies whether the endpoint's device
+     * registration token was updated as part of delivering the message.
      * </p>
      * 
      * @param updatedToken
-     *        For push notifications that are sent through the GCM channel, specifies whether the token was updated as
-     *        part of delivering the message.
+     *        For push notifications that are sent through the GCM channel, specifies whether the endpoint's device
+     *        registration token was updated as part of delivering the message.
      */
 
     public void setUpdatedToken(String updatedToken) {
@@ -765,12 +765,12 @@ public class MessageResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For push notifications that are sent through the GCM channel, specifies whether the token was updated as part of
-     * delivering the message.
+     * For push notifications that are sent through the GCM channel, specifies whether the endpoint's device
+     * registration token was updated as part of delivering the message.
      * </p>
      * 
-     * @return For push notifications that are sent through the GCM channel, specifies whether the token was updated as
-     *         part of delivering the message.
+     * @return For push notifications that are sent through the GCM channel, specifies whether the endpoint's device
+     *         registration token was updated as part of delivering the message.
      */
 
     public String getUpdatedToken() {
@@ -779,13 +779,13 @@ public class MessageResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For push notifications that are sent through the GCM channel, specifies whether the token was updated as part of
-     * delivering the message.
+     * For push notifications that are sent through the GCM channel, specifies whether the endpoint's device
+     * registration token was updated as part of delivering the message.
      * </p>
      * 
      * @param updatedToken
-     *        For push notifications that are sent through the GCM channel, specifies whether the token was updated as
-     *        part of delivering the message.
+     *        For push notifications that are sent through the GCM channel, specifies whether the endpoint's device
+     *        registration token was updated as part of delivering the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public CreateEmailTemplateResult createEmailTemplate(CreateEmailTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateExportJobResult createExportJob(CreateExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,7 +63,17 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public CreatePushTemplateResult createPushTemplate(CreatePushTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSegmentResult createSegment(CreateSegmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSmsTemplateResult createSmsTemplate(CreateSmsTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,6 +123,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public DeleteEmailTemplateResult deleteEmailTemplate(DeleteEmailTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,12 +143,22 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public DeletePushTemplateResult deletePushTemplate(DeletePushTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSegmentResult deleteSegment(DeleteSegmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSmsTemplateResult deleteSmsTemplate(DeleteSmsTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -233,6 +263,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetEmailTemplateResult getEmailTemplate(GetEmailTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEndpointResult getEndpoint(GetEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -264,6 +299,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public GetImportJobsResult getImportJobs(GetImportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPushTemplateResult getPushTemplate(GetPushTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -303,6 +343,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetSmsTemplateResult getSmsTemplate(GetSmsTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUserEndpointsResult getUserEndpoints(GetUserEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -314,6 +359,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTemplatesResult listTemplates(ListTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -403,6 +453,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public UpdateEmailTemplateResult updateEmailTemplate(UpdateEmailTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateEndpointResult updateEndpoint(UpdateEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -418,12 +473,22 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public UpdatePushTemplateResult updatePushTemplate(UpdatePushTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateSegmentResult updateSegment(UpdateSegmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateSmsChannelResult updateSmsChannel(UpdateSmsChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSmsTemplateResult updateSmsTemplate(UpdateSmsTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

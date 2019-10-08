@@ -36,8 +36,9 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
     private String configurationSetName;
     /**
      * <p>
-     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     * Transport Layer Security (TLS).
+     * Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If
+     * the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the
+     * value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
      * </p>
      */
     private String tlsPolicy;
@@ -90,13 +91,16 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     * Transport Layer Security (TLS).
+     * Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If
+     * the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the
+     * value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
      * </p>
      * 
      * @param tlsPolicy
-     *        Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     *        Transport Layer Security (TLS).
+     *        Specifies whether messages that use the configuration set are required to use Transport Layer Security
+     *        (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be
+     *        established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS
+     *        connection can't be established.
      * @see TlsPolicy
      */
 
@@ -106,12 +110,15 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     * Transport Layer Security (TLS).
+     * Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If
+     * the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the
+     * value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
      * </p>
      * 
-     * @return Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     *         Transport Layer Security (TLS).
+     * @return Specifies whether messages that use the configuration set are required to use Transport Layer Security
+     *         (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be
+     *         established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS
+     *         connection can't be established.
      * @see TlsPolicy
      */
 
@@ -121,13 +128,16 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     * Transport Layer Security (TLS).
+     * Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If
+     * the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the
+     * value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
      * </p>
      * 
      * @param tlsPolicy
-     *        Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     *        Transport Layer Security (TLS).
+     *        Specifies whether messages that use the configuration set are required to use Transport Layer Security
+     *        (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be
+     *        established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS
+     *        connection can't be established.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TlsPolicy
      */
@@ -139,13 +149,16 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     * Transport Layer Security (TLS).
+     * Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If
+     * the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the
+     * value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
      * </p>
      * 
      * @param tlsPolicy
-     *        Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
-     *        Transport Layer Security (TLS).
+     *        Specifies whether messages that use the configuration set are required to use Transport Layer Security
+     *        (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be
+     *        established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS
+     *        connection can't be established.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TlsPolicy
      */

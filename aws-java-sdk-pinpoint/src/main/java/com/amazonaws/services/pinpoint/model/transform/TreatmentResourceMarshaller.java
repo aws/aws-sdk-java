@@ -37,6 +37,8 @@ public class TreatmentResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SizePercent").build();
     private static final MarshallingInfo<StructuredPojo> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("State").build();
+    private static final MarshallingInfo<StructuredPojo> TEMPLATECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateConfiguration").build();
     private static final MarshallingInfo<String> TREATMENTDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TreatmentDescription").build();
     private static final MarshallingInfo<String> TREATMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,6 +65,7 @@ public class TreatmentResourceMarshaller {
             protocolMarshaller.marshall(treatmentResource.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(treatmentResource.getSizePercent(), SIZEPERCENT_BINDING);
             protocolMarshaller.marshall(treatmentResource.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(treatmentResource.getTemplateConfiguration(), TEMPLATECONFIGURATION_BINDING);
             protocolMarshaller.marshall(treatmentResource.getTreatmentDescription(), TREATMENTDESCRIPTION_BINDING);
             protocolMarshaller.marshall(treatmentResource.getTreatmentName(), TREATMENTNAME_BINDING);
         } catch (Exception e) {

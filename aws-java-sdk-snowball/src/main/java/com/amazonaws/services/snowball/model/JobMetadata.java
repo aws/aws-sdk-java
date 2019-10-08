@@ -76,14 +76,15 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
      * ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
+     * KMS.
      * </p>
      */
     private String kmsKeyARN;
     /**
      * <p>
      * The role ARN associated with this job. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      */
@@ -537,13 +538,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
      * ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
+     * KMS.
      * </p>
      * 
      * @param kmsKeyARN
      *        The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
      *        This ARN was created using the <a
-     *        href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
      *        AWS KMS.
      */
 
@@ -555,12 +557,13 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
      * ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
+     * KMS.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
      *         This ARN was created using the <a
-     *         href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *         href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
      *         AWS KMS.
      */
 
@@ -572,13 +575,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
      * ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS
+     * KMS.
      * </p>
      * 
      * @param kmsKeyARN
      *        The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
      *        This ARN was created using the <a
-     *        href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
      *        AWS KMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -591,14 +595,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The role ARN associated with this job. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
      * @param roleARN
      *        The role ARN associated with this job. This ARN was created using the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in
-     *        AWS Identity and Access Management (IAM).
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
+     *        in AWS Identity and Access Management (IAM).
      */
 
     public void setRoleARN(String roleARN) {
@@ -608,12 +612,12 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The role ARN associated with this job. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
      * @return The role ARN associated with this job. This ARN was created using the <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
+     *         href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
      *         in AWS Identity and Access Management (IAM).
      */
 
@@ -624,14 +628,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The role ARN associated with this job. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
      * @param roleARN
      *        The role ARN associated with this job. This ARN was created using the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in
-     *        AWS Identity and Access Management (IAM).
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
+     *        in AWS Identity and Access Management (IAM).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

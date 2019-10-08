@@ -31,6 +31,8 @@ public class ElasticsearchDestinationDescriptionMarshaller {
             .marshallLocationName("RoleARN").build();
     private static final MarshallingInfo<String> DOMAINARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DomainARN").build();
+    private static final MarshallingInfo<String> CLUSTERENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterEndpoint").build();
     private static final MarshallingInfo<String> INDEXNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IndexName").build();
     private static final MarshallingInfo<String> TYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class ElasticsearchDestinationDescriptionMarshaller {
         try {
             protocolMarshaller.marshall(elasticsearchDestinationDescription.getRoleARN(), ROLEARN_BINDING);
             protocolMarshaller.marshall(elasticsearchDestinationDescription.getDomainARN(), DOMAINARN_BINDING);
+            protocolMarshaller.marshall(elasticsearchDestinationDescription.getClusterEndpoint(), CLUSTERENDPOINT_BINDING);
             protocolMarshaller.marshall(elasticsearchDestinationDescription.getIndexName(), INDEXNAME_BINDING);
             protocolMarshaller.marshall(elasticsearchDestinationDescription.getTypeName(), TYPENAME_BINDING);
             protocolMarshaller.marshall(elasticsearchDestinationDescription.getIndexRotationPeriod(), INDEXROTATIONPERIOD_BINDING);

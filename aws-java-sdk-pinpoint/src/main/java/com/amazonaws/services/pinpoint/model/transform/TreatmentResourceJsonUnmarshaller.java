@@ -68,6 +68,10 @@ public class TreatmentResourceJsonUnmarshaller implements Unmarshaller<Treatment
                     context.nextToken();
                     treatmentResource.setState(CampaignStateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TemplateConfiguration", targetDepth)) {
+                    context.nextToken();
+                    treatmentResource.setTemplateConfiguration(TemplateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
                     context.nextToken();
                     treatmentResource.setTreatmentDescription(context.getUnmarshaller(String.class).unmarshall(context));

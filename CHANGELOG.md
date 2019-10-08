@@ -1,3 +1,28 @@
+# __1.11.647__ __2019-10-07__
+## __AWS Direct Connect__
+  - ### Features
+    - This release adds a service provider field for physical connection creation and provides a list of available partner providers for each Direct Connect location.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue now provides ability to use custom certificates for JDBC Connections.
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - AWS Snowball Edge now allows you to perform an offline update to the software of your Snowball Edge device when your device is not connected to the internet. Previously, updating your Snowball Edge's software required that the device be connected to the internet or be sent back to AWS. Now, you can keep your Snowball Edge software up to date even if your device(s) cannot connect to the internet, or are required to run in an air-gapped environment. To complete offline updates, download the software update from a client machine with connection to the internet using the AWS Command Line Interface (CLI). Then, have the Snowball Edge device download and install the software update using the Snowball Edge device API. For more information about offline updates, visit the Snowball Edge documentation page.
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - Amazon Kinesis Data Firehose now allows delivering data to Elasticsearch clusters set up in a different AWS account than the Firehose AWS account. For technical documentation, look for ElasticsearchDestinationConfiguration in the Amazon Kinesis Firehose API reference.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release of the Amazon Pinpoint API introduces support for using and managing message templates.
+
+## __Amazon Pinpoint Email Service__
+  - ### Features
+    - This release of the Amazon Pinpoint Email API introduces support for using and managing message templates.
+
 # __1.11.646__ __2019-10-04__
 ## __AWS Elemental MediaPackage__
   - ### Features

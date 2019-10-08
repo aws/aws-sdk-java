@@ -54,7 +54,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are
      * created by using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
      * Management Service (AWS KMS).
      * </p>
      */
@@ -62,15 +62,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by
-     * using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API
+     * using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API
      * action in AWS Identity and Access Management (IAM).
      * </p>
      */
     private String roleARN;
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      */
     private String snowballType;
@@ -96,7 +96,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, devices are delivered in one to seven days.
+     * In India, Snowball Edges are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -328,14 +328,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are
      * created by using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
      * Management Service (AWS KMS).
      * </p>
      * 
      * @param kmsKeyARN
      *        The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code>
      *        values are created by using the <a
-     *        href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
      *        AWS Key Management Service (AWS KMS).
      */
 
@@ -347,13 +347,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are
      * created by using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
      * Management Service (AWS KMS).
      * </p>
      * 
      * @return The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code>
      *         values are created by using the <a
-     *         href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *         href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
      *         AWS Key Management Service (AWS KMS).
      */
 
@@ -365,14 +365,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are
      * created by using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
      * Management Service (AWS KMS).
      * </p>
      * 
      * @param kmsKeyARN
      *        The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code>
      *        values are created by using the <a
-     *        href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
      *        AWS Key Management Service (AWS KMS).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -385,15 +385,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by
-     * using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API
+     * using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API
      * action in AWS Identity and Access Management (IAM).
      * </p>
      * 
      * @param roleARN
      *        The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are
      *        created by using the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in
-     *        AWS Identity and Access Management (IAM).
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
+     *        in AWS Identity and Access Management (IAM).
      */
 
     public void setRoleARN(String roleARN) {
@@ -403,13 +403,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by
-     * using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API
+     * using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API
      * action in AWS Identity and Access Management (IAM).
      * </p>
      * 
      * @return The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are
      *         created by using the <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
+     *         href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
      *         in AWS Identity and Access Management (IAM).
      */
 
@@ -420,15 +420,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by
-     * using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API
+     * using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API
      * action in AWS Identity and Access Management (IAM).
      * </p>
      * 
      * @param roleARN
      *        The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are
      *        created by using the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in
-     *        AWS Identity and Access Management (IAM).
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
+     *        in AWS Identity and Access Management (IAM).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,13 +439,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
-     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *        cluster jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -455,12 +455,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
-     * @return The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
-     *         are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * @return The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *         cluster jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -470,13 +470,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
-     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *        cluster jobs is <code>EDGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -488,13 +488,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
-     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *        cluster jobs is <code>EDGE</code>.
      * @see SnowballType
      */
 
@@ -504,13 +504,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
-     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
+     * jobs is <code>EDGE</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
-     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
+     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
+     *        cluster jobs is <code>EDGE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -542,7 +542,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, devices are delivered in one to seven days.
+     * In India, Snowball Edges are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -572,7 +572,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, devices are delivered in one to seven days.
+     *        In India, Snowball Edges are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -609,7 +609,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, devices are delivered in one to seven days.
+     * In India, Snowball Edges are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -638,7 +638,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         In India, devices are delivered in one to seven days.
+     *         In India, Snowball Edges are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -675,7 +675,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, devices are delivered in one to seven days.
+     * In India, Snowball Edges are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -705,7 +705,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, devices are delivered in one to seven days.
+     *        In India, Snowball Edges are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -744,7 +744,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, devices are delivered in one to seven days.
+     * In India, Snowball Edges are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -774,7 +774,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, devices are delivered in one to seven days.
+     *        In India, Snowball Edges are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -811,7 +811,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * In India, devices are delivered in one to seven days.
+     * In India, Snowball Edges are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -841,7 +841,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In India, devices are delivered in one to seven days.
+     *        In India, Snowball Edges are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>

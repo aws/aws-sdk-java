@@ -98,6 +98,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public GetSoftwareUpdatesResult getSoftwareUpdates(GetSoftwareUpdatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListClusterJobsResult listClusterJobs(ListClusterJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

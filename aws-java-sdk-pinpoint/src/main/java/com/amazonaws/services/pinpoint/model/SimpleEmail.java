@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the content of an email message, composed of a subject, a text part, and an HTML part.
+ * Specifies the contents of an email message, composed of a subject, a text part, and an HTML part.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SimpleEmail" target="_top">AWS API

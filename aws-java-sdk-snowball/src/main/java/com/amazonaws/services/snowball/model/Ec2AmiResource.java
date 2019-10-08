@@ -38,7 +38,7 @@ public class Ec2AmiResource implements Serializable, Cloneable, StructuredPojo {
     private String amiId;
     /**
      * <p>
-     * The ID of the AMI on the supported device.
+     * The ID of the AMI on the Snowball Edge device.
      * </p>
      */
     private String snowballAmiId;
@@ -85,11 +85,11 @@ public class Ec2AmiResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AMI on the supported device.
+     * The ID of the AMI on the Snowball Edge device.
      * </p>
      * 
      * @param snowballAmiId
-     *        The ID of the AMI on the supported device.
+     *        The ID of the AMI on the Snowball Edge device.
      */
 
     public void setSnowballAmiId(String snowballAmiId) {
@@ -98,10 +98,10 @@ public class Ec2AmiResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AMI on the supported device.
+     * The ID of the AMI on the Snowball Edge device.
      * </p>
      * 
-     * @return The ID of the AMI on the supported device.
+     * @return The ID of the AMI on the Snowball Edge device.
      */
 
     public String getSnowballAmiId() {
@@ -110,11 +110,11 @@ public class Ec2AmiResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AMI on the supported device.
+     * The ID of the AMI on the Snowball Edge device.
      * </p>
      * 
      * @param snowballAmiId
-     *        The ID of the AMI on the supported device.
+     *        The ID of the AMI on the Snowball Edge device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

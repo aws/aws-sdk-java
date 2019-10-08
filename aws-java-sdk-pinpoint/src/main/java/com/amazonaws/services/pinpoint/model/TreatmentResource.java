@@ -59,6 +59,8 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private CampaignState state;
+
+    private TemplateConfiguration templateConfiguration;
     /**
      * <p>
      * The custom description of the treatment.
@@ -274,6 +276,32 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * @param templateConfiguration
+     */
+
+    public void setTemplateConfiguration(TemplateConfiguration templateConfiguration) {
+        this.templateConfiguration = templateConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public TemplateConfiguration getTemplateConfiguration() {
+        return this.templateConfiguration;
+    }
+
+    /**
+     * @param templateConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TreatmentResource withTemplateConfiguration(TemplateConfiguration templateConfiguration) {
+        setTemplateConfiguration(templateConfiguration);
+        return this;
+    }
+
+    /**
      * <p>
      * The custom description of the treatment.
      * </p>
@@ -381,6 +409,8 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
             sb.append("SizePercent: ").append(getSizePercent()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getTemplateConfiguration() != null)
+            sb.append("TemplateConfiguration: ").append(getTemplateConfiguration()).append(",");
         if (getTreatmentDescription() != null)
             sb.append("TreatmentDescription: ").append(getTreatmentDescription()).append(",");
         if (getTreatmentName() != null)
@@ -419,6 +449,10 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getTemplateConfiguration() == null ^ this.getTemplateConfiguration() == null)
+            return false;
+        if (other.getTemplateConfiguration() != null && other.getTemplateConfiguration().equals(this.getTemplateConfiguration()) == false)
+            return false;
         if (other.getTreatmentDescription() == null ^ this.getTreatmentDescription() == null)
             return false;
         if (other.getTreatmentDescription() != null && other.getTreatmentDescription().equals(this.getTreatmentDescription()) == false)
@@ -440,6 +474,7 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getSizePercent() == null) ? 0 : getSizePercent().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTemplateConfiguration() == null) ? 0 : getTemplateConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTreatmentDescription() == null) ? 0 : getTreatmentDescription().hashCode());
         hashCode = prime * hashCode + ((getTreatmentName() == null) ? 0 : getTreatmentName().hashCode());
         return hashCode;

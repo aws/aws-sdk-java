@@ -50,9 +50,9 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     private String messageType;
     /**
      * <p>
-     * The number that the SMS message originates from. This should be one of the dedicated long codes or short codes
-     * that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long or short
-     * code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * The number to send the SMS message from. This value should be one of the dedicated long or short codes that's
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long
+     * code to the SMS message and sends the message from that code.
      * </p>
      */
     private String originationNumber;
@@ -246,15 +246,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number that the SMS message originates from. This should be one of the dedicated long codes or short codes
-     * that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long or short
-     * code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * The number to send the SMS message from. This value should be one of the dedicated long or short codes that's
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long
+     * code to the SMS message and sends the message from that code.
      * </p>
      * 
      * @param originationNumber
-     *        The number that the SMS message originates from. This should be one of the dedicated long codes or short
-     *        codes that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long
-     *        or short code, Amazon Pinpoint assigns a random long code to the SMS message.
+     *        The number to send the SMS message from. This value should be one of the dedicated long or short codes
+     *        that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a
+     *        random long code to the SMS message and sends the message from that code.
      */
 
     public void setOriginationNumber(String originationNumber) {
@@ -263,14 +263,14 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number that the SMS message originates from. This should be one of the dedicated long codes or short codes
-     * that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long or short
-     * code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * The number to send the SMS message from. This value should be one of the dedicated long or short codes that's
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long
+     * code to the SMS message and sends the message from that code.
      * </p>
      * 
-     * @return The number that the SMS message originates from. This should be one of the dedicated long codes or short
-     *         codes that you requested from AWS Support and is assigned to your AWS account. If you don't specify a
-     *         long or short code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * @return The number to send the SMS message from. This value should be one of the dedicated long or short codes
+     *         that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a
+     *         random long code to the SMS message and sends the message from that code.
      */
 
     public String getOriginationNumber() {
@@ -279,15 +279,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number that the SMS message originates from. This should be one of the dedicated long codes or short codes
-     * that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long or short
-     * code, Amazon Pinpoint assigns a random long code to the SMS message.
+     * The number to send the SMS message from. This value should be one of the dedicated long or short codes that's
+     * assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long
+     * code to the SMS message and sends the message from that code.
      * </p>
      * 
      * @param originationNumber
-     *        The number that the SMS message originates from. This should be one of the dedicated long codes or short
-     *        codes that you requested from AWS Support and is assigned to your AWS account. If you don't specify a long
-     *        or short code, Amazon Pinpoint assigns a random long code to the SMS message.
+     *        The number to send the SMS message from. This value should be one of the dedicated long or short codes
+     *        that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a
+     *        random long code to the SMS message and sends the message from that code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

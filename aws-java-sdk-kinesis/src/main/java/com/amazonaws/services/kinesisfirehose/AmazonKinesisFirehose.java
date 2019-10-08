@@ -160,7 +160,7 @@ public interface AmazonKinesisFirehose {
      * Kinesis Data Firehose assumes the IAM role that is configured as part of the destination. The role should allow
      * the Kinesis Data Firehose principal to assume the role, and the role should have permissions that allow the
      * service to deliver the data. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
      * Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
      * </p>
      * 
@@ -276,7 +276,7 @@ public interface AmazonKinesisFirehose {
      * By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5
      * MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these
      * two operations for each delivery stream. For more information about limits and how to request an increase, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.
      * </p>
      * <p>
      * You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>. The data record
@@ -319,7 +319,7 @@ public interface AmazonKinesisFirehose {
      *         The service is unavailable. Back off and retry the operation. If you continue to see the exception,
      *         throughput limits for the delivery stream may have been exceeded. For more information about limits and
      *         how to request an increase, see <a
-     *         href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose
      *         Limits</a>.
      * @sample AmazonKinesisFirehose.PutRecord
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord" target="_top">AWS API
@@ -337,7 +337,7 @@ public interface AmazonKinesisFirehose {
      * By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5
      * MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these
      * two operations for each delivery stream. For more information about limits, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.
      * </p>
      * <p>
      * Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the request can be as large as
@@ -404,7 +404,7 @@ public interface AmazonKinesisFirehose {
      *         The service is unavailable. Back off and retry the operation. If you continue to see the exception,
      *         throughput limits for the delivery stream may have been exceeded. For more information about limits and
      *         how to request an increase, see <a
-     *         href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose
      *         Limits</a>.
      * @sample AmazonKinesisFirehose.PutRecordBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch" target="_top">AWS API

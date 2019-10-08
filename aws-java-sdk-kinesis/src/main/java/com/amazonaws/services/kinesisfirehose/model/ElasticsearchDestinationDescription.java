@@ -42,8 +42,19 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a>.
      * </p>
+     * <p>
+     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
+     * ES.
+     * </p>
      */
     private String domainARN;
+    /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * </p>
+     */
+    private String clusterEndpoint;
     /**
      * <p>
      * The Elasticsearch index name.
@@ -157,11 +168,18 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a>.
      * </p>
+     * <p>
+     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
+     * ES.
+     * </p>
      * 
      * @param domainARN
      *        The ARN of the Amazon ES domain. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and AWS Service Namespaces</a>.</p>
+     *        <p>
+     *        Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
+     *        Amazon ES.
      */
 
     public void setDomainARN(String domainARN) {
@@ -174,10 +192,17 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a>.
      * </p>
+     * <p>
+     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
+     * ES.
+     * </p>
      * 
      * @return The ARN of the Amazon ES domain. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs) and AWS Service Namespaces</a>.</p>
+     *         <p>
+     *         Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
+     *         Amazon ES.
      */
 
     public String getDomainARN() {
@@ -190,16 +215,69 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a>.
      * </p>
+     * <p>
+     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
+     * ES.
+     * </p>
      * 
      * @param domainARN
      *        The ARN of the Amazon ES domain. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and AWS Service Namespaces</a>.</p>
+     *        <p>
+     *        Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
+     *        Amazon ES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ElasticsearchDestinationDescription withDomainARN(String domainARN) {
         setDomainARN(domainARN);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * </p>
+     * 
+     * @param clusterEndpoint
+     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *        <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     */
+
+    public void setClusterEndpoint(String clusterEndpoint) {
+        this.clusterEndpoint = clusterEndpoint;
+    }
+
+    /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * </p>
+     * 
+     * @return The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *         <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     */
+
+    public String getClusterEndpoint() {
+        return this.clusterEndpoint;
+    }
+
+    /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * </p>
+     * 
+     * @param clusterEndpoint
+     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *        <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationDescription withClusterEndpoint(String clusterEndpoint) {
+        setClusterEndpoint(clusterEndpoint);
         return this;
     }
 
@@ -645,6 +723,8 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
             sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getDomainARN() != null)
             sb.append("DomainARN: ").append(getDomainARN()).append(",");
+        if (getClusterEndpoint() != null)
+            sb.append("ClusterEndpoint: ").append(getClusterEndpoint()).append(",");
         if (getIndexName() != null)
             sb.append("IndexName: ").append(getIndexName()).append(",");
         if (getTypeName() != null)
@@ -684,6 +764,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
         if (other.getDomainARN() == null ^ this.getDomainARN() == null)
             return false;
         if (other.getDomainARN() != null && other.getDomainARN().equals(this.getDomainARN()) == false)
+            return false;
+        if (other.getClusterEndpoint() == null ^ this.getClusterEndpoint() == null)
+            return false;
+        if (other.getClusterEndpoint() != null && other.getClusterEndpoint().equals(this.getClusterEndpoint()) == false)
             return false;
         if (other.getIndexName() == null ^ this.getIndexName() == null)
             return false;
@@ -731,6 +815,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getDomainARN() == null) ? 0 : getDomainARN().hashCode());
+        hashCode = prime * hashCode + ((getClusterEndpoint() == null) ? 0 : getClusterEndpoint().hashCode());
         hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
         hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
         hashCode = prime * hashCode + ((getIndexRotationPeriod() == null) ? 0 : getIndexRotationPeriod().hashCode());
