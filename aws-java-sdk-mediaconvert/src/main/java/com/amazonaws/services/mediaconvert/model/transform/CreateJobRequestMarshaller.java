@@ -52,6 +52,8 @@ public class CreateJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("simulateReservedQueue").build();
     private static final MarshallingInfo<String> STATUSUPDATEINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusUpdateInterval").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<Map> USERMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("userMetadata").build();
 
@@ -81,6 +83,7 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getSettings(), SETTINGS_BINDING);
             protocolMarshaller.marshall(createJobRequest.getSimulateReservedQueue(), SIMULATERESERVEDQUEUE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getStatusUpdateInterval(), STATUSUPDATEINTERVAL_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createJobRequest.getUserMetadata(), USERMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

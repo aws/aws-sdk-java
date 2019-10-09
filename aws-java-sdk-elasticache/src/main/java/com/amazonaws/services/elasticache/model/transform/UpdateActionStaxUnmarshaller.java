@@ -50,6 +50,11 @@ public class UpdateActionStaxUnmarshaller implements Unmarshaller<UpdateAction, 
                     continue;
                 }
 
+                if (context.testExpression("CacheClusterId", targetDepth)) {
+                    updateAction.setCacheClusterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ServiceUpdateName", targetDepth)) {
                     updateAction.setServiceUpdateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -115,8 +120,23 @@ public class UpdateActionStaxUnmarshaller implements Unmarshaller<UpdateAction, 
                     continue;
                 }
 
+                if (context.testExpression("CacheNodeUpdateStatus", targetDepth)) {
+                    updateAction.withCacheNodeUpdateStatus(new ArrayList<CacheNodeUpdateStatus>());
+                    continue;
+                }
+
+                if (context.testExpression("CacheNodeUpdateStatus/CacheNodeUpdateStatus", targetDepth)) {
+                    updateAction.withCacheNodeUpdateStatus(CacheNodeUpdateStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("EstimatedUpdateTime", targetDepth)) {
                     updateAction.setEstimatedUpdateTime(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Engine", targetDepth)) {
+                    updateAction.setEngine(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

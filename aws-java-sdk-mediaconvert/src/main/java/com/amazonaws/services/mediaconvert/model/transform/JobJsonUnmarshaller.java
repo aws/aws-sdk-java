@@ -52,6 +52,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setAccelerationSettings(AccelerationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("accelerationStatus", targetDepth)) {
+                    context.nextToken();
+                    job.setAccelerationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     job.setArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +91,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 if (context.testExpression("jobTemplate", targetDepth)) {
                     context.nextToken();
                     job.setJobTemplate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("messages", targetDepth)) {
+                    context.nextToken();
+                    job.setMessages(JobMessagesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("outputGroupDetails", targetDepth)) {
                     context.nextToken();

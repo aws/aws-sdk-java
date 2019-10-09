@@ -54,6 +54,20 @@ public class BatchApplyUpdateActionRequestMarshaller implements Marshaller<Reque
             }
         }
 
+        if (!batchApplyUpdateActionRequest.getCacheClusterIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) batchApplyUpdateActionRequest.getCacheClusterIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheClusterIdsList = (com.amazonaws.internal.SdkInternalList<String>) batchApplyUpdateActionRequest
+                    .getCacheClusterIds();
+            int cacheClusterIdsListIndex = 1;
+
+            for (String cacheClusterIdsListValue : cacheClusterIdsList) {
+                if (cacheClusterIdsListValue != null) {
+                    request.addParameter("CacheClusterIds.member." + cacheClusterIdsListIndex, StringUtils.fromString(cacheClusterIdsListValue));
+                }
+                cacheClusterIdsListIndex++;
+            }
+        }
+
         if (batchApplyUpdateActionRequest.getServiceUpdateName() != null) {
             request.addParameter("ServiceUpdateName", StringUtils.fromString(batchApplyUpdateActionRequest.getServiceUpdateName()));
         }

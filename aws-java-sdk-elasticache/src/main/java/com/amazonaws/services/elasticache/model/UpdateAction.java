@@ -34,6 +34,12 @@ public class UpdateAction implements Serializable, Cloneable {
     private String replicationGroupId;
     /**
      * <p>
+     * The ID of the cache cluster
+     * </p>
+     */
+    private String cacheClusterId;
+    /**
+     * <p>
      * The unique ID of the service update
      * </p>
      */
@@ -111,10 +117,22 @@ public class UpdateAction implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<NodeGroupUpdateStatus> nodeGroupUpdateStatus;
     /**
      * <p>
+     * The status of the service update on the cache node
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CacheNodeUpdateStatus> cacheNodeUpdateStatus;
+    /**
+     * <p>
      * The estimated length of time for the update to complete
      * </p>
      */
     private String estimatedUpdateTime;
+    /**
+     * <p>
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    private String engine;
 
     /**
      * <p>
@@ -153,6 +171,46 @@ public class UpdateAction implements Serializable, Cloneable {
 
     public UpdateAction withReplicationGroupId(String replicationGroupId) {
         setReplicationGroupId(replicationGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the cache cluster
+     * </p>
+     * 
+     * @param cacheClusterId
+     *        The ID of the cache cluster
+     */
+
+    public void setCacheClusterId(String cacheClusterId) {
+        this.cacheClusterId = cacheClusterId;
+    }
+
+    /**
+     * <p>
+     * The ID of the cache cluster
+     * </p>
+     * 
+     * @return The ID of the cache cluster
+     */
+
+    public String getCacheClusterId() {
+        return this.cacheClusterId;
+    }
+
+    /**
+     * <p>
+     * The ID of the cache cluster
+     * </p>
+     * 
+     * @param cacheClusterId
+     *        The ID of the cache cluster
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAction withCacheClusterId(String cacheClusterId) {
+        setCacheClusterId(cacheClusterId);
         return this;
     }
 
@@ -800,6 +858,79 @@ public class UpdateAction implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The status of the service update on the cache node
+     * </p>
+     * 
+     * @return The status of the service update on the cache node
+     */
+
+    public java.util.List<CacheNodeUpdateStatus> getCacheNodeUpdateStatus() {
+        if (cacheNodeUpdateStatus == null) {
+            cacheNodeUpdateStatus = new com.amazonaws.internal.SdkInternalList<CacheNodeUpdateStatus>();
+        }
+        return cacheNodeUpdateStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the service update on the cache node
+     * </p>
+     * 
+     * @param cacheNodeUpdateStatus
+     *        The status of the service update on the cache node
+     */
+
+    public void setCacheNodeUpdateStatus(java.util.Collection<CacheNodeUpdateStatus> cacheNodeUpdateStatus) {
+        if (cacheNodeUpdateStatus == null) {
+            this.cacheNodeUpdateStatus = null;
+            return;
+        }
+
+        this.cacheNodeUpdateStatus = new com.amazonaws.internal.SdkInternalList<CacheNodeUpdateStatus>(cacheNodeUpdateStatus);
+    }
+
+    /**
+     * <p>
+     * The status of the service update on the cache node
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCacheNodeUpdateStatus(java.util.Collection)} or
+     * {@link #withCacheNodeUpdateStatus(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param cacheNodeUpdateStatus
+     *        The status of the service update on the cache node
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAction withCacheNodeUpdateStatus(CacheNodeUpdateStatus... cacheNodeUpdateStatus) {
+        if (this.cacheNodeUpdateStatus == null) {
+            setCacheNodeUpdateStatus(new com.amazonaws.internal.SdkInternalList<CacheNodeUpdateStatus>(cacheNodeUpdateStatus.length));
+        }
+        for (CacheNodeUpdateStatus ele : cacheNodeUpdateStatus) {
+            this.cacheNodeUpdateStatus.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the service update on the cache node
+     * </p>
+     * 
+     * @param cacheNodeUpdateStatus
+     *        The status of the service update on the cache node
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAction withCacheNodeUpdateStatus(java.util.Collection<CacheNodeUpdateStatus> cacheNodeUpdateStatus) {
+        setCacheNodeUpdateStatus(cacheNodeUpdateStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * The estimated length of time for the update to complete
      * </p>
      * 
@@ -839,6 +970,46 @@ public class UpdateAction implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     * 
+     * @param engine
+     *        The Elasticache engine to which the update applies. Either Redis or Memcached
+     */
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    /**
+     * <p>
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     * 
+     * @return The Elasticache engine to which the update applies. Either Redis or Memcached
+     */
+
+    public String getEngine() {
+        return this.engine;
+    }
+
+    /**
+     * <p>
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     * 
+     * @param engine
+     *        The Elasticache engine to which the update applies. Either Redis or Memcached
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAction withEngine(String engine) {
+        setEngine(engine);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -852,6 +1023,8 @@ public class UpdateAction implements Serializable, Cloneable {
         sb.append("{");
         if (getReplicationGroupId() != null)
             sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
+        if (getCacheClusterId() != null)
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getServiceUpdateName() != null)
             sb.append("ServiceUpdateName: ").append(getServiceUpdateName()).append(",");
         if (getServiceUpdateReleaseDate() != null)
@@ -876,8 +1049,12 @@ public class UpdateAction implements Serializable, Cloneable {
             sb.append("SlaMet: ").append(getSlaMet()).append(",");
         if (getNodeGroupUpdateStatus() != null)
             sb.append("NodeGroupUpdateStatus: ").append(getNodeGroupUpdateStatus()).append(",");
+        if (getCacheNodeUpdateStatus() != null)
+            sb.append("CacheNodeUpdateStatus: ").append(getCacheNodeUpdateStatus()).append(",");
         if (getEstimatedUpdateTime() != null)
-            sb.append("EstimatedUpdateTime: ").append(getEstimatedUpdateTime());
+            sb.append("EstimatedUpdateTime: ").append(getEstimatedUpdateTime()).append(",");
+        if (getEngine() != null)
+            sb.append("Engine: ").append(getEngine());
         sb.append("}");
         return sb.toString();
     }
@@ -895,6 +1072,10 @@ public class UpdateAction implements Serializable, Cloneable {
         if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null)
             return false;
         if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false)
+            return false;
+        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null)
+            return false;
+        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
             return false;
         if (other.getServiceUpdateName() == null ^ this.getServiceUpdateName() == null)
             return false;
@@ -946,9 +1127,17 @@ public class UpdateAction implements Serializable, Cloneable {
             return false;
         if (other.getNodeGroupUpdateStatus() != null && other.getNodeGroupUpdateStatus().equals(this.getNodeGroupUpdateStatus()) == false)
             return false;
+        if (other.getCacheNodeUpdateStatus() == null ^ this.getCacheNodeUpdateStatus() == null)
+            return false;
+        if (other.getCacheNodeUpdateStatus() != null && other.getCacheNodeUpdateStatus().equals(this.getCacheNodeUpdateStatus()) == false)
+            return false;
         if (other.getEstimatedUpdateTime() == null ^ this.getEstimatedUpdateTime() == null)
             return false;
         if (other.getEstimatedUpdateTime() != null && other.getEstimatedUpdateTime().equals(this.getEstimatedUpdateTime()) == false)
+            return false;
+        if (other.getEngine() == null ^ this.getEngine() == null)
+            return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
             return false;
         return true;
     }
@@ -959,6 +1148,7 @@ public class UpdateAction implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode());
         hashCode = prime * hashCode + ((getServiceUpdateName() == null) ? 0 : getServiceUpdateName().hashCode());
         hashCode = prime * hashCode + ((getServiceUpdateReleaseDate() == null) ? 0 : getServiceUpdateReleaseDate().hashCode());
         hashCode = prime * hashCode + ((getServiceUpdateSeverity() == null) ? 0 : getServiceUpdateSeverity().hashCode());
@@ -971,7 +1161,9 @@ public class UpdateAction implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getUpdateActionStatusModifiedDate() == null) ? 0 : getUpdateActionStatusModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getSlaMet() == null) ? 0 : getSlaMet().hashCode());
         hashCode = prime * hashCode + ((getNodeGroupUpdateStatus() == null) ? 0 : getNodeGroupUpdateStatus().hashCode());
+        hashCode = prime * hashCode + ((getCacheNodeUpdateStatus() == null) ? 0 : getCacheNodeUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getEstimatedUpdateTime() == null) ? 0 : getEstimatedUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         return hashCode;
     }
 

@@ -54,6 +54,20 @@ public class BatchStopUpdateActionRequestMarshaller implements Marshaller<Reques
             }
         }
 
+        if (!batchStopUpdateActionRequest.getCacheClusterIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) batchStopUpdateActionRequest.getCacheClusterIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheClusterIdsList = (com.amazonaws.internal.SdkInternalList<String>) batchStopUpdateActionRequest
+                    .getCacheClusterIds();
+            int cacheClusterIdsListIndex = 1;
+
+            for (String cacheClusterIdsListValue : cacheClusterIdsList) {
+                if (cacheClusterIdsListValue != null) {
+                    request.addParameter("CacheClusterIds.member." + cacheClusterIdsListIndex, StringUtils.fromString(cacheClusterIdsListValue));
+                }
+                cacheClusterIdsListIndex++;
+            }
+        }
+
         if (batchStopUpdateActionRequest.getServiceUpdateName() != null) {
             request.addParameter("ServiceUpdateName", StringUtils.fromString(batchStopUpdateActionRequest.getServiceUpdateName()));
         }

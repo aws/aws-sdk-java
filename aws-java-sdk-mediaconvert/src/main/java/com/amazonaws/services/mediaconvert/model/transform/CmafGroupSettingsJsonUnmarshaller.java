@@ -92,6 +92,10 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
                     context.nextToken();
                     cmafGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("mpdProfile", targetDepth)) {
+                    context.nextToken();
+                    cmafGroupSettings.setMpdProfile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("segmentControl", targetDepth)) {
                     context.nextToken();
                     cmafGroupSettings.setSegmentControl(context.getUnmarshaller(String.class).unmarshall(context));

@@ -15,13 +15,17 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Enable Acceleration (AccelerationMode) on any job that you want processed with accelerated transcoding.
+ * Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated
+ * transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files
+ * or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run
+ * with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AccelerationMode {
 
     DISABLED("DISABLED"),
-    ENABLED("ENABLED");
+    ENABLED("ENABLED"),
+    PREFERRED("PREFERRED");
 
     private String value;
 

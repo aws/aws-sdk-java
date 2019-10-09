@@ -29,6 +29,17 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
     private AccelerationSettings accelerationSettings;
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration
+     * (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus
+     * is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible
+     * with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings
+     * aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated
+     * transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without
+     * accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     */
+    private String accelerationStatus;
     /** An identifier for this resource that is unique within all of AWS. */
     private String arn;
     /**
@@ -59,6 +70,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private Integer jobPercentComplete;
     /** The job template that the job is created from, if it is created from a job template. */
     private String jobTemplate;
+    /** Provides messages from the service about jobs that you have already successfully submitted. */
+    private JobMessages messages;
     /** List of output group details */
     private java.util.List<OutputGroupDetail> outputGroupDetails;
     /** Relative priority on the job. */
@@ -131,6 +144,117 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withAccelerationSettings(AccelerationSettings accelerationSettings) {
         setAccelerationSettings(accelerationSettings);
+        return this;
+    }
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration
+     * (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus
+     * is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible
+     * with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings
+     * aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated
+     * transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without
+     * accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     * 
+     * @param accelerationStatus
+     *        Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration
+     *        (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have
+     *        Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other
+     *        states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files
+     *        and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is
+     *        ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the
+     *        service either fails your job or runs it without accelerated transcoding, depending on how you set
+     *        Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding,
+     *        AccelerationStatus is NOT_ACCELERATED.
+     * @see AccelerationStatus
+     */
+
+    public void setAccelerationStatus(String accelerationStatus) {
+        this.accelerationStatus = accelerationStatus;
+    }
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration
+     * (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus
+     * is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible
+     * with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings
+     * aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated
+     * transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without
+     * accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     * 
+     * @return Describes whether the current job is running with accelerated transcoding. For jobs that have
+     *         Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs
+     *         that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the
+     *         other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input
+     *         files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is
+     *         ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the
+     *         service either fails your job or runs it without accelerated transcoding, depending on how you set
+     *         Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding,
+     *         AccelerationStatus is NOT_ACCELERATED.
+     * @see AccelerationStatus
+     */
+
+    public String getAccelerationStatus() {
+        return this.accelerationStatus;
+    }
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration
+     * (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus
+     * is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible
+     * with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings
+     * aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated
+     * transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without
+     * accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     * 
+     * @param accelerationStatus
+     *        Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration
+     *        (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have
+     *        Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other
+     *        states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files
+     *        and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is
+     *        ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the
+     *        service either fails your job or runs it without accelerated transcoding, depending on how you set
+     *        Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding,
+     *        AccelerationStatus is NOT_ACCELERATED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccelerationStatus
+     */
+
+    public Job withAccelerationStatus(String accelerationStatus) {
+        setAccelerationStatus(accelerationStatus);
+        return this;
+    }
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration
+     * (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus
+     * is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible
+     * with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings
+     * aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated
+     * transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without
+     * accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     * 
+     * @param accelerationStatus
+     *        Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration
+     *        (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have
+     *        Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other
+     *        states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files
+     *        and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is
+     *        ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the
+     *        service either fails your job or runs it without accelerated transcoding, depending on how you set
+     *        Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding,
+     *        AccelerationStatus is NOT_ACCELERATED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccelerationStatus
+     */
+
+    public Job withAccelerationStatus(AccelerationStatus accelerationStatus) {
+        this.accelerationStatus = accelerationStatus.toString();
         return this;
     }
 
@@ -525,6 +649,40 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withJobTemplate(String jobTemplate) {
         setJobTemplate(jobTemplate);
+        return this;
+    }
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully submitted.
+     * 
+     * @param messages
+     *        Provides messages from the service about jobs that you have already successfully submitted.
+     */
+
+    public void setMessages(JobMessages messages) {
+        this.messages = messages;
+    }
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully submitted.
+     * 
+     * @return Provides messages from the service about jobs that you have already successfully submitted.
+     */
+
+    public JobMessages getMessages() {
+        return this.messages;
+    }
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully submitted.
+     * 
+     * @param messages
+     *        Provides messages from the service about jobs that you have already successfully submitted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withMessages(JobMessages messages) {
+        setMessages(messages);
         return this;
     }
 
@@ -1078,6 +1236,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAccelerationSettings() != null)
             sb.append("AccelerationSettings: ").append(getAccelerationSettings()).append(",");
+        if (getAccelerationStatus() != null)
+            sb.append("AccelerationStatus: ").append(getAccelerationStatus()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getBillingTagsSource() != null)
@@ -1096,6 +1256,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("JobPercentComplete: ").append(getJobPercentComplete()).append(",");
         if (getJobTemplate() != null)
             sb.append("JobTemplate: ").append(getJobTemplate()).append(",");
+        if (getMessages() != null)
+            sb.append("Messages: ").append(getMessages()).append(",");
         if (getOutputGroupDetails() != null)
             sb.append("OutputGroupDetails: ").append(getOutputGroupDetails()).append(",");
         if (getPriority() != null)
@@ -1136,6 +1298,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccelerationSettings() != null && other.getAccelerationSettings().equals(this.getAccelerationSettings()) == false)
             return false;
+        if (other.getAccelerationStatus() == null ^ this.getAccelerationStatus() == null)
+            return false;
+        if (other.getAccelerationStatus() != null && other.getAccelerationStatus().equals(this.getAccelerationStatus()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -1171,6 +1337,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (other.getJobTemplate() == null ^ this.getJobTemplate() == null)
             return false;
         if (other.getJobTemplate() != null && other.getJobTemplate().equals(this.getJobTemplate()) == false)
+            return false;
+        if (other.getMessages() == null ^ this.getMessages() == null)
+            return false;
+        if (other.getMessages() != null && other.getMessages().equals(this.getMessages()) == false)
             return false;
         if (other.getOutputGroupDetails() == null ^ this.getOutputGroupDetails() == null)
             return false;
@@ -1225,6 +1395,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccelerationSettings() == null) ? 0 : getAccelerationSettings().hashCode());
+        hashCode = prime * hashCode + ((getAccelerationStatus() == null) ? 0 : getAccelerationStatus().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getBillingTagsSource() == null) ? 0 : getBillingTagsSource().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
@@ -1234,6 +1405,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getJobPercentComplete() == null) ? 0 : getJobPercentComplete().hashCode());
         hashCode = prime * hashCode + ((getJobTemplate() == null) ? 0 : getJobTemplate().hashCode());
+        hashCode = prime * hashCode + ((getMessages() == null) ? 0 : getMessages().hashCode());
         hashCode = prime * hashCode + ((getOutputGroupDetails() == null) ? 0 : getOutputGroupDetails().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());

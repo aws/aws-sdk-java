@@ -34,6 +34,12 @@ public class UnprocessedUpdateAction implements Serializable, Cloneable {
     private String replicationGroupId;
     /**
      * <p>
+     * The ID of the cache cluster
+     * </p>
+     */
+    private String cacheClusterId;
+    /**
+     * <p>
      * The unique ID of the service update
      * </p>
      */
@@ -88,6 +94,46 @@ public class UnprocessedUpdateAction implements Serializable, Cloneable {
 
     public UnprocessedUpdateAction withReplicationGroupId(String replicationGroupId) {
         setReplicationGroupId(replicationGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the cache cluster
+     * </p>
+     * 
+     * @param cacheClusterId
+     *        The ID of the cache cluster
+     */
+
+    public void setCacheClusterId(String cacheClusterId) {
+        this.cacheClusterId = cacheClusterId;
+    }
+
+    /**
+     * <p>
+     * The ID of the cache cluster
+     * </p>
+     * 
+     * @return The ID of the cache cluster
+     */
+
+    public String getCacheClusterId() {
+        return this.cacheClusterId;
+    }
+
+    /**
+     * <p>
+     * The ID of the cache cluster
+     * </p>
+     * 
+     * @param cacheClusterId
+     *        The ID of the cache cluster
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UnprocessedUpdateAction withCacheClusterId(String cacheClusterId) {
+        setCacheClusterId(cacheClusterId);
         return this;
     }
 
@@ -225,6 +271,8 @@ public class UnprocessedUpdateAction implements Serializable, Cloneable {
         sb.append("{");
         if (getReplicationGroupId() != null)
             sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
+        if (getCacheClusterId() != null)
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getServiceUpdateName() != null)
             sb.append("ServiceUpdateName: ").append(getServiceUpdateName()).append(",");
         if (getErrorType() != null)
@@ -249,6 +297,10 @@ public class UnprocessedUpdateAction implements Serializable, Cloneable {
             return false;
         if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false)
             return false;
+        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null)
+            return false;
+        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
+            return false;
         if (other.getServiceUpdateName() == null ^ this.getServiceUpdateName() == null)
             return false;
         if (other.getServiceUpdateName() != null && other.getServiceUpdateName().equals(this.getServiceUpdateName()) == false)
@@ -270,6 +322,7 @@ public class UnprocessedUpdateAction implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode());
         hashCode = prime * hashCode + ((getServiceUpdateName() == null) ? 0 : getServiceUpdateName().hashCode());
         hashCode = prime * hashCode + ((getErrorType() == null) ? 0 : getErrorType().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());

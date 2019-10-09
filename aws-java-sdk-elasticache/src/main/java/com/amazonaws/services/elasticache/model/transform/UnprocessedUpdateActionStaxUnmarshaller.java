@@ -48,6 +48,11 @@ public class UnprocessedUpdateActionStaxUnmarshaller implements Unmarshaller<Unp
                     continue;
                 }
 
+                if (context.testExpression("CacheClusterId", targetDepth)) {
+                    unprocessedUpdateAction.setCacheClusterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ServiceUpdateName", targetDepth)) {
                     unprocessedUpdateAction.setServiceUpdateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

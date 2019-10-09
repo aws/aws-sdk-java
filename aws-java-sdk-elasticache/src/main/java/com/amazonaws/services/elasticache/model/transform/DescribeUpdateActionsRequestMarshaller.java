@@ -58,6 +58,24 @@ public class DescribeUpdateActionsRequestMarshaller implements Marshaller<Reques
             }
         }
 
+        if (!describeUpdateActionsRequest.getCacheClusterIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeUpdateActionsRequest.getCacheClusterIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheClusterIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeUpdateActionsRequest
+                    .getCacheClusterIds();
+            int cacheClusterIdsListIndex = 1;
+
+            for (String cacheClusterIdsListValue : cacheClusterIdsList) {
+                if (cacheClusterIdsListValue != null) {
+                    request.addParameter("CacheClusterIds.member." + cacheClusterIdsListIndex, StringUtils.fromString(cacheClusterIdsListValue));
+                }
+                cacheClusterIdsListIndex++;
+            }
+        }
+
+        if (describeUpdateActionsRequest.getEngine() != null) {
+            request.addParameter("Engine", StringUtils.fromString(describeUpdateActionsRequest.getEngine()));
+        }
+
         if (!describeUpdateActionsRequest.getServiceUpdateStatus().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<String>) describeUpdateActionsRequest.getServiceUpdateStatus()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<String> serviceUpdateStatusList = (com.amazonaws.internal.SdkInternalList<String>) describeUpdateActionsRequest

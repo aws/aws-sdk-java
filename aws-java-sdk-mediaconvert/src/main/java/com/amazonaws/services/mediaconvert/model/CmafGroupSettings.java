@@ -74,6 +74,14 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
      */
     private Double minFinalSegmentLength;
     /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
+     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
+     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
+     * (SINGLE_FILE).
+     */
+    private String mpdProfile;
+    /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
      * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      */
@@ -626,6 +634,89 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
+     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
+     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
+     * (SINGLE_FILE).
+     * 
+     * @param mpdProfile
+     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the
+     *        service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose
+     *        On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your
+     *        .mpd. When you choose On-demand, you must also set the output group setting Segment control
+     *        (SegmentControl) to Single file (SINGLE_FILE).
+     * @see CmafMpdProfile
+     */
+
+    public void setMpdProfile(String mpdProfile) {
+        this.mpdProfile = mpdProfile;
+    }
+
+    /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
+     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
+     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
+     * (SINGLE_FILE).
+     * 
+     * @return Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the
+     *         service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose
+     *         On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your
+     *         .mpd. When you choose On-demand, you must also set the output group setting Segment control
+     *         (SegmentControl) to Single file (SINGLE_FILE).
+     * @see CmafMpdProfile
+     */
+
+    public String getMpdProfile() {
+        return this.mpdProfile;
+    }
+
+    /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
+     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
+     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
+     * (SINGLE_FILE).
+     * 
+     * @param mpdProfile
+     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the
+     *        service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose
+     *        On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your
+     *        .mpd. When you choose On-demand, you must also set the output group setting Segment control
+     *        (SegmentControl) to Single file (SINGLE_FILE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafMpdProfile
+     */
+
+    public CmafGroupSettings withMpdProfile(String mpdProfile) {
+        setMpdProfile(mpdProfile);
+        return this;
+    }
+
+    /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
+     * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
+     * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file
+     * (SINGLE_FILE).
+     * 
+     * @param mpdProfile
+     *        Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the
+     *        service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose
+     *        On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your
+     *        .mpd. When you choose On-demand, you must also set the output group setting Segment control
+     *        (SegmentControl) to Single file (SINGLE_FILE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafMpdProfile
+     */
+
+    public CmafGroupSettings withMpdProfile(CmafMpdProfile mpdProfile) {
+        this.mpdProfile = mpdProfile.toString();
+        return this;
+    }
+
+    /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
      * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * 
@@ -935,6 +1026,8 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             sb.append("MinBufferTime: ").append(getMinBufferTime()).append(",");
         if (getMinFinalSegmentLength() != null)
             sb.append("MinFinalSegmentLength: ").append(getMinFinalSegmentLength()).append(",");
+        if (getMpdProfile() != null)
+            sb.append("MpdProfile: ").append(getMpdProfile()).append(",");
         if (getSegmentControl() != null)
             sb.append("SegmentControl: ").append(getSegmentControl()).append(",");
         if (getSegmentLength() != null)
@@ -1003,6 +1096,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMinFinalSegmentLength() != null && other.getMinFinalSegmentLength().equals(this.getMinFinalSegmentLength()) == false)
             return false;
+        if (other.getMpdProfile() == null ^ this.getMpdProfile() == null)
+            return false;
+        if (other.getMpdProfile() != null && other.getMpdProfile().equals(this.getMpdProfile()) == false)
+            return false;
         if (other.getSegmentControl() == null ^ this.getSegmentControl() == null)
             return false;
         if (other.getSegmentControl() != null && other.getSegmentControl().equals(this.getSegmentControl()) == false)
@@ -1042,6 +1139,7 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getManifestDurationFormat() == null) ? 0 : getManifestDurationFormat().hashCode());
         hashCode = prime * hashCode + ((getMinBufferTime() == null) ? 0 : getMinBufferTime().hashCode());
         hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());
+        hashCode = prime * hashCode + ((getMpdProfile() == null) ? 0 : getMpdProfile().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getStreamInfResolution() == null) ? 0 : getStreamInfResolution().hashCode());

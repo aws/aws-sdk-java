@@ -33,6 +33,12 @@ public class BatchStopUpdateActionRequest extends com.amazonaws.AmazonWebService
     private com.amazonaws.internal.SdkInternalList<String> replicationGroupIds;
     /**
      * <p>
+     * The cache cluster IDs
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> cacheClusterIds;
+    /**
+     * <p>
      * The unique ID of the service update
      * </p>
      */
@@ -113,6 +119,79 @@ public class BatchStopUpdateActionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The cache cluster IDs
+     * </p>
+     * 
+     * @return The cache cluster IDs
+     */
+
+    public java.util.List<String> getCacheClusterIds() {
+        if (cacheClusterIds == null) {
+            cacheClusterIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return cacheClusterIds;
+    }
+
+    /**
+     * <p>
+     * The cache cluster IDs
+     * </p>
+     * 
+     * @param cacheClusterIds
+     *        The cache cluster IDs
+     */
+
+    public void setCacheClusterIds(java.util.Collection<String> cacheClusterIds) {
+        if (cacheClusterIds == null) {
+            this.cacheClusterIds = null;
+            return;
+        }
+
+        this.cacheClusterIds = new com.amazonaws.internal.SdkInternalList<String>(cacheClusterIds);
+    }
+
+    /**
+     * <p>
+     * The cache cluster IDs
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCacheClusterIds(java.util.Collection)} or {@link #withCacheClusterIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param cacheClusterIds
+     *        The cache cluster IDs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchStopUpdateActionRequest withCacheClusterIds(String... cacheClusterIds) {
+        if (this.cacheClusterIds == null) {
+            setCacheClusterIds(new com.amazonaws.internal.SdkInternalList<String>(cacheClusterIds.length));
+        }
+        for (String ele : cacheClusterIds) {
+            this.cacheClusterIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cache cluster IDs
+     * </p>
+     * 
+     * @param cacheClusterIds
+     *        The cache cluster IDs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchStopUpdateActionRequest withCacheClusterIds(java.util.Collection<String> cacheClusterIds) {
+        setCacheClusterIds(cacheClusterIds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique ID of the service update
      * </p>
      * 
@@ -165,6 +244,8 @@ public class BatchStopUpdateActionRequest extends com.amazonaws.AmazonWebService
         sb.append("{");
         if (getReplicationGroupIds() != null)
             sb.append("ReplicationGroupIds: ").append(getReplicationGroupIds()).append(",");
+        if (getCacheClusterIds() != null)
+            sb.append("CacheClusterIds: ").append(getCacheClusterIds()).append(",");
         if (getServiceUpdateName() != null)
             sb.append("ServiceUpdateName: ").append(getServiceUpdateName());
         sb.append("}");
@@ -185,6 +266,10 @@ public class BatchStopUpdateActionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getReplicationGroupIds() != null && other.getReplicationGroupIds().equals(this.getReplicationGroupIds()) == false)
             return false;
+        if (other.getCacheClusterIds() == null ^ this.getCacheClusterIds() == null)
+            return false;
+        if (other.getCacheClusterIds() != null && other.getCacheClusterIds().equals(this.getCacheClusterIds()) == false)
+            return false;
         if (other.getServiceUpdateName() == null ^ this.getServiceUpdateName() == null)
             return false;
         if (other.getServiceUpdateName() != null && other.getServiceUpdateName().equals(this.getServiceUpdateName()) == false)
@@ -198,6 +283,7 @@ public class BatchStopUpdateActionRequest extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getReplicationGroupIds() == null) ? 0 : getReplicationGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterIds() == null) ? 0 : getCacheClusterIds().hashCode());
         hashCode = prime * hashCode + ((getServiceUpdateName() == null) ? 0 : getServiceUpdateName().hashCode());
         return hashCode;
     }

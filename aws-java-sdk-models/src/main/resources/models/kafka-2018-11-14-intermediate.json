@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -1197,7 +1197,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones. By default, broker nodes are distributed among three Availability Zones. Currently, the only supported value is DEFAULT. You can either specify this value explicitly or leave it out.</p>\n         ",
+      "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         ",
       "enums" : [ {
         "name" : "DEFAULT",
         "value" : "DEFAULT"
@@ -1566,11 +1566,11 @@
         "c2jName" : "BrokerAZDistribution",
         "c2jShape" : "BrokerAZDistribution",
         "deprecated" : false,
-        "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         ",
+        "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         ",
         "enumType" : "BrokerAZDistribution",
-        "fluentSetterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BrokerAZDistribution*/",
+        "fluentSetterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BrokerAZDistribution*/",
         "fluentSetterMethodName" : "withBrokerAZDistribution",
-        "getterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         \n@return <p>The distribution of broker nodes across Availability Zones.</p>\n@see BrokerAZDistribution*/",
+        "getterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         \n@return <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n@see BrokerAZDistribution*/",
         "getterMethodName" : "getBrokerAZDistribution",
         "getterModel" : {
           "returnType" : "String",
@@ -1604,7 +1604,7 @@
         "marshallingType" : "STRING",
         "name" : "BrokerAZDistribution",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones.</p>\n@see BrokerAZDistribution*/",
+        "setterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n@see BrokerAZDistribution*/",
         "setterMethodName" : "setBrokerAZDistribution",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1618,13 +1618,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BrokerAZDistribution*/",
+        "varargSetterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BrokerAZDistribution*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "brokerAZDistribution",
           "variableType" : "String",
-          "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         ",
+          "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         ",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2067,11 +2067,11 @@
           "c2jName" : "BrokerAZDistribution",
           "c2jShape" : "BrokerAZDistribution",
           "deprecated" : false,
-          "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         ",
+          "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         ",
           "enumType" : "BrokerAZDistribution",
-          "fluentSetterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BrokerAZDistribution*/",
+          "fluentSetterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BrokerAZDistribution*/",
           "fluentSetterMethodName" : "withBrokerAZDistribution",
-          "getterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         \n@return <p>The distribution of broker nodes across Availability Zones.</p>\n@see BrokerAZDistribution*/",
+          "getterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         \n@return <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n@see BrokerAZDistribution*/",
           "getterMethodName" : "getBrokerAZDistribution",
           "getterModel" : {
             "returnType" : "String",
@@ -2105,7 +2105,7 @@
           "marshallingType" : "STRING",
           "name" : "BrokerAZDistribution",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones.</p>\n@see BrokerAZDistribution*/",
+          "setterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n@see BrokerAZDistribution*/",
           "setterMethodName" : "setBrokerAZDistribution",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2119,13 +2119,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BrokerAZDistribution*/",
+          "varargSetterDocumentation" : "/**\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         \n@param brokerAZDistribution <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BrokerAZDistribution*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "brokerAZDistribution",
             "variableType" : "String",
-            "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones.</p>\n         ",
+            "documentation" : "\n            <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>\n         <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>\n         ",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

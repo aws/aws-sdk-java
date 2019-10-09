@@ -25,7 +25,8 @@ public enum BillingTagsSource {
 
     QUEUE("QUEUE"),
     PRESET("PRESET"),
-    JOB_TEMPLATE("JOB_TEMPLATE");
+    JOB_TEMPLATE("JOB_TEMPLATE"),
+    JOB("JOB");
 
     private String value;
 

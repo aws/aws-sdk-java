@@ -41,6 +41,8 @@ public class DashIsoGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hbbtvCompliance").build();
     private static final MarshallingInfo<Integer> MINBUFFERTIME_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minBufferTime").build();
+    private static final MarshallingInfo<String> MPDPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpdProfile").build();
     private static final MarshallingInfo<String> SEGMENTCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentControl").build();
     private static final MarshallingInfo<Integer> SEGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -71,6 +73,7 @@ public class DashIsoGroupSettingsMarshaller {
             protocolMarshaller.marshall(dashIsoGroupSettings.getFragmentLength(), FRAGMENTLENGTH_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getHbbtvCompliance(), HBBTVCOMPLIANCE_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getMinBufferTime(), MINBUFFERTIME_BINDING);
+            protocolMarshaller.marshall(dashIsoGroupSettings.getMpdProfile(), MPDPROFILE_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentControl(), SEGMENTCONTROL_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentLength(), SEGMENTLENGTH_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getWriteSegmentTimelineInRepresentation(), WRITESEGMENTTIMELINEINREPRESENTATION_BINDING);

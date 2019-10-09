@@ -196,14 +196,13 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     /** Inserts timecode for each frame as 4 bytes of an unregistered SEI message. */
     private String unregisteredSeiTimecode;
     /**
-     * Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you include
-     * writeMp4PackagingType in your JSON job specification for other outputs, your video might not work properly with
-     * downstream systems and video players. If the location of parameter set NAL units don't matter in your workflow,
-     * ignore this setting. The service defaults to marking your output as HEV1. Choose HVC1 to mark your output as HVC1.
-     * This makes your output compliant with this specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd
-     * Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the
-     * samples directly. Keep the default HEV1 to mark your output as HEV1. For these outputs, the service writes
-     * parameter set NAL units directly into the samples.
+     * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting
+     * in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that doesn't work
+     * properly with some downstream systems and video players. Choose HVC1 to mark your output as HVC1. This makes your
+     * output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition.
+     * For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples
+     * directly. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set
+     * NAL units directly into the samples.
      */
     private String writeMp4PackagingType;
 
@@ -2280,24 +2279,22 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you include
-     * writeMp4PackagingType in your JSON job specification for other outputs, your video might not work properly with
-     * downstream systems and video players. If the location of parameter set NAL units don't matter in your workflow,
-     * ignore this setting. The service defaults to marking your output as HEV1. Choose HVC1 to mark your output as HVC1.
-     * This makes your output compliant with this specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd
-     * Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the
-     * samples directly. Keep the default HEV1 to mark your output as HEV1. For these outputs, the service writes
-     * parameter set NAL units directly into the samples.
+     * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting
+     * in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that doesn't work
+     * properly with some downstream systems and video players. Choose HVC1 to mark your output as HVC1. This makes your
+     * output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition.
+     * For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples
+     * directly. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set
+     * NAL units directly into the samples.
      * 
      * @param writeMp4PackagingType
-     *        Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you
-     *        include writeMp4PackagingType in your JSON job specification for other outputs, your video might not work
-     *        properly with downstream systems and video players. If the location of parameter set NAL units don't
-     *        matter in your workflow, ignore this setting. The service defaults to marking your output as HEV1. Choose
-     *        HVC1 to mark your output as HVC1. This makes your output compliant with this specification: ISO IECJTC1
-     *        SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set
-     *        NAL units in the sample headers but not in the samples directly. Keep the default HEV1 to mark your output
-     *        as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
+     *        If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this
+     *        setting in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that
+     *        doesn't work properly with some downstream systems and video players. Choose HVC1 to mark your output as
+     *        HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text
+     *        ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the
+     *        sample headers but not in the samples directly. The service defaults to marking your output as HEV1. For
+     *        these outputs, the service writes parameter set NAL units directly into the samples.
      * @see H265WriteMp4PackagingType
      */
 
@@ -2306,23 +2303,21 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you include
-     * writeMp4PackagingType in your JSON job specification for other outputs, your video might not work properly with
-     * downstream systems and video players. If the location of parameter set NAL units don't matter in your workflow,
-     * ignore this setting. The service defaults to marking your output as HEV1. Choose HVC1 to mark your output as HVC1.
-     * This makes your output compliant with this specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd
-     * Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the
-     * samples directly. Keep the default HEV1 to mark your output as HEV1. For these outputs, the service writes
-     * parameter set NAL units directly into the samples.
+     * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting
+     * in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that doesn't work
+     * properly with some downstream systems and video players. Choose HVC1 to mark your output as HVC1. This makes your
+     * output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition.
+     * For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples
+     * directly. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set
+     * NAL units directly into the samples.
      * 
-     * @return Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you
-     *         include writeMp4PackagingType in your JSON job specification for other outputs, your video might not work
-     *         properly with downstream systems and video players. If the location of parameter set NAL units don't
-     *         matter in your workflow, ignore this setting. The service defaults to marking your output as HEV1. Choose
-     *         HVC1 to mark your output as HVC1. This makes your output compliant with this specification: ISO IECJTC1
-     *         SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set
-     *         NAL units in the sample headers but not in the samples directly. Keep the default HEV1 to mark your
-     *         output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
+     * @return If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this
+     *         setting in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that
+     *         doesn't work properly with some downstream systems and video players. Choose HVC1 to mark your output as
+     *         HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text
+     *         ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the
+     *         sample headers but not in the samples directly. The service defaults to marking your output as HEV1. For
+     *         these outputs, the service writes parameter set NAL units directly into the samples.
      * @see H265WriteMp4PackagingType
      */
 
@@ -2331,24 +2326,22 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you include
-     * writeMp4PackagingType in your JSON job specification for other outputs, your video might not work properly with
-     * downstream systems and video players. If the location of parameter set NAL units don't matter in your workflow,
-     * ignore this setting. The service defaults to marking your output as HEV1. Choose HVC1 to mark your output as HVC1.
-     * This makes your output compliant with this specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd
-     * Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the
-     * samples directly. Keep the default HEV1 to mark your output as HEV1. For these outputs, the service writes
-     * parameter set NAL units directly into the samples.
+     * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting
+     * in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that doesn't work
+     * properly with some downstream systems and video players. Choose HVC1 to mark your output as HVC1. This makes your
+     * output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition.
+     * For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples
+     * directly. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set
+     * NAL units directly into the samples.
      * 
      * @param writeMp4PackagingType
-     *        Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you
-     *        include writeMp4PackagingType in your JSON job specification for other outputs, your video might not work
-     *        properly with downstream systems and video players. If the location of parameter set NAL units don't
-     *        matter in your workflow, ignore this setting. The service defaults to marking your output as HEV1. Choose
-     *        HVC1 to mark your output as HVC1. This makes your output compliant with this specification: ISO IECJTC1
-     *        SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set
-     *        NAL units in the sample headers but not in the samples directly. Keep the default HEV1 to mark your output
-     *        as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
+     *        If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this
+     *        setting in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that
+     *        doesn't work properly with some downstream systems and video players. Choose HVC1 to mark your output as
+     *        HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text
+     *        ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the
+     *        sample headers but not in the samples directly. The service defaults to marking your output as HEV1. For
+     *        these outputs, the service writes parameter set NAL units directly into the samples.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265WriteMp4PackagingType
      */
@@ -2359,24 +2352,22 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you include
-     * writeMp4PackagingType in your JSON job specification for other outputs, your video might not work properly with
-     * downstream systems and video players. If the location of parameter set NAL units don't matter in your workflow,
-     * ignore this setting. The service defaults to marking your output as HEV1. Choose HVC1 to mark your output as HVC1.
-     * This makes your output compliant with this specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd
-     * Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the
-     * samples directly. Keep the default HEV1 to mark your output as HEV1. For these outputs, the service writes
-     * parameter set NAL units directly into the samples.
+     * If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting
+     * in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that doesn't work
+     * properly with some downstream systems and video players. Choose HVC1 to mark your output as HVC1. This makes your
+     * output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition.
+     * For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples
+     * directly. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set
+     * NAL units directly into the samples.
      * 
      * @param writeMp4PackagingType
-     *        Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you
-     *        include writeMp4PackagingType in your JSON job specification for other outputs, your video might not work
-     *        properly with downstream systems and video players. If the location of parameter set NAL units don't
-     *        matter in your workflow, ignore this setting. The service defaults to marking your output as HEV1. Choose
-     *        HVC1 to mark your output as HVC1. This makes your output compliant with this specification: ISO IECJTC1
-     *        SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set
-     *        NAL units in the sample headers but not in the samples directly. Keep the default HEV1 to mark your output
-     *        as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
+     *        If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this
+     *        setting in your CMAF, DASH, or file MP4 output. For file MP4 outputs, choosing HVC1 can create video that
+     *        doesn't work properly with some downstream systems and video players. Choose HVC1 to mark your output as
+     *        HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text
+     *        ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the
+     *        sample headers but not in the samples directly. The service defaults to marking your output as HEV1. For
+     *        these outputs, the service writes parameter set NAL units directly into the samples.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265WriteMp4PackagingType
      */

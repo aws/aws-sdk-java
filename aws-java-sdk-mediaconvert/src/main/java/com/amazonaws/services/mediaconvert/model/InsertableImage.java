@@ -49,7 +49,10 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
      * this setting blank.
      */
     private Integer height;
-    /** Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file. */
+    /**
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or
+     * TGA file.
+     */
     private String imageInserterInput;
     /**
      * Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required for
@@ -265,10 +268,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or
+     * TGA file.
      * 
      * @param imageInserterInput
-     *        Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+     *        Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a
+     *        PNG or TGA file.
      */
 
     public void setImageInserterInput(String imageInserterInput) {
@@ -276,9 +281,11 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or
+     * TGA file.
      * 
-     * @return Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+     * @return Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a
+     *         PNG or TGA file.
      */
 
     public String getImageInserterInput() {
@@ -286,10 +293,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or
+     * TGA file.
      * 
      * @param imageInserterInput
-     *        Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+     *        Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a
+     *        PNG or TGA file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

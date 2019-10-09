@@ -39,6 +39,18 @@ public class DescribeUpdateActionsRequest extends com.amazonaws.AmazonWebService
     private com.amazonaws.internal.SdkInternalList<String> replicationGroupIds;
     /**
      * <p>
+     * The cache cluster IDs
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> cacheClusterIds;
+    /**
+     * <p>
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    private String engine;
+    /**
+     * <p>
      * The status of the service update
      * </p>
      */
@@ -186,6 +198,119 @@ public class DescribeUpdateActionsRequest extends com.amazonaws.AmazonWebService
 
     public DescribeUpdateActionsRequest withReplicationGroupIds(java.util.Collection<String> replicationGroupIds) {
         setReplicationGroupIds(replicationGroupIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cache cluster IDs
+     * </p>
+     * 
+     * @return The cache cluster IDs
+     */
+
+    public java.util.List<String> getCacheClusterIds() {
+        if (cacheClusterIds == null) {
+            cacheClusterIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return cacheClusterIds;
+    }
+
+    /**
+     * <p>
+     * The cache cluster IDs
+     * </p>
+     * 
+     * @param cacheClusterIds
+     *        The cache cluster IDs
+     */
+
+    public void setCacheClusterIds(java.util.Collection<String> cacheClusterIds) {
+        if (cacheClusterIds == null) {
+            this.cacheClusterIds = null;
+            return;
+        }
+
+        this.cacheClusterIds = new com.amazonaws.internal.SdkInternalList<String>(cacheClusterIds);
+    }
+
+    /**
+     * <p>
+     * The cache cluster IDs
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCacheClusterIds(java.util.Collection)} or {@link #withCacheClusterIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param cacheClusterIds
+     *        The cache cluster IDs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeUpdateActionsRequest withCacheClusterIds(String... cacheClusterIds) {
+        if (this.cacheClusterIds == null) {
+            setCacheClusterIds(new com.amazonaws.internal.SdkInternalList<String>(cacheClusterIds.length));
+        }
+        for (String ele : cacheClusterIds) {
+            this.cacheClusterIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cache cluster IDs
+     * </p>
+     * 
+     * @param cacheClusterIds
+     *        The cache cluster IDs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeUpdateActionsRequest withCacheClusterIds(java.util.Collection<String> cacheClusterIds) {
+        setCacheClusterIds(cacheClusterIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     * 
+     * @param engine
+     *        The Elasticache engine to which the update applies. Either Redis or Memcached
+     */
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    /**
+     * <p>
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     * 
+     * @return The Elasticache engine to which the update applies. Either Redis or Memcached
+     */
+
+    public String getEngine() {
+        return this.engine;
+    }
+
+    /**
+     * <p>
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     * 
+     * @param engine
+     *        The Elasticache engine to which the update applies. Either Redis or Memcached
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeUpdateActionsRequest withEngine(String engine) {
+        setEngine(engine);
         return this;
     }
 
@@ -591,6 +716,10 @@ public class DescribeUpdateActionsRequest extends com.amazonaws.AmazonWebService
             sb.append("ServiceUpdateName: ").append(getServiceUpdateName()).append(",");
         if (getReplicationGroupIds() != null)
             sb.append("ReplicationGroupIds: ").append(getReplicationGroupIds()).append(",");
+        if (getCacheClusterIds() != null)
+            sb.append("CacheClusterIds: ").append(getCacheClusterIds()).append(",");
+        if (getEngine() != null)
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getServiceUpdateStatus() != null)
             sb.append("ServiceUpdateStatus: ").append(getServiceUpdateStatus()).append(",");
         if (getServiceUpdateTimeRange() != null)
@@ -624,6 +753,14 @@ public class DescribeUpdateActionsRequest extends com.amazonaws.AmazonWebService
         if (other.getReplicationGroupIds() == null ^ this.getReplicationGroupIds() == null)
             return false;
         if (other.getReplicationGroupIds() != null && other.getReplicationGroupIds().equals(this.getReplicationGroupIds()) == false)
+            return false;
+        if (other.getCacheClusterIds() == null ^ this.getCacheClusterIds() == null)
+            return false;
+        if (other.getCacheClusterIds() != null && other.getCacheClusterIds().equals(this.getCacheClusterIds()) == false)
+            return false;
+        if (other.getEngine() == null ^ this.getEngine() == null)
+            return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
             return false;
         if (other.getServiceUpdateStatus() == null ^ this.getServiceUpdateStatus() == null)
             return false;
@@ -659,6 +796,8 @@ public class DescribeUpdateActionsRequest extends com.amazonaws.AmazonWebService
 
         hashCode = prime * hashCode + ((getServiceUpdateName() == null) ? 0 : getServiceUpdateName().hashCode());
         hashCode = prime * hashCode + ((getReplicationGroupIds() == null) ? 0 : getReplicationGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getCacheClusterIds() == null) ? 0 : getCacheClusterIds().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getServiceUpdateStatus() == null) ? 0 : getServiceUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getServiceUpdateTimeRange() == null) ? 0 : getServiceUpdateTimeRange().hashCode());
         hashCode = prime * hashCode + ((getUpdateActionStatus() == null) ? 0 : getUpdateActionStatus().hashCode());

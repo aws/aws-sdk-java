@@ -79,13 +79,13 @@ public class ServiceUpdate implements Serializable, Cloneable {
     private String serviceUpdateType;
     /**
      * <p>
-     * The Redis engine to which the service update applies
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
      * </p>
      */
     private String engine;
     /**
      * <p>
-     * The Redis engine version to which the service update applies
+     * The Elasticache engine version to which the update applies. Either Redis or Memcached engine version
      * </p>
      */
     private String engineVersion;
@@ -500,11 +500,11 @@ public class ServiceUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Redis engine to which the service update applies
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
      * </p>
      * 
      * @param engine
-     *        The Redis engine to which the service update applies
+     *        The Elasticache engine to which the update applies. Either Redis or Memcached
      */
 
     public void setEngine(String engine) {
@@ -513,10 +513,10 @@ public class ServiceUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Redis engine to which the service update applies
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
      * </p>
      * 
-     * @return The Redis engine to which the service update applies
+     * @return The Elasticache engine to which the update applies. Either Redis or Memcached
      */
 
     public String getEngine() {
@@ -525,11 +525,11 @@ public class ServiceUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Redis engine to which the service update applies
+     * The Elasticache engine to which the update applies. Either Redis or Memcached
      * </p>
      * 
      * @param engine
-     *        The Redis engine to which the service update applies
+     *        The Elasticache engine to which the update applies. Either Redis or Memcached
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -540,11 +540,11 @@ public class ServiceUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Redis engine version to which the service update applies
+     * The Elasticache engine version to which the update applies. Either Redis or Memcached engine version
      * </p>
      * 
      * @param engineVersion
-     *        The Redis engine version to which the service update applies
+     *        The Elasticache engine version to which the update applies. Either Redis or Memcached engine version
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -553,10 +553,10 @@ public class ServiceUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Redis engine version to which the service update applies
+     * The Elasticache engine version to which the update applies. Either Redis or Memcached engine version
      * </p>
      * 
-     * @return The Redis engine version to which the service update applies
+     * @return The Elasticache engine version to which the update applies. Either Redis or Memcached engine version
      */
 
     public String getEngineVersion() {
@@ -565,11 +565,11 @@ public class ServiceUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Redis engine version to which the service update applies
+     * The Elasticache engine version to which the update applies. Either Redis or Memcached engine version
      * </p>
      * 
      * @param engineVersion
-     *        The Redis engine version to which the service update applies
+     *        The Elasticache engine version to which the update applies. Either Redis or Memcached engine version
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
