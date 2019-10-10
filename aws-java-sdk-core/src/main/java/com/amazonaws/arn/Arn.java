@@ -175,27 +175,38 @@ public class Arn {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Arn)) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        Arn other = (Arn)o;
+        Arn arn = (Arn) o;
 
-        return this.partition.equals(other.partition)
-            && this.service.equals(other.service)
-            && this.region.equals(other.region)
-            && this.accountId.equals(other.accountId)
-            && this.resource.equals(other.resource);
+        if (!partition.equals(arn.partition)) {
+            return false;
+        }
+        if (!service.equals(arn.service)) {
+            return false;
+        }
+        if (region != null ? !region.equals(arn.region) : arn.region != null) {
+            return false;
+        }
+        if (accountId != null ? !accountId.equals(arn.accountId) : arn.accountId != null) {
+            return false;
+        }
+        return resource.equals(arn.resource);
     }
 
     @Override
     public int hashCode() {
-        int hash = partition.hashCode();
-        hash = 31 * hash + service.hashCode();
-        hash = 31 * hash + region.hashCode();
-        hash = 31 * hash + accountId.hashCode();
-        hash = 31 * hash + resource.hashCode();
-        return hash;
+        int result = partition.hashCode();
+        result = 31 * result + service.hashCode();
+        result = 31 * result + (region != null ? region.hashCode() : 0);
+        result = 31 * result + (accountId != null ? accountId.hashCode() : 0);
+        result = 31 * result + resource.hashCode();
+        return result;
     }
 
     public static final class Builder {

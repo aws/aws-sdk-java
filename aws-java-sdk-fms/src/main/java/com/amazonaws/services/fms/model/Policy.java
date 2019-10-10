@@ -56,10 +56,15 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     private SecurityServicePolicyData securityServicePolicyData;
     /**
      * <p>
-     * The type of resource to protect with the policy. This is in the format shown in <a
+     * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
+     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>.
      * </p>
      */
     private String resourceType;
@@ -78,8 +83,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are
-     * not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
-     * only resources with the specified tags are associated with the policy.
+     * not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
+     * only resources with the specified tags are in scope of the policy.
      * </p>
      */
     private Boolean excludeResourceTags;
@@ -294,17 +299,27 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy. This is in the format shown in <a
+     * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
+     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to protect with the policy. This is in the format shown in <a href=
+     *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     *        <code>AWS::CloudFront::Distribution</code>.
+     *        Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For
+     *        a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     *        <code>AWS::EC2::SecurityGroup</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -313,16 +328,26 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy. This is in the format shown in <a
+     * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
+     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>.
      * </p>
      * 
-     * @return The type of resource to protect with the policy. This is in the format shown in <a
+     * @return The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *         >AWS Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     *         <code>AWS::CloudFront::Distribution</code>.
+     *         >AWS Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *         <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>.
+     *         For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     *         <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     *         <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     *         <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     *         <code>AWS::EC2::SecurityGroup</code>.
      */
 
     public String getResourceType() {
@@ -331,17 +356,27 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy. This is in the format shown in <a
+     * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
+     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to protect with the policy. This is in the format shown in <a href=
+     *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     *        <code>AWS::CloudFront::Distribution</code>.
+     *        Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For
+     *        a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     *        <code>AWS::EC2::SecurityGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,14 +528,14 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are
-     * not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
-     * only resources with the specified tags are associated with the policy.
+     * not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
+     * only resources with the specified tags are in scope of the policy.
      * </p>
      * 
      * @param excludeResourceTags
      *        If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code>
-     *        array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
-     *        array is not null, only resources with the specified tags are associated with the policy.
+     *        array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array
+     *        is not null, only resources with the specified tags are in scope of the policy.
      */
 
     public void setExcludeResourceTags(Boolean excludeResourceTags) {
@@ -510,13 +545,13 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are
-     * not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
-     * only resources with the specified tags are associated with the policy.
+     * not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
+     * only resources with the specified tags are in scope of the policy.
      * </p>
      * 
      * @return If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code>
-     *         array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
-     *         array is not null, only resources with the specified tags are associated with the policy.
+     *         array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
+     *         array is not null, only resources with the specified tags are in scope of the policy.
      */
 
     public Boolean getExcludeResourceTags() {
@@ -526,14 +561,14 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are
-     * not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
-     * only resources with the specified tags are associated with the policy.
+     * not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
+     * only resources with the specified tags are in scope of the policy.
      * </p>
      * 
      * @param excludeResourceTags
      *        If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code>
-     *        array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
-     *        array is not null, only resources with the specified tags are associated with the policy.
+     *        array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array
+     *        is not null, only resources with the specified tags are in scope of the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -545,13 +580,13 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are
-     * not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
-     * only resources with the specified tags are associated with the policy.
+     * not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null,
+     * only resources with the specified tags are in scope of the policy.
      * </p>
      * 
      * @return If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code>
-     *         array are not protected by the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
-     *         array is not null, only resources with the specified tags are associated with the policy.
+     *         array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
+     *         array is not null, only resources with the specified tags are in scope of the policy.
      */
 
     public Boolean isExcludeResourceTags() {

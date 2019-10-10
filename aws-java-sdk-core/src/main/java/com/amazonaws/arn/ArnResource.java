@@ -15,6 +15,7 @@
 package com.amazonaws.arn;
 
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.ValidationUtils;
 
 /**
  * An additional model within {@link Arn} that provides the Resource Type, Resource, and
@@ -32,7 +33,7 @@ public class ArnResource {
 
     private ArnResource(Builder b) {
         this.resourceType = b.resourceType;
-        this.resource = b.resource;
+        this.resource = ValidationUtils.assertStringNotEmpty(b.resource, "resource");
         this.qualifier = b.qualifier;
     }
 
@@ -100,27 +101,30 @@ public class ArnResource {
 
     @Override
     public boolean equals(Object o) {
-        if (! (o instanceof ArnResource)) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        ArnResource other = (ArnResource) o;
+        ArnResource that = (ArnResource) o;
 
-        return (
-                   (this.resourceType == null && other.getResourceType() == null) ||
-                   (this.resourceType != null && this.resourceType.equals(other.getResourceType())))
-               && this.resource.equals(other.getResource())
-               && (
-                   (this.qualifier == null && other.getQualifier() == null) ||
-                   (this.qualifier != null && this.qualifier.equals(other.getQualifier())));
+        if (resourceType != null ? !resourceType.equals(that.resourceType) : that.resourceType != null) {
+            return false;
+        }
+        if (!resource.equals(that.resource)) {
+            return false;
+        }
+        return qualifier != null ? qualifier.equals(that.qualifier) : that.qualifier == null;
     }
 
     @Override
     public int hashCode() {
-        int hash = resource.hashCode();
-        hash = 31 * hash + resourceType.hashCode();
-        hash = 31 * hash + qualifier.hashCode();
-        return hash;
+        int result = resourceType != null ? resourceType.hashCode() : 0;
+        result = 31 * result + resource.hashCode();
+        result = 31 * result + (qualifier != null ? qualifier.hashCode() : 0);
+        return result;
     }
 
     public static final class Builder {

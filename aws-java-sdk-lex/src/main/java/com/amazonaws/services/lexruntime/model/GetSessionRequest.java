@@ -43,6 +43,16 @@ public class GetSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String userId;
+    /**
+     * <p>
+     * A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure.
+     * </p>
+     * <p>
+     * When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are
+     * returned.
+     * </p>
+     */
+    private String checkpointLabelFilter;
 
     /**
      * <p>
@@ -168,6 +178,67 @@ public class GetSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure.
+     * </p>
+     * <p>
+     * When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are
+     * returned.
+     * </p>
+     * 
+     * @param checkpointLabelFilter
+     *        A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+     *        <p>
+     *        When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string
+     *        are returned.
+     */
+
+    public void setCheckpointLabelFilter(String checkpointLabelFilter) {
+        this.checkpointLabelFilter = checkpointLabelFilter;
+    }
+
+    /**
+     * <p>
+     * A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure.
+     * </p>
+     * <p>
+     * When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are
+     * returned.
+     * </p>
+     * 
+     * @return A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+     *         <p>
+     *         When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string
+     *         are returned.
+     */
+
+    public String getCheckpointLabelFilter() {
+        return this.checkpointLabelFilter;
+    }
+
+    /**
+     * <p>
+     * A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure.
+     * </p>
+     * <p>
+     * When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are
+     * returned.
+     * </p>
+     * 
+     * @param checkpointLabelFilter
+     *        A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+     *        <p>
+     *        When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string
+     *        are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSessionRequest withCheckpointLabelFilter(String checkpointLabelFilter) {
+        setCheckpointLabelFilter(checkpointLabelFilter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +255,9 @@ public class GetSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getBotAlias() != null)
             sb.append("BotAlias: ").append(getBotAlias()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+            sb.append("UserId: ").append(getUserId()).append(",");
+        if (getCheckpointLabelFilter() != null)
+            sb.append("CheckpointLabelFilter: ").append(getCheckpointLabelFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +284,10 @@ public class GetSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
+        if (other.getCheckpointLabelFilter() == null ^ this.getCheckpointLabelFilter() == null)
+            return false;
+        if (other.getCheckpointLabelFilter() != null && other.getCheckpointLabelFilter().equals(this.getCheckpointLabelFilter()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +299,7 @@ public class GetSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getBotName() == null) ? 0 : getBotName().hashCode());
         hashCode = prime * hashCode + ((getBotAlias() == null) ? 0 : getBotAlias().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getCheckpointLabelFilter() == null) ? 0 : getCheckpointLabelFilter().hashCode());
         return hashCode;
     }
 

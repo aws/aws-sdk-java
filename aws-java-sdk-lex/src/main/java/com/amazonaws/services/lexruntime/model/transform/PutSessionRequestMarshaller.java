@@ -13,7 +13,7 @@
 package com.amazonaws.services.lexruntime.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +39,8 @@ public class PutSessionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sessionAttributes").build();
     private static final MarshallingInfo<StructuredPojo> DIALOGACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dialogAction").build();
+    private static final MarshallingInfo<List> RECENTINTENTSUMMARYVIEW_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recentIntentSummaryView").build();
     private static final MarshallingInfo<String> ACCEPT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
             .marshallLocationName("Accept").build();
 
@@ -63,6 +65,7 @@ public class PutSessionRequestMarshaller {
             protocolMarshaller.marshall(putSessionRequest.getUserId(), USERID_BINDING);
             protocolMarshaller.marshall(putSessionRequest.getSessionAttributes(), SESSIONATTRIBUTES_BINDING);
             protocolMarshaller.marshall(putSessionRequest.getDialogAction(), DIALOGACTION_BINDING);
+            protocolMarshaller.marshall(putSessionRequest.getRecentIntentSummaryView(), RECENTINTENTSUMMARYVIEW_BINDING);
             protocolMarshaller.marshall(putSessionRequest.getAccept(), ACCEPT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

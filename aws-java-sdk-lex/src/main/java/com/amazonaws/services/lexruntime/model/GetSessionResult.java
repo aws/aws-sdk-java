@@ -29,6 +29,10 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation
      * contains information about the last three intents used.
      * </p>
+     * <p>
+     * If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents
+     * with the specified label.
+     * </p>
      */
     private java.util.List<IntentSummary> recentIntentSummaryView;
     /**
@@ -57,10 +61,17 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation
      * contains information about the last three intents used.
      * </p>
+     * <p>
+     * If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents
+     * with the specified label.
+     * </p>
      * 
      * @return An array of information about the intents used in the session. The array can contain a maximum of three
      *         summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code>
-     *         operation contains information about the last three intents used.
+     *         operation contains information about the last three intents used.</p>
+     *         <p>
+     *         If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the
+     *         intents with the specified label.
      */
 
     public java.util.List<IntentSummary> getRecentIntentSummaryView() {
@@ -73,11 +84,18 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation
      * contains information about the last three intents used.
      * </p>
+     * <p>
+     * If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents
+     * with the specified label.
+     * </p>
      * 
      * @param recentIntentSummaryView
      *        An array of information about the intents used in the session. The array can contain a maximum of three
      *        summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code>
-     *        operation contains information about the last three intents used.
+     *        operation contains information about the last three intents used.</p>
+     *        <p>
+     *        If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the
+     *        intents with the specified label.
      */
 
     public void setRecentIntentSummaryView(java.util.Collection<IntentSummary> recentIntentSummaryView) {
@@ -96,6 +114,10 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * contains information about the last three intents used.
      * </p>
      * <p>
+     * If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents
+     * with the specified label.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRecentIntentSummaryView(java.util.Collection)} or
      * {@link #withRecentIntentSummaryView(java.util.Collection)} if you want to override the existing values.
@@ -104,7 +126,10 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @param recentIntentSummaryView
      *        An array of information about the intents used in the session. The array can contain a maximum of three
      *        summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code>
-     *        operation contains information about the last three intents used.
+     *        operation contains information about the last three intents used.</p>
+     *        <p>
+     *        If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the
+     *        intents with the specified label.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +149,18 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation
      * contains information about the last three intents used.
      * </p>
+     * <p>
+     * If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents
+     * with the specified label.
+     * </p>
      * 
      * @param recentIntentSummaryView
      *        An array of information about the intents used in the session. The array can contain a maximum of three
      *        summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code>
-     *        operation contains information about the last three intents used.
+     *        operation contains information about the last three intents used.</p>
+     *        <p>
+     *        If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the
+     *        intents with the specified label.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use this to store data store data in an S3 bucket that you manage.
+ * Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the
+ * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
+ * changed after creation of the data store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CustomerManagedDatastoreS3Storage"
@@ -36,8 +38,9 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
     private String bucket;
     /**
      * <p>
-     * The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key
-     * that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket
+     * has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
+     * prefix must end with a '/'.
      * </p>
      */
     private String keyPrefix;
@@ -90,13 +93,15 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key
-     * that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket
+     * has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
+     * prefix must end with a '/'.
      * </p>
      * 
      * @param keyPrefix
-     *        The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has
-     *        a key that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     *        [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3
+     *        bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
+     *        key). The prefix must end with a '/'.
      */
 
     public void setKeyPrefix(String keyPrefix) {
@@ -105,12 +110,14 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key
-     * that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket
+     * has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
+     * prefix must end with a '/'.
      * </p>
      * 
-     * @return The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has
-     *         a key that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * @return [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3
+     *         bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
+     *         key). The prefix must end with a '/'.
      */
 
     public String getKeyPrefix() {
@@ -119,13 +126,15 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key
-     * that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket
+     * has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
+     * prefix must end with a '/'.
      * </p>
      * 
      * @param keyPrefix
-     *        The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has
-     *        a key that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     *        [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3
+     *        bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
+     *        key). The prefix must end with a '/'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

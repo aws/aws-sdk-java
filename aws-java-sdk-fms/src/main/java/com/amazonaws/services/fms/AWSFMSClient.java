@@ -149,7 +149,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
     /**
      * <p>
      * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master
-     * account your AWS organization or associated with a member account that has the appropriate permissions. If the
+     * account of your AWS organization or associated with a member account that has the appropriate permissions. If the
      * account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the
      * appropriate permissions for the given member account.
      * </p>
@@ -345,7 +345,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
     /**
      * <p>
      * Disassociates the account that has been set as the AWS Firewall Manager administrator account. To set a different
-     * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request .
+     * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.
      * </p>
      * 
      * @param disassociateAdminAccountRequest
@@ -471,8 +471,10 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
     /**
      * <p>
      * Returns detailed compliance information about the specified member account. Details include resources that are in
-     * and out of compliance with the specified policy. Resources are considered non-compliant if the specified policy
-     * has not been applied to them.
+     * and out of compliance with the specified policy. Resources are considered noncompliant for AWS WAF and Shield
+     * Advanced policies if the specified policy has not been applied to them. Resources are considered noncompliant for
+     * security group policies if they are in scope of the policy, they violate one or more of the policy rules, and
+     * remediation is disabled or not possible.
      * </p>
      * 
      * @param getComplianceDetailRequest
@@ -529,8 +531,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
-     * Returns information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall
-     * Manager SNS logs.
+     * Information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager
+     * SNS logs.
      * </p>
      * 
      * @param getNotificationChannelRequest
@@ -656,7 +658,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
     /**
      * <p>
      * If you created a Shield Advanced policy, returns policy-level attack summary information in the event of a
-     * potential DDoS attack.
+     * potential DDoS attack. Other policy types are currently unsupported.
      * </p>
      * 
      * @param getProtectionStatusRequest
@@ -968,15 +970,32 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * Creates an AWS Firewall Manager policy.
      * </p>
      * <p>
-     * Firewall Manager provides two types of policies: A Shield Advanced policy, which applies Shield Advanced
-     * protection to specified accounts and resources, or a WAF policy, which contains a rule group and defines which
-     * resources are to be protected by that rule group. A policy is specific to either WAF or Shield Advanced. If you
-     * want to enforce both WAF rules and Shield Advanced protection across accounts, you can create multiple policies.
-     * You can create one or more policies for WAF rules, and one or more policies for Shield Advanced.
+     * Firewall Manager provides the following types of policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS WAF policy, which contains a rule group and defines which resources are to be protected by that rule group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A security group policy, which manages VPC security groups across your AWS organization.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Each policy is specific to one of the three types. If you want to enforce more than one policy type across
+     * accounts, you can create multiple policies. You can create multiple policies for each type.
      * </p>
      * <p>
-     * You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information on subscribing
-     * to Shield Advanced, see <a
+     * You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information about
+     * subscribing to Shield Advanced, see <a
      * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html"
      * >CreateSubscription</a>.
      * </p>

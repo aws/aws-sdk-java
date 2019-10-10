@@ -37,7 +37,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Where channel data is stored.
+     * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
+     * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
      * </p>
      */
     private ChannelStorage storage;
@@ -114,11 +115,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where channel data is stored.
+     * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
+     * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
      * </p>
      * 
      * @param storage
-     *        Where channel data is stored.
+     *        Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If
+     *        not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
      */
 
     public void setStorage(ChannelStorage storage) {
@@ -127,10 +130,12 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where channel data is stored.
+     * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
+     * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
      * </p>
      * 
-     * @return Where channel data is stored.
+     * @return Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If
+     *         not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
      */
 
     public ChannelStorage getStorage() {
@@ -139,11 +144,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Where channel data is stored.
+     * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
+     * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
      * </p>
      * 
      * @param storage
-     *        Where channel data is stored.
+     *        Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If
+     *        not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

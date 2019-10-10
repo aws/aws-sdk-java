@@ -33,13 +33,15 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
     private String datastoreName;
     /**
      * <p>
-     * Where data store data is stored.
+     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
+     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
      * </p>
      */
     private DatastoreStorage datastoreStorage;
     /**
      * <p>
-     * How long, in days, message data is kept for the data store.
+     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
+     * parameter is ignored.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
@@ -92,11 +94,14 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored.
+     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
+     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored.
+     *        Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
+     *        If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
+     *        created.
      */
 
     public void setDatastoreStorage(DatastoreStorage datastoreStorage) {
@@ -105,10 +110,13 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored.
+     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
+     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
      * </p>
      * 
-     * @return Where data store data is stored.
+     * @return Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
+     *         If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
+     *         created.
      */
 
     public DatastoreStorage getDatastoreStorage() {
@@ -117,11 +125,14 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored.
+     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
+     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored.
+     *        Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
+     *        If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +143,13 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store.
+     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
+     * parameter is ignored.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the data store.
+     *        How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
+     *        this parameter is ignored.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -145,10 +158,12 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store.
+     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
+     * parameter is ignored.
      * </p>
      * 
-     * @return How long, in days, message data is kept for the data store.
+     * @return How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
+     *         this parameter is ignored.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -157,11 +172,13 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store.
+     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
+     * parameter is ignored.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the data store.
+     *        How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
+     *        this parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

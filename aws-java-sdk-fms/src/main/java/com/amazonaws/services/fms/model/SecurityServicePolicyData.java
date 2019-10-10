@@ -31,32 +31,73 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
+     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting AWS Support.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:
+     * Details about the service that are specific to the service type, in JSON format. For service type
+     * <code>SHIELD_ADVANCED</code>, this is an empty string.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Example: <code>WAF</code>
      * </p>
      * <p>
      * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If this is a Shield Advanced policy, this string will be empty.
+     * Example: <code>SECURITY_GROUPS_COMMON</code>
      * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_CONTENT_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd \"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * </p>
+     * <p>
+     * The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For
+     * <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security
+     * group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that
+     * matches a rule value or range in the policy security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_USAGE_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"},"RemediationEnabled":false,"Resou rceType":"AWS::EC2::SecurityGroup"}</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String managedServiceData;
 
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
+     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting AWS Support.
      * </p>
      * 
      * @param type
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either a WAF policy or Shield Advanced policy.
+     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security
+     *        group policies, Firewall Manager supports one security group for each common policy and for each content
+     *        audit policy. This is an adjustable limit that you can increase by contacting AWS Support.
      * @see SecurityServiceType
      */
 
@@ -67,11 +108,15 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
+     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting AWS Support.
      * </p>
      * 
      * @return The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *         created, either a WAF policy or Shield Advanced policy.
+     *         created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security
+     *         group policies, Firewall Manager supports one security group for each common policy and for each content
+     *         audit policy. This is an adjustable limit that you can increase by contacting AWS Support.
      * @see SecurityServiceType
      */
 
@@ -82,12 +127,16 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
+     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting AWS Support.
      * </p>
      * 
      * @param type
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either a WAF policy or Shield Advanced policy.
+     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security
+     *        group policies, Firewall Manager supports one security group for each common policy and for each content
+     *        audit policy. This is an adjustable limit that you can increase by contacting AWS Support.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -100,12 +149,16 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security group policies,
+     * Firewall Manager supports one security group for each common policy and for each content audit policy. This is an
+     * adjustable limit that you can increase by contacting AWS Support.
      * </p>
      * 
      * @param type
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either a WAF policy or Shield Advanced policy.
+     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy. For security
+     *        group policies, Firewall Manager supports one security group for each common policy and for each content
+     *        audit policy. This is an adjustable limit that you can increase by contacting AWS Support.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -117,23 +170,92 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:
+     * Details about the service that are specific to the service type, in JSON format. For service type
+     * <code>SHIELD_ADVANCED</code>, this is an empty string.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Example: <code>WAF</code>
      * </p>
      * <p>
      * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If this is a Shield Advanced policy, this string will be empty.
+     * Example: <code>SECURITY_GROUPS_COMMON</code>
      * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_CONTENT_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd \"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * </p>
+     * <p>
+     * The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For
+     * <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security
+     * group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that
+     * matches a rule value or range in the policy security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_USAGE_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"},"RemediationEnabled":false,"Resou rceType":"AWS::EC2::SecurityGroup"}</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param managedServiceData
-     *        Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following
-     *        example:</p>
+     *        Details about the service that are specific to the service type, in JSON format. For service type
+     *        <code>SHIELD_ADVANCED</code>, this is an empty string.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Example: <code>WAF</code>
+     *        </p>
      *        <p>
      *        <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If this is a Shield Advanced policy, this string will be empty.
+     *        Example: <code>SECURITY_GROUPS_COMMON</code>
+     *        </p>
+     *        <p>
+     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
+     *        </p>
+     *        <p>
+     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_CONTENT_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd \"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *        </p>
+     *        <p>
+     *        The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For
+     *        <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's
+     *        security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or
+     *        a range that matches a rule value or range in the policy security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code>
+     *        </p>
+     *        <p>
+     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_USAGE_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"},"RemediationEnabled":false,"Resou rceType":"AWS::EC2::SecurityGroup"}</code>
+     *        </p>
+     *        </li>
      */
 
     public void setManagedServiceData(String managedServiceData) {
@@ -142,22 +264,91 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:
+     * Details about the service that are specific to the service type, in JSON format. For service type
+     * <code>SHIELD_ADVANCED</code>, this is an empty string.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Example: <code>WAF</code>
      * </p>
      * <p>
      * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If this is a Shield Advanced policy, this string will be empty.
+     * Example: <code>SECURITY_GROUPS_COMMON</code>
      * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_CONTENT_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd \"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * </p>
+     * <p>
+     * The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For
+     * <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security
+     * group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that
+     * matches a rule value or range in the policy security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_USAGE_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"},"RemediationEnabled":false,"Resou rceType":"AWS::EC2::SecurityGroup"}</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following
-     *         example:</p>
+     * @return Details about the service that are specific to the service type, in JSON format. For service type
+     *         <code>SHIELD_ADVANCED</code>, this is an empty string.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Example: <code>WAF</code>
+     *         </p>
      *         <p>
      *         <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         If this is a Shield Advanced policy, this string will be empty.
+     *         Example: <code>SECURITY_GROUPS_COMMON</code>
+     *         </p>
+     *         <p>
+     *         <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
+     *         </p>
+     *         <p>
+     *         <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_CONTENT_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd \"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *         </p>
+     *         <p>
+     *         The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For
+     *         <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's
+     *         security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value
+     *         or a range that matches a rule value or range in the policy security group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code>
+     *         </p>
+     *         <p>
+     *         <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_USAGE_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"},"RemediationEnabled":false,"Resou rceType":"AWS::EC2::SecurityGroup"}</code>
+     *         </p>
+     *         </li>
      */
 
     public String getManagedServiceData() {
@@ -166,23 +357,92 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following example:
+     * Details about the service that are specific to the service type, in JSON format. For service type
+     * <code>SHIELD_ADVANCED</code>, this is an empty string.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Example: <code>WAF</code>
      * </p>
      * <p>
      * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If this is a Shield Advanced policy, this string will be empty.
+     * Example: <code>SECURITY_GROUPS_COMMON</code>
      * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_CONTENT_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd \"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * </p>
+     * <p>
+     * The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For
+     * <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's security
+     * group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or a range that
+     * matches a rule value or range in the policy security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_USAGE_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"},"RemediationEnabled":false,"Resou rceType":"AWS::EC2::SecurityGroup"}</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param managedServiceData
-     *        Details about the service. This contains <code>WAF</code> data in JSON format, as shown in the following
-     *        example:</p>
+     *        Details about the service that are specific to the service type, in JSON format. For service type
+     *        <code>SHIELD_ADVANCED</code>, this is an empty string.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Example: <code>WAF</code>
+     *        </p>
      *        <p>
      *        <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If this is a Shield Advanced policy, this string will be empty.
+     *        Example: <code>SECURITY_GROUPS_COMMON</code>
+     *        </p>
+     *        <p>
+     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
+     *        </p>
+     *        <p>
+     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_CONTENT_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd \"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *        </p>
+     *        <p>
+     *        The security group action for content audit can be <code>ALLOW</code> or <code>DENY</code>. For
+     *        <code>ALLOW</code>, all in-scope security group rules must be within the allowed range of the policy's
+     *        security group rules. For <code>DENY</code>, all in-scope security group rules must not contain a value or
+     *        a range that matches a rule value or range in the policy security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code>
+     *        </p>
+     *        <p>
+     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_USAGE_AUDIT","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"},"RemediationEnabled":false,"Resou rceType":"AWS::EC2::SecurityGroup"}</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

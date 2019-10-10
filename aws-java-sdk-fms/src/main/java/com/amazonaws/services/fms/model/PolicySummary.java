@@ -48,17 +48,22 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     private String policyName;
     /**
      * <p>
-     * The type of resource to protect with the policy. This is in the format shown in <a
+     * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
+     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * </p>
      */
     private String securityServiceType;
@@ -191,17 +196,27 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy. This is in the format shown in <a
+     * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
+     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to protect with the policy. This is in the format shown in <a href=
+     *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     *        <code>AWS::CloudFront::Distribution</code>.
+     *        Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For
+     *        a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     *        <code>AWS::EC2::SecurityGroup</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -210,16 +225,26 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy. This is in the format shown in <a
+     * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
+     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>.
      * </p>
      * 
-     * @return The type of resource to protect with the policy. This is in the format shown in <a
+     * @return The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *         >AWS Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     *         <code>AWS::CloudFront::Distribution</code>.
+     *         >AWS Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *         <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>.
+     *         For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     *         <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     *         <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     *         <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     *         <code>AWS::EC2::SecurityGroup</code>.
      */
 
     public String getResourceType() {
@@ -228,17 +253,27 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy. This is in the format shown in <a
+     * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
+     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to protect with the policy. This is in the format shown in <a href=
+     *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     *        <code>AWS::CloudFront::Distribution</code>.
+     *        Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For
+     *        a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
+     *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
+     *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
+     *        <code>AWS::EC2::SecurityGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,12 +285,12 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * </p>
      * 
      * @param securityServiceType
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either a WAF policy or Shield Advanced policy.
+     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * @see SecurityServiceType
      */
 
@@ -266,11 +301,11 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * </p>
      * 
      * @return The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *         created, either a WAF policy or Shield Advanced policy.
+     *         created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * @see SecurityServiceType
      */
 
@@ -281,12 +316,12 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * </p>
      * 
      * @param securityServiceType
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either a WAF policy or Shield Advanced policy.
+     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -299,12 +334,12 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
-     * either a WAF policy or Shield Advanced policy.
+     * either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * </p>
      * 
      * @param securityServiceType
      *        The service that the policy is using to protect the resources. This specifies the type of policy that is
-     *        created, either a WAF policy or Shield Advanced policy.
+     *        created, either an AWS WAF policy, a Shield Advanced policy, or a security group policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */

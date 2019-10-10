@@ -37,7 +37,10 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     * identifier within the bucket (each object in a bucket has exactly one key).
+     * identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
+     * "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
+     * /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
      * </p>
      */
     private String key;
@@ -98,12 +101,18 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     * identifier within the bucket (each object in a bucket has exactly one key).
+     * identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
+     * "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
+     * /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
      * </p>
      * 
      * @param key
      *        The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     *        identifier within the bucket (each object in a bucket has exactly one key).
+     *        identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you
+     *        can use "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
+     *        "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
+     *        /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
      */
 
     public void setKey(String key) {
@@ -113,11 +122,17 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     * identifier within the bucket (each object in a bucket has exactly one key).
+     * identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
+     * "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
+     * /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
      * </p>
      * 
      * @return The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     *         identifier within the bucket (each object in a bucket has exactly one key).
+     *         identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you
+     *         can use "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
+     *         "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
+     *         /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
      */
 
     public String getKey() {
@@ -127,12 +142,18 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     * identifier within the bucket (each object in a bucket has exactly one key).
+     * identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
+     * "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
+     * /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
      * </p>
      * 
      * @param key
      *        The key of the data set contents object. Each object in an Amazon S3 bucket has a key that is its unique
-     *        identifier within the bucket (each object in a bucket has exactly one key).
+     *        identifier within the bucket (each object in a bucket has exactly one key). To produce a unique key, you
+     *        can use "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query run, or
+     *        "!{iotanalytics:versioned} to insert a unique hash identifying the data set, for example: "
+     *        /DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

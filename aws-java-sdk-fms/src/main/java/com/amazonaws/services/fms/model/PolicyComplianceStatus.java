@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Indicates whether the account is compliant with the specified policy. An account is considered non-compliant if it
- * includes resources that are not protected by the policy.
+ * Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it
+ * includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are
+ * noncompliant with the policy, for security group policies.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyComplianceStatus" target="_top">AWS API
@@ -61,15 +62,15 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
     private java.util.List<EvaluationResult> evaluationResults;
     /**
      * <p>
-     * Time stamp of the last update to the <code>EvaluationResult</code> objects.
+     * Timestamp of the last update to the <code>EvaluationResult</code> objects.
      * </p>
      */
     private java.util.Date lastUpdated;
     /**
      * <p>
      * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * non-compliant. The details include the name of the dependent service and the error message received that
-     * indicates the problem with the service.
+     * noncompliant. The details include the name of the dependent service and the error message received that indicates
+     * the problem with the service.
      * </p>
      */
     private java.util.Map<String, String> issueInfoMap;
@@ -306,11 +307,11 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Time stamp of the last update to the <code>EvaluationResult</code> objects.
+     * Timestamp of the last update to the <code>EvaluationResult</code> objects.
      * </p>
      * 
      * @param lastUpdated
-     *        Time stamp of the last update to the <code>EvaluationResult</code> objects.
+     *        Timestamp of the last update to the <code>EvaluationResult</code> objects.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -319,10 +320,10 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Time stamp of the last update to the <code>EvaluationResult</code> objects.
+     * Timestamp of the last update to the <code>EvaluationResult</code> objects.
      * </p>
      * 
-     * @return Time stamp of the last update to the <code>EvaluationResult</code> objects.
+     * @return Timestamp of the last update to the <code>EvaluationResult</code> objects.
      */
 
     public java.util.Date getLastUpdated() {
@@ -331,11 +332,11 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Time stamp of the last update to the <code>EvaluationResult</code> objects.
+     * Timestamp of the last update to the <code>EvaluationResult</code> objects.
      * </p>
      * 
      * @param lastUpdated
-     *        Time stamp of the last update to the <code>EvaluationResult</code> objects.
+     *        Timestamp of the last update to the <code>EvaluationResult</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,12 +348,12 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * non-compliant. The details include the name of the dependent service and the error message received that
-     * indicates the problem with the service.
+     * noncompliant. The details include the name of the dependent service and the error message received that indicates
+     * the problem with the service.
      * </p>
      * 
      * @return Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a
-     *         resource to be non-compliant. The details include the name of the dependent service and the error message
+     *         resource to be noncompliant. The details include the name of the dependent service and the error message
      *         received that indicates the problem with the service.
      */
 
@@ -363,13 +364,13 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * non-compliant. The details include the name of the dependent service and the error message received that
-     * indicates the problem with the service.
+     * noncompliant. The details include the name of the dependent service and the error message received that indicates
+     * the problem with the service.
      * </p>
      * 
      * @param issueInfoMap
      *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
-     *        to be non-compliant. The details include the name of the dependent service and the error message received
+     *        to be noncompliant. The details include the name of the dependent service and the error message received
      *        that indicates the problem with the service.
      */
 
@@ -380,13 +381,13 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * non-compliant. The details include the name of the dependent service and the error message received that
-     * indicates the problem with the service.
+     * noncompliant. The details include the name of the dependent service and the error message received that indicates
+     * the problem with the service.
      * </p>
      * 
      * @param issueInfoMap
      *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
-     *        to be non-compliant. The details include the name of the dependent service and the error message received
+     *        to be noncompliant. The details include the name of the dependent service and the error message received
      *        that indicates the problem with the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

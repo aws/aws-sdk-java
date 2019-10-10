@@ -67,7 +67,7 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * </ul>
      * <p>
-     * The details are in JSON format. An example is shown in the Examples section below.
+     * The details are in JSON format.
      * </p>
      */
     private String data;
@@ -217,7 +217,7 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * </ul>
      * <p>
-     * The details are in JSON format. An example is shown in the Examples section below.
+     * The details are in JSON format.
      * </p>
      * 
      * @param data
@@ -250,7 +250,7 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        </ul>
      *        <p>
-     *        The details are in JSON format. An example is shown in the Examples section below.
+     *        The details are in JSON format.
      */
 
     public void setData(String data) {
@@ -289,7 +289,7 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * </ul>
      * <p>
-     * The details are in JSON format. An example is shown in the Examples section below.
+     * The details are in JSON format.
      * </p>
      * 
      * @return Details about the attack, including the following:</p>
@@ -321,7 +321,7 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         </ul>
      *         <p>
-     *         The details are in JSON format. An example is shown in the Examples section below.
+     *         The details are in JSON format.
      */
 
     public String getData() {
@@ -360,7 +360,7 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * </ul>
      * <p>
-     * The details are in JSON format. An example is shown in the Examples section below.
+     * The details are in JSON format.
      * </p>
      * 
      * @param data
@@ -393,7 +393,7 @@ public class GetProtectionStatusResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        </ul>
      *        <p>
-     *        The details are in JSON format. An example is shown in the Examples section below.
+     *        The details are in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

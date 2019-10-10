@@ -37,6 +37,16 @@ public class IntentSummary implements Serializable, Cloneable, StructuredPojo {
     private String intentName;
     /**
      * <p>
+     * A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.
+     * </p>
+     * <p>
+     * Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter
+     * the intents returned by the operation to those with only the specified label.
+     * </p>
+     */
+    private String checkpointLabel;
+    /**
+     * <p>
      * Map of the slots that have been gathered and their values.
      * </p>
      */
@@ -166,6 +176,70 @@ public class IntentSummary implements Serializable, Cloneable, StructuredPojo {
 
     public IntentSummary withIntentName(String intentName) {
         setIntentName(intentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.
+     * </p>
+     * <p>
+     * Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter
+     * the intents returned by the operation to those with only the specified label.
+     * </p>
+     * 
+     * @param checkpointLabel
+     *        A user-defined label that identifies a particular intent. You can use this label to return to a previous
+     *        intent. </p>
+     *        <p>
+     *        Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to
+     *        filter the intents returned by the operation to those with only the specified label.
+     */
+
+    public void setCheckpointLabel(String checkpointLabel) {
+        this.checkpointLabel = checkpointLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.
+     * </p>
+     * <p>
+     * Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter
+     * the intents returned by the operation to those with only the specified label.
+     * </p>
+     * 
+     * @return A user-defined label that identifies a particular intent. You can use this label to return to a previous
+     *         intent. </p>
+     *         <p>
+     *         Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to
+     *         filter the intents returned by the operation to those with only the specified label.
+     */
+
+    public String getCheckpointLabel() {
+        return this.checkpointLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label that identifies a particular intent. You can use this label to return to a previous intent.
+     * </p>
+     * <p>
+     * Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter
+     * the intents returned by the operation to those with only the specified label.
+     * </p>
+     * 
+     * @param checkpointLabel
+     *        A user-defined label that identifies a particular intent. You can use this label to return to a previous
+     *        intent. </p>
+     *        <p>
+     *        Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to
+     *        filter the intents returned by the operation to those with only the specified label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IntentSummary withCheckpointLabel(String checkpointLabel) {
+        setCheckpointLabel(checkpointLabel);
         return this;
     }
 
@@ -953,6 +1027,8 @@ public class IntentSummary implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getIntentName() != null)
             sb.append("IntentName: ").append(getIntentName()).append(",");
+        if (getCheckpointLabel() != null)
+            sb.append("CheckpointLabel: ").append(getCheckpointLabel()).append(",");
         if (getSlots() != null)
             sb.append("Slots: ").append("***Sensitive Data Redacted***").append(",");
         if (getConfirmationStatus() != null)
@@ -980,6 +1056,10 @@ public class IntentSummary implements Serializable, Cloneable, StructuredPojo {
         if (other.getIntentName() == null ^ this.getIntentName() == null)
             return false;
         if (other.getIntentName() != null && other.getIntentName().equals(this.getIntentName()) == false)
+            return false;
+        if (other.getCheckpointLabel() == null ^ this.getCheckpointLabel() == null)
+            return false;
+        if (other.getCheckpointLabel() != null && other.getCheckpointLabel().equals(this.getCheckpointLabel()) == false)
             return false;
         if (other.getSlots() == null ^ this.getSlots() == null)
             return false;
@@ -1010,6 +1090,7 @@ public class IntentSummary implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIntentName() == null) ? 0 : getIntentName().hashCode());
+        hashCode = prime * hashCode + ((getCheckpointLabel() == null) ? 0 : getCheckpointLabel().hashCode());
         hashCode = prime * hashCode + ((getSlots() == null) ? 0 : getSlots().hashCode());
         hashCode = prime * hashCode + ((getConfirmationStatus() == null) ? 0 : getConfirmationStatus().hashCode());
         hashCode = prime * hashCode + ((getDialogActionType() == null) ? 0 : getDialogActionType().hashCode());

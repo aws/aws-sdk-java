@@ -33,6 +33,8 @@ public class GetSessionRequestMarshaller {
             .marshallLocationName("botAlias").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("userId").build();
+    private static final MarshallingInfo<String> CHECKPOINTLABELFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("checkpointLabelFilter").build();
 
     private static final GetSessionRequestMarshaller instance = new GetSessionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class GetSessionRequestMarshaller {
             protocolMarshaller.marshall(getSessionRequest.getBotName(), BOTNAME_BINDING);
             protocolMarshaller.marshall(getSessionRequest.getBotAlias(), BOTALIAS_BINDING);
             protocolMarshaller.marshall(getSessionRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(getSessionRequest.getCheckpointLabelFilter(), CHECKPOINTLABELFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

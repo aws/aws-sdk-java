@@ -36,8 +36,9 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
     private String bucket;
     /**
      * <p>
-     * The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has a key that
-     * is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has
+     * a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix
+     * must end with a '/'.
      * </p>
      */
     private String keyPrefix;
@@ -90,13 +91,15 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has a key that
-     * is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has
+     * a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix
+     * must end with a '/'.
      * </p>
      * 
      * @param keyPrefix
-     *        The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has a
-     *        key that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     *        [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3
+     *        bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
+     *        key). The prefix must end with a '/'.
      */
 
     public void setKeyPrefix(String keyPrefix) {
@@ -105,12 +108,14 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has a key that
-     * is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has
+     * a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix
+     * must end with a '/'.
      * </p>
      * 
-     * @return The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has a
-     *         key that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * @return [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3
+     *         bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
+     *         key). The prefix must end with a '/'.
      */
 
     public String getKeyPrefix() {
@@ -119,13 +124,15 @@ public class CustomerManagedChannelS3StorageSummary implements Serializable, Clo
 
     /**
      * <p>
-     * The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has a key that
-     * is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     * [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has
+     * a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The prefix
+     * must end with a '/'.
      * </p>
      * 
      * @param keyPrefix
-     *        The prefix used to create the keys of the channel data objects. Each object in an Amazon S3 bucket has a
-     *        key that is its unique identifier within the bucket (each object in a bucket has exactly one key).
+     *        [Optional] The prefix used to create the keys of the channel data objects. Each object in an Amazon S3
+     *        bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
+     *        key). The prefix must end with a '/'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

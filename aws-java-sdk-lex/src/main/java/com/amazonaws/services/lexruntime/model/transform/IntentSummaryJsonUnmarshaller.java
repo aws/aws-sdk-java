@@ -52,6 +52,10 @@ public class IntentSummaryJsonUnmarshaller implements Unmarshaller<IntentSummary
                     context.nextToken();
                     intentSummary.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("checkpointLabel", targetDepth)) {
+                    context.nextToken();
+                    intentSummary.setCheckpointLabel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("slots", targetDepth)) {
                     context.nextToken();
                     intentSummary.setSlots(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

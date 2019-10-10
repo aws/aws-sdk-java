@@ -20,10 +20,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded
- * from protection by the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different
- * ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which
- * you define. Tags are combined with an "OR." That is, if you add more than one tag, if any of the tags matches, the
- * resource is considered a match for the include or exclude. <a
+ * from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for
+ * example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager
+ * combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the
+ * specified tags to be included or excluded. For more information, see <a
  * href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.
  * </p>
  * 

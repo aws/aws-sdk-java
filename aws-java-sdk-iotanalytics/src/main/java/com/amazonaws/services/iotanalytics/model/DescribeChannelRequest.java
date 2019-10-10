@@ -33,7 +33,8 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
     private String channelName;
     /**
      * <p>
-     * If true, additional statistical information about the channel is included in the response.
+     * If true, additional statistical information about the channel is included in the response. This feature cannot be
+     * used with a channel whose S3 storage is customer-managed.
      * </p>
      */
     private Boolean includeStatistics;
@@ -80,11 +81,13 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If true, additional statistical information about the channel is included in the response.
+     * If true, additional statistical information about the channel is included in the response. This feature cannot be
+     * used with a channel whose S3 storage is customer-managed.
      * </p>
      * 
      * @param includeStatistics
-     *        If true, additional statistical information about the channel is included in the response.
+     *        If true, additional statistical information about the channel is included in the response. This feature
+     *        cannot be used with a channel whose S3 storage is customer-managed.
      */
 
     public void setIncludeStatistics(Boolean includeStatistics) {
@@ -93,10 +96,12 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If true, additional statistical information about the channel is included in the response.
+     * If true, additional statistical information about the channel is included in the response. This feature cannot be
+     * used with a channel whose S3 storage is customer-managed.
      * </p>
      * 
-     * @return If true, additional statistical information about the channel is included in the response.
+     * @return If true, additional statistical information about the channel is included in the response. This feature
+     *         cannot be used with a channel whose S3 storage is customer-managed.
      */
 
     public Boolean getIncludeStatistics() {
@@ -105,11 +110,13 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If true, additional statistical information about the channel is included in the response.
+     * If true, additional statistical information about the channel is included in the response. This feature cannot be
+     * used with a channel whose S3 storage is customer-managed.
      * </p>
      * 
      * @param includeStatistics
-     *        If true, additional statistical information about the channel is included in the response.
+     *        If true, additional statistical information about the channel is included in the response. This feature
+     *        cannot be used with a channel whose S3 storage is customer-managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +127,12 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If true, additional statistical information about the channel is included in the response.
+     * If true, additional statistical information about the channel is included in the response. This feature cannot be
+     * used with a channel whose S3 storage is customer-managed.
      * </p>
      * 
-     * @return If true, additional statistical information about the channel is included in the response.
+     * @return If true, additional statistical information about the channel is included in the response. This feature
+     *         cannot be used with a channel whose S3 storage is customer-managed.
      */
 
     public Boolean isIncludeStatistics() {

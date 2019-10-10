@@ -39,27 +39,27 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
     private String memberAccountId;
     /**
      * <p>
-     * The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample request
-     * above indicates a number type because the default used by AWS Firewall Manager is Unix time in seconds. However,
-     * any valid <code>timestamp</code> format is allowed.
+     * The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax
+     * listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is Unix time in
+     * seconds. However, any valid <code>timestamp</code> format is allowed.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample request
-     * above indicates a number type because the default used by AWS Firewall Manager is Unix time in seconds. However,
-     * any valid <code>timestamp</code> format is allowed.
+     * The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax
+     * listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is Unix time in
+     * seconds. However, any valid <code>timestamp</code> format is allowed.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows
-     * you to list another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests,
-     * specify the value of <code>NextToken</code> from the previous response to get information about another batch of
-     * objects.
+     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response, which you
+     * can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code>
+     * requests, specify the value of <code>NextToken</code> from the previous response to get information about another
+     * batch of objects.
      * </p>
      */
     private String nextToken;
@@ -154,15 +154,15 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample request
-     * above indicates a number type because the default used by AWS Firewall Manager is Unix time in seconds. However,
-     * any valid <code>timestamp</code> format is allowed.
+     * The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax
+     * listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is Unix time in
+     * seconds. However, any valid <code>timestamp</code> format is allowed.
      * </p>
      * 
      * @param startTime
-     *        The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample
-     *        request above indicates a number type because the default used by AWS Firewall Manager is Unix time in
-     *        seconds. However, any valid <code>timestamp</code> format is allowed.
+     *        The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request
+     *        syntax listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is
+     *        Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -171,14 +171,14 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample request
-     * above indicates a number type because the default used by AWS Firewall Manager is Unix time in seconds. However,
-     * any valid <code>timestamp</code> format is allowed.
+     * The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax
+     * listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is Unix time in
+     * seconds. However, any valid <code>timestamp</code> format is allowed.
      * </p>
      * 
-     * @return The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample
-     *         request above indicates a number type because the default used by AWS Firewall Manager is Unix time in
-     *         seconds. However, any valid <code>timestamp</code> format is allowed.
+     * @return The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request
+     *         syntax listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is
+     *         Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.
      */
 
     public java.util.Date getStartTime() {
@@ -187,15 +187,15 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample request
-     * above indicates a number type because the default used by AWS Firewall Manager is Unix time in seconds. However,
-     * any valid <code>timestamp</code> format is allowed.
+     * The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax
+     * listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is Unix time in
+     * seconds. However, any valid <code>timestamp</code> format is allowed.
      * </p>
      * 
      * @param startTime
-     *        The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample
-     *        request above indicates a number type because the default used by AWS Firewall Manager is Unix time in
-     *        seconds. However, any valid <code>timestamp</code> format is allowed.
+     *        The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request
+     *        syntax listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is
+     *        Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,15 +206,15 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample request
-     * above indicates a number type because the default used by AWS Firewall Manager is Unix time in seconds. However,
-     * any valid <code>timestamp</code> format is allowed.
+     * The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax
+     * listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is Unix time in
+     * seconds. However, any valid <code>timestamp</code> format is allowed.
      * </p>
      * 
      * @param endTime
-     *        The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample
-     *        request above indicates a number type because the default used by AWS Firewall Manager is Unix time in
-     *        seconds. However, any valid <code>timestamp</code> format is allowed.
+     *        The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request
+     *        syntax listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is
+     *        Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -223,14 +223,14 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample request
-     * above indicates a number type because the default used by AWS Firewall Manager is Unix time in seconds. However,
-     * any valid <code>timestamp</code> format is allowed.
+     * The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax
+     * listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is Unix time in
+     * seconds. However, any valid <code>timestamp</code> format is allowed.
      * </p>
      * 
-     * @return The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample
-     *         request above indicates a number type because the default used by AWS Firewall Manager is Unix time in
-     *         seconds. However, any valid <code>timestamp</code> format is allowed.
+     * @return The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request
+     *         syntax listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is
+     *         Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.
      */
 
     public java.util.Date getEndTime() {
@@ -239,15 +239,15 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample request
-     * above indicates a number type because the default used by AWS Firewall Manager is Unix time in seconds. However,
-     * any valid <code>timestamp</code> format is allowed.
+     * The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax
+     * listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is Unix time in
+     * seconds. However, any valid <code>timestamp</code> format is allowed.
      * </p>
      * 
      * @param endTime
-     *        The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The sample
-     *        request above indicates a number type because the default used by AWS Firewall Manager is Unix time in
-     *        seconds. However, any valid <code>timestamp</code> format is allowed.
+     *        The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request
+     *        syntax listing indicates a <code>number</code> type because the default used by AWS Firewall Manager is
+     *        Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,16 +259,16 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows
-     * you to list another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests,
-     * specify the value of <code>NextToken</code> from the previous response to get information about another batch of
-     * objects.
+     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response, which you
+     * can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code>
+     * requests, specify the value of <code>NextToken</code> from the previous response to get information about another
+     * batch of objects.
      * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> and you have more objects than the number that you
      *        specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
-     *        response that allows you to list another group of objects. For the second and subsequent
+     *        response, which you can use to retrieve another group of objects. For the second and subsequent
      *        <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous
      *        response to get information about another batch of objects.
      */
@@ -280,15 +280,15 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows
-     * you to list another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests,
-     * specify the value of <code>NextToken</code> from the previous response to get information about another batch of
-     * objects.
+     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response, which you
+     * can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code>
+     * requests, specify the value of <code>NextToken</code> from the previous response to get information about another
+     * batch of objects.
      * </p>
      * 
      * @return If you specify a value for <code>MaxResults</code> and you have more objects than the number that you
      *         specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
-     *         response that allows you to list another group of objects. For the second and subsequent
+     *         response, which you can use to retrieve another group of objects. For the second and subsequent
      *         <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous
      *         response to get information about another batch of objects.
      */
@@ -300,16 +300,16 @@ public class GetProtectionStatusRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for
-     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows
-     * you to list another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests,
-     * specify the value of <code>NextToken</code> from the previous response to get information about another batch of
-     * objects.
+     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response, which you
+     * can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code>
+     * requests, specify the value of <code>NextToken</code> from the previous response to get information about another
+     * batch of objects.
      * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> and you have more objects than the number that you
      *        specify for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
-     *        response that allows you to list another group of objects. For the second and subsequent
+     *        response, which you can use to retrieve another group of objects. For the second and subsequent
      *        <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous
      *        response to get information about another batch of objects.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -106,6 +106,18 @@ public class ArnTest {
     }
 
     @Test
+    public void hashCodeEquals_minimalProperties() {
+        Arn arn = Arn.builder()
+                     .withPartition("aws")
+                     .withService("foobar")
+                     .withResource("resource")
+                     .build();
+        Arn anotherArn = arn.toBuilder().build();
+        assertThat(arn.equals(anotherArn), equalTo(true));
+        assertThat(arn.hashCode(), equalTo(anotherArn.hashCode()));
+    }
+
+    @Test
     public void arnFromBuilder_ParsesCorrectly() {
         Arn arn = Arn.builder()
                      .withPartition("aws")

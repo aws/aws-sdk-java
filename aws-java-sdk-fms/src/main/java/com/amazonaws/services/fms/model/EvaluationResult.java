@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the compliance status for the account. An account is considered non-compliant if it includes resources that
- * are not protected by the specified policy.
+ * Describes the compliance status for the account. An account is considered noncompliant if it includes resources that
+ * are not protected by the specified policy or that don't comply with the policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EvaluationResult" target="_top">AWS API
@@ -37,14 +37,16 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
     private String complianceStatus;
     /**
      * <p>
-     * Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if
-     * it is not associated with the specified policy.
+     * The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     * policies, a resource is considered noncompliant if it is not associated with the policy. For security group
+     * policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation
+     * is disabled or not possible.
      * </p>
      */
     private Long violatorCount;
     /**
      * <p>
-     * Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      * </p>
      */
     private Boolean evaluationLimitExceeded;
@@ -110,13 +112,17 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if
-     * it is not associated with the specified policy.
+     * The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     * policies, a resource is considered noncompliant if it is not associated with the policy. For security group
+     * policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation
+     * is disabled or not possible.
      * </p>
      * 
      * @param violatorCount
-     *        Number of resources that are non-compliant with the specified policy. A resource is considered
-     *        non-compliant if it is not associated with the specified policy.
+     *        The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     *        policies, a resource is considered noncompliant if it is not associated with the policy. For security
+     *        group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy
+     *        and remediation is disabled or not possible.
      */
 
     public void setViolatorCount(Long violatorCount) {
@@ -125,12 +131,16 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if
-     * it is not associated with the specified policy.
+     * The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     * policies, a resource is considered noncompliant if it is not associated with the policy. For security group
+     * policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation
+     * is disabled or not possible.
      * </p>
      * 
-     * @return Number of resources that are non-compliant with the specified policy. A resource is considered
-     *         non-compliant if it is not associated with the specified policy.
+     * @return The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     *         policies, a resource is considered noncompliant if it is not associated with the policy. For security
+     *         group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy
+     *         and remediation is disabled or not possible.
      */
 
     public Long getViolatorCount() {
@@ -139,13 +149,17 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if
-     * it is not associated with the specified policy.
+     * The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     * policies, a resource is considered noncompliant if it is not associated with the policy. For security group
+     * policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation
+     * is disabled or not possible.
      * </p>
      * 
      * @param violatorCount
-     *        Number of resources that are non-compliant with the specified policy. A resource is considered
-     *        non-compliant if it is not associated with the specified policy.
+     *        The number of resources that are noncompliant with the specified policy. For AWS WAF and Shield Advanced
+     *        policies, a resource is considered noncompliant if it is not associated with the policy. For security
+     *        group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy
+     *        and remediation is disabled or not possible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +170,11 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      * </p>
      * 
      * @param evaluationLimitExceeded
-     *        Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     *        Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      */
 
     public void setEvaluationLimitExceeded(Boolean evaluationLimitExceeded) {
@@ -169,10 +183,10 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      * </p>
      * 
-     * @return Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     * @return Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      */
 
     public Boolean getEvaluationLimitExceeded() {
@@ -181,11 +195,11 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      * </p>
      * 
      * @param evaluationLimitExceeded
-     *        Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     *        Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,10 +210,10 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     * Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      * </p>
      * 
-     * @return Indicates that over 100 resources are non-compliant with the AWS Firewall Manager policy.
+     * @return Indicates that over 100 resources are noncompliant with the AWS Firewall Manager policy.
      */
 
     public Boolean isEvaluationLimitExceeded() {

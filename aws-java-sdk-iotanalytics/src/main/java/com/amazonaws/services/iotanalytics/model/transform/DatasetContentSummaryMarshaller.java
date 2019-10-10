@@ -35,6 +35,8 @@ public class DatasetContentSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> SCHEDULETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduleTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> COMPLETIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completionTime").timestampFormat("unixTimestamp").build();
 
     private static final DatasetContentSummaryMarshaller instance = new DatasetContentSummaryMarshaller();
 
@@ -56,6 +58,7 @@ public class DatasetContentSummaryMarshaller {
             protocolMarshaller.marshall(datasetContentSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(datasetContentSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(datasetContentSummary.getScheduleTime(), SCHEDULETIME_BINDING);
+            protocolMarshaller.marshall(datasetContentSummary.getCompletionTime(), COMPLETIONTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

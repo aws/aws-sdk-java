@@ -22,7 +22,8 @@ public enum DependentServiceName {
 
     AWSCONFIG("AWSCONFIG"),
     AWSWAF("AWSWAF"),
-    AWSSHIELD_ADVANCED("AWSSHIELD_ADVANCED");
+    AWSSHIELD_ADVANCED("AWSSHIELD_ADVANCED"),
+    AWSVPC("AWSVPC");
 
     private String value;
 

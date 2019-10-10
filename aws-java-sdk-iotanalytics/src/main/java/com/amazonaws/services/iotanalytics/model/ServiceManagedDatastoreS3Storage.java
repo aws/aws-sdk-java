@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+ * Use this to store data store data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
+ * service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ServiceManagedDatastoreS3Storage"

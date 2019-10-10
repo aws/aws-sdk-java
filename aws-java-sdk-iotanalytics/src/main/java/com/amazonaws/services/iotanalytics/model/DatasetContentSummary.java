@@ -52,6 +52,12 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date scheduleTime;
+    /**
+     * <p>
+     * The time the dataset content status was updated to SUCCEEDED or FAILED.
+     * </p>
+     */
+    private java.util.Date completionTime;
 
     /**
      * <p>
@@ -214,6 +220,46 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The time the dataset content status was updated to SUCCEEDED or FAILED.
+     * </p>
+     * 
+     * @param completionTime
+     *        The time the dataset content status was updated to SUCCEEDED or FAILED.
+     */
+
+    public void setCompletionTime(java.util.Date completionTime) {
+        this.completionTime = completionTime;
+    }
+
+    /**
+     * <p>
+     * The time the dataset content status was updated to SUCCEEDED or FAILED.
+     * </p>
+     * 
+     * @return The time the dataset content status was updated to SUCCEEDED or FAILED.
+     */
+
+    public java.util.Date getCompletionTime() {
+        return this.completionTime;
+    }
+
+    /**
+     * <p>
+     * The time the dataset content status was updated to SUCCEEDED or FAILED.
+     * </p>
+     * 
+     * @param completionTime
+     *        The time the dataset content status was updated to SUCCEEDED or FAILED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetContentSummary withCompletionTime(java.util.Date completionTime) {
+        setCompletionTime(completionTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +278,9 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getScheduleTime() != null)
-            sb.append("ScheduleTime: ").append(getScheduleTime());
+            sb.append("ScheduleTime: ").append(getScheduleTime()).append(",");
+        if (getCompletionTime() != null)
+            sb.append("CompletionTime: ").append(getCompletionTime());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +311,10 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
             return false;
         if (other.getScheduleTime() != null && other.getScheduleTime().equals(this.getScheduleTime()) == false)
             return false;
+        if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
+            return false;
+        if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +327,7 @@ public class DatasetContentSummary implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getScheduleTime() == null) ? 0 : getScheduleTime().hashCode());
+        hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         return hashCode;
     }
 
