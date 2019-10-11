@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum UpdateTargetsArchitecture {
 
+    Armv6l("armv6l"),
     Armv7l("armv7l"),
     X86_64("x86_64"),
     Aarch64("aarch64"),

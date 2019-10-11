@@ -1,3 +1,8 @@
+# __1.11.651__ __2019-10-11__
+## __AWS Greengrass__
+  - ### Features
+    - Greengrass OTA service supports Raspbian/Armv6l platforms.
+
 # __1.11.650__ __2019-10-10__
 ## __AWS IoT Analytics__
   - ### Features
