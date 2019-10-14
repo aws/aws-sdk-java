@@ -31,6 +31,22 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String solutionArn;
+    /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * </p>
+     * </important>
+     */
+    private String trainingMode;
 
     /**
      * <p>
@@ -73,6 +89,141 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * </p>
+     * </important>
+     * 
+     * @param trainingMode
+     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
+     *        trains the solution version based on the entirety of the input solution's training data, while the
+     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
+     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
+     *        an entirely new one.</p> <important>
+     *        <p>
+     *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the
+     *        <a>native-recipe-hrnn-coldstart</a> recipe.
+     *        </p>
+     * @see TrainingMode
+     */
+
+    public void setTrainingMode(String trainingMode) {
+        this.trainingMode = trainingMode;
+    }
+
+    /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * </p>
+     * </important>
+     * 
+     * @return The scope of training to be performed when creating the solution version. The <code>FULL</code> option
+     *         trains the solution version based on the entirety of the input solution's training data, while the
+     *         <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
+     *         Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of
+     *         creating an entirely new one.</p> <important>
+     *         <p>
+     *         The <code>UPDATE</code> option can only be used when you already have an active solution version created
+     *         from the input solution using the <code>FULL</code> option and the input solution was trained with the
+     *         <a>native-recipe-hrnn-coldstart</a> recipe.
+     *         </p>
+     * @see TrainingMode
+     */
+
+    public String getTrainingMode() {
+        return this.trainingMode;
+    }
+
+    /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * </p>
+     * </important>
+     * 
+     * @param trainingMode
+     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
+     *        trains the solution version based on the entirety of the input solution's training data, while the
+     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
+     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
+     *        an entirely new one.</p> <important>
+     *        <p>
+     *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the
+     *        <a>native-recipe-hrnn-coldstart</a> recipe.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingMode
+     */
+
+    public CreateSolutionVersionRequest withTrainingMode(String trainingMode) {
+        setTrainingMode(trainingMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * </p>
+     * <important>
+     * <p>
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * </p>
+     * </important>
+     * 
+     * @param trainingMode
+     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
+     *        trains the solution version based on the entirety of the input solution's training data, while the
+     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
+     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
+     *        an entirely new one.</p> <important>
+     *        <p>
+     *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the
+     *        <a>native-recipe-hrnn-coldstart</a> recipe.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingMode
+     */
+
+    public CreateSolutionVersionRequest withTrainingMode(TrainingMode trainingMode) {
+        this.trainingMode = trainingMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +236,9 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSolutionArn() != null)
-            sb.append("SolutionArn: ").append(getSolutionArn());
+            sb.append("SolutionArn: ").append(getSolutionArn()).append(",");
+        if (getTrainingMode() != null)
+            sb.append("TrainingMode: ").append(getTrainingMode());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +257,10 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getSolutionArn() != null && other.getSolutionArn().equals(this.getSolutionArn()) == false)
             return false;
+        if (other.getTrainingMode() == null ^ this.getTrainingMode() == null)
+            return false;
+        if (other.getTrainingMode() != null && other.getTrainingMode().equals(this.getTrainingMode()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +270,7 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSolutionArn() == null) ? 0 : getSolutionArn().hashCode());
+        hashCode = prime * hashCode + ((getTrainingMode() == null) ? 0 : getTrainingMode().hashCode());
         return hashCode;
     }
 

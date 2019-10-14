@@ -25,7 +25,7 @@ public class DescribeWorkspaceSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root volume.
+     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Snapshot> rebuildSnapshots;
@@ -39,10 +39,10 @@ public class DescribeWorkspaceSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root volume.
+     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.
      * </p>
      * 
-     * @return Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root
+     * @return Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user
      *         volume.
      */
 
@@ -55,11 +55,11 @@ public class DescribeWorkspaceSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root volume.
+     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.
      * </p>
      * 
      * @param rebuildSnapshots
-     *        Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root
+     *        Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user
      *        volume.
      */
 
@@ -74,7 +74,7 @@ public class DescribeWorkspaceSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root volume.
+     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class DescribeWorkspaceSnapshotsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param rebuildSnapshots
-     *        Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root
+     *        Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user
      *        volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -100,11 +100,11 @@ public class DescribeWorkspaceSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root volume.
+     * Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.
      * </p>
      * 
      * @param rebuildSnapshots
-     *        Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the root
+     *        Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user
      *        volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

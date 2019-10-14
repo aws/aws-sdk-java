@@ -29,6 +29,8 @@ public class CreateSolutionVersionRequestMarshaller {
 
     private static final MarshallingInfo<String> SOLUTIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("solutionArn").build();
+    private static final MarshallingInfo<String> TRAININGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingMode").build();
 
     private static final CreateSolutionVersionRequestMarshaller instance = new CreateSolutionVersionRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class CreateSolutionVersionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createSolutionVersionRequest.getSolutionArn(), SOLUTIONARN_BINDING);
+            protocolMarshaller.marshall(createSolutionVersionRequest.getTrainingMode(), TRAININGMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,3 +1,16 @@
+# __1.11.652__ __2019-10-14__
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - DefaultRequest now case-insensitively matches header keys.
+
+## __Amazon Personalize__
+  - ### Features
+    - AWS Personalize: Adds ability to create a solution version using FULL or UPDATE training mode
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Documentation updates for WorkSpaces
+
 # __1.11.651__ __2019-10-11__
 ## __AWS Greengrass__
   - ### Features

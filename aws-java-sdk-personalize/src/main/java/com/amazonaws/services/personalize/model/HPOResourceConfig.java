@@ -30,24 +30,28 @@ public class HPOResourceConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of training jobs.
+     * The maximum number of training jobs when you create a solution version. The maximum value for
+     * <code>maxNumberOfTrainingJobs</code> is <code>40</code>.
      * </p>
      */
     private String maxNumberOfTrainingJobs;
     /**
      * <p>
-     * The maximum number of parallel training jobs.
+     * The maximum number of parallel training jobs when you create a solution version. The maximum value for
+     * <code>maxParallelTrainingJobs</code> is <code>10</code>.
      * </p>
      */
     private String maxParallelTrainingJobs;
 
     /**
      * <p>
-     * The maximum number of training jobs.
+     * The maximum number of training jobs when you create a solution version. The maximum value for
+     * <code>maxNumberOfTrainingJobs</code> is <code>40</code>.
      * </p>
      * 
      * @param maxNumberOfTrainingJobs
-     *        The maximum number of training jobs.
+     *        The maximum number of training jobs when you create a solution version. The maximum value for
+     *        <code>maxNumberOfTrainingJobs</code> is <code>40</code>.
      */
 
     public void setMaxNumberOfTrainingJobs(String maxNumberOfTrainingJobs) {
@@ -56,10 +60,12 @@ public class HPOResourceConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of training jobs.
+     * The maximum number of training jobs when you create a solution version. The maximum value for
+     * <code>maxNumberOfTrainingJobs</code> is <code>40</code>.
      * </p>
      * 
-     * @return The maximum number of training jobs.
+     * @return The maximum number of training jobs when you create a solution version. The maximum value for
+     *         <code>maxNumberOfTrainingJobs</code> is <code>40</code>.
      */
 
     public String getMaxNumberOfTrainingJobs() {
@@ -68,11 +74,13 @@ public class HPOResourceConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of training jobs.
+     * The maximum number of training jobs when you create a solution version. The maximum value for
+     * <code>maxNumberOfTrainingJobs</code> is <code>40</code>.
      * </p>
      * 
      * @param maxNumberOfTrainingJobs
-     *        The maximum number of training jobs.
+     *        The maximum number of training jobs when you create a solution version. The maximum value for
+     *        <code>maxNumberOfTrainingJobs</code> is <code>40</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +91,13 @@ public class HPOResourceConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of parallel training jobs.
+     * The maximum number of parallel training jobs when you create a solution version. The maximum value for
+     * <code>maxParallelTrainingJobs</code> is <code>10</code>.
      * </p>
      * 
      * @param maxParallelTrainingJobs
-     *        The maximum number of parallel training jobs.
+     *        The maximum number of parallel training jobs when you create a solution version. The maximum value for
+     *        <code>maxParallelTrainingJobs</code> is <code>10</code>.
      */
 
     public void setMaxParallelTrainingJobs(String maxParallelTrainingJobs) {
@@ -96,10 +106,12 @@ public class HPOResourceConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of parallel training jobs.
+     * The maximum number of parallel training jobs when you create a solution version. The maximum value for
+     * <code>maxParallelTrainingJobs</code> is <code>10</code>.
      * </p>
      * 
-     * @return The maximum number of parallel training jobs.
+     * @return The maximum number of parallel training jobs when you create a solution version. The maximum value for
+     *         <code>maxParallelTrainingJobs</code> is <code>10</code>.
      */
 
     public String getMaxParallelTrainingJobs() {
@@ -108,11 +120,13 @@ public class HPOResourceConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of parallel training jobs.
+     * The maximum number of parallel training jobs when you create a solution version. The maximum value for
+     * <code>maxParallelTrainingJobs</code> is <code>10</code>.
      * </p>
      * 
      * @param maxParallelTrainingJobs
-     *        The maximum number of parallel training jobs.
+     *        The maximum number of parallel training jobs when you create a solution version. The maximum value for
+     *        <code>maxParallelTrainingJobs</code> is <code>10</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,6 +45,8 @@ public class SolutionVersionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("solutionConfig").build();
     private static final MarshallingInfo<Double> TRAININGHOURS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingHours").build();
+    private static final MarshallingInfo<String> TRAININGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingMode").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +81,7 @@ public class SolutionVersionMarshaller {
             protocolMarshaller.marshall(solutionVersion.getDatasetGroupArn(), DATASETGROUPARN_BINDING);
             protocolMarshaller.marshall(solutionVersion.getSolutionConfig(), SOLUTIONCONFIG_BINDING);
             protocolMarshaller.marshall(solutionVersion.getTrainingHours(), TRAININGHOURS_BINDING);
+            protocolMarshaller.marshall(solutionVersion.getTrainingMode(), TRAININGMODE_BINDING);
             protocolMarshaller.marshall(solutionVersion.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(solutionVersion.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(solutionVersion.getCreationDateTime(), CREATIONDATETIME_BINDING);

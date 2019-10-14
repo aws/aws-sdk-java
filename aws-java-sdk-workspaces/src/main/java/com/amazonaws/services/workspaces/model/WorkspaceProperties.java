@@ -38,7 +38,7 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     private String runningMode;
     /**
      * <p>
-     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
+     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.
      * </p>
      */
     private Integer runningModeAutoStopTimeoutInMinutes;
@@ -157,11 +157,11 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
+     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.
      * </p>
      * 
      * @param runningModeAutoStopTimeoutInMinutes
-     *        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute
+     *        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute
      *        intervals.
      */
 
@@ -171,10 +171,10 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
+     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.
      * </p>
      * 
-     * @return The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute
+     * @return The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute
      *         intervals.
      */
 
@@ -184,11 +184,11 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.
+     * The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.
      * </p>
      * 
      * @param runningModeAutoStopTimeoutInMinutes
-     *        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute
+     *        The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute
      *        intervals.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
