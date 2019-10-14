@@ -58,4 +58,17 @@ public class DefaultRequestTest {
         Assert.assertEquals("Hello2", modelRequest.getHandlerContext(context));
         Assert.assertEquals("Hello3", request.getHandlerContext(context));
     }
+
+    @Test
+    public void defaultRequestShouldTreatHeadersCaseInsensitive() {
+
+        AmazonWebServiceRequest modelRequest = new AmazonWebServiceRequest() {};
+        DefaultRequest<?> request = new DefaultRequest<Object>(modelRequest, "service-name");
+
+        request.addHeader("Content-Length", "100");
+        request.addHeader("content-length", "0");
+
+        Assert.assertEquals("0", request.getHeaders().get("Content-Length"));
+        Assert.assertEquals("0", request.getHeaders().get("content-length"));
+    }
 }
