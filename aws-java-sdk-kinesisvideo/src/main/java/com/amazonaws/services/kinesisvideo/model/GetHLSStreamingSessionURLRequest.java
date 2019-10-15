@@ -103,7 +103,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
     private String playbackMode;
     /**
      * <p>
-     * The time range of the requested fragment, and the source of the timestamps.
+     * The time range of the requested fragment and the source of the timestamps.
      * </p>
      * <p>
      * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>.
@@ -130,19 +130,45 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
     private String containerFormat;
     /**
      * <p>
-     * Specifies when flags marking discontinuities between fragments will be added to the media playlists. The default
-     * is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code>
-     * when it is <code>PRODUCER_TIMESTAMP</code>.
+     * Specifies when flags marking discontinuities between fragments are added to the media playlists.
      * </p>
      * <p>
      * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
-     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
-     * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
-     * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
-     * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
-     * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer timestamps.
+     * means that if there is any overlap or gap between fragments (as is typical if <a>HLSFragmentSelector</a> is set
+     * to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some
+     * places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall
+     * and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media
+     * player is expected to reset the timeline, resulting in the next fragment being played immediately after the
+     * previous fragment.
+     * </p>
+     * <p>
+     * The following modes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is
+     * recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     * <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of
+     * more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue
+     * with the media timeline (e.g. a missing fragment).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>, and
+     * <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      */
     private String discontinuityMode;
@@ -789,7 +815,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time range of the requested fragment, and the source of the timestamps.
+     * The time range of the requested fragment and the source of the timestamps.
      * </p>
      * <p>
      * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>.
@@ -800,7 +826,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param hLSFragmentSelector
-     *        The time range of the requested fragment, and the source of the timestamps.</p>
+     *        The time range of the requested fragment and the source of the timestamps.</p>
      *        <p>
      *        This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
      *        <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If
@@ -816,7 +842,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time range of the requested fragment, and the source of the timestamps.
+     * The time range of the requested fragment and the source of the timestamps.
      * </p>
      * <p>
      * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>.
@@ -826,7 +852,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.
      * </p>
      * 
-     * @return The time range of the requested fragment, and the source of the timestamps.</p>
+     * @return The time range of the requested fragment and the source of the timestamps.</p>
      *         <p>
      *         This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
      *         <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If
@@ -842,7 +868,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time range of the requested fragment, and the source of the timestamps.
+     * The time range of the requested fragment and the source of the timestamps.
      * </p>
      * <p>
      * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>.
@@ -853,7 +879,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param hLSFragmentSelector
-     *        The time range of the requested fragment, and the source of the timestamps.</p>
+     *        The time range of the requested fragment and the source of the timestamps.</p>
      *        <p>
      *        This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
      *        <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/> <code>LIVE</code>. If
@@ -990,35 +1016,86 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies when flags marking discontinuities between fragments will be added to the media playlists. The default
-     * is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code>
-     * when it is <code>PRODUCER_TIMESTAMP</code>.
+     * Specifies when flags marking discontinuities between fragments are added to the media playlists.
      * </p>
      * <p>
      * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
-     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
-     * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
-     * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
-     * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
-     * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer timestamps.
+     * means that if there is any overlap or gap between fragments (as is typical if <a>HLSFragmentSelector</a> is set
+     * to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some
+     * places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall
+     * and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media
+     * player is expected to reset the timeline, resulting in the next fragment being played immediately after the
+     * previous fragment.
+     * </p>
+     * <p>
+     * The following modes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is
+     * recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     * <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of
+     * more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue
+     * with the media timeline (e.g. a missing fragment).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>, and
+     * <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * 
      * @param discontinuityMode
-     *        Specifies when flags marking discontinuities between fragments will be added to the media playlists. The
-     *        default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
-     *        <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p>
+     *        Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
      *        <p>
      *        Media players typically build a timeline of media content to play, based on the timestamps of each
-     *        fragment. This means that if there is any overlap between fragments (as is typical if
-     *        <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps
-     *        between fragments in some places, and overwrites frames in other places. When there are discontinuity
-     *        flags between fragments, the media player is expected to reset the timeline, resulting in the fragment
-     *        being played immediately after the previous fragment. We recommend that you always have discontinuity
-     *        flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
-     *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
-     *        producer timestamps.
+     *        fragment. This means that if there is any overlap or gap between fragments (as is typical if
+     *        <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also
+     *        have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the
+     *        media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When
+     *        there are discontinuity flags between fragments, the media player is expected to reset the timeline,
+     *        resulting in the next fragment being played immediately after the previous fragment.
+     *        </p>
+     *        <p>
+     *        The following modes are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It
+     *        is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     *        <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or
+     *        overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     *        <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant
+     *        issue with the media timeline (e.g. a missing fragment).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>
+     *        , and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * @see HLSDiscontinuityMode
      */
 
@@ -1028,34 +1105,85 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies when flags marking discontinuities between fragments will be added to the media playlists. The default
-     * is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code>
-     * when it is <code>PRODUCER_TIMESTAMP</code>.
+     * Specifies when flags marking discontinuities between fragments are added to the media playlists.
      * </p>
      * <p>
      * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
-     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
-     * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
-     * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
-     * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
-     * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer timestamps.
+     * means that if there is any overlap or gap between fragments (as is typical if <a>HLSFragmentSelector</a> is set
+     * to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some
+     * places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall
+     * and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media
+     * player is expected to reset the timeline, resulting in the next fragment being played immediately after the
+     * previous fragment.
+     * </p>
+     * <p>
+     * The following modes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is
+     * recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     * <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of
+     * more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue
+     * with the media timeline (e.g. a missing fragment).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>, and
+     * <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * 
-     * @return Specifies when flags marking discontinuities between fragments will be added to the media playlists. The
-     *         default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
-     *         <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p>
+     * @return Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
      *         <p>
      *         Media players typically build a timeline of media content to play, based on the timestamps of each
-     *         fragment. This means that if there is any overlap between fragments (as is typical if
-     *         <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps
-     *         between fragments in some places, and overwrites frames in other places. When there are discontinuity
-     *         flags between fragments, the media player is expected to reset the timeline, resulting in the fragment
-     *         being played immediately after the previous fragment. We recommend that you always have discontinuity
-     *         flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
-     *         should not place discontinuity flags between fragments for the player timeline to accurately map to the
-     *         producer timestamps.
+     *         fragment. This means that if there is any overlap or gap between fragments (as is typical if
+     *         <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also
+     *         have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the
+     *         media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When
+     *         there are discontinuity flags between fragments, the media player is expected to reset the timeline,
+     *         resulting in the next fragment being played immediately after the previous fragment.
+     *         </p>
+     *         <p>
+     *         The following modes are supported:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist.
+     *         It is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     *         <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or
+     *         overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     *         <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant
+     *         issue with the media timeline (e.g. a missing fragment).
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to
+     *         <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * @see HLSDiscontinuityMode
      */
 
@@ -1065,35 +1193,86 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies when flags marking discontinuities between fragments will be added to the media playlists. The default
-     * is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code>
-     * when it is <code>PRODUCER_TIMESTAMP</code>.
+     * Specifies when flags marking discontinuities between fragments are added to the media playlists.
      * </p>
      * <p>
      * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
-     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
-     * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
-     * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
-     * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
-     * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer timestamps.
+     * means that if there is any overlap or gap between fragments (as is typical if <a>HLSFragmentSelector</a> is set
+     * to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some
+     * places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall
+     * and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media
+     * player is expected to reset the timeline, resulting in the next fragment being played immediately after the
+     * previous fragment.
+     * </p>
+     * <p>
+     * The following modes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is
+     * recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     * <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of
+     * more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue
+     * with the media timeline (e.g. a missing fragment).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>, and
+     * <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * 
      * @param discontinuityMode
-     *        Specifies when flags marking discontinuities between fragments will be added to the media playlists. The
-     *        default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
-     *        <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p>
+     *        Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
      *        <p>
      *        Media players typically build a timeline of media content to play, based on the timestamps of each
-     *        fragment. This means that if there is any overlap between fragments (as is typical if
-     *        <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps
-     *        between fragments in some places, and overwrites frames in other places. When there are discontinuity
-     *        flags between fragments, the media player is expected to reset the timeline, resulting in the fragment
-     *        being played immediately after the previous fragment. We recommend that you always have discontinuity
-     *        flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
-     *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
-     *        producer timestamps.
+     *        fragment. This means that if there is any overlap or gap between fragments (as is typical if
+     *        <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also
+     *        have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the
+     *        media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When
+     *        there are discontinuity flags between fragments, the media player is expected to reset the timeline,
+     *        resulting in the next fragment being played immediately after the previous fragment.
+     *        </p>
+     *        <p>
+     *        The following modes are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It
+     *        is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     *        <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or
+     *        overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     *        <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant
+     *        issue with the media timeline (e.g. a missing fragment).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>
+     *        , and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HLSDiscontinuityMode
      */
@@ -1105,35 +1284,86 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies when flags marking discontinuities between fragments will be added to the media playlists. The default
-     * is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code>
-     * when it is <code>PRODUCER_TIMESTAMP</code>.
+     * Specifies when flags marking discontinuities between fragments are added to the media playlists.
      * </p>
      * <p>
      * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
-     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
-     * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
-     * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
-     * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
-     * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer timestamps.
+     * means that if there is any overlap or gap between fragments (as is typical if <a>HLSFragmentSelector</a> is set
+     * to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some
+     * places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall
+     * and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media
+     * player is expected to reset the timeline, resulting in the next fragment being played immediately after the
+     * previous fragment.
+     * </p>
+     * <p>
+     * The following modes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is
+     * recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     * <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of
+     * more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     * <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue
+     * with the media timeline (e.g. a missing fragment).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>, and
+     * <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * 
      * @param discontinuityMode
-     *        Specifies when flags marking discontinuities between fragments will be added to the media playlists. The
-     *        default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
-     *        <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p>
+     *        Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
      *        <p>
      *        Media players typically build a timeline of media content to play, based on the timestamps of each
-     *        fragment. This means that if there is any overlap between fragments (as is typical if
-     *        <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps
-     *        between fragments in some places, and overwrites frames in other places. When there are discontinuity
-     *        flags between fragments, the media player is expected to reset the timeline, resulting in the fragment
-     *        being played immediately after the previous fragment. We recommend that you always have discontinuity
-     *        flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
-     *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
-     *        producer timestamps.
+     *        fragment. This means that if there is any overlap or gap between fragments (as is typical if
+     *        <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also
+     *        have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the
+     *        media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When
+     *        there are discontinuity flags between fragments, the media player is expected to reset the timeline,
+     *        resulting in the next fragment being played immediately after the previous fragment.
+     *        </p>
+     *        <p>
+     *        The following modes are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It
+     *        is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of
+     *        <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or
+     *        overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of
+     *        <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant
+     *        issue with the media timeline (e.g. a missing fragment).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>
+     *        , and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HLSDiscontinuityMode
      */

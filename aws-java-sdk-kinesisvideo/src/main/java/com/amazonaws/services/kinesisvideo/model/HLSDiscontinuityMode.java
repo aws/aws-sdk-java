@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum HLSDiscontinuityMode {
 
     ALWAYS("ALWAYS"),
-    NEVER("NEVER");
+    NEVER("NEVER"),
+    ON_DISCONTINUITY("ON_DISCONTINUITY");
 
     private String value;
 
