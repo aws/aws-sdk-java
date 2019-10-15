@@ -26,6 +26,12 @@ public class WebIdentityTokenCredentialsProvider implements AWSCredentialsProvid
     private final AWSCredentialsProvider credentialsProvider;
     private final RuntimeException loadException;
 
+    private static final WebIdentityTokenCredentialsProvider INSTANCE = new WebIdentityTokenCredentialsProvider();
+
+    private WebIdentityTokenCredentialsProvider() {
+        this(new BuilderImpl());
+    }
+
     private WebIdentityTokenCredentialsProvider(BuilderImpl builder) {
         AWSCredentialsProvider credentialsProvider = null;
         RuntimeException loadException = null;
@@ -75,6 +81,10 @@ public class WebIdentityTokenCredentialsProvider implements AWSCredentialsProvid
     @Override
     public void refresh() {
 
+    }
+
+    public static WebIdentityTokenCredentialsProvider getInstance() {
+        return INSTANCE;
     }
 
     public static WebIdentityTokenCredentialsProvider create() {
