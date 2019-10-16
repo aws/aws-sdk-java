@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum RobotSoftwareSuiteVersionType {
 
     Kinetic("Kinetic"),
-    Melodic("Melodic");
+    Melodic("Melodic"),
+    Dashing("Dashing");
 
     private String value;
 

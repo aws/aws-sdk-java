@@ -58686,6 +58686,9 @@
       "enums" : [ {
         "name" : "ROS",
         "value" : "ROS"
+      }, {
+        "name" : "ROS2",
+        "value" : "ROS2"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -58733,6 +58736,9 @@
       }, {
         "name" : "Melodic",
         "value" : "Melodic"
+      }, {
+        "name" : "Dashing",
+        "value" : "Dashing"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

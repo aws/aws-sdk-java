@@ -108,6 +108,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public UpdateBrokerCountResult updateBrokerCount(UpdateBrokerCountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateBrokerStorageResult updateBrokerStorage(UpdateBrokerStorageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

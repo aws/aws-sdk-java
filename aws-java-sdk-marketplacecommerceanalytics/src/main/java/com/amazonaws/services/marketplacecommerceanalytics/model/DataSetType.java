@@ -38,6 +38,8 @@ public enum DataSetType {
     Disbursed_amount_by_customer_geo("disbursed_amount_by_customer_geo"),
     Disbursed_amount_by_age_of_uncollected_funds("disbursed_amount_by_age_of_uncollected_funds"),
     Disbursed_amount_by_age_of_disbursed_funds("disbursed_amount_by_age_of_disbursed_funds"),
+    Disbursed_amount_by_age_of_past_due_funds("disbursed_amount_by_age_of_past_due_funds"),
+    Disbursed_amount_by_uncollected_funds_breakdown("disbursed_amount_by_uncollected_funds_breakdown"),
     Customer_profile_by_industry("customer_profile_by_industry"),
     Customer_profile_by_revenue("customer_profile_by_revenue"),
     Customer_profile_by_geography("customer_profile_by_geography"),

@@ -40,9 +40,12 @@ import org.mockito.MockitoAnnotations;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasEntry;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
@@ -288,6 +291,68 @@ public class JsonErrorResponseHandlerTest {
         assertThat(capturedCtx.getHttpResponse(), equalTo(httpResponse));
         verify(simpleTypeUnmarshallers).get(eq(String.class));
         verify(customTypeUnmarshallers).get(eq(JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE));
+    }
+
+    @Test
+    public void handle_unmarshallerIsEnhanced_contentIsMalformed_doesNotFail() throws Exception {
+        responseHandler = new JsonErrorResponseHandler(Arrays.<JsonErrorUnmarshaller>asList(enhancedUnmarshaller),
+                simpleTypeUnmarshallers,
+                customTypeUnmarshallers,
+                errorCodeParser,
+                JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
+                new JsonFactory());
+
+        String content = "This is not JSON";
+        httpResponse.setStatusCode(400);
+        httpResponse.setContent(new ByteArrayInputStream(content.getBytes("UTF-8")));
+
+        expectUnmarshallerMatches();
+
+        final AmazonServiceException ase = new AmazonServiceException(null);
+        when(enhancedUnmarshaller.unmarshallFromContext(any(JsonUnmarshallerContext.class))).thenAnswer(new Answer<AmazonServiceException>() {
+            @Override
+            public AmazonServiceException answer(InvocationOnMock invocationOnMock) throws Throwable {
+                JsonUnmarshallerContext ctx = invocationOnMock.getArgumentAt(0, JsonUnmarshallerContext.class);
+                // Consume the JSON entirely. This will fail if the JSON is not valid
+                while (ctx.nextToken() != null) {
+                }
+                return ase;
+            }
+        });
+
+        AmazonServiceException handledException = responseHandler.handle(httpResponse);
+        assertThat(handledException, equalTo(ase));
+    }
+
+    @Test
+    public void handle_unmarshallerIsLegacy_contentIsMalformed_doesNotFail() throws Exception {
+        responseHandler = new JsonErrorResponseHandler(Arrays.<JsonErrorUnmarshaller>asList(unmarshaller),
+                simpleTypeUnmarshallers,
+                customTypeUnmarshallers,
+                errorCodeParser,
+                JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
+                new JsonFactory());
+
+        String content = "This is not JSON";
+        httpResponse.setStatusCode(400);
+        httpResponse.setContent(new ByteArrayInputStream(content.getBytes("UTF-8")));
+
+        expectUnmarshallerMatches();
+
+        final AmazonServiceException ase = new AmazonServiceException(null);
+        when(unmarshaller.unmarshall(any(JsonNode.class))).thenAnswer(new Answer<AmazonServiceException>() {
+            @Override
+            public AmazonServiceException answer(InvocationOnMock invocationOnMock) throws Throwable {
+                return ase;
+            }
+        });
+
+        AmazonServiceException handledException = responseHandler.handle(httpResponse);
+
+        ArgumentCaptor<JsonNode> jsonNodeCaptor = ArgumentCaptor.forClass(JsonNode.class);
+        verify(unmarshaller).unmarshall(jsonNodeCaptor.capture());
+        assertThat(jsonNodeCaptor.getValue().elements().hasNext(), is(false));
+        assertThat(handledException, equalTo(ase));
     }
 
     private void expectUnmarshallerMatches() throws Exception {

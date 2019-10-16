@@ -1,3 +1,16 @@
+# __1.11.654__ __2019-10-16__
+## __AWS Marketplace Commerce Analytics__
+  - ### Features
+    - add 2 more values for the supporting sections - age of past due funds + uncollected funds breakdown
+
+## __AWS RoboMaker__
+  - ### Features
+    - This release adds support for ROS2 Dashing as a beta feature
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - AWS MSK has added support for adding brokers to a cluster.
+
 # __1.11.653__ __2019-10-15__
 ## __Amazon Kinesis Video Streams Archived Media__
   - ### Features

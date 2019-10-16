@@ -592,6 +592,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateBrokerCountResult> updateBrokerCountAsync(UpdateBrokerCountRequest request) {
+
+        return updateBrokerCountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBrokerCountResult> updateBrokerCountAsync(final UpdateBrokerCountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBrokerCountRequest, UpdateBrokerCountResult> asyncHandler) {
+        final UpdateBrokerCountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBrokerCountResult>() {
+            @Override
+            public UpdateBrokerCountResult call() throws Exception {
+                UpdateBrokerCountResult result = null;
+
+                try {
+                    result = executeUpdateBrokerCount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateBrokerStorageResult> updateBrokerStorageAsync(UpdateBrokerStorageRequest request) {
 
         return updateBrokerStorageAsync(request, null);

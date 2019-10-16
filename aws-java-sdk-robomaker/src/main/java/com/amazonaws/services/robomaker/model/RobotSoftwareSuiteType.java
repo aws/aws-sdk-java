@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RobotSoftwareSuiteType {
 
-    ROS("ROS");
+    ROS("ROS"),
+    ROS2("ROS2");
 
     private String value;
 
