@@ -65,8 +65,8 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is
-     * available, a pagination token called a marker is included in the response so that the following results can be
-     * retrieved.
+     * available, a pagination token called a marker is included in the response so that you can retrieve the remaining
+     * results.
      * </p>
      * <p>
      * Default: 100
@@ -386,8 +386,8 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is
-     * available, a pagination token called a marker is included in the response so that the following results can be
-     * retrieved.
+     * available, a pagination token called a marker is included in the response so that you can retrieve the remaining
+     * results.
      * </p>
      * <p>
      * Default: 100
@@ -398,8 +398,8 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value
-     *        is available, a pagination token called a marker is included in the response so that the following results
-     *        can be retrieved. </p>
+     *        is available, a pagination token called a marker is included in the response so that you can retrieve the
+     *        remaining results. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -414,8 +414,8 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is
-     * available, a pagination token called a marker is included in the response so that the following results can be
-     * retrieved.
+     * available, a pagination token called a marker is included in the response so that you can retrieve the remaining
+     * results.
      * </p>
      * <p>
      * Default: 100
@@ -425,8 +425,8 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @return The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value
-     *         is available, a pagination token called a marker is included in the response so that the following
-     *         results can be retrieved. </p>
+     *         is available, a pagination token called a marker is included in the response so that you can retrieve the
+     *         remaining results. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -441,8 +441,8 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is
-     * available, a pagination token called a marker is included in the response so that the following results can be
-     * retrieved.
+     * available, a pagination token called a marker is included in the response so that you can retrieve the remaining
+     * results.
      * </p>
      * <p>
      * Default: 100
@@ -453,8 +453,8 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value
-     *        is available, a pagination token called a marker is included in the response so that the following results
-     *        can be retrieved. </p>
+     *        is available, a pagination token called a marker is included in the response so that you can retrieve the
+     *        remaining results. </p>
      *        <p>
      *        Default: 100
      *        </p>

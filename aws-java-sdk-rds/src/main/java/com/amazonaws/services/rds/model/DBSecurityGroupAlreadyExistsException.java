@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A DB security group with the name specified in <i>DBSecurityGroupName</i> already exists.
+ * A DB security group with the name specified in <code>DBSecurityGroupName</code> already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

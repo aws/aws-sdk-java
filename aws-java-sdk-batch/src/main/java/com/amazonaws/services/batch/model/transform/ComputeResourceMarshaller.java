@@ -31,6 +31,8 @@ public class ComputeResourceMarshaller {
 
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> ALLOCATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allocationStrategy").build();
     private static final MarshallingInfo<Integer> MINVCPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minvCpus").build();
     private static final MarshallingInfo<Integer> MAXVCPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -77,6 +79,7 @@ public class ComputeResourceMarshaller {
 
         try {
             protocolMarshaller.marshall(computeResource.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(computeResource.getAllocationStrategy(), ALLOCATIONSTRATEGY_BINDING);
             protocolMarshaller.marshall(computeResource.getMinvCpus(), MINVCPUS_BINDING);
             protocolMarshaller.marshall(computeResource.getMaxvCpus(), MAXVCPUS_BINDING);
             protocolMarshaller.marshall(computeResource.getDesiredvCpus(), DESIREDVCPUS_BINDING);

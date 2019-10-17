@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+ * <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

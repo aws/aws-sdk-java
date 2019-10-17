@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>BacktrackIdentifier</i> doesn't refer to an existing backtrack.
+ * <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

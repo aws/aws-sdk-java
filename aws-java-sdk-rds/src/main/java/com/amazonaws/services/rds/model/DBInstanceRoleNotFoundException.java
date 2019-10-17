@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified <i>RoleArn</i> value doesn't match the specifed feature for the DB instance.
+ * The specified <code>RoleArn</code> value doesn't match the specified feature for the DB instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

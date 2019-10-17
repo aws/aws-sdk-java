@@ -52,6 +52,10 @@ public class ComputeResourceJsonUnmarshaller implements Unmarshaller<ComputeReso
                     context.nextToken();
                     computeResource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("allocationStrategy", targetDepth)) {
+                    context.nextToken();
+                    computeResource.setAllocationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("minvCpus", targetDepth)) {
                     context.nextToken();
                     computeResource.setMinvCpus(context.getUnmarshaller(Integer.class).unmarshall(context));

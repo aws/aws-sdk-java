@@ -30,7 +30,7 @@ import com.amazonaws.services.rds.model.*;
  * </p>
  * <p>
  * Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a
- * relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational
+ * relational database in the cloud. It provides cost-efficient, resizeable capacity for an industry-standard relational
  * database and manages common database administration tasks, freeing up developers to focus on what makes their
  * applications and businesses unique.
  * </p>
@@ -788,6 +788,57 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Creates a custom Availability Zone (AZ).
+     * </p>
+     * <p>
+     * A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+     * </p>
+     * <p>
+     * For more information about RDS on VMware, see the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
+     * User Guide.</i> </a>
+     * </p>
+     * 
+     * @param createCustomAvailabilityZoneRequest
+     * @return A Java Future containing the result of the CreateCustomAvailabilityZone operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.CreateCustomAvailabilityZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CustomAvailabilityZone> createCustomAvailabilityZoneAsync(
+            CreateCustomAvailabilityZoneRequest createCustomAvailabilityZoneRequest);
+
+    /**
+     * <p>
+     * Creates a custom Availability Zone (AZ).
+     * </p>
+     * <p>
+     * A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+     * </p>
+     * <p>
+     * For more information about RDS on VMware, see the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
+     * User Guide.</i> </a>
+     * </p>
+     * 
+     * @param createCustomAvailabilityZoneRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCustomAvailabilityZone operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.CreateCustomAvailabilityZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CustomAvailabilityZone> createCustomAvailabilityZoneAsync(
+            CreateCustomAvailabilityZoneRequest createCustomAvailabilityZoneRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomAvailabilityZoneRequest, CustomAvailabilityZone> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Amazon Aurora DB cluster.
      * </p>
      * <p>
@@ -1459,6 +1510,57 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Deletes a custom Availability Zone (AZ).
+     * </p>
+     * <p>
+     * A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+     * </p>
+     * <p>
+     * For more information about RDS on VMware, see the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
+     * User Guide.</i> </a>
+     * </p>
+     * 
+     * @param deleteCustomAvailabilityZoneRequest
+     * @return A Java Future containing the result of the DeleteCustomAvailabilityZone operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DeleteCustomAvailabilityZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CustomAvailabilityZone> deleteCustomAvailabilityZoneAsync(
+            DeleteCustomAvailabilityZoneRequest deleteCustomAvailabilityZoneRequest);
+
+    /**
+     * <p>
+     * Deletes a custom Availability Zone (AZ).
+     * </p>
+     * <p>
+     * A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+     * </p>
+     * <p>
+     * For more information about RDS on VMware, see the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
+     * User Guide.</i> </a>
+     * </p>
+     * 
+     * @param deleteCustomAvailabilityZoneRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCustomAvailabilityZone operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DeleteCustomAvailabilityZone
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CustomAvailabilityZone> deleteCustomAvailabilityZoneAsync(
+            DeleteCustomAvailabilityZoneRequest deleteCustomAvailabilityZoneRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomAvailabilityZoneRequest, CustomAvailabilityZone> asyncHandler);
+
+    /**
+     * <p>
      * The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all
      * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
@@ -2041,6 +2143,39 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Deletes the installation media for an on-premises, bring your own media (BYOM) DB engine, such as Microsoft SQL
+     * Server.
+     * </p>
+     * 
+     * @param deleteInstallationMediaRequest
+     * @return A Java Future containing the result of the DeleteInstallationMedia operation returned by the service.
+     * @sample AmazonRDSAsync.DeleteInstallationMedia
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstallationMediaResult> deleteInstallationMediaAsync(DeleteInstallationMediaRequest deleteInstallationMediaRequest);
+
+    /**
+     * <p>
+     * Deletes the installation media for an on-premises, bring your own media (BYOM) DB engine, such as Microsoft SQL
+     * Server.
+     * </p>
+     * 
+     * @param deleteInstallationMediaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInstallationMedia operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DeleteInstallationMedia
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstallationMediaResult> deleteInstallationMediaAsync(DeleteInstallationMediaRequest deleteInstallationMediaRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInstallationMediaRequest, DeleteInstallationMediaResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an existing option group.
      * </p>
      * 
@@ -2173,6 +2308,57 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about custom Availability Zones (AZs).
+     * </p>
+     * <p>
+     * A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+     * </p>
+     * <p>
+     * For more information about RDS on VMware, see the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
+     * User Guide.</i> </a>
+     * </p>
+     * 
+     * @param describeCustomAvailabilityZonesRequest
+     * @return A Java Future containing the result of the DescribeCustomAvailabilityZones operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DescribeCustomAvailabilityZones
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCustomAvailabilityZonesResult> describeCustomAvailabilityZonesAsync(
+            DescribeCustomAvailabilityZonesRequest describeCustomAvailabilityZonesRequest);
+
+    /**
+     * <p>
+     * Returns information about custom Availability Zones (AZs).
+     * </p>
+     * <p>
+     * A custom AZ is an on-premises AZ that is integrated with a VMware vSphere cluster.
+     * </p>
+     * <p>
+     * For more information about RDS on VMware, see the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
+     * User Guide.</i> </a>
+     * </p>
+     * 
+     * @param describeCustomAvailabilityZonesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCustomAvailabilityZones operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DescribeCustomAvailabilityZones
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCustomAvailabilityZones"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCustomAvailabilityZonesResult> describeCustomAvailabilityZonesAsync(
+            DescribeCustomAvailabilityZonesRequest describeCustomAvailabilityZonesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCustomAvailabilityZonesRequest, DescribeCustomAvailabilityZonesResult> asyncHandler);
 
     /**
      * <p>
@@ -3361,6 +3547,41 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Describes the available installation media for on-premises, bring your own media (BYOM) DB engines, such as
+     * Microsoft SQL Server.
+     * </p>
+     * 
+     * @param describeInstallationMediaRequest
+     * @return A Java Future containing the result of the DescribeInstallationMedia operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeInstallationMedia
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstallationMediaResult> describeInstallationMediaAsync(
+            DescribeInstallationMediaRequest describeInstallationMediaRequest);
+
+    /**
+     * <p>
+     * Describes the available installation media for on-premises, bring your own media (BYOM) DB engines, such as
+     * Microsoft SQL Server.
+     * </p>
+     * 
+     * @param describeInstallationMediaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstallationMedia operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeInstallationMedia
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstallationMediaResult> describeInstallationMediaAsync(
+            DescribeInstallationMediaRequest describeInstallationMediaRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstallationMediaRequest, DescribeInstallationMediaResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes all available options.
      * </p>
      * 
@@ -3808,6 +4029,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * @see #failoverDBClusterAsync(FailoverDBClusterRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<DBCluster> failoverDBClusterAsync(com.amazonaws.handlers.AsyncHandler<FailoverDBClusterRequest, DBCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Imports the installation media for an on-premises, bring your own media (BYOM) DB engine, such as SQL Server.
+     * </p>
+     * 
+     * @param importInstallationMediaRequest
+     * @return A Java Future containing the result of the ImportInstallationMedia operation returned by the service.
+     * @sample AmazonRDSAsync.ImportInstallationMedia
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportInstallationMediaResult> importInstallationMediaAsync(ImportInstallationMediaRequest importInstallationMediaRequest);
+
+    /**
+     * <p>
+     * Imports the installation media for an on-premises, bring your own media (BYOM) DB engine, such as SQL Server.
+     * </p>
+     * 
+     * @param importInstallationMediaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportInstallationMedia operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ImportInstallationMedia
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportInstallationMediaResult> importInstallationMediaAsync(ImportInstallationMediaRequest importInstallationMediaRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportInstallationMediaRequest, ImportInstallationMediaResult> asyncHandler);
 
     /**
      * <p>

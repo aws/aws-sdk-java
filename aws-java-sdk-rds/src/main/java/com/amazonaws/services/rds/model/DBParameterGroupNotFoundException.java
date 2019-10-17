@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
+ * <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

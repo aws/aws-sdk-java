@@ -35,7 +35,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a
- * relational database in the cloud. It provides cost-efficient, resizable capacity for an industry-standard relational
+ * relational database in the cloud. It provides cost-efficient, resizeable capacity for an industry-standard relational
  * database and manages common database administration tasks, freeing up developers to focus on what makes their
  * applications and businesses unique.
  * </p>
@@ -710,6 +710,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<CustomAvailabilityZone> createCustomAvailabilityZoneAsync(CreateCustomAvailabilityZoneRequest request) {
+
+        return createCustomAvailabilityZoneAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CustomAvailabilityZone> createCustomAvailabilityZoneAsync(final CreateCustomAvailabilityZoneRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCustomAvailabilityZoneRequest, CustomAvailabilityZone> asyncHandler) {
+        final CreateCustomAvailabilityZoneRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CustomAvailabilityZone>() {
+            @Override
+            public CustomAvailabilityZone call() throws Exception {
+                CustomAvailabilityZone result = null;
+
+                try {
+                    result = executeCreateCustomAvailabilityZone(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> createDBClusterAsync(CreateDBClusterRequest request) {
 
         return createDBClusterAsync(request, null);
@@ -1139,6 +1172,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<CustomAvailabilityZone> deleteCustomAvailabilityZoneAsync(DeleteCustomAvailabilityZoneRequest request) {
+
+        return deleteCustomAvailabilityZoneAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CustomAvailabilityZone> deleteCustomAvailabilityZoneAsync(final DeleteCustomAvailabilityZoneRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomAvailabilityZoneRequest, CustomAvailabilityZone> asyncHandler) {
+        final DeleteCustomAvailabilityZoneRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CustomAvailabilityZone>() {
+            @Override
+            public CustomAvailabilityZone call() throws Exception {
+                CustomAvailabilityZone result = null;
+
+                try {
+                    result = executeDeleteCustomAvailabilityZone(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> deleteDBClusterAsync(DeleteDBClusterRequest request) {
 
         return deleteDBClusterAsync(request, null);
@@ -1536,6 +1602,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteInstallationMediaResult> deleteInstallationMediaAsync(DeleteInstallationMediaRequest request) {
+
+        return deleteInstallationMediaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInstallationMediaResult> deleteInstallationMediaAsync(final DeleteInstallationMediaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteInstallationMediaRequest, DeleteInstallationMediaResult> asyncHandler) {
+        final DeleteInstallationMediaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteInstallationMediaResult>() {
+            @Override
+            public DeleteInstallationMediaResult call() throws Exception {
+                DeleteInstallationMediaResult result = null;
+
+                try {
+                    result = executeDeleteInstallationMedia(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOptionGroupResult> deleteOptionGroupAsync(DeleteOptionGroupRequest request) {
 
         return deleteOptionGroupAsync(request, null);
@@ -1678,6 +1777,41 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
             com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler) {
 
         return describeCertificatesAsync(new DescribeCertificatesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCustomAvailabilityZonesResult> describeCustomAvailabilityZonesAsync(
+            DescribeCustomAvailabilityZonesRequest request) {
+
+        return describeCustomAvailabilityZonesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCustomAvailabilityZonesResult> describeCustomAvailabilityZonesAsync(
+            final DescribeCustomAvailabilityZonesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCustomAvailabilityZonesRequest, DescribeCustomAvailabilityZonesResult> asyncHandler) {
+        final DescribeCustomAvailabilityZonesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCustomAvailabilityZonesResult>() {
+            @Override
+            public DescribeCustomAvailabilityZonesResult call() throws Exception {
+                DescribeCustomAvailabilityZonesResult result = null;
+
+                try {
+                    result = executeDescribeCustomAvailabilityZones(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -2746,6 +2880,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInstallationMediaResult> describeInstallationMediaAsync(DescribeInstallationMediaRequest request) {
+
+        return describeInstallationMediaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstallationMediaResult> describeInstallationMediaAsync(final DescribeInstallationMediaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInstallationMediaRequest, DescribeInstallationMediaResult> asyncHandler) {
+        final DescribeInstallationMediaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInstallationMediaResult>() {
+            @Override
+            public DescribeInstallationMediaResult call() throws Exception {
+                DescribeInstallationMediaResult result = null;
+
+                try {
+                    result = executeDescribeInstallationMedia(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest request) {
 
         return describeOptionGroupOptionsAsync(request, null);
@@ -3197,6 +3364,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     public java.util.concurrent.Future<DBCluster> failoverDBClusterAsync(com.amazonaws.handlers.AsyncHandler<FailoverDBClusterRequest, DBCluster> asyncHandler) {
 
         return failoverDBClusterAsync(new FailoverDBClusterRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportInstallationMediaResult> importInstallationMediaAsync(ImportInstallationMediaRequest request) {
+
+        return importInstallationMediaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportInstallationMediaResult> importInstallationMediaAsync(final ImportInstallationMediaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportInstallationMediaRequest, ImportInstallationMediaResult> asyncHandler) {
+        final ImportInstallationMediaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportInstallationMediaResult>() {
+            @Override
+            public ImportInstallationMediaResult call() throws Exception {
+                ImportInstallationMediaResult result = null;
+
+                try {
+                    result = executeImportInstallationMedia(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

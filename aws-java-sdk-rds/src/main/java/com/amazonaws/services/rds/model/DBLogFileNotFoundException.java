@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>LogFileName</i> doesn't refer to an existing DB log file.
+ * <code>LogFileName</code> doesn't refer to an existing DB log file.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

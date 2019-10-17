@@ -90,8 +90,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
     /**
      * <p>
      * The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is
-     * available, a pagination token called a marker is included in the response so that the following results can be
-     * retrieved.
+     * available, a pagination token called a marker is included in the response so that you can retrieve the reamaining
+     * results.
      * </p>
      * <p>
      * Default: 100
@@ -536,8 +536,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
     /**
      * <p>
      * The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is
-     * available, a pagination token called a marker is included in the response so that the following results can be
-     * retrieved.
+     * available, a pagination token called a marker is included in the response so that you can retrieve the reamaining
+     * results.
      * </p>
      * <p>
      * Default: 100
@@ -548,8 +548,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value
-     *        is available, a pagination token called a marker is included in the response so that the following results
-     *        can be retrieved. </p>
+     *        is available, a pagination token called a marker is included in the response so that you can retrieve the
+     *        reamaining results. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -564,8 +564,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
     /**
      * <p>
      * The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is
-     * available, a pagination token called a marker is included in the response so that the following results can be
-     * retrieved.
+     * available, a pagination token called a marker is included in the response so that you can retrieve the reamaining
+     * results.
      * </p>
      * <p>
      * Default: 100
@@ -575,8 +575,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
      * </p>
      * 
      * @return The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value
-     *         is available, a pagination token called a marker is included in the response so that the following
-     *         results can be retrieved. </p>
+     *         is available, a pagination token called a marker is included in the response so that you can retrieve the
+     *         reamaining results. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -591,8 +591,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
     /**
      * <p>
      * The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is
-     * available, a pagination token called a marker is included in the response so that the following results can be
-     * retrieved.
+     * available, a pagination token called a marker is included in the response so that you can retrieve the reamaining
+     * results.
      * </p>
      * <p>
      * Default: 100
@@ -603,8 +603,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value
-     *        is available, a pagination token called a marker is included in the response so that the following results
-     *        can be retrieved. </p>
+     *        is available, a pagination token called a marker is included in the response so that you can retrieve the
+     *        reamaining results. </p>
      *        <p>
      *        Default: 100
      *        </p>

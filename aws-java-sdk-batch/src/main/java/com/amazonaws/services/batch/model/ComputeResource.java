@@ -30,34 +30,49 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment: EC2 or SPOT.
+     * The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The allocation strategy to use for the compute resource in case not enough instances of the best fitting instance
+     * type can be allocated. This could be due to availability of the instance type in the region or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
+     * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
+     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
+     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
+     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
+     * preference for an instance type that is less likely to be interrupted.
+     * </p>
+     */
+    private String allocationStrategy;
+    /**
+     * <p>
+     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      */
     private Integer minvCpus;
     /**
      * <p>
-     * The maximum number of EC2 vCPUs that an environment can reach.
+     * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
      */
     private Integer maxvCpus;
     /**
      * <p>
-     * The desired number of EC2 vCPUS in the compute environment.
+     * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
      */
     private Integer desiredvCpus;
     /**
      * <p>
      * The instances types that may be launched. You can specify instance families to launch any instance type within
-     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
-     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
      * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      */
@@ -78,13 +93,16 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> subnets;
     /**
      * <p>
-     * The EC2 security group that is associated with instances launched in the compute environment.
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     * security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced
+     * in <code>launchTemplate</code>. If security groups are specified using both <code>securityGroupIds</code> and
+     * <code>launchTemplate</code>, the values in <code>securityGroupIds</code> will be used.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * The EC2 key pair that is used for instances launched in the compute environment.
+     * The Amazon EC2 key pair that is used for instances launched in the compute environment.
      * </p>
      */
     private String ec2KeyPair;
@@ -122,8 +140,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
-     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
-     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * below 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price
+     * and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
      * On-Demand price.
      * </p>
      */
@@ -150,11 +168,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment: EC2 or SPOT.
+     * The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * </p>
      * 
      * @param type
-     *        The type of compute environment: EC2 or SPOT.
+     *        The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * @see CRType
      */
 
@@ -164,10 +182,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment: EC2 or SPOT.
+     * The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * </p>
      * 
-     * @return The type of compute environment: EC2 or SPOT.
+     * @return The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * @see CRType
      */
 
@@ -177,11 +195,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment: EC2 or SPOT.
+     * The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * </p>
      * 
      * @param type
-     *        The type of compute environment: EC2 or SPOT.
+     *        The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRType
      */
@@ -193,11 +211,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment: EC2 or SPOT.
+     * The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * </p>
      * 
      * @param type
-     *        The type of compute environment: EC2 or SPOT.
+     *        The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * @see CRType
      */
 
@@ -207,11 +225,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of compute environment: EC2 or SPOT.
+     * The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * </p>
      * 
      * @param type
-     *        The type of compute environment: EC2 or SPOT.
+     *        The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRType
      */
@@ -223,13 +241,181 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The allocation strategy to use for the compute resource in case not enough instances of the best fitting instance
+     * type can be allocated. This could be due to availability of the instance type in the region or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
+     * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
+     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
+     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
+     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
+     * preference for an instance type that is less likely to be interrupted.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        The allocation strategy to use for the compute resource in case not enough instances of the best fitting
+     *        instance type can be allocated. This could be due to availability of the instance type in the region or <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     *        limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
+     *        fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
+     *        keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
+     *        instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
+     *        for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *        Instance compute resources and will select an additional instance type that is large enough to meet the
+     *        requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
+     *        interrupted.
+     * @see CRAllocationStrategy
+     */
+
+    public void setAllocationStrategy(String allocationStrategy) {
+        this.allocationStrategy = allocationStrategy;
+    }
+
+    /**
+     * <p>
+     * The allocation strategy to use for the compute resource in case not enough instances of the best fitting instance
+     * type can be allocated. This could be due to availability of the instance type in the region or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
+     * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
+     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
+     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
+     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
+     * preference for an instance type that is less likely to be interrupted.
+     * </p>
+     * 
+     * @return The allocation strategy to use for the compute resource in case not enough instances of the best fitting
+     *         instance type can be allocated. This could be due to availability of the instance type in the region or
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     *         limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
+     *         fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
+     *         keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
+     *         instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
+     *         for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *         Instance compute resources and will select an additional instance type that is large enough to meet the
+     *         requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
+     *         interrupted.
+     * @see CRAllocationStrategy
+     */
+
+    public String getAllocationStrategy() {
+        return this.allocationStrategy;
+    }
+
+    /**
+     * <p>
+     * The allocation strategy to use for the compute resource in case not enough instances of the best fitting instance
+     * type can be allocated. This could be due to availability of the instance type in the region or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
+     * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
+     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
+     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
+     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
+     * preference for an instance type that is less likely to be interrupted.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        The allocation strategy to use for the compute resource in case not enough instances of the best fitting
+     *        instance type can be allocated. This could be due to availability of the instance type in the region or <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     *        limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
+     *        fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
+     *        keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
+     *        instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
+     *        for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *        Instance compute resources and will select an additional instance type that is large enough to meet the
+     *        requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
+     *        interrupted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CRAllocationStrategy
+     */
+
+    public ComputeResource withAllocationStrategy(String allocationStrategy) {
+        setAllocationStrategy(allocationStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The allocation strategy to use for the compute resource in case not enough instances of the best fitting instance
+     * type can be allocated. This could be due to availability of the instance type in the region or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
+     * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
+     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
+     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
+     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
+     * preference for an instance type that is less likely to be interrupted.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        The allocation strategy to use for the compute resource in case not enough instances of the best fitting
+     *        instance type can be allocated. This could be due to availability of the instance type in the region or <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     *        limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
+     *        fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
+     *        keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
+     *        instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
+     *        for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *        Instance compute resources and will select an additional instance type that is large enough to meet the
+     *        requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
+     *        interrupted.
+     * @see CRAllocationStrategy
+     */
+
+    public void setAllocationStrategy(CRAllocationStrategy allocationStrategy) {
+        withAllocationStrategy(allocationStrategy);
+    }
+
+    /**
+     * <p>
+     * The allocation strategy to use for the compute resource in case not enough instances of the best fitting instance
+     * type can be allocated. This could be due to availability of the instance type in the region or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
+     * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
+     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
+     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
+     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
+     * preference for an instance type that is less likely to be interrupted.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        The allocation strategy to use for the compute resource in case not enough instances of the best fitting
+     *        instance type can be allocated. This could be due to availability of the instance type in the region or <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
+     *        limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
+     *        fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
+     *        keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
+     *        instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
+     *        for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *        Instance compute resources and will select an additional instance type that is large enough to meet the
+     *        requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
+     *        interrupted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CRAllocationStrategy
+     */
+
+    public ComputeResource withAllocationStrategy(CRAllocationStrategy allocationStrategy) {
+        this.allocationStrategy = allocationStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * 
      * @param minvCpus
-     *        The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
-     *        <code>DISABLED</code>).
+     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
+     *        environment is <code>DISABLED</code>).
      */
 
     public void setMinvCpus(Integer minvCpus) {
@@ -238,12 +424,12 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * 
-     * @return The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
-     *         <code>DISABLED</code>).
+     * @return The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
+     *         environment is <code>DISABLED</code>).
      */
 
     public Integer getMinvCpus() {
@@ -252,13 +438,13 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * 
      * @param minvCpus
-     *        The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
-     *        <code>DISABLED</code>).
+     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
+     *        environment is <code>DISABLED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,11 +455,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of EC2 vCPUs that an environment can reach.
+     * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
      * 
      * @param maxvCpus
-     *        The maximum number of EC2 vCPUs that an environment can reach.
+     *        The maximum number of Amazon EC2 vCPUs that an environment can reach.
      */
 
     public void setMaxvCpus(Integer maxvCpus) {
@@ -282,10 +468,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of EC2 vCPUs that an environment can reach.
+     * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
      * 
-     * @return The maximum number of EC2 vCPUs that an environment can reach.
+     * @return The maximum number of Amazon EC2 vCPUs that an environment can reach.
      */
 
     public Integer getMaxvCpus() {
@@ -294,11 +480,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of EC2 vCPUs that an environment can reach.
+     * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
      * 
      * @param maxvCpus
-     *        The maximum number of EC2 vCPUs that an environment can reach.
+     *        The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,11 +495,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The desired number of EC2 vCPUS in the compute environment.
+     * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
      * 
      * @param desiredvCpus
-     *        The desired number of EC2 vCPUS in the compute environment.
+     *        The desired number of Amazon EC2 vCPUS in the compute environment.
      */
 
     public void setDesiredvCpus(Integer desiredvCpus) {
@@ -322,10 +508,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The desired number of EC2 vCPUS in the compute environment.
+     * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
      * 
-     * @return The desired number of EC2 vCPUS in the compute environment.
+     * @return The desired number of Amazon EC2 vCPUS in the compute environment.
      */
 
     public Integer getDesiredvCpus() {
@@ -334,11 +520,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The desired number of EC2 vCPUS in the compute environment.
+     * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
      * 
      * @param desiredvCpus
-     *        The desired number of EC2 vCPUS in the compute environment.
+     *        The desired number of Amazon EC2 vCPUS in the compute environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,14 +536,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The instances types that may be launched. You can specify instance families to launch any instance type within
-     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
-     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
      * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @return The instances types that may be launched. You can specify instance families to launch any instance type
-     *         within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific
-     *         sizes within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *         within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific
+     *         sizes within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
      *         instance types (from the C, M, and R instance families) on the fly that match the demand of your job
      *         queues.
      */
@@ -369,15 +555,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The instances types that may be launched. You can specify instance families to launch any instance type within
-     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
-     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
      * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @param instanceTypes
      *        The instances types that may be launched. You can specify instance families to launch any instance type
-     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
-     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
      *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
      *        queues.
      */
@@ -394,8 +580,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The instances types that may be launched. You can specify instance families to launch any instance type within
-     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
-     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
      * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * <p>
@@ -406,8 +592,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param instanceTypes
      *        The instances types that may be launched. You can specify instance families to launch any instance type
-     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
-     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
      *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
      *        queues.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -426,15 +612,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The instances types that may be launched. You can specify instance families to launch any instance type within
-     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
-     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
      * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @param instanceTypes
      *        The instances types that may be launched. You can specify instance families to launch any instance type
-     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
-     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        within those families (for example, <code>c5</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c5.8xlarge</code>). You can also choose <code>optimal</code> to pick
      *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
      *        queues.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -573,10 +759,17 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 security group that is associated with instances launched in the compute environment.
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     * security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced
+     * in <code>launchTemplate</code>. If security groups are specified using both <code>securityGroupIds</code> and
+     * <code>launchTemplate</code>, the values in <code>securityGroupIds</code> will be used.
      * </p>
      * 
-     * @return The EC2 security group that is associated with instances launched in the compute environment.
+     * @return The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     *         security groups must be specified, either in <code>securityGroupIds</code> or using a launch template
+     *         referenced in <code>launchTemplate</code>. If security groups are specified using both
+     *         <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in
+     *         <code>securityGroupIds</code> will be used.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -585,11 +778,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 security group that is associated with instances launched in the compute environment.
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     * security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced
+     * in <code>launchTemplate</code>. If security groups are specified using both <code>securityGroupIds</code> and
+     * <code>launchTemplate</code>, the values in <code>securityGroupIds</code> will be used.
      * </p>
      * 
      * @param securityGroupIds
-     *        The EC2 security group that is associated with instances launched in the compute environment.
+     *        The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     *        security groups must be specified, either in <code>securityGroupIds</code> or using a launch template
+     *        referenced in <code>launchTemplate</code>. If security groups are specified using both
+     *        <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code>
+     *        will be used.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -603,7 +803,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 security group that is associated with instances launched in the compute environment.
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     * security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced
+     * in <code>launchTemplate</code>. If security groups are specified using both <code>securityGroupIds</code> and
+     * <code>launchTemplate</code>, the values in <code>securityGroupIds</code> will be used.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -612,7 +815,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param securityGroupIds
-     *        The EC2 security group that is associated with instances launched in the compute environment.
+     *        The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     *        security groups must be specified, either in <code>securityGroupIds</code> or using a launch template
+     *        referenced in <code>launchTemplate</code>. If security groups are specified using both
+     *        <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code>
+     *        will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -628,11 +835,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 security group that is associated with instances launched in the compute environment.
+     * The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     * security groups must be specified, either in <code>securityGroupIds</code> or using a launch template referenced
+     * in <code>launchTemplate</code>. If security groups are specified using both <code>securityGroupIds</code> and
+     * <code>launchTemplate</code>, the values in <code>securityGroupIds</code> will be used.
      * </p>
      * 
      * @param securityGroupIds
-     *        The EC2 security group that is associated with instances launched in the compute environment.
+     *        The Amazon EC2 security groups associated with instances launched in the compute environment. One or more
+     *        security groups must be specified, either in <code>securityGroupIds</code> or using a launch template
+     *        referenced in <code>launchTemplate</code>. If security groups are specified using both
+     *        <code>securityGroupIds</code> and <code>launchTemplate</code>, the values in <code>securityGroupIds</code>
+     *        will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -643,11 +857,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 key pair that is used for instances launched in the compute environment.
+     * The Amazon EC2 key pair that is used for instances launched in the compute environment.
      * </p>
      * 
      * @param ec2KeyPair
-     *        The EC2 key pair that is used for instances launched in the compute environment.
+     *        The Amazon EC2 key pair that is used for instances launched in the compute environment.
      */
 
     public void setEc2KeyPair(String ec2KeyPair) {
@@ -656,10 +870,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 key pair that is used for instances launched in the compute environment.
+     * The Amazon EC2 key pair that is used for instances launched in the compute environment.
      * </p>
      * 
-     * @return The EC2 key pair that is used for instances launched in the compute environment.
+     * @return The Amazon EC2 key pair that is used for instances launched in the compute environment.
      */
 
     public String getEc2KeyPair() {
@@ -668,11 +882,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The EC2 key pair that is used for instances launched in the compute environment.
+     * The Amazon EC2 key pair that is used for instances launched in the compute environment.
      * </p>
      * 
      * @param ec2KeyPair
-     *        The EC2 key pair that is used for instances launched in the compute environment.
+     *        The Amazon EC2 key pair that is used for instances launched in the compute environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -904,17 +1118,17 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
-     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
-     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * below 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price
+     * and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
      * On-Demand price.
      * </p>
      * 
      * @param bidPercentage
      *        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
      *        instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot
-     *        price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest
-     *        (market) price and never more than your maximum percentage. If you leave this field empty, the default
-     *        value is 100% of the On-Demand price.
+     *        price must be below 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the
+     *        lowest (market) price and never more than your maximum percentage. If you leave this field empty, the
+     *        default value is 100% of the On-Demand price.
      */
 
     public void setBidPercentage(Integer bidPercentage) {
@@ -925,15 +1139,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
-     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
-     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * below 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price
+     * and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
      * On-Demand price.
      * </p>
      * 
      * @return The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
      *         instance type before instances are launched. For example, if your maximum percentage is 20%, then the
-     *         Spot price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the
-     *         lowest (market) price and never more than your maximum percentage. If you leave this field empty, the
+     *         Spot price must be below 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
+     *         the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the
      *         default value is 100% of the On-Demand price.
      */
 
@@ -945,17 +1159,17 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
-     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
-     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * below 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price
+     * and never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
      * On-Demand price.
      * </p>
      * 
      * @param bidPercentage
      *        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
      *        instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot
-     *        price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest
-     *        (market) price and never more than your maximum percentage. If you leave this field empty, the default
-     *        value is 100% of the On-Demand price.
+     *        price must be below 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the
+     *        lowest (market) price and never more than your maximum percentage. If you leave this field empty, the
+     *        default value is 100% of the On-Demand price.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1103,6 +1317,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getAllocationStrategy() != null)
+            sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
         if (getMinvCpus() != null)
             sb.append("MinvCpus: ").append(getMinvCpus()).append(",");
         if (getMaxvCpus() != null)
@@ -1148,6 +1364,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getAllocationStrategy() == null ^ this.getAllocationStrategy() == null)
+            return false;
+        if (other.getAllocationStrategy() != null && other.getAllocationStrategy().equals(this.getAllocationStrategy()) == false)
             return false;
         if (other.getMinvCpus() == null ^ this.getMinvCpus() == null)
             return false;
@@ -1214,6 +1434,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
         hashCode = prime * hashCode + ((getMinvCpus() == null) ? 0 : getMinvCpus().hashCode());
         hashCode = prime * hashCode + ((getMaxvCpus() == null) ? 0 : getMaxvCpus().hashCode());
         hashCode = prime * hashCode + ((getDesiredvCpus() == null) ? 0 : getDesiredvCpus().hashCode());

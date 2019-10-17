@@ -30,30 +30,30 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * </p>
      */
     private Integer minvCpus;
     /**
      * <p>
-     * The maximum number of EC2 vCPUs that an environment can reach.
+     * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
      */
     private Integer maxvCpus;
     /**
      * <p>
-     * The desired number of EC2 vCPUS in the compute environment.
+     * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
      */
     private Integer desiredvCpus;
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * </p>
      * 
      * @param minvCpus
-     *        The minimum number of EC2 vCPUs that an environment should maintain.
+     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      */
 
     public void setMinvCpus(Integer minvCpus) {
@@ -62,10 +62,10 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * </p>
      * 
-     * @return The minimum number of EC2 vCPUs that an environment should maintain.
+     * @return The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      */
 
     public Integer getMinvCpus() {
@@ -74,11 +74,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * </p>
      * 
      * @param minvCpus
-     *        The minimum number of EC2 vCPUs that an environment should maintain.
+     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of EC2 vCPUs that an environment can reach.
+     * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
      * 
      * @param maxvCpus
-     *        The maximum number of EC2 vCPUs that an environment can reach.
+     *        The maximum number of Amazon EC2 vCPUs that an environment can reach.
      */
 
     public void setMaxvCpus(Integer maxvCpus) {
@@ -102,10 +102,10 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of EC2 vCPUs that an environment can reach.
+     * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
      * 
-     * @return The maximum number of EC2 vCPUs that an environment can reach.
+     * @return The maximum number of Amazon EC2 vCPUs that an environment can reach.
      */
 
     public Integer getMaxvCpus() {
@@ -114,11 +114,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of EC2 vCPUs that an environment can reach.
+     * The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * </p>
      * 
      * @param maxvCpus
-     *        The maximum number of EC2 vCPUs that an environment can reach.
+     *        The maximum number of Amazon EC2 vCPUs that an environment can reach.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The desired number of EC2 vCPUS in the compute environment.
+     * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
      * 
      * @param desiredvCpus
-     *        The desired number of EC2 vCPUS in the compute environment.
+     *        The desired number of Amazon EC2 vCPUS in the compute environment.
      */
 
     public void setDesiredvCpus(Integer desiredvCpus) {
@@ -142,10 +142,10 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The desired number of EC2 vCPUS in the compute environment.
+     * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
      * 
-     * @return The desired number of EC2 vCPUS in the compute environment.
+     * @return The desired number of Amazon EC2 vCPUS in the compute environment.
      */
 
     public Integer getDesiredvCpus() {
@@ -154,11 +154,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The desired number of EC2 vCPUS in the compute environment.
+     * The desired number of Amazon EC2 vCPUS in the compute environment.
      * </p>
      * 
      * @param desiredvCpus
-     *        The desired number of EC2 vCPUS in the compute environment.
+     *        The desired number of Amazon EC2 vCPUS in the compute environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

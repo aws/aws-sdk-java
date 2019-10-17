@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
+ * <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,3 +1,12 @@
+# __1.11.655__ __2019-10-17__
+## __AWS Batch__
+  - ### Features
+    - Adding support for Compute Environment Allocation Strategies 
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Amazon RDS now supports Amazon RDS on VMware with the introduction of APIs related to Custom Availability Zones and Media installation.
+
 # __1.11.654__ __2019-10-16__
 ## __AWS Marketplace Commerce Analytics__
   - ### Features

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified <i>RoleArn</i> or <i>FeatureName</i> value is already associated with the DB instance.
+ * The specified <code>RoleArn</code> or <code>FeatureName</code> value is already associated with the DB instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

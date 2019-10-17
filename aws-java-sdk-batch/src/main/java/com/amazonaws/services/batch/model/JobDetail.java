@@ -283,7 +283,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param status
-     *        The current status for the job. </p> <note>
+     *        The current status for the job.</p> <note>
      *        <p>
      *        If your jobs do not progress to <code>STARTING</code>, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
@@ -308,7 +308,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return The current status for the job. </p> <note>
+     * @return The current status for the job.</p> <note>
      *         <p>
      *         If your jobs do not progress to <code>STARTING</code>, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
@@ -334,7 +334,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param status
-     *        The current status for the job. </p> <note>
+     *        The current status for the job.</p> <note>
      *        <p>
      *        If your jobs do not progress to <code>STARTING</code>, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
@@ -362,7 +362,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param status
-     *        The current status for the job. </p> <note>
+     *        The current status for the job.</p> <note>
      *        <p>
      *        If your jobs do not progress to <code>STARTING</code>, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
@@ -388,7 +388,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param status
-     *        The current status for the job. </p> <note>
+     *        The current status for the job.</p> <note>
      *        <p>
      *        If your jobs do not progress to <code>STARTING</code>, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs

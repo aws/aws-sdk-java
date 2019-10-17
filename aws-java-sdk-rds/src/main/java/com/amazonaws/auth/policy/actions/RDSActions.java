@@ -49,6 +49,8 @@ public enum RDSActions implements Action {
     CopyDBSnapshot("rds:CopyDBSnapshot"),
     /** Action for the CopyOptionGroup operation. */
     CopyOptionGroup("rds:CopyOptionGroup"),
+    /** Action for the CreateCustomAvailabilityZone operation. */
+    CreateCustomAvailabilityZone("rds:CreateCustomAvailabilityZone"),
     /** Action for the CreateDBCluster operation. */
     CreateDBCluster("rds:CreateDBCluster"),
     /** Action for the CreateDBClusterEndpoint operation. */
@@ -75,6 +77,8 @@ public enum RDSActions implements Action {
     CreateGlobalCluster("rds:CreateGlobalCluster"),
     /** Action for the CreateOptionGroup operation. */
     CreateOptionGroup("rds:CreateOptionGroup"),
+    /** Action for the DeleteCustomAvailabilityZone operation. */
+    DeleteCustomAvailabilityZone("rds:DeleteCustomAvailabilityZone"),
     /** Action for the DeleteDBCluster operation. */
     DeleteDBCluster("rds:DeleteDBCluster"),
     /** Action for the DeleteDBClusterEndpoint operation. */
@@ -99,12 +103,16 @@ public enum RDSActions implements Action {
     DeleteEventSubscription("rds:DeleteEventSubscription"),
     /** Action for the DeleteGlobalCluster operation. */
     DeleteGlobalCluster("rds:DeleteGlobalCluster"),
+    /** Action for the DeleteInstallationMedia operation. */
+    DeleteInstallationMedia("rds:DeleteInstallationMedia"),
     /** Action for the DeleteOptionGroup operation. */
     DeleteOptionGroup("rds:DeleteOptionGroup"),
     /** Action for the DescribeAccountAttributes operation. */
     DescribeAccountAttributes("rds:DescribeAccountAttributes"),
     /** Action for the DescribeCertificates operation. */
     DescribeCertificates("rds:DescribeCertificates"),
+    /** Action for the DescribeCustomAvailabilityZones operation. */
+    DescribeCustomAvailabilityZones("rds:DescribeCustomAvailabilityZones"),
     /** Action for the DescribeDBClusterBacktracks operation. */
     DescribeDBClusterBacktracks("rds:DescribeDBClusterBacktracks"),
     /** Action for the DescribeDBClusterEndpoints operation. */
@@ -151,6 +159,8 @@ public enum RDSActions implements Action {
     DescribeEvents("rds:DescribeEvents"),
     /** Action for the DescribeGlobalClusters operation. */
     DescribeGlobalClusters("rds:DescribeGlobalClusters"),
+    /** Action for the DescribeInstallationMedia operation. */
+    DescribeInstallationMedia("rds:DescribeInstallationMedia"),
     /** Action for the DescribeOptionGroupOptions operation. */
     DescribeOptionGroupOptions("rds:DescribeOptionGroupOptions"),
     /** Action for the DescribeOptionGroups operation. */
@@ -171,6 +181,8 @@ public enum RDSActions implements Action {
     DownloadDBLogFilePortion("rds:DownloadDBLogFilePortion"),
     /** Action for the FailoverDBCluster operation. */
     FailoverDBCluster("rds:FailoverDBCluster"),
+    /** Action for the ImportInstallationMedia operation. */
+    ImportInstallationMedia("rds:ImportInstallationMedia"),
     /** Action for the ListTagsForResource operation. */
     ListTagsForResource("rds:ListTagsForResource"),
     /** Action for the ModifyCurrentDBClusterCapacity operation. */
