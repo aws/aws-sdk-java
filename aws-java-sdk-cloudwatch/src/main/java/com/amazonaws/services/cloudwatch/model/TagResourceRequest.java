@@ -27,30 +27,27 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the CloudWatch resource that you're adding tags to. For more information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * The list of key-value pairs to associate with the resource.
+     * The list of key-value pairs to associate with the alarm.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The ARN of the CloudWatch resource that you're adding tags to. For more information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the CloudWatch resource that you're adding tags to. For more information on ARN format, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">
-     *        Example ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
      */
 
     public void setResourceARN(String resourceARN) {
@@ -59,14 +56,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the CloudWatch resource that you're adding tags to. For more information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
      * </p>
      * 
-     * @return The ARN of the CloudWatch resource that you're adding tags to. For more information on ARN format, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">
-     *         Example ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     *         <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
      */
 
     public String getResourceARN() {
@@ -75,15 +70,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the CloudWatch resource that you're adding tags to. For more information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the CloudWatch resource that you're adding tags to. For more information on ARN format, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">
-     *        Example ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +87,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the resource.
+     * The list of key-value pairs to associate with the alarm.
      * </p>
      * 
-     * @return The list of key-value pairs to associate with the resource.
+     * @return The list of key-value pairs to associate with the alarm.
      */
 
     public java.util.List<Tag> getTags() {
@@ -109,11 +102,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the resource.
+     * The list of key-value pairs to associate with the alarm.
      * </p>
      * 
      * @param tags
-     *        The list of key-value pairs to associate with the resource.
+     *        The list of key-value pairs to associate with the alarm.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -127,7 +120,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the resource.
+     * The list of key-value pairs to associate with the alarm.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -136,7 +129,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The list of key-value pairs to associate with the resource.
+     *        The list of key-value pairs to associate with the alarm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +145,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the resource.
+     * The list of key-value pairs to associate with the alarm.
      * </p>
      * 
      * @param tags
-     *        The list of key-value pairs to associate with the resource.
+     *        The list of key-value pairs to associate with the alarm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

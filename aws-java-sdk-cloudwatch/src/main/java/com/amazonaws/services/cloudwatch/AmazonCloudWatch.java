@@ -800,18 +800,21 @@ public interface AmazonCloudWatch {
 
     /**
      * <p>
-     * Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Tags can help you organize and
-     * categorize your resources. You can also use them to scope user permissions, by granting a user permission to
-     * access or change only resources with certain tag values. In CloudWatch, alarms can be tagged.
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently, the only CloudWatch
+     * resources that can be tagged are alarms.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only resources with certain tag values.
      * </p>
      * <p>
      * Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.
      * </p>
      * <p>
-     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
-     * key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag
-     * key that is already associated with the resource, the new tag value that you specify replaces the previous value
-     * for that tag.
+     * You can use the <code>TagResource</code> action with an alarm that already has tags. If you specify a new tag key
+     * for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that
+     * is already associated with the alarm, the new tag value that you specify replaces the previous value for that
+     * tag.
      * </p>
      * <p>
      * You can associate as many as 50 tags with a resource.

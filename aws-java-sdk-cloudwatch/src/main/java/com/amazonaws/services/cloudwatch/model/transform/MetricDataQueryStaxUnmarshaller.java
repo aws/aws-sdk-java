@@ -67,6 +67,11 @@ public class MetricDataQueryStaxUnmarshaller implements Unmarshaller<MetricDataQ
                     metricDataQuery.setReturnData(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Period", targetDepth)) {
+                    metricDataQuery.setPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return metricDataQuery;

@@ -127,6 +127,11 @@ public class GetMetricDataRequestMarshaller implements Marshaller<Request<GetMet
                     request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".ReturnData",
                             StringUtils.fromBoolean(metricDataQueriesListValue.getReturnData()));
                 }
+
+                if (metricDataQueriesListValue.getPeriod() != null) {
+                    request.addParameter("MetricDataQueries.member." + metricDataQueriesListIndex + ".Period",
+                            StringUtils.fromInteger(metricDataQueriesListValue.getPeriod()));
+                }
                 metricDataQueriesListIndex++;
             }
         }

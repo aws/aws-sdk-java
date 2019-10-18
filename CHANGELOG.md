@@ -1,3 +1,8 @@
+# __1.11.656__ __2019-10-18__
+## __Amazon CloudWatch__
+  - ### Features
+    - New Period parameter added to MetricDataQuery structure.
+
 # __1.11.655__ __2019-10-17__
 ## __AWS Batch__
   - ### Features

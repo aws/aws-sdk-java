@@ -240,6 +240,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
                 if (metricsListValue.getReturnData() != null) {
                     request.addParameter("Metrics.member." + metricsListIndex + ".ReturnData", StringUtils.fromBoolean(metricsListValue.getReturnData()));
                 }
+
+                if (metricsListValue.getPeriod() != null) {
+                    request.addParameter("Metrics.member." + metricsListIndex + ".Period", StringUtils.fromInteger(metricsListValue.getPeriod()));
+                }
                 metricsListIndex++;
             }
         }

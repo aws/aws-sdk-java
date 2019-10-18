@@ -34,8 +34,33 @@ public class MetricStat implements Serializable, Cloneable {
     private Metric metric;
     /**
      * <p>
-     * The period, in seconds, to use when retrieving the metric.
+     * The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as
+     * short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at
+     * intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution
+     * metrics are those metrics stored by a <code>PutMetricData</code> call that includes a
+     * <code>StorageResolution</code> of 1 second.
      * </p>
+     * <p>
+     * If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify
+     * the period as follows or no data points in that time range is returned:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer period;
     /**
@@ -100,11 +125,60 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The period, in seconds, to use when retrieving the metric.
+     * The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as
+     * short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at
+     * intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution
+     * metrics are those metrics stored by a <code>PutMetricData</code> call that includes a
+     * <code>StorageResolution</code> of 1 second.
      * </p>
+     * <p>
+     * If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify
+     * the period as follows or no data points in that time range is returned:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param period
-     *        The period, in seconds, to use when retrieving the metric.
+     *        The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period
+     *        can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that
+     *        are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
+     *        60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a
+     *        <code>StorageResolution</code> of 1 second.</p>
+     *        <p>
+     *        If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must
+     *        specify the period as follows or no data points in that time range is returned:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).
+     *        </p>
+     *        </li>
      */
 
     public void setPeriod(Integer period) {
@@ -113,10 +187,59 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The period, in seconds, to use when retrieving the metric.
+     * The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as
+     * short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at
+     * intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution
+     * metrics are those metrics stored by a <code>PutMetricData</code> call that includes a
+     * <code>StorageResolution</code> of 1 second.
      * </p>
+     * <p>
+     * If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify
+     * the period as follows or no data points in that time range is returned:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The period, in seconds, to use when retrieving the metric.
+     * @return The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period
+     *         can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that
+     *         are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple
+     *         of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that
+     *         includes a <code>StorageResolution</code> of 1 second.</p>
+     *         <p>
+     *         If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must
+     *         specify the period as follows or no data points in that time range is returned:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).
+     *         </p>
+     *         </li>
      */
 
     public Integer getPeriod() {
@@ -125,11 +248,60 @@ public class MetricStat implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The period, in seconds, to use when retrieving the metric.
+     * The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as
+     * short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at
+     * intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution
+     * metrics are those metrics stored by a <code>PutMetricData</code> call that includes a
+     * <code>StorageResolution</code> of 1 second.
      * </p>
+     * <p>
+     * If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify
+     * the period as follows or no data points in that time range is returned:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param period
-     *        The period, in seconds, to use when retrieving the metric.
+     *        The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period
+     *        can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that
+     *        are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
+     *        60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a
+     *        <code>StorageResolution</code> of 1 second.</p>
+     *        <p>
+     *        If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must
+     *        specify the period as follows or no data points in that time range is returned:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
