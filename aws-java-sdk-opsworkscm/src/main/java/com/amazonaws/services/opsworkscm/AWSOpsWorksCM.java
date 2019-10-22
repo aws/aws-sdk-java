@@ -306,6 +306,11 @@ public interface AWSOpsWorksCM {
      * to allow access from known IP addresses and address ranges only. To edit security group rules, open Security
      * Groups in the navigation pane of the EC2 management console.
      * </p>
+     * <p>
+     * To specify your own domain for a server, and provide your own self-signed or CA-signed certificate and private
+     * key, specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>, and
+     * <code>CustomPrivateKey</code>.
+     * </p>
      * 
      * @param createServerRequest
      * @return Result of the CreateServer operation returned by the service.

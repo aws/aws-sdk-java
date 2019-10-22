@@ -30,6 +30,12 @@ public class CreateServerRequestMarshaller {
 
     private static final MarshallingInfo<Boolean> ASSOCIATEPUBLICIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatePublicIpAddress").build();
+    private static final MarshallingInfo<String> CUSTOMDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDomain").build();
+    private static final MarshallingInfo<String> CUSTOMCERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomCertificate").build();
+    private static final MarshallingInfo<String> CUSTOMPRIVATEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomPrivateKey").build();
     private static final MarshallingInfo<Boolean> DISABLEAUTOMATEDBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableAutomatedBackup").build();
     private static final MarshallingInfo<String> ENGINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -80,6 +86,9 @@ public class CreateServerRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createServerRequest.getAssociatePublicIpAddress(), ASSOCIATEPUBLICIPADDRESS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getCustomDomain(), CUSTOMDOMAIN_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getCustomCertificate(), CUSTOMCERTIFICATE_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getCustomPrivateKey(), CUSTOMPRIVATEKEY_BINDING);
             protocolMarshaller.marshall(createServerRequest.getDisableAutomatedBackup(), DISABLEAUTOMATEDBACKUP_BINDING);
             protocolMarshaller.marshall(createServerRequest.getEngine(), ENGINE_BINDING);
             protocolMarshaller.marshall(createServerRequest.getEngineModel(), ENGINEMODEL_BINDING);

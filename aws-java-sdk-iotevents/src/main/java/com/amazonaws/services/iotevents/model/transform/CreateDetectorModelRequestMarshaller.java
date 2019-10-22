@@ -40,6 +40,8 @@ public class CreateDetectorModelRequestMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> EVALUATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("evaluationMethod").build();
 
     private static final CreateDetectorModelRequestMarshaller instance = new CreateDetectorModelRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateDetectorModelRequestMarshaller {
             protocolMarshaller.marshall(createDetectorModelRequest.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(createDetectorModelRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createDetectorModelRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDetectorModelRequest.getEvaluationMethod(), EVALUATIONMETHOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

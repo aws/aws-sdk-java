@@ -45,9 +45,9 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
     private String detectorModelDescription;
     /**
      * <p>
-     * The input attribute key used to identify a device or system in order to create a detector (an instance of the
-     * detector model) and then to route each input received to the appropriate detector (instance). This parameter uses
-     * a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
+     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
+     * JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
      * identify the device associated with the input.
      * </p>
      */
@@ -64,6 +64,14 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     */
+    private String evaluationMethod;
 
     /**
      * <p>
@@ -187,15 +195,15 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system in order to create a detector (an instance of the
-     * detector model) and then to route each input received to the appropriate detector (instance). This parameter uses
-     * a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
+     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
+     * JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
      * identify the device associated with the input.
      * </p>
      * 
      * @param key
-     *        The input attribute key used to identify a device or system in order to create a detector (an instance of
-     *        the detector model) and then to route each input received to the appropriate detector (instance). This
+     *        The input attribute key used to identify a device or system to create a detector (an instance of the
+     *        detector model) and then to route each input received to the appropriate detector (instance). This
      *        parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
      *        input that is used to identify the device associated with the input.
      */
@@ -206,14 +214,14 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system in order to create a detector (an instance of the
-     * detector model) and then to route each input received to the appropriate detector (instance). This parameter uses
-     * a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
+     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
+     * JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
      * identify the device associated with the input.
      * </p>
      * 
-     * @return The input attribute key used to identify a device or system in order to create a detector (an instance of
-     *         the detector model) and then to route each input received to the appropriate detector (instance). This
+     * @return The input attribute key used to identify a device or system to create a detector (an instance of the
+     *         detector model) and then to route each input received to the appropriate detector (instance). This
      *         parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
      *         input that is used to identify the device associated with the input.
      */
@@ -224,15 +232,15 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system in order to create a detector (an instance of the
-     * detector model) and then to route each input received to the appropriate detector (instance). This parameter uses
-     * a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
+     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
+     * JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
      * identify the device associated with the input.
      * </p>
      * 
      * @param key
-     *        The input attribute key used to identify a device or system in order to create a detector (an instance of
-     *        the detector model) and then to route each input received to the appropriate detector (instance). This
+     *        The input attribute key used to identify a device or system to create a detector (an instance of the
+     *        detector model) and then to route each input received to the appropriate detector (instance). This
      *        parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
      *        input that is used to identify the device associated with the input.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -354,6 +362,81 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     * 
+     * @param evaluationMethod
+     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
+     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
+     *        after all event conditions are evaluated.
+     * @see EvaluationMethod
+     */
+
+    public void setEvaluationMethod(String evaluationMethod) {
+        this.evaluationMethod = evaluationMethod;
+    }
+
+    /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     * 
+     * @return When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
+     *         the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
+     *         after all event conditions are evaluated.
+     * @see EvaluationMethod
+     */
+
+    public String getEvaluationMethod() {
+        return this.evaluationMethod;
+    }
+
+    /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     * 
+     * @param evaluationMethod
+     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
+     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
+     *        after all event conditions are evaluated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EvaluationMethod
+     */
+
+    public CreateDetectorModelRequest withEvaluationMethod(String evaluationMethod) {
+        setEvaluationMethod(evaluationMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     * 
+     * @param evaluationMethod
+     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
+     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
+     *        after all event conditions are evaluated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EvaluationMethod
+     */
+
+    public CreateDetectorModelRequest withEvaluationMethod(EvaluationMethod evaluationMethod) {
+        this.evaluationMethod = evaluationMethod.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +459,9 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEvaluationMethod() != null)
+            sb.append("EvaluationMethod: ").append(getEvaluationMethod());
         sb.append("}");
         return sb.toString();
     }
@@ -415,6 +500,10 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEvaluationMethod() == null ^ this.getEvaluationMethod() == null)
+            return false;
+        if (other.getEvaluationMethod() != null && other.getEvaluationMethod().equals(this.getEvaluationMethod()) == false)
+            return false;
         return true;
     }
 
@@ -429,6 +518,7 @@ public class CreateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationMethod() == null) ? 0 : getEvaluationMethod().hashCode());
         return hashCode;
     }
 

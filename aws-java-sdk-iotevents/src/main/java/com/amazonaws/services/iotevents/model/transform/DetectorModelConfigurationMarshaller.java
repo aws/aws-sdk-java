@@ -45,6 +45,8 @@ public class DetectorModelConfigurationMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("key").build();
+    private static final MarshallingInfo<String> EVALUATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("evaluationMethod").build();
 
     private static final DetectorModelConfigurationMarshaller instance = new DetectorModelConfigurationMarshaller();
 
@@ -71,6 +73,7 @@ public class DetectorModelConfigurationMarshaller {
             protocolMarshaller.marshall(detectorModelConfiguration.getLastUpdateTime(), LASTUPDATETIME_BINDING);
             protocolMarshaller.marshall(detectorModelConfiguration.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(detectorModelConfiguration.getKey(), KEY_BINDING);
+            protocolMarshaller.marshall(detectorModelConfiguration.getEvaluationMethod(), EVALUATIONMETHOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

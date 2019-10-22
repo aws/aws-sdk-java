@@ -60,13 +60,22 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     private String cloudFormationStackArn;
     /**
      * <p>
+     * An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.
+     * </p>
+     */
+    private String customDomain;
+    /**
+     * <p>
      * Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.
      * </p>
      */
     private Boolean disableAutomatedBackup;
     /**
      * <p>
-     * A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>
+     * A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>.
+     * You cannot access the server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified.
      * </p>
      */
     private String endpoint;
@@ -426,6 +435,55 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.
+     * </p>
+     * 
+     * @param customDomain
+     *        An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot
+     *        access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     *        specified.
+     */
+
+    public void setCustomDomain(String customDomain) {
+        this.customDomain = customDomain;
+    }
+
+    /**
+     * <p>
+     * An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.
+     * </p>
+     * 
+     * @return An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot
+     *         access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     *         specified.
+     */
+
+    public String getCustomDomain() {
+        return this.customDomain;
+    }
+
+    /**
+     * <p>
+     * An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.
+     * </p>
+     * 
+     * @param customDomain
+     *        An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot
+     *        access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     *        specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Server withCustomDomain(String customDomain) {
+        setCustomDomain(customDomain);
+        return this;
+    }
+
+    /**
+     * <p>
      * Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.
      * </p>
      * 
@@ -482,12 +540,15 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>
+     * A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>.
+     * You cannot access the server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified.
      * </p>
      * 
      * @param endpoint
      *        A DNS name that can be used to access the engine. Example:
-     *        <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>
+     *        <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the server by using the
+     *        <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.
      */
 
     public void setEndpoint(String endpoint) {
@@ -496,11 +557,14 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>
+     * A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>.
+     * You cannot access the server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified.
      * </p>
      * 
      * @return A DNS name that can be used to access the engine. Example:
-     *         <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>
+     *         <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the server by using the
+     *         <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.
      */
 
     public String getEndpoint() {
@@ -509,12 +573,15 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>
+     * A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>.
+     * You cannot access the server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified.
      * </p>
      * 
      * @param endpoint
      *        A DNS name that can be used to access the engine. Example:
-     *        <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>
+     *        <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the server by using the
+     *        <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1693,6 +1760,8 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getCloudFormationStackArn() != null)
             sb.append("CloudFormationStackArn: ").append(getCloudFormationStackArn()).append(",");
+        if (getCustomDomain() != null)
+            sb.append("CustomDomain: ").append(getCustomDomain()).append(",");
         if (getDisableAutomatedBackup() != null)
             sb.append("DisableAutomatedBackup: ").append(getDisableAutomatedBackup()).append(",");
         if (getEndpoint() != null)
@@ -1762,6 +1831,10 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
         if (other.getCloudFormationStackArn() == null ^ this.getCloudFormationStackArn() == null)
             return false;
         if (other.getCloudFormationStackArn() != null && other.getCloudFormationStackArn().equals(this.getCloudFormationStackArn()) == false)
+            return false;
+        if (other.getCustomDomain() == null ^ this.getCustomDomain() == null)
+            return false;
+        if (other.getCustomDomain() != null && other.getCustomDomain().equals(this.getCustomDomain()) == false)
             return false;
         if (other.getDisableAutomatedBackup() == null ^ this.getDisableAutomatedBackup() == null)
             return false;
@@ -1848,6 +1921,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getCloudFormationStackArn() == null) ? 0 : getCloudFormationStackArn().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomain() == null) ? 0 : getCustomDomain().hashCode());
         hashCode = prime * hashCode + ((getDisableAutomatedBackup() == null) ? 0 : getDisableAutomatedBackup().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());

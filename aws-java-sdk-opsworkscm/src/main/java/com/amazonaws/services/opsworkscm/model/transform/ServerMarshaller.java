@@ -38,6 +38,8 @@ public class ServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CLOUDFORMATIONSTACKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudFormationStackArn").build();
+    private static final MarshallingInfo<String> CUSTOMDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDomain").build();
     private static final MarshallingInfo<Boolean> DISABLEAUTOMATEDBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableAutomatedBackup").build();
     private static final MarshallingInfo<String> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -96,6 +98,7 @@ public class ServerMarshaller {
             protocolMarshaller.marshall(server.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(server.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(server.getCloudFormationStackArn(), CLOUDFORMATIONSTACKARN_BINDING);
+            protocolMarshaller.marshall(server.getCustomDomain(), CUSTOMDOMAIN_BINDING);
             protocolMarshaller.marshall(server.getDisableAutomatedBackup(), DISABLEAUTOMATEDBACKUP_BINDING);
             protocolMarshaller.marshall(server.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(server.getEngine(), ENGINE_BINDING);

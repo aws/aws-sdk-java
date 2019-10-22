@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
- * Firehose stream.
+ * Firehose delivery stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/FirehoseAction" target="_top">AWS API
@@ -31,25 +31,25 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Kinesis Data Firehose stream where the data is written.
+     * The name of the Kinesis Data Firehose delivery stream where the data is written.
      * </p>
      */
     private String deliveryStreamName;
     /**
      * <p>
-     * A character separator that is used to separate records written to the Kinesis Data Firehose stream. Valid values
-     * are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     * A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream.
+     * Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      * </p>
      */
     private String separator;
 
     /**
      * <p>
-     * The name of the Kinesis Data Firehose stream where the data is written.
+     * The name of the Kinesis Data Firehose delivery stream where the data is written.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the Kinesis Data Firehose stream where the data is written.
+     *        The name of the Kinesis Data Firehose delivery stream where the data is written.
      */
 
     public void setDeliveryStreamName(String deliveryStreamName) {
@@ -58,10 +58,10 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Kinesis Data Firehose stream where the data is written.
+     * The name of the Kinesis Data Firehose delivery stream where the data is written.
      * </p>
      * 
-     * @return The name of the Kinesis Data Firehose stream where the data is written.
+     * @return The name of the Kinesis Data Firehose delivery stream where the data is written.
      */
 
     public String getDeliveryStreamName() {
@@ -70,11 +70,11 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Kinesis Data Firehose stream where the data is written.
+     * The name of the Kinesis Data Firehose delivery stream where the data is written.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the Kinesis Data Firehose stream where the data is written.
+     *        The name of the Kinesis Data Firehose delivery stream where the data is written.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,13 +85,13 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character separator that is used to separate records written to the Kinesis Data Firehose stream. Valid values
-     * are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     * A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream.
+     * Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      * </p>
      * 
      * @param separator
-     *        A character separator that is used to separate records written to the Kinesis Data Firehose stream. Valid
-     *        values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     *        A character separator that is used to separate records written to the Kinesis Data Firehose delivery
+     *        stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      */
 
     public void setSeparator(String separator) {
@@ -100,12 +100,12 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character separator that is used to separate records written to the Kinesis Data Firehose stream. Valid values
-     * are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     * A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream.
+     * Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      * </p>
      * 
-     * @return A character separator that is used to separate records written to the Kinesis Data Firehose stream. Valid
-     *         values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     * @return A character separator that is used to separate records written to the Kinesis Data Firehose delivery
+     *         stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      */
 
     public String getSeparator() {
@@ -114,13 +114,13 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A character separator that is used to separate records written to the Kinesis Data Firehose stream. Valid values
-     * are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     * A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream.
+     * Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      * </p>
      * 
      * @param separator
-     *        A character separator that is used to separate records written to the Kinesis Data Firehose stream. Valid
-     *        values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     *        A character separator that is used to separate records written to the Kinesis Data Firehose delivery
+     *        stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

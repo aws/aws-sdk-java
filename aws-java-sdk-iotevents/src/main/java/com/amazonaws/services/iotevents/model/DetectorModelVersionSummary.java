@@ -70,6 +70,14 @@ public class DetectorModelVersionSummary implements Serializable, Cloneable, Str
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     */
+    private String evaluationMethod;
 
     /**
      * <p>
@@ -371,6 +379,81 @@ public class DetectorModelVersionSummary implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     * 
+     * @param evaluationMethod
+     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
+     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
+     *        after all event conditions are evaluated.
+     * @see EvaluationMethod
+     */
+
+    public void setEvaluationMethod(String evaluationMethod) {
+        this.evaluationMethod = evaluationMethod;
+    }
+
+    /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     * 
+     * @return When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
+     *         the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
+     *         after all event conditions are evaluated.
+     * @see EvaluationMethod
+     */
+
+    public String getEvaluationMethod() {
+        return this.evaluationMethod;
+    }
+
+    /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     * 
+     * @param evaluationMethod
+     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
+     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
+     *        after all event conditions are evaluated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EvaluationMethod
+     */
+
+    public DetectorModelVersionSummary withEvaluationMethod(String evaluationMethod) {
+        setEvaluationMethod(evaluationMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
+     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.
+     * </p>
+     * 
+     * @param evaluationMethod
+     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
+     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
+     *        after all event conditions are evaluated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EvaluationMethod
+     */
+
+    public DetectorModelVersionSummary withEvaluationMethod(EvaluationMethod evaluationMethod) {
+        this.evaluationMethod = evaluationMethod.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -395,7 +478,9 @@ public class DetectorModelVersionSummary implements Serializable, Cloneable, Str
         if (getLastUpdateTime() != null)
             sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getEvaluationMethod() != null)
+            sb.append("EvaluationMethod: ").append(getEvaluationMethod());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +523,10 @@ public class DetectorModelVersionSummary implements Serializable, Cloneable, Str
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getEvaluationMethod() == null ^ this.getEvaluationMethod() == null)
+            return false;
+        if (other.getEvaluationMethod() != null && other.getEvaluationMethod().equals(this.getEvaluationMethod()) == false)
+            return false;
         return true;
     }
 
@@ -453,6 +542,7 @@ public class DetectorModelVersionSummary implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationMethod() == null) ? 0 : getEvaluationMethod().hashCode());
         return hashCode;
     }
 

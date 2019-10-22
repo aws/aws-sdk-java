@@ -66,8 +66,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private ResetTimerAction resetTimer;
     /**
      * <p>
-     * Calls a Lambda function, passing in information about the detector model instance and the event which triggered
-     * the action.
+     * Calls an AWS Lambda function, passing in information about the detector model instance and the event which
+     * triggered the action.
      * </p>
      */
     private LambdaAction lambda;
@@ -80,14 +80,15 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private IotEventsAction iotEvents;
     /**
      * <p>
-     * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+     * Sends information about the detector model instance and the event which triggered the action to an Amazon SQS
+     * queue.
      * </p>
      */
     private SqsAction sqs;
     /**
      * <p>
      * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
-     * Firehose stream.
+     * Firehose delivery stream.
      * </p>
      */
     private FirehoseAction firehose;
@@ -334,12 +335,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Calls a Lambda function, passing in information about the detector model instance and the event which triggered
-     * the action.
+     * Calls an AWS Lambda function, passing in information about the detector model instance and the event which
+     * triggered the action.
      * </p>
      * 
      * @param lambda
-     *        Calls a Lambda function, passing in information about the detector model instance and the event which
+     *        Calls an AWS Lambda function, passing in information about the detector model instance and the event which
      *        triggered the action.
      */
 
@@ -349,12 +350,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Calls a Lambda function, passing in information about the detector model instance and the event which triggered
-     * the action.
+     * Calls an AWS Lambda function, passing in information about the detector model instance and the event which
+     * triggered the action.
      * </p>
      * 
-     * @return Calls a Lambda function, passing in information about the detector model instance and the event which
-     *         triggered the action.
+     * @return Calls an AWS Lambda function, passing in information about the detector model instance and the event
+     *         which triggered the action.
      */
 
     public LambdaAction getLambda() {
@@ -363,12 +364,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Calls a Lambda function, passing in information about the detector model instance and the event which triggered
-     * the action.
+     * Calls an AWS Lambda function, passing in information about the detector model instance and the event which
+     * triggered the action.
      * </p>
      * 
      * @param lambda
-     *        Calls a Lambda function, passing in information about the detector model instance and the event which
+     *        Calls an AWS Lambda function, passing in information about the detector model instance and the event which
      *        triggered the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -426,12 +427,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+     * Sends information about the detector model instance and the event which triggered the action to an Amazon SQS
+     * queue.
      * </p>
      * 
      * @param sqs
-     *        Sends information about the detector model instance and the event which triggered the action to an AWS SQS
-     *        queue.
+     *        Sends information about the detector model instance and the event which triggered the action to an Amazon
+     *        SQS queue.
      */
 
     public void setSqs(SqsAction sqs) {
@@ -440,10 +442,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+     * Sends information about the detector model instance and the event which triggered the action to an Amazon SQS
+     * queue.
      * </p>
      * 
-     * @return Sends information about the detector model instance and the event which triggered the action to an AWS
+     * @return Sends information about the detector model instance and the event which triggered the action to an Amazon
      *         SQS queue.
      */
 
@@ -453,12 +456,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event which triggered the action to an AWS SQS queue.
+     * Sends information about the detector model instance and the event which triggered the action to an Amazon SQS
+     * queue.
      * </p>
      * 
      * @param sqs
-     *        Sends information about the detector model instance and the event which triggered the action to an AWS SQS
-     *        queue.
+     *        Sends information about the detector model instance and the event which triggered the action to an Amazon
+     *        SQS queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,12 +474,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
-     * Firehose stream.
+     * Firehose delivery stream.
      * </p>
      * 
      * @param firehose
      *        Sends information about the detector model instance and the event which triggered the action to a Kinesis
-     *        Data Firehose stream.
+     *        Data Firehose delivery stream.
      */
 
     public void setFirehose(FirehoseAction firehose) {
@@ -485,11 +489,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
-     * Firehose stream.
+     * Firehose delivery stream.
      * </p>
      * 
      * @return Sends information about the detector model instance and the event which triggered the action to a Kinesis
-     *         Data Firehose stream.
+     *         Data Firehose delivery stream.
      */
 
     public FirehoseAction getFirehose() {
@@ -499,12 +503,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
-     * Firehose stream.
+     * Firehose delivery stream.
      * </p>
      * 
      * @param firehose
      *        Sends information about the detector model instance and the event which triggered the action to a Kinesis
-     *        Data Firehose stream.
+     *        Data Firehose delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

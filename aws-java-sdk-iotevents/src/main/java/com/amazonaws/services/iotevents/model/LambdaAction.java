@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Calls a Lambda function, passing in information about the detector model instance and the event which triggered the
- * action.
+ * Calls an AWS Lambda function, passing in information about the detector model instance and the event which triggered
+ * the action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/LambdaAction" target="_top">AWS API
@@ -31,18 +31,18 @@ public class LambdaAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Lambda function which is executed.
+     * The ARN of the AWS Lambda function which is executed.
      * </p>
      */
     private String functionArn;
 
     /**
      * <p>
-     * The ARN of the Lambda function which is executed.
+     * The ARN of the AWS Lambda function which is executed.
      * </p>
      * 
      * @param functionArn
-     *        The ARN of the Lambda function which is executed.
+     *        The ARN of the AWS Lambda function which is executed.
      */
 
     public void setFunctionArn(String functionArn) {
@@ -51,10 +51,10 @@ public class LambdaAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Lambda function which is executed.
+     * The ARN of the AWS Lambda function which is executed.
      * </p>
      * 
-     * @return The ARN of the Lambda function which is executed.
+     * @return The ARN of the AWS Lambda function which is executed.
      */
 
     public String getFunctionArn() {
@@ -63,11 +63,11 @@ public class LambdaAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Lambda function which is executed.
+     * The ARN of the AWS Lambda function which is executed.
      * </p>
      * 
      * @param functionArn
-     *        The ARN of the Lambda function which is executed.
+     *        The ARN of the AWS Lambda function which is executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

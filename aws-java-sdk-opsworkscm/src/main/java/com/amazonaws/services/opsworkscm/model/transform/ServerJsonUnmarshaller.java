@@ -68,6 +68,10 @@ public class ServerJsonUnmarshaller implements Unmarshaller<Server, JsonUnmarsha
                     context.nextToken();
                     server.setCloudFormationStackArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CustomDomain", targetDepth)) {
+                    context.nextToken();
+                    server.setCustomDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DisableAutomatedBackup", targetDepth)) {
                     context.nextToken();
                     server.setDisableAutomatedBackup(context.getUnmarshaller(Boolean.class).unmarshall(context));
