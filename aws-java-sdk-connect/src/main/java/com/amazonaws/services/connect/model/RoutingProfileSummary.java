@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>RoutingProfileSummary</code> object that contains information about a routing profile, including ARN, Id, and
- * Name.
+ * Contains summary information about a routing profile.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileSummary" target="_top">AWS API
@@ -37,7 +36,7 @@ public class RoutingProfileSummary implements Serializable, Cloneable, Structure
     private String id;
     /**
      * <p>
-     * The ARN of the routing profile.
+     * The Amazon Resource Name (ARN) of the routing profile.
      * </p>
      */
     private String arn;
@@ -90,11 +89,11 @@ public class RoutingProfileSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the routing profile.
+     * The Amazon Resource Name (ARN) of the routing profile.
      * </p>
      * 
      * @param arn
-     *        The ARN of the routing profile.
+     *        The Amazon Resource Name (ARN) of the routing profile.
      */
 
     public void setArn(String arn) {
@@ -103,10 +102,10 @@ public class RoutingProfileSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the routing profile.
+     * The Amazon Resource Name (ARN) of the routing profile.
      * </p>
      * 
-     * @return The ARN of the routing profile.
+     * @return The Amazon Resource Name (ARN) of the routing profile.
      */
 
     public String getArn() {
@@ -115,11 +114,11 @@ public class RoutingProfileSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the routing profile.
+     * The Amazon Resource Name (ARN) of the routing profile.
      * </p>
      * 
      * @param arn
-     *        The ARN of the routing profile.
+     *        The Amazon Resource Name (ARN) of the routing profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>CurrentMetric</code> object that contains the Name and Unit for the metric.
+ * Contains information about a real-time metric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetric" target="_top">AWS API

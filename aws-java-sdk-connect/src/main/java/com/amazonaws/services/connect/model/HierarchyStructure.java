@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>HierarchyStructure</code> object that contains information about the hierarchy group structure.
+ * Contains information about a hierarchy structure.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HierarchyStructure" target="_top">AWS API
@@ -30,42 +30,42 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level one.
      * </p>
      */
     private HierarchyLevel levelOne;
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level two.
      * </p>
      */
     private HierarchyLevel levelTwo;
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level three.
      * </p>
      */
     private HierarchyLevel levelThree;
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level four.
      * </p>
      */
     private HierarchyLevel levelFour;
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level five.
      * </p>
      */
     private HierarchyLevel levelFive;
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level one.
      * </p>
      * 
      * @param levelOne
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level one.
      */
 
     public void setLevelOne(HierarchyLevel levelOne) {
@@ -74,10 +74,10 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level one.
      * </p>
      * 
-     * @return A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * @return Information about level one.
      */
 
     public HierarchyLevel getLevelOne() {
@@ -86,11 +86,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level one.
      * </p>
      * 
      * @param levelOne
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level two.
      * </p>
      * 
      * @param levelTwo
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level two.
      */
 
     public void setLevelTwo(HierarchyLevel levelTwo) {
@@ -114,10 +114,10 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level two.
      * </p>
      * 
-     * @return A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * @return Information about level two.
      */
 
     public HierarchyLevel getLevelTwo() {
@@ -126,11 +126,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level two.
      * </p>
      * 
      * @param levelTwo
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level two.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level three.
      * </p>
      * 
      * @param levelThree
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level three.
      */
 
     public void setLevelThree(HierarchyLevel levelThree) {
@@ -154,10 +154,10 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level three.
      * </p>
      * 
-     * @return A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * @return Information about level three.
      */
 
     public HierarchyLevel getLevelThree() {
@@ -166,11 +166,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level three.
      * </p>
      * 
      * @param levelThree
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level three.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level four.
      * </p>
      * 
      * @param levelFour
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level four.
      */
 
     public void setLevelFour(HierarchyLevel levelFour) {
@@ -194,10 +194,10 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level four.
      * </p>
      * 
-     * @return A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * @return Information about level four.
      */
 
     public HierarchyLevel getLevelFour() {
@@ -206,11 +206,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level four.
      * </p>
      * 
      * @param levelFour
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level four.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level five.
      * </p>
      * 
      * @param levelFive
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level five.
      */
 
     public void setLevelFive(HierarchyLevel levelFive) {
@@ -234,10 +234,10 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level five.
      * </p>
      * 
-     * @return A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * @return Information about level five.
      */
 
     public HierarchyLevel getLevelFive() {
@@ -246,11 +246,11 @@ public class HierarchyStructure implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     * Information about level five.
      * </p>
      * 
      * @param levelFive
-     *        A <code>HierarchyLevel</code> object that contains information about the hierarchy group level.
+     *        Information about level five.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

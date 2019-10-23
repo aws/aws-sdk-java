@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>UserIdentityInfo</code> object that contains information about the user's identity, including email address,
- * first name, and last name.
+ * Contains information about the identity of a user.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserIdentityInfo" target="_top">AWS API
@@ -31,35 +30,31 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The first name used in the user account. This is required if you are using Amazon Connect or SAML for identity
-     * management.
+     * The first name. This is required if you are using Amazon Connect or SAML for identity management.
      * </p>
      */
     private String firstName;
     /**
      * <p>
-     * The last name used in the user account. This is required if you are using Amazon Connect or SAML for identity
-     * management.
+     * The last name. This is required if you are using Amazon Connect or SAML for identity management.
      * </p>
      */
     private String lastName;
     /**
      * <p>
-     * The email address added to the user account. If you are using SAML for identity management and include this
-     * parameter, an <code>InvalidRequestException</code> is returned.
+     * The email address. If you are using SAML for identity management and include this parameter, an error is
+     * returned.
      * </p>
      */
     private String email;
 
     /**
      * <p>
-     * The first name used in the user account. This is required if you are using Amazon Connect or SAML for identity
-     * management.
+     * The first name. This is required if you are using Amazon Connect or SAML for identity management.
      * </p>
      * 
      * @param firstName
-     *        The first name used in the user account. This is required if you are using Amazon Connect or SAML for
-     *        identity management.
+     *        The first name. This is required if you are using Amazon Connect or SAML for identity management.
      */
 
     public void setFirstName(String firstName) {
@@ -68,12 +63,10 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The first name used in the user account. This is required if you are using Amazon Connect or SAML for identity
-     * management.
+     * The first name. This is required if you are using Amazon Connect or SAML for identity management.
      * </p>
      * 
-     * @return The first name used in the user account. This is required if you are using Amazon Connect or SAML for
-     *         identity management.
+     * @return The first name. This is required if you are using Amazon Connect or SAML for identity management.
      */
 
     public String getFirstName() {
@@ -82,13 +75,11 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The first name used in the user account. This is required if you are using Amazon Connect or SAML for identity
-     * management.
+     * The first name. This is required if you are using Amazon Connect or SAML for identity management.
      * </p>
      * 
      * @param firstName
-     *        The first name used in the user account. This is required if you are using Amazon Connect or SAML for
-     *        identity management.
+     *        The first name. This is required if you are using Amazon Connect or SAML for identity management.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,13 +90,11 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The last name used in the user account. This is required if you are using Amazon Connect or SAML for identity
-     * management.
+     * The last name. This is required if you are using Amazon Connect or SAML for identity management.
      * </p>
      * 
      * @param lastName
-     *        The last name used in the user account. This is required if you are using Amazon Connect or SAML for
-     *        identity management.
+     *        The last name. This is required if you are using Amazon Connect or SAML for identity management.
      */
 
     public void setLastName(String lastName) {
@@ -114,12 +103,10 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The last name used in the user account. This is required if you are using Amazon Connect or SAML for identity
-     * management.
+     * The last name. This is required if you are using Amazon Connect or SAML for identity management.
      * </p>
      * 
-     * @return The last name used in the user account. This is required if you are using Amazon Connect or SAML for
-     *         identity management.
+     * @return The last name. This is required if you are using Amazon Connect or SAML for identity management.
      */
 
     public String getLastName() {
@@ -128,13 +115,11 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The last name used in the user account. This is required if you are using Amazon Connect or SAML for identity
-     * management.
+     * The last name. This is required if you are using Amazon Connect or SAML for identity management.
      * </p>
      * 
      * @param lastName
-     *        The last name used in the user account. This is required if you are using Amazon Connect or SAML for
-     *        identity management.
+     *        The last name. This is required if you are using Amazon Connect or SAML for identity management.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,13 +130,13 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The email address added to the user account. If you are using SAML for identity management and include this
-     * parameter, an <code>InvalidRequestException</code> is returned.
+     * The email address. If you are using SAML for identity management and include this parameter, an error is
+     * returned.
      * </p>
      * 
      * @param email
-     *        The email address added to the user account. If you are using SAML for identity management and include
-     *        this parameter, an <code>InvalidRequestException</code> is returned.
+     *        The email address. If you are using SAML for identity management and include this parameter, an error is
+     *        returned.
      */
 
     public void setEmail(String email) {
@@ -160,12 +145,12 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The email address added to the user account. If you are using SAML for identity management and include this
-     * parameter, an <code>InvalidRequestException</code> is returned.
+     * The email address. If you are using SAML for identity management and include this parameter, an error is
+     * returned.
      * </p>
      * 
-     * @return The email address added to the user account. If you are using SAML for identity management and include
-     *         this parameter, an <code>InvalidRequestException</code> is returned.
+     * @return The email address. If you are using SAML for identity management and include this parameter, an error is
+     *         returned.
      */
 
     public String getEmail() {
@@ -174,13 +159,13 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The email address added to the user account. If you are using SAML for identity management and include this
-     * parameter, an <code>InvalidRequestException</code> is returned.
+     * The email address. If you are using SAML for identity management and include this parameter, an error is
+     * returned.
      * </p>
      * 
      * @param email
-     *        The email address added to the user account. If you are using SAML for identity management and include
-     *        this parameter, an <code>InvalidRequestException</code> is returned.
+     *        The email address. If you are using SAML for identity management and include this parameter, an error is
+     *        returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

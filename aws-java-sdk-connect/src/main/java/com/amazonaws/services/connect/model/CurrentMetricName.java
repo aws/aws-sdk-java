@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of current metric names.
+ * The current metric names.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

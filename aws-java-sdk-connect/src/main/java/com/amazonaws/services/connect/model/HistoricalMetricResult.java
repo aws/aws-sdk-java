@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The metrics data returned from a <code>GetMetricData</code> operation.
+ * Contains information about the historical metrics retrieved.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HistoricalMetricResult" target="_top">AWS API
@@ -30,24 +30,24 @@ public class HistoricalMetricResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The <code>Dimensions</code> for the metrics.
+     * The dimension for the metrics.
      * </p>
      */
     private Dimensions dimensions;
     /**
      * <p>
-     * A list of <code>HistoricalMetricData</code> objects.
+     * The set of metrics.
      * </p>
      */
     private java.util.List<HistoricalMetricData> collections;
 
     /**
      * <p>
-     * The <code>Dimensions</code> for the metrics.
+     * The dimension for the metrics.
      * </p>
      * 
      * @param dimensions
-     *        The <code>Dimensions</code> for the metrics.
+     *        The dimension for the metrics.
      */
 
     public void setDimensions(Dimensions dimensions) {
@@ -56,10 +56,10 @@ public class HistoricalMetricResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The <code>Dimensions</code> for the metrics.
+     * The dimension for the metrics.
      * </p>
      * 
-     * @return The <code>Dimensions</code> for the metrics.
+     * @return The dimension for the metrics.
      */
 
     public Dimensions getDimensions() {
@@ -68,11 +68,11 @@ public class HistoricalMetricResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The <code>Dimensions</code> for the metrics.
+     * The dimension for the metrics.
      * </p>
      * 
      * @param dimensions
-     *        The <code>Dimensions</code> for the metrics.
+     *        The dimension for the metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class HistoricalMetricResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of <code>HistoricalMetricData</code> objects.
+     * The set of metrics.
      * </p>
      * 
-     * @return A list of <code>HistoricalMetricData</code> objects.
+     * @return The set of metrics.
      */
 
     public java.util.List<HistoricalMetricData> getCollections() {
@@ -95,11 +95,11 @@ public class HistoricalMetricResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of <code>HistoricalMetricData</code> objects.
+     * The set of metrics.
      * </p>
      * 
      * @param collections
-     *        A list of <code>HistoricalMetricData</code> objects.
+     *        The set of metrics.
      */
 
     public void setCollections(java.util.Collection<HistoricalMetricData> collections) {
@@ -113,7 +113,7 @@ public class HistoricalMetricResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of <code>HistoricalMetricData</code> objects.
+     * The set of metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class HistoricalMetricResult implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param collections
-     *        A list of <code>HistoricalMetricData</code> objects.
+     *        The set of metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class HistoricalMetricResult implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of <code>HistoricalMetricData</code> objects.
+     * The set of metrics.
      * </p>
      * 
      * @param collections
-     *        A list of <code>HistoricalMetricData</code> objects.
+     *        The set of metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,18 +25,18 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <code>User</code> object that contains information about the user account and configuration settings.
+     * Information about the user account and configuration settings.
      * </p>
      */
     private User user;
 
     /**
      * <p>
-     * A <code>User</code> object that contains information about the user account and configuration settings.
+     * Information about the user account and configuration settings.
      * </p>
      * 
      * @param user
-     *        A <code>User</code> object that contains information about the user account and configuration settings.
+     *        Information about the user account and configuration settings.
      */
 
     public void setUser(User user) {
@@ -45,10 +45,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <code>User</code> object that contains information about the user account and configuration settings.
+     * Information about the user account and configuration settings.
      * </p>
      * 
-     * @return A <code>User</code> object that contains information about the user account and configuration settings.
+     * @return Information about the user account and configuration settings.
      */
 
     public User getUser() {
@@ -57,11 +57,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <code>User</code> object that contains information about the user account and configuration settings.
+     * Information about the user account and configuration settings.
      * </p>
      * 
      * @param user
-     *        A <code>User</code> object that contains information about the user account and configuration settings.
+     *        Information about the user account and configuration settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -589,7 +589,7 @@
       "members":{
         "message":{"shape":"invalidAuthorizationMessage"}
       },
-      "documentation":"<p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>",
+      "documentation":"<p>This error is returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>",
       "error":{
         "code":"InvalidAuthorizationMessageException",
         "httpStatusCode":400,

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>UserSummary</code> object that contains Information about a user, including ARN, Id, and user name.
+ * Contains summary information about a user.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserSummary" target="_top">AWS API
@@ -30,30 +30,30 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the user account.
+     * The identifier of the user account.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The ARN for the user account.
+     * The Amazon Resource Name (ARN) of the user account.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The Amazon Connect user name for the user account.
+     * The Amazon Connect user name of the user account.
      * </p>
      */
     private String username;
 
     /**
      * <p>
-     * The identifier for the user account.
+     * The identifier of the user account.
      * </p>
      * 
      * @param id
-     *        The identifier for the user account.
+     *        The identifier of the user account.
      */
 
     public void setId(String id) {
@@ -62,10 +62,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the user account.
+     * The identifier of the user account.
      * </p>
      * 
-     * @return The identifier for the user account.
+     * @return The identifier of the user account.
      */
 
     public String getId() {
@@ -74,11 +74,11 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the user account.
+     * The identifier of the user account.
      * </p>
      * 
      * @param id
-     *        The identifier for the user account.
+     *        The identifier of the user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the user account.
+     * The Amazon Resource Name (ARN) of the user account.
      * </p>
      * 
      * @param arn
-     *        The ARN for the user account.
+     *        The Amazon Resource Name (ARN) of the user account.
      */
 
     public void setArn(String arn) {
@@ -102,10 +102,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the user account.
+     * The Amazon Resource Name (ARN) of the user account.
      * </p>
      * 
-     * @return The ARN for the user account.
+     * @return The Amazon Resource Name (ARN) of the user account.
      */
 
     public String getArn() {
@@ -114,11 +114,11 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the user account.
+     * The Amazon Resource Name (ARN) of the user account.
      * </p>
      * 
      * @param arn
-     *        The ARN for the user account.
+     *        The Amazon Resource Name (ARN) of the user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Connect user name for the user account.
+     * The Amazon Connect user name of the user account.
      * </p>
      * 
      * @param username
-     *        The Amazon Connect user name for the user account.
+     *        The Amazon Connect user name of the user account.
      */
 
     public void setUsername(String username) {
@@ -142,10 +142,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Connect user name for the user account.
+     * The Amazon Connect user name of the user account.
      * </p>
      * 
-     * @return The Amazon Connect user name for the user account.
+     * @return The Amazon Connect user name of the user account.
      */
 
     public String getUsername() {
@@ -154,11 +154,11 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Connect user name for the user account.
+     * The Amazon Connect user name of the user account.
      * </p>
      * 
      * @param username
-     *        The Amazon Connect user name for the user account.
+     *        The Amazon Connect user name of the user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

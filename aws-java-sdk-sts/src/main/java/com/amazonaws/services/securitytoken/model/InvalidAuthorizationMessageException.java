@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if
- * the token contains invalid characters, such as linebreaks.
+ * This error is returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen
+ * if the token contains invalid characters, such as linebreaks.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

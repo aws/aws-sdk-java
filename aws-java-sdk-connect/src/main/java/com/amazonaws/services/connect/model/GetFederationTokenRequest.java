@@ -27,27 +27,18 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      */
     private String instanceId;
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
-     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
-     *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
-     *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     *        The identifier of the Amazon Connect instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -56,17 +47,10 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
-     * @return The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console
-     *         and select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID
-     *         is displayed in the Overview section of your instance settings. For example, the instance ID is the set
-     *         of characters at the end of the instance ARN, after instance/, such as
-     *         10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * @return The identifier of the Amazon Connect instance.
      */
 
     public String getInstanceId() {
@@ -75,17 +59,11 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
-     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
-     *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
-     *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     *        The identifier of the Amazon Connect instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

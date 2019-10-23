@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>UserPhoneConfig</code> object that contains information about the user phone configuration settings.
+ * Contains information about the phone configuration settings for a user.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserPhoneConfig" target="_top">AWS API
@@ -30,19 +30,19 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The phone type selected for the user, either Soft phone or Desk phone.
+     * The phone type.
      * </p>
      */
     private String phoneType;
     /**
      * <p>
-     * The Auto accept setting for the user, Yes or No.
+     * The Auto accept setting.
      * </p>
      */
     private Boolean autoAccept;
     /**
      * <p>
-     * The After Call Work (ACW) timeout setting, in seconds, for the user.
+     * The After Call Work (ACW) timeout setting, in seconds.
      * </p>
      */
     private Integer afterContactWorkTimeLimit;
@@ -55,11 +55,11 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The phone type selected for the user, either Soft phone or Desk phone.
+     * The phone type.
      * </p>
      * 
      * @param phoneType
-     *        The phone type selected for the user, either Soft phone or Desk phone.
+     *        The phone type.
      * @see PhoneType
      */
 
@@ -69,10 +69,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The phone type selected for the user, either Soft phone or Desk phone.
+     * The phone type.
      * </p>
      * 
-     * @return The phone type selected for the user, either Soft phone or Desk phone.
+     * @return The phone type.
      * @see PhoneType
      */
 
@@ -82,11 +82,11 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The phone type selected for the user, either Soft phone or Desk phone.
+     * The phone type.
      * </p>
      * 
      * @param phoneType
-     *        The phone type selected for the user, either Soft phone or Desk phone.
+     *        The phone type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhoneType
      */
@@ -98,11 +98,11 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The phone type selected for the user, either Soft phone or Desk phone.
+     * The phone type.
      * </p>
      * 
      * @param phoneType
-     *        The phone type selected for the user, either Soft phone or Desk phone.
+     *        The phone type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhoneType
      */
@@ -114,11 +114,11 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Auto accept setting for the user, Yes or No.
+     * The Auto accept setting.
      * </p>
      * 
      * @param autoAccept
-     *        The Auto accept setting for the user, Yes or No.
+     *        The Auto accept setting.
      */
 
     public void setAutoAccept(Boolean autoAccept) {
@@ -127,10 +127,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Auto accept setting for the user, Yes or No.
+     * The Auto accept setting.
      * </p>
      * 
-     * @return The Auto accept setting for the user, Yes or No.
+     * @return The Auto accept setting.
      */
 
     public Boolean getAutoAccept() {
@@ -139,11 +139,11 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Auto accept setting for the user, Yes or No.
+     * The Auto accept setting.
      * </p>
      * 
      * @param autoAccept
-     *        The Auto accept setting for the user, Yes or No.
+     *        The Auto accept setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,10 +154,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Auto accept setting for the user, Yes or No.
+     * The Auto accept setting.
      * </p>
      * 
-     * @return The Auto accept setting for the user, Yes or No.
+     * @return The Auto accept setting.
      */
 
     public Boolean isAutoAccept() {
@@ -166,11 +166,11 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The After Call Work (ACW) timeout setting, in seconds, for the user.
+     * The After Call Work (ACW) timeout setting, in seconds.
      * </p>
      * 
      * @param afterContactWorkTimeLimit
-     *        The After Call Work (ACW) timeout setting, in seconds, for the user.
+     *        The After Call Work (ACW) timeout setting, in seconds.
      */
 
     public void setAfterContactWorkTimeLimit(Integer afterContactWorkTimeLimit) {
@@ -179,10 +179,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The After Call Work (ACW) timeout setting, in seconds, for the user.
+     * The After Call Work (ACW) timeout setting, in seconds.
      * </p>
      * 
-     * @return The After Call Work (ACW) timeout setting, in seconds, for the user.
+     * @return The After Call Work (ACW) timeout setting, in seconds.
      */
 
     public Integer getAfterContactWorkTimeLimit() {
@@ -191,11 +191,11 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The After Call Work (ACW) timeout setting, in seconds, for the user.
+     * The After Call Work (ACW) timeout setting, in seconds.
      * </p>
      * 
      * @param afterContactWorkTimeLimit
-     *        The After Call Work (ACW) timeout setting, in seconds, for the user.
+     *        The After Call Work (ACW) timeout setting, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

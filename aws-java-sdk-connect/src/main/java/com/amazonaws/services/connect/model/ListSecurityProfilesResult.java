@@ -25,24 +25,23 @@ public class ListSecurityProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of <code>SecurityProfileSummary</code> objects.
+     * Information about the security profiles.
      * </p>
      */
     private java.util.List<SecurityProfileSummary> securityProfileSummaryList;
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of <code>SecurityProfileSummary</code> objects.
+     * Information about the security profiles.
      * </p>
      * 
-     * @return An array of <code>SecurityProfileSummary</code> objects.
+     * @return Information about the security profiles.
      */
 
     public java.util.List<SecurityProfileSummary> getSecurityProfileSummaryList() {
@@ -51,11 +50,11 @@ public class ListSecurityProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of <code>SecurityProfileSummary</code> objects.
+     * Information about the security profiles.
      * </p>
      * 
      * @param securityProfileSummaryList
-     *        An array of <code>SecurityProfileSummary</code> objects.
+     *        Information about the security profiles.
      */
 
     public void setSecurityProfileSummaryList(java.util.Collection<SecurityProfileSummary> securityProfileSummaryList) {
@@ -69,7 +68,7 @@ public class ListSecurityProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of <code>SecurityProfileSummary</code> objects.
+     * Information about the security profiles.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +77,7 @@ public class ListSecurityProfilesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param securityProfileSummaryList
-     *        An array of <code>SecurityProfileSummary</code> objects.
+     *        Information about the security profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +93,11 @@ public class ListSecurityProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of <code>SecurityProfileSummary</code> objects.
+     * Information about the security profiles.
      * </p>
      * 
      * @param securityProfileSummaryList
-     *        An array of <code>SecurityProfileSummary</code> objects.
+     *        Information about the security profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +108,11 @@ public class ListSecurityProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.
+     *        If there are additional results, this is the token for the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +121,10 @@ public class ListSecurityProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
-     * @return A string returned in the response. Use the value returned in the response as the value of the NextToken
-     *         in a subsequent request to retrieve the next set of results.
+     * @return If there are additional results, this is the token for the next set of results.
      */
 
     public String getNextToken() {
@@ -138,13 +133,11 @@ public class ListSecurityProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.
+     *        If there are additional results, this is the token for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

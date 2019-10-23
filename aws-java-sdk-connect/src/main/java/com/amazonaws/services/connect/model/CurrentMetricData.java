@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>CurrentMetricData</code> object.
+ * Contains the data for a real-time metric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetricData" target="_top">AWS API
@@ -30,24 +30,24 @@ public class CurrentMetricData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The metric in a <code>CurrentMetricData</code> object.
+     * Information about the metric.
      * </p>
      */
     private CurrentMetric metric;
     /**
      * <p>
-     * The value of the metric in the CurrentMetricData object.
+     * The value of the metric.
      * </p>
      */
     private Double value;
 
     /**
      * <p>
-     * The metric in a <code>CurrentMetricData</code> object.
+     * Information about the metric.
      * </p>
      * 
      * @param metric
-     *        The metric in a <code>CurrentMetricData</code> object.
+     *        Information about the metric.
      */
 
     public void setMetric(CurrentMetric metric) {
@@ -56,10 +56,10 @@ public class CurrentMetricData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The metric in a <code>CurrentMetricData</code> object.
+     * Information about the metric.
      * </p>
      * 
-     * @return The metric in a <code>CurrentMetricData</code> object.
+     * @return Information about the metric.
      */
 
     public CurrentMetric getMetric() {
@@ -68,11 +68,11 @@ public class CurrentMetricData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The metric in a <code>CurrentMetricData</code> object.
+     * Information about the metric.
      * </p>
      * 
      * @param metric
-     *        The metric in a <code>CurrentMetricData</code> object.
+     *        Information about the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class CurrentMetricData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of the metric in the CurrentMetricData object.
+     * The value of the metric.
      * </p>
      * 
      * @param value
-     *        The value of the metric in the CurrentMetricData object.
+     *        The value of the metric.
      */
 
     public void setValue(Double value) {
@@ -96,10 +96,10 @@ public class CurrentMetricData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of the metric in the CurrentMetricData object.
+     * The value of the metric.
      * </p>
      * 
-     * @return The value of the metric in the CurrentMetricData object.
+     * @return The value of the metric.
      */
 
     public Double getValue() {
@@ -108,11 +108,11 @@ public class CurrentMetricData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of the metric in the CurrentMetricData object.
+     * The value of the metric.
      * </p>
      * 
      * @param value
-     *        The value of the metric in the CurrentMetricData object.
+     *        The value of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,56 +25,41 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * <p>
-     * The token expires after 5 minutes from the time it is created. Subsequent requests that use the NextToken must
-     * use the same request parameters as the request that generated the token.
+     * The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use
+     * the same request parameters as the request that generated the token.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.
-     * </p>
-     * <p>
-     * <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     * </p>
-     * <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to the
-     * <code>CurrentMetrics</code> specified in the request.
-     * </p>
-     * <p>
-     * If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     * <code>CurrentMetric</code> returned.
+     * Information about the real-time metrics.
      * </p>
      */
     private java.util.List<CurrentMetricResult> metricResults;
     /**
      * <p>
-     * The time at which <code>CurrentMetricData</code> was retrieved and cached for pagination.
+     * The time at which the metrics were retrieved and cached for pagination.
      * </p>
      */
     private java.util.Date dataSnapshotTime;
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * <p>
-     * The token expires after 5 minutes from the time it is created. Subsequent requests that use the NextToken must
-     * use the same request parameters as the request that generated the token.
+     * The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use
+     * the same request parameters as the request that generated the token.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.</p>
+     *        If there are additional results, this is the token for the next set of results.</p>
      *        <p>
-     *        The token expires after 5 minutes from the time it is created. Subsequent requests that use the NextToken
-     *        must use the same request parameters as the request that generated the token.
+     *        The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must
+     *        use the same request parameters as the request that generated the token.
      */
 
     public void setNextToken(String nextToken) {
@@ -83,18 +68,16 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * <p>
-     * The token expires after 5 minutes from the time it is created. Subsequent requests that use the NextToken must
-     * use the same request parameters as the request that generated the token.
+     * The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use
+     * the same request parameters as the request that generated the token.
      * </p>
      * 
-     * @return A string returned in the response. Use the value returned in the response as the value of the NextToken
-     *         in a subsequent request to retrieve the next set of results.</p>
+     * @return If there are additional results, this is the token for the next set of results.</p>
      *         <p>
-     *         The token expires after 5 minutes from the time it is created. Subsequent requests that use the NextToken
+     *         The token expires after 5 minutes from the time it is created. Subsequent requests that use the token
      *         must use the same request parameters as the request that generated the token.
      */
 
@@ -104,20 +87,18 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * <p>
-     * The token expires after 5 minutes from the time it is created. Subsequent requests that use the NextToken must
-     * use the same request parameters as the request that generated the token.
+     * The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use
+     * the same request parameters as the request that generated the token.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.</p>
+     *        If there are additional results, this is the token for the next set of results.</p>
      *        <p>
-     *        The token expires after 5 minutes from the time it is created. Subsequent requests that use the NextToken
-     *        must use the same request parameters as the request that generated the token.
+     *        The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must
+     *        use the same request parameters as the request that generated the token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,33 +109,10 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.
-     * </p>
-     * <p>
-     * <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     * </p>
-     * <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to the
-     * <code>CurrentMetrics</code> specified in the request.
-     * </p>
-     * <p>
-     * If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     * <code>CurrentMetric</code> returned.
+     * Information about the real-time metrics.
      * </p>
      * 
-     * @return A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     *         <code>CurrentMetricDataCollections</code>.</p>
-     *         <p>
-     *         <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     *         </p>
-     *         <p>
-     *         <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to
-     *         the <code>CurrentMetrics</code> specified in the request.
-     *         </p>
-     *         <p>
-     *         If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     *         <code>CurrentMetric</code> returned.
+     * @return Information about the real-time metrics.
      */
 
     public java.util.List<CurrentMetricResult> getMetricResults() {
@@ -163,34 +121,11 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.
-     * </p>
-     * <p>
-     * <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     * </p>
-     * <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to the
-     * <code>CurrentMetrics</code> specified in the request.
-     * </p>
-     * <p>
-     * If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     * <code>CurrentMetric</code> returned.
+     * Information about the real-time metrics.
      * </p>
      * 
      * @param metricResults
-     *        A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     *        <code>CurrentMetricDataCollections</code>.</p>
-     *        <p>
-     *        <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     *        </p>
-     *        <p>
-     *        <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to
-     *        the <code>CurrentMetrics</code> specified in the request.
-     *        </p>
-     *        <p>
-     *        If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     *        <code>CurrentMetric</code> returned.
+     *        Information about the real-time metrics.
      */
 
     public void setMetricResults(java.util.Collection<CurrentMetricResult> metricResults) {
@@ -204,19 +139,7 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.
-     * </p>
-     * <p>
-     * <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     * </p>
-     * <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to the
-     * <code>CurrentMetrics</code> specified in the request.
-     * </p>
-     * <p>
-     * If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     * <code>CurrentMetric</code> returned.
+     * Information about the real-time metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -225,18 +148,7 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param metricResults
-     *        A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     *        <code>CurrentMetricDataCollections</code>.</p>
-     *        <p>
-     *        <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     *        </p>
-     *        <p>
-     *        <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to
-     *        the <code>CurrentMetrics</code> specified in the request.
-     *        </p>
-     *        <p>
-     *        If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     *        <code>CurrentMetric</code> returned.
+     *        Information about the real-time metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,34 +164,11 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.
-     * </p>
-     * <p>
-     * <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     * </p>
-     * <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to the
-     * <code>CurrentMetrics</code> specified in the request.
-     * </p>
-     * <p>
-     * If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     * <code>CurrentMetric</code> returned.
+     * Information about the real-time metrics.
      * </p>
      * 
      * @param metricResults
-     *        A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code> combining with
-     *        <code>CurrentMetricDataCollections</code>.</p>
-     *        <p>
-     *        <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the request.
-     *        </p>
-     *        <p>
-     *        <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with corresponding values to
-     *        the <code>CurrentMetrics</code> specified in the request.
-     *        </p>
-     *        <p>
-     *        If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a summary for the
-     *        <code>CurrentMetric</code> returned.
+     *        Information about the real-time metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,11 +179,11 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time at which <code>CurrentMetricData</code> was retrieved and cached for pagination.
+     * The time at which the metrics were retrieved and cached for pagination.
      * </p>
      * 
      * @param dataSnapshotTime
-     *        The time at which <code>CurrentMetricData</code> was retrieved and cached for pagination.
+     *        The time at which the metrics were retrieved and cached for pagination.
      */
 
     public void setDataSnapshotTime(java.util.Date dataSnapshotTime) {
@@ -303,10 +192,10 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time at which <code>CurrentMetricData</code> was retrieved and cached for pagination.
+     * The time at which the metrics were retrieved and cached for pagination.
      * </p>
      * 
-     * @return The time at which <code>CurrentMetricData</code> was retrieved and cached for pagination.
+     * @return The time at which the metrics were retrieved and cached for pagination.
      */
 
     public java.util.Date getDataSnapshotTime() {
@@ -315,11 +204,11 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time at which <code>CurrentMetricData</code> was retrieved and cached for pagination.
+     * The time at which the metrics were retrieved and cached for pagination.
      * </p>
      * 
      * @param dataSnapshotTime
-     *        The time at which <code>CurrentMetricData</code> was retrieved and cached for pagination.
+     *        The time at which the metrics were retrieved and cached for pagination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

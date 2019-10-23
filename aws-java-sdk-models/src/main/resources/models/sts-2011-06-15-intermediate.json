@@ -361,7 +361,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InvalidAuthorizationMessageException",
-        "documentation" : "<p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>",
+        "documentation" : "<p>This error is returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>",
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -10778,7 +10778,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>",
+      "documentation" : "<p>This error is returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>",
       "enums" : null,
       "errorCode" : "InvalidAuthorizationMessageException",
       "hasHeaderMember" : false,

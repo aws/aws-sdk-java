@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>Threshold</code> object that includes a comparison and <code>ThresholdValue</code> to compare to. Used with
- * service level metrics.
+ * Contains information about the threshold for service level metrics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Threshold" target="_top">AWS API
@@ -31,24 +30,24 @@ public class Threshold implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are supported.
+     * The type of comparison. Only "less than" (LT) comparisons are supported.
      * </p>
      */
     private String comparison;
     /**
      * <p>
-     * The value of the threshold to compare the metric to. Only "Less than" (LT) comparisons are supported.
+     * The threshold value to compare.
      * </p>
      */
     private Double thresholdValue;
 
     /**
      * <p>
-     * The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are supported.
+     * The type of comparison. Only "less than" (LT) comparisons are supported.
      * </p>
      * 
      * @param comparison
-     *        The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are supported.
+     *        The type of comparison. Only "less than" (LT) comparisons are supported.
      * @see Comparison
      */
 
@@ -58,11 +57,10 @@ public class Threshold implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are supported.
+     * The type of comparison. Only "less than" (LT) comparisons are supported.
      * </p>
      * 
-     * @return The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are
-     *         supported.
+     * @return The type of comparison. Only "less than" (LT) comparisons are supported.
      * @see Comparison
      */
 
@@ -72,11 +70,11 @@ public class Threshold implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are supported.
+     * The type of comparison. Only "less than" (LT) comparisons are supported.
      * </p>
      * 
      * @param comparison
-     *        The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are supported.
+     *        The type of comparison. Only "less than" (LT) comparisons are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Comparison
      */
@@ -88,11 +86,11 @@ public class Threshold implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are supported.
+     * The type of comparison. Only "less than" (LT) comparisons are supported.
      * </p>
      * 
      * @param comparison
-     *        The Threshold to use to compare service level metrics to. Only "Less than" (LT) comparisons are supported.
+     *        The type of comparison. Only "less than" (LT) comparisons are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Comparison
      */
@@ -104,11 +102,11 @@ public class Threshold implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the threshold to compare the metric to. Only "Less than" (LT) comparisons are supported.
+     * The threshold value to compare.
      * </p>
      * 
      * @param thresholdValue
-     *        The value of the threshold to compare the metric to. Only "Less than" (LT) comparisons are supported.
+     *        The threshold value to compare.
      */
 
     public void setThresholdValue(Double thresholdValue) {
@@ -117,10 +115,10 @@ public class Threshold implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the threshold to compare the metric to. Only "Less than" (LT) comparisons are supported.
+     * The threshold value to compare.
      * </p>
      * 
-     * @return The value of the threshold to compare the metric to. Only "Less than" (LT) comparisons are supported.
+     * @return The threshold value to compare.
      */
 
     public Double getThresholdValue() {
@@ -129,11 +127,11 @@ public class Threshold implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the threshold to compare the metric to. Only "Less than" (LT) comparisons are supported.
+     * The threshold value to compare.
      * </p>
      * 
      * @param thresholdValue
-     *        The value of the threshold to compare the metric to. Only "Less than" (LT) comparisons are supported.
+     *        The threshold value to compare.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

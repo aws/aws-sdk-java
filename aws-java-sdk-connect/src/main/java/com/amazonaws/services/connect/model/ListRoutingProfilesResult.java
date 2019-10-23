@@ -25,25 +25,23 @@ public class ListRoutingProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing profile.
+     * Information about the routing profiles.
      * </p>
      */
     private java.util.List<RoutingProfileSummary> routingProfileSummaryList;
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing profile.
+     * Information about the routing profiles.
      * </p>
      * 
-     * @return An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing
-     *         profile.
+     * @return Information about the routing profiles.
      */
 
     public java.util.List<RoutingProfileSummary> getRoutingProfileSummaryList() {
@@ -52,12 +50,11 @@ public class ListRoutingProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing profile.
+     * Information about the routing profiles.
      * </p>
      * 
      * @param routingProfileSummaryList
-     *        An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing
-     *        profile.
+     *        Information about the routing profiles.
      */
 
     public void setRoutingProfileSummaryList(java.util.Collection<RoutingProfileSummary> routingProfileSummaryList) {
@@ -71,7 +68,7 @@ public class ListRoutingProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing profile.
+     * Information about the routing profiles.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,8 +77,7 @@ public class ListRoutingProfilesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param routingProfileSummaryList
-     *        An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing
-     *        profile.
+     *        Information about the routing profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,12 +93,11 @@ public class ListRoutingProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing profile.
+     * Information about the routing profiles.
      * </p>
      * 
      * @param routingProfileSummaryList
-     *        An array of <code>RoutingProfileSummary</code> objects that include the ARN, Id, and Name of the routing
-     *        profile.
+     *        Information about the routing profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,13 +108,11 @@ public class ListRoutingProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.
+     *        If there are additional results, this is the token for the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -128,12 +121,10 @@ public class ListRoutingProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
-     * @return A string returned in the response. Use the value returned in the response as the value of the NextToken
-     *         in a subsequent request to retrieve the next set of results.
+     * @return If there are additional results, this is the token for the next set of results.
      */
 
     public String getNextToken() {
@@ -142,13 +133,11 @@ public class ListRoutingProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.
+     *        If there are additional results, this is the token for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -988,8 +988,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * @param decodeAuthorizationMessageRequest
      * @return Result of the DecodeAuthorizationMessage operation returned by the service.
      * @throws InvalidAuthorizationMessageException
-     *         The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can
-     *         happen if the token contains invalid characters, such as linebreaks.
+     *         This error is returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This
+     *         can happen if the token contains invalid characters, such as linebreaks.
      * @sample AWSSecurityTokenService.DecodeAuthorizationMessage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage" target="_top">AWS
      *      API Documentation</a>

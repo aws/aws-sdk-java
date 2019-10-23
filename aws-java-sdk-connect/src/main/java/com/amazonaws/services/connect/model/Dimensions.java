@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>Dimensions</code> object that includes the Channel and Queue for the metric.
+ * Contains information about the dimensions for a set of metrics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Dimensions" target="_top">AWS API
@@ -30,24 +30,24 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>QueueReference</code> object used as one part of dimension for the metrics results.
+     * Information about the queue for which metrics are returned.
      * </p>
      */
     private QueueReference queue;
     /**
      * <p>
-     * The channel used for grouping and filters. Only VOICE is supported.
+     * The channel used for grouping and filters.
      * </p>
      */
     private String channel;
 
     /**
      * <p>
-     * A <code>QueueReference</code> object used as one part of dimension for the metrics results.
+     * Information about the queue for which metrics are returned.
      * </p>
      * 
      * @param queue
-     *        A <code>QueueReference</code> object used as one part of dimension for the metrics results.
+     *        Information about the queue for which metrics are returned.
      */
 
     public void setQueue(QueueReference queue) {
@@ -56,10 +56,10 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>QueueReference</code> object used as one part of dimension for the metrics results.
+     * Information about the queue for which metrics are returned.
      * </p>
      * 
-     * @return A <code>QueueReference</code> object used as one part of dimension for the metrics results.
+     * @return Information about the queue for which metrics are returned.
      */
 
     public QueueReference getQueue() {
@@ -68,11 +68,11 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>QueueReference</code> object used as one part of dimension for the metrics results.
+     * Information about the queue for which metrics are returned.
      * </p>
      * 
      * @param queue
-     *        A <code>QueueReference</code> object used as one part of dimension for the metrics results.
+     *        Information about the queue for which metrics are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel used for grouping and filters. Only VOICE is supported.
+     * The channel used for grouping and filters.
      * </p>
      * 
      * @param channel
-     *        The channel used for grouping and filters. Only VOICE is supported.
+     *        The channel used for grouping and filters.
      * @see Channel
      */
 
@@ -97,10 +97,10 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel used for grouping and filters. Only VOICE is supported.
+     * The channel used for grouping and filters.
      * </p>
      * 
-     * @return The channel used for grouping and filters. Only VOICE is supported.
+     * @return The channel used for grouping and filters.
      * @see Channel
      */
 
@@ -110,11 +110,11 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel used for grouping and filters. Only VOICE is supported.
+     * The channel used for grouping and filters.
      * </p>
      * 
      * @param channel
-     *        The channel used for grouping and filters. Only VOICE is supported.
+     *        The channel used for grouping and filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Channel
      */
@@ -126,11 +126,11 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The channel used for grouping and filters. Only VOICE is supported.
+     * The channel used for grouping and filters.
      * </p>
      * 
      * @param channel
-     *        The channel used for grouping and filters. Only VOICE is supported.
+     *        The channel used for grouping and filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Channel
      */

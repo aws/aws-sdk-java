@@ -25,18 +25,18 @@ public class StartOutboundVoiceContactResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier of this contact within your Amazon Connect instance.
+     * The identifier of this contact within the Amazon Connect instance.
      * </p>
      */
     private String contactId;
 
     /**
      * <p>
-     * The unique identifier of this contact within your Amazon Connect instance.
+     * The identifier of this contact within the Amazon Connect instance.
      * </p>
      * 
      * @param contactId
-     *        The unique identifier of this contact within your Amazon Connect instance.
+     *        The identifier of this contact within the Amazon Connect instance.
      */
 
     public void setContactId(String contactId) {
@@ -45,10 +45,10 @@ public class StartOutboundVoiceContactResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier of this contact within your Amazon Connect instance.
+     * The identifier of this contact within the Amazon Connect instance.
      * </p>
      * 
-     * @return The unique identifier of this contact within your Amazon Connect instance.
+     * @return The identifier of this contact within the Amazon Connect instance.
      */
 
     public String getContactId() {
@@ -57,11 +57,11 @@ public class StartOutboundVoiceContactResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier of this contact within your Amazon Connect instance.
+     * The identifier of this contact within the Amazon Connect instance.
      * </p>
      * 
      * @param contactId
-     *        The unique identifier of this contact within your Amazon Connect instance.
+     *        The identifier of this contact within the Amazon Connect instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

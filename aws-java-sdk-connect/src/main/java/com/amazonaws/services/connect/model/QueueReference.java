@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A QueueReference object that contains the the QueueId and ARN for the queue resource for which metrics are returned.
+ * Contains information about a queue resource for which metrics are returned.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QueueReference" target="_top">AWS API
@@ -30,24 +30,24 @@ public class QueueReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the queue associated with the metrics returned.
+     * The identifier of the queue.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of queue.
+     * The Amazon Resource Name (ARN) of the queue.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The ID of the queue associated with the metrics returned.
+     * The identifier of the queue.
      * </p>
      * 
      * @param id
-     *        The ID of the queue associated with the metrics returned.
+     *        The identifier of the queue.
      */
 
     public void setId(String id) {
@@ -56,10 +56,10 @@ public class QueueReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the queue associated with the metrics returned.
+     * The identifier of the queue.
      * </p>
      * 
-     * @return The ID of the queue associated with the metrics returned.
+     * @return The identifier of the queue.
      */
 
     public String getId() {
@@ -68,11 +68,11 @@ public class QueueReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the queue associated with the metrics returned.
+     * The identifier of the queue.
      * </p>
      * 
      * @param id
-     *        The ID of the queue associated with the metrics returned.
+     *        The identifier of the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class QueueReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of queue.
+     * The Amazon Resource Name (ARN) of the queue.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of queue.
+     *        The Amazon Resource Name (ARN) of the queue.
      */
 
     public void setArn(String arn) {
@@ -96,10 +96,10 @@ public class QueueReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of queue.
+     * The Amazon Resource Name (ARN) of the queue.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of queue.
+     * @return The Amazon Resource Name (ARN) of the queue.
      */
 
     public String getArn() {
@@ -108,11 +108,11 @@ public class QueueReference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of queue.
+     * The Amazon Resource Name (ARN) of the queue.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of queue.
+     *        The Amazon Resource Name (ARN) of the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

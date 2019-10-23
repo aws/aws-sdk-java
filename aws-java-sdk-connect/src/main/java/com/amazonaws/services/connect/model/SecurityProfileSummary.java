@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>SecurityProfileSummary</code> object that contains information about a security profile, including ARN, Id,
- * Name.
+ * Contains information about a security profile.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SecurityProfileSummary" target="_top">AWS API
@@ -37,7 +36,7 @@ public class SecurityProfileSummary implements Serializable, Cloneable, Structur
     private String id;
     /**
      * <p>
-     * The ARN of the security profile.
+     * The Amazon Resource Name (ARN) of the security profile.
      * </p>
      */
     private String arn;
@@ -90,11 +89,11 @@ public class SecurityProfileSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the security profile.
+     * The Amazon Resource Name (ARN) of the security profile.
      * </p>
      * 
      * @param arn
-     *        The ARN of the security profile.
+     *        The Amazon Resource Name (ARN) of the security profile.
      */
 
     public void setArn(String arn) {
@@ -103,10 +102,10 @@ public class SecurityProfileSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the security profile.
+     * The Amazon Resource Name (ARN) of the security profile.
      * </p>
      * 
-     * @return The ARN of the security profile.
+     * @return The Amazon Resource Name (ARN) of the security profile.
      */
 
     public String getArn() {
@@ -115,11 +114,11 @@ public class SecurityProfileSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the security profile.
+     * The Amazon Resource Name (ARN) of the security profile.
      * </p>
      * 
      * @param arn
-     *        The ARN of the security profile.
+     *        The Amazon Resource Name (ARN) of the security profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

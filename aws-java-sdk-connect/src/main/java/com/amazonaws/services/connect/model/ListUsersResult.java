@@ -25,24 +25,23 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     * Information about the users.
      * </p>
      */
     private java.util.List<UserSummary> userSummaryList;
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     * Information about the users.
      * </p>
      * 
-     * @return An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     * @return Information about the users.
      */
 
     public java.util.List<UserSummary> getUserSummaryList() {
@@ -51,11 +50,11 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     * Information about the users.
      * </p>
      * 
      * @param userSummaryList
-     *        An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     *        Information about the users.
      */
 
     public void setUserSummaryList(java.util.Collection<UserSummary> userSummaryList) {
@@ -69,7 +68,7 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     * Information about the users.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +77,7 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param userSummaryList
-     *        An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     *        Information about the users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +93,11 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     * Information about the users.
      * </p>
      * 
      * @param userSummaryList
-     *        An array of <code>UserSummary</code> objects that contain information about the users in your instance.
+     *        Information about the users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +108,11 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.
+     *        If there are additional results, this is the token for the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +121,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
-     * @return A string returned in the response. Use the value returned in the response as the value of the NextToken
-     *         in a subsequent request to retrieve the next set of results.
+     * @return If there are additional results, this is the token for the next set of results.
      */
 
     public String getNextToken() {
@@ -138,13 +133,11 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.
+     *        If there are additional results, this is the token for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

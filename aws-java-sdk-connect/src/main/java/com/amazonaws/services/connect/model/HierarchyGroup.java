@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>HierarchyGroup</code> object that contains information about a hierarchy group in your Amazon Connect
- * instance.
+ * Contains information about a hierarchy group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HierarchyGroup" target="_top">AWS API
@@ -31,42 +30,42 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the hierarchy group.
+     * The identifier of the hierarchy group.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the hierarchy group.
+     * The Amazon Resource Name (ARN) of the hierarchy group.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of the hierarchy group in your instance.
+     * The name of the hierarchy group.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The identifier for the level in the hierarchy group.
+     * The identifier of the level in the hierarchy group.
      * </p>
      */
     private String levelId;
     /**
      * <p>
-     * A <code>HierarchyPath</code> object that contains information about the levels in the hierarchy group.
+     * Information about the levels in the hierarchy group.
      * </p>
      */
     private HierarchyPath hierarchyPath;
 
     /**
      * <p>
-     * The identifier for the hierarchy group.
+     * The identifier of the hierarchy group.
      * </p>
      * 
      * @param id
-     *        The identifier for the hierarchy group.
+     *        The identifier of the hierarchy group.
      */
 
     public void setId(String id) {
@@ -75,10 +74,10 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the hierarchy group.
+     * The identifier of the hierarchy group.
      * </p>
      * 
-     * @return The identifier for the hierarchy group.
+     * @return The identifier of the hierarchy group.
      */
 
     public String getId() {
@@ -87,11 +86,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the hierarchy group.
+     * The identifier of the hierarchy group.
      * </p>
      * 
      * @param id
-     *        The identifier for the hierarchy group.
+     *        The identifier of the hierarchy group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +101,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the hierarchy group.
+     * The Amazon Resource Name (ARN) of the hierarchy group.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the hierarchy group.
+     *        The Amazon Resource Name (ARN) of the hierarchy group.
      */
 
     public void setArn(String arn) {
@@ -115,10 +114,10 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the hierarchy group.
+     * The Amazon Resource Name (ARN) of the hierarchy group.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the hierarchy group.
+     * @return The Amazon Resource Name (ARN) of the hierarchy group.
      */
 
     public String getArn() {
@@ -127,11 +126,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the hierarchy group.
+     * The Amazon Resource Name (ARN) of the hierarchy group.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the hierarchy group.
+     *        The Amazon Resource Name (ARN) of the hierarchy group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +141,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the hierarchy group in your instance.
+     * The name of the hierarchy group.
      * </p>
      * 
      * @param name
-     *        The name of the hierarchy group in your instance.
+     *        The name of the hierarchy group.
      */
 
     public void setName(String name) {
@@ -155,10 +154,10 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the hierarchy group in your instance.
+     * The name of the hierarchy group.
      * </p>
      * 
-     * @return The name of the hierarchy group in your instance.
+     * @return The name of the hierarchy group.
      */
 
     public String getName() {
@@ -167,11 +166,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the hierarchy group in your instance.
+     * The name of the hierarchy group.
      * </p>
      * 
      * @param name
-     *        The name of the hierarchy group in your instance.
+     *        The name of the hierarchy group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +181,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the level in the hierarchy group.
+     * The identifier of the level in the hierarchy group.
      * </p>
      * 
      * @param levelId
-     *        The identifier for the level in the hierarchy group.
+     *        The identifier of the level in the hierarchy group.
      */
 
     public void setLevelId(String levelId) {
@@ -195,10 +194,10 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the level in the hierarchy group.
+     * The identifier of the level in the hierarchy group.
      * </p>
      * 
-     * @return The identifier for the level in the hierarchy group.
+     * @return The identifier of the level in the hierarchy group.
      */
 
     public String getLevelId() {
@@ -207,11 +206,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the level in the hierarchy group.
+     * The identifier of the level in the hierarchy group.
      * </p>
      * 
      * @param levelId
-     *        The identifier for the level in the hierarchy group.
+     *        The identifier of the level in the hierarchy group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,11 +221,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>HierarchyPath</code> object that contains information about the levels in the hierarchy group.
+     * Information about the levels in the hierarchy group.
      * </p>
      * 
      * @param hierarchyPath
-     *        A <code>HierarchyPath</code> object that contains information about the levels in the hierarchy group.
+     *        Information about the levels in the hierarchy group.
      */
 
     public void setHierarchyPath(HierarchyPath hierarchyPath) {
@@ -235,10 +234,10 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>HierarchyPath</code> object that contains information about the levels in the hierarchy group.
+     * Information about the levels in the hierarchy group.
      * </p>
      * 
-     * @return A <code>HierarchyPath</code> object that contains information about the levels in the hierarchy group.
+     * @return Information about the levels in the hierarchy group.
      */
 
     public HierarchyPath getHierarchyPath() {
@@ -247,11 +246,11 @@ public class HierarchyGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>HierarchyPath</code> object that contains information about the levels in the hierarchy group.
+     * Information about the levels in the hierarchy group.
      * </p>
      * 
      * @param hierarchyPath
-     *        A <code>HierarchyPath</code> object that contains information about the levels in the hierarchy group.
+     *        Information about the levels in the hierarchy group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

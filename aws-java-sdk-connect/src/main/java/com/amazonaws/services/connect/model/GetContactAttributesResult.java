@@ -25,17 +25,17 @@ public class GetContactAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The attributes to update.
+     * Information about the attributes.
      * </p>
      */
     private java.util.Map<String, String> attributes;
 
     /**
      * <p>
-     * The attributes to update.
+     * Information about the attributes.
      * </p>
      * 
-     * @return The attributes to update.
+     * @return Information about the attributes.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -44,11 +44,11 @@ public class GetContactAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The attributes to update.
+     * Information about the attributes.
      * </p>
      * 
      * @param attributes
-     *        The attributes to update.
+     *        Information about the attributes.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -57,11 +57,11 @@ public class GetContactAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The attributes to update.
+     * Information about the attributes.
      * </p>
      * 
      * @param attributes
-     *        The attributes to update.
+     *        Information about the attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,24 +25,23 @@ public class ListUserHierarchyGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of <code>HierarchyGroupSummary</code> objects.
+     * Information about the hierarchy groups.
      * </p>
      */
     private java.util.List<HierarchyGroupSummary> userHierarchyGroupSummaryList;
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of <code>HierarchyGroupSummary</code> objects.
+     * Information about the hierarchy groups.
      * </p>
      * 
-     * @return An array of <code>HierarchyGroupSummary</code> objects.
+     * @return Information about the hierarchy groups.
      */
 
     public java.util.List<HierarchyGroupSummary> getUserHierarchyGroupSummaryList() {
@@ -51,11 +50,11 @@ public class ListUserHierarchyGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of <code>HierarchyGroupSummary</code> objects.
+     * Information about the hierarchy groups.
      * </p>
      * 
      * @param userHierarchyGroupSummaryList
-     *        An array of <code>HierarchyGroupSummary</code> objects.
+     *        Information about the hierarchy groups.
      */
 
     public void setUserHierarchyGroupSummaryList(java.util.Collection<HierarchyGroupSummary> userHierarchyGroupSummaryList) {
@@ -69,7 +68,7 @@ public class ListUserHierarchyGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of <code>HierarchyGroupSummary</code> objects.
+     * Information about the hierarchy groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +77,7 @@ public class ListUserHierarchyGroupsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param userHierarchyGroupSummaryList
-     *        An array of <code>HierarchyGroupSummary</code> objects.
+     *        Information about the hierarchy groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +93,11 @@ public class ListUserHierarchyGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of <code>HierarchyGroupSummary</code> objects.
+     * Information about the hierarchy groups.
      * </p>
      * 
      * @param userHierarchyGroupSummaryList
-     *        An array of <code>HierarchyGroupSummary</code> objects.
+     *        Information about the hierarchy groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +108,11 @@ public class ListUserHierarchyGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.
+     *        If there are additional results, this is the token for the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +121,10 @@ public class ListUserHierarchyGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
-     * @return A string returned in the response. Use the value returned in the response as the value of the NextToken
-     *         in a subsequent request to retrieve the next set of results.
+     * @return If there are additional results, this is the token for the next set of results.
      */
 
     public String getNextToken() {
@@ -138,13 +133,11 @@ public class ListUserHierarchyGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A string returned in the response. Use the value returned in the response as the value of the NextToken in a
-     * subsequent request to retrieve the next set of results.
+     * If there are additional results, this is the token for the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A string returned in the response. Use the value returned in the response as the value of the NextToken in
-     *        a subsequent request to retrieve the next set of results.
+     *        If there are additional results, this is the token for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

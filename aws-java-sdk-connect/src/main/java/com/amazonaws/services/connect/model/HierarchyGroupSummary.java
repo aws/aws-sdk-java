@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>HierarchyGroupSummary</code> object that contains information about the hierarchy group, including ARN, Id,
- * and Name.
+ * Contains summary information about a hierarchy group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HierarchyGroupSummary" target="_top">AWS API
@@ -37,7 +36,7 @@ public class HierarchyGroupSummary implements Serializable, Cloneable, Structure
     private String id;
     /**
      * <p>
-     * The ARN for the hierarchy group.
+     * The Amazon Resource Name (ARN) of the hierarchy group.
      * </p>
      */
     private String arn;
@@ -90,11 +89,11 @@ public class HierarchyGroupSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN for the hierarchy group.
+     * The Amazon Resource Name (ARN) of the hierarchy group.
      * </p>
      * 
      * @param arn
-     *        The ARN for the hierarchy group.
+     *        The Amazon Resource Name (ARN) of the hierarchy group.
      */
 
     public void setArn(String arn) {
@@ -103,10 +102,10 @@ public class HierarchyGroupSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN for the hierarchy group.
+     * The Amazon Resource Name (ARN) of the hierarchy group.
      * </p>
      * 
-     * @return The ARN for the hierarchy group.
+     * @return The Amazon Resource Name (ARN) of the hierarchy group.
      */
 
     public String getArn() {
@@ -115,11 +114,11 @@ public class HierarchyGroupSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN for the hierarchy group.
+     * The Amazon Resource Name (ARN) of the hierarchy group.
      * </p>
      * 
      * @param arn
-     *        The ARN for the hierarchy group.
+     *        The Amazon Resource Name (ARN) of the hierarchy group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

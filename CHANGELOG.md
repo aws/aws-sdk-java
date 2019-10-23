@@ -1,3 +1,16 @@
+# __1.11.658__ __2019-10-23__
+## __AWS Security Token Service__
+  - ### Features
+    - AWS Security Token Service (STS) now supports a regional configuration flag to make the client respect the region without the need for the endpoint parameter. 
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release adds 4 new APIs ListQueues, ListPhoneNumbers, ListContactFlows, and ListHoursOfOperations, which can be used to programmatically list Queues, PhoneNumbers, ContactFlows, and HoursOfOperations configured for an Amazon Connect instance respectively. You can learn more about the new APIs here: https://docs.aws.amazon.com/connect/latest/APIReference/Welcome.html.
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds new female voices: US Spanish - Lupe and Brazilian Portuguese - Camila; both voices are available in Standard and Neural engine.
+
 # __1.11.657__ __2019-10-22__
 ## __AWS IoT Events__
   - ### Features

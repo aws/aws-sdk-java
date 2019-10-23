@@ -73,6 +73,26 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListContactFlowsResult listContactFlows(ListContactFlowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListHoursOfOperationsResult listHoursOfOperations(ListHoursOfOperationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPhoneNumbersResult listPhoneNumbers(ListPhoneNumbersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListQueuesResult listQueues(ListQueuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRoutingProfilesResult listRoutingProfiles(ListRoutingProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

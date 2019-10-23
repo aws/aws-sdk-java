@@ -27,28 +27,19 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The phone number of the customer in E.164 format.
+     * The phone number of the customer, in E.164 format.
      * </p>
      */
     private String destinationPhoneNumber;
     /**
      * <p>
-     * The identifier for the contact flow to connect the outbound call to.
-     * </p>
-     * <p>
-     * To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect contact flow
-     * editor. The ID for the contact flow is displayed in the address bar as part of the URL. For example, the contact
-     * flow ID is the set of characters at the end of the URL, after 'contact-flow/' such as
-     * <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.
+     * The identifier of the contact flow for the outbound call.
      * </p>
      */
     private String contactFlowId;
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      */
     private String instanceId;
@@ -62,46 +53,38 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
     private String clientToken;
     /**
      * <p>
-     * The phone number, in E.164 format, associated with your Amazon Connect instance to use for the outbound call.
+     * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source
+     * phone number, you must specify a queue.
      * </p>
      */
     private String sourcePhoneNumber;
     /**
      * <p>
-     * The queue to add the call to. If you specify a queue, the phone displayed for caller ID is the phone number
-     * specified in the queue. If you do not specify a queue, the queue used will be the queue defined in the contact
-     * flow.
-     * </p>
-     * <p>
-     * To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor. The ID for
-     * the queue is displayed in the address bar as part of the URL. For example, the queue ID is the set of characters
-     * at the end of the URL, after 'queue/' such as <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.
+     * The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified
+     * in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify
+     * a queue, you must specify a source phone number.
      * </p>
      */
     private String queueId;
     /**
      * <p>
-     * Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
-     * and can be accessed in contact flows just like any other contact attributes.
+     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
+     * accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
      * alphanumeric, dash, and underscore characters.
-     * </p>
-     * <p>
-     * For example, if you want play a greeting when the customer answers the call, you can pass the customer name in
-     * attributes similar to the following:
      * </p>
      */
     private java.util.Map<String, String> attributes;
 
     /**
      * <p>
-     * The phone number of the customer in E.164 format.
+     * The phone number of the customer, in E.164 format.
      * </p>
      * 
      * @param destinationPhoneNumber
-     *        The phone number of the customer in E.164 format.
+     *        The phone number of the customer, in E.164 format.
      */
 
     public void setDestinationPhoneNumber(String destinationPhoneNumber) {
@@ -110,10 +93,10 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The phone number of the customer in E.164 format.
+     * The phone number of the customer, in E.164 format.
      * </p>
      * 
-     * @return The phone number of the customer in E.164 format.
+     * @return The phone number of the customer, in E.164 format.
      */
 
     public String getDestinationPhoneNumber() {
@@ -122,11 +105,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The phone number of the customer in E.164 format.
+     * The phone number of the customer, in E.164 format.
      * </p>
      * 
      * @param destinationPhoneNumber
-     *        The phone number of the customer in E.164 format.
+     *        The phone number of the customer, in E.164 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,22 +120,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier for the contact flow to connect the outbound call to.
-     * </p>
-     * <p>
-     * To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect contact flow
-     * editor. The ID for the contact flow is displayed in the address bar as part of the URL. For example, the contact
-     * flow ID is the set of characters at the end of the URL, after 'contact-flow/' such as
-     * <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.
+     * The identifier of the contact flow for the outbound call.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier for the contact flow to connect the outbound call to.</p>
-     *        <p>
-     *        To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect
-     *        contact flow editor. The ID for the contact flow is displayed in the address bar as part of the URL. For
-     *        example, the contact flow ID is the set of characters at the end of the URL, after 'contact-flow/' such as
-     *        <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.
+     *        The identifier of the contact flow for the outbound call.
      */
 
     public void setContactFlowId(String contactFlowId) {
@@ -161,21 +133,10 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier for the contact flow to connect the outbound call to.
-     * </p>
-     * <p>
-     * To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect contact flow
-     * editor. The ID for the contact flow is displayed in the address bar as part of the URL. For example, the contact
-     * flow ID is the set of characters at the end of the URL, after 'contact-flow/' such as
-     * <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.
+     * The identifier of the contact flow for the outbound call.
      * </p>
      * 
-     * @return The identifier for the contact flow to connect the outbound call to.</p>
-     *         <p>
-     *         To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect
-     *         contact flow editor. The ID for the contact flow is displayed in the address bar as part of the URL. For
-     *         example, the contact flow ID is the set of characters at the end of the URL, after 'contact-flow/' such
-     *         as <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.
+     * @return The identifier of the contact flow for the outbound call.
      */
 
     public String getContactFlowId() {
@@ -184,22 +145,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier for the contact flow to connect the outbound call to.
-     * </p>
-     * <p>
-     * To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect contact flow
-     * editor. The ID for the contact flow is displayed in the address bar as part of the URL. For example, the contact
-     * flow ID is the set of characters at the end of the URL, after 'contact-flow/' such as
-     * <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.
+     * The identifier of the contact flow for the outbound call.
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier for the contact flow to connect the outbound call to.</p>
-     *        <p>
-     *        To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect
-     *        contact flow editor. The ID for the contact flow is displayed in the address bar as part of the URL. For
-     *        example, the contact flow ID is the set of characters at the end of the URL, after 'contact-flow/' such as
-     *        <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.
+     *        The identifier of the contact flow for the outbound call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,17 +160,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
-     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
-     *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
-     *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     *        The identifier of the Amazon Connect instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -229,17 +173,10 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
-     * @return The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console
-     *         and select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID
-     *         is displayed in the Overview section of your instance settings. For example, the instance ID is the set
-     *         of characters at the end of the instance ARN, after instance/, such as
-     *         10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * @return The identifier of the Amazon Connect instance.
      */
 
     public String getInstanceId() {
@@ -248,17 +185,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
-     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
-     *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
-     *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     *        The identifier of the Amazon Connect instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,12 +252,13 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The phone number, in E.164 format, associated with your Amazon Connect instance to use for the outbound call.
+     * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source
+     * phone number, you must specify a queue.
      * </p>
      * 
      * @param sourcePhoneNumber
-     *        The phone number, in E.164 format, associated with your Amazon Connect instance to use for the outbound
-     *        call.
+     *        The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a
+     *        source phone number, you must specify a queue.
      */
 
     public void setSourcePhoneNumber(String sourcePhoneNumber) {
@@ -335,11 +267,12 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The phone number, in E.164 format, associated with your Amazon Connect instance to use for the outbound call.
+     * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source
+     * phone number, you must specify a queue.
      * </p>
      * 
-     * @return The phone number, in E.164 format, associated with your Amazon Connect instance to use for the outbound
-     *         call.
+     * @return The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a
+     *         source phone number, you must specify a queue.
      */
 
     public String getSourcePhoneNumber() {
@@ -348,12 +281,13 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The phone number, in E.164 format, associated with your Amazon Connect instance to use for the outbound call.
+     * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source
+     * phone number, you must specify a queue.
      * </p>
      * 
      * @param sourcePhoneNumber
-     *        The phone number, in E.164 format, associated with your Amazon Connect instance to use for the outbound
-     *        call.
+     *        The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a
+     *        source phone number, you must specify a queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,25 +298,15 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The queue to add the call to. If you specify a queue, the phone displayed for caller ID is the phone number
-     * specified in the queue. If you do not specify a queue, the queue used will be the queue defined in the contact
-     * flow.
-     * </p>
-     * <p>
-     * To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor. The ID for
-     * the queue is displayed in the address bar as part of the URL. For example, the queue ID is the set of characters
-     * at the end of the URL, after 'queue/' such as <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.
+     * The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified
+     * in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify
+     * a queue, you must specify a source phone number.
      * </p>
      * 
      * @param queueId
-     *        The queue to add the call to. If you specify a queue, the phone displayed for caller ID is the phone
-     *        number specified in the queue. If you do not specify a queue, the queue used will be the queue defined in
-     *        the contact flow.</p>
-     *        <p>
-     *        To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor. The
-     *        ID for the queue is displayed in the address bar as part of the URL. For example, the queue ID is the set
-     *        of characters at the end of the URL, after 'queue/' such as
-     *        <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.
+     *        The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number
+     *        specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If
+     *        you do not specify a queue, you must specify a source phone number.
      */
 
     public void setQueueId(String queueId) {
@@ -391,24 +315,14 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The queue to add the call to. If you specify a queue, the phone displayed for caller ID is the phone number
-     * specified in the queue. If you do not specify a queue, the queue used will be the queue defined in the contact
-     * flow.
-     * </p>
-     * <p>
-     * To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor. The ID for
-     * the queue is displayed in the address bar as part of the URL. For example, the queue ID is the set of characters
-     * at the end of the URL, after 'queue/' such as <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.
+     * The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified
+     * in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify
+     * a queue, you must specify a source phone number.
      * </p>
      * 
-     * @return The queue to add the call to. If you specify a queue, the phone displayed for caller ID is the phone
-     *         number specified in the queue. If you do not specify a queue, the queue used will be the queue defined in
-     *         the contact flow.</p>
-     *         <p>
-     *         To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor. The
-     *         ID for the queue is displayed in the address bar as part of the URL. For example, the queue ID is the set
-     *         of characters at the end of the URL, after 'queue/' such as
-     *         <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.
+     * @return The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number
+     *         specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If
+     *         you do not specify a queue, you must specify a source phone number.
      */
 
     public String getQueueId() {
@@ -417,25 +331,15 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The queue to add the call to. If you specify a queue, the phone displayed for caller ID is the phone number
-     * specified in the queue. If you do not specify a queue, the queue used will be the queue defined in the contact
-     * flow.
-     * </p>
-     * <p>
-     * To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor. The ID for
-     * the queue is displayed in the address bar as part of the URL. For example, the queue ID is the set of characters
-     * at the end of the URL, after 'queue/' such as <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.
+     * The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified
+     * in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify
+     * a queue, you must specify a source phone number.
      * </p>
      * 
      * @param queueId
-     *        The queue to add the call to. If you specify a queue, the phone displayed for caller ID is the phone
-     *        number specified in the queue. If you do not specify a queue, the queue used will be the queue defined in
-     *        the contact flow.</p>
-     *        <p>
-     *        To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor. The
-     *        ID for the queue is displayed in the address bar as part of the URL. For example, the queue ID is the set
-     *        of characters at the end of the URL, after 'queue/' such as
-     *        <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.
+     *        The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number
+     *        specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If
+     *        you do not specify a queue, you must specify a source phone number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -446,27 +350,19 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
-     * and can be accessed in contact flows just like any other contact attributes.
+     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
+     * accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
      * alphanumeric, dash, and underscore characters.
      * </p>
-     * <p>
-     * For example, if you want play a greeting when the customer answers the call, you can pass the customer name in
-     * attributes similar to the following:
-     * </p>
      * 
-     * @return Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-     *         attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+     * @return A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
+     *         and can be accessed in contact flows just like any other contact attributes.</p>
      *         <p>
      *         There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *         only alphanumeric, dash, and underscore characters.
-     *         </p>
-     *         <p>
-     *         For example, if you want play a greeting when the customer answers the call, you can pass the customer
-     *         name in attributes similar to the following:
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -475,28 +371,20 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
-     * and can be accessed in contact flows just like any other contact attributes.
+     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
+     * accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
      * alphanumeric, dash, and underscore characters.
      * </p>
-     * <p>
-     * For example, if you want play a greeting when the customer answers the call, you can pass the customer name in
-     * attributes similar to the following:
-     * </p>
      * 
      * @param attributes
-     *        Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-     *        attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+     *        A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and
+     *        can be accessed in contact flows just like any other contact attributes.</p>
      *        <p>
      *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *        only alphanumeric, dash, and underscore characters.
-     *        </p>
-     *        <p>
-     *        For example, if you want play a greeting when the customer answers the call, you can pass the customer
-     *        name in attributes similar to the following:
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -505,28 +393,20 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes,
-     * and can be accessed in contact flows just like any other contact attributes.
+     * A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be
+     * accessed in contact flows just like any other contact attributes.
      * </p>
      * <p>
      * There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only
      * alphanumeric, dash, and underscore characters.
      * </p>
-     * <p>
-     * For example, if you want play a greeting when the customer answers the call, you can pass the customer name in
-     * attributes similar to the following:
-     * </p>
      * 
      * @param attributes
-     *        Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect
-     *        attributes, and can be accessed in contact flows just like any other contact attributes.</p>
+     *        A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and
+     *        can be accessed in contact flows just like any other contact attributes.</p>
      *        <p>
      *        There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include
      *        only alphanumeric, dash, and underscore characters.
-     *        </p>
-     *        <p>
-     *        For example, if you want play a greeting when the customer answers the call, you can pass the customer
-     *        name in attributes similar to the following:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

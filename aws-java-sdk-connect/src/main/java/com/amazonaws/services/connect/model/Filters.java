@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The filter, either channel or queues, to apply to the metric results retrieved.
+ * Contains the filter to apply when retrieving metrics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Filters" target="_top">AWS API
@@ -30,26 +30,23 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and
-     * ARNs in a request.
+     * The queues to use to filter the metrics. You can specify up to 100 queues per request.
      * </p>
      */
     private java.util.List<String> queues;
     /**
      * <p>
-     * The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     * The channel to use to filter the metrics.
      * </p>
      */
     private java.util.List<String> channels;
 
     /**
      * <p>
-     * A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and
-     * ARNs in a request.
+     * The queues to use to filter the metrics. You can specify up to 100 queues per request.
      * </p>
      * 
-     * @return A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both
-     *         IDs and ARNs in a request.
+     * @return The queues to use to filter the metrics. You can specify up to 100 queues per request.
      */
 
     public java.util.List<String> getQueues() {
@@ -58,13 +55,11 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and
-     * ARNs in a request.
+     * The queues to use to filter the metrics. You can specify up to 100 queues per request.
      * </p>
      * 
      * @param queues
-     *        A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both
-     *        IDs and ARNs in a request.
+     *        The queues to use to filter the metrics. You can specify up to 100 queues per request.
      */
 
     public void setQueues(java.util.Collection<String> queues) {
@@ -78,8 +73,7 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and
-     * ARNs in a request.
+     * The queues to use to filter the metrics. You can specify up to 100 queues per request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,8 +82,7 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param queues
-     *        A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both
-     *        IDs and ARNs in a request.
+     *        The queues to use to filter the metrics. You can specify up to 100 queues per request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,13 +98,11 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and
-     * ARNs in a request.
+     * The queues to use to filter the metrics. You can specify up to 100 queues per request.
      * </p>
      * 
      * @param queues
-     *        A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both
-     *        IDs and ARNs in a request.
+     *        The queues to use to filter the metrics. You can specify up to 100 queues per request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,10 +113,10 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     * The channel to use to filter the metrics.
      * </p>
      * 
-     * @return The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     * @return The channel to use to filter the metrics.
      * @see Channel
      */
 
@@ -135,11 +126,11 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     * The channel to use to filter the metrics.
      * </p>
      * 
      * @param channels
-     *        The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     *        The channel to use to filter the metrics.
      * @see Channel
      */
 
@@ -154,7 +145,7 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     * The channel to use to filter the metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +154,7 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param channels
-     *        The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     *        The channel to use to filter the metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Channel
      */
@@ -180,11 +171,11 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     * The channel to use to filter the metrics.
      * </p>
      * 
      * @param channels
-     *        The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     *        The channel to use to filter the metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Channel
      */
@@ -196,11 +187,11 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     * The channel to use to filter the metrics.
      * </p>
      * 
      * @param channels
-     *        The Channel to use as a filter for the metrics returned. Only VOICE is supported.
+     *        The channel to use to filter the metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Channel
      */

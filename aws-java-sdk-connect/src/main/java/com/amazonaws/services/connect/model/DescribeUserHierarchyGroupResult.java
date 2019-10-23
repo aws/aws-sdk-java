@@ -25,18 +25,18 @@ public class DescribeUserHierarchyGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Returns a <code>HierarchyGroup</code> object.
+     * Information about the hierarchy group.
      * </p>
      */
     private HierarchyGroup hierarchyGroup;
 
     /**
      * <p>
-     * Returns a <code>HierarchyGroup</code> object.
+     * Information about the hierarchy group.
      * </p>
      * 
      * @param hierarchyGroup
-     *        Returns a <code>HierarchyGroup</code> object.
+     *        Information about the hierarchy group.
      */
 
     public void setHierarchyGroup(HierarchyGroup hierarchyGroup) {
@@ -45,10 +45,10 @@ public class DescribeUserHierarchyGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Returns a <code>HierarchyGroup</code> object.
+     * Information about the hierarchy group.
      * </p>
      * 
-     * @return Returns a <code>HierarchyGroup</code> object.
+     * @return Information about the hierarchy group.
      */
 
     public HierarchyGroup getHierarchyGroup() {
@@ -57,11 +57,11 @@ public class DescribeUserHierarchyGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Returns a <code>HierarchyGroup</code> object.
+     * Information about the hierarchy group.
      * </p>
      * 
      * @param hierarchyGroup
-     *        Returns a <code>HierarchyGroup</code> object.
+     *        Information about the hierarchy group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

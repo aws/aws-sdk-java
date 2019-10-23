@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>CurrentMetricResult</code> object.
+ * Contains information about a set of real-time metrics.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetricResult" target="_top">AWS API
@@ -30,24 +30,24 @@ public class CurrentMetricResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.
+     * The dimensions for the metrics.
      * </p>
      */
     private Dimensions dimensions;
     /**
      * <p>
-     * The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     * The set of metrics.
      * </p>
      */
     private java.util.List<CurrentMetricData> collections;
 
     /**
      * <p>
-     * The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.
+     * The dimensions for the metrics.
      * </p>
      * 
      * @param dimensions
-     *        The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.
+     *        The dimensions for the metrics.
      */
 
     public void setDimensions(Dimensions dimensions) {
@@ -56,10 +56,10 @@ public class CurrentMetricResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.
+     * The dimensions for the metrics.
      * </p>
      * 
-     * @return The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.
+     * @return The dimensions for the metrics.
      */
 
     public Dimensions getDimensions() {
@@ -68,11 +68,11 @@ public class CurrentMetricResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.
+     * The dimensions for the metrics.
      * </p>
      * 
      * @param dimensions
-     *        The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.
+     *        The dimensions for the metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class CurrentMetricResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     * The set of metrics.
      * </p>
      * 
-     * @return The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     * @return The set of metrics.
      */
 
     public java.util.List<CurrentMetricData> getCollections() {
@@ -95,11 +95,11 @@ public class CurrentMetricResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     * The set of metrics.
      * </p>
      * 
      * @param collections
-     *        The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     *        The set of metrics.
      */
 
     public void setCollections(java.util.Collection<CurrentMetricData> collections) {
@@ -113,7 +113,7 @@ public class CurrentMetricResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     * The set of metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class CurrentMetricResult implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param collections
-     *        The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     *        The set of metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class CurrentMetricResult implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     * The set of metrics.
      * </p>
      * 
      * @param collections
-     *        The <code>Collections</code> for the <code>CurrentMetricResult</code> object.
+     *        The set of metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

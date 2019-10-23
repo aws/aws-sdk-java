@@ -27,32 +27,29 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifiers for the security profiles to assign to the user.
+     * The identifiers of the security profiles for the user.
      * </p>
      */
     private java.util.List<String> securityProfileIds;
     /**
      * <p>
-     * The identifier of the user account to assign the security profiles.
+     * The identifier of the user account.
      * </p>
      */
     private String userId;
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      */
     private String instanceId;
 
     /**
      * <p>
-     * The identifiers for the security profiles to assign to the user.
+     * The identifiers of the security profiles for the user.
      * </p>
      * 
-     * @return The identifiers for the security profiles to assign to the user.
+     * @return The identifiers of the security profiles for the user.
      */
 
     public java.util.List<String> getSecurityProfileIds() {
@@ -61,11 +58,11 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifiers for the security profiles to assign to the user.
+     * The identifiers of the security profiles for the user.
      * </p>
      * 
      * @param securityProfileIds
-     *        The identifiers for the security profiles to assign to the user.
+     *        The identifiers of the security profiles for the user.
      */
 
     public void setSecurityProfileIds(java.util.Collection<String> securityProfileIds) {
@@ -79,7 +76,7 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifiers for the security profiles to assign to the user.
+     * The identifiers of the security profiles for the user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +85,7 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param securityProfileIds
-     *        The identifiers for the security profiles to assign to the user.
+     *        The identifiers of the security profiles for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +101,11 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifiers for the security profiles to assign to the user.
+     * The identifiers of the security profiles for the user.
      * </p>
      * 
      * @param securityProfileIds
-     *        The identifiers for the security profiles to assign to the user.
+     *        The identifiers of the security profiles for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +116,11 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the user account to assign the security profiles.
+     * The identifier of the user account.
      * </p>
      * 
      * @param userId
-     *        The identifier of the user account to assign the security profiles.
+     *        The identifier of the user account.
      */
 
     public void setUserId(String userId) {
@@ -132,10 +129,10 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the user account to assign the security profiles.
+     * The identifier of the user account.
      * </p>
      * 
-     * @return The identifier of the user account to assign the security profiles.
+     * @return The identifier of the user account.
      */
 
     public String getUserId() {
@@ -144,11 +141,11 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the user account to assign the security profiles.
+     * The identifier of the user account.
      * </p>
      * 
      * @param userId
-     *        The identifier of the user account to assign the security profiles.
+     *        The identifier of the user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,17 +156,11 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
-     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
-     *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
-     *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     *        The identifier of the Amazon Connect instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -178,17 +169,10 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
-     * @return The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console
-     *         and select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID
-     *         is displayed in the Overview section of your instance settings. For example, the instance ID is the set
-     *         of characters at the end of the instance ARN, after instance/, such as
-     *         10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * @return The identifier of the Amazon Connect instance.
      */
 
     public String getInstanceId() {
@@ -197,17 +181,11 @@ public class UpdateUserSecurityProfilesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select
-     * Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in
-     * the Overview section of your instance settings. For example, the instance ID is the set of characters at the end
-     * of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     * The identifier of the Amazon Connect instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and
-     *        select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is
-     *        displayed in the Overview section of your instance settings. For example, the instance ID is the set of
-     *        characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+     *        The identifier of the Amazon Connect instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

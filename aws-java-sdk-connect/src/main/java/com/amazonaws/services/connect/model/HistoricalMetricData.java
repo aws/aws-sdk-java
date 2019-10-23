@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>HistoricalMetricData</code> object than contains a <code>Metric</code> and a <code>Value</code>.
+ * Contains the data for a historical metric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HistoricalMetricData" target="_top">AWS API
@@ -30,24 +30,24 @@ public class HistoricalMetricData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A <code>HistoricalMetric</code> object.
+     * Information about the metric.
      * </p>
      */
     private HistoricalMetric metric;
     /**
      * <p>
-     * The <code>Value</code> of the metric.
+     * The value of the metric.
      * </p>
      */
     private Double value;
 
     /**
      * <p>
-     * A <code>HistoricalMetric</code> object.
+     * Information about the metric.
      * </p>
      * 
      * @param metric
-     *        A <code>HistoricalMetric</code> object.
+     *        Information about the metric.
      */
 
     public void setMetric(HistoricalMetric metric) {
@@ -56,10 +56,10 @@ public class HistoricalMetricData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A <code>HistoricalMetric</code> object.
+     * Information about the metric.
      * </p>
      * 
-     * @return A <code>HistoricalMetric</code> object.
+     * @return Information about the metric.
      */
 
     public HistoricalMetric getMetric() {
@@ -68,11 +68,11 @@ public class HistoricalMetricData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A <code>HistoricalMetric</code> object.
+     * Information about the metric.
      * </p>
      * 
      * @param metric
-     *        A <code>HistoricalMetric</code> object.
+     *        Information about the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class HistoricalMetricData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The <code>Value</code> of the metric.
+     * The value of the metric.
      * </p>
      * 
      * @param value
-     *        The <code>Value</code> of the metric.
+     *        The value of the metric.
      */
 
     public void setValue(Double value) {
@@ -96,10 +96,10 @@ public class HistoricalMetricData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The <code>Value</code> of the metric.
+     * The value of the metric.
      * </p>
      * 
-     * @return The <code>Value</code> of the metric.
+     * @return The value of the metric.
      */
 
     public Double getValue() {
@@ -108,11 +108,11 @@ public class HistoricalMetricData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The <code>Value</code> of the metric.
+     * The value of the metric.
      * </p>
      * 
      * @param value
-     *        The <code>Value</code> of the metric.
+     *        The value of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
