@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the method and value to match the header value sent with a request. Specify one match method.
+ * An object that represents the method and value to match with the header value sent in a request. Specify one match
+ * method.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HeaderMatchMethod" target="_top">AWS API
@@ -30,42 +31,42 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must match the specified value exactly.
+     * The value sent by the client must match the specified value exactly.
      * </p>
      */
     private String exact;
     /**
      * <p>
-     * The header value sent by the client must begin with the specified characters.
+     * The value sent by the client must begin with the specified characters.
      * </p>
      */
     private String prefix;
     /**
      * <p>
-     * The object that specifies the range of numbers that the header value sent by the client must be included in.
+     * An object that represents the range of values to match on.
      * </p>
      */
     private MatchRange range;
     /**
      * <p>
-     * The header value sent by the client must include the specified characters.
+     * The value sent by the client must include the specified characters.
      * </p>
      */
     private String regex;
     /**
      * <p>
-     * The header value sent by the client must end with the specified characters.
+     * The value sent by the client must end with the specified characters.
      * </p>
      */
     private String suffix;
 
     /**
      * <p>
-     * The header value sent by the client must match the specified value exactly.
+     * The value sent by the client must match the specified value exactly.
      * </p>
      * 
      * @param exact
-     *        The header value sent by the client must match the specified value exactly.
+     *        The value sent by the client must match the specified value exactly.
      */
 
     public void setExact(String exact) {
@@ -74,10 +75,10 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must match the specified value exactly.
+     * The value sent by the client must match the specified value exactly.
      * </p>
      * 
-     * @return The header value sent by the client must match the specified value exactly.
+     * @return The value sent by the client must match the specified value exactly.
      */
 
     public String getExact() {
@@ -86,11 +87,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must match the specified value exactly.
+     * The value sent by the client must match the specified value exactly.
      * </p>
      * 
      * @param exact
-     *        The header value sent by the client must match the specified value exactly.
+     *        The value sent by the client must match the specified value exactly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +102,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must begin with the specified characters.
+     * The value sent by the client must begin with the specified characters.
      * </p>
      * 
      * @param prefix
-     *        The header value sent by the client must begin with the specified characters.
+     *        The value sent by the client must begin with the specified characters.
      */
 
     public void setPrefix(String prefix) {
@@ -114,10 +115,10 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must begin with the specified characters.
+     * The value sent by the client must begin with the specified characters.
      * </p>
      * 
-     * @return The header value sent by the client must begin with the specified characters.
+     * @return The value sent by the client must begin with the specified characters.
      */
 
     public String getPrefix() {
@@ -126,11 +127,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must begin with the specified characters.
+     * The value sent by the client must begin with the specified characters.
      * </p>
      * 
      * @param prefix
-     *        The header value sent by the client must begin with the specified characters.
+     *        The value sent by the client must begin with the specified characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,12 +142,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The object that specifies the range of numbers that the header value sent by the client must be included in.
+     * An object that represents the range of values to match on.
      * </p>
      * 
      * @param range
-     *        The object that specifies the range of numbers that the header value sent by the client must be included
-     *        in.
+     *        An object that represents the range of values to match on.
      */
 
     public void setRange(MatchRange range) {
@@ -155,11 +155,10 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The object that specifies the range of numbers that the header value sent by the client must be included in.
+     * An object that represents the range of values to match on.
      * </p>
      * 
-     * @return The object that specifies the range of numbers that the header value sent by the client must be included
-     *         in.
+     * @return An object that represents the range of values to match on.
      */
 
     public MatchRange getRange() {
@@ -168,12 +167,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The object that specifies the range of numbers that the header value sent by the client must be included in.
+     * An object that represents the range of values to match on.
      * </p>
      * 
      * @param range
-     *        The object that specifies the range of numbers that the header value sent by the client must be included
-     *        in.
+     *        An object that represents the range of values to match on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +182,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must include the specified characters.
+     * The value sent by the client must include the specified characters.
      * </p>
      * 
      * @param regex
-     *        The header value sent by the client must include the specified characters.
+     *        The value sent by the client must include the specified characters.
      */
 
     public void setRegex(String regex) {
@@ -197,10 +195,10 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must include the specified characters.
+     * The value sent by the client must include the specified characters.
      * </p>
      * 
-     * @return The header value sent by the client must include the specified characters.
+     * @return The value sent by the client must include the specified characters.
      */
 
     public String getRegex() {
@@ -209,11 +207,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must include the specified characters.
+     * The value sent by the client must include the specified characters.
      * </p>
      * 
      * @param regex
-     *        The header value sent by the client must include the specified characters.
+     *        The value sent by the client must include the specified characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +222,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must end with the specified characters.
+     * The value sent by the client must end with the specified characters.
      * </p>
      * 
      * @param suffix
-     *        The header value sent by the client must end with the specified characters.
+     *        The value sent by the client must end with the specified characters.
      */
 
     public void setSuffix(String suffix) {
@@ -237,10 +235,10 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must end with the specified characters.
+     * The value sent by the client must end with the specified characters.
      * </p>
      * 
-     * @return The header value sent by the client must end with the specified characters.
+     * @return The value sent by the client must end with the specified characters.
      */
 
     public String getSuffix() {
@@ -249,11 +247,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The header value sent by the client must end with the specified characters.
+     * The value sent by the client must end with the specified characters.
      * </p>
      * 
      * @param suffix
-     *        The header value sent by the client must end with the specified characters.
+     *        The value sent by the client must end with the specified characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

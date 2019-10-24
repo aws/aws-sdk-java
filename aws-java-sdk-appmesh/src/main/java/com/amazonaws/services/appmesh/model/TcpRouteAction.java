@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the traffic distribution requirements for matched TCP requests.
+ * An object that represents the action to take if a match is determined.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpRouteAction" target="_top">AWS API
@@ -30,20 +30,17 @@ public class TcpRouteAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights to distribute traffic with.
+     * An object that represents the targets that traffic is routed to when a request matches the route.
      * </p>
      */
     private java.util.List<WeightedTarget> weightedTargets;
 
     /**
      * <p>
-     * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights to distribute traffic with.
+     * An object that represents the targets that traffic is routed to when a request matches the route.
      * </p>
      * 
-     * @return The targets that traffic is routed to when a request matches the route. You can specify one or more
-     *         targets and their relative weights to distribute traffic with.
+     * @return An object that represents the targets that traffic is routed to when a request matches the route.
      */
 
     public java.util.List<WeightedTarget> getWeightedTargets() {
@@ -52,13 +49,11 @@ public class TcpRouteAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights to distribute traffic with.
+     * An object that represents the targets that traffic is routed to when a request matches the route.
      * </p>
      * 
      * @param weightedTargets
-     *        The targets that traffic is routed to when a request matches the route. You can specify one or more
-     *        targets and their relative weights to distribute traffic with.
+     *        An object that represents the targets that traffic is routed to when a request matches the route.
      */
 
     public void setWeightedTargets(java.util.Collection<WeightedTarget> weightedTargets) {
@@ -72,8 +67,7 @@ public class TcpRouteAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights to distribute traffic with.
+     * An object that represents the targets that traffic is routed to when a request matches the route.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,8 +76,7 @@ public class TcpRouteAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param weightedTargets
-     *        The targets that traffic is routed to when a request matches the route. You can specify one or more
-     *        targets and their relative weights to distribute traffic with.
+     *        An object that represents the targets that traffic is routed to when a request matches the route.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,13 +92,11 @@ public class TcpRouteAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The targets that traffic is routed to when a request matches the route. You can specify one or more targets and
-     * their relative weights to distribute traffic with.
+     * An object that represents the targets that traffic is routed to when a request matches the route.
      * </p>
      * 
      * @param weightedTargets
-     *        The targets that traffic is routed to when a request matches the route. You can specify one or more
-     *        targets and their relative weights to distribute traffic with.
+     *        An object that represents the targets that traffic is routed to when a request matches the route.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,14 @@ public class RouteSpecJsonUnmarshaller implements Unmarshaller<RouteSpec, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("grpcRoute", targetDepth)) {
+                    context.nextToken();
+                    routeSpec.setGrpcRoute(GrpcRouteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("http2Route", targetDepth)) {
+                    context.nextToken();
+                    routeSpec.setHttp2Route(HttpRouteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("httpRoute", targetDepth)) {
                     context.nextToken();
                     routeSpec.setHttpRoute(HttpRouteJsonUnmarshaller.getInstance().unmarshall(context));

@@ -52,6 +52,10 @@ public class VoiceConnectorJsonUnmarshaller implements Unmarshaller<VoiceConnect
                     context.nextToken();
                     voiceConnector.setVoiceConnectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AwsRegion", targetDepth)) {
+                    context.nextToken();
+                    voiceConnector.setAwsRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     voiceConnector.setName(context.getUnmarshaller(String.class).unmarshall(context));

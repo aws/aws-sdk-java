@@ -37,6 +37,14 @@ public class AssociatePhoneNumbersWithVoiceConnectorRequest extends com.amazonaw
      * </p>
      */
     private java.util.List<String> e164PhoneNumbers;
+    /**
+     * <p>
+     * If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any
+     * previously existing associations. If false, does not associate any phone numbers that have previously existing
+     * associations.
+     * </p>
+     */
+    private Boolean forceAssociate;
 
     /**
      * <p>
@@ -149,6 +157,74 @@ public class AssociatePhoneNumbersWithVoiceConnectorRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any
+     * previously existing associations. If false, does not associate any phone numbers that have previously existing
+     * associations.
+     * </p>
+     * 
+     * @param forceAssociate
+     *        If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes
+     *        any previously existing associations. If false, does not associate any phone numbers that have previously
+     *        existing associations.
+     */
+
+    public void setForceAssociate(Boolean forceAssociate) {
+        this.forceAssociate = forceAssociate;
+    }
+
+    /**
+     * <p>
+     * If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any
+     * previously existing associations. If false, does not associate any phone numbers that have previously existing
+     * associations.
+     * </p>
+     * 
+     * @return If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes
+     *         any previously existing associations. If false, does not associate any phone numbers that have previously
+     *         existing associations.
+     */
+
+    public Boolean getForceAssociate() {
+        return this.forceAssociate;
+    }
+
+    /**
+     * <p>
+     * If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any
+     * previously existing associations. If false, does not associate any phone numbers that have previously existing
+     * associations.
+     * </p>
+     * 
+     * @param forceAssociate
+     *        If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes
+     *        any previously existing associations. If false, does not associate any phone numbers that have previously
+     *        existing associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociatePhoneNumbersWithVoiceConnectorRequest withForceAssociate(Boolean forceAssociate) {
+        setForceAssociate(forceAssociate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any
+     * previously existing associations. If false, does not associate any phone numbers that have previously existing
+     * associations.
+     * </p>
+     * 
+     * @return If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes
+     *         any previously existing associations. If false, does not associate any phone numbers that have previously
+     *         existing associations.
+     */
+
+    public Boolean isForceAssociate() {
+        return this.forceAssociate;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,7 +239,9 @@ public class AssociatePhoneNumbersWithVoiceConnectorRequest extends com.amazonaw
         if (getVoiceConnectorId() != null)
             sb.append("VoiceConnectorId: ").append(getVoiceConnectorId()).append(",");
         if (getE164PhoneNumbers() != null)
-            sb.append("E164PhoneNumbers: ").append("***Sensitive Data Redacted***");
+            sb.append("E164PhoneNumbers: ").append("***Sensitive Data Redacted***").append(",");
+        if (getForceAssociate() != null)
+            sb.append("ForceAssociate: ").append(getForceAssociate());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +264,10 @@ public class AssociatePhoneNumbersWithVoiceConnectorRequest extends com.amazonaw
             return false;
         if (other.getE164PhoneNumbers() != null && other.getE164PhoneNumbers().equals(this.getE164PhoneNumbers()) == false)
             return false;
+        if (other.getForceAssociate() == null ^ this.getForceAssociate() == null)
+            return false;
+        if (other.getForceAssociate() != null && other.getForceAssociate().equals(this.getForceAssociate()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +278,7 @@ public class AssociatePhoneNumbersWithVoiceConnectorRequest extends com.amazonaw
 
         hashCode = prime * hashCode + ((getVoiceConnectorId() == null) ? 0 : getVoiceConnectorId().hashCode());
         hashCode = prime * hashCode + ((getE164PhoneNumbers() == null) ? 0 : getE164PhoneNumbers().hashCode());
+        hashCode = prime * hashCode + ((getForceAssociate() == null) ? 0 : getForceAssociate().hashCode());
         return hashCode;
     }
 

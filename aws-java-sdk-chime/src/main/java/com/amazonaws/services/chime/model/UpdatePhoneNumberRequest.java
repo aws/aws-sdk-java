@@ -37,6 +37,12 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String productType;
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     */
+    private String callingName;
 
     /**
      * <p>
@@ -138,6 +144,46 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @param callingName
+     *        The outbound calling name associated with the phone number.
+     */
+
+    public void setCallingName(String callingName) {
+        this.callingName = callingName;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @return The outbound calling name associated with the phone number.
+     */
+
+    public String getCallingName() {
+        return this.callingName;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @param callingName
+     *        The outbound calling name associated with the phone number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePhoneNumberRequest withCallingName(String callingName) {
+        setCallingName(callingName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,7 +198,9 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getPhoneNumberId() != null)
             sb.append("PhoneNumberId: ").append(getPhoneNumberId()).append(",");
         if (getProductType() != null)
-            sb.append("ProductType: ").append(getProductType());
+            sb.append("ProductType: ").append(getProductType()).append(",");
+        if (getCallingName() != null)
+            sb.append("CallingName: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -175,6 +223,10 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getProductType() != null && other.getProductType().equals(this.getProductType()) == false)
             return false;
+        if (other.getCallingName() == null ^ this.getCallingName() == null)
+            return false;
+        if (other.getCallingName() != null && other.getCallingName().equals(this.getCallingName()) == false)
+            return false;
         return true;
     }
 
@@ -185,6 +237,7 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getPhoneNumberId() == null) ? 0 : getPhoneNumberId().hashCode());
         hashCode = prime * hashCode + ((getProductType() == null) ? 0 : getProductType().hashCode());
+        hashCode = prime * hashCode + ((getCallingName() == null) ? 0 : getCallingName().hashCode());
         return hashCode;
     }
 

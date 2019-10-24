@@ -72,6 +72,18 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<PhoneNumberAssociation> associations;
     /**
      * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     */
+    private String callingName;
+    /**
+     * <p>
+     * The outbound calling name status.
+     * </p>
+     */
+    private String callingNameStatus;
+    /**
+     * <p>
      * The phone number creation timestamp, in ISO 8601 format.
      * </p>
      */
@@ -458,6 +470,105 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @param callingName
+     *        The outbound calling name associated with the phone number.
+     */
+
+    public void setCallingName(String callingName) {
+        this.callingName = callingName;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @return The outbound calling name associated with the phone number.
+     */
+
+    public String getCallingName() {
+        return this.callingName;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @param callingName
+     *        The outbound calling name associated with the phone number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PhoneNumber withCallingName(String callingName) {
+        setCallingName(callingName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name status.
+     * </p>
+     * 
+     * @param callingNameStatus
+     *        The outbound calling name status.
+     * @see CallingNameStatus
+     */
+
+    public void setCallingNameStatus(String callingNameStatus) {
+        this.callingNameStatus = callingNameStatus;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name status.
+     * </p>
+     * 
+     * @return The outbound calling name status.
+     * @see CallingNameStatus
+     */
+
+    public String getCallingNameStatus() {
+        return this.callingNameStatus;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name status.
+     * </p>
+     * 
+     * @param callingNameStatus
+     *        The outbound calling name status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallingNameStatus
+     */
+
+    public PhoneNumber withCallingNameStatus(String callingNameStatus) {
+        setCallingNameStatus(callingNameStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name status.
+     * </p>
+     * 
+     * @param callingNameStatus
+     *        The outbound calling name status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallingNameStatus
+     */
+
+    public PhoneNumber withCallingNameStatus(CallingNameStatus callingNameStatus) {
+        this.callingNameStatus = callingNameStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The phone number creation timestamp, in ISO 8601 format.
      * </p>
      * 
@@ -602,6 +713,10 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
             sb.append("Capabilities: ").append(getCapabilities()).append(",");
         if (getAssociations() != null)
             sb.append("Associations: ").append(getAssociations()).append(",");
+        if (getCallingName() != null)
+            sb.append("CallingName: ").append("***Sensitive Data Redacted***").append(",");
+        if (getCallingNameStatus() != null)
+            sb.append("CallingNameStatus: ").append(getCallingNameStatus()).append(",");
         if (getCreatedTimestamp() != null)
             sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
         if (getUpdatedTimestamp() != null)
@@ -650,6 +765,14 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false)
             return false;
+        if (other.getCallingName() == null ^ this.getCallingName() == null)
+            return false;
+        if (other.getCallingName() != null && other.getCallingName().equals(this.getCallingName()) == false)
+            return false;
+        if (other.getCallingNameStatus() == null ^ this.getCallingNameStatus() == null)
+            return false;
+        if (other.getCallingNameStatus() != null && other.getCallingNameStatus().equals(this.getCallingNameStatus()) == false)
+            return false;
         if (other.getCreatedTimestamp() == null ^ this.getCreatedTimestamp() == null)
             return false;
         if (other.getCreatedTimestamp() != null && other.getCreatedTimestamp().equals(this.getCreatedTimestamp()) == false)
@@ -677,6 +800,8 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode());
+        hashCode = prime * hashCode + ((getCallingName() == null) ? 0 : getCallingName().hashCode());
+        hashCode = prime * hashCode + ((getCallingNameStatus() == null) ? 0 : getCallingNameStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getUpdatedTimestamp() == null) ? 0 : getUpdatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDeletionTimestamp() == null) ? 0 : getDeletionTimestamp().hashCode());

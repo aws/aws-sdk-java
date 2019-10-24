@@ -33,6 +33,12 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * </p>
+     */
+    private String awsRegion;
+    /**
+     * <p>
      * When enabled, requires encryption for the Amazon Chime Voice Connector.
      * </p>
      */
@@ -75,6 +81,69 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
 
     public CreateVoiceConnectorRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * </p>
+     * 
+     * @param awsRegion
+     *        The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>
+     *        .
+     * @see VoiceConnectorAwsRegion
+     */
+
+    public void setAwsRegion(String awsRegion) {
+        this.awsRegion = awsRegion;
+    }
+
+    /**
+     * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * </p>
+     * 
+     * @return The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
+     *         <code>us-east-1</code>.
+     * @see VoiceConnectorAwsRegion
+     */
+
+    public String getAwsRegion() {
+        return this.awsRegion;
+    }
+
+    /**
+     * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * </p>
+     * 
+     * @param awsRegion
+     *        The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VoiceConnectorAwsRegion
+     */
+
+    public CreateVoiceConnectorRequest withAwsRegion(String awsRegion) {
+        setAwsRegion(awsRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>.
+     * </p>
+     * 
+     * @param awsRegion
+     *        The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VoiceConnectorAwsRegion
+     */
+
+    public CreateVoiceConnectorRequest withAwsRegion(VoiceConnectorAwsRegion awsRegion) {
+        this.awsRegion = awsRegion.toString();
         return this;
     }
 
@@ -144,6 +213,8 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getAwsRegion() != null)
+            sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getRequireEncryption() != null)
             sb.append("RequireEncryption: ").append(getRequireEncryption());
         sb.append("}");
@@ -164,6 +235,10 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getAwsRegion() == null ^ this.getAwsRegion() == null)
+            return false;
+        if (other.getAwsRegion() != null && other.getAwsRegion().equals(this.getAwsRegion()) == false)
+            return false;
         if (other.getRequireEncryption() == null ^ this.getRequireEncryption() == null)
             return false;
         if (other.getRequireEncryption() != null && other.getRequireEncryption().equals(this.getRequireEncryption()) == false)
@@ -177,6 +252,7 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getRequireEncryption() == null) ? 0 : getRequireEncryption().hashCode());
         return hashCode;
     }

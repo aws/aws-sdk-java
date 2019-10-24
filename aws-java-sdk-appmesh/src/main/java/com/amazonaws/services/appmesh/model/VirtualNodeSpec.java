@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the specification of a virtual node.
+ * An object that represents the specification of a virtual node.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeSpec" target="_top">AWS API
@@ -36,8 +36,7 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<Backend> backends;
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual node.
+     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      */
     private java.util.List<Listener> listeners;
@@ -127,12 +126,11 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual node.
+     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
-     * @return The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
-     *         listener is supported per virtual node.
+     * @return The listeners that the virtual node is expected to receive inbound traffic from. You can specify one
+     *         listener.
      */
 
     public java.util.List<Listener> getListeners() {
@@ -141,13 +139,12 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual node.
+     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
-     *        listener is supported per virtual node.
+     *        The listeners that the virtual node is expected to receive inbound traffic from. You can specify one
+     *        listener.
      */
 
     public void setListeners(java.util.Collection<Listener> listeners) {
@@ -161,8 +158,7 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual node.
+     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,8 +167,8 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
-     *        listener is supported per virtual node.
+     *        The listeners that the virtual node is expected to receive inbound traffic from. You can specify one
+     *        listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,13 +184,12 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual node.
+     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual node is expected to receive inbound traffic from. Currently only one
-     *        listener is supported per virtual node.
+     *        The listeners that the virtual node is expected to receive inbound traffic from. You can specify one
+     *        listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the requirements for a route to match HTTP requests for a virtual router.
+ * An object that represents the requirements for a route to match HTTP requests for a virtual router.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteMatch" target="_top">AWS API
@@ -30,13 +30,13 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request headers to match on.
+     * An object that represents the client request headers to match on.
      * </p>
      */
     private java.util.List<HttpRouteHeader> headers;
     /**
      * <p>
-     * The client request header method to match on.
+     * The client request method to match on. Specify only one.
      * </p>
      */
     private String method;
@@ -51,17 +51,17 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
     private String prefix;
     /**
      * <p>
-     * The client request header scheme to match on.
+     * The client request scheme to match on. Specify only one.
      * </p>
      */
     private String scheme;
 
     /**
      * <p>
-     * The client request headers to match on.
+     * An object that represents the client request headers to match on.
      * </p>
      * 
-     * @return The client request headers to match on.
+     * @return An object that represents the client request headers to match on.
      */
 
     public java.util.List<HttpRouteHeader> getHeaders() {
@@ -70,11 +70,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request headers to match on.
+     * An object that represents the client request headers to match on.
      * </p>
      * 
      * @param headers
-     *        The client request headers to match on.
+     *        An object that represents the client request headers to match on.
      */
 
     public void setHeaders(java.util.Collection<HttpRouteHeader> headers) {
@@ -88,7 +88,7 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request headers to match on.
+     * An object that represents the client request headers to match on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,7 +97,7 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param headers
-     *        The client request headers to match on.
+     *        An object that represents the client request headers to match on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request headers to match on.
+     * An object that represents the client request headers to match on.
      * </p>
      * 
      * @param headers
-     *        The client request headers to match on.
+     *        An object that represents the client request headers to match on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,11 +128,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request header method to match on.
+     * The client request method to match on. Specify only one.
      * </p>
      * 
      * @param method
-     *        The client request header method to match on.
+     *        The client request method to match on. Specify only one.
      * @see HttpMethod
      */
 
@@ -142,10 +142,10 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request header method to match on.
+     * The client request method to match on. Specify only one.
      * </p>
      * 
-     * @return The client request header method to match on.
+     * @return The client request method to match on. Specify only one.
      * @see HttpMethod
      */
 
@@ -155,11 +155,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request header method to match on.
+     * The client request method to match on. Specify only one.
      * </p>
      * 
      * @param method
-     *        The client request header method to match on.
+     *        The client request method to match on. Specify only one.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpMethod
      */
@@ -171,11 +171,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request header method to match on.
+     * The client request method to match on. Specify only one.
      * </p>
      * 
      * @param method
-     *        The client request header method to match on.
+     *        The client request method to match on. Specify only one.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpMethod
      */
@@ -248,11 +248,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request header scheme to match on.
+     * The client request scheme to match on. Specify only one.
      * </p>
      * 
      * @param scheme
-     *        The client request header scheme to match on.
+     *        The client request scheme to match on. Specify only one.
      * @see HttpScheme
      */
 
@@ -262,10 +262,10 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request header scheme to match on.
+     * The client request scheme to match on. Specify only one.
      * </p>
      * 
-     * @return The client request header scheme to match on.
+     * @return The client request scheme to match on. Specify only one.
      * @see HttpScheme
      */
 
@@ -275,11 +275,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request header scheme to match on.
+     * The client request scheme to match on. Specify only one.
      * </p>
      * 
      * @param scheme
-     *        The client request header scheme to match on.
+     *        The client request scheme to match on. Specify only one.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpScheme
      */
@@ -291,11 +291,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request header scheme to match on.
+     * The client request scheme to match on. Specify only one.
      * </p>
      * 
      * @param scheme
-     *        The client request header scheme to match on.
+     *        The client request scheme to match on. Specify only one.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpScheme
      */

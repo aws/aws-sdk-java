@@ -38,6 +38,12 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public AssociatePhoneNumbersWithVoiceConnectorGroupResult associatePhoneNumbersWithVoiceConnectorGroup(
+            AssociatePhoneNumbersWithVoiceConnectorGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDeletePhoneNumberResult batchDeletePhoneNumber(BatchDeletePhoneNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -83,6 +89,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public CreateVoiceConnectorGroupResult createVoiceConnectorGroup(CreateVoiceConnectorGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAccountResult deleteAccount(DeleteAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,7 +114,17 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public DeleteVoiceConnectorGroupResult deleteVoiceConnectorGroup(DeleteVoiceConnectorGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteVoiceConnectorOriginationResult deleteVoiceConnectorOrigination(DeleteVoiceConnectorOriginationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVoiceConnectorStreamingConfigurationResult deleteVoiceConnectorStreamingConfiguration(DeleteVoiceConnectorStreamingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,6 +145,12 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public DisassociatePhoneNumbersFromVoiceConnectorResult disassociatePhoneNumbersFromVoiceConnector(DisassociatePhoneNumbersFromVoiceConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociatePhoneNumbersFromVoiceConnectorGroupResult disassociatePhoneNumbersFromVoiceConnectorGroup(
+            DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,6 +190,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public GetPhoneNumberSettingsResult getPhoneNumberSettings(GetPhoneNumberSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUserResult getUser(GetUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -178,7 +210,22 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public GetVoiceConnectorGroupResult getVoiceConnectorGroup(GetVoiceConnectorGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVoiceConnectorLoggingConfigurationResult getVoiceConnectorLoggingConfiguration(GetVoiceConnectorLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetVoiceConnectorOriginationResult getVoiceConnectorOrigination(GetVoiceConnectorOriginationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVoiceConnectorStreamingConfigurationResult getVoiceConnectorStreamingConfiguration(GetVoiceConnectorStreamingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,6 +270,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public ListVoiceConnectorGroupsResult listVoiceConnectorGroups(ListVoiceConnectorGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListVoiceConnectorTerminationCredentialsResult listVoiceConnectorTerminationCredentials(ListVoiceConnectorTerminationCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -243,7 +295,17 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public PutVoiceConnectorLoggingConfigurationResult putVoiceConnectorLoggingConfiguration(PutVoiceConnectorLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutVoiceConnectorOriginationResult putVoiceConnectorOrigination(PutVoiceConnectorOriginationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutVoiceConnectorStreamingConfigurationResult putVoiceConnectorStreamingConfiguration(PutVoiceConnectorStreamingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -303,6 +365,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public UpdatePhoneNumberSettingsResult updatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateUserResult updateUser(UpdateUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -314,6 +381,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public UpdateVoiceConnectorResult updateVoiceConnector(UpdateVoiceConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVoiceConnectorGroupResult updateVoiceConnectorGroup(UpdateVoiceConnectorGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

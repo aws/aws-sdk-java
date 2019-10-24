@@ -36,6 +36,12 @@ public class VoiceConnector implements Serializable, Cloneable, StructuredPojo {
     private String voiceConnectorId;
     /**
      * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * </p>
+     */
+    private String awsRegion;
+    /**
+     * <p>
      * The name of the Amazon Chime Voice Connector.
      * </p>
      */
@@ -102,6 +108,65 @@ public class VoiceConnector implements Serializable, Cloneable, StructuredPojo {
 
     public VoiceConnector withVoiceConnectorId(String voiceConnectorId) {
         setVoiceConnectorId(voiceConnectorId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * </p>
+     * 
+     * @param awsRegion
+     *        The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * @see VoiceConnectorAwsRegion
+     */
+
+    public void setAwsRegion(String awsRegion) {
+        this.awsRegion = awsRegion;
+    }
+
+    /**
+     * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * </p>
+     * 
+     * @return The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * @see VoiceConnectorAwsRegion
+     */
+
+    public String getAwsRegion() {
+        return this.awsRegion;
+    }
+
+    /**
+     * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * </p>
+     * 
+     * @param awsRegion
+     *        The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VoiceConnectorAwsRegion
+     */
+
+    public VoiceConnector withAwsRegion(String awsRegion) {
+        setAwsRegion(awsRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * </p>
+     * 
+     * @param awsRegion
+     *        The AWS Region in which the Amazon Chime Voice Connector is created. Default: <code>us-east-1</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VoiceConnectorAwsRegion
+     */
+
+    public VoiceConnector withAwsRegion(VoiceConnectorAwsRegion awsRegion) {
+        this.awsRegion = awsRegion.toString();
         return this;
     }
 
@@ -331,6 +396,8 @@ public class VoiceConnector implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getVoiceConnectorId() != null)
             sb.append("VoiceConnectorId: ").append(getVoiceConnectorId()).append(",");
+        if (getAwsRegion() != null)
+            sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getOutboundHostName() != null)
@@ -358,6 +425,10 @@ public class VoiceConnector implements Serializable, Cloneable, StructuredPojo {
         if (other.getVoiceConnectorId() == null ^ this.getVoiceConnectorId() == null)
             return false;
         if (other.getVoiceConnectorId() != null && other.getVoiceConnectorId().equals(this.getVoiceConnectorId()) == false)
+            return false;
+        if (other.getAwsRegion() == null ^ this.getAwsRegion() == null)
+            return false;
+        if (other.getAwsRegion() != null && other.getAwsRegion().equals(this.getAwsRegion()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -388,6 +459,7 @@ public class VoiceConnector implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVoiceConnectorId() == null) ? 0 : getVoiceConnectorId().hashCode());
+        hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutboundHostName() == null) ? 0 : getOutboundHostName().hashCode());
         hashCode = prime * hashCode + ((getRequireEncryption() == null) ? 0 : getRequireEncryption().hashCode());

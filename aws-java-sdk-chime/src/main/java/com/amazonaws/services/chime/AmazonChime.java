@@ -102,6 +102,8 @@ public interface AmazonChime {
      *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -116,7 +118,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Associates a phone number with the specified Amazon Chime Voice Connector.
+     * Associates phone numbers with the specified Amazon Chime Voice Connector.
      * </p>
      * 
      * @param associatePhoneNumbersWithVoiceConnectorRequest
@@ -130,6 +132,8 @@ public interface AmazonChime {
      *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -142,6 +146,38 @@ public interface AmazonChime {
      */
     AssociatePhoneNumbersWithVoiceConnectorResult associatePhoneNumbersWithVoiceConnector(
             AssociatePhoneNumbersWithVoiceConnectorRequest associatePhoneNumbersWithVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Associates phone numbers with the specified Amazon Chime Voice Connector group.
+     * </p>
+     * 
+     * @param associatePhoneNumbersWithVoiceConnectorGroupRequest
+     * @return Result of the AssociatePhoneNumbersWithVoiceConnectorGroup operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.AssociatePhoneNumbersWithVoiceConnectorGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociatePhoneNumbersWithVoiceConnectorGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociatePhoneNumbersWithVoiceConnectorGroupResult associatePhoneNumbersWithVoiceConnectorGroup(
+            AssociatePhoneNumbersWithVoiceConnectorGroupRequest associatePhoneNumbersWithVoiceConnectorGroupRequest);
 
     /**
      * <p>
@@ -257,8 +293,17 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates phone number product types. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector
-     * product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product type.
+     * Updates phone number product types or calling names. You can update one attribute at a time for each
+     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update either the product type or the calling
+     * name.
+     * </p>
+     * <p>
+     * For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free
+     * numbers, you must use the Amazon Chime Voice Connector product type.
+     * </p>
+     * <p>
+     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
+     * must be complete before you can request another update.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -375,21 +420,24 @@ public interface AmazonChime {
     /**
      * <p>
      * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
-     * Voice Connector product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
-     * type.
+     * Voice Connector product types. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
      * </p>
      * 
      * @param createPhoneNumberOrderRequest
      * @return Result of the CreatePhoneNumberOrder operation returned by the service.
-     * @throws UnauthorizedClientException
-     *         The client is not currently authorized to make the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
-     * @throws BadRequestException
-     *         The input parameters don't match the service's restrictions.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -402,23 +450,30 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Creates an Amazon Chime Voice Connector under the administrator's AWS account. Enabling
-     * <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime Voice Connector to use TLS
-     * transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted
+     * Creates an Amazon Chime Voice Connector under the administrator's AWS account. You can choose to create an Amazon
+     * Chime Voice Connector in a specific AWS Region.
+     * </p>
+     * <p>
+     * Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a> configures your Amazon Chime Voice Connector to use
+     * TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted
      * outbound calls are blocked.
      * </p>
      * 
      * @param createVoiceConnectorRequest
      * @return Result of the CreateVoiceConnector operation returned by the service.
-     * @throws UnauthorizedClientException
-     *         The client is not currently authorized to make the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
-     * @throws BadRequestException
-     *         The input parameters don't match the service's restrictions.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -428,6 +483,42 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     CreateVoiceConnectorResult createVoiceConnector(CreateVoiceConnectorRequest createVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Chime Voice Connector group under the administrator's AWS account. You can associate up to
+     * three existing Amazon Chime Voice Connectors with the Amazon Chime Voice Connector group by including
+     * <code>VoiceConnectorItems</code> in the request.
+     * </p>
+     * <p>
+     * You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault
+     * tolerant mechanism for fallback in case of availability events.
+     * </p>
+     * 
+     * @param createVoiceConnectorGroupRequest
+     * @return Result of the CreateVoiceConnectorGroup operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateVoiceConnectorGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateVoiceConnectorGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVoiceConnectorGroupResult createVoiceConnectorGroup(CreateVoiceConnectorGroupRequest createVoiceConnectorGroupRequest);
 
     /**
      * <p>
@@ -532,8 +623,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime Voice Connector. Any phone numbers assigned to the Amazon Chime Voice
-     * Connector must be unassigned from it before it can be deleted.
+     * Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with the Amazon Chime Voice
+     * Connector must be disassociated from it before it can be deleted.
      * </p>
      * 
      * @param deleteVoiceConnectorRequest
@@ -547,6 +638,8 @@ public interface AmazonChime {
      *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -558,6 +651,37 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     DeleteVoiceConnectorResult deleteVoiceConnector(DeleteVoiceConnectorRequest deleteVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers
+     * associated with the group must be removed before it can be deleted.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorGroupRequest
+     * @return Result of the DeleteVoiceConnectorGroup operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteVoiceConnectorGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVoiceConnectorGroupResult deleteVoiceConnectorGroup(DeleteVoiceConnectorGroupRequest deleteVoiceConnectorGroupRequest);
 
     /**
      * <p>
@@ -586,6 +710,35 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteVoiceConnectorOriginationResult deleteVoiceConnectorOrigination(DeleteVoiceConnectorOriginationRequest deleteVoiceConnectorOriginationRequest);
+
+    /**
+     * <p>
+     * Deletes the streaming configuration for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorStreamingConfigurationRequest
+     * @return Result of the DeleteVoiceConnectorStreamingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteVoiceConnectorStreamingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorStreamingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVoiceConnectorStreamingConfigurationResult deleteVoiceConnectorStreamingConfiguration(
+            DeleteVoiceConnectorStreamingConfigurationRequest deleteVoiceConnectorStreamingConfigurationRequest);
 
     /**
      * <p>
@@ -674,7 +827,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Disassociates the specified phone number from the specified Amazon Chime Voice Connector.
+     * Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector.
      * </p>
      * 
      * @param disassociatePhoneNumbersFromVoiceConnectorRequest
@@ -700,6 +853,36 @@ public interface AmazonChime {
      */
     DisassociatePhoneNumbersFromVoiceConnectorResult disassociatePhoneNumbersFromVoiceConnector(
             DisassociatePhoneNumbersFromVoiceConnectorRequest disassociatePhoneNumbersFromVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector group.
+     * </p>
+     * 
+     * @param disassociatePhoneNumbersFromVoiceConnectorGroupRequest
+     * @return Result of the DisassociatePhoneNumbersFromVoiceConnectorGroup operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DisassociatePhoneNumbersFromVoiceConnectorGroup
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociatePhoneNumbersFromVoiceConnectorGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociatePhoneNumbersFromVoiceConnectorGroupResult disassociatePhoneNumbersFromVoiceConnectorGroup(
+            DisassociatePhoneNumbersFromVoiceConnectorGroupRequest disassociatePhoneNumbersFromVoiceConnectorGroupRequest);
 
     /**
      * <p>
@@ -901,6 +1084,33 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Retrieves the phone number settings for the administrator's AWS account, such as the default outbound calling
+     * name.
+     * </p>
+     * 
+     * @param getPhoneNumberSettingsRequest
+     * @return Result of the GetPhoneNumberSettings operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetPhoneNumberSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetPhoneNumberSettingsResult getPhoneNumberSettings(GetPhoneNumberSettingsRequest getPhoneNumberSettingsRequest);
+
+    /**
+     * <p>
      * Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting
      * PIN.
      * </p>
@@ -991,6 +1201,65 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps, name, and associated
+     * <code>VoiceConnectorItems</code>.
+     * </p>
+     * 
+     * @param getVoiceConnectorGroupRequest
+     * @return Result of the GetVoiceConnectorGroup operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetVoiceConnectorGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetVoiceConnectorGroupResult getVoiceConnectorGroup(GetVoiceConnectorGroupRequest getVoiceConnectorGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the logging configuration details for the specified Amazon Chime Voice Connector. Shows whether SIP
+     * message logs are enabled for sending to Amazon CloudWatch Logs.
+     * </p>
+     * 
+     * @param getVoiceConnectorLoggingConfigurationRequest
+     * @return Result of the GetVoiceConnectorLoggingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetVoiceConnectorLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetVoiceConnectorLoggingConfigurationResult getVoiceConnectorLoggingConfiguration(
+            GetVoiceConnectorLoggingConfigurationRequest getVoiceConnectorLoggingConfigurationRequest);
+
+    /**
+     * <p>
      * Retrieves origination setting details for the specified Amazon Chime Voice Connector.
      * </p>
      * 
@@ -1016,6 +1285,37 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     GetVoiceConnectorOriginationResult getVoiceConnectorOrigination(GetVoiceConnectorOriginationRequest getVoiceConnectorOriginationRequest);
+
+    /**
+     * <p>
+     * Retrieves the streaming configuration details for the specified Amazon Chime Voice Connector. Shows whether media
+     * streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data,
+     * in hours.
+     * </p>
+     * 
+     * @param getVoiceConnectorStreamingConfigurationRequest
+     * @return Result of the GetVoiceConnectorStreamingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetVoiceConnectorStreamingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorStreamingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetVoiceConnectorStreamingConfigurationResult getVoiceConnectorStreamingConfiguration(
+            GetVoiceConnectorStreamingConfigurationRequest getVoiceConnectorStreamingConfigurationRequest);
 
     /**
      * <p>
@@ -1188,8 +1488,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user, or Amazon Chime Voice
-     * Connector.
+     * Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user, Amazon Chime Voice Connector,
+     * or Amazon Chime Voice Connector group.
      * </p>
      * 
      * @param listPhoneNumbersRequest
@@ -1241,6 +1541,32 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
+
+    /**
+     * <p>
+     * Lists the Amazon Chime Voice Connector groups for the administrator's AWS account.
+     * </p>
+     * 
+     * @param listVoiceConnectorGroupsRequest
+     * @return Result of the ListVoiceConnectorGroups operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListVoiceConnectorGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListVoiceConnectorGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListVoiceConnectorGroupsResult listVoiceConnectorGroups(ListVoiceConnectorGroupsRequest listVoiceConnectorGroupsRequest);
 
     /**
      * <p>
@@ -1356,6 +1682,36 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging configuration specifies
+     * whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
+     * </p>
+     * 
+     * @param putVoiceConnectorLoggingConfigurationRequest
+     * @return Result of the PutVoiceConnectorLoggingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutVoiceConnectorLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutVoiceConnectorLoggingConfigurationResult putVoiceConnectorLoggingConfiguration(
+            PutVoiceConnectorLoggingConfigurationRequest putVoiceConnectorLoggingConfigurationRequest);
+
+    /**
+     * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
      * 
@@ -1384,6 +1740,37 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
+     * specifies whether media streaming is enabled for sending to Amazon Kinesis, and sets the retention period for the
+     * Amazon Kinesis data, in hours.
+     * </p>
+     * 
+     * @param putVoiceConnectorStreamingConfigurationRequest
+     * @return Result of the PutVoiceConnectorStreamingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutVoiceConnectorStreamingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutVoiceConnectorStreamingConfigurationResult putVoiceConnectorStreamingConfiguration(
+            PutVoiceConnectorStreamingConfigurationRequest putVoiceConnectorStreamingConfigurationRequest);
+
+    /**
+     * <p>
      * Adds termination settings for the specified Amazon Chime Voice Connector.
      * </p>
      * 
@@ -1398,6 +1785,8 @@ public interface AmazonChime {
      *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -1512,6 +1901,8 @@ public interface AmazonChime {
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -1529,13 +1920,15 @@ public interface AmazonChime {
      * 
      * @param searchAvailablePhoneNumbersRequest
      * @return Result of the SearchAvailablePhoneNumbers operation returned by the service.
-     * @throws UnauthorizedClientException
-     *         The client is not currently authorized to make the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
-     * @throws BadRequestException
-     *         The input parameters don't match the service's restrictions.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -1666,8 +2059,16 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates phone number details, such as product type, for the specified phone number ID. For toll-free numbers, you
-     * can use only the Amazon Chime Voice Connector product type.
+     * Updates phone number details, such as product type or calling name, for the specified phone number ID. You can
+     * update one phone number detail at a time. For example, you can update either the product type or the calling name
+     * in one action.
+     * </p>
+     * <p>
+     * For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * </p>
+     * <p>
+     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
+     * must be complete before you can request another update.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -1692,6 +2093,34 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     UpdatePhoneNumberResult updatePhoneNumber(UpdatePhoneNumberRequest updatePhoneNumberRequest);
+
+    /**
+     * <p>
+     * Updates the phone number settings for the administrator's AWS account, such as the default outbound calling name.
+     * You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72
+     * hours to be updated.
+     * </p>
+     * 
+     * @param updatePhoneNumberSettingsRequest
+     * @return Result of the UpdatePhoneNumberSettings operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdatePhoneNumberSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePhoneNumberSettingsResult updatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest updatePhoneNumberSettingsRequest);
 
     /**
      * <p>
@@ -1777,6 +2206,37 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     UpdateVoiceConnectorResult updateVoiceConnector(UpdateVoiceConnectorRequest updateVoiceConnectorRequest);
+
+    /**
+     * <p>
+     * Updates details for the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
+     * Connector priority ranking.
+     * </p>
+     * 
+     * @param updateVoiceConnectorGroupRequest
+     * @return Result of the UpdateVoiceConnectorGroup operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateVoiceConnectorGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateVoiceConnectorGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateVoiceConnectorGroupResult updateVoiceConnectorGroup(UpdateVoiceConnectorGroupRequest updateVoiceConnectorGroupRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

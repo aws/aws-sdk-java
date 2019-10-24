@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The phone number capabilities, such as enabled inbound and outbound calling and text messaging.
+ * The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound
+ * calling and text messaging.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PhoneNumberCapabilities" target="_top">AWS API

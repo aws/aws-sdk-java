@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the specification of a route.
+ * An object that represents a route specification. Specify one route type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/RouteSpec" target="_top">AWS API
@@ -30,7 +30,19 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP routing information for the route.
+     * An object that represents the specification of a GRPC route.
+     * </p>
+     */
+    private GrpcRoute grpcRoute;
+    /**
+     * <p>
+     * An object that represents the specification of an HTTP2 route.
+     * </p>
+     */
+    private HttpRoute http2Route;
+    /**
+     * <p>
+     * An object that represents the specification of an HTTP route.
      * </p>
      */
     private HttpRoute httpRoute;
@@ -42,18 +54,98 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
     private Integer priority;
     /**
      * <p>
-     * The TCP routing information for the route.
+     * An object that represents the specification of a TCP route.
      * </p>
      */
     private TcpRoute tcpRoute;
 
     /**
      * <p>
-     * The HTTP routing information for the route.
+     * An object that represents the specification of a GRPC route.
+     * </p>
+     * 
+     * @param grpcRoute
+     *        An object that represents the specification of a GRPC route.
+     */
+
+    public void setGrpcRoute(GrpcRoute grpcRoute) {
+        this.grpcRoute = grpcRoute;
+    }
+
+    /**
+     * <p>
+     * An object that represents the specification of a GRPC route.
+     * </p>
+     * 
+     * @return An object that represents the specification of a GRPC route.
+     */
+
+    public GrpcRoute getGrpcRoute() {
+        return this.grpcRoute;
+    }
+
+    /**
+     * <p>
+     * An object that represents the specification of a GRPC route.
+     * </p>
+     * 
+     * @param grpcRoute
+     *        An object that represents the specification of a GRPC route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RouteSpec withGrpcRoute(GrpcRoute grpcRoute) {
+        setGrpcRoute(grpcRoute);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that represents the specification of an HTTP2 route.
+     * </p>
+     * 
+     * @param http2Route
+     *        An object that represents the specification of an HTTP2 route.
+     */
+
+    public void setHttp2Route(HttpRoute http2Route) {
+        this.http2Route = http2Route;
+    }
+
+    /**
+     * <p>
+     * An object that represents the specification of an HTTP2 route.
+     * </p>
+     * 
+     * @return An object that represents the specification of an HTTP2 route.
+     */
+
+    public HttpRoute getHttp2Route() {
+        return this.http2Route;
+    }
+
+    /**
+     * <p>
+     * An object that represents the specification of an HTTP2 route.
+     * </p>
+     * 
+     * @param http2Route
+     *        An object that represents the specification of an HTTP2 route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RouteSpec withHttp2Route(HttpRoute http2Route) {
+        setHttp2Route(http2Route);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that represents the specification of an HTTP route.
      * </p>
      * 
      * @param httpRoute
-     *        The HTTP routing information for the route.
+     *        An object that represents the specification of an HTTP route.
      */
 
     public void setHttpRoute(HttpRoute httpRoute) {
@@ -62,10 +154,10 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP routing information for the route.
+     * An object that represents the specification of an HTTP route.
      * </p>
      * 
-     * @return The HTTP routing information for the route.
+     * @return An object that represents the specification of an HTTP route.
      */
 
     public HttpRoute getHttpRoute() {
@@ -74,11 +166,11 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP routing information for the route.
+     * An object that represents the specification of an HTTP route.
      * </p>
      * 
      * @param httpRoute
-     *        The HTTP routing information for the route.
+     *        An object that represents the specification of an HTTP route.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +224,11 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The TCP routing information for the route.
+     * An object that represents the specification of a TCP route.
      * </p>
      * 
      * @param tcpRoute
-     *        The TCP routing information for the route.
+     *        An object that represents the specification of a TCP route.
      */
 
     public void setTcpRoute(TcpRoute tcpRoute) {
@@ -145,10 +237,10 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The TCP routing information for the route.
+     * An object that represents the specification of a TCP route.
      * </p>
      * 
-     * @return The TCP routing information for the route.
+     * @return An object that represents the specification of a TCP route.
      */
 
     public TcpRoute getTcpRoute() {
@@ -157,11 +249,11 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The TCP routing information for the route.
+     * An object that represents the specification of a TCP route.
      * </p>
      * 
      * @param tcpRoute
-     *        The TCP routing information for the route.
+     *        An object that represents the specification of a TCP route.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,6 +274,10 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getGrpcRoute() != null)
+            sb.append("GrpcRoute: ").append(getGrpcRoute()).append(",");
+        if (getHttp2Route() != null)
+            sb.append("Http2Route: ").append(getHttp2Route()).append(",");
         if (getHttpRoute() != null)
             sb.append("HttpRoute: ").append(getHttpRoute()).append(",");
         if (getPriority() != null)
@@ -202,6 +298,14 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof RouteSpec == false)
             return false;
         RouteSpec other = (RouteSpec) obj;
+        if (other.getGrpcRoute() == null ^ this.getGrpcRoute() == null)
+            return false;
+        if (other.getGrpcRoute() != null && other.getGrpcRoute().equals(this.getGrpcRoute()) == false)
+            return false;
+        if (other.getHttp2Route() == null ^ this.getHttp2Route() == null)
+            return false;
+        if (other.getHttp2Route() != null && other.getHttp2Route().equals(this.getHttp2Route()) == false)
+            return false;
         if (other.getHttpRoute() == null ^ this.getHttpRoute() == null)
             return false;
         if (other.getHttpRoute() != null && other.getHttpRoute().equals(this.getHttpRoute()) == false)
@@ -222,6 +326,8 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getGrpcRoute() == null) ? 0 : getGrpcRoute().hashCode());
+        hashCode = prime * hashCode + ((getHttp2Route() == null) ? 0 : getHttp2Route().hashCode());
         hashCode = prime * hashCode + ((getHttpRoute() == null) ? 0 : getHttpRoute().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getTcpRoute() == null) ? 0 : getTcpRoute().hashCode());

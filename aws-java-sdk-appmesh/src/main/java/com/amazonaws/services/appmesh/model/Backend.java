@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the backends that a virtual node is expected to send outbound traffic to.
+ * An object that represents the backends that a virtual node is expected to send outbound traffic to.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Backend" target="_top">AWS API

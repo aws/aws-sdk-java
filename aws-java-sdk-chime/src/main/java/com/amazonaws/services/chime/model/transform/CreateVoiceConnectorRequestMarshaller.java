@@ -29,6 +29,8 @@ public class CreateVoiceConnectorRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> AWSREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AwsRegion").build();
     private static final MarshallingInfo<Boolean> REQUIREENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequireEncryption").build();
 
@@ -49,6 +51,7 @@ public class CreateVoiceConnectorRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createVoiceConnectorRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createVoiceConnectorRequest.getAwsRegion(), AWSREGION_BINDING);
             protocolMarshaller.marshall(createVoiceConnectorRequest.getRequireEncryption(), REQUIREENCRYPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

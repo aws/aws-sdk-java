@@ -27,17 +27,17 @@ public class BatchUpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The request containing the phone number IDs and product types to update.
+     * The request containing the phone number IDs and product types or calling names to update.
      * </p>
      */
     private java.util.List<UpdatePhoneNumberRequestItem> updatePhoneNumberRequestItems;
 
     /**
      * <p>
-     * The request containing the phone number IDs and product types to update.
+     * The request containing the phone number IDs and product types or calling names to update.
      * </p>
      * 
-     * @return The request containing the phone number IDs and product types to update.
+     * @return The request containing the phone number IDs and product types or calling names to update.
      */
 
     public java.util.List<UpdatePhoneNumberRequestItem> getUpdatePhoneNumberRequestItems() {
@@ -46,11 +46,11 @@ public class BatchUpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The request containing the phone number IDs and product types to update.
+     * The request containing the phone number IDs and product types or calling names to update.
      * </p>
      * 
      * @param updatePhoneNumberRequestItems
-     *        The request containing the phone number IDs and product types to update.
+     *        The request containing the phone number IDs and product types or calling names to update.
      */
 
     public void setUpdatePhoneNumberRequestItems(java.util.Collection<UpdatePhoneNumberRequestItem> updatePhoneNumberRequestItems) {
@@ -64,7 +64,7 @@ public class BatchUpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The request containing the phone number IDs and product types to update.
+     * The request containing the phone number IDs and product types or calling names to update.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchUpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param updatePhoneNumberRequestItems
-     *        The request containing the phone number IDs and product types to update.
+     *        The request containing the phone number IDs and product types or calling names to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchUpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The request containing the phone number IDs and product types to update.
+     * The request containing the phone number IDs and product types or calling names to update.
      * </p>
      * 
      * @param updatePhoneNumberRequestItems
-     *        The request containing the phone number IDs and product types to update.
+     *        The request containing the phone number IDs and product types or calling names to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

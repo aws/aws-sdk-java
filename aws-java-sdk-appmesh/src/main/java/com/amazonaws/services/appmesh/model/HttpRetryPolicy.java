@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that represents a retry policy.
+ * An object that represents a retry policy. Specify at least one value for at least one of the types of
+ * <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRetryPolicy" target="_top">AWS API
@@ -58,13 +59,13 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> httpRetryEvents;
     /**
      * <p>
-     * The maximum number of retry attempts. If no value is specified, the default is 1.
+     * The maximum number of retry attempts.
      * </p>
      */
     private Long maxRetries;
     /**
      * <p>
-     * An object that represents the retry duration.
+     * An object that represents a duration of time.
      * </p>
      */
     private Duration perRetryTimeout;
@@ -319,11 +320,11 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of retry attempts. If no value is specified, the default is 1.
+     * The maximum number of retry attempts.
      * </p>
      * 
      * @param maxRetries
-     *        The maximum number of retry attempts. If no value is specified, the default is 1.
+     *        The maximum number of retry attempts.
      */
 
     public void setMaxRetries(Long maxRetries) {
@@ -332,10 +333,10 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of retry attempts. If no value is specified, the default is 1.
+     * The maximum number of retry attempts.
      * </p>
      * 
-     * @return The maximum number of retry attempts. If no value is specified, the default is 1.
+     * @return The maximum number of retry attempts.
      */
 
     public Long getMaxRetries() {
@@ -344,11 +345,11 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of retry attempts. If no value is specified, the default is 1.
+     * The maximum number of retry attempts.
      * </p>
      * 
      * @param maxRetries
-     *        The maximum number of retry attempts. If no value is specified, the default is 1.
+     *        The maximum number of retry attempts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +360,11 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An object that represents the retry duration.
+     * An object that represents a duration of time.
      * </p>
      * 
      * @param perRetryTimeout
-     *        An object that represents the retry duration.
+     *        An object that represents a duration of time.
      */
 
     public void setPerRetryTimeout(Duration perRetryTimeout) {
@@ -372,10 +373,10 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An object that represents the retry duration.
+     * An object that represents a duration of time.
      * </p>
      * 
-     * @return An object that represents the retry duration.
+     * @return An object that represents a duration of time.
      */
 
     public Duration getPerRetryTimeout() {
@@ -384,11 +385,11 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An object that represents the retry duration.
+     * An object that represents a duration of time.
      * </p>
      * 
      * @param perRetryTimeout
-     *        An object that represents the retry duration.
+     *        An object that represents a duration of time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the egress filter rules for a service mesh.
+ * An object that represents the egress filter rules for a service mesh.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/EgressFilter" target="_top">AWS API

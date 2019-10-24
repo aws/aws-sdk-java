@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the duration between retry attempts.
+ * An object that represents a duration of time.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Duration" target="_top">AWS API
@@ -30,24 +30,24 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of time between retry attempts.
+     * A unit of time.
      * </p>
      */
     private String unit;
     /**
      * <p>
-     * The duration of time between retry attempts.
+     * A number of time units.
      * </p>
      */
     private Long value;
 
     /**
      * <p>
-     * The unit of time between retry attempts.
+     * A unit of time.
      * </p>
      * 
      * @param unit
-     *        The unit of time between retry attempts.
+     *        A unit of time.
      * @see DurationUnit
      */
 
@@ -57,10 +57,10 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of time between retry attempts.
+     * A unit of time.
      * </p>
      * 
-     * @return The unit of time between retry attempts.
+     * @return A unit of time.
      * @see DurationUnit
      */
 
@@ -70,11 +70,11 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of time between retry attempts.
+     * A unit of time.
      * </p>
      * 
      * @param unit
-     *        The unit of time between retry attempts.
+     *        A unit of time.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DurationUnit
      */
@@ -86,11 +86,11 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of time between retry attempts.
+     * A unit of time.
      * </p>
      * 
      * @param unit
-     *        The unit of time between retry attempts.
+     *        A unit of time.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DurationUnit
      */
@@ -102,11 +102,11 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The duration of time between retry attempts.
+     * A number of time units.
      * </p>
      * 
      * @param value
-     *        The duration of time between retry attempts.
+     *        A number of time units.
      */
 
     public void setValue(Long value) {
@@ -115,10 +115,10 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The duration of time between retry attempts.
+     * A number of time units.
      * </p>
      * 
-     * @return The duration of time between retry attempts.
+     * @return A number of time units.
      */
 
     public Long getValue() {
@@ -127,11 +127,11 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The duration of time between retry attempts.
+     * A number of time units.
      * </p>
      * 
      * @param value
-     *        The duration of time between retry attempts.
+     *        A number of time units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

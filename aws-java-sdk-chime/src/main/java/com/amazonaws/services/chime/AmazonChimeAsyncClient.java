@@ -175,6 +175,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<AssociatePhoneNumbersWithVoiceConnectorGroupResult> associatePhoneNumbersWithVoiceConnectorGroupAsync(
+            AssociatePhoneNumbersWithVoiceConnectorGroupRequest request) {
+
+        return associatePhoneNumbersWithVoiceConnectorGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociatePhoneNumbersWithVoiceConnectorGroupResult> associatePhoneNumbersWithVoiceConnectorGroupAsync(
+            final AssociatePhoneNumbersWithVoiceConnectorGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociatePhoneNumbersWithVoiceConnectorGroupRequest, AssociatePhoneNumbersWithVoiceConnectorGroupResult> asyncHandler) {
+        final AssociatePhoneNumbersWithVoiceConnectorGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociatePhoneNumbersWithVoiceConnectorGroupResult>() {
+            @Override
+            public AssociatePhoneNumbersWithVoiceConnectorGroupResult call() throws Exception {
+                AssociatePhoneNumbersWithVoiceConnectorGroupResult result = null;
+
+                try {
+                    result = executeAssociatePhoneNumbersWithVoiceConnectorGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDeletePhoneNumberResult> batchDeletePhoneNumberAsync(BatchDeletePhoneNumberRequest request) {
 
         return batchDeletePhoneNumberAsync(request, null);
@@ -472,6 +507,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVoiceConnectorGroupResult> createVoiceConnectorGroupAsync(CreateVoiceConnectorGroupRequest request) {
+
+        return createVoiceConnectorGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVoiceConnectorGroupResult> createVoiceConnectorGroupAsync(final CreateVoiceConnectorGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVoiceConnectorGroupRequest, CreateVoiceConnectorGroupResult> asyncHandler) {
+        final CreateVoiceConnectorGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVoiceConnectorGroupResult>() {
+            @Override
+            public CreateVoiceConnectorGroupResult call() throws Exception {
+                CreateVoiceConnectorGroupResult result = null;
+
+                try {
+                    result = executeCreateVoiceConnectorGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAccountResult> deleteAccountAsync(DeleteAccountRequest request) {
 
         return deleteAccountAsync(request, null);
@@ -604,6 +672,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorGroupResult> deleteVoiceConnectorGroupAsync(DeleteVoiceConnectorGroupRequest request) {
+
+        return deleteVoiceConnectorGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorGroupResult> deleteVoiceConnectorGroupAsync(final DeleteVoiceConnectorGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorGroupRequest, DeleteVoiceConnectorGroupResult> asyncHandler) {
+        final DeleteVoiceConnectorGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVoiceConnectorGroupResult>() {
+            @Override
+            public DeleteVoiceConnectorGroupResult call() throws Exception {
+                DeleteVoiceConnectorGroupResult result = null;
+
+                try {
+                    result = executeDeleteVoiceConnectorGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteVoiceConnectorOriginationResult> deleteVoiceConnectorOriginationAsync(
             DeleteVoiceConnectorOriginationRequest request) {
 
@@ -623,6 +724,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeDeleteVoiceConnectorOrigination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorStreamingConfigurationResult> deleteVoiceConnectorStreamingConfigurationAsync(
+            DeleteVoiceConnectorStreamingConfigurationRequest request) {
+
+        return deleteVoiceConnectorStreamingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorStreamingConfigurationResult> deleteVoiceConnectorStreamingConfigurationAsync(
+            final DeleteVoiceConnectorStreamingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorStreamingConfigurationRequest, DeleteVoiceConnectorStreamingConfigurationResult> asyncHandler) {
+        final DeleteVoiceConnectorStreamingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVoiceConnectorStreamingConfigurationResult>() {
+            @Override
+            public DeleteVoiceConnectorStreamingConfigurationResult call() throws Exception {
+                DeleteVoiceConnectorStreamingConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteVoiceConnectorStreamingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -763,6 +899,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeDisassociatePhoneNumbersFromVoiceConnector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociatePhoneNumbersFromVoiceConnectorGroupResult> disassociatePhoneNumbersFromVoiceConnectorGroupAsync(
+            DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request) {
+
+        return disassociatePhoneNumbersFromVoiceConnectorGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociatePhoneNumbersFromVoiceConnectorGroupResult> disassociatePhoneNumbersFromVoiceConnectorGroupAsync(
+            final DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociatePhoneNumbersFromVoiceConnectorGroupRequest, DisassociatePhoneNumbersFromVoiceConnectorGroupResult> asyncHandler) {
+        final DisassociatePhoneNumbersFromVoiceConnectorGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociatePhoneNumbersFromVoiceConnectorGroupResult>() {
+            @Override
+            public DisassociatePhoneNumbersFromVoiceConnectorGroupResult call() throws Exception {
+                DisassociatePhoneNumbersFromVoiceConnectorGroupResult result = null;
+
+                try {
+                    result = executeDisassociatePhoneNumbersFromVoiceConnectorGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1010,6 +1181,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<GetPhoneNumberSettingsResult> getPhoneNumberSettingsAsync(GetPhoneNumberSettingsRequest request) {
+
+        return getPhoneNumberSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPhoneNumberSettingsResult> getPhoneNumberSettingsAsync(final GetPhoneNumberSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPhoneNumberSettingsRequest, GetPhoneNumberSettingsResult> asyncHandler) {
+        final GetPhoneNumberSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPhoneNumberSettingsResult>() {
+            @Override
+            public GetPhoneNumberSettingsResult call() throws Exception {
+                GetPhoneNumberSettingsResult result = null;
+
+                try {
+                    result = executeGetPhoneNumberSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest request) {
 
         return getUserAsync(request, null);
@@ -1109,6 +1313,74 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<GetVoiceConnectorGroupResult> getVoiceConnectorGroupAsync(GetVoiceConnectorGroupRequest request) {
+
+        return getVoiceConnectorGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorGroupResult> getVoiceConnectorGroupAsync(final GetVoiceConnectorGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorGroupRequest, GetVoiceConnectorGroupResult> asyncHandler) {
+        final GetVoiceConnectorGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVoiceConnectorGroupResult>() {
+            @Override
+            public GetVoiceConnectorGroupResult call() throws Exception {
+                GetVoiceConnectorGroupResult result = null;
+
+                try {
+                    result = executeGetVoiceConnectorGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorLoggingConfigurationResult> getVoiceConnectorLoggingConfigurationAsync(
+            GetVoiceConnectorLoggingConfigurationRequest request) {
+
+        return getVoiceConnectorLoggingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorLoggingConfigurationResult> getVoiceConnectorLoggingConfigurationAsync(
+            final GetVoiceConnectorLoggingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorLoggingConfigurationRequest, GetVoiceConnectorLoggingConfigurationResult> asyncHandler) {
+        final GetVoiceConnectorLoggingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVoiceConnectorLoggingConfigurationResult>() {
+            @Override
+            public GetVoiceConnectorLoggingConfigurationResult call() throws Exception {
+                GetVoiceConnectorLoggingConfigurationResult result = null;
+
+                try {
+                    result = executeGetVoiceConnectorLoggingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVoiceConnectorOriginationResult> getVoiceConnectorOriginationAsync(GetVoiceConnectorOriginationRequest request) {
 
         return getVoiceConnectorOriginationAsync(request, null);
@@ -1126,6 +1398,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeGetVoiceConnectorOrigination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorStreamingConfigurationResult> getVoiceConnectorStreamingConfigurationAsync(
+            GetVoiceConnectorStreamingConfigurationRequest request) {
+
+        return getVoiceConnectorStreamingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorStreamingConfigurationResult> getVoiceConnectorStreamingConfigurationAsync(
+            final GetVoiceConnectorStreamingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorStreamingConfigurationRequest, GetVoiceConnectorStreamingConfigurationResult> asyncHandler) {
+        final GetVoiceConnectorStreamingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVoiceConnectorStreamingConfigurationResult>() {
+            @Override
+            public GetVoiceConnectorStreamingConfigurationResult call() throws Exception {
+                GetVoiceConnectorStreamingConfigurationResult result = null;
+
+                try {
+                    result = executeGetVoiceConnectorStreamingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1408,6 +1715,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<ListVoiceConnectorGroupsResult> listVoiceConnectorGroupsAsync(ListVoiceConnectorGroupsRequest request) {
+
+        return listVoiceConnectorGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVoiceConnectorGroupsResult> listVoiceConnectorGroupsAsync(final ListVoiceConnectorGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVoiceConnectorGroupsRequest, ListVoiceConnectorGroupsResult> asyncHandler) {
+        final ListVoiceConnectorGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVoiceConnectorGroupsResult>() {
+            @Override
+            public ListVoiceConnectorGroupsResult call() throws Exception {
+                ListVoiceConnectorGroupsResult result = null;
+
+                try {
+                    result = executeListVoiceConnectorGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListVoiceConnectorTerminationCredentialsResult> listVoiceConnectorTerminationCredentialsAsync(
             ListVoiceConnectorTerminationCredentialsRequest request) {
 
@@ -1542,6 +1882,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<PutVoiceConnectorLoggingConfigurationResult> putVoiceConnectorLoggingConfigurationAsync(
+            PutVoiceConnectorLoggingConfigurationRequest request) {
+
+        return putVoiceConnectorLoggingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorLoggingConfigurationResult> putVoiceConnectorLoggingConfigurationAsync(
+            final PutVoiceConnectorLoggingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorLoggingConfigurationRequest, PutVoiceConnectorLoggingConfigurationResult> asyncHandler) {
+        final PutVoiceConnectorLoggingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutVoiceConnectorLoggingConfigurationResult>() {
+            @Override
+            public PutVoiceConnectorLoggingConfigurationResult call() throws Exception {
+                PutVoiceConnectorLoggingConfigurationResult result = null;
+
+                try {
+                    result = executePutVoiceConnectorLoggingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutVoiceConnectorOriginationResult> putVoiceConnectorOriginationAsync(PutVoiceConnectorOriginationRequest request) {
 
         return putVoiceConnectorOriginationAsync(request, null);
@@ -1559,6 +1934,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executePutVoiceConnectorOrigination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorStreamingConfigurationResult> putVoiceConnectorStreamingConfigurationAsync(
+            PutVoiceConnectorStreamingConfigurationRequest request) {
+
+        return putVoiceConnectorStreamingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorStreamingConfigurationResult> putVoiceConnectorStreamingConfigurationAsync(
+            final PutVoiceConnectorStreamingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorStreamingConfigurationRequest, PutVoiceConnectorStreamingConfigurationResult> asyncHandler) {
+        final PutVoiceConnectorStreamingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutVoiceConnectorStreamingConfigurationResult>() {
+            @Override
+            public PutVoiceConnectorStreamingConfigurationResult call() throws Exception {
+                PutVoiceConnectorStreamingConfigurationResult result = null;
+
+                try {
+                    result = executePutVoiceConnectorStreamingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1940,6 +2350,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<UpdatePhoneNumberSettingsResult> updatePhoneNumberSettingsAsync(UpdatePhoneNumberSettingsRequest request) {
+
+        return updatePhoneNumberSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePhoneNumberSettingsResult> updatePhoneNumberSettingsAsync(final UpdatePhoneNumberSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePhoneNumberSettingsRequest, UpdatePhoneNumberSettingsResult> asyncHandler) {
+        final UpdatePhoneNumberSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePhoneNumberSettingsResult>() {
+            @Override
+            public UpdatePhoneNumberSettingsResult call() throws Exception {
+                UpdatePhoneNumberSettingsResult result = null;
+
+                try {
+                    result = executeUpdatePhoneNumberSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest request) {
 
         return updateUserAsync(request, null);
@@ -2023,6 +2466,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeUpdateVoiceConnector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVoiceConnectorGroupResult> updateVoiceConnectorGroupAsync(UpdateVoiceConnectorGroupRequest request) {
+
+        return updateVoiceConnectorGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVoiceConnectorGroupResult> updateVoiceConnectorGroupAsync(final UpdateVoiceConnectorGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVoiceConnectorGroupRequest, UpdateVoiceConnectorGroupResult> asyncHandler) {
+        final UpdateVoiceConnectorGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVoiceConnectorGroupResult>() {
+            @Override
+            public UpdateVoiceConnectorGroupResult call() throws Exception {
+                UpdateVoiceConnectorGroupResult result = null;
+
+                try {
+                    result = executeUpdateVoiceConnectorGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

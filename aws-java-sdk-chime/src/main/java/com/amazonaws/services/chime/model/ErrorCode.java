@@ -20,16 +20,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ErrorCode {
 
-    Unauthorized("Unauthorized"),
-    Forbidden("Forbidden"),
-    NotFound("NotFound"),
     BadRequest("BadRequest"),
     Conflict("Conflict"),
+    Forbidden("Forbidden"),
+    NotFound("NotFound"),
+    PreconditionFailed("PreconditionFailed"),
+    ResourceLimitExceeded("ResourceLimitExceeded"),
     ServiceFailure("ServiceFailure"),
+    AccessDenied("AccessDenied"),
     ServiceUnavailable("ServiceUnavailable"),
-    Unprocessable("Unprocessable"),
     Throttled("Throttled"),
-    PreconditionFailed("PreconditionFailed");
+    Unauthorized("Unauthorized"),
+    Unprocessable("Unprocessable"),
+    VoiceConnectorGroupAssociationsExist("VoiceConnectorGroupAssociationsExist"),
+    PhoneNumberAssociationsExist("PhoneNumberAssociationsExist");
 
     private String value;
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the specification of a virtual router.
+ * An object that represents the specification of a virtual router.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterSpec" target="_top">AWS API
@@ -30,20 +30,18 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      */
     private java.util.List<VirtualRouterListener> listeners;
 
     /**
      * <p>
-     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
-     * @return The listeners that the virtual router is expected to receive inbound traffic from. Currently only one
-     *         listener is supported per virtual router.
+     * @return The listeners that the virtual router is expected to receive inbound traffic from. You can specify one
+     *         listener.
      */
 
     public java.util.List<VirtualRouterListener> getListeners() {
@@ -52,13 +50,12 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual router is expected to receive inbound traffic from. Currently only one
-     *        listener is supported per virtual router.
+     *        The listeners that the virtual router is expected to receive inbound traffic from. You can specify one
+     *        listener.
      */
 
     public void setListeners(java.util.Collection<VirtualRouterListener> listeners) {
@@ -72,8 +69,7 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,8 +78,8 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual router is expected to receive inbound traffic from. Currently only one
-     *        listener is supported per virtual router.
+     *        The listeners that the virtual router is expected to receive inbound traffic from. You can specify one
+     *        listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,13 +95,12 @@ public class VirtualRouterSpec implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is
-     * supported per virtual router.
+     * The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual router is expected to receive inbound traffic from. Currently only one
-     *        listener is supported per virtual router.
+     *        The listeners that the virtual router is expected to receive inbound traffic from. You can specify one
+     *        listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

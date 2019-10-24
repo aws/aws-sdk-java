@@ -22,7 +22,8 @@ public enum PhoneNumberAssociationName {
 
     AccountId("AccountId"),
     UserId("UserId"),
-    VoiceConnectorId("VoiceConnectorId");
+    VoiceConnectorId("VoiceConnectorId"),
+    VoiceConnectorGroupId("VoiceConnectorGroupId");
 
     private String value;
 

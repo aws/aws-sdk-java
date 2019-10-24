@@ -32,6 +32,8 @@ public class AssociatePhoneNumbersWithVoiceConnectorRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("voiceConnectorId").build();
     private static final MarshallingInfo<List> E164PHONENUMBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("E164PhoneNumbers").build();
+    private static final MarshallingInfo<Boolean> FORCEASSOCIATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceAssociate").build();
 
     private static final AssociatePhoneNumbersWithVoiceConnectorRequestMarshaller instance = new AssociatePhoneNumbersWithVoiceConnectorRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class AssociatePhoneNumbersWithVoiceConnectorRequestMarshaller {
         try {
             protocolMarshaller.marshall(associatePhoneNumbersWithVoiceConnectorRequest.getVoiceConnectorId(), VOICECONNECTORID_BINDING);
             protocolMarshaller.marshall(associatePhoneNumbersWithVoiceConnectorRequest.getE164PhoneNumbers(), E164PHONENUMBERS_BINDING);
+            protocolMarshaller.marshall(associatePhoneNumbersWithVoiceConnectorRequest.getForceAssociate(), FORCEASSOCIATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

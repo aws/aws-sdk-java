@@ -77,6 +77,14 @@ public class PhoneNumberJsonUnmarshaller implements Unmarshaller<PhoneNumber, Js
                     phoneNumber.setAssociations(new ListUnmarshaller<PhoneNumberAssociation>(PhoneNumberAssociationJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("CallingName", targetDepth)) {
+                    context.nextToken();
+                    phoneNumber.setCallingName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CallingNameStatus", targetDepth)) {
+                    context.nextToken();
+                    phoneNumber.setCallingNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
                     phoneNumber.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

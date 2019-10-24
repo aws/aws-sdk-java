@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, or Amazon Chime Voice Connector
- * ID.
+ * The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, Amazon Chime Voice Connector
+ * ID, or Amazon Chime Voice Connector group ID.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PhoneNumberAssociation" target="_top">AWS API
@@ -37,7 +37,8 @@ public class PhoneNumberAssociation implements Serializable, Cloneable, Structur
     private String value;
     /**
      * <p>
-     * Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     * Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon
+     * Chime Voice Connector group ID.
      * </p>
      */
     private String name;
@@ -90,11 +91,13 @@ public class PhoneNumberAssociation implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     * Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon
+     * Chime Voice Connector group ID.
      * </p>
      * 
      * @param name
-     *        Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     *        Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or
+     *        Amazon Chime Voice Connector group ID.
      * @see PhoneNumberAssociationName
      */
 
@@ -104,10 +107,12 @@ public class PhoneNumberAssociation implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     * Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon
+     * Chime Voice Connector group ID.
      * </p>
      * 
-     * @return Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     * @return Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or
+     *         Amazon Chime Voice Connector group ID.
      * @see PhoneNumberAssociationName
      */
 
@@ -117,11 +122,13 @@ public class PhoneNumberAssociation implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     * Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon
+     * Chime Voice Connector group ID.
      * </p>
      * 
      * @param name
-     *        Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     *        Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or
+     *        Amazon Chime Voice Connector group ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhoneNumberAssociationName
      */
@@ -133,11 +140,13 @@ public class PhoneNumberAssociation implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     * Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or Amazon
+     * Chime Voice Connector group ID.
      * </p>
      * 
      * @param name
-     *        Defines the association with an Amazon Chime account ID, user ID, or Amazon Chime Voice Connector ID.
+     *        Defines the association with an Amazon Chime account ID, user ID, Amazon Chime Voice Connector ID, or
+     *        Amazon Chime Voice Connector group ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhoneNumberAssociationName
      */

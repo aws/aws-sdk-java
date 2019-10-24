@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the HTTP routing specification for a route.
+ * An object that represents an HTTP or HTTP2 route type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRoute" target="_top">AWS API
@@ -30,13 +30,13 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to take if a match is determined.
+     * An object that represents the action to take if a match is determined.
      * </p>
      */
     private HttpRouteAction action;
     /**
      * <p>
-     * The criteria for determining an HTTP request match.
+     * An object that represents the criteria for determining a request match.
      * </p>
      */
     private HttpRouteMatch match;
@@ -49,11 +49,11 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to take if a match is determined.
+     * An object that represents the action to take if a match is determined.
      * </p>
      * 
      * @param action
-     *        The action to take if a match is determined.
+     *        An object that represents the action to take if a match is determined.
      */
 
     public void setAction(HttpRouteAction action) {
@@ -62,10 +62,10 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to take if a match is determined.
+     * An object that represents the action to take if a match is determined.
      * </p>
      * 
-     * @return The action to take if a match is determined.
+     * @return An object that represents the action to take if a match is determined.
      */
 
     public HttpRouteAction getAction() {
@@ -74,11 +74,11 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to take if a match is determined.
+     * An object that represents the action to take if a match is determined.
      * </p>
      * 
      * @param action
-     *        The action to take if a match is determined.
+     *        An object that represents the action to take if a match is determined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria for determining an HTTP request match.
+     * An object that represents the criteria for determining a request match.
      * </p>
      * 
      * @param match
-     *        The criteria for determining an HTTP request match.
+     *        An object that represents the criteria for determining a request match.
      */
 
     public void setMatch(HttpRouteMatch match) {
@@ -102,10 +102,10 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria for determining an HTTP request match.
+     * An object that represents the criteria for determining a request match.
      * </p>
      * 
-     * @return The criteria for determining an HTTP request match.
+     * @return An object that represents the criteria for determining a request match.
      */
 
     public HttpRouteMatch getMatch() {
@@ -114,11 +114,11 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria for determining an HTTP request match.
+     * An object that represents the criteria for determining a request match.
      * </p>
      * 
      * @param match
-     *        The criteria for determining an HTTP request match.
+     *        An object that represents the criteria for determining a request match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

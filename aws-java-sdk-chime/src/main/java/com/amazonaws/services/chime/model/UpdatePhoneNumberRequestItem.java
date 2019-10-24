@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The phone number ID and product type fields to update, used with the <a>BatchUpdatePhoneNumber</a> and
+ * The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and
  * <a>UpdatePhoneNumber</a> actions.
  * </p>
  * 
@@ -41,6 +41,12 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
      * </p>
      */
     private String productType;
+    /**
+     * <p>
+     * The outbound calling name to update.
+     * </p>
+     */
+    private String callingName;
 
     /**
      * <p>
@@ -142,6 +148,46 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The outbound calling name to update.
+     * </p>
+     * 
+     * @param callingName
+     *        The outbound calling name to update.
+     */
+
+    public void setCallingName(String callingName) {
+        this.callingName = callingName;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name to update.
+     * </p>
+     * 
+     * @return The outbound calling name to update.
+     */
+
+    public String getCallingName() {
+        return this.callingName;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name to update.
+     * </p>
+     * 
+     * @param callingName
+     *        The outbound calling name to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePhoneNumberRequestItem withCallingName(String callingName) {
+        setCallingName(callingName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -156,7 +202,9 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
         if (getPhoneNumberId() != null)
             sb.append("PhoneNumberId: ").append(getPhoneNumberId()).append(",");
         if (getProductType() != null)
-            sb.append("ProductType: ").append(getProductType());
+            sb.append("ProductType: ").append(getProductType()).append(",");
+        if (getCallingName() != null)
+            sb.append("CallingName: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -179,6 +227,10 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
             return false;
         if (other.getProductType() != null && other.getProductType().equals(this.getProductType()) == false)
             return false;
+        if (other.getCallingName() == null ^ this.getCallingName() == null)
+            return false;
+        if (other.getCallingName() != null && other.getCallingName().equals(this.getCallingName()) == false)
+            return false;
         return true;
     }
 
@@ -189,6 +241,7 @@ public class UpdatePhoneNumberRequestItem implements Serializable, Cloneable, St
 
         hashCode = prime * hashCode + ((getPhoneNumberId() == null) ? 0 : getPhoneNumberId().hashCode());
         hashCode = prime * hashCode + ((getProductType() == null) ? 0 : getProductType().hashCode());
+        hashCode = prime * hashCode + ((getCallingName() == null) ? 0 : getCallingName().hashCode());
         return hashCode;
     }
 

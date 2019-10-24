@@ -35,6 +35,12 @@ public enum ProductionVariantInstanceType {
     MlM54xlarge("ml.m5.4xlarge"),
     MlM512xlarge("ml.m5.12xlarge"),
     MlM524xlarge("ml.m5.24xlarge"),
+    MlM5dLarge("ml.m5d.large"),
+    MlM5dXlarge("ml.m5d.xlarge"),
+    MlM5d2xlarge("ml.m5d.2xlarge"),
+    MlM5d4xlarge("ml.m5d.4xlarge"),
+    MlM5d12xlarge("ml.m5d.12xlarge"),
+    MlM5d24xlarge("ml.m5d.24xlarge"),
     MlC4Large("ml.c4.large"),
     MlC4Xlarge("ml.c4.xlarge"),
     MlC42xlarge("ml.c4.2xlarge"),
@@ -52,6 +58,12 @@ public enum ProductionVariantInstanceType {
     MlC54xlarge("ml.c5.4xlarge"),
     MlC59xlarge("ml.c5.9xlarge"),
     MlC518xlarge("ml.c5.18xlarge"),
+    MlC5dLarge("ml.c5d.large"),
+    MlC5dXlarge("ml.c5d.xlarge"),
+    MlC5d2xlarge("ml.c5d.2xlarge"),
+    MlC5d4xlarge("ml.c5d.4xlarge"),
+    MlC5d9xlarge("ml.c5d.9xlarge"),
+    MlC5d18xlarge("ml.c5d.18xlarge"),
     MlG4dnXlarge("ml.g4dn.xlarge"),
     MlG4dn2xlarge("ml.g4dn.2xlarge"),
     MlG4dn4xlarge("ml.g4dn.4xlarge"),
@@ -63,7 +75,13 @@ public enum ProductionVariantInstanceType {
     MlR52xlarge("ml.r5.2xlarge"),
     MlR54xlarge("ml.r5.4xlarge"),
     MlR512xlarge("ml.r5.12xlarge"),
-    MlR524xlarge("ml.r5.24xlarge");
+    MlR524xlarge("ml.r5.24xlarge"),
+    MlR5dLarge("ml.r5d.large"),
+    MlR5dXlarge("ml.r5d.xlarge"),
+    MlR5d2xlarge("ml.r5d.2xlarge"),
+    MlR5d4xlarge("ml.r5d.4xlarge"),
+    MlR5d12xlarge("ml.r5d.12xlarge"),
+    MlR5d24xlarge("ml.r5d.24xlarge");
 
     private String value;
 

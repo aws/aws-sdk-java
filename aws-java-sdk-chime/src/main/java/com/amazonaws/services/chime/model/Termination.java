@@ -42,13 +42,13 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
     private String defaultPhoneNumber;
     /**
      * <p>
-     * The countries to which calls are allowed.
+     * The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      * </p>
      */
     private java.util.List<String> callingRegions;
     /**
      * <p>
-     * The IP addresses allowed to make calls, in CIDR format.
+     * The IP addresses allowed to make calls, in CIDR format. Required.
      * </p>
      */
     private java.util.List<String> cidrAllowedList;
@@ -141,10 +141,10 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The countries to which calls are allowed.
+     * The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      * </p>
      * 
-     * @return The countries to which calls are allowed.
+     * @return The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      */
 
     public java.util.List<String> getCallingRegions() {
@@ -153,11 +153,11 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The countries to which calls are allowed.
+     * The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      * </p>
      * 
      * @param callingRegions
-     *        The countries to which calls are allowed.
+     *        The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      */
 
     public void setCallingRegions(java.util.Collection<String> callingRegions) {
@@ -171,7 +171,7 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The countries to which calls are allowed.
+     * The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -180,7 +180,7 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param callingRegions
-     *        The countries to which calls are allowed.
+     *        The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +196,11 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The countries to which calls are allowed.
+     * The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      * </p>
      * 
      * @param callingRegions
-     *        The countries to which calls are allowed.
+     *        The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,10 +211,10 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IP addresses allowed to make calls, in CIDR format.
+     * The IP addresses allowed to make calls, in CIDR format. Required.
      * </p>
      * 
-     * @return The IP addresses allowed to make calls, in CIDR format.
+     * @return The IP addresses allowed to make calls, in CIDR format. Required.
      */
 
     public java.util.List<String> getCidrAllowedList() {
@@ -223,11 +223,11 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IP addresses allowed to make calls, in CIDR format.
+     * The IP addresses allowed to make calls, in CIDR format. Required.
      * </p>
      * 
      * @param cidrAllowedList
-     *        The IP addresses allowed to make calls, in CIDR format.
+     *        The IP addresses allowed to make calls, in CIDR format. Required.
      */
 
     public void setCidrAllowedList(java.util.Collection<String> cidrAllowedList) {
@@ -241,7 +241,7 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IP addresses allowed to make calls, in CIDR format.
+     * The IP addresses allowed to make calls, in CIDR format. Required.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -250,7 +250,7 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param cidrAllowedList
-     *        The IP addresses allowed to make calls, in CIDR format.
+     *        The IP addresses allowed to make calls, in CIDR format. Required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +266,11 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IP addresses allowed to make calls, in CIDR format.
+     * The IP addresses allowed to make calls, in CIDR format. Required.
      * </p>
      * 
      * @param cidrAllowedList
-     *        The IP addresses allowed to make calls, in CIDR format.
+     *        The IP addresses allowed to make calls, in CIDR format. Required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
