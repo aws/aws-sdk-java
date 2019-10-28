@@ -30,6 +30,10 @@ public class CreateUserRequestMarshaller {
 
     private static final MarshallingInfo<String> HOMEDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectory").build();
+    private static final MarshallingInfo<String> HOMEDIRECTORYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectoryType").build();
+    private static final MarshallingInfo<List> HOMEDIRECTORYMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectoryMappings").build();
     private static final MarshallingInfo<String> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Policy").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +64,8 @@ public class CreateUserRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createUserRequest.getHomeDirectory(), HOMEDIRECTORY_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getHomeDirectoryType(), HOMEDIRECTORYTYPE_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getHomeDirectoryMappings(), HOMEDIRECTORYMAPPINGS_BINDING);
             protocolMarshaller.marshall(createUserRequest.getPolicy(), POLICY_BINDING);
             protocolMarshaller.marshall(createUserRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(createUserRequest.getServerId(), SERVERID_BINDING);

@@ -56,6 +56,15 @@ public class DescribedUserJsonUnmarshaller implements Unmarshaller<DescribedUser
                     context.nextToken();
                     describedUser.setHomeDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HomeDirectoryMappings", targetDepth)) {
+                    context.nextToken();
+                    describedUser.setHomeDirectoryMappings(new ListUnmarshaller<HomeDirectoryMapEntry>(HomeDirectoryMapEntryJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("HomeDirectoryType", targetDepth)) {
+                    context.nextToken();
+                    describedUser.setHomeDirectoryType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Policy", targetDepth)) {
                     context.nextToken();
                     describedUser.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));

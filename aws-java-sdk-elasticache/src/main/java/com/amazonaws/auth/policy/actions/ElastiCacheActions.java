@@ -33,6 +33,8 @@ public enum ElastiCacheActions implements Action {
     BatchApplyUpdateAction("elasticache:BatchApplyUpdateAction"),
     /** Action for the BatchStopUpdateAction operation. */
     BatchStopUpdateAction("elasticache:BatchStopUpdateAction"),
+    /** Action for the CompleteMigration operation. */
+    CompleteMigration("elasticache:CompleteMigration"),
     /** Action for the CopySnapshot operation. */
     CopySnapshot("elasticache:CopySnapshot"),
     /** Action for the CreateCacheCluster operation. */
@@ -115,6 +117,8 @@ public enum ElastiCacheActions implements Action {
     ResetCacheParameterGroup("elasticache:ResetCacheParameterGroup"),
     /** Action for the RevokeCacheSecurityGroupIngress operation. */
     RevokeCacheSecurityGroupIngress("elasticache:RevokeCacheSecurityGroupIngress"),
+    /** Action for the StartMigration operation. */
+    StartMigration("elasticache:StartMigration"),
     /** Action for the TestFailover operation. */
     TestFailover("elasticache:TestFailover"),
 

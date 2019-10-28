@@ -34,6 +34,8 @@ public class CreateRepositoryRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> IMAGETAGMUTABILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageTagMutability").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGESCANNINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageScanningConfiguration").build();
 
     private static final CreateRepositoryRequestMarshaller instance = new CreateRepositoryRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class CreateRepositoryRequestMarshaller {
             protocolMarshaller.marshall(createRepositoryRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
             protocolMarshaller.marshall(createRepositoryRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createRepositoryRequest.getImageTagMutability(), IMAGETAGMUTABILITY_BINDING);
+            protocolMarshaller.marshall(createRepositoryRequest.getImageScanningConfiguration(), IMAGESCANNINGCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

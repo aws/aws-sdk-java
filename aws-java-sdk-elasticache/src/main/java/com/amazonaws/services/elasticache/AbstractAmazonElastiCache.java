@@ -59,6 +59,11 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
+    public ReplicationGroup completeMigration(CompleteMigrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public Snapshot copySnapshot(CopySnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -315,6 +320,11 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
 
     @Override
     public CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ReplicationGroup startMigration(StartMigrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

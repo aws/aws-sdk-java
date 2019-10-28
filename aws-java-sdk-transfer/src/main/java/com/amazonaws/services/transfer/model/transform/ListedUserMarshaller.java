@@ -31,6 +31,8 @@ public class ListedUserMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> HOMEDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectory").build();
+    private static final MarshallingInfo<String> HOMEDIRECTORYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectoryType").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
     private static final MarshallingInfo<Integer> SSHPUBLICKEYCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -56,6 +58,7 @@ public class ListedUserMarshaller {
         try {
             protocolMarshaller.marshall(listedUser.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(listedUser.getHomeDirectory(), HOMEDIRECTORY_BINDING);
+            protocolMarshaller.marshall(listedUser.getHomeDirectoryType(), HOMEDIRECTORYTYPE_BINDING);
             protocolMarshaller.marshall(listedUser.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(listedUser.getSshPublicKeyCount(), SSHPUBLICKEYCOUNT_BINDING);
             protocolMarshaller.marshall(listedUser.getUserName(), USERNAME_BINDING);

@@ -40,6 +40,10 @@ public class ImageDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageSizeInBytes").build();
     private static final MarshallingInfo<java.util.Date> IMAGEPUSHEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePushedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGESCANSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageScanStatus").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGESCANFINDINGSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageScanFindingsSummary").build();
 
     private static final ImageDetailMarshaller instance = new ImageDetailMarshaller();
 
@@ -63,6 +67,8 @@ public class ImageDetailMarshaller {
             protocolMarshaller.marshall(imageDetail.getImageTags(), IMAGETAGS_BINDING);
             protocolMarshaller.marshall(imageDetail.getImageSizeInBytes(), IMAGESIZEINBYTES_BINDING);
             protocolMarshaller.marshall(imageDetail.getImagePushedAt(), IMAGEPUSHEDAT_BINDING);
+            protocolMarshaller.marshall(imageDetail.getImageScanStatus(), IMAGESCANSTATUS_BINDING);
+            protocolMarshaller.marshall(imageDetail.getImageScanFindingsSummary(), IMAGESCANFINDINGSSUMMARY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

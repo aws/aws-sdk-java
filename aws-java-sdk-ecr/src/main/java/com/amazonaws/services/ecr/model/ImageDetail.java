@@ -72,6 +72,18 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date imagePushedAt;
+    /**
+     * <p>
+     * The current state of the scan.
+     * </p>
+     */
+    private ImageScanStatus imageScanStatus;
+    /**
+     * <p>
+     * A summary of the last completed image scan.
+     * </p>
+     */
+    private ImageScanFindingsSummary imageScanFindingsSummary;
 
     /**
      * <p>
@@ -386,6 +398,86 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The current state of the scan.
+     * </p>
+     * 
+     * @param imageScanStatus
+     *        The current state of the scan.
+     */
+
+    public void setImageScanStatus(ImageScanStatus imageScanStatus) {
+        this.imageScanStatus = imageScanStatus;
+    }
+
+    /**
+     * <p>
+     * The current state of the scan.
+     * </p>
+     * 
+     * @return The current state of the scan.
+     */
+
+    public ImageScanStatus getImageScanStatus() {
+        return this.imageScanStatus;
+    }
+
+    /**
+     * <p>
+     * The current state of the scan.
+     * </p>
+     * 
+     * @param imageScanStatus
+     *        The current state of the scan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageDetail withImageScanStatus(ImageScanStatus imageScanStatus) {
+        setImageScanStatus(imageScanStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A summary of the last completed image scan.
+     * </p>
+     * 
+     * @param imageScanFindingsSummary
+     *        A summary of the last completed image scan.
+     */
+
+    public void setImageScanFindingsSummary(ImageScanFindingsSummary imageScanFindingsSummary) {
+        this.imageScanFindingsSummary = imageScanFindingsSummary;
+    }
+
+    /**
+     * <p>
+     * A summary of the last completed image scan.
+     * </p>
+     * 
+     * @return A summary of the last completed image scan.
+     */
+
+    public ImageScanFindingsSummary getImageScanFindingsSummary() {
+        return this.imageScanFindingsSummary;
+    }
+
+    /**
+     * <p>
+     * A summary of the last completed image scan.
+     * </p>
+     * 
+     * @param imageScanFindingsSummary
+     *        A summary of the last completed image scan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageDetail withImageScanFindingsSummary(ImageScanFindingsSummary imageScanFindingsSummary) {
+        setImageScanFindingsSummary(imageScanFindingsSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -408,7 +500,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
         if (getImageSizeInBytes() != null)
             sb.append("ImageSizeInBytes: ").append(getImageSizeInBytes()).append(",");
         if (getImagePushedAt() != null)
-            sb.append("ImagePushedAt: ").append(getImagePushedAt());
+            sb.append("ImagePushedAt: ").append(getImagePushedAt()).append(",");
+        if (getImageScanStatus() != null)
+            sb.append("ImageScanStatus: ").append(getImageScanStatus()).append(",");
+        if (getImageScanFindingsSummary() != null)
+            sb.append("ImageScanFindingsSummary: ").append(getImageScanFindingsSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -447,6 +543,14 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImagePushedAt() != null && other.getImagePushedAt().equals(this.getImagePushedAt()) == false)
             return false;
+        if (other.getImageScanStatus() == null ^ this.getImageScanStatus() == null)
+            return false;
+        if (other.getImageScanStatus() != null && other.getImageScanStatus().equals(this.getImageScanStatus()) == false)
+            return false;
+        if (other.getImageScanFindingsSummary() == null ^ this.getImageScanFindingsSummary() == null)
+            return false;
+        if (other.getImageScanFindingsSummary() != null && other.getImageScanFindingsSummary().equals(this.getImageScanFindingsSummary()) == false)
+            return false;
         return true;
     }
 
@@ -461,6 +565,8 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getImageTags() == null) ? 0 : getImageTags().hashCode());
         hashCode = prime * hashCode + ((getImageSizeInBytes() == null) ? 0 : getImageSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getImagePushedAt() == null) ? 0 : getImagePushedAt().hashCode());
+        hashCode = prime * hashCode + ((getImageScanStatus() == null) ? 0 : getImageScanStatus().hashCode());
+        hashCode = prime * hashCode + ((getImageScanFindingsSummary() == null) ? 0 : getImageScanFindingsSummary().hashCode());
         return hashCode;
     }
 

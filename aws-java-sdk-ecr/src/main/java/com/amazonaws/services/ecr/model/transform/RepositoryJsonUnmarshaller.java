@@ -72,6 +72,10 @@ public class RepositoryJsonUnmarshaller implements Unmarshaller<Repository, Json
                     context.nextToken();
                     repository.setImageTagMutability(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("imageScanningConfiguration", targetDepth)) {
+                    context.nextToken();
+                    repository.setImageScanningConfiguration(ImageScanningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

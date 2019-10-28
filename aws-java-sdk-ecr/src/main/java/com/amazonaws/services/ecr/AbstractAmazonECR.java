@@ -78,6 +78,11 @@ public class AbstractAmazonECR implements AmazonECR {
     }
 
     @Override
+    public DescribeImageScanFindingsResult describeImageScanFindings(DescribeImageScanFindingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeImagesResult describeImages(DescribeImagesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,6 +138,11 @@ public class AbstractAmazonECR implements AmazonECR {
     }
 
     @Override
+    public PutImageScanningConfigurationResult putImageScanningConfiguration(PutImageScanningConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutImageTagMutabilityResult putImageTagMutability(PutImageTagMutabilityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +154,11 @@ public class AbstractAmazonECR implements AmazonECR {
 
     @Override
     public SetRepositoryPolicyResult setRepositoryPolicy(SetRepositoryPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartImageScanResult startImageScan(StartImageScanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

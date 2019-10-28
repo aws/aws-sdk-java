@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.transfer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class UpdateUserRequestMarshaller {
 
     private static final MarshallingInfo<String> HOMEDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectory").build();
+    private static final MarshallingInfo<String> HOMEDIRECTORYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectoryType").build();
+    private static final MarshallingInfo<List> HOMEDIRECTORYMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HomeDirectoryMappings").build();
     private static final MarshallingInfo<String> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Policy").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +60,8 @@ public class UpdateUserRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateUserRequest.getHomeDirectory(), HOMEDIRECTORY_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getHomeDirectoryType(), HOMEDIRECTORYTYPE_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getHomeDirectoryMappings(), HOMEDIRECTORYMAPPINGS_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getPolicy(), POLICY_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getServerId(), SERVERID_BINDING);

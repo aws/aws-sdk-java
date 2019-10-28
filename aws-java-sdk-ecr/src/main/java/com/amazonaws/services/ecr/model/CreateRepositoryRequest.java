@@ -49,6 +49,13 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String imageTagMutability;
+    /**
+     * <p>
+     * The image scanning configuration for the repository. This setting determines whether images are scanned for known
+     * vulnerabilities after being pushed to the repository.
+     * </p>
+     */
+    private ImageScanningConfiguration imageScanningConfiguration;
 
     /**
      * <p>
@@ -268,6 +275,52 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The image scanning configuration for the repository. This setting determines whether images are scanned for known
+     * vulnerabilities after being pushed to the repository.
+     * </p>
+     * 
+     * @param imageScanningConfiguration
+     *        The image scanning configuration for the repository. This setting determines whether images are scanned
+     *        for known vulnerabilities after being pushed to the repository.
+     */
+
+    public void setImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
+        this.imageScanningConfiguration = imageScanningConfiguration;
+    }
+
+    /**
+     * <p>
+     * The image scanning configuration for the repository. This setting determines whether images are scanned for known
+     * vulnerabilities after being pushed to the repository.
+     * </p>
+     * 
+     * @return The image scanning configuration for the repository. This setting determines whether images are scanned
+     *         for known vulnerabilities after being pushed to the repository.
+     */
+
+    public ImageScanningConfiguration getImageScanningConfiguration() {
+        return this.imageScanningConfiguration;
+    }
+
+    /**
+     * <p>
+     * The image scanning configuration for the repository. This setting determines whether images are scanned for known
+     * vulnerabilities after being pushed to the repository.
+     * </p>
+     * 
+     * @param imageScanningConfiguration
+     *        The image scanning configuration for the repository. This setting determines whether images are scanned
+     *        for known vulnerabilities after being pushed to the repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRepositoryRequest withImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
+        setImageScanningConfiguration(imageScanningConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -284,7 +337,9 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getImageTagMutability() != null)
-            sb.append("ImageTagMutability: ").append(getImageTagMutability());
+            sb.append("ImageTagMutability: ").append(getImageTagMutability()).append(",");
+        if (getImageScanningConfiguration() != null)
+            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -311,6 +366,10 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getImageTagMutability() != null && other.getImageTagMutability().equals(this.getImageTagMutability()) == false)
             return false;
+        if (other.getImageScanningConfiguration() == null ^ this.getImageScanningConfiguration() == null)
+            return false;
+        if (other.getImageScanningConfiguration() != null && other.getImageScanningConfiguration().equals(this.getImageScanningConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -322,6 +381,7 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getImageTagMutability() == null) ? 0 : getImageTagMutability().hashCode());
+        hashCode = prime * hashCode + ((getImageScanningConfiguration() == null) ? 0 : getImageScanningConfiguration().hashCode());
         return hashCode;
     }
 

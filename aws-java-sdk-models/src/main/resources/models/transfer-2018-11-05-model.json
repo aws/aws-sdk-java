@@ -73,7 +73,8 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"InternalServiceError"},
         {"shape":"InvalidRequestException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes a user's Secure Shell (SSH) public key.</p> <p>No response is returned from this operation.</p>"
     },
@@ -137,7 +138,8 @@
         {"shape":"InternalServiceError"},
         {"shape":"InvalidRequestException"},
         {"shape":"ResourceExistsException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code> value assigned to a specific server, identified by <code>ServerId</code>.</p> <p>The response returns the <code>UserName</code> value, the <code>ServerId</code> value, and the name of the <code>SshPublicKeyId</code>.</p>"
     },
@@ -201,7 +203,8 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"InternalServiceError"},
         {"shape":"InvalidRequestException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Changes the state of a Secure File Transfer Protocol (SFTP) server from <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on an SFTP server that is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and process file transfer jobs.</p> <p>The state of <code>STARTING</code> indicates that the server is in an intermediate state, either not fully able to respond, or not fully online. The values of <code>START_FAILED</code> can indicate an error condition. </p> <p>No response is returned from this call.</p>"
     },
@@ -216,7 +219,8 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"InternalServiceError"},
         {"shape":"InvalidRequestException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Changes the state of an SFTP server from <code>ONLINE</code> to <code>OFFLINE</code>. An <code>OFFLINE</code> server cannot accept and process file transfer jobs. Information tied to your server such as server and user properties are not affected by stopping your server. Stopping a server will not reduce or impact your Secure File Transfer Protocol (SFTP) endpoint billing.</p> <p>The state of <code>STOPPING</code> indicates that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>STOP_FAILED</code> can indicate an error condition.</p> <p>No response is returned from this call.</p>"
     },
@@ -230,7 +234,8 @@
       "errors":[
         {"shape":"ServiceUnavailableException"},
         {"shape":"InternalServiceError"},
-        {"shape":"InvalidRequestException"}
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Attaches a key-value pair to a resource, as identified by its Amazon Resource Name (ARN). Resources are users, servers, roles, and other entities.</p> <p>There is no response returned from this call.</p>"
     },
@@ -260,7 +265,8 @@
       "errors":[
         {"shape":"ServiceUnavailableException"},
         {"shape":"InternalServiceError"},
-        {"shape":"InvalidRequestException"}
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Detaches a key-value pair from a resource, as identified by its Amazon Resource Name (ARN). Resources are users, servers, roles, and other entities.</p> <p>No response is returned from this call.</p>"
     },
@@ -276,7 +282,9 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"InternalServiceError"},
         {"shape":"InvalidRequestException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceExistsException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Updates the server properties after that server has been created.</p> <p>The <code>UpdateServer</code> call returns the <code>ServerId</code> of the Secure File Transfer Protocol (SFTP) server you updated.</p>"
     },
@@ -292,7 +300,8 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"InternalServiceError"},
         {"shape":"InvalidRequestException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Assigns new properties to a user. Parameters you pass modify any or all of the following: the home directory, role, and policy for the <code>UserName</code> and <code>ServerId</code> you specify.</p> <p>The response returns the <code>ServerId</code> and the <code>UserName</code> for the updated user.</p>"
     }
@@ -301,7 +310,8 @@
     "Arn":{
       "type":"string",
       "max":1600,
-      "min":20
+      "min":20,
+      "pattern":"arn:.*"
     },
     "CreateServerRequest":{
       "type":"structure",
@@ -316,7 +326,7 @@
         },
         "HostKey":{
           "shape":"HostKey",
-          "documentation":"<p>The RSA private key as generated by the <code>ssh-keygen -N \"\" -f my-new-server-key</code> command.</p> <important> <p>If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p> </important> <p> For more information, see \"https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key\" in the <i>AWS SFTP User Guide.</i> </p>"
+          "documentation":"<p>The RSA private key as generated by the <code>ssh-keygen -N \"\" -f my-new-server-key</code> command.</p> <important> <p>If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p> </important> <p> For more information, see \"https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key\" in the <i>AWS SFTP User Guide.</i> </p>"
         },
         "IdentityProviderDetails":{
           "shape":"IdentityProviderDetails",
@@ -356,7 +366,15 @@
       "members":{
         "HomeDirectory":{
           "shape":"HomeDirectory",
-          "documentation":"<p>The landing directory (folder) for a user when they log in to the server using their SFTP client. An example is <code>/home/<i>username</i> </code>.</p>"
+          "documentation":"<p>The landing directory (folder) for a user when they log in to the server using their SFTP client. </p> <p>An example is &lt;<code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>"
+        },
+        "HomeDirectoryType":{
+          "shape":"HomeDirectoryType",
+          "documentation":"<p>The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.</p>"
+        },
+        "HomeDirectoryMappings":{
+          "shape":"HomeDirectoryMappings",
+          "documentation":"<p>Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. You will need to specify the \"<code>Entry</code>\" and \"<code>Target</code>\" pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p> <p> <code>'[ \"/bucket2/documentation\", { \"Entry\": \"your-personal-report.pdf\", \"Target\": \"/bucket3/customized-reports/${transfer:UserName}.pdf\" } ]'</code> </p> <p>In most cases, you can use this value instead of the scope down policy to lock your user down to the designated home directory (\"chroot\"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value. </p>"
         },
         "Policy":{
           "shape":"Policy",
@@ -566,7 +584,15 @@
         },
         "HomeDirectory":{
           "shape":"HomeDirectory",
-          "documentation":"<p>This property specifies the landing directory (or folder), which is the location that files are written to or read from in an Amazon S3 bucket for the described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>"
+          "documentation":"<p>This property specifies the landing directory (or folder), which is the location that files are written to or read from in an Amazon S3 bucket for the described user. An example is <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.</p>"
+        },
+        "HomeDirectoryMappings":{
+          "shape":"HomeDirectoryMappings",
+          "documentation":"<p>Logical directory mappings that you specified for what S3 paths and keys should be visible to your user and how you want to make them visible. You will need to specify the \"<code>Entry</code>\" and \"<code>Target</code>\" pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>.</p> <p>In most cases, you can use this value instead of the scope down policy to lock your user down to the designated home directory (\"chroot\"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases, you can use this value instead of the scope down policy to lock your user down to the designated home directory (\"chroot\"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>"
+        },
+        "HomeDirectoryType":{
+          "shape":"HomeDirectoryType",
+          "documentation":"<p>The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.</p>"
         },
         "Policy":{
           "shape":"Policy",
@@ -612,6 +638,37 @@
       "type":"string",
       "max":1024,
       "pattern":"^$|/.*"
+    },
+    "HomeDirectoryMapEntry":{
+      "type":"structure",
+      "required":[
+        "Entry",
+        "Target"
+      ],
+      "members":{
+        "Entry":{
+          "shape":"MapEntry",
+          "documentation":"<p>Represents an entry and a target for <code>HomeDirectoryMappings</code>.</p>"
+        },
+        "Target":{
+          "shape":"MapTarget",
+          "documentation":"<p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>"
+        }
+      },
+      "documentation":"<p>Represents an object that contains entries and a targets for <code>HomeDirectoryMappings</code>.</p>"
+    },
+    "HomeDirectoryMappings":{
+      "type":"list",
+      "member":{"shape":"HomeDirectoryMapEntry"},
+      "max":50,
+      "min":1
+    },
+    "HomeDirectoryType":{
+      "type":"string",
+      "enum":[
+        "PATH",
+        "LOGICAL"
+      ]
     },
     "HostKey":{
       "type":"string",
@@ -866,6 +923,10 @@
           "shape":"HomeDirectory",
           "documentation":"<p>This value specifies the location that files are written to or read from an Amazon S3 bucket for the user you specify by their ARN.</p>"
         },
+        "HomeDirectoryType":{
+          "shape":"HomeDirectoryType",
+          "documentation":"<p>The type of landing directory (folder) you mapped for your users' home directory. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.</p>"
+        },
         "Role":{
           "shape":"Role",
           "documentation":"<p>The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3 bucket.</p>"
@@ -885,6 +946,16 @@
       "type":"list",
       "member":{"shape":"ListedUser"}
     },
+    "MapEntry":{
+      "type":"string",
+      "max":1024,
+      "pattern":"^/.*"
+    },
+    "MapTarget":{
+      "type":"string",
+      "max":1024,
+      "pattern":"^/.*"
+    },
     "MaxResults":{
       "type":"integer",
       "max":1000,
@@ -898,9 +969,13 @@
     },
     "NullableRole":{
       "type":"string",
+      "max":2048,
       "pattern":"^$|arn:.*role/.*"
     },
-    "Policy":{"type":"string"},
+    "Policy":{
+      "type":"string",
+      "max":2048
+    },
     "Resource":{"type":"string"},
     "ResourceExistsException":{
       "type":"structure",
@@ -934,12 +1009,17 @@
     },
     "ResourceType":{"type":"string"},
     "Response":{"type":"string"},
+    "RetryAfterSeconds":{"type":"string"},
     "Role":{
       "type":"string",
+      "max":2048,
+      "min":20,
       "pattern":"arn:.*role/.*"
     },
     "ServerId":{
       "type":"string",
+      "max":19,
+      "min":19,
       "pattern":"^s-([0-9a-f]{17})$"
     },
     "ServiceErrorMessage":{"type":"string"},
@@ -984,6 +1064,8 @@
     "SshPublicKeyCount":{"type":"integer"},
     "SshPublicKeyId":{
       "type":"string",
+      "max":21,
+      "min":21,
       "pattern":"^key-[0-9a-f]{17}$"
     },
     "SshPublicKeys":{
@@ -1042,7 +1124,10 @@
       },
       "documentation":"<p>Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.</p>"
     },
-    "TagKey":{"type":"string"},
+    "TagKey":{
+      "type":"string",
+      "max":128
+    },
     "TagKeys":{
       "type":"list",
       "member":{"shape":"TagKey"},
@@ -1066,7 +1151,10 @@
         }
       }
     },
-    "TagValue":{"type":"string"},
+    "TagValue":{
+      "type":"string",
+      "max":256
+    },
     "Tags":{
       "type":"list",
       "member":{"shape":"Tag"},
@@ -1118,6 +1206,14 @@
           "documentation":"<p>The endpoint of the service used to authenticate a user.</p>"
         }
       }
+    },
+    "ThrottlingException":{
+      "type":"structure",
+      "members":{
+        "RetryAfterSeconds":{"shape":"RetryAfterSeconds"}
+      },
+      "documentation":"<p>The request was denied due to request throttling.</p> <p> HTTP Status Code: 400</p>",
+      "exception":true
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -1185,7 +1281,15 @@
       "members":{
         "HomeDirectory":{
           "shape":"HomeDirectory",
-          "documentation":"<p>A parameter that specifies the landing directory (folder) for a user when they log in to the server using their client. An example is <code>/home/<i>username</i> </code>.</p>"
+          "documentation":"<p>A parameter that specifies the landing directory (folder) for a user when they log in to the server using their client. </p> <p>An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>"
+        },
+        "HomeDirectoryType":{
+          "shape":"HomeDirectoryType",
+          "documentation":"<p>The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.</p>"
+        },
+        "HomeDirectoryMappings":{
+          "shape":"HomeDirectoryMappings",
+          "documentation":"<p>Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. You will need to specify the \"<code>Entry</code>\" and \"<code>Target</code>\" pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p> <p> <code>'[ \"/bucket2/documentation\", { \"Entry\": \"your-personal-report.pdf\", \"Target\": \"/bucket3/customized-reports/${transfer:UserName}.pdf\" } ]'</code> </p> <p>In most cases, you can use this value instead of the scope down policy to lock your user down to the designated home directory (\"chroot\"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value. </p> <p> </p>"
         },
         "Policy":{
           "shape":"Policy",
@@ -1223,18 +1327,26 @@
       },
       "documentation":"<p> <code>UpdateUserResponse</code> returns the user name and server identifier for the request to update a user's properties.</p>"
     },
-    "Url":{"type":"string"},
+    "Url":{
+      "type":"string",
+      "max":255
+    },
     "UserCount":{"type":"integer"},
     "UserName":{
       "type":"string",
+      "max":32,
+      "min":3,
       "pattern":"^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$"
     },
     "UserPassword":{
       "type":"string",
+      "max":2048,
       "sensitive":true
     },
     "VpcEndpointId":{
       "type":"string",
+      "max":22,
+      "min":22,
       "pattern":"^vpce-[0-9a-f]{17}$"
     }
   },

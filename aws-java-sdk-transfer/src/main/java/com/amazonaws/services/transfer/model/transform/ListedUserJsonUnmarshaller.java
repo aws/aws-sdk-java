@@ -56,6 +56,10 @@ public class ListedUserJsonUnmarshaller implements Unmarshaller<ListedUser, Json
                     context.nextToken();
                     listedUser.setHomeDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HomeDirectoryType", targetDepth)) {
+                    context.nextToken();
+                    listedUser.setHomeDirectoryType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Role", targetDepth)) {
                     context.nextToken();
                     listedUser.setRole(context.getUnmarshaller(String.class).unmarshall(context));

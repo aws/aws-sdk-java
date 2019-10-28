@@ -214,7 +214,10 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Creates an image repository.
+     * Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users can push and pull Docker
+     * images. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR Repositories</a> in
+     * the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param createRepositoryRequest
@@ -227,7 +230,10 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Creates an image repository.
+     * Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users can push and pull Docker
+     * images. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR Repositories</a> in
+     * the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param createRepositoryRequest
@@ -337,6 +343,39 @@ public interface AmazonECRAsync extends AmazonECR {
      */
     java.util.concurrent.Future<DeleteRepositoryPolicyResult> deleteRepositoryPolicyAsync(DeleteRepositoryPolicyRequest deleteRepositoryPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRepositoryPolicyRequest, DeleteRepositoryPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the image scan findings for the specified image.
+     * </p>
+     * 
+     * @param describeImageScanFindingsRequest
+     * @return A Java Future containing the result of the DescribeImageScanFindings operation returned by the service.
+     * @sample AmazonECRAsync.DescribeImageScanFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImageScanFindingsResult> describeImageScanFindingsAsync(
+            DescribeImageScanFindingsRequest describeImageScanFindingsRequest);
+
+    /**
+     * <p>
+     * Describes the image scan findings for the specified image.
+     * </p>
+     * 
+     * @param describeImageScanFindingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeImageScanFindings operation returned by the service.
+     * @sample AmazonECRAsyncHandler.DescribeImageScanFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImageScanFindingsResult> describeImageScanFindingsAsync(
+            DescribeImageScanFindingsRequest describeImageScanFindingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeImageScanFindingsRequest, DescribeImageScanFindingsResult> asyncHandler);
 
     /**
      * <p>
@@ -761,6 +800,41 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
+     * Updates the image scanning configuration for a repository.
+     * </p>
+     * 
+     * @param putImageScanningConfigurationRequest
+     * @return A Java Future containing the result of the PutImageScanningConfiguration operation returned by the
+     *         service.
+     * @sample AmazonECRAsync.PutImageScanningConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutImageScanningConfigurationResult> putImageScanningConfigurationAsync(
+            PutImageScanningConfigurationRequest putImageScanningConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the image scanning configuration for a repository.
+     * </p>
+     * 
+     * @param putImageScanningConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutImageScanningConfiguration operation returned by the
+     *         service.
+     * @sample AmazonECRAsyncHandler.PutImageScanningConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutImageScanningConfigurationResult> putImageScanningConfigurationAsync(
+            PutImageScanningConfigurationRequest putImageScanningConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutImageScanningConfigurationRequest, PutImageScanningConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the image tag mutability settings for a repository.
      * </p>
      * 
@@ -859,6 +933,37 @@ public interface AmazonECRAsync extends AmazonECR {
      */
     java.util.concurrent.Future<SetRepositoryPolicyResult> setRepositoryPolicyAsync(SetRepositoryPolicyRequest setRepositoryPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<SetRepositoryPolicyRequest, SetRepositoryPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an image vulnerability scan.
+     * </p>
+     * 
+     * @param startImageScanRequest
+     * @return A Java Future containing the result of the StartImageScan operation returned by the service.
+     * @sample AmazonECRAsync.StartImageScan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImageScanResult> startImageScanAsync(StartImageScanRequest startImageScanRequest);
+
+    /**
+     * <p>
+     * Starts an image vulnerability scan.
+     * </p>
+     * 
+     * @param startImageScanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartImageScan operation returned by the service.
+     * @sample AmazonECRAsyncHandler.StartImageScan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImageScanResult> startImageScanAsync(StartImageScanRequest startImageScanRequest,
+            com.amazonaws.handlers.AsyncHandler<StartImageScanRequest, StartImageScanResult> asyncHandler);
 
     /**
      * <p>

@@ -28,10 +28,42 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
-     * client. An example is <code>/home/<i>username</i> </code>.
+     * client.
+     * </p>
+     * <p>
+     * An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * </p>
      */
     private String homeDirectory;
+    /**
+     * <p>
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
+     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
+     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * </p>
+     */
+    private String homeDirectoryType;
+    /**
+     * <p>
+     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
+     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
+     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
+     * access to paths in <code>Target</code>. The following is an example.
+     * </p>
+     * <p>
+     * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     * </p>
+     * <p>
+     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
+     * HomeDirectory parameter value.
+     * </p>
+     * <p>
+     * </p>
+     */
+    private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
      * <p>
      * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
@@ -84,12 +116,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
-     * client. An example is <code>/home/<i>username</i> </code>.
+     * client.
+     * </p>
+     * <p>
+     * An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * </p>
      * 
      * @param homeDirectory
      *        A parameter that specifies the landing directory (folder) for a user when they log in to the server using
-     *        their client. An example is <code>/home/<i>username</i> </code>.
+     *        their client. </p>
+     *        <p>
+     *        An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
      */
 
     public void setHomeDirectory(String homeDirectory) {
@@ -99,11 +136,16 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
-     * client. An example is <code>/home/<i>username</i> </code>.
+     * client.
+     * </p>
+     * <p>
+     * An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * </p>
      * 
      * @return A parameter that specifies the landing directory (folder) for a user when they log in to the server using
-     *         their client. An example is <code>/home/<i>username</i> </code>.
+     *         their client. </p>
+     *         <p>
+     *         An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
      */
 
     public String getHomeDirectory() {
@@ -113,17 +155,283 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
-     * client. An example is <code>/home/<i>username</i> </code>.
+     * client.
+     * </p>
+     * <p>
+     * An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * </p>
      * 
      * @param homeDirectory
      *        A parameter that specifies the landing directory (folder) for a user when they log in to the server using
-     *        their client. An example is <code>/home/<i>username</i> </code>.
+     *        their client. </p>
+     *        <p>
+     *        An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateUserRequest withHomeDirectory(String homeDirectory) {
         setHomeDirectory(homeDirectory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
+     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
+     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * </p>
+     * 
+     * @param homeDirectoryType
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
+     *        is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @see HomeDirectoryType
+     */
+
+    public void setHomeDirectoryType(String homeDirectoryType) {
+        this.homeDirectoryType = homeDirectoryType;
+    }
+
+    /**
+     * <p>
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
+     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
+     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * </p>
+     * 
+     * @return The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *         SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
+     *         is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     *         <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @see HomeDirectoryType
+     */
+
+    public String getHomeDirectoryType() {
+        return this.homeDirectoryType;
+    }
+
+    /**
+     * <p>
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
+     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
+     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * </p>
+     * 
+     * @param homeDirectoryType
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
+     *        is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HomeDirectoryType
+     */
+
+    public UpdateUserRequest withHomeDirectoryType(String homeDirectoryType) {
+        setHomeDirectoryType(homeDirectoryType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
+     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
+     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * </p>
+     * 
+     * @param homeDirectoryType
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
+     *        is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HomeDirectoryType
+     */
+
+    public UpdateUserRequest withHomeDirectoryType(HomeDirectoryType homeDirectoryType) {
+        this.homeDirectoryType = homeDirectoryType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
+     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
+     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
+     * access to paths in <code>Target</code>. The following is an example.
+     * </p>
+     * <p>
+     * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     * </p>
+     * <p>
+     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
+     * HomeDirectory parameter value.
+     * </p>
+     * <p>
+     * </p>
+     * 
+     * @return Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
+     *         want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
+     *         pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual
+     *         S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that
+     *         your AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p>
+     *         <p>
+     *         <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     *         </p>
+     *         <p>
+     *         In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *         designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     *         <code>Target</code> to the HomeDirectory parameter value.
+     *         </p>
+     *         <p>
+     */
+
+    public java.util.List<HomeDirectoryMapEntry> getHomeDirectoryMappings() {
+        return homeDirectoryMappings;
+    }
+
+    /**
+     * <p>
+     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
+     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
+     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
+     * access to paths in <code>Target</code>. The following is an example.
+     * </p>
+     * <p>
+     * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     * </p>
+     * <p>
+     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
+     * HomeDirectory parameter value.
+     * </p>
+     * <p>
+     * </p>
+     * 
+     * @param homeDirectoryMappings
+     *        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
+     *        want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
+     *        pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3
+     *        path. If you only specify a target, it will be displayed as is. You will need to also make sure that your
+     *        AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p>
+     *        <p>
+     *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     *        </p>
+     *        <p>
+     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     *        <code>Target</code> to the HomeDirectory parameter value.
+     *        </p>
+     *        <p>
+     */
+
+    public void setHomeDirectoryMappings(java.util.Collection<HomeDirectoryMapEntry> homeDirectoryMappings) {
+        if (homeDirectoryMappings == null) {
+            this.homeDirectoryMappings = null;
+            return;
+        }
+
+        this.homeDirectoryMappings = new java.util.ArrayList<HomeDirectoryMapEntry>(homeDirectoryMappings);
+    }
+
+    /**
+     * <p>
+     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
+     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
+     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
+     * access to paths in <code>Target</code>. The following is an example.
+     * </p>
+     * <p>
+     * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     * </p>
+     * <p>
+     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
+     * HomeDirectory parameter value.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHomeDirectoryMappings(java.util.Collection)} or
+     * {@link #withHomeDirectoryMappings(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param homeDirectoryMappings
+     *        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
+     *        want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
+     *        pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3
+     *        path. If you only specify a target, it will be displayed as is. You will need to also make sure that your
+     *        AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p>
+     *        <p>
+     *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     *        </p>
+     *        <p>
+     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     *        <code>Target</code> to the HomeDirectory parameter value.
+     *        </p>
+     *        <p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withHomeDirectoryMappings(HomeDirectoryMapEntry... homeDirectoryMappings) {
+        if (this.homeDirectoryMappings == null) {
+            setHomeDirectoryMappings(new java.util.ArrayList<HomeDirectoryMapEntry>(homeDirectoryMappings.length));
+        }
+        for (HomeDirectoryMapEntry ele : homeDirectoryMappings) {
+            this.homeDirectoryMappings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
+     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
+     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
+     * access to paths in <code>Target</code>. The following is an example.
+     * </p>
+     * <p>
+     * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     * </p>
+     * <p>
+     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
+     * HomeDirectory parameter value.
+     * </p>
+     * <p>
+     * </p>
+     * 
+     * @param homeDirectoryMappings
+     *        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
+     *        want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
+     *        pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3
+     *        path. If you only specify a target, it will be displayed as is. You will need to also make sure that your
+     *        AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p>
+     *        <p>
+     *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
+     *        </p>
+     *        <p>
+     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     *        <code>Target</code> to the HomeDirectory parameter value.
+     *        </p>
+     *        <p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withHomeDirectoryMappings(java.util.Collection<HomeDirectoryMapEntry> homeDirectoryMappings) {
+        setHomeDirectoryMappings(homeDirectoryMappings);
         return this;
     }
 
@@ -445,6 +753,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         sb.append("{");
         if (getHomeDirectory() != null)
             sb.append("HomeDirectory: ").append(getHomeDirectory()).append(",");
+        if (getHomeDirectoryType() != null)
+            sb.append("HomeDirectoryType: ").append(getHomeDirectoryType()).append(",");
+        if (getHomeDirectoryMappings() != null)
+            sb.append("HomeDirectoryMappings: ").append(getHomeDirectoryMappings()).append(",");
         if (getPolicy() != null)
             sb.append("Policy: ").append(getPolicy()).append(",");
         if (getRole() != null)
@@ -471,6 +783,14 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getHomeDirectory() != null && other.getHomeDirectory().equals(this.getHomeDirectory()) == false)
             return false;
+        if (other.getHomeDirectoryType() == null ^ this.getHomeDirectoryType() == null)
+            return false;
+        if (other.getHomeDirectoryType() != null && other.getHomeDirectoryType().equals(this.getHomeDirectoryType()) == false)
+            return false;
+        if (other.getHomeDirectoryMappings() == null ^ this.getHomeDirectoryMappings() == null)
+            return false;
+        if (other.getHomeDirectoryMappings() != null && other.getHomeDirectoryMappings().equals(this.getHomeDirectoryMappings()) == false)
+            return false;
         if (other.getPolicy() == null ^ this.getPolicy() == null)
             return false;
         if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
@@ -496,6 +816,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHomeDirectory() == null) ? 0 : getHomeDirectory().hashCode());
+        hashCode = prime * hashCode + ((getHomeDirectoryType() == null) ? 0 : getHomeDirectoryType().hashCode());
+        hashCode = prime * hashCode + ((getHomeDirectoryMappings() == null) ? 0 : getHomeDirectoryMappings().hashCode());
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());

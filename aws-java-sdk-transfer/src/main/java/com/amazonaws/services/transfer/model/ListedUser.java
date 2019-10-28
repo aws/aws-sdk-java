@@ -43,6 +43,15 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
     private String homeDirectory;
     /**
      * <p>
+     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you
+     * want to make S3 paths visible to your user.
+     * </p>
+     */
+    private String homeDirectoryType;
+    /**
+     * <p>
      * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
      * case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
      * that enables that user to perform file operations to their Amazon S3 bucket.
@@ -145,6 +154,89 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     public ListedUser withHomeDirectory(String homeDirectory) {
         setHomeDirectory(homeDirectory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you
+     * want to make S3 paths visible to your user.
+     * </p>
+     * 
+     * @param homeDirectoryType
+     *        The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     *        <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If
+     *        you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @see HomeDirectoryType
+     */
+
+    public void setHomeDirectoryType(String homeDirectoryType) {
+        this.homeDirectoryType = homeDirectoryType;
+    }
+
+    /**
+     * <p>
+     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you
+     * want to make S3 paths visible to your user.
+     * </p>
+     * 
+     * @return The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     *         <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If
+     *         you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     *         <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @see HomeDirectoryType
+     */
+
+    public String getHomeDirectoryType() {
+        return this.homeDirectoryType;
+    }
+
+    /**
+     * <p>
+     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you
+     * want to make S3 paths visible to your user.
+     * </p>
+     * 
+     * @param homeDirectoryType
+     *        The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     *        <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If
+     *        you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HomeDirectoryType
+     */
+
+    public ListedUser withHomeDirectoryType(String homeDirectoryType) {
+        setHomeDirectoryType(homeDirectoryType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you
+     * want to make S3 paths visible to your user.
+     * </p>
+     * 
+     * @param homeDirectoryType
+     *        The type of landing directory (folder) you mapped for your users' home directory. If you set it to
+     *        <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP clients. If
+     *        you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HomeDirectoryType
+     */
+
+    public ListedUser withHomeDirectoryType(HomeDirectoryType homeDirectoryType) {
+        this.homeDirectoryType = homeDirectoryType.toString();
         return this;
     }
 
@@ -296,6 +388,8 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arn: ").append(getArn()).append(",");
         if (getHomeDirectory() != null)
             sb.append("HomeDirectory: ").append(getHomeDirectory()).append(",");
+        if (getHomeDirectoryType() != null)
+            sb.append("HomeDirectoryType: ").append(getHomeDirectoryType()).append(",");
         if (getRole() != null)
             sb.append("Role: ").append(getRole()).append(",");
         if (getSshPublicKeyCount() != null)
@@ -324,6 +418,10 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHomeDirectory() != null && other.getHomeDirectory().equals(this.getHomeDirectory()) == false)
             return false;
+        if (other.getHomeDirectoryType() == null ^ this.getHomeDirectoryType() == null)
+            return false;
+        if (other.getHomeDirectoryType() != null && other.getHomeDirectoryType().equals(this.getHomeDirectoryType()) == false)
+            return false;
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
@@ -346,6 +444,7 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getHomeDirectory() == null) ? 0 : getHomeDirectory().hashCode());
+        hashCode = prime * hashCode + ((getHomeDirectoryType() == null) ? 0 : getHomeDirectoryType().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getSshPublicKeyCount() == null) ? 0 : getSshPublicKeyCount().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());

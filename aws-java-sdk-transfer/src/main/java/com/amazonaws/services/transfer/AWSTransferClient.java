@@ -89,6 +89,9 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.transfer.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.transfer.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.transfer.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -361,6 +364,10 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.</p>
+     *         <p>
+     *         HTTP Status Code: 400
      * @sample AWSTransfer.DeleteSshPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey" target="_top">AWS
      *      API Documentation</a>
@@ -627,6 +634,10 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.</p>
+     *         <p>
+     *         HTTP Status Code: 400
      * @sample AWSTransfer.ImportSshPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey" target="_top">AWS
      *      API Documentation</a>
@@ -883,6 +894,10 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.</p>
+     *         <p>
+     *         HTTP Status Code: 400
      * @sample AWSTransfer.StartServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer" target="_top">AWS API
      *      Documentation</a>
@@ -954,6 +969,10 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.</p>
+     *         <p>
+     *         HTTP Status Code: 400
      * @sample AWSTransfer.StopServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer" target="_top">AWS API
      *      Documentation</a>
@@ -1017,6 +1036,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
      * @sample AWSTransfer.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1144,6 +1165,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
      * @sample AWSTransfer.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1207,8 +1230,14 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.</p>
+     *         <p>
+     *         HTTP Status Code: 400
      * @sample AWSTransfer.UpdateServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer" target="_top">AWS API
      *      Documentation</a>
@@ -1274,6 +1303,10 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.</p>
+     *         <p>
+     *         HTTP Status Code: 400
      * @sample AWSTransfer.UpdateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser" target="_top">AWS API
      *      Documentation</a>
