@@ -49,6 +49,8 @@ public class CreateStackRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<List> ACCESSENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessEndpoints").build();
+    private static final MarshallingInfo<List> EMBEDHOSTDOMAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmbedHostDomains").build();
 
     private static final CreateStackRequestMarshaller instance = new CreateStackRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class CreateStackRequestMarshaller {
             protocolMarshaller.marshall(createStackRequest.getApplicationSettings(), APPLICATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(createStackRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createStackRequest.getAccessEndpoints(), ACCESSENDPOINTS_BINDING);
+            protocolMarshaller.marshall(createStackRequest.getEmbedHostDomains(), EMBEDHOSTDOMAINS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

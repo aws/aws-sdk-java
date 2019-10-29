@@ -66,8 +66,110 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The instance type for the image builder.
+     * The instance type for the image builder. The following instance types are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * </ul>
      */
     private String instanceType;
     /**
@@ -80,7 +182,14 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
      * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.
+     * operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
+     * creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
+     * >Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming
+     * Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      */
     private String iamRoleArn;
@@ -379,11 +488,214 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for the image builder.
+     * The instance type for the image builder. The following instance types are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param instanceType
-     *        The instance type for the image builder.
+     *        The instance type for the image builder. The following instance types are available:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.16xlarge
+     *        </p>
+     *        </li>
      */
 
     public void setInstanceType(String instanceType) {
@@ -392,10 +704,213 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for the image builder.
+     * The instance type for the image builder. The following instance types are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The instance type for the image builder.
+     * @return The instance type for the image builder. The following instance types are available:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.medium
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.standard.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-desktop.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.16xlarge
+     *         </p>
+     *         </li>
      */
 
     public String getInstanceType() {
@@ -404,11 +919,214 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for the image builder.
+     * The instance type for the image builder. The following instance types are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param instanceType
-     *        The instance type for the image builder.
+     *        The instance type for the image builder. The following instance types are available:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.16xlarge
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -480,13 +1198,27 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
      * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.
+     * operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
+     * creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
+     * >Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming
+     * Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param iamRoleArn
      *        The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
      *        the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
-     *        to use. The operation creates a new session with temporary credentials.
+     *        to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the
+     *        temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *        instance.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
+     *        >Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming
+     *        Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -497,12 +1229,26 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
      * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.
+     * operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
+     * creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
+     * >Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming
+     * Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @return The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
      *         the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
-     *         to use. The operation creates a new session with temporary credentials.
+     *         to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the
+     *         temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *         instance.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
+     *         >Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming
+     *         Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public String getIamRoleArn() {
@@ -513,13 +1259,27 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
      * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.
+     * operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
+     * creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
+     * >Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming
+     * Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param iamRoleArn
      *        The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
      *        the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
-     *        to use. The operation creates a new session with temporary credentials.
+     *        to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the
+     *        temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *        instance.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
+     *        >Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming
+     *        Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

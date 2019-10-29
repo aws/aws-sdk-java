@@ -103,6 +103,13 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<AccessEndpoint> accessEndpoints;
+    /**
+     * <p>
+     * The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains
+     * that you want to host embedded AppStream 2.0 streaming sessions.
+     * </p>
+     */
+    private java.util.List<String> embedHostDomains;
 
     /**
      * <p>
@@ -727,6 +734,84 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains
+     * that you want to host embedded AppStream 2.0 streaming sessions.
+     * </p>
+     * 
+     * @return The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the
+     *         domains that you want to host embedded AppStream 2.0 streaming sessions.
+     */
+
+    public java.util.List<String> getEmbedHostDomains() {
+        return embedHostDomains;
+    }
+
+    /**
+     * <p>
+     * The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains
+     * that you want to host embedded AppStream 2.0 streaming sessions.
+     * </p>
+     * 
+     * @param embedHostDomains
+     *        The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the
+     *        domains that you want to host embedded AppStream 2.0 streaming sessions.
+     */
+
+    public void setEmbedHostDomains(java.util.Collection<String> embedHostDomains) {
+        if (embedHostDomains == null) {
+            this.embedHostDomains = null;
+            return;
+        }
+
+        this.embedHostDomains = new java.util.ArrayList<String>(embedHostDomains);
+    }
+
+    /**
+     * <p>
+     * The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains
+     * that you want to host embedded AppStream 2.0 streaming sessions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEmbedHostDomains(java.util.Collection)} or {@link #withEmbedHostDomains(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param embedHostDomains
+     *        The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the
+     *        domains that you want to host embedded AppStream 2.0 streaming sessions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withEmbedHostDomains(String... embedHostDomains) {
+        if (this.embedHostDomains == null) {
+            setEmbedHostDomains(new java.util.ArrayList<String>(embedHostDomains.length));
+        }
+        for (String ele : embedHostDomains) {
+            this.embedHostDomains.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains
+     * that you want to host embedded AppStream 2.0 streaming sessions.
+     * </p>
+     * 
+     * @param embedHostDomains
+     *        The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the
+     *        domains that you want to host embedded AppStream 2.0 streaming sessions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withEmbedHostDomains(java.util.Collection<String> embedHostDomains) {
+        setEmbedHostDomains(embedHostDomains);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -761,7 +846,9 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
         if (getApplicationSettings() != null)
             sb.append("ApplicationSettings: ").append(getApplicationSettings()).append(",");
         if (getAccessEndpoints() != null)
-            sb.append("AccessEndpoints: ").append(getAccessEndpoints());
+            sb.append("AccessEndpoints: ").append(getAccessEndpoints()).append(",");
+        if (getEmbedHostDomains() != null)
+            sb.append("EmbedHostDomains: ").append(getEmbedHostDomains());
         sb.append("}");
         return sb.toString();
     }
@@ -824,6 +911,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccessEndpoints() != null && other.getAccessEndpoints().equals(this.getAccessEndpoints()) == false)
             return false;
+        if (other.getEmbedHostDomains() == null ^ this.getEmbedHostDomains() == null)
+            return false;
+        if (other.getEmbedHostDomains() != null && other.getEmbedHostDomains().equals(this.getEmbedHostDomains()) == false)
+            return false;
         return true;
     }
 
@@ -844,6 +935,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUserSettings() == null) ? 0 : getUserSettings().hashCode());
         hashCode = prime * hashCode + ((getApplicationSettings() == null) ? 0 : getApplicationSettings().hashCode());
         hashCode = prime * hashCode + ((getAccessEndpoints() == null) ? 0 : getAccessEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getEmbedHostDomains() == null) ? 0 : getEmbedHostDomains().hashCode());
         return hashCode;
     }
 

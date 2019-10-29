@@ -96,6 +96,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setAccessEndpoints(new ListUnmarshaller<AccessEndpoint>(AccessEndpointJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("EmbedHostDomains", targetDepth)) {
+                    context.nextToken();
+                    stack.setEmbedHostDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

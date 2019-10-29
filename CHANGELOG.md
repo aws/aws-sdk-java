@@ -1,3 +1,12 @@
+# __1.11.662__ __2019-10-29__
+## __AWS Cloud9__
+  - ### Features
+    - Added CREATING and CREATE_FAILED environment lifecycle statuses.  
+
+## __Amazon AppStream__
+  - ### Features
+    - Adds support for providing domain names that can embed streaming sessions
+
 # __1.11.661__ __2019-10-28__
 ## __Amazon Simple Storage Service__
   - ### Features

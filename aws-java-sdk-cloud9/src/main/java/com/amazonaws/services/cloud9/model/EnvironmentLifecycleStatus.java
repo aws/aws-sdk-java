@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EnvironmentLifecycleStatus {
 
+    CREATING("CREATING"),
     CREATED("CREATED"),
+    CREATE_FAILED("CREATE_FAILED"),
     DELETING("DELETING"),
     DELETE_FAILED("DELETE_FAILED");
 
