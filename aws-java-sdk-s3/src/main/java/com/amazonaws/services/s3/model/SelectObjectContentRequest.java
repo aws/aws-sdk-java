@@ -36,6 +36,7 @@ public class SelectObjectContentRequest extends AmazonWebServiceRequest implemen
     private RequestProgress requestProgress;
     private InputSerialization inputSerialization;
     private OutputSerialization outputSerialization;
+    private ScanRange scanRange;
 
     /**
      * The S3 Bucket.
@@ -137,6 +138,28 @@ public class SelectObjectContentRequest extends AmazonWebServiceRequest implemen
      */
     public SelectObjectContentRequest withExpressionType(ExpressionType expressionType) {
         setExpressionType(expressionType);
+        return this;
+    }
+
+    /**
+     * The byte range of the query
+     */
+    public ScanRange getScanRange() {
+        return scanRange;
+    }
+
+    /**
+     * The byte range of the query
+     */
+    public void setScanRange(ScanRange scanRange) {
+        this.scanRange = scanRange;
+    }
+
+    /**
+     * The byte range of the query
+     */
+    public SelectObjectContentRequest withScanRange(ScanRange scanRange) {
+        setScanRange(scanRange);
         return this;
     }
 

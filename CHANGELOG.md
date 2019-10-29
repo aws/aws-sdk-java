@@ -1,3 +1,8 @@
+# __1.11.661__ __2019-10-28__
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Adding support in SelectObjectContent for scanning a portion of an object specified by a scan range.
+
 # __1.11.660__ __2019-10-28__
 ## __AWS SDK for Java__
   - ### Features

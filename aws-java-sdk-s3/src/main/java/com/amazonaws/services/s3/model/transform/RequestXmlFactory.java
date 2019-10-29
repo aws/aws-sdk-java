@@ -33,9 +33,12 @@ import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.RequestProgress;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.S3Location;
+import com.amazonaws.services.s3.model.ScanRange;
 import com.amazonaws.services.s3.model.SelectObjectContentRequest;
 import com.amazonaws.services.s3.model.SelectParameters;
 import com.amazonaws.services.s3.model.Tag;
+
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -127,6 +130,8 @@ public class RequestXmlFactory {
 
         addIfNotNull(xml, "Expression", selectRequest.getExpression());
         addIfNotNull(xml, "ExpressionType", selectRequest.getExpressionType());
+
+        addScanRangeIfNotNull(xml,  selectRequest.getScanRange());
         addRequestProgressIfNotNull(xml, selectRequest.getRequestProgress());
         addInputSerializationIfNotNull(xml, selectRequest.getInputSerialization());
         addOutputSerializationIfNotNull(xml, selectRequest.getOutputSerialization());
@@ -162,6 +167,17 @@ public class RequestXmlFactory {
         addOutputSerializationIfNotNull(xml, selectParameters.getOutputSerialization());
 
         xml.end();
+    }
+
+    private static void addScanRangeIfNotNull(XmlWriter xml, ScanRange scanRange) {
+        if(scanRange != null) {
+            xml.start("ScanRange");
+
+            addIfNotNull(xml, "Start", scanRange.getStart());
+            addIfNotNull(xml, "End", scanRange.getEnd());
+
+            xml.end();
+        }
     }
 
     private static void addInputSerializationIfNotNull(XmlWriter xml, InputSerialization inputSerialization) {

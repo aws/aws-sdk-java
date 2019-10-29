@@ -39,6 +39,11 @@ public class SelectParameters implements Serializable, Cloneable {
     private String expression;
 
     /**
+     * The byte range on which to query the object.
+     */
+    private ScanRange scanRange;
+
+    /**
      * Describes how the results of the Select job are serialized.
      */
     private OutputSerialization outputSerialization;
@@ -132,6 +137,33 @@ public class SelectParameters implements Serializable, Cloneable {
      */
     public SelectParameters withExpression(String expression) {
         setExpression(expression);
+        return this;
+    }
+
+    /**
+     * @return The range on which the query is to be executed.
+     */
+    public ScanRange getScanRange() {
+        return scanRange;
+    }
+
+    /**
+     * Sets the byte range on which to execute the query.
+     *
+     * @param scanRange The new byte range value.
+     */
+    public void setScanRange(ScanRange scanRange) {
+        this.scanRange = scanRange;
+    }
+
+    /**
+     * Sets the scan range
+     *
+     * @param scanRange The new range value.
+     * @return This object for method chaining.
+     */
+    public SelectParameters withRange(ScanRange scanRange) {
+        setScanRange(scanRange);
         return this;
     }
 
