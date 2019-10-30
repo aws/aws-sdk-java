@@ -548,7 +548,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot contain any of the following characters: '/', '"', or '@'.
+     * The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.
      * </p>
      * </li>
      * </ul>
@@ -4014,7 +4015,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot contain any of the following characters: '/', '"', or '@'.
+     * The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.
      * </p>
      * </li>
      * </ul>
@@ -4051,7 +4053,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot contain any of the following characters: '/', '"', or '@'.
+     *        The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     *        special characters cannot be used in the AUTH token.
      *        </p>
      *        </li>
      *        </ul>
@@ -4094,7 +4097,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot contain any of the following characters: '/', '"', or '@'.
+     * The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.
      * </p>
      * </li>
      * </ul>
@@ -4130,7 +4134,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot contain any of the following characters: '/', '"', or '@'.
+     *         The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     *         special characters cannot be used in the AUTH token.
      *         </p>
      *         </li>
      *         </ul>
@@ -4173,7 +4178,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot contain any of the following characters: '/', '"', or '@'.
+     * The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.
      * </p>
      * </li>
      * </ul>
@@ -4210,7 +4216,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot contain any of the following characters: '/', '"', or '@'.
+     *        The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     *        special characters cannot be used in the AUTH token.
      *        </p>
      *        </li>
      *        </ul>

@@ -101,10 +101,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
-     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
-     * Considerations for Memcached</a>.
+     * Only newly created nodes are located in different Availability Zones.
      * </p>
      * </note>
      */
@@ -425,6 +422,57 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String cacheNodeType;
+    /**
+     * <p>
+     * Reserved parameter. The password used to access a password protected server. This parameter must be specified
+     * with the <code>auth-token-update</code> parameter. Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or '@', '%'
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
+     * </p>
+     */
+    private String authToken;
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     */
+    private String authTokenUpdateStrategy;
 
     /**
      * Default constructor for ModifyCacheClusterRequest object. Callers should use the setter or fluent setter
@@ -854,10 +902,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
-     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
-     * Considerations for Memcached</a>.
+     * Only newly created nodes are located in different Availability Zones.
      * </p>
      * </note>
      * 
@@ -877,11 +922,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        current Availability Zone.
      *        </p>
      *        <p>
-     *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
-     *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
-     *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     *        Node Considerations for Memcached</a>.
+     *        Only newly created nodes are located in different Availability Zones.
      *        </p>
      * @see AZMode
      */
@@ -908,10 +949,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
-     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
-     * Considerations for Memcached</a>.
+     * Only newly created nodes are located in different Availability Zones.
      * </p>
      * </note>
      * 
@@ -930,11 +968,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         current Availability Zone.
      *         </p>
      *         <p>
-     *         Only newly created nodes are located in different Availability Zones. For instructions on how to move
-     *         existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
-     *         section of <a
-     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     *         Node Considerations for Memcached</a>.
+     *         Only newly created nodes are located in different Availability Zones.
      *         </p>
      * @see AZMode
      */
@@ -961,10 +995,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
-     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
-     * Considerations for Memcached</a>.
+     * Only newly created nodes are located in different Availability Zones.
      * </p>
      * </note>
      * 
@@ -984,11 +1015,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        current Availability Zone.
      *        </p>
      *        <p>
-     *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
-     *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
-     *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     *        Node Considerations for Memcached</a>.
+     *        Only newly created nodes are located in different Availability Zones.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AZMode
@@ -1017,10 +1044,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
-     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
-     * Considerations for Memcached</a>.
+     * Only newly created nodes are located in different Availability Zones.
      * </p>
      * </note>
      * 
@@ -1040,11 +1064,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        current Availability Zone.
      *        </p>
      *        <p>
-     *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
-     *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
-     *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     *        Node Considerations for Memcached</a>.
+     *        Only newly created nodes are located in different Availability Zones.
      *        </p>
      * @see AZMode
      */
@@ -1071,10 +1091,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Availability Zone.
      * </p>
      * <p>
-     * Only newly created nodes are located in different Availability Zones. For instructions on how to move existing
-     * Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node
-     * Considerations for Memcached</a>.
+     * Only newly created nodes are located in different Availability Zones.
      * </p>
      * </note>
      * 
@@ -1094,11 +1111,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        current Availability Zone.
      *        </p>
      *        <p>
-     *        Only newly created nodes are located in different Availability Zones. For instructions on how to move
-     *        existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b>
-     *        section of <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     *        Node Considerations for Memcached</a>.
+     *        Only newly created nodes are located in different Availability Zones.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AZMode
@@ -3499,6 +3512,417 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Reserved parameter. The password used to access a password protected server. This parameter must be specified
+     * with the <code>auth-token-update</code> parameter. Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or '@', '%'
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
+     * </p>
+     * 
+     * @param authToken
+     *        Reserved parameter. The password used to access a password protected server. This parameter must be
+     *        specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be only printable ASCII characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 16 characters and no more than 128 characters in length
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain any of the following characters: '/', '"', or '@', '%'
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
+     */
+
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
+    }
+
+    /**
+     * <p>
+     * Reserved parameter. The password used to access a password protected server. This parameter must be specified
+     * with the <code>auth-token-update</code> parameter. Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or '@', '%'
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
+     * </p>
+     * 
+     * @return Reserved parameter. The password used to access a password protected server. This parameter must be
+     *         specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be only printable ASCII characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be at least 16 characters and no more than 128 characters in length
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot contain any of the following characters: '/', '"', or '@', '%'
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
+     */
+
+    public String getAuthToken() {
+        return this.authToken;
+    }
+
+    /**
+     * <p>
+     * Reserved parameter. The password used to access a password protected server. This parameter must be specified
+     * with the <code>auth-token-update</code> parameter. Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or '@', '%'
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
+     * </p>
+     * 
+     * @param authToken
+     *        Reserved parameter. The password used to access a password protected server. This parameter must be
+     *        specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be only printable ASCII characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 16 characters and no more than 128 characters in length
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain any of the following characters: '/', '"', or '@', '%'
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyCacheClusterRequest withAuthToken(String authToken) {
+        setAuthToken(authToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @param authTokenUpdateStrategy
+     *        Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *        <code>auth-token</code> parameter. Possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Rotate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        Redis AUTH</a>
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public void setAuthTokenUpdateStrategy(String authTokenUpdateStrategy) {
+        this.authTokenUpdateStrategy = authTokenUpdateStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @return Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *         <code>auth-token</code> parameter. Possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Rotate
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Set
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *         Redis AUTH</a>
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public String getAuthTokenUpdateStrategy() {
+        return this.authTokenUpdateStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @param authTokenUpdateStrategy
+     *        Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *        <code>auth-token</code> parameter. Possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Rotate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        Redis AUTH</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public ModifyCacheClusterRequest withAuthTokenUpdateStrategy(String authTokenUpdateStrategy) {
+        setAuthTokenUpdateStrategy(authTokenUpdateStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @param authTokenUpdateStrategy
+     *        Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *        <code>auth-token</code> parameter. Possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Rotate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        Redis AUTH</a>
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public void setAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType authTokenUpdateStrategy) {
+        withAuthTokenUpdateStrategy(authTokenUpdateStrategy);
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @param authTokenUpdateStrategy
+     *        Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *        <code>auth-token</code> parameter. Possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Rotate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        Redis AUTH</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public ModifyCacheClusterRequest withAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType authTokenUpdateStrategy) {
+        this.authTokenUpdateStrategy = authTokenUpdateStrategy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3543,7 +3967,11 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         if (getSnapshotWindow() != null)
             sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
         if (getCacheNodeType() != null)
-            sb.append("CacheNodeType: ").append(getCacheNodeType());
+            sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
+        if (getAuthToken() != null)
+            sb.append("AuthToken: ").append(getAuthToken()).append(",");
+        if (getAuthTokenUpdateStrategy() != null)
+            sb.append("AuthTokenUpdateStrategy: ").append(getAuthTokenUpdateStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -3626,6 +4054,14 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
             return false;
+        if (other.getAuthToken() == null ^ this.getAuthToken() == null)
+            return false;
+        if (other.getAuthToken() != null && other.getAuthToken().equals(this.getAuthToken()) == false)
+            return false;
+        if (other.getAuthTokenUpdateStrategy() == null ^ this.getAuthTokenUpdateStrategy() == null)
+            return false;
+        if (other.getAuthTokenUpdateStrategy() != null && other.getAuthTokenUpdateStrategy().equals(this.getAuthTokenUpdateStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -3651,6 +4087,8 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
+        hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
+        hashCode = prime * hashCode + ((getAuthTokenUpdateStrategy() == null) ? 0 : getAuthTokenUpdateStrategy().hashCode());
         return hashCode;
     }
 

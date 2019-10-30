@@ -60,6 +60,10 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("AutomaticFailoverEnabled", StringUtils.fromBoolean(modifyReplicationGroupRequest.getAutomaticFailoverEnabled()));
         }
 
+        if (modifyReplicationGroupRequest.getNodeGroupId() != null) {
+            request.addParameter("NodeGroupId", StringUtils.fromString(modifyReplicationGroupRequest.getNodeGroupId()));
+        }
+
         if (!modifyReplicationGroupRequest.getCacheSecurityGroupNames().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest.getCacheSecurityGroupNames()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest
@@ -129,8 +133,12 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("CacheNodeType", StringUtils.fromString(modifyReplicationGroupRequest.getCacheNodeType()));
         }
 
-        if (modifyReplicationGroupRequest.getNodeGroupId() != null) {
-            request.addParameter("NodeGroupId", StringUtils.fromString(modifyReplicationGroupRequest.getNodeGroupId()));
+        if (modifyReplicationGroupRequest.getAuthToken() != null) {
+            request.addParameter("AuthToken", StringUtils.fromString(modifyReplicationGroupRequest.getAuthToken()));
+        }
+
+        if (modifyReplicationGroupRequest.getAuthTokenUpdateStrategy() != null) {
+            request.addParameter("AuthTokenUpdateStrategy", StringUtils.fromString(modifyReplicationGroupRequest.getAuthTokenUpdateStrategy()));
         }
 
         return request;

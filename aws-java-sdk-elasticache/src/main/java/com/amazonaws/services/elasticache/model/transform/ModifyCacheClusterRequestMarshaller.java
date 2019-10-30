@@ -151,6 +151,14 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
             request.addParameter("CacheNodeType", StringUtils.fromString(modifyCacheClusterRequest.getCacheNodeType()));
         }
 
+        if (modifyCacheClusterRequest.getAuthToken() != null) {
+            request.addParameter("AuthToken", StringUtils.fromString(modifyCacheClusterRequest.getAuthToken()));
+        }
+
+        if (modifyCacheClusterRequest.getAuthTokenUpdateStrategy() != null) {
+            request.addParameter("AuthTokenUpdateStrategy", StringUtils.fromString(modifyCacheClusterRequest.getAuthTokenUpdateStrategy()));
+        }
+
         return request;
     }
 

@@ -55,6 +55,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private String cacheNodeType;
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     */
+    private String authTokenStatus;
 
     /**
      * <p>
@@ -279,6 +285,65 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @param authTokenStatus
+     *        The auth token status
+     * @see AuthTokenUpdateStatus
+     */
+
+    public void setAuthTokenStatus(String authTokenStatus) {
+        this.authTokenStatus = authTokenStatus;
+    }
+
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @return The auth token status
+     * @see AuthTokenUpdateStatus
+     */
+
+    public String getAuthTokenStatus() {
+        return this.authTokenStatus;
+    }
+
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @param authTokenStatus
+     *        The auth token status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthTokenUpdateStatus
+     */
+
+    public PendingModifiedValues withAuthTokenStatus(String authTokenStatus) {
+        setAuthTokenStatus(authTokenStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @param authTokenStatus
+     *        The auth token status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthTokenUpdateStatus
+     */
+
+    public PendingModifiedValues withAuthTokenStatus(AuthTokenUpdateStatus authTokenStatus) {
+        this.authTokenStatus = authTokenStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +362,9 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getCacheNodeType() != null)
-            sb.append("CacheNodeType: ").append(getCacheNodeType());
+            sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
+        if (getAuthTokenStatus() != null)
+            sb.append("AuthTokenStatus: ").append(getAuthTokenStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -328,6 +395,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             return false;
         if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
             return false;
+        if (other.getAuthTokenStatus() == null ^ this.getAuthTokenStatus() == null)
+            return false;
+        if (other.getAuthTokenStatus() != null && other.getAuthTokenStatus().equals(this.getAuthTokenStatus()) == false)
+            return false;
         return true;
     }
 
@@ -340,6 +411,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCacheNodeIdsToRemove() == null) ? 0 : getCacheNodeIdsToRemove().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
+        hashCode = prime * hashCode + ((getAuthTokenStatus() == null) ? 0 : getAuthTokenStatus().hashCode());
         return hashCode;
     }
 

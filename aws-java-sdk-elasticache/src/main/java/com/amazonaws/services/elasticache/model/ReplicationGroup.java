@@ -162,6 +162,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private Boolean authTokenEnabled;
     /**
      * <p>
+     * The date the auth token was last modified
+     * </p>
+     */
+    private java.util.Date authTokenLastModifiedDate;
+    /**
+     * <p>
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
@@ -1267,6 +1273,46 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The date the auth token was last modified
+     * </p>
+     * 
+     * @param authTokenLastModifiedDate
+     *        The date the auth token was last modified
+     */
+
+    public void setAuthTokenLastModifiedDate(java.util.Date authTokenLastModifiedDate) {
+        this.authTokenLastModifiedDate = authTokenLastModifiedDate;
+    }
+
+    /**
+     * <p>
+     * The date the auth token was last modified
+     * </p>
+     * 
+     * @return The date the auth token was last modified
+     */
+
+    public java.util.Date getAuthTokenLastModifiedDate() {
+        return this.authTokenLastModifiedDate;
+    }
+
+    /**
+     * <p>
+     * The date the auth token was last modified
+     * </p>
+     * 
+     * @param authTokenLastModifiedDate
+     *        The date the auth token was last modified
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withAuthTokenLastModifiedDate(java.util.Date authTokenLastModifiedDate) {
+        setAuthTokenLastModifiedDate(authTokenLastModifiedDate);
+        return this;
+    }
+
+    /**
+     * <p>
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
@@ -1633,6 +1679,8 @@ public class ReplicationGroup implements Serializable, Cloneable {
             sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
         if (getAuthTokenEnabled() != null)
             sb.append("AuthTokenEnabled: ").append(getAuthTokenEnabled()).append(",");
+        if (getAuthTokenLastModifiedDate() != null)
+            sb.append("AuthTokenLastModifiedDate: ").append(getAuthTokenLastModifiedDate()).append(",");
         if (getTransitEncryptionEnabled() != null)
             sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled()).append(",");
         if (getAtRestEncryptionEnabled() != null)
@@ -1709,6 +1757,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getAuthTokenEnabled() != null && other.getAuthTokenEnabled().equals(this.getAuthTokenEnabled()) == false)
             return false;
+        if (other.getAuthTokenLastModifiedDate() == null ^ this.getAuthTokenLastModifiedDate() == null)
+            return false;
+        if (other.getAuthTokenLastModifiedDate() != null && other.getAuthTokenLastModifiedDate().equals(this.getAuthTokenLastModifiedDate()) == false)
+            return false;
         if (other.getTransitEncryptionEnabled() == null ^ this.getTransitEncryptionEnabled() == null)
             return false;
         if (other.getTransitEncryptionEnabled() != null && other.getTransitEncryptionEnabled().equals(this.getTransitEncryptionEnabled()) == false)
@@ -1743,6 +1795,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterEnabled() == null) ? 0 : getClusterEnabled().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
         hashCode = prime * hashCode + ((getAuthTokenEnabled() == null) ? 0 : getAuthTokenEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAuthTokenLastModifiedDate() == null) ? 0 : getAuthTokenLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());

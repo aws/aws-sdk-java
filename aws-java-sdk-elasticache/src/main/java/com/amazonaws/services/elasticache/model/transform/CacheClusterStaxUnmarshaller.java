@@ -175,6 +175,11 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     continue;
                 }
 
+                if (context.testExpression("AuthTokenLastModifiedDate", targetDepth)) {
+                    cacheCluster.setAuthTokenLastModifiedDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TransitEncryptionEnabled", targetDepth)) {
                     cacheCluster.setTransitEncryptionEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -65,6 +65,12 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </p>
      */
     private ReshardingStatus resharding;
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     */
+    private String authTokenStatus;
 
     /**
      * <p>
@@ -421,6 +427,79 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @param authTokenStatus
+     *        The auth token status
+     * @see AuthTokenUpdateStatus
+     */
+
+    public void setAuthTokenStatus(String authTokenStatus) {
+        this.authTokenStatus = authTokenStatus;
+    }
+
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @return The auth token status
+     * @see AuthTokenUpdateStatus
+     */
+
+    public String getAuthTokenStatus() {
+        return this.authTokenStatus;
+    }
+
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @param authTokenStatus
+     *        The auth token status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthTokenUpdateStatus
+     */
+
+    public ReplicationGroupPendingModifiedValues withAuthTokenStatus(String authTokenStatus) {
+        setAuthTokenStatus(authTokenStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @param authTokenStatus
+     *        The auth token status
+     * @see AuthTokenUpdateStatus
+     */
+
+    public void setAuthTokenStatus(AuthTokenUpdateStatus authTokenStatus) {
+        withAuthTokenStatus(authTokenStatus);
+    }
+
+    /**
+     * <p>
+     * The auth token status
+     * </p>
+     * 
+     * @param authTokenStatus
+     *        The auth token status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthTokenUpdateStatus
+     */
+
+    public ReplicationGroupPendingModifiedValues withAuthTokenStatus(AuthTokenUpdateStatus authTokenStatus) {
+        this.authTokenStatus = authTokenStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -437,7 +516,9 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         if (getAutomaticFailoverStatus() != null)
             sb.append("AutomaticFailoverStatus: ").append(getAutomaticFailoverStatus()).append(",");
         if (getResharding() != null)
-            sb.append("Resharding: ").append(getResharding());
+            sb.append("Resharding: ").append(getResharding()).append(",");
+        if (getAuthTokenStatus() != null)
+            sb.append("AuthTokenStatus: ").append(getAuthTokenStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -464,6 +545,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
             return false;
         if (other.getResharding() != null && other.getResharding().equals(this.getResharding()) == false)
             return false;
+        if (other.getAuthTokenStatus() == null ^ this.getAuthTokenStatus() == null)
+            return false;
+        if (other.getAuthTokenStatus() != null && other.getAuthTokenStatus().equals(this.getAuthTokenStatus()) == false)
+            return false;
         return true;
     }
 
@@ -475,6 +560,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         hashCode = prime * hashCode + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailoverStatus() == null) ? 0 : getAutomaticFailoverStatus().hashCode());
         hashCode = prime * hashCode + ((getResharding() == null) ? 0 : getResharding().hashCode());
+        hashCode = prime * hashCode + ((getAuthTokenStatus() == null) ? 0 : getAuthTokenStatus().hashCode());
         return hashCode;
     }
 

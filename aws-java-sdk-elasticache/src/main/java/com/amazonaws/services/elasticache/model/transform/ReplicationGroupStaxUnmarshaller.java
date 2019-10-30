@@ -125,6 +125,11 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     continue;
                 }
 
+                if (context.testExpression("AuthTokenLastModifiedDate", targetDepth)) {
+                    replicationGroup.setAuthTokenLastModifiedDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TransitEncryptionEnabled", targetDepth)) {
                     replicationGroup.setTransitEncryptionEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -69,8 +69,19 @@ public class SDKDefaultRetryConditionTest {
     }
 
     @Test
-    public void shouldNotRetryBad4xxErrorCodeAse() {
-        Assert.assertFalse(shouldRetry(getAse(400 + random.nextInt(100), "BogusException")));
+    public void shouldNotRetryBad4xxErrorCodeAseExcept429() {
+        // Try all 4xx status codes except 429 which should be retryable
+        for (int i = 400; i < 500; ++i) {
+            if (i != 429) {
+                Assert.assertFalse("Status code " + i + " should not be retryable",
+                                   shouldRetry(getAse(i, "BogusException")));
+            }
+        }
+    }
+
+    @Test
+    public void shouldRetryBad429ErrorCodeAse() {
+        Assert.assertTrue("Status code 429 should be retryable", shouldRetry(getAse(429, "BogusException")));
     }
 
     private boolean shouldRetry(AmazonClientException ace) {

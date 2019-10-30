@@ -87,6 +87,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private Boolean automaticFailoverEnabled;
     /**
      * <p>
+     * Deprecated. This parameter is not used.
+     * </p>
+     */
+    @Deprecated
+    private String nodeGroupId;
+    /**
+     * <p>
      * A list of cache security group names to authorize for the clusters in this replication group. This change is
      * asynchronously applied as soon as possible.
      * </p>
@@ -257,11 +264,55 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String cacheNodeType;
     /**
      * <p>
-     * Deprecated. This parameter is not used.
+     * Reserved parameter. The password used to access a password protected server. This parameter must be specified
+     * with the <code>auth-token-update-strategy </code> parameter. Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or '@', '%'
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
      * </p>
      */
-    @Deprecated
-    private String nodeGroupId;
+    private String authToken;
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     */
+    private String authTokenUpdateStrategy;
 
     /**
      * <p>
@@ -679,6 +730,46 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     public Boolean isAutomaticFailoverEnabled() {
         return this.automaticFailoverEnabled;
+    }
+
+    /**
+     * <p>
+     * Deprecated. This parameter is not used.
+     * </p>
+     * 
+     * @param nodeGroupId
+     *        Deprecated. This parameter is not used.
+     */
+    @Deprecated
+    public void setNodeGroupId(String nodeGroupId) {
+        this.nodeGroupId = nodeGroupId;
+    }
+
+    /**
+     * <p>
+     * Deprecated. This parameter is not used.
+     * </p>
+     * 
+     * @return Deprecated. This parameter is not used.
+     */
+    @Deprecated
+    public String getNodeGroupId() {
+        return this.nodeGroupId;
+    }
+
+    /**
+     * <p>
+     * Deprecated. This parameter is not used.
+     * </p>
+     * 
+     * @param nodeGroupId
+     *        Deprecated. This parameter is not used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public ModifyReplicationGroupRequest withNodeGroupId(String nodeGroupId) {
+        setNodeGroupId(nodeGroupId);
+        return this;
     }
 
     /**
@@ -1859,41 +1950,363 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Deprecated. This parameter is not used.
+     * Reserved parameter. The password used to access a password protected server. This parameter must be specified
+     * with the <code>auth-token-update-strategy </code> parameter. Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or '@', '%'
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
      * </p>
      * 
-     * @param nodeGroupId
-     *        Deprecated. This parameter is not used.
+     * @param authToken
+     *        Reserved parameter. The password used to access a password protected server. This parameter must be
+     *        specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be only printable ASCII characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 16 characters and no more than 128 characters in length
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain any of the following characters: '/', '"', or '@', '%'
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
      */
-    @Deprecated
-    public void setNodeGroupId(String nodeGroupId) {
-        this.nodeGroupId = nodeGroupId;
+
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
     }
 
     /**
      * <p>
-     * Deprecated. This parameter is not used.
+     * Reserved parameter. The password used to access a password protected server. This parameter must be specified
+     * with the <code>auth-token-update-strategy </code> parameter. Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or '@', '%'
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
      * </p>
      * 
-     * @return Deprecated. This parameter is not used.
+     * @return Reserved parameter. The password used to access a password protected server. This parameter must be
+     *         specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be only printable ASCII characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be at least 16 characters and no more than 128 characters in length
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot contain any of the following characters: '/', '"', or '@', '%'
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
      */
-    @Deprecated
-    public String getNodeGroupId() {
-        return this.nodeGroupId;
+
+    public String getAuthToken() {
+        return this.authToken;
     }
 
     /**
      * <p>
-     * Deprecated. This parameter is not used.
+     * Reserved parameter. The password used to access a password protected server. This parameter must be specified
+     * with the <code>auth-token-update-strategy </code> parameter. Password constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be only printable ASCII characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be at least 16 characters and no more than 128 characters in length
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain any of the following characters: '/', '"', or '@', '%'
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
      * </p>
      * 
-     * @param nodeGroupId
-     *        Deprecated. This parameter is not used.
+     * @param authToken
+     *        Reserved parameter. The password used to access a password protected server. This parameter must be
+     *        specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be only printable ASCII characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be at least 16 characters and no more than 128 characters in length
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain any of the following characters: '/', '"', or '@', '%'
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-    @Deprecated
-    public ModifyReplicationGroupRequest withNodeGroupId(String nodeGroupId) {
-        setNodeGroupId(nodeGroupId);
+
+    public ModifyReplicationGroupRequest withAuthToken(String authToken) {
+        setAuthToken(authToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @param authTokenUpdateStrategy
+     *        Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *        <code>auth-token</code> parameter. Possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Rotate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        Redis AUTH</a>
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public void setAuthTokenUpdateStrategy(String authTokenUpdateStrategy) {
+        this.authTokenUpdateStrategy = authTokenUpdateStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @return Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *         <code>auth-token</code> parameter. Possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Rotate
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Set
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *         Redis AUTH</a>
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public String getAuthTokenUpdateStrategy() {
+        return this.authTokenUpdateStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @param authTokenUpdateStrategy
+     *        Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *        <code>auth-token</code> parameter. Possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Rotate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        Redis AUTH</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public ModifyReplicationGroupRequest withAuthTokenUpdateStrategy(String authTokenUpdateStrategy) {
+        setAuthTokenUpdateStrategy(authTokenUpdateStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     * <code>auth-token</code> parameter. Possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Rotate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * AUTH</a>
+     * </p>
+     * 
+     * @param authTokenUpdateStrategy
+     *        Specifies the strategy to use to update the AUTH token. This parameter must be specified with the
+     *        <code>auth-token</code> parameter. Possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Rotate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        Redis AUTH</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthTokenUpdateStrategyType
+     */
+
+    public ModifyReplicationGroupRequest withAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType authTokenUpdateStrategy) {
+        this.authTokenUpdateStrategy = authTokenUpdateStrategy.toString();
         return this;
     }
 
@@ -1919,6 +2332,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("SnapshottingClusterId: ").append(getSnapshottingClusterId()).append(",");
         if (getAutomaticFailoverEnabled() != null)
             sb.append("AutomaticFailoverEnabled: ").append(getAutomaticFailoverEnabled()).append(",");
+        if (getNodeGroupId() != null)
+            sb.append("NodeGroupId: ").append(getNodeGroupId()).append(",");
         if (getCacheSecurityGroupNames() != null)
             sb.append("CacheSecurityGroupNames: ").append(getCacheSecurityGroupNames()).append(",");
         if (getSecurityGroupIds() != null)
@@ -1943,8 +2358,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
         if (getCacheNodeType() != null)
             sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
-        if (getNodeGroupId() != null)
-            sb.append("NodeGroupId: ").append(getNodeGroupId());
+        if (getAuthToken() != null)
+            sb.append("AuthToken: ").append(getAuthToken()).append(",");
+        if (getAuthTokenUpdateStrategy() != null)
+            sb.append("AuthTokenUpdateStrategy: ").append(getAuthTokenUpdateStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -1978,6 +2395,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getAutomaticFailoverEnabled() == null ^ this.getAutomaticFailoverEnabled() == null)
             return false;
         if (other.getAutomaticFailoverEnabled() != null && other.getAutomaticFailoverEnabled().equals(this.getAutomaticFailoverEnabled()) == false)
+            return false;
+        if (other.getNodeGroupId() == null ^ this.getNodeGroupId() == null)
+            return false;
+        if (other.getNodeGroupId() != null && other.getNodeGroupId().equals(this.getNodeGroupId()) == false)
             return false;
         if (other.getCacheSecurityGroupNames() == null ^ this.getCacheSecurityGroupNames() == null)
             return false;
@@ -2027,9 +2448,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
             return false;
-        if (other.getNodeGroupId() == null ^ this.getNodeGroupId() == null)
+        if (other.getAuthToken() == null ^ this.getAuthToken() == null)
             return false;
-        if (other.getNodeGroupId() != null && other.getNodeGroupId().equals(this.getNodeGroupId()) == false)
+        if (other.getAuthToken() != null && other.getAuthToken().equals(this.getAuthToken()) == false)
+            return false;
+        if (other.getAuthTokenUpdateStrategy() == null ^ this.getAuthTokenUpdateStrategy() == null)
+            return false;
+        if (other.getAuthTokenUpdateStrategy() != null && other.getAuthTokenUpdateStrategy().equals(this.getAuthTokenUpdateStrategy()) == false)
             return false;
         return true;
     }
@@ -2044,6 +2469,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId().hashCode());
         hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailoverEnabled() == null) ? 0 : getAutomaticFailoverEnabled().hashCode());
+        hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
         hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
@@ -2056,7 +2482,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
-        hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
+        hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
+        hashCode = prime * hashCode + ((getAuthTokenUpdateStrategy() == null) ? 0 : getAuthTokenUpdateStrategy().hashCode());
         return hashCode;
     }
 

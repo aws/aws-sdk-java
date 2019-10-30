@@ -1019,6 +1019,20 @@
       },
       "documentation":"<p>Represents the allowed node types you can use to modify your cluster or replication group.</p>"
     },
+    "AuthTokenUpdateStatus":{
+      "type":"string",
+      "enum":[
+        "SETTING",
+        "ROTATING"
+      ]
+    },
+    "AuthTokenUpdateStrategyType":{
+      "type":"string",
+      "enum":[
+        "SET",
+        "ROTATE"
+      ]
+    },
     "AuthorizationAlreadyExistsFault":{
       "type":"structure",
       "members":{
@@ -1229,6 +1243,10 @@
         "AuthTokenEnabled":{
           "shape":"BooleanOptional",
           "documentation":"<p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p> <p>Default: <code>false</code> </p>"
+        },
+        "AuthTokenLastModifiedDate":{
+          "shape":"TStamp",
+          "documentation":"<p>The date the auth token was last modified</p>"
         },
         "TransitEncryptionEnabled":{
           "shape":"BooleanOptional",
@@ -2030,7 +2048,7 @@
         },
         "AuthToken":{
           "shape":"String",
-          "documentation":"<p> <b>Reserved parameter.</b> The password used to access a password protected server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following characters: '/', '\"', or '@'. </p> </li> </ul> <p>For more information, see <a href=\"http://redis.io/commands/AUTH\">AUTH password</a> at http://redis.io/commands/AUTH.</p>"
+          "documentation":"<p> <b>Reserved parameter.</b> The password used to access a password protected server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more than 128 characters in length.</p> </li> <li> <p>The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more information, see <a href=\"http://redis.io/commands/AUTH\">AUTH password</a> at http://redis.io/commands/AUTH.</p>"
         }
       },
       "documentation":"<p>Represents the input of a CreateCacheCluster operation.</p>"
@@ -2232,7 +2250,7 @@
         },
         "AuthToken":{
           "shape":"String",
-          "documentation":"<p> <b>Reserved parameter.</b> The password used to access a password protected server.</p> <p> <code>AuthToken</code> can be specified only on replication groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p> <important> <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>, an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important> <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following characters: '/', '\"', or '@'. </p> </li> </ul> <p>For more information, see <a href=\"http://redis.io/commands/AUTH\">AUTH password</a> at http://redis.io/commands/AUTH.</p>"
+          "documentation":"<p> <b>Reserved parameter.</b> The password used to access a password protected server.</p> <p> <code>AuthToken</code> can be specified only on replication groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p> <important> <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>, an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important> <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more than 128 characters in length.</p> </li> <li> <p>The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more information, see <a href=\"http://redis.io/commands/AUTH\">AUTH password</a> at http://redis.io/commands/AUTH.</p>"
         },
         "TransitEncryptionEnabled":{
           "shape":"BooleanOptional",
@@ -3169,7 +3187,7 @@
         },
         "AZMode":{
           "shape":"AZMode",
-          "documentation":"<p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p> <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p> <p>This option is only supported for Memcached clusters.</p> <note> <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p> <p>Only newly created nodes are located in different Availability Zones. For instructions on how to move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a href=\"https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html\">Cache Node Considerations for Memcached</a>.</p> </note>"
+          "documentation":"<p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p> <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p> <p>This option is only supported for Memcached clusters.</p> <note> <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p> <p>Only newly created nodes are located in different Availability Zones. </p> </note>"
         },
         "NewAvailabilityZones":{
           "shape":"PreferredAvailabilityZoneList",
@@ -3222,6 +3240,14 @@
         "CacheNodeType":{
           "shape":"String",
           "documentation":"<p>A valid cache node type that you want to scale this cluster up to.</p>"
+        },
+        "AuthToken":{
+          "shape":"String",
+          "documentation":"<p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li> <li> <p>Cannot contain any of the following characters: '/', '\"', or '@', '%'</p> </li> </ul> <p> For more information, see AUTH password at <a href=\"http://redis.io/commands/AUTH\">AUTH</a>.</p>"
+        },
+        "AuthTokenUpdateStrategy":{
+          "shape":"AuthTokenUpdateStrategyType",
+          "documentation":"<p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p> <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more information, see <a href=\"https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html\">Authenticating Users with Redis AUTH</a> </p>"
         }
       },
       "documentation":"<p>Represents the input of a <code>ModifyCacheCluster</code> operation.</p>"
@@ -3299,6 +3325,11 @@
           "shape":"BooleanOptional",
           "documentation":"<p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p> <p>Valid values: <code>true</code> | <code>false</code> </p> <p>Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>"
         },
+        "NodeGroupId":{
+          "shape":"String",
+          "documentation":"<p>Deprecated. This parameter is not used.</p>",
+          "deprecated":true
+        },
         "CacheSecurityGroupNames":{
           "shape":"CacheSecurityGroupNameList",
           "documentation":"<p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p> <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>"
@@ -3347,10 +3378,13 @@
           "shape":"String",
           "documentation":"<p>A valid cache node type that you want to scale this replication group to.</p>"
         },
-        "NodeGroupId":{
+        "AuthToken":{
           "shape":"String",
-          "documentation":"<p>Deprecated. This parameter is not used.</p>",
-          "deprecated":true
+          "documentation":"<p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li> <li> <p>Cannot contain any of the following characters: '/', '\"', or '@', '%'</p> </li> </ul> <p> For more information, see AUTH password at <a href=\"http://redis.io/commands/AUTH\">AUTH</a>.</p>"
+        },
+        "AuthTokenUpdateStrategy":{
+          "shape":"AuthTokenUpdateStrategyType",
+          "documentation":"<p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p> <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more information, see <a href=\"https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html\">Authenticating Users with Redis AUTH</a> </p>"
         }
       },
       "documentation":"<p>Represents the input of a <code>ModifyReplicationGroups</code> operation.</p>"
@@ -3822,6 +3856,10 @@
         "CacheNodeType":{
           "shape":"String",
           "documentation":"<p>The cache node type that this cluster or replication group is scaled to.</p>"
+        },
+        "AuthTokenStatus":{
+          "shape":"AuthTokenUpdateStatus",
+          "documentation":"<p>The auth token status</p>"
         }
       },
       "documentation":"<p>A group of settings that are applied to the cluster in the future, or that are currently being applied.</p>"
@@ -4021,6 +4059,10 @@
           "shape":"BooleanOptional",
           "documentation":"<p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p> <p>Default: <code>false</code> </p>"
         },
+        "AuthTokenLastModifiedDate":{
+          "shape":"TStamp",
+          "documentation":"<p>The date the auth token was last modified</p>"
+        },
         "TransitEncryptionEnabled":{
           "shape":"BooleanOptional",
           "documentation":"<p>A flag that enables in-transit encryption when set to <code>true</code>.</p> <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p> <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default: <code>false</code> </p>"
@@ -4125,6 +4167,10 @@
         "Resharding":{
           "shape":"ReshardingStatus",
           "documentation":"<p>The status of an online resharding operation.</p>"
+        },
+        "AuthTokenStatus":{
+          "shape":"AuthTokenUpdateStatus",
+          "documentation":"<p>The auth token status</p>"
         }
       },
       "documentation":"<p>The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.</p>"
