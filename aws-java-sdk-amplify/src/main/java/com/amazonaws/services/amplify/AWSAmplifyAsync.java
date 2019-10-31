@@ -364,8 +364,7 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieve website access logs for a specific time range via a pre-signed URL. Optionally, deliver the logs to a
-     * given S3 bucket.
+     * Retrieve website access logs for a specific time range via a pre-signed URL.
      * </p>
      * 
      * @param generateAccessLogsRequest
@@ -379,8 +378,7 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Retrieve website access logs for a specific time range via a pre-signed URL. Optionally, deliver the logs to a
-     * given S3 bucket.
+     * Retrieve website access logs for a specific time range via a pre-signed URL.
      * </p>
      * 
      * @param generateAccessLogsRequest
@@ -469,7 +467,7 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * </p>
      * 
      * @param getBranchRequest
-     *        Result structure for get branch request.
+     *        Request structure for get branch request.
      * @return A Java Future containing the result of the GetBranch operation returned by the service.
      * @sample AWSAmplifyAsync.GetBranch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranch" target="_top">AWS API
@@ -483,7 +481,7 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * </p>
      * 
      * @param getBranchRequest
-     *        Result structure for get branch request.
+     *        Request structure for get branch request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

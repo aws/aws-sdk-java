@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A code and name pair that represent a severity level that can be applied to a support case.
+ * A code and name pair that represents the severity level of a support case. The available values depend on the support
+ * plan for the account. For more information, see <a
+ * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+ * Severity</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/SeverityLevel" target="_top">AWS API
@@ -30,8 +33,11 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One of four values: "low," "medium," "high," and "urgent". These values correspond to response times returned to
-     * the caller in <code>severityLevel.name</code>.
+     * The code for case severity level.
+     * </p>
+     * <p>
+     * Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> |
+     * <code>critical</code>
      * </p>
      */
     private String code;
@@ -39,18 +45,62 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the severity level that corresponds to the severity level code.
      * </p>
+     * <note>
+     * <p>
+     * The values returned by the API differ from the values that are displayed in the AWS Support Center. For example,
+     * for the code "low", the API name is "Low", but the name in the Support Center is "General guidance". These are
+     * the Support Center code/name mappings:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>low</code>: General guidance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>normal</code>: System impaired
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>high</code>: Production system impaired
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>urgent</code>: Production system down
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>critical</code>: Business-critical system down
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a>
+     * </p>
      */
     private String name;
 
     /**
      * <p>
-     * One of four values: "low," "medium," "high," and "urgent". These values correspond to response times returned to
-     * the caller in <code>severityLevel.name</code>.
+     * The code for case severity level.
+     * </p>
+     * <p>
+     * Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> |
+     * <code>critical</code>
      * </p>
      * 
      * @param code
-     *        One of four values: "low," "medium," "high," and "urgent". These values correspond to response times
-     *        returned to the caller in <code>severityLevel.name</code>.
+     *        The code for case severity level.</p>
+     *        <p>
+     *        Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> |
+     *        <code>critical</code>
      */
 
     public void setCode(String code) {
@@ -59,12 +109,17 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One of four values: "low," "medium," "high," and "urgent". These values correspond to response times returned to
-     * the caller in <code>severityLevel.name</code>.
+     * The code for case severity level.
+     * </p>
+     * <p>
+     * Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> |
+     * <code>critical</code>
      * </p>
      * 
-     * @return One of four values: "low," "medium," "high," and "urgent". These values correspond to response times
-     *         returned to the caller in <code>severityLevel.name</code>.
+     * @return The code for case severity level.</p>
+     *         <p>
+     *         Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> |
+     *         <code>critical</code>
      */
 
     public String getCode() {
@@ -73,13 +128,18 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One of four values: "low," "medium," "high," and "urgent". These values correspond to response times returned to
-     * the caller in <code>severityLevel.name</code>.
+     * The code for case severity level.
+     * </p>
+     * <p>
+     * Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> |
+     * <code>critical</code>
      * </p>
      * 
      * @param code
-     *        One of four values: "low," "medium," "high," and "urgent". These values correspond to response times
-     *        returned to the caller in <code>severityLevel.name</code>.
+     *        The code for case severity level.</p>
+     *        <p>
+     *        Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> |
+     *        <code>critical</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,9 +152,85 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the severity level that corresponds to the severity level code.
      * </p>
+     * <note>
+     * <p>
+     * The values returned by the API differ from the values that are displayed in the AWS Support Center. For example,
+     * for the code "low", the API name is "Low", but the name in the Support Center is "General guidance". These are
+     * the Support Center code/name mappings:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>low</code>: General guidance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>normal</code>: System impaired
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>high</code>: Production system impaired
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>urgent</code>: Production system down
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>critical</code>: Business-critical system down
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a>
+     * </p>
      * 
      * @param name
-     *        The name of the severity level that corresponds to the severity level code.
+     *        The name of the severity level that corresponds to the severity level code.</p> <note>
+     *        <p>
+     *        The values returned by the API differ from the values that are displayed in the AWS Support Center. For
+     *        example, for the code "low", the API name is "Low", but the name in the Support Center is
+     *        "General guidance". These are the Support Center code/name mappings:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>low</code>: General guidance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>normal</code>: System impaired
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>high</code>: Production system impaired
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>urgent</code>: Production system down
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>critical</code>: Business-critical system down
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </note>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+     *        a Severity</a>
      */
 
     public void setName(String name) {
@@ -105,8 +241,84 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the severity level that corresponds to the severity level code.
      * </p>
+     * <note>
+     * <p>
+     * The values returned by the API differ from the values that are displayed in the AWS Support Center. For example,
+     * for the code "low", the API name is "Low", but the name in the Support Center is "General guidance". These are
+     * the Support Center code/name mappings:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>low</code>: General guidance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>normal</code>: System impaired
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>high</code>: Production system impaired
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>urgent</code>: Production system down
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>critical</code>: Business-critical system down
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a>
+     * </p>
      * 
-     * @return The name of the severity level that corresponds to the severity level code.
+     * @return The name of the severity level that corresponds to the severity level code.</p> <note>
+     *         <p>
+     *         The values returned by the API differ from the values that are displayed in the AWS Support Center. For
+     *         example, for the code "low", the API name is "Low", but the name in the Support Center is
+     *         "General guidance". These are the Support Center code/name mappings:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>low</code>: General guidance
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>normal</code>: System impaired
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>high</code>: Production system impaired
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>urgent</code>: Production system down
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>critical</code>: Business-critical system down
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </note>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+     *         a Severity</a>
      */
 
     public String getName() {
@@ -117,9 +329,85 @@ public class SeverityLevel implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the severity level that corresponds to the severity level code.
      * </p>
+     * <note>
+     * <p>
+     * The values returned by the API differ from the values that are displayed in the AWS Support Center. For example,
+     * for the code "low", the API name is "Low", but the name in the Support Center is "General guidance". These are
+     * the Support Center code/name mappings:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>low</code>: General guidance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>normal</code>: System impaired
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>high</code>: Production system impaired
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>urgent</code>: Production system down
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>critical</code>: Business-critical system down
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a>
+     * </p>
      * 
      * @param name
-     *        The name of the severity level that corresponds to the severity level code.
+     *        The name of the severity level that corresponds to the severity level code.</p> <note>
+     *        <p>
+     *        The values returned by the API differ from the values that are displayed in the AWS Support Center. For
+     *        example, for the code "low", the API name is "Low", but the name in the Support Center is
+     *        "General guidance". These are the Support Center code/name mappings:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>low</code>: General guidance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>normal</code>: System impaired
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>high</code>: Production system impaired
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>urgent</code>: Production system down
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>critical</code>: Business-critical system down
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </note>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+     *        a Severity</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

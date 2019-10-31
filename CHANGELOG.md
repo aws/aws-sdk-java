@@ -1,3 +1,16 @@
+# __1.11.664__ __2019-10-31__
+## __AWS Amplify__
+  - ### Features
+    - This release of AWS Amplify Console introduces support for Web Previews. This feature allows user to create ephemeral branch deployments from pull request submissions made to a connected repository.  A pull-request preview deploys every pull request made to your Git repository to a unique preview URL.
+
+## __AWS Support__
+  - ### Features
+    - The status descriptions for TrustedAdvisorCheckRefreshStatus have been updated
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - S3 Inventory now supports a new field 'IntelligentTieringAccessTier' that reports the access tier (frequent or infrequent) of objects stored in Intelligent-Tiering storage class.
+
 # __1.11.663__ __2019-10-30__
 ## __Amazon ElastiCache__
   - ### Features

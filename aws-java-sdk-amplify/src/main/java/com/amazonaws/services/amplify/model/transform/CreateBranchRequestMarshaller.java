@@ -59,6 +59,10 @@ public class CreateBranchRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
     private static final MarshallingInfo<Boolean> ENABLEPULLREQUESTPREVIEW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enablePullRequestPreview").build();
+    private static final MarshallingInfo<String> PULLREQUESTENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullRequestEnvironmentName").build();
+    private static final MarshallingInfo<String> BACKENDENVIRONMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backendEnvironmentArn").build();
 
     private static final CreateBranchRequestMarshaller instance = new CreateBranchRequestMarshaller();
 
@@ -91,6 +95,8 @@ public class CreateBranchRequestMarshaller {
             protocolMarshaller.marshall(createBranchRequest.getTtl(), TTL_BINDING);
             protocolMarshaller.marshall(createBranchRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(createBranchRequest.getEnablePullRequestPreview(), ENABLEPULLREQUESTPREVIEW_BINDING);
+            protocolMarshaller.marshall(createBranchRequest.getPullRequestEnvironmentName(), PULLREQUESTENVIRONMENTNAME_BINDING);
+            protocolMarshaller.marshall(createBranchRequest.getBackendEnvironmentArn(), BACKENDENVIRONMENTARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

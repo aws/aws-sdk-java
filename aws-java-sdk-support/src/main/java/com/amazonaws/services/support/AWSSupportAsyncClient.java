@@ -99,10 +99,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </ul>
  * <p>
  * For authentication of requests, AWS Support uses <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
+ * Process</a>.
  * </p>
  * <p>
- * See <a href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the AWS Support API</a> in the
+ * See <a href="https://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the AWS Support API</a> in the
  * <i>AWS Support User Guide</i> for information about how to use this service to create and manage your support cases,
  * and how to call Trusted Advisor for results of checks on your resources.
  * </p>

@@ -112,6 +112,18 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Boolean enablePullRequestPreview;
+    /**
+     * <p>
+     * The Amplify Environment name for the pull request.
+     * </p>
+     */
+    private String pullRequestEnvironmentName;
+    /**
+     * <p>
+     * ARN for a Backend Environment, part of an Amplify App.
+     * </p>
+     */
+    private String backendEnvironmentArn;
 
     /**
      * <p>
@@ -762,6 +774,86 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The Amplify Environment name for the pull request.
+     * </p>
+     * 
+     * @param pullRequestEnvironmentName
+     *        The Amplify Environment name for the pull request.
+     */
+
+    public void setPullRequestEnvironmentName(String pullRequestEnvironmentName) {
+        this.pullRequestEnvironmentName = pullRequestEnvironmentName;
+    }
+
+    /**
+     * <p>
+     * The Amplify Environment name for the pull request.
+     * </p>
+     * 
+     * @return The Amplify Environment name for the pull request.
+     */
+
+    public String getPullRequestEnvironmentName() {
+        return this.pullRequestEnvironmentName;
+    }
+
+    /**
+     * <p>
+     * The Amplify Environment name for the pull request.
+     * </p>
+     * 
+     * @param pullRequestEnvironmentName
+     *        The Amplify Environment name for the pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBranchRequest withPullRequestEnvironmentName(String pullRequestEnvironmentName) {
+        setPullRequestEnvironmentName(pullRequestEnvironmentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * ARN for a Backend Environment, part of an Amplify App.
+     * </p>
+     * 
+     * @param backendEnvironmentArn
+     *        ARN for a Backend Environment, part of an Amplify App.
+     */
+
+    public void setBackendEnvironmentArn(String backendEnvironmentArn) {
+        this.backendEnvironmentArn = backendEnvironmentArn;
+    }
+
+    /**
+     * <p>
+     * ARN for a Backend Environment, part of an Amplify App.
+     * </p>
+     * 
+     * @return ARN for a Backend Environment, part of an Amplify App.
+     */
+
+    public String getBackendEnvironmentArn() {
+        return this.backendEnvironmentArn;
+    }
+
+    /**
+     * <p>
+     * ARN for a Backend Environment, part of an Amplify App.
+     * </p>
+     * 
+     * @param backendEnvironmentArn
+     *        ARN for a Backend Environment, part of an Amplify App.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBranchRequest withBackendEnvironmentArn(String backendEnvironmentArn) {
+        setBackendEnvironmentArn(backendEnvironmentArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -800,7 +892,11 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getEnablePullRequestPreview() != null)
-            sb.append("EnablePullRequestPreview: ").append(getEnablePullRequestPreview());
+            sb.append("EnablePullRequestPreview: ").append(getEnablePullRequestPreview()).append(",");
+        if (getPullRequestEnvironmentName() != null)
+            sb.append("PullRequestEnvironmentName: ").append(getPullRequestEnvironmentName()).append(",");
+        if (getBackendEnvironmentArn() != null)
+            sb.append("BackendEnvironmentArn: ").append(getBackendEnvironmentArn());
         sb.append("}");
         return sb.toString();
     }
@@ -871,6 +967,14 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getEnablePullRequestPreview() != null && other.getEnablePullRequestPreview().equals(this.getEnablePullRequestPreview()) == false)
             return false;
+        if (other.getPullRequestEnvironmentName() == null ^ this.getPullRequestEnvironmentName() == null)
+            return false;
+        if (other.getPullRequestEnvironmentName() != null && other.getPullRequestEnvironmentName().equals(this.getPullRequestEnvironmentName()) == false)
+            return false;
+        if (other.getBackendEnvironmentArn() == null ^ this.getBackendEnvironmentArn() == null)
+            return false;
+        if (other.getBackendEnvironmentArn() != null && other.getBackendEnvironmentArn().equals(this.getBackendEnvironmentArn()) == false)
+            return false;
         return true;
     }
 
@@ -893,6 +997,8 @@ public class UpdateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getTtl() == null) ? 0 : getTtl().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getEnablePullRequestPreview() == null) ? 0 : getEnablePullRequestPreview().hashCode());
+        hashCode = prime * hashCode + ((getPullRequestEnvironmentName() == null) ? 0 : getPullRequestEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getBackendEnvironmentArn() == null) ? 0 : getBackendEnvironmentArn().hashCode());
         return hashCode;
     }
 

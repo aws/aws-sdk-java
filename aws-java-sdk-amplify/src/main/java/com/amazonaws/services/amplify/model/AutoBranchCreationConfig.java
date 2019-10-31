@@ -76,6 +76,12 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
      * </p>
      */
     private Boolean enablePullRequestPreview;
+    /**
+     * <p>
+     * The Amplify Environment name for the pull request.
+     * </p>
+     */
+    private String pullRequestEnvironmentName;
 
     /**
      * <p>
@@ -474,6 +480,46 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The Amplify Environment name for the pull request.
+     * </p>
+     * 
+     * @param pullRequestEnvironmentName
+     *        The Amplify Environment name for the pull request.
+     */
+
+    public void setPullRequestEnvironmentName(String pullRequestEnvironmentName) {
+        this.pullRequestEnvironmentName = pullRequestEnvironmentName;
+    }
+
+    /**
+     * <p>
+     * The Amplify Environment name for the pull request.
+     * </p>
+     * 
+     * @return The Amplify Environment name for the pull request.
+     */
+
+    public String getPullRequestEnvironmentName() {
+        return this.pullRequestEnvironmentName;
+    }
+
+    /**
+     * <p>
+     * The Amplify Environment name for the pull request.
+     * </p>
+     * 
+     * @param pullRequestEnvironmentName
+     *        The Amplify Environment name for the pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoBranchCreationConfig withPullRequestEnvironmentName(String pullRequestEnvironmentName) {
+        setPullRequestEnvironmentName(pullRequestEnvironmentName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -500,7 +546,9 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
         if (getBuildSpec() != null)
             sb.append("BuildSpec: ").append(getBuildSpec()).append(",");
         if (getEnablePullRequestPreview() != null)
-            sb.append("EnablePullRequestPreview: ").append(getEnablePullRequestPreview());
+            sb.append("EnablePullRequestPreview: ").append(getEnablePullRequestPreview()).append(",");
+        if (getPullRequestEnvironmentName() != null)
+            sb.append("PullRequestEnvironmentName: ").append(getPullRequestEnvironmentName());
         sb.append("}");
         return sb.toString();
     }
@@ -547,6 +595,10 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
             return false;
         if (other.getEnablePullRequestPreview() != null && other.getEnablePullRequestPreview().equals(this.getEnablePullRequestPreview()) == false)
             return false;
+        if (other.getPullRequestEnvironmentName() == null ^ this.getPullRequestEnvironmentName() == null)
+            return false;
+        if (other.getPullRequestEnvironmentName() != null && other.getPullRequestEnvironmentName().equals(this.getPullRequestEnvironmentName()) == false)
+            return false;
         return true;
     }
 
@@ -563,6 +615,7 @@ public class AutoBranchCreationConfig implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getEnableBasicAuth() == null) ? 0 : getEnableBasicAuth().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());
         hashCode = prime * hashCode + ((getEnablePullRequestPreview() == null) ? 0 : getEnablePullRequestPreview().hashCode());
+        hashCode = prime * hashCode + ((getPullRequestEnvironmentName() == null) ? 0 : getPullRequestEnvironmentName().hashCode());
         return hashCode;
     }
 

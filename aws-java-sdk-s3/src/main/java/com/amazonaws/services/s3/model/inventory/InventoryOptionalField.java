@@ -39,8 +39,9 @@ public enum InventoryOptionalField {
 
     ObjectLockMode("ObjectLockMode"),
 
-    ObjectLockLegalHoldStatus("ObjectLockLegalHoldStatus")
+    ObjectLockLegalHoldStatus("ObjectLockLegalHoldStatus"),
 
+    IntelligentTieringAccessTier("IntelligentTieringAccessTier")
     ;
 
     private final String field;

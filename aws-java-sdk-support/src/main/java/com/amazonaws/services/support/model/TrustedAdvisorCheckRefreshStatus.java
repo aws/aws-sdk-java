@@ -36,9 +36,35 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable, Cloneable
     private String checkId;
     /**
      * <p>
-     * The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued", "processing",
-     * "success", or "abandoned".
+     * The status of the Trusted Advisor check for which a refresh has been requested:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enqueued:</code> The check refresh requests has entered the refresh queue
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processing:</code> The check refresh request is picked up by the rule processing engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>success:</code> The check is successfully refreshed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>abandoned:</code> The check refresh has failed
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -90,13 +116,64 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued", "processing",
-     * "success", or "abandoned".
+     * The status of the Trusted Advisor check for which a refresh has been requested:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enqueued:</code> The check refresh requests has entered the refresh queue
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processing:</code> The check refresh request is picked up by the rule processing engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>success:</code> The check is successfully refreshed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>abandoned:</code> The check refresh has failed
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued",
-     *        "processing", "success", or "abandoned".
+     *        The status of the Trusted Advisor check for which a refresh has been requested: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>enqueued:</code> The check refresh requests has entered the refresh queue
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processing:</code> The check refresh request is picked up by the rule processing engine
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>success:</code> The check is successfully refreshed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>abandoned:</code> The check refresh has failed
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -105,12 +182,63 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued", "processing",
-     * "success", or "abandoned".
+     * The status of the Trusted Advisor check for which a refresh has been requested:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enqueued:</code> The check refresh requests has entered the refresh queue
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processing:</code> The check refresh request is picked up by the rule processing engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>success:</code> The check is successfully refreshed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>abandoned:</code> The check refresh has failed
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued",
-     *         "processing", "success", or "abandoned".
+     * @return The status of the Trusted Advisor check for which a refresh has been requested: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>enqueued:</code> The check refresh requests has entered the refresh queue
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>processing:</code> The check refresh request is picked up by the rule processing engine
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>success:</code> The check is successfully refreshed
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>abandoned:</code> The check refresh has failed
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -119,13 +247,64 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued", "processing",
-     * "success", or "abandoned".
+     * The status of the Trusted Advisor check for which a refresh has been requested:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enqueued:</code> The check refresh requests has entered the refresh queue
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processing:</code> The check refresh request is picked up by the rule processing engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>success:</code> The check is successfully refreshed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>abandoned:</code> The check refresh has failed
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued",
-     *        "processing", "success", or "abandoned".
+     *        The status of the Trusted Advisor check for which a refresh has been requested: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>enqueued:</code> The check refresh requests has entered the refresh queue
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processing:</code> The check refresh request is picked up by the rule processing engine
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>success:</code> The check is successfully refreshed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>abandoned:</code> The check refresh has failed
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

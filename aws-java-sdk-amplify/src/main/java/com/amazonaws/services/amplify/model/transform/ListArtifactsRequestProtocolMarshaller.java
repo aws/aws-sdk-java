@@ -34,7 +34,7 @@ public class ListArtifactsRequestProtocolMarshaller implements Marshaller<Reques
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/apps/{appId}/branches/{branchName}/jobs/{jobId}/artifacts").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).serviceName("AWSAmplify").build();
+            .hasPayloadMembers(false).serviceName("AWSAmplify").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

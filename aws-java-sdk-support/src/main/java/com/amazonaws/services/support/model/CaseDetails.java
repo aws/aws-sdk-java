@@ -66,13 +66,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * <b>severityCode. </b>The severity code assigned to the case. Contains one of the values returned by the call to
- * <a>DescribeSeverityLevels</a>.
+ * <b>severityCode.</b> The severity code assigned to the case. Contains one of the values returned by the call to
+ * <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>,
+ * <code>urgent</code>, and <code>critical</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>status.</b> The status of the case in the AWS Support Center.
+ * <b>status.</b> The status of the case in the AWS Support Center. The possible values are: <code>resolved</code>,
+ * <code>pending-customer-action</code>, <code>opened</code>, <code>unassigned</code>, and <code>work-in-progress</code>
+ * .
  * </p>
  * </li>
  * <li>
@@ -119,13 +122,15 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
     private String subject;
     /**
      * <p>
-     * The status of the case.
+     * The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
+     * <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * The code for the AWS service. You can get a list of codes and the corresponding service names by calling
+     * <a>DescribeServices</a>.
      * </p>
      */
     private String serviceCode;
@@ -302,11 +307,13 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the case.
+     * The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
+     * <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
      * </p>
      * 
      * @param status
-     *        The status of the case.
+     *        The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
+     *        <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
      */
 
     public void setStatus(String status) {
@@ -315,10 +322,12 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the case.
+     * The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
+     * <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
      * </p>
      * 
-     * @return The status of the case.
+     * @return The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
+     *         <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
      */
 
     public String getStatus() {
@@ -327,11 +336,13 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the case.
+     * The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
+     * <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
      * </p>
      * 
      * @param status
-     *        The status of the case.
+     *        The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
+     *        <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,11 +353,13 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * The code for the AWS service. You can get a list of codes and the corresponding service names by calling
+     * <a>DescribeServices</a>.
      * </p>
      * 
      * @param serviceCode
-     *        The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     *        The code for the AWS service. You can get a list of codes and the corresponding service names by calling
+     *        <a>DescribeServices</a>.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -355,10 +368,12 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * The code for the AWS service. You can get a list of codes and the corresponding service names by calling
+     * <a>DescribeServices</a>.
      * </p>
      * 
-     * @return The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * @return The code for the AWS service. You can get a list of codes and the corresponding service names by calling
+     *         <a>DescribeServices</a>.
      */
 
     public String getServiceCode() {
@@ -367,11 +382,13 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * The code for the AWS service. You can get a list of codes and the corresponding service names by calling
+     * <a>DescribeServices</a>.
      * </p>
      * 
      * @param serviceCode
-     *        The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     *        The code for the AWS service. You can get a list of codes and the corresponding service names by calling
+     *        <a>DescribeServices</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

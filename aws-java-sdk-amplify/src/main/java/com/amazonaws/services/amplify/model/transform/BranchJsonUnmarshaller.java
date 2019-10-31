@@ -138,6 +138,10 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                     context.nextToken();
                     branch.setEnablePullRequestPreview(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("pullRequestEnvironmentName", targetDepth)) {
+                    context.nextToken();
+                    branch.setPullRequestEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("destinationBranch", targetDepth)) {
                     context.nextToken();
                     branch.setDestinationBranch(context.getUnmarshaller(String.class).unmarshall(context));
@@ -145,6 +149,10 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                 if (context.testExpression("sourceBranch", targetDepth)) {
                     context.nextToken();
                     branch.setSourceBranch(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("backendEnvironmentArn", targetDepth)) {
+                    context.nextToken();
+                    branch.setBackendEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

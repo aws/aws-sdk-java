@@ -95,10 +95,11 @@ import com.amazonaws.services.support.model.*;
  * </ul>
  * <p>
  * For authentication of requests, AWS Support uses <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
+ * Process</a>.
  * </p>
  * <p>
- * See <a href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the AWS Support API</a> in the
+ * See <a href="https://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the AWS Support API</a> in the
  * <i>AWS Support User Guide</i> for information about how to use this service to create and manage your support cases,
  * and how to call Trusted Advisor for results of checks on your resources.
  * </p>
@@ -241,16 +242,26 @@ public interface AWSSupport {
      * <b>issueType.</b> The type of issue for the case. You can specify either "customer-service" or "technical." If
      * you do not indicate a value, the default is "technical."
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
+     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
+     * </p>
+     * <p>
+     * The <code>caseId</code> is not the <code>displayId</code> that appears in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>. You can use the <a>DescribeCases</a> API to get
+     * the <code>displayId</code>.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
-     * <b>serviceCode.</b> The code for an AWS service. You obtain the <code>serviceCode</code> by calling
-     * <a>DescribeServices</a>.
+     * <b>serviceCode.</b> The code for an AWS service. You can get the possible <code>serviceCode</code> values by
+     * calling <a>DescribeServices</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>categoryCode.</b> The category for the service defined for the <code>serviceCode</code> value. You also obtain
+     * <b>categoryCode.</b> The category for the service defined for the <code>serviceCode</code> value. You also get
      * the category code for a service by calling <a>DescribeServices</a>. Each AWS service defines its own set of
      * category codes.
      * </p>
@@ -258,8 +269,11 @@ public interface AWSSupport {
      * <li>
      * <p>
      * <b>severityCode.</b> A value that indicates the urgency of the case, which in turn determines the response time
-     * according to your service level agreement with AWS Support. You obtain the SeverityCode by calling
-     * <a>DescribeSeverityLevels</a>.
+     * according to your service level agreement with AWS Support. You can get the possible <code>severityCode</code>
+     * values by calling <a>DescribeSeverityLevels</a>. For more information about the meaning of the codes, see
+     * <a>SeverityLevel</a> and <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a>.
      * </p>
      * </li>
      * <li>
@@ -578,7 +592,7 @@ public interface AWSSupport {
      * <p>
      * Returns information about all available Trusted Advisor checks, including name, ID, category, description, and
      * metadata. You must specify a language code; English ("en") and Japanese ("ja") are currently supported. The
-     * response contains a <a>TrustedAdvisorCheckDescription</a> for each check.
+     * response contains a <a>TrustedAdvisorCheckDescription</a> for each check. The region must be set to us-east-1.
      * </p>
      * 
      * @param describeTrustedAdvisorChecksRequest
@@ -609,8 +623,35 @@ public interface AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * <b>status.</b> The refresh status of the check: "none", "enqueued", "processing", "success", or "abandoned".
+     * <b>status.</b> The refresh status of the check:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enqueued:</code> The check refresh requests has entered the refresh queue
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processing:</code> The check refresh request is picked up by the rule processing engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>success:</code> The check is successfully refreshed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>abandoned:</code> The check refresh has failed
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>

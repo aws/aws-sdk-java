@@ -796,8 +796,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
     /**
      * <p>
-     * Retrieve website access logs for a specific time range via a pre-signed URL. Optionally, deliver the logs to a
-     * given S3 bucket.
+     * Retrieve website access logs for a specific time range via a pre-signed URL.
      * </p>
      * 
      * @param generateAccessLogsRequest
@@ -989,7 +988,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
      * </p>
      * 
      * @param getBranchRequest
-     *        Result structure for get branch request.
+     *        Request structure for get branch request.
      * @return Result of the GetBranch operation returned by the service.
      * @throws BadRequestException
      *         Exception thrown when a request contains unexpected data.

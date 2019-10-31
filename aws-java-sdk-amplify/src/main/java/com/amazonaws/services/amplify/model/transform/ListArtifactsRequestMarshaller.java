@@ -33,8 +33,6 @@ public class ListArtifactsRequestMarshaller {
             .marshallLocationName("branchName").build();
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("jobId").build();
-    private static final MarshallingInfo<String> ARTIFACTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactType").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -59,7 +57,6 @@ public class ListArtifactsRequestMarshaller {
             protocolMarshaller.marshall(listArtifactsRequest.getAppId(), APPID_BINDING);
             protocolMarshaller.marshall(listArtifactsRequest.getBranchName(), BRANCHNAME_BINDING);
             protocolMarshaller.marshall(listArtifactsRequest.getJobId(), JOBID_BINDING);
-            protocolMarshaller.marshall(listArtifactsRequest.getArtifactType(), ARTIFACTTYPE_BINDING);
             protocolMarshaller.marshall(listArtifactsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listArtifactsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

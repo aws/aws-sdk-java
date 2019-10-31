@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase" target="_top">AWS API
  *      Documentation</a>
@@ -44,8 +43,7 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.
+     * The availability of severity levels depends on the support plan for the account.
      * </p>
      * </note>
      */
@@ -80,6 +78,12 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
      * a value, the default is "technical."
      * </p>
+     * <note>
+     * <p>
+     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
+     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
+     * </p>
+     * </note>
      */
     private String issueType;
     /**
@@ -175,16 +179,14 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.
+     * The availability of severity levels depends on the support plan for the account.
      * </p>
      * </note>
      * 
      * @param severityCode
      *        The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
      *        <p>
-     *        The availability of severity levels depends on each customer's support subscription. In other words, your
-     *        subscription may not necessarily require the urgent level of response time.
+     *        The availability of severity levels depends on the support plan for the account.
      *        </p>
      */
 
@@ -198,15 +200,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.
+     * The availability of severity levels depends on the support plan for the account.
      * </p>
      * </note>
      * 
      * @return The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
      *         <p>
-     *         The availability of severity levels depends on each customer's support subscription. In other words, your
-     *         subscription may not necessarily require the urgent level of response time.
+     *         The availability of severity levels depends on the support plan for the account.
      *         </p>
      */
 
@@ -220,16 +220,14 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.
+     * The availability of severity levels depends on the support plan for the account.
      * </p>
      * </note>
      * 
      * @param severityCode
      *        The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
      *        <p>
-     *        The availability of severity levels depends on each customer's support subscription. In other words, your
-     *        subscription may not necessarily require the urgent level of response time.
+     *        The availability of severity levels depends on the support plan for the account.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -443,10 +441,20 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
      * a value, the default is "technical."
      * </p>
+     * <note>
+     * <p>
+     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
+     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
+     * </p>
+     * </note>
      * 
      * @param issueType
      *        The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
-     *        indicate a value, the default is "technical."
+     *        indicate a value, the default is "technical."</p> <note>
+     *        <p>
+     *        Service limit increases are not supported by the Support API; you must submit service limit increase
+     *        requests in <a href="https://console.aws.amazon.com/support">Support Center</a>.
+     *        </p>
      */
 
     public void setIssueType(String issueType) {
@@ -458,9 +466,19 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
      * a value, the default is "technical."
      * </p>
+     * <note>
+     * <p>
+     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
+     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
+     * </p>
+     * </note>
      * 
      * @return The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
-     *         indicate a value, the default is "technical."
+     *         indicate a value, the default is "technical."</p> <note>
+     *         <p>
+     *         Service limit increases are not supported by the Support API; you must submit service limit increase
+     *         requests in <a href="https://console.aws.amazon.com/support">Support Center</a>.
+     *         </p>
      */
 
     public String getIssueType() {
@@ -472,10 +490,20 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
      * a value, the default is "technical."
      * </p>
+     * <note>
+     * <p>
+     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
+     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
+     * </p>
+     * </note>
      * 
      * @param issueType
      *        The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
-     *        indicate a value, the default is "technical."
+     *        indicate a value, the default is "technical."</p> <note>
+     *        <p>
+     *        Service limit increases are not supported by the Support API; you must submit service limit increase
+     *        requests in <a href="https://console.aws.amazon.com/support">Support Center</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

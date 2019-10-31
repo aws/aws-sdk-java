@@ -48,12 +48,6 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String jobId;
     /**
      * <p>
-     * Type for an artifact.
-     * </p>
-     */
-    private String artifactType;
-    /**
-     * <p>
      * Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is returned in
      * a result, then pass its value in here to list more artifacts.
      * </p>
@@ -188,65 +182,6 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type for an artifact.
-     * </p>
-     * 
-     * @param artifactType
-     *        Type for an artifact.
-     * @see ArtifactType
-     */
-
-    public void setArtifactType(String artifactType) {
-        this.artifactType = artifactType;
-    }
-
-    /**
-     * <p>
-     * Type for an artifact.
-     * </p>
-     * 
-     * @return Type for an artifact.
-     * @see ArtifactType
-     */
-
-    public String getArtifactType() {
-        return this.artifactType;
-    }
-
-    /**
-     * <p>
-     * Type for an artifact.
-     * </p>
-     * 
-     * @param artifactType
-     *        Type for an artifact.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ArtifactType
-     */
-
-    public ListArtifactsRequest withArtifactType(String artifactType) {
-        setArtifactType(artifactType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Type for an artifact.
-     * </p>
-     * 
-     * @param artifactType
-     *        Type for an artifact.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ArtifactType
-     */
-
-    public ListArtifactsRequest withArtifactType(ArtifactType artifactType) {
-        this.artifactType = artifactType.toString();
-        return this;
-    }
-
-    /**
-     * <p>
      * Pagination token. Set to null to start listing artifacts from start. If non-null pagination token is returned in
      * a result, then pass its value in here to list more artifacts.
      * </p>
@@ -349,8 +284,6 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("BranchName: ").append(getBranchName()).append(",");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
-        if (getArtifactType() != null)
-            sb.append("ArtifactType: ").append(getArtifactType()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -381,10 +314,6 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
-        if (other.getArtifactType() == null ^ this.getArtifactType() == null)
-            return false;
-        if (other.getArtifactType() != null && other.getArtifactType().equals(this.getArtifactType()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -404,7 +333,6 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
         hashCode = prime * hashCode + ((getBranchName() == null) ? 0 : getBranchName().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
-        hashCode = prime * hashCode + ((getArtifactType() == null) ? 0 : getArtifactType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

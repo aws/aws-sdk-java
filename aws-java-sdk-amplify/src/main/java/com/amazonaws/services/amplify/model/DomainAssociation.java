@@ -42,7 +42,7 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
     private String domainName;
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches.
+     * Enables automated creation of Subdomains for branches. (Currently not supported)
      * </p>
      */
     private Boolean enableAutoSubDomain;
@@ -153,11 +153,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches.
+     * Enables automated creation of Subdomains for branches. (Currently not supported)
      * </p>
      * 
      * @param enableAutoSubDomain
-     *        Enables automated creation of Subdomains for branches.
+     *        Enables automated creation of Subdomains for branches. (Currently not supported)
      */
 
     public void setEnableAutoSubDomain(Boolean enableAutoSubDomain) {
@@ -166,10 +166,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches.
+     * Enables automated creation of Subdomains for branches. (Currently not supported)
      * </p>
      * 
-     * @return Enables automated creation of Subdomains for branches.
+     * @return Enables automated creation of Subdomains for branches. (Currently not supported)
      */
 
     public Boolean getEnableAutoSubDomain() {
@@ -178,11 +178,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches.
+     * Enables automated creation of Subdomains for branches. (Currently not supported)
      * </p>
      * 
      * @param enableAutoSubDomain
-     *        Enables automated creation of Subdomains for branches.
+     *        Enables automated creation of Subdomains for branches. (Currently not supported)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,10 +193,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables automated creation of Subdomains for branches.
+     * Enables automated creation of Subdomains for branches. (Currently not supported)
      * </p>
      * 
-     * @return Enables automated creation of Subdomains for branches.
+     * @return Enables automated creation of Subdomains for branches. (Currently not supported)
      */
 
     public Boolean isEnableAutoSubDomain() {
