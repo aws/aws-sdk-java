@@ -45,8 +45,9 @@ import com.amazonaws.services.cloudtrail.model.*;
  * </p>
  * </note>
  * <p>
- * See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS CloudTrail
- * User Guide</a> for information about the data that is included with each AWS API call listed in the log files.
+ * See the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
+ * CloudTrail User Guide</a> for information about the data that is included with each AWS API call listed in the log
+ * files.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -54,10 +55,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail. Overwrites an existing
-     * tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag
-     * will be created with the specified key and a value of null. You can tag a trail that applies to all regions only
-     * from the region in which the trail was created (that is, from its home region).
+     * Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is
+     * specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the
+     * same name but different values. If you specify a key without a value, the tag will be created with the specified
+     * key and a value of null. You can tag a trail that applies to all AWS Regions only from the Region in which the
+     * trail was created (also known as its home region).
      * </p>
      * 
      * @param addTagsRequest
@@ -71,10 +73,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail. Overwrites an existing
-     * tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag
-     * will be created with the specified key and a value of null. You can tag a trail that applies to all regions only
-     * from the region in which the trail was created (that is, from its home region).
+     * Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is
+     * specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the
+     * same name but different values. If you specify a key without a value, the tag will be created with the specified
+     * key and a value of null. You can tag a trail that applies to all AWS Regions only from the Region in which the
+     * trail was created (also known as its home region).
      * </p>
      * 
      * @param addTagsRequest
@@ -93,8 +96,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five
-     * trails can exist in a region, irrespective of the region in which they were created.
+     * Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
      * </p>
      * 
      * @param createTrailRequest
@@ -108,8 +110,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five
-     * trails can exist in a region, irrespective of the region in which they were created.
+     * Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
      * </p>
      * 
      * @param createTrailRequest
@@ -165,7 +166,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Retrieves settings for the trail associated with the current region for your account.
+     * Retrieves settings for one or more trails associated with the current region for your account.
      * </p>
      * 
      * @param describeTrailsRequest
@@ -179,7 +180,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Retrieves settings for the trail associated with the current region for your account.
+     * Retrieves settings for one or more trails associated with the current region for your account.
      * </p>
      * 
      * @param describeTrailsRequest
@@ -237,7 +238,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
      * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
@@ -275,7 +276,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
      * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
@@ -291,6 +292,37 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<GetEventSelectorsResult> getEventSelectorsAsync(GetEventSelectorsRequest getEventSelectorsRequest,
             com.amazonaws.handlers.AsyncHandler<GetEventSelectorsRequest, GetEventSelectorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns settings information for a specified trail.
+     * </p>
+     * 
+     * @param getTrailRequest
+     * @return A Java Future containing the result of the GetTrail operation returned by the service.
+     * @sample AWSCloudTrailAsync.GetTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTrailResult> getTrailAsync(GetTrailRequest getTrailRequest);
+
+    /**
+     * <p>
+     * Returns settings information for a specified trail.
+     * </p>
+     * 
+     * @param getTrailRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTrail operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.GetTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTrailResult> getTrailAsync(GetTrailRequest getTrailRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTrailRequest, GetTrailResult> asyncHandler);
 
     /**
      * <p>
@@ -430,10 +462,41 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Lists trails that are in the current account.
+     * </p>
+     * 
+     * @param listTrailsRequest
+     * @return A Java Future containing the result of the ListTrails operation returned by the service.
+     * @sample AWSCloudTrailAsync.ListTrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTrails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTrailsResult> listTrailsAsync(ListTrailsRequest listTrailsRequest);
+
+    /**
+     * <p>
+     * Lists trails that are in the current account.
+     * </p>
+     * 
+     * @param listTrailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTrails operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.ListTrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTrails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTrailsResult> listTrailsAsync(ListTrailsRequest listTrailsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTrailsRequest, ListTrailsResult> asyncHandler);
+
+    /**
+     * <p>
      * Looks up <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
-     * >management events</a> captured by CloudTrail. Events for a region can be looked up in that region during the
-     * last 90 days. Lookup supports the following attributes:
+     * >management events</a> captured by CloudTrail. You can look up events that occurred in a region within the last
+     * 90 days. Lookup supports the following attributes:
      * </p>
      * <ul>
      * <li>
@@ -486,7 +549,6 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling
      * error occurs.
      * </p>
-     * </important> <important>
      * <p>
      * Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was
      * not enabled when the events occurred.
@@ -506,8 +568,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Looks up <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
-     * >management events</a> captured by CloudTrail. Events for a region can be looked up in that region during the
-     * last 90 days. Lookup supports the following attributes:
+     * >management events</a> captured by CloudTrail. You can look up events that occurred in a region within the last
+     * 90 days. Lookup supports the following attributes:
      * </p>
      * <ul>
      * <li>
@@ -560,7 +622,6 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling
      * error occurs.
      * </p>
-     * </important> <important>
      * <p>
      * Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was
      * not enabled when the events occurred.
@@ -643,7 +704,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
      * >Logging Data and Management Events for Trails </a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
      * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
@@ -705,7 +766,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
      * >Logging Data and Management Events for Trails </a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
      * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.

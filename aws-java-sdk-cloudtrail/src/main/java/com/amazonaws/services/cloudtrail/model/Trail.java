@@ -37,8 +37,8 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      */
     private String s3BucketName;
@@ -46,14 +46,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>.The maximum length is 200 characters.
      * </p>
      */
     private String s3KeyPrefix;
     /**
      * <p>
-     * This field is deprecated. Use SnsTopicARN.
+     * This field is no longer in use. Use SnsTopicARN.
      * </p>
      */
     @Deprecated
@@ -76,7 +76,7 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
-     * Specifies whether the trail belongs only to one region or exists in all regions.
+     * Specifies whether the trail exists only in one region or exists in all regions.
      * </p>
      */
     private Boolean isMultiRegionTrail;
@@ -180,14 +180,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @param s3BucketName
      *        Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
-     *        Bucket Naming Requirements</a>.
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *        S3 Bucket Naming Requirements</a>.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -197,12 +197,12 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @return Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
      *         S3 Bucket Naming Requirements</a>.
      */
 
@@ -213,14 +213,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @param s3BucketName
      *        Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
-     *        Bucket Naming Requirements</a>.
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *        S3 Bucket Naming Requirements</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,14 +233,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>.The maximum length is 200 characters.
      * </p>
      * 
      * @param s3KeyPrefix
      *        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *        file delivery. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *        Your CloudTrail Log Files</a>.The maximum length is 200 characters.
      */
 
@@ -252,13 +252,13 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>.The maximum length is 200 characters.
      * </p>
      * 
      * @return Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *         file delivery. For more information, see <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *         Your CloudTrail Log Files</a>.The maximum length is 200 characters.
      */
 
@@ -270,14 +270,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>.The maximum length is 200 characters.
      * </p>
      * 
      * @param s3KeyPrefix
      *        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *        file delivery. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *        Your CloudTrail Log Files</a>.The maximum length is 200 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -289,11 +289,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is deprecated. Use SnsTopicARN.
+     * This field is no longer in use. Use SnsTopicARN.
      * </p>
      * 
      * @param snsTopicName
-     *        This field is deprecated. Use SnsTopicARN.
+     *        This field is no longer in use. Use SnsTopicARN.
      */
     @Deprecated
     public void setSnsTopicName(String snsTopicName) {
@@ -302,10 +302,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is deprecated. Use SnsTopicARN.
+     * This field is no longer in use. Use SnsTopicARN.
      * </p>
      * 
-     * @return This field is deprecated. Use SnsTopicARN.
+     * @return This field is no longer in use. Use SnsTopicARN.
      */
     @Deprecated
     public String getSnsTopicName() {
@@ -314,11 +314,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is deprecated. Use SnsTopicARN.
+     * This field is no longer in use. Use SnsTopicARN.
      * </p>
      * 
      * @param snsTopicName
-     *        This field is deprecated. Use SnsTopicARN.
+     *        This field is no longer in use. Use SnsTopicARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -444,11 +444,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the trail belongs only to one region or exists in all regions.
+     * Specifies whether the trail exists only in one region or exists in all regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail belongs only to one region or exists in all regions.
+     *        Specifies whether the trail exists only in one region or exists in all regions.
      */
 
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
@@ -457,10 +457,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the trail belongs only to one region or exists in all regions.
+     * Specifies whether the trail exists only in one region or exists in all regions.
      * </p>
      * 
-     * @return Specifies whether the trail belongs only to one region or exists in all regions.
+     * @return Specifies whether the trail exists only in one region or exists in all regions.
      */
 
     public Boolean getIsMultiRegionTrail() {
@@ -469,11 +469,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the trail belongs only to one region or exists in all regions.
+     * Specifies whether the trail exists only in one region or exists in all regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail belongs only to one region or exists in all regions.
+     *        Specifies whether the trail exists only in one region or exists in all regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,10 +484,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the trail belongs only to one region or exists in all regions.
+     * Specifies whether the trail exists only in one region or exists in all regions.
      * </p>
      * 
-     * @return Specifies whether the trail belongs only to one region or exists in all regions.
+     * @return Specifies whether the trail exists only in one region or exists in all regions.
      */
 
     public Boolean isMultiRegionTrail() {

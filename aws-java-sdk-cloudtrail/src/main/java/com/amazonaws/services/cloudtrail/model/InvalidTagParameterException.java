@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the key or value specified for the tag does not match the regular expression
- * <code>^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$</code>.
+ * This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate
+ * tags or too many tags on the resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

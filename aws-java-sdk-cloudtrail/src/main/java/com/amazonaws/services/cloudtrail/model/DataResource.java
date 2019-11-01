@@ -31,7 +31,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </note>
  * <p>
  * The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket
- * named <code>bucket-1</code>. In this example, the CloudTrail user spcified an empty prefix, and the option to log
+ * named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log
  * both <code>Read</code> and <code>Write</code> data events.
  * </p>
  * <ol>
@@ -117,13 +117,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
-     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
-     * contains a match for <i>my-bucket</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
@@ -147,11 +140,11 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data eents for a specific Lambda function, specify the function ARN.
+     * To log data events for a specific Lambda function, specify the function ARN.
      * </p>
      * <note>
      * <p>
-     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * Lambda function ARNs are exact. For example, if you specify a function ARN
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
@@ -225,13 +218,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
-     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
-     * contains a match for <i>my-bucket</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
@@ -255,11 +241,11 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data eents for a specific Lambda function, specify the function ARN.
+     * To log data events for a specific Lambda function, specify the function ARN.
      * </p>
      * <note>
      * <p>
-     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * Lambda function ARNs are exact. For example, if you specify a function ARN
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
@@ -280,13 +266,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         even if that activity is performed on a bucket that belongs to another AWS account.
      *         </p>
      *         </note></li>
-     *         <li>
-     *         <p>
-     *         To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names,
-     *         specify the prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all
-     *         buckets whose name contains a match for <i>my-bucket</i>.
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
@@ -313,13 +292,13 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         </note></li>
      *         <li>
      *         <p>
-     *         To log data eents for a specific Lambda function, specify the function ARN.
+     *         To log data events for a specific Lambda function, specify the function ARN.
      *         </p>
      *         <note>
      *         <p>
-     *         Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a
-     *         function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be
-     *         logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     *         Lambda function ARNs are exact. For example, if you specify a function ARN
+     *         <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     *         <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      *         <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      *         </p>
      *         </note></li>
@@ -350,13 +329,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
-     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
-     * contains a match for <i>my-bucket</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
@@ -380,11 +352,11 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data eents for a specific Lambda function, specify the function ARN.
+     * To log data events for a specific Lambda function, specify the function ARN.
      * </p>
      * <note>
      * <p>
-     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * Lambda function ARNs are exact. For example, if you specify a function ARN
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
@@ -406,13 +378,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        even if that activity is performed on a bucket that belongs to another AWS account.
      *        </p>
      *        </note></li>
-     *        <li>
-     *        <p>
-     *        To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify
-     *        the prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets
-     *        whose name contains a match for <i>my-bucket</i>.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
@@ -439,12 +404,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </note></li>
      *        <li>
      *        <p>
-     *        To log data eents for a specific Lambda function, specify the function ARN.
+     *        To log data events for a specific Lambda function, specify the function ARN.
      *        </p>
      *        <note>
      *        <p>
-     *        Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function
-     *        ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     *        Lambda function ARNs are exact. For example, if you specify a function ARN
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      *        </p>
@@ -478,13 +443,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
-     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
-     * contains a match for <i>my-bucket</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
@@ -508,11 +466,11 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data eents for a specific Lambda function, specify the function ARN.
+     * To log data events for a specific Lambda function, specify the function ARN.
      * </p>
      * <note>
      * <p>
-     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * Lambda function ARNs are exact. For example, if you specify a function ARN
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
@@ -541,13 +499,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </note></li>
      *        <li>
      *        <p>
-     *        To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify
-     *        the prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets
-     *        whose name contains a match for <i>my-bucket</i>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      *        <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      *        </p>
@@ -572,12 +523,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </note></li>
      *        <li>
      *        <p>
-     *        To log data eents for a specific Lambda function, specify the function ARN.
+     *        To log data events for a specific Lambda function, specify the function ARN.
      *        </p>
      *        <note>
      *        <p>
-     *        Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function
-     *        ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     *        Lambda function ARNs are exact. For example, if you specify a function ARN
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      *        </p>
@@ -613,13 +564,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
-     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
-     * contains a match for <i>my-bucket</i>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
@@ -643,11 +587,11 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </note></li>
      * <li>
      * <p>
-     * To log data eents for a specific Lambda function, specify the function ARN.
+     * To log data events for a specific Lambda function, specify the function ARN.
      * </p>
      * <note>
      * <p>
-     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * Lambda function ARNs are exact. For example, if you specify a function ARN
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
@@ -669,13 +613,6 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        even if that activity is performed on a bucket that belongs to another AWS account.
      *        </p>
      *        </note></li>
-     *        <li>
-     *        <p>
-     *        To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify
-     *        the prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets
-     *        whose name contains a match for <i>my-bucket</i>.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
@@ -702,12 +639,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </note></li>
      *        <li>
      *        <p>
-     *        To log data eents for a specific Lambda function, specify the function ARN.
+     *        To log data events for a specific Lambda function, specify the function ARN.
      *        </p>
      *        <note>
      *        <p>
-     *        Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function
-     *        ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     *        Lambda function ARNs are exact. For example, if you specify a function ARN
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      *        </p>

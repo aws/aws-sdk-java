@@ -48,6 +48,10 @@ public class APNSMessageJsonUnmarshaller implements Unmarshaller<APNSMessage, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("APNSPushType", targetDepth)) {
+                    context.nextToken();
+                    aPNSMessage.setAPNSPushType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Action", targetDepth)) {
                     context.nextToken();
                     aPNSMessage.setAction(context.getUnmarshaller(String.class).unmarshall(context));

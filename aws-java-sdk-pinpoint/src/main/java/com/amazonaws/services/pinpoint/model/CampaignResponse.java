@@ -146,7 +146,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Map<String, String> tags;
-
+    /**
+     * <p>
+     * The message template that’s used for the campaign.
+     * </p>
+     */
     private TemplateConfiguration templateConfiguration;
     /**
      * <p>
@@ -1019,7 +1023,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The message template that’s used for the campaign.
+     * </p>
+     * 
      * @param templateConfiguration
+     *        The message template that’s used for the campaign.
      */
 
     public void setTemplateConfiguration(TemplateConfiguration templateConfiguration) {
@@ -1027,7 +1036,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The message template that’s used for the campaign.
+     * </p>
+     * 
+     * @return The message template that’s used for the campaign.
      */
 
     public TemplateConfiguration getTemplateConfiguration() {
@@ -1035,7 +1048,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The message template that’s used for the campaign.
+     * </p>
+     * 
      * @param templateConfiguration
+     *        The message template that’s used for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

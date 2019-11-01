@@ -409,6 +409,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateJourneyResult> createJourneyAsync(CreateJourneyRequest request) {
+
+        return createJourneyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJourneyResult> createJourneyAsync(final CreateJourneyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateJourneyRequest, CreateJourneyResult> asyncHandler) {
+        final CreateJourneyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateJourneyResult>() {
+            @Override
+            public CreateJourneyResult call() throws Exception {
+                CreateJourneyResult result = null;
+
+                try {
+                    result = executeCreateJourney(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePushTemplateResult> createPushTemplateAsync(CreatePushTemplateRequest request) {
 
         return createPushTemplateAsync(request, null);
@@ -921,6 +954,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeDeleteGcmChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJourneyResult> deleteJourneyAsync(DeleteJourneyRequest request) {
+
+        return deleteJourneyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJourneyResult> deleteJourneyAsync(final DeleteJourneyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteJourneyRequest, DeleteJourneyResult> asyncHandler) {
+        final DeleteJourneyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteJourneyResult>() {
+            @Override
+            public DeleteJourneyResult call() throws Exception {
+                DeleteJourneyResult result = null;
+
+                try {
+                    result = executeDeleteJourney(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1993,6 +2059,140 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetJourneyResult> getJourneyAsync(GetJourneyRequest request) {
+
+        return getJourneyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyResult> getJourneyAsync(final GetJourneyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetJourneyRequest, GetJourneyResult> asyncHandler) {
+        final GetJourneyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetJourneyResult>() {
+            @Override
+            public GetJourneyResult call() throws Exception {
+                GetJourneyResult result = null;
+
+                try {
+                    result = executeGetJourney(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyDateRangeKpiResult> getJourneyDateRangeKpiAsync(GetJourneyDateRangeKpiRequest request) {
+
+        return getJourneyDateRangeKpiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyDateRangeKpiResult> getJourneyDateRangeKpiAsync(final GetJourneyDateRangeKpiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetJourneyDateRangeKpiRequest, GetJourneyDateRangeKpiResult> asyncHandler) {
+        final GetJourneyDateRangeKpiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetJourneyDateRangeKpiResult>() {
+            @Override
+            public GetJourneyDateRangeKpiResult call() throws Exception {
+                GetJourneyDateRangeKpiResult result = null;
+
+                try {
+                    result = executeGetJourneyDateRangeKpi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyExecutionActivityMetricsResult> getJourneyExecutionActivityMetricsAsync(
+            GetJourneyExecutionActivityMetricsRequest request) {
+
+        return getJourneyExecutionActivityMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyExecutionActivityMetricsResult> getJourneyExecutionActivityMetricsAsync(
+            final GetJourneyExecutionActivityMetricsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetJourneyExecutionActivityMetricsRequest, GetJourneyExecutionActivityMetricsResult> asyncHandler) {
+        final GetJourneyExecutionActivityMetricsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetJourneyExecutionActivityMetricsResult>() {
+            @Override
+            public GetJourneyExecutionActivityMetricsResult call() throws Exception {
+                GetJourneyExecutionActivityMetricsResult result = null;
+
+                try {
+                    result = executeGetJourneyExecutionActivityMetrics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyExecutionMetricsResult> getJourneyExecutionMetricsAsync(GetJourneyExecutionMetricsRequest request) {
+
+        return getJourneyExecutionMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyExecutionMetricsResult> getJourneyExecutionMetricsAsync(final GetJourneyExecutionMetricsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetJourneyExecutionMetricsRequest, GetJourneyExecutionMetricsResult> asyncHandler) {
+        final GetJourneyExecutionMetricsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetJourneyExecutionMetricsResult>() {
+            @Override
+            public GetJourneyExecutionMetricsResult call() throws Exception {
+                GetJourneyExecutionMetricsResult result = null;
+
+                try {
+                    result = executeGetJourneyExecutionMetrics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPushTemplateResult> getPushTemplateAsync(GetPushTemplateRequest request) {
 
         return getPushTemplateAsync(request, null);
@@ -2340,6 +2540,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeGetVoiceChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJourneysResult> listJourneysAsync(ListJourneysRequest request) {
+
+        return listJourneysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJourneysResult> listJourneysAsync(final ListJourneysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListJourneysRequest, ListJourneysResult> asyncHandler) {
+        final ListJourneysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListJourneysResult>() {
+            @Override
+            public ListJourneysResult call() throws Exception {
+                ListJourneysResult result = null;
+
+                try {
+                    result = executeListJourneys(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3099,6 +3332,72 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeUpdateGcmChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJourneyResult> updateJourneyAsync(UpdateJourneyRequest request) {
+
+        return updateJourneyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJourneyResult> updateJourneyAsync(final UpdateJourneyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateJourneyRequest, UpdateJourneyResult> asyncHandler) {
+        final UpdateJourneyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateJourneyResult>() {
+            @Override
+            public UpdateJourneyResult call() throws Exception {
+                UpdateJourneyResult result = null;
+
+                try {
+                    result = executeUpdateJourney(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJourneyStateResult> updateJourneyStateAsync(UpdateJourneyStateRequest request) {
+
+        return updateJourneyStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJourneyStateResult> updateJourneyStateAsync(final UpdateJourneyStateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateJourneyStateRequest, UpdateJourneyStateResult> asyncHandler) {
+        final UpdateJourneyStateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateJourneyStateResult>() {
+            @Override
+            public UpdateJourneyStateResult call() throws Exception {
+                UpdateJourneyStateResult result = null;
+
+                try {
+                    result = executeUpdateJourneyState(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides a single value and metadata about that value as part of an array of query results for a standard metric that
- * applies to an application or campaign.
+ * applies to an application, campaign, or journey.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ResultRowValue" target="_top">AWS API
@@ -31,7 +31,7 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
+     * The friendly name of the metric whose value is specified by the Value property.
      * </p>
      */
     private String key;
@@ -51,11 +51,11 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
+     * The friendly name of the metric whose value is specified by the Value property.
      * </p>
      * 
      * @param key
-     *        The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
+     *        The friendly name of the metric whose value is specified by the Value property.
      */
 
     public void setKey(String key) {
@@ -64,10 +64,10 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
+     * The friendly name of the metric whose value is specified by the Value property.
      * </p>
      * 
-     * @return The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
+     * @return The friendly name of the metric whose value is specified by the Value property.
      */
 
     public String getKey() {
@@ -76,11 +76,11 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
+     * The friendly name of the metric whose value is specified by the Value property.
      * </p>
      * 
      * @param key
-     *        The name of the field that Amazon Pinpoint uses to store the value specified by the Value property.
+     *        The friendly name of the metric whose value is specified by the Value property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,9 +95,7 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param type
-     *        <p>
      *        The data type of the value specified by the Value property.
-     *        </p>
      */
 
     public void setType(String type) {
@@ -109,9 +107,7 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * The data type of the value specified by the Value property.
      * </p>
      * 
-     * @return <p>
-     *         The data type of the value specified by the Value property.
-     *         </p>
+     * @return The data type of the value specified by the Value property.
      */
 
     public String getType() {
@@ -124,9 +120,7 @@ public class ResultRowValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param type
-     *        <p>
      *        The data type of the value specified by the Value property.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

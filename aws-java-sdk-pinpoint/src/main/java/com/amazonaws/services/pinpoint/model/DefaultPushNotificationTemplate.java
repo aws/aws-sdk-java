@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the settings and content for the default message template that's used in messages that are sent through a
- * push notification channel.
+ * Specifies the default settings and content for a message template that can be used in messages that are sent through
+ * a push notification channel.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DefaultPushNotificationTemplate"

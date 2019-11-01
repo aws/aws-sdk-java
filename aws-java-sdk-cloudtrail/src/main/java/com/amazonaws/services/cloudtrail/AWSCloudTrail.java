@@ -46,8 +46,9 @@ import com.amazonaws.services.cloudtrail.model.*;
  * </p>
  * </note>
  * <p>
- * See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS CloudTrail
- * User Guide</a> for information about the data that is included with each AWS API call listed in the log files.
+ * See the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
+ * CloudTrail User Guide</a> for information about the data that is included with each AWS API call listed in the log
+ * files.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -115,10 +116,11 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail. Overwrites an existing
-     * tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag
-     * will be created with the specified key and a value of null. You can tag a trail that applies to all regions only
-     * from the region in which the trail was created (that is, from its home region).
+     * Adds one or more tags to a trail, up to a limit of 50. Overwrites an existing tag's value when a new value is
+     * specified for an existing tag key. Tag key names must be unique for a trail; you cannot have two keys with the
+     * same name but different values. If you specify a key without a value, the tag will be created with the specified
+     * key and a value of null. You can tag a trail that applies to all AWS Regions only from the Region in which the
+     * trail was created (also known as its home region).
      * </p>
      * 
      * @param addTagsRequest
@@ -167,8 +169,8 @@ public interface AWSCloudTrail {
      *         </p>
      *         </li>
      * @throws InvalidTagParameterException
-     *         This exception is thrown when the key or value specified for the tag does not match the regular
-     *         expression <code>^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$</code>.
+     *         This exception is thrown when the specified tag key or values are not valid. It can also occur if there
+     *         are duplicate tags or too many tags on the resource.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -187,8 +189,7 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five
-     * trails can exist in a region, irrespective of the region in which they were created.
+     * Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
      * </p>
      * 
      * @param createTrailRequest
@@ -245,14 +246,14 @@ public interface AWSCloudTrail {
      *         </p>
      *         </li>
      * @throws TrailNotProvidedException
-     *         This exception is deprecated.
+     *         This exception is no longer in use.
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws KmsKeyNotFoundException
      *         This exception is thrown when the KMS key does not exist, or when the S3 bucket and the KMS key are not
      *         in the same region.
      * @throws KmsKeyDisabledException
-     *         This exception is deprecated.
+     *         This exception is no longer in use.
      * @throws KmsException
      *         This exception is thrown when there is an issue with the specified KMS key and the trail can’t be
      *         updated.
@@ -262,6 +263,9 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the provided role is not valid.
      * @throws CloudWatchLogsDeliveryUnavailableException
      *         Cannot set a CloudWatch Logs delivery for this region.
+     * @throws InvalidTagParameterException
+     *         This exception is thrown when the specified tag key or values are not valid. It can also occur if there
+     *         are duplicate tags or too many tags on the resource.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -370,7 +374,7 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Retrieves settings for the trail associated with the current region for your account.
+     * Retrieves settings for one or more trails associated with the current region for your account.
      * </p>
      * 
      * @param describeTrailsRequest
@@ -419,7 +423,7 @@ public interface AWSCloudTrail {
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
      * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
@@ -466,6 +470,55 @@ public interface AWSCloudTrail {
      *      API Documentation</a>
      */
     GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest);
+
+    /**
+     * <p>
+     * Returns settings information for a specified trail.
+     * </p>
+     * 
+     * @param getTrailRequest
+     * @return Result of the GetTrail operation returned by the service.
+     * @throws TrailNotFoundException
+     *         This exception is thrown when the trail with the given name is not found.
+     * @throws InvalidTrailNameException
+     *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
+     *         requirements:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
+     *         <code>my--namespace</code> are invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @sample AWSCloudTrail.GetTrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetTrailResult getTrail(GetTrailRequest getTrailRequest);
 
     /**
      * <p>
@@ -616,10 +669,27 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
+     * Lists trails that are in the current account.
+     * </p>
+     * 
+     * @param listTrailsRequest
+     * @return Result of the ListTrails operation returned by the service.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @sample AWSCloudTrail.ListTrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTrails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTrailsResult listTrails(ListTrailsRequest listTrailsRequest);
+
+    /**
+     * <p>
      * Looks up <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
-     * >management events</a> captured by CloudTrail. Events for a region can be looked up in that region during the
-     * last 90 days. Lookup supports the following attributes:
+     * >management events</a> captured by CloudTrail. You can look up events that occurred in a region within the last
+     * 90 days. Lookup supports the following attributes:
      * </p>
      * <ul>
      * <li>
@@ -672,7 +742,6 @@ public interface AWSCloudTrail {
      * The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling
      * error occurs.
      * </p>
-     * </important> <important>
      * <p>
      * Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was
      * not enabled when the events occurred.
@@ -753,7 +822,7 @@ public interface AWSCloudTrail {
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
      * >Logging Data and Management Events for Trails </a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
      * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
@@ -895,8 +964,8 @@ public interface AWSCloudTrail {
      *         </p>
      *         </li>
      * @throws InvalidTagParameterException
-     *         This exception is thrown when the key or value specified for the tag does not match the regular
-     *         expression <code>^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$</code>.
+     *         This exception is thrown when the specified tag key or values are not valid. It can also occur if there
+     *         are duplicate tags or too many tags on the resource.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -1110,7 +1179,7 @@ public interface AWSCloudTrail {
      *         </p>
      *         </li>
      * @throws TrailNotProvidedException
-     *         This exception is deprecated.
+     *         This exception is no longer in use.
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws InvalidHomeRegionException
@@ -1120,7 +1189,7 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the KMS key does not exist, or when the S3 bucket and the KMS key are not
      *         in the same region.
      * @throws KmsKeyDisabledException
-     *         This exception is deprecated.
+     *         This exception is no longer in use.
      * @throws KmsException
      *         This exception is thrown when there is an issue with the specified KMS key and the trail can’t be
      *         updated.

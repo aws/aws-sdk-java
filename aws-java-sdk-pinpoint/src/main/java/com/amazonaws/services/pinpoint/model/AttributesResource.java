@@ -47,7 +47,7 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
+     * endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
      * </p>
      * </li>
      * <li>
@@ -117,7 +117,7 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
+     * endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
      * </p>
      * </li>
      * <li>
@@ -137,7 +137,7 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
+     *        endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
      *        </p>
      *        </li>
      *        <li>
@@ -163,7 +163,7 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
+     * endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
      * </p>
      * </li>
      * <li>
@@ -182,7 +182,7 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
-     *         endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
+     *         endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
      *         </p>
      *         </li>
      *         <li>
@@ -208,7 +208,7 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
+     * endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
      * </p>
      * </li>
      * <li>
@@ -228,7 +228,7 @@ public class AttributesResource implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
+     *        endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.
      *        </p>
      *        </li>
      *        <li>

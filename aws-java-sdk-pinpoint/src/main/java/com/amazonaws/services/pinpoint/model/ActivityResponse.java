@@ -72,7 +72,8 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
     private String start;
     /**
      * <p>
-     * The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.
+     * The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
+     * COMPLETED.
      * </p>
      */
     private String state;
@@ -390,12 +391,13 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.
+     * The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
+     * COMPLETED.
      * </p>
      * 
      * @param state
-     *        The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
-     *        COMPLETED.
+     *        The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED,
+     *        CANCELLED, and COMPLETED.
      */
 
     public void setState(String state) {
@@ -404,11 +406,12 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.
+     * The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
+     * COMPLETED.
      * </p>
      * 
-     * @return The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
-     *         COMPLETED.
+     * @return The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED,
+     *         CANCELLED, and COMPLETED.
      */
 
     public String getState() {
@@ -417,12 +420,13 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.
+     * The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
+     * COMPLETED.
      * </p>
      * 
      * @param state
-     *        The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
-     *        COMPLETED.
+     *        The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED,
+     *        CANCELLED, and COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -72,8 +72,8 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      */
     private String s3BucketName;
@@ -81,7 +81,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>. The maximum length is 200 characters.
      * </p>
      */
@@ -104,7 +104,8 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
      * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
      * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted.
+     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
+     * a best practice, consider using trails that log events in all regions.
      * </p>
      */
     private Boolean isMultiRegionTrail;
@@ -432,14 +433,14 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @param s3BucketName
      *        Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
-     *        Bucket Naming Requirements</a>.
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *        S3 Bucket Naming Requirements</a>.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -449,12 +450,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @return Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
      *         S3 Bucket Naming Requirements</a>.
      */
 
@@ -465,14 +466,14 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @param s3BucketName
      *        Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
-     *        Bucket Naming Requirements</a>.
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *        S3 Bucket Naming Requirements</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,14 +486,14 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>. The maximum length is 200 characters.
      * </p>
      * 
      * @param s3KeyPrefix
      *        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *        file delivery. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *        Your CloudTrail Log Files</a>. The maximum length is 200 characters.
      */
 
@@ -504,13 +505,13 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>. The maximum length is 200 characters.
      * </p>
      * 
      * @return Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *         file delivery. For more information, see <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *         Your CloudTrail Log Files</a>. The maximum length is 200 characters.
      */
 
@@ -522,14 +523,14 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>. The maximum length is 200 characters.
      * </p>
      * 
      * @param s3KeyPrefix
      *        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *        file delivery. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *        Your CloudTrail Log Files</a>. The maximum length is 200 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -642,7 +643,8 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
      * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
      * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted.
+     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
+     * a best practice, consider using trails that log events in all regions.
      * </p>
      * 
      * @param isMultiRegionTrail
@@ -650,7 +652,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        the trail exists only in the current region and this value is set to true, shadow trails (replications of
      *        the trail) will be created in the other regions. If the trail exists in all regions and this value is set
      *        to false, the trail will remain in the region where it was created, and its shadow trails in other regions
-     *        will be deleted.
+     *        will be deleted. As a best practice, consider using trails that log events in all regions.
      */
 
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
@@ -662,14 +664,15 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
      * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
      * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted.
+     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
+     * a best practice, consider using trails that log events in all regions.
      * </p>
      * 
      * @return Specifies whether the trail applies only to the current region or to all regions. The default is false.
      *         If the trail exists only in the current region and this value is set to true, shadow trails (replications
      *         of the trail) will be created in the other regions. If the trail exists in all regions and this value is
      *         set to false, the trail will remain in the region where it was created, and its shadow trails in other
-     *         regions will be deleted.
+     *         regions will be deleted. As a best practice, consider using trails that log events in all regions.
      */
 
     public Boolean getIsMultiRegionTrail() {
@@ -681,7 +684,8 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
      * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
      * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted.
+     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
+     * a best practice, consider using trails that log events in all regions.
      * </p>
      * 
      * @param isMultiRegionTrail
@@ -689,7 +693,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        the trail exists only in the current region and this value is set to true, shadow trails (replications of
      *        the trail) will be created in the other regions. If the trail exists in all regions and this value is set
      *        to false, the trail will remain in the region where it was created, and its shadow trails in other regions
-     *        will be deleted.
+     *        will be deleted. As a best practice, consider using trails that log events in all regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -703,14 +707,15 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies whether the trail applies only to the current region or to all regions. The default is false. If the
      * trail exists only in the current region and this value is set to true, shadow trails (replications of the trail)
      * will be created in the other regions. If the trail exists in all regions and this value is set to false, the
-     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted.
+     * trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As
+     * a best practice, consider using trails that log events in all regions.
      * </p>
      * 
      * @return Specifies whether the trail applies only to the current region or to all regions. The default is false.
      *         If the trail exists only in the current region and this value is set to true, shadow trails (replications
      *         of the trail) will be created in the other regions. If the trail exists in all regions and this value is
      *         set to false, the trail will remain in the region where it was created, and its shadow trails in other
-     *         regions will be deleted.
+     *         regions will be deleted. As a best practice, consider using trails that log events in all regions.
      */
 
     public Boolean isMultiRegionTrail() {

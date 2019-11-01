@@ -55,11 +55,15 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
     private Integer sizePercent;
     /**
      * <p>
-     * The status of the treatment.
+     * The current status of the treatment.
      * </p>
      */
     private CampaignState state;
-
+    /**
+     * <p>
+     * The message template to use for the treatment.
+     * </p>
+     */
     private TemplateConfiguration templateConfiguration;
     /**
      * <p>
@@ -237,11 +241,11 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the treatment.
+     * The current status of the treatment.
      * </p>
      * 
      * @param state
-     *        The status of the treatment.
+     *        The current status of the treatment.
      */
 
     public void setState(CampaignState state) {
@@ -250,10 +254,10 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the treatment.
+     * The current status of the treatment.
      * </p>
      * 
-     * @return The status of the treatment.
+     * @return The current status of the treatment.
      */
 
     public CampaignState getState() {
@@ -262,11 +266,11 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the treatment.
+     * The current status of the treatment.
      * </p>
      * 
      * @param state
-     *        The status of the treatment.
+     *        The current status of the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,7 +280,12 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The message template to use for the treatment.
+     * </p>
+     * 
      * @param templateConfiguration
+     *        The message template to use for the treatment.
      */
 
     public void setTemplateConfiguration(TemplateConfiguration templateConfiguration) {
@@ -284,7 +293,11 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The message template to use for the treatment.
+     * </p>
+     * 
+     * @return The message template to use for the treatment.
      */
 
     public TemplateConfiguration getTemplateConfiguration() {
@@ -292,7 +305,12 @@ public class TreatmentResource implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The message template to use for the treatment.
+     * </p>
+     * 
      * @param templateConfiguration
+     *        The message template to use for the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

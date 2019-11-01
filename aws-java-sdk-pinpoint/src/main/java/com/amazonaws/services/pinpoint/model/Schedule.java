@@ -30,7 +30,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, for the campaign to end.
+     * The scheduled time, in ISO 8601 format, when the campaign ended or will end.
      * </p>
      */
     private String endTime;
@@ -85,7 +85,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private QuietTime quietTime;
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, for the campaign to begin.
+     * The scheduled time, in ISO 8601 format, when the campaign began or will begin.
      * </p>
      */
     private String startTime;
@@ -101,11 +101,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, for the campaign to end.
+     * The scheduled time, in ISO 8601 format, when the campaign ended or will end.
      * </p>
      * 
      * @param endTime
-     *        The scheduled time, in ISO 8601 format, for the campaign to end.
+     *        The scheduled time, in ISO 8601 format, when the campaign ended or will end.
      */
 
     public void setEndTime(String endTime) {
@@ -114,10 +114,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, for the campaign to end.
+     * The scheduled time, in ISO 8601 format, when the campaign ended or will end.
      * </p>
      * 
-     * @return The scheduled time, in ISO 8601 format, for the campaign to end.
+     * @return The scheduled time, in ISO 8601 format, when the campaign ended or will end.
      */
 
     public String getEndTime() {
@@ -126,11 +126,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, for the campaign to end.
+     * The scheduled time, in ISO 8601 format, when the campaign ended or will end.
      * </p>
      * 
      * @param endTime
-     *        The scheduled time, in ISO 8601 format, for the campaign to end.
+     *        The scheduled time, in ISO 8601 format, when the campaign ended or will end.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -495,11 +495,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, for the campaign to begin.
+     * The scheduled time, in ISO 8601 format, when the campaign began or will begin.
      * </p>
      * 
      * @param startTime
-     *        The scheduled time, in ISO 8601 format, for the campaign to begin.
+     *        The scheduled time, in ISO 8601 format, when the campaign began or will begin.
      */
 
     public void setStartTime(String startTime) {
@@ -508,10 +508,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, for the campaign to begin.
+     * The scheduled time, in ISO 8601 format, when the campaign began or will begin.
      * </p>
      * 
-     * @return The scheduled time, in ISO 8601 format, for the campaign to begin.
+     * @return The scheduled time, in ISO 8601 format, when the campaign began or will begin.
      */
 
     public String getStartTime() {
@@ -520,11 +520,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, for the campaign to begin.
+     * The scheduled time, in ISO 8601 format, when the campaign began or will begin.
      * </p>
      * 
      * @param startTime
-     *        The scheduled time, in ISO 8601 format, for the campaign to begin.
+     *        The scheduled time, in ISO 8601 format, when the campaign began or will begin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

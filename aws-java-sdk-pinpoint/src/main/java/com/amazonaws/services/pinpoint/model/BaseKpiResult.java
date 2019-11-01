@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the results of a query that retrieved the data for a standard metric that applies to an application or
- * campaign.
+ * Provides the results of a query that retrieved the data for a standard metric that applies to an application,
+ * campaign, or journey.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/BaseKpiResult" target="_top">AWS API
@@ -32,7 +32,7 @@ public class BaseKpiResult implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects that provides the results of a query that retrieved the data for a standard metric that
-     * applies to an application or campaign.
+     * applies to an application, campaign, or journey.
      * </p>
      */
     private java.util.List<ResultRow> rows;
@@ -40,11 +40,11 @@ public class BaseKpiResult implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects that provides the results of a query that retrieved the data for a standard metric that
-     * applies to an application or campaign.
+     * applies to an application, campaign, or journey.
      * </p>
      * 
      * @return An array of objects that provides the results of a query that retrieved the data for a standard metric
-     *         that applies to an application or campaign.
+     *         that applies to an application, campaign, or journey.
      */
 
     public java.util.List<ResultRow> getRows() {
@@ -54,12 +54,12 @@ public class BaseKpiResult implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects that provides the results of a query that retrieved the data for a standard metric that
-     * applies to an application or campaign.
+     * applies to an application, campaign, or journey.
      * </p>
      * 
      * @param rows
      *        An array of objects that provides the results of a query that retrieved the data for a standard metric
-     *        that applies to an application or campaign.
+     *        that applies to an application, campaign, or journey.
      */
 
     public void setRows(java.util.Collection<ResultRow> rows) {
@@ -74,7 +74,7 @@ public class BaseKpiResult implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects that provides the results of a query that retrieved the data for a standard metric that
-     * applies to an application or campaign.
+     * applies to an application, campaign, or journey.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class BaseKpiResult implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param rows
      *        An array of objects that provides the results of a query that retrieved the data for a standard metric
-     *        that applies to an application or campaign.
+     *        that applies to an application, campaign, or journey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,12 +101,12 @@ public class BaseKpiResult implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects that provides the results of a query that retrieved the data for a standard metric that
-     * applies to an application or campaign.
+     * applies to an application, campaign, or journey.
      * </p>
      * 
      * @param rows
      *        An array of objects that provides the results of a query that retrieved the data for a standard metric
-     *        that applies to an application or campaign.
+     *        that applies to an application, campaign, or journey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

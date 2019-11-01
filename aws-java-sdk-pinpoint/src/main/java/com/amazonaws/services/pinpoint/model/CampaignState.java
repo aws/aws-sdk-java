@@ -30,22 +30,24 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
-     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign. If
+     * a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED.
      * </p>
      */
     private String campaignStatus;
 
     /**
      * <p>
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
-     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign. If
+     * a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED.
      * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
-     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
-     *        status of COMPLETED.
+     *        The current status of the campaign, or the current status of a treatment that belongs to an A/B test
+     *        campaign. If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign
+     *        treatments have a status of COMPLETED.
      * @see CampaignStatus
      */
 
@@ -55,13 +57,14 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
-     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign. If
+     * a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED.
      * </p>
      * 
-     * @return The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
-     *         campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have
-     *         a status of COMPLETED.
+     * @return The current status of the campaign, or the current status of a treatment that belongs to an A/B test
+     *         campaign. If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign
+     *         treatments have a status of COMPLETED.
      * @see CampaignStatus
      */
 
@@ -71,14 +74,15 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
-     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign. If
+     * a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED.
      * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
-     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
-     *        status of COMPLETED.
+     *        The current status of the campaign, or the current status of a treatment that belongs to an A/B test
+     *        campaign. If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign
+     *        treatments have a status of COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CampaignStatus
      */
@@ -90,14 +94,15 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
-     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign. If
+     * a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED.
      * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
-     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
-     *        status of COMPLETED.
+     *        The current status of the campaign, or the current status of a treatment that belongs to an A/B test
+     *        campaign. If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign
+     *        treatments have a status of COMPLETED.
      * @see CampaignStatus
      */
 
@@ -107,14 +112,15 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
-     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign. If
+     * a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status
+     * of COMPLETED.
      * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
-     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
-     *        status of COMPLETED.
+     *        The current status of the campaign, or the current status of a treatment that belongs to an A/B test
+     *        campaign. If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign
+     *        treatments have a status of COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CampaignStatus
      */

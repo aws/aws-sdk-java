@@ -27,15 +27,15 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The NextToken string that specifies which page of results to return in a paginated response. This parameter is
-     * currently not supported by the Application Metrics and Campaign Metrics resources.
+     * The string that specifies which page of results to return in a paginated response. This parameter is currently
+     * not supported for application, campaign, and journey metrics.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
      * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported by the Application Metrics and Campaign Metrics resources.
+     * supported for application, campaign, and journey metrics.
      * </p>
      */
     private String pageSize;
@@ -56,13 +56,13 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The NextToken string that specifies which page of results to return in a paginated response. This parameter is
-     * currently not supported by the Application Metrics and Campaign Metrics resources.
+     * The string that specifies which page of results to return in a paginated response. This parameter is currently
+     * not supported for application, campaign, and journey metrics.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken string that specifies which page of results to return in a paginated response. This
-     *        parameter is currently not supported by the Application Metrics and Campaign Metrics resources.
+     *        The string that specifies which page of results to return in a paginated response. This parameter is
+     *        currently not supported for application, campaign, and journey metrics.
      */
 
     public void setNextToken(String nextToken) {
@@ -71,12 +71,12 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The NextToken string that specifies which page of results to return in a paginated response. This parameter is
-     * currently not supported by the Application Metrics and Campaign Metrics resources.
+     * The string that specifies which page of results to return in a paginated response. This parameter is currently
+     * not supported for application, campaign, and journey metrics.
      * </p>
      * 
-     * @return The NextToken string that specifies which page of results to return in a paginated response. This
-     *         parameter is currently not supported by the Application Metrics and Campaign Metrics resources.
+     * @return The string that specifies which page of results to return in a paginated response. This parameter is
+     *         currently not supported for application, campaign, and journey metrics.
      */
 
     public String getNextToken() {
@@ -85,13 +85,13 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The NextToken string that specifies which page of results to return in a paginated response. This parameter is
-     * currently not supported by the Application Metrics and Campaign Metrics resources.
+     * The string that specifies which page of results to return in a paginated response. This parameter is currently
+     * not supported for application, campaign, and journey metrics.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken string that specifies which page of results to return in a paginated response. This
-     *        parameter is currently not supported by the Application Metrics and Campaign Metrics resources.
+     *        The string that specifies which page of results to return in a paginated response. This parameter is
+     *        currently not supported for application, campaign, and journey metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,12 +103,12 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported by the Application Metrics and Campaign Metrics resources.
+     * supported for application, campaign, and journey metrics.
      * </p>
      * 
      * @param pageSize
      *        The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *        not supported by the Application Metrics and Campaign Metrics resources.
+     *        not supported for application, campaign, and journey metrics.
      */
 
     public void setPageSize(String pageSize) {
@@ -118,11 +118,11 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported by the Application Metrics and Campaign Metrics resources.
+     * supported for application, campaign, and journey metrics.
      * </p>
      * 
      * @return The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *         not supported by the Application Metrics and Campaign Metrics resources.
+     *         not supported for application, campaign, and journey metrics.
      */
 
     public String getPageSize() {
@@ -132,12 +132,12 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported by the Application Metrics and Campaign Metrics resources.
+     * supported for application, campaign, and journey metrics.
      * </p>
      * 
      * @param pageSize
      *        The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *        not supported by the Application Metrics and Campaign Metrics resources.
+     *        not supported for application, campaign, and journey metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

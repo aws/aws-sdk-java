@@ -35,6 +35,8 @@ public enum PinpointActions implements Action {
     CreateExportJob("pinpoint:CreateExportJob"),
     /** Action for the CreateImportJob operation. */
     CreateImportJob("pinpoint:CreateImportJob"),
+    /** Action for the CreateJourney operation. */
+    CreateJourney("pinpoint:CreateJourney"),
     /** Action for the CreatePushTemplate operation. */
     CreatePushTemplate("pinpoint:CreatePushTemplate"),
     /** Action for the CreateSegment operation. */
@@ -67,6 +69,8 @@ public enum PinpointActions implements Action {
     DeleteEventStream("pinpoint:DeleteEventStream"),
     /** Action for the DeleteGcmChannel operation. */
     DeleteGcmChannel("pinpoint:DeleteGcmChannel"),
+    /** Action for the DeleteJourney operation. */
+    DeleteJourney("pinpoint:DeleteJourney"),
     /** Action for the DeletePushTemplate operation. */
     DeletePushTemplate("pinpoint:DeletePushTemplate"),
     /** Action for the DeleteSegment operation. */
@@ -131,6 +135,14 @@ public enum PinpointActions implements Action {
     GetImportJob("pinpoint:GetImportJob"),
     /** Action for the GetImportJobs operation. */
     GetImportJobs("pinpoint:GetImportJobs"),
+    /** Action for the GetJourney operation. */
+    GetJourney("pinpoint:GetJourney"),
+    /** Action for the GetJourneyDateRangeKpi operation. */
+    GetJourneyDateRangeKpi("pinpoint:GetJourneyDateRangeKpi"),
+    /** Action for the GetJourneyExecutionActivityMetrics operation. */
+    GetJourneyExecutionActivityMetrics("pinpoint:GetJourneyExecutionActivityMetrics"),
+    /** Action for the GetJourneyExecutionMetrics operation. */
+    GetJourneyExecutionMetrics("pinpoint:GetJourneyExecutionMetrics"),
     /** Action for the GetPushTemplate operation. */
     GetPushTemplate("pinpoint:GetPushTemplate"),
     /** Action for the GetSegment operation. */
@@ -153,6 +165,8 @@ public enum PinpointActions implements Action {
     GetUserEndpoints("pinpoint:GetUserEndpoints"),
     /** Action for the GetVoiceChannel operation. */
     GetVoiceChannel("pinpoint:GetVoiceChannel"),
+    /** Action for the ListJourneys operation. */
+    ListJourneys("pinpoint:ListJourneys"),
     /** Action for the ListTagsForResource operation. */
     ListTagsForResource("pinpoint:ListTagsForResource"),
     /** Action for the ListTemplates operation. */
@@ -199,6 +213,10 @@ public enum PinpointActions implements Action {
     UpdateEndpointsBatch("pinpoint:UpdateEndpointsBatch"),
     /** Action for the UpdateGcmChannel operation. */
     UpdateGcmChannel("pinpoint:UpdateGcmChannel"),
+    /** Action for the UpdateJourney operation. */
+    UpdateJourney("pinpoint:UpdateJourney"),
+    /** Action for the UpdateJourneyState operation. */
+    UpdateJourneyState("pinpoint:UpdateJourneyState"),
     /** Action for the UpdatePushTemplate operation. */
     UpdatePushTemplate("pinpoint:UpdatePushTemplate"),
     /** Action for the UpdateSegment operation. */

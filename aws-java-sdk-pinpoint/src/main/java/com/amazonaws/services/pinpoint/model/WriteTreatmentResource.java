@@ -47,7 +47,11 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
      * </p>
      */
     private Integer sizePercent;
-
+    /**
+     * <p>
+     * The message template to use for the treatment.
+     * </p>
+     */
     private TemplateConfiguration templateConfiguration;
     /**
      * <p>
@@ -184,7 +188,12 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The message template to use for the treatment.
+     * </p>
+     * 
      * @param templateConfiguration
+     *        The message template to use for the treatment.
      */
 
     public void setTemplateConfiguration(TemplateConfiguration templateConfiguration) {
@@ -192,7 +201,11 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * The message template to use for the treatment.
+     * </p>
+     * 
+     * @return The message template to use for the treatment.
      */
 
     public TemplateConfiguration getTemplateConfiguration() {
@@ -200,7 +213,12 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The message template to use for the treatment.
+     * </p>
+     * 
      * @param templateConfiguration
+     *        The message template to use for the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

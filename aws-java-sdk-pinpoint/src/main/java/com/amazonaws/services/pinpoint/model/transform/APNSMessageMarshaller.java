@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class APNSMessageMarshaller {
 
+    private static final MarshallingInfo<String> APNSPUSHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("APNSPushType").build();
     private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Action").build();
     private static final MarshallingInfo<Integer> BADGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -80,6 +82,7 @@ public class APNSMessageMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(aPNSMessage.getAPNSPushType(), APNSPUSHTYPE_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getBadge(), BADGE_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getBody(), BODY_BINDING);

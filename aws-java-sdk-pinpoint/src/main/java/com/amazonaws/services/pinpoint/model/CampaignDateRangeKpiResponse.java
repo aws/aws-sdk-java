@@ -52,7 +52,7 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
      * <p>
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
-     * lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the <a
+     * lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
      * Guide</a>.
      * </p>
@@ -68,7 +68,7 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
     /**
      * <p>
      * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
-     * null for the Campaign Metrics resource. The Campaign Metrics resource returns all results in a single page.
+     * null for the Campaign Metrics resource because the resource returns all results in a single page.
      * </p>
      */
     private String nextToken;
@@ -210,7 +210,7 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
      * <p>
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
-     * lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the <a
+     * lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
      * Guide</a>.
      * </p>
@@ -218,8 +218,8 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
      * @param kpiName
      *        The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *        retrieved for. This value describes the associated metric and consists of two or more terms, which are
-     *        comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the
-     *        <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
+     *        comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see
+     *        the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
      *        Developer Guide</a>.
      */
 
@@ -231,14 +231,14 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
      * <p>
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
-     * lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the <a
+     * lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
      * Guide</a>.
      * </p>
      * 
      * @return The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *         retrieved for. This value describes the associated metric and consists of two or more terms, which are
-     *         comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see
+     *         comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see
      *         the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
      *         Developer Guide</a>.
      */
@@ -251,7 +251,7 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
      * <p>
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
-     * lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the <a
+     * lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
      * Guide</a>.
      * </p>
@@ -259,8 +259,8 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
      * @param kpiName
      *        The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *        retrieved for. This value describes the associated metric and consists of two or more terms, which are
-     *        comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of valid values, see the
-     *        <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
+     *        comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see
+     *        the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
      *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -319,13 +319,12 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
     /**
      * <p>
      * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
-     * null for the Campaign Metrics resource. The Campaign Metrics resource returns all results in a single page.
+     * null for the Campaign Metrics resource because the resource returns all results in a single page.
      * </p>
      * 
      * @param nextToken
      *        The string to use in a subsequent request to get the next page of results in a paginated response. This
-     *        value is null for the Campaign Metrics resource. The Campaign Metrics resource returns all results in a
-     *        single page.
+     *        value is null for the Campaign Metrics resource because the resource returns all results in a single page.
      */
 
     public void setNextToken(String nextToken) {
@@ -335,12 +334,12 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
     /**
      * <p>
      * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
-     * null for the Campaign Metrics resource. The Campaign Metrics resource returns all results in a single page.
+     * null for the Campaign Metrics resource because the resource returns all results in a single page.
      * </p>
      * 
      * @return The string to use in a subsequent request to get the next page of results in a paginated response. This
-     *         value is null for the Campaign Metrics resource. The Campaign Metrics resource returns all results in a
-     *         single page.
+     *         value is null for the Campaign Metrics resource because the resource returns all results in a single
+     *         page.
      */
 
     public String getNextToken() {
@@ -350,13 +349,12 @@ public class CampaignDateRangeKpiResponse implements Serializable, Cloneable, St
     /**
      * <p>
      * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
-     * null for the Campaign Metrics resource. The Campaign Metrics resource returns all results in a single page.
+     * null for the Campaign Metrics resource because the resource returns all results in a single page.
      * </p>
      * 
      * @param nextToken
      *        The string to use in a subsequent request to get the next page of results in a paginated response. This
-     *        value is null for the Campaign Metrics resource. The Campaign Metrics resource returns all results in a
-     *        single page.
+     *        value is null for the Campaign Metrics resource because the resource returns all results in a single page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

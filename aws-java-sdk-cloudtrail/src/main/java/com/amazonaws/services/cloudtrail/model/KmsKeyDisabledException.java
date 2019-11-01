@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is deprecated.
+ * This exception is no longer in use.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

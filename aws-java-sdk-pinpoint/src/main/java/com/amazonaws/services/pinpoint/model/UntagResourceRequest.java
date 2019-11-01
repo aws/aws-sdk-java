@@ -27,26 +27,25 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The key of the tag to remove from the application, campaign, message template, or segment. To remove multiple
-     * tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand
-     * (&amp;).
+     * The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     * argument for each additional tag to remove, separated by an ampersand (&amp;).
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -55,10 +54,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getResourceArn() {
@@ -67,11 +66,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the application, campaign, message template, or segment.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,14 +81,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The key of the tag to remove from the application, campaign, message template, or segment. To remove multiple
-     * tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand
-     * (&amp;).
+     * The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     * argument for each additional tag to remove, separated by an ampersand (&amp;).
      * </p>
      * 
-     * @return The key of the tag to remove from the application, campaign, message template, or segment. To remove
-     *         multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by
-     *         an ampersand (&amp;).
+     * @return The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     *         argument for each additional tag to remove, separated by an ampersand (&amp;).
      */
 
     public java.util.List<String> getTagKeys() {
@@ -98,15 +95,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The key of the tag to remove from the application, campaign, message template, or segment. To remove multiple
-     * tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand
-     * (&amp;).
+     * The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     * argument for each additional tag to remove, separated by an ampersand (&amp;).
      * </p>
      * 
      * @param tagKeys
-     *        The key of the tag to remove from the application, campaign, message template, or segment. To remove
-     *        multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by
-     *        an ampersand (&amp;).
+     *        The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     *        argument for each additional tag to remove, separated by an ampersand (&amp;).
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -120,9 +115,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The key of the tag to remove from the application, campaign, message template, or segment. To remove multiple
-     * tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand
-     * (&amp;).
+     * The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     * argument for each additional tag to remove, separated by an ampersand (&amp;).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -131,9 +125,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The key of the tag to remove from the application, campaign, message template, or segment. To remove
-     *        multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by
-     *        an ampersand (&amp;).
+     *        The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     *        argument for each additional tag to remove, separated by an ampersand (&amp;).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,15 +142,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The key of the tag to remove from the application, campaign, message template, or segment. To remove multiple
-     * tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand
-     * (&amp;).
+     * The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     * argument for each additional tag to remove, separated by an ampersand (&amp;).
      * </p>
      * 
      * @param tagKeys
-     *        The key of the tag to remove from the application, campaign, message template, or segment. To remove
-     *        multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by
-     *        an ampersand (&amp;).
+     *        The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and
+     *        argument for each additional tag to remove, separated by an ampersand (&amp;).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

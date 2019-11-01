@@ -103,7 +103,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Map<String, String> tags;
-
+    /**
+     * <p>
+     * The message template to use for the campaign.
+     * </p>
+     */
     private TemplateConfiguration templateConfiguration;
     /**
      * <p>
@@ -684,7 +688,12 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The message template to use for the campaign.
+     * </p>
+     * 
      * @param templateConfiguration
+     *        The message template to use for the campaign.
      */
 
     public void setTemplateConfiguration(TemplateConfiguration templateConfiguration) {
@@ -692,7 +701,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * The message template to use for the campaign.
+     * </p>
+     * 
+     * @return The message template to use for the campaign.
      */
 
     public TemplateConfiguration getTemplateConfiguration() {
@@ -700,7 +713,12 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The message template to use for the campaign.
+     * </p>
+     * 
      * @param templateConfiguration
+     *        The message template to use for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

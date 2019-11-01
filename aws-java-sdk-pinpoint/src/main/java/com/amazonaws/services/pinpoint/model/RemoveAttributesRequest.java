@@ -45,7 +45,7 @@ public class RemoveAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the
+     * endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the
      * number of app sessions or the number of items left in a cart.
      * </p>
      * </li>
@@ -119,7 +119,7 @@ public class RemoveAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the
+     * endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the
      * number of app sessions or the number of items left in a cart.
      * </p>
      * </li>
@@ -143,8 +143,8 @@ public class RemoveAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as
-     *        the number of app sessions or the number of items left in a cart.
+     *        endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such
+     *        as the number of app sessions or the number of items left in a cart.
      *        </p>
      *        </li>
      *        <li>
@@ -172,7 +172,7 @@ public class RemoveAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the
+     * endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the
      * number of app sessions or the number of items left in a cart.
      * </p>
      * </li>
@@ -195,8 +195,8 @@ public class RemoveAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as
-     *         the number of app sessions or the number of items left in a cart.
+     *         endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such
+     *         as the number of app sessions or the number of items left in a cart.
      *         </p>
      *         </li>
      *         <li>
@@ -224,7 +224,7 @@ public class RemoveAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the
+     * endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the
      * number of app sessions or the number of items left in a cart.
      * </p>
      * </li>
@@ -248,8 +248,8 @@ public class RemoveAttributesRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        endpoint-custom-metrics - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as
-     *        the number of app sessions or the number of items left in a cart.
+     *        endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such
+     *        as the number of app sessions or the number of items left in a cart.
      *        </p>
      *        </li>
      *        <li>

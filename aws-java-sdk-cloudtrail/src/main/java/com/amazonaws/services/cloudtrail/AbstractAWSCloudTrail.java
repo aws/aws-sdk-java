@@ -68,6 +68,11 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     }
 
     @Override
+    public GetTrailResult getTrail(GetTrailRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTrailStatusResult getTrailStatus(GetTrailStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +89,11 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
 
     @Override
     public ListTagsResult listTags(ListTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTrailsResult listTrails(ListTrailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

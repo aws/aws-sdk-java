@@ -66,6 +66,15 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
      * </p>
+     * <note>
+     * <p>
+     * When you use this task setting with a source PostgreSQL database, a logical replication slot should already be
+     * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * </p>
+     * </note>
      */
     private String cdcStartPosition;
     /**
@@ -277,6 +286,15 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
      * </p>
+     * <note>
+     * <p>
+     * When you use this task setting with a source PostgreSQL database, a logical replication slot should already be
+     * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * </p>
+     * </note>
      * 
      * @param cdcStartPosition
      *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
@@ -294,6 +312,16 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     *        </p>
+     *        <note>
+     *        <p>
+     *        When you use this task setting with a source PostgreSQL database, a logical replication slot should
+     *        already be created and associated with the source endpoint. You can verify this by setting the
+     *        <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     *        >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *        </p>
      */
 
     public void setCdcStartPosition(String cdcStartPosition) {
@@ -318,6 +346,15 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
      * </p>
+     * <note>
+     * <p>
+     * When you use this task setting with a source PostgreSQL database, a logical replication slot should already be
+     * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * </p>
+     * </note>
      * 
      * @return Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
      *         CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
@@ -334,6 +371,16 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         <p>
      *         LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     *         </p>
+     *         <note>
+     *         <p>
+     *         When you use this task setting with a source PostgreSQL database, a logical replication slot should
+     *         already be created and associated with the source endpoint. You can verify this by setting the
+     *         <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     *         >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *         </p>
      */
 
     public String getCdcStartPosition() {
@@ -358,6 +405,15 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
      * </p>
+     * <note>
+     * <p>
+     * When you use this task setting with a source PostgreSQL database, a logical replication slot should already be
+     * created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     * >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     * </p>
+     * </note>
      * 
      * @param cdcStartPosition
      *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
@@ -375,6 +431,16 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     *        </p>
+     *        <note>
+     *        <p>
+     *        When you use this task setting with a source PostgreSQL database, a logical replication slot should
+     *        already be created and associated with the source endpoint. You can verify this by setting the
+     *        <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib"
+     *        >Extra Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -65,8 +65,8 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      */
     private String s3BucketName;
@@ -74,7 +74,7 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>. The maximum length is 200 characters.
      * </p>
      */
@@ -94,7 +94,9 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false.
+     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
+     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
+     * events in all regions.
      * </p>
      */
     private Boolean isMultiRegionTrail;
@@ -168,6 +170,8 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private Boolean isOrganizationTrail;
+
+    private com.amazonaws.internal.SdkInternalList<Tag> tagsList;
 
     /**
      * <p>
@@ -377,14 +381,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @param s3BucketName
      *        Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
-     *        Bucket Naming Requirements</a>.
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *        S3 Bucket Naming Requirements</a>.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -394,12 +398,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @return Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
      *         S3 Bucket Naming Requirements</a>.
      */
 
@@ -410,14 +414,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket
-     * Naming Requirements</a>.
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
+     * Bucket Naming Requirements</a>.
      * </p>
      * 
      * @param s3BucketName
      *        Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3
-     *        Bucket Naming Requirements</a>.
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     *        S3 Bucket Naming Requirements</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,14 +434,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>. The maximum length is 200 characters.
      * </p>
      * 
      * @param s3KeyPrefix
      *        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *        file delivery. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *        Your CloudTrail Log Files</a>. The maximum length is 200 characters.
      */
 
@@ -449,13 +453,13 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>. The maximum length is 200 characters.
      * </p>
      * 
      * @return Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *         file delivery. For more information, see <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *         Your CloudTrail Log Files</a>. The maximum length is 200 characters.
      */
 
@@ -467,14 +471,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>. The maximum length is 200 characters.
      * </p>
      * 
      * @param s3KeyPrefix
      *        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *        file delivery. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *        Your CloudTrail Log Files</a>. The maximum length is 200 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -584,11 +588,15 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false.
+     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
+     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
+     * events in all regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail is created in the current region or in all regions. The default is false.
+     *        Specifies whether the trail is created in the current region or in all regions. The default is false,
+     *        which creates a trail only in the region where you are signed in. As a best practice, consider creating
+     *        trails that log events in all regions.
      */
 
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
@@ -597,10 +605,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false.
+     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
+     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
+     * events in all regions.
      * </p>
      * 
-     * @return Specifies whether the trail is created in the current region or in all regions. The default is false.
+     * @return Specifies whether the trail is created in the current region or in all regions. The default is false,
+     *         which creates a trail only in the region where you are signed in. As a best practice, consider creating
+     *         trails that log events in all regions.
      */
 
     public Boolean getIsMultiRegionTrail() {
@@ -609,11 +621,15 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false.
+     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
+     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
+     * events in all regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail is created in the current region or in all regions. The default is false.
+     *        Specifies whether the trail is created in the current region or in all regions. The default is false,
+     *        which creates a trail only in the region where you are signed in. As a best practice, consider creating
+     *        trails that log events in all regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -624,10 +640,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false.
+     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
+     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
+     * events in all regions.
      * </p>
      * 
-     * @return Specifies whether the trail is created in the current region or in all regions. The default is false.
+     * @return Specifies whether the trail is created in the current region or in all regions. The default is false,
+     *         which creates a trail only in the region where you are signed in. As a best practice, consider creating
+     *         trails that log events in all regions.
      */
 
     public Boolean isMultiRegionTrail() {
@@ -1115,6 +1135,61 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagsList() {
+        if (tagsList == null) {
+            tagsList = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tagsList;
+    }
+
+    /**
+     * @param tagsList
+     */
+
+    public void setTagsList(java.util.Collection<Tag> tagsList) {
+        if (tagsList == null) {
+            this.tagsList = null;
+            return;
+        }
+
+        this.tagsList = new com.amazonaws.internal.SdkInternalList<Tag>(tagsList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagsList(java.util.Collection)} or {@link #withTagsList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagsList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrailRequest withTagsList(Tag... tagsList) {
+        if (this.tagsList == null) {
+            setTagsList(new com.amazonaws.internal.SdkInternalList<Tag>(tagsList.length));
+        }
+        for (Tag ele : tagsList) {
+            this.tagsList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagsList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrailRequest withTagsList(java.util.Collection<Tag> tagsList) {
+        setTagsList(tagsList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1147,7 +1222,9 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getIsOrganizationTrail() != null)
-            sb.append("IsOrganizationTrail: ").append(getIsOrganizationTrail());
+            sb.append("IsOrganizationTrail: ").append(getIsOrganizationTrail()).append(",");
+        if (getTagsList() != null)
+            sb.append("TagsList: ").append(getTagsList());
         sb.append("}");
         return sb.toString();
     }
@@ -1206,6 +1283,10 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getIsOrganizationTrail() != null && other.getIsOrganizationTrail().equals(this.getIsOrganizationTrail()) == false)
             return false;
+        if (other.getTagsList() == null ^ this.getTagsList() == null)
+            return false;
+        if (other.getTagsList() != null && other.getTagsList().equals(this.getTagsList()) == false)
+            return false;
         return true;
     }
 
@@ -1225,6 +1306,7 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getIsOrganizationTrail() == null) ? 0 : getIsOrganizationTrail().hashCode());
+        hashCode = prime * hashCode + ((getTagsList() == null) ? 0 : getTagsList().hashCode());
         return hashCode;
     }
 

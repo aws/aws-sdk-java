@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an API request or response.
+ * Provides information about a request to create a message template.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateTemplateMessageBody" target="_top">AWS
@@ -30,30 +30,30 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the message template.
+     * The Amazon Resource Name (ARN) of the message template that was created.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The message that's returned from the API.
+     * The message that's returned from the API for the request to create the message template.
      * </p>
      */
     private String message;
     /**
      * <p>
-     * The unique identifier for the request or response.
+     * The unique identifier for the request to create the message template.
      * </p>
      */
     private String requestID;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the message template.
+     * The Amazon Resource Name (ARN) of the message template that was created.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the message template.
+     *        The Amazon Resource Name (ARN) of the message template that was created.
      */
 
     public void setArn(String arn) {
@@ -62,10 +62,10 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the message template.
+     * The Amazon Resource Name (ARN) of the message template that was created.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the message template.
+     * @return The Amazon Resource Name (ARN) of the message template that was created.
      */
 
     public String getArn() {
@@ -74,11 +74,11 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the message template.
+     * The Amazon Resource Name (ARN) of the message template that was created.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the message template.
+     *        The Amazon Resource Name (ARN) of the message template that was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The message that's returned from the API.
+     * The message that's returned from the API for the request to create the message template.
      * </p>
      * 
      * @param message
-     *        The message that's returned from the API.
+     *        The message that's returned from the API for the request to create the message template.
      */
 
     public void setMessage(String message) {
@@ -102,10 +102,10 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The message that's returned from the API.
+     * The message that's returned from the API for the request to create the message template.
      * </p>
      * 
-     * @return The message that's returned from the API.
+     * @return The message that's returned from the API for the request to create the message template.
      */
 
     public String getMessage() {
@@ -114,11 +114,11 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The message that's returned from the API.
+     * The message that's returned from the API for the request to create the message template.
      * </p>
      * 
      * @param message
-     *        The message that's returned from the API.
+     *        The message that's returned from the API for the request to create the message template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The unique identifier for the request or response.
+     * The unique identifier for the request to create the message template.
      * </p>
      * 
      * @param requestID
-     *        The unique identifier for the request or response.
+     *        The unique identifier for the request to create the message template.
      */
 
     public void setRequestID(String requestID) {
@@ -142,10 +142,10 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The unique identifier for the request or response.
+     * The unique identifier for the request to create the message template.
      * </p>
      * 
-     * @return The unique identifier for the request or response.
+     * @return The unique identifier for the request to create the message template.
      */
 
     public String getRequestID() {
@@ -154,11 +154,11 @@ public class CreateTemplateMessageBody implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The unique identifier for the request or response.
+     * The unique identifier for the request to create the message template.
      * </p>
      * 
      * @param requestID
-     *        The unique identifier for the request or response.
+     *        The unique identifier for the request to create the message template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -62,6 +62,39 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
      * </p>
      */
     private Integer tablesErrored;
+    /**
+     * <p>
+     * The date the replication task was started either with a fresh start or a target reload.
+     * </p>
+     */
+    private java.util.Date freshStartDate;
+    /**
+     * <p>
+     * The date the replication task was started either with a fresh start or a resume. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType"
+     * >StartReplicationTaskType</a>.
+     * </p>
+     */
+    private java.util.Date startDate;
+    /**
+     * <p>
+     * The date the replication task was stopped.
+     * </p>
+     */
+    private java.util.Date stopDate;
+    /**
+     * <p>
+     * The date the the replication task full load was started.
+     * </p>
+     */
+    private java.util.Date fullLoadStartDate;
+    /**
+     * <p>
+     * The date the replication task full load was completed.
+     * </p>
+     */
+    private java.util.Date fullLoadFinishDate;
 
     /**
      * <p>
@@ -304,6 +337,224 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The date the replication task was started either with a fresh start or a target reload.
+     * </p>
+     * 
+     * @param freshStartDate
+     *        The date the replication task was started either with a fresh start or a target reload.
+     */
+
+    public void setFreshStartDate(java.util.Date freshStartDate) {
+        this.freshStartDate = freshStartDate;
+    }
+
+    /**
+     * <p>
+     * The date the replication task was started either with a fresh start or a target reload.
+     * </p>
+     * 
+     * @return The date the replication task was started either with a fresh start or a target reload.
+     */
+
+    public java.util.Date getFreshStartDate() {
+        return this.freshStartDate;
+    }
+
+    /**
+     * <p>
+     * The date the replication task was started either with a fresh start or a target reload.
+     * </p>
+     * 
+     * @param freshStartDate
+     *        The date the replication task was started either with a fresh start or a target reload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTaskStats withFreshStartDate(java.util.Date freshStartDate) {
+        setFreshStartDate(freshStartDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the replication task was started either with a fresh start or a resume. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType"
+     * >StartReplicationTaskType</a>.
+     * </p>
+     * 
+     * @param startDate
+     *        The date the replication task was started either with a fresh start or a resume. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType"
+     *        >StartReplicationTaskType</a>.
+     */
+
+    public void setStartDate(java.util.Date startDate) {
+        this.startDate = startDate;
+    }
+
+    /**
+     * <p>
+     * The date the replication task was started either with a fresh start or a resume. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType"
+     * >StartReplicationTaskType</a>.
+     * </p>
+     * 
+     * @return The date the replication task was started either with a fresh start or a resume. For more information,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType"
+     *         >StartReplicationTaskType</a>.
+     */
+
+    public java.util.Date getStartDate() {
+        return this.startDate;
+    }
+
+    /**
+     * <p>
+     * The date the replication task was started either with a fresh start or a resume. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType"
+     * >StartReplicationTaskType</a>.
+     * </p>
+     * 
+     * @param startDate
+     *        The date the replication task was started either with a fresh start or a resume. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType"
+     *        >StartReplicationTaskType</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTaskStats withStartDate(java.util.Date startDate) {
+        setStartDate(startDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the replication task was stopped.
+     * </p>
+     * 
+     * @param stopDate
+     *        The date the replication task was stopped.
+     */
+
+    public void setStopDate(java.util.Date stopDate) {
+        this.stopDate = stopDate;
+    }
+
+    /**
+     * <p>
+     * The date the replication task was stopped.
+     * </p>
+     * 
+     * @return The date the replication task was stopped.
+     */
+
+    public java.util.Date getStopDate() {
+        return this.stopDate;
+    }
+
+    /**
+     * <p>
+     * The date the replication task was stopped.
+     * </p>
+     * 
+     * @param stopDate
+     *        The date the replication task was stopped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTaskStats withStopDate(java.util.Date stopDate) {
+        setStopDate(stopDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the the replication task full load was started.
+     * </p>
+     * 
+     * @param fullLoadStartDate
+     *        The date the the replication task full load was started.
+     */
+
+    public void setFullLoadStartDate(java.util.Date fullLoadStartDate) {
+        this.fullLoadStartDate = fullLoadStartDate;
+    }
+
+    /**
+     * <p>
+     * The date the the replication task full load was started.
+     * </p>
+     * 
+     * @return The date the the replication task full load was started.
+     */
+
+    public java.util.Date getFullLoadStartDate() {
+        return this.fullLoadStartDate;
+    }
+
+    /**
+     * <p>
+     * The date the the replication task full load was started.
+     * </p>
+     * 
+     * @param fullLoadStartDate
+     *        The date the the replication task full load was started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTaskStats withFullLoadStartDate(java.util.Date fullLoadStartDate) {
+        setFullLoadStartDate(fullLoadStartDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the replication task full load was completed.
+     * </p>
+     * 
+     * @param fullLoadFinishDate
+     *        The date the replication task full load was completed.
+     */
+
+    public void setFullLoadFinishDate(java.util.Date fullLoadFinishDate) {
+        this.fullLoadFinishDate = fullLoadFinishDate;
+    }
+
+    /**
+     * <p>
+     * The date the replication task full load was completed.
+     * </p>
+     * 
+     * @return The date the replication task full load was completed.
+     */
+
+    public java.util.Date getFullLoadFinishDate() {
+        return this.fullLoadFinishDate;
+    }
+
+    /**
+     * <p>
+     * The date the replication task full load was completed.
+     * </p>
+     * 
+     * @param fullLoadFinishDate
+     *        The date the replication task full load was completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTaskStats withFullLoadFinishDate(java.util.Date fullLoadFinishDate) {
+        setFullLoadFinishDate(fullLoadFinishDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -326,7 +577,17 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
         if (getTablesQueued() != null)
             sb.append("TablesQueued: ").append(getTablesQueued()).append(",");
         if (getTablesErrored() != null)
-            sb.append("TablesErrored: ").append(getTablesErrored());
+            sb.append("TablesErrored: ").append(getTablesErrored()).append(",");
+        if (getFreshStartDate() != null)
+            sb.append("FreshStartDate: ").append(getFreshStartDate()).append(",");
+        if (getStartDate() != null)
+            sb.append("StartDate: ").append(getStartDate()).append(",");
+        if (getStopDate() != null)
+            sb.append("StopDate: ").append(getStopDate()).append(",");
+        if (getFullLoadStartDate() != null)
+            sb.append("FullLoadStartDate: ").append(getFullLoadStartDate()).append(",");
+        if (getFullLoadFinishDate() != null)
+            sb.append("FullLoadFinishDate: ").append(getFullLoadFinishDate());
         sb.append("}");
         return sb.toString();
     }
@@ -365,6 +626,26 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
             return false;
         if (other.getTablesErrored() != null && other.getTablesErrored().equals(this.getTablesErrored()) == false)
             return false;
+        if (other.getFreshStartDate() == null ^ this.getFreshStartDate() == null)
+            return false;
+        if (other.getFreshStartDate() != null && other.getFreshStartDate().equals(this.getFreshStartDate()) == false)
+            return false;
+        if (other.getStartDate() == null ^ this.getStartDate() == null)
+            return false;
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
+            return false;
+        if (other.getStopDate() == null ^ this.getStopDate() == null)
+            return false;
+        if (other.getStopDate() != null && other.getStopDate().equals(this.getStopDate()) == false)
+            return false;
+        if (other.getFullLoadStartDate() == null ^ this.getFullLoadStartDate() == null)
+            return false;
+        if (other.getFullLoadStartDate() != null && other.getFullLoadStartDate().equals(this.getFullLoadStartDate()) == false)
+            return false;
+        if (other.getFullLoadFinishDate() == null ^ this.getFullLoadFinishDate() == null)
+            return false;
+        if (other.getFullLoadFinishDate() != null && other.getFullLoadFinishDate().equals(this.getFullLoadFinishDate()) == false)
+            return false;
         return true;
     }
 
@@ -379,6 +660,11 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getTablesLoading() == null) ? 0 : getTablesLoading().hashCode());
         hashCode = prime * hashCode + ((getTablesQueued() == null) ? 0 : getTablesQueued().hashCode());
         hashCode = prime * hashCode + ((getTablesErrored() == null) ? 0 : getTablesErrored().hashCode());
+        hashCode = prime * hashCode + ((getFreshStartDate() == null) ? 0 : getFreshStartDate().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
+        hashCode = prime * hashCode + ((getStopDate() == null) ? 0 : getStopDate().hashCode());
+        hashCode = prime * hashCode + ((getFullLoadStartDate() == null) ? 0 : getFullLoadStartDate().hashCode());
+        hashCode = prime * hashCode + ((getFullLoadFinishDate() == null) ? 0 : getFullLoadFinishDate().hashCode());
         return hashCode;
     }
 

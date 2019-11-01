@@ -42,14 +42,14 @@ public class CreateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>.
      * </p>
      */
     private String s3KeyPrefix;
     /**
      * <p>
-     * This field is deprecated. Use SnsTopicARN.
+     * This field is no longer in use. Use SnsTopicARN.
      * </p>
      */
     @Deprecated
@@ -204,14 +204,14 @@ public class CreateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>.
      * </p>
      * 
      * @param s3KeyPrefix
      *        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *        file delivery. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *        Your CloudTrail Log Files</a>.
      */
 
@@ -223,13 +223,13 @@ public class CreateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>.
      * </p>
      * 
      * @return Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *         file delivery. For more information, see <a
-     *         href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *         Your CloudTrail Log Files</a>.
      */
 
@@ -241,14 +241,14 @@ public class CreateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file
      * delivery. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your
      * CloudTrail Log Files</a>.
      * </p>
      * 
      * @param s3KeyPrefix
      *        Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log
      *        file delivery. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      *        Your CloudTrail Log Files</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -260,11 +260,11 @@ public class CreateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This field is deprecated. Use SnsTopicARN.
+     * This field is no longer in use. Use SnsTopicARN.
      * </p>
      * 
      * @param snsTopicName
-     *        This field is deprecated. Use SnsTopicARN.
+     *        This field is no longer in use. Use SnsTopicARN.
      */
     @Deprecated
     public void setSnsTopicName(String snsTopicName) {
@@ -273,10 +273,10 @@ public class CreateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This field is deprecated. Use SnsTopicARN.
+     * This field is no longer in use. Use SnsTopicARN.
      * </p>
      * 
-     * @return This field is deprecated. Use SnsTopicARN.
+     * @return This field is no longer in use. Use SnsTopicARN.
      */
     @Deprecated
     public String getSnsTopicName() {
@@ -285,11 +285,11 @@ public class CreateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This field is deprecated. Use SnsTopicARN.
+     * This field is no longer in use. Use SnsTopicARN.
      * </p>
      * 
      * @param snsTopicName
-     *        This field is deprecated. Use SnsTopicARN.
+     *        This field is no longer in use. Use SnsTopicARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
