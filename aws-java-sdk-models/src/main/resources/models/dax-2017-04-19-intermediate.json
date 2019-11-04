@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : {
       "DescribeEventsRequest" : [ "SourceType" ],
       "Event" : [ "SourceType" ],
@@ -145,7 +145,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -201,7 +201,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -261,7 +261,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -309,7 +309,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -361,7 +361,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -413,7 +413,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -465,7 +465,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -505,7 +505,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -549,7 +549,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -587,13 +587,13 @@
       "asyncReturnType" : "DescribeEventsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>",
+      "documentation" : "<p>Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last 24 hours are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -641,7 +641,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -689,7 +689,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -737,7 +737,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -797,7 +797,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -853,7 +853,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -891,7 +891,7 @@
       "asyncReturnType" : "RebootNodeResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.</p>",
+      "documentation" : "<p>Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.</p> <note> <p> <code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache. </p> </note>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -909,7 +909,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -969,7 +969,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -1029,7 +1029,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -1089,7 +1089,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -1141,7 +1141,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -1201,7 +1201,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceLinkedRoleNotFoundException",
-        "documentation" : null,
+        "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -4446,11 +4446,11 @@
         "c2jName" : "ReplicationFactor",
         "c2jShape" : "Integer",
         "deprecated" : false,
-        "documentation" : "<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>",
+        "documentation" : "<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withReplicationFactor",
-        "getterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@return The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
+        "getterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@return The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
         "getterMethodName" : "getReplicationFactor",
         "getterModel" : {
           "returnType" : "Integer",
@@ -4484,7 +4484,7 @@
         "marshallingType" : "INTEGER",
         "name" : "ReplicationFactor",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
+        "setterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
         "setterMethodName" : "setReplicationFactor",
         "setterModel" : {
           "timestampFormat" : null,
@@ -4498,13 +4498,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "replicationFactor",
           "variableType" : "Integer",
-          "documentation" : "<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>",
+          "documentation" : "<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -4513,11 +4513,11 @@
         "c2jName" : "AvailabilityZones",
         "c2jShape" : "AvailabilityZoneList",
         "deprecated" : false,
-        "documentation" : "<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>",
+        "documentation" : "<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withAvailabilityZones",
-        "getterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@return The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.*/",
+        "getterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>\n@return The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.*/",
         "getterMethodName" : "getAvailabilityZones",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -4633,7 +4633,7 @@
         "marshallingType" : "LIST",
         "name" : "AvailabilityZones",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.*/",
+        "setterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.*/",
         "setterMethodName" : "setAvailabilityZones",
         "setterModel" : {
           "timestampFormat" : null,
@@ -4647,13 +4647,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if you want to override the existing values.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if you want to override the existing values.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "availabilityZones",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>",
+          "documentation" : "<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -5364,11 +5364,11 @@
           "c2jName" : "AvailabilityZones",
           "c2jShape" : "AvailabilityZoneList",
           "deprecated" : false,
-          "documentation" : "<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>",
+          "documentation" : "<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withAvailabilityZones",
-          "getterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@return The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.*/",
+          "getterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>\n@return The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.*/",
           "getterMethodName" : "getAvailabilityZones",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -5484,7 +5484,7 @@
           "marshallingType" : "LIST",
           "name" : "AvailabilityZones",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.*/",
+          "setterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.*/",
           "setterMethodName" : "setAvailabilityZones",
           "setterModel" : {
             "timestampFormat" : null,
@@ -5498,13 +5498,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if you want to override the existing values.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if you want to override the existing values.</p>\n@param availabilityZones The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "availabilityZones",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>",
+            "documentation" : "<p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -5990,11 +5990,11 @@
           "c2jName" : "ReplicationFactor",
           "c2jShape" : "Integer",
           "deprecated" : false,
-          "documentation" : "<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>",
+          "documentation" : "<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withReplicationFactor",
-          "getterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@return The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
+          "getterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@return The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
           "getterMethodName" : "getReplicationFactor",
           "getterModel" : {
             "returnType" : "Integer",
@@ -6028,7 +6028,7 @@
           "marshallingType" : "INTEGER",
           "name" : "ReplicationFactor",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
+          "setterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>*/",
           "setterMethodName" : "setReplicationFactor",
           "setterModel" : {
             "timestampFormat" : null,
@@ -6042,13 +6042,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>\n@param replicationFactor The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "replicationFactor",
             "variableType" : "Integer",
-            "documentation" : "<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>",
+            "documentation" : "<p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you have at least two read replicas per cluster.</p> </note>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -25325,7 +25325,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "",
+      "documentation" : "<p>The specified service linked role (SLR) was not found.</p>",
       "enums" : null,
       "errorCode" : "ServiceLinkedRoleNotFoundFault",
       "hasHeaderMember" : false,
@@ -25493,11 +25493,11 @@
         "c2jName" : "SubnetAvailabilityZone",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The Availability Zone (AZ) for subnet subnet.</p>",
+        "documentation" : "<p>The Availability Zone (AZ) for the subnet.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for subnet subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The Availability Zone (AZ) for the subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSubnetAvailabilityZone",
-        "getterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@return The Availability Zone (AZ) for subnet subnet.*/",
+        "getterDocumentation" : "/**<p>The Availability Zone (AZ) for the subnet.</p>\n@return The Availability Zone (AZ) for the subnet.*/",
         "getterMethodName" : "getSubnetAvailabilityZone",
         "getterModel" : {
           "returnType" : "String",
@@ -25531,7 +25531,7 @@
         "marshallingType" : "STRING",
         "name" : "SubnetAvailabilityZone",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for subnet subnet.*/",
+        "setterDocumentation" : "/**<p>The Availability Zone (AZ) for the subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for the subnet.*/",
         "setterMethodName" : "setSubnetAvailabilityZone",
         "setterModel" : {
           "timestampFormat" : null,
@@ -25545,13 +25545,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for subnet subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Availability Zone (AZ) for the subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "subnetAvailabilityZone",
           "variableType" : "String",
-          "documentation" : "<p>The Availability Zone (AZ) for subnet subnet.</p>",
+          "documentation" : "<p>The Availability Zone (AZ) for the subnet.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -25562,11 +25562,11 @@
           "c2jName" : "SubnetAvailabilityZone",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The Availability Zone (AZ) for subnet subnet.</p>",
+          "documentation" : "<p>The Availability Zone (AZ) for the subnet.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for subnet subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The Availability Zone (AZ) for the subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSubnetAvailabilityZone",
-          "getterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@return The Availability Zone (AZ) for subnet subnet.*/",
+          "getterDocumentation" : "/**<p>The Availability Zone (AZ) for the subnet.</p>\n@return The Availability Zone (AZ) for the subnet.*/",
           "getterMethodName" : "getSubnetAvailabilityZone",
           "getterModel" : {
             "returnType" : "String",
@@ -25600,7 +25600,7 @@
           "marshallingType" : "STRING",
           "name" : "SubnetAvailabilityZone",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for subnet subnet.*/",
+          "setterDocumentation" : "/**<p>The Availability Zone (AZ) for the subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for the subnet.*/",
           "setterMethodName" : "setSubnetAvailabilityZone",
           "setterModel" : {
             "timestampFormat" : null,
@@ -25614,13 +25614,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The Availability Zone (AZ) for subnet subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for subnet subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Availability Zone (AZ) for the subnet.</p>\n@param subnetAvailabilityZone The Availability Zone (AZ) for the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "subnetAvailabilityZone",
             "variableType" : "String",
-            "documentation" : "<p>The Availability Zone (AZ) for subnet subnet.</p>",
+            "documentation" : "<p>The Availability Zone (AZ) for the subnet.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

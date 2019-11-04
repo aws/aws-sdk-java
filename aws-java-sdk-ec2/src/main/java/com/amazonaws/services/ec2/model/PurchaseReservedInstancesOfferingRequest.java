@@ -49,7 +49,8 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     private ReservedInstanceLimitPrice limitPrice;
     /**
      * <p>
-     * The time at which to purchase the Reserved Instance.
+     * The time at which to purchase the Reserved Instance, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      */
     private java.util.Date purchaseTime;
@@ -203,11 +204,13 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The time at which to purchase the Reserved Instance.
+     * The time at which to purchase the Reserved Instance, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
      * @param purchaseTime
-     *        The time at which to purchase the Reserved Instance.
+     *        The time at which to purchase the Reserved Instance, in UTC format (for example,
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
     public void setPurchaseTime(java.util.Date purchaseTime) {
@@ -216,10 +219,12 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The time at which to purchase the Reserved Instance.
+     * The time at which to purchase the Reserved Instance, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
-     * @return The time at which to purchase the Reserved Instance.
+     * @return The time at which to purchase the Reserved Instance, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
     public java.util.Date getPurchaseTime() {
@@ -228,11 +233,13 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The time at which to purchase the Reserved Instance.
+     * The time at which to purchase the Reserved Instance, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
      * @param purchaseTime
-     *        The time at which to purchase the Reserved Instance.
+     *        The time at which to purchase the Reserved Instance, in UTC format (for example,
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

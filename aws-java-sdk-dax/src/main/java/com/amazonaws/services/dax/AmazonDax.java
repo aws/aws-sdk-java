@@ -75,6 +75,7 @@ public interface AmazonDax {
      * @throws TagQuotaPerResourceExceededException
      *         You have exceeded the maximum number of tags for this DAX cluster.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -100,6 +101,7 @@ public interface AmazonDax {
      * @throws InvalidParameterGroupStateException
      *         One or more parameters in a parameter group are in an invalid state.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -126,6 +128,7 @@ public interface AmazonDax {
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @sample AmazonDax.CreateSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup" target="_top">AWS API
      *      Documentation</a>
@@ -152,6 +155,7 @@ public interface AmazonDax {
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -176,6 +180,7 @@ public interface AmazonDax {
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -199,6 +204,7 @@ public interface AmazonDax {
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -226,6 +232,7 @@ public interface AmazonDax {
      * @throws SubnetGroupNotFoundException
      *         The requested subnet group name does not refer to an existing subnet group.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @sample AmazonDax.DeleteSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup" target="_top">AWS API
      *      Documentation</a>
@@ -259,6 +266,7 @@ public interface AmazonDax {
      * @throws ClusterNotFoundException
      *         The requested cluster ID does not refer to an existing DAX cluster.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -277,6 +285,7 @@ public interface AmazonDax {
      * @param describeDefaultParametersRequest
      * @return Result of the DescribeDefaultParameters operation returned by the service.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -293,13 +302,14 @@ public interface AmazonDax {
      * cluster or parameter group by providing the name as a parameter.
      * </p>
      * <p>
-     * By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days'
-     * worth of events if necessary.
+     * By default, only the events occurring within the last 24 hours are returned; however, you can retrieve up to 14
+     * days' worth of events if necessary.
      * </p>
      * 
      * @param describeEventsRequest
      * @return Result of the DescribeEvents operation returned by the service.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -321,6 +331,7 @@ public interface AmazonDax {
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -341,6 +352,7 @@ public interface AmazonDax {
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -362,6 +374,7 @@ public interface AmazonDax {
      * @throws SubnetGroupNotFoundException
      *         The requested subnet group name does not refer to an existing subnet group.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @sample AmazonDax.DescribeSubnetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups" target="_top">AWS API
      *      Documentation</a>
@@ -389,6 +402,7 @@ public interface AmazonDax {
      * @throws NodeQuotaForCustomerExceededException
      *         You have attempted to exceed the maximum number of nodes for your AWS account.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -414,6 +428,7 @@ public interface AmazonDax {
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -429,6 +444,11 @@ public interface AmazonDax {
      * Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the
      * node status is set to REBOOTING.
      * </p>
+     * <note>
+     * <p>
+     * <code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache.
+     * </p>
+     * </note>
      * 
      * @param rebootNodeRequest
      * @return Result of the RebootNode operation returned by the service.
@@ -439,6 +459,7 @@ public interface AmazonDax {
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -466,6 +487,7 @@ public interface AmazonDax {
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -493,6 +515,7 @@ public interface AmazonDax {
      * @throws InvalidClusterStateException
      *         The requested DAX cluster is not in the <i>available</i> state.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -520,6 +543,7 @@ public interface AmazonDax {
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -543,6 +567,7 @@ public interface AmazonDax {
      * @throws ParameterGroupNotFoundException
      *         The specified parameter group does not exist.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -569,6 +594,7 @@ public interface AmazonDax {
      * @throws InvalidSubnetException
      *         An invalid subnet identifier was specified.
      * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
      * @sample AmazonDax.UpdateSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup" target="_top">AWS API
      *      Documentation</a>

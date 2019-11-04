@@ -33,6 +33,8 @@ public class DeploymentConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureThresholdPercentage").build();
     private static final MarshallingInfo<Long> ROBOTDEPLOYMENTTIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("robotDeploymentTimeoutInSeconds").build();
+    private static final MarshallingInfo<StructuredPojo> DOWNLOADCONDITIONFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("downloadConditionFile").build();
 
     private static final DeploymentConfigMarshaller instance = new DeploymentConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class DeploymentConfigMarshaller {
             protocolMarshaller.marshall(deploymentConfig.getConcurrentDeploymentPercentage(), CONCURRENTDEPLOYMENTPERCENTAGE_BINDING);
             protocolMarshaller.marshall(deploymentConfig.getFailureThresholdPercentage(), FAILURETHRESHOLDPERCENTAGE_BINDING);
             protocolMarshaller.marshall(deploymentConfig.getRobotDeploymentTimeoutInSeconds(), ROBOTDEPLOYMENTTIMEOUTINSECONDS_BINDING);
+            protocolMarshaller.marshall(deploymentConfig.getDownloadConditionFile(), DOWNLOADCONDITIONFILE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

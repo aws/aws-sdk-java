@@ -179,7 +179,7 @@ public class KeyPair implements Serializable, Cloneable {
         if (getKeyFingerprint() != null)
             sb.append("KeyFingerprint: ").append(getKeyFingerprint()).append(",");
         if (getKeyMaterial() != null)
-            sb.append("KeyMaterial: ").append(getKeyMaterial()).append(",");
+            sb.append("KeyMaterial: ").append("***Sensitive Data Redacted***").append(",");
         if (getKeyName() != null)
             sb.append("KeyName: ").append(getKeyName());
         sb.append("}");

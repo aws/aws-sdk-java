@@ -157,7 +157,11 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private VPCConfigResponse vpcConfig;
-    /** <p/> */
+    /**
+     * <p>
+     * Information about a network interface.
+     * </p>
+     */
     private NetworkInterface networkInterface;
 
     /**
@@ -1203,9 +1207,12 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Information about a network interface.
+     * </p>
      * 
      * @param networkInterface
+     *        Information about a network interface.
      */
 
     public void setNetworkInterface(NetworkInterface networkInterface) {
@@ -1213,9 +1220,11 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Information about a network interface.
+     * </p>
      * 
-     * @return
+     * @return Information about a network interface.
      */
 
     public NetworkInterface getNetworkInterface() {
@@ -1223,9 +1232,12 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Information about a network interface.
+     * </p>
      * 
      * @param networkInterface
+     *        Information about a network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

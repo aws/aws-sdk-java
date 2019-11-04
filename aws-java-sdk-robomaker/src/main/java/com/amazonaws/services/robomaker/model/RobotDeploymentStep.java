@@ -22,6 +22,7 @@ public enum RobotDeploymentStep {
 
     Validating("Validating"),
     DownloadingExtracting("DownloadingExtracting"),
+    ExecutingDownloadCondition("ExecutingDownloadCondition"),
     ExecutingPreLaunch("ExecutingPreLaunch"),
     Launching("Launching"),
     ExecutingPostLaunch("ExecutingPostLaunch"),

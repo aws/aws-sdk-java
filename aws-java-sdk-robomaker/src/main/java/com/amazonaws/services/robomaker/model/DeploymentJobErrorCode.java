@@ -36,6 +36,7 @@ public enum DeploymentJobErrorCode {
     PreLaunchFileFailure("PreLaunchFileFailure"),
     PostLaunchFileFailure("PostLaunchFileFailure"),
     BadPermissionError("BadPermissionError"),
+    DownloadConditionFailed("DownloadConditionFailed"),
     InternalServerError("InternalServerError");
 
     private String value;

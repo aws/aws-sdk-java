@@ -1,3 +1,16 @@
+# __1.11.666__ __2019-11-04__
+## __AWS RoboMaker__
+  - ### Features
+    - RoboMaker Fleet Management launch a feature to verify your robot is ready to download and install the new robot application using a download condition file, which is a script run on the robot prior to downloading the new deployment. 
+
+## __Amazon DynamoDB Accelerator (DAX)__
+  - ### Features
+    - Documentation updates for dax
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Documentation updates for ec2
+
 # __1.11.665__ __2019-11-01__
 ## __AWS CloudTrail__
   - ### Features

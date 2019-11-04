@@ -776,7 +776,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getUserData() != null)
-            sb.append("UserData: ").append(getUserData());
+            sb.append("UserData: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

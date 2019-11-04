@@ -67,7 +67,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any
      * read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read
-     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.
+     * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read
+     * replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is
+     * provided, its length must equal the <code>ReplicationFactor</code>.
      * </p>
      * <note>
      * <p>
@@ -78,8 +80,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer replicationFactor;
     /**
      * <p>
-     * The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are
-     * placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.
+     * The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     * updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you
+     * omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
      * </p>
      */
     private java.util.List<String> availabilityZones;
@@ -437,7 +440,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any
      * read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read
-     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.
+     * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read
+     * replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is
+     * provided, its length must equal the <code>ReplicationFactor</code>.
      * </p>
      * <note>
      * <p>
@@ -448,7 +453,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param replicationFactor
      *        The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster,
      *        without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one
-     *        or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note>
+     *        or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary
+     *        and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code>
+     *        parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
      *        <p>
      *        AWS recommends that you have at least two read replicas per cluster.
      *        </p>
@@ -462,7 +469,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any
      * read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read
-     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.
+     * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read
+     * replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is
+     * provided, its length must equal the <code>ReplicationFactor</code>.
      * </p>
      * <note>
      * <p>
@@ -472,7 +481,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster,
      *         without any read replicas. For additional fault tolerance, you can create a multiple node cluster with
-     *         one or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note>
+     *         one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one
+     *         primary and two read replicas) and 10 (one primary and nine read replicas).
+     *         <code>If the AvailabilityZones</code> parameter is provided, its length must equal the
+     *         <code>ReplicationFactor</code>.</p> <note>
      *         <p>
      *         AWS recommends that you have at least two read replicas per cluster.
      *         </p>
@@ -486,7 +498,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any
      * read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read
-     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.
+     * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read
+     * replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is
+     * provided, its length must equal the <code>ReplicationFactor</code>.
      * </p>
      * <note>
      * <p>
@@ -497,7 +511,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param replicationFactor
      *        The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster,
      *        without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one
-     *        or more read replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note>
+     *        or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary
+     *        and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code>
+     *        parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
      *        <p>
      *        AWS recommends that you have at least two read replicas per cluster.
      *        </p>
@@ -511,13 +527,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are
-     * placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.
+     * The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     * updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you
+     * omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
      * </p>
      * 
-     * @return The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the
-     *         cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes
-     *         across multiple AZs.
+     * @return The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     *         updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If
+     *         you omit this parameter, DAX will spread the nodes across Availability Zones for the highest
+     *         availability.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -526,14 +544,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are
-     * placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.
+     * The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     * updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you
+     * omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the
-     *        cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes
-     *        across multiple AZs.
+     *        The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     *        updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If
+     *        you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
      */
 
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -547,8 +566,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are
-     * placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.
+     * The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     * updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you
+     * omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -557,9 +577,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the
-     *        cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes
-     *        across multiple AZs.
+     *        The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     *        updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If
+     *        you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,14 +595,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are
-     * placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.
+     * The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     * updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you
+     * omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the
-     *        cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes
-     *        across multiple AZs.
+     *        The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or
+     *        updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If
+     *        you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,8 +48,8 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * <p>
      * The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
      * parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in
-     * bytes) that you want to mirror. For example, if you set this value to 1network0, then the first 100 bytes that
-     * meet the filter criteria are copied to the target.
+     * bytes) that you want to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the
+     * filter criteria are copied to the target.
      * </p>
      * <p>
      * If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number
@@ -221,8 +221,8 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * <p>
      * The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
      * parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in
-     * bytes) that you want to mirror. For example, if you set this value to 1network0, then the first 100 bytes that
-     * meet the filter criteria are copied to the target.
+     * bytes) that you want to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the
+     * filter criteria are copied to the target.
      * </p>
      * <p>
      * If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number
@@ -232,8 +232,8 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * @param packetLength
      *        The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
      *        parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the
-     *        length (in bytes) that you want to mirror. For example, if you set this value to 1network0, then the first
-     *        100 bytes that meet the filter criteria are copied to the target.</p>
+     *        length (in bytes) that you want to mirror. For example, if you set this value to 100, then the first 100
+     *        bytes that meet the filter criteria are copied to the target.</p>
      *        <p>
      *        If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the
      *        number of bytes in each packet to mirror.
@@ -247,8 +247,8 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * <p>
      * The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
      * parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in
-     * bytes) that you want to mirror. For example, if you set this value to 1network0, then the first 100 bytes that
-     * meet the filter criteria are copied to the target.
+     * bytes) that you want to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the
+     * filter criteria are copied to the target.
      * </p>
      * <p>
      * If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number
@@ -257,8 +257,8 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * 
      * @return The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
      *         parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the
-     *         length (in bytes) that you want to mirror. For example, if you set this value to 1network0, then the
-     *         first 100 bytes that meet the filter criteria are copied to the target.</p>
+     *         length (in bytes) that you want to mirror. For example, if you set this value to 100, then the first 100
+     *         bytes that meet the filter criteria are copied to the target.</p>
      *         <p>
      *         If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify
      *         the number of bytes in each packet to mirror.
@@ -272,8 +272,8 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * <p>
      * The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
      * parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in
-     * bytes) that you want to mirror. For example, if you set this value to 1network0, then the first 100 bytes that
-     * meet the filter criteria are copied to the target.
+     * bytes) that you want to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the
+     * filter criteria are copied to the target.
      * </p>
      * <p>
      * If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number
@@ -283,8 +283,8 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * @param packetLength
      *        The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
      *        parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the
-     *        length (in bytes) that you want to mirror. For example, if you set this value to 1network0, then the first
-     *        100 bytes that meet the filter criteria are copied to the target.</p>
+     *        length (in bytes) that you want to mirror. For example, if you set this value to 100, then the first 100
+     *        bytes that meet the filter criteria are copied to the target.</p>
      *        <p>
      *        If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the
      *        number of bytes in each packet to mirror.

@@ -232,7 +232,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
-     * prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -1913,7 +1913,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
-     * prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -1922,9 +1922,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      *        Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
      *        meets the <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites"
-     *        >hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more
-     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     *        Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >hibernation prerequisites</a>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setHibernationOptions(LaunchTemplateHibernationOptionsRequest hibernationOptions) {
@@ -1936,7 +1936,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
-     * prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -1944,9 +1944,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * @return Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
      *         meets the <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites"
-     *         >hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more
-     *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     *         Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         >hibernation prerequisites</a>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public LaunchTemplateHibernationOptionsRequest getHibernationOptions() {
@@ -1958,7 +1958,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
-     * prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -1967,9 +1967,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      *        Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
      *        meets the <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites"
-     *        >hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more
-     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     *        Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >hibernation prerequisites</a>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

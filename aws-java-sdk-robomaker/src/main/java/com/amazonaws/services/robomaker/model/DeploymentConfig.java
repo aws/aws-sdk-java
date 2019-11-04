@@ -47,6 +47,12 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Long robotDeploymentTimeoutInSeconds;
+    /**
+     * <p>
+     * The download condition file.
+     * </p>
+     */
+    private S3Object downloadConditionFile;
 
     /**
      * <p>
@@ -175,6 +181,46 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The download condition file.
+     * </p>
+     * 
+     * @param downloadConditionFile
+     *        The download condition file.
+     */
+
+    public void setDownloadConditionFile(S3Object downloadConditionFile) {
+        this.downloadConditionFile = downloadConditionFile;
+    }
+
+    /**
+     * <p>
+     * The download condition file.
+     * </p>
+     * 
+     * @return The download condition file.
+     */
+
+    public S3Object getDownloadConditionFile() {
+        return this.downloadConditionFile;
+    }
+
+    /**
+     * <p>
+     * The download condition file.
+     * </p>
+     * 
+     * @param downloadConditionFile
+     *        The download condition file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentConfig withDownloadConditionFile(S3Object downloadConditionFile) {
+        setDownloadConditionFile(downloadConditionFile);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +237,9 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
         if (getFailureThresholdPercentage() != null)
             sb.append("FailureThresholdPercentage: ").append(getFailureThresholdPercentage()).append(",");
         if (getRobotDeploymentTimeoutInSeconds() != null)
-            sb.append("RobotDeploymentTimeoutInSeconds: ").append(getRobotDeploymentTimeoutInSeconds());
+            sb.append("RobotDeploymentTimeoutInSeconds: ").append(getRobotDeploymentTimeoutInSeconds()).append(",");
+        if (getDownloadConditionFile() != null)
+            sb.append("DownloadConditionFile: ").append(getDownloadConditionFile());
         sb.append("}");
         return sb.toString();
     }
@@ -220,6 +268,10 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
         if (other.getRobotDeploymentTimeoutInSeconds() != null
                 && other.getRobotDeploymentTimeoutInSeconds().equals(this.getRobotDeploymentTimeoutInSeconds()) == false)
             return false;
+        if (other.getDownloadConditionFile() == null ^ this.getDownloadConditionFile() == null)
+            return false;
+        if (other.getDownloadConditionFile() != null && other.getDownloadConditionFile().equals(this.getDownloadConditionFile()) == false)
+            return false;
         return true;
     }
 
@@ -231,6 +283,7 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getConcurrentDeploymentPercentage() == null) ? 0 : getConcurrentDeploymentPercentage().hashCode());
         hashCode = prime * hashCode + ((getFailureThresholdPercentage() == null) ? 0 : getFailureThresholdPercentage().hashCode());
         hashCode = prime * hashCode + ((getRobotDeploymentTimeoutInSeconds() == null) ? 0 : getRobotDeploymentTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getDownloadConditionFile() == null) ? 0 : getDownloadConditionFile().hashCode());
         return hashCode;
     }
 

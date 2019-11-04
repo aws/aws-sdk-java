@@ -36,7 +36,7 @@ public class Subnet implements Serializable, Cloneable, StructuredPojo {
     private String subnetIdentifier;
     /**
      * <p>
-     * The Availability Zone (AZ) for subnet subnet.
+     * The Availability Zone (AZ) for the subnet.
      * </p>
      */
     private String subnetAvailabilityZone;
@@ -83,11 +83,11 @@ public class Subnet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone (AZ) for subnet subnet.
+     * The Availability Zone (AZ) for the subnet.
      * </p>
      * 
      * @param subnetAvailabilityZone
-     *        The Availability Zone (AZ) for subnet subnet.
+     *        The Availability Zone (AZ) for the subnet.
      */
 
     public void setSubnetAvailabilityZone(String subnetAvailabilityZone) {
@@ -96,10 +96,10 @@ public class Subnet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone (AZ) for subnet subnet.
+     * The Availability Zone (AZ) for the subnet.
      * </p>
      * 
-     * @return The Availability Zone (AZ) for subnet subnet.
+     * @return The Availability Zone (AZ) for the subnet.
      */
 
     public String getSubnetAvailabilityZone() {
@@ -108,11 +108,11 @@ public class Subnet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone (AZ) for subnet subnet.
+     * The Availability Zone (AZ) for the subnet.
      * </p>
      * 
      * @param subnetAvailabilityZone
-     *        The Availability Zone (AZ) for subnet subnet.
+     *        The Availability Zone (AZ) for the subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

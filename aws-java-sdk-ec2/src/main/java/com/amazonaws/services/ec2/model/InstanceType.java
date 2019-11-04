@@ -244,6 +244,8 @@ public enum InstanceType {
     U6tb1Metal("u-6tb1.metal"),
     U9tb1Metal("u-9tb1.metal"),
     U12tb1Metal("u-12tb1.metal"),
+    U18tb1Metal("u-18tb1.metal"),
+    U24tb1Metal("u-24tb1.metal"),
     A1Medium("a1.medium"),
     A1Large("a1.large"),
     A1Xlarge("a1.xlarge"),

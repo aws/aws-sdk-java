@@ -15,7 +15,9 @@ package com.amazonaws.services.dax.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The specified service linked role (SLR) was not found.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceLinkedRoleNotFoundException extends com.amazonaws.services.dax.model.AmazonDaxException {

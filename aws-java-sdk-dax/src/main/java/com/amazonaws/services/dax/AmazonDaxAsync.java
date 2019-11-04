@@ -388,8 +388,8 @@ public interface AmazonDaxAsync extends AmazonDax {
      * cluster or parameter group by providing the name as a parameter.
      * </p>
      * <p>
-     * By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days'
-     * worth of events if necessary.
+     * By default, only the events occurring within the last 24 hours are returned; however, you can retrieve up to 14
+     * days' worth of events if necessary.
      * </p>
      * 
      * @param describeEventsRequest
@@ -406,8 +406,8 @@ public interface AmazonDaxAsync extends AmazonDax {
      * cluster or parameter group by providing the name as a parameter.
      * </p>
      * <p>
-     * By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days'
-     * worth of events if necessary.
+     * By default, only the events occurring within the last 24 hours are returned; however, you can retrieve up to 14
+     * days' worth of events if necessary.
      * </p>
      * 
      * @param describeEventsRequest
@@ -591,6 +591,11 @@ public interface AmazonDaxAsync extends AmazonDax {
      * Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the
      * node status is set to REBOOTING.
      * </p>
+     * <note>
+     * <p>
+     * <code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache.
+     * </p>
+     * </note>
      * 
      * @param rebootNodeRequest
      * @return A Java Future containing the result of the RebootNode operation returned by the service.
@@ -605,6 +610,11 @@ public interface AmazonDaxAsync extends AmazonDax {
      * Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the
      * node status is set to REBOOTING.
      * </p>
+     * <note>
+     * <p>
+     * <code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache.
+     * </p>
+     * </note>
      * 
      * @param rebootNodeRequest
      * @param asyncHandler
