@@ -1032,7 +1032,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy of the DB cluster snapshot in
@@ -3257,14 +3264,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Deletes the installation media for an on-premises, bring your own media (BYOM) DB engine, such as Microsoft SQL
-     * Server.
+     * Deletes the installation medium for a DB engine that requires an on-premises customer provided license, such as
+     * Microsoft SQL Server.
      * </p>
      * 
      * @param deleteInstallationMediaRequest
      * @return Result of the DeleteInstallationMedia operation returned by the service.
      * @throws InstallationMediaNotFoundException
-     *         <code>InstallationMediaID</code> doesn't refer to an existing installation media.
+     *         <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
      * @sample AmazonRDS.DeleteInstallationMedia
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia" target="_top">AWS
      *      API Documentation</a>
@@ -5003,14 +5010,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Describes the available installation media for on-premises, bring your own media (BYOM) DB engines, such as
-     * Microsoft SQL Server.
+     * Describes the available installation media for a DB engine that requires an on-premises customer provided
+     * license, such as Microsoft SQL Server.
      * </p>
      * 
      * @param describeInstallationMediaRequest
      * @return Result of the DescribeInstallationMedia operation returned by the service.
      * @throws InstallationMediaNotFoundException
-     *         <code>InstallationMediaID</code> doesn't refer to an existing installation media.
+     *         <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
      * @sample AmazonRDS.DescribeInstallationMedia
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia" target="_top">AWS
      *      API Documentation</a>
@@ -5664,7 +5671,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Imports the installation media for an on-premises, bring your own media (BYOM) DB engine, such as SQL Server.
+     * Imports the installation media for a DB engine that requires an on-premises customer provided license, such as
+     * SQL Server.
      * </p>
      * 
      * @param importInstallationMediaRequest
@@ -5672,7 +5680,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws CustomAvailabilityZoneNotFoundException
      *         <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.
      * @throws InstallationMediaAlreadyExistsException
-     *         The specified installation media has already been imported.
+     *         The specified installation medium has already been imported.
      * @sample AmazonRDS.ImportInstallationMedia
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia" target="_top">AWS
      *      API Documentation</a>
@@ -7555,8 +7563,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point
-     * with the same configuration as the original source DB cluster, except that the new DB cluster is created with the
-     * default security group.
+     * with the same configuration as the original source DB cluster. If you don't specify a security group, the new DB
+     * cluster is associated with the default security group.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a

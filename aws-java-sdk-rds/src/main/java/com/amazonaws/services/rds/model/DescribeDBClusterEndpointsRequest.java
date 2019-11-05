@@ -56,8 +56,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The maximum number of records to include in the response. If more records exist than the specified
-     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can
-     * retrieve the remaining results.
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve
+     * the remaining results.
      * </p>
      * <p>
      * Default: 100
@@ -314,8 +314,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The maximum number of records to include in the response. If more records exist than the specified
-     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can
-     * retrieve the remaining results.
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve
+     * the remaining results.
      * </p>
      * <p>
      * Default: 100
@@ -326,8 +326,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
-     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you
-     *        can retrieve the remaining results. </p>
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can
+     *        retrieve the remaining results. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -342,8 +342,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The maximum number of records to include in the response. If more records exist than the specified
-     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can
-     * retrieve the remaining results.
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve
+     * the remaining results.
      * </p>
      * <p>
      * Default: 100
@@ -353,8 +353,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return The maximum number of records to include in the response. If more records exist than the specified
-     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you
-     *         can retrieve the remaining results. </p>
+     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can
+     *         retrieve the remaining results. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -369,8 +369,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The maximum number of records to include in the response. If more records exist than the specified
-     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can
-     * retrieve the remaining results.
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve
+     * the remaining results.
      * </p>
      * <p>
      * Default: 100
@@ -381,8 +381,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
-     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you
-     *        can retrieve the remaining results. </p>
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can
+     *        retrieve the remaining results. </p>
      *        <p>
      *        Default: 100
      *        </p>

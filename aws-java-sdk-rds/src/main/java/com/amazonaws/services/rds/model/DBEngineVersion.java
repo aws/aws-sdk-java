@@ -59,7 +59,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     * parameter of the CreateDBInstance API is not specified.
+     * parameter of the CreateDBInstance API isn't specified.
      * </p>
      */
     private CharacterSet defaultCharacterSet;
@@ -331,12 +331,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     * parameter of the CreateDBInstance API is not specified.
+     * parameter of the CreateDBInstance API isn't specified.
      * </p>
      * 
      * @param defaultCharacterSet
      *        The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     *        parameter of the CreateDBInstance API is not specified.
+     *        parameter of the CreateDBInstance API isn't specified.
      */
 
     public void setDefaultCharacterSet(CharacterSet defaultCharacterSet) {
@@ -346,11 +346,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     * parameter of the CreateDBInstance API is not specified.
+     * parameter of the CreateDBInstance API isn't specified.
      * </p>
      * 
      * @return The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     *         parameter of the CreateDBInstance API is not specified.
+     *         parameter of the CreateDBInstance API isn't specified.
      */
 
     public CharacterSet getDefaultCharacterSet() {
@@ -360,12 +360,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     * parameter of the CreateDBInstance API is not specified.
+     * parameter of the CreateDBInstance API isn't specified.
      * </p>
      * 
      * @param defaultCharacterSet
      *        The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     *        parameter of the CreateDBInstance API is not specified.
+     *        parameter of the CreateDBInstance API isn't specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

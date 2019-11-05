@@ -98,7 +98,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB
-     * instance is not restored from the latest backup time.
+     * instance isn't restored from the latest backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
@@ -172,8 +172,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -203,7 +203,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * This parameter is not used for the MySQL or MariaDB engines.
+     * This parameter isn't used for the MySQL or MariaDB engines.
      * </p>
      * </note>
      */
@@ -292,7 +292,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Setting the IOPS value for the SQL Server database engine is not supported.
+     * Setting the IOPS value for the SQL Server database engine isn't supported.
      * </p>
      */
     private Integer iops;
@@ -932,7 +932,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB
-     * instance is not restored from the latest backup time.
+     * instance isn't restored from the latest backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
@@ -940,7 +940,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * 
      * @param useLatestRestorableTime
      *        A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB
-     *        instance is not restored from the latest backup time. </p>
+     *        instance isn't restored from the latest backup time. </p>
      *        <p>
      *        Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
      */
@@ -952,14 +952,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB
-     * instance is not restored from the latest backup time.
+     * instance isn't restored from the latest backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
      * </p>
      * 
      * @return A value that indicates whether the DB instance is restored from the latest backup time. By default, the
-     *         DB instance is not restored from the latest backup time. </p>
+     *         DB instance isn't restored from the latest backup time. </p>
      *         <p>
      *         Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
      */
@@ -971,7 +971,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB
-     * instance is not restored from the latest backup time.
+     * instance isn't restored from the latest backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
@@ -979,7 +979,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * 
      * @param useLatestRestorableTime
      *        A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB
-     *        instance is not restored from the latest backup time. </p>
+     *        instance isn't restored from the latest backup time. </p>
      *        <p>
      *        Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -993,14 +993,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A value that indicates whether the DB instance is restored from the latest backup time. By default, the DB
-     * instance is not restored from the latest backup time.
+     * instance isn't restored from the latest backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
      * </p>
      * 
      * @return A value that indicates whether the DB instance is restored from the latest backup time. By default, the
-     *         DB instance is not restored from the latest backup time. </p>
+     *         DB instance isn't restored from the latest backup time. </p>
      *         <p>
      *         Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.
      */
@@ -1415,14 +1415,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
      *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
      */
 
@@ -1434,13 +1434,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
      */
 
@@ -1452,14 +1452,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
      *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1473,13 +1473,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
      */
 
@@ -1632,14 +1632,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * This parameter is not used for the MySQL or MariaDB engines.
+     * This parameter isn't used for the MySQL or MariaDB engines.
      * </p>
      * </note>
      * 
      * @param dBName
      *        The database name for the restored DB instance.</p> <note>
      *        <p>
-     *        This parameter is not used for the MySQL or MariaDB engines.
+     *        This parameter isn't used for the MySQL or MariaDB engines.
      *        </p>
      */
 
@@ -1653,13 +1653,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * This parameter is not used for the MySQL or MariaDB engines.
+     * This parameter isn't used for the MySQL or MariaDB engines.
      * </p>
      * </note>
      * 
      * @return The database name for the restored DB instance.</p> <note>
      *         <p>
-     *         This parameter is not used for the MySQL or MariaDB engines.
+     *         This parameter isn't used for the MySQL or MariaDB engines.
      *         </p>
      */
 
@@ -1673,14 +1673,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * This parameter is not used for the MySQL or MariaDB engines.
+     * This parameter isn't used for the MySQL or MariaDB engines.
      * </p>
      * </note>
      * 
      * @param dBName
      *        The database name for the restored DB instance.</p> <note>
      *        <p>
-     *        This parameter is not used for the MySQL or MariaDB engines.
+     *        This parameter isn't used for the MySQL or MariaDB engines.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2135,7 +2135,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Setting the IOPS value for the SQL Server database engine is not supported.
+     * Setting the IOPS value for the SQL Server database engine isn't supported.
      * </p>
      * 
      * @param iops
@@ -2148,7 +2148,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        <b>SQL Server</b>
      *        </p>
      *        <p>
-     *        Setting the IOPS value for the SQL Server database engine is not supported.
+     *        Setting the IOPS value for the SQL Server database engine isn't supported.
      */
 
     public void setIops(Integer iops) {
@@ -2167,7 +2167,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Setting the IOPS value for the SQL Server database engine is not supported.
+     * Setting the IOPS value for the SQL Server database engine isn't supported.
      * </p>
      * 
      * @return The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
@@ -2179,7 +2179,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *         <b>SQL Server</b>
      *         </p>
      *         <p>
-     *         Setting the IOPS value for the SQL Server database engine is not supported.
+     *         Setting the IOPS value for the SQL Server database engine isn't supported.
      */
 
     public Integer getIops() {
@@ -2198,7 +2198,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Setting the IOPS value for the SQL Server database engine is not supported.
+     * Setting the IOPS value for the SQL Server database engine isn't supported.
      * </p>
      * 
      * @param iops
@@ -2211,7 +2211,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        <b>SQL Server</b>
      *        </p>
      *        <p>
-     *        Setting the IOPS value for the SQL Server database engine is not supported.
+     *        Setting the IOPS value for the SQL Server database engine isn't supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

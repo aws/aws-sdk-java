@@ -98,8 +98,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String dBClusterIdentifier;
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     * <code>default.aurora5.6</code> is used.
+     * The name of the DB cluster parameter group to associate with this DB cluster. If you do not specify a value, then
+     * the default DB cluster parameter group for the specified DB engine and version is used.
      * </p>
      * <p>
      * Constraints:
@@ -323,7 +323,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
-     * If an encryption key is not specified in <code>KmsKeyId</code>:
+     * If an encryption key isn't specified in <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
@@ -334,7 +334,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is not
+     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't
      * specified, then Amazon RDS will use your default encryption key.
      * </p>
      * </li>
@@ -393,6 +393,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note>
      */
     private String preSignedUrl;
     /**
@@ -962,8 +970,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     * <code>default.aurora5.6</code> is used.
+     * The name of the DB cluster parameter group to associate with this DB cluster. If you do not specify a value, then
+     * the default DB cluster parameter group for the specified DB engine and version is used.
      * </p>
      * <p>
      * Constraints:
@@ -977,8 +985,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     *        <code>default.aurora5.6</code> is used. </p>
+     *        The name of the DB cluster parameter group to associate with this DB cluster. If you do not specify a
+     *        value, then the default DB cluster parameter group for the specified DB engine and version is used. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -996,8 +1004,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     * <code>default.aurora5.6</code> is used.
+     * The name of the DB cluster parameter group to associate with this DB cluster. If you do not specify a value, then
+     * the default DB cluster parameter group for the specified DB engine and version is used.
      * </p>
      * <p>
      * Constraints:
@@ -1010,8 +1018,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The name of the DB cluster parameter group to associate with this DB cluster. If this argument is
-     *         omitted, <code>default.aurora5.6</code> is used. </p>
+     * @return The name of the DB cluster parameter group to associate with this DB cluster. If you do not specify a
+     *         value, then the default DB cluster parameter group for the specified DB engine and version is used. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1029,8 +1037,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     * <code>default.aurora5.6</code> is used.
+     * The name of the DB cluster parameter group to associate with this DB cluster. If you do not specify a value, then
+     * the default DB cluster parameter group for the specified DB engine and version is used.
      * </p>
      * <p>
      * Constraints:
@@ -1044,8 +1052,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     *        <code>default.aurora5.6</code> is used. </p>
+     *        The name of the DB cluster parameter group to associate with this DB cluster. If you do not specify a
+     *        value, then the default DB cluster parameter group for the specified DB engine and version is used. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2379,7 +2387,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
-     * If an encryption key is not specified in <code>KmsKeyId</code>:
+     * If an encryption key isn't specified in <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
@@ -2390,7 +2398,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is not
+     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't
      * specified, then Amazon RDS will use your default encryption key.
      * </p>
      * </li>
@@ -2413,7 +2421,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
-     *        If an encryption key is not specified in <code>KmsKeyId</code>:
+     *        If an encryption key isn't specified in <code>KmsKeyId</code>:
      *        </p>
      *        <ul>
      *        <li>
@@ -2424,8 +2432,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is
-     *        not specified, then Amazon RDS will use your default encryption key.
+     *        If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
+     *        isn't specified, then Amazon RDS will use your default encryption key.
      *        </p>
      *        </li>
      *        </ul>
@@ -2453,7 +2461,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
-     * If an encryption key is not specified in <code>KmsKeyId</code>:
+     * If an encryption key isn't specified in <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
@@ -2464,7 +2472,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is not
+     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't
      * specified, then Amazon RDS will use your default encryption key.
      * </p>
      * </li>
@@ -2486,7 +2494,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *         </p>
      *         <p>
-     *         If an encryption key is not specified in <code>KmsKeyId</code>:
+     *         If an encryption key isn't specified in <code>KmsKeyId</code>:
      *         </p>
      *         <ul>
      *         <li>
@@ -2497,8 +2505,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is
-     *         not specified, then Amazon RDS will use your default encryption key.
+     *         If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
+     *         isn't specified, then Amazon RDS will use your default encryption key.
      *         </p>
      *         </li>
      *         </ul>
@@ -2526,7 +2534,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
-     * If an encryption key is not specified in <code>KmsKeyId</code>:
+     * If an encryption key isn't specified in <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
@@ -2537,7 +2545,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is not
+     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't
      * specified, then Amazon RDS will use your default encryption key.
      * </p>
      * </li>
@@ -2560,7 +2568,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
-     *        If an encryption key is not specified in <code>KmsKeyId</code>:
+     *        If an encryption key isn't specified in <code>KmsKeyId</code>:
      *        </p>
      *        <ul>
      *        <li>
@@ -2571,8 +2579,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is
-     *        not specified, then Amazon RDS will use your default encryption key.
+     *        If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
+     *        isn't specified, then Amazon RDS will use your default encryption key.
      *        </p>
      *        </li>
      *        </ul>
@@ -2635,6 +2643,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note>
      * 
      * @param preSignedUrl
      *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
@@ -2678,6 +2694,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      *        Process</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     *        <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *        Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *        operation that can be executed in the source AWS Region.
+     *        </p>
      */
 
     public void setPreSignedUrl(String preSignedUrl) {
@@ -2727,6 +2751,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note>
      * 
      * @return A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to
      *         be called in the source AWS Region where the DB cluster is replicated from. You only need to specify
@@ -2769,6 +2801,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4
      *         Signing Process</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     *         <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *         Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *         operation that can be executed in the source AWS Region.
+     *         </p>
      */
 
     public String getPreSignedUrl() {
@@ -2818,6 +2858,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note>
      * 
      * @param preSignedUrl
      *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
@@ -2861,6 +2909,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      *        Process</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     *        <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *        Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *        operation that can be executed in the source AWS Region.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

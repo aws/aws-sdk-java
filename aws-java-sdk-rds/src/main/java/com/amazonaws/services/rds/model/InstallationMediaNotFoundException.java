@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <code>InstallationMediaID</code> doesn't refer to an existing installation media.
+ * <code>InstallationMediaID</code> doesn't refer to an existing installation medium.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

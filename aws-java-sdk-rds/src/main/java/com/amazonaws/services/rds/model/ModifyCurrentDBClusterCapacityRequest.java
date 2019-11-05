@@ -27,7 +27,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -84,7 +84,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
-     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
+     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout
      * period.
      * </p>
      */
@@ -92,7 +92,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -106,7 +106,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
+     *        The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -124,7 +124,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -137,7 +137,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * </li>
      * </ul>
      * 
-     * @return The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
+     * @return The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -155,7 +155,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -169,7 +169,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
+     *        The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -402,7 +402,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
-     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
+     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout
      * period.
      * </p>
      * 
@@ -414,7 +414,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      *        possible.
      *        </p>
      *        <p>
-     *        <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the
+     *        <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the
      *        timeout period.
      */
 
@@ -431,7 +431,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
-     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
+     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout
      * period.
      * </p>
      * 
@@ -442,7 +442,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      *         possible.
      *         </p>
      *         <p>
-     *         <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the
+     *         <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the
      *         timeout period.
      */
 
@@ -459,7 +459,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
-     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
+     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout
      * period.
      * </p>
      * 
@@ -471,7 +471,7 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      *        possible.
      *        </p>
      *        <p>
-     *        <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the
+     *        <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the
      *        timeout period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

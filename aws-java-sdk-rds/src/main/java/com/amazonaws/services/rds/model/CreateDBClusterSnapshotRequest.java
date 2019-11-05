@@ -57,7 +57,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
     private String dBClusterSnapshotIdentifier;
     /**
      * <p>
-     * The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.
+     * The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -258,7 +258,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.
+     * The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -275,7 +275,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
+     *        The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -296,7 +296,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.
+     * The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -312,7 +312,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>my-cluster1</code>
      * </p>
      * 
-     * @return The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
+     * @return The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -333,7 +333,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.
+     * The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -350,7 +350,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
+     *        The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>

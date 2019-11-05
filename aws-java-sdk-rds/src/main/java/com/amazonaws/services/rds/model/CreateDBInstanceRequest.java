@@ -34,7 +34,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      * database is created in the DB instance.
      * </p>
      * <p>
@@ -56,7 +56,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      * database is created in the DB instance.
      * </p>
      * <p>
@@ -78,7 +78,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, the
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
      * default "postgres" database is created in the DB instance.
      * </p>
      * <p>
@@ -132,8 +132,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter is
-     * not specified, no database is created in the DB instance.
+     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter
+     * isn't specified, no database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -718,9 +718,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
-     * <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is
-     * used.
+     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then the
+     * default DB parameter group for the specified DB engine and version is used.
      * </p>
      * <p>
      * Constraints:
@@ -1016,14 +1015,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      * </p>
      * <p>
-     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -1040,7 +1039,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -1099,7 +1098,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String tdeCredentialPassword;
     /**
      * <p>
-     * A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.
+     * A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -1828,7 +1827,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      * database is created in the DB instance.
      * </p>
      * <p>
@@ -1850,7 +1849,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      * database is created in the DB instance.
      * </p>
      * <p>
@@ -1872,7 +1871,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, the
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
      * default "postgres" database is created in the DB instance.
      * </p>
      * <p>
@@ -1926,8 +1925,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter is
-     * not specified, no database is created in the DB instance.
+     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter
+     * isn't specified, no database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1951,7 +1950,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>MySQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      *        database is created in the DB instance.
      *        </p>
      *        <p>
@@ -1973,7 +1972,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>MariaDB</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      *        database is created in the DB instance.
      *        </p>
      *        <p>
@@ -1995,8 +1994,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter is not specified,
-     *        the default "postgres" database is created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, the
+     *        default "postgres" database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2051,7 +2050,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        The name of the database to create when the primary instance of the DB cluster is created. If this
-     *        parameter is not specified, no database is created in the DB instance.
+     *        parameter isn't specified, no database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2081,7 +2080,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      * database is created in the DB instance.
      * </p>
      * <p>
@@ -2103,7 +2102,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      * database is created in the DB instance.
      * </p>
      * <p>
@@ -2125,7 +2124,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, the
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
      * default "postgres" database is created in the DB instance.
      * </p>
      * <p>
@@ -2179,8 +2178,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter is
-     * not specified, no database is created in the DB instance.
+     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter
+     * isn't specified, no database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2203,8 +2202,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>MySQL</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the DB instance is created. If this parameter is not specified,
-     *         no database is created in the DB instance.
+     *         The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     *         database is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -2225,8 +2224,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>MariaDB</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the DB instance is created. If this parameter is not specified,
-     *         no database is created in the DB instance.
+     *         The name of the database to create when the DB instance is created. If this parameter isn't specified, no
+     *         database is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -2247,7 +2246,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>PostgreSQL</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the DB instance is created. If this parameter is not specified,
+     *         The name of the database to create when the DB instance is created. If this parameter isn't specified,
      *         the default "postgres" database is created in the DB instance.
      *         </p>
      *         <p>
@@ -2303,7 +2302,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         The name of the database to create when the primary instance of the DB cluster is created. If this
-     *         parameter is not specified, no database is created in the DB instance.
+     *         parameter isn't specified, no database is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -2333,7 +2332,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      * database is created in the DB instance.
      * </p>
      * <p>
@@ -2355,7 +2354,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      * database is created in the DB instance.
      * </p>
      * <p>
@@ -2377,7 +2376,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter is not specified, the
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
      * default "postgres" database is created in the DB instance.
      * </p>
      * <p>
@@ -2431,8 +2430,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter is
-     * not specified, no database is created in the DB instance.
+     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter
+     * isn't specified, no database is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2456,7 +2455,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>MySQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      *        database is created in the DB instance.
      *        </p>
      *        <p>
@@ -2478,7 +2477,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>MariaDB</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter is not specified, no
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, no
      *        database is created in the DB instance.
      *        </p>
      *        <p>
@@ -2500,8 +2499,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter is not specified,
-     *        the default "postgres" database is created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, the
+     *        default "postgres" database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2556,7 +2555,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        The name of the database to create when the primary instance of the DB cluster is created. If this
-     *        parameter is not specified, no database is created in the DB instance.
+     *        parameter isn't specified, no database is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -6074,9 +6073,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
-     * <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is
-     * used.
+     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then the
+     * default DB parameter group for the specified DB engine and version is used.
      * </p>
      * <p>
      * Constraints:
@@ -6100,9 +6098,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
-     *        <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB
-     *        engine is used.</p>
+     *        The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then
+     *        the default DB parameter group for the specified DB engine and version is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -6130,9 +6127,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
-     * <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is
-     * used.
+     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then the
+     * default DB parameter group for the specified DB engine and version is used.
      * </p>
      * <p>
      * Constraints:
@@ -6155,9 +6151,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
-     *         <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB
-     *         engine is used.</p>
+     * @return The name of the DB parameter group to associate with this DB instance. If you do not specify a value,
+     *         then the default DB parameter group for the specified DB engine and version is used.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -6185,9 +6180,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
-     * <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is
-     * used.
+     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then the
+     * default DB parameter group for the specified DB engine and version is used.
      * </p>
      * <p>
      * Constraints:
@@ -6211,9 +6205,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
-     *        <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB
-     *        engine is used.</p>
+     *        The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then
+     *        the default DB parameter group for the specified DB engine and version is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -7905,14 +7898,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      * </p>
      * <p>
-     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -7929,7 +7922,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -7949,13 +7942,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param publiclyAccessible
      *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *        name that resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      *        </p>
      *        <p>
-     *        If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified,
+     *        If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified,
      *        the following applies:
      *        </p>
      *        <ul>
@@ -7972,7 +7965,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     *        If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      *        following applies:
      *        </p>
      *        <ul>
@@ -7997,14 +7990,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      * </p>
      * <p>
-     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -8021,7 +8014,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -8040,13 +8033,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *         name that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      *         </p>
      *         <p>
-     *         If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified,
+     *         If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified,
      *         the following applies:
      *         </p>
      *         <ul>
@@ -8064,7 +8057,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         </ul>
      *         <p>
-     *         If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     *         If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      *         following applies:
      *         </p>
      *         <ul>
@@ -8089,14 +8082,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      * </p>
      * <p>
-     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -8113,7 +8106,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -8133,13 +8126,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param publiclyAccessible
      *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *        name that resolves to a private IP address.</p>
      *        <p>
      *        Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      *        </p>
      *        <p>
-     *        If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified,
+     *        If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified,
      *        the following applies:
      *        </p>
      *        <ul>
@@ -8156,7 +8149,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     *        If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      *        following applies:
      *        </p>
      *        <ul>
@@ -8183,14 +8176,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      * </p>
      * <p>
-     * If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -8207,7 +8200,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     * If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      * following applies:
      * </p>
      * <ul>
@@ -8226,13 +8219,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *         name that resolves to a private IP address.</p>
      *         <p>
      *         Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      *         </p>
      *         <p>
-     *         If <code>DBSubnetGroupName</code> is not specified, and <code>PubliclyAccessible</code> is not specified,
+     *         If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified,
      *         the following applies:
      *         </p>
      *         <ul>
@@ -8250,7 +8243,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         </ul>
      *         <p>
-     *         If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> is not specified, the
+     *         If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the
      *         following applies:
      *         </p>
      *         <ul>
@@ -8557,7 +8550,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.
+     * A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -8567,7 +8560,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param storageEncrypted
-     *        A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.</p>
+     *        A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -8581,7 +8574,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.
+     * A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -8590,7 +8583,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.</p>
+     * @return A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
@@ -8604,7 +8597,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.
+     * A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -8614,7 +8607,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param storageEncrypted
-     *        A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.</p>
+     *        A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -8630,7 +8623,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.
+     * A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -8639,7 +8632,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. The encryption for DB instances is managed by the DB cluster.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is encrypted. By default, it is not encrypted.</p>
+     * @return A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>

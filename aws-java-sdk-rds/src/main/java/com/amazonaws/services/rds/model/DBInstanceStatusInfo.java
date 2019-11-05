@@ -47,7 +47,7 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * Details of the error if there is an error for the instance. If the instance is not in an error state, this value
+     * Details of the error if there is an error for the instance. If the instance isn't in an error state, this value
      * is blank.
      * </p>
      */
@@ -197,12 +197,12 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Details of the error if there is an error for the instance. If the instance is not in an error state, this value
+     * Details of the error if there is an error for the instance. If the instance isn't in an error state, this value
      * is blank.
      * </p>
      * 
      * @param message
-     *        Details of the error if there is an error for the instance. If the instance is not in an error state, this
+     *        Details of the error if there is an error for the instance. If the instance isn't in an error state, this
      *        value is blank.
      */
 
@@ -212,12 +212,12 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Details of the error if there is an error for the instance. If the instance is not in an error state, this value
+     * Details of the error if there is an error for the instance. If the instance isn't in an error state, this value
      * is blank.
      * </p>
      * 
-     * @return Details of the error if there is an error for the instance. If the instance is not in an error state,
-     *         this value is blank.
+     * @return Details of the error if there is an error for the instance. If the instance isn't in an error state, this
+     *         value is blank.
      */
 
     public String getMessage() {
@@ -226,12 +226,12 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Details of the error if there is an error for the instance. If the instance is not in an error state, this value
+     * Details of the error if there is an error for the instance. If the instance isn't in an error state, this value
      * is blank.
      * </p>
      * 
      * @param message
-     *        Details of the error if there is an error for the instance. If the instance is not in an error state, this
+     *        Details of the error if there is an error for the instance. If the instance isn't in an error state, this
      *        value is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

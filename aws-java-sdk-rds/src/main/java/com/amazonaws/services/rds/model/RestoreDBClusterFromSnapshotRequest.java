@@ -118,6 +118,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
      * </p>
+     * <note>
+     * <p>
+     * If you aren't using the default engine version, then you must specify the engine version.
+     * </p>
+     * </note>
      * <p>
      * <b>Aurora MySQL</b>
      * </p>
@@ -203,8 +208,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored
-     * DB cluster is not encrypted.
+     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored
+     * DB cluster isn't encrypted.
      * </p>
      * </li>
      * </ul>
@@ -782,6 +787,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
      * </p>
+     * <note>
+     * <p>
+     * If you aren't using the default engine version, then you must specify the engine version.
+     * </p>
+     * </note>
      * <p>
      * <b>Aurora MySQL</b>
      * </p>
@@ -819,6 +829,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <p>
      *        <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you aren't using the default engine version, then you must specify the engine version.
+     *        </p>
+     *        </note>
      *        <p>
      *        <b>Aurora MySQL</b>
      *        </p>
@@ -861,6 +876,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
      * </p>
+     * <note>
+     * <p>
+     * If you aren't using the default engine version, then you must specify the engine version.
+     * </p>
+     * </note>
      * <p>
      * <b>Aurora MySQL</b>
      * </p>
@@ -897,6 +917,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *         <p>
      *         <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
      *         </p>
+     *         <note>
+     *         <p>
+     *         If you aren't using the default engine version, then you must specify the engine version.
+     *         </p>
+     *         </note>
      *         <p>
      *         <b>Aurora MySQL</b>
      *         </p>
@@ -939,6 +964,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
      * </p>
+     * <note>
+     * <p>
+     * If you aren't using the default engine version, then you must specify the engine version.
+     * </p>
+     * </note>
      * <p>
      * <b>Aurora MySQL</b>
      * </p>
@@ -976,6 +1006,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <p>
      *        <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you aren't using the default engine version, then you must specify the engine version.
+     *        </p>
+     *        </note>
      *        <p>
      *        <b>Aurora MySQL</b>
      *        </p>
@@ -1390,8 +1425,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored
-     * DB cluster is not encrypted.
+     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored
+     * DB cluster isn't encrypted.
      * </p>
      * </li>
      * </ul>
@@ -1417,8 +1452,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
-     *        restored DB cluster is not encrypted.
+     *        If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the
+     *        restored DB cluster isn't encrypted.
      *        </p>
      *        </li>
      */
@@ -1449,8 +1484,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored
-     * DB cluster is not encrypted.
+     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored
+     * DB cluster isn't encrypted.
      * </p>
      * </li>
      * </ul>
@@ -1475,8 +1510,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *         </li>
      *         <li>
      *         <p>
-     *         If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
-     *         restored DB cluster is not encrypted.
+     *         If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the
+     *         restored DB cluster isn't encrypted.
      *         </p>
      *         </li>
      */
@@ -1507,8 +1542,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored
-     * DB cluster is not encrypted.
+     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored
+     * DB cluster isn't encrypted.
      * </p>
      * </li>
      * </ul>
@@ -1534,8 +1569,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
-     *        restored DB cluster is not encrypted.
+     *        If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the
+     *        restored DB cluster isn't encrypted.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

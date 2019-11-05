@@ -36,7 +36,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * The list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     * The list only includes supported DB engines that require an on-premises customer provided license.
      * </p>
      * <p>
      * Valid Values:
@@ -74,7 +74,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The following are the database engines and links to information about the major and minor versions. The list only
-     * includes supported on-premises, bring your own media (BYOM) DB engines.
+     * includes DB engines that require an on-premises customer provided license.
      * </p>
      * <p>
      * <b>Microsoft SQL Server</b>
@@ -88,7 +88,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
     private String engineVersion;
     /**
      * <p>
-     * The path to the installation media for the specified DB engine.
+     * The path to the installation medium for the specified DB engine.
      * </p>
      * <p>
      * Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code>
@@ -97,7 +97,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
     private String engineInstallationMediaPath;
     /**
      * <p>
-     * The path to the installation media for the operating system associated with the specified DB engine.
+     * The path to the installation medium for the operating system associated with the specified DB engine.
      * </p>
      * <p>
      * Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
@@ -150,7 +150,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * The list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     * The list only includes supported DB engines that require an on-premises customer provided license.
      * </p>
      * <p>
      * Valid Values:
@@ -181,7 +181,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * @param engine
      *        The name of the database engine to be used for this instance. </p>
      *        <p>
-     *        The list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     *        The list only includes supported DB engines that require an on-premises customer provided license.
      *        </p>
      *        <p>
      *        Valid Values:
@@ -218,7 +218,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * The list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     * The list only includes supported DB engines that require an on-premises customer provided license.
      * </p>
      * <p>
      * Valid Values:
@@ -248,7 +248,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * 
      * @return The name of the database engine to be used for this instance. </p>
      *         <p>
-     *         The list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     *         The list only includes supported DB engines that require an on-premises customer provided license.
      *         </p>
      *         <p>
      *         Valid Values:
@@ -285,7 +285,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * The list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     * The list only includes supported DB engines that require an on-premises customer provided license.
      * </p>
      * <p>
      * Valid Values:
@@ -316,7 +316,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * @param engine
      *        The name of the database engine to be used for this instance. </p>
      *        <p>
-     *        The list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     *        The list only includes supported DB engines that require an on-premises customer provided license.
      *        </p>
      *        <p>
      *        Valid Values:
@@ -359,7 +359,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The following are the database engines and links to information about the major and minor versions. The list only
-     * includes supported on-premises, bring your own media (BYOM) DB engines.
+     * includes DB engines that require an on-premises customer provided license.
      * </p>
      * <p>
      * <b>Microsoft SQL Server</b>
@@ -377,7 +377,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        The following are the database engines and links to information about the major and minor versions. The
-     *        list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     *        list only includes DB engines that require an on-premises customer provided license.
      *        </p>
      *        <p>
      *        <b>Microsoft SQL Server</b>
@@ -401,7 +401,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The following are the database engines and links to information about the major and minor versions. The list only
-     * includes supported on-premises, bring your own media (BYOM) DB engines.
+     * includes DB engines that require an on-premises customer provided license.
      * </p>
      * <p>
      * <b>Microsoft SQL Server</b>
@@ -418,7 +418,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      *         </p>
      *         <p>
      *         The following are the database engines and links to information about the major and minor versions. The
-     *         list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     *         list only includes DB engines that require an on-premises customer provided license.
      *         </p>
      *         <p>
      *         <b>Microsoft SQL Server</b>
@@ -442,7 +442,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The following are the database engines and links to information about the major and minor versions. The list only
-     * includes supported on-premises, bring your own media (BYOM) DB engines.
+     * includes DB engines that require an on-premises customer provided license.
      * </p>
      * <p>
      * <b>Microsoft SQL Server</b>
@@ -460,7 +460,7 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        The following are the database engines and links to information about the major and minor versions. The
-     *        list only includes supported on-premises, bring your own media (BYOM) DB engines.
+     *        list only includes DB engines that require an on-premises customer provided license.
      *        </p>
      *        <p>
      *        <b>Microsoft SQL Server</b>
@@ -479,14 +479,14 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the installation media for the specified DB engine.
+     * The path to the installation medium for the specified DB engine.
      * </p>
      * <p>
      * Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code>
      * </p>
      * 
      * @param engineInstallationMediaPath
-     *        The path to the installation media for the specified DB engine.</p>
+     *        The path to the installation medium for the specified DB engine.</p>
      *        <p>
      *        Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code>
      */
@@ -497,13 +497,13 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the installation media for the specified DB engine.
+     * The path to the installation medium for the specified DB engine.
      * </p>
      * <p>
      * Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code>
      * </p>
      * 
-     * @return The path to the installation media for the specified DB engine.</p>
+     * @return The path to the installation medium for the specified DB engine.</p>
      *         <p>
      *         Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code>
      */
@@ -514,14 +514,14 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the installation media for the specified DB engine.
+     * The path to the installation medium for the specified DB engine.
      * </p>
      * <p>
      * Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code>
      * </p>
      * 
      * @param engineInstallationMediaPath
-     *        The path to the installation media for the specified DB engine.</p>
+     *        The path to the installation medium for the specified DB engine.</p>
      *        <p>
      *        Example: <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -534,14 +534,14 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the installation media for the operating system associated with the specified DB engine.
+     * The path to the installation medium for the operating system associated with the specified DB engine.
      * </p>
      * <p>
      * Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
      * </p>
      * 
      * @param oSInstallationMediaPath
-     *        The path to the installation media for the operating system associated with the specified DB engine.</p>
+     *        The path to the installation medium for the operating system associated with the specified DB engine.</p>
      *        <p>
      *        Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
      */
@@ -552,13 +552,13 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the installation media for the operating system associated with the specified DB engine.
+     * The path to the installation medium for the operating system associated with the specified DB engine.
      * </p>
      * <p>
      * Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
      * </p>
      * 
-     * @return The path to the installation media for the operating system associated with the specified DB engine.</p>
+     * @return The path to the installation medium for the operating system associated with the specified DB engine.</p>
      *         <p>
      *         Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
      */
@@ -569,14 +569,14 @@ public class ImportInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the installation media for the operating system associated with the specified DB engine.
+     * The path to the installation medium for the operating system associated with the specified DB engine.
      * </p>
      * <p>
      * Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
      * </p>
      * 
      * @param oSInstallationMediaPath
-     *        The path to the installation media for the operating system associated with the specified DB engine.</p>
+     *        The path to the installation medium for the operating system associated with the specified DB engine.</p>
      *        <p>
      *        Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -27,18 +27,18 @@ public class DeleteInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      */
     private String installationMediaId;
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
      * @param installationMediaId
-     *        The installation media ID.
+     *        The installation medium ID.
      */
 
     public void setInstallationMediaId(String installationMediaId) {
@@ -47,10 +47,10 @@ public class DeleteInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
-     * @return The installation media ID.
+     * @return The installation medium ID.
      */
 
     public String getInstallationMediaId() {
@@ -59,11 +59,11 @@ public class DeleteInstallationMediaRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
      * @param installationMediaId
-     *        The installation media ID.
+     *        The installation medium ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

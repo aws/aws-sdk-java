@@ -112,7 +112,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+     * Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
      * </p>
      * </li>
      * <li>
@@ -134,7 +134,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster is not restored to the latest restorable backup time.
+     * cluster isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -205,12 +205,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     * If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is
+     * If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is
      * rejected.
      * </p>
      */
@@ -731,7 +731,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+     * Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
      * </p>
      * </li>
      * <li>
@@ -765,7 +765,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+     *        Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
      *        </p>
      *        </li>
      *        <li>
@@ -805,7 +805,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+     * Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
      * </p>
      * </li>
      * <li>
@@ -838,7 +838,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         <li>
      *         <p>
-     *         Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+     *         Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
      *         </p>
      *         </li>
      *         <li>
@@ -878,7 +878,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+     * Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
      * </p>
      * </li>
      * <li>
@@ -912,7 +912,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+     *        Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided
      *        </p>
      *        </li>
      *        <li>
@@ -939,7 +939,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster is not restored to the latest restorable backup time.
+     * cluster isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -947,7 +947,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * 
      * @param useLatestRestorableTime
      *        A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default,
-     *        the DB cluster is not restored to the latest restorable backup time. </p>
+     *        the DB cluster isn't restored to the latest restorable backup time. </p>
      *        <p>
      *        Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
@@ -959,14 +959,14 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster is not restored to the latest restorable backup time.
+     * cluster isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @return A value that indicates whether to restore the DB cluster to the latest restorable backup time. By
-     *         default, the DB cluster is not restored to the latest restorable backup time. </p>
+     *         default, the DB cluster isn't restored to the latest restorable backup time. </p>
      *         <p>
      *         Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
@@ -978,7 +978,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster is not restored to the latest restorable backup time.
+     * cluster isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -986,7 +986,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * 
      * @param useLatestRestorableTime
      *        A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default,
-     *        the DB cluster is not restored to the latest restorable backup time. </p>
+     *        the DB cluster isn't restored to the latest restorable backup time. </p>
      *        <p>
      *        Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1000,14 +1000,14 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster is not restored to the latest restorable backup time.
+     * cluster isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @return A value that indicates whether to restore the DB cluster to the latest restorable backup time. By
-     *         default, the DB cluster is not restored to the latest restorable backup time. </p>
+     *         default, the DB cluster isn't restored to the latest restorable backup time. </p>
      *         <p>
      *         Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
@@ -1356,12 +1356,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     * If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is
+     * If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is
      * rejected.
      * </p>
      * 
@@ -1389,12 +1389,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     *        If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request
+     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
      *        is rejected.
      */
 
@@ -1428,12 +1428,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     * If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is
+     * If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is
      * rejected.
      * </p>
      * 
@@ -1461,13 +1461,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         <li>
      *         <p>
-     *         If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     *         If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore
-     *         request is rejected.
+     *         If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
+     *         is rejected.
      */
 
     public String getKmsKeyId() {
@@ -1500,12 +1500,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     * If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is
+     * If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is
      * rejected.
      * </p>
      * 
@@ -1533,12 +1533,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     *        If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request
+     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
      *        is rejected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

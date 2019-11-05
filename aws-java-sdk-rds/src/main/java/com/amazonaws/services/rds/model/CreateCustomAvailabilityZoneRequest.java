@@ -44,7 +44,7 @@ public class CreateCustomAvailabilityZoneRequest extends com.amazonaws.AmazonWeb
      * The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.
      * </p>
      * <p>
-     * Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     * Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * </p>
      */
     private String newVpnTunnelName;
@@ -53,7 +53,7 @@ public class CreateCustomAvailabilityZoneRequest extends com.amazonaws.AmazonWeb
      * The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.
      * </p>
      * <p>
-     * Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     * Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * </p>
      */
     private String vpnTunnelOriginatorIP;
@@ -149,13 +149,13 @@ public class CreateCustomAvailabilityZoneRequest extends com.amazonaws.AmazonWeb
      * The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.
      * </p>
      * <p>
-     * Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     * Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * </p>
      * 
      * @param newVpnTunnelName
      *        The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
      *        <p>
-     *        Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     *        Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      */
 
     public void setNewVpnTunnelName(String newVpnTunnelName) {
@@ -167,12 +167,12 @@ public class CreateCustomAvailabilityZoneRequest extends com.amazonaws.AmazonWeb
      * The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.
      * </p>
      * <p>
-     * Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     * Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * </p>
      * 
      * @return The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
      *         <p>
-     *         Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     *         Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      */
 
     public String getNewVpnTunnelName() {
@@ -184,13 +184,13 @@ public class CreateCustomAvailabilityZoneRequest extends com.amazonaws.AmazonWeb
      * The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.
      * </p>
      * <p>
-     * Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     * Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * </p>
      * 
      * @param newVpnTunnelName
      *        The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
      *        <p>
-     *        Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     *        Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,14 +204,14 @@ public class CreateCustomAvailabilityZoneRequest extends com.amazonaws.AmazonWeb
      * The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.
      * </p>
      * <p>
-     * Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     * Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * </p>
      * 
      * @param vpnTunnelOriginatorIP
      *        The IP address of network traffic from your on-premises data center. A custom AZ receives the network
      *        traffic.</p>
      *        <p>
-     *        Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     *        Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      */
 
     public void setVpnTunnelOriginatorIP(String vpnTunnelOriginatorIP) {
@@ -223,13 +223,13 @@ public class CreateCustomAvailabilityZoneRequest extends com.amazonaws.AmazonWeb
      * The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.
      * </p>
      * <p>
-     * Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     * Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * </p>
      * 
      * @return The IP address of network traffic from your on-premises data center. A custom AZ receives the network
      *         traffic.</p>
      *         <p>
-     *         Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     *         Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      */
 
     public String getVpnTunnelOriginatorIP() {
@@ -241,14 +241,14 @@ public class CreateCustomAvailabilityZoneRequest extends com.amazonaws.AmazonWeb
      * The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.
      * </p>
      * <p>
-     * Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     * Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * </p>
      * 
      * @param vpnTunnelOriginatorIP
      *        The IP address of network traffic from your on-premises data center. A custom AZ receives the network
      *        traffic.</p>
      *        <p>
-     *        Specify this parameter only if <code>ExistingVpnId</code> is not specified.
+     *        Specify this parameter only if <code>ExistingVpnId</code> isn't specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

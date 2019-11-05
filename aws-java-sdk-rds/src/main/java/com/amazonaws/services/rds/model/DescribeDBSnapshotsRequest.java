@@ -29,7 +29,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction
-     * with <code>DBSnapshotIdentifier</code>. This parameter is not case-sensitive.
+     * with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -208,7 +208,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction
-     * with <code>DBSnapshotIdentifier</code>. This parameter is not case-sensitive.
+     * with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -223,7 +223,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param dBInstanceIdentifier
      *        The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in
-     *        conjunction with <code>DBSnapshotIdentifier</code>. This parameter is not case-sensitive. </p>
+     *        conjunction with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -242,7 +242,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction
-     * with <code>DBSnapshotIdentifier</code>. This parameter is not case-sensitive.
+     * with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -256,7 +256,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @return The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in
-     *         conjunction with <code>DBSnapshotIdentifier</code>. This parameter is not case-sensitive. </p>
+     *         conjunction with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -275,7 +275,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction
-     * with <code>DBSnapshotIdentifier</code>. This parameter is not case-sensitive.
+     * with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -290,7 +290,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param dBInstanceIdentifier
      *        The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in
-     *        conjunction with <code>DBSnapshotIdentifier</code>. This parameter is not case-sensitive. </p>
+     *        conjunction with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive. </p>
      *        <p>
      *        Constraints:
      *        </p>

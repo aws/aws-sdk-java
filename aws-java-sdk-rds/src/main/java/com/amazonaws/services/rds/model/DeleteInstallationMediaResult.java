@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the installation media for on-premises, bring your own media (BYOM) DB engines, such as Microsoft SQL
- * Server.
+ * Contains the installation media for a DB engine that requires an on-premises customer provided license, such as
+ * Microsoft SQL Server.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia" target="_top">AWS API
@@ -29,7 +29,7 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      */
     private String installationMediaId;
@@ -53,19 +53,19 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
     private String engineVersion;
     /**
      * <p>
-     * The path to the installation media for the DB engine.
+     * The path to the installation medium for the DB engine.
      * </p>
      */
     private String engineInstallationMediaPath;
     /**
      * <p>
-     * The path to the installation media for the operating system associated with the DB engine.
+     * The path to the installation medium for the operating system associated with the DB engine.
      * </p>
      */
     private String oSInstallationMediaPath;
     /**
      * <p>
-     * The status of the installation media.
+     * The status of the installation medium.
      * </p>
      */
     private String status;
@@ -78,11 +78,11 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
      * @param installationMediaId
-     *        The installation media ID.
+     *        The installation medium ID.
      */
 
     public void setInstallationMediaId(String installationMediaId) {
@@ -91,10 +91,10 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
-     * @return The installation media ID.
+     * @return The installation medium ID.
      */
 
     public String getInstallationMediaId() {
@@ -103,11 +103,11 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
      * @param installationMediaId
-     *        The installation media ID.
+     *        The installation medium ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,11 +238,11 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path to the installation media for the DB engine.
+     * The path to the installation medium for the DB engine.
      * </p>
      * 
      * @param engineInstallationMediaPath
-     *        The path to the installation media for the DB engine.
+     *        The path to the installation medium for the DB engine.
      */
 
     public void setEngineInstallationMediaPath(String engineInstallationMediaPath) {
@@ -251,10 +251,10 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path to the installation media for the DB engine.
+     * The path to the installation medium for the DB engine.
      * </p>
      * 
-     * @return The path to the installation media for the DB engine.
+     * @return The path to the installation medium for the DB engine.
      */
 
     public String getEngineInstallationMediaPath() {
@@ -263,11 +263,11 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path to the installation media for the DB engine.
+     * The path to the installation medium for the DB engine.
      * </p>
      * 
      * @param engineInstallationMediaPath
-     *        The path to the installation media for the DB engine.
+     *        The path to the installation medium for the DB engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,11 +278,11 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path to the installation media for the operating system associated with the DB engine.
+     * The path to the installation medium for the operating system associated with the DB engine.
      * </p>
      * 
      * @param oSInstallationMediaPath
-     *        The path to the installation media for the operating system associated with the DB engine.
+     *        The path to the installation medium for the operating system associated with the DB engine.
      */
 
     public void setOSInstallationMediaPath(String oSInstallationMediaPath) {
@@ -291,10 +291,10 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path to the installation media for the operating system associated with the DB engine.
+     * The path to the installation medium for the operating system associated with the DB engine.
      * </p>
      * 
-     * @return The path to the installation media for the operating system associated with the DB engine.
+     * @return The path to the installation medium for the operating system associated with the DB engine.
      */
 
     public String getOSInstallationMediaPath() {
@@ -303,11 +303,11 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path to the installation media for the operating system associated with the DB engine.
+     * The path to the installation medium for the operating system associated with the DB engine.
      * </p>
      * 
      * @param oSInstallationMediaPath
-     *        The path to the installation media for the operating system associated with the DB engine.
+     *        The path to the installation medium for the operating system associated with the DB engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,11 +318,11 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status of the installation media.
+     * The status of the installation medium.
      * </p>
      * 
      * @param status
-     *        The status of the installation media.
+     *        The status of the installation medium.
      */
 
     public void setStatus(String status) {
@@ -331,10 +331,10 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status of the installation media.
+     * The status of the installation medium.
      * </p>
      * 
-     * @return The status of the installation media.
+     * @return The status of the installation medium.
      */
 
     public String getStatus() {
@@ -343,11 +343,11 @@ public class DeleteInstallationMediaResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The status of the installation media.
+     * The status of the installation medium.
      * </p>
      * 
      * @param status
-     *        The status of the installation media.
+     *        The status of the installation medium.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

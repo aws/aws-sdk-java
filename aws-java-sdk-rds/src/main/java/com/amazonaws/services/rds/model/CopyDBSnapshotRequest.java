@@ -138,8 +138,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * You must specify this parameter when you copy an encrypted DB snapshot from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead of this parameter when you copy
-     * an encrypted DB snapshot from another AWS Region by using the AWS CLI.
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same
+     * AWS Region.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
@@ -183,6 +183,14 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note>
      */
     private String preSignedUrl;
     /**
@@ -908,8 +916,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * You must specify this parameter when you copy an encrypted DB snapshot from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead of this parameter when you copy
-     * an encrypted DB snapshot from another AWS Region by using the AWS CLI.
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same
+     * AWS Region.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
@@ -953,14 +961,22 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note>
      * 
      * @param preSignedUrl
      *        The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
      *        in the source AWS Region that contains the source DB snapshot to copy. </p>
      *        <p>
      *        You must specify this parameter when you copy an encrypted DB snapshot from another AWS Region by using
-     *        the Amazon RDS API. You can specify the <code>--source-region</code> option instead of this parameter when
-     *        you copy an encrypted DB snapshot from another AWS Region by using the AWS CLI.
+     *        the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot
+     *        in the same AWS Region.
      *        </p>
      *        <p>
      *        The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
@@ -1006,6 +1022,14 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *        Process</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     *        <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *        Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *        operation that can be executed in the source AWS Region.
+     *        </p>
      */
 
     public void setPreSignedUrl(String preSignedUrl) {
@@ -1019,8 +1043,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * You must specify this parameter when you copy an encrypted DB snapshot from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead of this parameter when you copy
-     * an encrypted DB snapshot from another AWS Region by using the AWS CLI.
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same
+     * AWS Region.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
@@ -1064,13 +1088,21 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note>
      * 
      * @return The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
      *         in the source AWS Region that contains the source DB snapshot to copy. </p>
      *         <p>
      *         You must specify this parameter when you copy an encrypted DB snapshot from another AWS Region by using
-     *         the Amazon RDS API. You can specify the <code>--source-region</code> option instead of this parameter
-     *         when you copy an encrypted DB snapshot from another AWS Region by using the AWS CLI.
+     *         the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot
+     *         in the same AWS Region.
      *         </p>
      *         <p>
      *         The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
@@ -1116,6 +1148,14 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *         Process</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     *         <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *         Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *         operation that can be executed in the source AWS Region.
+     *         </p>
      */
 
     public String getPreSignedUrl() {
@@ -1129,8 +1169,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * You must specify this parameter when you copy an encrypted DB snapshot from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead of this parameter when you copy
-     * an encrypted DB snapshot from another AWS Region by using the AWS CLI.
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same
+     * AWS Region.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
@@ -1174,14 +1214,22 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
+     * that can be executed in the source AWS Region.
+     * </p>
+     * </note>
      * 
      * @param preSignedUrl
      *        The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
      *        in the source AWS Region that contains the source DB snapshot to copy. </p>
      *        <p>
      *        You must specify this parameter when you copy an encrypted DB snapshot from another AWS Region by using
-     *        the Amazon RDS API. You can specify the <code>--source-region</code> option instead of this parameter when
-     *        you copy an encrypted DB snapshot from another AWS Region by using the AWS CLI.
+     *        the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot
+     *        in the same AWS Region.
      *        </p>
      *        <p>
      *        The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
@@ -1227,6 +1275,14 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *        Process</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     *        <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *        Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *        operation that can be executed in the source AWS Region.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

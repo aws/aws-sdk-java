@@ -44,7 +44,7 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
     private String dBParameterGroupName;
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -170,10 +170,10 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      * 
-     * @return This parameter is not currently supported.
+     * @return This parameter isn't currently supported.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -185,11 +185,11 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        This parameter isn't currently supported.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -203,7 +203,7 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -212,7 +212,7 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        This parameter isn't currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +228,11 @@ public class DescribeDBParameterGroupsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        This parameter isn't currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

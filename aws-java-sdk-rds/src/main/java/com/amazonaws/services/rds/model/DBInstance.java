@@ -248,7 +248,7 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBInstanceStatusInfo> statusInfos;
@@ -2135,10 +2135,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      * </p>
      * 
-     * @return The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     * @return The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      */
 
     public java.util.List<DBInstanceStatusInfo> getStatusInfos() {
@@ -2150,11 +2150,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      * </p>
      * 
      * @param statusInfos
-     *        The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     *        The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      */
 
     public void setStatusInfos(java.util.Collection<DBInstanceStatusInfo> statusInfos) {
@@ -2168,7 +2168,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2177,7 +2177,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param statusInfos
-     *        The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     *        The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2193,11 +2193,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      * </p>
      * 
      * @param statusInfos
-     *        The status of a Read Replica. If the instance is not a Read Replica, this is blank.
+     *        The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

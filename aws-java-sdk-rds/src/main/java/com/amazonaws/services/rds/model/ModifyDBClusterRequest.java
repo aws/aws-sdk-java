@@ -28,7 +28,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints: This identifier must match the identifier of an existing DB cluster.
@@ -357,14 +357,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints: This identifier must match the identifier of an existing DB cluster.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
+     *        The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints: This identifier must match the identifier of an existing DB cluster.
      */
@@ -375,13 +375,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints: This identifier must match the identifier of an existing DB cluster.
      * </p>
      * 
-     * @return The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
+     * @return The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints: This identifier must match the identifier of an existing DB cluster.
      */
@@ -392,14 +392,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints: This identifier must match the identifier of an existing DB cluster.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
+     *        The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints: This identifier must match the identifier of an existing DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.

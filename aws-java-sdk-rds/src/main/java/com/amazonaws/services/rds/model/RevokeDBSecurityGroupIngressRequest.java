@@ -58,8 +58,8 @@ public class RevokeDBSecurityGroupIngressRequest extends com.amazonaws.AmazonWeb
     private String eC2SecurityGroupId;
     /**
      * <p>
-     * The AWS Account Number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
-     * parameter. The AWS Access Key ID is not an acceptable value. For VPC DB security groups,
+     * The AWS account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The AWS access key ID isn't an acceptable value. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
      * </p>
@@ -282,15 +282,15 @@ public class RevokeDBSecurityGroupIngressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS Account Number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
-     * parameter. The AWS Access Key ID is not an acceptable value. For VPC DB security groups,
+     * The AWS account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The AWS access key ID isn't an acceptable value. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
      * </p>
      * 
      * @param eC2SecurityGroupOwnerId
-     *        The AWS Account Number of the owner of the EC2 security group specified in the
-     *        <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID is not an acceptable value. For VPC DB
+     *        The AWS account number of the owner of the EC2 security group specified in the
+     *        <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an acceptable value. For VPC DB
      *        security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and
      *        either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
      */
@@ -301,14 +301,14 @@ public class RevokeDBSecurityGroupIngressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS Account Number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
-     * parameter. The AWS Access Key ID is not an acceptable value. For VPC DB security groups,
+     * The AWS account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The AWS access key ID isn't an acceptable value. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
      * </p>
      * 
-     * @return The AWS Account Number of the owner of the EC2 security group specified in the
-     *         <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID is not an acceptable value. For VPC DB
+     * @return The AWS account number of the owner of the EC2 security group specified in the
+     *         <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an acceptable value. For VPC DB
      *         security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and
      *         either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
      */
@@ -319,15 +319,15 @@ public class RevokeDBSecurityGroupIngressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS Account Number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
-     * parameter. The AWS Access Key ID is not an acceptable value. For VPC DB security groups,
+     * The AWS account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
+     * parameter. The AWS access key ID isn't an acceptable value. For VPC DB security groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either
      * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
      * </p>
      * 
      * @param eC2SecurityGroupOwnerId
-     *        The AWS Account Number of the owner of the EC2 security group specified in the
-     *        <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID is not an acceptable value. For VPC DB
+     *        The AWS account number of the owner of the EC2 security group specified in the
+     *        <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an acceptable value. For VPC DB
      *        security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and
      *        either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
      * @return Returns a reference to this object so that method calls can be chained together.

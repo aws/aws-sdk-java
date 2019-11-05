@@ -27,7 +27,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -81,7 +81,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -95,8 +95,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param globalClusterIdentifier
-     *        The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
-     *        </p>
+     *        The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -114,7 +113,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -127,7 +126,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * 
-     * @return The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
+     * @return The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
      *         </p>
      *         <p>
      *         Constraints:
@@ -146,7 +145,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
+     * The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -160,8 +159,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param globalClusterIdentifier
-     *        The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
-     *        </p>
+     *        The DB cluster identifier for the global cluster being modified. This parameter isn't case-sensitive. </p>
      *        <p>
      *        Constraints:
      *        </p>

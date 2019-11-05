@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the cause of an installation media failure. Installation media is used for on-premises, bring your own media
- * (BYOM) DB engines, such as Microsoft SQL Server.
+ * Contains the cause of an installation media failure. Installation media is used for a DB engine that requires an
+ * on-premises customer provided license, such as Microsoft SQL Server.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/InstallationMediaFailureCause" target="_top">AWS

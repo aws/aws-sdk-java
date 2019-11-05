@@ -62,7 +62,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * If the specified time is not a consistent time for the DB cluster, Aurora automatically chooses the nearest
+     * If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the nearest
      * possible consistent time for the DB cluster.
      * </p>
      * </note>
@@ -287,7 +287,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * If the specified time is not a consistent time for the DB cluster, Aurora automatically chooses the nearest
+     * If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the nearest
      * possible consistent time for the DB cluster.
      * </p>
      * </note>
@@ -315,8 +315,8 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        information about ISO 8601, see the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *        page.</a> </p> <note>
      *        <p>
-     *        If the specified time is not a consistent time for the DB cluster, Aurora automatically chooses the
-     *        nearest possible consistent time for the DB cluster.
+     *        If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the nearest
+     *        possible consistent time for the DB cluster.
      *        </p>
      *        </note>
      *        <p>
@@ -349,7 +349,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * If the specified time is not a consistent time for the DB cluster, Aurora automatically chooses the nearest
+     * If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the nearest
      * possible consistent time for the DB cluster.
      * </p>
      * </note>
@@ -376,7 +376,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         information about ISO 8601, see the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> </p> <note>
      *         <p>
-     *         If the specified time is not a consistent time for the DB cluster, Aurora automatically chooses the
+     *         If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the
      *         nearest possible consistent time for the DB cluster.
      *         </p>
      *         </note>
@@ -410,7 +410,7 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * If the specified time is not a consistent time for the DB cluster, Aurora automatically chooses the nearest
+     * If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the nearest
      * possible consistent time for the DB cluster.
      * </p>
      * </note>
@@ -438,8 +438,8 @@ public class BacktrackDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        information about ISO 8601, see the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *        page.</a> </p> <note>
      *        <p>
-     *        If the specified time is not a consistent time for the DB cluster, Aurora automatically chooses the
-     *        nearest possible consistent time for the DB cluster.
+     *        If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the nearest
+     *        possible consistent time for the DB cluster.
      *        </p>
      *        </note>
      *        <p>

@@ -85,7 +85,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
-     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not found in
+     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in
      * the timeout period.
      * </p>
      * <important>
@@ -411,7 +411,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
-     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not found in
+     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in
      * the timeout period.
      * </p>
      * <important>
@@ -433,7 +433,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      *        <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
      *        </p>
      *        <p>
-     *        <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not
+     *        <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't
      *        found in the timeout period.
      *        </p>
      *        <important>
@@ -461,7 +461,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
-     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not found in
+     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in
      * the timeout period.
      * </p>
      * <important>
@@ -482,7 +482,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      *         <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
      *         </p>
      *         <p>
-     *         <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not
+     *         <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't
      *         found in the timeout period.
      *         </p>
      *         <important>
@@ -510,7 +510,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
      * </p>
      * <p>
-     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not found in
+     * <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't found in
      * the timeout period.
      * </p>
      * <important>
@@ -532,7 +532,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      *        <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as soon as possible.
      *        </p>
      *        <p>
-     *        <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point is not
+     *        <code>RollbackCapacityChange</code>, the default, ignores the capacity change if a scaling point isn't
      *        found in the timeout period.
      *        </p>
      *        <important>

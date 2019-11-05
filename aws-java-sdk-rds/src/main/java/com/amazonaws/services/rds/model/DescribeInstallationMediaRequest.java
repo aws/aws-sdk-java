@@ -27,7 +27,7 @@ public class DescribeInstallationMediaRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      */
     private String installationMediaId;
@@ -72,11 +72,11 @@ public class DescribeInstallationMediaRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
      * @param installationMediaId
-     *        The installation media ID.
+     *        The installation medium ID.
      */
 
     public void setInstallationMediaId(String installationMediaId) {
@@ -85,10 +85,10 @@ public class DescribeInstallationMediaRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
-     * @return The installation media ID.
+     * @return The installation medium ID.
      */
 
     public String getInstallationMediaId() {
@@ -97,11 +97,11 @@ public class DescribeInstallationMediaRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The installation media ID.
+     * The installation medium ID.
      * </p>
      * 
      * @param installationMediaId
-     *        The installation media ID.
+     *        The installation medium ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -83,7 +83,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
+     * Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
      * </p>
      */
     private String dBInstanceClass;
@@ -324,8 +324,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -828,7 +828,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
+     * Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
      * </p>
      * 
      * @param dBInstanceClass
@@ -838,7 +838,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
-     *        Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
+     *        Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -854,7 +854,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
+     * Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
      * </p>
      * 
      * @return The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
@@ -863,7 +863,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
-     *         Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
+     *         Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
      */
 
     public String getDBInstanceClass() {
@@ -879,7 +879,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
+     * Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
      * </p>
      * 
      * @param dBInstanceClass
@@ -889,7 +889,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
-     *        Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
+     *        Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2450,14 +2450,14 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
      *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
      */
 
@@ -2469,13 +2469,13 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
      */
 
@@ -2487,14 +2487,14 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
      *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2508,13 +2508,13 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
+     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
+     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
      *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
      */
 

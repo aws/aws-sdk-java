@@ -28,7 +28,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
+     * The identifier of the DB cluster Read Replica to promote. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -48,7 +48,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
+     * The identifier of the DB cluster Read Replica to promote. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -65,7 +65,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive. </p>
+     *        The identifier of the DB cluster Read Replica to promote. This parameter isn't case-sensitive. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -86,7 +86,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
+     * The identifier of the DB cluster Read Replica to promote. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -102,7 +102,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      * Example: <code>my-cluster-replica1</code>
      * </p>
      * 
-     * @return The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive. </p>
+     * @return The identifier of the DB cluster Read Replica to promote. This parameter isn't case-sensitive. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -123,7 +123,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive.
+     * The identifier of the DB cluster Read Replica to promote. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -140,7 +140,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster Read Replica to promote. This parameter is not case-sensitive. </p>
+     *        The identifier of the DB cluster Read Replica to promote. This parameter isn't case-sensitive. </p>
      *        <p>
      *        Constraints:
      *        </p>

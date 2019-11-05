@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified installation media has already been imported.
+ * The specified installation medium has already been imported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

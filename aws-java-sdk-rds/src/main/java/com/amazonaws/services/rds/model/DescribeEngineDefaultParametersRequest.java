@@ -34,15 +34,15 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
     private String dBParameterGroupFamily;
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
      * The maximum number of records to include in the response. If more records exist than the specified
-     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can
-     * retrieve the remaining results.
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve
+     * the remaining results.
      * </p>
      * <p>
      * Default: 100
@@ -121,10 +121,10 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      * 
-     * @return This parameter is not currently supported.
+     * @return This parameter isn't currently supported.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -136,11 +136,11 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        This parameter isn't currently supported.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -154,7 +154,7 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +163,7 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        This parameter isn't currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * This parameter isn't currently supported.
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        This parameter isn't currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,8 +195,8 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The maximum number of records to include in the response. If more records exist than the specified
-     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can
-     * retrieve the remaining results.
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve
+     * the remaining results.
      * </p>
      * <p>
      * Default: 100
@@ -207,8 +207,8 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
-     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you
-     *        can retrieve the remaining results. </p>
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can
+     *        retrieve the remaining results. </p>
      *        <p>
      *        Default: 100
      *        </p>
@@ -223,8 +223,8 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The maximum number of records to include in the response. If more records exist than the specified
-     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can
-     * retrieve the remaining results.
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve
+     * the remaining results.
      * </p>
      * <p>
      * Default: 100
@@ -234,8 +234,8 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @return The maximum number of records to include in the response. If more records exist than the specified
-     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you
-     *         can retrieve the remaining results. </p>
+     *         <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can
+     *         retrieve the remaining results. </p>
      *         <p>
      *         Default: 100
      *         </p>
@@ -250,8 +250,8 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The maximum number of records to include in the response. If more records exist than the specified
-     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can
-     * retrieve the remaining results.
+     * <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve
+     * the remaining results.
      * </p>
      * <p>
      * Default: 100
@@ -262,8 +262,8 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * 
      * @param maxRecords
      *        The maximum number of records to include in the response. If more records exist than the specified
-     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you
-     *        can retrieve the remaining results. </p>
+     *        <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can
+     *        retrieve the remaining results. </p>
      *        <p>
      *        Default: 100
      *        </p>
