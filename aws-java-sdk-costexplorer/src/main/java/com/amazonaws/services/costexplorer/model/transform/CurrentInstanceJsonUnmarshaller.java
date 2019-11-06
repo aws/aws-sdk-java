@@ -68,6 +68,10 @@ public class CurrentInstanceJsonUnmarshaller implements Unmarshaller<CurrentInst
                     context.nextToken();
                     currentInstance.setReservationCoveredHoursInLookbackPeriod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SavingsPlansCoveredHoursInLookbackPeriod", targetDepth)) {
+                    context.nextToken();
+                    currentInstance.setSavingsPlansCoveredHoursInLookbackPeriod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("OnDemandHoursInLookbackPeriod", targetDepth)) {
                     context.nextToken();
                     currentInstance.setOnDemandHoursInLookbackPeriod(context.getUnmarshaller(String.class).unmarshall(context));

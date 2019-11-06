@@ -159,6 +159,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
+     * value field contains the AWS ID of the member account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<DimensionValuesWithAttributes> dimensionValues;
     /**
@@ -317,6 +353,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
+     * value field contains the AWS ID of the member account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The filters that you used to filter your request. Some dimensions are available only for a specific
      *         context.</p>
@@ -452,6 +524,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *         <li>
      *         <p>
      *         TENANCY - The tenancy of a resource. Examples are shared or dedicated.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REGION - The AWS Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
+     *         The value field contains the AWS ID of the member account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
      *         </p>
      *         </li>
      */
@@ -596,6 +704,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
+     * value field contains the AWS ID of the member account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param dimensionValues
      *        The filters that you used to filter your request. Some dimensions are available only for a specific
@@ -729,6 +873,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        <li>
      *        <p>
      *        TENANCY - The tenancy of a resource. Examples are shared or dedicated.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION - The AWS Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
+     *        The value field contains the AWS ID of the member account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
      *        </p>
      *        </li>
      */
@@ -879,6 +1059,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
+     * If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
+     * value field contains the AWS ID of the member account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDimensionValues(java.util.Collection)} or {@link #withDimensionValues(java.util.Collection)} if you
      * want to override the existing values.
@@ -1016,6 +1232,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        <li>
      *        <p>
      *        TENANCY - The tenancy of a resource. Examples are shared or dedicated.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION - The AWS Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
+     *        The value field contains the AWS ID of the member account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1167,6 +1419,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The
+     * value field contains the AWS ID of the member account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param dimensionValues
      *        The filters that you used to filter your request. Some dimensions are available only for a specific
@@ -1300,6 +1588,42 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        <li>
      *        <p>
      *        TENANCY - The tenancy of a resource. Examples are shared or dedicated.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION - The AWS Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account.
+     *        The value field contains the AWS ID of the member account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

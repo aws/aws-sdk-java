@@ -37,7 +37,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -274,7 +278,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -294,7 +302,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -321,7 +333,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -340,7 +356,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     *         </p>
+     *         </note></li>
      *         <li>
      *         <p>
      *         <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -367,7 +387,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -387,7 +411,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -416,7 +444,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -436,7 +468,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -463,7 +499,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     * </p>
+     * </note></li>
      * <li>
      * <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build output.
@@ -483,7 +523,11 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        <code>CODEPIPELINE</code>: The build project has build output generated through AWS CodePipeline.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        The <code>CODEPIPELINE</code> type is not supported for <code>secondaryArtifacts</code>.
+     *        </p>
+     *        </note></li>
      *        <li>
      *        <p>
      *        <code>NO_ARTIFACTS</code>: The build project does not produce any build output.

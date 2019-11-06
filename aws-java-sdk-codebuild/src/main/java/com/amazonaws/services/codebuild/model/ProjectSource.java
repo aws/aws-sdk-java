@@ -56,6 +56,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.
      * </p>
      * </li>
@@ -168,6 +173,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
      * source provider, an invalidInputException is thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      */
     private Boolean reportBuildStatus;
     /**
@@ -211,6 +221,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.
      * </p>
      * </li>
@@ -243,6 +258,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
      *        </p>
      *        </li>
      *        <li>
@@ -290,6 +310,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.
      * </p>
      * </li>
@@ -321,6 +346,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>GITHUB</code>: The source code is in a GitHub repository.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
      *         </p>
      *         </li>
      *         <li>
@@ -368,6 +398,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.
      * </p>
      * </li>
@@ -400,6 +435,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
      *        </p>
      *        </li>
      *        <li>
@@ -449,6 +489,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.
      * </p>
      * </li>
@@ -481,6 +526,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
      *        </p>
      *        </li>
      *        <li>
@@ -528,6 +578,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>NO_SOURCE</code>: The project does not have input source code.
      * </p>
      * </li>
@@ -560,6 +615,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
      *        </p>
      *        </li>
      *        <li>
@@ -1174,11 +1234,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
      * source provider, an invalidInputException is thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      * 
      * @param reportBuildStatus
      *        Set to true to report the status of a build's start and finish to your source provider. This option is
      *        valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *        use a different source provider, an invalidInputException is thrown.
+     *        use a different source provider, an invalidInputException is thrown. </p> <note>
+     *        <p>
+     *        The status of a build triggered by a webhook is always reported to your source provider.
+     *        </p>
      */
 
     public void setReportBuildStatus(Boolean reportBuildStatus) {
@@ -1191,10 +1259,18 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
      * source provider, an invalidInputException is thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      * 
      * @return Set to true to report the status of a build's start and finish to your source provider. This option is
      *         valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *         use a different source provider, an invalidInputException is thrown.
+     *         use a different source provider, an invalidInputException is thrown. </p> <note>
+     *         <p>
+     *         The status of a build triggered by a webhook is always reported to your source provider.
+     *         </p>
      */
 
     public Boolean getReportBuildStatus() {
@@ -1207,11 +1283,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
      * source provider, an invalidInputException is thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      * 
      * @param reportBuildStatus
      *        Set to true to report the status of a build's start and finish to your source provider. This option is
      *        valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *        use a different source provider, an invalidInputException is thrown.
+     *        use a different source provider, an invalidInputException is thrown. </p> <note>
+     *        <p>
+     *        The status of a build triggered by a webhook is always reported to your source provider.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1226,10 +1310,18 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
      * source provider, an invalidInputException is thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      * 
      * @return Set to true to report the status of a build's start and finish to your source provider. This option is
      *         valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *         use a different source provider, an invalidInputException is thrown.
+     *         use a different source provider, an invalidInputException is thrown. </p> <note>
+     *         <p>
+     *         The status of a build triggered by a webhook is always reported to your source provider.
+     *         </p>
      */
 
     public Boolean isReportBuildStatus() {

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Context {
 
     COST_AND_USAGE("COST_AND_USAGE"),
-    RESERVATIONS("RESERVATIONS");
+    RESERVATIONS("RESERVATIONS"),
+    SAVINGS_PLANS("SAVINGS_PLANS");
 
     private String value;
 

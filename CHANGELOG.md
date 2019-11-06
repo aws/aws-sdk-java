@@ -1,3 +1,28 @@
+# __1.11.668__ __2019-11-06__
+## __AWS Budgets__
+  - ### Features
+    - Documentation updates for budgets to track Savings Plans utilization and coverage
+
+## __AWS CodeBuild__
+  - ### Features
+    - Add support for Build Number, Secrets Manager and Exported Environment Variables.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This launch provides customers with access to Savings Plans management APIs.
+
+## __AWS Savings Plans__
+  - ### Features
+    - This is the first release of Savings Plans, a new flexible pricing model that offers low prices on Amazon EC2 and AWS Fargate usage.
+
+## __AWS Signer__
+  - ### Features
+    - This release adds support for tagging code-signing profiles in AWS Signer.
+
+## __Amazon Elastic File System__
+  - ### Features
+    - EFS customers can select a lifecycle policy that automatically moves files that have not been accessed for 7 days into the EFS Infrequent Access (EFS IA) storage class. EFS IA provides price/performance that is cost-optimized for files that are not accessed every day.
+
 # __1.11.667__ __2019-11-05__
 ## __AWS CodeStar Notifications__
   - ### Features

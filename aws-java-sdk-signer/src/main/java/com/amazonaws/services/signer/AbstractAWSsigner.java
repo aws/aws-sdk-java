@@ -64,12 +64,27 @@ public class AbstractAWSsigner implements AWSsigner {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutSigningProfileResult putSigningProfile(PutSigningProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartSigningJobResult startSigningJob(StartSigningJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

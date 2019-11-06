@@ -28,7 +28,8 @@ public class GetRightsizingRecommendationRequest extends com.amazonaws.AmazonWeb
     private Expression filter;
     /**
      * <p>
-     * The specific service that you want recommendations for.
+     * The specific service that you want recommendations for. The only valid value for
+     * <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".
      * </p>
      */
     private String service;
@@ -73,11 +74,13 @@ public class GetRightsizingRecommendationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The specific service that you want recommendations for.
+     * The specific service that you want recommendations for. The only valid value for
+     * <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".
      * </p>
      * 
      * @param service
-     *        The specific service that you want recommendations for.
+     *        The specific service that you want recommendations for. The only valid value for
+     *        <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".
      */
 
     public void setService(String service) {
@@ -86,10 +89,12 @@ public class GetRightsizingRecommendationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The specific service that you want recommendations for.
+     * The specific service that you want recommendations for. The only valid value for
+     * <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".
      * </p>
      * 
-     * @return The specific service that you want recommendations for.
+     * @return The specific service that you want recommendations for. The only valid value for
+     *         <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".
      */
 
     public String getService() {
@@ -98,11 +103,13 @@ public class GetRightsizingRecommendationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The specific service that you want recommendations for.
+     * The specific service that you want recommendations for. The only valid value for
+     * <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".
      * </p>
      * 
      * @param service
-     *        The specific service that you want recommendations for.
+     *        The specific service that you want recommendations for. The only valid value for
+     *        <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

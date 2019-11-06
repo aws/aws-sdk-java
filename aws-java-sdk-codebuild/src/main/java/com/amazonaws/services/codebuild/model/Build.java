@@ -42,6 +42,14 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
+     * The number of the build. For each project, the <code>buildNumber</code> of its first build is <code>1</code>. The
+     * <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If a build is deleted, the
+     * <code>buildNumber</code> of other builds does not change.
+     * </p>
+     */
+    private Long buildNumber;
+    /**
+     * <p>
      * When the build process started, expressed in Unix time format.
      * </p>
      */
@@ -301,6 +309,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String encryptionKey;
+    /**
+     * <p>
+     * A list of exported environment variables for this build.
+     * </p>
+     */
+    private java.util.List<ExportedEnvironmentVariable> exportedEnvironmentVariables;
 
     /**
      * <p>
@@ -379,6 +393,58 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     public Build withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of the build. For each project, the <code>buildNumber</code> of its first build is <code>1</code>. The
+     * <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If a build is deleted, the
+     * <code>buildNumber</code> of other builds does not change.
+     * </p>
+     * 
+     * @param buildNumber
+     *        The number of the build. For each project, the <code>buildNumber</code> of its first build is
+     *        <code>1</code>. The <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If
+     *        a build is deleted, the <code>buildNumber</code> of other builds does not change.
+     */
+
+    public void setBuildNumber(Long buildNumber) {
+        this.buildNumber = buildNumber;
+    }
+
+    /**
+     * <p>
+     * The number of the build. For each project, the <code>buildNumber</code> of its first build is <code>1</code>. The
+     * <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If a build is deleted, the
+     * <code>buildNumber</code> of other builds does not change.
+     * </p>
+     * 
+     * @return The number of the build. For each project, the <code>buildNumber</code> of its first build is
+     *         <code>1</code>. The <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>.
+     *         If a build is deleted, the <code>buildNumber</code> of other builds does not change.
+     */
+
+    public Long getBuildNumber() {
+        return this.buildNumber;
+    }
+
+    /**
+     * <p>
+     * The number of the build. For each project, the <code>buildNumber</code> of its first build is <code>1</code>. The
+     * <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If a build is deleted, the
+     * <code>buildNumber</code> of other builds does not change.
+     * </p>
+     * 
+     * @param buildNumber
+     *        The number of the build. For each project, the <code>buildNumber</code> of its first build is
+     *        <code>1</code>. The <code>buildNumber</code> of each subsequent build is incremented by <code>1</code>. If
+     *        a build is deleted, the <code>buildNumber</code> of other builds does not change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withBuildNumber(Long buildNumber) {
+        setBuildNumber(buildNumber);
         return this;
     }
 
@@ -2382,6 +2448,76 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of exported environment variables for this build.
+     * </p>
+     * 
+     * @return A list of exported environment variables for this build.
+     */
+
+    public java.util.List<ExportedEnvironmentVariable> getExportedEnvironmentVariables() {
+        return exportedEnvironmentVariables;
+    }
+
+    /**
+     * <p>
+     * A list of exported environment variables for this build.
+     * </p>
+     * 
+     * @param exportedEnvironmentVariables
+     *        A list of exported environment variables for this build.
+     */
+
+    public void setExportedEnvironmentVariables(java.util.Collection<ExportedEnvironmentVariable> exportedEnvironmentVariables) {
+        if (exportedEnvironmentVariables == null) {
+            this.exportedEnvironmentVariables = null;
+            return;
+        }
+
+        this.exportedEnvironmentVariables = new java.util.ArrayList<ExportedEnvironmentVariable>(exportedEnvironmentVariables);
+    }
+
+    /**
+     * <p>
+     * A list of exported environment variables for this build.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExportedEnvironmentVariables(java.util.Collection)} or
+     * {@link #withExportedEnvironmentVariables(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param exportedEnvironmentVariables
+     *        A list of exported environment variables for this build.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withExportedEnvironmentVariables(ExportedEnvironmentVariable... exportedEnvironmentVariables) {
+        if (this.exportedEnvironmentVariables == null) {
+            setExportedEnvironmentVariables(new java.util.ArrayList<ExportedEnvironmentVariable>(exportedEnvironmentVariables.length));
+        }
+        for (ExportedEnvironmentVariable ele : exportedEnvironmentVariables) {
+            this.exportedEnvironmentVariables.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of exported environment variables for this build.
+     * </p>
+     * 
+     * @param exportedEnvironmentVariables
+     *        A list of exported environment variables for this build.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withExportedEnvironmentVariables(java.util.Collection<ExportedEnvironmentVariable> exportedEnvironmentVariables) {
+        setExportedEnvironmentVariables(exportedEnvironmentVariables);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2397,6 +2533,8 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getBuildNumber() != null)
+            sb.append("BuildNumber: ").append(getBuildNumber()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
@@ -2444,7 +2582,9 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (getNetworkInterface() != null)
             sb.append("NetworkInterface: ").append(getNetworkInterface()).append(",");
         if (getEncryptionKey() != null)
-            sb.append("EncryptionKey: ").append(getEncryptionKey());
+            sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
+        if (getExportedEnvironmentVariables() != null)
+            sb.append("ExportedEnvironmentVariables: ").append(getExportedEnvironmentVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -2466,6 +2606,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getBuildNumber() == null ^ this.getBuildNumber() == null)
+            return false;
+        if (other.getBuildNumber() != null && other.getBuildNumber().equals(this.getBuildNumber()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
@@ -2563,6 +2707,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEncryptionKey() != null && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
             return false;
+        if (other.getExportedEnvironmentVariables() == null ^ this.getExportedEnvironmentVariables() == null)
+            return false;
+        if (other.getExportedEnvironmentVariables() != null && other.getExportedEnvironmentVariables().equals(this.getExportedEnvironmentVariables()) == false)
+            return false;
         return true;
     }
 
@@ -2573,6 +2721,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getBuildNumber() == null) ? 0 : getBuildNumber().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getCurrentPhase() == null) ? 0 : getCurrentPhase().hashCode());
@@ -2597,6 +2746,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterface() == null) ? 0 : getNetworkInterface().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
+        hashCode = prime * hashCode + ((getExportedEnvironmentVariables() == null) ? 0 : getExportedEnvironmentVariables().hashCode());
         return hashCode;
     }
 

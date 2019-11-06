@@ -38,6 +38,8 @@ public class CurrentInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceUtilization").build();
     private static final MarshallingInfo<String> RESERVATIONCOVEREDHOURSINLOOKBACKPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReservationCoveredHoursInLookbackPeriod").build();
+    private static final MarshallingInfo<String> SAVINGSPLANSCOVEREDHOURSINLOOKBACKPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SavingsPlansCoveredHoursInLookbackPeriod").build();
     private static final MarshallingInfo<String> ONDEMANDHOURSINLOOKBACKPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDemandHoursInLookbackPeriod").build();
     private static final MarshallingInfo<String> TOTALRUNNINGHOURSINLOOKBACKPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class CurrentInstanceMarshaller {
             protocolMarshaller.marshall(currentInstance.getResourceDetails(), RESOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(currentInstance.getResourceUtilization(), RESOURCEUTILIZATION_BINDING);
             protocolMarshaller.marshall(currentInstance.getReservationCoveredHoursInLookbackPeriod(), RESERVATIONCOVEREDHOURSINLOOKBACKPERIOD_BINDING);
+            protocolMarshaller.marshall(currentInstance.getSavingsPlansCoveredHoursInLookbackPeriod(), SAVINGSPLANSCOVEREDHOURSINLOOKBACKPERIOD_BINDING);
             protocolMarshaller.marshall(currentInstance.getOnDemandHoursInLookbackPeriod(), ONDEMANDHOURSINLOOKBACKPERIOD_BINDING);
             protocolMarshaller.marshall(currentInstance.getTotalRunningHoursInLookbackPeriod(), TOTALRUNNINGHOURSINLOOKBACKPERIOD_BINDING);
             protocolMarshaller.marshall(currentInstance.getMonthlyCost(), MONTHLYCOST_BINDING);

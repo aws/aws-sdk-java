@@ -52,13 +52,14 @@ import com.amazonaws.services.signer.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * You can use Code Signing for Amazon FreeRTOS (AWS Signer) to sign code that you created for any of the IoT devices
- * that Amazon Web Services supports. AWS Signer is integrated with Amazon FreeRTOS, AWS Certificate Manager, and AWS
- * CloudTrail. Amazon FreeRTOS customers can use AWS Signer to sign code images before making them available for
- * microcontrollers. You can use ACM to import third-party certificates to be used by AWS Signer. For general
- * information about using AWS Signer, see the <a
- * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for Amazon FreeRTOS
- * Developer Guide</a>.
+ * With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web
+ * Services (AWS). Code signing is available through <a
+ * href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
+ * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and integrated with <a
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
+ * import a third-party code signing certificate with ACM that is used to sign updates in Amazon FreeRTOS and AWS IoT
+ * Device Management. For general information about using code signing, see the <a
+ * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for IoT Developer Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -90,17 +91,23 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.signer.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.signer.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.signer.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.signer.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.signer.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.signer.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.signer.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.signer.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.signer.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.signer.model.AWSsignerException.class));
 
     public static AWSsignerClientBuilder builder() {
@@ -395,10 +402,10 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
     /**
      * <p>
      * Lists all your signing jobs. You can use the <code>maxResults</code> parameter to limit the number of signing
-     * jobs that are returned in the response. If additional jobs remain to be listed, AWS Signer returns a
+     * jobs that are returned in the response. If additional jobs remain to be listed, code signing returns a
      * <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the
      * remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
-     * parameter and with new values that AWS Signer returns in the <code>nextToken</code> parameter until all of your
+     * parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your
      * signing jobs have been returned.
      * </p>
      * 
@@ -460,10 +467,10 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
 
     /**
      * <p>
-     * Lists all signing platforms available in AWS Signer that match the request parameters. If additional jobs remain
-     * to be listed, AWS Signer returns a <code>nextToken</code> value. Use this value in subsequent calls to
+     * Lists all signing platforms available in code signing that match the request parameters. If additional jobs
+     * remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to
      * <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-     * with your <code>maxResults</code> parameter and with new values that AWS Signer returns in the
+     * with your <code>maxResults</code> parameter and with new values that code signing returns in the
      * <code>nextToken</code> parameter until all of your signing jobs have been returned.
      * </p>
      * 
@@ -527,9 +534,9 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
      * <p>
      * Lists all available signing profiles in your AWS account. Returns only profiles with an <code>ACTIVE</code>
      * status unless the <code>includeCanceled</code> request field is set to <code>true</code>. If additional jobs
-     * remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this value in subsequent calls to
+     * remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to
      * <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-     * with your <code>maxResults</code> parameter and with new values that AWS Signer returns in the
+     * with your <code>maxResults</code> parameter and with new values that code signing returns in the
      * <code>nextToken</code> parameter until all of your signing jobs have been returned.
      * </p>
      * 
@@ -589,7 +596,67 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
 
     /**
      * <p>
-     * Creates a signing profile. A signing profile is an AWS Signer template that can be used to carry out a
+     * Returns a list of the tags associated with a signing profile resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @throws BadRequestException
+     *         The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a
+     *         tagging API on a cancelled signing profile.
+     * @throws NotFoundException
+     *         The signing profile was not found.
+     * @sample AWSsigner.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a signing profile. A signing profile is a code signing template that can be used to carry out a
      * pre-defined signing job. For more information, see <a
      * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html"
      * >http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
@@ -673,7 +740,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
      * </li>
      * <li>
      * <p>
-     * You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket to write your signed code.
+     * You must create an S3 destination bucket. Code signing uses your S3 destination bucket to write your signed code.
      * </p>
      * </li>
      * <li>
@@ -684,7 +751,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
      * </li>
      * <li>
      * <p>
-     * You must also specify a request token that identifies your request to AWS Signer.
+     * You must also specify a request token that identifies your request to code signing.
      * </p>
      * </li>
      * </ul>
@@ -745,6 +812,128 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
 
             HttpResponseHandler<AmazonWebServiceResponse<StartSigningJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSigningJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to a signing profile. Tags are labels that you can use to identify and organize your AWS
+     * resources. Each tag consists of a key and an optional value. You specify the signing profile using its Amazon
+     * Resource Name (ARN). You specify the tag by using a key-value pair.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @throws BadRequestException
+     *         The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a
+     *         tagging API on a cancelled signing profile.
+     * @throws NotFoundException
+     *         The signing profile was not found.
+     * @sample AWSsigner.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove one or more tags from a signing profile. Specify a list of tag keys to remove the tags.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @throws BadRequestException
+     *         The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a
+     *         tagging API on a cancelled signing profile.
+     * @throws NotFoundException
+     *         The signing profile was not found.
+     * @sample AWSsigner.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

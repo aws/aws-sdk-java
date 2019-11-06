@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TransitionToIARules {
 
+    AFTER_7_DAYS("AFTER_7_DAYS"),
     AFTER_14_DAYS("AFTER_14_DAYS"),
     AFTER_30_DAYS("AFTER_30_DAYS"),
     AFTER_60_DAYS("AFTER_60_DAYS"),

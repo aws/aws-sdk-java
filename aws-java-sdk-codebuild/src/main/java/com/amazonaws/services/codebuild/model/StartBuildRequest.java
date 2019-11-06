@@ -161,6 +161,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
      * thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      */
     private Boolean reportBuildStatusOverride;
     /**
@@ -1260,11 +1265,19 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
      * thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      * 
      * @param reportBuildStatusOverride
      *        Set to true to report to your source provider the status of a build's start and completion. If you use
      *        this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-     *        invalidInputException is thrown.
+     *        invalidInputException is thrown. </p> <note>
+     *        <p>
+     *        The status of a build triggered by a webhook is always reported to your source provider.
+     *        </p>
      */
 
     public void setReportBuildStatusOverride(Boolean reportBuildStatusOverride) {
@@ -1277,10 +1290,18 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
      * thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      * 
      * @return Set to true to report to your source provider the status of a build's start and completion. If you use
      *         this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-     *         invalidInputException is thrown.
+     *         invalidInputException is thrown. </p> <note>
+     *         <p>
+     *         The status of a build triggered by a webhook is always reported to your source provider.
+     *         </p>
      */
 
     public Boolean getReportBuildStatusOverride() {
@@ -1293,11 +1314,19 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
      * thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      * 
      * @param reportBuildStatusOverride
      *        Set to true to report to your source provider the status of a build's start and completion. If you use
      *        this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-     *        invalidInputException is thrown.
+     *        invalidInputException is thrown. </p> <note>
+     *        <p>
+     *        The status of a build triggered by a webhook is always reported to your source provider.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1312,10 +1341,18 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an invalidInputException is
      * thrown.
      * </p>
+     * <note>
+     * <p>
+     * The status of a build triggered by a webhook is always reported to your source provider.
+     * </p>
+     * </note>
      * 
      * @return Set to true to report to your source provider the status of a build's start and completion. If you use
      *         this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an
-     *         invalidInputException is thrown.
+     *         invalidInputException is thrown. </p> <note>
+     *         <p>
+     *         The status of a build triggered by a webhook is always reported to your source provider.
+     *         </p>
      */
 
     public Boolean isReportBuildStatusOverride() {

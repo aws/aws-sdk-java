@@ -77,6 +77,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
+     * Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
+     * </p>
      */
     private String computeType;
     /**
@@ -88,7 +93,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
-     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default
+     * setting is <code>false</code>.
      * </p>
      * <p>
      * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
@@ -378,6 +384,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
+     * Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
+     * </p>
      * 
      * @param computeType
      *        Information about the compute resources the build project uses. Available values include:</p>
@@ -397,6 +408,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB memory and 8 vCPUs for builds.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     *        Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
      * @see ComputeType
      */
 
@@ -425,6 +441,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
+     * Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
+     * </p>
      * 
      * @return Information about the compute resources the build project uses. Available values include:</p>
      *         <ul>
@@ -443,6 +464,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB memory and 8 vCPUs for builds.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     *         Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
      * @see ComputeType
      */
 
@@ -471,6 +497,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
+     * Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
+     * </p>
      * 
      * @param computeType
      *        Information about the compute resources the build project uses. Available values include:</p>
@@ -490,6 +521,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB memory and 8 vCPUs for builds.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     *        Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputeType
      */
@@ -520,6 +556,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
+     * Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
+     * </p>
      * 
      * @param computeType
      *        Information about the compute resources the build project uses. Available values include:</p>
@@ -539,6 +580,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB memory and 8 vCPUs for builds.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     *        Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
      * @see ComputeType
      */
 
@@ -567,6 +613,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
+     * Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
+     * </p>
      * 
      * @param computeType
      *        Information about the compute resources the build project uses. Available values include:</p>
@@ -586,6 +637,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB memory and 8 vCPUs for builds.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     *        Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputeType
      */
@@ -668,7 +724,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
-     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default
+     * setting is <code>false</code>.
      * </p>
      * <p>
      * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
@@ -696,7 +753,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * 
      * @param privilegedMode
      *        Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used
-     *        to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.</p>
+     *        to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The
+     *        default setting is <code>false</code>.</p>
      *        <p>
      *        You can initialize the Docker daemon during the install phase of your build by adding one of the following
      *        sets of commands to the install phase of your buildspec file:
@@ -728,7 +786,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
-     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default
+     * setting is <code>false</code>.
      * </p>
      * <p>
      * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
@@ -755,8 +814,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is
-     *         used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon
-     *         fails.</p>
+     *         used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     *         The default setting is <code>false</code>.</p>
      *         <p>
      *         You can initialize the Docker daemon during the install phase of your build by adding one of the
      *         following sets of commands to the install phase of your buildspec file:
@@ -788,7 +847,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
-     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default
+     * setting is <code>false</code>.
      * </p>
      * <p>
      * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
@@ -816,7 +876,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * 
      * @param privilegedMode
      *        Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used
-     *        to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.</p>
+     *        to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The
+     *        default setting is <code>false</code>.</p>
      *        <p>
      *        You can initialize the Docker daemon during the install phase of your build by adding one of the following
      *        sets of commands to the install phase of your buildspec file:
@@ -850,7 +911,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to
-     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     * build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default
+     * setting is <code>false</code>.
      * </p>
      * <p>
      * You can initialize the Docker daemon during the install phase of your build by adding one of the following sets
@@ -877,8 +939,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is
-     *         used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon
-     *         fails.</p>
+     *         used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails.
+     *         The default setting is <code>false</code>.</p>
      *         <p>
      *         You can initialize the Docker daemon during the install phase of your build by adding one of the
      *         following sets of commands to the install phase of your buildspec file:

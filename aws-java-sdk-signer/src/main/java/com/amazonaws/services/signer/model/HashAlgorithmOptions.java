@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The hash algorithms that are available to an AWS Signer job.
+ * The hash algorithms that are available to a code signing job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/HashAlgorithmOptions" target="_top">AWS API
@@ -30,23 +30,23 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The set of accepted hash algorithms allowed in an AWS Signer job.
+     * The set of accepted hash algorithms allowed in a code signing job.
      * </p>
      */
     private java.util.List<String> allowedValues;
     /**
      * <p>
-     * The default hash algorithm that is used in an AWS Signer job.
+     * The default hash algorithm that is used in a code signing job.
      * </p>
      */
     private String defaultValue;
 
     /**
      * <p>
-     * The set of accepted hash algorithms allowed in an AWS Signer job.
+     * The set of accepted hash algorithms allowed in a code signing job.
      * </p>
      * 
-     * @return The set of accepted hash algorithms allowed in an AWS Signer job.
+     * @return The set of accepted hash algorithms allowed in a code signing job.
      * @see HashAlgorithm
      */
 
@@ -56,11 +56,11 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The set of accepted hash algorithms allowed in an AWS Signer job.
+     * The set of accepted hash algorithms allowed in a code signing job.
      * </p>
      * 
      * @param allowedValues
-     *        The set of accepted hash algorithms allowed in an AWS Signer job.
+     *        The set of accepted hash algorithms allowed in a code signing job.
      * @see HashAlgorithm
      */
 
@@ -75,7 +75,7 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The set of accepted hash algorithms allowed in an AWS Signer job.
+     * The set of accepted hash algorithms allowed in a code signing job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param allowedValues
-     *        The set of accepted hash algorithms allowed in an AWS Signer job.
+     *        The set of accepted hash algorithms allowed in a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HashAlgorithm
      */
@@ -101,11 +101,11 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The set of accepted hash algorithms allowed in an AWS Signer job.
+     * The set of accepted hash algorithms allowed in a code signing job.
      * </p>
      * 
      * @param allowedValues
-     *        The set of accepted hash algorithms allowed in an AWS Signer job.
+     *        The set of accepted hash algorithms allowed in a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HashAlgorithm
      */
@@ -117,11 +117,11 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The set of accepted hash algorithms allowed in an AWS Signer job.
+     * The set of accepted hash algorithms allowed in a code signing job.
      * </p>
      * 
      * @param allowedValues
-     *        The set of accepted hash algorithms allowed in an AWS Signer job.
+     *        The set of accepted hash algorithms allowed in a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HashAlgorithm
      */
@@ -141,11 +141,11 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The default hash algorithm that is used in an AWS Signer job.
+     * The default hash algorithm that is used in a code signing job.
      * </p>
      * 
      * @param defaultValue
-     *        The default hash algorithm that is used in an AWS Signer job.
+     *        The default hash algorithm that is used in a code signing job.
      * @see HashAlgorithm
      */
 
@@ -155,10 +155,10 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The default hash algorithm that is used in an AWS Signer job.
+     * The default hash algorithm that is used in a code signing job.
      * </p>
      * 
-     * @return The default hash algorithm that is used in an AWS Signer job.
+     * @return The default hash algorithm that is used in a code signing job.
      * @see HashAlgorithm
      */
 
@@ -168,11 +168,11 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The default hash algorithm that is used in an AWS Signer job.
+     * The default hash algorithm that is used in a code signing job.
      * </p>
      * 
      * @param defaultValue
-     *        The default hash algorithm that is used in an AWS Signer job.
+     *        The default hash algorithm that is used in a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HashAlgorithm
      */
@@ -184,11 +184,11 @@ public class HashAlgorithmOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The default hash algorithm that is used in an AWS Signer job.
+     * The default hash algorithm that is used in a code signing job.
      * </p>
      * 
      * @param defaultValue
-     *        The default hash algorithm that is used in an AWS Signer job.
+     *        The default hash algorithm that is used in a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HashAlgorithm
      */

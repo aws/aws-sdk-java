@@ -59,6 +59,18 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the signing profile.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
+     * A list of tags associated with the signing profile.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -341,6 +353,107 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the signing profile.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) for the signing profile.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the signing profile.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the signing profile.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the signing profile.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) for the signing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags associated with the signing profile.
+     * </p>
+     * 
+     * @return A list of tags associated with the signing profile.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags associated with the signing profile.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags associated with the signing profile.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags associated with the signing profile.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags associated with the signing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GetSigningProfileResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -363,7 +476,11 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
         if (getSigningParameters() != null)
             sb.append("SigningParameters: ").append(getSigningParameters()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -402,6 +519,14 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +541,8 @@ public class GetSigningProfileResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getSigningParameters() == null) ? 0 : getSigningParameters().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

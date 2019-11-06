@@ -60,6 +60,12 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
     private String reservationCoveredHoursInLookbackPeriod;
     /**
      * <p>
+     * Number of hours during the lookback period covered by Savings Plans.
+     * </p>
+     */
+    private String savingsPlansCoveredHoursInLookbackPeriod;
+    /**
+     * <p>
      * Number of hours during the lookback period billed at On Demand rates.
      * </p>
      */
@@ -315,6 +321,46 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Number of hours during the lookback period covered by Savings Plans.
+     * </p>
+     * 
+     * @param savingsPlansCoveredHoursInLookbackPeriod
+     *        Number of hours during the lookback period covered by Savings Plans.
+     */
+
+    public void setSavingsPlansCoveredHoursInLookbackPeriod(String savingsPlansCoveredHoursInLookbackPeriod) {
+        this.savingsPlansCoveredHoursInLookbackPeriod = savingsPlansCoveredHoursInLookbackPeriod;
+    }
+
+    /**
+     * <p>
+     * Number of hours during the lookback period covered by Savings Plans.
+     * </p>
+     * 
+     * @return Number of hours during the lookback period covered by Savings Plans.
+     */
+
+    public String getSavingsPlansCoveredHoursInLookbackPeriod() {
+        return this.savingsPlansCoveredHoursInLookbackPeriod;
+    }
+
+    /**
+     * <p>
+     * Number of hours during the lookback period covered by Savings Plans.
+     * </p>
+     * 
+     * @param savingsPlansCoveredHoursInLookbackPeriod
+     *        Number of hours during the lookback period covered by Savings Plans.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CurrentInstance withSavingsPlansCoveredHoursInLookbackPeriod(String savingsPlansCoveredHoursInLookbackPeriod) {
+        setSavingsPlansCoveredHoursInLookbackPeriod(savingsPlansCoveredHoursInLookbackPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
      * Number of hours during the lookback period billed at On Demand rates.
      * </p>
      * 
@@ -495,6 +541,8 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
             sb.append("ResourceUtilization: ").append(getResourceUtilization()).append(",");
         if (getReservationCoveredHoursInLookbackPeriod() != null)
             sb.append("ReservationCoveredHoursInLookbackPeriod: ").append(getReservationCoveredHoursInLookbackPeriod()).append(",");
+        if (getSavingsPlansCoveredHoursInLookbackPeriod() != null)
+            sb.append("SavingsPlansCoveredHoursInLookbackPeriod: ").append(getSavingsPlansCoveredHoursInLookbackPeriod()).append(",");
         if (getOnDemandHoursInLookbackPeriod() != null)
             sb.append("OnDemandHoursInLookbackPeriod: ").append(getOnDemandHoursInLookbackPeriod()).append(",");
         if (getTotalRunningHoursInLookbackPeriod() != null)
@@ -538,6 +586,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
         if (other.getReservationCoveredHoursInLookbackPeriod() != null
                 && other.getReservationCoveredHoursInLookbackPeriod().equals(this.getReservationCoveredHoursInLookbackPeriod()) == false)
             return false;
+        if (other.getSavingsPlansCoveredHoursInLookbackPeriod() == null ^ this.getSavingsPlansCoveredHoursInLookbackPeriod() == null)
+            return false;
+        if (other.getSavingsPlansCoveredHoursInLookbackPeriod() != null
+                && other.getSavingsPlansCoveredHoursInLookbackPeriod().equals(this.getSavingsPlansCoveredHoursInLookbackPeriod()) == false)
+            return false;
         if (other.getOnDemandHoursInLookbackPeriod() == null ^ this.getOnDemandHoursInLookbackPeriod() == null)
             return false;
         if (other.getOnDemandHoursInLookbackPeriod() != null
@@ -569,6 +622,7 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getResourceDetails() == null) ? 0 : getResourceDetails().hashCode());
         hashCode = prime * hashCode + ((getResourceUtilization() == null) ? 0 : getResourceUtilization().hashCode());
         hashCode = prime * hashCode + ((getReservationCoveredHoursInLookbackPeriod() == null) ? 0 : getReservationCoveredHoursInLookbackPeriod().hashCode());
+        hashCode = prime * hashCode + ((getSavingsPlansCoveredHoursInLookbackPeriod() == null) ? 0 : getSavingsPlansCoveredHoursInLookbackPeriod().hashCode());
         hashCode = prime * hashCode + ((getOnDemandHoursInLookbackPeriod() == null) ? 0 : getOnDemandHoursInLookbackPeriod().hashCode());
         hashCode = prime * hashCode + ((getTotalRunningHoursInLookbackPeriod() == null) ? 0 : getTotalRunningHoursInLookbackPeriod().hashCode());
         hashCode = prime * hashCode + ((getMonthlyCost() == null) ? 0 : getMonthlyCost().hashCode());

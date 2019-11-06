@@ -151,6 +151,9 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.budgets.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -397,6 +400,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         You've exceeded the notification or subscriber limit.
      * @throws DuplicateRecordException
      *         The budget name already exists. Budget names must be unique within an account.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.CreateBudget
      */
     @Override
@@ -459,6 +464,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         You've exceeded the notification or subscriber limit.
      * @throws DuplicateRecordException
      *         The budget name already exists. Budget names must be unique within an account.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.CreateNotification
      */
     @Override
@@ -521,6 +528,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         The budget name already exists. Budget names must be unique within an account.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.CreateSubscriber
      */
     @Override
@@ -584,6 +593,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DeleteBudget
      */
     @Override
@@ -647,6 +658,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         An error on the server occurred during the processing of your request. Try again later.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DeleteNotification
      */
     @Override
@@ -710,6 +723,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DeleteSubscriber
      */
     @Override
@@ -776,6 +791,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeBudget
      */
     @Override
@@ -838,6 +855,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
      *         The pagination token expired.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeBudgetPerformanceHistory
      */
     @Override
@@ -911,6 +930,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
      *         The pagination token expired.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeBudgets
      */
     @Override
@@ -973,6 +994,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
      *         The pagination token expired.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeNotificationsForBudget
      */
     @Override
@@ -1037,6 +1060,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
      *         The pagination token expired.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeSubscribersForNotification
      */
     @Override
@@ -1109,6 +1134,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.UpdateBudget
      */
     @Override
@@ -1169,6 +1196,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         We can’t locate the resource that you specified.
      * @throws DuplicateRecordException
      *         The budget name already exists. Budget names must be unique within an account.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.UpdateNotification
      */
     @Override
@@ -1229,6 +1258,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         We can’t locate the resource that you specified.
      * @throws DuplicateRecordException
      *         The budget name already exists. Budget names must be unique within an account.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.UpdateSubscriber
      */
     @Override

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The encryption algorithm options that are available to an AWS Signer job.
+ * The encryption algorithm options that are available to a code signing job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/EncryptionAlgorithmOptions" target="_top">AWS
@@ -30,23 +30,23 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     * The set of accepted encryption algorithms that are allowed in a code signing job.
      * </p>
      */
     private java.util.List<String> allowedValues;
     /**
      * <p>
-     * The default encryption algorithm that is used by an AWS Signer job.
+     * The default encryption algorithm that is used by a code signing job.
      * </p>
      */
     private String defaultValue;
 
     /**
      * <p>
-     * The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     * The set of accepted encryption algorithms that are allowed in a code signing job.
      * </p>
      * 
-     * @return The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     * @return The set of accepted encryption algorithms that are allowed in a code signing job.
      * @see EncryptionAlgorithm
      */
 
@@ -56,11 +56,11 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     * The set of accepted encryption algorithms that are allowed in a code signing job.
      * </p>
      * 
      * @param allowedValues
-     *        The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     *        The set of accepted encryption algorithms that are allowed in a code signing job.
      * @see EncryptionAlgorithm
      */
 
@@ -75,7 +75,7 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     * The set of accepted encryption algorithms that are allowed in a code signing job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param allowedValues
-     *        The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     *        The set of accepted encryption algorithms that are allowed in a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithm
      */
@@ -101,11 +101,11 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     * The set of accepted encryption algorithms that are allowed in a code signing job.
      * </p>
      * 
      * @param allowedValues
-     *        The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     *        The set of accepted encryption algorithms that are allowed in a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithm
      */
@@ -117,11 +117,11 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     * The set of accepted encryption algorithms that are allowed in a code signing job.
      * </p>
      * 
      * @param allowedValues
-     *        The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+     *        The set of accepted encryption algorithms that are allowed in a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithm
      */
@@ -141,11 +141,11 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default encryption algorithm that is used by an AWS Signer job.
+     * The default encryption algorithm that is used by a code signing job.
      * </p>
      * 
      * @param defaultValue
-     *        The default encryption algorithm that is used by an AWS Signer job.
+     *        The default encryption algorithm that is used by a code signing job.
      * @see EncryptionAlgorithm
      */
 
@@ -155,10 +155,10 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default encryption algorithm that is used by an AWS Signer job.
+     * The default encryption algorithm that is used by a code signing job.
      * </p>
      * 
-     * @return The default encryption algorithm that is used by an AWS Signer job.
+     * @return The default encryption algorithm that is used by a code signing job.
      * @see EncryptionAlgorithm
      */
 
@@ -168,11 +168,11 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default encryption algorithm that is used by an AWS Signer job.
+     * The default encryption algorithm that is used by a code signing job.
      * </p>
      * 
      * @param defaultValue
-     *        The default encryption algorithm that is used by an AWS Signer job.
+     *        The default encryption algorithm that is used by a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithm
      */
@@ -184,11 +184,11 @@ public class EncryptionAlgorithmOptions implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default encryption algorithm that is used by an AWS Signer job.
+     * The default encryption algorithm that is used by a code signing job.
      * </p>
      * 
      * @param defaultValue
-     *        The default encryption algorithm that is used by an AWS Signer job.
+     *        The default encryption algorithm that is used by a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithm
      */

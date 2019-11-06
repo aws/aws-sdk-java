@@ -28,13 +28,14 @@ import com.amazonaws.services.signer.waiters.AWSsignerWaiters;
  * </p>
  * <p>
  * <p>
- * You can use Code Signing for Amazon FreeRTOS (AWS Signer) to sign code that you created for any of the IoT devices
- * that Amazon Web Services supports. AWS Signer is integrated with Amazon FreeRTOS, AWS Certificate Manager, and AWS
- * CloudTrail. Amazon FreeRTOS customers can use AWS Signer to sign code images before making them available for
- * microcontrollers. You can use ACM to import third-party certificates to be used by AWS Signer. For general
- * information about using AWS Signer, see the <a
- * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for Amazon FreeRTOS
- * Developer Guide</a>.
+ * With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web
+ * Services (AWS). Code signing is available through <a
+ * href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
+ * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and integrated with <a
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
+ * import a third-party code signing certificate with ACM that is used to sign updates in Amazon FreeRTOS and AWS IoT
+ * Device Management. For general information about using code signing, see the <a
+ * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for IoT Developer Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -134,10 +135,10 @@ public interface AWSsigner {
     /**
      * <p>
      * Lists all your signing jobs. You can use the <code>maxResults</code> parameter to limit the number of signing
-     * jobs that are returned in the response. If additional jobs remain to be listed, AWS Signer returns a
+     * jobs that are returned in the response. If additional jobs remain to be listed, code signing returns a
      * <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the
      * remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
-     * parameter and with new values that AWS Signer returns in the <code>nextToken</code> parameter until all of your
+     * parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your
      * signing jobs have been returned.
      * </p>
      * 
@@ -159,10 +160,10 @@ public interface AWSsigner {
 
     /**
      * <p>
-     * Lists all signing platforms available in AWS Signer that match the request parameters. If additional jobs remain
-     * to be listed, AWS Signer returns a <code>nextToken</code> value. Use this value in subsequent calls to
+     * Lists all signing platforms available in code signing that match the request parameters. If additional jobs
+     * remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to
      * <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-     * with your <code>maxResults</code> parameter and with new values that AWS Signer returns in the
+     * with your <code>maxResults</code> parameter and with new values that code signing returns in the
      * <code>nextToken</code> parameter until all of your signing jobs have been returned.
      * </p>
      * 
@@ -186,9 +187,9 @@ public interface AWSsigner {
      * <p>
      * Lists all available signing profiles in your AWS account. Returns only profiles with an <code>ACTIVE</code>
      * status unless the <code>includeCanceled</code> request field is set to <code>true</code>. If additional jobs
-     * remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this value in subsequent calls to
+     * remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to
      * <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-     * with your <code>maxResults</code> parameter and with new values that AWS Signer returns in the
+     * with your <code>maxResults</code> parameter and with new values that code signing returns in the
      * <code>nextToken</code> parameter until all of your signing jobs have been returned.
      * </p>
      * 
@@ -208,7 +209,27 @@ public interface AWSsigner {
 
     /**
      * <p>
-     * Creates a signing profile. A signing profile is an AWS Signer template that can be used to carry out a
+     * Returns a list of the tags associated with a signing profile resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @throws BadRequestException
+     *         The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a
+     *         tagging API on a cancelled signing profile.
+     * @throws NotFoundException
+     *         The signing profile was not found.
+     * @sample AWSsigner.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Creates a signing profile. A signing profile is a code signing template that can be used to carry out a
      * pre-defined signing job. For more information, see <a
      * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html"
      * >http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
@@ -252,7 +273,7 @@ public interface AWSsigner {
      * </li>
      * <li>
      * <p>
-     * You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket to write your signed code.
+     * You must create an S3 destination bucket. Code signing uses your S3 destination bucket to write your signed code.
      * </p>
      * </li>
      * <li>
@@ -263,7 +284,7 @@ public interface AWSsigner {
      * </li>
      * <li>
      * <p>
-     * You must also specify a request token that identifies your request to AWS Signer.
+     * You must also specify a request token that identifies your request to code signing.
      * </p>
      * </li>
      * </ul>
@@ -293,6 +314,48 @@ public interface AWSsigner {
      *      Documentation</a>
      */
     StartSigningJobResult startSigningJob(StartSigningJobRequest startSigningJobRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to a signing profile. Tags are labels that you can use to identify and organize your AWS
+     * resources. Each tag consists of a key and an optional value. You specify the signing profile using its Amazon
+     * Resource Name (ARN). You specify the tag by using a key-value pair.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @throws BadRequestException
+     *         The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a
+     *         tagging API on a cancelled signing profile.
+     * @throws NotFoundException
+     *         The signing profile was not found.
+     * @sample AWSsigner.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Remove one or more tags from a signing profile. Specify a list of tag keys to remove the tags.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @throws BadRequestException
+     *         The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a
+     *         tagging API on a cancelled signing profile.
+     * @throws NotFoundException
+     *         The signing profile was not found.
+     * @sample AWSsigner.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

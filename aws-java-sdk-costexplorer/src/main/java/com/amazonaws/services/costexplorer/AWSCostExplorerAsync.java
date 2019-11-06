@@ -482,6 +482,222 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
+     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. For any
+     * time period, you can filter data for Savings Plans usage with the following dimensions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LINKED_ACCOUNT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE_FAMILY</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.
+     * </p>
+     * 
+     * @param getSavingsPlansCoverageRequest
+     * @return A Java Future containing the result of the GetSavingsPlansCoverage operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetSavingsPlansCoverage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlansCoverageResult> getSavingsPlansCoverageAsync(GetSavingsPlansCoverageRequest getSavingsPlansCoverageRequest);
+
+    /**
+     * <p>
+     * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
+     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. For any
+     * time period, you can filter data for Savings Plans usage with the following dimensions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LINKED_ACCOUNT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE_FAMILY</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.
+     * </p>
+     * 
+     * @param getSavingsPlansCoverageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSavingsPlansCoverage operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetSavingsPlansCoverage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlansCoverageResult> getSavingsPlansCoverageAsync(GetSavingsPlansCoverageRequest getSavingsPlansCoverageRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSavingsPlansCoverageRequest, GetSavingsPlansCoverageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * </p>
+     * 
+     * @param getSavingsPlansPurchaseRecommendationRequest
+     * @return A Java Future containing the result of the GetSavingsPlansPurchaseRecommendation operation returned by
+     *         the service.
+     * @sample AWSCostExplorerAsync.GetSavingsPlansPurchaseRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlansPurchaseRecommendationResult> getSavingsPlansPurchaseRecommendationAsync(
+            GetSavingsPlansPurchaseRecommendationRequest getSavingsPlansPurchaseRecommendationRequest);
+
+    /**
+     * <p>
+     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * </p>
+     * 
+     * @param getSavingsPlansPurchaseRecommendationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSavingsPlansPurchaseRecommendation operation returned by
+     *         the service.
+     * @sample AWSCostExplorerAsyncHandler.GetSavingsPlansPurchaseRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlansPurchaseRecommendationResult> getSavingsPlansPurchaseRecommendationAsync(
+            GetSavingsPlansPurchaseRecommendationRequest getSavingsPlansPurchaseRecommendationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSavingsPlansPurchaseRecommendationRequest, GetSavingsPlansPurchaseRecommendationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
+     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to
+     * determine the possible dimension values.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+     * </p>
+     * </note>
+     * 
+     * @param getSavingsPlansUtilizationRequest
+     * @return A Java Future containing the result of the GetSavingsPlansUtilization operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetSavingsPlansUtilization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlansUtilizationResult> getSavingsPlansUtilizationAsync(
+            GetSavingsPlansUtilizationRequest getSavingsPlansUtilizationRequest);
+
+    /**
+     * <p>
+     * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
+     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to
+     * determine the possible dimension values.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+     * </p>
+     * </note>
+     * 
+     * @param getSavingsPlansUtilizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSavingsPlansUtilization operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetSavingsPlansUtilization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlansUtilizationResult> getSavingsPlansUtilizationAsync(
+            GetSavingsPlansUtilizationRequest getSavingsPlansUtilizationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSavingsPlansUtilizationRequest, GetSavingsPlansUtilizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a single daily or monthly Savings Plans utilization rate and details for your account. Master accounts
+     * in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the
+     * possible dimension values.
+     * </p>
+     * <note>
+     * <p>
+     * You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+     * </p>
+     * </note>
+     * 
+     * @param getSavingsPlansUtilizationDetailsRequest
+     * @return A Java Future containing the result of the GetSavingsPlansUtilizationDetails operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.GetSavingsPlansUtilizationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlansUtilizationDetailsResult> getSavingsPlansUtilizationDetailsAsync(
+            GetSavingsPlansUtilizationDetailsRequest getSavingsPlansUtilizationDetailsRequest);
+
+    /**
+     * <p>
+     * Retrieves a single daily or monthly Savings Plans utilization rate and details for your account. Master accounts
+     * in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the
+     * possible dimension values.
+     * </p>
+     * <note>
+     * <p>
+     * You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+     * </p>
+     * </note>
+     * 
+     * @param getSavingsPlansUtilizationDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSavingsPlansUtilizationDetails operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.GetSavingsPlansUtilizationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlansUtilizationDetailsResult> getSavingsPlansUtilizationDetailsAsync(
+            GetSavingsPlansUtilizationDetailsRequest getSavingsPlansUtilizationDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSavingsPlansUtilizationDetailsRequest, GetSavingsPlansUtilizationDetailsResult> asyncHandler);
+
+    /**
+     * <p>
      * Queries for available tag keys and tag values for a specified period. You can search the tag values for an
      * arbitrary string.
      * </p>

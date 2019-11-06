@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Any overrides that are applied to the signing configuration of an AWS Signer platform.
+ * Any overrides that are applied to the signing configuration of a code signing platform.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningPlatformOverrides" target="_top">AWS
@@ -28,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SigningPlatformOverrides implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A signing configuration that overrides the default encryption or hash algorithm of a signing job.
+     * </p>
+     */
     private SigningConfigurationOverrides signingConfiguration;
 
     /**
+     * <p>
+     * A signing configuration that overrides the default encryption or hash algorithm of a signing job.
+     * </p>
+     * 
      * @param signingConfiguration
+     *        A signing configuration that overrides the default encryption or hash algorithm of a signing job.
      */
 
     public void setSigningConfiguration(SigningConfigurationOverrides signingConfiguration) {
@@ -39,7 +49,11 @@ public class SigningPlatformOverrides implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * A signing configuration that overrides the default encryption or hash algorithm of a signing job.
+     * </p>
+     * 
+     * @return A signing configuration that overrides the default encryption or hash algorithm of a signing job.
      */
 
     public SigningConfigurationOverrides getSigningConfiguration() {
@@ -47,7 +61,12 @@ public class SigningPlatformOverrides implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * A signing configuration that overrides the default encryption or hash algorithm of a signing job.
+     * </p>
+     * 
      * @param signingConfiguration
+     *        A signing configuration that overrides the default encryption or hash algorithm of a signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

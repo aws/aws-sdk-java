@@ -303,6 +303,120 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
+     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. For any
+     * time period, you can filter data for Savings Plans usage with the following dimensions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LINKED_ACCOUNT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REGION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE_FAMILY</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.
+     * </p>
+     * 
+     * @param getSavingsPlansCoverageRequest
+     * @return Result of the GetSavingsPlansCoverage operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetSavingsPlansCoverage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSavingsPlansCoverageResult getSavingsPlansCoverage(GetSavingsPlansCoverageRequest getSavingsPlansCoverageRequest);
+
+    /**
+     * <p>
+     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * </p>
+     * 
+     * @param getSavingsPlansPurchaseRecommendationRequest
+     * @return Result of the GetSavingsPlansPurchaseRecommendation operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetSavingsPlansPurchaseRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSavingsPlansPurchaseRecommendationResult getSavingsPlansPurchaseRecommendation(
+            GetSavingsPlansPurchaseRecommendationRequest getSavingsPlansPurchaseRecommendationRequest);
+
+    /**
+     * <p>
+     * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
+     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to
+     * determine the possible dimension values.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+     * </p>
+     * </note>
+     * 
+     * @param getSavingsPlansUtilizationRequest
+     * @return Result of the GetSavingsPlansUtilization operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetSavingsPlansUtilization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetSavingsPlansUtilizationResult getSavingsPlansUtilization(GetSavingsPlansUtilizationRequest getSavingsPlansUtilizationRequest);
+
+    /**
+     * <p>
+     * Retrieves a single daily or monthly Savings Plans utilization rate and details for your account. Master accounts
+     * in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the
+     * possible dimension values.
+     * </p>
+     * <note>
+     * <p>
+     * You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+     * </p>
+     * </note>
+     * 
+     * @param getSavingsPlansUtilizationDetailsRequest
+     * @return Result of the GetSavingsPlansUtilizationDetails operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetSavingsPlansUtilizationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSavingsPlansUtilizationDetailsResult getSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest getSavingsPlansUtilizationDetailsRequest);
+
+    /**
+     * <p>
      * Queries for available tag keys and tag values for a specified period. You can search the tag values for an
      * arbitrary string.
      * </p>

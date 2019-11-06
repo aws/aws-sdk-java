@@ -32,6 +32,8 @@ public class BuildMarshaller {
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<Long> BUILDNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("buildNumber").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -80,6 +82,8 @@ public class BuildMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterface").build();
     private static final MarshallingInfo<String> ENCRYPTIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionKey").build();
+    private static final MarshallingInfo<List> EXPORTEDENVIRONMENTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportedEnvironmentVariables").build();
 
     private static final BuildMarshaller instance = new BuildMarshaller();
 
@@ -99,6 +103,7 @@ public class BuildMarshaller {
         try {
             protocolMarshaller.marshall(build.getId(), ID_BINDING);
             protocolMarshaller.marshall(build.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(build.getBuildNumber(), BUILDNUMBER_BINDING);
             protocolMarshaller.marshall(build.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(build.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(build.getCurrentPhase(), CURRENTPHASE_BINDING);
@@ -123,6 +128,7 @@ public class BuildMarshaller {
             protocolMarshaller.marshall(build.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(build.getNetworkInterface(), NETWORKINTERFACE_BINDING);
             protocolMarshaller.marshall(build.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
+            protocolMarshaller.marshall(build.getExportedEnvironmentVariables(), EXPORTEDENVIRONMENTVARIABLES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

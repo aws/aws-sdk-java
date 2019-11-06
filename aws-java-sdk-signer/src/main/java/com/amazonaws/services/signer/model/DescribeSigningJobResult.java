@@ -98,7 +98,7 @@ public class DescribeSigningJobResult extends com.amazonaws.AmazonWebServiceResu
     private String statusReason;
     /**
      * <p>
-     * Name of the S3 bucket where the signed code image is saved by AWS Signer.
+     * Name of the S3 bucket where the signed code image is saved by code signing.
      * </p>
      */
     private SignedObject signedObject;
@@ -631,11 +631,11 @@ public class DescribeSigningJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Name of the S3 bucket where the signed code image is saved by AWS Signer.
+     * Name of the S3 bucket where the signed code image is saved by code signing.
      * </p>
      * 
      * @param signedObject
-     *        Name of the S3 bucket where the signed code image is saved by AWS Signer.
+     *        Name of the S3 bucket where the signed code image is saved by code signing.
      */
 
     public void setSignedObject(SignedObject signedObject) {
@@ -644,10 +644,10 @@ public class DescribeSigningJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Name of the S3 bucket where the signed code image is saved by AWS Signer.
+     * Name of the S3 bucket where the signed code image is saved by code signing.
      * </p>
      * 
-     * @return Name of the S3 bucket where the signed code image is saved by AWS Signer.
+     * @return Name of the S3 bucket where the signed code image is saved by code signing.
      */
 
     public SignedObject getSignedObject() {
@@ -656,11 +656,11 @@ public class DescribeSigningJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Name of the S3 bucket where the signed code image is saved by AWS Signer.
+     * Name of the S3 bucket where the signed code image is saved by code signing.
      * </p>
      * 
      * @param signedObject
-     *        Name of the S3 bucket where the signed code image is saved by AWS Signer.
+     *        Name of the S3 bucket where the signed code image is saved by code signing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

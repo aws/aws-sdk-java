@@ -21053,6 +21053,9 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
+        "name" : "AFTER_7_DAYS",
+        "value" : "AFTER_7_DAYS"
+      }, {
         "name" : "AFTER_14_DAYS",
         "value" : "AFTER_14_DAYS"
       }, {

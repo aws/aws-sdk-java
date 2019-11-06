@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum EnvironmentVariableType {
 
     PLAINTEXT("PLAINTEXT"),
-    PARAMETER_STORE("PARAMETER_STORE");
+    PARAMETER_STORE("PARAMETER_STORE"),
+    SECRETS_MANAGER("SECRETS_MANAGER");
 
     private String value;
 

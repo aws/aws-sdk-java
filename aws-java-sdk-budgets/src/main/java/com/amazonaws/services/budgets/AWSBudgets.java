@@ -191,6 +191,8 @@ public interface AWSBudgets {
      *         You've exceeded the notification or subscriber limit.
      * @throws DuplicateRecordException
      *         The budget name already exists. Budget names must be unique within an account.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.CreateBudget
      */
     CreateBudgetResult createBudget(CreateBudgetRequest createBudgetRequest);
@@ -213,6 +215,8 @@ public interface AWSBudgets {
      *         You've exceeded the notification or subscriber limit.
      * @throws DuplicateRecordException
      *         The budget name already exists. Budget names must be unique within an account.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.CreateNotification
      */
     CreateNotificationResult createNotification(CreateNotificationRequest createNotificationRequest);
@@ -235,6 +239,8 @@ public interface AWSBudgets {
      *         The budget name already exists. Budget names must be unique within an account.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.CreateSubscriber
      */
     CreateSubscriberResult createSubscriber(CreateSubscriberRequest createSubscriberRequest);
@@ -258,6 +264,8 @@ public interface AWSBudgets {
      *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DeleteBudget
      */
     DeleteBudgetResult deleteBudget(DeleteBudgetRequest deleteBudgetRequest);
@@ -281,6 +289,8 @@ public interface AWSBudgets {
      *         An error on the server occurred during the processing of your request. Try again later.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DeleteNotification
      */
     DeleteNotificationResult deleteNotification(DeleteNotificationRequest deleteNotificationRequest);
@@ -304,6 +314,8 @@ public interface AWSBudgets {
      *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DeleteSubscriber
      */
     DeleteSubscriberResult deleteSubscriber(DeleteSubscriberRequest deleteSubscriberRequest);
@@ -330,6 +342,8 @@ public interface AWSBudgets {
      *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeBudget
      */
     DescribeBudgetResult describeBudget(DescribeBudgetRequest describeBudgetRequest);
@@ -352,6 +366,8 @@ public interface AWSBudgets {
      *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
      *         The pagination token expired.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeBudgetPerformanceHistory
      */
     DescribeBudgetPerformanceHistoryResult describeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest describeBudgetPerformanceHistoryRequest);
@@ -382,6 +398,8 @@ public interface AWSBudgets {
      *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
      *         The pagination token expired.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeBudgets
      */
     DescribeBudgetsResult describeBudgets(DescribeBudgetsRequest describeBudgetsRequest);
@@ -404,6 +422,8 @@ public interface AWSBudgets {
      *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
      *         The pagination token expired.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeNotificationsForBudget
      */
     DescribeNotificationsForBudgetResult describeNotificationsForBudget(DescribeNotificationsForBudgetRequest describeNotificationsForBudgetRequest);
@@ -426,6 +446,8 @@ public interface AWSBudgets {
      *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
      *         The pagination token expired.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.DescribeSubscribersForNotification
      */
     DescribeSubscribersForNotificationResult describeSubscribersForNotification(
@@ -456,6 +478,8 @@ public interface AWSBudgets {
      *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
      *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.UpdateBudget
      */
     UpdateBudgetResult updateBudget(UpdateBudgetRequest updateBudgetRequest);
@@ -476,6 +500,8 @@ public interface AWSBudgets {
      *         We can’t locate the resource that you specified.
      * @throws DuplicateRecordException
      *         The budget name already exists. Budget names must be unique within an account.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.UpdateNotification
      */
     UpdateNotificationResult updateNotification(UpdateNotificationRequest updateNotificationRequest);
@@ -496,6 +522,8 @@ public interface AWSBudgets {
      *         We can’t locate the resource that you specified.
      * @throws DuplicateRecordException
      *         The budget name already exists. Budget names must be unique within an account.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
      * @sample AWSBudgets.UpdateSubscriber
      */
     UpdateSubscriberResult updateSubscriber(UpdateSubscriberRequest updateSubscriberRequest);

@@ -13,13 +13,14 @@
 
 /**
  * <p>
- * You can use Code Signing for Amazon FreeRTOS (AWS Signer) to sign code that you created for any of the IoT devices
- * that Amazon Web Services supports. AWS Signer is integrated with Amazon FreeRTOS, AWS Certificate Manager, and AWS
- * CloudTrail. Amazon FreeRTOS customers can use AWS Signer to sign code images before making them available for
- * microcontrollers. You can use ACM to import third-party certificates to be used by AWS Signer. For general
- * information about using AWS Signer, see the <a
- * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for Amazon FreeRTOS
- * Developer Guide</a>.
+ * With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web
+ * Services (AWS). Code signing is available through <a
+ * href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
+ * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and integrated with <a
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
+ * import a third-party code signing certificate with ACM that is used to sign updates in Amazon FreeRTOS and AWS IoT
+ * Device Management. For general information about using code signing, see the <a
+ * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for IoT Developer Guide</a>.
  * </p>
  */
 package com.amazonaws.services.signer;

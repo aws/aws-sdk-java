@@ -134,7 +134,7 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     /**
      * <p>
      * How much AWS estimates that you would have spent for all usage during the specified historical period if you had
-     * had a reservation.
+     * a reservation.
      * </p>
      */
     private String estimatedReservationCostForLookbackPeriod;
@@ -839,12 +839,12 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     /**
      * <p>
      * How much AWS estimates that you would have spent for all usage during the specified historical period if you had
-     * had a reservation.
+     * a reservation.
      * </p>
      * 
      * @param estimatedReservationCostForLookbackPeriod
      *        How much AWS estimates that you would have spent for all usage during the specified historical period if
-     *        you had had a reservation.
+     *        you had a reservation.
      */
 
     public void setEstimatedReservationCostForLookbackPeriod(String estimatedReservationCostForLookbackPeriod) {
@@ -854,11 +854,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     /**
      * <p>
      * How much AWS estimates that you would have spent for all usage during the specified historical period if you had
-     * had a reservation.
+     * a reservation.
      * </p>
      * 
      * @return How much AWS estimates that you would have spent for all usage during the specified historical period if
-     *         you had had a reservation.
+     *         you had a reservation.
      */
 
     public String getEstimatedReservationCostForLookbackPeriod() {
@@ -868,12 +868,12 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     /**
      * <p>
      * How much AWS estimates that you would have spent for all usage during the specified historical period if you had
-     * had a reservation.
+     * a reservation.
      * </p>
      * 
      * @param estimatedReservationCostForLookbackPeriod
      *        How much AWS estimates that you would have spent for all usage during the specified historical period if
-     *        you had had a reservation.
+     *        you had a reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

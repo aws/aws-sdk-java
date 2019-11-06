@@ -315,6 +315,142 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetSavingsPlansCoverageResult> getSavingsPlansCoverageAsync(GetSavingsPlansCoverageRequest request) {
+
+        return getSavingsPlansCoverageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavingsPlansCoverageResult> getSavingsPlansCoverageAsync(final GetSavingsPlansCoverageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSavingsPlansCoverageRequest, GetSavingsPlansCoverageResult> asyncHandler) {
+        final GetSavingsPlansCoverageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSavingsPlansCoverageResult>() {
+            @Override
+            public GetSavingsPlansCoverageResult call() throws Exception {
+                GetSavingsPlansCoverageResult result = null;
+
+                try {
+                    result = executeGetSavingsPlansCoverage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavingsPlansPurchaseRecommendationResult> getSavingsPlansPurchaseRecommendationAsync(
+            GetSavingsPlansPurchaseRecommendationRequest request) {
+
+        return getSavingsPlansPurchaseRecommendationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavingsPlansPurchaseRecommendationResult> getSavingsPlansPurchaseRecommendationAsync(
+            final GetSavingsPlansPurchaseRecommendationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSavingsPlansPurchaseRecommendationRequest, GetSavingsPlansPurchaseRecommendationResult> asyncHandler) {
+        final GetSavingsPlansPurchaseRecommendationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSavingsPlansPurchaseRecommendationResult>() {
+            @Override
+            public GetSavingsPlansPurchaseRecommendationResult call() throws Exception {
+                GetSavingsPlansPurchaseRecommendationResult result = null;
+
+                try {
+                    result = executeGetSavingsPlansPurchaseRecommendation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavingsPlansUtilizationResult> getSavingsPlansUtilizationAsync(GetSavingsPlansUtilizationRequest request) {
+
+        return getSavingsPlansUtilizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavingsPlansUtilizationResult> getSavingsPlansUtilizationAsync(final GetSavingsPlansUtilizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSavingsPlansUtilizationRequest, GetSavingsPlansUtilizationResult> asyncHandler) {
+        final GetSavingsPlansUtilizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSavingsPlansUtilizationResult>() {
+            @Override
+            public GetSavingsPlansUtilizationResult call() throws Exception {
+                GetSavingsPlansUtilizationResult result = null;
+
+                try {
+                    result = executeGetSavingsPlansUtilization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavingsPlansUtilizationDetailsResult> getSavingsPlansUtilizationDetailsAsync(
+            GetSavingsPlansUtilizationDetailsRequest request) {
+
+        return getSavingsPlansUtilizationDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavingsPlansUtilizationDetailsResult> getSavingsPlansUtilizationDetailsAsync(
+            final GetSavingsPlansUtilizationDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSavingsPlansUtilizationDetailsRequest, GetSavingsPlansUtilizationDetailsResult> asyncHandler) {
+        final GetSavingsPlansUtilizationDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSavingsPlansUtilizationDetailsResult>() {
+            @Override
+            public GetSavingsPlansUtilizationDetailsResult call() throws Exception {
+                GetSavingsPlansUtilizationDetailsResult result = null;
+
+                try {
+                    result = executeGetSavingsPlansUtilizationDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest request) {
 
         return getTagsAsync(request, null);

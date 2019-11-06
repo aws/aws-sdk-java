@@ -56,6 +56,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("buildNumber", targetDepth)) {
+                    context.nextToken();
+                    build.setBuildNumber(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
                     build.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -152,6 +156,11 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                 if (context.testExpression("encryptionKey", targetDepth)) {
                     context.nextToken();
                     build.setEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("exportedEnvironmentVariables", targetDepth)) {
+                    context.nextToken();
+                    build.setExportedEnvironmentVariables(new ListUnmarshaller<ExportedEnvironmentVariable>(ExportedEnvironmentVariableJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

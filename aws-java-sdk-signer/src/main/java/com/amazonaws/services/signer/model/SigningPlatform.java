@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the signing configurations and parameters that is used to perform an AWS Signer job.
+ * Contains information about the signing configurations and parameters that is used to perform a code signing job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningPlatform" target="_top">AWS API
@@ -30,61 +30,57 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of an AWS Signer platform.
+     * The ID of a code signing; platform.
      * </p>
      */
     private String platformId;
     /**
      * <p>
-     * The display name of an AWS Signer platform.
+     * The display name of a code signing platform.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * Any partner entities linked to an AWS Signer platform.
+     * Any partner entities linked to a code signing platform.
      * </p>
      */
     private String partner;
     /**
      * <p>
-     * The types of targets that can be signed by an AWS Signer platform.
+     * The types of targets that can be signed by a code signing platform.
      * </p>
      */
     private String target;
     /**
      * <p>
-     * The category of an AWS Signer platform.
+     * The category of a code signing platform.
      * </p>
      */
     private String category;
     /**
      * <p>
-     * The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm
-     * of a signing platform.
+     * The configuration of a code signing platform. This includes the designated hash algorithm and encryption
+     * algorithm of a signing platform.
      * </p>
      */
     private SigningConfiguration signingConfiguration;
-    /**
-     * <p>
-     * The signing image format that is used by an AWS Signer platform.
-     * </p>
-     */
+
     private SigningImageFormat signingImageFormat;
     /**
      * <p>
-     * The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+     * The maximum size (in MB) of code that can be signed by a code signing platform.
      * </p>
      */
     private Integer maxSizeInMB;
 
     /**
      * <p>
-     * The ID of an AWS Signer platform.
+     * The ID of a code signing; platform.
      * </p>
      * 
      * @param platformId
-     *        The ID of an AWS Signer platform.
+     *        The ID of a code signing; platform.
      */
 
     public void setPlatformId(String platformId) {
@@ -93,10 +89,10 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of an AWS Signer platform.
+     * The ID of a code signing; platform.
      * </p>
      * 
-     * @return The ID of an AWS Signer platform.
+     * @return The ID of a code signing; platform.
      */
 
     public String getPlatformId() {
@@ -105,11 +101,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of an AWS Signer platform.
+     * The ID of a code signing; platform.
      * </p>
      * 
      * @param platformId
-     *        The ID of an AWS Signer platform.
+     *        The ID of a code signing; platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +116,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The display name of an AWS Signer platform.
+     * The display name of a code signing platform.
      * </p>
      * 
      * @param displayName
-     *        The display name of an AWS Signer platform.
+     *        The display name of a code signing platform.
      */
 
     public void setDisplayName(String displayName) {
@@ -133,10 +129,10 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The display name of an AWS Signer platform.
+     * The display name of a code signing platform.
      * </p>
      * 
-     * @return The display name of an AWS Signer platform.
+     * @return The display name of a code signing platform.
      */
 
     public String getDisplayName() {
@@ -145,11 +141,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The display name of an AWS Signer platform.
+     * The display name of a code signing platform.
      * </p>
      * 
      * @param displayName
-     *        The display name of an AWS Signer platform.
+     *        The display name of a code signing platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +156,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Any partner entities linked to an AWS Signer platform.
+     * Any partner entities linked to a code signing platform.
      * </p>
      * 
      * @param partner
-     *        Any partner entities linked to an AWS Signer platform.
+     *        Any partner entities linked to a code signing platform.
      */
 
     public void setPartner(String partner) {
@@ -173,10 +169,10 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Any partner entities linked to an AWS Signer platform.
+     * Any partner entities linked to a code signing platform.
      * </p>
      * 
-     * @return Any partner entities linked to an AWS Signer platform.
+     * @return Any partner entities linked to a code signing platform.
      */
 
     public String getPartner() {
@@ -185,11 +181,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Any partner entities linked to an AWS Signer platform.
+     * Any partner entities linked to a code signing platform.
      * </p>
      * 
      * @param partner
-     *        Any partner entities linked to an AWS Signer platform.
+     *        Any partner entities linked to a code signing platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +196,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The types of targets that can be signed by an AWS Signer platform.
+     * The types of targets that can be signed by a code signing platform.
      * </p>
      * 
      * @param target
-     *        The types of targets that can be signed by an AWS Signer platform.
+     *        The types of targets that can be signed by a code signing platform.
      */
 
     public void setTarget(String target) {
@@ -213,10 +209,10 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The types of targets that can be signed by an AWS Signer platform.
+     * The types of targets that can be signed by a code signing platform.
      * </p>
      * 
-     * @return The types of targets that can be signed by an AWS Signer platform.
+     * @return The types of targets that can be signed by a code signing platform.
      */
 
     public String getTarget() {
@@ -225,11 +221,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The types of targets that can be signed by an AWS Signer platform.
+     * The types of targets that can be signed by a code signing platform.
      * </p>
      * 
      * @param target
-     *        The types of targets that can be signed by an AWS Signer platform.
+     *        The types of targets that can be signed by a code signing platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +236,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The category of an AWS Signer platform.
+     * The category of a code signing platform.
      * </p>
      * 
      * @param category
-     *        The category of an AWS Signer platform.
+     *        The category of a code signing platform.
      * @see Category
      */
 
@@ -254,10 +250,10 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The category of an AWS Signer platform.
+     * The category of a code signing platform.
      * </p>
      * 
-     * @return The category of an AWS Signer platform.
+     * @return The category of a code signing platform.
      * @see Category
      */
 
@@ -267,11 +263,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The category of an AWS Signer platform.
+     * The category of a code signing platform.
      * </p>
      * 
      * @param category
-     *        The category of an AWS Signer platform.
+     *        The category of a code signing platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Category
      */
@@ -283,11 +279,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The category of an AWS Signer platform.
+     * The category of a code signing platform.
      * </p>
      * 
      * @param category
-     *        The category of an AWS Signer platform.
+     *        The category of a code signing platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Category
      */
@@ -299,12 +295,12 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm
-     * of a signing platform.
+     * The configuration of a code signing platform. This includes the designated hash algorithm and encryption
+     * algorithm of a signing platform.
      * </p>
      * 
      * @param signingConfiguration
-     *        The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption
+     *        The configuration of a code signing platform. This includes the designated hash algorithm and encryption
      *        algorithm of a signing platform.
      */
 
@@ -314,11 +310,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm
-     * of a signing platform.
+     * The configuration of a code signing platform. This includes the designated hash algorithm and encryption
+     * algorithm of a signing platform.
      * </p>
      * 
-     * @return The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption
+     * @return The configuration of a code signing platform. This includes the designated hash algorithm and encryption
      *         algorithm of a signing platform.
      */
 
@@ -328,12 +324,12 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm
-     * of a signing platform.
+     * The configuration of a code signing platform. This includes the designated hash algorithm and encryption
+     * algorithm of a signing platform.
      * </p>
      * 
      * @param signingConfiguration
-     *        The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption
+     *        The configuration of a code signing platform. This includes the designated hash algorithm and encryption
      *        algorithm of a signing platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -344,12 +340,7 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The signing image format that is used by an AWS Signer platform.
-     * </p>
-     * 
      * @param signingImageFormat
-     *        The signing image format that is used by an AWS Signer platform.
      */
 
     public void setSigningImageFormat(SigningImageFormat signingImageFormat) {
@@ -357,11 +348,7 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The signing image format that is used by an AWS Signer platform.
-     * </p>
-     * 
-     * @return The signing image format that is used by an AWS Signer platform.
+     * @return
      */
 
     public SigningImageFormat getSigningImageFormat() {
@@ -369,12 +356,7 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The signing image format that is used by an AWS Signer platform.
-     * </p>
-     * 
      * @param signingImageFormat
-     *        The signing image format that is used by an AWS Signer platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,11 +367,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+     * The maximum size (in MB) of code that can be signed by a code signing platform.
      * </p>
      * 
      * @param maxSizeInMB
-     *        The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+     *        The maximum size (in MB) of code that can be signed by a code signing platform.
      */
 
     public void setMaxSizeInMB(Integer maxSizeInMB) {
@@ -398,10 +380,10 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+     * The maximum size (in MB) of code that can be signed by a code signing platform.
      * </p>
      * 
-     * @return The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+     * @return The maximum size (in MB) of code that can be signed by a code signing platform.
      */
 
     public Integer getMaxSizeInMB() {
@@ -410,11 +392,11 @@ public class SigningPlatform implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+     * The maximum size (in MB) of code that can be signed by a code signing platform.
      * </p>
      * 
      * @param maxSizeInMB
-     *        The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+     *        The maximum size (in MB) of code that can be signed by a code signing platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

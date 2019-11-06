@@ -39,6 +39,8 @@ public class PutSigningProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("overrides").build();
     private static final MarshallingInfo<Map> SIGNINGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signingParameters").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final PutSigningProfileRequestMarshaller instance = new PutSigningProfileRequestMarshaller();
 
@@ -61,6 +63,7 @@ public class PutSigningProfileRequestMarshaller {
             protocolMarshaller.marshall(putSigningProfileRequest.getPlatformId(), PLATFORMID_BINDING);
             protocolMarshaller.marshall(putSigningProfileRequest.getOverrides(), OVERRIDES_BINDING);
             protocolMarshaller.marshall(putSigningProfileRequest.getSigningParameters(), SIGNINGPARAMETERS_BINDING);
+            protocolMarshaller.marshall(putSigningProfileRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
