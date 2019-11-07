@@ -1,3 +1,8 @@
+# __1.11.669__ __2019-11-06__
+## __AWS Savings Plans__
+  - ### Features
+    - This is the first release of Savings Plans, a new flexible pricing model that offers low prices on Amazon EC2 and AWS Fargate usage.
+
 # __1.11.668__ __2019-11-06__
 ## __AWS Budgets__
   - ### Features
