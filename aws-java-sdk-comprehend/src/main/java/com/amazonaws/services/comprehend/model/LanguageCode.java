@@ -25,7 +25,13 @@ public enum LanguageCode {
     Fr("fr"),
     De("de"),
     It("it"),
-    Pt("pt");
+    Pt("pt"),
+    Ar("ar"),
+    Hi("hi"),
+    Ja("ja"),
+    Ko("ko"),
+    Zh("zh"),
+    ZhTW("zh-TW");
 
     private String value;
 

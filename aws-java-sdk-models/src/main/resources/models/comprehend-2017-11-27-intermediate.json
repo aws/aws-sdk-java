@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -35013,11 +35013,11 @@
         "c2jName" : "NumberOfTrainMentions",
         "c2jShape" : "Integer",
         "deprecated" : false,
-        "documentation" : "<p>indicates the number of times the given entity name was seen in the training data. </p>",
+        "documentation" : "<p>Indicates the number of times the given entity type was seen in the training data. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>indicates the number of times the given entity name was seen in the training data. </p>\n@param numberOfTrainMentions indicates the number of times the given entity name was seen in the training data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Indicates the number of times the given entity type was seen in the training data. </p>\n@param numberOfTrainMentions Indicates the number of times the given entity type was seen in the training data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNumberOfTrainMentions",
-        "getterDocumentation" : "/**<p>indicates the number of times the given entity name was seen in the training data. </p>\n@return indicates the number of times the given entity name was seen in the training data.*/",
+        "getterDocumentation" : "/**<p>Indicates the number of times the given entity type was seen in the training data. </p>\n@return Indicates the number of times the given entity type was seen in the training data.*/",
         "getterMethodName" : "getNumberOfTrainMentions",
         "getterModel" : {
           "returnType" : "Integer",
@@ -35051,7 +35051,7 @@
         "marshallingType" : "INTEGER",
         "name" : "NumberOfTrainMentions",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>indicates the number of times the given entity name was seen in the training data. </p>\n@param numberOfTrainMentions indicates the number of times the given entity name was seen in the training data.*/",
+        "setterDocumentation" : "/**<p>Indicates the number of times the given entity type was seen in the training data. </p>\n@param numberOfTrainMentions Indicates the number of times the given entity type was seen in the training data.*/",
         "setterMethodName" : "setNumberOfTrainMentions",
         "setterModel" : {
           "timestampFormat" : null,
@@ -35065,13 +35065,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>indicates the number of times the given entity name was seen in the training data. </p>\n@param numberOfTrainMentions indicates the number of times the given entity name was seen in the training data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Indicates the number of times the given entity type was seen in the training data. </p>\n@param numberOfTrainMentions Indicates the number of times the given entity type was seen in the training data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "numberOfTrainMentions",
           "variableType" : "Integer",
-          "documentation" : "<p>indicates the number of times the given entity name was seen in the training data. </p>",
+          "documentation" : "<p>Indicates the number of times the given entity type was seen in the training data. </p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -35150,11 +35150,11 @@
           "c2jName" : "NumberOfTrainMentions",
           "c2jShape" : "Integer",
           "deprecated" : false,
-          "documentation" : "<p>indicates the number of times the given entity name was seen in the training data. </p>",
+          "documentation" : "<p>Indicates the number of times the given entity type was seen in the training data. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>indicates the number of times the given entity name was seen in the training data. </p>\n@param numberOfTrainMentions indicates the number of times the given entity name was seen in the training data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Indicates the number of times the given entity type was seen in the training data. </p>\n@param numberOfTrainMentions Indicates the number of times the given entity type was seen in the training data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNumberOfTrainMentions",
-          "getterDocumentation" : "/**<p>indicates the number of times the given entity name was seen in the training data. </p>\n@return indicates the number of times the given entity name was seen in the training data.*/",
+          "getterDocumentation" : "/**<p>Indicates the number of times the given entity type was seen in the training data. </p>\n@return Indicates the number of times the given entity type was seen in the training data.*/",
           "getterMethodName" : "getNumberOfTrainMentions",
           "getterModel" : {
             "returnType" : "Integer",
@@ -35188,7 +35188,7 @@
           "marshallingType" : "INTEGER",
           "name" : "NumberOfTrainMentions",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>indicates the number of times the given entity name was seen in the training data. </p>\n@param numberOfTrainMentions indicates the number of times the given entity name was seen in the training data.*/",
+          "setterDocumentation" : "/**<p>Indicates the number of times the given entity type was seen in the training data. </p>\n@param numberOfTrainMentions Indicates the number of times the given entity type was seen in the training data.*/",
           "setterMethodName" : "setNumberOfTrainMentions",
           "setterModel" : {
             "timestampFormat" : null,
@@ -35202,13 +35202,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>indicates the number of times the given entity name was seen in the training data. </p>\n@param numberOfTrainMentions indicates the number of times the given entity name was seen in the training data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Indicates the number of times the given entity type was seen in the training data. </p>\n@param numberOfTrainMentions Indicates the number of times the given entity type was seen in the training data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "numberOfTrainMentions",
             "variableType" : "Integer",
-            "documentation" : "<p>indicates the number of times the given entity name was seen in the training data. </p>",
+            "documentation" : "<p>Indicates the number of times the given entity type was seen in the training data. </p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -41255,6 +41255,24 @@
       }, {
         "name" : "Pt",
         "value" : "pt"
+      }, {
+        "name" : "Ar",
+        "value" : "ar"
+      }, {
+        "name" : "Hi",
+        "value" : "hi"
+      }, {
+        "name" : "Ja",
+        "value" : "ja"
+      }, {
+        "name" : "Ko",
+        "value" : "ko"
+      }, {
+        "name" : "Zh",
+        "value" : "zh"
+      }, {
+        "name" : "ZhTW",
+        "value" : "zh-TW"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

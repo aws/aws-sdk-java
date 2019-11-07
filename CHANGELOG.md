@@ -1,3 +1,20 @@
+# __1.11.670__ __2019-11-07__
+## __AWS SSO OIDC__
+  - ### Features
+    - This is an initial release of AWS Single Sign-On OAuth device code authorization service.
+
+## __AWS Single Sign-On__
+  - ### Features
+    - This is an initial release of AWS Single Sign-On (SSO) end-user access. This release adds support for accessing AWS accounts assigned in AWS SSO using short term credentials.
+
+## __Amazon Comprehend__
+  - ### Features
+    - This release adds new languages (ar, hi, ko, ja, zh, zh-TW) for Amazon Comprehend's DetectSentiment, DetectEntities, DetectKeyPhrases, BatchDetectSentiment, BatchDetectEntities and BatchDetectKeyPhrases APIs
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager Session Manager target length increased to 400.
+
 # __1.11.669__ __2019-11-06__
 ## __AWS Savings Plans__
   - ### Features

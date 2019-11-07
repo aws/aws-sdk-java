@@ -43,7 +43,7 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
     private EntityTypesEvaluationMetrics evaluationMetrics;
     /**
      * <p>
-     * indicates the number of times the given entity name was seen in the training data.
+     * Indicates the number of times the given entity type was seen in the training data.
      * </p>
      */
     private Integer numberOfTrainMentions;
@@ -133,11 +133,11 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
 
     /**
      * <p>
-     * indicates the number of times the given entity name was seen in the training data.
+     * Indicates the number of times the given entity type was seen in the training data.
      * </p>
      * 
      * @param numberOfTrainMentions
-     *        indicates the number of times the given entity name was seen in the training data.
+     *        Indicates the number of times the given entity type was seen in the training data.
      */
 
     public void setNumberOfTrainMentions(Integer numberOfTrainMentions) {
@@ -146,10 +146,10 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
 
     /**
      * <p>
-     * indicates the number of times the given entity name was seen in the training data.
+     * Indicates the number of times the given entity type was seen in the training data.
      * </p>
      * 
-     * @return indicates the number of times the given entity name was seen in the training data.
+     * @return Indicates the number of times the given entity type was seen in the training data.
      */
 
     public Integer getNumberOfTrainMentions() {
@@ -158,11 +158,11 @@ public class EntityRecognizerMetadataEntityTypesListItem implements Serializable
 
     /**
      * <p>
-     * indicates the number of times the given entity name was seen in the training data.
+     * Indicates the number of times the given entity type was seen in the training data.
      * </p>
      * 
      * @param numberOfTrainMentions
-     *        indicates the number of times the given entity name was seen in the training data.
+     *        Indicates the number of times the given entity type was seen in the training data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
