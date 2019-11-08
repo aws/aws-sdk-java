@@ -1,3 +1,12 @@
+# __1.11.671__ __2019-11-08__
+## __Amazon Cognito Identity__
+  - ### Features
+    - This release adds support for disabling classic flow.
+
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - This release contains ticket fixes for Amazon ECR.
+
 # __1.11.670__ __2019-11-07__
 ## __AWS SSO OIDC__
   - ### Features

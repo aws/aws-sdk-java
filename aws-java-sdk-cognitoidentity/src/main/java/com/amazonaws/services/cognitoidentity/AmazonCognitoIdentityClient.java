@@ -332,8 +332,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * Creates a new identity pool. The identity pool is a store of user identity information that is specific to your
-     * AWS account. The limit on identity pools is 60 per account. The keys for <code>SupportedLoginProviders</code> are
-     * as follows:
+     * AWS account. The keys for <code>SupportedLoginProviders</code> are as follows:
      * </p>
      * <ul>
      * <li>

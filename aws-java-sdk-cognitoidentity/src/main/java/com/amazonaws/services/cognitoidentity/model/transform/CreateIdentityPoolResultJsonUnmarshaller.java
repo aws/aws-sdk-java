@@ -60,6 +60,10 @@ public class CreateIdentityPoolResultJsonUnmarshaller implements Unmarshaller<Cr
                     context.nextToken();
                     createIdentityPoolResult.setAllowUnauthenticatedIdentities(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("AllowClassicFlow", targetDepth)) {
+                    context.nextToken();
+                    createIdentityPoolResult.setAllowClassicFlow(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("SupportedLoginProviders", targetDepth)) {
                     context.nextToken();
                     createIdentityPoolResult.setSupportedLoginProviders(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

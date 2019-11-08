@@ -35,6 +35,8 @@ public class UpdateIdentityPoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolName").build();
     private static final MarshallingInfo<Boolean> ALLOWUNAUTHENTICATEDIDENTITIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowUnauthenticatedIdentities").build();
+    private static final MarshallingInfo<Boolean> ALLOWCLASSICFLOW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowClassicFlow").build();
     private static final MarshallingInfo<Map> SUPPORTEDLOGINPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedLoginProviders").build();
     private static final MarshallingInfo<String> DEVELOPERPROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class UpdateIdentityPoolRequestMarshaller {
             protocolMarshaller.marshall(updateIdentityPoolRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
             protocolMarshaller.marshall(updateIdentityPoolRequest.getIdentityPoolName(), IDENTITYPOOLNAME_BINDING);
             protocolMarshaller.marshall(updateIdentityPoolRequest.getAllowUnauthenticatedIdentities(), ALLOWUNAUTHENTICATEDIDENTITIES_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getAllowClassicFlow(), ALLOWCLASSICFLOW_BINDING);
             protocolMarshaller.marshall(updateIdentityPoolRequest.getSupportedLoginProviders(), SUPPORTEDLOGINPROVIDERS_BINDING);
             protocolMarshaller.marshall(updateIdentityPoolRequest.getDeveloperProviderName(), DEVELOPERPROVIDERNAME_BINDING);
             protocolMarshaller.marshall(updateIdentityPoolRequest.getOpenIdConnectProviderARNs(), OPENIDCONNECTPROVIDERARNS_BINDING);
