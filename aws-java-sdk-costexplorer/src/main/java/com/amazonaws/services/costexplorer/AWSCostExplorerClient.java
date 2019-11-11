@@ -233,6 +233,86 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves cost and usage metrics with resources for your account. You can specify which cost and usage-related
+     * metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You
+     * can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a
+     * specific time range. For a complete list of valid dimensions, see the <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
+     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
+     * </p>
+     * <note>
+     * <p>
+     * This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information
+     * on how to access the Settings page, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling Access for Cost
+     * Explorer</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param getCostAndUsageWithResourcesRequest
+     * @return Result of the GetCostAndUsageWithResources operation returned by the service.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws BillExpirationException
+     *         The requested report expired. Update the date interval and try again.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @throws RequestChangedException
+     *         Your request parameters changed between pages. Try again with the old parameters or without a pagination
+     *         token.
+     * @sample AWSCostExplorer.GetCostAndUsageWithResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCostAndUsageWithResourcesResult getCostAndUsageWithResources(GetCostAndUsageWithResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCostAndUsageWithResources(request);
+    }
+
+    @SdkInternalApi
+    final GetCostAndUsageWithResourcesResult executeGetCostAndUsageWithResources(GetCostAndUsageWithResourcesRequest getCostAndUsageWithResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCostAndUsageWithResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCostAndUsageWithResourcesRequest> request = null;
+        Response<GetCostAndUsageWithResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCostAndUsageWithResourcesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCostAndUsageWithResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostAndUsageWithResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCostAndUsageWithResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCostAndUsageWithResourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
      * that you select, based on your past costs.
      * </p>
@@ -840,8 +920,8 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
     /**
      * <p>
      * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
-     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to
-     * determine the possible dimension values.
+     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
+     * <code>SAVINGS_PLANS</code> to determine the possible dimension values.
      * </p>
      * <note>
      * <p>
@@ -905,13 +985,15 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Retrieves a single daily or monthly Savings Plans utilization rate and details for your account. Master accounts
-     * in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the
-     * possible dimension values.
+     * Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't
+     * support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single
+     * response similar to <code>GetSavingsPlanUtilization</code>, but you have the option to make multiple calls to
+     * <code>GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can use
+     * <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.
      * </p>
      * <note>
      * <p>
-     * You can't group by any dimension values for <code>GetSavingsPlansUtilizationDetails</code>.
+     * <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
      * </p>
      * </note>
      * 

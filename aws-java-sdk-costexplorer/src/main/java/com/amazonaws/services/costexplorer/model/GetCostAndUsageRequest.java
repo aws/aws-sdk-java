@@ -36,9 +36,9 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
     private DateInterval timePeriod;
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
-     * <code>DAILY</code>.
+     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
+     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * <p>
      * The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
@@ -163,9 +163,9 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
-     * <code>DAILY</code>.
+     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
+     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * <p>
      * The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
@@ -173,9 +173,9 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code>
-     *        isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     *        or <code>DAILY</code>. </p>
+     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     *        either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      *        <p>
      *        The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and
      *        <code>MONTHLY</code> granularities.
@@ -188,18 +188,18 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
-     * <code>DAILY</code>.
+     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
+     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * <p>
      * The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
      * granularities.
      * </p>
      * 
-     * @return Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code>
-     *         isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     *         or <code>DAILY</code>. </p>
+     * @return Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     *         <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     *         either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      *         <p>
      *         The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and
      *         <code>MONTHLY</code> granularities.
@@ -212,9 +212,9 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
-     * <code>DAILY</code>.
+     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
+     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * <p>
      * The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
@@ -222,9 +222,9 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code>
-     *        isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     *        or <code>DAILY</code>. </p>
+     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     *        either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      *        <p>
      *        The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and
      *        <code>MONTHLY</code> granularities.
@@ -239,9 +239,9 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code> isn't
-     * set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
-     * <code>DAILY</code>.
+     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     * <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either
+     * <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>.
      * </p>
      * <p>
      * The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
@@ -249,9 +249,9 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code>
-     *        isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     *        or <code>DAILY</code>. </p>
+     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If
+     *        <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>,
+     *        either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      *        <p>
      *        The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and
      *        <code>MONTHLY</code> granularities.

@@ -76,8 +76,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
-     * for AWS CloudFormation to create the stack set and related stack instances.
+     * In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in
+     * order for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
@@ -578,8 +578,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
-     * for AWS CloudFormation to create the stack set and related stack instances.
+     * In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in
+     * order for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
@@ -690,7 +690,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </note></li>
      * </ul>
      * 
-     * @return In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     * @return In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities
      *         in order for AWS CloudFormation to create the stack set and related stack instances.</p>
      *         <ul>
      *         <li>
@@ -814,8 +814,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
-     * for AWS CloudFormation to create the stack set and related stack instances.
+     * In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in
+     * order for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
@@ -927,7 +927,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *        In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities
      *        in order for AWS CloudFormation to create the stack set and related stack instances.</p>
      *        <ul>
      *        <li>
@@ -1053,8 +1053,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
-     * for AWS CloudFormation to create the stack set and related stack instances.
+     * In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in
+     * order for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
@@ -1171,7 +1171,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *        In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities
      *        in order for AWS CloudFormation to create the stack set and related stack instances.</p>
      *        <ul>
      *        <li>
@@ -1299,8 +1299,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
-     * for AWS CloudFormation to create the stack set and related stack instances.
+     * In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in
+     * order for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
@@ -1412,7 +1412,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *        In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities
      *        in order for AWS CloudFormation to create the stack set and related stack instances.</p>
      *        <ul>
      *        <li>
@@ -1535,8 +1535,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
-     * for AWS CloudFormation to create the stack set and related stack instances.
+     * In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities in
+     * order for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
@@ -1648,7 +1648,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *        In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities
      *        in order for AWS CloudFormation to create the stack set and related stack instances.</p>
      *        <ul>
      *        <li>

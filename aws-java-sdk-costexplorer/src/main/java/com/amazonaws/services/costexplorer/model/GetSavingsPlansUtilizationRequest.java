@@ -37,6 +37,10 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The granularity of the Amazon Web Services utillization data for your Savings Plans.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      */
     private String granularity;
     /**
@@ -67,7 +71,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>PAYMENT_OPTIONS</code>
+     * <code>PAYMENT_OPTION</code>
      * </p>
      * </li>
      * <li>
@@ -79,8 +83,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
-     * multiple values for a dimension, they are OR'd together.
+     * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      */
     private Expression filter;
@@ -141,9 +144,16 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The granularity of the Amazon Web Services utillization data for your Savings Plans.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
-     *        The granularity of the Amazon Web Services utillization data for your Savings Plans.
+     *        The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
+     *        <p>
+     *        The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and
+     *        <code>MONTHLY</code> granularities.
      * @see Granularity
      */
 
@@ -155,8 +165,15 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The granularity of the Amazon Web Services utillization data for your Savings Plans.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
-     * @return The granularity of the Amazon Web Services utillization data for your Savings Plans.
+     * @return The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
+     *         <p>
+     *         The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and
+     *         <code>MONTHLY</code> granularities.
      * @see Granularity
      */
 
@@ -168,9 +185,16 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The granularity of the Amazon Web Services utillization data for your Savings Plans.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
-     *        The granularity of the Amazon Web Services utillization data for your Savings Plans.
+     *        The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
+     *        <p>
+     *        The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and
+     *        <code>MONTHLY</code> granularities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -184,9 +208,16 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The granularity of the Amazon Web Services utillization data for your Savings Plans.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
-     *        The granularity of the Amazon Web Services utillization data for your Savings Plans.
+     *        The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
+     *        <p>
+     *        The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and
+     *        <code>MONTHLY</code> granularities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -224,7 +255,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>PAYMENT_OPTIONS</code>
+     * <code>PAYMENT_OPTION</code>
      * </p>
      * </li>
      * <li>
@@ -236,8 +267,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
-     * multiple values for a dimension, they are OR'd together.
+     * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
      * @param filter
@@ -266,7 +296,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PAYMENT_OPTIONS</code>
+     *        <code>PAYMENT_OPTION</code>
      *        </p>
      *        </li>
      *        <li>
@@ -279,7 +309,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *        <code>GetSavingsPlansUtilization</code> uses the same <a
      *        href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
-     *        dimension. If there are multiple values for a dimension, they are OR'd together.
+     *        dimension.
      */
 
     public void setFilter(Expression filter) {
@@ -314,7 +344,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>PAYMENT_OPTIONS</code>
+     * <code>PAYMENT_OPTION</code>
      * </p>
      * </li>
      * <li>
@@ -326,8 +356,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
-     * multiple values for a dimension, they are OR'd together.
+     * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
      * @return Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data
@@ -355,7 +384,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PAYMENT_OPTIONS</code>
+     *         <code>PAYMENT_OPTION</code>
      *         </p>
      *         </li>
      *         <li>
@@ -368,7 +397,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *         <code>GetSavingsPlansUtilization</code> uses the same <a
      *         href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *         >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
-     *         dimension. If there are multiple values for a dimension, they are OR'd together.
+     *         dimension.
      */
 
     public Expression getFilter() {
@@ -403,7 +432,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>PAYMENT_OPTIONS</code>
+     * <code>PAYMENT_OPTION</code>
      * </p>
      * </li>
      * <li>
@@ -415,8 +444,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
-     * multiple values for a dimension, they are OR'd together.
+     * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
      * @param filter
@@ -445,7 +473,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PAYMENT_OPTIONS</code>
+     *        <code>PAYMENT_OPTION</code>
      *        </p>
      *        </li>
      *        <li>
@@ -458,7 +486,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *        <code>GetSavingsPlansUtilization</code> uses the same <a
      *        href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
-     *        dimension. If there are multiple values for a dimension, they are OR'd together.
+     *        dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ChangeSetType {
 
     CREATE("CREATE"),
-    UPDATE("UPDATE");
+    UPDATE("UPDATE"),
+    IMPORT("IMPORT");
 
     private String value;
 

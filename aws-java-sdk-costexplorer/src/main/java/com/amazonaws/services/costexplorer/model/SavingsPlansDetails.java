@@ -30,7 +30,8 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A geographic location where the Savings Plans is hosted.
+     * A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the other
+     * Regions.
      * </p>
      */
     private String region;
@@ -49,11 +50,13 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A geographic location where the Savings Plans is hosted.
+     * A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the other
+     * Regions.
      * </p>
      * 
      * @param region
-     *        A geographic location where the Savings Plans is hosted.
+     *        A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the
+     *        other Regions.
      */
 
     public void setRegion(String region) {
@@ -62,10 +65,12 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A geographic location where the Savings Plans is hosted.
+     * A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the other
+     * Regions.
      * </p>
      * 
-     * @return A geographic location where the Savings Plans is hosted.
+     * @return A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the
+     *         other Regions.
      */
 
     public String getRegion() {
@@ -74,11 +79,13 @@ public class SavingsPlansDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A geographic location where the Savings Plans is hosted.
+     * A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the other
+     * Regions.
      * </p>
      * 
      * @param region
-     *        A geographic location where the Savings Plans is hosted.
+     *        A collection of AWS resources in a geographic area. Each AWS Region is isolated and independent of the
+     *        other Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

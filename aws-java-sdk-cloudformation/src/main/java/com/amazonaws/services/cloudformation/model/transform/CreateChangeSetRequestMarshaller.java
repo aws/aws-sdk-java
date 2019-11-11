@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cloudformation.model.transform;
 
+import java.util.Map;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -219,6 +220,48 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
 
         if (createChangeSetRequest.getChangeSetType() != null) {
             request.addParameter("ChangeSetType", StringUtils.fromString(createChangeSetRequest.getChangeSetType()));
+        }
+
+        if (createChangeSetRequest.getResourcesToImport().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<ResourceToImport>) createChangeSetRequest.getResourcesToImport()).isAutoConstruct()) {
+            request.addParameter("ResourcesToImport", "");
+        }
+        if (!createChangeSetRequest.getResourcesToImport().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ResourceToImport>) createChangeSetRequest.getResourcesToImport()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ResourceToImport> resourcesToImportList = (com.amazonaws.internal.SdkInternalList<ResourceToImport>) createChangeSetRequest
+                    .getResourcesToImport();
+            int resourcesToImportListIndex = 1;
+
+            for (ResourceToImport resourcesToImportListValue : resourcesToImportList) {
+
+                if (resourcesToImportListValue.getResourceType() != null) {
+                    request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceType",
+                            StringUtils.fromString(resourcesToImportListValue.getResourceType()));
+                }
+
+                if (resourcesToImportListValue.getLogicalResourceId() != null) {
+                    request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".LogicalResourceId",
+                            StringUtils.fromString(resourcesToImportListValue.getLogicalResourceId()));
+                }
+
+                java.util.Map<String, String> resourceIdentifier = resourcesToImportListValue.getResourceIdentifier();
+                if (resourceIdentifier != null) {
+                    int resourceIdentifierListIndex = 1;
+                    for (Map.Entry<String, String> entry : resourceIdentifier.entrySet()) {
+                        if (entry.getKey() != null) {
+                            request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceIdentifier.entry."
+                                    + resourceIdentifierListIndex + ".key", StringUtils.fromString(entry.getKey()));
+                        }
+                        if (entry.getValue() != null) {
+                            request.addParameter("ResourcesToImport.member." + resourcesToImportListIndex + ".ResourceIdentifier.entry."
+                                    + resourceIdentifierListIndex + ".value", StringUtils.fromString(entry.getValue()));
+                        }
+                        resourceIdentifierListIndex++;
+                    }
+                }
+
+                resourcesToImportListIndex++;
+            }
         }
 
         return request;

@@ -17,7 +17,30 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The AccountLimit data type. For more information about account limits, see <a
+ * The AccountLimit data type.
+ * </p>
+ * <p>
+ * CloudFormation has the following limits per account:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Number of concurrent resources
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Number of stacks
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Number of stack outputs
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For more information about these account limits, and other CloudFormation limits, see <a
  * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS CloudFormation
  * Limits</a> in the <i>AWS CloudFormation User Guide</i>.
  * </p>
@@ -32,6 +55,9 @@ public class AccountLimit implements Serializable, Cloneable {
      * <p>
      * The name of the account limit.
      * </p>
+     * <p>
+     * Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
+     * </p>
      */
     private String name;
     /**
@@ -45,9 +71,14 @@ public class AccountLimit implements Serializable, Cloneable {
      * <p>
      * The name of the account limit.
      * </p>
+     * <p>
+     * Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
+     * </p>
      * 
      * @param name
-     *        The name of the account limit.
+     *        The name of the account limit.</p>
+     *        <p>
+     *        Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
      */
 
     public void setName(String name) {
@@ -58,8 +89,13 @@ public class AccountLimit implements Serializable, Cloneable {
      * <p>
      * The name of the account limit.
      * </p>
+     * <p>
+     * Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
+     * </p>
      * 
-     * @return The name of the account limit.
+     * @return The name of the account limit.</p>
+     *         <p>
+     *         Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
      */
 
     public String getName() {
@@ -70,9 +106,14 @@ public class AccountLimit implements Serializable, Cloneable {
      * <p>
      * The name of the account limit.
      * </p>
+     * <p>
+     * Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
+     * </p>
      * 
      * @param name
-     *        The name of the account limit.
+     *        The name of the account limit.</p>
+     *        <p>
+     *        Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

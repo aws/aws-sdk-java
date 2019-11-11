@@ -105,6 +105,16 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements Unmarshaller<Ge
                     continue;
                 }
 
+                if (context.testExpression("ResourceIdentifierSummaries", targetDepth)) {
+                    getTemplateSummaryResult.withResourceIdentifierSummaries(new ArrayList<ResourceIdentifierSummary>());
+                    continue;
+                }
+
+                if (context.testExpression("ResourceIdentifierSummaries/member", targetDepth)) {
+                    getTemplateSummaryResult.withResourceIdentifierSummaries(ResourceIdentifierSummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getTemplateSummaryResult;

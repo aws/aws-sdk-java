@@ -115,6 +115,39 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetCostAndUsageWithResourcesResult> getCostAndUsageWithResourcesAsync(GetCostAndUsageWithResourcesRequest request) {
+
+        return getCostAndUsageWithResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostAndUsageWithResourcesResult> getCostAndUsageWithResourcesAsync(final GetCostAndUsageWithResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCostAndUsageWithResourcesRequest, GetCostAndUsageWithResourcesResult> asyncHandler) {
+        final GetCostAndUsageWithResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCostAndUsageWithResourcesResult>() {
+            @Override
+            public GetCostAndUsageWithResourcesResult call() throws Exception {
+                GetCostAndUsageWithResourcesResult result = null;
+
+                try {
+                    result = executeGetCostAndUsageWithResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCostForecastResult> getCostForecastAsync(GetCostForecastRequest request) {
 
         return getCostForecastAsync(request, null);

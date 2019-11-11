@@ -128,6 +128,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
+     * days for EC2-Compute Service.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:
@@ -479,6 +485,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
+     * days for EC2-Compute Service.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:
@@ -652,6 +664,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for
+     *        last 14 days for EC2-Compute Service.
      *        </p>
      *        </li>
      *        </ul>
@@ -836,6 +854,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
+     * days for EC2-Compute Service.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:
@@ -1011,6 +1035,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for
+     *         last 14 days for EC2-Compute Service.
      *         </p>
      *         </li>
      *         </ul>
@@ -1195,6 +1225,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
+     * days for EC2-Compute Service.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:
@@ -1368,6 +1404,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for
+     *        last 14 days for EC2-Compute Service.
      *        </p>
      *        </li>
      *        </ul>
@@ -1554,6 +1596,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14
+     * days for EC2-Compute Service.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:
@@ -1727,6 +1775,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for
+     *        last 14 days for EC2-Compute Service.
      *        </p>
      *        </li>
      *        </ul>

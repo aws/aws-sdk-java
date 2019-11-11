@@ -45,6 +45,10 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be
      * set if <code>GroupBy</code> is set.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      */
     private String granularity;
     /**
@@ -85,7 +89,7 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     * <code>spendCoveredBySavingsPlans</code>.
+     * <code>SpendCoveredBySavingsPlans</code>.
      * </p>
      */
     private java.util.List<String> metrics;
@@ -239,10 +243,17 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be
      * set if <code>GroupBy</code> is set.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
      *        The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> 
-     *        can't be set if <code>GroupBy</code> is set.
+     *        can't be set if <code>GroupBy</code> is set.</p>
+     *        <p>
+     *        The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and
+     *        <code>MONTHLY</code> granularities.
      * @see Granularity
      */
 
@@ -255,9 +266,16 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be
      * set if <code>GroupBy</code> is set.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @return The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> 
-     *         can't be set if <code>GroupBy</code> is set.
+     *         can't be set if <code>GroupBy</code> is set.</p>
+     *         <p>
+     *         The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and
+     *         <code>MONTHLY</code> granularities.
      * @see Granularity
      */
 
@@ -270,10 +288,17 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be
      * set if <code>GroupBy</code> is set.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
      *        The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> 
-     *        can't be set if <code>GroupBy</code> is set.
+     *        can't be set if <code>GroupBy</code> is set.</p>
+     *        <p>
+     *        The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and
+     *        <code>MONTHLY</code> granularities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -288,10 +313,17 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be
      * set if <code>GroupBy</code> is set.
      * </p>
+     * <p>
+     * The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+     * granularities.
+     * </p>
      * 
      * @param granularity
      *        The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> 
-     *        can't be set if <code>GroupBy</code> is set.
+     *        can't be set if <code>GroupBy</code> is set.</p>
+     *        <p>
+     *        The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and
+     *        <code>MONTHLY</code> granularities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -515,11 +547,11 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     * <code>spendCoveredBySavingsPlans</code>.
+     * <code>SpendCoveredBySavingsPlans</code>.
      * </p>
      * 
      * @return The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     *         <code>spendCoveredBySavingsPlans</code>.
+     *         <code>SpendCoveredBySavingsPlans</code>.
      */
 
     public java.util.List<String> getMetrics() {
@@ -529,12 +561,12 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     * <code>spendCoveredBySavingsPlans</code>.
+     * <code>SpendCoveredBySavingsPlans</code>.
      * </p>
      * 
      * @param metrics
      *        The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     *        <code>spendCoveredBySavingsPlans</code>.
+     *        <code>SpendCoveredBySavingsPlans</code>.
      */
 
     public void setMetrics(java.util.Collection<String> metrics) {
@@ -549,7 +581,7 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     * <code>spendCoveredBySavingsPlans</code>.
+     * <code>SpendCoveredBySavingsPlans</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -559,7 +591,7 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param metrics
      *        The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     *        <code>spendCoveredBySavingsPlans</code>.
+     *        <code>SpendCoveredBySavingsPlans</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -576,12 +608,12 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     * <code>spendCoveredBySavingsPlans</code>.
+     * <code>SpendCoveredBySavingsPlans</code>.
      * </p>
      * 
      * @param metrics
      *        The measurement that you want your Savings Plans coverage reported in. The only valid value is
-     *        <code>spendCoveredBySavingsPlans</code>.
+     *        <code>SpendCoveredBySavingsPlans</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

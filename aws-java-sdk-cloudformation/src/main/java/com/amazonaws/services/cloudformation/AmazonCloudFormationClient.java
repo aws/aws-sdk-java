@@ -457,8 +457,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code> parameter, specify
      * <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code> for the
-     * <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code> call successfully completes, AWS
-     * CloudFormation starts creating the change set. To check the status of the change set or to review it, use the
+     * <code>ChangeSetType</code> parameter. To create a change set for an import operation, specify <code>IMPORT</code>
+     * for the <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code> call successfully completes,
+     * AWS CloudFormation starts creating the change set. To check the status of the change set or to review it, use the
      * <a>DescribeChangeSet</a> action.
      * </p>
      * <p>
@@ -3036,12 +3037,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * Updates termination protection for the specified stack. If a user attempts to delete a stack with termination
      * protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a>
-     * in the <i>AWS CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * <p>
-     * For <a href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination
-     * protection is set on the root stack and cannot be changed directly on the nested stack.
+     * For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
      * </p>
      * 
      * @param updateTerminationProtectionRequest

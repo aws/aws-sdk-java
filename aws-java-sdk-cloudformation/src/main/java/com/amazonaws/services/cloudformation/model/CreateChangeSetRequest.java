@@ -73,8 +73,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to create the stack.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack.
      * </p>
      * <ul>
      * <li>
@@ -275,7 +275,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create
-     * a change set for an existing stack, specify <code>UPDATE</code>.
+     * a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.
      * </p>
      * <p>
      * If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no
@@ -289,6 +290,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String changeSetType;
+    /**
+     * <p>
+     * The resources to import into your stack.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ResourceToImport> resourcesToImport;
 
     /**
      * <p>
@@ -611,8 +618,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to create the stack.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack.
      * </p>
      * <ul>
      * <li>
@@ -734,7 +741,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     * @return In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *         order for AWS CloudFormation to create the stack.</p>
      *         <ul>
      *         <li>
@@ -871,8 +878,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to create the stack.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack.
      * </p>
      * <ul>
      * <li>
@@ -995,7 +1002,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *        order for AWS CloudFormation to create the stack.</p>
      *        <ul>
      *        <li>
@@ -1134,8 +1141,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to create the stack.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack.
      * </p>
      * <ul>
      * <li>
@@ -1263,7 +1270,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *        order for AWS CloudFormation to create the stack.</p>
      *        <ul>
      *        <li>
@@ -1404,8 +1411,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to create the stack.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack.
      * </p>
      * <ul>
      * <li>
@@ -1528,7 +1535,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *        order for AWS CloudFormation to create the stack.</p>
      *        <ul>
      *        <li>
@@ -1664,8 +1671,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to create the stack.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack.
      * </p>
      * <ul>
      * <li>
@@ -1788,7 +1795,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *        order for AWS CloudFormation to create the stack.</p>
      *        <ul>
      *        <li>
@@ -2536,7 +2543,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create
-     * a change set for an existing stack, specify <code>UPDATE</code>.
+     * a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.
      * </p>
      * <p>
      * If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no
@@ -2551,7 +2559,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param changeSetType
      *        The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To
-     *        create a change set for an existing stack, specify <code>UPDATE</code>.</p>
+     *        create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an
+     *        import operation, specify <code>IMPORT</code>.</p>
      *        <p>
      *        If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but
      *        no template or resources. The stack will be in the <a href=
@@ -2572,7 +2581,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create
-     * a change set for an existing stack, specify <code>UPDATE</code>.
+     * a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.
      * </p>
      * <p>
      * If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no
@@ -2586,7 +2596,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To
-     *         create a change set for an existing stack, specify <code>UPDATE</code>.</p>
+     *         create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an
+     *         import operation, specify <code>IMPORT</code>.</p>
      *         <p>
      *         If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID,
      *         but no template or resources. The stack will be in the <a href=
@@ -2607,7 +2618,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create
-     * a change set for an existing stack, specify <code>UPDATE</code>.
+     * a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.
      * </p>
      * <p>
      * If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no
@@ -2622,7 +2634,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param changeSetType
      *        The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To
-     *        create a change set for an existing stack, specify <code>UPDATE</code>.</p>
+     *        create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an
+     *        import operation, specify <code>IMPORT</code>.</p>
      *        <p>
      *        If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but
      *        no template or resources. The stack will be in the <a href=
@@ -2645,7 +2658,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create
-     * a change set for an existing stack, specify <code>UPDATE</code>.
+     * a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.
      * </p>
      * <p>
      * If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no
@@ -2660,7 +2674,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param changeSetType
      *        The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To
-     *        create a change set for an existing stack, specify <code>UPDATE</code>.</p>
+     *        create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an
+     *        import operation, specify <code>IMPORT</code>.</p>
      *        <p>
      *        If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but
      *        no template or resources. The stack will be in the <a href=
@@ -2681,7 +2696,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create
-     * a change set for an existing stack, specify <code>UPDATE</code>.
+     * a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.
      * </p>
      * <p>
      * If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but no
@@ -2696,7 +2712,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param changeSetType
      *        The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To
-     *        create a change set for an existing stack, specify <code>UPDATE</code>.</p>
+     *        create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an
+     *        import operation, specify <code>IMPORT</code>.</p>
      *        <p>
      *        If you create a change set for a new stack, AWS Cloudformation creates a stack with a unique stack ID, but
      *        no template or resources. The stack will be in the <a href=
@@ -2713,6 +2730,79 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateChangeSetRequest withChangeSetType(ChangeSetType changeSetType) {
         this.changeSetType = changeSetType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resources to import into your stack.
+     * </p>
+     * 
+     * @return The resources to import into your stack.
+     */
+
+    public java.util.List<ResourceToImport> getResourcesToImport() {
+        if (resourcesToImport == null) {
+            resourcesToImport = new com.amazonaws.internal.SdkInternalList<ResourceToImport>();
+        }
+        return resourcesToImport;
+    }
+
+    /**
+     * <p>
+     * The resources to import into your stack.
+     * </p>
+     * 
+     * @param resourcesToImport
+     *        The resources to import into your stack.
+     */
+
+    public void setResourcesToImport(java.util.Collection<ResourceToImport> resourcesToImport) {
+        if (resourcesToImport == null) {
+            this.resourcesToImport = null;
+            return;
+        }
+
+        this.resourcesToImport = new com.amazonaws.internal.SdkInternalList<ResourceToImport>(resourcesToImport);
+    }
+
+    /**
+     * <p>
+     * The resources to import into your stack.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourcesToImport(java.util.Collection)} or {@link #withResourcesToImport(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param resourcesToImport
+     *        The resources to import into your stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChangeSetRequest withResourcesToImport(ResourceToImport... resourcesToImport) {
+        if (this.resourcesToImport == null) {
+            setResourcesToImport(new com.amazonaws.internal.SdkInternalList<ResourceToImport>(resourcesToImport.length));
+        }
+        for (ResourceToImport ele : resourcesToImport) {
+            this.resourcesToImport.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resources to import into your stack.
+     * </p>
+     * 
+     * @param resourcesToImport
+     *        The resources to import into your stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChangeSetRequest withResourcesToImport(java.util.Collection<ResourceToImport> resourcesToImport) {
+        setResourcesToImport(resourcesToImport);
         return this;
     }
 
@@ -2757,7 +2847,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getChangeSetType() != null)
-            sb.append("ChangeSetType: ").append(getChangeSetType());
+            sb.append("ChangeSetType: ").append(getChangeSetType()).append(",");
+        if (getResourcesToImport() != null)
+            sb.append("ResourcesToImport: ").append(getResourcesToImport());
         sb.append("}");
         return sb.toString();
     }
@@ -2832,6 +2924,10 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getChangeSetType() != null && other.getChangeSetType().equals(this.getChangeSetType()) == false)
             return false;
+        if (other.getResourcesToImport() == null ^ this.getResourcesToImport() == null)
+            return false;
+        if (other.getResourcesToImport() != null && other.getResourcesToImport().equals(this.getResourcesToImport()) == false)
+            return false;
         return true;
     }
 
@@ -2855,6 +2951,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getChangeSetType() == null) ? 0 : getChangeSetType().hashCode());
+        hashCode = prime * hashCode + ((getResourcesToImport() == null) ? 0 : getResourcesToImport().hashCode());
         return hashCode;
     }
 

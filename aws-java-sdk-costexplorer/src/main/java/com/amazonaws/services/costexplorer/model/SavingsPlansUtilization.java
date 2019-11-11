@@ -36,7 +36,7 @@ public class SavingsPlansUtilization implements Serializable, Cloneable, Structu
     private String totalCommitment;
     /**
      * <p>
-     * The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a specific
+     * The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific
      * period.
      * </p>
      */
@@ -97,12 +97,12 @@ public class SavingsPlansUtilization implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a specific
+     * The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific
      * period.
      * </p>
      * 
      * @param usedCommitment
-     *        The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a
+     *        The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a
      *        specific period.
      */
 
@@ -112,11 +112,11 @@ public class SavingsPlansUtilization implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a specific
+     * The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific
      * period.
      * </p>
      * 
-     * @return The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a
+     * @return The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a
      *         specific period.
      */
 
@@ -126,12 +126,12 @@ public class SavingsPlansUtilization implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a specific
+     * The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a specific
      * period.
      * </p>
      * 
      * @param usedCommitment
-     *        The amount of your Savings Plans commitment that was not consumed from Savings Plans eligible usage in a
+     *        The amount of your Savings Plans commitment that was consumed from Savings Plans eligible usage in a
      *        specific period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

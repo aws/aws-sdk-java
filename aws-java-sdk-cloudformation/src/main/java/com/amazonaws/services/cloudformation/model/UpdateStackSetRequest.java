@@ -81,8 +81,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to update the stack set and its associated stack instances.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to update the stack set and its associated stack instances.
      * </p>
      * <ul>
      * <li>
@@ -722,8 +722,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to update the stack set and its associated stack instances.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to update the stack set and its associated stack instances.
      * </p>
      * <ul>
      * <li>
@@ -834,7 +834,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </important></li>
      * </ul>
      * 
-     * @return In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     * @return In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *         order for AWS CloudFormation to update the stack set and its associated stack instances.</p>
      *         <ul>
      *         <li>
@@ -958,8 +958,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to update the stack set and its associated stack instances.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to update the stack set and its associated stack instances.
      * </p>
      * <ul>
      * <li>
@@ -1071,7 +1071,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *        order for AWS CloudFormation to update the stack set and its associated stack instances.</p>
      *        <ul>
      *        <li>
@@ -1197,8 +1197,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to update the stack set and its associated stack instances.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to update the stack set and its associated stack instances.
      * </p>
      * <ul>
      * <li>
@@ -1315,7 +1315,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *        order for AWS CloudFormation to update the stack set and its associated stack instances.</p>
      *        <ul>
      *        <li>
@@ -1443,8 +1443,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to update the stack set and its associated stack instances.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to update the stack set and its associated stack instances.
      * </p>
      * <ul>
      * <li>
@@ -1556,7 +1556,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *        order for AWS CloudFormation to update the stack set and its associated stack instances.</p>
      *        <ul>
      *        <li>
@@ -1679,8 +1679,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * In some cases, you must explicity acknowledge that your stack template contains certain capabilities in order for
-     * AWS CloudFormation to update the stack set and its associated stack instances.
+     * In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order
+     * for AWS CloudFormation to update the stack set and its associated stack instances.
      * </p>
      * <ul>
      * <li>
@@ -1792,7 +1792,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param capabilities
-     *        In some cases, you must explicity acknowledge that your stack template contains certain capabilities in
+     *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *        order for AWS CloudFormation to update the stack set and its associated stack instances.</p>
      *        <ul>
      *        <li>

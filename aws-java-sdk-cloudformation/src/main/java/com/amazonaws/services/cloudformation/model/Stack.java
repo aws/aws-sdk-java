@@ -176,8 +176,8 @@ public class Stack implements Serializable, Cloneable {
     private String parentId;
     /**
      * <p>
-     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
-     * which the nested stack ultimately belongs.
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which
+     * the nested stack ultimately belongs.
      * </p>
      * <p>
      * For more information, see <a
@@ -1449,8 +1449,8 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
-     * which the nested stack ultimately belongs.
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which
+     * the nested stack ultimately belongs.
      * </p>
      * <p>
      * For more information, see <a
@@ -1459,8 +1459,8 @@ public class Stack implements Serializable, Cloneable {
      * </p>
      * 
      * @param rootId
-     *        For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
-     *        to which the nested stack ultimately belongs.</p>
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to
+     *        which the nested stack ultimately belongs.</p>
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
@@ -1473,8 +1473,8 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
-     * which the nested stack ultimately belongs.
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which
+     * the nested stack ultimately belongs.
      * </p>
      * <p>
      * For more information, see <a
@@ -1482,8 +1482,8 @@ public class Stack implements Serializable, Cloneable {
      * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
-     *         to which the nested stack ultimately belongs.</p>
+     * @return For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to
+     *         which the nested stack ultimately belongs.</p>
      *         <p>
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
@@ -1496,8 +1496,8 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
-     * which the nested stack ultimately belongs.
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which
+     * the nested stack ultimately belongs.
      * </p>
      * <p>
      * For more information, see <a
@@ -1506,8 +1506,8 @@ public class Stack implements Serializable, Cloneable {
      * </p>
      * 
      * @param rootId
-     *        For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
-     *        to which the nested stack ultimately belongs.</p>
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to
+     *        which the nested stack ultimately belongs.</p>
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working

@@ -1,3 +1,12 @@
+# __1.11.672__ __2019-11-11__
+## __AWS CloudFormation__
+  - ### Features
+    - The Resource Import feature enables customers to import existing AWS resources into new or existing CloudFormation Stacks.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This launch provides customers with access to GetCostAndUsageWithResources API.
+
 # __1.11.671__ __2019-11-08__
 ## __Amazon Cognito Identity__
   - ### Features

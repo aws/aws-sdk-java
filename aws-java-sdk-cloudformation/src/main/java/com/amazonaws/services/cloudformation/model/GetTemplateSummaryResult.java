@@ -82,6 +82,14 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> declaredTransforms;
+    /**
+     * <p>
+     * A list of resource identifier summaries that describe the target resources of an import operation and the
+     * properties you can provide during the import to identify the target resources. For example,
+     * <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ResourceIdentifierSummary> resourceIdentifierSummaries;
 
     /**
      * <p>
@@ -646,6 +654,95 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * A list of resource identifier summaries that describe the target resources of an import operation and the
+     * properties you can provide during the import to identify the target resources. For example,
+     * <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     * </p>
+     * 
+     * @return A list of resource identifier summaries that describe the target resources of an import operation and the
+     *         properties you can provide during the import to identify the target resources. For example,
+     *         <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     */
+
+    public java.util.List<ResourceIdentifierSummary> getResourceIdentifierSummaries() {
+        if (resourceIdentifierSummaries == null) {
+            resourceIdentifierSummaries = new com.amazonaws.internal.SdkInternalList<ResourceIdentifierSummary>();
+        }
+        return resourceIdentifierSummaries;
+    }
+
+    /**
+     * <p>
+     * A list of resource identifier summaries that describe the target resources of an import operation and the
+     * properties you can provide during the import to identify the target resources. For example,
+     * <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     * </p>
+     * 
+     * @param resourceIdentifierSummaries
+     *        A list of resource identifier summaries that describe the target resources of an import operation and the
+     *        properties you can provide during the import to identify the target resources. For example,
+     *        <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     */
+
+    public void setResourceIdentifierSummaries(java.util.Collection<ResourceIdentifierSummary> resourceIdentifierSummaries) {
+        if (resourceIdentifierSummaries == null) {
+            this.resourceIdentifierSummaries = null;
+            return;
+        }
+
+        this.resourceIdentifierSummaries = new com.amazonaws.internal.SdkInternalList<ResourceIdentifierSummary>(resourceIdentifierSummaries);
+    }
+
+    /**
+     * <p>
+     * A list of resource identifier summaries that describe the target resources of an import operation and the
+     * properties you can provide during the import to identify the target resources. For example,
+     * <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceIdentifierSummaries(java.util.Collection)} or
+     * {@link #withResourceIdentifierSummaries(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceIdentifierSummaries
+     *        A list of resource identifier summaries that describe the target resources of an import operation and the
+     *        properties you can provide during the import to identify the target resources. For example,
+     *        <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateSummaryResult withResourceIdentifierSummaries(ResourceIdentifierSummary... resourceIdentifierSummaries) {
+        if (this.resourceIdentifierSummaries == null) {
+            setResourceIdentifierSummaries(new com.amazonaws.internal.SdkInternalList<ResourceIdentifierSummary>(resourceIdentifierSummaries.length));
+        }
+        for (ResourceIdentifierSummary ele : resourceIdentifierSummaries) {
+            this.resourceIdentifierSummaries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of resource identifier summaries that describe the target resources of an import operation and the
+     * properties you can provide during the import to identify the target resources. For example,
+     * <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     * </p>
+     * 
+     * @param resourceIdentifierSummaries
+     *        A list of resource identifier summaries that describe the target resources of an import operation and the
+     *        properties you can provide during the import to identify the target resources. For example,
+     *        <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateSummaryResult withResourceIdentifierSummaries(java.util.Collection<ResourceIdentifierSummary> resourceIdentifierSummaries) {
+        setResourceIdentifierSummaries(resourceIdentifierSummaries);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -672,7 +769,9 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
         if (getMetadata() != null)
             sb.append("Metadata: ").append(getMetadata()).append(",");
         if (getDeclaredTransforms() != null)
-            sb.append("DeclaredTransforms: ").append(getDeclaredTransforms());
+            sb.append("DeclaredTransforms: ").append(getDeclaredTransforms()).append(",");
+        if (getResourceIdentifierSummaries() != null)
+            sb.append("ResourceIdentifierSummaries: ").append(getResourceIdentifierSummaries());
         sb.append("}");
         return sb.toString();
     }
@@ -719,6 +818,10 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getDeclaredTransforms() != null && other.getDeclaredTransforms().equals(this.getDeclaredTransforms()) == false)
             return false;
+        if (other.getResourceIdentifierSummaries() == null ^ this.getResourceIdentifierSummaries() == null)
+            return false;
+        if (other.getResourceIdentifierSummaries() != null && other.getResourceIdentifierSummaries().equals(this.getResourceIdentifierSummaries()) == false)
+            return false;
         return true;
     }
 
@@ -735,6 +838,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getDeclaredTransforms() == null) ? 0 : getDeclaredTransforms().hashCode());
+        hashCode = prime * hashCode + ((getResourceIdentifierSummaries() == null) ? 0 : getResourceIdentifierSummaries().hashCode());
         return hashCode;
     }
 

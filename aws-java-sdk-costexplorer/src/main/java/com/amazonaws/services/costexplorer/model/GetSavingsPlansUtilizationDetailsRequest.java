@@ -56,7 +56,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * <code>PAYMENT_OPTIONS</code>
+     * <code>PAYMENT_OPTION</code>
      * </p>
      * </li>
      * <li>
@@ -68,8 +68,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
-     * multiple values for a dimension, they are OR'd together.
+     * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      */
     private Expression filter;
@@ -163,7 +162,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * <code>PAYMENT_OPTIONS</code>
+     * <code>PAYMENT_OPTION</code>
      * </p>
      * </li>
      * <li>
@@ -175,8 +174,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
-     * multiple values for a dimension, they are OR'd together.
+     * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
      * @param filter
@@ -200,7 +198,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PAYMENT_OPTIONS</code>
+     *        <code>PAYMENT_OPTION</code>
      *        </p>
      *        </li>
      *        <li>
@@ -213,7 +211,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      *        <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      *        href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
-     *        dimension. If there are multiple values for a dimension, they are OR'd together.
+     *        dimension.
      */
 
     public void setFilter(Expression filter) {
@@ -243,7 +241,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * <code>PAYMENT_OPTIONS</code>
+     * <code>PAYMENT_OPTION</code>
      * </p>
      * </li>
      * <li>
@@ -255,8 +253,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
-     * multiple values for a dimension, they are OR'd together.
+     * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
      * @return Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data
@@ -279,7 +276,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PAYMENT_OPTIONS</code>
+     *         <code>PAYMENT_OPTION</code>
      *         </p>
      *         </li>
      *         <li>
@@ -292,7 +289,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      *         <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      *         href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *         >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
-     *         dimension. If there are multiple values for a dimension, they are OR'd together.
+     *         dimension.
      */
 
     public Expression getFilter() {
@@ -322,7 +319,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * <code>PAYMENT_OPTIONS</code>
+     * <code>PAYMENT_OPTION</code>
      * </p>
      * </li>
      * <li>
@@ -334,8 +331,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      * <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
-     * multiple values for a dimension, they are OR'd together.
+     * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
      * @param filter
@@ -359,7 +355,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PAYMENT_OPTIONS</code>
+     *        <code>PAYMENT_OPTION</code>
      *        </p>
      *        </li>
      *        <li>
@@ -372,7 +368,7 @@ public class GetSavingsPlansUtilizationDetailsRequest extends com.amazonaws.Amaz
      *        <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      *        href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
-     *        dimension. If there are multiple values for a dimension, they are OR'd together.
+     *        dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
