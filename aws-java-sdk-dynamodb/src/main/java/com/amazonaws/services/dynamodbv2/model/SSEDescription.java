@@ -53,8 +53,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
-     * and is managed by AWS KMS (KMS charges apply).
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your account
+     * and is managed by AWS KMS (AWS KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -62,7 +62,7 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
     private String sSEType;
     /**
      * <p>
-     * The KMS customer master key (CMK) ARN used for the KMS encryption.
+     * The KMS customer master key (CMK) ARN used for the AWS KMS encryption.
      * </p>
      */
     private String kMSMasterKeyArn;
@@ -225,8 +225,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
-     * and is managed by AWS KMS (KMS charges apply).
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your account
+     * and is managed by AWS KMS (AWS KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -236,8 +236,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
-     *        account and is managed by AWS KMS (KMS charges apply).
+     *        <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your
+     *        account and is managed by AWS KMS (AWS KMS charges apply).
      *        </p>
      *        </li>
      * @see SSEType
@@ -254,8 +254,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
-     * and is managed by AWS KMS (KMS charges apply).
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your account
+     * and is managed by AWS KMS (AWS KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -264,8 +264,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
-     *         account and is managed by AWS KMS (KMS charges apply).
+     *         <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your
+     *         account and is managed by AWS KMS (AWS KMS charges apply).
      *         </p>
      *         </li>
      * @see SSEType
@@ -282,8 +282,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
-     * and is managed by AWS KMS (KMS charges apply).
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your account
+     * and is managed by AWS KMS (AWS KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -293,8 +293,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
-     *        account and is managed by AWS KMS (KMS charges apply).
+     *        <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your
+     *        account and is managed by AWS KMS (AWS KMS charges apply).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -313,8 +313,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
-     * and is managed by AWS KMS (KMS charges apply).
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your account
+     * and is managed by AWS KMS (AWS KMS charges apply).
      * </p>
      * </li>
      * </ul>
@@ -324,8 +324,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
-     *        account and is managed by AWS KMS (KMS charges apply).
+     *        <code>KMS</code> - Server-side encryption that uses AWS Key Management Service. The key is stored in your
+     *        account and is managed by AWS KMS (AWS KMS charges apply).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -339,11 +339,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS customer master key (CMK) ARN used for the KMS encryption.
+     * The KMS customer master key (CMK) ARN used for the AWS KMS encryption.
      * </p>
      * 
      * @param kMSMasterKeyArn
-     *        The KMS customer master key (CMK) ARN used for the KMS encryption.
+     *        The KMS customer master key (CMK) ARN used for the AWS KMS encryption.
      */
 
     public void setKMSMasterKeyArn(String kMSMasterKeyArn) {
@@ -352,10 +352,10 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS customer master key (CMK) ARN used for the KMS encryption.
+     * The KMS customer master key (CMK) ARN used for the AWS KMS encryption.
      * </p>
      * 
-     * @return The KMS customer master key (CMK) ARN used for the KMS encryption.
+     * @return The KMS customer master key (CMK) ARN used for the AWS KMS encryption.
      */
 
     public String getKMSMasterKeyArn() {
@@ -364,11 +364,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS customer master key (CMK) ARN used for the KMS encryption.
+     * The KMS customer master key (CMK) ARN used for the AWS KMS encryption.
      * </p>
      * 
      * @param kMSMasterKeyArn
-     *        The KMS customer master key (CMK) ARN used for the KMS encryption.
+     *        The KMS customer master key (CMK) ARN used for the AWS KMS encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

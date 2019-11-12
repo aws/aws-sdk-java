@@ -30,13 +30,13 @@ public class RestoreSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the backup from which the table was restored.
+     * The Amazon Resource Name (ARN) of the backup from which the table was restored.
      * </p>
      */
     private String sourceBackupArn;
     /**
      * <p>
-     * ARN of the source table of the backup that is being restored.
+     * The ARN of the source table of the backup that is being restored.
      * </p>
      */
     private String sourceTableArn;
@@ -55,11 +55,11 @@ public class RestoreSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the backup from which the table was restored.
+     * The Amazon Resource Name (ARN) of the backup from which the table was restored.
      * </p>
      * 
      * @param sourceBackupArn
-     *        ARN of the backup from which the table was restored.
+     *        The Amazon Resource Name (ARN) of the backup from which the table was restored.
      */
 
     public void setSourceBackupArn(String sourceBackupArn) {
@@ -68,10 +68,10 @@ public class RestoreSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the backup from which the table was restored.
+     * The Amazon Resource Name (ARN) of the backup from which the table was restored.
      * </p>
      * 
-     * @return ARN of the backup from which the table was restored.
+     * @return The Amazon Resource Name (ARN) of the backup from which the table was restored.
      */
 
     public String getSourceBackupArn() {
@@ -80,11 +80,11 @@ public class RestoreSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the backup from which the table was restored.
+     * The Amazon Resource Name (ARN) of the backup from which the table was restored.
      * </p>
      * 
      * @param sourceBackupArn
-     *        ARN of the backup from which the table was restored.
+     *        The Amazon Resource Name (ARN) of the backup from which the table was restored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class RestoreSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the source table of the backup that is being restored.
+     * The ARN of the source table of the backup that is being restored.
      * </p>
      * 
      * @param sourceTableArn
-     *        ARN of the source table of the backup that is being restored.
+     *        The ARN of the source table of the backup that is being restored.
      */
 
     public void setSourceTableArn(String sourceTableArn) {
@@ -108,10 +108,10 @@ public class RestoreSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the source table of the backup that is being restored.
+     * The ARN of the source table of the backup that is being restored.
      * </p>
      * 
-     * @return ARN of the source table of the backup that is being restored.
+     * @return The ARN of the source table of the backup that is being restored.
      */
 
     public String getSourceTableArn() {
@@ -120,11 +120,11 @@ public class RestoreSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the source table of the backup that is being restored.
+     * The ARN of the source table of the backup that is being restored.
      * </p>
      * 
      * @param sourceTableArn
-     *        ARN of the source table of the backup that is being restored.
+     *        The ARN of the source table of the backup that is being restored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

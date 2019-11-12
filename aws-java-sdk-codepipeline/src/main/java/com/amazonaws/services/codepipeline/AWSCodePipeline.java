@@ -920,6 +920,8 @@ public interface AWSCodePipeline {
      *         The job was specified in an invalid format or cannot be found.
      * @throws InvalidJobStateException
      *         The job state was specified in an invalid format.
+     * @throws OutputVariablesSizeExceededException
+     *         Exceeded the total size limit for all variables in the pipeline.
      * @sample AWSCodePipeline.PutJobSuccessResult
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult"
      *      target="_top">AWS API Documentation</a>

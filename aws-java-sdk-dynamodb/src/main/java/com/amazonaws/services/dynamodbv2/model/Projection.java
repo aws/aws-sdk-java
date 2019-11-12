@@ -42,7 +42,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -78,7 +78,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -99,7 +99,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -127,7 +127,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -147,7 +147,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes are in <code>NonKeyAttributes</code>.
+     *         projected attributes is in <code>NonKeyAttributes</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -175,7 +175,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -196,7 +196,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -226,7 +226,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -247,7 +247,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -275,7 +275,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -296,7 +296,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>

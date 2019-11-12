@@ -40,6 +40,12 @@ public class ActionExecutionOutput implements Serializable, Cloneable, Structure
      * </p>
      */
     private ActionExecutionResult executionResult;
+    /**
+     * <p>
+     * The outputVariables field shows the key-value pairs that were output as part of that execution.
+     * </p>
+     */
+    private java.util.Map<String, String> outputVariables;
 
     /**
      * <p>
@@ -152,6 +158,67 @@ public class ActionExecutionOutput implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The outputVariables field shows the key-value pairs that were output as part of that execution.
+     * </p>
+     * 
+     * @return The outputVariables field shows the key-value pairs that were output as part of that execution.
+     */
+
+    public java.util.Map<String, String> getOutputVariables() {
+        return outputVariables;
+    }
+
+    /**
+     * <p>
+     * The outputVariables field shows the key-value pairs that were output as part of that execution.
+     * </p>
+     * 
+     * @param outputVariables
+     *        The outputVariables field shows the key-value pairs that were output as part of that execution.
+     */
+
+    public void setOutputVariables(java.util.Map<String, String> outputVariables) {
+        this.outputVariables = outputVariables;
+    }
+
+    /**
+     * <p>
+     * The outputVariables field shows the key-value pairs that were output as part of that execution.
+     * </p>
+     * 
+     * @param outputVariables
+     *        The outputVariables field shows the key-value pairs that were output as part of that execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecutionOutput withOutputVariables(java.util.Map<String, String> outputVariables) {
+        setOutputVariables(outputVariables);
+        return this;
+    }
+
+    public ActionExecutionOutput addOutputVariablesEntry(String key, String value) {
+        if (null == this.outputVariables) {
+            this.outputVariables = new java.util.HashMap<String, String>();
+        }
+        if (this.outputVariables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.outputVariables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into OutputVariables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecutionOutput clearOutputVariablesEntries() {
+        this.outputVariables = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -166,7 +233,9 @@ public class ActionExecutionOutput implements Serializable, Cloneable, Structure
         if (getOutputArtifacts() != null)
             sb.append("OutputArtifacts: ").append(getOutputArtifacts()).append(",");
         if (getExecutionResult() != null)
-            sb.append("ExecutionResult: ").append(getExecutionResult());
+            sb.append("ExecutionResult: ").append(getExecutionResult()).append(",");
+        if (getOutputVariables() != null)
+            sb.append("OutputVariables: ").append(getOutputVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -189,6 +258,10 @@ public class ActionExecutionOutput implements Serializable, Cloneable, Structure
             return false;
         if (other.getExecutionResult() != null && other.getExecutionResult().equals(this.getExecutionResult()) == false)
             return false;
+        if (other.getOutputVariables() == null ^ this.getOutputVariables() == null)
+            return false;
+        if (other.getOutputVariables() != null && other.getOutputVariables().equals(this.getOutputVariables()) == false)
+            return false;
         return true;
     }
 
@@ -199,6 +272,7 @@ public class ActionExecutionOutput implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getOutputArtifacts() == null) ? 0 : getOutputArtifacts().hashCode());
         hashCode = prime * hashCode + ((getExecutionResult() == null) ? 0 : getExecutionResult().hashCode());
+        hashCode = prime * hashCode + ((getOutputVariables() == null) ? 0 : getOutputVariables().hashCode());
         return hashCode;
     }
 

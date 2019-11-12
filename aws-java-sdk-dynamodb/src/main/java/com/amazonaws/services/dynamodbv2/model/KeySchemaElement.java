@@ -64,7 +64,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -106,8 +106,8 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -143,8 +143,8 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -216,7 +216,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -243,8 +243,8 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -277,7 +277,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -303,7 +303,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      *         <note>
      *         <p>
      *         The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
-     *         derives from DynamoDB' usage of an internal hash function to evenly distribute data items across
+     *         derives from DynamoDB's usage of an internal hash function to evenly distribute data items across
      *         partitions, based on their partition key values.
      *         </p>
      *         <p>
@@ -337,7 +337,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -364,8 +364,8 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -400,7 +400,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -427,8 +427,8 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -461,7 +461,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -488,8 +488,8 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives

@@ -1,3 +1,24 @@
+# __1.11.673__ __2019-11-12__
+## __AWS CodePipeline__
+  - ### Features
+    - AWS CodePipeline now supports the use of variables in action configuration.
+
+## __AWS Marketplace Catalog Service__
+  - ### Features
+    - This is the first release for the AWS Marketplace Catalog service which allows you to list, describe and manage change requests on your published entities on AWS Marketplace. 
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Amazon DynamoDB enables you to restore your data to a new DynamoDB table using a point-in-time or on-demand backup. You now can modify the settings on the new restored table. Specifically, you can exclude some or all of the local and global secondary indexes from being created with the restored table. In addition, you can change the billing mode and provisioned capacity settings.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this release, Amazon Transcribe now supports transcriptions from audio sources in Welsh English (en-WL), Scottish English(en-AB), Irish English(en-IE), Farsi(fa-IR), Tamil(ta-IN), Indonesian(id-ID), Portuguese (pt-PT), Dutch(nl-NL).
+
+## __Elastic Load Balancing__
+  - ### Features
+    - You can configure your Application Load Balancer to either drop invalid header fields or forward them to targets.
+
 # __1.11.672__ __2019-11-11__
 ## __AWS CloudFormation__
   - ### Features

@@ -43,7 +43,7 @@ public class GlobalTableGlobalSecondaryIndexSettingsUpdate implements Serializab
     private Long provisionedWriteCapacityUnits;
     /**
      * <p>
-     * AutoScaling settings for managing a global secondary index's write capacity units.
+     * Auto scaling settings for managing a global secondary index's write capacity units.
      * </p>
      */
     private AutoScalingSettingsUpdate provisionedWriteCapacityAutoScalingSettingsUpdate;
@@ -133,11 +133,11 @@ public class GlobalTableGlobalSecondaryIndexSettingsUpdate implements Serializab
 
     /**
      * <p>
-     * AutoScaling settings for managing a global secondary index's write capacity units.
+     * Auto scaling settings for managing a global secondary index's write capacity units.
      * </p>
      * 
      * @param provisionedWriteCapacityAutoScalingSettingsUpdate
-     *        AutoScaling settings for managing a global secondary index's write capacity units.
+     *        Auto scaling settings for managing a global secondary index's write capacity units.
      */
 
     public void setProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate provisionedWriteCapacityAutoScalingSettingsUpdate) {
@@ -146,10 +146,10 @@ public class GlobalTableGlobalSecondaryIndexSettingsUpdate implements Serializab
 
     /**
      * <p>
-     * AutoScaling settings for managing a global secondary index's write capacity units.
+     * Auto scaling settings for managing a global secondary index's write capacity units.
      * </p>
      * 
-     * @return AutoScaling settings for managing a global secondary index's write capacity units.
+     * @return Auto scaling settings for managing a global secondary index's write capacity units.
      */
 
     public AutoScalingSettingsUpdate getProvisionedWriteCapacityAutoScalingSettingsUpdate() {
@@ -158,11 +158,11 @@ public class GlobalTableGlobalSecondaryIndexSettingsUpdate implements Serializab
 
     /**
      * <p>
-     * AutoScaling settings for managing a global secondary index's write capacity units.
+     * Auto scaling settings for managing a global secondary index's write capacity units.
      * </p>
      * 
      * @param provisionedWriteCapacityAutoScalingSettingsUpdate
-     *        AutoScaling settings for managing a global secondary index's write capacity units.
+     *        Auto scaling settings for managing a global secondary index's write capacity units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

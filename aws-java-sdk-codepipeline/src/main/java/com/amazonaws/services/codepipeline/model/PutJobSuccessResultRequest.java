@@ -56,6 +56,14 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private ExecutionDetails executionDetails;
+    /**
+     * <p>
+     * Key-value pairs produced as output by a job worker that can be made available to a downstream action
+     * configuration. <code>outputVariables</code> can be included only when there is no continuation token on the
+     * request.
+     * </p>
+     */
+    private java.util.Map<String, String> outputVariables;
 
     /**
      * <p>
@@ -242,6 +250,79 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Key-value pairs produced as output by a job worker that can be made available to a downstream action
+     * configuration. <code>outputVariables</code> can be included only when there is no continuation token on the
+     * request.
+     * </p>
+     * 
+     * @return Key-value pairs produced as output by a job worker that can be made available to a downstream action
+     *         configuration. <code>outputVariables</code> can be included only when there is no continuation token on
+     *         the request.
+     */
+
+    public java.util.Map<String, String> getOutputVariables() {
+        return outputVariables;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs produced as output by a job worker that can be made available to a downstream action
+     * configuration. <code>outputVariables</code> can be included only when there is no continuation token on the
+     * request.
+     * </p>
+     * 
+     * @param outputVariables
+     *        Key-value pairs produced as output by a job worker that can be made available to a downstream action
+     *        configuration. <code>outputVariables</code> can be included only when there is no continuation token on
+     *        the request.
+     */
+
+    public void setOutputVariables(java.util.Map<String, String> outputVariables) {
+        this.outputVariables = outputVariables;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs produced as output by a job worker that can be made available to a downstream action
+     * configuration. <code>outputVariables</code> can be included only when there is no continuation token on the
+     * request.
+     * </p>
+     * 
+     * @param outputVariables
+     *        Key-value pairs produced as output by a job worker that can be made available to a downstream action
+     *        configuration. <code>outputVariables</code> can be included only when there is no continuation token on
+     *        the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutJobSuccessResultRequest withOutputVariables(java.util.Map<String, String> outputVariables) {
+        setOutputVariables(outputVariables);
+        return this;
+    }
+
+    public PutJobSuccessResultRequest addOutputVariablesEntry(String key, String value) {
+        if (null == this.outputVariables) {
+            this.outputVariables = new java.util.HashMap<String, String>();
+        }
+        if (this.outputVariables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.outputVariables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into OutputVariables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutJobSuccessResultRequest clearOutputVariablesEntries() {
+        this.outputVariables = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -260,7 +341,9 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
         if (getContinuationToken() != null)
             sb.append("ContinuationToken: ").append(getContinuationToken()).append(",");
         if (getExecutionDetails() != null)
-            sb.append("ExecutionDetails: ").append(getExecutionDetails());
+            sb.append("ExecutionDetails: ").append(getExecutionDetails()).append(",");
+        if (getOutputVariables() != null)
+            sb.append("OutputVariables: ").append(getOutputVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +374,10 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getExecutionDetails() != null && other.getExecutionDetails().equals(this.getExecutionDetails()) == false)
             return false;
+        if (other.getOutputVariables() == null ^ this.getOutputVariables() == null)
+            return false;
+        if (other.getOutputVariables() != null && other.getOutputVariables().equals(this.getOutputVariables()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +390,7 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getCurrentRevision() == null) ? 0 : getCurrentRevision().hashCode());
         hashCode = prime * hashCode + ((getContinuationToken() == null) ? 0 : getContinuationToken().hashCode());
         hashCode = prime * hashCode + ((getExecutionDetails() == null) ? 0 : getExecutionDetails().hashCode());
+        hashCode = prime * hashCode + ((getOutputVariables() == null) ? 0 : getOutputVariables().hashCode());
         return hashCode;
     }
 

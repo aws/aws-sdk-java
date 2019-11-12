@@ -36,7 +36,7 @@ public class TargetDescription implements Serializable, Cloneable {
     private String id;
     /**
      * <p>
-     * The port on which the target is listening.
+     * The port on which the target is listening. Not used if the target is a Lambda function.
      * </p>
      */
     private Integer port;
@@ -118,11 +118,11 @@ public class TargetDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the target is listening.
+     * The port on which the target is listening. Not used if the target is a Lambda function.
      * </p>
      * 
      * @param port
-     *        The port on which the target is listening.
+     *        The port on which the target is listening. Not used if the target is a Lambda function.
      */
 
     public void setPort(Integer port) {
@@ -131,10 +131,10 @@ public class TargetDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the target is listening.
+     * The port on which the target is listening. Not used if the target is a Lambda function.
      * </p>
      * 
-     * @return The port on which the target is listening.
+     * @return The port on which the target is listening. Not used if the target is a Lambda function.
      */
 
     public Integer getPort() {
@@ -143,11 +143,11 @@ public class TargetDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the target is listening.
+     * The port on which the target is listening. Not used if the target is a Lambda function.
      * </p>
      * 
      * @param port
-     *        The port on which the target is listening.
+     *        The port on which the target is listening. Not used if the target is a Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

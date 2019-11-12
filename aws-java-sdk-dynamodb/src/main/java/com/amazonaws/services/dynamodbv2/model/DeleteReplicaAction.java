@@ -30,18 +30,18 @@ public class DeleteReplicaAction implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The region of the replica to be removed.
+     * The Region of the replica to be removed.
      * </p>
      */
     private String regionName;
 
     /**
      * <p>
-     * The region of the replica to be removed.
+     * The Region of the replica to be removed.
      * </p>
      * 
      * @param regionName
-     *        The region of the replica to be removed.
+     *        The Region of the replica to be removed.
      */
 
     public void setRegionName(String regionName) {
@@ -50,10 +50,10 @@ public class DeleteReplicaAction implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The region of the replica to be removed.
+     * The Region of the replica to be removed.
      * </p>
      * 
-     * @return The region of the replica to be removed.
+     * @return The Region of the replica to be removed.
      */
 
     public String getRegionName() {
@@ -62,11 +62,11 @@ public class DeleteReplicaAction implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The region of the replica to be removed.
+     * The Region of the replica to be removed.
      * </p>
      * 
      * @param regionName
-     *        The region of the replica to be removed.
+     *        The Region of the replica to be removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

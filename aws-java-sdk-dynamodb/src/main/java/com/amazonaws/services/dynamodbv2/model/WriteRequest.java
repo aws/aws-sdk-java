@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one
  * of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these
- * operations, you will need to provide two separate <code>WriteRequest</code> objects.
+ * operations, you need to provide two separate <code>WriteRequest</code> objects.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/WriteRequest" target="_top">AWS API

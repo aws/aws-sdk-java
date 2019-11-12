@@ -35,7 +35,15 @@ public enum LanguageCode {
     HiIN("hi-IN"),
     ArSA("ar-SA"),
     RuRU("ru-RU"),
-    ZhCN("zh-CN");
+    ZhCN("zh-CN"),
+    NlNL("nl-NL"),
+    IdID("id-ID"),
+    TaIN("ta-IN"),
+    FaIR("fa-IR"),
+    EnIE("en-IE"),
+    EnAB("en-AB"),
+    EnWL("en-WL"),
+    PtPT("pt-PT");
 
     private String value;
 

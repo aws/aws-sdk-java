@@ -30,7 +30,7 @@ public class GlobalTableDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The regions where the global table has replicas.
+     * The Regions where the global table has replicas.
      * </p>
      */
     private java.util.List<ReplicaDescription> replicationGroup;
@@ -83,10 +83,10 @@ public class GlobalTableDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The regions where the global table has replicas.
+     * The Regions where the global table has replicas.
      * </p>
      * 
-     * @return The regions where the global table has replicas.
+     * @return The Regions where the global table has replicas.
      */
 
     public java.util.List<ReplicaDescription> getReplicationGroup() {
@@ -95,11 +95,11 @@ public class GlobalTableDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The regions where the global table has replicas.
+     * The Regions where the global table has replicas.
      * </p>
      * 
      * @param replicationGroup
-     *        The regions where the global table has replicas.
+     *        The Regions where the global table has replicas.
      */
 
     public void setReplicationGroup(java.util.Collection<ReplicaDescription> replicationGroup) {
@@ -113,7 +113,7 @@ public class GlobalTableDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The regions where the global table has replicas.
+     * The Regions where the global table has replicas.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class GlobalTableDescription implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param replicationGroup
-     *        The regions where the global table has replicas.
+     *        The Regions where the global table has replicas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class GlobalTableDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The regions where the global table has replicas.
+     * The Regions where the global table has replicas.
      * </p>
      * 
      * @param replicationGroup
-     *        The regions where the global table has replicas.
+     *        The Regions where the global table has replicas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,7 +48,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
@@ -247,7 +247,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
@@ -272,7 +272,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     *         <code>fixed-response</code>, or <code>redirect</code>.</p>
+     *         <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be
+     *         performed.</p>
      *         <p>
      *         If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
      *         must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP,
@@ -302,7 +303,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
@@ -328,7 +329,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param actions
      *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
+     *        <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
      *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
@@ -363,7 +364,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
@@ -394,7 +395,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param actions
      *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
+     *        <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
      *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
@@ -431,7 +432,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
@@ -457,7 +458,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param actions
      *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
+     *        <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
      *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,

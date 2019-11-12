@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the settings for a global table in a region that will be modified.
+ * Represents the settings for a global table in a Region that will be modified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaSettingsUpdate" target="_top">AWS API
@@ -30,7 +30,7 @@ public class ReplicaSettingsUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The region of the replica to be added.
+     * The Region of the replica to be added.
      * </p>
      */
     private String regionName;
@@ -45,7 +45,7 @@ public class ReplicaSettingsUpdate implements Serializable, Cloneable, Structure
     private Long replicaProvisionedReadCapacityUnits;
     /**
      * <p>
-     * Autoscaling settings for managing a global table replica's read capacity units.
+     * Auto scaling settings for managing a global table replica's read capacity units.
      * </p>
      */
     private AutoScalingSettingsUpdate replicaProvisionedReadCapacityAutoScalingSettingsUpdate;
@@ -58,11 +58,11 @@ public class ReplicaSettingsUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The region of the replica to be added.
+     * The Region of the replica to be added.
      * </p>
      * 
      * @param regionName
-     *        The region of the replica to be added.
+     *        The Region of the replica to be added.
      */
 
     public void setRegionName(String regionName) {
@@ -71,10 +71,10 @@ public class ReplicaSettingsUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The region of the replica to be added.
+     * The Region of the replica to be added.
      * </p>
      * 
-     * @return The region of the replica to be added.
+     * @return The Region of the replica to be added.
      */
 
     public String getRegionName() {
@@ -83,11 +83,11 @@ public class ReplicaSettingsUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The region of the replica to be added.
+     * The Region of the replica to be added.
      * </p>
      * 
      * @param regionName
-     *        The region of the replica to be added.
+     *        The Region of the replica to be added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +156,11 @@ public class ReplicaSettingsUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Autoscaling settings for managing a global table replica's read capacity units.
+     * Auto scaling settings for managing a global table replica's read capacity units.
      * </p>
      * 
      * @param replicaProvisionedReadCapacityAutoScalingSettingsUpdate
-     *        Autoscaling settings for managing a global table replica's read capacity units.
+     *        Auto scaling settings for managing a global table replica's read capacity units.
      */
 
     public void setReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate replicaProvisionedReadCapacityAutoScalingSettingsUpdate) {
@@ -169,10 +169,10 @@ public class ReplicaSettingsUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Autoscaling settings for managing a global table replica's read capacity units.
+     * Auto scaling settings for managing a global table replica's read capacity units.
      * </p>
      * 
-     * @return Autoscaling settings for managing a global table replica's read capacity units.
+     * @return Auto scaling settings for managing a global table replica's read capacity units.
      */
 
     public AutoScalingSettingsUpdate getReplicaProvisionedReadCapacityAutoScalingSettingsUpdate() {
@@ -181,11 +181,11 @@ public class ReplicaSettingsUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Autoscaling settings for managing a global table replica's read capacity units.
+     * Auto scaling settings for managing a global table replica's read capacity units.
      * </p>
      * 
      * @param replicaProvisionedReadCapacityAutoScalingSettingsUpdate
-     *        Autoscaling settings for managing a global table replica's read capacity units.
+     *        Auto scaling settings for managing a global table replica's read capacity units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

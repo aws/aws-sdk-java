@@ -37,6 +37,13 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
     private java.util.Map<String, String> configuration;
     /**
      * <p>
+     * Configuration data for an action execution with all variable references replaced with their real values for the
+     * execution.
+     * </p>
+     */
+    private java.util.Map<String, String> resolvedConfiguration;
+    /**
+     * <p>
      * The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the
      * pipeline.
      * </p>
@@ -54,6 +61,13 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.List<ArtifactDetail> inputArtifacts;
+    /**
+     * <p>
+     * The variable namespace associated with the action. All variables produced as output by this action fall under
+     * this namespace.
+     * </p>
+     */
+    private String namespace;
 
     /**
      * @param actionTypeId
@@ -139,6 +153,73 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
 
     public ActionExecutionInput clearConfigurationEntries() {
         this.configuration = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration data for an action execution with all variable references replaced with their real values for the
+     * execution.
+     * </p>
+     * 
+     * @return Configuration data for an action execution with all variable references replaced with their real values
+     *         for the execution.
+     */
+
+    public java.util.Map<String, String> getResolvedConfiguration() {
+        return resolvedConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration data for an action execution with all variable references replaced with their real values for the
+     * execution.
+     * </p>
+     * 
+     * @param resolvedConfiguration
+     *        Configuration data for an action execution with all variable references replaced with their real values
+     *        for the execution.
+     */
+
+    public void setResolvedConfiguration(java.util.Map<String, String> resolvedConfiguration) {
+        this.resolvedConfiguration = resolvedConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration data for an action execution with all variable references replaced with their real values for the
+     * execution.
+     * </p>
+     * 
+     * @param resolvedConfiguration
+     *        Configuration data for an action execution with all variable references replaced with their real values
+     *        for the execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecutionInput withResolvedConfiguration(java.util.Map<String, String> resolvedConfiguration) {
+        setResolvedConfiguration(resolvedConfiguration);
+        return this;
+    }
+
+    public ActionExecutionInput addResolvedConfigurationEntry(String key, String value) {
+        if (null == this.resolvedConfiguration) {
+            this.resolvedConfiguration = new java.util.HashMap<String, String>();
+        }
+        if (this.resolvedConfiguration.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.resolvedConfiguration.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ResolvedConfiguration.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecutionInput clearResolvedConfigurationEntries() {
+        this.resolvedConfiguration = null;
         return this;
     }
 
@@ -299,6 +380,52 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The variable namespace associated with the action. All variables produced as output by this action fall under
+     * this namespace.
+     * </p>
+     * 
+     * @param namespace
+     *        The variable namespace associated with the action. All variables produced as output by this action fall
+     *        under this namespace.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The variable namespace associated with the action. All variables produced as output by this action fall under
+     * this namespace.
+     * </p>
+     * 
+     * @return The variable namespace associated with the action. All variables produced as output by this action fall
+     *         under this namespace.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The variable namespace associated with the action. All variables produced as output by this action fall under
+     * this namespace.
+     * </p>
+     * 
+     * @param namespace
+     *        The variable namespace associated with the action. All variables produced as output by this action fall
+     *        under this namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecutionInput withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -314,12 +441,16 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
             sb.append("ActionTypeId: ").append(getActionTypeId()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getResolvedConfiguration() != null)
+            sb.append("ResolvedConfiguration: ").append(getResolvedConfiguration()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
         if (getInputArtifacts() != null)
-            sb.append("InputArtifacts: ").append(getInputArtifacts());
+            sb.append("InputArtifacts: ").append(getInputArtifacts()).append(",");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace());
         sb.append("}");
         return sb.toString();
     }
@@ -342,6 +473,10 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getResolvedConfiguration() == null ^ this.getResolvedConfiguration() == null)
+            return false;
+        if (other.getResolvedConfiguration() != null && other.getResolvedConfiguration().equals(this.getResolvedConfiguration()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -354,6 +489,10 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
             return false;
         if (other.getInputArtifacts() != null && other.getInputArtifacts().equals(this.getInputArtifacts()) == false)
             return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
         return true;
     }
 
@@ -364,9 +503,11 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getActionTypeId() == null) ? 0 : getActionTypeId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getResolvedConfiguration() == null) ? 0 : getResolvedConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getInputArtifacts() == null) ? 0 : getInputArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         return hashCode;
     }
 

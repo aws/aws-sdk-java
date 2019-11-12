@@ -48,7 +48,7 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
     private String tableArn;
     /**
      * <p>
-     * Size of the table in bytes. Please note this is an approximate value.
+     * Size of the table in bytes. Note that this is an approximate value.
      * </p>
      */
     private Long tableSizeBytes;
@@ -72,7 +72,7 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
     private ProvisionedThroughput provisionedThroughput;
     /**
      * <p>
-     * Number of items in the table. Please note this is an approximate value.
+     * Number of items in the table. Note that this is an approximate value.
      * </p>
      */
     private Long itemCount;
@@ -220,11 +220,11 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Size of the table in bytes. Please note this is an approximate value.
+     * Size of the table in bytes. Note that this is an approximate value.
      * </p>
      * 
      * @param tableSizeBytes
-     *        Size of the table in bytes. Please note this is an approximate value.
+     *        Size of the table in bytes. Note that this is an approximate value.
      */
 
     public void setTableSizeBytes(Long tableSizeBytes) {
@@ -233,10 +233,10 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Size of the table in bytes. Please note this is an approximate value.
+     * Size of the table in bytes. Note that this is an approximate value.
      * </p>
      * 
-     * @return Size of the table in bytes. Please note this is an approximate value.
+     * @return Size of the table in bytes. Note that this is an approximate value.
      */
 
     public Long getTableSizeBytes() {
@@ -245,11 +245,11 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Size of the table in bytes. Please note this is an approximate value.
+     * Size of the table in bytes. Note that this is an approximate value.
      * </p>
      * 
      * @param tableSizeBytes
-     *        Size of the table in bytes. Please note this is an approximate value.
+     *        Size of the table in bytes. Note that this is an approximate value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,11 +410,11 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Number of items in the table. Please note this is an approximate value.
+     * Number of items in the table. Note that this is an approximate value.
      * </p>
      * 
      * @param itemCount
-     *        Number of items in the table. Please note this is an approximate value.
+     *        Number of items in the table. Note that this is an approximate value.
      */
 
     public void setItemCount(Long itemCount) {
@@ -423,10 +423,10 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Number of items in the table. Please note this is an approximate value.
+     * Number of items in the table. Note that this is an approximate value.
      * </p>
      * 
-     * @return Number of items in the table. Please note this is an approximate value.
+     * @return Number of items in the table. Note that this is an approximate value.
      */
 
     public Long getItemCount() {
@@ -435,11 +435,11 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Number of items in the table. Please note this is an approximate value.
+     * Number of items in the table. Note that this is an approximate value.
      * </p>
      * 
      * @param itemCount
-     *        Number of items in the table. Please note this is an approximate value.
+     *        Number of items in the table. Note that this is an approximate value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

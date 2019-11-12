@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,14 @@ public class RestoreTableFromBackupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetTableName").build();
     private static final MarshallingInfo<String> BACKUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("BackupArn").build();
+    private static final MarshallingInfo<String> BILLINGMODEOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingModeOverride").build();
+    private static final MarshallingInfo<List> GLOBALSECONDARYINDEXOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalSecondaryIndexOverride").build();
+    private static final MarshallingInfo<List> LOCALSECONDARYINDEXOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalSecondaryIndexOverride").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUTOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughputOverride").build();
 
     private static final RestoreTableFromBackupRequestMarshaller instance = new RestoreTableFromBackupRequestMarshaller();
 
@@ -50,6 +59,10 @@ public class RestoreTableFromBackupRequestMarshaller {
         try {
             protocolMarshaller.marshall(restoreTableFromBackupRequest.getTargetTableName(), TARGETTABLENAME_BINDING);
             protocolMarshaller.marshall(restoreTableFromBackupRequest.getBackupArn(), BACKUPARN_BINDING);
+            protocolMarshaller.marshall(restoreTableFromBackupRequest.getBillingModeOverride(), BILLINGMODEOVERRIDE_BINDING);
+            protocolMarshaller.marshall(restoreTableFromBackupRequest.getGlobalSecondaryIndexOverride(), GLOBALSECONDARYINDEXOVERRIDE_BINDING);
+            protocolMarshaller.marshall(restoreTableFromBackupRequest.getLocalSecondaryIndexOverride(), LOCALSECONDARYINDEXOVERRIDE_BINDING);
+            protocolMarshaller.marshall(restoreTableFromBackupRequest.getProvisionedThroughputOverride(), PROVISIONEDTHROUGHPUTOVERRIDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

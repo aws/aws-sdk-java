@@ -28,8 +28,7 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * The type of action.
      * </p>
      */
     private String type;
@@ -56,8 +55,8 @@ public class Action implements Serializable, Cloneable {
     /**
      * <p>
      * The order for the action. This value is required for rules with multiple actions. The action with the lowest
-     * value for order is performed first. The final action to be performed must be a <code>forward</code> or a
-     * <code>fixed-response</code> action.
+     * value for order is performed first. The last action to be performed must be one of the following types of
+     * actions: a <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      */
     private Integer order;
@@ -78,13 +77,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * The type of action.
      * </p>
      * 
      * @param type
-     *        The type of action. Each rule must include exactly one of the following types of actions:
-     *        <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
+     *        The type of action.
      * @see ActionTypeEnum
      */
 
@@ -94,12 +91,10 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * The type of action.
      * </p>
      * 
-     * @return The type of action. Each rule must include exactly one of the following types of actions:
-     *         <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
+     * @return The type of action.
      * @see ActionTypeEnum
      */
 
@@ -109,13 +104,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * The type of action.
      * </p>
      * 
      * @param type
-     *        The type of action. Each rule must include exactly one of the following types of actions:
-     *        <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
+     *        The type of action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionTypeEnum
      */
@@ -127,13 +120,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * The type of action.
      * </p>
      * 
      * @param type
-     *        The type of action. Each rule must include exactly one of the following types of actions:
-     *        <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
+     *        The type of action.
      * @see ActionTypeEnum
      */
 
@@ -143,13 +134,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of action. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>.
+     * The type of action.
      * </p>
      * 
      * @param type
-     *        The type of action. Each rule must include exactly one of the following types of actions:
-     *        <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
+     *        The type of action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionTypeEnum
      */
@@ -297,14 +286,14 @@ public class Action implements Serializable, Cloneable {
     /**
      * <p>
      * The order for the action. This value is required for rules with multiple actions. The action with the lowest
-     * value for order is performed first. The final action to be performed must be a <code>forward</code> or a
-     * <code>fixed-response</code> action.
+     * value for order is performed first. The last action to be performed must be one of the following types of
+     * actions: a <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * 
      * @param order
      *        The order for the action. This value is required for rules with multiple actions. The action with the
-     *        lowest value for order is performed first. The final action to be performed must be a <code>forward</code>
-     *        or a <code>fixed-response</code> action.
+     *        lowest value for order is performed first. The last action to be performed must be one of the following
+     *        types of actions: a <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      */
 
     public void setOrder(Integer order) {
@@ -314,13 +303,13 @@ public class Action implements Serializable, Cloneable {
     /**
      * <p>
      * The order for the action. This value is required for rules with multiple actions. The action with the lowest
-     * value for order is performed first. The final action to be performed must be a <code>forward</code> or a
-     * <code>fixed-response</code> action.
+     * value for order is performed first. The last action to be performed must be one of the following types of
+     * actions: a <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * 
      * @return The order for the action. This value is required for rules with multiple actions. The action with the
-     *         lowest value for order is performed first. The final action to be performed must be a
-     *         <code>forward</code> or a <code>fixed-response</code> action.
+     *         lowest value for order is performed first. The last action to be performed must be one of the following
+     *         types of actions: a <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      */
 
     public Integer getOrder() {
@@ -330,14 +319,14 @@ public class Action implements Serializable, Cloneable {
     /**
      * <p>
      * The order for the action. This value is required for rules with multiple actions. The action with the lowest
-     * value for order is performed first. The final action to be performed must be a <code>forward</code> or a
-     * <code>fixed-response</code> action.
+     * value for order is performed first. The last action to be performed must be one of the following types of
+     * actions: a <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * </p>
      * 
      * @param order
      *        The order for the action. This value is required for rules with multiple actions. The action with the
-     *        lowest value for order is performed first. The final action to be performed must be a <code>forward</code>
-     *        or a <code>fixed-response</code> action.
+     *        lowest value for order is performed first. The last action to be performed must be one of the following
+     *        types of actions: a <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

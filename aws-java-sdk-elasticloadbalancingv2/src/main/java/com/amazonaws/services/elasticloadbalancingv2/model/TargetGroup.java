@@ -46,7 +46,7 @@ public class TargetGroup implements Serializable, Cloneable {
     private String protocol;
     /**
      * <p>
-     * The port on which the targets are listening.
+     * The port on which the targets are listening. Not used if the target is a Lambda function.
      * </p>
      */
     private Integer port;
@@ -280,11 +280,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the targets are listening.
+     * The port on which the targets are listening. Not used if the target is a Lambda function.
      * </p>
      * 
      * @param port
-     *        The port on which the targets are listening.
+     *        The port on which the targets are listening. Not used if the target is a Lambda function.
      */
 
     public void setPort(Integer port) {
@@ -293,10 +293,10 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the targets are listening.
+     * The port on which the targets are listening. Not used if the target is a Lambda function.
      * </p>
      * 
-     * @return The port on which the targets are listening.
+     * @return The port on which the targets are listening. Not used if the target is a Lambda function.
      */
 
     public Integer getPort() {
@@ -305,11 +305,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the targets are listening.
+     * The port on which the targets are listening. Not used if the target is a Lambda function.
      * </p>
      * 
      * @param port
-     *        The port on which the targets are listening.
+     *        The port on which the targets are listening. Not used if the target is a Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

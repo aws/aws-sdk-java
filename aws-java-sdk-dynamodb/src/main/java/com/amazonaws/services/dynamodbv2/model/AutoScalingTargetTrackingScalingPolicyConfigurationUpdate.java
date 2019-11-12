@@ -42,7 +42,8 @@ public class AutoScalingTargetTrackingScalingPolicyConfigurationUpdate implement
      * The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
      * The cooldown period is used to block subsequent scale in requests until it has expired. You should scale in
      * conservatively to protect your application's availability. However, if another alarm triggers a scale out policy
-     * during the cooldown period after a scale-in, application autoscaling scales out your scalable target immediately.
+     * during the cooldown period after a scale-in, application auto scaling scales out your scalable target
+     * immediately.
      * </p>
      */
     private Integer scaleInCooldown;
@@ -140,14 +141,15 @@ public class AutoScalingTargetTrackingScalingPolicyConfigurationUpdate implement
      * The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
      * The cooldown period is used to block subsequent scale in requests until it has expired. You should scale in
      * conservatively to protect your application's availability. However, if another alarm triggers a scale out policy
-     * during the cooldown period after a scale-in, application autoscaling scales out your scalable target immediately.
+     * during the cooldown period after a scale-in, application auto scaling scales out your scalable target
+     * immediately.
      * </p>
      * 
      * @param scaleInCooldown
      *        The amount of time, in seconds, after a scale in activity completes before another scale in activity can
      *        start. The cooldown period is used to block subsequent scale in requests until it has expired. You should
      *        scale in conservatively to protect your application's availability. However, if another alarm triggers a
-     *        scale out policy during the cooldown period after a scale-in, application autoscaling scales out your
+     *        scale out policy during the cooldown period after a scale-in, application auto scaling scales out your
      *        scalable target immediately.
      */
 
@@ -160,13 +162,14 @@ public class AutoScalingTargetTrackingScalingPolicyConfigurationUpdate implement
      * The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
      * The cooldown period is used to block subsequent scale in requests until it has expired. You should scale in
      * conservatively to protect your application's availability. However, if another alarm triggers a scale out policy
-     * during the cooldown period after a scale-in, application autoscaling scales out your scalable target immediately.
+     * during the cooldown period after a scale-in, application auto scaling scales out your scalable target
+     * immediately.
      * </p>
      * 
      * @return The amount of time, in seconds, after a scale in activity completes before another scale in activity can
      *         start. The cooldown period is used to block subsequent scale in requests until it has expired. You should
      *         scale in conservatively to protect your application's availability. However, if another alarm triggers a
-     *         scale out policy during the cooldown period after a scale-in, application autoscaling scales out your
+     *         scale out policy during the cooldown period after a scale-in, application auto scaling scales out your
      *         scalable target immediately.
      */
 
@@ -179,14 +182,15 @@ public class AutoScalingTargetTrackingScalingPolicyConfigurationUpdate implement
      * The amount of time, in seconds, after a scale in activity completes before another scale in activity can start.
      * The cooldown period is used to block subsequent scale in requests until it has expired. You should scale in
      * conservatively to protect your application's availability. However, if another alarm triggers a scale out policy
-     * during the cooldown period after a scale-in, application autoscaling scales out your scalable target immediately.
+     * during the cooldown period after a scale-in, application auto scaling scales out your scalable target
+     * immediately.
      * </p>
      * 
      * @param scaleInCooldown
      *        The amount of time, in seconds, after a scale in activity completes before another scale in activity can
      *        start. The cooldown period is used to block subsequent scale in requests until it has expired. You should
      *        scale in conservatively to protect your application's availability. However, if another alarm triggers a
-     *        scale out policy during the cooldown period after a scale-in, application autoscaling scales out your
+     *        scale out policy during the cooldown period after a scale-in, application auto scaling scales out your
      *        scalable target immediately.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

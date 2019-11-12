@@ -51,14 +51,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     * <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     * >Provisioned Mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     * >On-Demand Mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -92,6 +96,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
@@ -271,14 +278,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     * <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     * >Provisioned Mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     * >On-Demand Mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -291,14 +302,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     *        <code>PROVISIONED</code> for predictable workloads.
+     *        <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     *        <code>PROVISIONED</code> sets the billing mode to <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     *        >Provisioned Mode</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable
+     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     *        >On-Demand Mode</a>.
      *        </p>
      *        </li>
      * @see BillingMode
@@ -318,14 +333,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     * <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     * >Provisioned Mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     * >On-Demand Mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -337,14 +356,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     *         <code>PROVISIONED</code> for predictable workloads.
+     *         <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     *         <code>PROVISIONED</code> sets the billing mode to <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     *         >Provisioned Mode</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     *         <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *         <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable
+     *         workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     *         >On-Demand Mode</a>.
      *         </p>
      *         </li>
      * @see BillingMode
@@ -364,14 +387,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     * <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     * >Provisioned Mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     * >On-Demand Mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -384,14 +411,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     *        <code>PROVISIONED</code> for predictable workloads.
+     *        <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     *        <code>PROVISIONED</code> sets the billing mode to <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     *        >Provisioned Mode</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable
+     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     *        >On-Demand Mode</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -413,14 +444,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     * <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     * <code>PROVISIONED</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     * >Provisioned Mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     * >On-Demand Mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -433,14 +468,18 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
-     *        <code>PROVISIONED</code> for predictable workloads.
+     *        <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
+     *        <code>PROVISIONED</code> sets the billing mode to <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
+     *        >Provisioned Mode</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
-     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable
+     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
+     *        >On-Demand Mode</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -515,6 +554,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
+     * You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
      * Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -539,6 +581,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
@@ -572,6 +617,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
+     * You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
      * Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -597,6 +645,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
@@ -635,6 +686,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
+     * You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
      * Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -665,6 +719,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
@@ -705,6 +762,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
+     * You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global
      * Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -730,6 +790,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        You can create or delete only one global secondary index per <code>UpdateTable</code> operation.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global

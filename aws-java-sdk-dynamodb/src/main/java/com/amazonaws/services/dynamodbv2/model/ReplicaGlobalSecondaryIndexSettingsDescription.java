@@ -72,7 +72,7 @@ public class ReplicaGlobalSecondaryIndexSettingsDescription implements Serializa
     private Long provisionedReadCapacityUnits;
     /**
      * <p>
-     * Autoscaling settings for a global secondary index replica's read capacity units.
+     * Auto scaling settings for a global secondary index replica's read capacity units.
      * </p>
      */
     private AutoScalingSettingsDescription provisionedReadCapacityAutoScalingSettings;
@@ -84,7 +84,7 @@ public class ReplicaGlobalSecondaryIndexSettingsDescription implements Serializa
     private Long provisionedWriteCapacityUnits;
     /**
      * <p>
-     * AutoScaling settings for a global secondary index replica's write capacity units.
+     * Auto scaling settings for a global secondary index replica's write capacity units.
      * </p>
      */
     private AutoScalingSettingsDescription provisionedWriteCapacityAutoScalingSettings;
@@ -408,11 +408,11 @@ public class ReplicaGlobalSecondaryIndexSettingsDescription implements Serializa
 
     /**
      * <p>
-     * Autoscaling settings for a global secondary index replica's read capacity units.
+     * Auto scaling settings for a global secondary index replica's read capacity units.
      * </p>
      * 
      * @param provisionedReadCapacityAutoScalingSettings
-     *        Autoscaling settings for a global secondary index replica's read capacity units.
+     *        Auto scaling settings for a global secondary index replica's read capacity units.
      */
 
     public void setProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription provisionedReadCapacityAutoScalingSettings) {
@@ -421,10 +421,10 @@ public class ReplicaGlobalSecondaryIndexSettingsDescription implements Serializa
 
     /**
      * <p>
-     * Autoscaling settings for a global secondary index replica's read capacity units.
+     * Auto scaling settings for a global secondary index replica's read capacity units.
      * </p>
      * 
-     * @return Autoscaling settings for a global secondary index replica's read capacity units.
+     * @return Auto scaling settings for a global secondary index replica's read capacity units.
      */
 
     public AutoScalingSettingsDescription getProvisionedReadCapacityAutoScalingSettings() {
@@ -433,11 +433,11 @@ public class ReplicaGlobalSecondaryIndexSettingsDescription implements Serializa
 
     /**
      * <p>
-     * Autoscaling settings for a global secondary index replica's read capacity units.
+     * Auto scaling settings for a global secondary index replica's read capacity units.
      * </p>
      * 
      * @param provisionedReadCapacityAutoScalingSettings
-     *        Autoscaling settings for a global secondary index replica's read capacity units.
+     *        Auto scaling settings for a global secondary index replica's read capacity units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,11 +492,11 @@ public class ReplicaGlobalSecondaryIndexSettingsDescription implements Serializa
 
     /**
      * <p>
-     * AutoScaling settings for a global secondary index replica's write capacity units.
+     * Auto scaling settings for a global secondary index replica's write capacity units.
      * </p>
      * 
      * @param provisionedWriteCapacityAutoScalingSettings
-     *        AutoScaling settings for a global secondary index replica's write capacity units.
+     *        Auto scaling settings for a global secondary index replica's write capacity units.
      */
 
     public void setProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription provisionedWriteCapacityAutoScalingSettings) {
@@ -505,10 +505,10 @@ public class ReplicaGlobalSecondaryIndexSettingsDescription implements Serializa
 
     /**
      * <p>
-     * AutoScaling settings for a global secondary index replica's write capacity units.
+     * Auto scaling settings for a global secondary index replica's write capacity units.
      * </p>
      * 
-     * @return AutoScaling settings for a global secondary index replica's write capacity units.
+     * @return Auto scaling settings for a global secondary index replica's write capacity units.
      */
 
     public AutoScalingSettingsDescription getProvisionedWriteCapacityAutoScalingSettings() {
@@ -517,11 +517,11 @@ public class ReplicaGlobalSecondaryIndexSettingsDescription implements Serializa
 
     /**
      * <p>
-     * AutoScaling settings for a global secondary index replica's write capacity units.
+     * Auto scaling settings for a global secondary index replica's write capacity units.
      * </p>
      * 
      * @param provisionedWriteCapacityAutoScalingSettings
-     *        AutoScaling settings for a global secondary index replica's write capacity units.
+     *        Auto scaling settings for a global secondary index replica's write capacity units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

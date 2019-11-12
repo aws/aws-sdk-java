@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the autoscaling settings to be modified for a global table or global secondary index.
+ * Represents the auto scaling settings to be modified for a global table or global secondary index.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AutoScalingSettingsUpdate" target="_top">AWS
@@ -42,13 +42,13 @@ public class AutoScalingSettingsUpdate implements Serializable, Cloneable, Struc
     private Long maximumUnits;
     /**
      * <p>
-     * Disabled autoscaling for this global table or global secondary index.
+     * Disabled auto scaling for this global table or global secondary index.
      * </p>
      */
     private Boolean autoScalingDisabled;
     /**
      * <p>
-     * Role ARN used for configuring autoscaling policy.
+     * Role ARN used for configuring auto scaling policy.
      * </p>
      */
     private String autoScalingRoleArn;
@@ -141,11 +141,11 @@ public class AutoScalingSettingsUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Disabled autoscaling for this global table or global secondary index.
+     * Disabled auto scaling for this global table or global secondary index.
      * </p>
      * 
      * @param autoScalingDisabled
-     *        Disabled autoscaling for this global table or global secondary index.
+     *        Disabled auto scaling for this global table or global secondary index.
      */
 
     public void setAutoScalingDisabled(Boolean autoScalingDisabled) {
@@ -154,10 +154,10 @@ public class AutoScalingSettingsUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Disabled autoscaling for this global table or global secondary index.
+     * Disabled auto scaling for this global table or global secondary index.
      * </p>
      * 
-     * @return Disabled autoscaling for this global table or global secondary index.
+     * @return Disabled auto scaling for this global table or global secondary index.
      */
 
     public Boolean getAutoScalingDisabled() {
@@ -166,11 +166,11 @@ public class AutoScalingSettingsUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Disabled autoscaling for this global table or global secondary index.
+     * Disabled auto scaling for this global table or global secondary index.
      * </p>
      * 
      * @param autoScalingDisabled
-     *        Disabled autoscaling for this global table or global secondary index.
+     *        Disabled auto scaling for this global table or global secondary index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,10 +181,10 @@ public class AutoScalingSettingsUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Disabled autoscaling for this global table or global secondary index.
+     * Disabled auto scaling for this global table or global secondary index.
      * </p>
      * 
-     * @return Disabled autoscaling for this global table or global secondary index.
+     * @return Disabled auto scaling for this global table or global secondary index.
      */
 
     public Boolean isAutoScalingDisabled() {
@@ -193,11 +193,11 @@ public class AutoScalingSettingsUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Role ARN used for configuring autoscaling policy.
+     * Role ARN used for configuring auto scaling policy.
      * </p>
      * 
      * @param autoScalingRoleArn
-     *        Role ARN used for configuring autoscaling policy.
+     *        Role ARN used for configuring auto scaling policy.
      */
 
     public void setAutoScalingRoleArn(String autoScalingRoleArn) {
@@ -206,10 +206,10 @@ public class AutoScalingSettingsUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Role ARN used for configuring autoscaling policy.
+     * Role ARN used for configuring auto scaling policy.
      * </p>
      * 
-     * @return Role ARN used for configuring autoscaling policy.
+     * @return Role ARN used for configuring auto scaling policy.
      */
 
     public String getAutoScalingRoleArn() {
@@ -218,11 +218,11 @@ public class AutoScalingSettingsUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Role ARN used for configuring autoscaling policy.
+     * Role ARN used for configuring auto scaling policy.
      * </p>
      * 
      * @param autoScalingRoleArn
-     *        Role ARN used for configuring autoscaling policy.
+     *        Role ARN used for configuring auto scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

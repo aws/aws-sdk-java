@@ -59,7 +59,7 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a
+     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
      *         duplicate of a previously entered job name. Resend your request with a different name.</p>
      *         <p>
      *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
@@ -229,7 +229,7 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a
+     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
      *         duplicate of a previously entered job name. Resend your request with a different name.</p>
      *         <p>
      *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
@@ -260,7 +260,7 @@ public interface AmazonTranscribe {
      * @throws NotFoundException
      *         We can't find the requested resource. Check the name and try your request again.
      * @throws ConflictException
-     *         When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a
+     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
      *         duplicate of a previously entered job name. Resend your request with a different name.</p>
      *         <p>
      *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same

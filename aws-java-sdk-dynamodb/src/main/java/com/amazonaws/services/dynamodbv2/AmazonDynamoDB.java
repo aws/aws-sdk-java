@@ -1695,27 +1695,6 @@ public interface AmazonDynamoDB {
      * cannot retrieve items from tables in more than one AWS account or Region. The aggregate size of the items in the
      * transaction cannot exceed 4 MB.
      * </p>
-     * <note>
-     * <p>
-     * All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with up to 4 MB of data, except the
-     * following AWS Regions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * China (Beijing)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * China (Ningxia)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction with up to 4 MB of data.
-     * </p>
-     * </note>
      * <p>
      * DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following is true:
      * </p>
@@ -1781,11 +1760,6 @@ public interface AmazonDynamoDB {
      *         </li>
      *         <li>
      *         <p>
-     *         The aggregate size of the items in the transaction exceeds 4 MBs.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         There is a user error, such as an invalid data format.
      *         </p>
      *         </li>
@@ -1810,11 +1784,6 @@ public interface AmazonDynamoDB {
      *         <li>
      *         <p>
      *         There is insufficient provisioned capacity for the transaction to be completed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The aggregate size of the items in the transaction exceeds 4 MBs.
      *         </p>
      *         </li>
      *         <li>
@@ -2060,6 +2029,9 @@ public interface AmazonDynamoDB {
      *         the frequency of requests and use exponential backoff. For more information, go to <a href=
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff"
      *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.TransactGetItems
@@ -2075,27 +2047,6 @@ public interface AmazonDynamoDB {
      * can target the same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the
      * same item. The aggregate size of the items in the transaction cannot exceed 4 MB.
      * </p>
-     * <note>
-     * <p>
-     * All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with up to 4 MB of data, except the
-     * following AWS Regions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * China (Beijing)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * China (Ningxia)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction with up to 4 MB of data.
-     * </p>
-     * </note>
      * <p>
      * The actions are completed atomically so that either all of them succeed, or all of them fail. They are defined by
      * the following objects:
@@ -2211,11 +2162,6 @@ public interface AmazonDynamoDB {
      *         </li>
      *         <li>
      *         <p>
-     *         The aggregate size of the items in the transaction exceeds 4 MBs.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         There is a user error, such as an invalid data format.
      *         </p>
      *         </li>
@@ -2240,11 +2186,6 @@ public interface AmazonDynamoDB {
      *         <li>
      *         <p>
      *         There is insufficient provisioned capacity for the transaction to be completed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The aggregate size of the items in the transaction exceeds 4 MBs.
      *         </p>
      *         </li>
      *         <li>
@@ -2495,6 +2436,9 @@ public interface AmazonDynamoDB {
      *         the frequency of requests and use exponential backoff. For more information, go to <a href=
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff"
      *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.TransactWriteItems

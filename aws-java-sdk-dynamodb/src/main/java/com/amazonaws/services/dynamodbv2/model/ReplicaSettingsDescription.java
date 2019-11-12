@@ -30,33 +30,33 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The region name of the replica.
+     * The Region name of the replica.
      * </p>
      */
     private String regionName;
     /**
      * <p>
-     * The current state of the region:
+     * The current state of the Region:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The region is being created.
+     * <code>CREATING</code> - The Region is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The region is being updated.
+     * <code>UPDATING</code> - The Region is being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> - The region is being deleted.
+     * <code>DELETING</code> - The Region is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The region is ready for use.
+     * <code>ACTIVE</code> - The Region is ready for use.
      * </p>
      * </li>
      * </ul>
@@ -79,7 +79,7 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
     private Long replicaProvisionedReadCapacityUnits;
     /**
      * <p>
-     * Autoscaling settings for a global table replica's read capacity units.
+     * Auto scaling settings for a global table replica's read capacity units.
      * </p>
      */
     private AutoScalingSettingsDescription replicaProvisionedReadCapacityAutoScalingSettings;
@@ -94,7 +94,7 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
     private Long replicaProvisionedWriteCapacityUnits;
     /**
      * <p>
-     * AutoScaling settings for a global table replica's write capacity units.
+     * Auto scaling settings for a global table replica's write capacity units.
      * </p>
      */
     private AutoScalingSettingsDescription replicaProvisionedWriteCapacityAutoScalingSettings;
@@ -107,11 +107,11 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The region name of the replica.
+     * The Region name of the replica.
      * </p>
      * 
      * @param regionName
-     *        The region name of the replica.
+     *        The Region name of the replica.
      */
 
     public void setRegionName(String regionName) {
@@ -120,10 +120,10 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The region name of the replica.
+     * The Region name of the replica.
      * </p>
      * 
-     * @return The region name of the replica.
+     * @return The Region name of the replica.
      */
 
     public String getRegionName() {
@@ -132,11 +132,11 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The region name of the replica.
+     * The Region name of the replica.
      * </p>
      * 
      * @param regionName
-     *        The region name of the replica.
+     *        The Region name of the replica.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,52 +147,52 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The current state of the region:
+     * The current state of the Region:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The region is being created.
+     * <code>CREATING</code> - The Region is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The region is being updated.
+     * <code>UPDATING</code> - The Region is being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> - The region is being deleted.
+     * <code>DELETING</code> - The Region is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The region is ready for use.
+     * <code>ACTIVE</code> - The Region is ready for use.
      * </p>
      * </li>
      * </ul>
      * 
      * @param replicaStatus
-     *        The current state of the region:</p>
+     *        The current state of the Region:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The region is being created.
+     *        <code>CREATING</code> - The Region is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The region is being updated.
+     *        <code>UPDATING</code> - The Region is being updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETING</code> - The region is being deleted.
+     *        <code>DELETING</code> - The Region is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> - The region is ready for use.
+     *        <code>ACTIVE</code> - The Region is ready for use.
      *        </p>
      *        </li>
      * @see ReplicaStatus
@@ -204,51 +204,51 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The current state of the region:
+     * The current state of the Region:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The region is being created.
+     * <code>CREATING</code> - The Region is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The region is being updated.
+     * <code>UPDATING</code> - The Region is being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> - The region is being deleted.
+     * <code>DELETING</code> - The Region is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The region is ready for use.
+     * <code>ACTIVE</code> - The Region is ready for use.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The current state of the region:</p>
+     * @return The current state of the Region:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> - The region is being created.
+     *         <code>CREATING</code> - The Region is being created.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATING</code> - The region is being updated.
+     *         <code>UPDATING</code> - The Region is being updated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DELETING</code> - The region is being deleted.
+     *         <code>DELETING</code> - The Region is being deleted.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ACTIVE</code> - The region is ready for use.
+     *         <code>ACTIVE</code> - The Region is ready for use.
      *         </p>
      *         </li>
      * @see ReplicaStatus
@@ -260,52 +260,52 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The current state of the region:
+     * The current state of the Region:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The region is being created.
+     * <code>CREATING</code> - The Region is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The region is being updated.
+     * <code>UPDATING</code> - The Region is being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> - The region is being deleted.
+     * <code>DELETING</code> - The Region is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The region is ready for use.
+     * <code>ACTIVE</code> - The Region is ready for use.
      * </p>
      * </li>
      * </ul>
      * 
      * @param replicaStatus
-     *        The current state of the region:</p>
+     *        The current state of the Region:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The region is being created.
+     *        <code>CREATING</code> - The Region is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The region is being updated.
+     *        <code>UPDATING</code> - The Region is being updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETING</code> - The region is being deleted.
+     *        <code>DELETING</code> - The Region is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> - The region is ready for use.
+     *        <code>ACTIVE</code> - The Region is ready for use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -319,52 +319,52 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The current state of the region:
+     * The current state of the Region:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The region is being created.
+     * <code>CREATING</code> - The Region is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The region is being updated.
+     * <code>UPDATING</code> - The Region is being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> - The region is being deleted.
+     * <code>DELETING</code> - The Region is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The region is ready for use.
+     * <code>ACTIVE</code> - The Region is ready for use.
      * </p>
      * </li>
      * </ul>
      * 
      * @param replicaStatus
-     *        The current state of the region:</p>
+     *        The current state of the Region:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The region is being created.
+     *        <code>CREATING</code> - The Region is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The region is being updated.
+     *        <code>UPDATING</code> - The Region is being updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETING</code> - The region is being deleted.
+     *        <code>DELETING</code> - The Region is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> - The region is ready for use.
+     *        <code>ACTIVE</code> - The Region is ready for use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -476,11 +476,11 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Autoscaling settings for a global table replica's read capacity units.
+     * Auto scaling settings for a global table replica's read capacity units.
      * </p>
      * 
      * @param replicaProvisionedReadCapacityAutoScalingSettings
-     *        Autoscaling settings for a global table replica's read capacity units.
+     *        Auto scaling settings for a global table replica's read capacity units.
      */
 
     public void setReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription replicaProvisionedReadCapacityAutoScalingSettings) {
@@ -489,10 +489,10 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Autoscaling settings for a global table replica's read capacity units.
+     * Auto scaling settings for a global table replica's read capacity units.
      * </p>
      * 
-     * @return Autoscaling settings for a global table replica's read capacity units.
+     * @return Auto scaling settings for a global table replica's read capacity units.
      */
 
     public AutoScalingSettingsDescription getReplicaProvisionedReadCapacityAutoScalingSettings() {
@@ -501,11 +501,11 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Autoscaling settings for a global table replica's read capacity units.
+     * Auto scaling settings for a global table replica's read capacity units.
      * </p>
      * 
      * @param replicaProvisionedReadCapacityAutoScalingSettings
-     *        Autoscaling settings for a global table replica's read capacity units.
+     *        Auto scaling settings for a global table replica's read capacity units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,11 +575,11 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * AutoScaling settings for a global table replica's write capacity units.
+     * Auto scaling settings for a global table replica's write capacity units.
      * </p>
      * 
      * @param replicaProvisionedWriteCapacityAutoScalingSettings
-     *        AutoScaling settings for a global table replica's write capacity units.
+     *        Auto scaling settings for a global table replica's write capacity units.
      */
 
     public void setReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription replicaProvisionedWriteCapacityAutoScalingSettings) {
@@ -588,10 +588,10 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * AutoScaling settings for a global table replica's write capacity units.
+     * Auto scaling settings for a global table replica's write capacity units.
      * </p>
      * 
-     * @return AutoScaling settings for a global table replica's write capacity units.
+     * @return Auto scaling settings for a global table replica's write capacity units.
      */
 
     public AutoScalingSettingsDescription getReplicaProvisionedWriteCapacityAutoScalingSettings() {
@@ -600,11 +600,11 @@ public class ReplicaSettingsDescription implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * AutoScaling settings for a global table replica's write capacity units.
+     * Auto scaling settings for a global table replica's write capacity units.
      * </p>
      * 
      * @param replicaProvisionedWriteCapacityAutoScalingSettings
-     *        AutoScaling settings for a global table replica's write capacity units.
+     *        Auto scaling settings for a global table replica's write capacity units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

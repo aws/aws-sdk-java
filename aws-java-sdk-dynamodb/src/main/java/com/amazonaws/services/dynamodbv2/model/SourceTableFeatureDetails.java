@@ -39,7 +39,7 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Represents the GSI properties for the table when the backup was created. It includes the IndexName, KeySchema,
-     * Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     * Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      * </p>
      */
     private java.util.List<GlobalSecondaryIndexInfo> globalSecondaryIndexes;
@@ -143,11 +143,11 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Represents the GSI properties for the table when the backup was created. It includes the IndexName, KeySchema,
-     * Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     * Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      * </p>
      * 
      * @return Represents the GSI properties for the table when the backup was created. It includes the IndexName,
-     *         KeySchema, Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     *         KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      */
 
     public java.util.List<GlobalSecondaryIndexInfo> getGlobalSecondaryIndexes() {
@@ -157,12 +157,12 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Represents the GSI properties for the table when the backup was created. It includes the IndexName, KeySchema,
-     * Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     * Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      * </p>
      * 
      * @param globalSecondaryIndexes
      *        Represents the GSI properties for the table when the backup was created. It includes the IndexName,
-     *        KeySchema, Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     *        KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      */
 
     public void setGlobalSecondaryIndexes(java.util.Collection<GlobalSecondaryIndexInfo> globalSecondaryIndexes) {
@@ -177,7 +177,7 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Represents the GSI properties for the table when the backup was created. It includes the IndexName, KeySchema,
-     * Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     * Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,7 +187,7 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
      * 
      * @param globalSecondaryIndexes
      *        Represents the GSI properties for the table when the backup was created. It includes the IndexName,
-     *        KeySchema, Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     *        KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,12 +204,12 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Represents the GSI properties for the table when the backup was created. It includes the IndexName, KeySchema,
-     * Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     * Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      * </p>
      * 
      * @param globalSecondaryIndexes
      *        Represents the GSI properties for the table when the backup was created. It includes the IndexName,
-     *        KeySchema, Projection and ProvisionedThroughput for the GSIs on the table at the time of backup.
+     *        KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

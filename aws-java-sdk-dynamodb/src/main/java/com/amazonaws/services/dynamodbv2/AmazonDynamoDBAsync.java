@@ -2673,27 +2673,6 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * cannot retrieve items from tables in more than one AWS account or Region. The aggregate size of the items in the
      * transaction cannot exceed 4 MB.
      * </p>
-     * <note>
-     * <p>
-     * All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with up to 4 MB of data, except the
-     * following AWS Regions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * China (Beijing)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * China (Ningxia)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction with up to 4 MB of data.
-     * </p>
-     * </note>
      * <p>
      * DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following is true:
      * </p>
@@ -2737,27 +2716,6 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * cannot retrieve items from tables in more than one AWS account or Region. The aggregate size of the items in the
      * transaction cannot exceed 4 MB.
      * </p>
-     * <note>
-     * <p>
-     * All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with up to 4 MB of data, except the
-     * following AWS Regions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * China (Beijing)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * China (Ningxia)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction with up to 4 MB of data.
-     * </p>
-     * </note>
      * <p>
      * DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following is true:
      * </p>
@@ -2804,27 +2762,6 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * can target the same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the
      * same item. The aggregate size of the items in the transaction cannot exceed 4 MB.
      * </p>
-     * <note>
-     * <p>
-     * All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with up to 4 MB of data, except the
-     * following AWS Regions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * China (Beijing)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * China (Ningxia)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction with up to 4 MB of data.
-     * </p>
-     * </note>
      * <p>
      * The actions are completed atomically so that either all of them succeed, or all of them fail. They are defined by
      * the following objects:
@@ -2916,27 +2853,6 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * can target the same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the
      * same item. The aggregate size of the items in the transaction cannot exceed 4 MB.
      * </p>
-     * <note>
-     * <p>
-     * All AWS Regions and AWS GovCloud (US) support up to 25 items per transaction with up to 4 MB of data, except the
-     * following AWS Regions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * China (Beijing)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * China (Ningxia)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The China (Beijing) and China (Ningxia) Regions support up to 10 items per transaction with up to 4 MB of data.
-     * </p>
-     * </note>
      * <p>
      * The actions are completed atomically so that either all of them succeed, or all of them fail. They are defined by
      * the following objects:

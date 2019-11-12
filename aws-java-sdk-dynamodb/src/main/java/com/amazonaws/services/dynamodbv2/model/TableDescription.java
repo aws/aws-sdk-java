@@ -214,7 +214,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -261,9 +261,15 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling occurs only
-     * when a new global secondary index is added to the table; it is the process by which DynamoDB populates the new
+     * when a new global secondary index is added to the table. It is the process by which DynamoDB populates the new
      * index with data from the table. (This attribute does not appear for indexes that were created during a
      * <code>CreateTable</code> operation.)
+     * </p>
+     * <p>
+     * You can delete an index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that
+     * is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. (This
+     * attribute does not appear for indexes that were created during a <code>CreateTable</code> operation.)
      * </p>
      * </li>
      * <li>
@@ -336,7 +342,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -386,17 +392,17 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * AWS customer ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * the table name.
+     * Table name
      * </p>
      * </li>
      * <li>
      * <p>
-     * the <code>StreamLabel</code>.
+     * <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -1671,7 +1677,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1745,7 +1751,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *         <li>
      *         <p>
      *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes are in <code>NonKeyAttributes</code>.
+     *         projected attributes is in <code>NonKeyAttributes</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1824,7 +1830,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1898,7 +1904,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1982,7 +1988,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -2061,7 +2067,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2147,7 +2153,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -2221,7 +2227,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2273,9 +2279,15 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling occurs only
-     * when a new global secondary index is added to the table; it is the process by which DynamoDB populates the new
+     * when a new global secondary index is added to the table. It is the process by which DynamoDB populates the new
      * index with data from the table. (This attribute does not appear for indexes that were created during a
      * <code>CreateTable</code> operation.)
+     * </p>
+     * <p>
+     * You can delete an index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that
+     * is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. (This
+     * attribute does not appear for indexes that were created during a <code>CreateTable</code> operation.)
      * </p>
      * </li>
      * <li>
@@ -2348,7 +2360,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -2385,9 +2397,16 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *         <li>
      *         <p>
      *         <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling
-     *         occurs only when a new global secondary index is added to the table; it is the process by which DynamoDB
+     *         occurs only when a new global secondary index is added to the table. It is the process by which DynamoDB
      *         populates the new index with data from the table. (This attribute does not appear for indexes that were
      *         created during a <code>CreateTable</code> operation.)
+     *         </p>
+     *         <p>
+     *         You can delete an index that is being created during the <code>Backfilling</code> phase when
+     *         <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the
+     *         index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
+     *         is false. (This attribute does not appear for indexes that were created during a <code>CreateTable</code>
+     *         operation.)
      *         </p>
      *         </li>
      *         <li>
@@ -2461,7 +2480,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *         <li>
      *         <p>
      *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes are in <code>NonKeyAttributes</code>.
+     *         projected attributes is in <code>NonKeyAttributes</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -2505,9 +2524,15 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling occurs only
-     * when a new global secondary index is added to the table; it is the process by which DynamoDB populates the new
+     * when a new global secondary index is added to the table. It is the process by which DynamoDB populates the new
      * index with data from the table. (This attribute does not appear for indexes that were created during a
      * <code>CreateTable</code> operation.)
+     * </p>
+     * <p>
+     * You can delete an index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that
+     * is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. (This
+     * attribute does not appear for indexes that were created during a <code>CreateTable</code> operation.)
      * </p>
      * </li>
      * <li>
@@ -2580,7 +2605,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -2618,9 +2643,16 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling
-     *        occurs only when a new global secondary index is added to the table; it is the process by which DynamoDB
+     *        occurs only when a new global secondary index is added to the table. It is the process by which DynamoDB
      *        populates the new index with data from the table. (This attribute does not appear for indexes that were
      *        created during a <code>CreateTable</code> operation.)
+     *        </p>
+     *        <p>
+     *        You can delete an index that is being created during the <code>Backfilling</code> phase when
+     *        <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the
+     *        index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
+     *        is false. (This attribute does not appear for indexes that were created during a <code>CreateTable</code>
+     *        operation.)
      *        </p>
      *        </li>
      *        <li>
@@ -2694,7 +2726,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2743,9 +2775,15 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling occurs only
-     * when a new global secondary index is added to the table; it is the process by which DynamoDB populates the new
+     * when a new global secondary index is added to the table. It is the process by which DynamoDB populates the new
      * index with data from the table. (This attribute does not appear for indexes that were created during a
      * <code>CreateTable</code> operation.)
+     * </p>
+     * <p>
+     * You can delete an index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that
+     * is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. (This
+     * attribute does not appear for indexes that were created during a <code>CreateTable</code> operation.)
      * </p>
      * </li>
      * <li>
@@ -2818,7 +2856,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -2861,9 +2899,16 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling
-     *        occurs only when a new global secondary index is added to the table; it is the process by which DynamoDB
+     *        occurs only when a new global secondary index is added to the table. It is the process by which DynamoDB
      *        populates the new index with data from the table. (This attribute does not appear for indexes that were
      *        created during a <code>CreateTable</code> operation.)
+     *        </p>
+     *        <p>
+     *        You can delete an index that is being created during the <code>Backfilling</code> phase when
+     *        <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the
+     *        index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
+     *        is false. (This attribute does not appear for indexes that were created during a <code>CreateTable</code>
+     *        operation.)
      *        </p>
      *        </li>
      *        <li>
@@ -2937,7 +2982,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2988,9 +3033,15 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling occurs only
-     * when a new global secondary index is added to the table; it is the process by which DynamoDB populates the new
+     * when a new global secondary index is added to the table. It is the process by which DynamoDB populates the new
      * index with data from the table. (This attribute does not appear for indexes that were created during a
      * <code>CreateTable</code> operation.)
+     * </p>
+     * <p>
+     * You can delete an index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that
+     * is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. (This
+     * attribute does not appear for indexes that were created during a <code>CreateTable</code> operation.)
      * </p>
      * </li>
      * <li>
@@ -3063,7 +3114,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -3101,9 +3152,16 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>Backfilling</code> - If true, then the index is currently in the backfilling phase. Backfilling
-     *        occurs only when a new global secondary index is added to the table; it is the process by which DynamoDB
+     *        occurs only when a new global secondary index is added to the table. It is the process by which DynamoDB
      *        populates the new index with data from the table. (This attribute does not appear for indexes that were
      *        created during a <code>CreateTable</code> operation.)
+     *        </p>
+     *        <p>
+     *        You can delete an index that is being created during the <code>Backfilling</code> phase when
+     *        <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the
+     *        index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
+     *        is false. (This attribute does not appear for indexes that were created during a <code>CreateTable</code>
+     *        operation.)
      *        </p>
      *        </li>
      *        <li>
@@ -3177,7 +3235,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3266,17 +3324,17 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * AWS customer ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * the table name.
+     * Table name
      * </p>
      * </li>
      * <li>
      * <p>
-     * the <code>StreamLabel</code>.
+     * <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -3291,17 +3349,17 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        the AWS customer ID.
+     *        AWS customer ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        the table name.
+     *        Table name
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        the <code>StreamLabel</code>.
+     *        <code>StreamLabel</code>
      *        </p>
      *        </li>
      */
@@ -3322,17 +3380,17 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * AWS customer ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * the table name.
+     * Table name
      * </p>
      * </li>
      * <li>
      * <p>
-     * the <code>StreamLabel</code>.
+     * <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -3346,17 +3404,17 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *         <ul>
      *         <li>
      *         <p>
-     *         the AWS customer ID.
+     *         AWS customer ID
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         the table name.
+     *         Table name
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         the <code>StreamLabel</code>.
+     *         <code>StreamLabel</code>
      *         </p>
      *         </li>
      */
@@ -3377,17 +3435,17 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <ul>
      * <li>
      * <p>
-     * the AWS customer ID.
+     * AWS customer ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * the table name.
+     * Table name
      * </p>
      * </li>
      * <li>
      * <p>
-     * the <code>StreamLabel</code>.
+     * <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -3402,17 +3460,17 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <ul>
      *        <li>
      *        <p>
-     *        the AWS customer ID.
+     *        AWS customer ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        the table name.
+     *        Table name
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        the <code>StreamLabel</code>.
+     *        <code>StreamLabel</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

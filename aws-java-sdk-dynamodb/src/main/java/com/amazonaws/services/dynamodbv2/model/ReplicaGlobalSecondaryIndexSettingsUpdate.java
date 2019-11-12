@@ -43,7 +43,7 @@ public class ReplicaGlobalSecondaryIndexSettingsUpdate implements Serializable, 
     private Long provisionedReadCapacityUnits;
     /**
      * <p>
-     * Autoscaling settings for managing a global secondary index replica's read capacity units.
+     * Auto scaling settings for managing a global secondary index replica's read capacity units.
      * </p>
      */
     private AutoScalingSettingsUpdate provisionedReadCapacityAutoScalingSettingsUpdate;
@@ -136,11 +136,11 @@ public class ReplicaGlobalSecondaryIndexSettingsUpdate implements Serializable, 
 
     /**
      * <p>
-     * Autoscaling settings for managing a global secondary index replica's read capacity units.
+     * Auto scaling settings for managing a global secondary index replica's read capacity units.
      * </p>
      * 
      * @param provisionedReadCapacityAutoScalingSettingsUpdate
-     *        Autoscaling settings for managing a global secondary index replica's read capacity units.
+     *        Auto scaling settings for managing a global secondary index replica's read capacity units.
      */
 
     public void setProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate provisionedReadCapacityAutoScalingSettingsUpdate) {
@@ -149,10 +149,10 @@ public class ReplicaGlobalSecondaryIndexSettingsUpdate implements Serializable, 
 
     /**
      * <p>
-     * Autoscaling settings for managing a global secondary index replica's read capacity units.
+     * Auto scaling settings for managing a global secondary index replica's read capacity units.
      * </p>
      * 
-     * @return Autoscaling settings for managing a global secondary index replica's read capacity units.
+     * @return Auto scaling settings for managing a global secondary index replica's read capacity units.
      */
 
     public AutoScalingSettingsUpdate getProvisionedReadCapacityAutoScalingSettingsUpdate() {
@@ -161,11 +161,11 @@ public class ReplicaGlobalSecondaryIndexSettingsUpdate implements Serializable, 
 
     /**
      * <p>
-     * Autoscaling settings for managing a global secondary index replica's read capacity units.
+     * Auto scaling settings for managing a global secondary index replica's read capacity units.
      * </p>
      * 
      * @param provisionedReadCapacityAutoScalingSettingsUpdate
-     *        Autoscaling settings for managing a global secondary index replica's read capacity units.
+     *        Auto scaling settings for managing a global secondary index replica's read capacity units.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

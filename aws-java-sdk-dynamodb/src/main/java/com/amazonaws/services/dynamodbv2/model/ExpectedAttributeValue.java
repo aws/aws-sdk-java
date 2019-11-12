@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Represents a condition to be compared with an attribute value. This condition can be used with
- * <code>DeleteItem</code>, <code>PutItem</code> or <code>UpdateItem</code> operations; if the comparison evaluates to
+ * <code>DeleteItem</code>, <code>PutItem</code>, or <code>UpdateItem</code> operations; if the comparison evaluates to
  * true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of
  * two different ways:
  * </p>

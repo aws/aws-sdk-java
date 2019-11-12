@@ -30,18 +30,18 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      */
     private String regionName;
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
      * @param regionName
-     *        The name of the region.
+     *        The name of the Region.
      */
 
     public void setRegionName(String regionName) {
@@ -50,10 +50,10 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
-     * @return The name of the region.
+     * @return The name of the Region.
      */
 
     public String getRegionName() {
@@ -62,11 +62,11 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
      * @param regionName
-     *        The name of the region.
+     *        The name of the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

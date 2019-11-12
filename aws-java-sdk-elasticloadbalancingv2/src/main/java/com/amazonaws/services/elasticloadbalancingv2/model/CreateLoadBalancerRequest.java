@@ -77,8 +77,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
-     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
-     * route requests from clients with access to the VPC for the load balancer.
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route
+     * requests only from clients with access to the VPC for the load balancer.
      * </p>
      * <p>
      * The default is an Internet-facing load balancer.
@@ -508,8 +508,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
-     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
-     * route requests from clients with access to the VPC for the load balancer.
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route
+     * requests only from clients with access to the VPC for the load balancer.
      * </p>
      * <p>
      * The default is an Internet-facing load balancer.
@@ -522,7 +522,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
-     *        balancers can only route requests from clients with access to the VPC for the load balancer.
+     *        balancers can route requests only from clients with access to the VPC for the load balancer.
      *        </p>
      *        <p>
      *        The default is an Internet-facing load balancer.
@@ -541,8 +541,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
-     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
-     * route requests from clients with access to the VPC for the load balancer.
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route
+     * requests only from clients with access to the VPC for the load balancer.
      * </p>
      * <p>
      * The default is an Internet-facing load balancer.
@@ -554,7 +554,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *         balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
-     *         balancers can only route requests from clients with access to the VPC for the load balancer.
+     *         balancers can route requests only from clients with access to the VPC for the load balancer.
      *         </p>
      *         <p>
      *         The default is an Internet-facing load balancer.
@@ -573,8 +573,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
-     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
-     * route requests from clients with access to the VPC for the load balancer.
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route
+     * requests only from clients with access to the VPC for the load balancer.
      * </p>
      * <p>
      * The default is an Internet-facing load balancer.
@@ -587,7 +587,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
-     *        balancers can only route requests from clients with access to the VPC for the load balancer.
+     *        balancers can route requests only from clients with access to the VPC for the load balancer.
      *        </p>
      *        <p>
      *        The default is an Internet-facing load balancer.
@@ -608,8 +608,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
-     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
-     * route requests from clients with access to the VPC for the load balancer.
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route
+     * requests only from clients with access to the VPC for the load balancer.
      * </p>
      * <p>
      * The default is an Internet-facing load balancer.
@@ -622,7 +622,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
-     *        balancers can only route requests from clients with access to the VPC for the load balancer.
+     *        balancers can route requests only from clients with access to the VPC for the load balancer.
      *        </p>
      *        <p>
      *        The default is an Internet-facing load balancer.
@@ -641,8 +641,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
-     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can only
-     * route requests from clients with access to the VPC for the load balancer.
+     * is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route
+     * requests only from clients with access to the VPC for the load balancer.
      * </p>
      * <p>
      * The default is an Internet-facing load balancer.
@@ -655,7 +655,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
-     *        balancers can only route requests from clients with access to the VPC for the load balancer.
+     *        balancers can route requests only from clients with access to the VPC for the load balancer.
      *        </p>
      *        <p>
      *        The default is an Internet-facing load balancer.

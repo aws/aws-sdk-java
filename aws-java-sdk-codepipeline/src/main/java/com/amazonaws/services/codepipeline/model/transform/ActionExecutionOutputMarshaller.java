@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -32,6 +33,8 @@ public class ActionExecutionOutputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputArtifacts").build();
     private static final MarshallingInfo<StructuredPojo> EXECUTIONRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionResult").build();
+    private static final MarshallingInfo<Map> OUTPUTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("outputVariables").build();
 
     private static final ActionExecutionOutputMarshaller instance = new ActionExecutionOutputMarshaller();
 
@@ -51,6 +54,7 @@ public class ActionExecutionOutputMarshaller {
         try {
             protocolMarshaller.marshall(actionExecutionOutput.getOutputArtifacts(), OUTPUTARTIFACTS_BINDING);
             protocolMarshaller.marshall(actionExecutionOutput.getExecutionResult(), EXECUTIONRESULT_BINDING);
+            protocolMarshaller.marshall(actionExecutionOutput.getOutputVariables(), OUTPUTVARIABLES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

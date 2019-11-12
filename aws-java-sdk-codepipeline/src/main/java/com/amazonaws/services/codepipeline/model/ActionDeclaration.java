@@ -96,6 +96,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String region;
+    /**
+     * <p>
+     * The variable namespace associated with the action. All variables produced as output by this action fall under
+     * this namespace.
+     * </p>
+     */
+    private String namespace;
 
     /**
      * <p>
@@ -619,6 +626,52 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The variable namespace associated with the action. All variables produced as output by this action fall under
+     * this namespace.
+     * </p>
+     * 
+     * @param namespace
+     *        The variable namespace associated with the action. All variables produced as output by this action fall
+     *        under this namespace.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The variable namespace associated with the action. All variables produced as output by this action fall under
+     * this namespace.
+     * </p>
+     * 
+     * @return The variable namespace associated with the action. All variables produced as output by this action fall
+     *         under this namespace.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The variable namespace associated with the action. All variables produced as output by this action fall under
+     * this namespace.
+     * </p>
+     * 
+     * @param namespace
+     *        The variable namespace associated with the action. All variables produced as output by this action fall
+     *        under this namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionDeclaration withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -645,7 +698,9 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getRegion() != null)
-            sb.append("Region: ").append(getRegion());
+            sb.append("Region: ").append(getRegion()).append(",");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace());
         sb.append("}");
         return sb.toString();
     }
@@ -692,6 +747,10 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
         return true;
     }
 
@@ -708,6 +767,7 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getInputArtifacts() == null) ? 0 : getInputArtifacts().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         return hashCode;
     }
 

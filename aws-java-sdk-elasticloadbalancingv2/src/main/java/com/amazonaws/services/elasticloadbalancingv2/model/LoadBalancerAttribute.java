@@ -71,6 +71,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
+     * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
+     * default is <code>true</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.
      * </p>
@@ -141,6 +148,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
+     * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
+     * default is <code>true</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.
      * </p>
@@ -197,6 +211,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *        seconds. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid
+     *        header fields are removed by the load balancer (<code>true</code>) or routed to targets (
+     *        <code>false</code>). The default is <code>true</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -267,6 +288,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
+     * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
+     * default is <code>true</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.
      * </p>
@@ -322,6 +350,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *         seconds. The default is 60 seconds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with
+     *         invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (
+     *         <code>false</code>). The default is <code>true</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -392,6 +427,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
+     * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
+     * default is <code>true</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.
      * </p>
@@ -448,6 +490,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *        seconds. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid
+     *        header fields are removed by the load balancer (<code>true</code>) or routed to targets (
+     *        <code>false</code>). The default is <code>true</code>.
      *        </p>
      *        </li>
      *        <li>
