@@ -54,10 +54,9 @@
  * <li>
  * <p>
  * Paid container software products sold through AWS Marketplace must integrate with the AWS Marketplace Metering
- * Service and call the RegisterUsage operation for software entitlement and metering. Calling RegisterUsage from
- * containers running outside of Amazon Elastic Container Service (Amazon ECR) isn't supported. Free and BYOL products
- * for ECS aren't required to call RegisterUsage, but you can do so if you want to receive usage data in your seller
- * reports. For more information on using the RegisterUsage operation, see <a
+ * Service and call the RegisterUsage operation for software entitlement and metering. Free and BYOL products for Amazon
+ * ECS or Amazon EKS aren't required to call RegisterUsage, but you can do so if you want to receive usage data in your
+ * seller reports. For more information on using the RegisterUsage operation, see <a
  * href="https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html">Container-Based
  * Products</a>.
  * </p>

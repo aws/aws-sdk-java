@@ -74,8 +74,44 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> writeAttributes;
     /**
      * <p>
-     * The explicit authentication flows.
+     * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
+     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
+     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
+     * Password protocol) protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
+     * the password in the request instead of using the SRP protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> explicitAuthFlows;
     /**
@@ -193,6 +229,84 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private AnalyticsConfigurationType analyticsConfiguration;
+    /**
+     * <p>
+     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
+     * confirmation, and password recovery when the user does not exist in the user pool. When set to
+     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
+     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
+     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
+     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED</code> - This prevents user existence-related errors.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
+     * prevented.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This setting affects the behavior of following APIs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>AdminInitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>AdminRespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>InitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmSignUp</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ResendConfirmationCode</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code>
+     * for newly created user pool clients if no value is provided.
+     * </p>
+     * </note>
+     */
+    private String preventUserExistenceErrors;
 
     /**
      * <p>
@@ -572,10 +686,82 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The explicit authentication flows.
+     * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
+     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
+     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
+     * Password protocol) protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
+     * the password in the request instead of using the SRP protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The explicit authentication flows.
+     * @return The authentication flows that are supported by the user pool clients. Flow names without the
+     *         <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
+     *         that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
+     *         prefix.</p>
+     *         <p>
+     *         Valid values include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     *         <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
+     *         With this authentication flow, Cognito receives the password in the request instead of using the SRP
+     *         (Secure Remote Password protocol) protocol to verify passwords.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
+     *         receives the password in the request instead of using the SRP protocol to verify passwords.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     *         </p>
+     *         </li>
      * @see ExplicitAuthFlowsType
      */
 
@@ -585,11 +771,83 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The explicit authentication flows.
+     * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
+     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
+     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
+     * Password protocol) protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
+     * the password in the request instead of using the SRP protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param explicitAuthFlows
-     *        The explicit authentication flows.
+     *        The authentication flows that are supported by the user pool clients. Flow names without the
+     *        <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
+     *        that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
+     *        prefix.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     *        <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
+     *        With this authentication flow, Cognito receives the password in the request instead of using the SRP
+     *        (Secure Remote Password protocol) protocol to verify passwords.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
+     *        receives the password in the request instead of using the SRP protocol to verify passwords.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     *        </p>
+     *        </li>
      * @see ExplicitAuthFlowsType
      */
 
@@ -604,8 +862,44 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The explicit authentication flows.
+     * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
+     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
+     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
+     * Password protocol) protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
+     * the password in the request instead of using the SRP protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExplicitAuthFlows(java.util.Collection)} or {@link #withExplicitAuthFlows(java.util.Collection)} if
@@ -613,7 +907,43 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param explicitAuthFlows
-     *        The explicit authentication flows.
+     *        The authentication flows that are supported by the user pool clients. Flow names without the
+     *        <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
+     *        that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
+     *        prefix.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     *        <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
+     *        With this authentication flow, Cognito receives the password in the request instead of using the SRP
+     *        (Secure Remote Password protocol) protocol to verify passwords.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
+     *        receives the password in the request instead of using the SRP protocol to verify passwords.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
@@ -630,11 +960,83 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The explicit authentication flows.
+     * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
+     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
+     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
+     * Password protocol) protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
+     * the password in the request instead of using the SRP protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param explicitAuthFlows
-     *        The explicit authentication flows.
+     *        The authentication flows that are supported by the user pool clients. Flow names without the
+     *        <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
+     *        that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
+     *        prefix.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     *        <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
+     *        With this authentication flow, Cognito receives the password in the request instead of using the SRP
+     *        (Secure Remote Password protocol) protocol to verify passwords.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
+     *        receives the password in the request instead of using the SRP protocol to verify passwords.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
@@ -646,11 +1048,83 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The explicit authentication flows.
+     * The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code>
+     * prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with
+     * <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With
+     * this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote
+     * Password protocol) protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives
+     * the password in the request instead of using the SRP protocol to verify passwords.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param explicitAuthFlows
-     *        The explicit authentication flows.
+     *        The authentication flows that are supported by the user pool clients. Flow names without the
+     *        <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note
+     *        that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code>
+     *        prefix.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow
+     *        <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting.
+     *        With this authentication flow, Cognito receives the password in the request instead of using the SRP
+     *        (Secure Remote Password protocol) protocol to verify passwords.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito
+     *        receives the password in the request instead of using the SRP protocol to verify passwords.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
@@ -1659,6 +2133,637 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
+     * confirmation, and password recovery when the user does not exist in the user pool. When set to
+     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
+     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
+     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
+     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED</code> - This prevents user existence-related errors.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
+     * prevented.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This setting affects the behavior of following APIs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>AdminInitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>AdminRespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>InitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmSignUp</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ResendConfirmationCode</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code>
+     * for newly created user pool clients if no value is provided.
+     * </p>
+     * </note>
+     * 
+     * @param preventUserExistenceErrors
+     *        Use this setting to choose which errors and responses are returned by Cognito APIs during authentication,
+     *        account confirmation, and password recovery when the user does not exist in the user pool. When set to
+     *        <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the
+     *        username or password was incorrect, and account confirmation and password recovery return a response
+     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will
+     *        return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED</code> - This prevents user existence-related errors.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
+     *        not prevented.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This setting affects the behavior of following APIs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>AdminInitiateAuth</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>AdminRespondToAuthChallenge</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>InitiateAuth</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>RespondToAuthChallenge</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ForgotPassword</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ConfirmForgotPassword</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ConfirmSignUp</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ResendConfirmationCode</a>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to
+     *        <code>ENABLED</code> for newly created user pool clients if no value is provided.
+     *        </p>
+     * @see PreventUserExistenceErrorTypes
+     */
+
+    public void setPreventUserExistenceErrors(String preventUserExistenceErrors) {
+        this.preventUserExistenceErrors = preventUserExistenceErrors;
+    }
+
+    /**
+     * <p>
+     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
+     * confirmation, and password recovery when the user does not exist in the user pool. When set to
+     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
+     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
+     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
+     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED</code> - This prevents user existence-related errors.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
+     * prevented.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This setting affects the behavior of following APIs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>AdminInitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>AdminRespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>InitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmSignUp</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ResendConfirmationCode</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code>
+     * for newly created user pool clients if no value is provided.
+     * </p>
+     * </note>
+     * 
+     * @return Use this setting to choose which errors and responses are returned by Cognito APIs during authentication,
+     *         account confirmation, and password recovery when the user does not exist in the user pool. When set to
+     *         <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the
+     *         username or password was incorrect, and account confirmation and password recovery return a response
+     *         indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will
+     *         return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
+     *         <p>
+     *         Valid values include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ENABLED</code> - This prevents user existence-related errors.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
+     *         not prevented.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         This setting affects the behavior of following APIs:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a>AdminInitiateAuth</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>AdminRespondToAuthChallenge</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>InitiateAuth</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>RespondToAuthChallenge</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>ForgotPassword</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>ConfirmForgotPassword</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>ConfirmSignUp</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a>ResendConfirmationCode</a>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to
+     *         <code>ENABLED</code> for newly created user pool clients if no value is provided.
+     *         </p>
+     * @see PreventUserExistenceErrorTypes
+     */
+
+    public String getPreventUserExistenceErrors() {
+        return this.preventUserExistenceErrors;
+    }
+
+    /**
+     * <p>
+     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
+     * confirmation, and password recovery when the user does not exist in the user pool. When set to
+     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
+     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
+     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
+     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED</code> - This prevents user existence-related errors.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
+     * prevented.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This setting affects the behavior of following APIs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>AdminInitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>AdminRespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>InitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmSignUp</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ResendConfirmationCode</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code>
+     * for newly created user pool clients if no value is provided.
+     * </p>
+     * </note>
+     * 
+     * @param preventUserExistenceErrors
+     *        Use this setting to choose which errors and responses are returned by Cognito APIs during authentication,
+     *        account confirmation, and password recovery when the user does not exist in the user pool. When set to
+     *        <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the
+     *        username or password was incorrect, and account confirmation and password recovery return a response
+     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will
+     *        return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED</code> - This prevents user existence-related errors.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
+     *        not prevented.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This setting affects the behavior of following APIs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>AdminInitiateAuth</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>AdminRespondToAuthChallenge</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>InitiateAuth</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>RespondToAuthChallenge</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ForgotPassword</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ConfirmForgotPassword</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ConfirmSignUp</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ResendConfirmationCode</a>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to
+     *        <code>ENABLED</code> for newly created user pool clients if no value is provided.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PreventUserExistenceErrorTypes
+     */
+
+    public CreateUserPoolClientRequest withPreventUserExistenceErrors(String preventUserExistenceErrors) {
+        setPreventUserExistenceErrors(preventUserExistenceErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account
+     * confirmation, and password recovery when the user does not exist in the user pool. When set to
+     * <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username
+     * or password was incorrect, and account confirmation and password recovery return a response indicating a code was
+     * sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a
+     * <code>UserNotFoundException</code> exception if the user does not exist in the user pool.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED</code> - This prevents user existence-related errors.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
+     * prevented.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This setting affects the behavior of following APIs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>AdminInitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>AdminRespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>InitiateAuth</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RespondToAuthChallenge</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmForgotPassword</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ConfirmSignUp</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ResendConfirmationCode</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code>
+     * for newly created user pool clients if no value is provided.
+     * </p>
+     * </note>
+     * 
+     * @param preventUserExistenceErrors
+     *        Use this setting to choose which errors and responses are returned by Cognito APIs during authentication,
+     *        account confirmation, and password recovery when the user does not exist in the user pool. When set to
+     *        <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the
+     *        username or password was incorrect, and account confirmation and password recovery return a response
+     *        indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will
+     *        return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED</code> - This prevents user existence-related errors.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
+     *        not prevented.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This setting affects the behavior of following APIs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>AdminInitiateAuth</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>AdminRespondToAuthChallenge</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>InitiateAuth</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>RespondToAuthChallenge</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ForgotPassword</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ConfirmForgotPassword</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ConfirmSignUp</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ResendConfirmationCode</a>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        After January 1st 2020, the value of <code>PreventUserExistenceErrors</code> will default to
+     *        <code>ENABLED</code> for newly created user pool clients if no value is provided.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PreventUserExistenceErrorTypes
+     */
+
+    public CreateUserPoolClientRequest withPreventUserExistenceErrors(PreventUserExistenceErrorTypes preventUserExistenceErrors) {
+        this.preventUserExistenceErrors = preventUserExistenceErrors.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1699,7 +2804,9 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
         if (getAllowedOAuthFlowsUserPoolClient() != null)
             sb.append("AllowedOAuthFlowsUserPoolClient: ").append(getAllowedOAuthFlowsUserPoolClient()).append(",");
         if (getAnalyticsConfiguration() != null)
-            sb.append("AnalyticsConfiguration: ").append(getAnalyticsConfiguration());
+            sb.append("AnalyticsConfiguration: ").append(getAnalyticsConfiguration()).append(",");
+        if (getPreventUserExistenceErrors() != null)
+            sb.append("PreventUserExistenceErrors: ").append(getPreventUserExistenceErrors());
         sb.append("}");
         return sb.toString();
     }
@@ -1775,6 +2882,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getAnalyticsConfiguration() != null && other.getAnalyticsConfiguration().equals(this.getAnalyticsConfiguration()) == false)
             return false;
+        if (other.getPreventUserExistenceErrors() == null ^ this.getPreventUserExistenceErrors() == null)
+            return false;
+        if (other.getPreventUserExistenceErrors() != null && other.getPreventUserExistenceErrors().equals(this.getPreventUserExistenceErrors()) == false)
+            return false;
         return true;
     }
 
@@ -1798,6 +2909,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAllowedOAuthScopes() == null) ? 0 : getAllowedOAuthScopes().hashCode());
         hashCode = prime * hashCode + ((getAllowedOAuthFlowsUserPoolClient() == null) ? 0 : getAllowedOAuthFlowsUserPoolClient().hashCode());
         hashCode = prime * hashCode + ((getAnalyticsConfiguration() == null) ? 0 : getAnalyticsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPreventUserExistenceErrors() == null) ? 0 : getPreventUserExistenceErrors().hashCode());
         return hashCode;
     }
 

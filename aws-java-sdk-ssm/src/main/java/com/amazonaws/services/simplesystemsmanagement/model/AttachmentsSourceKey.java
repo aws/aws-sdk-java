@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AttachmentsSourceKey {
 
-    SourceUrl("SourceUrl");
+    SourceUrl("SourceUrl"),
+    S3FileUrl("S3FileUrl");
 
     private String value;
 

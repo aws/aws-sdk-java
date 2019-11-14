@@ -104,7 +104,8 @@ public interface AmazonConnect {
 
     /**
      * <p>
-     * Describes the specified user account.
+     * Describes the specified user account. You can find the instance ID in the console (it’s the final part of the
+     * ARN). The console does not display the user IDs. Instead, list the users and note the IDs provided in the output.
      * </p>
      * 
      * @param describeUserRequest
@@ -411,6 +412,29 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Lists the tags for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Provides summary information about the hierarchy groups for the specified Amazon Connect instance.
      * </p>
      * 
@@ -507,6 +531,55 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     StopContactResult stopContact(StopContactRequest stopContactRequest);
+
+    /**
+     * <p>
+     * Adds the specified tags to the specified resource.
+     * </p>
+     * <p>
+     * The supported resource type is users.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

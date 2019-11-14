@@ -32,6 +32,8 @@ public class AttachmentsSourceMarshaller {
             .marshallLocationName("Key").build();
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Values").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
     private static final AttachmentsSourceMarshaller instance = new AttachmentsSourceMarshaller();
 
@@ -51,6 +53,7 @@ public class AttachmentsSourceMarshaller {
         try {
             protocolMarshaller.marshall(attachmentsSource.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(attachmentsSource.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(attachmentsSource.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

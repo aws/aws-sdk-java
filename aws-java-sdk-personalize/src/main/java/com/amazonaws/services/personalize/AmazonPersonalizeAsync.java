@@ -35,6 +35,39 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Creates a batch inference job. The operation can handle up to 50 million records and the input file must be in
+     * JSON format. For more information, see <a>recommendations-batch</a>.
+     * </p>
+     * 
+     * @param createBatchInferenceJobRequest
+     * @return A Java Future containing the result of the CreateBatchInferenceJob operation returned by the service.
+     * @sample AmazonPersonalizeAsync.CreateBatchInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBatchInferenceJobResult> createBatchInferenceJobAsync(CreateBatchInferenceJobRequest createBatchInferenceJobRequest);
+
+    /**
+     * <p>
+     * Creates a batch inference job. The operation can handle up to 50 million records and the input file must be in
+     * JSON format. For more information, see <a>recommendations-batch</a>.
+     * </p>
+     * 
+     * @param createBatchInferenceJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBatchInferenceJob operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.CreateBatchInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBatchInferenceJobResult> createBatchInferenceJobAsync(CreateBatchInferenceJobRequest createBatchInferenceJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBatchInferenceJobRequest, CreateBatchInferenceJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a campaign by deploying a solution version. When a client calls the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
      * and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">
@@ -1544,6 +1577,41 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output
+     * configurations, and the ARN of the solution version used to generate the recommendations.
+     * </p>
+     * 
+     * @param describeBatchInferenceJobRequest
+     * @return A Java Future containing the result of the DescribeBatchInferenceJob operation returned by the service.
+     * @sample AmazonPersonalizeAsync.DescribeBatchInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBatchInferenceJobResult> describeBatchInferenceJobAsync(
+            DescribeBatchInferenceJobRequest describeBatchInferenceJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output
+     * configurations, and the ARN of the solution version used to generate the recommendations.
+     * </p>
+     * 
+     * @param describeBatchInferenceJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBatchInferenceJob operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.DescribeBatchInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBatchInferenceJobResult> describeBatchInferenceJobAsync(
+            DescribeBatchInferenceJobRequest describeBatchInferenceJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBatchInferenceJobRequest, DescribeBatchInferenceJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the given campaign, including its status.
      * </p>
      * <p>
@@ -1986,6 +2054,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      */
     java.util.concurrent.Future<GetSolutionMetricsResult> getSolutionMetricsAsync(GetSolutionMetricsRequest getSolutionMetricsRequest,
             com.amazonaws.handlers.AsyncHandler<GetSolutionMetricsRequest, GetSolutionMetricsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of the batch inference jobs that have been performed off of a solution version.
+     * </p>
+     * 
+     * @param listBatchInferenceJobsRequest
+     * @return A Java Future containing the result of the ListBatchInferenceJobs operation returned by the service.
+     * @sample AmazonPersonalizeAsync.ListBatchInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBatchInferenceJobsResult> listBatchInferenceJobsAsync(ListBatchInferenceJobsRequest listBatchInferenceJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the batch inference jobs that have been performed off of a solution version.
+     * </p>
+     * 
+     * @param listBatchInferenceJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBatchInferenceJobs operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.ListBatchInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBatchInferenceJobsResult> listBatchInferenceJobsAsync(ListBatchInferenceJobsRequest listBatchInferenceJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBatchInferenceJobsRequest, ListBatchInferenceJobsResult> asyncHandler);
 
     /**
      * <p>

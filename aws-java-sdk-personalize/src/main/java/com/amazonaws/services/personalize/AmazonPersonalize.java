@@ -44,6 +44,30 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
+     * Creates a batch inference job. The operation can handle up to 50 million records and the input file must be in
+     * JSON format. For more information, see <a>recommendations-batch</a>.
+     * </p>
+     * 
+     * @param createBatchInferenceJobRequest
+     * @return Result of the CreateBatchInferenceJob operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalize.CreateBatchInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateBatchInferenceJobResult createBatchInferenceJob(CreateBatchInferenceJobRequest createBatchInferenceJobRequest);
+
+    /**
+     * <p>
      * Creates a campaign by deploying a solution version. When a client calls the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
      * and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">
@@ -869,6 +893,24 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
+     * Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output
+     * configurations, and the ARN of the solution version used to generate the recommendations.
+     * </p>
+     * 
+     * @param describeBatchInferenceJobRequest
+     * @return Result of the DescribeBatchInferenceJob operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DescribeBatchInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBatchInferenceJobResult describeBatchInferenceJob(DescribeBatchInferenceJobRequest describeBatchInferenceJobRequest);
+
+    /**
+     * <p>
      * Describes the given campaign, including its status.
      * </p>
      * <p>
@@ -1105,6 +1147,23 @@ public interface AmazonPersonalize {
      *      API Documentation</a>
      */
     GetSolutionMetricsResult getSolutionMetrics(GetSolutionMetricsRequest getSolutionMetricsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the batch inference jobs that have been performed off of a solution version.
+     * </p>
+     * 
+     * @param listBatchInferenceJobsRequest
+     * @return Result of the ListBatchInferenceJobs operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListBatchInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBatchInferenceJobsResult listBatchInferenceJobs(ListBatchInferenceJobsRequest listBatchInferenceJobsRequest);
 
     /**
      * <p>

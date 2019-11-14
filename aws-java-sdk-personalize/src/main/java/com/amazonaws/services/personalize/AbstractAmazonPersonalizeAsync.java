@@ -28,6 +28,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBatchInferenceJobResult> createBatchInferenceJobAsync(CreateBatchInferenceJobRequest request) {
+
+        return createBatchInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBatchInferenceJobResult> createBatchInferenceJobAsync(CreateBatchInferenceJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateBatchInferenceJobRequest, CreateBatchInferenceJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCampaignResult> createCampaignAsync(CreateCampaignRequest request) {
 
         return createCampaignAsync(request, null);
@@ -223,6 +236,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeBatchInferenceJobResult> describeBatchInferenceJobAsync(DescribeBatchInferenceJobRequest request) {
+
+        return describeBatchInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBatchInferenceJobResult> describeBatchInferenceJobAsync(DescribeBatchInferenceJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBatchInferenceJobRequest, DescribeBatchInferenceJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCampaignResult> describeCampaignAsync(DescribeCampaignRequest request) {
 
         return describeCampaignAsync(request, null);
@@ -361,6 +387,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     @Override
     public java.util.concurrent.Future<GetSolutionMetricsResult> getSolutionMetricsAsync(GetSolutionMetricsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSolutionMetricsRequest, GetSolutionMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBatchInferenceJobsResult> listBatchInferenceJobsAsync(ListBatchInferenceJobsRequest request) {
+
+        return listBatchInferenceJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBatchInferenceJobsResult> listBatchInferenceJobsAsync(ListBatchInferenceJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBatchInferenceJobsRequest, ListBatchInferenceJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

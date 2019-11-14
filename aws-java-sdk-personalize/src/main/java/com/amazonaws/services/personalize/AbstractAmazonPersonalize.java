@@ -28,6 +28,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public CreateBatchInferenceJobResult createBatchInferenceJob(CreateBatchInferenceJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCampaignResult createCampaign(CreateCampaignRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,6 +108,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public DescribeBatchInferenceJobResult describeBatchInferenceJob(DescribeBatchInferenceJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeCampaignResult describeCampaign(DescribeCampaignRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +164,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public GetSolutionMetricsResult getSolutionMetrics(GetSolutionMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBatchInferenceJobsResult listBatchInferenceJobs(ListBatchInferenceJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -3040,6 +3040,11 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Calling this action requires developer credentials.
      * </p>
+     * <important>
+     * <p>
+     * If you don't provide a value for an attribute, it will be set to the default value.
+     * </p>
+     * </important>
      * 
      * @param updateGroupRequest
      * @return Result of the UpdateGroup operation returned by the service.
@@ -3088,6 +3093,11 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Updates the name and scopes of resource server. All other fields are read-only.
      * </p>
+     * <important>
+     * <p>
+     * If you don't provide a value for an attribute, it will be set to the default value.
+     * </p>
+     * </important>
      * 
      * @param updateResourceServerRequest
      * @return Result of the UpdateResourceServer operation returned by the service.
@@ -3167,9 +3177,14 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Updates the specified user pool with the specified attributes. If you don't provide a value for an attribute, it
-     * will be set to the default value. You can get a list of the current user pool settings with .
+     * Updates the specified user pool with the specified attributes. You can get a list of the current user pool
+     * settings with .
      * </p>
+     * <important>
+     * <p>
+     * If you don't provide a value for an attribute, it will be set to the default value.
+     * </p>
+     * </important>
      * 
      * @param updateUserPoolRequest
      *        Represents the request to update the user pool.
@@ -3209,10 +3224,14 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Updates the specified user pool app client with the specified attributes. If you don't provide a value for an
-     * attribute, it will be set to the default value. You can get a list of the current user pool app client settings
-     * with .
+     * Updates the specified user pool app client with the specified attributes. You can get a list of the current user
+     * pool app client settings with .
      * </p>
+     * <important>
+     * <p>
+     * If you don't provide a value for an attribute, it will be set to the default value.
+     * </p>
+     * </important>
      * 
      * @param updateUserPoolClientRequest
      *        Represents the request to update the user pool client.

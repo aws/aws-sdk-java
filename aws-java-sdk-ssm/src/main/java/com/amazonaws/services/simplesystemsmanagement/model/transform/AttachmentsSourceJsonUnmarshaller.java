@@ -56,6 +56,10 @@ public class AttachmentsSourceJsonUnmarshaller implements Unmarshaller<Attachmen
                     context.nextToken();
                     attachmentsSource.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    attachmentsSource.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

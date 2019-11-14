@@ -1,3 +1,24 @@
+# __1.11.675__ __2019-11-14__
+## __AWSMarketplace Metering__
+  - ### Features
+    - Added CustomerNotEntitledException in MeterUsage API for Container use case.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - This release adds a new setting at user pool client to prevent user existence related errors during authentication, confirmation, and password recovery related operations. This release also adds support to enable or disable specific authentication flows for a user pool client.
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release enhances the existing user management APIs and adds 3 new APIs - TagResource, UntagResource, and ListTagsForResource to support tagging Amazon Connect users, which facilitates more granular access controls for Amazon Connect users within an Amazon Connect instance. You can learn more about the new APIs here: https://docs.aws.amazon.com/connect/latest/APIReference/Welcome.html.
+
+## __Amazon Personalize__
+  - ### Features
+    - Amazon Personalize: Adds ability to get batch recommendations by creating a batch inference job.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Updates support for adding attachments to Systems Manager Automation documents
+
 # __1.11.674__ __2019-11-13__
 ## __AWS Data Exchange__
   - ### Features

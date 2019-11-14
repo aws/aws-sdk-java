@@ -36,8 +36,7 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
     private String eventValueThreshold;
     /**
      * <p>
-     * Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature.
-     * Not used with Amazon Personalize predefined recipes.
+     * Describes the properties for hyperparameter optimization (HPO).
      * </p>
      */
     private HPOConfig hpoConfig;
@@ -102,13 +101,11 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature.
-     * Not used with Amazon Personalize predefined recipes.
+     * Describes the properties for hyperparameter optimization (HPO).
      * </p>
      * 
      * @param hpoConfig
-     *        Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe
-     *        feature. Not used with Amazon Personalize predefined recipes.
+     *        Describes the properties for hyperparameter optimization (HPO).
      */
 
     public void setHpoConfig(HPOConfig hpoConfig) {
@@ -117,12 +114,10 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature.
-     * Not used with Amazon Personalize predefined recipes.
+     * Describes the properties for hyperparameter optimization (HPO).
      * </p>
      * 
-     * @return Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe
-     *         feature. Not used with Amazon Personalize predefined recipes.
+     * @return Describes the properties for hyperparameter optimization (HPO).
      */
 
     public HPOConfig getHpoConfig() {
@@ -131,13 +126,11 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature.
-     * Not used with Amazon Personalize predefined recipes.
+     * Describes the properties for hyperparameter optimization (HPO).
      * </p>
      * 
      * @param hpoConfig
-     *        Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe
-     *        feature. Not used with Amazon Personalize predefined recipes.
+     *        Describes the properties for hyperparameter optimization (HPO).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

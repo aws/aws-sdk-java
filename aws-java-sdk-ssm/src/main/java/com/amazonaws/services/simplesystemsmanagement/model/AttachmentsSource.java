@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A key and value pair that identifies the location of an attachment to a document.
+ * Identifying information about a document attachment, including the file name and a key-value pair that identifies the
+ * location of an attachment to a document.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AttachmentsSource" target="_top">AWS API
@@ -30,24 +31,31 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The key of a key and value pair that identifies the location of an attachment to a document.
+     * The key of a key-value pair that identifies the location of an attachment to a document.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
+     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
+    /**
+     * <p>
+     * The name of the document attachment file.
+     * </p>
+     */
+    private String name;
 
     /**
      * <p>
-     * The key of a key and value pair that identifies the location of an attachment to a document.
+     * The key of a key-value pair that identifies the location of an attachment to a document.
      * </p>
      * 
      * @param key
-     *        The key of a key and value pair that identifies the location of an attachment to a document.
+     *        The key of a key-value pair that identifies the location of an attachment to a document.
      * @see AttachmentsSourceKey
      */
 
@@ -57,10 +65,10 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The key of a key and value pair that identifies the location of an attachment to a document.
+     * The key of a key-value pair that identifies the location of an attachment to a document.
      * </p>
      * 
-     * @return The key of a key and value pair that identifies the location of an attachment to a document.
+     * @return The key of a key-value pair that identifies the location of an attachment to a document.
      * @see AttachmentsSourceKey
      */
 
@@ -70,11 +78,11 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The key of a key and value pair that identifies the location of an attachment to a document.
+     * The key of a key-value pair that identifies the location of an attachment to a document.
      * </p>
      * 
      * @param key
-     *        The key of a key and value pair that identifies the location of an attachment to a document.
+     *        The key of a key-value pair that identifies the location of an attachment to a document.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttachmentsSourceKey
      */
@@ -86,11 +94,11 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The key of a key and value pair that identifies the location of an attachment to a document.
+     * The key of a key-value pair that identifies the location of an attachment to a document.
      * </p>
      * 
      * @param key
-     *        The key of a key and value pair that identifies the location of an attachment to a document.
+     *        The key of a key-value pair that identifies the location of an attachment to a document.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttachmentsSourceKey
      */
@@ -102,10 +110,12 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
+     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      * </p>
      * 
-     * @return The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * @return The value of a key-value pair that identifies the location of an attachment to a document. The format is
+     *         the URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      */
 
     public java.util.List<String> getValues() {
@@ -117,11 +127,13 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
+     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      * </p>
      * 
      * @param values
-     *        The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     *        The value of a key-value pair that identifies the location of an attachment to a document. The format is
+     *        the URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -135,7 +147,8 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
+     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -144,7 +157,8 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param values
-     *        The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     *        The value of a key-value pair that identifies the location of an attachment to a document. The format is
+     *        the URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,16 +174,58 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
+     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      * </p>
      * 
      * @param values
-     *        The URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     *        The value of a key-value pair that identifies the location of an attachment to a document. The format is
+     *        the URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttachmentsSource withValues(java.util.Collection<String> values) {
         setValues(values);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the document attachment file.
+     * </p>
+     * 
+     * @param name
+     *        The name of the document attachment file.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the document attachment file.
+     * </p>
+     * 
+     * @return The name of the document attachment file.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the document attachment file.
+     * </p>
+     * 
+     * @param name
+     *        The name of the document attachment file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttachmentsSource withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -188,7 +244,9 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
         if (getKey() != null)
             sb.append("Key: ").append(getKey()).append(",");
         if (getValues() != null)
-            sb.append("Values: ").append(getValues());
+            sb.append("Values: ").append(getValues()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +269,10 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         return true;
     }
 
@@ -221,6 +283,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

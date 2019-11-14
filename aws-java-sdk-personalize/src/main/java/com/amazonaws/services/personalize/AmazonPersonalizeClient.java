@@ -145,6 +145,72 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a batch inference job. The operation can handle up to 50 million records and the input file must be in
+     * JSON format. For more information, see <a>recommendations-batch</a>.
+     * </p>
+     * 
+     * @param createBatchInferenceJobRequest
+     * @return Result of the CreateBatchInferenceJob operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalize.CreateBatchInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateBatchInferenceJobResult createBatchInferenceJob(CreateBatchInferenceJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBatchInferenceJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateBatchInferenceJobResult executeCreateBatchInferenceJob(CreateBatchInferenceJobRequest createBatchInferenceJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBatchInferenceJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBatchInferenceJobRequest> request = null;
+        Response<CreateBatchInferenceJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBatchInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createBatchInferenceJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBatchInferenceJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBatchInferenceJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateBatchInferenceJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a campaign by deploying a solution version. When a client calls the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
      * and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">
@@ -1572,6 +1638,66 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output
+     * configurations, and the ARN of the solution version used to generate the recommendations.
+     * </p>
+     * 
+     * @param describeBatchInferenceJobRequest
+     * @return Result of the DescribeBatchInferenceJob operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DescribeBatchInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeBatchInferenceJobResult describeBatchInferenceJob(DescribeBatchInferenceJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBatchInferenceJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBatchInferenceJobResult executeDescribeBatchInferenceJob(DescribeBatchInferenceJobRequest describeBatchInferenceJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBatchInferenceJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBatchInferenceJobRequest> request = null;
+        Response<DescribeBatchInferenceJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBatchInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeBatchInferenceJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBatchInferenceJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBatchInferenceJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeBatchInferenceJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the given campaign, including its status.
      * </p>
      * <p>
@@ -2245,6 +2371,64 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSolutionMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSolutionMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of the batch inference jobs that have been performed off of a solution version.
+     * </p>
+     * 
+     * @param listBatchInferenceJobsRequest
+     * @return Result of the ListBatchInferenceJobs operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListBatchInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListBatchInferenceJobsResult listBatchInferenceJobs(ListBatchInferenceJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBatchInferenceJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListBatchInferenceJobsResult executeListBatchInferenceJobs(ListBatchInferenceJobsRequest listBatchInferenceJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBatchInferenceJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBatchInferenceJobsRequest> request = null;
+        Response<ListBatchInferenceJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBatchInferenceJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBatchInferenceJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBatchInferenceJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBatchInferenceJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListBatchInferenceJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
