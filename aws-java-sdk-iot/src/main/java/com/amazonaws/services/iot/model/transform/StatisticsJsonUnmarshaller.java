@@ -52,6 +52,34 @@ public class StatisticsJsonUnmarshaller implements Unmarshaller<Statistics, Json
                     context.nextToken();
                     statistics.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("average", targetDepth)) {
+                    context.nextToken();
+                    statistics.setAverage(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("sum", targetDepth)) {
+                    context.nextToken();
+                    statistics.setSum(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("minimum", targetDepth)) {
+                    context.nextToken();
+                    statistics.setMinimum(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("maximum", targetDepth)) {
+                    context.nextToken();
+                    statistics.setMaximum(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("sumOfSquares", targetDepth)) {
+                    context.nextToken();
+                    statistics.setSumOfSquares(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("variance", targetDepth)) {
+                    context.nextToken();
+                    statistics.setVariance(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("stdDeviation", targetDepth)) {
+                    context.nextToken();
+                    statistics.setStdDeviation(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

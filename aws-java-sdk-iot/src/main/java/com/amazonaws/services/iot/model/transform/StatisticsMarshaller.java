@@ -29,6 +29,20 @@ public class StatisticsMarshaller {
 
     private static final MarshallingInfo<Integer> COUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("count").build();
+    private static final MarshallingInfo<Double> AVERAGE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("average").build();
+    private static final MarshallingInfo<Double> SUM_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sum").build();
+    private static final MarshallingInfo<Double> MINIMUM_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("minimum").build();
+    private static final MarshallingInfo<Double> MAXIMUM_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maximum").build();
+    private static final MarshallingInfo<Double> SUMOFSQUARES_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sumOfSquares").build();
+    private static final MarshallingInfo<Double> VARIANCE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("variance").build();
+    private static final MarshallingInfo<Double> STDDEVIATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stdDeviation").build();
 
     private static final StatisticsMarshaller instance = new StatisticsMarshaller();
 
@@ -47,6 +61,13 @@ public class StatisticsMarshaller {
 
         try {
             protocolMarshaller.marshall(statistics.getCount(), COUNT_BINDING);
+            protocolMarshaller.marshall(statistics.getAverage(), AVERAGE_BINDING);
+            protocolMarshaller.marshall(statistics.getSum(), SUM_BINDING);
+            protocolMarshaller.marshall(statistics.getMinimum(), MINIMUM_BINDING);
+            protocolMarshaller.marshall(statistics.getMaximum(), MAXIMUM_BINDING);
+            protocolMarshaller.marshall(statistics.getSumOfSquares(), SUMOFSQUARES_BINDING);
+            protocolMarshaller.marshall(statistics.getVariance(), VARIANCE_BINDING);
+            protocolMarshaller.marshall(statistics.getStdDeviation(), STDDEVIATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

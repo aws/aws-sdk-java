@@ -132,6 +132,63 @@ public interface AmazonDLM {
 
     /**
      * <p>
+     * Lists the tags for the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         The service failed in an unexpected way.
+     * @throws InvalidRequestException
+     *         Bad request. The request is missing required parameters or has invalid parameters.
+     * @throws ResourceNotFoundException
+     *         A requested resource was not found.
+     * @sample AmazonDLM.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Adds the specified tags to the specified resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The service failed in an unexpected way.
+     * @throws InvalidRequestException
+     *         Bad request. The request is missing required parameters or has invalid parameters.
+     * @throws ResourceNotFoundException
+     *         A requested resource was not found.
+     * @sample AmazonDLM.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The service failed in an unexpected way.
+     * @throws InvalidRequestException
+     *         Bad request. The request is missing required parameters or has invalid parameters.
+     * @throws ResourceNotFoundException
+     *         A requested resource was not found.
+     * @sample AmazonDLM.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates the specified lifecycle policy.
      * </p>
      * 

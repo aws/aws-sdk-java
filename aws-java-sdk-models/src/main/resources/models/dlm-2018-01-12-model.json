@@ -74,6 +74,51 @@
       ],
       "documentation":"<p>Gets detailed information about the specified lifecycle policy.</p>"
     },
+    "ListTagsForResource":{
+      "name":"ListTagsForResource",
+      "http":{
+        "method":"GET",
+        "requestUri":"/tags/{resourceArn}"
+      },
+      "input":{"shape":"ListTagsForResourceRequest"},
+      "output":{"shape":"ListTagsForResourceResponse"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Lists the tags for the specified resource.</p>"
+    },
+    "TagResource":{
+      "name":"TagResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/tags/{resourceArn}"
+      },
+      "input":{"shape":"TagResourceRequest"},
+      "output":{"shape":"TagResourceResponse"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Adds the specified tags to the specified resource.</p>"
+    },
+    "UntagResource":{
+      "name":"UntagResource",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/tags/{resourceArn}"
+      },
+      "input":{"shape":"UntagResourceRequest"},
+      "output":{"shape":"UntagResourceResponse"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Removes the specified tags from the specified resource.</p>"
+    },
     "UpdateLifecyclePolicy":{
       "name":"UpdateLifecyclePolicy",
       "http":{
@@ -121,7 +166,11 @@
         },
         "PolicyDetails":{
           "shape":"PolicyDetails",
-          "documentation":"<p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot be re-used across lifecycle policies.</p>"
+          "documentation":"<p>The configuration details of the lifecycle policy.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags to apply to the lifecycle policy during creation.</p>"
         }
       }
     },
@@ -176,7 +225,12 @@
     "ErrorCode":{"type":"string"},
     "ErrorMessage":{"type":"string"},
     "ExcludeBootVolume":{"type":"boolean"},
-    "ExecutionRoleArn":{"type":"string"},
+    "ExecutionRoleArn":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"arn:aws:iam::\\d+:role/.*"
+    },
     "GetLifecyclePoliciesRequest":{
       "type":"structure",
       "members":{
@@ -301,6 +355,10 @@
           "shape":"GettablePolicyStateValues",
           "documentation":"<p>The activation state of the lifecycle policy.</p>"
         },
+        "StatusMessage":{
+          "shape":"StatusMessage",
+          "documentation":"<p>The description of the status.</p>"
+        },
         "ExecutionRoleArn":{
           "shape":"ExecutionRoleArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>"
@@ -316,6 +374,14 @@
         "PolicyDetails":{
           "shape":"PolicyDetails",
           "documentation":"<p>The configuration of the lifecycle policy</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags.</p>"
+        },
+        "PolicyArn":{
+          "shape":"PolicyArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the policy.</p>"
         }
       },
       "documentation":"<p>Detailed information about a lifecycle policy.</p>"
@@ -334,6 +400,10 @@
         "State":{
           "shape":"GettablePolicyStateValues",
           "documentation":"<p>The activation state of the lifecycle policy.</p>"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags.</p>"
         }
       },
       "documentation":"<p>Summary information about a lifecycle policy.</p>"
@@ -356,6 +426,27 @@
       "error":{"httpStatusCode":429},
       "exception":true
     },
+    "ListTagsForResourceRequest":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{
+          "shape":"PolicyArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location":"uri",
+          "locationName":"resourceArn"
+        }
+      }
+    },
+    "ListTagsForResourceResponse":{
+      "type":"structure",
+      "members":{
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>Information about the tags.</p>"
+        }
+      }
+    },
     "Parameter":{"type":"string"},
     "ParameterList":{
       "type":"list",
@@ -371,10 +462,15 @@
       },
       "documentation":"<p>Optional parameters that can be added to the policy. The set of valid parameters depends on the combination of <code>policyType</code> and <code>resourceType</code> values.</p>"
     },
+    "PolicyArn":{
+      "type":"string",
+      "pattern":"^arn:aws:dlm:[A-Za-z0-9_/.-]{0,63}:\\d+:policy/[0-9A-Za-z_-]{1,128}$"
+    },
     "PolicyDescription":{
       "type":"string",
       "max":500,
-      "min":0
+      "min":0,
+      "pattern":"[0-9A-Za-z _-]+"
     },
     "PolicyDetails":{
       "type":"structure",
@@ -402,7 +498,12 @@
       },
       "documentation":"<p>Specifies the configuration of a lifecycle policy.</p>"
     },
-    "PolicyId":{"type":"string"},
+    "PolicyId":{
+      "type":"string",
+      "max":64,
+      "min":0,
+      "pattern":"policy-[A-Za-z0-9]+"
+    },
     "PolicyIdList":{
       "type":"list",
       "member":{"shape":"PolicyId"}
@@ -492,7 +593,8 @@
     "ScheduleName":{
       "type":"string",
       "max":500,
-      "min":0
+      "min":0,
+      "pattern":"[\\p{all}]*"
     },
     "SettablePolicyStateValues":{
       "type":"string",
@@ -501,7 +603,18 @@
         "DISABLED"
       ]
     },
-    "String":{"type":"string"},
+    "StatusMessage":{
+      "type":"string",
+      "max":500,
+      "min":0,
+      "pattern":"[\\p{all}]*"
+    },
+    "String":{
+      "type":"string",
+      "max":500,
+      "min":0,
+      "pattern":"[\\p{all}]*"
+    },
     "Tag":{
       "type":"structure",
       "required":[
@@ -520,7 +633,59 @@
       },
       "documentation":"<p>Specifies a tag for a resource.</p>"
     },
-    "TagFilter":{"type":"string"},
+    "TagFilter":{
+      "type":"string",
+      "max":256,
+      "min":0,
+      "pattern":"[\\p{all}]*"
+    },
+    "TagKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^(?!aws:)[a-zA-Z+-=._:/]+$"
+    },
+    "TagKeyList":{
+      "type":"list",
+      "member":{"shape":"TagKey"},
+      "max":200,
+      "min":1
+    },
+    "TagMap":{
+      "type":"map",
+      "key":{"shape":"TagKey"},
+      "value":{"shape":"TagValue"},
+      "max":200,
+      "min":1
+    },
+    "TagResourceRequest":{
+      "type":"structure",
+      "required":[
+        "ResourceArn",
+        "Tags"
+      ],
+      "members":{
+        "ResourceArn":{
+          "shape":"PolicyArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location":"uri",
+          "locationName":"resourceArn"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "documentation":"<p>One or more tags.</p>"
+        }
+      }
+    },
+    "TagResourceResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "TagValue":{
+      "type":"string",
+      "max":256
+    },
     "TagsToAddFilterList":{
       "type":"list",
       "member":{"shape":"TagFilter"},
@@ -547,7 +712,9 @@
     },
     "Time":{
       "type":"string",
-      "pattern":"^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$"
+      "max":5,
+      "min":5,
+      "pattern":"^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$"
     },
     "TimesList":{
       "type":"list",
@@ -557,6 +724,32 @@
     "Timestamp":{
       "type":"timestamp",
       "timestampFormat":"iso8601"
+    },
+    "UntagResourceRequest":{
+      "type":"structure",
+      "required":[
+        "ResourceArn",
+        "TagKeys"
+      ],
+      "members":{
+        "ResourceArn":{
+          "shape":"PolicyArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource.</p>",
+          "location":"uri",
+          "locationName":"resourceArn"
+        },
+        "TagKeys":{
+          "shape":"TagKeyList",
+          "documentation":"<p>The tag keys.</p>",
+          "location":"querystring",
+          "locationName":"tagKeys"
+        }
+      }
+    },
+    "UntagResourceResponse":{
+      "type":"structure",
+      "members":{
+      }
     },
     "UpdateLifecyclePolicyRequest":{
       "type":"structure",
@@ -582,7 +775,7 @@
         },
         "PolicyDetails":{
           "shape":"PolicyDetails",
-          "documentation":"<p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be re-used across policies.</p>"
+          "documentation":"<p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>"
         }
       }
     },

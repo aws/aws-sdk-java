@@ -1131,6 +1131,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetCardinalityResult> getCardinalityAsync(GetCardinalityRequest request) {
+
+        return getCardinalityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCardinalityResult> getCardinalityAsync(GetCardinalityRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCardinalityRequest, GetCardinalityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEffectivePoliciesResult> getEffectivePoliciesAsync(GetEffectivePoliciesRequest request) {
 
         return getEffectivePoliciesAsync(request, null);
@@ -1191,6 +1204,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<GetOTAUpdateResult> getOTAUpdateAsync(GetOTAUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOTAUpdateRequest, GetOTAUpdateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPercentilesResult> getPercentilesAsync(GetPercentilesRequest request) {
+
+        return getPercentilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPercentilesResult> getPercentilesAsync(GetPercentilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPercentilesRequest, GetPercentilesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

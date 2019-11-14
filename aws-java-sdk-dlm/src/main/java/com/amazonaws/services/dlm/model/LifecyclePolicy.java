@@ -48,6 +48,12 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
     private String state;
     /**
      * <p>
+     * The description of the status.
+     * </p>
+     */
+    private String statusMessage;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.
      * </p>
      */
@@ -70,6 +76,18 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private PolicyDetails policyDetails;
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the policy.
+     * </p>
+     */
+    private String policyArn;
 
     /**
      * <p>
@@ -207,6 +225,46 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     public LifecyclePolicy withState(GettablePolicyStateValues state) {
         this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the status.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The description of the status.
+     */
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * The description of the status.
+     * </p>
+     * 
+     * @return The description of the status.
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * The description of the status.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The description of the status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LifecyclePolicy withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
         return this;
     }
 
@@ -374,6 +432,107 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @return The tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LifecyclePolicy withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public LifecyclePolicy addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LifecyclePolicy clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the policy.
+     * </p>
+     * 
+     * @param policyArn
+     *        The Amazon Resource Name (ARN) of the policy.
+     */
+
+    public void setPolicyArn(String policyArn) {
+        this.policyArn = policyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the policy.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the policy.
+     */
+
+    public String getPolicyArn() {
+        return this.policyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the policy.
+     * </p>
+     * 
+     * @param policyArn
+     *        The Amazon Resource Name (ARN) of the policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LifecyclePolicy withPolicyArn(String policyArn) {
+        setPolicyArn(policyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -391,6 +550,8 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
             sb.append("Description: ").append(getDescription()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getExecutionRoleArn() != null)
             sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getDateCreated() != null)
@@ -398,7 +559,11 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
         if (getDateModified() != null)
             sb.append("DateModified: ").append(getDateModified()).append(",");
         if (getPolicyDetails() != null)
-            sb.append("PolicyDetails: ").append(getPolicyDetails());
+            sb.append("PolicyDetails: ").append(getPolicyDetails()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPolicyArn() != null)
+            sb.append("PolicyArn: ").append(getPolicyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -425,6 +590,10 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
         if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
             return false;
         if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
@@ -441,6 +610,14 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getPolicyDetails() != null && other.getPolicyDetails().equals(this.getPolicyDetails()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getPolicyArn() == null ^ this.getPolicyArn() == null)
+            return false;
+        if (other.getPolicyArn() != null && other.getPolicyArn().equals(this.getPolicyArn()) == false)
+            return false;
         return true;
     }
 
@@ -452,10 +629,13 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getPolicyId() == null) ? 0 : getPolicyId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getDateModified() == null) ? 0 : getDateModified().hashCode());
         hashCode = prime * hashCode + ((getPolicyDetails() == null) ? 0 : getPolicyDetails().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
         return hashCode;
     }
 

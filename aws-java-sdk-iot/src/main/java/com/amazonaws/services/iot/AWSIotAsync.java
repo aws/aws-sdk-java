@@ -1005,9 +1005,7 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
      * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
-     * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
-     * created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted
-     * within last 90 days, we will resurrect that old stream by incrementing the version by 1.
+     * a stream.
      * </p>
      * 
      * @param createStreamRequest
@@ -1020,9 +1018,7 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
      * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
-     * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
-     * created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted
-     * within last 90 days, we will resurrect that old stream by incrementing the version by 1.
+     * a stream.
      * </p>
      * 
      * @param createStreamRequest
@@ -2736,6 +2732,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Returns the number of things with distinct values for the aggregation field.
+     * </p>
+     * 
+     * @param getCardinalityRequest
+     * @return A Java Future containing the result of the GetCardinality operation returned by the service.
+     * @sample AWSIotAsync.GetCardinality
+     */
+    java.util.concurrent.Future<GetCardinalityResult> getCardinalityAsync(GetCardinalityRequest getCardinalityRequest);
+
+    /**
+     * <p>
+     * Returns the number of things with distinct values for the aggregation field.
+     * </p>
+     * 
+     * @param getCardinalityRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCardinality operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetCardinality
+     */
+    java.util.concurrent.Future<GetCardinalityResult> getCardinalityAsync(GetCardinalityRequest getCardinalityRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCardinalityRequest, GetCardinalityResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of the policies that have an effect on the authorization behavior of the specified device when it
      * connects to the AWS IoT device gateway.
      * </p>
@@ -2881,6 +2904,37 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Returns the percentile values for the aggregation field. The results from GetPercentiles is an approximation. The
+     * default percentile groupings are: 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
+     * percents argument to the GetPercentiles API.
+     * </p>
+     * 
+     * @param getPercentilesRequest
+     * @return A Java Future containing the result of the GetPercentiles operation returned by the service.
+     * @sample AWSIotAsync.GetPercentiles
+     */
+    java.util.concurrent.Future<GetPercentilesResult> getPercentilesAsync(GetPercentilesRequest getPercentilesRequest);
+
+    /**
+     * <p>
+     * Returns the percentile values for the aggregation field. The results from GetPercentiles is an approximation. The
+     * default percentile groupings are: 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
+     * percents argument to the GetPercentiles API.
+     * </p>
+     * 
+     * @param getPercentilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPercentiles operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetPercentiles
+     */
+    java.util.concurrent.Future<GetPercentilesResult> getPercentilesAsync(GetPercentilesRequest getPercentilesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPercentilesRequest, GetPercentilesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified policy with the policy document of the default version.
      * </p>
      * 
@@ -2968,7 +3022,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets statistics about things that match the specified query.
+     * Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance, and standard deviation
+     * for the specified aggregated field. If the aggregation field is of type String, only the count statistic is
+     * returned.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -2979,7 +3035,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets statistics about things that match the specified query.
+     * Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance, and standard deviation
+     * for the specified aggregated field. If the aggregation field is of type String, only the count statistic is
+     * returned.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -4384,7 +4442,11 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Provisions a thing.
+     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
+     * might exceed your account level <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
+     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
+     * Customer Support</a> to raise your throttling limits if necessary.
      * </p>
      * 
      * @param registerThingRequest
@@ -4395,7 +4457,11 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Provisions a thing.
+     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
+     * might exceed your account level <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
+     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
+     * Customer Support</a> to raise your throttling limits if necessary.
      * </p>
      * 
      * @param registerThingRequest

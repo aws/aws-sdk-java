@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dlm.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class LifecyclePolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
+    private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusMessage").build();
     private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
     private static final MarshallingInfo<java.util.Date> DATECREATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -41,6 +45,10 @@ public class LifecyclePolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DateModified").timestampFormat("iso8601").build();
     private static final MarshallingInfo<StructuredPojo> POLICYDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyDetails").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> POLICYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PolicyArn").build();
 
     private static final LifecyclePolicyMarshaller instance = new LifecyclePolicyMarshaller();
 
@@ -61,10 +69,13 @@ public class LifecyclePolicyMarshaller {
             protocolMarshaller.marshall(lifecyclePolicy.getPolicyId(), POLICYID_BINDING);
             protocolMarshaller.marshall(lifecyclePolicy.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(lifecyclePolicy.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(lifecyclePolicy.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(lifecyclePolicy.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(lifecyclePolicy.getDateCreated(), DATECREATED_BINDING);
             protocolMarshaller.marshall(lifecyclePolicy.getDateModified(), DATEMODIFIED_BINDING);
             protocolMarshaller.marshall(lifecyclePolicy.getPolicyDetails(), POLICYDETAILS_BINDING);
+            protocolMarshaller.marshall(lifecyclePolicy.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(lifecyclePolicy.getPolicyArn(), POLICYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

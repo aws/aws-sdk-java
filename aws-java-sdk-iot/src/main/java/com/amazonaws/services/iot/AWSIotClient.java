@@ -2202,9 +2202,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <p>
      * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
      * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
-     * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
-     * created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted
-     * within last 90 days, we will resurrect that old stream by incrementing the version by 1.
+     * a stream.
      * </p>
      * 
      * @param createStreamRequest
@@ -5828,6 +5826,75 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Returns the number of things with distinct values for the aggregation field.
+     * </p>
+     * 
+     * @param getCardinalityRequest
+     * @return Result of the GetCardinality operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidQueryException
+     *         The query is invalid.
+     * @throws InvalidAggregationException
+     *         The aggregation is invalid.
+     * @throws IndexNotReadyException
+     *         The index is not ready.
+     * @sample AWSIot.GetCardinality
+     */
+    @Override
+    public GetCardinalityResult getCardinality(GetCardinalityRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCardinality(request);
+    }
+
+    @SdkInternalApi
+    final GetCardinalityResult executeGetCardinality(GetCardinalityRequest getCardinalityRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCardinalityRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCardinalityRequest> request = null;
+        Response<GetCardinalityResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCardinalityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCardinalityRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCardinality");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCardinalityResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCardinalityResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of the policies that have an effect on the authorization behavior of the specified device when it
      * connects to the AWS IoT device gateway.
      * </p>
@@ -6140,6 +6207,77 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Returns the percentile values for the aggregation field. The results from GetPercentiles is an approximation. The
+     * default percentile groupings are: 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
+     * percents argument to the GetPercentiles API.
+     * </p>
+     * 
+     * @param getPercentilesRequest
+     * @return Result of the GetPercentiles operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidQueryException
+     *         The query is invalid.
+     * @throws InvalidAggregationException
+     *         The aggregation is invalid.
+     * @throws IndexNotReadyException
+     *         The index is not ready.
+     * @sample AWSIot.GetPercentiles
+     */
+    @Override
+    public GetPercentilesResult getPercentiles(GetPercentilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPercentiles(request);
+    }
+
+    @SdkInternalApi
+    final GetPercentilesResult executeGetPercentiles(GetPercentilesRequest getPercentilesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPercentilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPercentilesRequest> request = null;
+        Response<GetPercentilesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPercentilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPercentilesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPercentiles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPercentilesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPercentilesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about the specified policy with the policy document of the default version.
      * </p>
      * 
@@ -6330,7 +6468,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Gets statistics about things that match the specified query.
+     * Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance, and standard deviation
+     * for the specified aggregated field. If the aggregation field is of type String, only the count statistic is
+     * returned.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -9301,7 +9441,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Provisions a thing.
+     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
+     * might exceed your account level <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
+     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
+     * Customer Support</a> to raise your throttling limits if necessary.
      * </p>
      * 
      * @param registerThingRequest

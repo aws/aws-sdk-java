@@ -52,6 +52,14 @@ public class ThingGroupIndexingConfigurationJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     thingGroupIndexingConfiguration.setThingGroupIndexingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("managedFields", targetDepth)) {
+                    context.nextToken();
+                    thingGroupIndexingConfiguration.setManagedFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("customFields", targetDepth)) {
+                    context.nextToken();
+                    thingGroupIndexingConfiguration.setCustomFields(new ListUnmarshaller<Field>(FieldJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

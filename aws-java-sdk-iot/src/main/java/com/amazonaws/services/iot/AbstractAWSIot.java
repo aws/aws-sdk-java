@@ -460,6 +460,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public GetCardinalityResult getCardinality(GetCardinalityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEffectivePoliciesResult getEffectivePolicies(GetEffectivePoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -481,6 +486,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public GetOTAUpdateResult getOTAUpdate(GetOTAUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPercentilesResult getPercentiles(GetPercentilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

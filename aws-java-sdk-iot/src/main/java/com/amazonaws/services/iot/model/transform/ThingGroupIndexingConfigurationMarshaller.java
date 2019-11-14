@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class ThingGroupIndexingConfigurationMarshaller {
 
     private static final MarshallingInfo<String> THINGGROUPINDEXINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingGroupIndexingMode").build();
+    private static final MarshallingInfo<List> MANAGEDFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("managedFields").build();
+    private static final MarshallingInfo<List> CUSTOMFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("customFields").build();
 
     private static final ThingGroupIndexingConfigurationMarshaller instance = new ThingGroupIndexingConfigurationMarshaller();
 
@@ -47,6 +52,8 @@ public class ThingGroupIndexingConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(thingGroupIndexingConfiguration.getThingGroupIndexingMode(), THINGGROUPINDEXINGMODE_BINDING);
+            protocolMarshaller.marshall(thingGroupIndexingConfiguration.getManagedFields(), MANAGEDFIELDS_BINDING);
+            protocolMarshaller.marshall(thingGroupIndexingConfiguration.getCustomFields(), CUSTOMFIELDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

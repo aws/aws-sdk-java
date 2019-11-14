@@ -39,7 +39,7 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
     private String topic;
     /**
      * <p>
-     * The Quality of Service (QoS) level to use when republishing messages.
+     * The Quality of Service (QoS) level to use when republishing messages. The default value is 0.
      * </p>
      */
     private Integer qos;
@@ -126,11 +126,11 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Quality of Service (QoS) level to use when republishing messages.
+     * The Quality of Service (QoS) level to use when republishing messages. The default value is 0.
      * </p>
      * 
      * @param qos
-     *        The Quality of Service (QoS) level to use when republishing messages.
+     *        The Quality of Service (QoS) level to use when republishing messages. The default value is 0.
      */
 
     public void setQos(Integer qos) {
@@ -139,10 +139,10 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Quality of Service (QoS) level to use when republishing messages.
+     * The Quality of Service (QoS) level to use when republishing messages. The default value is 0.
      * </p>
      * 
-     * @return The Quality of Service (QoS) level to use when republishing messages.
+     * @return The Quality of Service (QoS) level to use when republishing messages. The default value is 0.
      */
 
     public Integer getQos() {
@@ -151,11 +151,11 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Quality of Service (QoS) level to use when republishing messages.
+     * The Quality of Service (QoS) level to use when republishing messages. The default value is 0.
      * </p>
      * 
      * @param qos
-     *        The Quality of Service (QoS) level to use when republishing messages.
+     *        The Quality of Service (QoS) level to use when republishing messages. The default value is 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

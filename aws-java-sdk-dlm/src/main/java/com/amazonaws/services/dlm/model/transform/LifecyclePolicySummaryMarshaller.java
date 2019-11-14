@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.dlm.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class LifecyclePolicySummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final LifecyclePolicySummaryMarshaller instance = new LifecyclePolicySummaryMarshaller();
 
@@ -53,6 +57,7 @@ public class LifecyclePolicySummaryMarshaller {
             protocolMarshaller.marshall(lifecyclePolicySummary.getPolicyId(), POLICYID_BINDING);
             protocolMarshaller.marshall(lifecyclePolicySummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(lifecyclePolicySummary.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(lifecyclePolicySummary.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

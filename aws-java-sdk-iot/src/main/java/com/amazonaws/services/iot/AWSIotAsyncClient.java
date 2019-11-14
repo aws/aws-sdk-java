@@ -3043,6 +3043,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetCardinalityResult> getCardinalityAsync(GetCardinalityRequest request) {
+
+        return getCardinalityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCardinalityResult> getCardinalityAsync(final GetCardinalityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCardinalityRequest, GetCardinalityResult> asyncHandler) {
+        final GetCardinalityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCardinalityResult>() {
+            @Override
+            public GetCardinalityResult call() throws Exception {
+                GetCardinalityResult result = null;
+
+                try {
+                    result = executeGetCardinality(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEffectivePoliciesResult> getEffectivePoliciesAsync(GetEffectivePoliciesRequest request) {
 
         return getEffectivePoliciesAsync(request, null);
@@ -3192,6 +3225,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeGetOTAUpdate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPercentilesResult> getPercentilesAsync(GetPercentilesRequest request) {
+
+        return getPercentilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPercentilesResult> getPercentilesAsync(final GetPercentilesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPercentilesRequest, GetPercentilesResult> asyncHandler) {
+        final GetPercentilesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPercentilesResult>() {
+            @Override
+            public GetPercentilesResult call() throws Exception {
+                GetPercentilesResult result = null;
+
+                try {
+                    result = executeGetPercentiles(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
