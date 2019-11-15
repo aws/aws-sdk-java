@@ -30,6 +30,8 @@ public class InvalidParameterException extends com.amazonaws.services.eks.model.
      */
     private String clusterName;
 
+    private String nodegroupName;
+
     /**
      * Constructs a new InvalidParameterException with the specified error message.
      *
@@ -79,6 +81,34 @@ public class InvalidParameterException extends com.amazonaws.services.eks.model.
 
     public InvalidParameterException withClusterName(String clusterName) {
         setClusterName(clusterName);
+        return this;
+    }
+
+    /**
+     * @param nodegroupName
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
+    public void setNodegroupName(String nodegroupName) {
+        this.nodegroupName = nodegroupName;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
+    public String getNodegroupName() {
+        return this.nodegroupName;
+    }
+
+    /**
+     * @param nodegroupName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvalidParameterException withNodegroupName(String nodegroupName) {
+        setNodegroupName(nodegroupName);
         return this;
     }
 

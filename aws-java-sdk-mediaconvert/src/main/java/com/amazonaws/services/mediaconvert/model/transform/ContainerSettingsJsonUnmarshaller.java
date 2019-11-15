@@ -72,6 +72,10 @@ public class ContainerSettingsJsonUnmarshaller implements Unmarshaller<Container
                     context.nextToken();
                     containerSettings.setMp4Settings(Mp4SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("mpdSettings", targetDepth)) {
+                    context.nextToken();
+                    containerSettings.setMpdSettings(MpdSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

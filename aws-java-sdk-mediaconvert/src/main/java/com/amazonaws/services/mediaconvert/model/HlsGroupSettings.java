@@ -32,6 +32,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private java.util.List<String> adMarkers;
     /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This
+     * default manifest references every output in the output group. To create additional top-level manifests that
+     * reference a subset of the outputs in the output group, specify a list of them here.
+     */
+    private java.util.List<HlsAdditionalManifest> additionalManifests;
+    /**
      * A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest
      * is delivered from a different URL than the main .m3u8 file.
      */
@@ -215,6 +221,84 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         } else {
             getAdMarkers().addAll(adMarkersCopy);
         }
+        return this;
+    }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This
+     * default manifest references every output in the output group. To create additional top-level manifests that
+     * reference a subset of the outputs in the output group, specify a list of them here.
+     * 
+     * @return By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job.
+     *         This default manifest references every output in the output group. To create additional top-level
+     *         manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     */
+
+    public java.util.List<HlsAdditionalManifest> getAdditionalManifests() {
+        return additionalManifests;
+    }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This
+     * default manifest references every output in the output group. To create additional top-level manifests that
+     * reference a subset of the outputs in the output group, specify a list of them here.
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job.
+     *        This default manifest references every output in the output group. To create additional top-level
+     *        manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     */
+
+    public void setAdditionalManifests(java.util.Collection<HlsAdditionalManifest> additionalManifests) {
+        if (additionalManifests == null) {
+            this.additionalManifests = null;
+            return;
+        }
+
+        this.additionalManifests = new java.util.ArrayList<HlsAdditionalManifest>(additionalManifests);
+    }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This
+     * default manifest references every output in the output group. To create additional top-level manifests that
+     * reference a subset of the outputs in the output group, specify a list of them here.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalManifests(java.util.Collection)} or {@link #withAdditionalManifests(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job.
+     *        This default manifest references every output in the output group. To create additional top-level
+     *        manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsGroupSettings withAdditionalManifests(HlsAdditionalManifest... additionalManifests) {
+        if (this.additionalManifests == null) {
+            setAdditionalManifests(new java.util.ArrayList<HlsAdditionalManifest>(additionalManifests.length));
+        }
+        for (HlsAdditionalManifest ele : additionalManifests) {
+            this.additionalManifests.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This
+     * default manifest references every output in the output group. To create additional top-level manifests that
+     * reference a subset of the outputs in the output group, specify a list of them here.
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job.
+     *        This default manifest references every output in the output group. To create additional top-level
+     *        manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsGroupSettings withAdditionalManifests(java.util.Collection<HlsAdditionalManifest> additionalManifests) {
+        setAdditionalManifests(additionalManifests);
         return this;
     }
 
@@ -1386,6 +1470,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getAdMarkers() != null)
             sb.append("AdMarkers: ").append(getAdMarkers()).append(",");
+        if (getAdditionalManifests() != null)
+            sb.append("AdditionalManifests: ").append(getAdditionalManifests()).append(",");
         if (getBaseUrl() != null)
             sb.append("BaseUrl: ").append(getBaseUrl()).append(",");
         if (getCaptionLanguageMappings() != null)
@@ -1449,6 +1535,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getAdMarkers() == null ^ this.getAdMarkers() == null)
             return false;
         if (other.getAdMarkers() != null && other.getAdMarkers().equals(this.getAdMarkers()) == false)
+            return false;
+        if (other.getAdditionalManifests() == null ^ this.getAdditionalManifests() == null)
+            return false;
+        if (other.getAdditionalManifests() != null && other.getAdditionalManifests().equals(this.getAdditionalManifests()) == false)
             return false;
         if (other.getBaseUrl() == null ^ this.getBaseUrl() == null)
             return false;
@@ -1551,6 +1641,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAdMarkers() == null) ? 0 : getAdMarkers().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalManifests() == null) ? 0 : getAdditionalManifests().hashCode());
         hashCode = prime * hashCode + ((getBaseUrl() == null) ? 0 : getBaseUrl().hashCode());
         hashCode = prime * hashCode + ((getCaptionLanguageMappings() == null) ? 0 : getCaptionLanguageMappings().hashCode());
         hashCode = prime * hashCode + ((getCaptionLanguageSetting() == null) ? 0 : getCaptionLanguageSetting().hashCode());

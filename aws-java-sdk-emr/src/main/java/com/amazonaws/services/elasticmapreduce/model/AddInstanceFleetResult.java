@@ -35,6 +35,12 @@ public class AddInstanceFleetResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String instanceFleetId;
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     */
+    private String clusterArn;
 
     /**
      * <p>
@@ -117,6 +123,46 @@ public class AddInstanceFleetResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name of the cluster.
+     */
+
+    public void setClusterArn(String clusterArn) {
+        this.clusterArn = clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the cluster.
+     */
+
+    public String getClusterArn() {
+        return this.clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name of the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddInstanceFleetResult withClusterArn(String clusterArn) {
+        setClusterArn(clusterArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +177,9 @@ public class AddInstanceFleetResult extends com.amazonaws.AmazonWebServiceResult
         if (getClusterId() != null)
             sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getInstanceFleetId() != null)
-            sb.append("InstanceFleetId: ").append(getInstanceFleetId());
+            sb.append("InstanceFleetId: ").append(getInstanceFleetId()).append(",");
+        if (getClusterArn() != null)
+            sb.append("ClusterArn: ").append(getClusterArn());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +202,10 @@ public class AddInstanceFleetResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getInstanceFleetId() != null && other.getInstanceFleetId().equals(this.getInstanceFleetId()) == false)
             return false;
+        if (other.getClusterArn() == null ^ this.getClusterArn() == null)
+            return false;
+        if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +216,7 @@ public class AddInstanceFleetResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
         hashCode = prime * hashCode + ((getInstanceFleetId() == null) ? 0 : getInstanceFleetId().hashCode());
+        hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         return hashCode;
     }
 

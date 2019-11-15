@@ -33,6 +33,12 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
     private com.amazonaws.internal.SdkInternalList<String> directoryIds;
     /**
      * <p>
+     * The maximum number of directories to return.
+     * </p>
+     */
+    private Integer limit;
+    /**
+     * <p>
      * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
      * the next set of results.
      * </p>
@@ -114,6 +120,46 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * The maximum number of directories to return.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of directories to return.
+     */
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of directories to return.
+     * </p>
+     * 
+     * @return The maximum number of directories to return.
+     */
+
+    public Integer getLimit() {
+        return this.limit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of directories to return.
+     * </p>
+     * 
+     * @param limit
+     *        The maximum number of directories to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeWorkspaceDirectoriesRequest withLimit(Integer limit) {
+        setLimit(limit);
+        return this;
+    }
+
+    /**
+     * <p>
      * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
      * the next set of results.
      * </p>
@@ -172,6 +218,8 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
         sb.append("{");
         if (getDirectoryIds() != null)
             sb.append("DirectoryIds: ").append(getDirectoryIds()).append(",");
+        if (getLimit() != null)
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -192,6 +240,10 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getDirectoryIds() != null && other.getDirectoryIds().equals(this.getDirectoryIds()) == false)
             return false;
+        if (other.getLimit() == null ^ this.getLimit() == null)
+            return false;
+        if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -205,6 +257,7 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDirectoryIds() == null) ? 0 : getDirectoryIds().hashCode());
+        hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

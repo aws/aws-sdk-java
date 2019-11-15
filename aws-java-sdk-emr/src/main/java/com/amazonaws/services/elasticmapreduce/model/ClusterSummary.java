@@ -55,6 +55,12 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer normalizedInstanceHours;
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     */
+    private String clusterArn;
 
     /**
      * <p>
@@ -235,6 +241,46 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name of the cluster.
+     */
+
+    public void setClusterArn(String clusterArn) {
+        this.clusterArn = clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the cluster.
+     */
+
+    public String getClusterArn() {
+        return this.clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name of the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterSummary withClusterArn(String clusterArn) {
+        setClusterArn(clusterArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -253,7 +299,9 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getNormalizedInstanceHours() != null)
-            sb.append("NormalizedInstanceHours: ").append(getNormalizedInstanceHours());
+            sb.append("NormalizedInstanceHours: ").append(getNormalizedInstanceHours()).append(",");
+        if (getClusterArn() != null)
+            sb.append("ClusterArn: ").append(getClusterArn());
         sb.append("}");
         return sb.toString();
     }
@@ -284,6 +332,10 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNormalizedInstanceHours() != null && other.getNormalizedInstanceHours().equals(this.getNormalizedInstanceHours()) == false)
             return false;
+        if (other.getClusterArn() == null ^ this.getClusterArn() == null)
+            return false;
+        if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
+            return false;
         return true;
     }
 
@@ -296,6 +348,7 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getNormalizedInstanceHours() == null) ? 0 : getNormalizedInstanceHours().hashCode());
+        hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         return hashCode;
     }
 

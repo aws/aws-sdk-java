@@ -33,6 +33,12 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
+     * The name of the Amazon EKS managed node group to list updates for.
+     * </p>
+     */
+    private String nodegroupName;
+    /**
+     * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
@@ -88,6 +94,46 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public ListUpdatesRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon EKS managed node group to list updates for.
+     * </p>
+     * 
+     * @param nodegroupName
+     *        The name of the Amazon EKS managed node group to list updates for.
+     */
+
+    public void setNodegroupName(String nodegroupName) {
+        this.nodegroupName = nodegroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon EKS managed node group to list updates for.
+     * </p>
+     * 
+     * @return The name of the Amazon EKS managed node group to list updates for.
+     */
+
+    public String getNodegroupName() {
+        return this.nodegroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon EKS managed node group to list updates for.
+     * </p>
+     * 
+     * @param nodegroupName
+     *        The name of the Amazon EKS managed node group to list updates for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListUpdatesRequest withNodegroupName(String nodegroupName) {
+        setNodegroupName(nodegroupName);
         return this;
     }
 
@@ -227,6 +273,8 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getNodegroupName() != null)
+            sb.append("NodegroupName: ").append(getNodegroupName()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -249,6 +297,10 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getNodegroupName() == null ^ this.getNodegroupName() == null)
+            return false;
+        if (other.getNodegroupName() != null && other.getNodegroupName().equals(this.getNodegroupName()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -266,6 +318,7 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNodegroupName() == null) ? 0 : getNodegroupName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

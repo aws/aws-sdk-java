@@ -35,6 +35,8 @@ public class ClusterSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Status").build();
     private static final MarshallingInfo<Integer> NORMALIZEDINSTANCEHOURS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NormalizedInstanceHours").build();
+    private static final MarshallingInfo<String> CLUSTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterArn").build();
 
     private static final ClusterSummaryMarshaller instance = new ClusterSummaryMarshaller();
 
@@ -56,6 +58,7 @@ public class ClusterSummaryMarshaller {
             protocolMarshaller.marshall(clusterSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(clusterSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(clusterSummary.getNormalizedInstanceHours(), NORMALIZEDINSTANCEHOURS_BINDING);
+            protocolMarshaller.marshall(clusterSummary.getClusterArn(), CLUSTERARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -56,6 +56,9 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
+     * <p>
+     * Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
+     * </p>
      */
     private String nextToken;
     /**
@@ -280,9 +283,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
+     * <p>
+     * Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
+     * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this token from a previous call.)
+     *        The token for the next set of items to return. (You received this token from a previous call.)</p>
+     *        <p>
+     *        Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -293,8 +301,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
+     * <p>
+     * Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
+     * </p>
      * 
-     * @return The token for the next set of items to return. (You received this token from a previous call.)
+     * @return The token for the next set of items to return. (You received this token from a previous call.)</p>
+     *         <p>
+     *         Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
      */
 
     public String getNextToken() {
@@ -305,9 +318,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
+     * <p>
+     * Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
+     * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this token from a previous call.)
+     *        The token for the next set of items to return. (You received this token from a previous call.)</p>
+     *        <p>
+     *        Using this token works only when you specify <code>true</code> for <code>startFromHead</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

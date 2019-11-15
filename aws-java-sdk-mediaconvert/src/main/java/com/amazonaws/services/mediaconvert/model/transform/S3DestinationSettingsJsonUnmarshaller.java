@@ -48,6 +48,10 @@ public class S3DestinationSettingsJsonUnmarshaller implements Unmarshaller<S3Des
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("accessControl", targetDepth)) {
+                    context.nextToken();
+                    s3DestinationSettings.setAccessControl(S3DestinationAccessControlJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("encryption", targetDepth)) {
                     context.nextToken();
                     s3DestinationSettings.setEncryption(S3EncryptionSettingsJsonUnmarshaller.getInstance().unmarshall(context));

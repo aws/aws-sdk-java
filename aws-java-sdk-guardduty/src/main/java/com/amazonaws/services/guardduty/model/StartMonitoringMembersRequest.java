@@ -27,25 +27,25 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
+     * The unique ID of the detector of the GuardDuty master account associated with the member accounts to monitor.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * A list of account IDs of the GuardDuty member accounts to start monitoring.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
+     * The unique ID of the detector of the GuardDuty master account associated with the member accounts to monitor.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
-     *        findings.
+     *        The unique ID of the detector of the GuardDuty master account associated with the member accounts to
+     *        monitor.
      */
 
     public void setDetectorId(String detectorId) {
@@ -54,11 +54,11 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
+     * The unique ID of the detector of the GuardDuty master account associated with the member accounts to monitor.
      * </p>
      * 
-     * @return The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
-     *         findings.
+     * @return The unique ID of the detector of the GuardDuty master account associated with the member accounts to
+     *         monitor.
      */
 
     public String getDetectorId() {
@@ -67,12 +67,12 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
+     * The unique ID of the detector of the GuardDuty master account associated with the member accounts to monitor.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
-     *        findings.
+     *        The unique ID of the detector of the GuardDuty master account associated with the member accounts to
+     *        monitor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,10 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * A list of account IDs of the GuardDuty member accounts to start monitoring.
      * </p>
      * 
-     * @return A list of account IDs of the GuardDuty member accounts whose findings you want the master account to
-     *         monitor.
+     * @return A list of account IDs of the GuardDuty member accounts to start monitoring.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -96,12 +95,11 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * A list of account IDs of the GuardDuty member accounts to start monitoring.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs of the GuardDuty member accounts whose findings you want the master account to
-     *        monitor.
+     *        A list of account IDs of the GuardDuty member accounts to start monitoring.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -115,7 +113,7 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * A list of account IDs of the GuardDuty member accounts to start monitoring.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,8 +122,7 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs of the GuardDuty member accounts whose findings you want the master account to
-     *        monitor.
+     *        A list of account IDs of the GuardDuty member accounts to start monitoring.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,12 +138,11 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * A list of account IDs of the GuardDuty member accounts to start monitoring.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs of the GuardDuty member accounts whose findings you want the master account to
-     *        monitor.
+     *        A list of account IDs of the GuardDuty member accounts to start monitoring.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

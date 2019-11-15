@@ -34,6 +34,8 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     private ColorCorrector colorCorrector;
     /** Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer picture. */
     private Deinterlacer deinterlacer;
+    /** Enable Dolby Vision feature to produce Dolby Vision compatible video output. */
+    private DolbyVision dolbyVision;
     /**
      * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
      * this feature for each output individually. This setting is disabled by default.
@@ -118,6 +120,40 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
 
     public VideoPreprocessor withDeinterlacer(Deinterlacer deinterlacer) {
         setDeinterlacer(deinterlacer);
+        return this;
+    }
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     * 
+     * @param dolbyVision
+     *        Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     */
+
+    public void setDolbyVision(DolbyVision dolbyVision) {
+        this.dolbyVision = dolbyVision;
+    }
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     * 
+     * @return Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     */
+
+    public DolbyVision getDolbyVision() {
+        return this.dolbyVision;
+    }
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     * 
+     * @param dolbyVision
+     *        Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoPreprocessor withDolbyVision(DolbyVision dolbyVision) {
+        setDolbyVision(dolbyVision);
         return this;
     }
 
@@ -251,6 +287,8 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
             sb.append("ColorCorrector: ").append(getColorCorrector()).append(",");
         if (getDeinterlacer() != null)
             sb.append("Deinterlacer: ").append(getDeinterlacer()).append(",");
+        if (getDolbyVision() != null)
+            sb.append("DolbyVision: ").append(getDolbyVision()).append(",");
         if (getImageInserter() != null)
             sb.append("ImageInserter: ").append(getImageInserter()).append(",");
         if (getNoiseReducer() != null)
@@ -279,6 +317,10 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDeinterlacer() != null && other.getDeinterlacer().equals(this.getDeinterlacer()) == false)
             return false;
+        if (other.getDolbyVision() == null ^ this.getDolbyVision() == null)
+            return false;
+        if (other.getDolbyVision() != null && other.getDolbyVision().equals(this.getDolbyVision()) == false)
+            return false;
         if (other.getImageInserter() == null ^ this.getImageInserter() == null)
             return false;
         if (other.getImageInserter() != null && other.getImageInserter().equals(this.getImageInserter()) == false)
@@ -301,6 +343,7 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getColorCorrector() == null) ? 0 : getColorCorrector().hashCode());
         hashCode = prime * hashCode + ((getDeinterlacer() == null) ? 0 : getDeinterlacer().hashCode());
+        hashCode = prime * hashCode + ((getDolbyVision() == null) ? 0 : getDolbyVision().hashCode());
         hashCode = prime * hashCode + ((getImageInserter() == null) ? 0 : getImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNoiseReducer() == null) ? 0 : getNoiseReducer().hashCode());
         hashCode = prime * hashCode + ((getTimecodeBurnin() == null) ? 0 : getTimecodeBurnin().hashCode());

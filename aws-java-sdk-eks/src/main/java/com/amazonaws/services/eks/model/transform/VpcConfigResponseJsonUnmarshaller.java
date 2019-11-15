@@ -56,6 +56,10 @@ public class VpcConfigResponseJsonUnmarshaller implements Unmarshaller<VpcConfig
                     context.nextToken();
                     vpcConfigResponse.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("clusterSecurityGroupId", targetDepth)) {
+                    context.nextToken();
+                    vpcConfigResponse.setClusterSecurityGroupId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("vpcId", targetDepth)) {
                     context.nextToken();
                     vpcConfigResponse.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));

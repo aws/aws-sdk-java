@@ -56,6 +56,10 @@ public class VideoPreprocessorJsonUnmarshaller implements Unmarshaller<VideoPrep
                     context.nextToken();
                     videoPreprocessor.setDeinterlacer(DeinterlacerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("dolbyVision", targetDepth)) {
+                    context.nextToken();
+                    videoPreprocessor.setDolbyVision(DolbyVisionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("imageInserter", targetDepth)) {
                     context.nextToken();
                     videoPreprocessor.setImageInserter(ImageInserterJsonUnmarshaller.getInstance().unmarshall(context));

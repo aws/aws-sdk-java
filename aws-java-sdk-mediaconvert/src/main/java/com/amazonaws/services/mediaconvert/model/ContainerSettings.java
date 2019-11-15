@@ -49,6 +49,8 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     private MovSettings movSettings;
     /** Settings for MP4 container. You can create audio-only AAC outputs with this container. */
     private Mp4Settings mp4Settings;
+    /** Settings for MP4 segments in DASH */
+    private MpdSettings mpdSettings;
 
     /**
      * Container for this output. Some containers require a container settings object. If not specified, the default
@@ -316,6 +318,40 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for MP4 segments in DASH
+     * 
+     * @param mpdSettings
+     *        Settings for MP4 segments in DASH
+     */
+
+    public void setMpdSettings(MpdSettings mpdSettings) {
+        this.mpdSettings = mpdSettings;
+    }
+
+    /**
+     * Settings for MP4 segments in DASH
+     * 
+     * @return Settings for MP4 segments in DASH
+     */
+
+    public MpdSettings getMpdSettings() {
+        return this.mpdSettings;
+    }
+
+    /**
+     * Settings for MP4 segments in DASH
+     * 
+     * @param mpdSettings
+     *        Settings for MP4 segments in DASH
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerSettings withMpdSettings(MpdSettings mpdSettings) {
+        setMpdSettings(mpdSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -338,7 +374,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
         if (getMovSettings() != null)
             sb.append("MovSettings: ").append(getMovSettings()).append(",");
         if (getMp4Settings() != null)
-            sb.append("Mp4Settings: ").append(getMp4Settings());
+            sb.append("Mp4Settings: ").append(getMp4Settings()).append(",");
+        if (getMpdSettings() != null)
+            sb.append("MpdSettings: ").append(getMpdSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -377,6 +415,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMp4Settings() != null && other.getMp4Settings().equals(this.getMp4Settings()) == false)
             return false;
+        if (other.getMpdSettings() == null ^ this.getMpdSettings() == null)
+            return false;
+        if (other.getMpdSettings() != null && other.getMpdSettings().equals(this.getMpdSettings()) == false)
+            return false;
         return true;
     }
 
@@ -391,6 +433,7 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getM3u8Settings() == null) ? 0 : getM3u8Settings().hashCode());
         hashCode = prime * hashCode + ((getMovSettings() == null) ? 0 : getMovSettings().hashCode());
         hashCode = prime * hashCode + ((getMp4Settings() == null) ? 0 : getMp4Settings().hashCode());
+        hashCode = prime * hashCode + ((getMpdSettings() == null) ? 0 : getMpdSettings().hashCode());
         return hashCode;
     }
 

@@ -33,7 +33,7 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String accountId;
     /**
      * <p>
-     * The user email addresses to which to send the invite.
+     * The user email addresses to which to send the email invitation.
      * </p>
      */
     private java.util.List<String> userEmailList;
@@ -80,10 +80,10 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user email addresses to which to send the invite.
+     * The user email addresses to which to send the email invitation.
      * </p>
      * 
-     * @return The user email addresses to which to send the invite.
+     * @return The user email addresses to which to send the email invitation.
      */
 
     public java.util.List<String> getUserEmailList() {
@@ -92,11 +92,11 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user email addresses to which to send the invite.
+     * The user email addresses to which to send the email invitation.
      * </p>
      * 
      * @param userEmailList
-     *        The user email addresses to which to send the invite.
+     *        The user email addresses to which to send the email invitation.
      */
 
     public void setUserEmailList(java.util.Collection<String> userEmailList) {
@@ -110,7 +110,7 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user email addresses to which to send the invite.
+     * The user email addresses to which to send the email invitation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param userEmailList
-     *        The user email addresses to which to send the invite.
+     *        The user email addresses to which to send the email invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user email addresses to which to send the invite.
+     * The user email addresses to which to send the email invitation.
      * </p>
      * 
      * @param userEmailList
-     *        The user email addresses to which to send the invite.
+     *        The user email addresses to which to send the email invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

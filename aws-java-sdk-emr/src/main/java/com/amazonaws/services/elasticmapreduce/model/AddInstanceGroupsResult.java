@@ -38,6 +38,12 @@ public class AddInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceGroupIds;
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     */
+    private String clusterArn;
 
     /**
      * <p>
@@ -153,6 +159,46 @@ public class AddInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name of the cluster.
+     */
+
+    public void setClusterArn(String clusterArn) {
+        this.clusterArn = clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the cluster.
+     */
+
+    public String getClusterArn() {
+        return this.clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name of the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddInstanceGroupsResult withClusterArn(String clusterArn) {
+        setClusterArn(clusterArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -167,7 +213,9 @@ public class AddInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResul
         if (getJobFlowId() != null)
             sb.append("JobFlowId: ").append(getJobFlowId()).append(",");
         if (getInstanceGroupIds() != null)
-            sb.append("InstanceGroupIds: ").append(getInstanceGroupIds());
+            sb.append("InstanceGroupIds: ").append(getInstanceGroupIds()).append(",");
+        if (getClusterArn() != null)
+            sb.append("ClusterArn: ").append(getClusterArn());
         sb.append("}");
         return sb.toString();
     }
@@ -190,6 +238,10 @@ public class AddInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getInstanceGroupIds() != null && other.getInstanceGroupIds().equals(this.getInstanceGroupIds()) == false)
             return false;
+        if (other.getClusterArn() == null ^ this.getClusterArn() == null)
+            return false;
+        if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
+            return false;
         return true;
     }
 
@@ -200,6 +252,7 @@ public class AddInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResul
 
         hashCode = prime * hashCode + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode());
         hashCode = prime * hashCode + ((getInstanceGroupIds() == null) ? 0 : getInstanceGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         return hashCode;
     }
 

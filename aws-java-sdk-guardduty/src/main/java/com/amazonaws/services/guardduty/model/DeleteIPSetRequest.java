@@ -27,24 +27,24 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the detector the ipSet is associated with.
+     * The unique ID of the detector associated with the IPSet.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * The unique ID of the ipSet you want to delete.
+     * The unique ID of the IPSet to delete.
      * </p>
      */
     private String ipSetId;
 
     /**
      * <p>
-     * The unique ID of the detector the ipSet is associated with.
+     * The unique ID of the detector associated with the IPSet.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the ipSet is associated with.
+     *        The unique ID of the detector associated with the IPSet.
      */
 
     public void setDetectorId(String detectorId) {
@@ -53,10 +53,10 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the detector the ipSet is associated with.
+     * The unique ID of the detector associated with the IPSet.
      * </p>
      * 
-     * @return The unique ID of the detector the ipSet is associated with.
+     * @return The unique ID of the detector associated with the IPSet.
      */
 
     public String getDetectorId() {
@@ -65,11 +65,11 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the detector the ipSet is associated with.
+     * The unique ID of the detector associated with the IPSet.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the ipSet is associated with.
+     *        The unique ID of the detector associated with the IPSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the ipSet you want to delete.
+     * The unique ID of the IPSet to delete.
      * </p>
      * 
      * @param ipSetId
-     *        The unique ID of the ipSet you want to delete.
+     *        The unique ID of the IPSet to delete.
      */
 
     public void setIpSetId(String ipSetId) {
@@ -93,10 +93,10 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the ipSet you want to delete.
+     * The unique ID of the IPSet to delete.
      * </p>
      * 
-     * @return The unique ID of the ipSet you want to delete.
+     * @return The unique ID of the IPSet to delete.
      */
 
     public String getIpSetId() {
@@ -105,11 +105,11 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the ipSet you want to delete.
+     * The unique ID of the IPSet to delete.
      * </p>
      * 
      * @param ipSetId
-     *        The unique ID of the ipSet you want to delete.
+     *        The unique ID of the IPSet to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

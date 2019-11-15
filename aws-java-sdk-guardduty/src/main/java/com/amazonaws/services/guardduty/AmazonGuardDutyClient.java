@@ -60,8 +60,8 @@ import com.amazonaws.services.guardduty.model.transform.*;
  * unauthorized infrastructure deployments, like instances deployed in a region that has never been used, or unusual API
  * calls, like a password policy change to reduce password strength. GuardDuty informs you of the status of your AWS
  * environment by producing security findings that you can view in the GuardDuty console or through Amazon CloudWatch
- * events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
- * Amazon GuardDuty User Guide</a>.
+ * events. For more information, see <a
+ * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -379,8 +379,9 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS
-     * infrastructure and applications.
+     * Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet is a list IP addresses
+     * trusted for secure communication with AWS infrastructure and applications. GuardDuty does not generate findings
+     * for IP addresses included in IPSets. Only users from the master account can use this operation.
      * </p>
      * 
      * @param createIPSetRequest
@@ -495,8 +496,68 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates a publishing destination to send findings to. The resource to send findings to must exist before you use
+     * this operation.
+     * </p>
+     * 
+     * @param createPublishingDestinationRequest
+     * @return Result of the CreatePublishingDestination operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.CreatePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePublishingDestinationResult createPublishingDestination(CreatePublishingDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePublishingDestination(request);
+    }
+
+    @SdkInternalApi
+    final CreatePublishingDestinationResult executeCreatePublishingDestination(CreatePublishingDestinationRequest createPublishingDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPublishingDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePublishingDestinationRequest> request = null;
+        Response<CreatePublishingDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePublishingDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createPublishingDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePublishingDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePublishingDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreatePublishingDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
-     * findingTypes, the API generates example findings of all supported finding types.
+     * <code>findingTypes</code>, the API generates example findings of all supported finding types.
      * </p>
      * 
      * @param createSampleFindingsRequest
@@ -554,7 +615,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
-     * findings based on ThreatIntelSets.
+     * findings based on ThreatIntelSets. Only users of the master account can use this operation.
      * </p>
      * 
      * @param createThreatIntelSetRequest
@@ -782,7 +843,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Deletes the IPSet specified by the IPSet ID.
+     * Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted IP lists in the console user
+     * interface.
      * </p>
      * 
      * @param deleteIPSetRequest
@@ -953,6 +1015,65 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes the publishing definition with the specified <code>destinationId</code>.
+     * </p>
+     * 
+     * @param deletePublishingDestinationRequest
+     * @return Result of the DeletePublishingDestination operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.DeletePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeletePublishingDestinationResult deletePublishingDestination(DeletePublishingDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePublishingDestination(request);
+    }
+
+    @SdkInternalApi
+    final DeletePublishingDestinationResult executeDeletePublishingDestination(DeletePublishingDestinationRequest deletePublishingDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePublishingDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePublishingDestinationRequest> request = null;
+        Response<DeletePublishingDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePublishingDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deletePublishingDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePublishingDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePublishingDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeletePublishingDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
      * </p>
      * 
@@ -998,6 +1119,65 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteThreatIntelSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThreatIntelSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the publishing destination specified by the provided <code>destinationId</code>.
+     * </p>
+     * 
+     * @param describePublishingDestinationRequest
+     * @return Result of the DescribePublishingDestination operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.DescribePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribePublishingDestinationResult describePublishingDestination(DescribePublishingDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePublishingDestination(request);
+    }
+
+    @SdkInternalApi
+    final DescribePublishingDestinationResult executeDescribePublishingDestination(DescribePublishingDestinationRequest describePublishingDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePublishingDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePublishingDestinationRequest> request = null;
+        Response<DescribePublishingDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePublishingDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describePublishingDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePublishingDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePublishingDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribePublishingDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1355,7 +1535,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Retrieves the IPSet specified by the IPSet ID.
+     * Retrieves the IPSet specified by the <code>ipSetId</code>.
      * </p>
      * 
      * @param getIPSetRequest
@@ -1871,7 +2051,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists the IPSets of the GuardDuty service specified by the detector ID.
+     * Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member
+     * account, the IPSets returned are the IPSets from the associated master account.
      * </p>
      * 
      * @param listIPSetsRequest
@@ -2042,6 +2223,65 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.
+     * </p>
+     * 
+     * @param listPublishingDestinationsRequest
+     * @return Result of the ListPublishingDestinations operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.ListPublishingDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPublishingDestinationsResult listPublishingDestinations(ListPublishingDestinationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPublishingDestinations(request);
+    }
+
+    @SdkInternalApi
+    final ListPublishingDestinationsResult executeListPublishingDestinations(ListPublishingDestinationsRequest listPublishingDestinationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPublishingDestinationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPublishingDestinationsRequest> request = null;
+        Response<ListPublishingDestinationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPublishingDestinationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPublishingDestinationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPublishingDestinations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPublishingDestinationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPublishingDestinationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and Threat
      * Intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
      * given resource..
@@ -2101,7 +2341,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+     * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a
+     * member account, the ThreatIntelSets associated with the master account are returned.
      * </p>
      * 
      * @param listThreatIntelSetsRequest
@@ -2158,9 +2399,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Re-enables GuardDuty to monitor findings of the member accounts specified by the account IDs. A master GuardDuty
-     * account can run this command after disabling GuardDuty from monitoring these members' findings by running
-     * StopMonitoringMembers.
+     * Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of
+     * accounts that you stopped monitoring with the <code>StopMonitoringMembers</code> operation.
      * </p>
      * 
      * @param startMonitoringMembersRequest
@@ -2218,9 +2458,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running
-     * this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these
-     * members’ findings.
+     * Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code> to
+     * restart monitoring for those accounts.
      * </p>
      * 
      * @param stopMonitoringMembersRequest
@@ -2335,7 +2574,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
+     * Unarchives GuardDuty findings specified by the <code>findingIds</code>.
      * </p>
      * 
      * @param unarchiveFindingsRequest
@@ -2449,7 +2688,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Updates an Amazon GuardDuty detector specified by the detectorId.
+     * Updates the Amazon GuardDuty detector specified by the detectorId.
      * </p>
      * 
      * @param updateDetectorRequest
@@ -2563,7 +2802,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Marks specified Amazon GuardDuty findings as useful or not useful.
+     * Marks the specified GuardDuty findings as useful or not useful.
      * </p>
      * 
      * @param updateFindingsFeedbackRequest
@@ -2666,6 +2905,65 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateIPSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateIPSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates information about the publishing destination specified by the <code>destinationId</code>.
+     * </p>
+     * 
+     * @param updatePublishingDestinationRequest
+     * @return Result of the UpdatePublishingDestination operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.UpdatePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdatePublishingDestinationResult updatePublishingDestination(UpdatePublishingDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePublishingDestination(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePublishingDestinationResult executeUpdatePublishingDestination(UpdatePublishingDestinationRequest updatePublishingDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePublishingDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePublishingDestinationRequest> request = null;
+        Response<UpdatePublishingDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePublishingDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updatePublishingDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePublishingDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePublishingDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdatePublishingDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

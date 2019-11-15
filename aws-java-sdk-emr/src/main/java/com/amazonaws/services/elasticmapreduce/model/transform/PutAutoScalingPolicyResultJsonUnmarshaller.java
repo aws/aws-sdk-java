@@ -60,6 +60,10 @@ public class PutAutoScalingPolicyResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     putAutoScalingPolicyResult.setAutoScalingPolicy(AutoScalingPolicyDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ClusterArn", targetDepth)) {
+                    context.nextToken();
+                    putAutoScalingPolicyResult.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

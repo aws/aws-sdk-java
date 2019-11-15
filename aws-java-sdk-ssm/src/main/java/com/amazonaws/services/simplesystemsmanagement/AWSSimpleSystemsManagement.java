@@ -1420,6 +1420,7 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Get information about a parameter.
      * </p>
+     * <note>
      * <p>
      * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
      * response includes information up to the limit specified. The number of items returned, however, can be between
@@ -1427,6 +1428,7 @@ public interface AWSSimpleSystemsManagement {
      * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
      * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
      * </p>
+     * </note>
      * 
      * @param describeParametersRequest
      * @return Result of the DescribeParameters operation returned by the service.
@@ -1982,20 +1984,15 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Retrieve parameters in a specific hierarchy. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
-     * Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * Retrieve information about one or more parameters in a specific hierarchy.
      * </p>
+     * <note>
      * <p>
      * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
      * response includes information up to the limit specified. The number of items returned, however, can be between
      * zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the
      * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
      * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
-     * </p>
-     * <note>
-     * <p>
-     * This API action doesn't support filtering by tags.
      * </p>
      * </note>
      * 

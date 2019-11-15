@@ -27,30 +27,30 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique ID of the detector that you want to update.
+     * The unique ID of the detector to update.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * Specifies whether the detector is enabled or not enabled.
      * </p>
      */
     private Boolean enable;
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      */
     private String findingPublishingFrequency;
 
     /**
      * <p>
-     * The unique ID of the detector that you want to update.
+     * The unique ID of the detector to update.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector that you want to update.
+     *        The unique ID of the detector to update.
      */
 
     public void setDetectorId(String detectorId) {
@@ -59,10 +59,10 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique ID of the detector that you want to update.
+     * The unique ID of the detector to update.
      * </p>
      * 
-     * @return The unique ID of the detector that you want to update.
+     * @return The unique ID of the detector to update.
      */
 
     public String getDetectorId() {
@@ -71,11 +71,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique ID of the detector that you want to update.
+     * The unique ID of the detector to update.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector that you want to update.
+     *        The unique ID of the detector to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * Specifies whether the detector is enabled or not enabled.
      * </p>
      * 
      * @param enable
-     *        Updated boolean value for the detector that specifies whether the detector is enabled.
+     *        Specifies whether the detector is enabled or not enabled.
      */
 
     public void setEnable(Boolean enable) {
@@ -99,10 +99,10 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * Specifies whether the detector is enabled or not enabled.
      * </p>
      * 
-     * @return Updated boolean value for the detector that specifies whether the detector is enabled.
+     * @return Specifies whether the detector is enabled or not enabled.
      */
 
     public Boolean getEnable() {
@@ -111,11 +111,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * Specifies whether the detector is enabled or not enabled.
      * </p>
      * 
      * @param enable
-     *        Updated boolean value for the detector that specifies whether the detector is enabled.
+     *        Specifies whether the detector is enabled or not enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,10 +126,10 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Updated boolean value for the detector that specifies whether the detector is enabled.
+     * Specifies whether the detector is enabled or not enabled.
      * </p>
      * 
-     * @return Updated boolean value for the detector that specifies whether the detector is enabled.
+     * @return Specifies whether the detector is enabled or not enabled.
      */
 
     public Boolean isEnable() {
@@ -138,11 +138,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently customer got Finding updates published.
+     *        A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * @see FindingPublishingFrequency
      */
 
@@ -152,10 +152,10 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      * 
-     * @return A enum value that specifies how frequently customer got Finding updates published.
+     * @return A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * @see FindingPublishingFrequency
      */
 
@@ -165,11 +165,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently customer got Finding updates published.
+     *        A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -181,11 +181,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently customer got Finding updates published.
+     *        A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */

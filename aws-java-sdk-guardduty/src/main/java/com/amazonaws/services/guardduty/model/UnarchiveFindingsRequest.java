@@ -27,24 +27,24 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the detector that specifies the GuardDuty service whose findings you want to unarchive.
+     * The ID of the detector associated with the findings to unarchive.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * IDs of the findings that you want to unarchive.
+     * IDs of the findings to unarchive.
      * </p>
      */
     private java.util.List<String> findingIds;
 
     /**
      * <p>
-     * The ID of the detector that specifies the GuardDuty service whose findings you want to unarchive.
+     * The ID of the detector associated with the findings to unarchive.
      * </p>
      * 
      * @param detectorId
-     *        The ID of the detector that specifies the GuardDuty service whose findings you want to unarchive.
+     *        The ID of the detector associated with the findings to unarchive.
      */
 
     public void setDetectorId(String detectorId) {
@@ -53,10 +53,10 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the detector that specifies the GuardDuty service whose findings you want to unarchive.
+     * The ID of the detector associated with the findings to unarchive.
      * </p>
      * 
-     * @return The ID of the detector that specifies the GuardDuty service whose findings you want to unarchive.
+     * @return The ID of the detector associated with the findings to unarchive.
      */
 
     public String getDetectorId() {
@@ -65,11 +65,11 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the detector that specifies the GuardDuty service whose findings you want to unarchive.
+     * The ID of the detector associated with the findings to unarchive.
      * </p>
      * 
      * @param detectorId
-     *        The ID of the detector that specifies the GuardDuty service whose findings you want to unarchive.
+     *        The ID of the detector associated with the findings to unarchive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * IDs of the findings that you want to unarchive.
+     * IDs of the findings to unarchive.
      * </p>
      * 
-     * @return IDs of the findings that you want to unarchive.
+     * @return IDs of the findings to unarchive.
      */
 
     public java.util.List<String> getFindingIds() {
@@ -92,11 +92,11 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * IDs of the findings that you want to unarchive.
+     * IDs of the findings to unarchive.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to unarchive.
+     *        IDs of the findings to unarchive.
      */
 
     public void setFindingIds(java.util.Collection<String> findingIds) {
@@ -110,7 +110,7 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * IDs of the findings that you want to unarchive.
+     * IDs of the findings to unarchive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to unarchive.
+     *        IDs of the findings to unarchive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * IDs of the findings that you want to unarchive.
+     * IDs of the findings to unarchive.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to unarchive.
+     *        IDs of the findings to unarchive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

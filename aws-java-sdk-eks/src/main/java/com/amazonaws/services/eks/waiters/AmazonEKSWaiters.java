@@ -70,6 +70,32 @@ public class AmazonEKSWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a NodegroupDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeNodegroupRequest> nodegroupDeleted() {
+
+        return new WaiterBuilder<DescribeNodegroupRequest, DescribeNodegroupResult>().withSdkFunction(new DescribeNodegroupFunction(client))
+                .withAcceptors(new NodegroupDeleted.IsDELETE_FAILEDMatcher(), new NodegroupDeleted.IsResourceNotFoundExceptionMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a NodegroupActive waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeNodegroupRequest> nodegroupActive() {
+
+        return new WaiterBuilder<DescribeNodegroupRequest, DescribeNodegroupResult>().withSdkFunction(new DescribeNodegroupFunction(client))
+                .withAcceptors(new NodegroupActive.IsCREATE_FAILEDMatcher(), new NodegroupActive.IsACTIVEMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(80), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
     public void shutdown() {
         executorService.shutdown();
     }

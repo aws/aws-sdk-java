@@ -23,7 +23,8 @@ public enum ClusterStatus {
     CREATING("CREATING"),
     ACTIVE("ACTIVE"),
     DELETING("DELETING"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    UPDATING("UPDATING");
 
     private String value;
 

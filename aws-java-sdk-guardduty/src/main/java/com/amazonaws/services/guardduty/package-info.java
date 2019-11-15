@@ -22,8 +22,8 @@
  * unauthorized infrastructure deployments, like instances deployed in a region that has never been used, or unusual API
  * calls, like a password policy change to reduce password strength. GuardDuty informs you of the status of your AWS
  * environment by producing security findings that you can view in the GuardDuty console or through Amazon CloudWatch
- * events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
- * Amazon GuardDuty User Guide</a>.
+ * events. For more information, see <a
+ * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a>.
  * </p>
  */
 package com.amazonaws.services.guardduty;

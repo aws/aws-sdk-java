@@ -68,6 +68,41 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
             request.addParameter("SourceSnapshotId", StringUtils.fromString(copySnapshotRequest.getSourceSnapshotId()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> copySnapshotRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) copySnapshotRequest
+                .getTagSpecifications();
+        if (!copySnapshotRequestTagSpecificationsList.isEmpty() || !copySnapshotRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification copySnapshotRequestTagSpecificationsListValue : copySnapshotRequestTagSpecificationsList) {
+
+                if (copySnapshotRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(copySnapshotRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copySnapshotRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         return request;
     }
 

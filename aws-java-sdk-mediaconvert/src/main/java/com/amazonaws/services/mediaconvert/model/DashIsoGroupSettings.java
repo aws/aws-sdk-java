@@ -27,6 +27,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class DashIsoGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default
+     * manifest references every output in the output group. To create additional DASH manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    private java.util.List<DashAdditionalManifest> additionalManifests;
+    /**
      * A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used
      * if streams are delivered from a different URL than the manifest file.
      */
@@ -79,6 +85,84 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * your DASH manifest.
      */
     private String writeSegmentTimelineInRepresentation;
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default
+     * manifest references every output in the output group. To create additional DASH manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     * 
+     * @return By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This
+     *         default manifest references every output in the output group. To create additional DASH manifests that
+     *         reference a subset of the outputs in the output group, specify a list of them here.
+     */
+
+    public java.util.List<DashAdditionalManifest> getAdditionalManifests() {
+        return additionalManifests;
+    }
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default
+     * manifest references every output in the output group. To create additional DASH manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This
+     *        default manifest references every output in the output group. To create additional DASH manifests that
+     *        reference a subset of the outputs in the output group, specify a list of them here.
+     */
+
+    public void setAdditionalManifests(java.util.Collection<DashAdditionalManifest> additionalManifests) {
+        if (additionalManifests == null) {
+            this.additionalManifests = null;
+            return;
+        }
+
+        this.additionalManifests = new java.util.ArrayList<DashAdditionalManifest>(additionalManifests);
+    }
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default
+     * manifest references every output in the output group. To create additional DASH manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalManifests(java.util.Collection)} or {@link #withAdditionalManifests(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This
+     *        default manifest references every output in the output group. To create additional DASH manifests that
+     *        reference a subset of the outputs in the output group, specify a list of them here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashIsoGroupSettings withAdditionalManifests(DashAdditionalManifest... additionalManifests) {
+        if (this.additionalManifests == null) {
+            setAdditionalManifests(new java.util.ArrayList<DashAdditionalManifest>(additionalManifests.length));
+        }
+        for (DashAdditionalManifest ele : additionalManifests) {
+            this.additionalManifests.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default
+     * manifest references every output in the output group. To create additional DASH manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This
+     *        default manifest references every output in the output group. To create additional DASH manifests that
+     *        reference a subset of the outputs in the output group, specify a list of them here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashIsoGroupSettings withAdditionalManifests(java.util.Collection<DashAdditionalManifest> additionalManifests) {
+        setAdditionalManifests(additionalManifests);
+        return this;
+    }
 
     /**
      * A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used
@@ -660,6 +744,8 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalManifests() != null)
+            sb.append("AdditionalManifests: ").append(getAdditionalManifests()).append(",");
         if (getBaseUrl() != null)
             sb.append("BaseUrl: ").append(getBaseUrl()).append(",");
         if (getDestination() != null)
@@ -696,6 +782,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         if (obj instanceof DashIsoGroupSettings == false)
             return false;
         DashIsoGroupSettings other = (DashIsoGroupSettings) obj;
+        if (other.getAdditionalManifests() == null ^ this.getAdditionalManifests() == null)
+            return false;
+        if (other.getAdditionalManifests() != null && other.getAdditionalManifests().equals(this.getAdditionalManifests()) == false)
+            return false;
         if (other.getBaseUrl() == null ^ this.getBaseUrl() == null)
             return false;
         if (other.getBaseUrl() != null && other.getBaseUrl().equals(this.getBaseUrl()) == false)
@@ -749,6 +839,7 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalManifests() == null) ? 0 : getAdditionalManifests().hashCode());
         hashCode = prime * hashCode + ((getBaseUrl() == null) ? 0 : getBaseUrl().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());

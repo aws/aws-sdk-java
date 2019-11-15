@@ -73,7 +73,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
      * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
-     * default is <code>true</code>.
+     * default is <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -150,7 +150,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
      * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
-     * default is <code>true</code>.
+     * default is <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -217,7 +217,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid
      *        header fields are removed by the load balancer (<code>true</code>) or routed to targets (
-     *        <code>false</code>). The default is <code>true</code>.
+     *        <code>false</code>). The default is <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -290,7 +290,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
      * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
-     * default is <code>true</code>.
+     * default is <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -356,7 +356,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with
      *         invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (
-     *         <code>false</code>). The default is <code>true</code>.
+     *         <code>false</code>). The default is <code>false</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -429,7 +429,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
      * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
-     * default is <code>true</code>.
+     * default is <code>false</code>.
      * </p>
      * </li>
      * <li>
@@ -496,7 +496,7 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid
      *        header fields are removed by the load balancer (<code>true</code>) or routed to targets (
-     *        <code>false</code>). The default is <code>true</code>.
+     *        <code>false</code>). The default is <code>false</code>.
      *        </p>
      *        </li>
      *        <li>

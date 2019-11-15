@@ -30,6 +30,8 @@ public class ResourceLimitExceededException extends com.amazonaws.services.eks.m
      */
     private String clusterName;
 
+    private String nodegroupName;
+
     /**
      * Constructs a new ResourceLimitExceededException with the specified error message.
      *
@@ -79,6 +81,34 @@ public class ResourceLimitExceededException extends com.amazonaws.services.eks.m
 
     public ResourceLimitExceededException withClusterName(String clusterName) {
         setClusterName(clusterName);
+        return this;
+    }
+
+    /**
+     * @param nodegroupName
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
+    public void setNodegroupName(String nodegroupName) {
+        this.nodegroupName = nodegroupName;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
+    public String getNodegroupName() {
+        return this.nodegroupName;
+    }
+
+    /**
+     * @param nodegroupName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceLimitExceededException withNodegroupName(String nodegroupName) {
+        setNodegroupName(nodegroupName);
         return this;
     }
 

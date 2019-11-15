@@ -287,9 +287,87 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
+     * Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster
+     * that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI
+     * release version for the respective minor Kubernetes version of the cluster.
+     * </p>
+     * <p>
+     * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * 2 AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
+     * <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param createNodegroupRequest
+     * @return Result of the CreateNodegroup operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceLimitExceededException
+     *         You have encountered a service limit on the specified resource.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
+     * @sample AmazonEKS.CreateNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateNodegroupResult createNodegroup(CreateNodegroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNodegroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateNodegroupResult executeCreateNodegroup(CreateNodegroupRequest createNodegroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNodegroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNodegroupRequest> request = null;
+        Response<CreateNodegroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNodegroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNodegroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNodegroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateNodegroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateNodegroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the Amazon EKS cluster control plane.
      * </p>
-     * <note>
      * <p>
      * If you have active services in your cluster that are associated with a load balancer, you must delete those
      * services before deleting the cluster so that the load balancers are deleted properly. Otherwise, you can have
@@ -297,7 +375,10 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
-     * </note>
+     * <p>
+     * If you have managed node groups attached to the cluster, you must delete them first. For more information, see
+     * <a>DeleteNodegroup</a>.
+     * </p>
      * 
      * @param deleteClusterRequest
      * @return Result of the DeleteCluster operation returned by the service.
@@ -305,7 +386,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon EKS clusters are Region-specific.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
      * @throws ClientException
      *         These errors are usually caused by a client action. Actions can include using an action or resource on
      *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
@@ -362,6 +444,75 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
+     * Deletes an Amazon EKS node group for a cluster.
+     * </p>
+     * 
+     * @param deleteNodegroupRequest
+     * @return Result of the DeleteNodegroup operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
+     * @sample AmazonEKS.DeleteNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteNodegroupResult deleteNodegroup(DeleteNodegroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNodegroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNodegroupResult executeDeleteNodegroup(DeleteNodegroupRequest deleteNodegroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNodegroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNodegroupRequest> request = null;
+        Response<DeleteNodegroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNodegroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNodegroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNodegroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteNodegroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteNodegroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns descriptive information about an Amazon EKS cluster.
      * </p>
      * <p>
@@ -381,7 +532,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * @return Result of the DescribeCluster operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon EKS clusters are Region-specific.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
      * @throws ClientException
      *         These errors are usually caused by a client action. Actions can include using an action or resource on
      *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
@@ -438,7 +590,74 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Returns descriptive information about an update against your Amazon EKS cluster.
+     * Returns descriptive information about an Amazon EKS node group.
+     * </p>
+     * 
+     * @param describeNodegroupRequest
+     * @return Result of the DescribeNodegroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
+     * @sample AmazonEKS.DescribeNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeNodegroupResult describeNodegroup(DescribeNodegroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNodegroup(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNodegroupResult executeDescribeNodegroup(DescribeNodegroupRequest describeNodegroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNodegroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNodegroupRequest> request = null;
+        Response<DescribeNodegroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNodegroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeNodegroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNodegroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeNodegroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeNodegroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns descriptive information about an update against your Amazon EKS cluster or associated managed node group.
      * </p>
      * <p>
      * When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status
@@ -457,7 +676,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      *         These errors are usually caused by a server-side issue.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon EKS clusters are Region-specific.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
      * @sample AmazonEKS.DescribeUpdate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate" target="_top">AWS API
      *      Documentation</a>
@@ -569,6 +789,74 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
+     * Lists the Amazon EKS node groups associated with the specified cluster in your AWS account in the specified
+     * Region.
+     * </p>
+     * 
+     * @param listNodegroupsRequest
+     * @return Result of the ListNodegroups operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @sample AmazonEKS.ListNodegroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListNodegroupsResult listNodegroups(ListNodegroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNodegroups(request);
+    }
+
+    @SdkInternalApi
+    final ListNodegroupsResult executeListNodegroups(ListNodegroupsRequest listNodegroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNodegroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNodegroupsRequest> request = null;
+        Response<ListNodegroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNodegroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNodegroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNodegroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNodegroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListNodegroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List the tags for an Amazon EKS resource.
      * </p>
      * 
@@ -628,7 +916,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Lists the updates associated with an Amazon EKS cluster in your AWS account, in the specified Region.
+     * Lists the updates associated with an Amazon EKS cluster or managed node group in your AWS account, in the
+     * specified Region.
      * </p>
      * 
      * @param listUpdatesRequest
@@ -643,7 +932,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      *         These errors are usually caused by a server-side issue.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon EKS clusters are Region-specific.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
      * @sample AmazonEKS.ListUpdates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates" target="_top">AWS API
      *      Documentation</a>
@@ -694,7 +984,9 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * associated with that resource are deleted as well. Tags that you create for Amazon EKS resources do not propagate
+     * to any other resources associated with the cluster. For example, if you tag a cluster with this operation, that
+     * tag does not automatically propagate to the subnets and worker nodes associated with the cluster.
      * </p>
      * 
      * @param tagResourceRequest
@@ -860,7 +1152,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon EKS clusters are Region-specific.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
      * @throws InvalidRequestException
      *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
      *         operations.
@@ -922,6 +1215,10 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
      * .
      * </p>
+     * <p>
+     * If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes versions must match
+     * the cluster’s Kubernetes version in order to update the cluster to a new Kubernetes version.
+     * </p>
      * 
      * @param updateClusterVersionRequest
      * @return Result of the UpdateClusterVersion operation returned by the service.
@@ -937,7 +1234,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
-     *         Amazon EKS clusters are Region-specific.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
      * @throws InvalidRequestException
      *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
      *         operations.
@@ -977,6 +1275,167 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateClusterVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateClusterVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an Amazon EKS managed node group configuration. Your node group continues to function during the update.
+     * The response output includes an update ID that you can use to track the status of your node group update with the
+     * <a>DescribeUpdate</a> API operation. Currently you can update the Kubernetes labels for a node group or the
+     * scaling configuration.
+     * </p>
+     * 
+     * @param updateNodegroupConfigRequest
+     * @return Result of the UpdateNodegroupConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @sample AmazonEKS.UpdateNodegroupConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateNodegroupConfigResult updateNodegroupConfig(UpdateNodegroupConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNodegroupConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNodegroupConfigResult executeUpdateNodegroupConfig(UpdateNodegroupConfigRequest updateNodegroupConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNodegroupConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNodegroupConfigRequest> request = null;
+        Response<UpdateNodegroupConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNodegroupConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNodegroupConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNodegroupConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNodegroupConfigResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateNodegroupConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.
+     * </p>
+     * <p>
+     * You can update to the latest available AMI version of a node group's current Kubernetes version by not specifying
+     * a Kubernetes version in the request. You can update to the latest AMI version of your cluster's current
+     * Kubernetes version by specifying your cluster's Kubernetes version in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
+     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * You cannot roll back a node group to an earlier Kubernetes version or AMI version.
+     * </p>
+     * <p>
+     * When a node in a managed node group is terminated due to a scaling action or update, the pods in that node are
+     * drained first. Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable to do so. You can
+     * <code>force</code> the update if Amazon EKS is unable to drain the nodes as a result of a pod disruption budget
+     * issue.
+     * </p>
+     * 
+     * @param updateNodegroupVersionRequest
+     * @return Result of the UpdateNodegroupVersion operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @sample AmazonEKS.UpdateNodegroupVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateNodegroupVersionResult updateNodegroupVersion(UpdateNodegroupVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNodegroupVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNodegroupVersionResult executeUpdateNodegroupVersion(UpdateNodegroupVersionRequest updateNodegroupVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNodegroupVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNodegroupVersionRequest> request = null;
+        Response<UpdateNodegroupVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNodegroupVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNodegroupVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNodegroupVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNodegroupVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateNodegroupVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

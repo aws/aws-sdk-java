@@ -35,8 +35,8 @@ import com.amazonaws.services.guardduty.model.*;
  * unauthorized infrastructure deployments, like instances deployed in a region that has never been used, or unusual API
  * calls, like a password policy change to reduce password strength. GuardDuty informs you of the status of your AWS
  * environment by producing security findings that you can view in the GuardDuty console or through Amazon CloudWatch
- * events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
- * Amazon GuardDuty User Guide</a>.
+ * events. For more information, see <a
+ * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -184,8 +184,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS
-     * infrastructure and applications.
+     * Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet is a list IP addresses
+     * trusted for secure communication with AWS infrastructure and applications. GuardDuty does not generate findings
+     * for IP addresses included in IPSets. Only users from the master account can use this operation.
      * </p>
      * 
      * @param createIPSetRequest
@@ -198,8 +199,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS
-     * infrastructure and applications.
+     * Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet is a list IP addresses
+     * trusted for secure communication with AWS infrastructure and applications. GuardDuty does not generate findings
+     * for IP addresses included in IPSets. Only users from the master account can use this operation.
      * </p>
      * 
      * @param createIPSetRequest
@@ -250,8 +252,43 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
+     * Creates a publishing destination to send findings to. The resource to send findings to must exist before you use
+     * this operation.
+     * </p>
+     * 
+     * @param createPublishingDestinationRequest
+     * @return A Java Future containing the result of the CreatePublishingDestination operation returned by the service.
+     * @sample AmazonGuardDutyAsync.CreatePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePublishingDestinationResult> createPublishingDestinationAsync(
+            CreatePublishingDestinationRequest createPublishingDestinationRequest);
+
+    /**
+     * <p>
+     * Creates a publishing destination to send findings to. The resource to send findings to must exist before you use
+     * this operation.
+     * </p>
+     * 
+     * @param createPublishingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePublishingDestination operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.CreatePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePublishingDestinationResult> createPublishingDestinationAsync(
+            CreatePublishingDestinationRequest createPublishingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePublishingDestinationRequest, CreatePublishingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
-     * findingTypes, the API generates example findings of all supported finding types.
+     * <code>findingTypes</code>, the API generates example findings of all supported finding types.
      * </p>
      * 
      * @param createSampleFindingsRequest
@@ -265,7 +302,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
-     * findingTypes, the API generates example findings of all supported finding types.
+     * <code>findingTypes</code>, the API generates example findings of all supported finding types.
      * </p>
      * 
      * @param createSampleFindingsRequest
@@ -284,7 +321,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
-     * findings based on ThreatIntelSets.
+     * findings based on ThreatIntelSets. Only users of the master account can use this operation.
      * </p>
      * 
      * @param createThreatIntelSetRequest
@@ -298,7 +335,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
-     * findings based on ThreatIntelSets.
+     * findings based on ThreatIntelSets. Only users of the master account can use this operation.
      * </p>
      * 
      * @param createThreatIntelSetRequest
@@ -409,7 +446,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes the IPSet specified by the IPSet ID.
+     * Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted IP lists in the console user
+     * interface.
      * </p>
      * 
      * @param deleteIPSetRequest
@@ -422,7 +460,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes the IPSet specified by the IPSet ID.
+     * Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted IP lists in the console user
+     * interface.
      * </p>
      * 
      * @param deleteIPSetRequest
@@ -502,6 +541,39 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
+     * Deletes the publishing definition with the specified <code>destinationId</code>.
+     * </p>
+     * 
+     * @param deletePublishingDestinationRequest
+     * @return A Java Future containing the result of the DeletePublishingDestination operation returned by the service.
+     * @sample AmazonGuardDutyAsync.DeletePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePublishingDestinationResult> deletePublishingDestinationAsync(
+            DeletePublishingDestinationRequest deletePublishingDestinationRequest);
+
+    /**
+     * <p>
+     * Deletes the publishing definition with the specified <code>destinationId</code>.
+     * </p>
+     * 
+     * @param deletePublishingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePublishingDestination operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.DeletePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePublishingDestinationResult> deletePublishingDestinationAsync(
+            DeletePublishingDestinationRequest deletePublishingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePublishingDestinationRequest, DeletePublishingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
      * </p>
      * 
@@ -530,6 +602,41 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<DeleteThreatIntelSetResult> deleteThreatIntelSetAsync(DeleteThreatIntelSetRequest deleteThreatIntelSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteThreatIntelSetRequest, DeleteThreatIntelSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the publishing destination specified by the provided <code>destinationId</code>.
+     * </p>
+     * 
+     * @param describePublishingDestinationRequest
+     * @return A Java Future containing the result of the DescribePublishingDestination operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsync.DescribePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePublishingDestinationResult> describePublishingDestinationAsync(
+            DescribePublishingDestinationRequest describePublishingDestinationRequest);
+
+    /**
+     * <p>
+     * Returns information about the publishing destination specified by the provided <code>destinationId</code>.
+     * </p>
+     * 
+     * @param describePublishingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePublishingDestination operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsyncHandler.DescribePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePublishingDestinationResult> describePublishingDestinationAsync(
+            DescribePublishingDestinationRequest describePublishingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePublishingDestinationRequest, DescribePublishingDestinationResult> asyncHandler);
 
     /**
      * <p>
@@ -723,7 +830,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Retrieves the IPSet specified by the IPSet ID.
+     * Retrieves the IPSet specified by the <code>ipSetId</code>.
      * </p>
      * 
      * @param getIPSetRequest
@@ -736,7 +843,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Retrieves the IPSet specified by the IPSet ID.
+     * Retrieves the IPSet specified by the <code>ipSetId</code>.
      * </p>
      * 
      * @param getIPSetRequest
@@ -1008,7 +1115,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists the IPSets of the GuardDuty service specified by the detector ID.
+     * Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member
+     * account, the IPSets returned are the IPSets from the associated master account.
      * </p>
      * 
      * @param listIPSetsRequest
@@ -1021,7 +1129,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists the IPSets of the GuardDuty service specified by the detector ID.
+     * Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member
+     * account, the IPSets returned are the IPSets from the associated master account.
      * </p>
      * 
      * @param listIPSetsRequest
@@ -1101,6 +1210,39 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
+     * Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.
+     * </p>
+     * 
+     * @param listPublishingDestinationsRequest
+     * @return A Java Future containing the result of the ListPublishingDestinations operation returned by the service.
+     * @sample AmazonGuardDutyAsync.ListPublishingDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPublishingDestinationsResult> listPublishingDestinationsAsync(
+            ListPublishingDestinationsRequest listPublishingDestinationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.
+     * </p>
+     * 
+     * @param listPublishingDestinationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPublishingDestinations operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.ListPublishingDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPublishingDestinationsResult> listPublishingDestinationsAsync(
+            ListPublishingDestinationsRequest listPublishingDestinationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPublishingDestinationsRequest, ListPublishingDestinationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and Threat
      * Intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
      * given resource..
@@ -1136,7 +1278,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+     * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a
+     * member account, the ThreatIntelSets associated with the master account are returned.
      * </p>
      * 
      * @param listThreatIntelSetsRequest
@@ -1149,7 +1292,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
+     * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a
+     * member account, the ThreatIntelSets associated with the master account are returned.
      * </p>
      * 
      * @param listThreatIntelSetsRequest
@@ -1167,9 +1311,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Re-enables GuardDuty to monitor findings of the member accounts specified by the account IDs. A master GuardDuty
-     * account can run this command after disabling GuardDuty from monitoring these members' findings by running
-     * StopMonitoringMembers.
+     * Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of
+     * accounts that you stopped monitoring with the <code>StopMonitoringMembers</code> operation.
      * </p>
      * 
      * @param startMonitoringMembersRequest
@@ -1182,9 +1325,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Re-enables GuardDuty to monitor findings of the member accounts specified by the account IDs. A master GuardDuty
-     * account can run this command after disabling GuardDuty from monitoring these members' findings by running
-     * StopMonitoringMembers.
+     * Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of
+     * accounts that you stopped monitoring with the <code>StopMonitoringMembers</code> operation.
      * </p>
      * 
      * @param startMonitoringMembersRequest
@@ -1202,9 +1344,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running
-     * this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these
-     * members’ findings.
+     * Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code> to
+     * restart monitoring for those accounts.
      * </p>
      * 
      * @param stopMonitoringMembersRequest
@@ -1217,9 +1358,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running
-     * this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these
-     * members’ findings.
+     * Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code> to
+     * restart monitoring for those accounts.
      * </p>
      * 
      * @param stopMonitoringMembersRequest
@@ -1268,7 +1408,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
+     * Unarchives GuardDuty findings specified by the <code>findingIds</code>.
      * </p>
      * 
      * @param unarchiveFindingsRequest
@@ -1281,7 +1421,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
+     * Unarchives GuardDuty findings specified by the <code>findingIds</code>.
      * </p>
      * 
      * @param unarchiveFindingsRequest
@@ -1330,7 +1470,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Updates an Amazon GuardDuty detector specified by the detectorId.
+     * Updates the Amazon GuardDuty detector specified by the detectorId.
      * </p>
      * 
      * @param updateDetectorRequest
@@ -1343,7 +1483,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Updates an Amazon GuardDuty detector specified by the detectorId.
+     * Updates the Amazon GuardDuty detector specified by the detectorId.
      * </p>
      * 
      * @param updateDetectorRequest
@@ -1392,7 +1532,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Marks specified Amazon GuardDuty findings as useful or not useful.
+     * Marks the specified GuardDuty findings as useful or not useful.
      * </p>
      * 
      * @param updateFindingsFeedbackRequest
@@ -1405,7 +1545,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Marks specified Amazon GuardDuty findings as useful or not useful.
+     * Marks the specified GuardDuty findings as useful or not useful.
      * </p>
      * 
      * @param updateFindingsFeedbackRequest
@@ -1451,6 +1591,39 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest updateIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates information about the publishing destination specified by the <code>destinationId</code>.
+     * </p>
+     * 
+     * @param updatePublishingDestinationRequest
+     * @return A Java Future containing the result of the UpdatePublishingDestination operation returned by the service.
+     * @sample AmazonGuardDutyAsync.UpdatePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePublishingDestinationResult> updatePublishingDestinationAsync(
+            UpdatePublishingDestinationRequest updatePublishingDestinationRequest);
+
+    /**
+     * <p>
+     * Updates information about the publishing destination specified by the <code>destinationId</code>.
+     * </p>
+     * 
+     * @param updatePublishingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePublishingDestination operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.UpdatePublishingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePublishingDestinationResult> updatePublishingDestinationAsync(
+            UpdatePublishingDestinationRequest updatePublishingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePublishingDestinationRequest, UpdatePublishingDestinationResult> asyncHandler);
 
     /**
      * <p>

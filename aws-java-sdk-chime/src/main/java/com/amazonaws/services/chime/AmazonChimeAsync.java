@@ -186,6 +186,41 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Adds up to 50 members to a chat room. Members can be either users or bots. The member role designates whether the
+     * member is a chat room administrator or a general chat room member.
+     * </p>
+     * 
+     * @param batchCreateRoomMembershipRequest
+     * @return A Java Future containing the result of the BatchCreateRoomMembership operation returned by the service.
+     * @sample AmazonChimeAsync.BatchCreateRoomMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateRoomMembershipResult> batchCreateRoomMembershipAsync(
+            BatchCreateRoomMembershipRequest batchCreateRoomMembershipRequest);
+
+    /**
+     * <p>
+     * Adds up to 50 members to a chat room. Members can be either users or bots. The member role designates whether the
+     * member is a chat room administrator or a general chat room member.
+     * </p>
+     * 
+     * @param batchCreateRoomMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchCreateRoomMembership operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.BatchCreateRoomMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateRoomMembershipResult> batchCreateRoomMembershipAsync(
+            BatchCreateRoomMembershipRequest batchCreateRoomMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateRoomMembershipRequest, BatchCreateRoomMembershipResult> asyncHandler);
+
+    /**
+     * <p>
      * Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be disassociated from any users or Amazon
      * Chime Voice Connectors before they can be deleted.
      * </p>
@@ -520,6 +555,70 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates a chat room for the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param createRoomRequest
+     * @return A Java Future containing the result of the CreateRoom operation returned by the service.
+     * @sample AmazonChimeAsync.CreateRoom
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest createRoomRequest);
+
+    /**
+     * <p>
+     * Creates a chat room for the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param createRoomRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRoom operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateRoom
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest createRoomRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRoomRequest, CreateRoomResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a member to a chat room. A member can be either a user or a bot. The member role designates whether the
+     * member is a chat room administrator or a general chat room member.
+     * </p>
+     * 
+     * @param createRoomMembershipRequest
+     * @return A Java Future containing the result of the CreateRoomMembership operation returned by the service.
+     * @sample AmazonChimeAsync.CreateRoomMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoomMembership" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRoomMembershipResult> createRoomMembershipAsync(CreateRoomMembershipRequest createRoomMembershipRequest);
+
+    /**
+     * <p>
+     * Adds a member to a chat room. A member can be either a user or a bot. The member role designates whether the
+     * member is a chat room administrator or a general chat room member.
+     * </p>
+     * 
+     * @param createRoomMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRoomMembership operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateRoomMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoomMembership" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRoomMembershipResult> createRoomMembershipAsync(CreateRoomMembershipRequest createRoomMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRoomMembershipRequest, CreateRoomMembershipResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Amazon Chime Voice Connector under the administrator's AWS account. You can choose to create an Amazon
      * Chime Voice Connector in a specific AWS Region.
      * </p>
@@ -734,6 +833,68 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<DeletePhoneNumberResult> deletePhoneNumberAsync(DeletePhoneNumberRequest deletePhoneNumberRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePhoneNumberRequest, DeletePhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a chat room.
+     * </p>
+     * 
+     * @param deleteRoomRequest
+     * @return A Java Future containing the result of the DeleteRoom operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteRoom
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoomResult> deleteRoomAsync(DeleteRoomRequest deleteRoomRequest);
+
+    /**
+     * <p>
+     * Deletes a chat room.
+     * </p>
+     * 
+     * @param deleteRoomRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRoom operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteRoom
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoomResult> deleteRoomAsync(DeleteRoomRequest deleteRoomRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoomRequest, DeleteRoomResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a member from a chat room.
+     * </p>
+     * 
+     * @param deleteRoomMembershipRequest
+     * @return A Java Future containing the result of the DeleteRoomMembership operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteRoomMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoomMembership" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoomMembershipResult> deleteRoomMembershipAsync(DeleteRoomMembershipRequest deleteRoomMembershipRequest);
+
+    /**
+     * <p>
+     * Removes a member from a chat room.
+     * </p>
+     * 
+     * @param deleteRoomMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRoomMembership operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteRoomMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoomMembership" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoomMembershipResult> deleteRoomMembershipAsync(DeleteRoomMembershipRequest deleteRoomMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoomMembershipRequest, DeleteRoomMembershipResult> asyncHandler);
 
     /**
      * <p>
@@ -1314,6 +1475,37 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Retrieves room details, such as name.
+     * </p>
+     * 
+     * @param getRoomRequest
+     * @return A Java Future containing the result of the GetRoom operation returned by the service.
+     * @sample AmazonChimeAsync.GetRoom
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest getRoomRequest);
+
+    /**
+     * <p>
+     * Retrieves room details, such as name.
+     * </p>
+     * 
+     * @param getRoomRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRoom operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetRoom
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest getRoomRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRoomRequest, GetRoomResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting
      * PIN.
      * </p>
@@ -1525,8 +1717,8 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Retrieves the streaming configuration details for the specified Amazon Chime Voice Connector. Shows whether media
-     * streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data,
-     * in hours.
+     * streaming is enabled for sending to Amazon Kinesis. It also shows the retention period, in hours, for the Amazon
+     * Kinesis data.
      * </p>
      * 
      * @param getVoiceConnectorStreamingConfigurationRequest
@@ -1542,8 +1734,8 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Retrieves the streaming configuration details for the specified Amazon Chime Voice Connector. Shows whether media
-     * streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data,
-     * in hours.
+     * streaming is enabled for sending to Amazon Kinesis. It also shows the retention period, in hours, for the Amazon
+     * Kinesis data.
      * </p>
      * 
      * @param getVoiceConnectorStreamingConfigurationRequest
@@ -1635,8 +1827,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Sends email invites to as many as 50 users, inviting them to the specified Amazon Chime <code>Team</code>
-     * account. Only <code>Team</code> account types are currently supported for this action.
+     * Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime <code>Team</code> account. Only
+     * <code>Team</code> account types are currently supported for this action.
      * </p>
      * 
      * @param inviteUsersRequest
@@ -1649,8 +1841,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Sends email invites to as many as 50 users, inviting them to the specified Amazon Chime <code>Team</code>
-     * account. Only <code>Team</code> account types are currently supported for this action.
+     * Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime <code>Team</code> account. Only
+     * <code>Team</code> account types are currently supported for this action.
      * </p>
      * 
      * @param inviteUsersRequest
@@ -1795,6 +1987,72 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<ListPhoneNumbersResult> listPhoneNumbersAsync(ListPhoneNumbersRequest listPhoneNumbersRequest,
             com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersRequest, ListPhoneNumbersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the membership details for the specified room, such as member IDs, member email addresses, and member
+     * names.
+     * </p>
+     * 
+     * @param listRoomMembershipsRequest
+     * @return A Java Future containing the result of the ListRoomMemberships operation returned by the service.
+     * @sample AmazonChimeAsync.ListRoomMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRoomMemberships" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRoomMembershipsResult> listRoomMembershipsAsync(ListRoomMembershipsRequest listRoomMembershipsRequest);
+
+    /**
+     * <p>
+     * Lists the membership details for the specified room, such as member IDs, member email addresses, and member
+     * names.
+     * </p>
+     * 
+     * @param listRoomMembershipsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRoomMemberships operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListRoomMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRoomMemberships" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRoomMembershipsResult> listRoomMembershipsAsync(ListRoomMembershipsRequest listRoomMembershipsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRoomMembershipsRequest, ListRoomMembershipsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the room details for the specified Amazon Chime account. Optionally, filter the results by a member ID
+     * (user ID or bot ID) to see a list of rooms that the member belongs to.
+     * </p>
+     * 
+     * @param listRoomsRequest
+     * @return A Java Future containing the result of the ListRooms operation returned by the service.
+     * @sample AmazonChimeAsync.ListRooms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRooms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRoomsResult> listRoomsAsync(ListRoomsRequest listRoomsRequest);
+
+    /**
+     * <p>
+     * Lists the room details for the specified Amazon Chime account. Optionally, filter the results by a member ID
+     * (user ID or bot ID) to see a list of rooms that the member belongs to.
+     * </p>
+     * 
+     * @param listRoomsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRooms operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListRooms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRooms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRoomsResult> listRoomsAsync(ListRoomsRequest listRoomsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRoomsRequest, ListRoomsResult> asyncHandler);
 
     /**
      * <p>
@@ -2065,8 +2323,8 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Amazon Kinesis, and sets the retention period for the
-     * Amazon Kinesis data, in hours.
+     * specifies whether media streaming is enabled for sending to Amazon Kinesis. It also sets the retention period, in
+     * hours, for the Amazon Kinesis data.
      * </p>
      * 
      * @param putVoiceConnectorStreamingConfigurationRequest
@@ -2082,8 +2340,8 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Amazon Kinesis, and sets the retention period for the
-     * Amazon Kinesis data, in hours.
+     * specifies whether media streaming is enabled for sending to Amazon Kinesis. It also sets the retention period, in
+     * hours, for the Amazon Kinesis data.
      * </p>
      * 
      * @param putVoiceConnectorStreamingConfigurationRequest
@@ -2488,7 +2746,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Updates the phone number settings for the administrator's AWS account, such as the default outbound calling name.
      * You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72
-     * hours to be updated.
+     * hours to update.
      * </p>
      * 
      * @param updatePhoneNumberSettingsRequest
@@ -2504,7 +2762,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Updates the phone number settings for the administrator's AWS account, such as the default outbound calling name.
      * You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72
-     * hours to be updated.
+     * hours to update.
      * </p>
      * 
      * @param updatePhoneNumberSettingsRequest
@@ -2520,6 +2778,70 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<UpdatePhoneNumberSettingsResult> updatePhoneNumberSettingsAsync(
             UpdatePhoneNumberSettingsRequest updatePhoneNumberSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePhoneNumberSettingsRequest, UpdatePhoneNumberSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates room details, such as the room name.
+     * </p>
+     * 
+     * @param updateRoomRequest
+     * @return A Java Future containing the result of the UpdateRoom operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateRoom
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRoomResult> updateRoomAsync(UpdateRoomRequest updateRoomRequest);
+
+    /**
+     * <p>
+     * Updates room details, such as the room name.
+     * </p>
+     * 
+     * @param updateRoomRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRoom operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateRoom
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRoomResult> updateRoomAsync(UpdateRoomRequest updateRoomRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoomRequest, UpdateRoomResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates room membership details, such as member role. The member role designates whether the member is a chat
+     * room administrator or a general chat room member. Member role can only be updated for user IDs.
+     * </p>
+     * 
+     * @param updateRoomMembershipRequest
+     * @return A Java Future containing the result of the UpdateRoomMembership operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateRoomMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoomMembership" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRoomMembershipResult> updateRoomMembershipAsync(UpdateRoomMembershipRequest updateRoomMembershipRequest);
+
+    /**
+     * <p>
+     * Updates room membership details, such as member role. The member role designates whether the member is a chat
+     * room administrator or a general chat room member. Member role can only be updated for user IDs.
+     * </p>
+     * 
+     * @param updateRoomMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRoomMembership operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateRoomMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoomMembership" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRoomMembershipResult> updateRoomMembershipAsync(UpdateRoomMembershipRequest updateRoomMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoomMembershipRequest, UpdateRoomMembershipResult> asyncHandler);
 
     /**
      * <p>

@@ -35,8 +35,8 @@ import java.util.concurrent.ExecutorService;
  * unauthorized infrastructure deployments, like instances deployed in a region that has never been used, or unusual API
  * calls, like a password policy change to reduce password strength. GuardDuty informs you of the status of your AWS
  * environment by producing security findings that you can view in the GuardDuty console or through Amazon CloudWatch
- * events. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
- * Amazon GuardDuty User Guide</a>.
+ * events. For more information, see <a
+ * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -255,6 +255,39 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
 
                 try {
                     result = executeCreateMembers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePublishingDestinationResult> createPublishingDestinationAsync(CreatePublishingDestinationRequest request) {
+
+        return createPublishingDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePublishingDestinationResult> createPublishingDestinationAsync(final CreatePublishingDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePublishingDestinationRequest, CreatePublishingDestinationResult> asyncHandler) {
+        final CreatePublishingDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePublishingDestinationResult>() {
+            @Override
+            public CreatePublishingDestinationResult call() throws Exception {
+                CreatePublishingDestinationResult result = null;
+
+                try {
+                    result = executeCreatePublishingDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -535,6 +568,39 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePublishingDestinationResult> deletePublishingDestinationAsync(DeletePublishingDestinationRequest request) {
+
+        return deletePublishingDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePublishingDestinationResult> deletePublishingDestinationAsync(final DeletePublishingDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePublishingDestinationRequest, DeletePublishingDestinationResult> asyncHandler) {
+        final DeletePublishingDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePublishingDestinationResult>() {
+            @Override
+            public DeletePublishingDestinationResult call() throws Exception {
+                DeletePublishingDestinationResult result = null;
+
+                try {
+                    result = executeDeletePublishingDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteThreatIntelSetResult> deleteThreatIntelSetAsync(DeleteThreatIntelSetRequest request) {
 
         return deleteThreatIntelSetAsync(request, null);
@@ -552,6 +618,40 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
 
                 try {
                     result = executeDeleteThreatIntelSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePublishingDestinationResult> describePublishingDestinationAsync(DescribePublishingDestinationRequest request) {
+
+        return describePublishingDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePublishingDestinationResult> describePublishingDestinationAsync(
+            final DescribePublishingDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePublishingDestinationRequest, DescribePublishingDestinationResult> asyncHandler) {
+        final DescribePublishingDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePublishingDestinationResult>() {
+            @Override
+            public DescribePublishingDestinationResult call() throws Exception {
+                DescribePublishingDestinationResult result = null;
+
+                try {
+                    result = executeDescribePublishingDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1163,6 +1263,39 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListPublishingDestinationsResult> listPublishingDestinationsAsync(ListPublishingDestinationsRequest request) {
+
+        return listPublishingDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPublishingDestinationsResult> listPublishingDestinationsAsync(final ListPublishingDestinationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPublishingDestinationsRequest, ListPublishingDestinationsResult> asyncHandler) {
+        final ListPublishingDestinationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPublishingDestinationsResult>() {
+            @Override
+            public ListPublishingDestinationsResult call() throws Exception {
+                ListPublishingDestinationsResult result = null;
+
+                try {
+                    result = executeListPublishingDestinations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1510,6 +1643,39 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
 
                 try {
                     result = executeUpdateIPSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublishingDestinationResult> updatePublishingDestinationAsync(UpdatePublishingDestinationRequest request) {
+
+        return updatePublishingDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublishingDestinationResult> updatePublishingDestinationAsync(final UpdatePublishingDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePublishingDestinationRequest, UpdatePublishingDestinationResult> asyncHandler) {
+        final UpdatePublishingDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePublishingDestinationResult>() {
+            @Override
+            public UpdatePublishingDestinationResult call() throws Exception {
+                UpdatePublishingDestinationResult result = null;
+
+                try {
+                    result = executeUpdatePublishingDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

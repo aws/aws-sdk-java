@@ -27,24 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the given GuardDuty resource
+     * The Amazon Resource Name (ARN) for the resource to remove tags from.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The tag keys to remove from a resource.
+     * The tag keys to remove from the resource.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the given GuardDuty resource
+     * The Amazon Resource Name (ARN) for the resource to remove tags from.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) for the given GuardDuty resource
+     *        The Amazon Resource Name (ARN) for the resource to remove tags from.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the given GuardDuty resource
+     * The Amazon Resource Name (ARN) for the resource to remove tags from.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the given GuardDuty resource
+     * @return The Amazon Resource Name (ARN) for the resource to remove tags from.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the given GuardDuty resource
+     * The Amazon Resource Name (ARN) for the resource to remove tags from.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) for the given GuardDuty resource
+     *        The Amazon Resource Name (ARN) for the resource to remove tags from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys to remove from a resource.
+     * The tag keys to remove from the resource.
      * </p>
      * 
-     * @return The tag keys to remove from a resource.
+     * @return The tag keys to remove from the resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys to remove from a resource.
+     * The tag keys to remove from the resource.
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys to remove from a resource.
+     *        The tag keys to remove from the resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys to remove from a resource.
+     * The tag keys to remove from the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys to remove from a resource.
+     *        The tag keys to remove from the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys to remove from a resource.
+     * The tag keys to remove from the resource.
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys to remove from a resource.
+     *        The tag keys to remove from the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

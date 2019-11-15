@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconvert.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MsSmoothGroupSettingsMarshaller {
 
+    private static final MarshallingInfo<List> ADDITIONALMANIFESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalManifests").build();
     private static final MarshallingInfo<String> AUDIODEDUPLICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDeduplication").build();
     private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +59,7 @@ public class MsSmoothGroupSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(msSmoothGroupSettings.getAdditionalManifests(), ADDITIONALMANIFESTS_BINDING);
             protocolMarshaller.marshall(msSmoothGroupSettings.getAudioDeduplication(), AUDIODEDUPLICATION_BINDING);
             protocolMarshaller.marshall(msSmoothGroupSettings.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(msSmoothGroupSettings.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);

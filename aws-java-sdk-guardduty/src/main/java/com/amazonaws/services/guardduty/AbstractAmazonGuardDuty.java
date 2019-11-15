@@ -58,6 +58,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public CreatePublishingDestinationResult createPublishingDestination(CreatePublishingDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSampleFindingsResult createSampleFindings(CreateSampleFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -98,7 +103,17 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public DeletePublishingDestinationResult deletePublishingDestination(DeletePublishingDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteThreatIntelSetResult deleteThreatIntelSet(DeleteThreatIntelSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePublishingDestinationResult describePublishingDestination(DescribePublishingDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,6 +208,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public ListPublishingDestinationsResult listPublishingDestinations(ListPublishingDestinationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -244,6 +264,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public UpdateIPSetResult updateIPSet(UpdateIPSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePublishingDestinationResult updatePublishingDestination(UpdatePublishingDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

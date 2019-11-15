@@ -31,6 +31,8 @@ public class UnsupportedAvailabilityZoneException extends com.amazonaws.services
      * </p>
      */
     private String clusterName;
+
+    private String nodegroupName;
     /**
      * <p>
      * The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.
@@ -87,6 +89,34 @@ public class UnsupportedAvailabilityZoneException extends com.amazonaws.services
 
     public UnsupportedAvailabilityZoneException withClusterName(String clusterName) {
         setClusterName(clusterName);
+        return this;
+    }
+
+    /**
+     * @param nodegroupName
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
+    public void setNodegroupName(String nodegroupName) {
+        this.nodegroupName = nodegroupName;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
+    public String getNodegroupName() {
+        return this.nodegroupName;
+    }
+
+    /**
+     * @param nodegroupName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UnsupportedAvailabilityZoneException withNodegroupName(String nodegroupName) {
+        setNodegroupName(nodegroupName);
         return this;
     }
 

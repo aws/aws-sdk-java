@@ -30,42 +30,42 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the equal condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private java.util.List<String> eq;
     /**
      * <p>
-     * Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the not equal condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private java.util.List<String> neq;
     /**
      * <p>
-     * Deprecated. Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a greater than condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private Integer gt;
     /**
      * <p>
-     * Deprecated. Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private Integer gte;
     /**
      * <p>
-     * Deprecated. Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a less than condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private Integer lt;
     /**
      * <p>
-     * Deprecated. Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
@@ -109,10 +109,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     * @return Represents the equal condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public java.util.List<String> getEq() {
@@ -121,11 +121,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param eq
-     *        Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     *        Represents the equal condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setEq(java.util.Collection<String> eq) {
@@ -139,7 +139,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the equal condition to be applied to a single field when querying for findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -148,7 +148,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param eq
-     *        Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     *        Represents the equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -164,11 +164,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param eq
-     *        Deprecated. Represents the equal condition to be applied to a single field when querying for findings.
+     *        Represents the equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -179,11 +179,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the not equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Deprecated. Represents the not equal condition to be applied to a single field when querying for
-     *         findings.
+     * @return Represents the not equal condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public java.util.List<String> getNeq() {
@@ -192,11 +191,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the not equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param neq
-     *        Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.
+     *        Represents the not equal condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setNeq(java.util.Collection<String> neq) {
@@ -210,7 +209,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the not equal condition to be applied to a single field when querying for findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -219,7 +218,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param neq
-     *        Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.
+     *        Represents the not equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -235,11 +234,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the not equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param neq
-     *        Deprecated. Represents the not equal condition to be applied to a single field when querying for findings.
+     *        Represents the not equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -250,12 +249,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a greater than condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gt
-     *        Deprecated. Represents a greater than condition to be applied to a single field when querying for
-     *        findings.
+     *        Represents a greater than condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setGt(Integer gt) {
@@ -264,11 +262,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a greater than condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Deprecated. Represents a greater than condition to be applied to a single field when querying for
-     *         findings.
+     * @return Represents a greater than condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public Integer getGt() {
@@ -277,12 +274,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a greater than condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gt
-     *        Deprecated. Represents a greater than condition to be applied to a single field when querying for
-     *        findings.
+     *        Represents a greater than condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -293,12 +289,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gte
-     *        Deprecated. Represents a greater than equal condition to be applied to a single field when querying for
-     *        findings.
+     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setGte(Integer gte) {
@@ -307,11 +302,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Deprecated. Represents a greater than equal condition to be applied to a single field when querying for
-     *         findings.
+     * @return Represents a greater than equal condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public Integer getGte() {
@@ -320,12 +314,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a greater than equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gte
-     *        Deprecated. Represents a greater than equal condition to be applied to a single field when querying for
-     *        findings.
+     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -336,11 +329,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a less than condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lt
-     *        Deprecated. Represents a less than condition to be applied to a single field when querying for findings.
+     *        Represents a less than condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setLt(Integer lt) {
@@ -349,10 +342,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a less than condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Deprecated. Represents a less than condition to be applied to a single field when querying for findings.
+     * @return Represents a less than condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public Integer getLt() {
@@ -361,11 +354,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a less than condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lt
-     *        Deprecated. Represents a less than condition to be applied to a single field when querying for findings.
+     *        Represents a less than condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -376,12 +369,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lte
-     *        Deprecated. Represents a less than equal condition to be applied to a single field when querying for
-     *        findings.
+     *        Represents a less than equal condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setLte(Integer lte) {
@@ -390,11 +382,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Deprecated. Represents a less than equal condition to be applied to a single field when querying for
-     *         findings.
+     * @return Represents a less than equal condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public Integer getLte() {
@@ -403,12 +394,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a less than equal condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lte
-     *        Deprecated. Represents a less than equal condition to be applied to a single field when querying for
-     *        findings.
+     *        Represents a less than equal condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

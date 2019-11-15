@@ -32,6 +32,8 @@ public class VpcConfigResponseMarshaller {
             .marshallLocationName("subnetIds").build();
     private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroupIds").build();
+    private static final MarshallingInfo<String> CLUSTERSECURITYGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clusterSecurityGroupId").build();
     private static final MarshallingInfo<String> VPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("vpcId").build();
     private static final MarshallingInfo<Boolean> ENDPOINTPUBLICACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -57,6 +59,7 @@ public class VpcConfigResponseMarshaller {
         try {
             protocolMarshaller.marshall(vpcConfigResponse.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(vpcConfigResponse.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
+            protocolMarshaller.marshall(vpcConfigResponse.getClusterSecurityGroupId(), CLUSTERSECURITYGROUPID_BINDING);
             protocolMarshaller.marshall(vpcConfigResponse.getVpcId(), VPCID_BINDING);
             protocolMarshaller.marshall(vpcConfigResponse.getEndpointPublicAccess(), ENDPOINTPUBLICACCESS_BINDING);
             protocolMarshaller.marshall(vpcConfigResponse.getEndpointPrivateAccess(), ENDPOINTPRIVATEACCESS_BINDING);

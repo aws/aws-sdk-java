@@ -48,6 +48,11 @@ public class MsSmoothGroupSettingsJsonUnmarshaller implements Unmarshaller<MsSmo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalManifests", targetDepth)) {
+                    context.nextToken();
+                    msSmoothGroupSettings.setAdditionalManifests(new ListUnmarshaller<MsSmoothAdditionalManifest>(MsSmoothAdditionalManifestJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("audioDeduplication", targetDepth)) {
                     context.nextToken();
                     msSmoothGroupSettings.setAudioDeduplication(context.getUnmarshaller(String.class).unmarshall(context));

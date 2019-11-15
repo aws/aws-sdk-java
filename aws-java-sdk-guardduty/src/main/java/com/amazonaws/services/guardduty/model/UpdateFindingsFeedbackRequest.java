@@ -27,8 +27,7 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or not
-     * useful.
+     * The ID of the detector associated with the findings to update feedback for.
      * </p>
      */
     private String detectorId;
@@ -40,7 +39,7 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<String> findingIds;
     /**
      * <p>
-     * Valid values: USEFUL | NOT_USEFUL
+     * The feedback for the finding.
      * </p>
      */
     private String feedback;
@@ -53,13 +52,11 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or not
-     * useful.
+     * The ID of the detector associated with the findings to update feedback for.
      * </p>
      * 
      * @param detectorId
-     *        The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or
-     *        not useful.
+     *        The ID of the detector associated with the findings to update feedback for.
      */
 
     public void setDetectorId(String detectorId) {
@@ -68,12 +65,10 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or not
-     * useful.
+     * The ID of the detector associated with the findings to update feedback for.
      * </p>
      * 
-     * @return The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or
-     *         not useful.
+     * @return The ID of the detector associated with the findings to update feedback for.
      */
 
     public String getDetectorId() {
@@ -82,13 +77,11 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or not
-     * useful.
+     * The ID of the detector associated with the findings to update feedback for.
      * </p>
      * 
      * @param detectorId
-     *        The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or
-     *        not useful.
+     *        The ID of the detector associated with the findings to update feedback for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,11 +162,11 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Valid values: USEFUL | NOT_USEFUL
+     * The feedback for the finding.
      * </p>
      * 
      * @param feedback
-     *        Valid values: USEFUL | NOT_USEFUL
+     *        The feedback for the finding.
      * @see Feedback
      */
 
@@ -183,10 +176,10 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Valid values: USEFUL | NOT_USEFUL
+     * The feedback for the finding.
      * </p>
      * 
-     * @return Valid values: USEFUL | NOT_USEFUL
+     * @return The feedback for the finding.
      * @see Feedback
      */
 
@@ -196,11 +189,11 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Valid values: USEFUL | NOT_USEFUL
+     * The feedback for the finding.
      * </p>
      * 
      * @param feedback
-     *        Valid values: USEFUL | NOT_USEFUL
+     *        The feedback for the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Feedback
      */
@@ -212,11 +205,11 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Valid values: USEFUL | NOT_USEFUL
+     * The feedback for the finding.
      * </p>
      * 
      * @param feedback
-     *        Valid values: USEFUL | NOT_USEFUL
+     *        The feedback for the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Feedback
      */

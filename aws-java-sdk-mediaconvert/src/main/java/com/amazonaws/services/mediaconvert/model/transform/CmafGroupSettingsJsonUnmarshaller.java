@@ -48,6 +48,11 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalManifests", targetDepth)) {
+                    context.nextToken();
+                    cmafGroupSettings.setAdditionalManifests(new ListUnmarshaller<CmafAdditionalManifest>(CmafAdditionalManifestJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("baseUrl", targetDepth)) {
                     context.nextToken();
                     cmafGroupSettings.setBaseUrl(context.getUnmarshaller(String.class).unmarshall(context));

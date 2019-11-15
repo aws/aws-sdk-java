@@ -30,6 +30,8 @@ public class DescribeWorkspaceDirectoriesRequestMarshaller {
 
     private static final MarshallingInfo<List> DIRECTORYIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DirectoryIds").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
 
@@ -50,6 +52,7 @@ public class DescribeWorkspaceDirectoriesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeWorkspaceDirectoriesRequest.getDirectoryIds(), DIRECTORYIDS_BINDING);
+            protocolMarshaller.marshall(describeWorkspaceDirectoriesRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(describeWorkspaceDirectoriesRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

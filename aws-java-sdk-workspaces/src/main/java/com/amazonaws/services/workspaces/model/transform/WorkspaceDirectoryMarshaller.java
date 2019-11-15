@@ -54,6 +54,12 @@ public class WorkspaceDirectoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkspaceCreationProperties").build();
     private static final MarshallingInfo<List> IPGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ipGroupIds").build();
+    private static final MarshallingInfo<StructuredPojo> WORKSPACEACCESSPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkspaceAccessProperties").build();
+    private static final MarshallingInfo<String> TENANCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tenancy").build();
+    private static final MarshallingInfo<StructuredPojo> SELFSERVICEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfservicePermissions").build();
 
     private static final WorkspaceDirectoryMarshaller instance = new WorkspaceDirectoryMarshaller();
 
@@ -84,6 +90,9 @@ public class WorkspaceDirectoryMarshaller {
             protocolMarshaller.marshall(workspaceDirectory.getState(), STATE_BINDING);
             protocolMarshaller.marshall(workspaceDirectory.getWorkspaceCreationProperties(), WORKSPACECREATIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(workspaceDirectory.getIpGroupIds(), IPGROUPIDS_BINDING);
+            protocolMarshaller.marshall(workspaceDirectory.getWorkspaceAccessProperties(), WORKSPACEACCESSPROPERTIES_BINDING);
+            protocolMarshaller.marshall(workspaceDirectory.getTenancy(), TENANCY_BINDING);
+            protocolMarshaller.marshall(workspaceDirectory.getSelfservicePermissions(), SELFSERVICEPERMISSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

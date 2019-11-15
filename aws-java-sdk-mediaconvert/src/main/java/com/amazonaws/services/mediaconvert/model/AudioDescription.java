@@ -60,9 +60,13 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
      */
     private AudioCodecSettings codecSettings;
     /**
-     * Specify the language for this audio output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
-     * The language specified will be used when 'Follow Input Language Code' is not selected or when 'Follow Input
-     * Language Code' is selected but there is no ISO 639 language code specified by the input.
+     * Specify the language for this audio output track. The service puts this language code into your output audio
+     * track when you set Language code control (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The
+     * service also uses your specified custom language code when you set Language code control
+     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file doesn't specify a language code.
+     * For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other
+     * code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output
+     * groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     private String customLanguageCode;
     /**
@@ -72,9 +76,11 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
      */
     private String languageCode;
     /**
-     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
-     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
-     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * Specify which source for language code takes precedence for this audio track. When you choose Follow input
+     * (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge
+     * code on the input track, the service uses the code that you specify in the setting Language code (languageCode or
+     * customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you
+     * specify.
      */
     private String languageCodeControl;
     /** Advanced audio remixing settings. */
@@ -376,14 +382,22 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify the language for this audio output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
-     * The language specified will be used when 'Follow Input Language Code' is not selected or when 'Follow Input
-     * Language Code' is selected but there is no ISO 639 language code specified by the input.
+     * Specify the language for this audio output track. The service puts this language code into your output audio
+     * track when you set Language code control (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The
+     * service also uses your specified custom language code when you set Language code control
+     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file doesn't specify a language code.
+     * For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other
+     * code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output
+     * groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      * 
      * @param customLanguageCode
-     *        Specify the language for this audio output track, using the ISO 639-2 or ISO 639-3 three-letter language
-     *        code. The language specified will be used when 'Follow Input Language Code' is not selected or when
-     *        'Follow Input Language Code' is selected but there is no ISO 639 language code specified by the input.
+     *        Specify the language for this audio output track. The service puts this language code into your output
+     *        audio track when you set Language code control (AudioLanguageCodeControl) to Use configured
+     *        (USE_CONFIGURED). The service also uses your specified custom language code when you set Language code
+     *        control (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file doesn't specify a
+     *        language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can
+     *        also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of
+     *        the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
 
     public void setCustomLanguageCode(String customLanguageCode) {
@@ -391,13 +405,21 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify the language for this audio output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
-     * The language specified will be used when 'Follow Input Language Code' is not selected or when 'Follow Input
-     * Language Code' is selected but there is no ISO 639 language code specified by the input.
+     * Specify the language for this audio output track. The service puts this language code into your output audio
+     * track when you set Language code control (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The
+     * service also uses your specified custom language code when you set Language code control
+     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file doesn't specify a language code.
+     * For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other
+     * code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output
+     * groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      * 
-     * @return Specify the language for this audio output track, using the ISO 639-2 or ISO 639-3 three-letter language
-     *         code. The language specified will be used when 'Follow Input Language Code' is not selected or when
-     *         'Follow Input Language Code' is selected but there is no ISO 639 language code specified by the input.
+     * @return Specify the language for this audio output track. The service puts this language code into your output
+     *         audio track when you set Language code control (AudioLanguageCodeControl) to Use configured
+     *         (USE_CONFIGURED). The service also uses your specified custom language code when you set Language code
+     *         control (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file doesn't specify a
+     *         language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you
+     *         can also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in
+     *         one of the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
 
     public String getCustomLanguageCode() {
@@ -405,14 +427,22 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify the language for this audio output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
-     * The language specified will be used when 'Follow Input Language Code' is not selected or when 'Follow Input
-     * Language Code' is selected but there is no ISO 639 language code specified by the input.
+     * Specify the language for this audio output track. The service puts this language code into your output audio
+     * track when you set Language code control (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The
+     * service also uses your specified custom language code when you set Language code control
+     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file doesn't specify a language code.
+     * For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can also use any other
+     * code in the full RFC-5646 specification. Streaming outputs are those that are in one of the following output
+     * groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      * 
      * @param customLanguageCode
-     *        Specify the language for this audio output track, using the ISO 639-2 or ISO 639-3 three-letter language
-     *        code. The language specified will be used when 'Follow Input Language Code' is not selected or when
-     *        'Follow Input Language Code' is selected but there is no ISO 639 language code specified by the input.
+     *        Specify the language for this audio output track. The service puts this language code into your output
+     *        audio track when you set Language code control (AudioLanguageCodeControl) to Use configured
+     *        (USE_CONFIGURED). The service also uses your specified custom language code when you set Language code
+     *        control (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file doesn't specify a
+     *        language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For streaming outputs, you can
+     *        also use any other code in the full RFC-5646 specification. Streaming outputs are those that are in one of
+     *        the following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,14 +519,18 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
-     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
-     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * Specify which source for language code takes precedence for this audio track. When you choose Follow input
+     * (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge
+     * code on the input track, the service uses the code that you specify in the setting Language code (languageCode or
+     * customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you
+     * specify.
      * 
      * @param languageCodeControl
-     *        Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language
-     *        code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected
-     *        or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     *        Specify which source for language code takes precedence for this audio track. When you choose Follow input
+     *        (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no
+     *        languge code on the input track, the service uses the code that you specify in the setting Language code
+     *        (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses
+     *        the language code that you specify.
      * @see AudioLanguageCodeControl
      */
 
@@ -505,13 +539,17 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
-     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
-     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * Specify which source for language code takes precedence for this audio track. When you choose Follow input
+     * (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge
+     * code on the input track, the service uses the code that you specify in the setting Language code (languageCode or
+     * customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you
+     * specify.
      * 
-     * @return Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language
-     *         code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected
-     *         or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * @return Specify which source for language code takes precedence for this audio track. When you choose Follow
+     *         input (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's
+     *         no languge code on the input track, the service uses the code that you specify in the setting Language
+     *         code (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service
+     *         uses the language code that you specify.
      * @see AudioLanguageCodeControl
      */
 
@@ -520,14 +558,18 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
-     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
-     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * Specify which source for language code takes precedence for this audio track. When you choose Follow input
+     * (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge
+     * code on the input track, the service uses the code that you specify in the setting Language code (languageCode or
+     * customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you
+     * specify.
      * 
      * @param languageCodeControl
-     *        Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language
-     *        code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected
-     *        or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     *        Specify which source for language code takes precedence for this audio track. When you choose Follow input
+     *        (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no
+     *        languge code on the input track, the service uses the code that you specify in the setting Language code
+     *        (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses
+     *        the language code that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioLanguageCodeControl
      */
@@ -538,14 +580,18 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of
-     * the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when
-     * FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     * Specify which source for language code takes precedence for this audio track. When you choose Follow input
+     * (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge
+     * code on the input track, the service uses the code that you specify in the setting Language code (languageCode or
+     * customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you
+     * specify.
      * 
      * @param languageCodeControl
-     *        Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language
-     *        code of the input. The language specified for languageCode' will be used when USE_CONFIGURED is selected
-     *        or when FOLLOW_INPUT is selected but there is no ISO 639 language code specified by the input.
+     *        Specify which source for language code takes precedence for this audio track. When you choose Follow input
+     *        (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no
+     *        languge code on the input track, the service uses the code that you specify in the setting Language code
+     *        (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses
+     *        the language code that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioLanguageCodeControl
      */

@@ -29,6 +29,8 @@ public class ListUpdatesRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> NODEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nodegroupName").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -51,6 +53,7 @@ public class ListUpdatesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listUpdatesRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(listUpdatesRequest.getNodegroupName(), NODEGROUPNAME_BINDING);
             protocolMarshaller.marshall(listUpdatesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listUpdatesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

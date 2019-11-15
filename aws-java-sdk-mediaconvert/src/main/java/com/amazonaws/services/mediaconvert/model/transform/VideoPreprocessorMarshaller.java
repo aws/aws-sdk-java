@@ -31,6 +31,8 @@ public class VideoPreprocessorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorCorrector").build();
     private static final MarshallingInfo<StructuredPojo> DEINTERLACER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deinterlacer").build();
+    private static final MarshallingInfo<StructuredPojo> DOLBYVISION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dolbyVision").build();
     private static final MarshallingInfo<StructuredPojo> IMAGEINSERTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageInserter").build();
     private static final MarshallingInfo<StructuredPojo> NOISEREDUCER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -56,6 +58,7 @@ public class VideoPreprocessorMarshaller {
         try {
             protocolMarshaller.marshall(videoPreprocessor.getColorCorrector(), COLORCORRECTOR_BINDING);
             protocolMarshaller.marshall(videoPreprocessor.getDeinterlacer(), DEINTERLACER_BINDING);
+            protocolMarshaller.marshall(videoPreprocessor.getDolbyVision(), DOLBYVISION_BINDING);
             protocolMarshaller.marshall(videoPreprocessor.getImageInserter(), IMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(videoPreprocessor.getNoiseReducer(), NOISEREDUCER_BINDING);
             protocolMarshaller.marshall(videoPreprocessor.getTimecodeBurnin(), TIMECODEBURNIN_BINDING);

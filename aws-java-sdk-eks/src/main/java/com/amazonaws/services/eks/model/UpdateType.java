@@ -22,7 +22,8 @@ public enum UpdateType {
 
     VersionUpdate("VersionUpdate"),
     EndpointAccessUpdate("EndpointAccessUpdate"),
-    LoggingUpdate("LoggingUpdate");
+    LoggingUpdate("LoggingUpdate"),
+    ConfigUpdate("ConfigUpdate");
 
     private String value;
 

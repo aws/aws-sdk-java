@@ -27,6 +27,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class MsSmoothGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming
+     * output group in your job. This default manifest references every output in the output group. To create additional
+     * manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     */
+    private java.util.List<MsSmoothAdditionalManifest> additionalManifests;
+    /**
      * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into
      * a single audio stream.
      */
@@ -51,6 +57,88 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
      * manifest. Valid options are utf8 and utf16.
      */
     private String manifestEncoding;
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming
+     * output group in your job. This default manifest references every output in the output group. To create additional
+     * manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     * 
+     * @return By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth
+     *         Streaming output group in your job. This default manifest references every output in the output group. To
+     *         create additional manifests that reference a subset of the outputs in the output group, specify a list of
+     *         them here.
+     */
+
+    public java.util.List<MsSmoothAdditionalManifest> getAdditionalManifests() {
+        return additionalManifests;
+    }
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming
+     * output group in your job. This default manifest references every output in the output group. To create additional
+     * manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth
+     *        Streaming output group in your job. This default manifest references every output in the output group. To
+     *        create additional manifests that reference a subset of the outputs in the output group, specify a list of
+     *        them here.
+     */
+
+    public void setAdditionalManifests(java.util.Collection<MsSmoothAdditionalManifest> additionalManifests) {
+        if (additionalManifests == null) {
+            this.additionalManifests = null;
+            return;
+        }
+
+        this.additionalManifests = new java.util.ArrayList<MsSmoothAdditionalManifest>(additionalManifests);
+    }
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming
+     * output group in your job. This default manifest references every output in the output group. To create additional
+     * manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalManifests(java.util.Collection)} or {@link #withAdditionalManifests(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth
+     *        Streaming output group in your job. This default manifest references every output in the output group. To
+     *        create additional manifests that reference a subset of the outputs in the output group, specify a list of
+     *        them here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MsSmoothGroupSettings withAdditionalManifests(MsSmoothAdditionalManifest... additionalManifests) {
+        if (this.additionalManifests == null) {
+            setAdditionalManifests(new java.util.ArrayList<MsSmoothAdditionalManifest>(additionalManifests.length));
+        }
+        for (MsSmoothAdditionalManifest ele : additionalManifests) {
+            this.additionalManifests.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming
+     * output group in your job. This default manifest references every output in the output group. To create additional
+     * manifests that reference a subset of the outputs in the output group, specify a list of them here.
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth
+     *        Streaming output group in your job. This default manifest references every output in the output group. To
+     *        create additional manifests that reference a subset of the outputs in the output group, specify a list of
+     *        them here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MsSmoothGroupSettings withAdditionalManifests(java.util.Collection<MsSmoothAdditionalManifest> additionalManifests) {
+        setAdditionalManifests(additionalManifests);
+        return this;
+    }
 
     /**
      * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into
@@ -339,6 +427,8 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalManifests() != null)
+            sb.append("AdditionalManifests: ").append(getAdditionalManifests()).append(",");
         if (getAudioDeduplication() != null)
             sb.append("AudioDeduplication: ").append(getAudioDeduplication()).append(",");
         if (getDestination() != null)
@@ -365,6 +455,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
         if (obj instanceof MsSmoothGroupSettings == false)
             return false;
         MsSmoothGroupSettings other = (MsSmoothGroupSettings) obj;
+        if (other.getAdditionalManifests() == null ^ this.getAdditionalManifests() == null)
+            return false;
+        if (other.getAdditionalManifests() != null && other.getAdditionalManifests().equals(this.getAdditionalManifests()) == false)
+            return false;
         if (other.getAudioDeduplication() == null ^ this.getAudioDeduplication() == null)
             return false;
         if (other.getAudioDeduplication() != null && other.getAudioDeduplication().equals(this.getAudioDeduplication()) == false)
@@ -397,6 +491,7 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalManifests() == null) ? 0 : getAdditionalManifests().hashCode());
         hashCode = prime * hashCode + ((getAudioDeduplication() == null) ? 0 : getAudioDeduplication().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());

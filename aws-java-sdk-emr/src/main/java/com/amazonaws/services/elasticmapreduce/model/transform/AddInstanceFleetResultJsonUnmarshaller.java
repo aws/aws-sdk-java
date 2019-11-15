@@ -56,6 +56,10 @@ public class AddInstanceFleetResultJsonUnmarshaller implements Unmarshaller<AddI
                     context.nextToken();
                     addInstanceFleetResult.setInstanceFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ClusterArn", targetDepth)) {
+                    context.nextToken();
+                    addInstanceFleetResult.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

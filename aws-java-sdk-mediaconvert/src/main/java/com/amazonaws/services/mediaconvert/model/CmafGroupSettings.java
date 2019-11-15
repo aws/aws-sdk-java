@@ -28,6 +28,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class CmafGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each
+     * CMAF output group in your job. These default manifests reference every output in the output group. To create
+     * additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them
+     * here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
+     */
+    private java.util.List<CmafAdditionalManifest> additionalManifests;
+    /**
      * A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if
      * streams are delivered from a different URL than the manifest file.
      */
@@ -101,6 +108,96 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     private String writeDashManifest;
     /** When set to ENABLED, an Apple HLS manifest will be generated for this output. */
     private String writeHlsManifest;
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each
+     * CMAF output group in your job. These default manifests reference every output in the output group. To create
+     * additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them
+     * here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
+     * 
+     * @return By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest
+     *         for each CMAF output group in your job. These default manifests reference every output in the output
+     *         group. To create additional top-level manifests that reference a subset of the outputs in the output
+     *         group, specify a list of them here. For each additional manifest that you specify, the service creates
+     *         one HLS manifest and one DASH manifest.
+     */
+
+    public java.util.List<CmafAdditionalManifest> getAdditionalManifests() {
+        return additionalManifests;
+    }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each
+     * CMAF output group in your job. These default manifests reference every output in the output group. To create
+     * additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them
+     * here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for
+     *        each CMAF output group in your job. These default manifests reference every output in the output group. To
+     *        create additional top-level manifests that reference a subset of the outputs in the output group, specify
+     *        a list of them here. For each additional manifest that you specify, the service creates one HLS manifest
+     *        and one DASH manifest.
+     */
+
+    public void setAdditionalManifests(java.util.Collection<CmafAdditionalManifest> additionalManifests) {
+        if (additionalManifests == null) {
+            this.additionalManifests = null;
+            return;
+        }
+
+        this.additionalManifests = new java.util.ArrayList<CmafAdditionalManifest>(additionalManifests);
+    }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each
+     * CMAF output group in your job. These default manifests reference every output in the output group. To create
+     * additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them
+     * here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalManifests(java.util.Collection)} or {@link #withAdditionalManifests(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for
+     *        each CMAF output group in your job. These default manifests reference every output in the output group. To
+     *        create additional top-level manifests that reference a subset of the outputs in the output group, specify
+     *        a list of them here. For each additional manifest that you specify, the service creates one HLS manifest
+     *        and one DASH manifest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmafGroupSettings withAdditionalManifests(CmafAdditionalManifest... additionalManifests) {
+        if (this.additionalManifests == null) {
+            setAdditionalManifests(new java.util.ArrayList<CmafAdditionalManifest>(additionalManifests.length));
+        }
+        for (CmafAdditionalManifest ele : additionalManifests) {
+            this.additionalManifests.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each
+     * CMAF output group in your job. These default manifests reference every output in the output group. To create
+     * additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them
+     * here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
+     * 
+     * @param additionalManifests
+     *        By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for
+     *        each CMAF output group in your job. These default manifests reference every output in the output group. To
+     *        create additional top-level manifests that reference a subset of the outputs in the output group, specify
+     *        a list of them here. For each additional manifest that you specify, the service creates one HLS manifest
+     *        and one DASH manifest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmafGroupSettings withAdditionalManifests(java.util.Collection<CmafAdditionalManifest> additionalManifests) {
+        setAdditionalManifests(additionalManifests);
+        return this;
+    }
 
     /**
      * A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if
@@ -1004,6 +1101,8 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalManifests() != null)
+            sb.append("AdditionalManifests: ").append(getAdditionalManifests()).append(",");
         if (getBaseUrl() != null)
             sb.append("BaseUrl: ").append(getBaseUrl()).append(",");
         if (getClientCache() != null)
@@ -1052,6 +1151,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof CmafGroupSettings == false)
             return false;
         CmafGroupSettings other = (CmafGroupSettings) obj;
+        if (other.getAdditionalManifests() == null ^ this.getAdditionalManifests() == null)
+            return false;
+        if (other.getAdditionalManifests() != null && other.getAdditionalManifests().equals(this.getAdditionalManifests()) == false)
+            return false;
         if (other.getBaseUrl() == null ^ this.getBaseUrl() == null)
             return false;
         if (other.getBaseUrl() != null && other.getBaseUrl().equals(this.getBaseUrl()) == false)
@@ -1128,6 +1231,7 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalManifests() == null) ? 0 : getAdditionalManifests().hashCode());
         hashCode = prime * hashCode + ((getBaseUrl() == null) ? 0 : getBaseUrl().hashCode());
         hashCode = prime * hashCode + ((getClientCache() == null) ? 0 : getClientCache().hashCode());
         hashCode = prime * hashCode + ((getCodecSpecification() == null) ? 0 : getCodecSpecification().hashCode());

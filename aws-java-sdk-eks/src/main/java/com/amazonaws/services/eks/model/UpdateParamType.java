@@ -24,7 +24,13 @@ public enum UpdateParamType {
     PlatformVersion("PlatformVersion"),
     EndpointPrivateAccess("EndpointPrivateAccess"),
     EndpointPublicAccess("EndpointPublicAccess"),
-    ClusterLogging("ClusterLogging");
+    ClusterLogging("ClusterLogging"),
+    DesiredSize("DesiredSize"),
+    LabelsToAdd("LabelsToAdd"),
+    LabelsToRemove("LabelsToRemove"),
+    MaxSize("MaxSize"),
+    MinSize("MinSize"),
+    ReleaseVersion("ReleaseVersion");
 
     private String value;
 

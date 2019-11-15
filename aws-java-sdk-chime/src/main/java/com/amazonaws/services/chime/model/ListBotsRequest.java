@@ -33,7 +33,7 @@ public class ListBotsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String accountId;
     /**
      * <p>
-     * The maximum number of results to return in a single call. Default is 10.
+     * The maximum number of results to return in a single call. The default is 10.
      * </p>
      */
     private Integer maxResults;
@@ -86,11 +86,11 @@ public class ListBotsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Default is 10.
+     * The maximum number of results to return in a single call. The default is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Default is 10.
+     *        The maximum number of results to return in a single call. The default is 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -99,10 +99,10 @@ public class ListBotsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Default is 10.
+     * The maximum number of results to return in a single call. The default is 10.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. Default is 10.
+     * @return The maximum number of results to return in a single call. The default is 10.
      */
 
     public Integer getMaxResults() {
@@ -111,11 +111,11 @@ public class ListBotsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Default is 10.
+     * The maximum number of results to return in a single call. The default is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Default is 10.
+     *        The maximum number of results to return in a single call. The default is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

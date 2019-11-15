@@ -57,6 +57,10 @@ public class UnsupportedAvailabilityZoneExceptionUnmarshaller extends EnhancedJs
                     context.nextToken();
                     unsupportedAvailabilityZoneException.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("nodegroupName", targetDepth)) {
+                    context.nextToken();
+                    unsupportedAvailabilityZoneException.setNodegroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("validZones", targetDepth)) {
                     context.nextToken();
                     unsupportedAvailabilityZoneException.setValidZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

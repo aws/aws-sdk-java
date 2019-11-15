@@ -40,9 +40,9 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer maxResults;
     /**
      * <p>
-     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
-     * from the previous response to continue listing data.
+     * You can use this parameter to paginate results in the response. Set the value of this parameter to null on your
+     * first call to the list action. For subsequent calls to the action fill nextToken in the request with the value of
+     * NextToken from the previous response to continue listing data.
      * </p>
      */
     private String nextToken;
@@ -135,15 +135,15 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
-     * from the previous response to continue listing data.
+     * You can use this parameter to paginate results in the response. Set the value of this parameter to null on your
+     * first call to the list action. For subsequent calls to the action fill nextToken in the request with the value of
+     * NextToken from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
-     *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
-     *        of NextToken from the previous response to continue listing data.
+     *        You can use this parameter to paginate results in the response. Set the value of this parameter to null on
+     *        your first call to the list action. For subsequent calls to the action fill nextToken in the request with
+     *        the value of NextToken from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -152,14 +152,14 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
-     * from the previous response to continue listing data.
+     * You can use this parameter to paginate results in the response. Set the value of this parameter to null on your
+     * first call to the list action. For subsequent calls to the action fill nextToken in the request with the value of
+     * NextToken from the previous response to continue listing data.
      * </p>
      * 
-     * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
-     *         of NextToken from the previous response to continue listing data.
+     * @return You can use this parameter to paginate results in the response. Set the value of this parameter to null
+     *         on your first call to the list action. For subsequent calls to the action fill nextToken in the request
+     *         with the value of NextToken from the previous response to continue listing data.
      */
 
     public String getNextToken() {
@@ -168,15 +168,15 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
-     * from the previous response to continue listing data.
+     * You can use this parameter to paginate results in the response. Set the value of this parameter to null on your
+     * first call to the list action. For subsequent calls to the action fill nextToken in the request with the value of
+     * NextToken from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
-     *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
-     *        of NextToken from the previous response to continue listing data.
+     *        You can use this parameter to paginate results in the response. Set the value of this parameter to null on
+     *        your first call to the list action. For subsequent calls to the action fill nextToken in the request with
+     *        the value of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

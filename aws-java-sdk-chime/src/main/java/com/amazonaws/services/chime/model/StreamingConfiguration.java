@@ -31,7 +31,7 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The retention period for the Amazon Kinesis data, in hours.
+     * The retention period, in hours, for the Amazon Kinesis data.
      * </p>
      */
     private Integer dataRetentionInHours;
@@ -44,11 +44,11 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The retention period for the Amazon Kinesis data, in hours.
+     * The retention period, in hours, for the Amazon Kinesis data.
      * </p>
      * 
      * @param dataRetentionInHours
-     *        The retention period for the Amazon Kinesis data, in hours.
+     *        The retention period, in hours, for the Amazon Kinesis data.
      */
 
     public void setDataRetentionInHours(Integer dataRetentionInHours) {
@@ -57,10 +57,10 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The retention period for the Amazon Kinesis data, in hours.
+     * The retention period, in hours, for the Amazon Kinesis data.
      * </p>
      * 
-     * @return The retention period for the Amazon Kinesis data, in hours.
+     * @return The retention period, in hours, for the Amazon Kinesis data.
      */
 
     public Integer getDataRetentionInHours() {
@@ -69,11 +69,11 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The retention period for the Amazon Kinesis data, in hours.
+     * The retention period, in hours, for the Amazon Kinesis data.
      * </p>
      * 
      * @param dataRetentionInHours
-     *        The retention period for the Amazon Kinesis data, in hours.
+     *        The retention period, in hours, for the Amazon Kinesis data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

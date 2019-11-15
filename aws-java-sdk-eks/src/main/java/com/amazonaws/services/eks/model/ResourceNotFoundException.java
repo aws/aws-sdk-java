@@ -16,8 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>. Amazon EKS
- * clusters are Region-specific.
+ * The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>. You can
+ * view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
+ * Region-specific.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,6 +31,8 @@ public class ResourceNotFoundException extends com.amazonaws.services.eks.model.
      * </p>
      */
     private String clusterName;
+
+    private String nodegroupName;
 
     /**
      * Constructs a new ResourceNotFoundException with the specified error message.
@@ -80,6 +83,34 @@ public class ResourceNotFoundException extends com.amazonaws.services.eks.model.
 
     public ResourceNotFoundException withClusterName(String clusterName) {
         setClusterName(clusterName);
+        return this;
+    }
+
+    /**
+     * @param nodegroupName
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
+    public void setNodegroupName(String nodegroupName) {
+        this.nodegroupName = nodegroupName;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
+    public String getNodegroupName() {
+        return this.nodegroupName;
+    }
+
+    /**
+     * @param nodegroupName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceNotFoundException withNodegroupName(String nodegroupName) {
+        setNodegroupName(nodegroupName);
         return this;
     }
 

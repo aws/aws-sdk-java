@@ -34,12 +34,27 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public CreateNodegroupResult createNodegroup(CreateNodegroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public DeleteNodegroupResult deleteNodegroup(DeleteNodegroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeNodegroupResult describeNodegroup(DescribeNodegroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -50,6 +65,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public ListClustersResult listClusters(ListClustersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListNodegroupsResult listNodegroups(ListNodegroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,6 +100,16 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public UpdateClusterVersionResult updateClusterVersion(UpdateClusterVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNodegroupConfigResult updateNodegroupConfig(UpdateNodegroupConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNodegroupVersionResult updateNodegroupVersion(UpdateNodegroupVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

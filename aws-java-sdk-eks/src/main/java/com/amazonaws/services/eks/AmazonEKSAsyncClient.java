@@ -104,6 +104,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(CreateNodegroupRequest request) {
+
+        return createNodegroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(final CreateNodegroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNodegroupRequest, CreateNodegroupResult> asyncHandler) {
+        final CreateNodegroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNodegroupResult>() {
+            @Override
+            public CreateNodegroupResult call() throws Exception {
+                CreateNodegroupResult result = null;
+
+                try {
+                    result = executeCreateNodegroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request) {
 
         return deleteClusterAsync(request, null);
@@ -137,6 +170,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNodegroupResult> deleteNodegroupAsync(DeleteNodegroupRequest request) {
+
+        return deleteNodegroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNodegroupResult> deleteNodegroupAsync(final DeleteNodegroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteNodegroupRequest, DeleteNodegroupResult> asyncHandler) {
+        final DeleteNodegroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteNodegroupResult>() {
+            @Override
+            public DeleteNodegroupResult call() throws Exception {
+                DeleteNodegroupResult result = null;
+
+                try {
+                    result = executeDeleteNodegroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request) {
 
         return describeClusterAsync(request, null);
@@ -154,6 +220,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeDescribeCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNodegroupResult> describeNodegroupAsync(DescribeNodegroupRequest request) {
+
+        return describeNodegroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNodegroupResult> describeNodegroupAsync(final DescribeNodegroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeNodegroupRequest, DescribeNodegroupResult> asyncHandler) {
+        final DescribeNodegroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeNodegroupResult>() {
+            @Override
+            public DescribeNodegroupResult call() throws Exception {
+                DescribeNodegroupResult result = null;
+
+                try {
+                    result = executeDescribeNodegroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -220,6 +319,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeListClusters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNodegroupsResult> listNodegroupsAsync(ListNodegroupsRequest request) {
+
+        return listNodegroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNodegroupsResult> listNodegroupsAsync(final ListNodegroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNodegroupsRequest, ListNodegroupsResult> asyncHandler) {
+        final ListNodegroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNodegroupsResult>() {
+            @Override
+            public ListNodegroupsResult call() throws Exception {
+                ListNodegroupsResult result = null;
+
+                try {
+                    result = executeListNodegroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -418,6 +550,72 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeUpdateClusterVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNodegroupConfigResult> updateNodegroupConfigAsync(UpdateNodegroupConfigRequest request) {
+
+        return updateNodegroupConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNodegroupConfigResult> updateNodegroupConfigAsync(final UpdateNodegroupConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNodegroupConfigRequest, UpdateNodegroupConfigResult> asyncHandler) {
+        final UpdateNodegroupConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNodegroupConfigResult>() {
+            @Override
+            public UpdateNodegroupConfigResult call() throws Exception {
+                UpdateNodegroupConfigResult result = null;
+
+                try {
+                    result = executeUpdateNodegroupConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNodegroupVersionResult> updateNodegroupVersionAsync(UpdateNodegroupVersionRequest request) {
+
+        return updateNodegroupVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNodegroupVersionResult> updateNodegroupVersionAsync(final UpdateNodegroupVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNodegroupVersionRequest, UpdateNodegroupVersionResult> asyncHandler) {
+        final UpdateNodegroupVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNodegroupVersionResult>() {
+            @Override
+            public UpdateNodegroupVersionResult call() throws Exception {
+                UpdateNodegroupVersionResult result = null;
+
+                try {
+                    result = executeUpdateNodegroupVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

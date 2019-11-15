@@ -51,11 +51,6 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
-     * <note>
-     * <p>
-     * You can't filter using the parameter name.
-     * </p>
-     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ParameterStringFilter> parameterFilters;
     /**
@@ -242,16 +237,8 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
-     * <note>
-     * <p>
-     * You can't filter using the parameter name.
-     * </p>
-     * </note>
      * 
-     * @return Filters to limit the request results.</p> <note>
-     *         <p>
-     *         You can't filter using the parameter name.
-     *         </p>
+     * @return Filters to limit the request results.
      */
 
     public java.util.List<ParameterStringFilter> getParameterFilters() {
@@ -265,17 +252,9 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
-     * <note>
-     * <p>
-     * You can't filter using the parameter name.
-     * </p>
-     * </note>
      * 
      * @param parameterFilters
-     *        Filters to limit the request results.</p> <note>
-     *        <p>
-     *        You can't filter using the parameter name.
-     *        </p>
+     *        Filters to limit the request results.
      */
 
     public void setParameterFilters(java.util.Collection<ParameterStringFilter> parameterFilters) {
@@ -291,11 +270,6 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
-     * <note>
-     * <p>
-     * You can't filter using the parameter name.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParameterFilters(java.util.Collection)} or {@link #withParameterFilters(java.util.Collection)} if you
@@ -303,10 +277,7 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param parameterFilters
-     *        Filters to limit the request results.</p> <note>
-     *        <p>
-     *        You can't filter using the parameter name.
-     *        </p>
+     *        Filters to limit the request results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,17 +295,9 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
-     * <note>
-     * <p>
-     * You can't filter using the parameter name.
-     * </p>
-     * </note>
      * 
      * @param parameterFilters
-     *        Filters to limit the request results.</p> <note>
-     *        <p>
-     *        You can't filter using the parameter name.
-     *        </p>
+     *        Filters to limit the request results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -111,13 +111,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Boolean terminationProtected;
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
-     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. The
+     * default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster actions if
+     * they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can perform actions. This value can be changed on a running cluster by using the
+     * <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you create a
+     * cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code> action.
      * </p>
      */
     private Boolean visibleToAllUsers;
@@ -218,6 +217,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private KerberosAttributes kerberosAttributes;
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     */
+    private String clusterArn;
 
     /**
      * <p>
@@ -843,23 +848,22 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
-     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. The
+     * default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster actions if
+     * they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can perform actions. This value can be changed on a running cluster by using the
+     * <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you create a
+     * cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        <i>This member will be deprecated.</i> </p>
-     *        <p>
      *        Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
-     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
-     *        cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
-     *        user that created the cluster can view and manage it. This value can be changed using the
-     *        <a>SetVisibleToAllUsers</a> action.
+     *        The default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster
+     *        actions if they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM
+     *        user that created the cluster can perform actions. This value can be changed on a running cluster by using
+     *        the <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you
+     *        create a cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code>
+     *        action.
      */
 
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -868,22 +872,21 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
-     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. The
+     * default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster actions if
+     * they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can perform actions. This value can be changed on a running cluster by using the
+     * <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you create a
+     * cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code> action.
      * </p>
      * 
-     * @return <i>This member will be deprecated.</i> </p>
-     *         <p>
-     *         Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
-     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
-     *         cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
-     *         user that created the cluster can view and manage it. This value can be changed using the
-     *         <a>SetVisibleToAllUsers</a> action.
+     * @return Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         The default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster
+     *         actions if they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM
+     *         user that created the cluster can perform actions. This value can be changed on a running cluster by
+     *         using the <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code>
+     *         when you create a cluster by using the <code>VisibleToAllUsers</code> parameter of the
+     *         <code>RunJobFlow</code> action.
      */
 
     public Boolean getVisibleToAllUsers() {
@@ -892,23 +895,22 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
-     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. The
+     * default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster actions if
+     * they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can perform actions. This value can be changed on a running cluster by using the
+     * <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you create a
+     * cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        <i>This member will be deprecated.</i> </p>
-     *        <p>
      *        Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
-     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
-     *        cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
-     *        user that created the cluster can view and manage it. This value can be changed using the
-     *        <a>SetVisibleToAllUsers</a> action.
+     *        The default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster
+     *        actions if they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM
+     *        user that created the cluster can perform actions. This value can be changed on a running cluster by using
+     *        the <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you
+     *        create a cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code>
+     *        action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -919,22 +921,21 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
-     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
-     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. The
+     * default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster actions if
+     * they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM user that created
+     * the cluster can perform actions. This value can be changed on a running cluster by using the
+     * <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code> when you create a
+     * cluster by using the <code>VisibleToAllUsers</code> parameter of the <code>RunJobFlow</code> action.
      * </p>
      * 
-     * @return <i>This member will be deprecated.</i> </p>
-     *         <p>
-     *         Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
-     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
-     *         cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
-     *         user that created the cluster can view and manage it. This value can be changed using the
-     *         <a>SetVisibleToAllUsers</a> action.
+     * @return Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         The default value, <code>true</code>, indicates that all IAM users in the AWS account can perform cluster
+     *         actions if they have the proper IAM policy permissions. If this value is <code>false</code>, only the IAM
+     *         user that created the cluster can perform actions. This value can be changed on a running cluster by
+     *         using the <a>SetVisibleToAllUsers</a> action. You can override the default value of <code>true</code>
+     *         when you create a cluster by using the <code>VisibleToAllUsers</code> parameter of the
+     *         <code>RunJobFlow</code> action.
      */
 
     public Boolean isVisibleToAllUsers() {
@@ -1786,6 +1787,46 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name of the cluster.
+     */
+
+    public void setClusterArn(String clusterArn) {
+        this.clusterArn = clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the cluster.
+     */
+
+    public String getClusterArn() {
+        return this.clusterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the cluster.
+     * </p>
+     * 
+     * @param clusterArn
+     *        The Amazon Resource Name of the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withClusterArn(String clusterArn) {
+        setClusterArn(clusterArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1846,7 +1887,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getRepoUpgradeOnBoot() != null)
             sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot()).append(",");
         if (getKerberosAttributes() != null)
-            sb.append("KerberosAttributes: ").append(getKerberosAttributes());
+            sb.append("KerberosAttributes: ").append(getKerberosAttributes()).append(",");
+        if (getClusterArn() != null)
+            sb.append("ClusterArn: ").append(getClusterArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1961,6 +2004,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKerberosAttributes() != null && other.getKerberosAttributes().equals(this.getKerberosAttributes()) == false)
             return false;
+        if (other.getClusterArn() == null ^ this.getClusterArn() == null)
+            return false;
+        if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
+            return false;
         return true;
     }
 
@@ -1994,6 +2041,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEbsRootVolumeSize() == null) ? 0 : getEbsRootVolumeSize().hashCode());
         hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
         hashCode = prime * hashCode + ((getKerberosAttributes() == null) ? 0 : getKerberosAttributes().hashCode());
+        hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         return hashCode;
     }
 

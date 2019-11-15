@@ -44,6 +44,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public BatchCreateRoomMembershipResult batchCreateRoomMembership(BatchCreateRoomMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDeletePhoneNumberResult batchDeletePhoneNumber(BatchDeletePhoneNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +89,16 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public CreateRoomResult createRoom(CreateRoomRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRoomMembershipResult createRoomMembership(CreateRoomMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVoiceConnectorResult createVoiceConnector(CreateVoiceConnectorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -105,6 +120,16 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public DeletePhoneNumberResult deletePhoneNumber(DeletePhoneNumberRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRoomResult deleteRoom(DeleteRoomRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRoomMembershipResult deleteRoomMembership(DeleteRoomMembershipRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -195,6 +220,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public GetRoomResult getRoom(GetRoomRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUserResult getUser(GetUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -261,6 +291,16 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public ListPhoneNumbersResult listPhoneNumbers(ListPhoneNumbersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRoomMembershipsResult listRoomMemberships(ListRoomMembershipsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRoomsResult listRooms(ListRoomsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -366,6 +406,16 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public UpdatePhoneNumberSettingsResult updatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoomResult updateRoom(UpdateRoomRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoomMembershipResult updateRoomMembership(UpdateRoomMembershipRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

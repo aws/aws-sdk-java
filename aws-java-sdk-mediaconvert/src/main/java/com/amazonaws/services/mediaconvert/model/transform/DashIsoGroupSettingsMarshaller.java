@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconvert.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DashIsoGroupSettingsMarshaller {
 
+    private static final MarshallingInfo<List> ADDITIONALMANIFESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalManifests").build();
     private static final MarshallingInfo<String> BASEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("baseUrl").build();
     private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -66,6 +69,7 @@ public class DashIsoGroupSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(dashIsoGroupSettings.getAdditionalManifests(), ADDITIONALMANIFESTS_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getBaseUrl(), BASEURL_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);

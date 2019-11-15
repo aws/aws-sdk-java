@@ -60,6 +60,14 @@ public class EmailConfigurationTypeJsonUnmarshaller implements Unmarshaller<Emai
                     context.nextToken();
                     emailConfigurationType.setEmailSendingAccount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("From", targetDepth)) {
+                    context.nextToken();
+                    emailConfigurationType.setFrom(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ConfigurationSet", targetDepth)) {
+                    context.nextToken();
+                    emailConfigurationType.setConfigurationSet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

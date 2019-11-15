@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an AWS Directory Service directory that is used with Amazon WorkSpaces.
+ * Describes a directory that is used with Amazon WorkSpaces.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceDirectory" target="_top">AWS API
@@ -92,7 +92,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     private String workspaceSecurityGroupId;
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces
+     * The state of the directory's registration with Amazon WorkSpaces.
      * </p>
      */
     private String state;
@@ -108,6 +108,27 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ipGroupIds;
+    /**
+     * <p>
+     * The devices and operating systems that users can use to access Workspaces.
+     * </p>
+     */
+    private WorkspaceAccessProperties workspaceAccessProperties;
+    /**
+     * <p>
+     * Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be
+     * set to <code>DEDICATED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
+     * Desktop Images</a>.
+     * </p>
+     */
+    private String tenancy;
+    /**
+     * <p>
+     * The default self-service permissions for WorkSpaces in the directory.
+     * </p>
+     */
+    private SelfservicePermissions selfservicePermissions;
 
     /**
      * <p>
@@ -622,11 +643,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces
+     * The state of the directory's registration with Amazon WorkSpaces.
      * </p>
      * 
      * @param state
-     *        The state of the directory's registration with Amazon WorkSpaces
+     *        The state of the directory's registration with Amazon WorkSpaces.
      * @see WorkspaceDirectoryState
      */
 
@@ -636,10 +657,10 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces
+     * The state of the directory's registration with Amazon WorkSpaces.
      * </p>
      * 
-     * @return The state of the directory's registration with Amazon WorkSpaces
+     * @return The state of the directory's registration with Amazon WorkSpaces.
      * @see WorkspaceDirectoryState
      */
 
@@ -649,11 +670,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces
+     * The state of the directory's registration with Amazon WorkSpaces.
      * </p>
      * 
      * @param state
-     *        The state of the directory's registration with Amazon WorkSpaces
+     *        The state of the directory's registration with Amazon WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceDirectoryState
      */
@@ -665,11 +686,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces
+     * The state of the directory's registration with Amazon WorkSpaces.
      * </p>
      * 
      * @param state
-     *        The state of the directory's registration with Amazon WorkSpaces
+     *        The state of the directory's registration with Amazon WorkSpaces.
      * @see WorkspaceDirectoryState
      */
 
@@ -679,11 +700,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The state of the directory's registration with Amazon WorkSpaces
+     * The state of the directory's registration with Amazon WorkSpaces.
      * </p>
      * 
      * @param state
-     *        The state of the directory's registration with Amazon WorkSpaces
+     *        The state of the directory's registration with Amazon WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceDirectoryState
      */
@@ -807,6 +828,189 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The devices and operating systems that users can use to access Workspaces.
+     * </p>
+     * 
+     * @param workspaceAccessProperties
+     *        The devices and operating systems that users can use to access Workspaces.
+     */
+
+    public void setWorkspaceAccessProperties(WorkspaceAccessProperties workspaceAccessProperties) {
+        this.workspaceAccessProperties = workspaceAccessProperties;
+    }
+
+    /**
+     * <p>
+     * The devices and operating systems that users can use to access Workspaces.
+     * </p>
+     * 
+     * @return The devices and operating systems that users can use to access Workspaces.
+     */
+
+    public WorkspaceAccessProperties getWorkspaceAccessProperties() {
+        return this.workspaceAccessProperties;
+    }
+
+    /**
+     * <p>
+     * The devices and operating systems that users can use to access Workspaces.
+     * </p>
+     * 
+     * @param workspaceAccessProperties
+     *        The devices and operating systems that users can use to access Workspaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDirectory withWorkspaceAccessProperties(WorkspaceAccessProperties workspaceAccessProperties) {
+        setWorkspaceAccessProperties(workspaceAccessProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be
+     * set to <code>DEDICATED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
+     * Desktop Images</a>.
+     * </p>
+     * 
+     * @param tenancy
+     *        Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value
+     *        must be set to <code>DEDICATED</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own
+     *        Windows Desktop Images</a>.
+     * @see Tenancy
+     */
+
+    public void setTenancy(String tenancy) {
+        this.tenancy = tenancy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be
+     * set to <code>DEDICATED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
+     * Desktop Images</a>.
+     * </p>
+     * 
+     * @return Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value
+     *         must be set to <code>DEDICATED</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own
+     *         Windows Desktop Images</a>.
+     * @see Tenancy
+     */
+
+    public String getTenancy() {
+        return this.tenancy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be
+     * set to <code>DEDICATED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
+     * Desktop Images</a>.
+     * </p>
+     * 
+     * @param tenancy
+     *        Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value
+     *        must be set to <code>DEDICATED</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own
+     *        Windows Desktop Images</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Tenancy
+     */
+
+    public WorkspaceDirectory withTenancy(String tenancy) {
+        setTenancy(tenancy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be
+     * set to <code>DEDICATED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
+     * Desktop Images</a>.
+     * </p>
+     * 
+     * @param tenancy
+     *        Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value
+     *        must be set to <code>DEDICATED</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own
+     *        Windows Desktop Images</a>.
+     * @see Tenancy
+     */
+
+    public void setTenancy(Tenancy tenancy) {
+        withTenancy(tenancy);
+    }
+
+    /**
+     * <p>
+     * Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be
+     * set to <code>DEDICATED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
+     * Desktop Images</a>.
+     * </p>
+     * 
+     * @param tenancy
+     *        Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value
+     *        must be set to <code>DEDICATED</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own
+     *        Windows Desktop Images</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Tenancy
+     */
+
+    public WorkspaceDirectory withTenancy(Tenancy tenancy) {
+        this.tenancy = tenancy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default self-service permissions for WorkSpaces in the directory.
+     * </p>
+     * 
+     * @param selfservicePermissions
+     *        The default self-service permissions for WorkSpaces in the directory.
+     */
+
+    public void setSelfservicePermissions(SelfservicePermissions selfservicePermissions) {
+        this.selfservicePermissions = selfservicePermissions;
+    }
+
+    /**
+     * <p>
+     * The default self-service permissions for WorkSpaces in the directory.
+     * </p>
+     * 
+     * @return The default self-service permissions for WorkSpaces in the directory.
+     */
+
+    public SelfservicePermissions getSelfservicePermissions() {
+        return this.selfservicePermissions;
+    }
+
+    /**
+     * <p>
+     * The default self-service permissions for WorkSpaces in the directory.
+     * </p>
+     * 
+     * @param selfservicePermissions
+     *        The default self-service permissions for WorkSpaces in the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDirectory withSelfservicePermissions(SelfservicePermissions selfservicePermissions) {
+        setSelfservicePermissions(selfservicePermissions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -843,7 +1047,13 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
         if (getWorkspaceCreationProperties() != null)
             sb.append("WorkspaceCreationProperties: ").append(getWorkspaceCreationProperties()).append(",");
         if (getIpGroupIds() != null)
-            sb.append("IpGroupIds: ").append(getIpGroupIds());
+            sb.append("IpGroupIds: ").append(getIpGroupIds()).append(",");
+        if (getWorkspaceAccessProperties() != null)
+            sb.append("WorkspaceAccessProperties: ").append(getWorkspaceAccessProperties()).append(",");
+        if (getTenancy() != null)
+            sb.append("Tenancy: ").append(getTenancy()).append(",");
+        if (getSelfservicePermissions() != null)
+            sb.append("SelfservicePermissions: ").append(getSelfservicePermissions());
         sb.append("}");
         return sb.toString();
     }
@@ -910,6 +1120,18 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getIpGroupIds() != null && other.getIpGroupIds().equals(this.getIpGroupIds()) == false)
             return false;
+        if (other.getWorkspaceAccessProperties() == null ^ this.getWorkspaceAccessProperties() == null)
+            return false;
+        if (other.getWorkspaceAccessProperties() != null && other.getWorkspaceAccessProperties().equals(this.getWorkspaceAccessProperties()) == false)
+            return false;
+        if (other.getTenancy() == null ^ this.getTenancy() == null)
+            return false;
+        if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
+            return false;
+        if (other.getSelfservicePermissions() == null ^ this.getSelfservicePermissions() == null)
+            return false;
+        if (other.getSelfservicePermissions() != null && other.getSelfservicePermissions().equals(this.getSelfservicePermissions()) == false)
+            return false;
         return true;
     }
 
@@ -931,6 +1153,9 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceCreationProperties() == null) ? 0 : getWorkspaceCreationProperties().hashCode());
         hashCode = prime * hashCode + ((getIpGroupIds() == null) ? 0 : getIpGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceAccessProperties() == null) ? 0 : getWorkspaceAccessProperties().hashCode());
+        hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
+        hashCode = prime * hashCode + ((getSelfservicePermissions() == null) ? 0 : getSelfservicePermissions().hashCode());
         return hashCode;
     }
 

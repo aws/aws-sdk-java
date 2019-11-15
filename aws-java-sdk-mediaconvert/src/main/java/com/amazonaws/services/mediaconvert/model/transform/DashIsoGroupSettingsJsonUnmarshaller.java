@@ -48,6 +48,11 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalManifests", targetDepth)) {
+                    context.nextToken();
+                    dashIsoGroupSettings.setAdditionalManifests(new ListUnmarshaller<DashAdditionalManifest>(DashAdditionalManifestJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("baseUrl", targetDepth)) {
                     context.nextToken();
                     dashIsoGroupSettings.setBaseUrl(context.getUnmarshaller(String.class).unmarshall(context));

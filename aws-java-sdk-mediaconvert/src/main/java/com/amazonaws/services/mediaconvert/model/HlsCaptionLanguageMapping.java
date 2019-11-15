@@ -28,7 +28,7 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
 
     /** Caption channel. */
     private Integer captionChannel;
-    /** Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code */
+    /** Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code */
     private String customLanguageCode;
     /**
      * Specify the language, using the ISO 639-2 three-letter code listed at
@@ -73,10 +73,11 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
      * 
      * @param customLanguageCode
-     *        Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     *        Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language
+     *        code
      */
 
     public void setCustomLanguageCode(String customLanguageCode) {
@@ -84,9 +85,9 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
      * 
-     * @return Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language
+     * @return Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language
      *         code
      */
 
@@ -95,10 +96,11 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
      * 
      * @param customLanguageCode
-     *        Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     *        Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language
+     *        code
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

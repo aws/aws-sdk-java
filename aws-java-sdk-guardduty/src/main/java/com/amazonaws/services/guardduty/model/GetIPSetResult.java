@@ -25,8 +25,7 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     * activity that involves IP addresses included in this IPSet.
+     * The user friendly name for the IPSet.
      * </p>
      */
     private String name;
@@ -58,13 +57,11 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     * activity that involves IP addresses included in this IPSet.
+     * The user friendly name for the IPSet.
      * </p>
      * 
      * @param name
-     *        The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     *        activity that involves IP addresses included in this IPSet.
+     *        The user friendly name for the IPSet.
      */
 
     public void setName(String name) {
@@ -73,12 +70,10 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     * activity that involves IP addresses included in this IPSet.
+     * The user friendly name for the IPSet.
      * </p>
      * 
-     * @return The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered
-     *         by activity that involves IP addresses included in this IPSet.
+     * @return The user friendly name for the IPSet.
      */
 
     public String getName() {
@@ -87,13 +82,11 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     * activity that involves IP addresses included in this IPSet.
+     * The user friendly name for the IPSet.
      * </p>
      * 
      * @param name
-     *        The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     *        activity that involves IP addresses included in this IPSet.
+     *        The user friendly name for the IPSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

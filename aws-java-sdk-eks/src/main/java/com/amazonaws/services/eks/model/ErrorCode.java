@@ -27,7 +27,10 @@ public enum ErrorCode {
     AccessDenied("AccessDenied"),
     OperationNotPermitted("OperationNotPermitted"),
     VpcIdNotFound("VpcIdNotFound"),
-    Unknown("Unknown");
+    Unknown("Unknown"),
+    NodeCreationFailure("NodeCreationFailure"),
+    PodEvictionFailure("PodEvictionFailure"),
+    InsufficientFreeAddresses("InsufficientFreeAddresses");
 
     private String value;
 

@@ -43,6 +43,13 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
+     * The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security
+     * group for control plane to data plane communication.
+     * </p>
+     */
+    private String clusterSecurityGroupId;
+    /**
+     * <p>
      * The VPC associated with your cluster.
      * </p>
      */
@@ -209,6 +216,52 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     public VpcConfigResponse withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security
+     * group for control plane to data plane communication.
+     * </p>
+     * 
+     * @param clusterSecurityGroupId
+     *        The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this
+     *        security group for control plane to data plane communication.
+     */
+
+    public void setClusterSecurityGroupId(String clusterSecurityGroupId) {
+        this.clusterSecurityGroupId = clusterSecurityGroupId;
+    }
+
+    /**
+     * <p>
+     * The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security
+     * group for control plane to data plane communication.
+     * </p>
+     * 
+     * @return The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this
+     *         security group for control plane to data plane communication.
+     */
+
+    public String getClusterSecurityGroupId() {
+        return this.clusterSecurityGroupId;
+    }
+
+    /**
+     * <p>
+     * The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security
+     * group for control plane to data plane communication.
+     * </p>
+     * 
+     * @param clusterSecurityGroupId
+     *        The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this
+     *        security group for control plane to data plane communication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcConfigResponse withClusterSecurityGroupId(String clusterSecurityGroupId) {
+        setClusterSecurityGroupId(clusterSecurityGroupId);
         return this;
     }
 
@@ -404,6 +457,8 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getSecurityGroupIds() != null)
             sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
+        if (getClusterSecurityGroupId() != null)
+            sb.append("ClusterSecurityGroupId: ").append(getClusterSecurityGroupId()).append(",");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getEndpointPublicAccess() != null)
@@ -432,6 +487,10 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
+        if (other.getClusterSecurityGroupId() == null ^ this.getClusterSecurityGroupId() == null)
+            return false;
+        if (other.getClusterSecurityGroupId() != null && other.getClusterSecurityGroupId().equals(this.getClusterSecurityGroupId()) == false)
+            return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
@@ -454,6 +513,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getClusterSecurityGroupId() == null) ? 0 : getClusterSecurityGroupId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getEndpointPublicAccess() == null) ? 0 : getEndpointPublicAccess().hashCode());
         hashCode = prime * hashCode + ((getEndpointPrivateAccess() == null) ? 0 : getEndpointPrivateAccess().hashCode());

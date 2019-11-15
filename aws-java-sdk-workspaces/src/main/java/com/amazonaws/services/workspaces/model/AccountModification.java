@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a modification to the configuration of bring your own license (BYOL) for the specified account.
+ * Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AccountModification" target="_top">AWS API

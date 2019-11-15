@@ -27,7 +27,7 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster to update.
+     * The name of the Amazon EKS cluster associated with the update.
      * </p>
      */
     private String name;
@@ -37,14 +37,20 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String updateId;
+    /**
+     * <p>
+     * The name of the Amazon EKS node group associated with the update.
+     * </p>
+     */
+    private String nodegroupName;
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster to update.
+     * The name of the Amazon EKS cluster associated with the update.
      * </p>
      * 
      * @param name
-     *        The name of the Amazon EKS cluster to update.
+     *        The name of the Amazon EKS cluster associated with the update.
      */
 
     public void setName(String name) {
@@ -53,10 +59,10 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster to update.
+     * The name of the Amazon EKS cluster associated with the update.
      * </p>
      * 
-     * @return The name of the Amazon EKS cluster to update.
+     * @return The name of the Amazon EKS cluster associated with the update.
      */
 
     public String getName() {
@@ -65,11 +71,11 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster to update.
+     * The name of the Amazon EKS cluster associated with the update.
      * </p>
      * 
      * @param name
-     *        The name of the Amazon EKS cluster to update.
+     *        The name of the Amazon EKS cluster associated with the update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,6 +125,46 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the Amazon EKS node group associated with the update.
+     * </p>
+     * 
+     * @param nodegroupName
+     *        The name of the Amazon EKS node group associated with the update.
+     */
+
+    public void setNodegroupName(String nodegroupName) {
+        this.nodegroupName = nodegroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon EKS node group associated with the update.
+     * </p>
+     * 
+     * @return The name of the Amazon EKS node group associated with the update.
+     */
+
+    public String getNodegroupName() {
+        return this.nodegroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon EKS node group associated with the update.
+     * </p>
+     * 
+     * @param nodegroupName
+     *        The name of the Amazon EKS node group associated with the update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeUpdateRequest withNodegroupName(String nodegroupName) {
+        setNodegroupName(nodegroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +179,9 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getUpdateId() != null)
-            sb.append("UpdateId: ").append(getUpdateId());
+            sb.append("UpdateId: ").append(getUpdateId()).append(",");
+        if (getNodegroupName() != null)
+            sb.append("NodegroupName: ").append(getNodegroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getUpdateId() != null && other.getUpdateId().equals(this.getUpdateId()) == false)
             return false;
+        if (other.getNodegroupName() == null ^ this.getNodegroupName() == null)
+            return false;
+        if (other.getNodegroupName() != null && other.getNodegroupName().equals(this.getNodegroupName()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +218,7 @@ public class DescribeUpdateRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getUpdateId() == null) ? 0 : getUpdateId().hashCode());
+        hashCode = prime * hashCode + ((getNodegroupName() == null) ? 0 : getNodegroupName().hashCode());
         return hashCode;
     }
 

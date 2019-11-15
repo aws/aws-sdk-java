@@ -37,7 +37,7 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
     private String directoryId;
     /**
      * <p>
-     * The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for
+     * The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service directory for
      * the WorkSpace.
      * </p>
      */
@@ -128,12 +128,12 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for
+     * The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service directory for
      * the WorkSpace.
      * </p>
      * 
      * @param userName
-     *        The username of the user for the WorkSpace. This username must exist in the AWS Directory Service
+     *        The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service
      *        directory for the WorkSpace.
      */
 
@@ -143,11 +143,11 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for
+     * The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service directory for
      * the WorkSpace.
      * </p>
      * 
-     * @return The username of the user for the WorkSpace. This username must exist in the AWS Directory Service
+     * @return The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service
      *         directory for the WorkSpace.
      */
 
@@ -157,12 +157,12 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for
+     * The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service directory for
      * the WorkSpace.
      * </p>
      * 
      * @param userName
-     *        The username of the user for the WorkSpace. This username must exist in the AWS Directory Service
+     *        The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service
      *        directory for the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

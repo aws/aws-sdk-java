@@ -566,7 +566,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * Creates a log group with the specified name.
      * </p>
      * <p>
-     * You can create up to 5000 log groups per account.
+     * You can create up to 20,000 log groups per account.
      * </p>
      * <p>
      * You must use the following guidelines when naming a log group:
@@ -585,7 +585,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <li>
      * <p>
      * Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward
-     * slash), and '.' (period).
+     * slash), '.' (period), and '#' (number sign)
      * </p>
      * </li>
      * </ul>
@@ -2128,10 +2128,12 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Creates or updates a destination. A destination encapsulates a physical resource (such as an Amazon Kinesis
-     * stream) and enables you to subscribe to a real-time stream of log events for a different account, ingested using
-     * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon Kinesis Data Firehose strea, or an AWS
-     * Lambda function.
+     * Creates or updates a destination. This operation is used only to create destinations for cross-account
+     * subscriptions.
+     * </p>
+     * <p>
+     * A destination encapsulates a physical resource (such as an Amazon Kinesis stream) and enables you to subscribe to
+     * a real-time stream of log events for a different account, ingested using <a>PutLogEvents</a>.
      * </p>
      * <p>
      * Through an access policy, a destination controls what is written to it. By default, <code>PutDestination</code>

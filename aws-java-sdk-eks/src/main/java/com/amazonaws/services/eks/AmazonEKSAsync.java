@@ -162,9 +162,57 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster
+     * that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI
+     * release version for the respective minor Kubernetes version of the cluster.
+     * </p>
+     * <p>
+     * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * 2 AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
+     * <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param createNodegroupRequest
+     * @return A Java Future containing the result of the CreateNodegroup operation returned by the service.
+     * @sample AmazonEKSAsync.CreateNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(CreateNodegroupRequest createNodegroupRequest);
+
+    /**
+     * <p>
+     * Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster
+     * that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI
+     * release version for the respective minor Kubernetes version of the cluster.
+     * </p>
+     * <p>
+     * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * 2 AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
+     * <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param createNodegroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNodegroup operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.CreateNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(CreateNodegroupRequest createNodegroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNodegroupRequest, CreateNodegroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the Amazon EKS cluster control plane.
      * </p>
-     * <note>
      * <p>
      * If you have active services in your cluster that are associated with a load balancer, you must delete those
      * services before deleting the cluster so that the load balancers are deleted properly. Otherwise, you can have
@@ -172,7 +220,10 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
-     * </note>
+     * <p>
+     * If you have managed node groups attached to the cluster, you must delete them first. For more information, see
+     * <a>DeleteNodegroup</a>.
+     * </p>
      * 
      * @param deleteClusterRequest
      * @return A Java Future containing the result of the DeleteCluster operation returned by the service.
@@ -186,7 +237,6 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * Deletes the Amazon EKS cluster control plane.
      * </p>
-     * <note>
      * <p>
      * If you have active services in your cluster that are associated with a load balancer, you must delete those
      * services before deleting the cluster so that the load balancers are deleted properly. Otherwise, you can have
@@ -194,7 +244,10 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
-     * </note>
+     * <p>
+     * If you have managed node groups attached to the cluster, you must delete them first. For more information, see
+     * <a>DeleteNodegroup</a>.
+     * </p>
      * 
      * @param deleteClusterRequest
      * @param asyncHandler
@@ -208,6 +261,37 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an Amazon EKS node group for a cluster.
+     * </p>
+     * 
+     * @param deleteNodegroupRequest
+     * @return A Java Future containing the result of the DeleteNodegroup operation returned by the service.
+     * @sample AmazonEKSAsync.DeleteNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNodegroupResult> deleteNodegroupAsync(DeleteNodegroupRequest deleteNodegroupRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon EKS node group for a cluster.
+     * </p>
+     * 
+     * @param deleteNodegroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNodegroup operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DeleteNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNodegroupResult> deleteNodegroupAsync(DeleteNodegroupRequest deleteNodegroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNodegroupRequest, DeleteNodegroupResult> asyncHandler);
 
     /**
      * <p>
@@ -266,7 +350,38 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Returns descriptive information about an update against your Amazon EKS cluster.
+     * Returns descriptive information about an Amazon EKS node group.
+     * </p>
+     * 
+     * @param describeNodegroupRequest
+     * @return A Java Future containing the result of the DescribeNodegroup operation returned by the service.
+     * @sample AmazonEKSAsync.DescribeNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNodegroupResult> describeNodegroupAsync(DescribeNodegroupRequest describeNodegroupRequest);
+
+    /**
+     * <p>
+     * Returns descriptive information about an Amazon EKS node group.
+     * </p>
+     * 
+     * @param describeNodegroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeNodegroup operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DescribeNodegroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNodegroupResult> describeNodegroupAsync(DescribeNodegroupRequest describeNodegroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeNodegroupRequest, DescribeNodegroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns descriptive information about an update against your Amazon EKS cluster or associated managed node group.
      * </p>
      * <p>
      * When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status
@@ -283,7 +398,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Returns descriptive information about an update against your Amazon EKS cluster.
+     * Returns descriptive information about an update against your Amazon EKS cluster or associated managed node group.
      * </p>
      * <p>
      * When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status
@@ -336,6 +451,39 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Lists the Amazon EKS node groups associated with the specified cluster in your AWS account in the specified
+     * Region.
+     * </p>
+     * 
+     * @param listNodegroupsRequest
+     * @return A Java Future containing the result of the ListNodegroups operation returned by the service.
+     * @sample AmazonEKSAsync.ListNodegroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListNodegroupsResult> listNodegroupsAsync(ListNodegroupsRequest listNodegroupsRequest);
+
+    /**
+     * <p>
+     * Lists the Amazon EKS node groups associated with the specified cluster in your AWS account in the specified
+     * Region.
+     * </p>
+     * 
+     * @param listNodegroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNodegroups operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.ListNodegroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListNodegroupsResult> listNodegroupsAsync(ListNodegroupsRequest listNodegroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNodegroupsRequest, ListNodegroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * List the tags for an Amazon EKS resource.
      * </p>
      * 
@@ -367,7 +515,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Lists the updates associated with an Amazon EKS cluster in your AWS account, in the specified Region.
+     * Lists the updates associated with an Amazon EKS cluster or managed node group in your AWS account, in the
+     * specified Region.
      * </p>
      * 
      * @param listUpdatesRequest
@@ -380,7 +529,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Lists the updates associated with an Amazon EKS cluster in your AWS account, in the specified Region.
+     * Lists the updates associated with an Amazon EKS cluster or managed node group in your AWS account, in the
+     * specified Region.
      * </p>
      * 
      * @param listUpdatesRequest
@@ -400,7 +550,9 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * associated with that resource are deleted as well. Tags that you create for Amazon EKS resources do not propagate
+     * to any other resources associated with the cluster. For example, if you tag a cluster with this operation, that
+     * tag does not automatically propagate to the subnets and worker nodes associated with the cluster.
      * </p>
      * 
      * @param tagResourceRequest
@@ -415,7 +567,9 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * associated with that resource are deleted as well. Tags that you create for Amazon EKS resources do not propagate
+     * to any other resources associated with the cluster. For example, if you tag a cluster with this operation, that
+     * tag does not automatically propagate to the subnets and worker nodes associated with the cluster.
      * </p>
      * 
      * @param tagResourceRequest
@@ -567,6 +721,10 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
      * .
      * </p>
+     * <p>
+     * If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes versions must match
+     * the cluster’s Kubernetes version in order to update the cluster to a new Kubernetes version.
+     * </p>
      * 
      * @param updateClusterVersionRequest
      * @return A Java Future containing the result of the UpdateClusterVersion operation returned by the service.
@@ -588,6 +746,10 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>
      * .
      * </p>
+     * <p>
+     * If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes versions must match
+     * the cluster’s Kubernetes version in order to update the cluster to a new Kubernetes version.
+     * </p>
      * 
      * @param updateClusterVersionRequest
      * @param asyncHandler
@@ -601,5 +763,105 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<UpdateClusterVersionResult> updateClusterVersionAsync(UpdateClusterVersionRequest updateClusterVersionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateClusterVersionRequest, UpdateClusterVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS managed node group configuration. Your node group continues to function during the update.
+     * The response output includes an update ID that you can use to track the status of your node group update with the
+     * <a>DescribeUpdate</a> API operation. Currently you can update the Kubernetes labels for a node group or the
+     * scaling configuration.
+     * </p>
+     * 
+     * @param updateNodegroupConfigRequest
+     * @return A Java Future containing the result of the UpdateNodegroupConfig operation returned by the service.
+     * @sample AmazonEKSAsync.UpdateNodegroupConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNodegroupConfigResult> updateNodegroupConfigAsync(UpdateNodegroupConfigRequest updateNodegroupConfigRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS managed node group configuration. Your node group continues to function during the update.
+     * The response output includes an update ID that you can use to track the status of your node group update with the
+     * <a>DescribeUpdate</a> API operation. Currently you can update the Kubernetes labels for a node group or the
+     * scaling configuration.
+     * </p>
+     * 
+     * @param updateNodegroupConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNodegroupConfig operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.UpdateNodegroupConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNodegroupConfigResult> updateNodegroupConfigAsync(UpdateNodegroupConfigRequest updateNodegroupConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNodegroupConfigRequest, UpdateNodegroupConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.
+     * </p>
+     * <p>
+     * You can update to the latest available AMI version of a node group's current Kubernetes version by not specifying
+     * a Kubernetes version in the request. You can update to the latest AMI version of your cluster's current
+     * Kubernetes version by specifying your cluster's Kubernetes version in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
+     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * You cannot roll back a node group to an earlier Kubernetes version or AMI version.
+     * </p>
+     * <p>
+     * When a node in a managed node group is terminated due to a scaling action or update, the pods in that node are
+     * drained first. Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable to do so. You can
+     * <code>force</code> the update if Amazon EKS is unable to drain the nodes as a result of a pod disruption budget
+     * issue.
+     * </p>
+     * 
+     * @param updateNodegroupVersionRequest
+     * @return A Java Future containing the result of the UpdateNodegroupVersion operation returned by the service.
+     * @sample AmazonEKSAsync.UpdateNodegroupVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNodegroupVersionResult> updateNodegroupVersionAsync(UpdateNodegroupVersionRequest updateNodegroupVersionRequest);
+
+    /**
+     * <p>
+     * Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.
+     * </p>
+     * <p>
+     * You can update to the latest available AMI version of a node group's current Kubernetes version by not specifying
+     * a Kubernetes version in the request. You can update to the latest AMI version of your cluster's current
+     * Kubernetes version by specifying your cluster's Kubernetes version in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
+     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * You cannot roll back a node group to an earlier Kubernetes version or AMI version.
+     * </p>
+     * <p>
+     * When a node in a managed node group is terminated due to a scaling action or update, the pods in that node are
+     * drained first. Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable to do so. You can
+     * <code>force</code> the update if Amazon EKS is unable to drain the nodes as a result of a pod disruption budget
+     * issue.
+     * </p>
+     * 
+     * @param updateNodegroupVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNodegroupVersion operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.UpdateNodegroupVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNodegroupVersionResult> updateNodegroupVersionAsync(UpdateNodegroupVersionRequest updateNodegroupVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNodegroupVersionRequest, UpdateNodegroupVersionResult> asyncHandler);
 
 }

@@ -19,9 +19,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * <i>This member will be deprecated.</i>
- * </p>
- * <p>
  * The input to the SetVisibleToAllUsers action.
  * </p>
  * 
@@ -33,29 +30,25 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Identifiers of the job flows to receive the new visibility setting.
+     * The unique identifier of the job flow (cluster).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> jobFlowIds;
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
-     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
-     * and manage it.
+     * A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions if they
+     * have the proper IAM policy permissions. This is the default. A value of <code>false</code> indicates that only
+     * the IAM user who created the cluster can perform actions.
      * </p>
      */
     private Boolean visibleToAllUsers;
 
     /**
      * <p>
-     * Identifiers of the job flows to receive the new visibility setting.
+     * The unique identifier of the job flow (cluster).
      * </p>
      * 
-     * @return Identifiers of the job flows to receive the new visibility setting.
+     * @return The unique identifier of the job flow (cluster).
      */
 
     public java.util.List<String> getJobFlowIds() {
@@ -67,11 +60,11 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Identifiers of the job flows to receive the new visibility setting.
+     * The unique identifier of the job flow (cluster).
      * </p>
      * 
      * @param jobFlowIds
-     *        Identifiers of the job flows to receive the new visibility setting.
+     *        The unique identifier of the job flow (cluster).
      */
 
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
@@ -85,7 +78,7 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Identifiers of the job flows to receive the new visibility setting.
+     * The unique identifier of the job flow (cluster).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -94,7 +87,7 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param jobFlowIds
-     *        Identifiers of the job flows to receive the new visibility setting.
+     *        The unique identifier of the job flow (cluster).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,11 +103,11 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Identifiers of the job flows to receive the new visibility setting.
+     * The unique identifier of the job flow (cluster).
      * </p>
      * 
      * @param jobFlowIds
-     *        Identifiers of the job flows to receive the new visibility setting.
+     *        The unique identifier of the job flow (cluster).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,22 +118,15 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
-     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
-     * and manage it.
+     * A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions if they
+     * have the proper IAM policy permissions. This is the default. A value of <code>false</code> indicates that only
+     * the IAM user who created the cluster can perform actions.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        <i>This member will be deprecated.</i> </p>
-     *        <p>
-     *        Whether the specified clusters are visible to all IAM users of the AWS account associated with the
-     *        cluster. If this value is set to True, all IAM users of that AWS account can view and, if they have the
-     *        proper IAM policy permissions set, manage the clusters. If it is set to False, only the IAM user that
-     *        created a cluster can view and manage it.
+     *        A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions
+     *        if they have the proper IAM policy permissions. This is the default. A value of <code>false</code>
+     *        indicates that only the IAM user who created the cluster can perform actions.
      */
 
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -149,21 +135,14 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
-     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
-     * and manage it.
+     * A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions if they
+     * have the proper IAM policy permissions. This is the default. A value of <code>false</code> indicates that only
+     * the IAM user who created the cluster can perform actions.
      * </p>
      * 
-     * @return <i>This member will be deprecated.</i> </p>
-     *         <p>
-     *         Whether the specified clusters are visible to all IAM users of the AWS account associated with the
-     *         cluster. If this value is set to True, all IAM users of that AWS account can view and, if they have the
-     *         proper IAM policy permissions set, manage the clusters. If it is set to False, only the IAM user that
-     *         created a cluster can view and manage it.
+     * @return A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions
+     *         if they have the proper IAM policy permissions. This is the default. A value of <code>false</code>
+     *         indicates that only the IAM user who created the cluster can perform actions.
      */
 
     public Boolean getVisibleToAllUsers() {
@@ -172,22 +151,15 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
-     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
-     * and manage it.
+     * A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions if they
+     * have the proper IAM policy permissions. This is the default. A value of <code>false</code> indicates that only
+     * the IAM user who created the cluster can perform actions.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        <i>This member will be deprecated.</i> </p>
-     *        <p>
-     *        Whether the specified clusters are visible to all IAM users of the AWS account associated with the
-     *        cluster. If this value is set to True, all IAM users of that AWS account can view and, if they have the
-     *        proper IAM policy permissions set, manage the clusters. If it is set to False, only the IAM user that
-     *        created a cluster can view and manage it.
+     *        A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions
+     *        if they have the proper IAM policy permissions. This is the default. A value of <code>false</code>
+     *        indicates that only the IAM user who created the cluster can perform actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,21 +170,14 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * <i>This member will be deprecated.</i>
-     * </p>
-     * <p>
-     * Whether the specified clusters are visible to all IAM users of the AWS account associated with the cluster. If
-     * this value is set to True, all IAM users of that AWS account can view and, if they have the proper IAM policy
-     * permissions set, manage the clusters. If it is set to False, only the IAM user that created a cluster can view
-     * and manage it.
+     * A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions if they
+     * have the proper IAM policy permissions. This is the default. A value of <code>false</code> indicates that only
+     * the IAM user who created the cluster can perform actions.
      * </p>
      * 
-     * @return <i>This member will be deprecated.</i> </p>
-     *         <p>
-     *         Whether the specified clusters are visible to all IAM users of the AWS account associated with the
-     *         cluster. If this value is set to True, all IAM users of that AWS account can view and, if they have the
-     *         proper IAM policy permissions set, manage the clusters. If it is set to False, only the IAM user that
-     *         created a cluster can view and manage it.
+     * @return A value of <code>true</code> indicates that all IAM users in the AWS account can perform cluster actions
+     *         if they have the proper IAM policy permissions. This is the default. A value of <code>false</code>
+     *         indicates that only the IAM user who created the cluster can perform actions.
      */
 
     public Boolean isVisibleToAllUsers() {

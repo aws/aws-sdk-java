@@ -15,9 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to follow the ISO 639 language code of the
- * input. The language specified for languageCode' will be used when USE_CONFIGURED is selected or when FOLLOW_INPUT is
- * selected but there is no ISO 639 language code specified by the input.
+ * Specify which source for language code takes precedence for this audio track. When you choose Follow input
+ * (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code
+ * on the input track, the service uses the code that you specify in the setting Language code (languageCode or
+ * customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you
+ * specify.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AudioLanguageCodeControl {

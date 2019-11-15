@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class S3DestinationSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ACCESSCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessControl").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
 
@@ -46,6 +48,7 @@ public class S3DestinationSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(s3DestinationSettings.getAccessControl(), ACCESSCONTROL_BINDING);
             protocolMarshaller.marshall(s3DestinationSettings.getEncryption(), ENCRYPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

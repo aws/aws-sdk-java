@@ -27,7 +27,7 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ParametersFilter> filters;
@@ -53,10 +53,10 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      * </p>
      * 
-     * @return One or more filters. Use a filter to return a more specific list of results.
+     * @return This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      */
 
     public java.util.List<ParametersFilter> getFilters() {
@@ -68,11 +68,11 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      */
 
     public void setFilters(java.util.Collection<ParametersFilter> filters) {
@@ -86,7 +86,7 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,7 +95,7 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +111,11 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of results.
+     * This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        This data type is deprecated. Instead, use <code>ParameterFilters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
