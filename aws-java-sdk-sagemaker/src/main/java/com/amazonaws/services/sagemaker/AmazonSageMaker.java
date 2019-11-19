@@ -657,8 +657,8 @@ public interface AmazonSageMaker {
      * </li>
      * </ul>
      * <p>
-     * For more information about how batch transformation works Amazon SageMaker, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It Works</a>.
+     * For more information about how batch transformation works, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch Transform</a>.
      * </p>
      * 
      * @param createTransformJobRequest

@@ -29,12 +29,18 @@ public class ResourceDataSyncItemMarshaller {
 
     private static final MarshallingInfo<String> SYNCNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SyncName").build();
+    private static final MarshallingInfo<String> SYNCTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SyncType").build();
+    private static final MarshallingInfo<StructuredPojo> SYNCSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncSource").build();
     private static final MarshallingInfo<StructuredPojo> S3DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Destination").build();
     private static final MarshallingInfo<java.util.Date> LASTSYNCTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSyncTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTSUCCESSFULSYNCTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulSyncTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> SYNCLASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncLastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LASTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastStatus").build();
     private static final MarshallingInfo<java.util.Date> SYNCCREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -59,9 +65,12 @@ public class ResourceDataSyncItemMarshaller {
 
         try {
             protocolMarshaller.marshall(resourceDataSyncItem.getSyncName(), SYNCNAME_BINDING);
+            protocolMarshaller.marshall(resourceDataSyncItem.getSyncType(), SYNCTYPE_BINDING);
+            protocolMarshaller.marshall(resourceDataSyncItem.getSyncSource(), SYNCSOURCE_BINDING);
             protocolMarshaller.marshall(resourceDataSyncItem.getS3Destination(), S3DESTINATION_BINDING);
             protocolMarshaller.marshall(resourceDataSyncItem.getLastSyncTime(), LASTSYNCTIME_BINDING);
             protocolMarshaller.marshall(resourceDataSyncItem.getLastSuccessfulSyncTime(), LASTSUCCESSFULSYNCTIME_BINDING);
+            protocolMarshaller.marshall(resourceDataSyncItem.getSyncLastModifiedTime(), SYNCLASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(resourceDataSyncItem.getLastStatus(), LASTSTATUS_BINDING);
             protocolMarshaller.marshall(resourceDataSyncItem.getSyncCreatedTime(), SYNCCREATEDTIME_BINDING);
             protocolMarshaller.marshall(resourceDataSyncItem.getLastSyncStatusMessage(), LASTSYNCSTATUSMESSAGE_BINDING);

@@ -60,6 +60,10 @@ public class APNSPushNotificationTemplateJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     aPNSPushNotificationTemplate.setMediaUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RawContent", targetDepth)) {
+                    context.nextToken();
+                    aPNSPushNotificationTemplate.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Sound", targetDepth)) {
                     context.nextToken();
                     aPNSPushNotificationTemplate.setSound(context.getUnmarshaller(String.class).unmarshall(context));

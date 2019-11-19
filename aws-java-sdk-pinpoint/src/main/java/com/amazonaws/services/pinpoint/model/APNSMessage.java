@@ -180,8 +180,8 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     private String priority;
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides all other
-     * content for the message.
+     * The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value
+     * overrides all other content for the message.
      * </p>
      * <note>
      * <p>
@@ -1338,8 +1338,8 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides all other
-     * content for the message.
+     * The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value
+     * overrides all other content for the message.
      * </p>
      * <note>
      * <p>
@@ -1356,8 +1356,8 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param rawContent
-     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *        all other content for the message.</p> <note>
+     *        The raw, JSON-formatted string to use as the payload for the notification message. If specified, this
+     *        value overrides all other content for the message.</p> <note>
      *        <p>
      *        If you specify the raw content of an APNs push notification, the message payload has to include the
      *        content-available key. The value of the content-available key has to be an integer, and can only be 0 or
@@ -1377,8 +1377,8 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides all other
-     * content for the message.
+     * The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value
+     * overrides all other content for the message.
      * </p>
      * <note>
      * <p>
@@ -1394,8 +1394,8 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *         all other content for the message.</p> <note>
+     * @return The raw, JSON-formatted string to use as the payload for the notification message. If specified, this
+     *         value overrides all other content for the message.</p> <note>
      *         <p>
      *         If you specify the raw content of an APNs push notification, the message payload has to include the
      *         content-available key. The value of the content-available key has to be an integer, and can only be 0 or
@@ -1415,8 +1415,8 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides all other
-     * content for the message.
+     * The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value
+     * overrides all other content for the message.
      * </p>
      * <note>
      * <p>
@@ -1433,8 +1433,8 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param rawContent
-     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *        all other content for the message.</p> <note>
+     *        The raw, JSON-formatted string to use as the payload for the notification message. If specified, this
+     *        value overrides all other content for the message.</p> <note>
      *        <p>
      *        If you specify the raw content of an APNs push notification, the message payload has to include the
      *        content-available key. The value of the content-available key has to be an integer, and can only be 0 or

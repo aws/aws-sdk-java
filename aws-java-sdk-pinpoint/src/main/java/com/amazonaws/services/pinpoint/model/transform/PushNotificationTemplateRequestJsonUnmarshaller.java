@@ -64,6 +64,10 @@ public class PushNotificationTemplateRequestJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     pushNotificationTemplateRequest.setDefault(DefaultPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    context.nextToken();
+                    pushNotificationTemplateRequest.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("GCM", targetDepth)) {
                     context.nextToken();
                     pushNotificationTemplateRequest.setGCM(AndroidPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
@@ -72,6 +76,10 @@ public class PushNotificationTemplateRequestJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     pushNotificationTemplateRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("TemplateDescription", targetDepth)) {
+                    context.nextToken();
+                    pushNotificationTemplateRequest.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -56,6 +56,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Mode", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ModelDataUrl", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setModelDataUrl(context.getUnmarshaller(String.class).unmarshall(context));

@@ -41,6 +41,8 @@ public class SavingsPlansPurchaseRecommendationDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EstimatedSPCost").build();
     private static final MarshallingInfo<String> ESTIMATEDONDEMANDCOST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EstimatedOnDemandCost").build();
+    private static final MarshallingInfo<String> ESTIMATEDONDEMANDCOSTWITHCURRENTCOMMITMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EstimatedOnDemandCostWithCurrentCommitment").build();
     private static final MarshallingInfo<String> ESTIMATEDSAVINGSAMOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EstimatedSavingsAmount").build();
     private static final MarshallingInfo<String> ESTIMATEDSAVINGSPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -81,6 +83,8 @@ public class SavingsPlansPurchaseRecommendationDetailMarshaller {
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getCurrencyCode(), CURRENCYCODE_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getEstimatedSPCost(), ESTIMATEDSPCOST_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getEstimatedOnDemandCost(), ESTIMATEDONDEMANDCOST_BINDING);
+            protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getEstimatedOnDemandCostWithCurrentCommitment(),
+                    ESTIMATEDONDEMANDCOSTWITHCURRENTCOMMITMENT_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getEstimatedSavingsAmount(), ESTIMATEDSAVINGSAMOUNT_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getEstimatedSavingsPercentage(), ESTIMATEDSAVINGSPERCENTAGE_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationDetail.getHourlyCommitmentToPurchase(), HOURLYCOMMITMENTTOPURCHASE_BINDING);

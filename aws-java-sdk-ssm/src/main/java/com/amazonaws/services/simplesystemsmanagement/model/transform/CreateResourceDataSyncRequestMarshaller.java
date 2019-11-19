@@ -31,6 +31,10 @@ public class CreateResourceDataSyncRequestMarshaller {
             .marshallLocationName("SyncName").build();
     private static final MarshallingInfo<StructuredPojo> S3DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Destination").build();
+    private static final MarshallingInfo<String> SYNCTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SyncType").build();
+    private static final MarshallingInfo<StructuredPojo> SYNCSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncSource").build();
 
     private static final CreateResourceDataSyncRequestMarshaller instance = new CreateResourceDataSyncRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class CreateResourceDataSyncRequestMarshaller {
         try {
             protocolMarshaller.marshall(createResourceDataSyncRequest.getSyncName(), SYNCNAME_BINDING);
             protocolMarshaller.marshall(createResourceDataSyncRequest.getS3Destination(), S3DESTINATION_BINDING);
+            protocolMarshaller.marshall(createResourceDataSyncRequest.getSyncType(), SYNCTYPE_BINDING);
+            protocolMarshaller.marshall(createResourceDataSyncRequest.getSyncSource(), SYNCSOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

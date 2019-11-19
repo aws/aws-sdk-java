@@ -52,7 +52,7 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
     private BaiduMessage baiduMessage;
     /**
      * <p>
-     * The default message body for all channels.
+     * The default message for all channels.
      * </p>
      */
     private DefaultMessage defaultMessage;
@@ -229,11 +229,11 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default message body for all channels.
+     * The default message for all channels.
      * </p>
      * 
      * @param defaultMessage
-     *        The default message body for all channels.
+     *        The default message for all channels.
      */
 
     public void setDefaultMessage(DefaultMessage defaultMessage) {
@@ -242,10 +242,10 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default message body for all channels.
+     * The default message for all channels.
      * </p>
      * 
-     * @return The default message body for all channels.
+     * @return The default message for all channels.
      */
 
     public DefaultMessage getDefaultMessage() {
@@ -254,11 +254,11 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The default message body for all channels.
+     * The default message for all channels.
      * </p>
      * 
      * @param defaultMessage
-     *        The default message body for all channels.
+     *        The default message for all channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

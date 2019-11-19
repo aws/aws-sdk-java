@@ -107,10 +107,9 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTramsformJob</code>
-     * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
-     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a> request. For
+     * more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key
+     * Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private String kmsKeyId;
@@ -394,10 +393,9 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTramsformJob</code>
-     * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
-     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a> request. For
+     * more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key
+     * Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
@@ -445,8 +443,8 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
      *        <p>
-     *        The KMS key policy must grant permission to the IAM role that you specify in your
-     *        <code>CreateTramsformJob</code> request. For more information, see <a
+     *        The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a>
+     *        request. For more information, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
@@ -501,10 +499,9 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTramsformJob</code>
-     * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
-     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a> request. For
+     * more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key
+     * Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
@@ -551,8 +548,8 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *         Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *         </p>
      *         <p>
-     *         The KMS key policy must grant permission to the IAM role that you specify in your
-     *         <code>CreateTramsformJob</code> request. For more information, see <a
+     *         The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a>
+     *         request. For more information, see <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *         KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
@@ -607,10 +604,9 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTramsformJob</code>
-     * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
-     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a> request. For
+     * more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key
+     * Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
@@ -658,8 +654,8 @@ public class TransformOutput implements Serializable, Cloneable, StructuredPojo 
      *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
      *        <p>
-     *        The KMS key policy must grant permission to the IAM role that you specify in your
-     *        <code>CreateTramsformJob</code> request. For more information, see <a
+     *        The KMS key policy must grant permission to the IAM role that you specify in your <a>CreateModel</a>
+     *        request. For more information, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

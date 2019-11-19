@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the default message to use for all channels.
+ * Specifies the default message for all channels.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DefaultMessage" target="_top">AWS API
@@ -30,25 +30,25 @@ public class DefaultMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default message body of the push notification, email, or SMS message.
+     * The default body of the message.
      * </p>
      */
     private String body;
     /**
      * <p>
-     * The default message variables to use in the push notification, email, or SMS message. You can override these
-     * default variables with individual address variables.
+     * The default message variables to use in the message. You can override these default variables with individual
+     * address variables.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> substitutions;
 
     /**
      * <p>
-     * The default message body of the push notification, email, or SMS message.
+     * The default body of the message.
      * </p>
      * 
      * @param body
-     *        The default message body of the push notification, email, or SMS message.
+     *        The default body of the message.
      */
 
     public void setBody(String body) {
@@ -57,10 +57,10 @@ public class DefaultMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default message body of the push notification, email, or SMS message.
+     * The default body of the message.
      * </p>
      * 
-     * @return The default message body of the push notification, email, or SMS message.
+     * @return The default body of the message.
      */
 
     public String getBody() {
@@ -69,11 +69,11 @@ public class DefaultMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default message body of the push notification, email, or SMS message.
+     * The default body of the message.
      * </p>
      * 
      * @param body
-     *        The default message body of the push notification, email, or SMS message.
+     *        The default body of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,12 +84,12 @@ public class DefaultMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default message variables to use in the push notification, email, or SMS message. You can override these
-     * default variables with individual address variables.
+     * The default message variables to use in the message. You can override these default variables with individual
+     * address variables.
      * </p>
      * 
-     * @return The default message variables to use in the push notification, email, or SMS message. You can override
-     *         these default variables with individual address variables.
+     * @return The default message variables to use in the message. You can override these default variables with
+     *         individual address variables.
      */
 
     public java.util.Map<String, java.util.List<String>> getSubstitutions() {
@@ -98,13 +98,13 @@ public class DefaultMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default message variables to use in the push notification, email, or SMS message. You can override these
-     * default variables with individual address variables.
+     * The default message variables to use in the message. You can override these default variables with individual
+     * address variables.
      * </p>
      * 
      * @param substitutions
-     *        The default message variables to use in the push notification, email, or SMS message. You can override
-     *        these default variables with individual address variables.
+     *        The default message variables to use in the message. You can override these default variables with
+     *        individual address variables.
      */
 
     public void setSubstitutions(java.util.Map<String, java.util.List<String>> substitutions) {
@@ -113,13 +113,13 @@ public class DefaultMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default message variables to use in the push notification, email, or SMS message. You can override these
-     * default variables with individual address variables.
+     * The default message variables to use in the message. You can override these default variables with individual
+     * address variables.
      * </p>
      * 
      * @param substitutions
-     *        The default message variables to use in the push notification, email, or SMS message. You can override
-     *        these default variables with individual address variables.
+     *        The default message variables to use in the message. You can override these default variables with
+     *        individual address variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

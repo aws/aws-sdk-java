@@ -48,8 +48,8 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String prefix;
     /**
      * <p>
-     * The type of message template to include in the results. Valid values are: EMAIL, SMS, and PUSH. To include all
-     * types of templates in the results, don't include this parameter in your request.
+     * The type of message template to include in the results. Valid values are: EMAIL, SMS, PUSH, and VOICE. To include
+     * all types of templates in the results, don't include this parameter in your request.
      * </p>
      */
     private String templateType;
@@ -197,13 +197,13 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of message template to include in the results. Valid values are: EMAIL, SMS, and PUSH. To include all
-     * types of templates in the results, don't include this parameter in your request.
+     * The type of message template to include in the results. Valid values are: EMAIL, SMS, PUSH, and VOICE. To include
+     * all types of templates in the results, don't include this parameter in your request.
      * </p>
      * 
      * @param templateType
-     *        The type of message template to include in the results. Valid values are: EMAIL, SMS, and PUSH. To include
-     *        all types of templates in the results, don't include this parameter in your request.
+     *        The type of message template to include in the results. Valid values are: EMAIL, SMS, PUSH, and VOICE. To
+     *        include all types of templates in the results, don't include this parameter in your request.
      */
 
     public void setTemplateType(String templateType) {
@@ -212,11 +212,11 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of message template to include in the results. Valid values are: EMAIL, SMS, and PUSH. To include all
-     * types of templates in the results, don't include this parameter in your request.
+     * The type of message template to include in the results. Valid values are: EMAIL, SMS, PUSH, and VOICE. To include
+     * all types of templates in the results, don't include this parameter in your request.
      * </p>
      * 
-     * @return The type of message template to include in the results. Valid values are: EMAIL, SMS, and PUSH. To
+     * @return The type of message template to include in the results. Valid values are: EMAIL, SMS, PUSH, and VOICE. To
      *         include all types of templates in the results, don't include this parameter in your request.
      */
 
@@ -226,13 +226,13 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of message template to include in the results. Valid values are: EMAIL, SMS, and PUSH. To include all
-     * types of templates in the results, don't include this parameter in your request.
+     * The type of message template to include in the results. Valid values are: EMAIL, SMS, PUSH, and VOICE. To include
+     * all types of templates in the results, don't include this parameter in your request.
      * </p>
      * 
      * @param templateType
-     *        The type of message template to include in the results. Valid values are: EMAIL, SMS, and PUSH. To include
-     *        all types of templates in the results, don't include this parameter in your request.
+     *        The type of message template to include in the results. Valid values are: EMAIL, SMS, PUSH, and VOICE. To
+     *        include all types of templates in the results, don't include this parameter in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

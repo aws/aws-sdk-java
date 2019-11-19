@@ -68,6 +68,14 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * For the list of engine versions that are available for upgrading a DB snapshot, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"
+     * > Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
+     * </p>
      */
     private String engineVersion;
     /**
@@ -160,6 +168,14 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * For the list of engine versions that are available for upgrading a DB snapshot, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"
+     * > Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
+     * </p>
      * 
      * @param engineVersion
      *        The engine version to upgrade the DB snapshot to. </p>
@@ -196,6 +212,14 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        For the list of engine versions that are available for upgrading a DB snapshot, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"
+     *        > Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -239,6 +263,14 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * For the list of engine versions that are available for upgrading a DB snapshot, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"
+     * > Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
+     * </p>
      * 
      * @return The engine version to upgrade the DB snapshot to. </p>
      *         <p>
@@ -274,6 +306,14 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *         <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         For the list of engine versions that are available for upgrading a DB snapshot, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"
+     *         > Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
      */
 
     public String getEngineVersion() {
@@ -317,6 +357,14 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * For the list of engine versions that are available for upgrading a DB snapshot, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"
+     * > Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
+     * </p>
      * 
      * @param engineVersion
      *        The engine version to upgrade the DB snapshot to. </p>
@@ -353,6 +401,14 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        For the list of engine versions that are available for upgrading a DB snapshot, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion"
+     *        > Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

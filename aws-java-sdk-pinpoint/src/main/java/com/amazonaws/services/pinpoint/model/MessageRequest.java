@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the objects that define configuration and other settings for a message.
+ * Specifies the configuration and other settings for a message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageRequest" target="_top">AWS API
@@ -55,7 +55,7 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, EndpointSendConfiguration> endpoints;
     /**
      * <p>
-     * The set of properties that defines the configuration settings for the message.
+     * The settings and content for the default message and any default messages that you defined for specific channels.
      * </p>
      */
     private DirectMessageConfiguration messageConfiguration;
@@ -299,11 +299,12 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The set of properties that defines the configuration settings for the message.
+     * The settings and content for the default message and any default messages that you defined for specific channels.
      * </p>
      * 
      * @param messageConfiguration
-     *        The set of properties that defines the configuration settings for the message.
+     *        The settings and content for the default message and any default messages that you defined for specific
+     *        channels.
      */
 
     public void setMessageConfiguration(DirectMessageConfiguration messageConfiguration) {
@@ -312,10 +313,11 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The set of properties that defines the configuration settings for the message.
+     * The settings and content for the default message and any default messages that you defined for specific channels.
      * </p>
      * 
-     * @return The set of properties that defines the configuration settings for the message.
+     * @return The settings and content for the default message and any default messages that you defined for specific
+     *         channels.
      */
 
     public DirectMessageConfiguration getMessageConfiguration() {
@@ -324,11 +326,12 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The set of properties that defines the configuration settings for the message.
+     * The settings and content for the default message and any default messages that you defined for specific channels.
      * </p>
      * 
      * @param messageConfiguration
-     *        The set of properties that defines the configuration settings for the message.
+     *        The settings and content for the default message and any default messages that you defined for specific
+     *        channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

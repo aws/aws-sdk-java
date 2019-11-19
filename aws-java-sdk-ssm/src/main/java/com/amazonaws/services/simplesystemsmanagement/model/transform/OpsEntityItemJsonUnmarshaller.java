@@ -49,6 +49,10 @@ public class OpsEntityItemJsonUnmarshaller implements Unmarshaller<OpsEntityItem
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CaptureTime", targetDepth)) {
+                    context.nextToken();
+                    opsEntityItem.setCaptureTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Content", targetDepth)) {
                     context.nextToken();
                     opsEntityItem.setContent(new ListUnmarshaller<java.util.Map<String, String>>(new MapUnmarshaller<String, String>(context

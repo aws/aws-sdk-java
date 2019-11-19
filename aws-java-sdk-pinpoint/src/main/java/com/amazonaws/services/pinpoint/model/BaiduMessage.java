@@ -88,8 +88,8 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     private String imageUrl;
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
-     * message.
+     * The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value
+     * overrides all other content for the message.
      * </p>
      */
     private String rawContent;
@@ -587,13 +587,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
-     * message.
+     * The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value
+     * overrides all other content for the message.
      * </p>
      * 
      * @param rawContent
-     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *        the message.
+     *        The raw, JSON-formatted string to use as the payload for the notification message. If specified, this
+     *        value overrides all other content for the message.
      */
 
     public void setRawContent(String rawContent) {
@@ -602,12 +602,12 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
-     * message.
+     * The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value
+     * overrides all other content for the message.
      * </p>
      * 
-     * @return The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *         the message.
+     * @return The raw, JSON-formatted string to use as the payload for the notification message. If specified, this
+     *         value overrides all other content for the message.
      */
 
     public String getRawContent() {
@@ -616,13 +616,13 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
-     * message.
+     * The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value
+     * overrides all other content for the message.
      * </p>
      * 
      * @param rawContent
-     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *        the message.
+     *        The raw, JSON-formatted string to use as the payload for the notification message. If specified, this
+     *        value overrides all other content for the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -110,6 +110,18 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String title;
+    /**
+     * <p>
+     * Specify a new category for an OpsItem.
+     * </p>
+     */
+    private String category;
+    /**
+     * <p>
+     * Specify a new severity for an OpsItem.
+     * </p>
+     */
+    private String severity;
 
     /**
      * <p>
@@ -811,6 +823,86 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specify a new category for an OpsItem.
+     * </p>
+     * 
+     * @param category
+     *        Specify a new category for an OpsItem.
+     */
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * <p>
+     * Specify a new category for an OpsItem.
+     * </p>
+     * 
+     * @return Specify a new category for an OpsItem.
+     */
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    /**
+     * <p>
+     * Specify a new category for an OpsItem.
+     * </p>
+     * 
+     * @param category
+     *        Specify a new category for an OpsItem.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOpsItemRequest withCategory(String category) {
+        setCategory(category);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify a new severity for an OpsItem.
+     * </p>
+     * 
+     * @param severity
+     *        Specify a new severity for an OpsItem.
+     */
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
+    /**
+     * <p>
+     * Specify a new severity for an OpsItem.
+     * </p>
+     * 
+     * @return Specify a new severity for an OpsItem.
+     */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * Specify a new severity for an OpsItem.
+     * </p>
+     * 
+     * @param severity
+     *        Specify a new severity for an OpsItem.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOpsItemRequest withSeverity(String severity) {
+        setSeverity(severity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -839,7 +931,11 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getOpsItemId() != null)
             sb.append("OpsItemId: ").append(getOpsItemId()).append(",");
         if (getTitle() != null)
-            sb.append("Title: ").append(getTitle());
+            sb.append("Title: ").append(getTitle()).append(",");
+        if (getCategory() != null)
+            sb.append("Category: ").append(getCategory()).append(",");
+        if (getSeverity() != null)
+            sb.append("Severity: ").append(getSeverity());
         sb.append("}");
         return sb.toString();
     }
@@ -890,6 +986,14 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
             return false;
+        if (other.getCategory() == null ^ this.getCategory() == null)
+            return false;
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
+            return false;
+        if (other.getSeverity() == null ^ this.getSeverity() == null)
+            return false;
+        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
+            return false;
         return true;
     }
 
@@ -907,6 +1011,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getOpsItemId() == null) ? 0 : getOpsItemId().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
+        hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
         return hashCode;
     }
 

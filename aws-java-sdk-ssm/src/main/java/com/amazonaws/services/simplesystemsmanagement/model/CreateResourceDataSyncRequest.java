@@ -37,6 +37,20 @@ public class CreateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private ResourceDataSyncS3Destination s3Destination;
+    /**
+     * <p>
+     * Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data from multiple AWS
+     * Regions to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to synchronize data from multiple AWS
+     * accounts and Regions, as listed in AWS Organizations.
+     * </p>
+     */
+    private String syncType;
+    /**
+     * <p>
+     * Specify information about the data sources to synchronize.
+     * </p>
+     */
+    private ResourceDataSyncSource syncSource;
 
     /**
      * <p>
@@ -119,6 +133,98 @@ public class CreateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data from multiple AWS
+     * Regions to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to synchronize data from multiple AWS
+     * accounts and Regions, as listed in AWS Organizations.
+     * </p>
+     * 
+     * @param syncType
+     *        Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data from multiple
+     *        AWS Regions to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to synchronize data from multiple
+     *        AWS accounts and Regions, as listed in AWS Organizations.
+     */
+
+    public void setSyncType(String syncType) {
+        this.syncType = syncType;
+    }
+
+    /**
+     * <p>
+     * Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data from multiple AWS
+     * Regions to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to synchronize data from multiple AWS
+     * accounts and Regions, as listed in AWS Organizations.
+     * </p>
+     * 
+     * @return Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data from
+     *         multiple AWS Regions to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to synchronize data from
+     *         multiple AWS accounts and Regions, as listed in AWS Organizations.
+     */
+
+    public String getSyncType() {
+        return this.syncType;
+    }
+
+    /**
+     * <p>
+     * Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data from multiple AWS
+     * Regions to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to synchronize data from multiple AWS
+     * accounts and Regions, as listed in AWS Organizations.
+     * </p>
+     * 
+     * @param syncType
+     *        Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data from multiple
+     *        AWS Regions to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to synchronize data from multiple
+     *        AWS accounts and Regions, as listed in AWS Organizations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResourceDataSyncRequest withSyncType(String syncType) {
+        setSyncType(syncType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify information about the data sources to synchronize.
+     * </p>
+     * 
+     * @param syncSource
+     *        Specify information about the data sources to synchronize.
+     */
+
+    public void setSyncSource(ResourceDataSyncSource syncSource) {
+        this.syncSource = syncSource;
+    }
+
+    /**
+     * <p>
+     * Specify information about the data sources to synchronize.
+     * </p>
+     * 
+     * @return Specify information about the data sources to synchronize.
+     */
+
+    public ResourceDataSyncSource getSyncSource() {
+        return this.syncSource;
+    }
+
+    /**
+     * <p>
+     * Specify information about the data sources to synchronize.
+     * </p>
+     * 
+     * @param syncSource
+     *        Specify information about the data sources to synchronize.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResourceDataSyncRequest withSyncSource(ResourceDataSyncSource syncSource) {
+        setSyncSource(syncSource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +239,11 @@ public class CreateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
         if (getSyncName() != null)
             sb.append("SyncName: ").append(getSyncName()).append(",");
         if (getS3Destination() != null)
-            sb.append("S3Destination: ").append(getS3Destination());
+            sb.append("S3Destination: ").append(getS3Destination()).append(",");
+        if (getSyncType() != null)
+            sb.append("SyncType: ").append(getSyncType()).append(",");
+        if (getSyncSource() != null)
+            sb.append("SyncSource: ").append(getSyncSource());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +266,14 @@ public class CreateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getS3Destination() != null && other.getS3Destination().equals(this.getS3Destination()) == false)
             return false;
+        if (other.getSyncType() == null ^ this.getSyncType() == null)
+            return false;
+        if (other.getSyncType() != null && other.getSyncType().equals(this.getSyncType()) == false)
+            return false;
+        if (other.getSyncSource() == null ^ this.getSyncSource() == null)
+            return false;
+        if (other.getSyncSource() != null && other.getSyncSource().equals(this.getSyncSource()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +284,8 @@ public class CreateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getSyncName() == null) ? 0 : getSyncName().hashCode());
         hashCode = prime * hashCode + ((getS3Destination() == null) ? 0 : getS3Destination().hashCode());
+        hashCode = prime * hashCode + ((getSyncType() == null) ? 0 : getSyncType().hashCode());
+        hashCode = prime * hashCode + ((getSyncSource() == null) ? 0 : getSyncSource().hashCode());
         return hashCode;
     }
 

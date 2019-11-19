@@ -52,11 +52,19 @@ public class SMSTemplateRequestJsonUnmarshaller implements Unmarshaller<SMSTempl
                     context.nextToken();
                     sMSTemplateRequest.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    context.nextToken();
+                    sMSTemplateRequest.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     sMSTemplateRequest
                             .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                                     .unmarshall(context));
+                }
+                if (context.testExpression("TemplateDescription", targetDepth)) {
+                    context.nextToken();
+                    sMSTemplateRequest.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

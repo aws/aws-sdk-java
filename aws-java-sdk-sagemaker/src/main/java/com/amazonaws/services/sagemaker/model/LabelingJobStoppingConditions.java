@@ -22,6 +22,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped.
  * You can use these conditions to control the cost of data labeling.
  * </p>
+ * <note>
+ * <p>
+ * Labeling jobs fail after 30 days with an appropriate client error message.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobStoppingConditions"
  *      target="_top">AWS API Documentation</a>

@@ -30,8 +30,8 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The body of the email message, in HTML format. We recommend using an HTML part for email clients that support
-     * HTML. You can include links, formatted text, and more in an HTML message.
+     * The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML
+     * content. You can include links, formatted text, and more in an HTML message.
      * </p>
      */
     private SimpleEmailPart htmlPart;
@@ -43,21 +43,21 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
     private SimpleEmailPart subject;
     /**
      * <p>
-     * The body of the email message, in text format. We recommend using a text part for email clients that don't
-     * support HTML and clients that are connected to high-latency networks, such as mobile devices.
+     * The body of the email message, in plain text format. We recommend using plain text format for email clients that
+     * don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.
      * </p>
      */
     private SimpleEmailPart textPart;
 
     /**
      * <p>
-     * The body of the email message, in HTML format. We recommend using an HTML part for email clients that support
-     * HTML. You can include links, formatted text, and more in an HTML message.
+     * The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML
+     * content. You can include links, formatted text, and more in an HTML message.
      * </p>
      * 
      * @param htmlPart
-     *        The body of the email message, in HTML format. We recommend using an HTML part for email clients that
-     *        support HTML. You can include links, formatted text, and more in an HTML message.
+     *        The body of the email message, in HTML format. We recommend using HTML format for email clients that
+     *        render HTML content. You can include links, formatted text, and more in an HTML message.
      */
 
     public void setHtmlPart(SimpleEmailPart htmlPart) {
@@ -66,12 +66,12 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The body of the email message, in HTML format. We recommend using an HTML part for email clients that support
-     * HTML. You can include links, formatted text, and more in an HTML message.
+     * The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML
+     * content. You can include links, formatted text, and more in an HTML message.
      * </p>
      * 
-     * @return The body of the email message, in HTML format. We recommend using an HTML part for email clients that
-     *         support HTML. You can include links, formatted text, and more in an HTML message.
+     * @return The body of the email message, in HTML format. We recommend using HTML format for email clients that
+     *         render HTML content. You can include links, formatted text, and more in an HTML message.
      */
 
     public SimpleEmailPart getHtmlPart() {
@@ -80,13 +80,13 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The body of the email message, in HTML format. We recommend using an HTML part for email clients that support
-     * HTML. You can include links, formatted text, and more in an HTML message.
+     * The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML
+     * content. You can include links, formatted text, and more in an HTML message.
      * </p>
      * 
      * @param htmlPart
-     *        The body of the email message, in HTML format. We recommend using an HTML part for email clients that
-     *        support HTML. You can include links, formatted text, and more in an HTML message.
+     *        The body of the email message, in HTML format. We recommend using HTML format for email clients that
+     *        render HTML content. You can include links, formatted text, and more in an HTML message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,13 +137,14 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The body of the email message, in text format. We recommend using a text part for email clients that don't
-     * support HTML and clients that are connected to high-latency networks, such as mobile devices.
+     * The body of the email message, in plain text format. We recommend using plain text format for email clients that
+     * don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.
      * </p>
      * 
      * @param textPart
-     *        The body of the email message, in text format. We recommend using a text part for email clients that don't
-     *        support HTML and clients that are connected to high-latency networks, such as mobile devices.
+     *        The body of the email message, in plain text format. We recommend using plain text format for email
+     *        clients that don't render HTML content and clients that are connected to high-latency networks, such as
+     *        mobile devices.
      */
 
     public void setTextPart(SimpleEmailPart textPart) {
@@ -152,12 +153,13 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The body of the email message, in text format. We recommend using a text part for email clients that don't
-     * support HTML and clients that are connected to high-latency networks, such as mobile devices.
+     * The body of the email message, in plain text format. We recommend using plain text format for email clients that
+     * don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.
      * </p>
      * 
-     * @return The body of the email message, in text format. We recommend using a text part for email clients that
-     *         don't support HTML and clients that are connected to high-latency networks, such as mobile devices.
+     * @return The body of the email message, in plain text format. We recommend using plain text format for email
+     *         clients that don't render HTML content and clients that are connected to high-latency networks, such as
+     *         mobile devices.
      */
 
     public SimpleEmailPart getTextPart() {
@@ -166,13 +168,14 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The body of the email message, in text format. We recommend using a text part for email clients that don't
-     * support HTML and clients that are connected to high-latency networks, such as mobile devices.
+     * The body of the email message, in plain text format. We recommend using plain text format for email clients that
+     * don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.
      * </p>
      * 
      * @param textPart
-     *        The body of the email message, in text format. We recommend using a text part for email clients that don't
-     *        support HTML and clients that are connected to high-latency networks, such as mobile devices.
+     *        The body of the email message, in plain text format. We recommend using plain text format for email
+     *        clients that don't render HTML content and clients that are connected to high-latency networks, such as
+     *        mobile devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

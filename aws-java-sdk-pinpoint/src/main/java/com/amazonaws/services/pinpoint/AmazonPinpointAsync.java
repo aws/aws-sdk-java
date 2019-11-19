@@ -315,6 +315,37 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
+     * Creates a message template that you can use in messages that are sent through the voice channel.
+     * </p>
+     * 
+     * @param createVoiceTemplateRequest
+     * @return A Java Future containing the result of the CreateVoiceTemplate operation returned by the service.
+     * @sample AmazonPinpointAsync.CreateVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVoiceTemplateResult> createVoiceTemplateAsync(CreateVoiceTemplateRequest createVoiceTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a message template that you can use in messages that are sent through the voice channel.
+     * </p>
+     * 
+     * @param createVoiceTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVoiceTemplate operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.CreateVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVoiceTemplateResult> createVoiceTemplateAsync(CreateVoiceTemplateRequest createVoiceTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVoiceTemplateRequest, CreateVoiceTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables the ADM channel for an application and deletes any existing settings for the channel.
      * </p>
      * 
@@ -938,6 +969,37 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<DeleteVoiceChannelResult> deleteVoiceChannelAsync(DeleteVoiceChannelRequest deleteVoiceChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteVoiceChannelRequest, DeleteVoiceChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a message template that was designed for use in messages that were sent through the voice channel.
+     * </p>
+     * 
+     * @param deleteVoiceTemplateRequest
+     * @return A Java Future containing the result of the DeleteVoiceTemplate operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceTemplateResult> deleteVoiceTemplateAsync(DeleteVoiceTemplateRequest deleteVoiceTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a message template that was designed for use in messages that were sent through the voice channel.
+     * </p>
+     * 
+     * @param deleteVoiceTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceTemplate operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceTemplateResult> deleteVoiceTemplateAsync(DeleteVoiceTemplateRequest deleteVoiceTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceTemplateRequest, DeleteVoiceTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -2238,6 +2300,39 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
+     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
+     * voice channel.
+     * </p>
+     * 
+     * @param getVoiceTemplateRequest
+     * @return A Java Future containing the result of the GetVoiceTemplate operation returned by the service.
+     * @sample AmazonPinpointAsync.GetVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceTemplateResult> getVoiceTemplateAsync(GetVoiceTemplateRequest getVoiceTemplateRequest);
+
+    /**
+     * <p>
+     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
+     * voice channel.
+     * </p>
+     * 
+     * @param getVoiceTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceTemplate operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceTemplateResult> getVoiceTemplateAsync(GetVoiceTemplateRequest getVoiceTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceTemplateRequest, GetVoiceTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about the status, configuration, and other settings for all the journeys that are
      * associated with an application.
      * </p>
@@ -3244,5 +3339,36 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<UpdateVoiceChannelResult> updateVoiceChannelAsync(UpdateVoiceChannelRequest updateVoiceChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateVoiceChannelRequest, UpdateVoiceChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing message template that you can use in messages that are sent through the voice channel.
+     * </p>
+     * 
+     * @param updateVoiceTemplateRequest
+     * @return A Java Future containing the result of the UpdateVoiceTemplate operation returned by the service.
+     * @sample AmazonPinpointAsync.UpdateVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVoiceTemplateResult> updateVoiceTemplateAsync(UpdateVoiceTemplateRequest updateVoiceTemplateRequest);
+
+    /**
+     * <p>
+     * Updates an existing message template that you can use in messages that are sent through the voice channel.
+     * </p>
+     * 
+     * @param updateVoiceTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVoiceTemplate operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.UpdateVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVoiceTemplateResult> updateVoiceTemplateAsync(UpdateVoiceTemplateRequest updateVoiceTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVoiceTemplateRequest, UpdateVoiceTemplateResult> asyncHandler);
 
 }

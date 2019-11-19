@@ -29,7 +29,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -45,7 +45,20 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String invokedProductionVariant;
-    /** <p/> */
+    /**
+     * <p>
+     * Provides additional information in the response about the inference returned by a model hosted at an Amazon
+     * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
+     * example, to return an ID received in the <code>CustomAttributes</code> header of a request or other metadata that
+     * a service endpoint was programmed to produce. The value must consist of no more than 1024 visible US-ASCII
+     * characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute
+     * returned, the model must set the custom attribute to be included on the way back.
+     * </p>
+     * <p>
+     * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
+     * </p>
+     */
     private String customAttributes;
 
     /**
@@ -54,7 +67,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -71,7 +84,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        Includes the inference provided by the model.</p>
      *        <p>
      *        For information about the format of the response body, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *        Formats—Inference</a>.
      */
 
@@ -85,7 +98,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -98,7 +111,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * @return Includes the inference provided by the model.</p>
      *         <p>
      *         For information about the format of the response body, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *         Formats—Inference</a>.
      */
 
@@ -112,7 +125,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -129,7 +142,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        Includes the inference provided by the model.</p>
      *        <p>
      *        For information about the format of the response body, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *        Formats—Inference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -220,9 +233,30 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides additional information in the response about the inference returned by a model hosted at an Amazon
+     * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
+     * example, to return an ID received in the <code>CustomAttributes</code> header of a request or other metadata that
+     * a service endpoint was programmed to produce. The value must consist of no more than 1024 visible US-ASCII
+     * characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute
+     * returned, the model must set the custom attribute to be included on the way back.
+     * </p>
+     * <p>
+     * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
+     * </p>
      * 
      * @param customAttributes
+     *        Provides additional information in the response about the inference returned by a model hosted at an
+     *        Amazon SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use
+     *        this value, for example, to return an ID received in the <code>CustomAttributes</code> header of a request
+     *        or other metadata that a service endpoint was programmed to produce. The value must consist of no more
+     *        than 1024 visible US-ASCII characters as specified in <a
+     *        href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
+     *        Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
+     *        must set the custom attribute to be included on the way back. </p>
+     *        <p>
+     *        This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
 
     public void setCustomAttributes(String customAttributes) {
@@ -230,9 +264,29 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides additional information in the response about the inference returned by a model hosted at an Amazon
+     * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
+     * example, to return an ID received in the <code>CustomAttributes</code> header of a request or other metadata that
+     * a service endpoint was programmed to produce. The value must consist of no more than 1024 visible US-ASCII
+     * characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute
+     * returned, the model must set the custom attribute to be included on the way back.
+     * </p>
+     * <p>
+     * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
+     * </p>
      * 
-     * @return
+     * @return Provides additional information in the response about the inference returned by a model hosted at an
+     *         Amazon SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use
+     *         this value, for example, to return an ID received in the <code>CustomAttributes</code> header of a
+     *         request or other metadata that a service endpoint was programmed to produce. The value must consist of no
+     *         more than 1024 visible US-ASCII characters as specified in <a
+     *         href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
+     *         Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
+     *         must set the custom attribute to be included on the way back. </p>
+     *         <p>
+     *         This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
 
     public String getCustomAttributes() {
@@ -240,9 +294,30 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides additional information in the response about the inference returned by a model hosted at an Amazon
+     * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
+     * example, to return an ID received in the <code>CustomAttributes</code> header of a request or other metadata that
+     * a service endpoint was programmed to produce. The value must consist of no more than 1024 visible US-ASCII
+     * characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute
+     * returned, the model must set the custom attribute to be included on the way back.
+     * </p>
+     * <p>
+     * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
+     * </p>
      * 
      * @param customAttributes
+     *        Provides additional information in the response about the inference returned by a model hosted at an
+     *        Amazon SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use
+     *        this value, for example, to return an ID received in the <code>CustomAttributes</code> header of a request
+     *        or other metadata that a service endpoint was programmed to produce. The value must consist of no more
+     *        than 1024 visible US-ASCII characters as specified in <a
+     *        href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
+     *        Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
+     *        must set the custom attribute to be included on the way back. </p>
+     *        <p>
+     *        This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

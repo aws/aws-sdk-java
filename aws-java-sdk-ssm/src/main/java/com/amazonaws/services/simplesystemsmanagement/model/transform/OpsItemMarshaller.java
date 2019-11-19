@@ -57,6 +57,10 @@ public class OpsItemMarshaller {
             .marshallLocationName("Source").build();
     private static final MarshallingInfo<Map> OPERATIONALDATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("OperationalData").build();
+    private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Category").build();
+    private static final MarshallingInfo<String> SEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Severity").build();
 
     private static final OpsItemMarshaller instance = new OpsItemMarshaller();
 
@@ -88,6 +92,8 @@ public class OpsItemMarshaller {
             protocolMarshaller.marshall(opsItem.getTitle(), TITLE_BINDING);
             protocolMarshaller.marshall(opsItem.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(opsItem.getOperationalData(), OPERATIONALDATA_BINDING);
+            protocolMarshaller.marshall(opsItem.getCategory(), CATEGORY_BINDING);
+            protocolMarshaller.marshall(opsItem.getSeverity(), SEVERITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

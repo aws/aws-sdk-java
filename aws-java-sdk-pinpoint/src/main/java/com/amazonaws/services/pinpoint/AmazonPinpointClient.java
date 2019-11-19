@@ -905,6 +905,72 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates a message template that you can use in messages that are sent through the voice channel.
+     * </p>
+     * 
+     * @param createVoiceTemplateRequest
+     * @return Result of the CreateVoiceTemplate operation returned by the service.
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @sample AmazonPinpoint.CreateVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateVoiceTemplateResult createVoiceTemplate(CreateVoiceTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVoiceTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateVoiceTemplateResult executeCreateVoiceTemplate(CreateVoiceTemplateRequest createVoiceTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVoiceTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVoiceTemplateRequest> request = null;
+        Response<CreateVoiceTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVoiceTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVoiceTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVoiceTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVoiceTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVoiceTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables the ADM channel for an application and deletes any existing settings for the channel.
      * </p>
      * 
@@ -2259,6 +2325,74 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteVoiceChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVoiceChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a message template that was designed for use in messages that were sent through the voice channel.
+     * </p>
+     * 
+     * @param deleteVoiceTemplateRequest
+     * @return Result of the DeleteVoiceTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.DeleteVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteVoiceTemplateResult deleteVoiceTemplate(DeleteVoiceTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVoiceTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVoiceTemplateResult executeDeleteVoiceTemplate(DeleteVoiceTemplateRequest deleteVoiceTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVoiceTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVoiceTemplateRequest> request = null;
+        Response<DeleteVoiceTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVoiceTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVoiceTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVoiceTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVoiceTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5082,6 +5216,75 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
+     * voice channel.
+     * </p>
+     * 
+     * @param getVoiceTemplateRequest
+     * @return Result of the GetVoiceTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetVoiceTemplateResult getVoiceTemplate(GetVoiceTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVoiceTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetVoiceTemplateResult executeGetVoiceTemplate(GetVoiceTemplateRequest getVoiceTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVoiceTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVoiceTemplateRequest> request = null;
+        Response<GetVoiceTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVoiceTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVoiceTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVoiceTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVoiceTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about the status, configuration, and other settings for all the journeys that are
      * associated with an application.
      * </p>
@@ -7159,6 +7362,74 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateVoiceChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVoiceChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing message template that you can use in messages that are sent through the voice channel.
+     * </p>
+     * 
+     * @param updateVoiceTemplateRequest
+     * @return Result of the UpdateVoiceTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.UpdateVoiceTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateVoiceTemplateResult updateVoiceTemplate(UpdateVoiceTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVoiceTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVoiceTemplateResult executeUpdateVoiceTemplate(UpdateVoiceTemplateRequest updateVoiceTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVoiceTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVoiceTemplateRequest> request = null;
+        Response<UpdateVoiceTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVoiceTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVoiceTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVoiceTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVoiceTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVoiceTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

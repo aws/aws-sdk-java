@@ -47,6 +47,8 @@ public class SavingsPlansPurchaseRecommendationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EstimatedSavingsPercentage").build();
     private static final MarshallingInfo<String> ESTIMATEDMONTHLYSAVINGSAMOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EstimatedMonthlySavingsAmount").build();
+    private static final MarshallingInfo<String> ESTIMATEDONDEMANDCOSTWITHCURRENTCOMMITMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EstimatedOnDemandCostWithCurrentCommitment").build();
 
     private static final SavingsPlansPurchaseRecommendationSummaryMarshaller instance = new SavingsPlansPurchaseRecommendationSummaryMarshaller();
 
@@ -74,6 +76,8 @@ public class SavingsPlansPurchaseRecommendationSummaryMarshaller {
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationSummary.getHourlyCommitmentToPurchase(), HOURLYCOMMITMENTTOPURCHASE_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationSummary.getEstimatedSavingsPercentage(), ESTIMATEDSAVINGSPERCENTAGE_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendationSummary.getEstimatedMonthlySavingsAmount(), ESTIMATEDMONTHLYSAVINGSAMOUNT_BINDING);
+            protocolMarshaller.marshall(savingsPlansPurchaseRecommendationSummary.getEstimatedOnDemandCostWithCurrentCommitment(),
+                    ESTIMATEDONDEMANDCOSTWITHCURRENTCOMMITMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey.
+ * Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey,
+ * and provides information about that query.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyExecutionMetricsResponse"

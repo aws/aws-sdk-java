@@ -37,11 +37,26 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
     private String body;
     /**
      * <p>
+     * A JSON object that specifies the default values to use for message variables in the message template. This object
+     * is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable. When you create a message that's based on the template, you can override
+     * these defaults with message-specific and address-specific variables and values.
+     * </p>
+     */
+    private String defaultSubstitutions;
+    /**
+     * <p>
      * A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag
      * consists of a required tag key and an associated tag value.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * A custom description of the message template.
+     * </p>
+     */
+    private String templateDescription;
 
     /**
      * <p>
@@ -80,6 +95,65 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
 
     public SMSTemplateRequest withBody(String body) {
         setBody(body);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A JSON object that specifies the default values to use for message variables in the message template. This object
+     * is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable. When you create a message that's based on the template, you can override
+     * these defaults with message-specific and address-specific variables and values.
+     * </p>
+     * 
+     * @param defaultSubstitutions
+     *        A JSON object that specifies the default values to use for message variables in the message template. This
+     *        object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
+     *        value defines the default value for that variable. When you create a message that's based on the template,
+     *        you can override these defaults with message-specific and address-specific variables and values.
+     */
+
+    public void setDefaultSubstitutions(String defaultSubstitutions) {
+        this.defaultSubstitutions = defaultSubstitutions;
+    }
+
+    /**
+     * <p>
+     * A JSON object that specifies the default values to use for message variables in the message template. This object
+     * is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable. When you create a message that's based on the template, you can override
+     * these defaults with message-specific and address-specific variables and values.
+     * </p>
+     * 
+     * @return A JSON object that specifies the default values to use for message variables in the message template.
+     *         This object is a set of key-value pairs. Each key defines a message variable in the template. The
+     *         corresponding value defines the default value for that variable. When you create a message that's based
+     *         on the template, you can override these defaults with message-specific and address-specific variables and
+     *         values.
+     */
+
+    public String getDefaultSubstitutions() {
+        return this.defaultSubstitutions;
+    }
+
+    /**
+     * <p>
+     * A JSON object that specifies the default values to use for message variables in the message template. This object
+     * is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable. When you create a message that's based on the template, you can override
+     * these defaults with message-specific and address-specific variables and values.
+     * </p>
+     * 
+     * @param defaultSubstitutions
+     *        A JSON object that specifies the default values to use for message variables in the message template. This
+     *        object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
+     *        value defines the default value for that variable. When you create a message that's based on the template,
+     *        you can override these defaults with message-specific and address-specific variables and values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMSTemplateRequest withDefaultSubstitutions(String defaultSubstitutions) {
+        setDefaultSubstitutions(defaultSubstitutions);
         return this;
     }
 
@@ -151,6 +225,46 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * A custom description of the message template.
+     * </p>
+     * 
+     * @param templateDescription
+     *        A custom description of the message template.
+     */
+
+    public void setTemplateDescription(String templateDescription) {
+        this.templateDescription = templateDescription;
+    }
+
+    /**
+     * <p>
+     * A custom description of the message template.
+     * </p>
+     * 
+     * @return A custom description of the message template.
+     */
+
+    public String getTemplateDescription() {
+        return this.templateDescription;
+    }
+
+    /**
+     * <p>
+     * A custom description of the message template.
+     * </p>
+     * 
+     * @param templateDescription
+     *        A custom description of the message template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMSTemplateRequest withTemplateDescription(String templateDescription) {
+        setTemplateDescription(templateDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -164,8 +278,12 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getBody() != null)
             sb.append("Body: ").append(getBody()).append(",");
+        if (getDefaultSubstitutions() != null)
+            sb.append("DefaultSubstitutions: ").append(getDefaultSubstitutions()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTemplateDescription() != null)
+            sb.append("TemplateDescription: ").append(getTemplateDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -184,9 +302,17 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
+        if (other.getDefaultSubstitutions() == null ^ this.getDefaultSubstitutions() == null)
+            return false;
+        if (other.getDefaultSubstitutions() != null && other.getDefaultSubstitutions().equals(this.getDefaultSubstitutions()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getTemplateDescription() == null ^ this.getTemplateDescription() == null)
+            return false;
+        if (other.getTemplateDescription() != null && other.getTemplateDescription().equals(this.getTemplateDescription()) == false)
             return false;
         return true;
     }
@@ -197,7 +323,9 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime * hashCode + ((getDefaultSubstitutions() == null) ? 0 : getDefaultSubstitutions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());
         return hashCode;
     }
 

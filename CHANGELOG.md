@@ -1,3 +1,36 @@
+# __1.11.677__ __2019-11-18__
+## __AWS CloudFormation__
+  - ### Features
+    - This release introduces APIs for the CloudFormation Registry, a new service to submit and discover resource providers with which you can manage third-party resources natively in CloudFormation.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - add EstimatedOnDemandCostWithCurrentCommitment to GetSavingsPlansPurchaseRecommendationRequest API
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release of the Amazon Pinpoint API introduces support for using and managing message templates for messages that are sent through the voice channel. It also introduces support for specifying default values for message variables in message templates. 
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for rds
+
+## __Amazon SageMaker Runtime__
+  - ### Features
+    - Amazon SageMaker Runtime now supports a new TargetModel header to invoke a specific model hosted on multi model endpoints.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker now supports multi-model endpoints to host multiple models on an endpoint using a single inference container.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Added support for S3 Replication for existing objects. This release allows customers who have requested and been granted access to replicate existing S3 objects across buckets.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - The release contains new API and API changes for AWS Systems Manager Explorer product.
+
 # __1.11.676__ __2019-11-15__
 ## __AWS Elemental MediaConvert__
   - ### Features

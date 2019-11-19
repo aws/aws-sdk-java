@@ -56,6 +56,10 @@ public class EmailTemplateResponseJsonUnmarshaller implements Unmarshaller<Email
                     context.nextToken();
                     emailTemplateResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    context.nextToken();
+                    emailTemplateResponse.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("HtmlPart", targetDepth)) {
                     context.nextToken();
                     emailTemplateResponse.setHtmlPart(context.getUnmarshaller(String.class).unmarshall(context));
@@ -72,6 +76,10 @@ public class EmailTemplateResponseJsonUnmarshaller implements Unmarshaller<Email
                     context.nextToken();
                     emailTemplateResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("TemplateDescription", targetDepth)) {
+                    context.nextToken();
+                    emailTemplateResponse.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateName", targetDepth)) {
                     context.nextToken();

@@ -56,6 +56,10 @@ public class TemplateResponseJsonUnmarshaller implements Unmarshaller<TemplateRe
                     context.nextToken();
                     templateResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    context.nextToken();
+                    templateResponse.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
                     templateResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
@@ -64,6 +68,10 @@ public class TemplateResponseJsonUnmarshaller implements Unmarshaller<TemplateRe
                     context.nextToken();
                     templateResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (context.testExpression("TemplateDescription", targetDepth)) {
+                    context.nextToken();
+                    templateResponse.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateName", targetDepth)) {
                     context.nextToken();

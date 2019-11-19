@@ -25,6 +25,8 @@ public class ResourceDataSyncNotFoundException extends com.amazonaws.services.si
 
     private String syncName;
 
+    private String syncType;
+
     /**
      * Constructs a new ResourceDataSyncNotFoundException with the specified error message.
      *
@@ -60,6 +62,34 @@ public class ResourceDataSyncNotFoundException extends com.amazonaws.services.si
 
     public ResourceDataSyncNotFoundException withSyncName(String syncName) {
         setSyncName(syncName);
+        return this;
+    }
+
+    /**
+     * @param syncType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("SyncType")
+    public void setSyncType(String syncType) {
+        this.syncType = syncType;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("SyncType")
+    public String getSyncType() {
+        return this.syncType;
+    }
+
+    /**
+     * @param syncType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataSyncNotFoundException withSyncType(String syncType) {
+        setSyncType(syncType);
         return this;
     }
 

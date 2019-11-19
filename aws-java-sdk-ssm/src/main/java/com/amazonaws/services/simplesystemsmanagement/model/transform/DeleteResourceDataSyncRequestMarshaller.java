@@ -29,6 +29,8 @@ public class DeleteResourceDataSyncRequestMarshaller {
 
     private static final MarshallingInfo<String> SYNCNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SyncName").build();
+    private static final MarshallingInfo<String> SYNCTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SyncType").build();
 
     private static final DeleteResourceDataSyncRequestMarshaller instance = new DeleteResourceDataSyncRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteResourceDataSyncRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteResourceDataSyncRequest.getSyncName(), SYNCNAME_BINDING);
+            protocolMarshaller.marshall(deleteResourceDataSyncRequest.getSyncType(), SYNCTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

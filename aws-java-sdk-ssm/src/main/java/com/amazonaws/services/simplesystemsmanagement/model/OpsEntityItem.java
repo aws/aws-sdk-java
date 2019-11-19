@@ -30,10 +30,56 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The time OpsItem data was captured.
+     * </p>
+     */
+    private String captureTime;
+    /**
+     * <p>
      * The detailed data content for an OpsItem summaries result item.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, String>> content;
+
+    /**
+     * <p>
+     * The time OpsItem data was captured.
+     * </p>
+     * 
+     * @param captureTime
+     *        The time OpsItem data was captured.
+     */
+
+    public void setCaptureTime(String captureTime) {
+        this.captureTime = captureTime;
+    }
+
+    /**
+     * <p>
+     * The time OpsItem data was captured.
+     * </p>
+     * 
+     * @return The time OpsItem data was captured.
+     */
+
+    public String getCaptureTime() {
+        return this.captureTime;
+    }
+
+    /**
+     * <p>
+     * The time OpsItem data was captured.
+     * </p>
+     * 
+     * @param captureTime
+     *        The time OpsItem data was captured.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpsEntityItem withCaptureTime(String captureTime) {
+        setCaptureTime(captureTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -120,6 +166,8 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCaptureTime() != null)
+            sb.append("CaptureTime: ").append(getCaptureTime()).append(",");
         if (getContent() != null)
             sb.append("Content: ").append(getContent());
         sb.append("}");
@@ -136,6 +184,10 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof OpsEntityItem == false)
             return false;
         OpsEntityItem other = (OpsEntityItem) obj;
+        if (other.getCaptureTime() == null ^ this.getCaptureTime() == null)
+            return false;
+        if (other.getCaptureTime() != null && other.getCaptureTime().equals(this.getCaptureTime()) == false)
+            return false;
         if (other.getContent() == null ^ this.getContent() == null)
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
@@ -148,6 +200,7 @@ public class OpsEntityItem implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCaptureTime() == null) ? 0 : getCaptureTime().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         return hashCode;
     }

@@ -55,7 +55,7 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
     private TemplateConfiguration templateConfiguration;
     /**
      * <p>
-     * The custom description of the treatment.
+     * A custom description of the treatment.
      * </p>
      */
     private String treatmentDescription;
@@ -229,11 +229,11 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The custom description of the treatment.
+     * A custom description of the treatment.
      * </p>
      * 
      * @param treatmentDescription
-     *        The custom description of the treatment.
+     *        A custom description of the treatment.
      */
 
     public void setTreatmentDescription(String treatmentDescription) {
@@ -242,10 +242,10 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The custom description of the treatment.
+     * A custom description of the treatment.
      * </p>
      * 
-     * @return The custom description of the treatment.
+     * @return A custom description of the treatment.
      */
 
     public String getTreatmentDescription() {
@@ -254,11 +254,11 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The custom description of the treatment.
+     * A custom description of the treatment.
      * </p>
      * 
      * @param treatmentDescription
-     *        The custom description of the treatment.
+     *        A custom description of the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

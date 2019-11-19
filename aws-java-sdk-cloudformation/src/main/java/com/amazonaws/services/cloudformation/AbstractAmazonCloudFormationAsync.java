@@ -158,6 +158,19 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterTypeResult> deregisterTypeAsync(DeregisterTypeRequest request) {
+
+        return deregisterTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterTypeResult> deregisterTypeAsync(DeregisterTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterTypeRequest, DeregisterTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request) {
 
         return describeAccountLimitsAsync(request, null);
@@ -323,6 +336,32 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
             com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
 
         return describeStacksAsync(new DescribeStacksRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTypeResult> describeTypeAsync(DescribeTypeRequest request) {
+
+        return describeTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTypeResult> describeTypeAsync(DescribeTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTypeRequest, DescribeTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTypeRegistrationResult> describeTypeRegistrationAsync(DescribeTypeRegistrationRequest request) {
+
+        return describeTypeRegistrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTypeRegistrationResult> describeTypeRegistrationAsync(DescribeTypeRegistrationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTypeRegistrationRequest, DescribeTypeRegistrationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -602,6 +641,71 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<ListTypeRegistrationsResult> listTypeRegistrationsAsync(ListTypeRegistrationsRequest request) {
+
+        return listTypeRegistrationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypeRegistrationsResult> listTypeRegistrationsAsync(ListTypeRegistrationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTypeRegistrationsRequest, ListTypeRegistrationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypeVersionsResult> listTypeVersionsAsync(ListTypeVersionsRequest request) {
+
+        return listTypeVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypeVersionsResult> listTypeVersionsAsync(ListTypeVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTypeVersionsRequest, ListTypeVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypesResult> listTypesAsync(ListTypesRequest request) {
+
+        return listTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypesResult> listTypesAsync(ListTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTypesRequest, ListTypesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RecordHandlerProgressResult> recordHandlerProgressAsync(RecordHandlerProgressRequest request) {
+
+        return recordHandlerProgressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RecordHandlerProgressResult> recordHandlerProgressAsync(RecordHandlerProgressRequest request,
+            com.amazonaws.handlers.AsyncHandler<RecordHandlerProgressRequest, RecordHandlerProgressResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterTypeResult> registerTypeAsync(RegisterTypeRequest request) {
+
+        return registerTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterTypeResult> registerTypeAsync(RegisterTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterTypeRequest, RegisterTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(SetStackPolicyRequest request) {
 
         return setStackPolicyAsync(request, null);
@@ -610,6 +714,19 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     @Override
     public java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(SetStackPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, SetStackPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetTypeDefaultVersionResult> setTypeDefaultVersionAsync(SetTypeDefaultVersionRequest request) {
+
+        return setTypeDefaultVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetTypeDefaultVersionResult> setTypeDefaultVersionAsync(SetTypeDefaultVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetTypeDefaultVersionRequest, SetTypeDefaultVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

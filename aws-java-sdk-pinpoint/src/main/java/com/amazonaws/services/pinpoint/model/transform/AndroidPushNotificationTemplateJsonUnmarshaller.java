@@ -64,6 +64,10 @@ public class AndroidPushNotificationTemplateJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     androidPushNotificationTemplate.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RawContent", targetDepth)) {
+                    context.nextToken();
+                    androidPushNotificationTemplate.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SmallImageIconUrl", targetDepth)) {
                     context.nextToken();
                     androidPushNotificationTemplate.setSmallImageIconUrl(context.getUnmarshaller(String.class).unmarshall(context));

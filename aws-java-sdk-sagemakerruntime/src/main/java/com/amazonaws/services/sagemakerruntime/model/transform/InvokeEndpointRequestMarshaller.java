@@ -37,6 +37,8 @@ public class InvokeEndpointRequestMarshaller {
             .marshallLocationName("Accept").build();
     private static final MarshallingInfo<String> CUSTOMATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Custom-Attributes").build();
+    private static final MarshallingInfo<String> TARGETMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Target-Model").build();
 
     private static final InvokeEndpointRequestMarshaller instance = new InvokeEndpointRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class InvokeEndpointRequestMarshaller {
             protocolMarshaller.marshall(invokeEndpointRequest.getContentType(), CONTENTTYPE_BINDING);
             protocolMarshaller.marshall(invokeEndpointRequest.getAccept(), ACCEPT_BINDING);
             protocolMarshaller.marshall(invokeEndpointRequest.getCustomAttributes(), CUSTOMATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(invokeEndpointRequest.getTargetModel(), TARGETMODEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

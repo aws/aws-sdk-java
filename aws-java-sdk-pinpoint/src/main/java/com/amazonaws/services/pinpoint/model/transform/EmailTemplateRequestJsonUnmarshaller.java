@@ -48,6 +48,10 @@ public class EmailTemplateRequestJsonUnmarshaller implements Unmarshaller<EmailT
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    context.nextToken();
+                    emailTemplateRequest.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("HtmlPart", targetDepth)) {
                     context.nextToken();
                     emailTemplateRequest.setHtmlPart(context.getUnmarshaller(String.class).unmarshall(context));
@@ -60,6 +64,10 @@ public class EmailTemplateRequestJsonUnmarshaller implements Unmarshaller<EmailT
                     context.nextToken();
                     emailTemplateRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("TemplateDescription", targetDepth)) {
+                    context.nextToken();
+                    emailTemplateRequest.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TextPart", targetDepth)) {
                     context.nextToken();

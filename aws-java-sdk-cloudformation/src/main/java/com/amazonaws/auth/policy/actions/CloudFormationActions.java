@@ -45,6 +45,8 @@ public enum CloudFormationActions implements Action {
     DeleteStackInstances("cloudformation:DeleteStackInstances"),
     /** Action for the DeleteStackSet operation. */
     DeleteStackSet("cloudformation:DeleteStackSet"),
+    /** Action for the DeregisterType operation. */
+    DeregisterType("cloudformation:DeregisterType"),
     /** Action for the DescribeAccountLimits operation. */
     DescribeAccountLimits("cloudformation:DescribeAccountLimits"),
     /** Action for the DescribeChangeSet operation. */
@@ -67,6 +69,10 @@ public enum CloudFormationActions implements Action {
     DescribeStackSetOperation("cloudformation:DescribeStackSetOperation"),
     /** Action for the DescribeStacks operation. */
     DescribeStacks("cloudformation:DescribeStacks"),
+    /** Action for the DescribeType operation. */
+    DescribeType("cloudformation:DescribeType"),
+    /** Action for the DescribeTypeRegistration operation. */
+    DescribeTypeRegistration("cloudformation:DescribeTypeRegistration"),
     /** Action for the DetectStackDrift operation. */
     DetectStackDrift("cloudformation:DetectStackDrift"),
     /** Action for the DetectStackResourceDrift operation. */
@@ -99,8 +105,20 @@ public enum CloudFormationActions implements Action {
     ListStackSets("cloudformation:ListStackSets"),
     /** Action for the ListStacks operation. */
     ListStacks("cloudformation:ListStacks"),
+    /** Action for the ListTypeRegistrations operation. */
+    ListTypeRegistrations("cloudformation:ListTypeRegistrations"),
+    /** Action for the ListTypeVersions operation. */
+    ListTypeVersions("cloudformation:ListTypeVersions"),
+    /** Action for the ListTypes operation. */
+    ListTypes("cloudformation:ListTypes"),
+    /** Action for the RecordHandlerProgress operation. */
+    RecordHandlerProgress("cloudformation:RecordHandlerProgress"),
+    /** Action for the RegisterType operation. */
+    RegisterType("cloudformation:RegisterType"),
     /** Action for the SetStackPolicy operation. */
     SetStackPolicy("cloudformation:SetStackPolicy"),
+    /** Action for the SetTypeDefaultVersion operation. */
+    SetTypeDefaultVersion("cloudformation:SetTypeDefaultVersion"),
     /** Action for the SignalResource operation. */
     SignalResource("cloudformation:SignalResource"),
     /** Action for the StopStackSetOperation operation. */

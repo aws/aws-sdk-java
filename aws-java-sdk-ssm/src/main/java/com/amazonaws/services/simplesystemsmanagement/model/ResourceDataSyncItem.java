@@ -36,6 +36,20 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
     private String syncName;
     /**
      * <p>
+     * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
+     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * </p>
+     */
+    private String syncType;
+    /**
+     * <p>
+     * Information about the source where the data was synchronized.
+     * </p>
+     */
+    private ResourceDataSyncSourceWithState syncSource;
+    /**
+     * <p>
      * Configuration information for the target Amazon S3 bucket.
      * </p>
      */
@@ -52,6 +66,12 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Date lastSuccessfulSyncTime;
+    /**
+     * <p>
+     * The date and time the resource data sync was changed.
+     * </p>
+     */
+    private java.util.Date syncLastModifiedTime;
     /**
      * <p>
      * The status reported by the last sync.
@@ -108,6 +128,101 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     public ResourceDataSyncItem withSyncName(String syncName) {
         setSyncName(syncName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
+     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * </p>
+     * 
+     * @param syncType
+     *        The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
+     *        resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
+     *        <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
+     *        multiple AWS Regions.
+     */
+
+    public void setSyncType(String syncType) {
+        this.syncType = syncType;
+    }
+
+    /**
+     * <p>
+     * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
+     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * </p>
+     * 
+     * @return The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
+     *         resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
+     *         <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
+     *         multiple AWS Regions.
+     */
+
+    public String getSyncType() {
+        return this.syncType;
+    }
+
+    /**
+     * <p>
+     * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
+     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * </p>
+     * 
+     * @param syncType
+     *        The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
+     *        resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
+     *        <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
+     *        multiple AWS Regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataSyncItem withSyncType(String syncType) {
+        setSyncType(syncType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the source where the data was synchronized.
+     * </p>
+     * 
+     * @param syncSource
+     *        Information about the source where the data was synchronized.
+     */
+
+    public void setSyncSource(ResourceDataSyncSourceWithState syncSource) {
+        this.syncSource = syncSource;
+    }
+
+    /**
+     * <p>
+     * Information about the source where the data was synchronized.
+     * </p>
+     * 
+     * @return Information about the source where the data was synchronized.
+     */
+
+    public ResourceDataSyncSourceWithState getSyncSource() {
+        return this.syncSource;
+    }
+
+    /**
+     * <p>
+     * Information about the source where the data was synchronized.
+     * </p>
+     * 
+     * @param syncSource
+     *        Information about the source where the data was synchronized.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataSyncItem withSyncSource(ResourceDataSyncSourceWithState syncSource) {
+        setSyncSource(syncSource);
         return this;
     }
 
@@ -228,6 +343,46 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     public ResourceDataSyncItem withLastSuccessfulSyncTime(java.util.Date lastSuccessfulSyncTime) {
         setLastSuccessfulSyncTime(lastSuccessfulSyncTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource data sync was changed.
+     * </p>
+     * 
+     * @param syncLastModifiedTime
+     *        The date and time the resource data sync was changed.
+     */
+
+    public void setSyncLastModifiedTime(java.util.Date syncLastModifiedTime) {
+        this.syncLastModifiedTime = syncLastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource data sync was changed.
+     * </p>
+     * 
+     * @return The date and time the resource data sync was changed.
+     */
+
+    public java.util.Date getSyncLastModifiedTime() {
+        return this.syncLastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource data sync was changed.
+     * </p>
+     * 
+     * @param syncLastModifiedTime
+     *        The date and time the resource data sync was changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataSyncItem withSyncLastModifiedTime(java.util.Date syncLastModifiedTime) {
+        setSyncLastModifiedTime(syncLastModifiedTime);
         return this;
     }
 
@@ -398,12 +553,18 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getSyncName() != null)
             sb.append("SyncName: ").append(getSyncName()).append(",");
+        if (getSyncType() != null)
+            sb.append("SyncType: ").append(getSyncType()).append(",");
+        if (getSyncSource() != null)
+            sb.append("SyncSource: ").append(getSyncSource()).append(",");
         if (getS3Destination() != null)
             sb.append("S3Destination: ").append(getS3Destination()).append(",");
         if (getLastSyncTime() != null)
             sb.append("LastSyncTime: ").append(getLastSyncTime()).append(",");
         if (getLastSuccessfulSyncTime() != null)
             sb.append("LastSuccessfulSyncTime: ").append(getLastSuccessfulSyncTime()).append(",");
+        if (getSyncLastModifiedTime() != null)
+            sb.append("SyncLastModifiedTime: ").append(getSyncLastModifiedTime()).append(",");
         if (getLastStatus() != null)
             sb.append("LastStatus: ").append(getLastStatus()).append(",");
         if (getSyncCreatedTime() != null)
@@ -428,6 +589,14 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
             return false;
         if (other.getSyncName() != null && other.getSyncName().equals(this.getSyncName()) == false)
             return false;
+        if (other.getSyncType() == null ^ this.getSyncType() == null)
+            return false;
+        if (other.getSyncType() != null && other.getSyncType().equals(this.getSyncType()) == false)
+            return false;
+        if (other.getSyncSource() == null ^ this.getSyncSource() == null)
+            return false;
+        if (other.getSyncSource() != null && other.getSyncSource().equals(this.getSyncSource()) == false)
+            return false;
         if (other.getS3Destination() == null ^ this.getS3Destination() == null)
             return false;
         if (other.getS3Destination() != null && other.getS3Destination().equals(this.getS3Destination()) == false)
@@ -439,6 +608,10 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
         if (other.getLastSuccessfulSyncTime() == null ^ this.getLastSuccessfulSyncTime() == null)
             return false;
         if (other.getLastSuccessfulSyncTime() != null && other.getLastSuccessfulSyncTime().equals(this.getLastSuccessfulSyncTime()) == false)
+            return false;
+        if (other.getSyncLastModifiedTime() == null ^ this.getSyncLastModifiedTime() == null)
+            return false;
+        if (other.getSyncLastModifiedTime() != null && other.getSyncLastModifiedTime().equals(this.getSyncLastModifiedTime()) == false)
             return false;
         if (other.getLastStatus() == null ^ this.getLastStatus() == null)
             return false;
@@ -461,9 +634,12 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSyncName() == null) ? 0 : getSyncName().hashCode());
+        hashCode = prime * hashCode + ((getSyncType() == null) ? 0 : getSyncType().hashCode());
+        hashCode = prime * hashCode + ((getSyncSource() == null) ? 0 : getSyncSource().hashCode());
         hashCode = prime * hashCode + ((getS3Destination() == null) ? 0 : getS3Destination().hashCode());
         hashCode = prime * hashCode + ((getLastSyncTime() == null) ? 0 : getLastSyncTime().hashCode());
         hashCode = prime * hashCode + ((getLastSuccessfulSyncTime() == null) ? 0 : getLastSuccessfulSyncTime().hashCode());
+        hashCode = prime * hashCode + ((getSyncLastModifiedTime() == null) ? 0 : getSyncLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
         hashCode = prime * hashCode + ((getSyncCreatedTime() == null) ? 0 : getSyncCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getLastSyncStatusMessage() == null) ? 0 : getLastSyncStatusMessage().hashCode());

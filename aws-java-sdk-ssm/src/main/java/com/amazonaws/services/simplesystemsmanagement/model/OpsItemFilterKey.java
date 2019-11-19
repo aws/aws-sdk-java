@@ -32,7 +32,9 @@ public enum OpsItemFilterKey {
     OperationalDataKey("OperationalDataKey"),
     OperationalDataValue("OperationalDataValue"),
     ResourceId("ResourceId"),
-    AutomationId("AutomationId");
+    AutomationId("AutomationId"),
+    Category("Category"),
+    Severity("Severity");
 
     private String value;
 

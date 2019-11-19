@@ -58,6 +58,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String image;
     /**
      * <p>
+     * Specifies whether the container hosts a single model or multiple models.
+     * </p>
+     */
+    private String mode;
+    /**
+     * <p>
      * The S3 path where the model artifacts, which result from model training, are stored. This path must point to a
      * single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for Amazon SageMaker built-in
      * algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a
@@ -264,6 +270,65 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     public ContainerDefinition withImage(String image) {
         setImage(image);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the container hosts a single model or multiple models.
+     * </p>
+     * 
+     * @param mode
+     *        Specifies whether the container hosts a single model or multiple models.
+     * @see ContainerMode
+     */
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the container hosts a single model or multiple models.
+     * </p>
+     * 
+     * @return Specifies whether the container hosts a single model or multiple models.
+     * @see ContainerMode
+     */
+
+    public String getMode() {
+        return this.mode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the container hosts a single model or multiple models.
+     * </p>
+     * 
+     * @param mode
+     *        Specifies whether the container hosts a single model or multiple models.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContainerMode
+     */
+
+    public ContainerDefinition withMode(String mode) {
+        setMode(mode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the container hosts a single model or multiple models.
+     * </p>
+     * 
+     * @param mode
+     *        Specifies whether the container hosts a single model or multiple models.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContainerMode
+     */
+
+    public ContainerDefinition withMode(ContainerMode mode) {
+        this.mode = mode.toString();
         return this;
     }
 
@@ -542,6 +607,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             sb.append("ContainerHostname: ").append(getContainerHostname()).append(",");
         if (getImage() != null)
             sb.append("Image: ").append(getImage()).append(",");
+        if (getMode() != null)
+            sb.append("Mode: ").append(getMode()).append(",");
         if (getModelDataUrl() != null)
             sb.append("ModelDataUrl: ").append(getModelDataUrl()).append(",");
         if (getEnvironment() != null)
@@ -570,6 +637,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
             return false;
+        if (other.getMode() == null ^ this.getMode() == null)
+            return false;
+        if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
+            return false;
         if (other.getModelDataUrl() == null ^ this.getModelDataUrl() == null)
             return false;
         if (other.getModelDataUrl() != null && other.getModelDataUrl().equals(this.getModelDataUrl()) == false)
@@ -592,6 +663,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getContainerHostname() == null) ? 0 : getContainerHostname().hashCode());
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         hashCode = prime * hashCode + ((getModelDataUrl() == null) ? 0 : getModelDataUrl().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getModelPackageName() == null) ? 0 : getModelPackageName().hashCode());

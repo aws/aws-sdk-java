@@ -287,21 +287,25 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     }
 
     private void init() {
-        exceptionUnmarshallers.add(new InvalidChangeSetStatusExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new StackSetNotEmptyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TokenAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ChangeSetNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OperationStatusCheckFailedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NameAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StackSetNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientCapabilitiesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new StackInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StaleRequestExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidChangeSetStatusExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new StackSetNotEmptyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ChangeSetNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new StackInstanceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CFNRegistryExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidStateTransitionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationIdAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TypeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CreatedButModifiedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.cloudformation.model.AmazonCloudFormationException.class));
 
@@ -957,6 +961,72 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DeleteStackSetResult> responseHandler = new StaxResponseHandler<DeleteStackSetResult>(
                     new DeleteStackSetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a type or type version from active use in the CloudFormation registry. If a type or type version is
+     * deregistered, it cannot be used in CloudFormation operations.
+     * </p>
+     * <p>
+     * To deregister a type, you must individually deregister all registered versions of that type. If a type has only a
+     * single registered version, deregistering that version results in the type itself being deregistered.
+     * </p>
+     * <p>
+     * You cannot deregister the default version of a type, unless it is the only registered version of that type, in
+     * which case the type itself is deregistered as well.
+     * </p>
+     * 
+     * @param deregisterTypeRequest
+     * @return Result of the DeregisterType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified type does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.DeregisterType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeregisterTypeResult deregisterType(DeregisterTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterType(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterTypeResult executeDeregisterType(DeregisterTypeRequest deregisterTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterTypeRequest> request = null;
+        Response<DeregisterTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterTypeRequestMarshaller().marshall(super.beforeMarshalling(deregisterTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeregisterTypeResult> responseHandler = new StaxResponseHandler<DeregisterTypeResult>(
+                    new DeregisterTypeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1650,6 +1720,129 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     @Override
     public DescribeStacksResult describeStacks() {
         return describeStacks(new DescribeStacksRequest());
+    }
+
+    /**
+     * <p>
+     * Returns detailed information about a type that has been registered.
+     * </p>
+     * <p>
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
+     * version. Otherwise, it returns information about the default type version.
+     * </p>
+     * 
+     * @param describeTypeRequest
+     * @return Result of the DescribeType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified type does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.DescribeType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeTypeResult describeType(DescribeTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeType(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTypeResult executeDescribeType(DescribeTypeRequest describeTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTypeRequest> request = null;
+        Response<DescribeTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTypeRequestMarshaller().marshall(super.beforeMarshalling(describeTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTypeResult> responseHandler = new StaxResponseHandler<DescribeTypeResult>(new DescribeTypeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a type's registration, including its current status and type and version identifiers.
+     * </p>
+     * <p>
+     * When you initiate a registration request using <code> <a>RegisterType</a> </code>, you can then use
+     * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of that registration request.
+     * </p>
+     * <p>
+     * Once the registration request has completed, use <code> <a>DescribeType</a> </code> to return detailed
+     * informaiton about a type.
+     * </p>
+     * 
+     * @param describeTypeRegistrationRequest
+     * @return Result of the DescribeTypeRegistration operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.DescribeTypeRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTypeRegistrationResult describeTypeRegistration(DescribeTypeRegistrationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTypeRegistration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTypeRegistrationResult executeDescribeTypeRegistration(DescribeTypeRegistrationRequest describeTypeRegistrationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTypeRegistrationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTypeRegistrationRequest> request = null;
+        Response<DescribeTypeRegistrationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTypeRegistrationRequestMarshaller().marshall(super.beforeMarshalling(describeTypeRegistrationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTypeRegistration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTypeRegistrationResult> responseHandler = new StaxResponseHandler<DescribeTypeRegistrationResult>(
+                    new DescribeTypeRegistrationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2638,6 +2831,317 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Returns a list of registration tokens for the specified type.
+     * </p>
+     * 
+     * @param listTypeRegistrationsRequest
+     * @return Result of the ListTypeRegistrations operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.ListTypeRegistrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTypeRegistrationsResult listTypeRegistrations(ListTypeRegistrationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTypeRegistrations(request);
+    }
+
+    @SdkInternalApi
+    final ListTypeRegistrationsResult executeListTypeRegistrations(ListTypeRegistrationsRequest listTypeRegistrationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTypeRegistrationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTypeRegistrationsRequest> request = null;
+        Response<ListTypeRegistrationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTypeRegistrationsRequestMarshaller().marshall(super.beforeMarshalling(listTypeRegistrationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypeRegistrations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListTypeRegistrationsResult> responseHandler = new StaxResponseHandler<ListTypeRegistrationsResult>(
+                    new ListTypeRegistrationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns summary information about the versions of a type.
+     * </p>
+     * 
+     * @param listTypeVersionsRequest
+     * @return Result of the ListTypeVersions operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.ListTypeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTypeVersionsResult listTypeVersions(ListTypeVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTypeVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListTypeVersionsResult executeListTypeVersions(ListTypeVersionsRequest listTypeVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTypeVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTypeVersionsRequest> request = null;
+        Response<ListTypeVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTypeVersionsRequestMarshaller().marshall(super.beforeMarshalling(listTypeVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypeVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListTypeVersionsResult> responseHandler = new StaxResponseHandler<ListTypeVersionsResult>(
+                    new ListTypeVersionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns summary information about types that have been registered with CloudFormation.
+     * </p>
+     * 
+     * @param listTypesRequest
+     * @return Result of the ListTypes operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.ListTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTypesResult listTypes(ListTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTypes(request);
+    }
+
+    @SdkInternalApi
+    final ListTypesResult executeListTypes(ListTypesRequest listTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTypesRequest> request = null;
+        Response<ListTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTypesRequestMarshaller().marshall(super.beforeMarshalling(listTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListTypesResult> responseHandler = new StaxResponseHandler<ListTypesResult>(new ListTypesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Reports progress of a resource handler to CloudFormation.
+     * </p>
+     * <p>
+     * Reserved for use by the <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html"
+     * >CloudFormation CLI</a>. Do not use this API in your code.
+     * </p>
+     * 
+     * @param recordHandlerProgressRequest
+     * @return Result of the RecordHandlerProgress operation returned by the service.
+     * @throws InvalidStateTransitionException
+     *         Error reserved for use by the <a
+     *         href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html"
+     *         >CloudFormation CLI</a>. CloudFormation does not return this error to users.
+     * @throws OperationStatusCheckFailedException
+     *         Error reserved for use by the <a
+     *         href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html"
+     *         >CloudFormation CLI</a>. CloudFormation does not return this error to users.
+     * @sample AmazonCloudFormation.RecordHandlerProgress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RecordHandlerProgressResult recordHandlerProgress(RecordHandlerProgressRequest request) {
+        request = beforeClientExecution(request);
+        return executeRecordHandlerProgress(request);
+    }
+
+    @SdkInternalApi
+    final RecordHandlerProgressResult executeRecordHandlerProgress(RecordHandlerProgressRequest recordHandlerProgressRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(recordHandlerProgressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RecordHandlerProgressRequest> request = null;
+        Response<RecordHandlerProgressResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RecordHandlerProgressRequestMarshaller().marshall(super.beforeMarshalling(recordHandlerProgressRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RecordHandlerProgress");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RecordHandlerProgressResult> responseHandler = new StaxResponseHandler<RecordHandlerProgressResult>(
+                    new RecordHandlerProgressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers a type with the CloudFormation service. Registering a type makes it available for use in CloudFormation
+     * templates in your AWS account, and includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Validating the resource schema
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Determining which handlers have been specified for the resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Making the resource type available for use in your account
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information on how to develop types and ready them for registeration, see <a
+     * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource Providers</a> in the
+     * <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p>
+     * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
+     * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of the registration request.
+     * </p>
+     * 
+     * @param registerTypeRequest
+     * @return Result of the RegisterType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.RegisterType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RegisterTypeResult registerType(RegisterTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterType(request);
+    }
+
+    @SdkInternalApi
+    final RegisterTypeResult executeRegisterType(RegisterTypeRequest registerTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterTypeRequest> request = null;
+        Response<RegisterTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterTypeRequestMarshaller().marshall(super.beforeMarshalling(registerTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RegisterTypeResult> responseHandler = new StaxResponseHandler<RegisterTypeResult>(new RegisterTypeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets a stack policy for a specified stack.
      * </p>
      * 
@@ -2680,6 +3184,63 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<SetStackPolicyResult> responseHandler = new StaxResponseHandler<SetStackPolicyResult>(
                     new SetStackPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Specify the default version of a type. The default version of a type will be used in CloudFormation operations.
+     * </p>
+     * 
+     * @param setTypeDefaultVersionRequest
+     * @return Result of the SetTypeDefaultVersion operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified type does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.SetTypeDefaultVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetTypeDefaultVersionResult setTypeDefaultVersion(SetTypeDefaultVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetTypeDefaultVersion(request);
+    }
+
+    @SdkInternalApi
+    final SetTypeDefaultVersionResult executeSetTypeDefaultVersion(SetTypeDefaultVersionRequest setTypeDefaultVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setTypeDefaultVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetTypeDefaultVersionRequest> request = null;
+        Response<SetTypeDefaultVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetTypeDefaultVersionRequestMarshaller().marshall(super.beforeMarshalling(setTypeDefaultVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetTypeDefaultVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<SetTypeDefaultVersionResult> responseHandler = new StaxResponseHandler<SetTypeDefaultVersionResult>(
+                    new SetTypeDefaultVersionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

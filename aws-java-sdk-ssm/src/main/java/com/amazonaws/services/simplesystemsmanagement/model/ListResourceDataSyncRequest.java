@@ -27,6 +27,14 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
+     * resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view
+     * resource data syncs from AWS Organizations or from multiple AWS Regions.
+     * </p>
+     */
+    private String syncType;
+    /**
+     * <p>
      * A token to start the list. Use this token to get the next set of results.
      * </p>
      */
@@ -38,6 +46,61 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Integer maxResults;
+
+    /**
+     * <p>
+     * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
+     * resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view
+     * resource data syncs from AWS Organizations or from multiple AWS Regions.
+     * </p>
+     * 
+     * @param syncType
+     *        View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
+     *        view resource data syncs that synchronize data to an Amazon S3 buckets. Specify
+     *        <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS
+     *        Regions.
+     */
+
+    public void setSyncType(String syncType) {
+        this.syncType = syncType;
+    }
+
+    /**
+     * <p>
+     * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
+     * resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view
+     * resource data syncs from AWS Organizations or from multiple AWS Regions.
+     * </p>
+     * 
+     * @return View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
+     *         view resource data syncs that synchronize data to an Amazon S3 buckets. Specify
+     *         <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS
+     *         Regions.
+     */
+
+    public String getSyncType() {
+        return this.syncType;
+    }
+
+    /**
+     * <p>
+     * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
+     * resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view
+     * resource data syncs from AWS Organizations or from multiple AWS Regions.
+     * </p>
+     * 
+     * @param syncType
+     *        View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
+     *        view resource data syncs that synchronize data to an Amazon S3 buckets. Specify
+     *        <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS
+     *        Regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListResourceDataSyncRequest withSyncType(String syncType) {
+        setSyncType(syncType);
+        return this;
+    }
 
     /**
      * <p>
@@ -137,6 +200,8 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getSyncType() != null)
+            sb.append("SyncType: ").append(getSyncType()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -155,6 +220,10 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof ListResourceDataSyncRequest == false)
             return false;
         ListResourceDataSyncRequest other = (ListResourceDataSyncRequest) obj;
+        if (other.getSyncType() == null ^ this.getSyncType() == null)
+            return false;
+        if (other.getSyncType() != null && other.getSyncType().equals(this.getSyncType()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -171,6 +240,7 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getSyncType() == null) ? 0 : getSyncType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

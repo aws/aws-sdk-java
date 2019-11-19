@@ -60,6 +60,10 @@ public class SMSTemplateResponseJsonUnmarshaller implements Unmarshaller<SMSTemp
                     context.nextToken();
                     sMSTemplateResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    context.nextToken();
+                    sMSTemplateResponse.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
                     sMSTemplateResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
@@ -68,6 +72,10 @@ public class SMSTemplateResponseJsonUnmarshaller implements Unmarshaller<SMSTemp
                     context.nextToken();
                     sMSTemplateResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("TemplateDescription", targetDepth)) {
+                    context.nextToken();
+                    sMSTemplateResponse.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateName", targetDepth)) {
                     context.nextToken();

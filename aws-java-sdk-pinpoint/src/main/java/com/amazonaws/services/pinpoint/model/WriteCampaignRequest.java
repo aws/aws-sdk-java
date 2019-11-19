@@ -37,7 +37,7 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     private java.util.List<WriteTreatmentResource> additionalTreatments;
     /**
      * <p>
-     * The custom description of the campaign.
+     * A custom description of the campaign.
      * </p>
      */
     private String description;
@@ -111,7 +111,7 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     private TemplateConfiguration templateConfiguration;
     /**
      * <p>
-     * The custom description of a variation of the campaign to use for A/B testing.
+     * A custom description of a variation of the campaign to use for A/B testing.
      * </p>
      */
     private String treatmentDescription;
@@ -202,11 +202,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The custom description of the campaign.
+     * A custom description of the campaign.
      * </p>
      * 
      * @param description
-     *        The custom description of the campaign.
+     *        A custom description of the campaign.
      */
 
     public void setDescription(String description) {
@@ -215,10 +215,10 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The custom description of the campaign.
+     * A custom description of the campaign.
      * </p>
      * 
-     * @return The custom description of the campaign.
+     * @return A custom description of the campaign.
      */
 
     public String getDescription() {
@@ -227,11 +227,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The custom description of the campaign.
+     * A custom description of the campaign.
      * </p>
      * 
      * @param description
-     *        The custom description of the campaign.
+     *        A custom description of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -729,11 +729,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The custom description of a variation of the campaign to use for A/B testing.
+     * A custom description of a variation of the campaign to use for A/B testing.
      * </p>
      * 
      * @param treatmentDescription
-     *        The custom description of a variation of the campaign to use for A/B testing.
+     *        A custom description of a variation of the campaign to use for A/B testing.
      */
 
     public void setTreatmentDescription(String treatmentDescription) {
@@ -742,10 +742,10 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The custom description of a variation of the campaign to use for A/B testing.
+     * A custom description of a variation of the campaign to use for A/B testing.
      * </p>
      * 
-     * @return The custom description of a variation of the campaign to use for A/B testing.
+     * @return A custom description of a variation of the campaign to use for A/B testing.
      */
 
     public String getTreatmentDescription() {
@@ -754,11 +754,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The custom description of a variation of the campaign to use for A/B testing.
+     * A custom description of a variation of the campaign to use for A/B testing.
      * </p>
      * 
      * @param treatmentDescription
-     *        The custom description of a variation of the campaign to use for A/B testing.
+     *        A custom description of a variation of the campaign to use for A/B testing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

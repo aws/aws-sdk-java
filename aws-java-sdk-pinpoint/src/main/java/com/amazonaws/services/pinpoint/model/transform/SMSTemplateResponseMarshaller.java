@@ -35,10 +35,14 @@ public class SMSTemplateResponseMarshaller {
             .marshallLocationName("Body").build();
     private static final MarshallingInfo<String> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
+    private static final MarshallingInfo<String> DEFAULTSUBSTITUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubstitutions").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> TEMPLATEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateDescription").build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
     private static final MarshallingInfo<String> TEMPLATETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,8 +67,10 @@ public class SMSTemplateResponseMarshaller {
             protocolMarshaller.marshall(sMSTemplateResponse.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(sMSTemplateResponse.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(sMSTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getTemplateType(), TEMPLATETYPE_BINDING);
         } catch (Exception e) {

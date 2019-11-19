@@ -28,7 +28,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      */
     private String endpointName;
@@ -39,7 +39,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * For information about the format of the request body, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -55,18 +55,34 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String accept;
-    /** <p/> */
+    /**
+     * <p>
+     * Provides additional information about a request for an inference submitted to a model hosted at an Amazon
+     * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
+     * example, to provide an ID that you can use to track a request or to provide other metadata that a service
+     * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
+     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently supported in the AWS SDKs
+     * but not in the Amazon SageMaker Python SDK.
+     * </p>
+     */
     private String customAttributes;
+    /**
+     * <p>
+     * Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * </p>
+     */
+    private String targetModel;
 
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @param endpointName
      *        The name of the endpoint that you specified when you created the endpoint using the <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      */
 
     public void setEndpointName(String endpointName) {
@@ -76,11 +92,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @return The name of the endpoint that you specified when you created the endpoint using the <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      */
 
     public String getEndpointName() {
@@ -90,12 +106,12 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @param endpointName
      *        The name of the endpoint that you specified when you created the endpoint using the <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,7 +127,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * For information about the format of the request body, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -129,7 +145,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        SageMaker passes all of the data in the body to the model. </p>
      *        <p>
      *        For information about the format of the request body, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *        Formats—Inference</a>.
      */
 
@@ -144,7 +160,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * For information about the format of the request body, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -158,7 +174,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *         SageMaker passes all of the data in the body to the model. </p>
      *         <p>
      *         For information about the format of the request body, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *         Formats—Inference</a>.
      */
 
@@ -173,7 +189,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * For information about the format of the request body, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -191,7 +207,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        SageMaker passes all of the data in the body to the model. </p>
      *        <p>
      *        For information about the format of the request body, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
      *        Formats—Inference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -282,9 +298,24 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides additional information about a request for an inference submitted to a model hosted at an Amazon
+     * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
+     * example, to provide an ID that you can use to track a request or to provide other metadata that a service
+     * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
+     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently supported in the AWS SDKs
+     * but not in the Amazon SageMaker Python SDK.
+     * </p>
      * 
      * @param customAttributes
+     *        Provides additional information about a request for an inference submitted to a model hosted at an Amazon
+     *        SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
+     *        value, for example, to provide an ID that you can use to track a request or to provide other metadata that
+     *        a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII
+     *        characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6.
+     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently
+     *        supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
 
     public void setCustomAttributes(String customAttributes) {
@@ -292,9 +323,23 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides additional information about a request for an inference submitted to a model hosted at an Amazon
+     * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
+     * example, to provide an ID that you can use to track a request or to provide other metadata that a service
+     * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
+     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently supported in the AWS SDKs
+     * but not in the Amazon SageMaker Python SDK.
+     * </p>
      * 
-     * @return
+     * @return Provides additional information about a request for an inference submitted to a model hosted at an Amazon
+     *         SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
+     *         value, for example, to provide an ID that you can use to track a request or to provide other metadata
+     *         that a service endpoint was programmed to process. The value must consist of no more than 1024 visible
+     *         US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
+     *         3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is
+     *         currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
 
     public String getCustomAttributes() {
@@ -302,14 +347,69 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * Provides additional information about a request for an inference submitted to a model hosted at an Amazon
+     * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
+     * example, to provide an ID that you can use to track a request or to provide other metadata that a service
+     * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
+     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently supported in the AWS SDKs
+     * but not in the Amazon SageMaker Python SDK.
+     * </p>
      * 
      * @param customAttributes
+     *        Provides additional information about a request for an inference submitted to a model hosted at an Amazon
+     *        SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
+     *        value, for example, to provide an ID that you can use to track a request or to provide other metadata that
+     *        a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII
+     *        characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6.
+     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). This feature is currently
+     *        supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvokeEndpointRequest withCustomAttributes(String customAttributes) {
         setCustomAttributes(customAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * </p>
+     * 
+     * @param targetModel
+     *        Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     */
+
+    public void setTargetModel(String targetModel) {
+        this.targetModel = targetModel;
+    }
+
+    /**
+     * <p>
+     * Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * </p>
+     * 
+     * @return Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     */
+
+    public String getTargetModel() {
+        return this.targetModel;
+    }
+
+    /**
+     * <p>
+     * Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * </p>
+     * 
+     * @param targetModel
+     *        Specifies the model to be requested for an inference when invoking a multi-model endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointRequest withTargetModel(String targetModel) {
+        setTargetModel(targetModel);
         return this;
     }
 
@@ -334,7 +434,9 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getAccept() != null)
             sb.append("Accept: ").append(getAccept()).append(",");
         if (getCustomAttributes() != null)
-            sb.append("CustomAttributes: ").append("***Sensitive Data Redacted***");
+            sb.append("CustomAttributes: ").append("***Sensitive Data Redacted***").append(",");
+        if (getTargetModel() != null)
+            sb.append("TargetModel: ").append(getTargetModel());
         sb.append("}");
         return sb.toString();
     }
@@ -369,6 +471,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getCustomAttributes() != null && other.getCustomAttributes().equals(this.getCustomAttributes()) == false)
             return false;
+        if (other.getTargetModel() == null ^ this.getTargetModel() == null)
+            return false;
+        if (other.getTargetModel() != null && other.getTargetModel().equals(this.getTargetModel()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +488,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getAccept() == null) ? 0 : getAccept().hashCode());
         hashCode = prime * hashCode + ((getCustomAttributes() == null) ? 0 : getCustomAttributes().hashCode());
+        hashCode = prime * hashCode + ((getTargetModel() == null) ? 0 : getTargetModel().hashCode());
         return hashCode;
     }
 

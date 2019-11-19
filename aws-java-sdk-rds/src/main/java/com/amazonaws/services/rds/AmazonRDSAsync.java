@@ -1390,6 +1390,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you are notified of
      * events generated from all RDS sources belonging to your customer account.
      * </p>
+     * <note>
+     * <p>
+     * RDS event notification is only available for unencrypted SNS topics. If you specify an encrypted SNS topic, event
+     * notifications aren't sent for the topic.
+     * </p>
+     * </note>
      * 
      * @param createEventSubscriptionRequest
      * @return A Java Future containing the result of the CreateEventSubscription operation returned by the service.
@@ -1418,6 +1424,12 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you are notified of
      * events generated from all RDS sources belonging to your customer account.
      * </p>
+     * <note>
+     * <p>
+     * RDS event notification is only available for unencrypted SNS topics. If you specify an encrypted SNS topic, event
+     * notifications aren't sent for the topic.
+     * </p>
+     * </note>
      * 
      * @param createEventSubscriptionRequest
      * @param asyncHandler
@@ -4566,7 +4578,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
      * </p>
      * <p>
-     * Amazon RDS supports upgrading DB snapshots for MySQL and Oracle.
+     * Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL.
      * </p>
      * 
      * @param modifyDBSnapshotRequest
@@ -4582,7 +4594,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
      * </p>
      * <p>
-     * Amazon RDS supports upgrading DB snapshots for MySQL and Oracle.
+     * Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL.
      * </p>
      * 
      * @param modifyDBSnapshotRequest

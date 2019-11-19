@@ -31,7 +31,7 @@ public class WaitTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of time, as a duration in ISO 8601 format, to wait before determining whether the activity's
+     * The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's
      * conditions have been met or moving participants to the next activity in the journey.
      * </p>
      */
@@ -46,12 +46,12 @@ public class WaitTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of time, as a duration in ISO 8601 format, to wait before determining whether the activity's
+     * The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's
      * conditions have been met or moving participants to the next activity in the journey.
      * </p>
      * 
      * @param waitFor
-     *        The amount of time, as a duration in ISO 8601 format, to wait before determining whether the activity's
+     *        The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's
      *        conditions have been met or moving participants to the next activity in the journey.
      */
 
@@ -61,11 +61,11 @@ public class WaitTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of time, as a duration in ISO 8601 format, to wait before determining whether the activity's
+     * The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's
      * conditions have been met or moving participants to the next activity in the journey.
      * </p>
      * 
-     * @return The amount of time, as a duration in ISO 8601 format, to wait before determining whether the activity's
+     * @return The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's
      *         conditions have been met or moving participants to the next activity in the journey.
      */
 
@@ -75,12 +75,12 @@ public class WaitTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of time, as a duration in ISO 8601 format, to wait before determining whether the activity's
+     * The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's
      * conditions have been met or moving participants to the next activity in the journey.
      * </p>
      * 
      * @param waitFor
-     *        The amount of time, as a duration in ISO 8601 format, to wait before determining whether the activity's
+     *        The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's
      *        conditions have been met or moving participants to the next activity in the journey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

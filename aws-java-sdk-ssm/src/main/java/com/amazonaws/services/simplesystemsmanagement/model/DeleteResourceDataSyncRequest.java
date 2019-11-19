@@ -31,6 +31,12 @@ public class DeleteResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String syncName;
+    /**
+     * <p>
+     * Specify the type of resource data sync to delete.
+     * </p>
+     */
+    private String syncType;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class DeleteResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specify the type of resource data sync to delete.
+     * </p>
+     * 
+     * @param syncType
+     *        Specify the type of resource data sync to delete.
+     */
+
+    public void setSyncType(String syncType) {
+        this.syncType = syncType;
+    }
+
+    /**
+     * <p>
+     * Specify the type of resource data sync to delete.
+     * </p>
+     * 
+     * @return Specify the type of resource data sync to delete.
+     */
+
+    public String getSyncType() {
+        return this.syncType;
+    }
+
+    /**
+     * <p>
+     * Specify the type of resource data sync to delete.
+     * </p>
+     * 
+     * @param syncType
+     *        Specify the type of resource data sync to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteResourceDataSyncRequest withSyncType(String syncType) {
+        setSyncType(syncType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class DeleteResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSyncName() != null)
-            sb.append("SyncName: ").append(getSyncName());
+            sb.append("SyncName: ").append(getSyncName()).append(",");
+        if (getSyncType() != null)
+            sb.append("SyncType: ").append(getSyncType());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class DeleteResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getSyncName() != null && other.getSyncName().equals(this.getSyncName()) == false)
             return false;
+        if (other.getSyncType() == null ^ this.getSyncType() == null)
+            return false;
+        if (other.getSyncType() != null && other.getSyncType().equals(this.getSyncType()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class DeleteResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSyncName() == null) ? 0 : getSyncName().hashCode());
+        hashCode = prime * hashCode + ((getSyncType() == null) ? 0 : getSyncType().hashCode());
         return hashCode;
     }
 

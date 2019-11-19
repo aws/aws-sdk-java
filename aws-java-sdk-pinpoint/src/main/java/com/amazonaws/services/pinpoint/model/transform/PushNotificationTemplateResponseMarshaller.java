@@ -41,12 +41,16 @@ public class PushNotificationTemplateResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Default").build();
+    private static final MarshallingInfo<String> DEFAULTSUBSTITUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubstitutions").build();
     private static final MarshallingInfo<StructuredPojo> GCM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GCM").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> TEMPLATEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateDescription").build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
     private static final MarshallingInfo<String> TEMPLATETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -74,9 +78,11 @@ public class PushNotificationTemplateResponseMarshaller {
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getBaidu(), BAIDU_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getDefault(), DEFAULT_BINDING);
+            protocolMarshaller.marshall(pushNotificationTemplateResponse.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getGCM(), GCM_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(pushNotificationTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTemplateType(), TEMPLATETYPE_BINDING);
         } catch (Exception e) {

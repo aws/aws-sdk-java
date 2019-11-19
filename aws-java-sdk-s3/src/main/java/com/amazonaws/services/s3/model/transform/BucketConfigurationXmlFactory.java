@@ -38,6 +38,7 @@ import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
 import com.amazonaws.services.s3.model.CloudFunctionConfiguration;
 import com.amazonaws.services.s3.model.DeleteMarkerReplication;
+import com.amazonaws.services.s3.model.ExistingObjectReplication;
 import com.amazonaws.services.s3.model.Filter;
 import com.amazonaws.services.s3.model.FilterRule;
 import com.amazonaws.services.s3.model.LambdaConfiguration;
@@ -297,6 +298,10 @@ public class BucketConfigurationXmlFactory {
                 xml.start("Priority").value(Integer.toString(priority)).end();
             }
             xml.start("Status").value(rule.getStatus()).end();
+            ExistingObjectReplication existingObjectReplication = rule.getExistingObjectReplication();
+            if (existingObjectReplication != null) {
+                xml.start("ExistingObjectReplication").start("Status").value(existingObjectReplication.getStatus()).end().end();
+            }
             DeleteMarkerReplication deleteMarkerReplication = rule.getDeleteMarkerReplication();
             if (deleteMarkerReplication != null) {
                 xml.start("DeleteMarkerReplication").start("Status").value(deleteMarkerReplication.getStatus()).end().end();

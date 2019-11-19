@@ -197,7 +197,7 @@
         {"shape":"ResourceDataSyncAlreadyExistsException"},
         {"shape":"ResourceDataSyncInvalidConfigurationException"}
       ],
-      "documentation":"<p>Creates a resource data sync configuration to a single bucket in Amazon S3. This is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data to the Amazon S3 bucket. To check the status of the sync, use the <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html\">Configuring Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
+      "documentation":"<p>A resource data sync helps you view data from multiple sources in a single location. Systems Manager offers two types of resource data sync: <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You can configure Systems Manager Inventory to use the <code>SyncToDestination</code> type to synchronize Inventory data from multiple AWS Regions to a single Amazon S3 bucket. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html\">Configuring Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You can configure Systems Manager Explorer to use the <code>SyncToDestination</code> type to synchronize operational work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single Amazon S3 bucket. You can also configure Explorer to use the <code>SyncFromSource</code> type. This type synchronizes OpsItems and OpsData from multiple AWS accounts and Regions by using AWS Organizations. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html\">Setting Up Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data. To check the status of a sync, use the <a>ListResourceDataSync</a>.</p> <note> <p>By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy. </p> </note>"
     },
     "DeleteActivation":{
       "name":"DeleteActivation",
@@ -329,9 +329,10 @@
       "output":{"shape":"DeleteResourceDataSyncResult"},
       "errors":[
         {"shape":"InternalServerError"},
-        {"shape":"ResourceDataSyncNotFoundException"}
+        {"shape":"ResourceDataSyncNotFoundException"},
+        {"shape":"ResourceDataSyncInvalidConfigurationException"}
       ],
-      "documentation":"<p>Deletes a Resource Data Sync configuration. After the configuration is deleted, changes to inventory data on managed instances are no longer synced with the target Amazon S3 bucket. Deleting a sync configuration does not delete data in the target Amazon S3 bucket.</p>"
+      "documentation":"<p>Deletes a Resource Data Sync configuration. After the configuration is deleted, changes to data on managed instances are no longer synced to or from the target. Deleting a sync configuration does not delete data.</p>"
     },
     "DeregisterManagedInstance":{
       "name":"DeregisterManagedInstance",
@@ -1074,6 +1075,7 @@
       "output":{"shape":"GetOpsSummaryResult"},
       "errors":[
         {"shape":"InternalServerError"},
+        {"shape":"ResourceDataSyncNotFoundException"},
         {"shape":"InvalidFilter"},
         {"shape":"InvalidNextToken"},
         {"shape":"InvalidTypeNameException"},
@@ -1370,6 +1372,7 @@
       "input":{"shape":"ListResourceDataSyncRequest"},
       "output":{"shape":"ListResourceDataSyncResult"},
       "errors":[
+        {"shape":"ResourceDataSyncInvalidConfigurationException"},
         {"shape":"InternalServerError"},
         {"shape":"InvalidNextToken"}
       ],
@@ -4070,6 +4073,14 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM policy that specifies tags. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions\">Getting Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>Tags use a key-value pair. For example:</p> <p> <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>"
+        },
+        "Category":{
+          "shape":"OpsItemCategory",
+          "documentation":"<p>Specify a category to assign to an OpsItem. </p>"
+        },
+        "Severity":{
+          "shape":"OpsItemSeverity",
+          "documentation":"<p>Specify a severity to assign to an OpsItem.</p>"
         }
       }
     },
@@ -4153,10 +4164,7 @@
     },
     "CreateResourceDataSyncRequest":{
       "type":"structure",
-      "required":[
-        "SyncName",
-        "S3Destination"
-      ],
+      "required":["SyncName"],
       "members":{
         "SyncName":{
           "shape":"ResourceDataSyncName",
@@ -4165,6 +4173,14 @@
         "S3Destination":{
           "shape":"ResourceDataSyncS3Destination",
           "documentation":"<p>Amazon S3 configuration details for the sync.</p>"
+        },
+        "SyncType":{
+          "shape":"ResourceDataSyncType",
+          "documentation":"<p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data from multiple AWS Regions to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to synchronize data from multiple AWS accounts and Regions, as listed in AWS Organizations.</p>"
+        },
+        "SyncSource":{
+          "shape":"ResourceDataSyncSource",
+          "documentation":"<p>Specify information about the data sources to synchronize.</p>"
         }
       }
     },
@@ -4373,6 +4389,10 @@
         "SyncName":{
           "shape":"ResourceDataSyncName",
           "documentation":"<p>The name of the configuration to delete.</p>"
+        },
+        "SyncType":{
+          "shape":"ResourceDataSyncType",
+          "documentation":"<p>Specify the type of resource data sync to delete.</p>"
         }
       }
     },
@@ -6875,8 +6895,11 @@
     },
     "GetOpsSummaryRequest":{
       "type":"structure",
-      "required":["Aggregators"],
       "members":{
+        "SyncName":{
+          "shape":"ResourceDataSyncName",
+          "documentation":"<p>Specify the name of a resource data sync to get.</p>"
+        },
         "Filters":{
           "shape":"OpsFilterList",
           "documentation":"<p>Optional filters used to scope down the returned OpsItems. </p>"
@@ -6884,6 +6907,10 @@
         "Aggregators":{
           "shape":"OpsAggregatorList",
           "documentation":"<p>Optional aggregators that return counts of OpsItems based on one or more expressions.</p>"
+        },
+        "ResultAttributes":{
+          "shape":"OpsResultAttributeList",
+          "documentation":"<p>The OpsItem data type to return.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -8928,6 +8955,10 @@
     "ListResourceDataSyncRequest":{
       "type":"structure",
       "members":{
+        "SyncType":{
+          "shape":"ResourceDataSyncType",
+          "documentation":"<p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS Regions. </p>"
+        },
         "NextToken":{
           "shape":"NextToken",
           "documentation":"<p>A token to start the list. Use this token to get the next set of results. </p>"
@@ -9824,11 +9855,11 @@
       "type":"string",
       "max":20,
       "min":1,
-      "pattern":"^(range|count)"
+      "pattern":"^(range|count|sum)"
     },
     "OpsAggregatorValue":{
       "type":"string",
-      "max":512,
+      "max":2048,
       "min":0
     },
     "OpsAggregatorValueKey":{
@@ -9868,12 +9899,20 @@
     "OpsEntityItem":{
       "type":"structure",
       "members":{
+        "CaptureTime":{
+          "shape":"OpsEntityItemCaptureTime",
+          "documentation":"<p>The time OpsItem data was captured.</p>"
+        },
         "Content":{
           "shape":"OpsEntityItemEntryList",
           "documentation":"<p>The detailed data content for an OpsItem summaries result item.</p>"
         }
       },
       "documentation":"<p>The OpsItem summaries result item.</p>"
+    },
+    "OpsEntityItemCaptureTime":{
+      "type":"string",
+      "pattern":"^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$"
     },
     "OpsEntityItemEntry":{
       "type":"map",
@@ -10007,6 +10046,14 @@
         "OperationalData":{
           "shape":"OpsItemOperationalData",
           "documentation":"<p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important> <p>Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p> <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view AWS CLI example commands that use these keys, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems\">Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
+        },
+        "Category":{
+          "shape":"OpsItemCategory",
+          "documentation":"<p>An OpsItem category. Category options include: Availability, Cost, Performance, Recovery, Security.</p>"
+        },
+        "Severity":{
+          "shape":"OpsItemSeverity",
+          "documentation":"<p>The severity of the OpsItem. Severity options range from 1 to 4.</p>"
         }
       },
       "documentation":"<p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">AWS Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. </p>"
@@ -10019,6 +10066,11 @@
       },
       "documentation":"<p>The OpsItem already exists.</p>",
       "exception":true
+    },
+    "OpsItemCategory":{
+      "type":"string",
+      "max":64,
+      "min":1
     },
     "OpsItemDataKey":{
       "type":"string",
@@ -10090,7 +10142,9 @@
         "OperationalDataKey",
         "OperationalDataValue",
         "ResourceId",
-        "AutomationId"
+        "AutomationId",
+        "Category",
+        "Severity"
       ]
     },
     "OpsItemFilterOperator":{
@@ -10180,6 +10234,11 @@
       "max":5,
       "min":1
     },
+    "OpsItemSeverity":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
     "OpsItemSource":{
       "type":"string",
       "max":64,
@@ -10239,6 +10298,14 @@
         "OperationalData":{
           "shape":"OpsItemOperationalData",
           "documentation":"<p>Operational data is custom data that provides useful reference details about the OpsItem. </p>"
+        },
+        "Category":{
+          "shape":"OpsItemCategory",
+          "documentation":"<p>A list of OpsItems by category.</p>"
+        },
+        "Severity":{
+          "shape":"OpsItemSeverity",
+          "documentation":"<p>A list of OpsItems by severity.</p>"
         }
       },
       "documentation":"<p>A count of OpsItems.</p>"
@@ -10246,6 +10313,23 @@
     "OpsItemTitle":{
       "type":"string",
       "max":1024,
+      "min":1
+    },
+    "OpsResultAttribute":{
+      "type":"structure",
+      "required":["TypeName"],
+      "members":{
+        "TypeName":{
+          "shape":"OpsDataTypeName",
+          "documentation":"<p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation, AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>"
+        }
+      },
+      "documentation":"<p>The OpsItem data type to return.</p>"
+    },
+    "OpsResultAttributeList":{
+      "type":"list",
+      "member":{"shape":"OpsResultAttribute"},
+      "max":1,
       "min":1
     },
     "OutputSource":{
@@ -11660,6 +11744,21 @@
       "documentation":"<p>A sync configuration with the same name already exists.</p>",
       "exception":true
     },
+    "ResourceDataSyncAwsOrganizationsSource":{
+      "type":"structure",
+      "required":["OrganizationSourceType"],
+      "members":{
+        "OrganizationSourceType":{
+          "shape":"ResourceDataSyncOrganizationSourceType",
+          "documentation":"<p>If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire AWS Organization. </p>"
+        },
+        "OrganizationalUnits":{
+          "shape":"ResourceDataSyncOrganizationalUnitList",
+          "documentation":"<p>The AWS Organizations organization units included in the sync.</p>"
+        }
+      },
+      "documentation":"<p>Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions.</p>"
+    },
     "ResourceDataSyncCountExceededException":{
       "type":"structure",
       "members":{
@@ -11669,6 +11768,7 @@
       "exception":true
     },
     "ResourceDataSyncCreatedTime":{"type":"timestamp"},
+    "ResourceDataSyncIncludeFutureRegions":{"type":"boolean"},
     "ResourceDataSyncInvalidConfigurationException":{
       "type":"structure",
       "members":{
@@ -11684,6 +11784,14 @@
           "shape":"ResourceDataSyncName",
           "documentation":"<p>The name of the Resource Data Sync.</p>"
         },
+        "SyncType":{
+          "shape":"ResourceDataSyncType",
+          "documentation":"<p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.</p>"
+        },
+        "SyncSource":{
+          "shape":"ResourceDataSyncSourceWithState",
+          "documentation":"<p>Information about the source where the data was synchronized. </p>"
+        },
         "S3Destination":{
           "shape":"ResourceDataSyncS3Destination",
           "documentation":"<p>Configuration information for the target Amazon S3 bucket.</p>"
@@ -11695,6 +11803,10 @@
         "LastSuccessfulSyncTime":{
           "shape":"LastSuccessfulResourceDataSyncTime",
           "documentation":"<p>The last time the sync operations returned a status of <code>SUCCESSFUL</code> (UTC).</p>"
+        },
+        "SyncLastModifiedTime":{
+          "shape":"ResourceDataSyncLastModifiedTime",
+          "documentation":"<p>The date and time the resource data sync was changed. </p>"
         },
         "LastStatus":{
           "shape":"LastResourceDataSyncStatus",
@@ -11715,6 +11827,7 @@
       "type":"list",
       "member":{"shape":"ResourceDataSyncItem"}
     },
+    "ResourceDataSyncLastModifiedTime":{"type":"timestamp"},
     "ResourceDataSyncName":{
       "type":"string",
       "max":64,
@@ -11723,10 +11836,39 @@
     "ResourceDataSyncNotFoundException":{
       "type":"structure",
       "members":{
-        "SyncName":{"shape":"ResourceDataSyncName"}
+        "SyncName":{"shape":"ResourceDataSyncName"},
+        "SyncType":{"shape":"ResourceDataSyncType"},
+        "Message":{"shape":"String"}
       },
       "documentation":"<p>The specified sync name was not found.</p>",
       "exception":true
+    },
+    "ResourceDataSyncOrganizationSourceType":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "ResourceDataSyncOrganizationalUnit":{
+      "type":"structure",
+      "members":{
+        "OrganizationalUnitId":{
+          "shape":"ResourceDataSyncOrganizationalUnitId",
+          "documentation":"<p>The AWS Organization unit ID data source for the sync.</p>"
+        }
+      },
+      "documentation":"<p>The AWS Organizations organizational unit data source for the sync.</p>"
+    },
+    "ResourceDataSyncOrganizationalUnitId":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$"
+    },
+    "ResourceDataSyncOrganizationalUnitList":{
+      "type":"list",
+      "member":{"shape":"ResourceDataSyncOrganizationalUnit"},
+      "max":1000,
+      "min":1
     },
     "ResourceDataSyncS3BucketName":{
       "type":"string",
@@ -11774,6 +11916,82 @@
       "min":1
     },
     "ResourceDataSyncS3Region":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "ResourceDataSyncSource":{
+      "type":"structure",
+      "required":[
+        "SourceType",
+        "SourceRegions"
+      ],
+      "members":{
+        "SourceType":{
+          "shape":"ResourceDataSyncSourceType",
+          "documentation":"<p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or <code>singleAccountMultiRegions</code>.</p>"
+        },
+        "AwsOrganizationsSource":{
+          "shape":"ResourceDataSyncAwsOrganizationsSource",
+          "documentation":"<p>The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>"
+        },
+        "SourceRegions":{
+          "shape":"ResourceDataSyncSourceRegionList",
+          "documentation":"<p>The <code>SyncSource</code> AWS Regions included in the resource data sync.</p>"
+        },
+        "IncludeFutureRegions":{
+          "shape":"ResourceDataSyncIncludeFutureRegions",
+          "documentation":"<p>Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come online.</p>"
+        }
+      },
+      "documentation":"<p>Information about the source of the data included in the resource data sync.</p>"
+    },
+    "ResourceDataSyncSourceRegion":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "ResourceDataSyncSourceRegionList":{
+      "type":"list",
+      "member":{"shape":"ResourceDataSyncSourceRegion"}
+    },
+    "ResourceDataSyncSourceType":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "ResourceDataSyncSourceWithState":{
+      "type":"structure",
+      "members":{
+        "SourceType":{
+          "shape":"ResourceDataSyncSourceType",
+          "documentation":"<p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or <code>singleAccountMultiRegions</code>.</p>"
+        },
+        "AwsOrganizationsSource":{
+          "shape":"ResourceDataSyncAwsOrganizationsSource",
+          "documentation":"<p>The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>"
+        },
+        "SourceRegions":{
+          "shape":"ResourceDataSyncSourceRegionList",
+          "documentation":"<p>The <code>SyncSource</code> AWS Regions included in the resource data sync.</p>"
+        },
+        "IncludeFutureRegions":{
+          "shape":"ResourceDataSyncIncludeFutureRegions",
+          "documentation":"<p>Whether to automatically synchronize and aggregate data from new AWS Regions when those Regions come online.</p>"
+        },
+        "State":{
+          "shape":"ResourceDataSyncState",
+          "documentation":"<p>The data type name for including resource data sync state. There are four sync states:</p> <p> <code>OrganizationNotExists</code>: Your organization doesn't exist.</p> <p> <code>NoPermissions</code>: The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.</p> <p> <code>InvalidOrganizationalUnit</code>: You specified or selected an invalid unit in the resource data sync configuration.</p> <p> <code>TrustedAccessDisabled</code>: You disabled Systems Manager access in the organization in AWS Organizations.</p>"
+        }
+      },
+      "documentation":"<p>The data type name for including resource data sync state. There are four sync states:</p> <p> <code>OrganizationNotExists</code> (Your organization doesn't exist)</p> <p> <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.)</p> <p> <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.)</p> <p> <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)</p>"
+    },
+    "ResourceDataSyncState":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "ResourceDataSyncType":{
       "type":"string",
       "max":64,
       "min":1
@@ -12688,7 +12906,7 @@
           "documentation":"<p>User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of <code>ServerRole,WebServer</code>. </p>"
         }
       },
-      "documentation":"<p>An array of search criteria that targets instances using a Key,Value combination that you specify. </p> <p>Supported formats include the following.</p> <ul> <li> <p> <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> </p> </li> <li> <p> <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> </p> </li> <li> <p> <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> </p> </li> </ul> <p>For example:</p> <ul> <li> <p> <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> </p> </li> <li> <p> <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p> </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> </p> </li> </ul> <p>For information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting\">Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
+      "documentation":"<p>An array of search criteria that targets instances using a Key,Value combination that you specify. </p> <p>Supported formats include the following.</p> <ul> <li> <p> <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> </p> </li> <li> <p> <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> </p> </li> <li> <p> <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> </p> </li> </ul> <p>For example:</p> <ul> <li> <p> <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> </p> </li> <li> <p> <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p> </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> </p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p> <p>This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li> <p>(Maintenance window targets only) <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> </p> <p>This example demonstrates how to target only Amazon EC2 instances and VPCs in your maintenance window.</p> </li> <li> <p>(State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code> </p> <p>This example demonstrates how to target all managed instances in the AWS Region where the association was created.</p> </li> </ul> <p>For information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting\">Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
     },
     "TargetCount":{"type":"integer"},
     "TargetInUseException":{
@@ -13431,6 +13649,14 @@
         "Title":{
           "shape":"OpsItemTitle",
           "documentation":"<p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>"
+        },
+        "Category":{
+          "shape":"OpsItemCategory",
+          "documentation":"<p>Specify a new category for an OpsItem.</p>"
+        },
+        "Severity":{
+          "shape":"OpsItemSeverity",
+          "documentation":"<p>Specify a new severity for an OpsItem.</p>"
         }
       }
     },

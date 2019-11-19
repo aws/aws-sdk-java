@@ -89,6 +89,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public DeregisterTypeResult deregisterType(DeregisterTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -146,6 +151,16 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     @Override
     public DescribeStacksResult describeStacks() {
         return describeStacks(new DescribeStacksRequest());
+    }
+
+    @Override
+    public DescribeTypeResult describeType(DescribeTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTypeRegistrationResult describeTypeRegistration(DescribeTypeRegistrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -244,7 +259,37 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public ListTypeRegistrationsResult listTypeRegistrations(ListTypeRegistrationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTypeVersionsResult listTypeVersions(ListTypeVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTypesResult listTypes(ListTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RecordHandlerProgressResult recordHandlerProgress(RecordHandlerProgressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterTypeResult registerType(RegisterTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetStackPolicyResult setStackPolicy(SetStackPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetTypeDefaultVersionResult setTypeDefaultVersion(SetTypeDefaultVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

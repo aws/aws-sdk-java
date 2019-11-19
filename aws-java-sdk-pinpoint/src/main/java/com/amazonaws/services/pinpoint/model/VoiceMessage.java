@@ -30,14 +30,15 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text script for the voice message.
+     * The text of the script to use for the voice message.
      * </p>
      */
     private String body;
     /**
      * <p>
-     * The language to use when delivering the message. For a list of supported languages, see the <a
-     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * The code for the language to use when synthesizing the text of the message script. For a list of supported
+     * languages and the code for each one, see the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * </p>
      */
     private String languageCode;
@@ -59,18 +60,18 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the voice to use when delivering the message. For a list of supported voices, see the <a
-     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * </p>
      */
     private String voiceId;
 
     /**
      * <p>
-     * The text script for the voice message.
+     * The text of the script to use for the voice message.
      * </p>
      * 
      * @param body
-     *        The text script for the voice message.
+     *        The text of the script to use for the voice message.
      */
 
     public void setBody(String body) {
@@ -79,10 +80,10 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text script for the voice message.
+     * The text of the script to use for the voice message.
      * </p>
      * 
-     * @return The text script for the voice message.
+     * @return The text of the script to use for the voice message.
      */
 
     public String getBody() {
@@ -91,11 +92,11 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text script for the voice message.
+     * The text of the script to use for the voice message.
      * </p>
      * 
      * @param body
-     *        The text script for the voice message.
+     *        The text of the script to use for the voice message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,13 +107,15 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language to use when delivering the message. For a list of supported languages, see the <a
-     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * The code for the language to use when synthesizing the text of the message script. For a list of supported
+     * languages and the code for each one, see the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * </p>
      * 
      * @param languageCode
-     *        The language to use when delivering the message. For a list of supported languages, see the <a
-     *        href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     *        The code for the language to use when synthesizing the text of the message script. For a list of supported
+     *        languages and the code for each one, see the <a
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      */
 
     public void setLanguageCode(String languageCode) {
@@ -121,12 +124,14 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language to use when delivering the message. For a list of supported languages, see the <a
-     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * The code for the language to use when synthesizing the text of the message script. For a list of supported
+     * languages and the code for each one, see the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * </p>
      * 
-     * @return The language to use when delivering the message. For a list of supported languages, see the <a
-     *         href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * @return The code for the language to use when synthesizing the text of the message script. For a list of
+     *         supported languages and the code for each one, see the <a
+     *         href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      */
 
     public String getLanguageCode() {
@@ -135,13 +140,15 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language to use when delivering the message. For a list of supported languages, see the <a
-     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * The code for the language to use when synthesizing the text of the message script. For a list of supported
+     * languages and the code for each one, see the <a
+     * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * </p>
      * 
      * @param languageCode
-     *        The language to use when delivering the message. For a list of supported languages, see the <a
-     *        href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     *        The code for the language to use when synthesizing the text of the message script. For a list of supported
+     *        languages and the code for each one, see the <a
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,12 +279,12 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the voice to use when delivering the message. For a list of supported voices, see the <a
-     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * </p>
      * 
      * @param voiceId
      *        The name of the voice to use when delivering the message. For a list of supported voices, see the <a
-     *        href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      */
 
     public void setVoiceId(String voiceId) {
@@ -287,11 +294,11 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the voice to use when delivering the message. For a list of supported voices, see the <a
-     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * </p>
      * 
      * @return The name of the voice to use when delivering the message. For a list of supported voices, see the <a
-     *         href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      */
 
     public String getVoiceId() {
@@ -301,12 +308,12 @@ public class VoiceMessage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the voice to use when delivering the message. For a list of supported voices, see the <a
-     * href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * </p>
      * 
      * @param voiceId
      *        The name of the voice to use when delivering the message. For a list of supported voices, see the <a
-     *        href="AmazonPollyDG.html">Amazon Polly Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

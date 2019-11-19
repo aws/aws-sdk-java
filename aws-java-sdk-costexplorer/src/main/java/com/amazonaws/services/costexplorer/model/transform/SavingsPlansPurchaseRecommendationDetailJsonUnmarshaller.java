@@ -77,6 +77,11 @@ public class SavingsPlansPurchaseRecommendationDetailJsonUnmarshaller implements
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedOnDemandCost(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EstimatedOnDemandCostWithCurrentCommitment", targetDepth)) {
+                    context.nextToken();
+                    savingsPlansPurchaseRecommendationDetail.setEstimatedOnDemandCostWithCurrentCommitment(context.getUnmarshaller(String.class).unmarshall(
+                            context));
+                }
                 if (context.testExpression("EstimatedSavingsAmount", targetDepth)) {
                     context.nextToken();
                     savingsPlansPurchaseRecommendationDetail.setEstimatedSavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));

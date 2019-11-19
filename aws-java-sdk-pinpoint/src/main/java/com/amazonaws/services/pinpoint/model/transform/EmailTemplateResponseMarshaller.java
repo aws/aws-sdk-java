@@ -33,6 +33,8 @@ public class EmailTemplateResponseMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
+    private static final MarshallingInfo<String> DEFAULTSUBSTITUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubstitutions").build();
     private static final MarshallingInfo<String> HTMLPART_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HtmlPart").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -41,6 +43,8 @@ public class EmailTemplateResponseMarshaller {
             .marshallLocationName("Subject").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> TEMPLATEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateDescription").build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
     private static final MarshallingInfo<String> TEMPLATETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -66,10 +70,12 @@ public class EmailTemplateResponseMarshaller {
         try {
             protocolMarshaller.marshall(emailTemplateResponse.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(emailTemplateResponse.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getHtmlPart(), HTMLPART_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getSubject(), SUBJECT_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(emailTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTemplateType(), TEMPLATETYPE_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTextPart(), TEXTPART_BINDING);

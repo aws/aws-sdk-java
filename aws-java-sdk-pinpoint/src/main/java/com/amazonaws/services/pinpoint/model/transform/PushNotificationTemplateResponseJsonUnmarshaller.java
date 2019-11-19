@@ -72,6 +72,10 @@ public class PushNotificationTemplateResponseJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     pushNotificationTemplateResponse.setDefault(DefaultPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DefaultSubstitutions", targetDepth)) {
+                    context.nextToken();
+                    pushNotificationTemplateResponse.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("GCM", targetDepth)) {
                     context.nextToken();
                     pushNotificationTemplateResponse.setGCM(AndroidPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
@@ -84,6 +88,10 @@ public class PushNotificationTemplateResponseJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     pushNotificationTemplateResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("TemplateDescription", targetDepth)) {
+                    context.nextToken();
+                    pushNotificationTemplateResponse.setTemplateDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TemplateName", targetDepth)) {
                     context.nextToken();

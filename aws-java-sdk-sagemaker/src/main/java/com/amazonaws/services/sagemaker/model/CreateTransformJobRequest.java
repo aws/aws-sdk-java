@@ -72,8 +72,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
      * </p>
      * <p>
-     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
-     * <code>TFRecord</code>.
+     * To enable the batch strategy, you must set the <code>SplitType</code> property of the <a>DataProcessing</a>
+     * object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      * </p>
      * <p>
      * To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to
@@ -395,8 +395,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
      * </p>
      * <p>
-     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
-     * <code>TFRecord</code>.
+     * To enable the batch strategy, you must set the <code>SplitType</code> property of the <a>DataProcessing</a>
+     * object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      * </p>
      * <p>
      * To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to
@@ -412,8 +412,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      *        <i/> is a single unit of input data that inference can be made on. For example, a single line in a CSV
      *        file is a record. </p>
      *        <p>
-     *        To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
-     *        <code>RecordIO</code>, or <code>TFRecord</code>.
+     *        To enable the batch strategy, you must set the <code>SplitType</code> property of the
+     *        <a>DataProcessing</a> object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      *        </p>
      *        <p>
      *        To use only one record when making an HTTP invocation request to a container, set
@@ -435,8 +435,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
      * </p>
      * <p>
-     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
-     * <code>TFRecord</code>.
+     * To enable the batch strategy, you must set the <code>SplitType</code> property of the <a>DataProcessing</a>
+     * object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      * </p>
      * <p>
      * To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to
@@ -451,8 +451,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      *         <i/> is a single unit of input data that inference can be made on. For example, a single line in a CSV
      *         file is a record. </p>
      *         <p>
-     *         To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
-     *         <code>RecordIO</code>, or <code>TFRecord</code>.
+     *         To enable the batch strategy, you must set the <code>SplitType</code> property of the
+     *         <a>DataProcessing</a> object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      *         </p>
      *         <p>
      *         To use only one record when making an HTTP invocation request to a container, set
@@ -474,8 +474,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
      * </p>
      * <p>
-     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
-     * <code>TFRecord</code>.
+     * To enable the batch strategy, you must set the <code>SplitType</code> property of the <a>DataProcessing</a>
+     * object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      * </p>
      * <p>
      * To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to
@@ -491,8 +491,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      *        <i/> is a single unit of input data that inference can be made on. For example, a single line in a CSV
      *        file is a record. </p>
      *        <p>
-     *        To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
-     *        <code>RecordIO</code>, or <code>TFRecord</code>.
+     *        To enable the batch strategy, you must set the <code>SplitType</code> property of the
+     *        <a>DataProcessing</a> object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      *        </p>
      *        <p>
      *        To use only one record when making an HTTP invocation request to a container, set
@@ -516,8 +516,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record.
      * </p>
      * <p>
-     * To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>, <code>RecordIO</code>, or
-     * <code>TFRecord</code>.
+     * To enable the batch strategy, you must set the <code>SplitType</code> property of the <a>DataProcessing</a>
+     * object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      * </p>
      * <p>
      * To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to
@@ -533,8 +533,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      *        <i/> is a single unit of input data that inference can be made on. For example, a single line in a CSV
      *        file is a record. </p>
      *        <p>
-     *        To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
-     *        <code>RecordIO</code>, or <code>TFRecord</code>.
+     *        To enable the batch strategy, you must set the <code>SplitType</code> property of the
+     *        <a>DataProcessing</a> object to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
      *        </p>
      *        <p>
      *        To use only one record when making an HTTP invocation request to a container, set

@@ -70,6 +70,13 @@ public class APNSPushNotificationTemplate implements Serializable, Cloneable, St
     private String mediaUrl;
     /**
      * <p>
+     * The raw, JSON-formatted string to use as the payload for push notifications that are based on the message
+     * template. If specified, this value overrides all other content for the message template.
+     * </p>
+     */
+    private String rawContent;
+    /**
+     * <p>
      * The key for the sound to play when the recipient receives a push notification that's based on the message
      * template. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds
      * folder in your app's data container. If the sound file can't be found or you specify default for the value, the
@@ -397,6 +404,52 @@ public class APNSPushNotificationTemplate implements Serializable, Cloneable, St
 
     /**
      * <p>
+     * The raw, JSON-formatted string to use as the payload for push notifications that are based on the message
+     * template. If specified, this value overrides all other content for the message template.
+     * </p>
+     * 
+     * @param rawContent
+     *        The raw, JSON-formatted string to use as the payload for push notifications that are based on the message
+     *        template. If specified, this value overrides all other content for the message template.
+     */
+
+    public void setRawContent(String rawContent) {
+        this.rawContent = rawContent;
+    }
+
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for push notifications that are based on the message
+     * template. If specified, this value overrides all other content for the message template.
+     * </p>
+     * 
+     * @return The raw, JSON-formatted string to use as the payload for push notifications that are based on the message
+     *         template. If specified, this value overrides all other content for the message template.
+     */
+
+    public String getRawContent() {
+        return this.rawContent;
+    }
+
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for push notifications that are based on the message
+     * template. If specified, this value overrides all other content for the message template.
+     * </p>
+     * 
+     * @param rawContent
+     *        The raw, JSON-formatted string to use as the payload for push notifications that are based on the message
+     *        template. If specified, this value overrides all other content for the message template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSPushNotificationTemplate withRawContent(String rawContent) {
+        setRawContent(rawContent);
+        return this;
+    }
+
+    /**
+     * <p>
      * The key for the sound to play when the recipient receives a push notification that's based on the message
      * template. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds
      * folder in your app's data container. If the sound file can't be found or you specify default for the value, the
@@ -563,6 +616,8 @@ public class APNSPushNotificationTemplate implements Serializable, Cloneable, St
             sb.append("Body: ").append(getBody()).append(",");
         if (getMediaUrl() != null)
             sb.append("MediaUrl: ").append(getMediaUrl()).append(",");
+        if (getRawContent() != null)
+            sb.append("RawContent: ").append(getRawContent()).append(",");
         if (getSound() != null)
             sb.append("Sound: ").append(getSound()).append(",");
         if (getTitle() != null)
@@ -595,6 +650,10 @@ public class APNSPushNotificationTemplate implements Serializable, Cloneable, St
             return false;
         if (other.getMediaUrl() != null && other.getMediaUrl().equals(this.getMediaUrl()) == false)
             return false;
+        if (other.getRawContent() == null ^ this.getRawContent() == null)
+            return false;
+        if (other.getRawContent() != null && other.getRawContent().equals(this.getRawContent()) == false)
+            return false;
         if (other.getSound() == null ^ this.getSound() == null)
             return false;
         if (other.getSound() != null && other.getSound().equals(this.getSound()) == false)
@@ -618,6 +677,7 @@ public class APNSPushNotificationTemplate implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getMediaUrl() == null) ? 0 : getMediaUrl().hashCode());
+        hashCode = prime * hashCode + ((getRawContent() == null) ? 0 : getRawContent().hashCode());
         hashCode = prime * hashCode + ((getSound() == null) ? 0 : getSound().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());

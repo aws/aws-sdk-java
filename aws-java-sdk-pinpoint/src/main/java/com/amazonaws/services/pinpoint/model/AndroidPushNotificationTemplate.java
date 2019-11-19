@@ -78,6 +78,13 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
     private String imageUrl;
     /**
      * <p>
+     * The raw, JSON-formatted string to use as the payload for a push notification that's based on the message
+     * template. If specified, this value overrides all other content for the message template.
+     * </p>
+     */
+    private String rawContent;
+    /**
+     * <p>
      * The URL of the small icon image to display in the status bar and the content view of a push notification that's
      * based on the message template.
      * </p>
@@ -457,6 +464,52 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
 
     /**
      * <p>
+     * The raw, JSON-formatted string to use as the payload for a push notification that's based on the message
+     * template. If specified, this value overrides all other content for the message template.
+     * </p>
+     * 
+     * @param rawContent
+     *        The raw, JSON-formatted string to use as the payload for a push notification that's based on the message
+     *        template. If specified, this value overrides all other content for the message template.
+     */
+
+    public void setRawContent(String rawContent) {
+        this.rawContent = rawContent;
+    }
+
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for a push notification that's based on the message
+     * template. If specified, this value overrides all other content for the message template.
+     * </p>
+     * 
+     * @return The raw, JSON-formatted string to use as the payload for a push notification that's based on the message
+     *         template. If specified, this value overrides all other content for the message template.
+     */
+
+    public String getRawContent() {
+        return this.rawContent;
+    }
+
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for a push notification that's based on the message
+     * template. If specified, this value overrides all other content for the message template.
+     * </p>
+     * 
+     * @param rawContent
+     *        The raw, JSON-formatted string to use as the payload for a push notification that's based on the message
+     *        template. If specified, this value overrides all other content for the message template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AndroidPushNotificationTemplate withRawContent(String rawContent) {
+        setRawContent(rawContent);
+        return this;
+    }
+
+    /**
+     * <p>
      * The URL of the small icon image to display in the status bar and the content view of a push notification that's
      * based on the message template.
      * </p>
@@ -665,6 +718,8 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
             sb.append("ImageIconUrl: ").append(getImageIconUrl()).append(",");
         if (getImageUrl() != null)
             sb.append("ImageUrl: ").append(getImageUrl()).append(",");
+        if (getRawContent() != null)
+            sb.append("RawContent: ").append(getRawContent()).append(",");
         if (getSmallImageIconUrl() != null)
             sb.append("SmallImageIconUrl: ").append(getSmallImageIconUrl()).append(",");
         if (getSound() != null)
@@ -703,6 +758,10 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
             return false;
         if (other.getImageUrl() != null && other.getImageUrl().equals(this.getImageUrl()) == false)
             return false;
+        if (other.getRawContent() == null ^ this.getRawContent() == null)
+            return false;
+        if (other.getRawContent() != null && other.getRawContent().equals(this.getRawContent()) == false)
+            return false;
         if (other.getSmallImageIconUrl() == null ^ this.getSmallImageIconUrl() == null)
             return false;
         if (other.getSmallImageIconUrl() != null && other.getSmallImageIconUrl().equals(this.getSmallImageIconUrl()) == false)
@@ -731,6 +790,7 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getImageIconUrl() == null) ? 0 : getImageIconUrl().hashCode());
         hashCode = prime * hashCode + ((getImageUrl() == null) ? 0 : getImageUrl().hashCode());
+        hashCode = prime * hashCode + ((getRawContent() == null) ? 0 : getRawContent().hashCode());
         hashCode = prime * hashCode + ((getSmallImageIconUrl() == null) ? 0 : getSmallImageIconUrl().hashCode());
         hashCode = prime * hashCode + ((getSound() == null) ? 0 : getSound().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());

@@ -89,6 +89,11 @@ public class SavingsPlansPurchaseRecommendationSummaryJsonUnmarshaller implement
                     context.nextToken();
                     savingsPlansPurchaseRecommendationSummary.setEstimatedMonthlySavingsAmount(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EstimatedOnDemandCostWithCurrentCommitment", targetDepth)) {
+                    context.nextToken();
+                    savingsPlansPurchaseRecommendationSummary.setEstimatedOnDemandCostWithCurrentCommitment(context.getUnmarshaller(String.class).unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

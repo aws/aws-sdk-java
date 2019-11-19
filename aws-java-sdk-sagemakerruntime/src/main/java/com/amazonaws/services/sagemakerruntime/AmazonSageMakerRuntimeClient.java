@@ -144,16 +144,21 @@ public class AmazonSageMakerRuntimeClient extends AmazonWebServiceClient impleme
      * </p>
      * <p>
      * For an overview of Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>.
      * </p>
      * <p>
      * Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional
      * headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
      * </p>
      * <p>
-     * Cals to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version 4. For information, see <a
+     * Calls to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version 4. For information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests
      * (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+     * </p>
+     * <p>
+     * A customer's model containers must respond to requests within 60 seconds. The model itself can have a maximum
+     * processing time of 60 seconds before responding to the /invocations. If your model is going to take 50-60 seconds
+     * of processing time, the SDK socket timeout should be set to be 70 seconds.
      * </p>
      * <note>
      * <p>
@@ -171,7 +176,7 @@ public class AmazonSageMakerRuntimeClient extends AmazonWebServiceClient impleme
      * @throws ValidationErrorException
      *         Inspect your request and try again.
      * @throws ModelErrorException
-     *         Model (owned by the customer in the container) returned an error 500.
+     *         Model (owned by the customer in the container) returned 4xx or 5xx error code.
      * @sample AmazonSageMakerRuntime.InvokeEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint"
      *      target="_top">AWS API Documentation</a>

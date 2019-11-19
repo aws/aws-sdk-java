@@ -39,7 +39,7 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
     private java.util.Map<String, String> context;
     /**
      * <p>
-     * The message definitions for the default message and any default messages that you defined for specific channels.
+     * The settings and content for the default message and any default messages that you defined for specific channels.
      * </p>
      */
     private DirectMessageConfiguration messageConfiguration;
@@ -138,11 +138,11 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The message definitions for the default message and any default messages that you defined for specific channels.
+     * The settings and content for the default message and any default messages that you defined for specific channels.
      * </p>
      * 
      * @param messageConfiguration
-     *        The message definitions for the default message and any default messages that you defined for specific
+     *        The settings and content for the default message and any default messages that you defined for specific
      *        channels.
      */
 
@@ -152,10 +152,10 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The message definitions for the default message and any default messages that you defined for specific channels.
+     * The settings and content for the default message and any default messages that you defined for specific channels.
      * </p>
      * 
-     * @return The message definitions for the default message and any default messages that you defined for specific
+     * @return The settings and content for the default message and any default messages that you defined for specific
      *         channels.
      */
 
@@ -165,11 +165,11 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The message definitions for the default message and any default messages that you defined for specific channels.
+     * The settings and content for the default message and any default messages that you defined for specific channels.
      * </p>
      * 
      * @param messageConfiguration
-     *        The message definitions for the default message and any default messages that you defined for specific
+     *        The settings and content for the default message and any default messages that you defined for specific
      *        channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

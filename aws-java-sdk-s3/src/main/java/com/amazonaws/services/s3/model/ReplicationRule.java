@@ -56,6 +56,12 @@ public class ReplicationRule implements Serializable {
     private Integer priority;
 
     /**
+     * The status of the replication of existing objects in this replication rule. Valid values are Enabled, Disabled.
+     * The rule will be applied only if the status is Enabled, and is only valid for Replication configuration V2.
+     */
+    private ExistingObjectReplication existingObjectReplication;
+
+    /**
      * The status of the replication of delete markers in this replication rule. Valid values are Enabled, Disabled.
      * The rule will be applied only if the status is Enabled, and is only valid for Replication configuration V2.
      */
@@ -94,13 +100,42 @@ public class ReplicationRule implements Serializable {
     }
 
     /**
+     * Returns the status of existing object replication of current rule.
+     */
+    public ExistingObjectReplication getExistingObjectReplication() {
+        return existingObjectReplication;
+    }
+
+    /**
+     * Sets the status of existing object replication of current rule.
+     *
+     * @param existingObjectReplication Status of existing object replication.
+     */
+    public void setExistingObjectReplication(ExistingObjectReplication existingObjectReplication) {
+        this.existingObjectReplication = existingObjectReplication;
+    }
+
+    /**
+     * Fluent method to set the ExistingObjectReplication that is indicate if existing
+     * objects are replicated in Replication configuration V2.
+     *
+     * @param existingObjectReplication Status of existing object replication.
+     * @return This object for method chaining.
+     */
+    public ReplicationRule withExistingObjectReplication(ExistingObjectReplication existingObjectReplication) {
+        setExistingObjectReplication(existingObjectReplication);
+        return this;
+    }
+
+    /**
      * Returns the status of delete marker replication of current rule.
      */
     public DeleteMarkerReplication getDeleteMarkerReplication() {
         return deleteMarkerReplication;
     }
+
     /**
-     * Sets the Amazon S3 Object prefix for the replication rule.
+     * Sets the status of delete marker replication of the current rule.
      *
      * @param deleteMarkerReplication Status of delete markers replication.
      */

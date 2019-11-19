@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class OpsEntityItemMarshaller {
 
+    private static final MarshallingInfo<String> CAPTURETIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaptureTime").build();
     private static final MarshallingInfo<List> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Content").build();
 
@@ -47,6 +49,7 @@ public class OpsEntityItemMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(opsEntityItem.getCaptureTime(), CAPTURETIME_BINDING);
             protocolMarshaller.marshall(opsEntityItem.getContent(), CONTENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

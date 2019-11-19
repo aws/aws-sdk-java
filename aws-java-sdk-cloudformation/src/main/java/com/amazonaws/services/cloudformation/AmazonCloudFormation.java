@@ -368,6 +368,32 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Removes a type or type version from active use in the CloudFormation registry. If a type or type version is
+     * deregistered, it cannot be used in CloudFormation operations.
+     * </p>
+     * <p>
+     * To deregister a type, you must individually deregister all registered versions of that type. If a type has only a
+     * single registered version, deregistering that version results in the type itself being deregistered.
+     * </p>
+     * <p>
+     * You cannot deregister the default version of a type, unless it is the only registered version of that type, in
+     * which case the type itself is deregistered as well.
+     * </p>
+     * 
+     * @param deregisterTypeRequest
+     * @return Result of the DeregisterType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified type does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.DeregisterType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeregisterTypeResult deregisterType(DeregisterTypeRequest deregisterTypeRequest);
+
+    /**
+     * <p>
      * Retrieves your account's AWS CloudFormation limits, such as the maximum number of stacks that you can create in
      * your account. For more information about account limits, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS
@@ -611,6 +637,50 @@ public interface AmazonCloudFormation {
      * @see #describeStacks(DescribeStacksRequest)
      */
     DescribeStacksResult describeStacks();
+
+    /**
+     * <p>
+     * Returns detailed information about a type that has been registered.
+     * </p>
+     * <p>
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
+     * version. Otherwise, it returns information about the default type version.
+     * </p>
+     * 
+     * @param describeTypeRequest
+     * @return Result of the DescribeType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified type does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.DescribeType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeTypeResult describeType(DescribeTypeRequest describeTypeRequest);
+
+    /**
+     * <p>
+     * Returns information about a type's registration, including its current status and type and version identifiers.
+     * </p>
+     * <p>
+     * When you initiate a registration request using <code> <a>RegisterType</a> </code>, you can then use
+     * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of that registration request.
+     * </p>
+     * <p>
+     * Once the registration request has completed, use <code> <a>DescribeType</a> </code> to return detailed
+     * informaiton about a type.
+     * </p>
+     * 
+     * @param describeTypeRegistrationRequest
+     * @return Result of the DescribeTypeRegistration operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.DescribeTypeRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTypeRegistrationResult describeTypeRegistration(DescribeTypeRegistrationRequest describeTypeRegistrationRequest);
 
     /**
      * <p>
@@ -969,6 +1039,119 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Returns a list of registration tokens for the specified type.
+     * </p>
+     * 
+     * @param listTypeRegistrationsRequest
+     * @return Result of the ListTypeRegistrations operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.ListTypeRegistrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTypeRegistrationsResult listTypeRegistrations(ListTypeRegistrationsRequest listTypeRegistrationsRequest);
+
+    /**
+     * <p>
+     * Returns summary information about the versions of a type.
+     * </p>
+     * 
+     * @param listTypeVersionsRequest
+     * @return Result of the ListTypeVersions operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.ListTypeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTypeVersionsResult listTypeVersions(ListTypeVersionsRequest listTypeVersionsRequest);
+
+    /**
+     * <p>
+     * Returns summary information about types that have been registered with CloudFormation.
+     * </p>
+     * 
+     * @param listTypesRequest
+     * @return Result of the ListTypes operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.ListTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTypesResult listTypes(ListTypesRequest listTypesRequest);
+
+    /**
+     * <p>
+     * Reports progress of a resource handler to CloudFormation.
+     * </p>
+     * <p>
+     * Reserved for use by the <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html"
+     * >CloudFormation CLI</a>. Do not use this API in your code.
+     * </p>
+     * 
+     * @param recordHandlerProgressRequest
+     * @return Result of the RecordHandlerProgress operation returned by the service.
+     * @throws InvalidStateTransitionException
+     *         Error reserved for use by the <a
+     *         href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html"
+     *         >CloudFormation CLI</a>. CloudFormation does not return this error to users.
+     * @throws OperationStatusCheckFailedException
+     *         Error reserved for use by the <a
+     *         href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html"
+     *         >CloudFormation CLI</a>. CloudFormation does not return this error to users.
+     * @sample AmazonCloudFormation.RecordHandlerProgress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RecordHandlerProgressResult recordHandlerProgress(RecordHandlerProgressRequest recordHandlerProgressRequest);
+
+    /**
+     * <p>
+     * Registers a type with the CloudFormation service. Registering a type makes it available for use in CloudFormation
+     * templates in your AWS account, and includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Validating the resource schema
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Determining which handlers have been specified for the resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Making the resource type available for use in your account
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information on how to develop types and ready them for registeration, see <a
+     * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource Providers</a> in the
+     * <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p>
+     * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
+     * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of the registration request.
+     * </p>
+     * 
+     * @param registerTypeRequest
+     * @return Result of the RegisterType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.RegisterType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RegisterTypeResult registerType(RegisterTypeRequest registerTypeRequest);
+
+    /**
+     * <p>
      * Sets a stack policy for a specified stack.
      * </p>
      * 
@@ -980,6 +1163,23 @@ public interface AmazonCloudFormation {
      *      API Documentation</a>
      */
     SetStackPolicyResult setStackPolicy(SetStackPolicyRequest setStackPolicyRequest);
+
+    /**
+     * <p>
+     * Specify the default version of a type. The default version of a type will be used in CloudFormation operations.
+     * </p>
+     * 
+     * @param setTypeDefaultVersionRequest
+     * @return Result of the SetTypeDefaultVersion operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified type does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.SetTypeDefaultVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetTypeDefaultVersionResult setTypeDefaultVersion(SetTypeDefaultVersionRequest setTypeDefaultVersionRequest);
 
     /**
      * <p>

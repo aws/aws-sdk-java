@@ -2208,6 +2208,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you are notified of
      * events generated from all RDS sources belonging to your customer account.
      * </p>
+     * <note>
+     * <p>
+     * RDS event notification is only available for unencrypted SNS topics. If you specify an encrypted SNS topic, event
+     * notifications aren't sent for the topic.
+     * </p>
+     * </note>
      * 
      * @param createEventSubscriptionRequest
      * @return Result of the CreateEventSubscription operation returned by the service.
@@ -6369,7 +6375,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
      * </p>
      * <p>
-     * Amazon RDS supports upgrading DB snapshots for MySQL and Oracle.
+     * Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL.
      * </p>
      * 
      * @param modifyDBSnapshotRequest

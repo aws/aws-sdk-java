@@ -80,7 +80,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>ReverseLogarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
      * </p>
      * <p>
      * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
@@ -254,7 +254,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>ReverseLogarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
      * </p>
      * <p>
      * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
@@ -292,7 +292,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      *        <dt>ReverseLogarithmic</dt>
      *        <dd>
      *        <p>
-     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic
      *        scale.
      *        </p>
      *        <p>
@@ -338,7 +338,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>ReverseLogarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
      * </p>
      * <p>
      * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
@@ -375,7 +375,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      *         <dt>ReverseLogarithmic</dt>
      *         <dd>
      *         <p>
-     *         Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic
+     *         Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic
      *         scale.
      *         </p>
      *         <p>
@@ -421,7 +421,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>ReverseLogarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
      * </p>
      * <p>
      * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
@@ -459,7 +459,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      *        <dt>ReverseLogarithmic</dt>
      *        <dd>
      *        <p>
-     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic
      *        scale.
      *        </p>
      *        <p>
@@ -507,7 +507,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <dt>ReverseLogarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic scale.
      * </p>
      * <p>
      * Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.
@@ -545,7 +545,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      *        <dt>ReverseLogarithmic</dt>
      *        <dd>
      *        <p>
-     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a reverse logarithmic
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a reverse logarithmic
      *        scale.
      *        </p>
      *        <p>

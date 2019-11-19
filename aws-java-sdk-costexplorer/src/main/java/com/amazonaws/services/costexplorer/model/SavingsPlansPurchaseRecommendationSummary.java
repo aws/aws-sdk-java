@@ -90,6 +90,13 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
      * </p>
      */
     private String estimatedMonthlySavingsAmount;
+    /**
+     * <p>
+     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
+     * time period and the Savings Plans you own.
+     * </p>
+     */
+    private String estimatedOnDemandCostWithCurrentCommitment;
 
     /**
      * <p>
@@ -507,6 +514,52 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
     }
 
     /**
+     * <p>
+     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
+     * time period and the Savings Plans you own.
+     * </p>
+     * 
+     * @param estimatedOnDemandCostWithCurrentCommitment
+     *        The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     *        selected time period and the Savings Plans you own.
+     */
+
+    public void setEstimatedOnDemandCostWithCurrentCommitment(String estimatedOnDemandCostWithCurrentCommitment) {
+        this.estimatedOnDemandCostWithCurrentCommitment = estimatedOnDemandCostWithCurrentCommitment;
+    }
+
+    /**
+     * <p>
+     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
+     * time period and the Savings Plans you own.
+     * </p>
+     * 
+     * @return The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     *         selected time period and the Savings Plans you own.
+     */
+
+    public String getEstimatedOnDemandCostWithCurrentCommitment() {
+        return this.estimatedOnDemandCostWithCurrentCommitment;
+    }
+
+    /**
+     * <p>
+     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
+     * time period and the Savings Plans you own.
+     * </p>
+     * 
+     * @param estimatedOnDemandCostWithCurrentCommitment
+     *        The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     *        selected time period and the Savings Plans you own.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SavingsPlansPurchaseRecommendationSummary withEstimatedOnDemandCostWithCurrentCommitment(String estimatedOnDemandCostWithCurrentCommitment) {
+        setEstimatedOnDemandCostWithCurrentCommitment(estimatedOnDemandCostWithCurrentCommitment);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -537,7 +590,9 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
         if (getEstimatedSavingsPercentage() != null)
             sb.append("EstimatedSavingsPercentage: ").append(getEstimatedSavingsPercentage()).append(",");
         if (getEstimatedMonthlySavingsAmount() != null)
-            sb.append("EstimatedMonthlySavingsAmount: ").append(getEstimatedMonthlySavingsAmount());
+            sb.append("EstimatedMonthlySavingsAmount: ").append(getEstimatedMonthlySavingsAmount()).append(",");
+        if (getEstimatedOnDemandCostWithCurrentCommitment() != null)
+            sb.append("EstimatedOnDemandCostWithCurrentCommitment: ").append(getEstimatedOnDemandCostWithCurrentCommitment());
         sb.append("}");
         return sb.toString();
     }
@@ -593,6 +648,11 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
         if (other.getEstimatedMonthlySavingsAmount() != null
                 && other.getEstimatedMonthlySavingsAmount().equals(this.getEstimatedMonthlySavingsAmount()) == false)
             return false;
+        if (other.getEstimatedOnDemandCostWithCurrentCommitment() == null ^ this.getEstimatedOnDemandCostWithCurrentCommitment() == null)
+            return false;
+        if (other.getEstimatedOnDemandCostWithCurrentCommitment() != null
+                && other.getEstimatedOnDemandCostWithCurrentCommitment().equals(this.getEstimatedOnDemandCostWithCurrentCommitment()) == false)
+            return false;
         return true;
     }
 
@@ -611,6 +671,8 @@ public class SavingsPlansPurchaseRecommendationSummary implements Serializable, 
         hashCode = prime * hashCode + ((getHourlyCommitmentToPurchase() == null) ? 0 : getHourlyCommitmentToPurchase().hashCode());
         hashCode = prime * hashCode + ((getEstimatedSavingsPercentage() == null) ? 0 : getEstimatedSavingsPercentage().hashCode());
         hashCode = prime * hashCode + ((getEstimatedMonthlySavingsAmount() == null) ? 0 : getEstimatedMonthlySavingsAmount().hashCode());
+        hashCode = prime * hashCode
+                + ((getEstimatedOnDemandCostWithCurrentCommitment() == null) ? 0 : getEstimatedOnDemandCostWithCurrentCommitment().hashCode());
         return hashCode;
     }
 

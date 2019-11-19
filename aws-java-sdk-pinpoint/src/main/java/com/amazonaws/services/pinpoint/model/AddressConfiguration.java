@@ -50,16 +50,15 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     private java.util.Map<String, String> context;
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
-     * message.
+     * The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all
+     * other values for the message.
      * </p>
      */
     private String rawContent;
     /**
      * <p>
-     * An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable values
-     * specified by properties of the DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.
+     * A map of the message variables to merge with the variables specified by properties of the DefaultMessage object.
+     * The variables specified in this map take precedence over all other variables.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> substitutions;
@@ -261,13 +260,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
-     * message.
+     * The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all
+     * other values for the message.
      * </p>
      * 
      * @param rawContent
-     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *        the message.
+     *        The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides
+     *        all other values for the message.
      */
 
     public void setRawContent(String rawContent) {
@@ -276,12 +275,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
-     * message.
+     * The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all
+     * other values for the message.
      * </p>
      * 
-     * @return The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *         the message.
+     * @return The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides
+     *         all other values for the message.
      */
 
     public String getRawContent() {
@@ -290,13 +289,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides the
-     * message.
+     * The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all
+     * other values for the message.
      * </p>
      * 
      * @param rawContent
-     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
-     *        the message.
+     *        The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides
+     *        all other values for the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,14 +306,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable values
-     * specified by properties of the DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.
+     * A map of the message variables to merge with the variables specified by properties of the DefaultMessage object.
+     * The variables specified in this map take precedence over all other variables.
      * </p>
      * 
-     * @return An object that maps variable values for the message. Amazon Pinpoint merges these values with the
-     *         variable values specified by properties of the DefaultMessage object. The substitutions in this map take
-     *         precedence over all other substitutions.
+     * @return A map of the message variables to merge with the variables specified by properties of the DefaultMessage
+     *         object. The variables specified in this map take precedence over all other variables.
      */
 
     public java.util.Map<String, java.util.List<String>> getSubstitutions() {
@@ -323,15 +320,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable values
-     * specified by properties of the DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.
+     * A map of the message variables to merge with the variables specified by properties of the DefaultMessage object.
+     * The variables specified in this map take precedence over all other variables.
      * </p>
      * 
      * @param substitutions
-     *        An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable
-     *        values specified by properties of the DefaultMessage object. The substitutions in this map take precedence
-     *        over all other substitutions.
+     *        A map of the message variables to merge with the variables specified by properties of the DefaultMessage
+     *        object. The variables specified in this map take precedence over all other variables.
      */
 
     public void setSubstitutions(java.util.Map<String, java.util.List<String>> substitutions) {
@@ -340,15 +335,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable values
-     * specified by properties of the DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.
+     * A map of the message variables to merge with the variables specified by properties of the DefaultMessage object.
+     * The variables specified in this map take precedence over all other variables.
      * </p>
      * 
      * @param substitutions
-     *        An object that maps variable values for the message. Amazon Pinpoint merges these values with the variable
-     *        values specified by properties of the DefaultMessage object. The substitutions in this map take precedence
-     *        over all other substitutions.
+     *        A map of the message variables to merge with the variables specified by properties of the DefaultMessage
+     *        object. The variables specified in this map take precedence over all other variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

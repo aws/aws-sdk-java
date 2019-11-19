@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListResourceDataSyncRequestMarshaller {
 
+    private static final MarshallingInfo<String> SYNCTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SyncType").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +50,7 @@ public class ListResourceDataSyncRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listResourceDataSyncRequest.getSyncType(), SYNCTYPE_BINDING);
             protocolMarshaller.marshall(listResourceDataSyncRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listResourceDataSyncRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

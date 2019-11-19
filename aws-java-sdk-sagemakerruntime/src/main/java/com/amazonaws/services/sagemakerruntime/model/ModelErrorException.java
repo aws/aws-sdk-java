@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Model (owned by the customer in the container) returned an error 500.
+ * Model (owned by the customer in the container) returned 4xx or 5xx error code.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

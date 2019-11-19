@@ -43,6 +43,8 @@ public enum PinpointActions implements Action {
     CreateSegment("pinpoint:CreateSegment"),
     /** Action for the CreateSmsTemplate operation. */
     CreateSmsTemplate("pinpoint:CreateSmsTemplate"),
+    /** Action for the CreateVoiceTemplate operation. */
+    CreateVoiceTemplate("pinpoint:CreateVoiceTemplate"),
     /** Action for the DeleteAdmChannel operation. */
     DeleteAdmChannel("pinpoint:DeleteAdmChannel"),
     /** Action for the DeleteApnsChannel operation. */
@@ -83,6 +85,8 @@ public enum PinpointActions implements Action {
     DeleteUserEndpoints("pinpoint:DeleteUserEndpoints"),
     /** Action for the DeleteVoiceChannel operation. */
     DeleteVoiceChannel("pinpoint:DeleteVoiceChannel"),
+    /** Action for the DeleteVoiceTemplate operation. */
+    DeleteVoiceTemplate("pinpoint:DeleteVoiceTemplate"),
     /** Action for the GetAdmChannel operation. */
     GetAdmChannel("pinpoint:GetAdmChannel"),
     /** Action for the GetApnsChannel operation. */
@@ -165,6 +169,8 @@ public enum PinpointActions implements Action {
     GetUserEndpoints("pinpoint:GetUserEndpoints"),
     /** Action for the GetVoiceChannel operation. */
     GetVoiceChannel("pinpoint:GetVoiceChannel"),
+    /** Action for the GetVoiceTemplate operation. */
+    GetVoiceTemplate("pinpoint:GetVoiceTemplate"),
     /** Action for the ListJourneys operation. */
     ListJourneys("pinpoint:ListJourneys"),
     /** Action for the ListTagsForResource operation. */
@@ -227,6 +233,8 @@ public enum PinpointActions implements Action {
     UpdateSmsTemplate("pinpoint:UpdateSmsTemplate"),
     /** Action for the UpdateVoiceChannel operation. */
     UpdateVoiceChannel("pinpoint:UpdateVoiceChannel"),
+    /** Action for the UpdateVoiceTemplate operation. */
+    UpdateVoiceTemplate("pinpoint:UpdateVoiceTemplate"),
 
     ;
 

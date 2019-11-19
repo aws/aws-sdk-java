@@ -137,6 +137,20 @@ public class AmazonCloudFormationWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a TypeRegistrationComplete waiter by using custom parameters waiterParameters and other parameters defined
+     * in the waiters specification, and then polls until it determines whether the resource entered the desired state
+     * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeTypeRegistrationRequest> typeRegistrationComplete() {
+
+        return new WaiterBuilder<DescribeTypeRegistrationRequest, DescribeTypeRegistrationResult>()
+                .withSdkFunction(new DescribeTypeRegistrationFunction(client))
+                .withAcceptors(new TypeRegistrationComplete.IsCOMPLETEMatcher(), new TypeRegistrationComplete.IsFAILEDMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
     public void shutdown() {
         executorService.shutdown();
     }

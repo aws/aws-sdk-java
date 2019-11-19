@@ -30,7 +30,7 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The body of the email for recipients whose email clients don't support HTML content.
+     * The body of the email for recipients whose email clients don't render HTML content.
      * </p>
      */
     private String body;
@@ -43,7 +43,7 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
     private String fromAddress;
     /**
      * <p>
-     * The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * The body of the email, in HTML format, for recipients whose email clients render HTML content.
      * </p>
      */
     private String htmlBody;
@@ -56,11 +56,11 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The body of the email for recipients whose email clients don't support HTML content.
+     * The body of the email for recipients whose email clients don't render HTML content.
      * </p>
      * 
      * @param body
-     *        The body of the email for recipients whose email clients don't support HTML content.
+     *        The body of the email for recipients whose email clients don't render HTML content.
      */
 
     public void setBody(String body) {
@@ -69,10 +69,10 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The body of the email for recipients whose email clients don't support HTML content.
+     * The body of the email for recipients whose email clients don't render HTML content.
      * </p>
      * 
-     * @return The body of the email for recipients whose email clients don't support HTML content.
+     * @return The body of the email for recipients whose email clients don't render HTML content.
      */
 
     public String getBody() {
@@ -81,11 +81,11 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The body of the email for recipients whose email clients don't support HTML content.
+     * The body of the email for recipients whose email clients don't render HTML content.
      * </p>
      * 
      * @param body
-     *        The body of the email for recipients whose email clients don't support HTML content.
+     *        The body of the email for recipients whose email clients don't render HTML content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * The body of the email, in HTML format, for recipients whose email clients render HTML content.
      * </p>
      * 
      * @param htmlBody
-     *        The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     *        The body of the email, in HTML format, for recipients whose email clients render HTML content.
      */
 
     public void setHtmlBody(String htmlBody) {
@@ -155,10 +155,10 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * The body of the email, in HTML format, for recipients whose email clients render HTML content.
      * </p>
      * 
-     * @return The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * @return The body of the email, in HTML format, for recipients whose email clients render HTML content.
      */
 
     public String getHtmlBody() {
@@ -167,11 +167,11 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     * The body of the email, in HTML format, for recipients whose email clients render HTML content.
      * </p>
      * 
      * @param htmlBody
-     *        The body of the email, in HTML format, for recipients whose email clients support HTML content.
+     *        The body of the email, in HTML format, for recipients whose email clients render HTML content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

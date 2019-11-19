@@ -2185,6 +2185,7 @@ public class XmlResponsesSaxParser {
         private List<ReplicationFilterPredicate> andOperandsList;
         private String currentTagKey;
         private String currentTagValue;
+        private ExistingObjectReplication existingObjectReplication;
         private DeleteMarkerReplication deleteMarkerReplication;
         private ReplicationDestinationConfig destinationConfig;
         private AccessControlTranslation accessControlTranslation;
@@ -2202,6 +2203,7 @@ public class XmlResponsesSaxParser {
         private static final String TAG = "Tag";
         private static final String TAG_KEY = "Key";
         private static final String TAG_VALUE = "Value";
+        private static final String EXISTING_OBJECT_REPLICATION = "ExistingObjectReplication";
         private static final String DELETE_MARKER_REPLICATION = "DeleteMarkerReplication";
         private static final String PRIORITY = "Priority";
         private static final String STATUS = "Status";
@@ -2232,6 +2234,8 @@ public class XmlResponsesSaxParser {
                     destinationConfig = new ReplicationDestinationConfig();
                 } else if (name.equals(SOURCE_SELECTION_CRITERIA)) {
                     sourceSelectionCriteria = new SourceSelectionCriteria();
+                } else if (name.equals(EXISTING_OBJECT_REPLICATION)) {
+                    existingObjectReplication = new ExistingObjectReplication();
                 } else if (name.equals(DELETE_MARKER_REPLICATION)) {
                     deleteMarkerReplication = new DeleteMarkerReplication();
                 } else if (name.equals(FILTER)) {
@@ -2262,6 +2266,7 @@ public class XmlResponsesSaxParser {
                             currentRule);
                     currentRule = null;
                     currentRuleId = null;
+                    existingObjectReplication = null;
                     deleteMarkerReplication = null;
                     destinationConfig = null;
                     sseKmsEncryptedObjects = null;
@@ -2277,6 +2282,8 @@ public class XmlResponsesSaxParser {
                     currentRule.setPrefix(getText());
                 } else if (name.equals(PRIORITY)) {
                     currentRule.setPriority(Integer.valueOf(getText()));
+                } else if (name.equals(EXISTING_OBJECT_REPLICATION)){
+                    currentRule.setExistingObjectReplication(existingObjectReplication);
                 } else if (name.equals(DELETE_MARKER_REPLICATION)) {
                     currentRule.setDeleteMarkerReplication(deleteMarkerReplication);
                 } else if (name.equals(SOURCE_SELECTION_CRITERIA)) {
@@ -2330,6 +2337,10 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA, SSE_KMS_ENCRYPTED_OBJECTS)) {
                 if (name.equals(STATUS)) {
                     sseKmsEncryptedObjects.setStatus(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, EXISTING_OBJECT_REPLICATION)) {
+                if (name.equals(STATUS)) {
+                    existingObjectReplication.setStatus(getText());
                 }
             } else if (in(REPLICATION_CONFIG, RULE, DELETE_MARKER_REPLICATION)) {
                 if (name.equals(STATUS)) {

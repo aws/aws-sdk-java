@@ -69,7 +69,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Logarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
      * Logarithmic scaling works only for ranges that have only values greater than 0.
@@ -222,7 +222,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Logarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
      * Logarithmic scaling works only for ranges that have only values greater than 0.
@@ -251,7 +251,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        <dt>Logarithmic</dt>
      *        <dd>
      *        <p>
-     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      *        </p>
      *        <p>
      *        Logarithmic scaling works only for ranges that have only values greater than 0.
@@ -287,7 +287,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Logarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
      * Logarithmic scaling works only for ranges that have only values greater than 0.
@@ -315,7 +315,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *         <dt>Logarithmic</dt>
      *         <dd>
      *         <p>
-     *         Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     *         Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      *         </p>
      *         <p>
      *         Logarithmic scaling works only for ranges that have only values greater than 0.
@@ -351,7 +351,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Logarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
      * Logarithmic scaling works only for ranges that have only values greater than 0.
@@ -380,7 +380,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        <dt>Logarithmic</dt>
      *        <dd>
      *        <p>
-     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      *        </p>
      *        <p>
      *        Logarithmic scaling works only for ranges that have only values greater than 0.
@@ -418,7 +418,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * <dt>Logarithmic</dt>
      * <dd>
      * <p>
-     * Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
      * Logarithmic scaling works only for ranges that have only values greater than 0.
@@ -447,7 +447,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        <dt>Logarithmic</dt>
      *        <dd>
      *        <p>
-     *        Hyperparemeter tuning searches the values in the hyperparameter range by using a logarithmic scale.
+     *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      *        </p>
      *        <p>
      *        Logarithmic scaling works only for ranges that have only values greater than 0.

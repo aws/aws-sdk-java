@@ -74,6 +74,13 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
     private String estimatedOnDemandCost;
     /**
      * <p>
+     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
+     * time period and the Savings Plans you own.
+     * </p>
+     */
+    private String estimatedOnDemandCostWithCurrentCommitment;
+    /**
+     * <p>
      * The estimated savings amount based on the recommended Savings Plans over the length of the lookback period.
      * </p>
      */
@@ -412,6 +419,52 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     public SavingsPlansPurchaseRecommendationDetail withEstimatedOnDemandCost(String estimatedOnDemandCost) {
         setEstimatedOnDemandCost(estimatedOnDemandCost);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
+     * time period and the Savings Plans you own.
+     * </p>
+     * 
+     * @param estimatedOnDemandCostWithCurrentCommitment
+     *        The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     *        selected time period and the Savings Plans you own.
+     */
+
+    public void setEstimatedOnDemandCostWithCurrentCommitment(String estimatedOnDemandCostWithCurrentCommitment) {
+        this.estimatedOnDemandCostWithCurrentCommitment = estimatedOnDemandCostWithCurrentCommitment;
+    }
+
+    /**
+     * <p>
+     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
+     * time period and the Savings Plans you own.
+     * </p>
+     * 
+     * @return The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     *         selected time period and the Savings Plans you own.
+     */
+
+    public String getEstimatedOnDemandCostWithCurrentCommitment() {
+        return this.estimatedOnDemandCostWithCurrentCommitment;
+    }
+
+    /**
+     * <p>
+     * The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the selected
+     * time period and the Savings Plans you own.
+     * </p>
+     * 
+     * @param estimatedOnDemandCostWithCurrentCommitment
+     *        The estimated On-Demand costs you would expect with no additional commitment, based on your usage of the
+     *        selected time period and the Savings Plans you own.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SavingsPlansPurchaseRecommendationDetail withEstimatedOnDemandCostWithCurrentCommitment(String estimatedOnDemandCostWithCurrentCommitment) {
+        setEstimatedOnDemandCostWithCurrentCommitment(estimatedOnDemandCostWithCurrentCommitment);
         return this;
     }
 
@@ -776,6 +829,8 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
             sb.append("EstimatedSPCost: ").append(getEstimatedSPCost()).append(",");
         if (getEstimatedOnDemandCost() != null)
             sb.append("EstimatedOnDemandCost: ").append(getEstimatedOnDemandCost()).append(",");
+        if (getEstimatedOnDemandCostWithCurrentCommitment() != null)
+            sb.append("EstimatedOnDemandCostWithCurrentCommitment: ").append(getEstimatedOnDemandCostWithCurrentCommitment()).append(",");
         if (getEstimatedSavingsAmount() != null)
             sb.append("EstimatedSavingsAmount: ").append(getEstimatedSavingsAmount()).append(",");
         if (getEstimatedSavingsPercentage() != null)
@@ -834,6 +889,11 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
             return false;
         if (other.getEstimatedOnDemandCost() != null && other.getEstimatedOnDemandCost().equals(this.getEstimatedOnDemandCost()) == false)
             return false;
+        if (other.getEstimatedOnDemandCostWithCurrentCommitment() == null ^ this.getEstimatedOnDemandCostWithCurrentCommitment() == null)
+            return false;
+        if (other.getEstimatedOnDemandCostWithCurrentCommitment() != null
+                && other.getEstimatedOnDemandCostWithCurrentCommitment().equals(this.getEstimatedOnDemandCostWithCurrentCommitment()) == false)
+            return false;
         if (other.getEstimatedSavingsAmount() == null ^ this.getEstimatedSavingsAmount() == null)
             return false;
         if (other.getEstimatedSavingsAmount() != null && other.getEstimatedSavingsAmount().equals(this.getEstimatedSavingsAmount()) == false)
@@ -885,6 +945,8 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
         hashCode = prime * hashCode + ((getEstimatedSPCost() == null) ? 0 : getEstimatedSPCost().hashCode());
         hashCode = prime * hashCode + ((getEstimatedOnDemandCost() == null) ? 0 : getEstimatedOnDemandCost().hashCode());
+        hashCode = prime * hashCode
+                + ((getEstimatedOnDemandCostWithCurrentCommitment() == null) ? 0 : getEstimatedOnDemandCostWithCurrentCommitment().hashCode());
         hashCode = prime * hashCode + ((getEstimatedSavingsAmount() == null) ? 0 : getEstimatedSavingsAmount().hashCode());
         hashCode = prime * hashCode + ((getEstimatedSavingsPercentage() == null) ? 0 : getEstimatedSavingsPercentage().hashCode());
         hashCode = prime * hashCode + ((getHourlyCommitmentToPurchase() == null) ? 0 : getHourlyCommitmentToPurchase().hashCode());

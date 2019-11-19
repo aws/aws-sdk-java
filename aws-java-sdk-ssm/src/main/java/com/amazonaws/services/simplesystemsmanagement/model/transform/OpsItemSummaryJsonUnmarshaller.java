@@ -89,6 +89,14 @@ public class OpsItemSummaryJsonUnmarshaller implements Unmarshaller<OpsItemSumma
                     opsItemSummary.setOperationalData(new MapUnmarshaller<String, OpsItemDataValue>(context.getUnmarshaller(String.class),
                             OpsItemDataValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("Category", targetDepth)) {
+                    context.nextToken();
+                    opsItemSummary.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Severity", targetDepth)) {
+                    context.nextToken();
+                    opsItemSummary.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -43,6 +43,14 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
     private String creationDate;
     /**
      * <p>
+     * The JSON object that specifies the default values that are used for message variables in the message template.
+     * This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
+     * value defines the default value for that variable.
+     * </p>
+     */
+    private String defaultSubstitutions;
+    /**
+     * <p>
      * The message body, in HTML format, that's used in email messages that are based on the message template.
      * </p>
      */
@@ -68,6 +76,12 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
     private java.util.Map<String, String> tags;
     /**
      * <p>
+     * The custom description of the message template.
+     * </p>
+     */
+    private String templateDescription;
+    /**
+     * <p>
      * The name of the message template.
      * </p>
      */
@@ -80,7 +94,7 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
     private String templateType;
     /**
      * <p>
-     * The message body, in text format, that's used in email messages that are based on the message template.
+     * The message body, in plain text format, that's used in email messages that are based on the message template.
      * </p>
      */
     private String textPart;
@@ -162,6 +176,58 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
 
     public EmailTemplateResponse withCreationDate(String creationDate) {
         setCreationDate(creationDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The JSON object that specifies the default values that are used for message variables in the message template.
+     * This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
+     * value defines the default value for that variable.
+     * </p>
+     * 
+     * @param defaultSubstitutions
+     *        The JSON object that specifies the default values that are used for message variables in the message
+     *        template. This object is a set of key-value pairs. Each key defines a message variable in the template.
+     *        The corresponding value defines the default value for that variable.
+     */
+
+    public void setDefaultSubstitutions(String defaultSubstitutions) {
+        this.defaultSubstitutions = defaultSubstitutions;
+    }
+
+    /**
+     * <p>
+     * The JSON object that specifies the default values that are used for message variables in the message template.
+     * This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
+     * value defines the default value for that variable.
+     * </p>
+     * 
+     * @return The JSON object that specifies the default values that are used for message variables in the message
+     *         template. This object is a set of key-value pairs. Each key defines a message variable in the template.
+     *         The corresponding value defines the default value for that variable.
+     */
+
+    public String getDefaultSubstitutions() {
+        return this.defaultSubstitutions;
+    }
+
+    /**
+     * <p>
+     * The JSON object that specifies the default values that are used for message variables in the message template.
+     * This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
+     * value defines the default value for that variable.
+     * </p>
+     * 
+     * @param defaultSubstitutions
+     *        The JSON object that specifies the default values that are used for message variables in the message
+     *        template. This object is a set of key-value pairs. Each key defines a message variable in the template.
+     *        The corresponding value defines the default value for that variable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailTemplateResponse withDefaultSubstitutions(String defaultSubstitutions) {
+        setDefaultSubstitutions(defaultSubstitutions);
         return this;
     }
 
@@ -354,6 +420,46 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The custom description of the message template.
+     * </p>
+     * 
+     * @param templateDescription
+     *        The custom description of the message template.
+     */
+
+    public void setTemplateDescription(String templateDescription) {
+        this.templateDescription = templateDescription;
+    }
+
+    /**
+     * <p>
+     * The custom description of the message template.
+     * </p>
+     * 
+     * @return The custom description of the message template.
+     */
+
+    public String getTemplateDescription() {
+        return this.templateDescription;
+    }
+
+    /**
+     * <p>
+     * The custom description of the message template.
+     * </p>
+     * 
+     * @param templateDescription
+     *        The custom description of the message template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailTemplateResponse withTemplateDescription(String templateDescription) {
+        setTemplateDescription(templateDescription);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the message template.
      * </p>
      * 
@@ -454,11 +560,12 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The message body, in text format, that's used in email messages that are based on the message template.
+     * The message body, in plain text format, that's used in email messages that are based on the message template.
      * </p>
      * 
      * @param textPart
-     *        The message body, in text format, that's used in email messages that are based on the message template.
+     *        The message body, in plain text format, that's used in email messages that are based on the message
+     *        template.
      */
 
     public void setTextPart(String textPart) {
@@ -467,10 +574,11 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The message body, in text format, that's used in email messages that are based on the message template.
+     * The message body, in plain text format, that's used in email messages that are based on the message template.
      * </p>
      * 
-     * @return The message body, in text format, that's used in email messages that are based on the message template.
+     * @return The message body, in plain text format, that's used in email messages that are based on the message
+     *         template.
      */
 
     public String getTextPart() {
@@ -479,11 +587,12 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The message body, in text format, that's used in email messages that are based on the message template.
+     * The message body, in plain text format, that's used in email messages that are based on the message template.
      * </p>
      * 
      * @param textPart
-     *        The message body, in text format, that's used in email messages that are based on the message template.
+     *        The message body, in plain text format, that's used in email messages that are based on the message
+     *        template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,6 +617,8 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getDefaultSubstitutions() != null)
+            sb.append("DefaultSubstitutions: ").append(getDefaultSubstitutions()).append(",");
         if (getHtmlPart() != null)
             sb.append("HtmlPart: ").append(getHtmlPart()).append(",");
         if (getLastModifiedDate() != null)
@@ -516,6 +627,8 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
             sb.append("Subject: ").append(getSubject()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getTemplateDescription() != null)
+            sb.append("TemplateDescription: ").append(getTemplateDescription()).append(",");
         if (getTemplateName() != null)
             sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getTemplateType() != null)
@@ -544,6 +657,10 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getDefaultSubstitutions() == null ^ this.getDefaultSubstitutions() == null)
+            return false;
+        if (other.getDefaultSubstitutions() != null && other.getDefaultSubstitutions().equals(this.getDefaultSubstitutions()) == false)
+            return false;
         if (other.getHtmlPart() == null ^ this.getHtmlPart() == null)
             return false;
         if (other.getHtmlPart() != null && other.getHtmlPart().equals(this.getHtmlPart()) == false)
@@ -559,6 +676,10 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getTemplateDescription() == null ^ this.getTemplateDescription() == null)
+            return false;
+        if (other.getTemplateDescription() != null && other.getTemplateDescription().equals(this.getTemplateDescription()) == false)
             return false;
         if (other.getTemplateName() == null ^ this.getTemplateName() == null)
             return false;
@@ -582,10 +703,12 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getDefaultSubstitutions() == null) ? 0 : getDefaultSubstitutions().hashCode());
         hashCode = prime * hashCode + ((getHtmlPart() == null) ? 0 : getHtmlPart().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getTemplateType() == null) ? 0 : getTemplateType().hashCode());
         hashCode = prime * hashCode + ((getTextPart() == null) ? 0 : getTextPart().hashCode());

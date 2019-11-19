@@ -33,6 +33,8 @@ public class ContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerHostname").build();
     private static final MarshallingInfo<String> IMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Image").build();
+    private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Mode").build();
     private static final MarshallingInfo<String> MODELDATAURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataUrl").build();
     private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class ContainerDefinitionMarshaller {
         try {
             protocolMarshaller.marshall(containerDefinition.getContainerHostname(), CONTAINERHOSTNAME_BINDING);
             protocolMarshaller.marshall(containerDefinition.getImage(), IMAGE_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getMode(), MODE_BINDING);
             protocolMarshaller.marshall(containerDefinition.getModelDataUrl(), MODELDATAURL_BINDING);
             protocolMarshaller.marshall(containerDefinition.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(containerDefinition.getModelPackageName(), MODELPACKAGENAME_BINDING);

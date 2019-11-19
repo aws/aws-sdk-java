@@ -541,6 +541,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVoiceTemplateResult> createVoiceTemplateAsync(CreateVoiceTemplateRequest request) {
+
+        return createVoiceTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVoiceTemplateResult> createVoiceTemplateAsync(final CreateVoiceTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVoiceTemplateRequest, CreateVoiceTemplateResult> asyncHandler) {
+        final CreateVoiceTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVoiceTemplateResult>() {
+            @Override
+            public CreateVoiceTemplateResult call() throws Exception {
+                CreateVoiceTemplateResult result = null;
+
+                try {
+                    result = executeCreateVoiceTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAdmChannelResult> deleteAdmChannelAsync(DeleteAdmChannelRequest request) {
 
         return deleteAdmChannelAsync(request, null);
@@ -1185,6 +1218,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeDeleteVoiceChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceTemplateResult> deleteVoiceTemplateAsync(DeleteVoiceTemplateRequest request) {
+
+        return deleteVoiceTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceTemplateResult> deleteVoiceTemplateAsync(final DeleteVoiceTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVoiceTemplateRequest, DeleteVoiceTemplateResult> asyncHandler) {
+        final DeleteVoiceTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVoiceTemplateResult>() {
+            @Override
+            public DeleteVoiceTemplateResult call() throws Exception {
+                DeleteVoiceTemplateResult result = null;
+
+                try {
+                    result = executeDeleteVoiceTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2556,6 +2622,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetVoiceTemplateResult> getVoiceTemplateAsync(GetVoiceTemplateRequest request) {
+
+        return getVoiceTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceTemplateResult> getVoiceTemplateAsync(final GetVoiceTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVoiceTemplateRequest, GetVoiceTemplateResult> asyncHandler) {
+        final GetVoiceTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVoiceTemplateResult>() {
+            @Override
+            public GetVoiceTemplateResult call() throws Exception {
+                GetVoiceTemplateResult result = null;
+
+                try {
+                    result = executeGetVoiceTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJourneysResult> listJourneysAsync(ListJourneysRequest request) {
 
         return listJourneysAsync(request, null);
@@ -3563,6 +3662,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeUpdateVoiceChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVoiceTemplateResult> updateVoiceTemplateAsync(UpdateVoiceTemplateRequest request) {
+
+        return updateVoiceTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVoiceTemplateResult> updateVoiceTemplateAsync(final UpdateVoiceTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVoiceTemplateRequest, UpdateVoiceTemplateResult> asyncHandler) {
+        final UpdateVoiceTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVoiceTemplateResult>() {
+            @Override
+            public UpdateVoiceTemplateResult call() throws Exception {
+                UpdateVoiceTemplateResult result = null;
+
+                try {
+                    result = executeUpdateVoiceTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
