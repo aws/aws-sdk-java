@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the name and data type at a field.
+ * The field to aggregate.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -33,7 +33,7 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The datatype of the field.
+     * The data type of the field.
      * </p>
      */
     private String type;
@@ -80,11 +80,11 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The datatype of the field.
+     * The data type of the field.
      * </p>
      * 
      * @param type
-     *        The datatype of the field.
+     *        The data type of the field.
      * @see FieldType
      */
 
@@ -94,10 +94,10 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The datatype of the field.
+     * The data type of the field.
      * </p>
      * 
-     * @return The datatype of the field.
+     * @return The data type of the field.
      * @see FieldType
      */
 
@@ -107,11 +107,11 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The datatype of the field.
+     * The data type of the field.
      * </p>
      * 
      * @param type
-     *        The datatype of the field.
+     *        The data type of the field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FieldType
      */
@@ -123,11 +123,11 @@ public class Field implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The datatype of the field.
+     * The data type of the field.
      * </p>
      * 
      * @param type
-     *        The datatype of the field.
+     *        The data type of the field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FieldType
      */

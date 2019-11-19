@@ -19,6 +19,8 @@
 package com.amazonaws.util;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 
 import org.junit.AfterClass;
@@ -27,16 +29,30 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.amazonaws.SDKGlobalConfiguration;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+@RunWith(Parameterized.class)
 public class EC2MetadataUtilsIntegrationTest {
 
     private static EC2MetadataUtilsServer SERVER = null;
+    private static boolean tokenEnabled;
+
+    public EC2MetadataUtilsIntegrationTest(boolean tokenEnabled) {
+        this.tokenEnabled = tokenEnabled;
+    }
+
+    @Parameterized.Parameters()
+    public static Iterable<Boolean[]> tokenEnabled() {
+        Collection<Boolean[]> tokenEnabled = new ArrayList<Boolean[]>();
+        tokenEnabled.add(new Boolean[] {true});
+        tokenEnabled.add(new Boolean[] {false});
+        return tokenEnabled;
+    }
 
     @BeforeClass
     public static void setUp() throws IOException {
-
-
-        SERVER = new EC2MetadataUtilsServer("localhost", 0);
+        SERVER = new EC2MetadataUtilsServer("localhost", 0, tokenEnabled);
         SERVER.start();
 
         System.setProperty(

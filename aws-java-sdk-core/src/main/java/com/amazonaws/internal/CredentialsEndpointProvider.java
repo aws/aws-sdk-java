@@ -14,14 +14,11 @@
  */
 package com.amazonaws.internal;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
+import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p>
@@ -38,14 +35,8 @@ public abstract class CredentialsEndpointProvider {
      * @return
      * 		URI to retrieve the credentials.
      *
-     * @throws URISyntaxException
-     * 				If the endpoint string could not be parsed as a URI reference.
-     *
-     * @throws IOException
-     * 				If any problems are encountered while connecting to the
-     *             	service to retrieve the endpoint.
      */
-    public abstract URI getCredentialsEndpoint() throws URISyntaxException, IOException;
+    public abstract URI getCredentialsEndpoint() ;
 
     /**
      * Allows the extending class to provide a custom retry policy.

@@ -174,6 +174,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public DetectStackSetDriftResult detectStackSetDrift(DetectStackSetDriftRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EstimateTemplateCostResult estimateTemplateCost(EstimateTemplateCostRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

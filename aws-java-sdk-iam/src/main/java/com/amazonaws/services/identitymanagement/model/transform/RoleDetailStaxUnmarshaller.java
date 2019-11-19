@@ -120,6 +120,10 @@ public class RoleDetailStaxUnmarshaller implements Unmarshaller<RoleDetail, Stax
                     continue;
                 }
 
+                if (context.testExpression("RoleLastUsed", targetDepth)) {
+                    roleDetail.setRoleLastUsed(RoleLastUsedStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return roleDetail;

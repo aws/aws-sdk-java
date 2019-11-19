@@ -35,7 +35,7 @@ public class GetStatisticsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String queryString;
     /**
      * <p>
-     * The aggregation field name.
+     * The aggregation field name. Currently not supported.
      * </p>
      */
     private String aggregationField;
@@ -134,11 +134,11 @@ public class GetStatisticsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The aggregation field name.
+     * The aggregation field name. Currently not supported.
      * </p>
      * 
      * @param aggregationField
-     *        The aggregation field name.
+     *        The aggregation field name. Currently not supported.
      */
 
     public void setAggregationField(String aggregationField) {
@@ -147,10 +147,10 @@ public class GetStatisticsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The aggregation field name.
+     * The aggregation field name. Currently not supported.
      * </p>
      * 
-     * @return The aggregation field name.
+     * @return The aggregation field name. Currently not supported.
      */
 
     public String getAggregationField() {
@@ -159,11 +159,11 @@ public class GetStatisticsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The aggregation field name.
+     * The aggregation field name. Currently not supported.
      * </p>
      * 
      * @param aggregationField
-     *        The aggregation field name.
+     *        The aggregation field name. Currently not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,11 @@ public class AutoScalingInstanceDetailsStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("InstanceType", targetDepth)) {
+                    autoScalingInstanceDetails.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("AutoScalingGroupName", targetDepth)) {
                     autoScalingInstanceDetails.setAutoScalingGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -80,6 +85,11 @@ public class AutoScalingInstanceDetailsStaxUnmarshaller implements Unmarshaller<
 
                 if (context.testExpression("ProtectedFromScaleIn", targetDepth)) {
                     autoScalingInstanceDetails.setProtectedFromScaleIn(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("WeightedCapacity", targetDepth)) {
+                    autoScalingInstanceDetails.setWeightedCapacity(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -26,7 +26,7 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * Returns a list of <code>OrganizationConfigRule</code> objects.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OrganizationConfigRule> organizationConfigRules;
@@ -40,10 +40,10 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * Returns a list of <code>OrganizationConfigRule</code> objects.
      * </p>
      * 
-     * @return Retuns a list <code>OrganizationConfigRule</code> objects.
+     * @return Returns a list of <code>OrganizationConfigRule</code> objects.
      */
 
     public java.util.List<OrganizationConfigRule> getOrganizationConfigRules() {
@@ -55,11 +55,11 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * Returns a list of <code>OrganizationConfigRule</code> objects.
      * </p>
      * 
      * @param organizationConfigRules
-     *        Retuns a list <code>OrganizationConfigRule</code> objects.
+     *        Returns a list of <code>OrganizationConfigRule</code> objects.
      */
 
     public void setOrganizationConfigRules(java.util.Collection<OrganizationConfigRule> organizationConfigRules) {
@@ -73,7 +73,7 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * Returns a list of <code>OrganizationConfigRule</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param organizationConfigRules
-     *        Retuns a list <code>OrganizationConfigRule</code> objects.
+     *        Returns a list of <code>OrganizationConfigRule</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * Returns a list of <code>OrganizationConfigRule</code> objects.
      * </p>
      * 
      * @param organizationConfigRules
-     *        Retuns a list <code>OrganizationConfigRule</code> objects.
+     *        Returns a list of <code>OrganizationConfigRule</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

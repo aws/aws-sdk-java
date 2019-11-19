@@ -33,25 +33,25 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
     private Integer count;
     /**
      * <p>
-     * The average of the aggregated field values.
+     * The average of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      */
     private Double average;
     /**
      * <p>
-     * The sum of the aggregated field values.
+     * The sum of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      */
     private Double sum;
     /**
      * <p>
-     * The minimum aggregated field value.
+     * The minimum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      */
     private Double minimum;
     /**
      * <p>
-     * The maximum aggregated field value.
+     * The maximum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      */
     private Double maximum;
@@ -69,7 +69,7 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
     private Double variance;
     /**
      * <p>
-     * The standard deviation of the aggregated field valuesl
+     * The standard deviation of the aggregated field values.
      * </p>
      */
     private Double stdDeviation;
@@ -116,11 +116,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The average of the aggregated field values.
+     * The average of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
      * @param average
-     *        The average of the aggregated field values.
+     *        The average of the aggregated fields. If the field data type is String this value is indeterminate.
      */
 
     public void setAverage(Double average) {
@@ -129,10 +129,10 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The average of the aggregated field values.
+     * The average of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
-     * @return The average of the aggregated field values.
+     * @return The average of the aggregated fields. If the field data type is String this value is indeterminate.
      */
 
     public Double getAverage() {
@@ -141,11 +141,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The average of the aggregated field values.
+     * The average of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
      * @param average
-     *        The average of the aggregated field values.
+     *        The average of the aggregated fields. If the field data type is String this value is indeterminate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +156,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sum of the aggregated field values.
+     * The sum of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
      * @param sum
-     *        The sum of the aggregated field values.
+     *        The sum of the aggregated fields. If the field data type is String this value is indeterminate.
      */
 
     public void setSum(Double sum) {
@@ -169,10 +169,10 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sum of the aggregated field values.
+     * The sum of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
-     * @return The sum of the aggregated field values.
+     * @return The sum of the aggregated fields. If the field data type is String this value is indeterminate.
      */
 
     public Double getSum() {
@@ -181,11 +181,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sum of the aggregated field values.
+     * The sum of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
      * @param sum
-     *        The sum of the aggregated field values.
+     *        The sum of the aggregated fields. If the field data type is String this value is indeterminate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +196,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum aggregated field value.
+     * The minimum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
      * @param minimum
-     *        The minimum aggregated field value.
+     *        The minimum value of the aggregated fields. If the field data type is String this value is indeterminate.
      */
 
     public void setMinimum(Double minimum) {
@@ -209,10 +209,10 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum aggregated field value.
+     * The minimum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
-     * @return The minimum aggregated field value.
+     * @return The minimum value of the aggregated fields. If the field data type is String this value is indeterminate.
      */
 
     public Double getMinimum() {
@@ -221,11 +221,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum aggregated field value.
+     * The minimum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
      * @param minimum
-     *        The minimum aggregated field value.
+     *        The minimum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum aggregated field value.
+     * The maximum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
      * @param maximum
-     *        The maximum aggregated field value.
+     *        The maximum value of the aggregated fields. If the field data type is String this value is indeterminate.
      */
 
     public void setMaximum(Double maximum) {
@@ -249,10 +249,10 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum aggregated field value.
+     * The maximum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
-     * @return The maximum aggregated field value.
+     * @return The maximum value of the aggregated fields. If the field data type is String this value is indeterminate.
      */
 
     public Double getMaximum() {
@@ -261,11 +261,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum aggregated field value.
+     * The maximum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * </p>
      * 
      * @param maximum
-     *        The maximum aggregated field value.
+     *        The maximum value of the aggregated fields. If the field data type is String this value is indeterminate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,11 +356,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The standard deviation of the aggregated field valuesl
+     * The standard deviation of the aggregated field values.
      * </p>
      * 
      * @param stdDeviation
-     *        The standard deviation of the aggregated field valuesl
+     *        The standard deviation of the aggregated field values.
      */
 
     public void setStdDeviation(Double stdDeviation) {
@@ -369,10 +369,10 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The standard deviation of the aggregated field valuesl
+     * The standard deviation of the aggregated field values.
      * </p>
      * 
-     * @return The standard deviation of the aggregated field valuesl
+     * @return The standard deviation of the aggregated field values.
      */
 
     public Double getStdDeviation() {
@@ -381,11 +381,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The standard deviation of the aggregated field valuesl
+     * The standard deviation of the aggregated field values.
      * </p>
      * 
      * @param stdDeviation
-     *        The standard deviation of the aggregated field valuesl
+     *        The standard deviation of the aggregated field values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

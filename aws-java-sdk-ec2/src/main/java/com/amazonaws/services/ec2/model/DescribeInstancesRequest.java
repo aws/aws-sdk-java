@@ -115,10 +115,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -185,6 +181,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>launch-time</code> - The time when the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>required</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
+     * possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -615,10 +629,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -685,6 +695,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>launch-time</code> - The time when the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>required</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
+     * possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -1087,12 +1115,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as
-     *         an ARN.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>image-id</code> - The ID of the image used to launch the instance.
+     *         an ARN. <code>image-id</code> - The ID of the image used to launch the instance.
      *         </p>
      *         </li>
      *         <li>
@@ -1159,6 +1182,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>launch-time</code> - The time when the instance was launched.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     *         <code>required</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     *         (integer, possible values <code>1</code> to <code>64</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     *         <code>enabled</code> | <code>disabled</code>)
      *         </p>
      *         </li>
      *         <li>
@@ -1577,10 +1618,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -1647,6 +1684,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>launch-time</code> - The time when the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>required</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
+     * possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -2050,12 +2105,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an
-     *        ARN.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>image-id</code> - The ID of the image used to launch the instance.
+     *        ARN. <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -2122,6 +2172,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>launch-time</code> - The time when the instance was launched.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     *        <code>required</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     *        (integer, possible values <code>1</code> to <code>64</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     *        <code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -2541,10 +2609,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -2611,6 +2675,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>launch-time</code> - The time when the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>required</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
+     * possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -3019,12 +3101,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an
-     *        ARN.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>image-id</code> - The ID of the image used to launch the instance.
+     *        ARN. <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -3091,6 +3168,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>launch-time</code> - The time when the instance was launched.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     *        <code>required</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     *        (integer, possible values <code>1</code> to <code>64</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     *        <code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -3512,10 +3607,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -3582,6 +3673,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>launch-time</code> - The time when the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>required</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
+     * possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -3985,12 +4094,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an
-     *        ARN.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>image-id</code> - The ID of the image used to launch the instance.
+     *        ARN. <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -4057,6 +4161,24 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>launch-time</code> - The time when the instance was launched.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     *        <code>required</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     *        (integer, possible values <code>1</code> to <code>64</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     *        <code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>
      *        <li>

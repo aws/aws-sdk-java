@@ -539,7 +539,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach.
      *        The adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter
      *        (either an absolute number or a percentage). A positive value adds to the current capacity and a negative
-     *        value subtracts from the current capacity. For exact capacity, you must specify a positive value. </p>
+     *        value subtracts from the current capacity. For exact capacity, you must specify a positive value.</p>
      *        <p>
      *        Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this
      *        parameter. (Not used with any other policy type.)
@@ -564,7 +564,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @return The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach.
      *         The adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter
      *         (either an absolute number or a percentage). A positive value adds to the current capacity and a negative
-     *         value subtracts from the current capacity. For exact capacity, you must specify a positive value. </p>
+     *         value subtracts from the current capacity. For exact capacity, you must specify a positive value.</p>
      *         <p>
      *         Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this
      *         parameter. (Not used with any other policy type.)
@@ -590,7 +590,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach.
      *        The adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter
      *        (either an absolute number or a percentage). A positive value adds to the current capacity and a negative
-     *        value subtracts from the current capacity. For exact capacity, you must specify a positive value. </p>
+     *        value subtracts from the current capacity. For exact capacity, you must specify a positive value.</p>
      *        <p>
      *        Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this
      *        parameter. (Not used with any other policy type.)

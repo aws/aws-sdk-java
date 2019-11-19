@@ -310,6 +310,12 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LicenseConfiguration> licenses;
+    /**
+     * <p>
+     * The metadata options for the instance.
+     * </p>
+     */
+    private InstanceMetadataOptionsResponse metadataOptions;
 
     /**
      * <p>
@@ -2755,6 +2761,46 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The metadata options for the instance.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        The metadata options for the instance.
+     */
+
+    public void setMetadataOptions(InstanceMetadataOptionsResponse metadataOptions) {
+        this.metadataOptions = metadataOptions;
+    }
+
+    /**
+     * <p>
+     * The metadata options for the instance.
+     * </p>
+     * 
+     * @return The metadata options for the instance.
+     */
+
+    public InstanceMetadataOptionsResponse getMetadataOptions() {
+        return this.metadataOptions;
+    }
+
+    /**
+     * <p>
+     * The metadata options for the instance.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        The metadata options for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withMetadataOptions(InstanceMetadataOptionsResponse metadataOptions) {
+        setMetadataOptions(metadataOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2855,7 +2901,9 @@ public class Instance implements Serializable, Cloneable {
         if (getHibernationOptions() != null)
             sb.append("HibernationOptions: ").append(getHibernationOptions()).append(",");
         if (getLicenses() != null)
-            sb.append("Licenses: ").append(getLicenses());
+            sb.append("Licenses: ").append(getLicenses()).append(",");
+        if (getMetadataOptions() != null)
+            sb.append("MetadataOptions: ").append(getMetadataOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -3052,6 +3100,10 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getLicenses() != null && other.getLicenses().equals(this.getLicenses()) == false)
             return false;
+        if (other.getMetadataOptions() == null ^ this.getMetadataOptions() == null)
+            return false;
+        if (other.getMetadataOptions() != null && other.getMetadataOptions().equals(this.getMetadataOptions()) == false)
+            return false;
         return true;
     }
 
@@ -3105,6 +3157,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCapacityReservationSpecification() == null) ? 0 : getCapacityReservationSpecification().hashCode());
         hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
         hashCode = prime * hashCode + ((getLicenses() == null) ? 0 : getLicenses().hashCode());
+        hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
         return hashCode;
     }
 

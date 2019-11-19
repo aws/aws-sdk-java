@@ -64,6 +64,12 @@ public class CustomerGateway implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
+     * The name of customer gateway device.
+     * </p>
+     */
+    private String deviceName;
+    /**
+     * <p>
      * Any tags assigned to the customer gateway.
      * </p>
      */
@@ -311,6 +317,46 @@ public class CustomerGateway implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of customer gateway device.
+     * </p>
+     * 
+     * @param deviceName
+     *        The name of customer gateway device.
+     */
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    /**
+     * <p>
+     * The name of customer gateway device.
+     * </p>
+     * 
+     * @return The name of customer gateway device.
+     */
+
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    /**
+     * <p>
+     * The name of customer gateway device.
+     * </p>
+     * 
+     * @param deviceName
+     *        The name of customer gateway device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomerGateway withDeviceName(String deviceName) {
+        setDeviceName(deviceName);
+        return this;
+    }
+
+    /**
+     * <p>
      * Any tags assigned to the customer gateway.
      * </p>
      * 
@@ -406,6 +452,8 @@ public class CustomerGateway implements Serializable, Cloneable {
             sb.append("State: ").append(getState()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getDeviceName() != null)
+            sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -446,6 +494,10 @@ public class CustomerGateway implements Serializable, Cloneable {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getDeviceName() == null ^ this.getDeviceName() == null)
+            return false;
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -464,6 +516,7 @@ public class CustomerGateway implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

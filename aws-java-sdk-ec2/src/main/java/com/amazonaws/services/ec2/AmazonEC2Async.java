@@ -2158,10 +2158,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <important>
      * <p>
-     * You cannot create more than one customer gateway with the same VPN type, IP address, and BGP ASN parameter
-     * values. If you run an identical request more than one time, the first request creates the customer gateway, and
-     * subsequent requests return information about the existing customer gateway. The subsequent requests do not create
-     * new customer gateway resources.
+     * To create more than one customer gateway with the same VPN type, IP address, and BGP ASN, specify a unique device
+     * name for each customer gateway. Identical requests return information about the existing customer gateway and do
+     * not create new customer gateways.
      * </p>
      * </important>
      * 
@@ -2198,10 +2197,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <important>
      * <p>
-     * You cannot create more than one customer gateway with the same VPN type, IP address, and BGP ASN parameter
-     * values. If you run an identical request more than one time, the first request creates the customer gateway, and
-     * subsequent requests return information about the existing customer gateway. The subsequent requests do not create
-     * new customer gateway resources.
+     * To create more than one customer gateway with the same VPN type, IP address, and BGP ASN, specify a unique device
+     * name for each customer gateway. Identical requests return information about the existing customer gateway and do
+     * not create new customer gateways.
      * </p>
      * </important>
      * 
@@ -14180,6 +14178,53 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ModifyInstanceEventStartTimeResult> modifyInstanceEventStartTimeAsync(
             ModifyInstanceEventStartTimeRequest modifyInstanceEventStartTimeRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyInstanceEventStartTimeRequest, ModifyInstanceEventStartTimeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modify the instance metadata parameters on a running or stopped instance. When you modify the parameters on a
+     * stopped instance, they are applied when the instance is started. When you modify the parameters on a running
+     * instance, the API responds with a state of “pending”. After the parameter modifications are successfully applied
+     * to the instance, the state of the modifications changes from “pending” to “applied” in subsequent
+     * describe-instances API calls. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a>.
+     * </p>
+     * 
+     * @param modifyInstanceMetadataOptionsRequest
+     * @return A Java Future containing the result of the ModifyInstanceMetadataOptions operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyInstanceMetadataOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceMetadataOptionsResult> modifyInstanceMetadataOptionsAsync(
+            ModifyInstanceMetadataOptionsRequest modifyInstanceMetadataOptionsRequest);
+
+    /**
+     * <p>
+     * Modify the instance metadata parameters on a running or stopped instance. When you modify the parameters on a
+     * stopped instance, they are applied when the instance is started. When you modify the parameters on a running
+     * instance, the API responds with a state of “pending”. After the parameter modifications are successfully applied
+     * to the instance, the state of the modifications changes from “pending” to “applied” in subsequent
+     * describe-instances API calls. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a>.
+     * </p>
+     * 
+     * @param modifyInstanceMetadataOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyInstanceMetadataOptions operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyInstanceMetadataOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceMetadataOptionsResult> modifyInstanceMetadataOptionsAsync(
+            ModifyInstanceMetadataOptionsRequest modifyInstanceMetadataOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceMetadataOptionsRequest, ModifyInstanceMetadataOptionsResult> asyncHandler);
 
     /**
      * <p>

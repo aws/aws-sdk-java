@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum EnvironmentType {
 
     WINDOWS_CONTAINER("WINDOWS_CONTAINER"),
-    LINUX_CONTAINER("LINUX_CONTAINER");
+    LINUX_CONTAINER("LINUX_CONTAINER"),
+    LINUX_GPU_CONTAINER("LINUX_GPU_CONTAINER"),
+    ARM_CONTAINER("ARM_CONTAINER");
 
     private String value;
 

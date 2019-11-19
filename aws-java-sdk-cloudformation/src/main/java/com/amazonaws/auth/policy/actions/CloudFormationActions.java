@@ -77,6 +77,8 @@ public enum CloudFormationActions implements Action {
     DetectStackDrift("cloudformation:DetectStackDrift"),
     /** Action for the DetectStackResourceDrift operation. */
     DetectStackResourceDrift("cloudformation:DetectStackResourceDrift"),
+    /** Action for the DetectStackSetDrift operation. */
+    DetectStackSetDrift("cloudformation:DetectStackSetDrift"),
     /** Action for the EstimateTemplateCost operation. */
     EstimateTemplateCost("cloudformation:EstimateTemplateCost"),
     /** Action for the ExecuteChangeSet operation. */

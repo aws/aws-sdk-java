@@ -77,6 +77,11 @@ public class ActionStaxUnmarshaller implements Unmarshaller<Action, StaxUnmarsha
                     action.setFixedResponseConfig(FixedResponseActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ForwardConfig", targetDepth)) {
+                    action.setForwardConfig(ForwardActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return action;

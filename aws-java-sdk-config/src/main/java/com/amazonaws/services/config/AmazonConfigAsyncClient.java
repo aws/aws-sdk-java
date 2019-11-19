@@ -464,6 +464,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConformancePackResult> deleteConformancePackAsync(DeleteConformancePackRequest request) {
+
+        return deleteConformancePackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConformancePackResult> deleteConformancePackAsync(final DeleteConformancePackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConformancePackRequest, DeleteConformancePackResult> asyncHandler) {
+        final DeleteConformancePackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConformancePackResult>() {
+            @Override
+            public DeleteConformancePackResult call() throws Exception {
+                DeleteConformancePackResult result = null;
+
+                try {
+                    result = executeDeleteConformancePack(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(DeleteDeliveryChannelRequest request) {
 
         return deleteDeliveryChannelAsync(request, null);
@@ -547,6 +580,41 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executeDeleteOrganizationConfigRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOrganizationConformancePackResult> deleteOrganizationConformancePackAsync(
+            DeleteOrganizationConformancePackRequest request) {
+
+        return deleteOrganizationConformancePackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOrganizationConformancePackResult> deleteOrganizationConformancePackAsync(
+            final DeleteOrganizationConformancePackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResult> asyncHandler) {
+        final DeleteOrganizationConformancePackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOrganizationConformancePackResult>() {
+            @Override
+            public DeleteOrganizationConformancePackResult call() throws Exception {
+                DeleteOrganizationConformancePackResult result = null;
+
+                try {
+                    result = executeDeleteOrganizationConformancePack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1217,6 +1285,108 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeConformancePackComplianceResult> describeConformancePackComplianceAsync(
+            DescribeConformancePackComplianceRequest request) {
+
+        return describeConformancePackComplianceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConformancePackComplianceResult> describeConformancePackComplianceAsync(
+            final DescribeConformancePackComplianceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeConformancePackComplianceRequest, DescribeConformancePackComplianceResult> asyncHandler) {
+        final DescribeConformancePackComplianceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConformancePackComplianceResult>() {
+            @Override
+            public DescribeConformancePackComplianceResult call() throws Exception {
+                DescribeConformancePackComplianceResult result = null;
+
+                try {
+                    result = executeDescribeConformancePackCompliance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConformancePackStatusResult> describeConformancePackStatusAsync(DescribeConformancePackStatusRequest request) {
+
+        return describeConformancePackStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConformancePackStatusResult> describeConformancePackStatusAsync(
+            final DescribeConformancePackStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeConformancePackStatusRequest, DescribeConformancePackStatusResult> asyncHandler) {
+        final DescribeConformancePackStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConformancePackStatusResult>() {
+            @Override
+            public DescribeConformancePackStatusResult call() throws Exception {
+                DescribeConformancePackStatusResult result = null;
+
+                try {
+                    result = executeDescribeConformancePackStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConformancePacksResult> describeConformancePacksAsync(DescribeConformancePacksRequest request) {
+
+        return describeConformancePacksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConformancePacksResult> describeConformancePacksAsync(final DescribeConformancePacksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeConformancePacksRequest, DescribeConformancePacksResult> asyncHandler) {
+        final DescribeConformancePacksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeConformancePacksResult>() {
+            @Override
+            public DescribeConformancePacksResult call() throws Exception {
+                DescribeConformancePacksResult result = null;
+
+                try {
+                    result = executeDescribeConformancePacks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest request) {
 
         return describeDeliveryChannelStatusAsync(request, null);
@@ -1385,6 +1555,76 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executeDescribeOrganizationConfigRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConformancePackStatusesResult> describeOrganizationConformancePackStatusesAsync(
+            DescribeOrganizationConformancePackStatusesRequest request) {
+
+        return describeOrganizationConformancePackStatusesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConformancePackStatusesResult> describeOrganizationConformancePackStatusesAsync(
+            final DescribeOrganizationConformancePackStatusesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConformancePackStatusesRequest, DescribeOrganizationConformancePackStatusesResult> asyncHandler) {
+        final DescribeOrganizationConformancePackStatusesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeOrganizationConformancePackStatusesResult>() {
+            @Override
+            public DescribeOrganizationConformancePackStatusesResult call() throws Exception {
+                DescribeOrganizationConformancePackStatusesResult result = null;
+
+                try {
+                    result = executeDescribeOrganizationConformancePackStatuses(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConformancePacksResult> describeOrganizationConformancePacksAsync(
+            DescribeOrganizationConformancePacksRequest request) {
+
+        return describeOrganizationConformancePacksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConformancePacksResult> describeOrganizationConformancePacksAsync(
+            final DescribeOrganizationConformancePacksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConformancePacksRequest, DescribeOrganizationConformancePacksResult> asyncHandler) {
+        final DescribeOrganizationConformancePacksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeOrganizationConformancePacksResult>() {
+            @Override
+            public DescribeOrganizationConformancePacksResult call() throws Exception {
+                DescribeOrganizationConformancePacksResult result = null;
+
+                try {
+                    result = executeDescribeOrganizationConformancePacks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1900,6 +2140,76 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetConformancePackComplianceDetailsResult> getConformancePackComplianceDetailsAsync(
+            GetConformancePackComplianceDetailsRequest request) {
+
+        return getConformancePackComplianceDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConformancePackComplianceDetailsResult> getConformancePackComplianceDetailsAsync(
+            final GetConformancePackComplianceDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConformancePackComplianceDetailsRequest, GetConformancePackComplianceDetailsResult> asyncHandler) {
+        final GetConformancePackComplianceDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConformancePackComplianceDetailsResult>() {
+            @Override
+            public GetConformancePackComplianceDetailsResult call() throws Exception {
+                GetConformancePackComplianceDetailsResult result = null;
+
+                try {
+                    result = executeGetConformancePackComplianceDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConformancePackComplianceSummaryResult> getConformancePackComplianceSummaryAsync(
+            GetConformancePackComplianceSummaryRequest request) {
+
+        return getConformancePackComplianceSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConformancePackComplianceSummaryResult> getConformancePackComplianceSummaryAsync(
+            final GetConformancePackComplianceSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConformancePackComplianceSummaryRequest, GetConformancePackComplianceSummaryResult> asyncHandler) {
+        final GetConformancePackComplianceSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConformancePackComplianceSummaryResult>() {
+            @Override
+            public GetConformancePackComplianceSummaryResult call() throws Exception {
+                GetConformancePackComplianceSummaryResult result = null;
+
+                try {
+                    result = executeGetConformancePackComplianceSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDiscoveredResourceCountsResult> getDiscoveredResourceCountsAsync(GetDiscoveredResourceCountsRequest request) {
 
         return getDiscoveredResourceCountsAsync(request, null);
@@ -1952,6 +2262,41 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executeGetOrganizationConfigRuleDetailedStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationConformancePackDetailedStatusResult> getOrganizationConformancePackDetailedStatusAsync(
+            GetOrganizationConformancePackDetailedStatusRequest request) {
+
+        return getOrganizationConformancePackDetailedStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationConformancePackDetailedStatusResult> getOrganizationConformancePackDetailedStatusAsync(
+            final GetOrganizationConformancePackDetailedStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOrganizationConformancePackDetailedStatusRequest, GetOrganizationConformancePackDetailedStatusResult> asyncHandler) {
+        final GetOrganizationConformancePackDetailedStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOrganizationConformancePackDetailedStatusResult>() {
+            @Override
+            public GetOrganizationConformancePackDetailedStatusResult call() throws Exception {
+                GetOrganizationConformancePackDetailedStatusResult result = null;
+
+                try {
+                    result = executeGetOrganizationConformancePackDetailedStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2234,6 +2579,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<PutConformancePackResult> putConformancePackAsync(PutConformancePackRequest request) {
+
+        return putConformancePackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConformancePackResult> putConformancePackAsync(final PutConformancePackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutConformancePackRequest, PutConformancePackResult> asyncHandler) {
+        final PutConformancePackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutConformancePackResult>() {
+            @Override
+            public PutConformancePackResult call() throws Exception {
+                PutConformancePackResult result = null;
+
+                try {
+                    result = executePutConformancePack(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(PutDeliveryChannelRequest request) {
 
         return putDeliveryChannelAsync(request, null);
@@ -2317,6 +2695,40 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executePutOrganizationConfigRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutOrganizationConformancePackResult> putOrganizationConformancePackAsync(PutOrganizationConformancePackRequest request) {
+
+        return putOrganizationConformancePackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutOrganizationConformancePackResult> putOrganizationConformancePackAsync(
+            final PutOrganizationConformancePackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutOrganizationConformancePackRequest, PutOrganizationConformancePackResult> asyncHandler) {
+        final PutOrganizationConformancePackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutOrganizationConformancePackResult>() {
+            @Override
+            public PutOrganizationConformancePackResult call() throws Exception {
+                PutOrganizationConformancePackResult result = null;
+
+                try {
+                    result = executePutOrganizationConformancePack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

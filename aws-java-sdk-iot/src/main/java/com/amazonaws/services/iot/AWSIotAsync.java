@@ -518,6 +518,39 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Confirms a topic rule destination. When you create a rule requiring a destination, AWS IoT sends a confirmation
+     * message to the endpoint or base address you specify. The message includes a token which you pass back when
+     * calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access to the endpoint.
+     * </p>
+     * 
+     * @param confirmTopicRuleDestinationRequest
+     * @return A Java Future containing the result of the ConfirmTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsync.ConfirmTopicRuleDestination
+     */
+    java.util.concurrent.Future<ConfirmTopicRuleDestinationResult> confirmTopicRuleDestinationAsync(
+            ConfirmTopicRuleDestinationRequest confirmTopicRuleDestinationRequest);
+
+    /**
+     * <p>
+     * Confirms a topic rule destination. When you create a rule requiring a destination, AWS IoT sends a confirmation
+     * message to the endpoint or base address you specify. The message includes a token which you pass back when
+     * calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access to the endpoint.
+     * </p>
+     * 
+     * @param confirmTopicRuleDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ConfirmTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsyncHandler.ConfirmTopicRuleDestination
+     */
+    java.util.concurrent.Future<ConfirmTopicRuleDestinationResult> confirmTopicRuleDestinationAsync(
+            ConfirmTopicRuleDestinationRequest confirmTopicRuleDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<ConfirmTopicRuleDestinationRequest, ConfirmTopicRuleDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an authorizer.
      * </p>
      * 
@@ -1182,6 +1215,35 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Creates a topic rule destination. The destination must be confirmed prior to use.
+     * </p>
+     * 
+     * @param createTopicRuleDestinationRequest
+     * @return A Java Future containing the result of the CreateTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsync.CreateTopicRuleDestination
+     */
+    java.util.concurrent.Future<CreateTopicRuleDestinationResult> createTopicRuleDestinationAsync(
+            CreateTopicRuleDestinationRequest createTopicRuleDestinationRequest);
+
+    /**
+     * <p>
+     * Creates a topic rule destination. The destination must be confirmed prior to use.
+     * </p>
+     * 
+     * @param createTopicRuleDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateTopicRuleDestination
+     */
+    java.util.concurrent.Future<CreateTopicRuleDestinationResult> createTopicRuleDestinationAsync(
+            CreateTopicRuleDestinationRequest createTopicRuleDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRuleDestinationRequest, CreateTopicRuleDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Restores the default settings for Device Defender audits for this account. Any configuration data you entered is
      * deleted and all audit checks are reset to disabled.
      * </p>
@@ -1828,6 +1890,35 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(DeleteTopicRuleRequest deleteTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a topic rule destination.
+     * </p>
+     * 
+     * @param deleteTopicRuleDestinationRequest
+     * @return A Java Future containing the result of the DeleteTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsync.DeleteTopicRuleDestination
+     */
+    java.util.concurrent.Future<DeleteTopicRuleDestinationResult> deleteTopicRuleDestinationAsync(
+            DeleteTopicRuleDestinationRequest deleteTopicRuleDestinationRequest);
+
+    /**
+     * <p>
+     * Deletes a topic rule destination.
+     * </p>
+     * 
+     * @param deleteTopicRuleDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteTopicRuleDestination
+     */
+    java.util.concurrent.Future<DeleteTopicRuleDestinationResult> deleteTopicRuleDestinationAsync(
+            DeleteTopicRuleDestinationRequest deleteTopicRuleDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleDestinationRequest, DeleteTopicRuleDestinationResult> asyncHandler);
 
     /**
      * <p>
@@ -2732,7 +2823,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns the number of things with distinct values for the aggregation field.
+     * Returns the approximate count of unique values that match the query.
      * </p>
      * 
      * @param getCardinalityRequest
@@ -2743,7 +2834,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns the number of things with distinct values for the aggregation field.
+     * Returns the approximate count of unique values that match the query.
      * </p>
      * 
      * @param getCardinalityRequest
@@ -2904,9 +2995,13 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns the percentile values for the aggregation field. The results from GetPercentiles is an approximation. The
-     * default percentile groupings are: 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
-     * percents argument to the GetPercentiles API.
+     * Groups the aggregated values that match the query into percentile groupings. The default percentile groupings
+     * are: 1,5,25,50,75,95,99, although you can specify your own when you call <code>GetPercentiles</code>. This
+     * function returns a value for each percentile group specified (or the default percentile groupings). The
+     * percentile group "1" contains the aggregated field value that occurs in approximately one percent of the values
+     * that match the query. The percentile group "5" contains the aggregated field value that occurs in approximately
+     * five percent of the values that match the query, and so on. The result is an approximation, the more values that
+     * match the query, the more accurate the percentile values.
      * </p>
      * 
      * @param getPercentilesRequest
@@ -2917,9 +3012,13 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns the percentile values for the aggregation field. The results from GetPercentiles is an approximation. The
-     * default percentile groupings are: 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
-     * percents argument to the GetPercentiles API.
+     * Groups the aggregated values that match the query into percentile groupings. The default percentile groupings
+     * are: 1,5,25,50,75,95,99, although you can specify your own when you call <code>GetPercentiles</code>. This
+     * function returns a value for each percentile group specified (or the default percentile groupings). The
+     * percentile group "1" contains the aggregated field value that occurs in approximately one percent of the values
+     * that match the query. The percentile group "5" contains the aggregated field value that occurs in approximately
+     * five percent of the values that match the query, and so on. The result is an approximation, the more values that
+     * match the query, the more accurate the percentile values.
      * </p>
      * 
      * @param getPercentilesRequest
@@ -3022,9 +3121,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance, and standard deviation
-     * for the specified aggregated field. If the aggregation field is of type String, only the count statistic is
-     * returned.
+     * Gets statistics about things that match the specified query.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -3035,9 +3132,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance, and standard deviation
-     * for the specified aggregated field. If the aggregation field is of type String, only the count statistic is
-     * returned.
+     * Gets statistics about things that match the specified query.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -3079,6 +3174,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<GetTopicRuleResult> getTopicRuleAsync(GetTopicRuleRequest getTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<GetTopicRuleRequest, GetTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a topic rule destination.
+     * </p>
+     * 
+     * @param getTopicRuleDestinationRequest
+     * @return A Java Future containing the result of the GetTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsync.GetTopicRuleDestination
+     */
+    java.util.concurrent.Future<GetTopicRuleDestinationResult> getTopicRuleDestinationAsync(GetTopicRuleDestinationRequest getTopicRuleDestinationRequest);
+
+    /**
+     * <p>
+     * Gets information about a topic rule destination.
+     * </p>
+     * 
+     * @param getTopicRuleDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetTopicRuleDestination
+     */
+    java.util.concurrent.Future<GetTopicRuleDestinationResult> getTopicRuleDestinationAsync(GetTopicRuleDestinationRequest getTopicRuleDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTopicRuleDestinationRequest, GetTopicRuleDestinationResult> asyncHandler);
 
     /**
      * <p>
@@ -4287,6 +4409,35 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Lists all the topic rule destinations in your AWS account.
+     * </p>
+     * 
+     * @param listTopicRuleDestinationsRequest
+     * @return A Java Future containing the result of the ListTopicRuleDestinations operation returned by the service.
+     * @sample AWSIotAsync.ListTopicRuleDestinations
+     */
+    java.util.concurrent.Future<ListTopicRuleDestinationsResult> listTopicRuleDestinationsAsync(
+            ListTopicRuleDestinationsRequest listTopicRuleDestinationsRequest);
+
+    /**
+     * <p>
+     * Lists all the topic rule destinations in your AWS account.
+     * </p>
+     * 
+     * @param listTopicRuleDestinationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTopicRuleDestinations operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListTopicRuleDestinations
+     */
+    java.util.concurrent.Future<ListTopicRuleDestinationsResult> listTopicRuleDestinationsAsync(
+            ListTopicRuleDestinationsRequest listTopicRuleDestinationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTopicRuleDestinationsRequest, ListTopicRuleDestinationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the rules for the specific topic.
      * </p>
      * 
@@ -4442,11 +4593,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
-     * might exceed your account level <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
-     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
-     * Customer Support</a> to raise your throttling limits if necessary.
+     * Provisions a thing.
      * </p>
      * 
      * @param registerThingRequest
@@ -4457,11 +4604,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
-     * might exceed your account level <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
-     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
-     * Customer Support</a> to raise your throttling limits if necessary.
+     * Provisions a thing.
      * </p>
      * 
      * @param registerThingRequest
@@ -5566,6 +5709,37 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<UpdateThingGroupsForThingResult> updateThingGroupsForThingAsync(
             UpdateThingGroupsForThingRequest updateThingGroupsForThingRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateThingGroupsForThingRequest, UpdateThingGroupsForThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a topic rule destination. You use this to change the status, endpoint URL, or confirmation URL of the
+     * destination.
+     * </p>
+     * 
+     * @param updateTopicRuleDestinationRequest
+     * @return A Java Future containing the result of the UpdateTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsync.UpdateTopicRuleDestination
+     */
+    java.util.concurrent.Future<UpdateTopicRuleDestinationResult> updateTopicRuleDestinationAsync(
+            UpdateTopicRuleDestinationRequest updateTopicRuleDestinationRequest);
+
+    /**
+     * <p>
+     * Updates a topic rule destination. You use this to change the status, endpoint URL, or confirmation URL of the
+     * destination.
+     * </p>
+     * 
+     * @param updateTopicRuleDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTopicRuleDestination operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateTopicRuleDestination
+     */
+    java.util.concurrent.Future<UpdateTopicRuleDestinationResult> updateTopicRuleDestinationAsync(
+            UpdateTopicRuleDestinationRequest updateTopicRuleDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTopicRuleDestinationRequest, UpdateTopicRuleDestinationResult> asyncHandler);
 
     /**
      * <p>

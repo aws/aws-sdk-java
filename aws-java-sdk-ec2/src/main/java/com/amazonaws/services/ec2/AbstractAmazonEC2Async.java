@@ -5172,6 +5172,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyInstanceMetadataOptionsResult> modifyInstanceMetadataOptionsAsync(ModifyInstanceMetadataOptionsRequest request) {
+
+        return modifyInstanceMetadataOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyInstanceMetadataOptionsResult> modifyInstanceMetadataOptionsAsync(ModifyInstanceMetadataOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceMetadataOptionsRequest, ModifyInstanceMetadataOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyInstancePlacementResult> modifyInstancePlacementAsync(ModifyInstancePlacementRequest request) {
 
         return modifyInstancePlacementAsync(request, null);

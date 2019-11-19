@@ -65,7 +65,7 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
+     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
      * </p>
      */
     private String volumeType;
@@ -132,7 +132,7 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * 
      * @param snapshotId
-     *        The snapshot ID of the volume to use. </p>
+     *        The snapshot ID of the volume to use.</p>
      *        <p>
      *        Conditional: This parameter is optional if you specify a volume size. If you specify both
      *        <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than
@@ -152,7 +152,7 @@ public class Ebs implements Serializable, Cloneable {
      * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
      * </p>
      * 
-     * @return The snapshot ID of the volume to use. </p>
+     * @return The snapshot ID of the volume to use.</p>
      *         <p>
      *         Conditional: This parameter is optional if you specify a volume size. If you specify both
      *         <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater
@@ -173,7 +173,7 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * 
      * @param snapshotId
-     *        The snapshot ID of the volume to use. </p>
+     *        The snapshot ID of the volume to use.</p>
      *        <p>
      *        Conditional: This parameter is optional if you specify a volume size. If you specify both
      *        <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than
@@ -206,7 +206,7 @@ public class Ebs implements Serializable, Cloneable {
      * </note>
      * 
      * @param volumeSize
-     *        The volume size, in Gibibytes (GiB). </p>
+     *        The volume size, in Gibibytes (GiB).</p>
      *        <p>
      *        This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      *        <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the
@@ -245,7 +245,7 @@ public class Ebs implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return The volume size, in Gibibytes (GiB). </p>
+     * @return The volume size, in Gibibytes (GiB).</p>
      *         <p>
      *         This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      *         <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot,
@@ -285,7 +285,7 @@ public class Ebs implements Serializable, Cloneable {
      * </note>
      * 
      * @param volumeSize
-     *        The volume size, in Gibibytes (GiB). </p>
+     *        The volume size, in Gibibytes (GiB).</p>
      *        <p>
      *        This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      *        <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the
@@ -316,7 +316,7 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
+     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
      * </p>
      * 
      * @param volumeType
@@ -326,7 +326,7 @@ public class Ebs implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *        Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
      *        <code>sc1</code>
      */
 
@@ -343,7 +343,7 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
+     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
      * </p>
      * 
      * @return The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS
@@ -352,7 +352,7 @@ public class Ebs implements Serializable, Cloneable {
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
      *         Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *         <p>
-     *         Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *         Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
      *         <code>sc1</code>
      */
 
@@ -369,7 +369,7 @@ public class Ebs implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
+     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
      * </p>
      * 
      * @param volumeType
@@ -379,7 +379,7 @@ public class Ebs implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *        Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
      *        <code>sc1</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

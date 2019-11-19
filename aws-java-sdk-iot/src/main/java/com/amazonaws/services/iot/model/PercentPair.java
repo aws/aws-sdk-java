@@ -33,7 +33,7 @@ public class PercentPair implements Serializable, Cloneable, StructuredPojo {
     private Double percent;
     /**
      * <p>
-     * The value.
+     * The value of the percentile.
      * </p>
      */
     private Double value;
@@ -80,11 +80,11 @@ public class PercentPair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value.
+     * The value of the percentile.
      * </p>
      * 
      * @param value
-     *        The value.
+     *        The value of the percentile.
      */
 
     public void setValue(Double value) {
@@ -93,10 +93,10 @@ public class PercentPair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value.
+     * The value of the percentile.
      * </p>
      * 
-     * @return The value.
+     * @return The value of the percentile.
      */
 
     public Double getValue() {
@@ -105,11 +105,11 @@ public class PercentPair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value.
+     * The value of the percentile.
      * </p>
      * 
      * @param value
-     *        The value.
+     *        The value of the percentile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

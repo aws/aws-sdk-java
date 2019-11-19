@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
@@ -41,10 +42,15 @@ import com.amazonaws.util.EC2MetadataUtils;
 public class EC2MetadataServiceMock {
 
     private EC2MockMetadataServiceListenerThread hosmMockServerThread;
+    private boolean tokenEnabled;
+
+    public EC2MetadataServiceMock(boolean tokenEnabled) {
+        this.tokenEnabled = tokenEnabled;
+    }
 
     private static final String OUTPUT_HEADERS = "HTTP/1.1 200 OK\r\n" +
-            "Content-Type: text/html\r\n" +
-            "Content-Length: ";
+                                                 "Content-Type: text/html\r\n" +
+                                                 "Content-Length: ";
 
     private static final String OUTPUT_END_OF_HEADERS = "\r\n\r\n";
 
@@ -74,7 +80,7 @@ public class EC2MetadataServiceMock {
     }
 
     public void start() throws IOException {
-        hosmMockServerThread = new EC2MockMetadataServiceListenerThread(startServerSocket());
+        hosmMockServerThread = new EC2MockMetadataServiceListenerThread(startServerSocket(), tokenEnabled);
         hosmMockServerThread.start();
     }
 
@@ -103,9 +109,11 @@ public class EC2MetadataServiceMock {
         private ServerSocket serverSocket;
         private String responseFileName;
         private String securityCredentialNames;
+        private boolean tokenEnabled;
 
-        public EC2MockMetadataServiceListenerThread(ServerSocket serverSocket) {
+        public EC2MockMetadataServiceListenerThread(ServerSocket serverSocket, boolean tokenEnabled) {
             this.serverSocket = serverSocket;
+            this.tokenEnabled = tokenEnabled;
         }
 
         public void setResponseFileName(String responseFileName) {
@@ -141,7 +149,10 @@ public class EC2MetadataServiceMock {
 
                     String httpResponse = null;
 
-                    if (resourcePath.equals(EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE)) {
+                    if (resourcePath.equals("/latest/api/token")) {
+                        httpResponse = formTokenHttpResponse();
+                        outputStream.write(httpResponse.getBytes());
+                    } else if (resourcePath.equals(EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE)) {
                         httpResponse = formHttpResponse(securityCredentialNames);
                         outputStream.write(httpResponse.getBytes());
 
@@ -181,6 +192,21 @@ public class EC2MetadataServiceMock {
             outputStringToWrite.append(OUTPUT_END_OF_HEADERS);
             outputStringToWrite.append(content);
             return outputStringToWrite.toString();
+        }
+
+        private String formTokenHttpResponse() {
+            String token = "123456";
+            StringBuilder sb = new StringBuilder();
+            if (tokenEnabled) {
+                sb.append(OUTPUT_HEADERS);
+                sb.append(token.length());
+                sb.append(OUTPUT_END_OF_HEADERS);
+                sb.append(token);
+            } else {
+                sb.append("HTTP/1.1 404 Not Found\n");
+                sb.append(OUTPUT_END_OF_HEADERS);
+            }
+            return sb.toString();
         }
 
         public void stopServer() {

@@ -26,7 +26,8 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-import java.net.UnknownHostException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Starts a new EC2 Metadata server instance with given address and port number.
@@ -35,14 +36,15 @@ import java.net.UnknownHostException;
 public class EC2MetadataUtilsServer {
 
     private ServerSocket server;
+    private boolean tokenEnabled;
 
-    public EC2MetadataUtilsServer(String address, int port)
-            throws UnknownHostException, IOException {
+    public EC2MetadataUtilsServer(String address, int port, boolean tokenEnabled)
+        throws IOException {
         server = new ServerSocket(port, 1, InetAddress.getByName(address));
+        this.tokenEnabled = tokenEnabled;
     }
 
-    public void start()
-            throws UnknownHostException, IOException {
+    public void start() {
 
         Thread thread = new Thread() {
             @Override
@@ -99,42 +101,99 @@ public class EC2MetadataUtilsServer {
         if (parts.length != 3) {
             throw new RuntimeException("Bogus request: " + line);
         }
-        if (!"GET".equals(parts[0])) {
-            throw new RuntimeException("Bogus verb: " + line);
+
+        String httpMethod = parts[0];
+
+        if (!"GET".equals(httpMethod) && !"PUT".equals(httpMethod)) {
+            outputBadRequest("incorrect http method", output);
+            return;
         }
 
-        ignoreRequest(input);
+        if (!isRequestValid(input, httpMethod, output)) {
+            return;
+        }
 
         String path = parts[1];
+
         if (path.equals("/latest/meta-data/iam/info")) {
             outputIamInfo(output);
-
-        } else if (path.equals("/latest/meta-data/iam/security-credentials")) {
-            outputIamCredList(output);
-
-        } else if (path
-                .startsWith("/latest/meta-data/iam/security-credentials/")) {
-
-            outputIamCred(output);
-
-        } else if (path.equals("/latest/dynamic/instance-identity/document")) {
-            outputInstanceInfo(output);
-        } else {
-            throw new RuntimeException("Unknown path: " + path);
+            return;
         }
+
+        if (path.equals("/latest/meta-data/iam/security-credentials")) {
+            outputIamCredList(output);
+            return;
+        }
+
+        if (path.startsWith("/latest/meta-data/iam/security-credentials/")) {
+            outputIamCred(output);
+            return;
+        }
+
+        if (path.equals("/latest/dynamic/instance-identity/document")) {
+            outputInstanceInfo(output);
+            return;
+        }
+
+        if (path.equals("/latest/api/token")) {
+            if (!"PUT".equals(httpMethod)) {
+                outputBadRequest("incorrect http method", output);
+                return;
+            }
+
+           outputTokenInfo(output);
+           return;
+        }
+
+        throw new RuntimeException("Unknown path: " + path);
+
     }
 
-    private void ignoreRequest(BufferedReader input) throws IOException {
-
+    private boolean isRequestValid(BufferedReader input, String httpMethod, PrintWriter output) throws IOException {
+        Map<String, String> headers = new HashMap<String, String>();
         while (true) {
             String line = input.readLine();
+
             if (line == null) {
                 throw new RuntimeException("Unexpected end of input");
             }
             if (line.length() == 0) {
-                return;
+                break;
+            }
+
+            String[] headerEntry = line.split(":");
+            headers.put(headerEntry[0].trim(), headerEntry[1].trim());
+        }
+
+        if (tokenEnabled) {
+            if (httpMethod.equals("PUT") && !headers.containsKey("x-aws-ec2-metadata-token-ttl-seconds")) {
+                outputBadRequest("Token ttl header is not present",  output);
+                return false;
+            }
+
+            if (httpMethod.equals("GET") && !headers.containsKey("x-aws-ec2-metadata-token")) {
+                outputBadRequest("Token is enabled but the request does not contain the metadata token", output);
+                return false;
             }
         }
+
+        return true;
+    }
+
+    private void outputTokenInfo(PrintWriter output) {
+        if (tokenEnabled) {
+            String payload = "1234567890";
+            output.println("HTTP/1.1 200 OK");
+            output.println("Connection: close");
+            output.println("Content-Length: " + payload.length());
+            output.println();
+            output.print(payload);
+        } else {
+
+            output.println("HTTP/1.1 404 Not Found");
+            output.println("Connection: close");
+        }
+        output.flush();
     }
 
     private void outputIamInfo(PrintWriter output) throws IOException {
@@ -199,6 +258,17 @@ public class EC2MetadataUtilsServer {
         String payload = constructInstanceInfo();
 
         output.println("HTTP/1.1 200 OK");
+        output.println("Connection: close");
+        output.println("Content-Length: " + payload.length());
+        output.println();
+
+        output.print(payload);
+        output.flush();
+    }
+
+    private void outputBadRequest(String payload, PrintWriter output) {
+
+        output.println("HTTP/1.1 400 Bad Request");
         output.println("Connection: close");
         output.println("Content-Length: " + payload.length());
         output.println();

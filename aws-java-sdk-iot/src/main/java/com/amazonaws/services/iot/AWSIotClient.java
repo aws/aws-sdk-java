@@ -1306,6 +1306,72 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Confirms a topic rule destination. When you create a rule requiring a destination, AWS IoT sends a confirmation
+     * message to the endpoint or base address you specify. The message includes a token which you pass back when
+     * calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access to the endpoint.
+     * </p>
+     * 
+     * @param confirmTopicRuleDestinationRequest
+     * @return Result of the ConfirmTopicRuleDestination operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
+     * @sample AWSIot.ConfirmTopicRuleDestination
+     */
+    @Override
+    public ConfirmTopicRuleDestinationResult confirmTopicRuleDestination(ConfirmTopicRuleDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfirmTopicRuleDestination(request);
+    }
+
+    @SdkInternalApi
+    final ConfirmTopicRuleDestinationResult executeConfirmTopicRuleDestination(ConfirmTopicRuleDestinationRequest confirmTopicRuleDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(confirmTopicRuleDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ConfirmTopicRuleDestinationRequest> request = null;
+        Response<ConfirmTopicRuleDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ConfirmTopicRuleDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(confirmTopicRuleDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmTopicRuleDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ConfirmTopicRuleDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ConfirmTopicRuleDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an authorizer.
      * </p>
      * 
@@ -2528,6 +2594,70 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a topic rule destination. The destination must be confirmed prior to use.
+     * </p>
+     * 
+     * @param createTopicRuleDestinationRequest
+     * @return Result of the CreateTopicRuleDestination operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
+     * @sample AWSIot.CreateTopicRuleDestination
+     */
+    @Override
+    public CreateTopicRuleDestinationResult createTopicRuleDestination(CreateTopicRuleDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTopicRuleDestination(request);
+    }
+
+    @SdkInternalApi
+    final CreateTopicRuleDestinationResult executeCreateTopicRuleDestination(CreateTopicRuleDestinationRequest createTopicRuleDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTopicRuleDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTopicRuleDestinationRequest> request = null;
+        Response<CreateTopicRuleDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTopicRuleDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createTopicRuleDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTopicRuleDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTopicRuleDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateTopicRuleDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3891,6 +4021,70 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a topic rule destination.
+     * </p>
+     * 
+     * @param deleteTopicRuleDestinationRequest
+     * @return Result of the DeleteTopicRuleDestination operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
+     * @sample AWSIot.DeleteTopicRuleDestination
+     */
+    @Override
+    public DeleteTopicRuleDestinationResult deleteTopicRuleDestination(DeleteTopicRuleDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTopicRuleDestination(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTopicRuleDestinationResult executeDeleteTopicRuleDestination(DeleteTopicRuleDestinationRequest deleteTopicRuleDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTopicRuleDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTopicRuleDestinationRequest> request = null;
+        Response<DeleteTopicRuleDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTopicRuleDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteTopicRuleDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTopicRuleDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTopicRuleDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteTopicRuleDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5826,7 +6020,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Returns the number of things with distinct values for the aggregation field.
+     * Returns the approximate count of unique values that match the query.
      * </p>
      * 
      * @param getCardinalityRequest
@@ -6207,9 +6401,13 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Returns the percentile values for the aggregation field. The results from GetPercentiles is an approximation. The
-     * default percentile groupings are: 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
-     * percents argument to the GetPercentiles API.
+     * Groups the aggregated values that match the query into percentile groupings. The default percentile groupings
+     * are: 1,5,25,50,75,95,99, although you can specify your own when you call <code>GetPercentiles</code>. This
+     * function returns a value for each percentile group specified (or the default percentile groupings). The
+     * percentile group "1" contains the aggregated field value that occurs in approximately one percent of the values
+     * that match the query. The percentile group "5" contains the aggregated field value that occurs in approximately
+     * five percent of the values that match the query, and so on. The result is an approximation, the more values that
+     * match the query, the more accurate the percentile values.
      * </p>
      * 
      * @param getPercentilesRequest
@@ -6468,9 +6666,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Gets statistics returns the count, average, sum, minimum, maximum, sumOfSquares, variance, and standard deviation
-     * for the specified aggregated field. If the aggregation field is of type String, only the count statistic is
-     * returned.
+     * Gets statistics about things that match the specified query.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -6587,6 +6783,67 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about a topic rule destination.
+     * </p>
+     * 
+     * @param getTopicRuleDestinationRequest
+     * @return Result of the GetTopicRuleDestination operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.GetTopicRuleDestination
+     */
+    @Override
+    public GetTopicRuleDestinationResult getTopicRuleDestination(GetTopicRuleDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTopicRuleDestination(request);
+    }
+
+    @SdkInternalApi
+    final GetTopicRuleDestinationResult executeGetTopicRuleDestination(GetTopicRuleDestinationRequest getTopicRuleDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTopicRuleDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTopicRuleDestinationRequest> request = null;
+        Response<GetTopicRuleDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTopicRuleDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getTopicRuleDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTopicRuleDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTopicRuleDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetTopicRuleDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9117,6 +9374,67 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Lists all the topic rule destinations in your AWS account.
+     * </p>
+     * 
+     * @param listTopicRuleDestinationsRequest
+     * @return Result of the ListTopicRuleDestinations operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.ListTopicRuleDestinations
+     */
+    @Override
+    public ListTopicRuleDestinationsResult listTopicRuleDestinations(ListTopicRuleDestinationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTopicRuleDestinations(request);
+    }
+
+    @SdkInternalApi
+    final ListTopicRuleDestinationsResult executeListTopicRuleDestinations(ListTopicRuleDestinationsRequest listTopicRuleDestinationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTopicRuleDestinationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTopicRuleDestinationsRequest> request = null;
+        Response<ListTopicRuleDestinationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTopicRuleDestinationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTopicRuleDestinationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTopicRuleDestinations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTopicRuleDestinationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTopicRuleDestinationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the rules for the specific topic.
      * </p>
      * 
@@ -9441,11 +9759,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
-     * might exceed your account level <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
-     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
-     * Customer Support</a> to raise your throttling limits if necessary.
+     * Provisions a thing.
      * </p>
      * 
      * @param registerThingRequest
@@ -11795,6 +12109,71 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<UpdateThingGroupsForThingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateThingGroupsForThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a topic rule destination. You use this to change the status, endpoint URL, or confirmation URL of the
+     * destination.
+     * </p>
+     * 
+     * @param updateTopicRuleDestinationRequest
+     * @return Result of the UpdateTopicRuleDestination operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
+     * @sample AWSIot.UpdateTopicRuleDestination
+     */
+    @Override
+    public UpdateTopicRuleDestinationResult updateTopicRuleDestination(UpdateTopicRuleDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTopicRuleDestination(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTopicRuleDestinationResult executeUpdateTopicRuleDestination(UpdateTopicRuleDestinationRequest updateTopicRuleDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTopicRuleDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTopicRuleDestinationRequest> request = null;
+        Response<UpdateTopicRuleDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTopicRuleDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateTopicRuleDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTopicRuleDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTopicRuleDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateTopicRuleDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -98,6 +98,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("NoRunningConfigurationRecorderException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.NoRunningConfigurationRecorderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationConformancePackTemplateValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.OrganizationConformancePackTemplateValidationExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotDiscoveredException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.ResourceNotDiscoveredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -179,6 +183,12 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("InvalidExpressionException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.InvalidExpressionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchOrganizationConformancePackException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchOrganizationConformancePackExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConformancePacksExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.MaxNumberOfConformancePacksExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfOrganizationConfigRulesExceededException")
                                     .withExceptionUnmarshaller(
                                             com.amazonaws.services.config.model.transform.MaxNumberOfOrganizationConfigRulesExceededExceptionUnmarshaller
@@ -190,8 +200,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigRuleInConformancePackException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchConfigRuleInConformancePackExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigurationRecordersExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.MaxNumberOfConfigurationRecordersExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConformancePackException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchConformancePackExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.NoSuchBucketExceptionUnmarshaller.getInstance()))
@@ -224,6 +240,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeliveryChannelNameException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.InvalidDeliveryChannelNameExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConformancePackTemplateValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.ConformancePackTemplateValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfOrganizationConformancePacksExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.MaxNumberOfOrganizationConformancePacksExceededExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidS3KeyPrefixException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.InvalidS3KeyPrefixExceptionUnmarshaller.getInstance()))
@@ -660,18 +683,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again later.
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request again later.
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, a remediation action is associated with the rule and AWS Config cannot delete
-     *         this rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
      *         request again later.
      *         </p>
      *         </li>
@@ -685,6 +708,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <p>
      *         For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request
      *         again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
      *         </p>
      *         </li>
      * @sample AmazonConfig.DeleteConfigRule
@@ -860,6 +895,111 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Deletes the specified conformance pack and all the AWS Config rules and all evaluation results within that
+     * conformance pack.
+     * </p>
+     * <p>
+     * AWS Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You
+     * cannot update a conformance pack while it is in this state.
+     * </p>
+     * 
+     * @param deleteConformancePackRequest
+     * @return Result of the DeleteConformancePack operation returned by the service.
+     * @throws NoSuchConformancePackException
+     *         You specified one or more conformance packs that do not exist.
+     * @throws ResourceInUseException
+     *         You see this exception in the following cases: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again
+     *         later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request
+     *         again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
+     *         </p>
+     *         </li>
+     * @sample AmazonConfig.DeleteConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConformancePack" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteConformancePackResult deleteConformancePack(DeleteConformancePackRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConformancePack(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConformancePackResult executeDeleteConformancePack(DeleteConformancePackRequest deleteConformancePackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteConformancePackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConformancePackRequest> request = null;
+        Response<DeleteConformancePackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConformancePackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConformancePackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConformancePack");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConformancePackResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteConformancePackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the delivery channel.
      * </p>
      * <p>
@@ -939,18 +1079,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again later.
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request again later.
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, a remediation action is associated with the rule and AWS Config cannot delete
-     *         this rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
      *         request again later.
      *         </p>
      *         </li>
@@ -964,6 +1104,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <p>
      *         For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request
      *         again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
      *         </p>
      *         </li>
      * @sample AmazonConfig.DeleteEvaluationResults
@@ -1033,18 +1185,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again later.
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request again later.
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, a remediation action is associated with the rule and AWS Config cannot delete
-     *         this rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
      *         request again later.
      *         </p>
      *         </li>
@@ -1060,11 +1212,23 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         again later.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
+     *         </p>
+     *         </li>
      * @throws OrganizationAccessDeniedException
      *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
      *         <p>
-     *         For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called from member
-     *         accounts. All APIs must be called from organization master account.
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
      * @sample AmazonConfig.DeleteOrganizationConfigRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule"
      *      target="_top">AWS API Documentation</a>
@@ -1103,6 +1267,122 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<DeleteOrganizationConfigRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteOrganizationConfigRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified organization conformance pack and all of the config rules and remediation actions from all
+     * member accounts in that organization. Only a master account can delete an organization conformance pack.
+     * </p>
+     * <p>
+     * AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot
+     * update a conformance pack while it is in this state.
+     * </p>
+     * 
+     * @param deleteOrganizationConformancePackRequest
+     * @return Result of the DeleteOrganizationConformancePack operation returned by the service.
+     * @throws NoSuchOrganizationConformancePackException
+     *         AWS Config organization conformance pack that you passed in the filter does not exist.</p>
+     *         <p>
+     *         For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not
+     *         exist.
+     * @throws ResourceInUseException
+     *         You see this exception in the following cases:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again
+     *         later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request
+     *         again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
+     *         </p>
+     *         </li>
+     * @throws OrganizationAccessDeniedException
+     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         <p>
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     * @sample AmazonConfig.DeleteOrganizationConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteOrganizationConformancePackResult deleteOrganizationConformancePack(DeleteOrganizationConformancePackRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOrganizationConformancePack(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOrganizationConformancePackResult executeDeleteOrganizationConformancePack(
+            DeleteOrganizationConformancePackRequest deleteOrganizationConformancePackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOrganizationConformancePackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOrganizationConformancePackRequest> request = null;
+        Response<DeleteOrganizationConformancePackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOrganizationConformancePackRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteOrganizationConformancePackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationConformancePack");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOrganizationConformancePackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteOrganizationConformancePackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2171,6 +2451,200 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Returns compliance information for each rule in that conformance pack.
+     * </p>
+     * <note>
+     * <p>
+     * You must provide exact rule names otherwise AWS Config cannot return evaluation results due to insufficient data.
+     * </p>
+     * </note>
+     * 
+     * @param describeConformancePackComplianceRequest
+     * @return Result of the DescribeConformancePackCompliance operation returned by the service.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws NoSuchConfigRuleInConformancePackException
+     *         AWS Config rule that you passed in the filter does not exist.
+     * @throws NoSuchConformancePackException
+     *         You specified one or more conformance packs that do not exist.
+     * @sample AmazonConfig.DescribeConformancePackCompliance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeConformancePackComplianceResult describeConformancePackCompliance(DescribeConformancePackComplianceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConformancePackCompliance(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConformancePackComplianceResult executeDescribeConformancePackCompliance(
+            DescribeConformancePackComplianceRequest describeConformancePackComplianceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeConformancePackComplianceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConformancePackComplianceRequest> request = null;
+        Response<DescribeConformancePackComplianceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConformancePackComplianceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeConformancePackComplianceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePackCompliance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConformancePackComplianceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeConformancePackComplianceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides one or more conformance packs deployment status.
+     * </p>
+     * 
+     * @param describeConformancePackStatusRequest
+     * @return Result of the DescribeConformancePackStatus operation returned by the service.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.DescribeConformancePackStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeConformancePackStatusResult describeConformancePackStatus(DescribeConformancePackStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConformancePackStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConformancePackStatusResult executeDescribeConformancePackStatus(DescribeConformancePackStatusRequest describeConformancePackStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeConformancePackStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConformancePackStatusRequest> request = null;
+        Response<DescribeConformancePackStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConformancePackStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeConformancePackStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePackStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConformancePackStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeConformancePackStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of one or more conformance packs.
+     * </p>
+     * 
+     * @param describeConformancePacksRequest
+     * @return Result of the DescribeConformancePacks operation returned by the service.
+     * @throws NoSuchConformancePackException
+     *         You specified one or more conformance packs that do not exist.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.DescribeConformancePacks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeConformancePacksResult describeConformancePacks(DescribeConformancePacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConformancePacks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConformancePacksResult executeDescribeConformancePacks(DescribeConformancePacksRequest describeConformancePacksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeConformancePacksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConformancePacksRequest> request = null;
+        Response<DescribeConformancePacksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConformancePacksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeConformancePacksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePacks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConformancePacksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeConformancePacksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action
      * returns the current status of all delivery channels associated with the account.
      * </p>
@@ -2338,8 +2812,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws OrganizationAccessDeniedException
      *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
      *         <p>
-     *         For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called from member
-     *         accounts. All APIs must be called from organization master account.
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
      * @sample AmazonConfig.DescribeOrganizationConfigRuleStatuses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses"
      *      target="_top">AWS API Documentation</a>
@@ -2416,8 +2890,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws OrganizationAccessDeniedException
      *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
      *         <p>
-     *         For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called from member
-     *         accounts. All APIs must be called from organization master account.
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
      * @sample AmazonConfig.DescribeOrganizationConfigRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules"
      *      target="_top">AWS API Documentation</a>
@@ -2457,6 +2931,173 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<DescribeOrganizationConfigRulesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeOrganizationConfigRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides organization conformance pack deployment status for an organization.
+     * </p>
+     * <note>
+     * <p>
+     * The status is not considered successful until organization conformance pack is successfully deployed in all the
+     * member accounts with an exception of excluded accounts.
+     * </p>
+     * <p>
+     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
+     * applicable if you specify organization conformance pack names. They are only applicable, when you request all the
+     * organization conformance packs.
+     * </p>
+     * <p>
+     * Only a master account can call this API.
+     * </p>
+     * </note>
+     * 
+     * @param describeOrganizationConformancePackStatusesRequest
+     * @return Result of the DescribeOrganizationConformancePackStatuses operation returned by the service.
+     * @throws NoSuchOrganizationConformancePackException
+     *         AWS Config organization conformance pack that you passed in the filter does not exist.</p>
+     *         <p>
+     *         For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not
+     *         exist.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws OrganizationAccessDeniedException
+     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         </p>
+     *         <p>
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     * @sample AmazonConfig.DescribeOrganizationConformancePackStatuses
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeOrganizationConformancePackStatusesResult describeOrganizationConformancePackStatuses(
+            DescribeOrganizationConformancePackStatusesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrganizationConformancePackStatuses(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrganizationConformancePackStatusesResult executeDescribeOrganizationConformancePackStatuses(
+            DescribeOrganizationConformancePackStatusesRequest describeOrganizationConformancePackStatusesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOrganizationConformancePackStatusesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOrganizationConformancePackStatusesRequest> request = null;
+        Response<DescribeOrganizationConformancePackStatusesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOrganizationConformancePackStatusesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeOrganizationConformancePackStatusesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConformancePackStatuses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeOrganizationConformancePackStatusesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeOrganizationConformancePackStatusesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of organization conformance packs.
+     * </p>
+     * <note>
+     * <p>
+     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
+     * applicable if you specify organization conformance packs names. They are only applicable, when you request all
+     * the organization conformance packs. Only a master account can call this API.
+     * </p>
+     * </note>
+     * 
+     * @param describeOrganizationConformancePacksRequest
+     * @return Result of the DescribeOrganizationConformancePacks operation returned by the service.
+     * @throws NoSuchOrganizationConformancePackException
+     *         AWS Config organization conformance pack that you passed in the filter does not exist.</p>
+     *         <p>
+     *         For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not
+     *         exist.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws OrganizationAccessDeniedException
+     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         </p>
+     *         <p>
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     * @sample AmazonConfig.DescribeOrganizationConformancePacks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeOrganizationConformancePacksResult describeOrganizationConformancePacks(DescribeOrganizationConformancePacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrganizationConformancePacks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrganizationConformancePacksResult executeDescribeOrganizationConformancePacks(
+            DescribeOrganizationConformancePacksRequest describeOrganizationConformancePacksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOrganizationConformancePacksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOrganizationConformancePacksRequest> request = null;
+        Response<DescribeOrganizationConformancePacksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOrganizationConformancePacksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeOrganizationConformancePacksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConformancePacks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeOrganizationConformancePacksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeOrganizationConformancePacksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3317,6 +3958,132 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Returns compliance details of a conformance pack for all AWS resources that are monitered by conformance pack.
+     * </p>
+     * 
+     * @param getConformancePackComplianceDetailsRequest
+     * @return Result of the GetConformancePackComplianceDetails operation returned by the service.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConformancePackException
+     *         You specified one or more conformance packs that do not exist.
+     * @throws NoSuchConfigRuleInConformancePackException
+     *         AWS Config rule that you passed in the filter does not exist.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @sample AmazonConfig.GetConformancePackComplianceDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConformancePackComplianceDetailsResult getConformancePackComplianceDetails(GetConformancePackComplianceDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConformancePackComplianceDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetConformancePackComplianceDetailsResult executeGetConformancePackComplianceDetails(
+            GetConformancePackComplianceDetailsRequest getConformancePackComplianceDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConformancePackComplianceDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConformancePackComplianceDetailsRequest> request = null;
+        Response<GetConformancePackComplianceDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConformancePackComplianceDetailsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getConformancePackComplianceDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConformancePackComplianceDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConformancePackComplianceDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetConformancePackComplianceDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param getConformancePackComplianceSummaryRequest
+     * @return Result of the GetConformancePackComplianceSummary operation returned by the service.
+     * @throws NoSuchConformancePackException
+     *         You specified one or more conformance packs that do not exist.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.GetConformancePackComplianceSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConformancePackComplianceSummaryResult getConformancePackComplianceSummary(GetConformancePackComplianceSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConformancePackComplianceSummary(request);
+    }
+
+    @SdkInternalApi
+    final GetConformancePackComplianceSummaryResult executeGetConformancePackComplianceSummary(
+            GetConformancePackComplianceSummaryRequest getConformancePackComplianceSummaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConformancePackComplianceSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConformancePackComplianceSummaryRequest> request = null;
+        Response<GetConformancePackComplianceSummaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConformancePackComplianceSummaryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getConformancePackComplianceSummaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConformancePackComplianceSummary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConformancePackComplianceSummaryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetConformancePackComplianceSummaryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the resource types, the number of each resource type, and the total number of resources that AWS Config
      * is recording in this region for your AWS account.
      * </p>
@@ -3467,8 +4234,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws OrganizationAccessDeniedException
      *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
      *         <p>
-     *         For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called from member
-     *         accounts. All APIs must be called from organization master account.
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
      * @sample AmazonConfig.GetOrganizationConfigRuleDetailedStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus"
      *      target="_top">AWS API Documentation</a>
@@ -3508,6 +4275,83 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<GetOrganizationConfigRuleDetailedStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetOrganizationConfigRuleDetailedStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns detailed status for each member account within an organization for a given organization conformance pack.
+     * </p>
+     * <p>
+     * Only a master account can call this API.
+     * </p>
+     * 
+     * @param getOrganizationConformancePackDetailedStatusRequest
+     * @return Result of the GetOrganizationConformancePackDetailedStatus operation returned by the service.
+     * @throws NoSuchOrganizationConformancePackException
+     *         AWS Config organization conformance pack that you passed in the filter does not exist.</p>
+     *         <p>
+     *         For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not
+     *         exist.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws OrganizationAccessDeniedException
+     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         </p>
+     *         <p>
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     * @sample AmazonConfig.GetOrganizationConformancePackDetailedStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOrganizationConformancePackDetailedStatusResult getOrganizationConformancePackDetailedStatus(
+            GetOrganizationConformancePackDetailedStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOrganizationConformancePackDetailedStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetOrganizationConformancePackDetailedStatusResult executeGetOrganizationConformancePackDetailedStatus(
+            GetOrganizationConformancePackDetailedStatusRequest getOrganizationConformancePackDetailedStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOrganizationConformancePackDetailedStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOrganizationConformancePackDetailedStatusRequest> request = null;
+        Response<GetOrganizationConformancePackDetailedStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOrganizationConformancePackDetailedStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getOrganizationConformancePackDetailedStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOrganizationConformancePackDetailedStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetOrganizationConformancePackDetailedStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetOrganizationConformancePackDetailedStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3933,18 +4777,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again later.
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request again later.
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, a remediation action is associated with the rule and AWS Config cannot delete
-     *         this rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
      *         request again later.
      *         </p>
      *         </li>
@@ -3958,6 +4802,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <p>
      *         For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request
      *         again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
      *         </p>
      *         </li>
      * @throws InsufficientPermissionsException
@@ -3977,9 +4833,32 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         For OrganizationConfigRule, organization config rule cannot be created because you do not have
-     *         permissions to call IAM <code>GetRole</code> action or create service linked role.
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a rule and a stack.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.
@@ -4062,8 +4941,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
      *         </p>
      *         <p>
-     *         For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called from member
-     *         accounts. All APIs must be called from organization master account.
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
      * @throws NoAvailableOrganizationException
      *         Organization is no longer available.
      * @throws OrganizationAllFeaturesNotEnabledException
@@ -4184,6 +5063,166 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<PutConfigurationRecorderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutConfigurationRecorderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates a conformance pack. A conformance pack is a collection of AWS Config rules that can be easily
+     * deployed in an account and a region.
+     * </p>
+     * <p>
+     * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
+     * linked role is created only when the role does not exist in your account. AWS Config verifies the existence of
+     * role with <code>GetRole</code> action.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
+     * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+     * <code>TemplateBody</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @param putConformancePackRequest
+     * @return Result of the PutConformancePack operation returned by the service.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS Config lacks
+     *         permissions to perform the config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN, and check the
+     *         function's permissions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a rule and a stack.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     * @throws ConformancePackTemplateValidationException
+     *         You have specified a template that is not valid or supported.
+     * @throws ResourceInUseException
+     *         You see this exception in the following cases: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again
+     *         later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request
+     *         again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
+     *         </p>
+     *         </li>
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws MaxNumberOfConformancePacksExceededException
+     *         You have reached the limit (20) of the number of conformance packs in an account.
+     * @sample AmazonConfig.PutConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutConformancePackResult putConformancePack(PutConformancePackRequest request) {
+        request = beforeClientExecution(request);
+        return executePutConformancePack(request);
+    }
+
+    @SdkInternalApi
+    final PutConformancePackResult executePutConformancePack(PutConformancePackRequest putConformancePackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putConformancePackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutConformancePackRequest> request = null;
+        Response<PutConformancePackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutConformancePackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConformancePackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConformancePack");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutConformancePackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutConformancePackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4375,18 +5414,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again later.
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request again later.
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, a remediation action is associated with the rule and AWS Config cannot delete
-     *         this rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
      *         request again later.
      *         </p>
      *         </li>
@@ -4402,6 +5441,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         again later.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws ValidationException
@@ -4409,8 +5460,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws OrganizationAccessDeniedException
      *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
      *         <p>
-     *         For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called from member
-     *         accounts. All APIs must be called from organization master account.
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
      * @throws NoAvailableOrganizationException
      *         Organization is no longer available.
      * @throws OrganizationAllFeaturesNotEnabledException
@@ -4433,9 +5484,32 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         For OrganizationConfigRule, organization config rule cannot be created because you do not have
-     *         permissions to call IAM <code>GetRole</code> action or create service linked role.
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a rule and a stack.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      * @sample AmazonConfig.PutOrganizationConfigRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule"
@@ -4487,6 +5561,181 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Deploys conformance packs across member accounts in an AWS Organization.
+     * </p>
+     * <p>
+     * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
+     * service linked role AWSServiceRoleForConfigMultiAccountSetup in the master account of your organization. The
+     * service linked role is created only when the role does not exist in the master account. AWS Config verifies the
+     * existence of role with GetRole action.
+     * </p>
+     * <note>
+     * <p>
+     * The SPN is <code>config-multiaccountsetup.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
+     * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+     * <code>TemplateBody</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @param putOrganizationConformancePackRequest
+     * @return Result of the PutOrganizationConformancePack operation returned by the service.
+     * @throws MaxNumberOfOrganizationConformancePacksExceededException
+     *         You have reached the limit (10) of the number of organization conformance packs in an account.
+     * @throws ResourceInUseException
+     *         You see this exception in the following cases: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again
+     *         later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request
+     *         again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
+     *         </p>
+     *         </li>
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws OrganizationAccessDeniedException
+     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         <p>
+     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
+     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS Config lacks
+     *         permissions to perform the config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN, and check the
+     *         function's permissions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a rule and a stack.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     * @throws OrganizationConformancePackTemplateValidationException
+     *         You have specified a template that is not valid or supported.
+     * @throws OrganizationAllFeaturesNotEnabledException
+     *         AWS Config resource cannot be created because your organization does not have all features enabled.
+     * @throws NoAvailableOrganizationException
+     *         Organization is no longer available.
+     * @sample AmazonConfig.PutOrganizationConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutOrganizationConformancePackResult putOrganizationConformancePack(PutOrganizationConformancePackRequest request) {
+        request = beforeClientExecution(request);
+        return executePutOrganizationConformancePack(request);
+    }
+
+    @SdkInternalApi
+    final PutOrganizationConformancePackResult executePutOrganizationConformancePack(PutOrganizationConformancePackRequest putOrganizationConformancePackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putOrganizationConformancePackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutOrganizationConformancePackRequest> request = null;
+        Response<PutOrganizationConformancePackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutOrganizationConformancePackRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putOrganizationConformancePackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutOrganizationConformancePack");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutOrganizationConformancePackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutOrganizationConformancePackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds or updates the remediation configuration with a specific AWS Config rule with the selected target or action.
      * The API creates the <code>RemediationConfiguration</code> object for the AWS Config rule. The AWS Config rule
      * must already exist for you to add a remediation configuration. The target (SSM document) must exist and have
@@ -4512,9 +5761,32 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         For OrganizationConfigRule, organization config rule cannot be created because you do not have
-     *         permissions to call IAM <code>GetRole</code> action or create service linked role.
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a rule and a stack.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
@@ -4828,18 +6100,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again later.
+     *         For DeleteConfigRule, AWS Config is deleting this rule. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request again later.
+     *         For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For DeleteConfigRule API, a remediation action is associated with the rule and AWS Config cannot delete
-     *         this rule. Delete the remediation action associated with the rule before deleting the rule and try your
+     *         For DeleteConfigRule, a remediation action is associated with the rule and AWS Config cannot delete this
+     *         rule. Delete the remediation action associated with the rule before deleting the rule and try your
      *         request again later.
      *         </p>
      *         </li>
@@ -4853,6 +6125,18 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         <p>
      *         For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request
      *         again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and
+     *         deletion is in progress. Try your request again later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your
+     *         request again later.
      *         </p>
      *         </li>
      * @throws InvalidParameterValueException
@@ -5000,9 +6284,32 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         For OrganizationConfigRule, organization config rule cannot be created because you do not have
-     *         permissions to call IAM <code>GetRole</code> action or create service linked role.
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a rule and a stack.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      * @throws NoSuchRemediationConfigurationException
      *         You specified an AWS Config rule without a remediation configuration.

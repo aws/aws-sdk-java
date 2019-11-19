@@ -19,7 +19,7 @@ import static com.amazonaws.SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.SdkClientException;
-import com.amazonaws.internal.EC2CredentialsUtils;
+import com.amazonaws.internal.InstanceMetadataServiceResourceFetcher;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -397,7 +397,7 @@ public class EC2MetadataUtils {
         List<String> items;
         try {
             String hostAddress = getHostAddressForEC2MetadataService();
-            String response = EC2CredentialsUtils.getInstance().readResource(new URI(hostAddress + path));
+            String response = InstanceMetadataServiceResourceFetcher.getInstance().readResource(new URI(hostAddress + path));
             if (slurp)
                 items = Collections.singletonList(response);
             else

@@ -68,6 +68,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DeleteConformancePackResult deleteConformancePack(DeleteConformancePackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDeliveryChannelResult deleteDeliveryChannel(DeleteDeliveryChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public DeleteOrganizationConfigRuleResult deleteOrganizationConfigRule(DeleteOrganizationConfigRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteOrganizationConformancePackResult deleteOrganizationConformancePack(DeleteOrganizationConformancePackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,6 +199,21 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DescribeConformancePackComplianceResult describeConformancePackCompliance(DescribeConformancePackComplianceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeConformancePackStatusResult describeConformancePackStatus(DescribeConformancePackStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeConformancePacksResult describeConformancePacks(DescribeConformancePacksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -215,6 +240,17 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public DescribeOrganizationConfigRulesResult describeOrganizationConfigRules(DescribeOrganizationConfigRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeOrganizationConformancePackStatusesResult describeOrganizationConformancePackStatuses(
+            DescribeOrganizationConformancePackStatusesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeOrganizationConformancePacksResult describeOrganizationConformancePacks(DescribeOrganizationConformancePacksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -294,12 +330,28 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public GetConformancePackComplianceDetailsResult getConformancePackComplianceDetails(GetConformancePackComplianceDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConformancePackComplianceSummaryResult getConformancePackComplianceSummary(GetConformancePackComplianceSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDiscoveredResourceCountsResult getDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetOrganizationConfigRuleDetailedStatusResult getOrganizationConfigRuleDetailedStatus(GetOrganizationConfigRuleDetailedStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOrganizationConformancePackDetailedStatusResult getOrganizationConformancePackDetailedStatus(
+            GetOrganizationConformancePackDetailedStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -344,6 +396,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public PutConformancePackResult putConformancePack(PutConformancePackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDeliveryChannelResult putDeliveryChannel(PutDeliveryChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -355,6 +412,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public PutOrganizationConfigRuleResult putOrganizationConfigRule(PutOrganizationConfigRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutOrganizationConformancePackResult putOrganizationConformancePack(PutOrganizationConformancePackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

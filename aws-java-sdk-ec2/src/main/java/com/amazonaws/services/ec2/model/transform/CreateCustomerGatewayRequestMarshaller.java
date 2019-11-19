@@ -56,6 +56,10 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
             request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
         }
 
+        if (createCustomerGatewayRequest.getDeviceName() != null) {
+            request.addParameter("DeviceName", StringUtils.fromString(createCustomerGatewayRequest.getDeviceName()));
+        }
+
         return request;
     }
 

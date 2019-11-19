@@ -28,13 +28,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The metric type.
-     * </p>
-     */
-    private String predefinedMetricType;
-    /**
-     * <p>
-     * Identifies the resource associated with the metric type. The following predefined metrics are available:
+     * The metric type. The following predefined metrics are available:
      * </p>
      * <ul>
      * <li>
@@ -61,95 +55,38 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     */
+    private String predefinedMetricType;
+    /**
      * <p>
-     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
-     * <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric
-     * type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter
-     * must be specified in the format:
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
-     * , where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load
-     * balancer ARN, and <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion
-     * of the target group ARN. The target group must be attached to the Auto Scaling group.
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group.
      * </p>
+     * <p>
+     * The format is
+     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
+     * , where
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load balancer
+     * ARN, and
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion of the target
+     * group ARN.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceLabel;
 
     /**
      * <p>
-     * The metric type.
-     * </p>
-     * 
-     * @param predefinedMetricType
-     *        The metric type.
-     * @see MetricType
-     */
-
-    public void setPredefinedMetricType(String predefinedMetricType) {
-        this.predefinedMetricType = predefinedMetricType;
-    }
-
-    /**
-     * <p>
-     * The metric type.
-     * </p>
-     * 
-     * @return The metric type.
-     * @see MetricType
-     */
-
-    public String getPredefinedMetricType() {
-        return this.predefinedMetricType;
-    }
-
-    /**
-     * <p>
-     * The metric type.
-     * </p>
-     * 
-     * @param predefinedMetricType
-     *        The metric type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see MetricType
-     */
-
-    public PredefinedMetricSpecification withPredefinedMetricType(String predefinedMetricType) {
-        setPredefinedMetricType(predefinedMetricType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The metric type.
-     * </p>
-     * 
-     * @param predefinedMetricType
-     *        The metric type.
-     * @see MetricType
-     */
-
-    public void setPredefinedMetricType(MetricType predefinedMetricType) {
-        withPredefinedMetricType(predefinedMetricType);
-    }
-
-    /**
-     * <p>
-     * The metric type.
-     * </p>
-     * 
-     * @param predefinedMetricType
-     *        The metric type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see MetricType
-     */
-
-    public PredefinedMetricSpecification withPredefinedMetricType(MetricType predefinedMetricType) {
-        this.predefinedMetricType = predefinedMetricType.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * Identifies the resource associated with the metric type. The following predefined metrics are available:
+     * The metric type. The following predefined metrics are available:
      * </p>
      * <ul>
      * <li>
@@ -176,20 +113,9 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
-     * <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric
-     * type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter
-     * must be specified in the format:
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
-     * , where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load
-     * balancer ARN, and <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion
-     * of the target group ARN. The target group must be attached to the Auto Scaling group.
-     * </p>
      * 
-     * @param resourceLabel
-     *        Identifies the resource associated with the metric type. The following predefined metrics are
-     *        available:</p>
+     * @param predefinedMetricType
+     *        The metric type. The following predefined metrics are available:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -214,25 +140,16 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *        Balancer target group.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
-     *        <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the
-     *        metric type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,
-     *        the parameter must be specified in the format:
-     *        <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
-     *        , where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the
-     *        load balancer ARN, and <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     *        final portion of the target group ARN. The target group must be attached to the Auto Scaling group.
+     * @see MetricType
      */
 
-    public void setResourceLabel(String resourceLabel) {
-        this.resourceLabel = resourceLabel;
+    public void setPredefinedMetricType(String predefinedMetricType) {
+        this.predefinedMetricType = predefinedMetricType;
     }
 
     /**
      * <p>
-     * Identifies the resource associated with the metric type. The following predefined metrics are available:
+     * The metric type. The following predefined metrics are available:
      * </p>
      * <ul>
      * <li>
@@ -259,19 +176,8 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
-     * <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric
-     * type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter
-     * must be specified in the format:
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
-     * , where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load
-     * balancer ARN, and <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion
-     * of the target group ARN. The target group must be attached to the Auto Scaling group.
-     * </p>
      * 
-     * @return Identifies the resource associated with the metric type. The following predefined metrics are
-     *         available:</p>
+     * @return The metric type. The following predefined metrics are available:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -296,25 +202,16 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *         Balancer target group.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
-     *         <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with
-     *         the metric type is the Auto Scaling group. For predefined metric type
-     *         <code>ALBRequestCountPerTarget</code>, the parameter must be specified in the format:
-     *         <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
-     *         , where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the
-     *         load balancer ARN, and <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     *         final portion of the target group ARN. The target group must be attached to the Auto Scaling group.
+     * @see MetricType
      */
 
-    public String getResourceLabel() {
-        return this.resourceLabel;
+    public String getPredefinedMetricType() {
+        return this.predefinedMetricType;
     }
 
     /**
      * <p>
-     * Identifies the resource associated with the metric type. The following predefined metrics are available:
+     * The metric type. The following predefined metrics are available:
      * </p>
      * <ul>
      * <li>
@@ -341,20 +238,9 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
-     * <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the metric
-     * type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>, the parameter
-     * must be specified in the format:
-     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
-     * , where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load
-     * balancer ARN, and <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion
-     * of the target group ARN. The target group must be attached to the Auto Scaling group.
-     * </p>
      * 
-     * @param resourceLabel
-     *        Identifies the resource associated with the metric type. The following predefined metrics are
-     *        available:</p>
+     * @param predefinedMetricType
+     *        The metric type. The following predefined metrics are available:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -379,16 +265,295 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable {
      *        Balancer target group.
      *        </p>
      *        </li>
-     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MetricType
+     */
+
+    public PredefinedMetricSpecification withPredefinedMetricType(String predefinedMetricType) {
+        setPredefinedMetricType(predefinedMetricType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metric type. The following predefined metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling
+     * group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto
+     * Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load Balancer
+     * target group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param predefinedMetricType
+     *        The metric type. The following predefined metrics are available:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        For predefined metric types <code>ASGAverageCPUUtilization</code>, <code>ASGAverageNetworkIn</code>, and
-     *        <code>ASGAverageNetworkOut</code>, the parameter must not be specified as the resource associated with the
-     *        metric type is the Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,
-     *        the parameter must be specified in the format:
+     *        <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto
+     *        Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto
+     *        Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load
+     *        Balancer target group.
+     *        </p>
+     *        </li>
+     * @see MetricType
+     */
+
+    public void setPredefinedMetricType(MetricType predefinedMetricType) {
+        withPredefinedMetricType(predefinedMetricType);
+    }
+
+    /**
+     * <p>
+     * The metric type. The following predefined metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling
+     * group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto
+     * Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load Balancer
+     * target group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param predefinedMetricType
+     *        The metric type. The following predefined metrics are available:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto
+     *        Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto
+     *        Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in an Application Load
+     *        Balancer target group.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MetricType
+     */
+
+    public PredefinedMetricSpecification withPredefinedMetricType(MetricType predefinedMetricType) {
+        this.predefinedMetricType = predefinedMetricType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group.
+     * </p>
+     * <p>
+     * The format is
+     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
+     * , where
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load balancer
+     * ARN, and
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion of the target
+     * group ARN.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceLabel
+     *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
+     *        Scaling group.</p>
+     *        <p>
+     *        The format is
      *        <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
-     *        , where <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the
-     *        load balancer ARN, and <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the
-     *        final portion of the target group ARN. The target group must be attached to the Auto Scaling group.
+     *        , where
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load
+     *        balancer ARN, and
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion of the
+     *        target group ARN.
+     *        </p>
+     *        </li>
+     */
+
+    public void setResourceLabel(String resourceLabel) {
+        this.resourceLabel = resourceLabel;
+    }
+
+    /**
+     * <p>
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group.
+     * </p>
+     * <p>
+     * The format is
+     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
+     * , where
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load balancer
+     * ARN, and
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion of the target
+     * group ARN.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *         metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
+     *         Scaling group.</p>
+     *         <p>
+     *         The format is
+     *         <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
+     *         , where
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load
+     *         balancer ARN, and
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion of the
+     *         target group ARN.
+     *         </p>
+     *         </li>
+     */
+
+    public String getResourceLabel() {
+        return this.resourceLabel;
+    }
+
+    /**
+     * <p>
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group.
+     * </p>
+     * <p>
+     * The format is
+     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
+     * , where
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load balancer
+     * ARN, and
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion of the target
+     * group ARN.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceLabel
+     *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
+     *        Scaling group.</p>
+     *        <p>
+     *        The format is
+     *        <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code>
+     *        , where
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> is the final portion of the load
+     *        balancer ARN, and
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i> </code> is the final portion of the
+     *        target group ARN.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

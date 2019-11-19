@@ -122,6 +122,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private StepFunctionsAction stepFunctions;
+    /**
+     * <p>
+     * Send data to an HTTPS endpoint.
+     * </p>
+     */
+    private HttpAction http;
 
     /**
      * <p>
@@ -770,6 +776,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Send data to an HTTPS endpoint.
+     * </p>
+     * 
+     * @param http
+     *        Send data to an HTTPS endpoint.
+     */
+
+    public void setHttp(HttpAction http) {
+        this.http = http;
+    }
+
+    /**
+     * <p>
+     * Send data to an HTTPS endpoint.
+     * </p>
+     * 
+     * @return Send data to an HTTPS endpoint.
+     */
+
+    public HttpAction getHttp() {
+        return this.http;
+    }
+
+    /**
+     * <p>
+     * Send data to an HTTPS endpoint.
+     * </p>
+     * 
+     * @param http
+     *        Send data to an HTTPS endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withHttp(HttpAction http) {
+        setHttp(http);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -812,7 +858,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getIotEvents() != null)
             sb.append("IotEvents: ").append(getIotEvents()).append(",");
         if (getStepFunctions() != null)
-            sb.append("StepFunctions: ").append(getStepFunctions());
+            sb.append("StepFunctions: ").append(getStepFunctions()).append(",");
+        if (getHttp() != null)
+            sb.append("Http: ").append(getHttp());
         sb.append("}");
         return sb.toString();
     }
@@ -891,6 +939,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStepFunctions() != null && other.getStepFunctions().equals(this.getStepFunctions()) == false)
             return false;
+        if (other.getHttp() == null ^ this.getHttp() == null)
+            return false;
+        if (other.getHttp() != null && other.getHttp().equals(this.getHttp()) == false)
+            return false;
         return true;
     }
 
@@ -915,6 +967,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIotAnalytics() == null) ? 0 : getIotAnalytics().hashCode());
         hashCode = prime * hashCode + ((getIotEvents() == null) ? 0 : getIotEvents().hashCode());
         hashCode = prime * hashCode + ((getStepFunctions() == null) ? 0 : getStepFunctions().hashCode());
+        hashCode = prime * hashCode + ((getHttp() == null) ? 0 : getHttp().hashCode());
         return hashCode;
     }
 

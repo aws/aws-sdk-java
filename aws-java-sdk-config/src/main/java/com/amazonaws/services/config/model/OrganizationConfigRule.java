@@ -36,7 +36,7 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     private String organizationConfigRuleName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of organization config rule.
+     * Amazon Resource Name (ARN) of organization config rule.
      * </p>
      */
     private String organizationConfigRuleArn;
@@ -107,11 +107,11 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of organization config rule.
+     * Amazon Resource Name (ARN) of organization config rule.
      * </p>
      * 
      * @param organizationConfigRuleArn
-     *        The Amazon Resource Name (ARN) of organization config rule.
+     *        Amazon Resource Name (ARN) of organization config rule.
      */
 
     public void setOrganizationConfigRuleArn(String organizationConfigRuleArn) {
@@ -120,10 +120,10 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of organization config rule.
+     * Amazon Resource Name (ARN) of organization config rule.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of organization config rule.
+     * @return Amazon Resource Name (ARN) of organization config rule.
      */
 
     public String getOrganizationConfigRuleArn() {
@@ -132,11 +132,11 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of organization config rule.
+     * Amazon Resource Name (ARN) of organization config rule.
      * </p>
      * 
      * @param organizationConfigRuleArn
-     *        The Amazon Resource Name (ARN) of organization config rule.
+     *        Amazon Resource Name (ARN) of organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

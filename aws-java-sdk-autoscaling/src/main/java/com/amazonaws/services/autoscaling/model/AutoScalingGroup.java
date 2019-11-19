@@ -181,6 +181,15 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * </p>
      */
     private String serviceLinkedRoleARN;
+    /**
+     * <p>
+     * The maximum amount of time, in seconds, that an instance can be in service.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 604800.
+     * </p>
+     */
+    private Integer maxInstanceLifetime;
 
     /**
      * <p>
@@ -1494,6 +1503,61 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The maximum amount of time, in seconds, that an instance can be in service.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 604800.
+     * </p>
+     * 
+     * @param maxInstanceLifetime
+     *        The maximum amount of time, in seconds, that an instance can be in service.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 604800.
+     */
+
+    public void setMaxInstanceLifetime(Integer maxInstanceLifetime) {
+        this.maxInstanceLifetime = maxInstanceLifetime;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time, in seconds, that an instance can be in service.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 604800.
+     * </p>
+     * 
+     * @return The maximum amount of time, in seconds, that an instance can be in service.</p>
+     *         <p>
+     *         Valid Range: Minimum value of 604800.
+     */
+
+    public Integer getMaxInstanceLifetime() {
+        return this.maxInstanceLifetime;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time, in seconds, that an instance can be in service.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 604800.
+     * </p>
+     * 
+     * @param maxInstanceLifetime
+     *        The maximum amount of time, in seconds, that an instance can be in service.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 604800.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withMaxInstanceLifetime(Integer maxInstanceLifetime) {
+        setMaxInstanceLifetime(maxInstanceLifetime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1554,7 +1618,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getNewInstancesProtectedFromScaleIn() != null)
             sb.append("NewInstancesProtectedFromScaleIn: ").append(getNewInstancesProtectedFromScaleIn()).append(",");
         if (getServiceLinkedRoleARN() != null)
-            sb.append("ServiceLinkedRoleARN: ").append(getServiceLinkedRoleARN());
+            sb.append("ServiceLinkedRoleARN: ").append(getServiceLinkedRoleARN()).append(",");
+        if (getMaxInstanceLifetime() != null)
+            sb.append("MaxInstanceLifetime: ").append(getMaxInstanceLifetime());
         sb.append("}");
         return sb.toString();
     }
@@ -1670,6 +1736,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return false;
         if (other.getServiceLinkedRoleARN() != null && other.getServiceLinkedRoleARN().equals(this.getServiceLinkedRoleARN()) == false)
             return false;
+        if (other.getMaxInstanceLifetime() == null ^ this.getMaxInstanceLifetime() == null)
+            return false;
+        if (other.getMaxInstanceLifetime() != null && other.getMaxInstanceLifetime().equals(this.getMaxInstanceLifetime()) == false)
+            return false;
         return true;
     }
 
@@ -1703,6 +1773,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode());
         hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
         hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getMaxInstanceLifetime() == null) ? 0 : getMaxInstanceLifetime().hashCode());
         return hashCode;
     }
 

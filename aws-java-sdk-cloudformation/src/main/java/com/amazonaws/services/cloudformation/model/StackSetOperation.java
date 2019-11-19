@@ -136,6 +136,22 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date endTimestamp;
+    /**
+     * <p>
+     * Detailed information about the drift status of the stack set. This includes information about drift operations
+     * currently being performed on the stack set.
+     * </p>
+     * <p>
+     * this information will only be present for stack set operations whose <code>Action</code> type is
+     * <code>DETECT_DRIFT</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
+     * Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+     * </p>
+     */
+    private StackSetDriftDetectionDetails stackSetDriftDetectionDetails;
 
     /**
      * <p>
@@ -1053,6 +1069,103 @@ public class StackSetOperation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Detailed information about the drift status of the stack set. This includes information about drift operations
+     * currently being performed on the stack set.
+     * </p>
+     * <p>
+     * this information will only be present for stack set operations whose <code>Action</code> type is
+     * <code>DETECT_DRIFT</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
+     * Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+     * </p>
+     * 
+     * @param stackSetDriftDetectionDetails
+     *        Detailed information about the drift status of the stack set. This includes information about drift
+     *        operations currently being performed on the stack set.</p>
+     *        <p>
+     *        this information will only be present for stack set operations whose <code>Action</code> type is
+     *        <code>DETECT_DRIFT</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     *        Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+     */
+
+    public void setStackSetDriftDetectionDetails(StackSetDriftDetectionDetails stackSetDriftDetectionDetails) {
+        this.stackSetDriftDetectionDetails = stackSetDriftDetectionDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the drift status of the stack set. This includes information about drift operations
+     * currently being performed on the stack set.
+     * </p>
+     * <p>
+     * this information will only be present for stack set operations whose <code>Action</code> type is
+     * <code>DETECT_DRIFT</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
+     * Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+     * </p>
+     * 
+     * @return Detailed information about the drift status of the stack set. This includes information about drift
+     *         operations currently being performed on the stack set.</p>
+     *         <p>
+     *         this information will only be present for stack set operations whose <code>Action</code> type is
+     *         <code>DETECT_DRIFT</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     *         Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+     */
+
+    public StackSetDriftDetectionDetails getStackSetDriftDetectionDetails() {
+        return this.stackSetDriftDetectionDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the drift status of the stack set. This includes information about drift operations
+     * currently being performed on the stack set.
+     * </p>
+     * <p>
+     * this information will only be present for stack set operations whose <code>Action</code> type is
+     * <code>DETECT_DRIFT</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
+     * Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+     * </p>
+     * 
+     * @param stackSetDriftDetectionDetails
+     *        Detailed information about the drift status of the stack set. This includes information about drift
+     *        operations currently being performed on the stack set.</p>
+     *        <p>
+     *        this information will only be present for stack set operations whose <code>Action</code> type is
+     *        <code>DETECT_DRIFT</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     *        Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperation withStackSetDriftDetectionDetails(StackSetDriftDetectionDetails stackSetDriftDetectionDetails) {
+        setStackSetDriftDetectionDetails(stackSetDriftDetectionDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1083,7 +1196,9 @@ public class StackSetOperation implements Serializable, Cloneable {
         if (getCreationTimestamp() != null)
             sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
         if (getEndTimestamp() != null)
-            sb.append("EndTimestamp: ").append(getEndTimestamp());
+            sb.append("EndTimestamp: ").append(getEndTimestamp()).append(",");
+        if (getStackSetDriftDetectionDetails() != null)
+            sb.append("StackSetDriftDetectionDetails: ").append(getStackSetDriftDetectionDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1138,6 +1253,11 @@ public class StackSetOperation implements Serializable, Cloneable {
             return false;
         if (other.getEndTimestamp() != null && other.getEndTimestamp().equals(this.getEndTimestamp()) == false)
             return false;
+        if (other.getStackSetDriftDetectionDetails() == null ^ this.getStackSetDriftDetectionDetails() == null)
+            return false;
+        if (other.getStackSetDriftDetectionDetails() != null
+                && other.getStackSetDriftDetectionDetails().equals(this.getStackSetDriftDetectionDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1156,6 +1276,7 @@ public class StackSetOperation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEndTimestamp() == null) ? 0 : getEndTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getStackSetDriftDetectionDetails() == null) ? 0 : getStackSetDriftDetectionDetails().hashCode());
         return hashCode;
     }
 

@@ -34,6 +34,12 @@ public class Instance implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
+     * The instance type of the EC2 instance.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
      * The Availability Zone in which the instance is running.
      * </p>
      */
@@ -70,6 +76,15 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private Boolean protectedFromScaleIn;
+    /**
+     * <p>
+     * The number of capacity units contributed by the instance based on its instance type.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * </p>
+     */
+    private String weightedCapacity;
 
     /**
      * <p>
@@ -108,6 +123,46 @@ public class Instance implements Serializable, Cloneable {
 
     public Instance withInstanceId(String instanceId) {
         setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type of the EC2 instance.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type of the EC2 instance.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type of the EC2 instance.
+     * </p>
+     * 
+     * @return The instance type of the EC2 instance.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type of the EC2 instance.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type of the EC2 instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
         return this;
     }
 
@@ -409,6 +464,61 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of capacity units contributed by the instance based on its instance type.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * </p>
+     * 
+     * @param weightedCapacity
+     *        The number of capacity units contributed by the instance based on its instance type.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 999.
+     */
+
+    public void setWeightedCapacity(String weightedCapacity) {
+        this.weightedCapacity = weightedCapacity;
+    }
+
+    /**
+     * <p>
+     * The number of capacity units contributed by the instance based on its instance type.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * </p>
+     * 
+     * @return The number of capacity units contributed by the instance based on its instance type.</p>
+     *         <p>
+     *         Valid Range: Minimum value of 1. Maximum value of 999.
+     */
+
+    public String getWeightedCapacity() {
+        return this.weightedCapacity;
+    }
+
+    /**
+     * <p>
+     * The number of capacity units contributed by the instance based on its instance type.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * </p>
+     * 
+     * @param weightedCapacity
+     *        The number of capacity units contributed by the instance based on its instance type.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 999.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withWeightedCapacity(String weightedCapacity) {
+        setWeightedCapacity(weightedCapacity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -422,6 +532,8 @@ public class Instance implements Serializable, Cloneable {
         sb.append("{");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getLifecycleState() != null)
@@ -433,7 +545,9 @@ public class Instance implements Serializable, Cloneable {
         if (getLaunchTemplate() != null)
             sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getProtectedFromScaleIn() != null)
-            sb.append("ProtectedFromScaleIn: ").append(getProtectedFromScaleIn());
+            sb.append("ProtectedFromScaleIn: ").append(getProtectedFromScaleIn()).append(",");
+        if (getWeightedCapacity() != null)
+            sb.append("WeightedCapacity: ").append(getWeightedCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +565,10 @@ public class Instance implements Serializable, Cloneable {
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
@@ -476,6 +594,10 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getProtectedFromScaleIn() != null && other.getProtectedFromScaleIn().equals(this.getProtectedFromScaleIn()) == false)
             return false;
+        if (other.getWeightedCapacity() == null ^ this.getWeightedCapacity() == null)
+            return false;
+        if (other.getWeightedCapacity() != null && other.getWeightedCapacity().equals(this.getWeightedCapacity()) == false)
+            return false;
         return true;
     }
 
@@ -485,12 +607,14 @@ public class Instance implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getLifecycleState() == null) ? 0 : getLifecycleState().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getProtectedFromScaleIn() == null) ? 0 : getProtectedFromScaleIn().hashCode());
+        hashCode = prime * hashCode + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity().hashCode());
         return hashCode;
     }
 

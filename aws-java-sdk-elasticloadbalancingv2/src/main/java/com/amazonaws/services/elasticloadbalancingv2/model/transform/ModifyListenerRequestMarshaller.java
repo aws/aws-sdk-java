@@ -300,6 +300,54 @@ public class ModifyListenerRequestMarshaller implements Marshaller<Request<Modif
                             }
                         }
                     }
+
+                    {
+                        ForwardActionConfig forwardConfig = defaultActionsListValue.getForwardConfig();
+                        if (forwardConfig != null) {
+
+                            if (forwardConfig.getTargetGroups() != null) {
+                                java.util.List<TargetGroupTuple> targetGroupsList = forwardConfig.getTargetGroups();
+                                if (targetGroupsList.isEmpty()) {
+                                    request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".ForwardConfig.TargetGroups", "");
+                                } else {
+                                    int targetGroupsListIndex = 1;
+
+                                    for (TargetGroupTuple targetGroupsListValue : targetGroupsList) {
+
+                                        if (targetGroupsListValue.getTargetGroupArn() != null) {
+                                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".ForwardConfig.TargetGroups.member."
+                                                    + targetGroupsListIndex + ".TargetGroupArn",
+                                                    StringUtils.fromString(targetGroupsListValue.getTargetGroupArn()));
+                                        }
+
+                                        if (targetGroupsListValue.getWeight() != null) {
+                                            request.addParameter("DefaultActions.member." + defaultActionsListIndex + ".ForwardConfig.TargetGroups.member."
+                                                    + targetGroupsListIndex + ".Weight", StringUtils.fromInteger(targetGroupsListValue.getWeight()));
+                                        }
+                                        targetGroupsListIndex++;
+                                    }
+                                }
+                            }
+
+                            {
+                                TargetGroupStickinessConfig targetGroupStickinessConfig = forwardConfig.getTargetGroupStickinessConfig();
+                                if (targetGroupStickinessConfig != null) {
+
+                                    if (targetGroupStickinessConfig.getEnabled() != null) {
+                                        request.addParameter("DefaultActions.member." + defaultActionsListIndex
+                                                + ".ForwardConfig.TargetGroupStickinessConfig.Enabled",
+                                                StringUtils.fromBoolean(targetGroupStickinessConfig.getEnabled()));
+                                    }
+
+                                    if (targetGroupStickinessConfig.getDurationSeconds() != null) {
+                                        request.addParameter("DefaultActions.member." + defaultActionsListIndex
+                                                + ".ForwardConfig.TargetGroupStickinessConfig.DurationSeconds",
+                                                StringUtils.fromInteger(targetGroupStickinessConfig.getDurationSeconds()));
+                                    }
+                                }
+                            }
+                        }
+                    }
                     defaultActionsListIndex++;
                 }
             }

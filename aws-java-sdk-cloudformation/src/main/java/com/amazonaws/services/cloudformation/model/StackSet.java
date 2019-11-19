@@ -107,6 +107,16 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      */
     private String executionRoleName;
+    /**
+     * <p>
+     * Detailed information about the drift status of the stack set.
+     * </p>
+     * <p>
+     * For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set.
+     * Information about drift operations currently in progress is not included.
+     * </p>
+     */
+    private StackSetDriftDetectionDetails stackSetDriftDetectionDetails;
 
     /**
      * <p>
@@ -802,6 +812,67 @@ public class StackSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Detailed information about the drift status of the stack set.
+     * </p>
+     * <p>
+     * For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set.
+     * Information about drift operations currently in progress is not included.
+     * </p>
+     * 
+     * @param stackSetDriftDetectionDetails
+     *        Detailed information about the drift status of the stack set.</p>
+     *        <p>
+     *        For stack sets, contains information about the last <i>completed</i> drift operation performed on the
+     *        stack set. Information about drift operations currently in progress is not included.
+     */
+
+    public void setStackSetDriftDetectionDetails(StackSetDriftDetectionDetails stackSetDriftDetectionDetails) {
+        this.stackSetDriftDetectionDetails = stackSetDriftDetectionDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the drift status of the stack set.
+     * </p>
+     * <p>
+     * For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set.
+     * Information about drift operations currently in progress is not included.
+     * </p>
+     * 
+     * @return Detailed information about the drift status of the stack set.</p>
+     *         <p>
+     *         For stack sets, contains information about the last <i>completed</i> drift operation performed on the
+     *         stack set. Information about drift operations currently in progress is not included.
+     */
+
+    public StackSetDriftDetectionDetails getStackSetDriftDetectionDetails() {
+        return this.stackSetDriftDetectionDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the drift status of the stack set.
+     * </p>
+     * <p>
+     * For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set.
+     * Information about drift operations currently in progress is not included.
+     * </p>
+     * 
+     * @param stackSetDriftDetectionDetails
+     *        Detailed information about the drift status of the stack set.</p>
+     *        <p>
+     *        For stack sets, contains information about the last <i>completed</i> drift operation performed on the
+     *        stack set. Information about drift operations currently in progress is not included.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSet withStackSetDriftDetectionDetails(StackSetDriftDetectionDetails stackSetDriftDetectionDetails) {
+        setStackSetDriftDetectionDetails(stackSetDriftDetectionDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -834,7 +905,9 @@ public class StackSet implements Serializable, Cloneable {
         if (getAdministrationRoleARN() != null)
             sb.append("AdministrationRoleARN: ").append(getAdministrationRoleARN()).append(",");
         if (getExecutionRoleName() != null)
-            sb.append("ExecutionRoleName: ").append(getExecutionRoleName());
+            sb.append("ExecutionRoleName: ").append(getExecutionRoleName()).append(",");
+        if (getStackSetDriftDetectionDetails() != null)
+            sb.append("StackSetDriftDetectionDetails: ").append(getStackSetDriftDetectionDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -893,6 +966,11 @@ public class StackSet implements Serializable, Cloneable {
             return false;
         if (other.getExecutionRoleName() != null && other.getExecutionRoleName().equals(this.getExecutionRoleName()) == false)
             return false;
+        if (other.getStackSetDriftDetectionDetails() == null ^ this.getStackSetDriftDetectionDetails() == null)
+            return false;
+        if (other.getStackSetDriftDetectionDetails() != null
+                && other.getStackSetDriftDetectionDetails().equals(this.getStackSetDriftDetectionDetails()) == false)
+            return false;
         return true;
     }
 
@@ -912,6 +990,7 @@ public class StackSet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStackSetARN() == null) ? 0 : getStackSetARN().hashCode());
         hashCode = prime * hashCode + ((getAdministrationRoleARN() == null) ? 0 : getAdministrationRoleARN().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
+        hashCode = prime * hashCode + ((getStackSetDriftDetectionDetails() == null) ? 0 : getStackSetDriftDetectionDetails().hashCode());
         return hashCode;
     }
 

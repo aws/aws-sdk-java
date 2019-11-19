@@ -107,6 +107,11 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                                     request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".InstanceType",
                                             StringUtils.fromString(overridesListValue.getInstanceType()));
                                 }
+
+                                if (overridesListValue.getWeightedCapacity() != null) {
+                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".WeightedCapacity",
+                                            StringUtils.fromString(overridesListValue.getWeightedCapacity()));
+                                }
                                 overridesListIndex++;
                             }
                         }
@@ -218,6 +223,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
 
         if (updateAutoScalingGroupRequest.getServiceLinkedRoleARN() != null) {
             request.addParameter("ServiceLinkedRoleARN", StringUtils.fromString(updateAutoScalingGroupRequest.getServiceLinkedRoleARN()));
+        }
+
+        if (updateAutoScalingGroupRequest.getMaxInstanceLifetime() != null) {
+            request.addParameter("MaxInstanceLifetime", StringUtils.fromInteger(updateAutoScalingGroupRequest.getMaxInstanceLifetime()));
         }
 
         return request;

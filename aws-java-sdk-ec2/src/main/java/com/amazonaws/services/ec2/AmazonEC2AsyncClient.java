@@ -11237,6 +11237,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyInstanceMetadataOptionsResult> modifyInstanceMetadataOptionsAsync(ModifyInstanceMetadataOptionsRequest request) {
+
+        return modifyInstanceMetadataOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyInstanceMetadataOptionsResult> modifyInstanceMetadataOptionsAsync(
+            final ModifyInstanceMetadataOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyInstanceMetadataOptionsRequest, ModifyInstanceMetadataOptionsResult> asyncHandler) {
+        final ModifyInstanceMetadataOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyInstanceMetadataOptionsResult>() {
+            @Override
+            public ModifyInstanceMetadataOptionsResult call() throws Exception {
+                ModifyInstanceMetadataOptionsResult result = null;
+
+                try {
+                    result = executeModifyInstanceMetadataOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyInstancePlacementResult> modifyInstancePlacementAsync(ModifyInstancePlacementRequest request) {
 
         return modifyInstancePlacementAsync(request, null);

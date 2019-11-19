@@ -544,6 +544,22 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             }
         }
 
+        InstanceMetadataOptionsRequest metadataOptions = runInstancesRequest.getMetadataOptions();
+        if (metadataOptions != null) {
+
+            if (metadataOptions.getHttpTokens() != null) {
+                request.addParameter("MetadataOptions.HttpTokens", StringUtils.fromString(metadataOptions.getHttpTokens()));
+            }
+
+            if (metadataOptions.getHttpPutResponseHopLimit() != null) {
+                request.addParameter("MetadataOptions.HttpPutResponseHopLimit", StringUtils.fromInteger(metadataOptions.getHttpPutResponseHopLimit()));
+            }
+
+            if (metadataOptions.getHttpEndpoint() != null) {
+                request.addParameter("MetadataOptions.HttpEndpoint", StringUtils.fromString(metadataOptions.getHttpEndpoint()));
+            }
+        }
+
         return request;
     }
 

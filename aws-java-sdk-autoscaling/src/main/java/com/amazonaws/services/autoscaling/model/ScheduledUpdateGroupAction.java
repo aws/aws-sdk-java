@@ -344,7 +344,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      * 
      * @param recurrence
-     *        The recurring schedule for the action, in Unix cron syntax format. </p>
+     *        The recurring schedule for the action, in Unix cron syntax format.</p>
      *        <p>
      *        When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form
      *        the boundaries of when the recurring action starts and stops.
@@ -363,7 +363,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * boundaries of when the recurring action starts and stops.
      * </p>
      * 
-     * @return The recurring schedule for the action, in Unix cron syntax format. </p>
+     * @return The recurring schedule for the action, in Unix cron syntax format.</p>
      *         <p>
      *         When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they
      *         form the boundaries of when the recurring action starts and stops.
@@ -383,7 +383,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      * 
      * @param recurrence
-     *        The recurring schedule for the action, in Unix cron syntax format. </p>
+     *        The recurring schedule for the action, in Unix cron syntax format.</p>
      *        <p>
      *        When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form
      *        the boundaries of when the recurring action starts and stops.

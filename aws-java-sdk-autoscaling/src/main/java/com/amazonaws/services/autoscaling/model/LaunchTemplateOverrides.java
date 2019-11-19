@@ -37,6 +37,18 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      */
     private String instanceType;
+    /**
+     * <p>
+     * The number of capacity units, which gives the instance type a proportional weight to other instance types. For
+     * example, larger instance types are generally weighted more than smaller instance types. These are the same units
+     * that you chose to set the desired capacity in terms of instances, or a performance attribute such as vCPUs,
+     * memory, or I/O.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * </p>
+     */
+    private String weightedCapacity;
 
     /**
      * <p>
@@ -49,7 +61,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * 
      * @param instanceType
-     *        The instance type. </p>
+     *        The instance type.</p>
      *        <p>
      *        For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
@@ -70,7 +82,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
-     * @return The instance type. </p>
+     * @return The instance type.</p>
      *         <p>
      *         For information about available instance types, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
@@ -92,7 +104,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * 
      * @param instanceType
-     *        The instance type. </p>
+     *        The instance type.</p>
      *        <p>
      *        For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
@@ -102,6 +114,79 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     public LaunchTemplateOverrides withInstanceType(String instanceType) {
         setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of capacity units, which gives the instance type a proportional weight to other instance types. For
+     * example, larger instance types are generally weighted more than smaller instance types. These are the same units
+     * that you chose to set the desired capacity in terms of instances, or a performance attribute such as vCPUs,
+     * memory, or I/O.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * </p>
+     * 
+     * @param weightedCapacity
+     *        The number of capacity units, which gives the instance type a proportional weight to other instance types.
+     *        For example, larger instance types are generally weighted more than smaller instance types. These are the
+     *        same units that you chose to set the desired capacity in terms of instances, or a performance attribute
+     *        such as vCPUs, memory, or I/O.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 999.
+     */
+
+    public void setWeightedCapacity(String weightedCapacity) {
+        this.weightedCapacity = weightedCapacity;
+    }
+
+    /**
+     * <p>
+     * The number of capacity units, which gives the instance type a proportional weight to other instance types. For
+     * example, larger instance types are generally weighted more than smaller instance types. These are the same units
+     * that you chose to set the desired capacity in terms of instances, or a performance attribute such as vCPUs,
+     * memory, or I/O.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * </p>
+     * 
+     * @return The number of capacity units, which gives the instance type a proportional weight to other instance
+     *         types. For example, larger instance types are generally weighted more than smaller instance types. These
+     *         are the same units that you chose to set the desired capacity in terms of instances, or a performance
+     *         attribute such as vCPUs, memory, or I/O.</p>
+     *         <p>
+     *         Valid Range: Minimum value of 1. Maximum value of 999.
+     */
+
+    public String getWeightedCapacity() {
+        return this.weightedCapacity;
+    }
+
+    /**
+     * <p>
+     * The number of capacity units, which gives the instance type a proportional weight to other instance types. For
+     * example, larger instance types are generally weighted more than smaller instance types. These are the same units
+     * that you chose to set the desired capacity in terms of instances, or a performance attribute such as vCPUs,
+     * memory, or I/O.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 999.
+     * </p>
+     * 
+     * @param weightedCapacity
+     *        The number of capacity units, which gives the instance type a proportional weight to other instance types.
+     *        For example, larger instance types are generally weighted more than smaller instance types. These are the
+     *        same units that you chose to set the desired capacity in terms of instances, or a performance attribute
+     *        such as vCPUs, memory, or I/O.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 999.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateOverrides withWeightedCapacity(String weightedCapacity) {
+        setWeightedCapacity(weightedCapacity);
         return this;
     }
 
@@ -118,7 +203,9 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType());
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getWeightedCapacity() != null)
+            sb.append("WeightedCapacity: ").append(getWeightedCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +224,10 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getWeightedCapacity() == null ^ this.getWeightedCapacity() == null)
+            return false;
+        if (other.getWeightedCapacity() != null && other.getWeightedCapacity().equals(this.getWeightedCapacity()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +237,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity().hashCode());
         return hashCode;
     }
 

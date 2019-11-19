@@ -1147,6 +1147,39 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     }
 
     @Override
+    public java.util.concurrent.Future<DetectStackSetDriftResult> detectStackSetDriftAsync(DetectStackSetDriftRequest request) {
+
+        return detectStackSetDriftAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackSetDriftResult> detectStackSetDriftAsync(final DetectStackSetDriftRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectStackSetDriftRequest, DetectStackSetDriftResult> asyncHandler) {
+        final DetectStackSetDriftRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectStackSetDriftResult>() {
+            @Override
+            public DetectStackSetDriftResult call() throws Exception {
+                DetectStackSetDriftResult result = null;
+
+                try {
+                    result = executeDetectStackSetDrift(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(EstimateTemplateCostRequest request) {
 
         return estimateTemplateCostAsync(request, null);

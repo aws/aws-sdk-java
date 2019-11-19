@@ -391,6 +391,19 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<DetectStackSetDriftResult> detectStackSetDriftAsync(DetectStackSetDriftRequest request) {
+
+        return detectStackSetDriftAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackSetDriftResult> detectStackSetDriftAsync(DetectStackSetDriftRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetectStackSetDriftRequest, DetectStackSetDriftResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(EstimateTemplateCostRequest request) {
 
         return estimateTemplateCostAsync(request, null);

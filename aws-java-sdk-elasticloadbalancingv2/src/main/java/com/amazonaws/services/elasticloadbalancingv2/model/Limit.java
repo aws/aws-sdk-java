@@ -63,6 +63,21 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * target-groups-per-action-on-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * target-groups-per-action-on-network-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * target-groups-per-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * targets-per-application-load-balancer
      * </p>
      * </li>
@@ -123,6 +138,21 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * target-groups-per-action-on-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * target-groups-per-action-on-network-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * target-groups-per-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * targets-per-application-load-balancer
      * </p>
      * </li>
@@ -169,6 +199,21 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        target-groups
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        target-groups-per-action-on-application-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        target-groups-per-action-on-network-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        target-groups-per-application-load-balancer
      *        </p>
      *        </li>
      *        <li>
@@ -229,6 +274,21 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * target-groups-per-action-on-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * target-groups-per-action-on-network-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * target-groups-per-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * targets-per-application-load-balancer
      * </p>
      * </li>
@@ -274,6 +334,21 @@ public class Limit implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         target-groups
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         target-groups-per-action-on-application-load-balancer
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         target-groups-per-action-on-network-load-balancer
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         target-groups-per-application-load-balancer
      *         </p>
      *         </li>
      *         <li>
@@ -334,6 +409,21 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * target-groups-per-action-on-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * target-groups-per-action-on-network-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * target-groups-per-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * targets-per-application-load-balancer
      * </p>
      * </li>
@@ -380,6 +470,21 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        target-groups
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        target-groups-per-action-on-application-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        target-groups-per-action-on-network-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        target-groups-per-application-load-balancer
      *        </p>
      *        </li>
      *        <li>

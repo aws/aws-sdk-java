@@ -20,7 +20,6 @@ import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 import com.amazonaws.util.CollectionUtils;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -53,7 +52,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
     /** Default endpoint to retreive the Amazon ECS Credentials. */
     private static final String ECS_CREDENTIALS_ENDPOINT = "http://169.254.170.2";
 
-    private final EC2CredentialsFetcher credentialsFetcher;
+    private final ContainerCredentialsFetcher credentialsFetcher;
 
     /**
      * @deprecated use {@link #ContainerCredentialsProvider(CredentialsEndpointProvider)}
@@ -64,7 +63,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
     }
 
     public ContainerCredentialsProvider(CredentialsEndpointProvider credentialsEndpointProvider) {
-        this.credentialsFetcher = new EC2CredentialsFetcher(credentialsEndpointProvider);
+        this.credentialsFetcher = new ContainerCredentialsFetcher(credentialsEndpointProvider);
     }
 
     @Override
@@ -84,14 +83,14 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
 
     static class ECSCredentialsEndpointProvider extends CredentialsEndpointProvider {
         @Override
-        public URI getCredentialsEndpoint() throws URISyntaxException {
+        public URI getCredentialsEndpoint() {
             String path = System.getenv(ECS_CONTAINER_CREDENTIALS_PATH);
             if (path == null) {
                 throw new SdkClientException(
                         "The environment variable " + ECS_CONTAINER_CREDENTIALS_PATH + " is empty");
             }
 
-            return new URI(ECS_CREDENTIALS_ENDPOINT + path);
+            return URI.create(ECS_CREDENTIALS_ENDPOINT + path);
         }
         @Override
         public CredentialsEndpointRetryPolicy getRetryPolicy() {
@@ -108,13 +107,13 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
     static class FullUriCredentialsEndpointProvider extends CredentialsEndpointProvider {
 
         @Override
-        public URI getCredentialsEndpoint() throws URISyntaxException {
+        public URI getCredentialsEndpoint() {
             String fullUri = System.getenv(CONTAINER_CREDENTIALS_FULL_URI);
             if (fullUri == null || fullUri.length() == 0) {
                 throw new SdkClientException("The environment variable " + CONTAINER_CREDENTIALS_FULL_URI + " is empty");
             }
 
-            URI uri = new URI(fullUri);
+            URI uri = URI.create(fullUri);
 
             if (!ALLOWED_FULL_URI_HOSTS.contains(uri.getHost())) {
                 throw new SdkClientException("The full URI (" + uri + ") contained withing environment variable " +

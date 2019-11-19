@@ -109,6 +109,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ConfirmTopicRuleDestinationResult confirmTopicRuleDestination(ConfirmTopicRuleDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAuthorizerResult createAuthorizer(CreateAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -195,6 +200,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public CreateTopicRuleResult createTopicRule(CreateTopicRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTopicRuleDestinationResult createTopicRuleDestination(CreateTopicRuleDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -300,6 +310,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeleteTopicRuleResult deleteTopicRule(DeleteTopicRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTopicRuleDestinationResult deleteTopicRuleDestination(DeleteTopicRuleDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -520,6 +535,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public GetTopicRuleDestinationResult getTopicRuleDestination(GetTopicRuleDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetV2LoggingOptionsResult getV2LoggingOptions(GetV2LoggingOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -723,6 +743,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListThingsInThingGroupResult listThingsInThingGroup(ListThingsInThingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTopicRuleDestinationsResult listTopicRuleDestinations(ListTopicRuleDestinationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -933,6 +958,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public UpdateThingGroupsForThingResult updateThingGroupsForThing(UpdateThingGroupsForThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTopicRuleDestinationResult updateTopicRuleDestination(UpdateTopicRuleDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

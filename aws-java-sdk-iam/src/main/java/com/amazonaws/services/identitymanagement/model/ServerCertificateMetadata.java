@@ -33,8 +33,8 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the server certificate. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      */
     private String path;
@@ -47,8 +47,8 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the server certificate. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      */
     private String serverCertificateId;
@@ -56,7 +56,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use
      * them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String arn;
@@ -87,18 +87,18 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @param path
      *        The path to the server certificate. For more information about paths, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @param serverCertificateName
      *        The name that identifies the server certificate.
      * @param serverCertificateId
      *        The stable and unique string identifying the server certificate. For more information about IDs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how
      *        to use them in policies, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      */
     public ServerCertificateMetadata(String path, String serverCertificateName, String serverCertificateId, String arn) {
         setPath(path);
@@ -110,14 +110,14 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the server certificate. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the server certificate. For more information about paths, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      */
 
     public void setPath(String path) {
@@ -127,13 +127,13 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the server certificate. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The path to the server certificate. For more information about paths, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *         <i>Using IAM</i> guide.
+     *         <i>IAM User Guide</i>.
      */
 
     public String getPath() {
@@ -143,14 +143,14 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the server certificate. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the server certificate. For more information about paths, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,14 +202,14 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the server certificate. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param serverCertificateId
      *        The stable and unique string identifying the server certificate. For more information about IDs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      */
 
     public void setServerCertificateId(String serverCertificateId) {
@@ -219,13 +219,13 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the server certificate. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the server certificate. For more information about IDs, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *         <i>Using IAM</i> guide.
+     *         <i>IAM User Guide</i>.
      */
 
     public String getServerCertificateId() {
@@ -235,14 +235,14 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the server certificate. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param serverCertificateId
      *        The stable and unique string identifying the server certificate. For more information about IDs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,14 +255,14 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use
      * them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how
      *        to use them in policies, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      */
 
     public void setArn(String arn) {
@@ -273,13 +273,13 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use
      * them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how
      *         to use them in policies, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *         <i>Using IAM</i> guide.
+     *         <i>IAM User Guide</i>.
      */
 
     public String getArn() {
@@ -290,14 +290,14 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use
      * them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.
+     * Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how
      *        to use them in policies, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

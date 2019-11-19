@@ -14,103 +14,70 @@
  */
 package com.amazonaws.internal;
 
+
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkTestInternalApi;
+import com.amazonaws.retry.internal.CredentialsEndpointRetryParameters;
+import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
+import com.amazonaws.util.IOUtils;
+import com.amazonaws.util.VersionInfoUtils;
+import com.amazonaws.util.json.Jackson;
+import com.fasterxml.jackson.databind.JsonNode;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.SdkClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.retry.internal.CredentialsEndpointRetryParameters;
-import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
-import com.amazonaws.util.IOUtils;
-import com.amazonaws.util.json.Jackson;
-import com.amazonaws.util.VersionInfoUtils;
-import com.fasterxml.jackson.databind.JsonNode;
-
 @SdkInternalApi
-public final class EC2CredentialsUtils {
+public abstract class EC2ResourceFetcher {
 
-    private static final Log LOG = LogFactory.getLog(EC2CredentialsUtils.class);
-
-    private static EC2CredentialsUtils instance;
+    private static final Log LOG = LogFactory.getLog(EC2ResourceFetcher.class);
 
     private final ConnectionUtils connectionUtils;
 
     private static final String USER_AGENT = VersionInfoUtils.getUserAgent();
 
-    private EC2CredentialsUtils() {
-        this(ConnectionUtils.getInstance());
+    EC2ResourceFetcher() {
+        connectionUtils = ConnectionUtils.getInstance();
     }
 
-    EC2CredentialsUtils(ConnectionUtils connectionUtils) {
+    @SdkTestInternalApi
+    EC2ResourceFetcher(ConnectionUtils connectionUtils) {
         this.connectionUtils = connectionUtils;
     }
 
-    public static EC2CredentialsUtils getInstance() {
-        if (instance == null) {
-            instance = new EC2CredentialsUtils();
-        }
-        return instance;
+    public static EC2ResourceFetcher defaultResourceFetcher() {
+        return DefaultEC2ResourceFetcher.DEFAULT_BASE_RESOURCE_FETCHER;
     }
 
-    /**
-     * Connects to the given endpoint to read the resource
-     * and returns the text contents.
-     *
-     * If the connection fails, the request will not be retried.
-     *
-     * @param endpoint
-     *            The service endpoint to connect to.
-     *
-     * @return The text payload returned from the Amazon EC2 endpoint
-     *         service for the specified resource path.
-     *
-     * @throws IOException
-     *             If any problems were encountered while connecting to the
-     *             service for the requested resource path.
-     * @throws SdkClientException
-     *             If the requested service is not found.
-     */
-    public String readResource(URI endpoint) throws IOException {
+    public abstract String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers);
+
+    public final String readResource(URI endpoint) {
         return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, null);
     }
 
-    /**
-     * Connects to the given endpoint to read the resource
-     * and returns the text contents.
-     *
-     * @param endpoint
-     *            The service endpoint to connect to.
-     *
-     * @param retryPolicy
-     *            The custom retry policy that determines whether a
-     *            failed request should be retried or not.
-     *
-     * @return The text payload returned from the Amazon EC2 endpoint
-     *         service for the specified resource path.
-     *
-     * @throws IOException
-     *             If any problems were encountered while connecting to the
-     *             service for the requested resource path.
-     * @throws SdkClientException
-     *             If the requested service is not found.
-     */
-    public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers) throws IOException {
+    public final String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy) {
+        return readResource(endpoint, retryPolicy, null);
+    }
+
+    final String doReadResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers) {
+        return doReadResource(endpoint, retryPolicy, headers, "GET");
+    }
+
+    final String doReadResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers, String method) {
         int retriesAttempted = 0;
         InputStream inputStream = null;
-
-        headers = addDefaultHeaders(headers);
-
+        Map<String, String> headersToSent = addDefaultHeaders(headers);
         while (true) {
             try {
-                HttpURLConnection connection = connectionUtils.connectToEndpoint(endpoint, headers);
+
+                HttpURLConnection connection = connectionUtils.connectToEndpoint(endpoint, headersToSent, method);
 
                 int statusCode = connection.getResponseCode();
 
@@ -121,36 +88,39 @@ public final class EC2CredentialsUtils {
                     // This is to preserve existing behavior of EC2 Instance metadata service.
                     throw new SdkClientException("The requested metadata is not found at " + connection.getURL());
                 } else {
-                    if (!retryPolicy.shouldRetry(retriesAttempted++, CredentialsEndpointRetryParameters.builder().withStatusCode(statusCode).build())) {
+                    if (!retryPolicy.shouldRetry(retriesAttempted++,
+                                                 CredentialsEndpointRetryParameters.builder().withStatusCode(statusCode).build())) {
                         inputStream = connection.getErrorStream();
                         handleErrorResponse(inputStream, statusCode, connection.getResponseMessage());
                     }
                 }
             } catch (IOException ioException) {
-                if (!retryPolicy.shouldRetry(retriesAttempted++, CredentialsEndpointRetryParameters.builder().withException(ioException).build())) {
-                    throw ioException;
+                if (!retryPolicy.shouldRetry(retriesAttempted++,
+                                             CredentialsEndpointRetryParameters.builder().withException(ioException).build())) {
+                    throw new SdkClientException("Failed to connect to service endpoint: ", ioException);
                 }
-                LOG.debug("An IOException occured when connecting to service endpoint: " + endpoint  + "\n Retrying to connect again.");
+                LOG.debug("An IOException occurred when connecting to service endpoint: " + endpoint + "\n Retrying to connect "
+                          + "again.");
             } finally {
                 IOUtils.closeQuietly(inputStream, LOG);
             }
         }
-
     }
 
-    private Map<String,String> addDefaultHeaders(Map<String,String> headers) {
+
+    protected final Map<String, String> addDefaultHeaders(Map<String, String> headers) {
         HashMap<String, String> map = new HashMap<String, String>();
         if (headers != null) {
             map.putAll(headers);
         }
 
-        putIfAbsent(map,"User-Agent", USER_AGENT);
-        putIfAbsent(map,"Accept", "*/*");
-        putIfAbsent(map,"Connection", "keep-alive");
+        putIfAbsent(map, "User-Agent", USER_AGENT);
+        putIfAbsent(map, "Accept", "*/*");
+        putIfAbsent(map, "Connection", "keep-alive");
         return map;
     }
 
-    private <K,V> void putIfAbsent(Map<K,V> map, K key, V value) {
+    private <K, V> void putIfAbsent(Map<K, V> map, K key, V value) {
         if (map.get(key) == null) {
             map.put(key, value);
         }
@@ -160,7 +130,7 @@ public final class EC2CredentialsUtils {
         String errorCode = null;
 
         // Parse the error stream returned from the service.
-        if(errorStream != null) {
+        if (errorStream != null) {
             String errorResponse = IOUtils.toString(errorStream);
 
             try {
@@ -180,5 +150,22 @@ public final class EC2CredentialsUtils {
         ase.setStatusCode(statusCode);
         ase.setErrorCode(errorCode);
         throw ase;
+    }
+
+    static final class DefaultEC2ResourceFetcher extends EC2ResourceFetcher {
+        private static final DefaultEC2ResourceFetcher DEFAULT_BASE_RESOURCE_FETCHER = new DefaultEC2ResourceFetcher();
+
+        DefaultEC2ResourceFetcher() {
+        }
+
+        @SdkTestInternalApi
+        DefaultEC2ResourceFetcher(ConnectionUtils connectionUtils) {
+            super(connectionUtils);
+        }
+
+        @Override
+        public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers) {
+            return doReadResource(endpoint, retryPolicy, headers);
+        }
     }
 }

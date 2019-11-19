@@ -356,6 +356,47 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Deletes the specified conformance pack and all the AWS Config rules and all evaluation results within that
+     * conformance pack.
+     * </p>
+     * <p>
+     * AWS Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You
+     * cannot update a conformance pack while it is in this state.
+     * </p>
+     * 
+     * @param deleteConformancePackRequest
+     * @return A Java Future containing the result of the DeleteConformancePack operation returned by the service.
+     * @sample AmazonConfigAsync.DeleteConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConformancePack" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConformancePackResult> deleteConformancePackAsync(DeleteConformancePackRequest deleteConformancePackRequest);
+
+    /**
+     * <p>
+     * Deletes the specified conformance pack and all the AWS Config rules and all evaluation results within that
+     * conformance pack.
+     * </p>
+     * <p>
+     * AWS Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You
+     * cannot update a conformance pack while it is in this state.
+     * </p>
+     * 
+     * @param deleteConformancePackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConformancePack operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DeleteConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConformancePack" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConformancePackResult> deleteConformancePackAsync(DeleteConformancePackRequest deleteConformancePackRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConformancePackRequest, DeleteConformancePackResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the delivery channel.
      * </p>
      * <p>
@@ -476,6 +517,51 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<DeleteOrganizationConfigRuleResult> deleteOrganizationConfigRuleAsync(
             DeleteOrganizationConfigRuleRequest deleteOrganizationConfigRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteOrganizationConfigRuleRequest, DeleteOrganizationConfigRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified organization conformance pack and all of the config rules and remediation actions from all
+     * member accounts in that organization. Only a master account can delete an organization conformance pack.
+     * </p>
+     * <p>
+     * AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot
+     * update a conformance pack while it is in this state.
+     * </p>
+     * 
+     * @param deleteOrganizationConformancePackRequest
+     * @return A Java Future containing the result of the DeleteOrganizationConformancePack operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.DeleteOrganizationConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOrganizationConformancePackResult> deleteOrganizationConformancePackAsync(
+            DeleteOrganizationConformancePackRequest deleteOrganizationConformancePackRequest);
+
+    /**
+     * <p>
+     * Deletes the specified organization conformance pack and all of the config rules and remediation actions from all
+     * member accounts in that organization. Only a master account can delete an organization conformance pack.
+     * </p>
+     * <p>
+     * AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot
+     * update a conformance pack while it is in this state.
+     * </p>
+     * 
+     * @param deleteOrganizationConformancePackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOrganizationConformancePack operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.DeleteOrganizationConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOrganizationConformancePackResult> deleteOrganizationConformancePackAsync(
+            DeleteOrganizationConformancePackRequest deleteOrganizationConformancePackRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOrganizationConformancePackRequest, DeleteOrganizationConformancePackResult> asyncHandler);
 
     /**
      * <p>
@@ -1310,6 +1396,117 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns compliance information for each rule in that conformance pack.
+     * </p>
+     * <note>
+     * <p>
+     * You must provide exact rule names otherwise AWS Config cannot return evaluation results due to insufficient data.
+     * </p>
+     * </note>
+     * 
+     * @param describeConformancePackComplianceRequest
+     * @return A Java Future containing the result of the DescribeConformancePackCompliance operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.DescribeConformancePackCompliance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConformancePackComplianceResult> describeConformancePackComplianceAsync(
+            DescribeConformancePackComplianceRequest describeConformancePackComplianceRequest);
+
+    /**
+     * <p>
+     * Returns compliance information for each rule in that conformance pack.
+     * </p>
+     * <note>
+     * <p>
+     * You must provide exact rule names otherwise AWS Config cannot return evaluation results due to insufficient data.
+     * </p>
+     * </note>
+     * 
+     * @param describeConformancePackComplianceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConformancePackCompliance operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.DescribeConformancePackCompliance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConformancePackComplianceResult> describeConformancePackComplianceAsync(
+            DescribeConformancePackComplianceRequest describeConformancePackComplianceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConformancePackComplianceRequest, DescribeConformancePackComplianceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides one or more conformance packs deployment status.
+     * </p>
+     * 
+     * @param describeConformancePackStatusRequest
+     * @return A Java Future containing the result of the DescribeConformancePackStatus operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.DescribeConformancePackStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConformancePackStatusResult> describeConformancePackStatusAsync(
+            DescribeConformancePackStatusRequest describeConformancePackStatusRequest);
+
+    /**
+     * <p>
+     * Provides one or more conformance packs deployment status.
+     * </p>
+     * 
+     * @param describeConformancePackStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConformancePackStatus operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.DescribeConformancePackStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConformancePackStatusResult> describeConformancePackStatusAsync(
+            DescribeConformancePackStatusRequest describeConformancePackStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConformancePackStatusRequest, DescribeConformancePackStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of one or more conformance packs.
+     * </p>
+     * 
+     * @param describeConformancePacksRequest
+     * @return A Java Future containing the result of the DescribeConformancePacks operation returned by the service.
+     * @sample AmazonConfigAsync.DescribeConformancePacks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConformancePacksResult> describeConformancePacksAsync(DescribeConformancePacksRequest describeConformancePacksRequest);
+
+    /**
+     * <p>
+     * Returns a list of one or more conformance packs.
+     * </p>
+     * 
+     * @param describeConformancePacksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConformancePacks operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeConformancePacks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConformancePacksResult> describeConformancePacksAsync(DescribeConformancePacksRequest describeConformancePacksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConformancePacksRequest, DescribeConformancePacksResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action
      * returns the current status of all delivery channels associated with the account.
      * </p>
@@ -1550,6 +1747,120 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<DescribeOrganizationConfigRulesResult> describeOrganizationConfigRulesAsync(
             DescribeOrganizationConfigRulesRequest describeOrganizationConfigRulesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigRulesRequest, DescribeOrganizationConfigRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides organization conformance pack deployment status for an organization.
+     * </p>
+     * <note>
+     * <p>
+     * The status is not considered successful until organization conformance pack is successfully deployed in all the
+     * member accounts with an exception of excluded accounts.
+     * </p>
+     * <p>
+     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
+     * applicable if you specify organization conformance pack names. They are only applicable, when you request all the
+     * organization conformance packs.
+     * </p>
+     * <p>
+     * Only a master account can call this API.
+     * </p>
+     * </note>
+     * 
+     * @param describeOrganizationConformancePackStatusesRequest
+     * @return A Java Future containing the result of the DescribeOrganizationConformancePackStatuses operation returned
+     *         by the service.
+     * @sample AmazonConfigAsync.DescribeOrganizationConformancePackStatuses
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConformancePackStatusesResult> describeOrganizationConformancePackStatusesAsync(
+            DescribeOrganizationConformancePackStatusesRequest describeOrganizationConformancePackStatusesRequest);
+
+    /**
+     * <p>
+     * Provides organization conformance pack deployment status for an organization.
+     * </p>
+     * <note>
+     * <p>
+     * The status is not considered successful until organization conformance pack is successfully deployed in all the
+     * member accounts with an exception of excluded accounts.
+     * </p>
+     * <p>
+     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
+     * applicable if you specify organization conformance pack names. They are only applicable, when you request all the
+     * organization conformance packs.
+     * </p>
+     * <p>
+     * Only a master account can call this API.
+     * </p>
+     * </note>
+     * 
+     * @param describeOrganizationConformancePackStatusesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOrganizationConformancePackStatuses operation returned
+     *         by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeOrganizationConformancePackStatuses
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConformancePackStatusesResult> describeOrganizationConformancePackStatusesAsync(
+            DescribeOrganizationConformancePackStatusesRequest describeOrganizationConformancePackStatusesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConformancePackStatusesRequest, DescribeOrganizationConformancePackStatusesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of organization conformance packs.
+     * </p>
+     * <note>
+     * <p>
+     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
+     * applicable if you specify organization conformance packs names. They are only applicable, when you request all
+     * the organization conformance packs. Only a master account can call this API.
+     * </p>
+     * </note>
+     * 
+     * @param describeOrganizationConformancePacksRequest
+     * @return A Java Future containing the result of the DescribeOrganizationConformancePacks operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.DescribeOrganizationConformancePacks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConformancePacksResult> describeOrganizationConformancePacksAsync(
+            DescribeOrganizationConformancePacksRequest describeOrganizationConformancePacksRequest);
+
+    /**
+     * <p>
+     * Returns a list of organization conformance packs.
+     * </p>
+     * <note>
+     * <p>
+     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
+     * applicable if you specify organization conformance packs names. They are only applicable, when you request all
+     * the organization conformance packs. Only a master account can call this API.
+     * </p>
+     * </note>
+     * 
+     * @param describeOrganizationConformancePacksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOrganizationConformancePacks operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.DescribeOrganizationConformancePacks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConformancePacksResult> describeOrganizationConformancePacksAsync(
+            DescribeOrganizationConformancePacksRequest describeOrganizationConformancePacksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConformancePacksRequest, DescribeOrganizationConformancePacksResult> asyncHandler);
 
     /**
      * <p>
@@ -2122,6 +2433,68 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns compliance details of a conformance pack for all AWS resources that are monitered by conformance pack.
+     * </p>
+     * 
+     * @param getConformancePackComplianceDetailsRequest
+     * @return A Java Future containing the result of the GetConformancePackComplianceDetails operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.GetConformancePackComplianceDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConformancePackComplianceDetailsResult> getConformancePackComplianceDetailsAsync(
+            GetConformancePackComplianceDetailsRequest getConformancePackComplianceDetailsRequest);
+
+    /**
+     * <p>
+     * Returns compliance details of a conformance pack for all AWS resources that are monitered by conformance pack.
+     * </p>
+     * 
+     * @param getConformancePackComplianceDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConformancePackComplianceDetails operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.GetConformancePackComplianceDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConformancePackComplianceDetailsResult> getConformancePackComplianceDetailsAsync(
+            GetConformancePackComplianceDetailsRequest getConformancePackComplianceDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConformancePackComplianceDetailsRequest, GetConformancePackComplianceDetailsResult> asyncHandler);
+
+    /**
+     * @param getConformancePackComplianceSummaryRequest
+     * @return A Java Future containing the result of the GetConformancePackComplianceSummary operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.GetConformancePackComplianceSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConformancePackComplianceSummaryResult> getConformancePackComplianceSummaryAsync(
+            GetConformancePackComplianceSummaryRequest getConformancePackComplianceSummaryRequest);
+
+    /**
+     * @param getConformancePackComplianceSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConformancePackComplianceSummary operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.GetConformancePackComplianceSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConformancePackComplianceSummaryResult> getConformancePackComplianceSummaryAsync(
+            GetConformancePackComplianceSummaryRequest getConformancePackComplianceSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConformancePackComplianceSummaryRequest, GetConformancePackComplianceSummaryResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the resource types, the number of each resource type, and the total number of resources that AWS Config
      * is recording in this region for your AWS account.
      * </p>
@@ -2333,6 +2706,49 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<GetOrganizationConfigRuleDetailedStatusResult> getOrganizationConfigRuleDetailedStatusAsync(
             GetOrganizationConfigRuleDetailedStatusRequest getOrganizationConfigRuleDetailedStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetOrganizationConfigRuleDetailedStatusRequest, GetOrganizationConfigRuleDetailedStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns detailed status for each member account within an organization for a given organization conformance pack.
+     * </p>
+     * <p>
+     * Only a master account can call this API.
+     * </p>
+     * 
+     * @param getOrganizationConformancePackDetailedStatusRequest
+     * @return A Java Future containing the result of the GetOrganizationConformancePackDetailedStatus operation
+     *         returned by the service.
+     * @sample AmazonConfigAsync.GetOrganizationConformancePackDetailedStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOrganizationConformancePackDetailedStatusResult> getOrganizationConformancePackDetailedStatusAsync(
+            GetOrganizationConformancePackDetailedStatusRequest getOrganizationConformancePackDetailedStatusRequest);
+
+    /**
+     * <p>
+     * Returns detailed status for each member account within an organization for a given organization conformance pack.
+     * </p>
+     * <p>
+     * Only a master account can call this API.
+     * </p>
+     * 
+     * @param getOrganizationConformancePackDetailedStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOrganizationConformancePackDetailedStatus operation
+     *         returned by the service.
+     * @sample AmazonConfigAsyncHandler.GetOrganizationConformancePackDetailedStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOrganizationConformancePackDetailedStatusResult> getOrganizationConformancePackDetailedStatusAsync(
+            GetOrganizationConformancePackDetailedStatusRequest getOrganizationConformancePackDetailedStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOrganizationConformancePackDetailedStatusRequest, GetOrganizationConformancePackDetailedStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -2802,6 +3218,63 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Creates or updates a conformance pack. A conformance pack is a collection of AWS Config rules that can be easily
+     * deployed in an account and a region.
+     * </p>
+     * <p>
+     * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
+     * linked role is created only when the role does not exist in your account. AWS Config verifies the existence of
+     * role with <code>GetRole</code> action.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
+     * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+     * <code>TemplateBody</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @param putConformancePackRequest
+     * @return A Java Future containing the result of the PutConformancePack operation returned by the service.
+     * @sample AmazonConfigAsync.PutConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutConformancePackResult> putConformancePackAsync(PutConformancePackRequest putConformancePackRequest);
+
+    /**
+     * <p>
+     * Creates or updates a conformance pack. A conformance pack is a collection of AWS Config rules that can be easily
+     * deployed in an account and a region.
+     * </p>
+     * <p>
+     * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
+     * linked role is created only when the role does not exist in your account. AWS Config verifies the existence of
+     * role with <code>GetRole</code> action.
+     * </p>
+     * <note>
+     * <p>
+     * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
+     * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+     * <code>TemplateBody</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @param putConformancePackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutConformancePack operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.PutConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutConformancePackResult> putConformancePackAsync(PutConformancePackRequest putConformancePackRequest,
+            com.amazonaws.handlers.AsyncHandler<PutConformancePackRequest, PutConformancePackResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS
      * topic.
      * </p>
@@ -2972,6 +3445,73 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<PutOrganizationConfigRuleResult> putOrganizationConfigRuleAsync(
             PutOrganizationConfigRuleRequest putOrganizationConfigRuleRequest,
             com.amazonaws.handlers.AsyncHandler<PutOrganizationConfigRuleRequest, PutOrganizationConfigRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deploys conformance packs across member accounts in an AWS Organization.
+     * </p>
+     * <p>
+     * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
+     * service linked role AWSServiceRoleForConfigMultiAccountSetup in the master account of your organization. The
+     * service linked role is created only when the role does not exist in the master account. AWS Config verifies the
+     * existence of role with GetRole action.
+     * </p>
+     * <note>
+     * <p>
+     * The SPN is <code>config-multiaccountsetup.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
+     * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+     * <code>TemplateBody</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @param putOrganizationConformancePackRequest
+     * @return A Java Future containing the result of the PutOrganizationConformancePack operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.PutOrganizationConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutOrganizationConformancePackResult> putOrganizationConformancePackAsync(
+            PutOrganizationConformancePackRequest putOrganizationConformancePackRequest);
+
+    /**
+     * <p>
+     * Deploys conformance packs across member accounts in an AWS Organization.
+     * </p>
+     * <p>
+     * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
+     * service linked role AWSServiceRoleForConfigMultiAccountSetup in the master account of your organization. The
+     * service linked role is created only when the role does not exist in the master account. AWS Config verifies the
+     * existence of role with GetRole action.
+     * </p>
+     * <note>
+     * <p>
+     * The SPN is <code>config-multiaccountsetup.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
+     * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
+     * <code>TemplateBody</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @param putOrganizationConformancePackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutOrganizationConformancePack operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.PutOrganizationConformancePack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutOrganizationConformancePackResult> putOrganizationConformancePackAsync(
+            PutOrganizationConformancePackRequest putOrganizationConformancePackRequest,
+            com.amazonaws.handlers.AsyncHandler<PutOrganizationConformancePackRequest, PutOrganizationConformancePackResult> asyncHandler);
 
     /**
      * <p>

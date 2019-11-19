@@ -1,3 +1,40 @@
+# __1.11.678__ __2019-11-19__
+## __AWS CloudFormation__
+  - ### Features
+    - This release of AWS CloudFormation StackSets enables users to detect drift on a stack set and the stack instances that belong to that stack set.
+
+## __AWS CodeBuild__
+  - ### Features
+    - Add support for ARM and GPU-enhanced build environments and a new SSD-backed Linux compute type with additional CPU and memory in CodeBuild
+
+## __AWS Config__
+  - ### Features
+    - AWSConfig launches support for conformance packs. A conformance pack is a new resource type that allows you to package a collection of Config rules and remediation actions into a single entity. You can create and deploy conformance packs into your account or across all accounts in your organization
+
+## __AWS Identity and Access Management__
+  - ### Features
+    - IAM reports the timestamp when a role's credentials were last used to make an AWS request. This helps you identify unused roles and remove them confidently from your AWS accounts.
+
+## __AWS IoT__
+  - ### Features
+    - As part of this release, we are extending the capability of AWS IoT Rules Engine to send messages directly to customer's own web services/applications. Customers can now create topic rules with HTTP actions to route messages from IoT Core directly to URL's that they own. Ownership is proved by creating and confirming topic rule destinations.
+
+## __AWS Lambda__
+  - ### Features
+    - This release provides three new runtimes to support Node.js 12 (initially 12.13.0), Python 3.8 and Java 11.  
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for RunInstances to specify the metadata options for new instances; adds a new API, ModifyInstanceMetadataOptions, which lets you modify the metadata options for a running or stopped instance; and adds support for CreateCustomerGateway to specify a device name.
+
+## __Auto Scaling__
+  - ### Features
+    - Amazon EC2 Auto Scaling now supports Instance Weighting and Max Instance Lifetime. Instance Weighting allows specifying the capacity units for each instance type included in the MixedInstancesPolicy and how they would contribute to your application's performance. Max Instance Lifetime allows specifying the maximum length of time that an instance can be in service. If any instances are approaching this limit, Amazon EC2 Auto Scaling gradually replaces them.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release allows forward actions on Application Load Balancers to route requests to multiple target groups, based on the weight you specify for each target group.
+
 # __1.11.677__ __2019-11-18__
 ## __AWS CloudFormation__
   - ### Features

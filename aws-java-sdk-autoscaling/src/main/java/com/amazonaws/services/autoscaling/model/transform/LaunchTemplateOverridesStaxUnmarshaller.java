@@ -47,6 +47,11 @@ public class LaunchTemplateOverridesStaxUnmarshaller implements Unmarshaller<Lau
                     launchTemplateOverrides.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("WeightedCapacity", targetDepth)) {
+                    launchTemplateOverrides.setWeightedCapacity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchTemplateOverrides;

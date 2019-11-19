@@ -55,6 +55,15 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * A name for the customer gateway device.
+     * </p>
+     * <p>
+     * Length Constraints: Up to 255 characters.
+     * </p>
+     */
+    private String deviceName;
 
     /**
      * Default constructor for CreateCustomerGatewayRequest object. Callers should use the setter or fluent setter
@@ -311,6 +320,61 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * A name for the customer gateway device.
+     * </p>
+     * <p>
+     * Length Constraints: Up to 255 characters.
+     * </p>
+     * 
+     * @param deviceName
+     *        A name for the customer gateway device.</p>
+     *        <p>
+     *        Length Constraints: Up to 255 characters.
+     */
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    /**
+     * <p>
+     * A name for the customer gateway device.
+     * </p>
+     * <p>
+     * Length Constraints: Up to 255 characters.
+     * </p>
+     * 
+     * @return A name for the customer gateway device.</p>
+     *         <p>
+     *         Length Constraints: Up to 255 characters.
+     */
+
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    /**
+     * <p>
+     * A name for the customer gateway device.
+     * </p>
+     * <p>
+     * Length Constraints: Up to 255 characters.
+     * </p>
+     * 
+     * @param deviceName
+     *        A name for the customer gateway device.</p>
+     *        <p>
+     *        Length Constraints: Up to 255 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomerGatewayRequest withDeviceName(String deviceName) {
+        setDeviceName(deviceName);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -340,7 +404,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         if (getCertificateArn() != null)
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getDeviceName() != null)
+            sb.append("DeviceName: ").append(getDeviceName());
         sb.append("}");
         return sb.toString();
     }
@@ -371,6 +437,10 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getDeviceName() == null ^ this.getDeviceName() == null)
+            return false;
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
+            return false;
         return true;
     }
 
@@ -383,6 +453,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         return hashCode;
     }
 

@@ -25,7 +25,7 @@ import javax.annotation.Generated;
  * <p>
  * For more information about managed policies, refer to <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline
- * Policies</a> in the <i>Using IAM</i> guide.
+ * Policies</a> in the <i>IAM User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyRole" target="_top">AWS API

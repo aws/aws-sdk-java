@@ -33,6 +33,11 @@
  * </li>
  * <li>
  * <p>
+ * <code>BatchGetBuilds</code>: Gets information about one or more builds.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
  * AWS CodeBuild runs a build. This includes information such as where to get the source code to build, the build
  * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i> is a
@@ -54,12 +59,12 @@
  * </li>
  * <li>
  * <p>
- * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
+ * <code>DeleteProject</code>: Deletes a build project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>DeleteProject</code>: Deletes a build project.
+ * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
  * <li>
@@ -71,18 +76,13 @@
  * </li>
  * <li>
  * <p>
- * <code>ListProjects</code>: Gets a list of build project names, with each build project name representing a single
- * build project.
+ * <code>ImportSourceCredentials</code>: Imports the source repository credentials for an AWS CodeBuild project that has
+ * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>UpdateProject</code>: Changes the settings of an existing build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetBuilds</code>: Gets information about one or more builds.
+ * <code>InvalidateProjectCache</code>: Resets the cache for a project.
  * </p>
  * </li>
  * <li>
@@ -98,6 +98,24 @@
  * </li>
  * <li>
  * <p>
+ * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that are managed by AWS CodeBuild.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListProjects</code>: Gets a list of build project names, with each build project name representing a single
+ * build project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
+ * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
+ * for one set of credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>StartBuild</code>: Starts running a build.
  * </p>
  * </li>
@@ -108,25 +126,12 @@
  * </li>
  * <li>
  * <p>
- * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that are managed by AWS CodeBuild.
+ * <code>UpdateProject</code>: Changes the settings of an existing build project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ImportSourceCredentials</code>: Imports the source repository credentials for an AWS CodeBuild project that has
- * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
- * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
- * for one set of credentials.
+ * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
  * </p>
  * </li>
  * </ul>

@@ -26,7 +26,7 @@ import javax.annotation.Generated;
  * <p>
  * For more information about managed policies, refer to <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline
- * Policies</a> in the <i>Using IAM</i> guide.
+ * Policies</a> in the <i>IAM User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Policy" target="_top">AWS API Documentation</a>
@@ -46,8 +46,8 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      */
     private String policyId;
@@ -59,8 +59,8 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      */
     private String path;
@@ -169,8 +169,8 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param policyId
@@ -178,7 +178,7 @@ public class Policy implements Serializable, Cloneable {
      *        <p>
      *        For more information about IDs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      */
 
     public void setPolicyId(String policyId) {
@@ -191,15 +191,15 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the policy.</p>
      *         <p>
      *         For more information about IDs, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *         <i>Using IAM</i> guide.
+     *         <i>IAM User Guide</i>.
      */
 
     public String getPolicyId() {
@@ -212,8 +212,8 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param policyId
@@ -221,7 +221,7 @@ public class Policy implements Serializable, Cloneable {
      *        <p>
      *        For more information about IDs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,8 +262,8 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param path
@@ -271,7 +271,7 @@ public class Policy implements Serializable, Cloneable {
      *        <p>
      *        For more information about paths, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      */
 
     public void setPath(String path) {
@@ -284,15 +284,15 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The path to the policy.</p>
      *         <p>
      *         For more information about paths, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *         <i>Using IAM</i> guide.
+     *         <i>IAM User Guide</i>.
      */
 
     public String getPath() {
@@ -305,8 +305,8 @@ public class Policy implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param path
@@ -314,7 +314,7 @@ public class Policy implements Serializable, Cloneable {
      *        <p>
      *        For more information about paths, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

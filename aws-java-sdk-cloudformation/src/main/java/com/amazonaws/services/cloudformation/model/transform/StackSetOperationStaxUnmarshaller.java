@@ -92,6 +92,11 @@ public class StackSetOperationStaxUnmarshaller implements Unmarshaller<StackSetO
                     stackSetOperation.setEndTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("StackSetDriftDetectionDetails", targetDepth)) {
+                    stackSetOperation.setStackSetDriftDetectionDetails(StackSetDriftDetectionDetailsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSetOperation;

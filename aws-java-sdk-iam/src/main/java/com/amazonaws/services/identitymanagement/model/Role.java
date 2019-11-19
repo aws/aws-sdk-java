@@ -29,8 +29,8 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      */
     private String path;
@@ -43,8 +43,8 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      */
     private String roleId;
@@ -102,18 +102,29 @@ public class Role implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Contains information about the last time that an IAM role was used. This includes the date and time and the
+     * Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be
+     * shorter if your Region began supporting these features within the last year. The role might have been used more
+     * than 400 days ago. For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
+    private RoleLastUsed roleLastUsed;
 
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      */
 
     public void setPath(String path) {
@@ -123,13 +134,13 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The path to the role. For more information about paths, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *         <i>Using IAM</i> guide.
+     *         <i>IAM User Guide</i>.
      */
 
     public String getPath() {
@@ -139,14 +150,14 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,14 +209,14 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param roleId
      *        The stable and unique string identifying the role. For more information about IDs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      */
 
     public void setRoleId(String roleId) {
@@ -215,13 +226,13 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the role. For more information about IDs, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *         <i>Using IAM</i> guide.
+     *         <i>IAM User Guide</i>.
      */
 
     public String getRoleId() {
@@ -231,14 +242,14 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     * <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param roleId
      *        The stable and unique string identifying the role. For more information about IDs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>Using IAM</i> guide.
+     *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -634,6 +645,76 @@ public class Role implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains information about the last time that an IAM role was used. This includes the date and time and the
+     * Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be
+     * shorter if your Region began supporting these features within the last year. The role might have been used more
+     * than 400 days ago. For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param roleLastUsed
+     *        Contains information about the last time that an IAM role was used. This includes the date and time and
+     *        the Region in which the role was last used. Activity is only reported for the trailing 400 days. This
+     *        period can be shorter if your Region began supporting these features within the last year. The role might
+     *        have been used more than 400 days ago. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     *        >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     */
+
+    public void setRoleLastUsed(RoleLastUsed roleLastUsed) {
+        this.roleLastUsed = roleLastUsed;
+    }
+
+    /**
+     * <p>
+     * Contains information about the last time that an IAM role was used. This includes the date and time and the
+     * Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be
+     * shorter if your Region began supporting these features within the last year. The role might have been used more
+     * than 400 days ago. For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return Contains information about the last time that an IAM role was used. This includes the date and time and
+     *         the Region in which the role was last used. Activity is only reported for the trailing 400 days. This
+     *         period can be shorter if your Region began supporting these features within the last year. The role might
+     *         have been used more than 400 days ago. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     *         >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     */
+
+    public RoleLastUsed getRoleLastUsed() {
+        return this.roleLastUsed;
+    }
+
+    /**
+     * <p>
+     * Contains information about the last time that an IAM role was used. This includes the date and time and the
+     * Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be
+     * shorter if your Region began supporting these features within the last year. The role might have been used more
+     * than 400 days ago. For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param roleLastUsed
+     *        Contains information about the last time that an IAM role was used. This includes the date and time and
+     *        the Region in which the role was last used. Activity is only reported for the trailing 400 days. This
+     *        period can be shorter if your Region began supporting these features within the last year. The role might
+     *        have been used more than 400 days ago. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     *        >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Role withRoleLastUsed(RoleLastUsed roleLastUsed) {
+        setRoleLastUsed(roleLastUsed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -664,7 +745,9 @@ public class Role implements Serializable, Cloneable {
         if (getPermissionsBoundary() != null)
             sb.append("PermissionsBoundary: ").append(getPermissionsBoundary()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getRoleLastUsed() != null)
+            sb.append("RoleLastUsed: ").append(getRoleLastUsed());
         sb.append("}");
         return sb.toString();
     }
@@ -719,6 +802,10 @@ public class Role implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getRoleLastUsed() == null ^ this.getRoleLastUsed() == null)
+            return false;
+        if (other.getRoleLastUsed() != null && other.getRoleLastUsed().equals(this.getRoleLastUsed()) == false)
+            return false;
         return true;
     }
 
@@ -737,6 +824,7 @@ public class Role implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxSessionDuration() == null) ? 0 : getMaxSessionDuration().hashCode());
         hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getRoleLastUsed() == null) ? 0 : getRoleLastUsed().hashCode());
         return hashCode;
     }
 

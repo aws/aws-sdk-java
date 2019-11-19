@@ -20,18 +20,18 @@ public class GetCardinalityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of things that match the query.
+     * The approximate count of unique values that match the query.
      * </p>
      */
     private Integer cardinality;
 
     /**
      * <p>
-     * The number of things that match the query.
+     * The approximate count of unique values that match the query.
      * </p>
      * 
      * @param cardinality
-     *        The number of things that match the query.
+     *        The approximate count of unique values that match the query.
      */
 
     public void setCardinality(Integer cardinality) {
@@ -40,10 +40,10 @@ public class GetCardinalityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of things that match the query.
+     * The approximate count of unique values that match the query.
      * </p>
      * 
-     * @return The number of things that match the query.
+     * @return The approximate count of unique values that match the query.
      */
 
     public Integer getCardinality() {
@@ -52,11 +52,11 @@ public class GetCardinalityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of things that match the query.
+     * The approximate count of unique values that match the query.
      * </p>
      * 
      * @param cardinality
-     *        The number of things that match the query.
+     *        The approximate count of unique values that match the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

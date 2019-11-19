@@ -60096,8 +60096,14 @@
         "name" : "Nodejs10X",
         "value" : "nodejs10.x"
       }, {
+        "name" : "Nodejs12X",
+        "value" : "nodejs12.x"
+      }, {
         "name" : "Java8",
         "value" : "java8"
+      }, {
+        "name" : "Java11",
+        "value" : "java11"
       }, {
         "name" : "Python27",
         "value" : "python2.7"
@@ -60107,6 +60113,9 @@
       }, {
         "name" : "Python37",
         "value" : "python3.7"
+      }, {
+        "name" : "Python38",
+        "value" : "python3.8"
       }, {
         "name" : "Dotnetcore10",
         "value" : "dotnetcore1.0"

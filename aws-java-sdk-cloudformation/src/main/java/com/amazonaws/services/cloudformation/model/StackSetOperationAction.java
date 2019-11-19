@@ -22,7 +22,8 @@ public enum StackSetOperationAction {
 
     CREATE("CREATE"),
     UPDATE("UPDATE"),
-    DELETE("DELETE");
+    DELETE("DELETE"),
+    DETECT_DRIFT("DETECT_DRIFT");
 
     private String value;
 

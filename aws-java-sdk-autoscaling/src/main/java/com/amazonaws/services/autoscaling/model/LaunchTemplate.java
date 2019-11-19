@@ -23,6 +23,11 @@ import javax.annotation.Generated;
  * The overrides are used to override the instance type specified by the launch template with multiple instance types
  * that can be used to launch On-Demand Instances and Spot Instances.
  * </p>
+ * <p>
+ * When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out
+ * occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto
+ * Scaling terminates instances according to the group's termination policies.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplate" target="_top">AWS API
  *      Documentation</a>
@@ -39,8 +44,8 @@ public class LaunchTemplate implements Serializable, Cloneable {
     private LaunchTemplateSpecification launchTemplateSpecification;
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You must specify between 2 and 20 overrides.
+     * An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     * Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides> overrides;
@@ -93,12 +98,12 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You must specify between 2 and 20 overrides.
+     * An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     * Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      * </p>
      * 
-     * @return Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *         supported override is instance type. You must specify between 2 and 20 overrides.
+     * @return An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     *         Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      */
 
     public java.util.List<LaunchTemplateOverrides> getOverrides() {
@@ -110,13 +115,13 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You must specify between 2 and 20 overrides.
+     * An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     * Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. You must specify between 2 and 20 overrides.
+     *        An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     *        Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      */
 
     public void setOverrides(java.util.Collection<LaunchTemplateOverrides> overrides) {
@@ -130,8 +135,8 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You must specify between 2 and 20 overrides.
+     * An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     * Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -140,8 +145,8 @@ public class LaunchTemplate implements Serializable, Cloneable {
      * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. You must specify between 2 and 20 overrides.
+     *        An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     *        Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,13 +162,13 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     * supported override is instance type. You must specify between 2 and 20 overrides.
+     * An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     * Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template. Currently, the only
-     *        supported override is instance type. You must specify between 2 and 20 overrides.
+     *        An optional setting. Any parameters that you specify override the same parameters in the launch template.
+     *        Currently, the only supported override is instance type. You can specify between 1 and 20 instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

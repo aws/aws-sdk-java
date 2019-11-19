@@ -26,7 +26,6 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Date;
 
 import org.junit.BeforeClass;
@@ -39,7 +38,7 @@ import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.IOUtils;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 
-public class EC2CredentialsFetcherTest {
+public class ContainerCredentialsFetcherTest {
 
     @ClassRule
     public static WireMockRule mockServer = new WireMockRule(0);
@@ -56,8 +55,8 @@ public class EC2CredentialsFetcherTest {
 
     @BeforeClass
     public static void setup() throws IOException {
-        successResponse = IOUtils.toString(EC2CredentialsFetcherTest.class.getResourceAsStream("/resources/wiremock/successResponse.json"));
-        successResponseWithInvalidBody = IOUtils.toString(EC2CredentialsFetcherTest.class.getResourceAsStream("/resources/wiremock/successResponseWithInvalidBody.json"));
+        successResponse = IOUtils.toString(ContainerCredentialsFetcherTest.class.getResourceAsStream("/resources/wiremock/successResponse.json"));
+        successResponseWithInvalidBody = IOUtils.toString(ContainerCredentialsFetcherTest.class.getResourceAsStream("/resources/wiremock/successResponseWithInvalidBody.json"));
     }
 
 
@@ -181,12 +180,12 @@ public class EC2CredentialsFetcherTest {
     }
 
 
-    private static class TestCredentialsProvider extends EC2CredentialsFetcher {
-        public TestCredentialsProvider() {
+    private static class TestCredentialsProvider extends ContainerCredentialsFetcher {
+        TestCredentialsProvider() {
             super(new TestCredentialsEndpointProvider("http://localhost:" + mockServer.port()));
         }
 
-        public void setLastInstanceProfileCheck(Date lastInstanceProfileCheck) {
+        void setLastInstanceProfileCheck(Date lastInstanceProfileCheck) {
             this.lastInstanceProfileCheck = lastInstanceProfileCheck;
         }
     }
@@ -202,8 +201,8 @@ public class EC2CredentialsFetcherTest {
             this.host = host;
         }
         @Override
-        public URI getCredentialsEndpoint() throws URISyntaxException {
-            return new URI(host + CREDENTIALS_PATH);
+        public URI getCredentialsEndpoint() {
+            return URI.create(host + CREDENTIALS_PATH);
         }
     }
 

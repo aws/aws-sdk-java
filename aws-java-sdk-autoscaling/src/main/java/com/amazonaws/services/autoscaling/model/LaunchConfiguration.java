@@ -156,7 +156,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are
-     * launched when the price you specify exceeds the current Spot market price.
+     * launched when the price you specify exceeds the current Spot price.
      * </p>
      * <p>
      * For more information, see <a
@@ -309,7 +309,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param imageId
-     *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. </p>
+     *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
@@ -330,7 +330,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
-     * @return The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. </p>
+     * @return The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
@@ -352,7 +352,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param imageId
-     *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. </p>
+     *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
@@ -439,7 +439,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
-     * @return A list that contains the security groups to assign to the instances in the Auto Scaling group. </p>
+     * @return A list that contains the security groups to assign to the instances in the Auto Scaling group.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
@@ -464,7 +464,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param securityGroups
-     *        A list that contains the security groups to assign to the instances in the Auto Scaling group. </p>
+     *        A list that contains the security groups to assign to the instances in the Auto Scaling group.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
@@ -496,7 +496,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param securityGroups
-     *        A list that contains the security groups to assign to the instances in the Auto Scaling group. </p>
+     *        A list that contains the security groups to assign to the instances in the Auto Scaling group.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
@@ -525,7 +525,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param securityGroups
-     *        A list that contains the security groups to assign to the instances in the Auto Scaling group. </p>
+     *        A list that contains the security groups to assign to the instances in the Auto Scaling group.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
@@ -551,7 +551,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param classicLinkVPCId
-     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. </p>
+     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
@@ -576,7 +576,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. </p>
+     * @return The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
@@ -602,7 +602,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param classicLinkVPCId
-     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. </p>
+     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
@@ -629,7 +629,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. </p>
+     * @return The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
@@ -658,7 +658,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. </p>
+     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
@@ -694,7 +694,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. </p>
+     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
@@ -727,7 +727,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>. </p>
+     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
@@ -753,7 +753,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data to make available to the launched EC2 instances. </p>
+     *        The Base64-encoded user data to make available to the launched EC2 instances.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
@@ -774,7 +774,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
-     * @return The Base64-encoded user data to make available to the launched EC2 instances. </p>
+     * @return The Base64-encoded user data to make available to the launched EC2 instances.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
@@ -796,7 +796,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data to make available to the launched EC2 instances. </p>
+     *        The Base64-encoded user data to make available to the launched EC2 instances.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
@@ -1078,7 +1078,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param instanceMonitoring
      *        Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
-     *        <code>false</code>) monitoring. </p>
+     *        <code>false</code>) monitoring.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
@@ -1101,7 +1101,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
-     *         <code>false</code>) monitoring. </p>
+     *         <code>false</code>) monitoring.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
@@ -1125,7 +1125,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param instanceMonitoring
      *        Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (
-     *        <code>false</code>) monitoring. </p>
+     *        <code>false</code>) monitoring.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics"
@@ -1141,7 +1141,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are
-     * launched when the price you specify exceeds the current Spot market price.
+     * launched when the price you specify exceeds the current Spot price.
      * </p>
      * <p>
      * For more information, see <a
@@ -1151,7 +1151,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param spotPrice
      *        The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances
-     *        are launched when the price you specify exceeds the current Spot market price. </p>
+     *        are launched when the price you specify exceeds the current Spot price.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching Spot
@@ -1165,7 +1165,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are
-     * launched when the price you specify exceeds the current Spot market price.
+     * launched when the price you specify exceeds the current Spot price.
      * </p>
      * <p>
      * For more information, see <a
@@ -1174,7 +1174,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances
-     *         are launched when the price you specify exceeds the current Spot market price. </p>
+     *         are launched when the price you specify exceeds the current Spot price.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
@@ -1188,7 +1188,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are
-     * launched when the price you specify exceeds the current Spot market price.
+     * launched when the price you specify exceeds the current Spot price.
      * </p>
      * <p>
      * For more information, see <a
@@ -1198,7 +1198,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param spotPrice
      *        The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances
-     *        are launched when the price you specify exceeds the current Spot market price. </p>
+     *        are launched when the price you specify exceeds the current Spot price.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching Spot
@@ -1223,7 +1223,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param iamInstanceProfile
      *        The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
-     *        instance. The instance profile contains the IAM role. </p>
+     *        instance. The instance profile contains the IAM role.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM Role for Applications
@@ -1245,7 +1245,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
-     *         instance. The instance profile contains the IAM role. </p>
+     *         instance. The instance profile contains the IAM role.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM Role for Applications
@@ -1268,7 +1268,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param iamInstanceProfile
      *        The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
-     *        instance. The instance profile contains the IAM role. </p>
+     *        instance. The instance profile contains the IAM role.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM Role for Applications
@@ -1333,7 +1333,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param ebsOptimized
      *        Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (
-     *        <code>false</code>). </p>
+     *        <code>false</code>).</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
@@ -1355,7 +1355,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (
-     *         <code>false</code>). </p>
+     *         <code>false</code>).</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
@@ -1378,7 +1378,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param ebsOptimized
      *        Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (
-     *        <code>false</code>). </p>
+     *        <code>false</code>).</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
@@ -1402,7 +1402,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (
-     *         <code>false</code>). </p>
+     *         <code>false</code>).</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
@@ -1426,7 +1426,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param associatePublicIpAddress
      *        For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the
-     *        group's instances. </p>
+     *        group's instances.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
@@ -1449,7 +1449,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the
-     *         group's instances. </p>
+     *         group's instances.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
@@ -1473,7 +1473,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param associatePublicIpAddress
      *        For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the
-     *        group's instances. </p>
+     *        group's instances.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
@@ -1498,7 +1498,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @return For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the
-     *         group's instances. </p>
+     *         group's instances.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling

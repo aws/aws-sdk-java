@@ -60,7 +60,7 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @return The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can
      *         only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code>
-     *         parameter. </p>
+     *         parameter.</p>
      *         <p>
      *         If you omit this parameter, all Auto Scaling groups are described.
      */
@@ -84,7 +84,7 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
      * @param autoScalingGroupNames
      *        The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can
      *        only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code>
-     *        parameter. </p>
+     *        parameter.</p>
      *        <p>
      *        If you omit this parameter, all Auto Scaling groups are described.
      */
@@ -115,7 +115,7 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
      * @param autoScalingGroupNames
      *        The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can
      *        only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code>
-     *        parameter. </p>
+     *        parameter.</p>
      *        <p>
      *        If you omit this parameter, all Auto Scaling groups are described.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -143,7 +143,7 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
      * @param autoScalingGroupNames
      *        The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters. By default, you can
      *        only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code>
-     *        parameter. </p>
+     *        parameter.</p>
      *        <p>
      *        If you omit this parameter, all Auto Scaling groups are described.
      * @return Returns a reference to this object so that method calls can be chained together.

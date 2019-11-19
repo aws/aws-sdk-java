@@ -2916,10 +2916,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <important>
      * <p>
-     * You cannot create more than one customer gateway with the same VPN type, IP address, and BGP ASN parameter
-     * values. If you run an identical request more than one time, the first request creates the customer gateway, and
-     * subsequent requests return information about the existing customer gateway. The subsequent requests do not create
-     * new customer gateway resources.
+     * To create more than one customer gateway with the same VPN type, IP address, and BGP ASN, specify a unique device
+     * name for each customer gateway. Identical requests return information about the existing customer gateway and do
+     * not create new customer gateways.
      * </p>
      * </important>
      * 
@@ -17948,6 +17947,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceEventStartTimeResult> responseHandler = new StaxResponseHandler<ModifyInstanceEventStartTimeResult>(
                     new ModifyInstanceEventStartTimeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modify the instance metadata parameters on a running or stopped instance. When you modify the parameters on a
+     * stopped instance, they are applied when the instance is started. When you modify the parameters on a running
+     * instance, the API responds with a state of “pending”. After the parameter modifications are successfully applied
+     * to the instance, the state of the modifications changes from “pending” to “applied” in subsequent
+     * describe-instances API calls. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a>.
+     * </p>
+     * 
+     * @param modifyInstanceMetadataOptionsRequest
+     * @return Result of the ModifyInstanceMetadataOptions operation returned by the service.
+     * @sample AmazonEC2.ModifyInstanceMetadataOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyInstanceMetadataOptionsResult modifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyInstanceMetadataOptions(request);
+    }
+
+    @SdkInternalApi
+    final ModifyInstanceMetadataOptionsResult executeModifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest modifyInstanceMetadataOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyInstanceMetadataOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyInstanceMetadataOptionsRequest> request = null;
+        Response<ModifyInstanceMetadataOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyInstanceMetadataOptionsRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceMetadataOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceMetadataOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyInstanceMetadataOptionsResult> responseHandler = new StaxResponseHandler<ModifyInstanceMetadataOptionsResult>(
+                    new ModifyInstanceMetadataOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

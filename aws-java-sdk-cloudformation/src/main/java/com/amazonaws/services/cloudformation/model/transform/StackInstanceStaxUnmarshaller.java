@@ -84,6 +84,16 @@ public class StackInstanceStaxUnmarshaller implements Unmarshaller<StackInstance
                     stackInstance.setStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("DriftStatus", targetDepth)) {
+                    stackInstance.setDriftStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LastDriftCheckTimestamp", targetDepth)) {
+                    stackInstance.setLastDriftCheckTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackInstance;

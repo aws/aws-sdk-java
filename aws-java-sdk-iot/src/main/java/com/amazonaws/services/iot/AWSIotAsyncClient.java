@@ -724,6 +724,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ConfirmTopicRuleDestinationResult> confirmTopicRuleDestinationAsync(ConfirmTopicRuleDestinationRequest request) {
+
+        return confirmTopicRuleDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmTopicRuleDestinationResult> confirmTopicRuleDestinationAsync(final ConfirmTopicRuleDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConfirmTopicRuleDestinationRequest, ConfirmTopicRuleDestinationResult> asyncHandler) {
+        final ConfirmTopicRuleDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ConfirmTopicRuleDestinationResult>() {
+            @Override
+            public ConfirmTopicRuleDestinationResult call() throws Exception {
+                ConfirmTopicRuleDestinationResult result = null;
+
+                try {
+                    result = executeConfirmTopicRuleDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(CreateAuthorizerRequest request) {
 
         return createAuthorizerAsync(request, null);
@@ -1302,6 +1335,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeCreateTopicRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTopicRuleDestinationResult> createTopicRuleDestinationAsync(CreateTopicRuleDestinationRequest request) {
+
+        return createTopicRuleDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTopicRuleDestinationResult> createTopicRuleDestinationAsync(final CreateTopicRuleDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTopicRuleDestinationRequest, CreateTopicRuleDestinationResult> asyncHandler) {
+        final CreateTopicRuleDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTopicRuleDestinationResult>() {
+            @Override
+            public CreateTopicRuleDestinationResult call() throws Exception {
+                CreateTopicRuleDestinationResult result = null;
+
+                try {
+                    result = executeCreateTopicRuleDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1997,6 +2063,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDeleteTopicRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTopicRuleDestinationResult> deleteTopicRuleDestinationAsync(DeleteTopicRuleDestinationRequest request) {
+
+        return deleteTopicRuleDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTopicRuleDestinationResult> deleteTopicRuleDestinationAsync(final DeleteTopicRuleDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleDestinationRequest, DeleteTopicRuleDestinationResult> asyncHandler) {
+        final DeleteTopicRuleDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTopicRuleDestinationResult>() {
+            @Override
+            public DeleteTopicRuleDestinationResult call() throws Exception {
+                DeleteTopicRuleDestinationResult result = null;
+
+                try {
+                    result = executeDeleteTopicRuleDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3439,6 +3538,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetTopicRuleDestinationResult> getTopicRuleDestinationAsync(GetTopicRuleDestinationRequest request) {
+
+        return getTopicRuleDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTopicRuleDestinationResult> getTopicRuleDestinationAsync(final GetTopicRuleDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTopicRuleDestinationRequest, GetTopicRuleDestinationResult> asyncHandler) {
+        final GetTopicRuleDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTopicRuleDestinationResult>() {
+            @Override
+            public GetTopicRuleDestinationResult call() throws Exception {
+                GetTopicRuleDestinationResult result = null;
+
+                try {
+                    result = executeGetTopicRuleDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetV2LoggingOptionsResult> getV2LoggingOptionsAsync(GetV2LoggingOptionsRequest request) {
 
         return getV2LoggingOptionsAsync(request, null);
@@ -4788,6 +4920,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeListThingsInThingGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTopicRuleDestinationsResult> listTopicRuleDestinationsAsync(ListTopicRuleDestinationsRequest request) {
+
+        return listTopicRuleDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTopicRuleDestinationsResult> listTopicRuleDestinationsAsync(final ListTopicRuleDestinationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTopicRuleDestinationsRequest, ListTopicRuleDestinationsResult> asyncHandler) {
+        final ListTopicRuleDestinationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTopicRuleDestinationsResult>() {
+            @Override
+            public ListTopicRuleDestinationsResult call() throws Exception {
+                ListTopicRuleDestinationsResult result = null;
+
+                try {
+                    result = executeListTopicRuleDestinations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -6178,6 +6343,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeUpdateThingGroupsForThing(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTopicRuleDestinationResult> updateTopicRuleDestinationAsync(UpdateTopicRuleDestinationRequest request) {
+
+        return updateTopicRuleDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTopicRuleDestinationResult> updateTopicRuleDestinationAsync(final UpdateTopicRuleDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTopicRuleDestinationRequest, UpdateTopicRuleDestinationResult> asyncHandler) {
+        final UpdateTopicRuleDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTopicRuleDestinationResult>() {
+            @Override
+            public UpdateTopicRuleDestinationResult call() throws Exception {
+                UpdateTopicRuleDestinationResult result = null;
+
+                try {
+                    result = executeUpdateTopicRuleDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

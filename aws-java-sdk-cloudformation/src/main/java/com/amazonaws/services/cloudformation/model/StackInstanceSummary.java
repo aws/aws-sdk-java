@@ -95,6 +95,45 @@ public class StackInstanceSummary implements Serializable, Cloneable {
      * </p>
      */
     private String statusReason;
+    /**
+     * <p>
+     * Status of the stack instance's actual configuration compared to the expected template and parameter configuration
+     * of the stack set to which it belongs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set
+     * to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the
+     * associated stack have drifted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its expected
+     * stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>: This value is reserved for future use.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String driftStatus;
+    /**
+     * <p>
+     * Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will
+     * be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.
+     * </p>
+     */
+    private java.util.Date lastDriftCheckTimestamp;
 
     /**
      * <p>
@@ -696,6 +735,388 @@ public class StackInstanceSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Status of the stack instance's actual configuration compared to the expected template and parameter configuration
+     * of the stack set to which it belongs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set
+     * to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the
+     * associated stack have drifted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its expected
+     * stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>: This value is reserved for future use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param driftStatus
+     *        Status of the stack instance's actual configuration compared to the expected template and parameter
+     *        configuration of the stack set to which it belongs. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the
+     *        stack set to which it belongs. A stack instance is considered to have drifted if one or more of the
+     *        resources in the associated stack have drifted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its
+     *        expected stack set configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set
+     *        configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNKNOWN</code>: This value is reserved for future use.
+     *        </p>
+     *        </li>
+     * @see StackDriftStatus
+     */
+
+    public void setDriftStatus(String driftStatus) {
+        this.driftStatus = driftStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the stack instance's actual configuration compared to the expected template and parameter configuration
+     * of the stack set to which it belongs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set
+     * to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the
+     * associated stack have drifted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its expected
+     * stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>: This value is reserved for future use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Status of the stack instance's actual configuration compared to the expected template and parameter
+     *         configuration of the stack set to which it belongs. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the
+     *         stack set to which it belongs. A stack instance is considered to have drifted if one or more of the
+     *         resources in the associated stack have drifted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its
+     *         expected stack set configuration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set
+     *         configuration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNKNOWN</code>: This value is reserved for future use.
+     *         </p>
+     *         </li>
+     * @see StackDriftStatus
+     */
+
+    public String getDriftStatus() {
+        return this.driftStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the stack instance's actual configuration compared to the expected template and parameter configuration
+     * of the stack set to which it belongs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set
+     * to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the
+     * associated stack have drifted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its expected
+     * stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>: This value is reserved for future use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param driftStatus
+     *        Status of the stack instance's actual configuration compared to the expected template and parameter
+     *        configuration of the stack set to which it belongs. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the
+     *        stack set to which it belongs. A stack instance is considered to have drifted if one or more of the
+     *        resources in the associated stack have drifted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its
+     *        expected stack set configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set
+     *        configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNKNOWN</code>: This value is reserved for future use.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StackDriftStatus
+     */
+
+    public StackInstanceSummary withDriftStatus(String driftStatus) {
+        setDriftStatus(driftStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status of the stack instance's actual configuration compared to the expected template and parameter configuration
+     * of the stack set to which it belongs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set
+     * to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the
+     * associated stack have drifted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its expected
+     * stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>: This value is reserved for future use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param driftStatus
+     *        Status of the stack instance's actual configuration compared to the expected template and parameter
+     *        configuration of the stack set to which it belongs. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the
+     *        stack set to which it belongs. A stack instance is considered to have drifted if one or more of the
+     *        resources in the associated stack have drifted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its
+     *        expected stack set configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set
+     *        configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNKNOWN</code>: This value is reserved for future use.
+     *        </p>
+     *        </li>
+     * @see StackDriftStatus
+     */
+
+    public void setDriftStatus(StackDriftStatus driftStatus) {
+        withDriftStatus(driftStatus);
+    }
+
+    /**
+     * <p>
+     * Status of the stack instance's actual configuration compared to the expected template and parameter configuration
+     * of the stack set to which it belongs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set
+     * to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the
+     * associated stack have drifted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its expected
+     * stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>: This value is reserved for future use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param driftStatus
+     *        Status of the stack instance's actual configuration compared to the expected template and parameter
+     *        configuration of the stack set to which it belongs. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the
+     *        stack set to which it belongs. A stack instance is considered to have drifted if one or more of the
+     *        resources in the associated stack have drifted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_CHECKED</code>: AWS CloudFormation has not checked if the stack instance differs from its
+     *        expected stack set configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set
+     *        configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNKNOWN</code>: This value is reserved for future use.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StackDriftStatus
+     */
+
+    public StackInstanceSummary withDriftStatus(StackDriftStatus driftStatus) {
+        this.driftStatus = driftStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will
+     * be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.
+     * </p>
+     * 
+     * @param lastDriftCheckTimestamp
+     *        Most recent time when CloudFormation performed a drift detection operation on the stack instance. This
+     *        value will be <code>NULL</code> for any stack instance on which drift detection has not yet been
+     *        performed.
+     */
+
+    public void setLastDriftCheckTimestamp(java.util.Date lastDriftCheckTimestamp) {
+        this.lastDriftCheckTimestamp = lastDriftCheckTimestamp;
+    }
+
+    /**
+     * <p>
+     * Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will
+     * be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.
+     * </p>
+     * 
+     * @return Most recent time when CloudFormation performed a drift detection operation on the stack instance. This
+     *         value will be <code>NULL</code> for any stack instance on which drift detection has not yet been
+     *         performed.
+     */
+
+    public java.util.Date getLastDriftCheckTimestamp() {
+        return this.lastDriftCheckTimestamp;
+    }
+
+    /**
+     * <p>
+     * Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will
+     * be <code>NULL</code> for any stack instance on which drift detection has not yet been performed.
+     * </p>
+     * 
+     * @param lastDriftCheckTimestamp
+     *        Most recent time when CloudFormation performed a drift detection operation on the stack instance. This
+     *        value will be <code>NULL</code> for any stack instance on which drift detection has not yet been
+     *        performed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackInstanceSummary withLastDriftCheckTimestamp(java.util.Date lastDriftCheckTimestamp) {
+        setLastDriftCheckTimestamp(lastDriftCheckTimestamp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -718,7 +1139,11 @@ public class StackInstanceSummary implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason());
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getDriftStatus() != null)
+            sb.append("DriftStatus: ").append(getDriftStatus()).append(",");
+        if (getLastDriftCheckTimestamp() != null)
+            sb.append("LastDriftCheckTimestamp: ").append(getLastDriftCheckTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -757,6 +1182,14 @@ public class StackInstanceSummary implements Serializable, Cloneable {
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getDriftStatus() == null ^ this.getDriftStatus() == null)
+            return false;
+        if (other.getDriftStatus() != null && other.getDriftStatus().equals(this.getDriftStatus()) == false)
+            return false;
+        if (other.getLastDriftCheckTimestamp() == null ^ this.getLastDriftCheckTimestamp() == null)
+            return false;
+        if (other.getLastDriftCheckTimestamp() != null && other.getLastDriftCheckTimestamp().equals(this.getLastDriftCheckTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -771,6 +1204,8 @@ public class StackInstanceSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getDriftStatus() == null) ? 0 : getDriftStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastDriftCheckTimestamp() == null) ? 0 : getLastDriftCheckTimestamp().hashCode());
         return hashCode;
     }
 
