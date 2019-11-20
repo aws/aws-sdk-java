@@ -1145,6 +1145,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAvailabilityMonitorTestResult> describeAvailabilityMonitorTestAsync(
+            DescribeAvailabilityMonitorTestRequest request) {
+
+        return describeAvailabilityMonitorTestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAvailabilityMonitorTestResult> describeAvailabilityMonitorTestAsync(
+            final DescribeAvailabilityMonitorTestRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAvailabilityMonitorTestRequest, DescribeAvailabilityMonitorTestResult> asyncHandler) {
+        final DescribeAvailabilityMonitorTestRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAvailabilityMonitorTestResult>() {
+            @Override
+            public DescribeAvailabilityMonitorTestResult call() throws Exception {
+                DescribeAvailabilityMonitorTestResult result = null;
+
+                try {
+                    result = executeDescribeAvailabilityMonitorTest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeBandwidthRateLimitResult> describeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest request) {
 
         return describeBandwidthRateLimitAsync(request, null);
@@ -2442,6 +2477,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeShutdownGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAvailabilityMonitorTestResult> startAvailabilityMonitorTestAsync(StartAvailabilityMonitorTestRequest request) {
+
+        return startAvailabilityMonitorTestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAvailabilityMonitorTestResult> startAvailabilityMonitorTestAsync(final StartAvailabilityMonitorTestRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartAvailabilityMonitorTestRequest, StartAvailabilityMonitorTestResult> asyncHandler) {
+        final StartAvailabilityMonitorTestRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartAvailabilityMonitorTestResult>() {
+            @Override
+            public StartAvailabilityMonitorTestResult call() throws Exception {
+                StartAvailabilityMonitorTestResult result = null;
+
+                try {
+                    result = executeStartAvailabilityMonitorTest(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -85,6 +85,14 @@ public class PullRequestJsonUnmarshaller implements Unmarshaller<PullRequest, Js
                     context.nextToken();
                     pullRequest.setClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("revisionId", targetDepth)) {
+                    context.nextToken();
+                    pullRequest.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("approvalRules", targetDepth)) {
+                    context.nextToken();
+                    pullRequest.setApprovalRules(new ListUnmarshaller<ApprovalRule>(ApprovalRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

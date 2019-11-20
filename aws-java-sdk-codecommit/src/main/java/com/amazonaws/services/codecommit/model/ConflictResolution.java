@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict resolution
- * strategy.
+ * If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ConflictResolution" target="_top">AWS API
@@ -31,29 +30,29 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Files that will have content replaced as part of the merge conflict resolution.
+     * Files to have content replaced as part of the merge conflict resolution.
      * </p>
      */
     private java.util.List<ReplaceContentEntry> replaceContents;
     /**
      * <p>
-     * Files that will be deleted as part of the merge conflict resolution.
+     * Files to be deleted as part of the merge conflict resolution.
      * </p>
      */
     private java.util.List<DeleteFileEntry> deleteFiles;
     /**
      * <p>
-     * File modes that will be set as part of the merge conflict resolution.
+     * File modes that are set as part of the merge conflict resolution.
      * </p>
      */
     private java.util.List<SetFileModeEntry> setFileModes;
 
     /**
      * <p>
-     * Files that will have content replaced as part of the merge conflict resolution.
+     * Files to have content replaced as part of the merge conflict resolution.
      * </p>
      * 
-     * @return Files that will have content replaced as part of the merge conflict resolution.
+     * @return Files to have content replaced as part of the merge conflict resolution.
      */
 
     public java.util.List<ReplaceContentEntry> getReplaceContents() {
@@ -62,11 +61,11 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Files that will have content replaced as part of the merge conflict resolution.
+     * Files to have content replaced as part of the merge conflict resolution.
      * </p>
      * 
      * @param replaceContents
-     *        Files that will have content replaced as part of the merge conflict resolution.
+     *        Files to have content replaced as part of the merge conflict resolution.
      */
 
     public void setReplaceContents(java.util.Collection<ReplaceContentEntry> replaceContents) {
@@ -80,7 +79,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Files that will have content replaced as part of the merge conflict resolution.
+     * Files to have content replaced as part of the merge conflict resolution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +88,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param replaceContents
-     *        Files that will have content replaced as part of the merge conflict resolution.
+     *        Files to have content replaced as part of the merge conflict resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +104,11 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Files that will have content replaced as part of the merge conflict resolution.
+     * Files to have content replaced as part of the merge conflict resolution.
      * </p>
      * 
      * @param replaceContents
-     *        Files that will have content replaced as part of the merge conflict resolution.
+     *        Files to have content replaced as part of the merge conflict resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +119,10 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Files that will be deleted as part of the merge conflict resolution.
+     * Files to be deleted as part of the merge conflict resolution.
      * </p>
      * 
-     * @return Files that will be deleted as part of the merge conflict resolution.
+     * @return Files to be deleted as part of the merge conflict resolution.
      */
 
     public java.util.List<DeleteFileEntry> getDeleteFiles() {
@@ -132,11 +131,11 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Files that will be deleted as part of the merge conflict resolution.
+     * Files to be deleted as part of the merge conflict resolution.
      * </p>
      * 
      * @param deleteFiles
-     *        Files that will be deleted as part of the merge conflict resolution.
+     *        Files to be deleted as part of the merge conflict resolution.
      */
 
     public void setDeleteFiles(java.util.Collection<DeleteFileEntry> deleteFiles) {
@@ -150,7 +149,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Files that will be deleted as part of the merge conflict resolution.
+     * Files to be deleted as part of the merge conflict resolution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,7 +158,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param deleteFiles
-     *        Files that will be deleted as part of the merge conflict resolution.
+     *        Files to be deleted as part of the merge conflict resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +174,11 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Files that will be deleted as part of the merge conflict resolution.
+     * Files to be deleted as part of the merge conflict resolution.
      * </p>
      * 
      * @param deleteFiles
-     *        Files that will be deleted as part of the merge conflict resolution.
+     *        Files to be deleted as part of the merge conflict resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,10 +189,10 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * File modes that will be set as part of the merge conflict resolution.
+     * File modes that are set as part of the merge conflict resolution.
      * </p>
      * 
-     * @return File modes that will be set as part of the merge conflict resolution.
+     * @return File modes that are set as part of the merge conflict resolution.
      */
 
     public java.util.List<SetFileModeEntry> getSetFileModes() {
@@ -202,11 +201,11 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * File modes that will be set as part of the merge conflict resolution.
+     * File modes that are set as part of the merge conflict resolution.
      * </p>
      * 
      * @param setFileModes
-     *        File modes that will be set as part of the merge conflict resolution.
+     *        File modes that are set as part of the merge conflict resolution.
      */
 
     public void setSetFileModes(java.util.Collection<SetFileModeEntry> setFileModes) {
@@ -220,7 +219,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * File modes that will be set as part of the merge conflict resolution.
+     * File modes that are set as part of the merge conflict resolution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -229,7 +228,7 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param setFileModes
-     *        File modes that will be set as part of the merge conflict resolution.
+     *        File modes that are set as part of the merge conflict resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +244,11 @@ public class ConflictResolution implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * File modes that will be set as part of the merge conflict resolution.
+     * File modes that are set as part of the merge conflict resolution.
      * </p>
      * 
      * @param setFileModes
-     *        File modes that will be set as part of the merge conflict resolution.
+     *        File modes that are set as part of the merge conflict resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

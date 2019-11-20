@@ -30,6 +30,11 @@ import com.amazonaws.services.migrationhub.model.*;
  * The AWS Migration Hub API methods help to obtain server and application migration status and integrate your
  * resource-specific migration tool by providing a programmatic interface to Migration Hub.
  * </p>
+ * <p>
+ * Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a
+ * <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home
+ * region.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSMigrationHub {
@@ -72,7 +77,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -85,8 +90,11 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.AssociateCreatedArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateCreatedArtifact"
      *      target="_top">AWS API Documentation</a>
@@ -95,7 +103,7 @@ public interface AWSMigrationHub {
 
     /**
      * <p>
-     * Associates a discovered resource ID from Application Discovery Service (ADS) with a migration task.
+     * Associates a discovered resource ID from Application Discovery Service with a migration task.
      * </p>
      * 
      * @param associateDiscoveredResourceRequest
@@ -103,7 +111,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -116,12 +124,15 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws PolicyErrorException
-     *         Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due
-     *         to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured
-     *         correctly.
+     *         Exception raised when there are problems accessing Application Discovery Service (Application Discovery
+     *         Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is
+     *         missing or not configured correctly.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.AssociateDiscoveredResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateDiscoveredResource"
      *      target="_top">AWS API Documentation</a>
@@ -141,7 +152,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -153,6 +164,8 @@ public interface AWSMigrationHub {
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.CreateProgressUpdateStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreateProgressUpdateStream"
      *      target="_top">AWS API Documentation</a>
@@ -185,7 +198,7 @@ public interface AWSMigrationHub {
      * <li>
      * <p>
      * <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>,
-     * and all Associate[*] APIs realted to the tasks belonging to the stream will throw "InvalidInputException" if the
+     * and all Associate[*] APIs related to the tasks belonging to the stream will throw "InvalidInputException" if the
      * stream of the same name is in the process of being deleted.
      * </p>
      * </li>
@@ -203,7 +216,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -216,8 +229,11 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.DeleteProgressUpdateStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream"
      *      target="_top">AWS API Documentation</a>
@@ -234,19 +250,22 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws PolicyErrorException
-     *         Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due
-     *         to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured
-     *         correctly.
+     *         Exception raised when there are problems accessing Application Discovery Service (Application Discovery
+     *         Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is
+     *         missing or not configured correctly.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.DescribeApplicationState
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState"
      *      target="_top">AWS API Documentation</a>
@@ -263,15 +282,18 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.DescribeMigrationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask"
      *      target="_top">AWS API Documentation</a>
@@ -308,7 +330,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -321,8 +343,11 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.DisassociateCreatedArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateCreatedArtifact"
      *      target="_top">AWS API Documentation</a>
@@ -331,7 +356,7 @@ public interface AWSMigrationHub {
 
     /**
      * <p>
-     * Disassociate an Application Discovery Service (ADS) discovered resource from a migration task.
+     * Disassociate an Application Discovery Service discovered resource from a migration task.
      * </p>
      * 
      * @param disassociateDiscoveredResourceRequest
@@ -339,7 +364,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -352,8 +377,11 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.DisassociateDiscoveredResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateDiscoveredResource"
      *      target="_top">AWS API Documentation</a>
@@ -375,7 +403,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -388,8 +416,11 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.ImportMigrationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ImportMigrationTask"
      *      target="_top">AWS API Documentation</a>
@@ -425,15 +456,18 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.ListCreatedArtifacts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts"
      *      target="_top">AWS API Documentation</a>
@@ -450,15 +484,18 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.ListDiscoveredResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources"
      *      target="_top">AWS API Documentation</a>
@@ -493,19 +530,22 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws PolicyErrorException
-     *         Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due
-     *         to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured
-     *         correctly.
+     *         Exception raised when there are problems accessing Application Discovery Service (Application Discovery
+     *         Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is
+     *         missing or not configured correctly.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.ListMigrationTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks"
      *      target="_top">AWS API Documentation</a>
@@ -522,12 +562,14 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws InvalidInputException
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.ListProgressUpdateStreams
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams"
      *      target="_top">AWS API Documentation</a>
@@ -546,7 +588,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -559,12 +601,15 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws PolicyErrorException
-     *         Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due
-     *         to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured
-     *         correctly.
+     *         Exception raised when there are problems accessing Application Discovery Service (Application Discovery
+     *         Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is
+     *         missing or not configured correctly.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.NotifyApplicationState
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyApplicationState"
      *      target="_top">AWS API Documentation</a>
@@ -599,7 +644,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -612,8 +657,11 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.NotifyMigrationTaskState
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyMigrationTaskState"
      *      target="_top">AWS API Documentation</a>
@@ -623,8 +671,8 @@ public interface AWSMigrationHub {
     /**
      * <p>
      * Provides identifying details of the resource being migrated so that it can be associated in the Application
-     * Discovery Service (ADS)'s repository. This association occurs asynchronously after
-     * <code>PutResourceAttributes</code> returns.
+     * Discovery Service repository. This association occurs asynchronously after <code>PutResourceAttributes</code>
+     * returns.
      * </p>
      * <important>
      * <ul>
@@ -632,7 +680,7 @@ public interface AWSMigrationHub {
      * <p>
      * Keep in mind that subsequent calls to PutResourceAttributes will override previously stored attributes. For
      * example, if it is first called with a MAC address, but later, it is desired to <i>add</i> an IP address, it will
-     * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overiding the MAC address.
+     * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overriding the MAC address.
      * </p>
      * </li>
      * <li>
@@ -655,7 +703,7 @@ public interface AWSMigrationHub {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws InternalServerErrorException
-     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
      *         Exception raised when there is an internal, configuration, or dependency error encountered.
      * @throws DryRunOperationException
@@ -668,8 +716,11 @@ public interface AWSMigrationHub {
      *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
      *         or data type.
      * @throws ResourceNotFoundException
-     *         Exception raised when the request references a resource (ADS configuration, update stream, migration
-     *         task, etc.) that does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+     *         Exception raised when the request references a resource (Application Discovery Service configuration,
+     *         update stream, migration task, etc.) that does not exist in Application Discovery Service (Application
+     *         Discovery Service) or in Migration Hub's repository.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSMigrationHub.PutResourceAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes"
      *      target="_top">AWS API Documentation</a>

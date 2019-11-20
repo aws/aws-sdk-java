@@ -57,7 +57,16 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<String> domainControllers;
     /**
      * <p>
-     * Sets the user name of user who has permission to add the gateway to the Active Directory domain.
+     * Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20
+     * seconds.
+     * </p>
+     */
+    private Integer timeoutInSeconds;
+    /**
+     * <p>
+     * Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user
+     * account should be enabled to join computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the domain.
      * </p>
      */
     private String userName;
@@ -284,11 +293,61 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Sets the user name of user who has permission to add the gateway to the Active Directory domain.
+     * Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20
+     * seconds.
+     * </p>
+     * 
+     * @param timeoutInSeconds
+     *        Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default
+     *        is 20 seconds.
+     */
+
+    public void setTimeoutInSeconds(Integer timeoutInSeconds) {
+        this.timeoutInSeconds = timeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20
+     * seconds.
+     * </p>
+     * 
+     * @return Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default
+     *         is 20 seconds.
+     */
+
+    public Integer getTimeoutInSeconds() {
+        return this.timeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20
+     * seconds.
+     * </p>
+     * 
+     * @param timeoutInSeconds
+     *        Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default
+     *        is 20 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JoinDomainRequest withTimeoutInSeconds(Integer timeoutInSeconds) {
+        setTimeoutInSeconds(timeoutInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user
+     * account should be enabled to join computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the domain.
      * </p>
      * 
      * @param userName
-     *        Sets the user name of user who has permission to add the gateway to the Active Directory domain.
+     *        Sets the user name of user who has permission to add the gateway to the Active Directory domain. The
+     *        domain user account should be enabled to join computers to the domain. For example, you can use the domain
+     *        administrator account or an account with delegated permissions to join computers to the domain.
      */
 
     public void setUserName(String userName) {
@@ -297,10 +356,14 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Sets the user name of user who has permission to add the gateway to the Active Directory domain.
+     * Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user
+     * account should be enabled to join computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the domain.
      * </p>
      * 
-     * @return Sets the user name of user who has permission to add the gateway to the Active Directory domain.
+     * @return Sets the user name of user who has permission to add the gateway to the Active Directory domain. The
+     *         domain user account should be enabled to join computers to the domain. For example, you can use the
+     *         domain administrator account or an account with delegated permissions to join computers to the domain.
      */
 
     public String getUserName() {
@@ -309,11 +372,15 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Sets the user name of user who has permission to add the gateway to the Active Directory domain.
+     * Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user
+     * account should be enabled to join computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the domain.
      * </p>
      * 
      * @param userName
-     *        Sets the user name of user who has permission to add the gateway to the Active Directory domain.
+     *        Sets the user name of user who has permission to add the gateway to the Active Directory domain. The
+     *        domain user account should be enabled to join computers to the domain. For example, you can use the domain
+     *        administrator account or an account with delegated permissions to join computers to the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,6 +449,8 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("OrganizationalUnit: ").append(getOrganizationalUnit()).append(",");
         if (getDomainControllers() != null)
             sb.append("DomainControllers: ").append(getDomainControllers()).append(",");
+        if (getTimeoutInSeconds() != null)
+            sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds()).append(",");
         if (getUserName() != null)
             sb.append("UserName: ").append(getUserName()).append(",");
         if (getPassword() != null)
@@ -416,6 +485,10 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDomainControllers() != null && other.getDomainControllers().equals(this.getDomainControllers()) == false)
             return false;
+        if (other.getTimeoutInSeconds() == null ^ this.getTimeoutInSeconds() == null)
+            return false;
+        if (other.getTimeoutInSeconds() != null && other.getTimeoutInSeconds().equals(this.getTimeoutInSeconds()) == false)
+            return false;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
@@ -436,6 +509,7 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnit() == null) ? 0 : getOrganizationalUnit().hashCode());
         hashCode = prime * hashCode + ((getDomainControllers() == null) ? 0 : getDomainControllers().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         return hashCode;

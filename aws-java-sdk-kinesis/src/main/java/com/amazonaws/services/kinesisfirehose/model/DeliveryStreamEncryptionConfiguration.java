@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Indicates the server-side encryption (SSE) status for the delivery stream.
+ * Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master
+ * key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by
+ * invoking the <a>DescribeDeliveryStream</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeliveryStreamEncryptionConfiguration"
@@ -30,21 +32,188 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a> and
-     * <a>StopDeliveryStreamEncryption</a>.
+     * If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed
+     * CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
+     * doesn't contain a value for <code>KeyARN</code>.
+     * </p>
+     */
+    private String keyARN;
+    /**
+     * <p>
+     * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
+     * (CMKs)</a>.
+     * </p>
+     */
+    private String keyType;
+    /**
+     * <p>
+     * This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different
+     * values of this status, see <a>StartDeliveryStreamEncryption</a> and <a>StopDeliveryStreamEncryption</a>. If this
+     * status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent
+     * attempt to enable or disable SSE, respectively.
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Provides details in case one of the following operations fails due to an error related to KMS:
+     * <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     * <a>StopDeliveryStreamEncryption</a>.
+     * </p>
+     */
+    private FailureDescription failureDescription;
 
     /**
      * <p>
-     * For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a> and
-     * <a>StopDeliveryStreamEncryption</a>.
+     * If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed
+     * CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
+     * doesn't contain a value for <code>KeyARN</code>.
+     * </p>
+     * 
+     * @param keyARN
+     *        If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer
+     *        managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>,
+     *        <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
+     */
+
+    public void setKeyARN(String keyARN) {
+        this.keyARN = keyARN;
+    }
+
+    /**
+     * <p>
+     * If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed
+     * CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
+     * doesn't contain a value for <code>KeyARN</code>.
+     * </p>
+     * 
+     * @return If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer
+     *         managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>,
+     *         <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
+     */
+
+    public String getKeyARN() {
+        return this.keyARN;
+    }
+
+    /**
+     * <p>
+     * If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed
+     * CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
+     * doesn't contain a value for <code>KeyARN</code>.
+     * </p>
+     * 
+     * @param keyARN
+     *        If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer
+     *        managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>,
+     *        <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeliveryStreamEncryptionConfiguration withKeyARN(String keyARN) {
+        setKeyARN(keyARN);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
+     * (CMKs)</a>.
+     * </p>
+     * 
+     * @param keyType
+     *        Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        Keys (CMKs)</a>.
+     * @see KeyType
+     */
+
+    public void setKeyType(String keyType) {
+        this.keyType = keyType;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
+     * (CMKs)</a>.
+     * </p>
+     * 
+     * @return Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     *         <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *         Keys (CMKs)</a>.
+     * @see KeyType
+     */
+
+    public String getKeyType() {
+        return this.keyType;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
+     * (CMKs)</a>.
+     * </p>
+     * 
+     * @param keyType
+     *        Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        Keys (CMKs)</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyType
+     */
+
+    public DeliveryStreamEncryptionConfiguration withKeyType(String keyType) {
+        setKeyType(keyType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
+     * (CMKs)</a>.
+     * </p>
+     * 
+     * @param keyType
+     *        Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
+     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        Keys (CMKs)</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyType
+     */
+
+    public DeliveryStreamEncryptionConfiguration withKeyType(KeyType keyType) {
+        this.keyType = keyType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different
+     * values of this status, see <a>StartDeliveryStreamEncryption</a> and <a>StopDeliveryStreamEncryption</a>. If this
+     * status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent
+     * attempt to enable or disable SSE, respectively.
      * </p>
      * 
      * @param status
-     *        For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a>
-     *        and <a>StopDeliveryStreamEncryption</a>.
+     *        This is the server-side encryption (SSE) status for the delivery stream. For a full description of the
+     *        different values of this status, see <a>StartDeliveryStreamEncryption</a> and
+     *        <a>StopDeliveryStreamEncryption</a>. If this status is <code>ENABLING_FAILED</code> or
+     *        <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE,
+     *        respectively.
      * @see DeliveryStreamEncryptionStatus
      */
 
@@ -54,12 +223,17 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a> and
-     * <a>StopDeliveryStreamEncryption</a>.
+     * This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different
+     * values of this status, see <a>StartDeliveryStreamEncryption</a> and <a>StopDeliveryStreamEncryption</a>. If this
+     * status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent
+     * attempt to enable or disable SSE, respectively.
      * </p>
      * 
-     * @return For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a>
-     *         and <a>StopDeliveryStreamEncryption</a>.
+     * @return This is the server-side encryption (SSE) status for the delivery stream. For a full description of the
+     *         different values of this status, see <a>StartDeliveryStreamEncryption</a> and
+     *         <a>StopDeliveryStreamEncryption</a>. If this status is <code>ENABLING_FAILED</code> or
+     *         <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE,
+     *         respectively.
      * @see DeliveryStreamEncryptionStatus
      */
 
@@ -69,13 +243,18 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a> and
-     * <a>StopDeliveryStreamEncryption</a>.
+     * This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different
+     * values of this status, see <a>StartDeliveryStreamEncryption</a> and <a>StopDeliveryStreamEncryption</a>. If this
+     * status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent
+     * attempt to enable or disable SSE, respectively.
      * </p>
      * 
      * @param status
-     *        For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a>
-     *        and <a>StopDeliveryStreamEncryption</a>.
+     *        This is the server-side encryption (SSE) status for the delivery stream. For a full description of the
+     *        different values of this status, see <a>StartDeliveryStreamEncryption</a> and
+     *        <a>StopDeliveryStreamEncryption</a>. If this status is <code>ENABLING_FAILED</code> or
+     *        <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE,
+     *        respectively.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryStreamEncryptionStatus
      */
@@ -87,19 +266,76 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a> and
-     * <a>StopDeliveryStreamEncryption</a>.
+     * This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different
+     * values of this status, see <a>StartDeliveryStreamEncryption</a> and <a>StopDeliveryStreamEncryption</a>. If this
+     * status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent
+     * attempt to enable or disable SSE, respectively.
      * </p>
      * 
      * @param status
-     *        For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a>
-     *        and <a>StopDeliveryStreamEncryption</a>.
+     *        This is the server-side encryption (SSE) status for the delivery stream. For a full description of the
+     *        different values of this status, see <a>StartDeliveryStreamEncryption</a> and
+     *        <a>StopDeliveryStreamEncryption</a>. If this status is <code>ENABLING_FAILED</code> or
+     *        <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE,
+     *        respectively.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryStreamEncryptionStatus
      */
 
     public DeliveryStreamEncryptionConfiguration withStatus(DeliveryStreamEncryptionStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details in case one of the following operations fails due to an error related to KMS:
+     * <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     * <a>StopDeliveryStreamEncryption</a>.
+     * </p>
+     * 
+     * @param failureDescription
+     *        Provides details in case one of the following operations fails due to an error related to KMS:
+     *        <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     *        <a>StopDeliveryStreamEncryption</a>.
+     */
+
+    public void setFailureDescription(FailureDescription failureDescription) {
+        this.failureDescription = failureDescription;
+    }
+
+    /**
+     * <p>
+     * Provides details in case one of the following operations fails due to an error related to KMS:
+     * <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     * <a>StopDeliveryStreamEncryption</a>.
+     * </p>
+     * 
+     * @return Provides details in case one of the following operations fails due to an error related to KMS:
+     *         <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     *         <a>StopDeliveryStreamEncryption</a>.
+     */
+
+    public FailureDescription getFailureDescription() {
+        return this.failureDescription;
+    }
+
+    /**
+     * <p>
+     * Provides details in case one of the following operations fails due to an error related to KMS:
+     * <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     * <a>StopDeliveryStreamEncryption</a>.
+     * </p>
+     * 
+     * @param failureDescription
+     *        Provides details in case one of the following operations fails due to an error related to KMS:
+     *        <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     *        <a>StopDeliveryStreamEncryption</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeliveryStreamEncryptionConfiguration withFailureDescription(FailureDescription failureDescription) {
+        setFailureDescription(failureDescription);
         return this;
     }
 
@@ -115,8 +351,14 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getKeyARN() != null)
+            sb.append("KeyARN: ").append(getKeyARN()).append(",");
+        if (getKeyType() != null)
+            sb.append("KeyType: ").append(getKeyType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getFailureDescription() != null)
+            sb.append("FailureDescription: ").append(getFailureDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -131,9 +373,21 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
         if (obj instanceof DeliveryStreamEncryptionConfiguration == false)
             return false;
         DeliveryStreamEncryptionConfiguration other = (DeliveryStreamEncryptionConfiguration) obj;
+        if (other.getKeyARN() == null ^ this.getKeyARN() == null)
+            return false;
+        if (other.getKeyARN() != null && other.getKeyARN().equals(this.getKeyARN()) == false)
+            return false;
+        if (other.getKeyType() == null ^ this.getKeyType() == null)
+            return false;
+        if (other.getKeyType() != null && other.getKeyType().equals(this.getKeyType()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getFailureDescription() == null ^ this.getFailureDescription() == null)
+            return false;
+        if (other.getFailureDescription() != null && other.getFailureDescription().equals(this.getFailureDescription()) == false)
             return false;
         return true;
     }
@@ -143,7 +397,10 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getKeyARN() == null) ? 0 : getKeyARN().hashCode());
+        hashCode = prime * hashCode + ((getKeyType() == null) ? 0 : getKeyType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getFailureDescription() == null) ? 0 : getFailureDescription().hashCode());
         return hashCode;
     }
 

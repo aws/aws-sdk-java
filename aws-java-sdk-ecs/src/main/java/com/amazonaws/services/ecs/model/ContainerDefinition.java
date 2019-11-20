@@ -398,8 +398,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContainerDependency> dependsOn;
@@ -424,17 +424,19 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      */
     private Integer startTimeout;
     /**
      * <p>
      * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its
-     * own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter
-     * is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service
-     * requires platform version 1.3.0 or later.
+     * own.
+     * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task or
+     * service requires platform version <code>1.3.0</code> or later.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
@@ -3441,8 +3443,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      * 
      * @return The dependencies defined for container startup and shutdown. A container can contain multiple
@@ -3462,8 +3464,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <p>
-     *         This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *         and the task or service requires platform version 1.3.0 or later.
+     *         For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
+     *         or later.
      */
 
     public java.util.List<ContainerDependency> getDependsOn() {
@@ -3491,8 +3493,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      * 
      * @param dependsOn
@@ -3513,8 +3515,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *        and the task or service requires platform version 1.3.0 or later.
+     *        For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
+     *        or later.
      */
 
     public void setDependsOn(java.util.Collection<ContainerDependency> dependsOn) {
@@ -3544,8 +3546,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3571,8 +3573,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *        and the task or service requires platform version 1.3.0 or later.
+     *        For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
+     *        or later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3604,8 +3606,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      * 
      * @param dependsOn
@@ -3626,8 +3628,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *        and the task or service requires platform version 1.3.0 or later.
+     *        For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
+     *        or later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3657,8 +3659,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      * 
      * @param startTimeout
@@ -3683,8 +3685,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *        and the task or service requires platform version 1.3.0 or later.
+     *        For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
+     *        or later.
      */
 
     public void setStartTimeout(Integer startTimeout) {
@@ -3712,8 +3714,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      * 
      * @return Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
@@ -3737,8 +3739,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <p>
-     *         This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *         and the task or service requires platform version 1.3.0 or later.
+     *         For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
+     *         or later.
      */
 
     public Integer getStartTimeout() {
@@ -3766,8 +3768,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
+     * later.
      * </p>
      * 
      * @param startTimeout
@@ -3792,8 +3794,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *        and the task or service requires platform version 1.3.0 or later.
+     *        For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
+     *        or later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3805,9 +3807,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its
-     * own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter
-     * is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service
-     * requires platform version 1.3.0 or later.
+     * own.
+     * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task or
+     * service requires platform version <code>1.3.0</code> or later.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
@@ -3826,9 +3830,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param stopTimeout
      *        Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
-     *        on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes.
-     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *        and the task or service requires platform version 1.3.0 or later.</p>
+     *        on its own.</p>
+     *        <p>
+     *        For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task
+     *        or service requires platform version <code>1.3.0</code> or later.
+     *        </p>
      *        <p>
      *        For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
      *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container
@@ -3852,9 +3858,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its
-     * own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter
-     * is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service
-     * requires platform version 1.3.0 or later.
+     * own.
+     * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task or
+     * service requires platform version <code>1.3.0</code> or later.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
@@ -3872,9 +3880,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
-     *         on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes.
-     *         This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *         and the task or service requires platform version 1.3.0 or later.</p>
+     *         on its own.</p>
+     *         <p>
+     *         For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task
+     *         or service requires platform version <code>1.3.0</code> or later.
+     *         </p>
      *         <p>
      *         For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
      *         <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container
@@ -3898,9 +3908,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its
-     * own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter
-     * is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service
-     * requires platform version 1.3.0 or later.
+     * own.
+     * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task or
+     * service requires platform version <code>1.3.0</code> or later.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
@@ -3919,9 +3931,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param stopTimeout
      *        Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
-     *        on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes.
-     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
-     *        and the task or service requires platform version 1.3.0 or later.</p>
+     *        on its own.</p>
+     *        <p>
+     *        For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task
+     *        or service requires platform version <code>1.3.0</code> or later.
+     *        </p>
      *        <p>
      *        For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
      *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container

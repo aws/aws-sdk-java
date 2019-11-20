@@ -114,6 +114,11 @@ public class VolumeStaxUnmarshaller implements Unmarshaller<Volume, StaxUnmarsha
                     volume.setVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("fastRestored", targetDepth)) {
+                    volume.setFastRestored(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return volume;

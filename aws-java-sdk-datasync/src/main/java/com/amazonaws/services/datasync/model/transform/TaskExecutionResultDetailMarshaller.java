@@ -31,6 +31,8 @@ public class TaskExecutionResultDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrepareDuration").build();
     private static final MarshallingInfo<String> PREPARESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrepareStatus").build();
+    private static final MarshallingInfo<Long> TOTALDURATION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TotalDuration").build();
     private static final MarshallingInfo<Long> TRANSFERDURATION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransferDuration").build();
     private static final MarshallingInfo<String> TRANSFERSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,7 @@ public class TaskExecutionResultDetailMarshaller {
         try {
             protocolMarshaller.marshall(taskExecutionResultDetail.getPrepareDuration(), PREPAREDURATION_BINDING);
             protocolMarshaller.marshall(taskExecutionResultDetail.getPrepareStatus(), PREPARESTATUS_BINDING);
+            protocolMarshaller.marshall(taskExecutionResultDetail.getTotalDuration(), TOTALDURATION_BINDING);
             protocolMarshaller.marshall(taskExecutionResultDetail.getTransferDuration(), TRANSFERDURATION_BINDING);
             protocolMarshaller.marshall(taskExecutionResultDetail.getTransferStatus(), TRANSFERSTATUS_BINDING);
             protocolMarshaller.marshall(taskExecutionResultDetail.getVerifyDuration(), VERIFYDURATION_BINDING);

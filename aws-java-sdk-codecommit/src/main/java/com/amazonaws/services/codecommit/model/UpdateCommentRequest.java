@@ -34,7 +34,7 @@ public class UpdateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String commentId;
     /**
      * <p>
-     * The updated content with which you want to replace the existing content of the comment.
+     * The updated content to replace the existing content of the comment.
      * </p>
      */
     private String content;
@@ -87,11 +87,11 @@ public class UpdateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated content with which you want to replace the existing content of the comment.
+     * The updated content to replace the existing content of the comment.
      * </p>
      * 
      * @param content
-     *        The updated content with which you want to replace the existing content of the comment.
+     *        The updated content to replace the existing content of the comment.
      */
 
     public void setContent(String content) {
@@ -100,10 +100,10 @@ public class UpdateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated content with which you want to replace the existing content of the comment.
+     * The updated content to replace the existing content of the comment.
      * </p>
      * 
-     * @return The updated content with which you want to replace the existing content of the comment.
+     * @return The updated content to replace the existing content of the comment.
      */
 
     public String getContent() {
@@ -112,11 +112,11 @@ public class UpdateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated content with which you want to replace the existing content of the comment.
+     * The updated content to replace the existing content of the comment.
      * </p>
      * 
      * @param content
-     *        The updated content with which you want to replace the existing content of the comment.
+     *        The updated content to replace the existing content of the comment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

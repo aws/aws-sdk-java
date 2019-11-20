@@ -33,9 +33,9 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String repositoryName;
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit
-     * ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown.
-     * If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit
+     * ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you
+     * do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with
      * <code>maxResults</code>.
      * </p>
      */
@@ -50,27 +50,26 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The file path in which to check for differences. Limits the results to this path. Can also be used to specify the
      * previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified,
-     * differences will be shown for all paths.
+     * differences are shown for all paths.
      * </p>
      */
     private String beforePath;
     /**
      * <p>
      * The file path in which to check differences. Limits the results to this path. Can also be used to specify the
-     * changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all
-     * paths.
+     * changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.
      * </p>
      */
     private String afterPath;
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results.
+     * A non-zero, non-negative integer used to limit the number of returned results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      */
     private String nextToken;
@@ -117,17 +116,17 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit
-     * ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown.
-     * If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit
+     * ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you
+     * do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with
      * <code>maxResults</code>.
      * </p>
      * 
      * @param beforeCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full
-     *        commit ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value
-     *        will be shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the
-     *        results with <code>maxResults</code>.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full
+     *        commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are
+     *        shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results
+     *        with <code>maxResults</code>.
      */
 
     public void setBeforeCommitSpecifier(String beforeCommitSpecifier) {
@@ -136,16 +135,16 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit
-     * ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown.
-     * If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit
+     * ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you
+     * do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with
      * <code>maxResults</code>.
      * </p>
      * 
-     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the
-     *         full commit ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code>
-     *         value will be shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider
-     *         limiting the results with <code>maxResults</code>.
+     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the
+     *         full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code>
+     *         value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting
+     *         the results with <code>maxResults</code>.
      */
 
     public String getBeforeCommitSpecifier() {
@@ -154,17 +153,17 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full commit
-     * ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value will be shown.
-     * If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit
+     * ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you
+     * do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with
      * <code>maxResults</code>.
      * </p>
      * 
      * @param beforeCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, the full
-     *        commit ID. Optional. If not specified, all changes prior to the <code>afterCommitSpecifier</code> value
-     *        will be shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the
-     *        results with <code>maxResults</code>.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full
+     *        commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are
+     *        shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results
+     *        with <code>maxResults</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,13 +216,13 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The file path in which to check for differences. Limits the results to this path. Can also be used to specify the
      * previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified,
-     * differences will be shown for all paths.
+     * differences are shown for all paths.
      * </p>
      * 
      * @param beforePath
      *        The file path in which to check for differences. Limits the results to this path. Can also be used to
      *        specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code>
-     *        are not specified, differences will be shown for all paths.
+     *        are not specified, differences are shown for all paths.
      */
 
     public void setBeforePath(String beforePath) {
@@ -234,12 +233,12 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The file path in which to check for differences. Limits the results to this path. Can also be used to specify the
      * previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified,
-     * differences will be shown for all paths.
+     * differences are shown for all paths.
      * </p>
      * 
      * @return The file path in which to check for differences. Limits the results to this path. Can also be used to
      *         specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code>
-     *         are not specified, differences will be shown for all paths.
+     *         are not specified, differences are shown for all paths.
      */
 
     public String getBeforePath() {
@@ -250,13 +249,13 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The file path in which to check for differences. Limits the results to this path. Can also be used to specify the
      * previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified,
-     * differences will be shown for all paths.
+     * differences are shown for all paths.
      * </p>
      * 
      * @param beforePath
      *        The file path in which to check for differences. Limits the results to this path. Can also be used to
      *        specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code>
-     *        are not specified, differences will be shown for all paths.
+     *        are not specified, differences are shown for all paths.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,14 +267,13 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The file path in which to check differences. Limits the results to this path. Can also be used to specify the
-     * changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all
-     * paths.
+     * changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.
      * </p>
      * 
      * @param afterPath
      *        The file path in which to check differences. Limits the results to this path. Can also be used to specify
-     *        the changed name of a directory or folder, if it has changed. If not specified, differences will be shown
-     *        for all paths.
+     *        the changed name of a directory or folder, if it has changed. If not specified, differences are shown for
+     *        all paths.
      */
 
     public void setAfterPath(String afterPath) {
@@ -285,13 +283,12 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The file path in which to check differences. Limits the results to this path. Can also be used to specify the
-     * changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all
-     * paths.
+     * changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.
      * </p>
      * 
      * @return The file path in which to check differences. Limits the results to this path. Can also be used to specify
-     *         the changed name of a directory or folder, if it has changed. If not specified, differences will be shown
-     *         for all paths.
+     *         the changed name of a directory or folder, if it has changed. If not specified, differences are shown for
+     *         all paths.
      */
 
     public String getAfterPath() {
@@ -301,14 +298,13 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The file path in which to check differences. Limits the results to this path. Can also be used to specify the
-     * changed name of a directory or folder, if it has changed. If not specified, differences will be shown for all
-     * paths.
+     * changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.
      * </p>
      * 
      * @param afterPath
      *        The file path in which to check differences. Limits the results to this path. Can also be used to specify
-     *        the changed name of a directory or folder, if it has changed. If not specified, differences will be shown
-     *        for all paths.
+     *        the changed name of a directory or folder, if it has changed. If not specified, differences are shown for
+     *        all paths.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +315,11 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results.
+     * A non-zero, non-negative integer used to limit the number of returned results.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results.
+     *        A non-zero, non-negative integer used to limit the number of returned results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -332,10 +328,10 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results.
+     * A non-zero, non-negative integer used to limit the number of returned results.
      * </p>
      * 
-     * @return A non-negative integer used to limit the number of returned results.
+     * @return A non-zero, non-negative integer used to limit the number of returned results.
      */
 
     public Integer getMaxResults() {
@@ -344,11 +340,11 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results.
+     * A non-zero, non-negative integer used to limit the number of returned results.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results.
+     *        A non-zero, non-negative integer used to limit the number of returned results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +355,11 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that, when provided in a request, returns the next batch of the results.
      */
 
     public void setNextToken(String nextToken) {
@@ -372,10 +368,10 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
-     * @return An enumeration token that when provided in a request, returns the next batch of the results.
+     * @return An enumeration token that, when provided in a request, returns the next batch of the results.
      */
 
     public String getNextToken() {
@@ -384,11 +380,11 @@ public class GetDifferencesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that, when provided in a request, returns the next batch of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

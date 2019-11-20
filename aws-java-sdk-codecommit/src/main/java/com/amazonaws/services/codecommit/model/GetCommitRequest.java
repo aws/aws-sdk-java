@@ -36,7 +36,7 @@ public class GetCommitRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String repositoryName;
     /**
      * <p>
-     * The commit ID. Commit IDs are the full SHA of the commit.
+     * The commit ID. Commit IDs are the full SHA ID of the commit.
      * </p>
      */
     private String commitId;
@@ -83,11 +83,11 @@ public class GetCommitRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The commit ID. Commit IDs are the full SHA of the commit.
+     * The commit ID. Commit IDs are the full SHA ID of the commit.
      * </p>
      * 
      * @param commitId
-     *        The commit ID. Commit IDs are the full SHA of the commit.
+     *        The commit ID. Commit IDs are the full SHA ID of the commit.
      */
 
     public void setCommitId(String commitId) {
@@ -96,10 +96,10 @@ public class GetCommitRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The commit ID. Commit IDs are the full SHA of the commit.
+     * The commit ID. Commit IDs are the full SHA ID of the commit.
      * </p>
      * 
-     * @return The commit ID. Commit IDs are the full SHA of the commit.
+     * @return The commit ID. Commit IDs are the full SHA ID of the commit.
      */
 
     public String getCommitId() {
@@ -108,11 +108,11 @@ public class GetCommitRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The commit ID. Commit IDs are the full SHA of the commit.
+     * The commit ID. Commit IDs are the full SHA ID of the commit.
      * </p>
      * 
      * @param commitId
-     *        The commit ID. Commit IDs are the full SHA of the commit.
+     *        The commit ID. Commit IDs are the full SHA ID of the commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

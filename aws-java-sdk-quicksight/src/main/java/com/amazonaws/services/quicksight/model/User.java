@@ -31,7 +31,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the user.
+     * The Amazon Resource name (ARN) for the user.
      * </p>
      */
     private String arn;
@@ -49,8 +49,35 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String email;
     /**
      * <p>
-     * The Amazon QuickSight role for the user.
+     * The Amazon QuickSight role for the user. The user role can be one of the following:.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>READER</code>: A user who has read-only access to dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String role;
     /**
@@ -62,7 +89,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password
+     * is inactive until they sign in and provide a password.
      * </p>
      */
     private Boolean active;
@@ -75,11 +102,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the user.
+     * The Amazon Resource name (ARN) for the user.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the user.
+     *        The Amazon Resource name (ARN) for the user.
      */
 
     public void setArn(String arn) {
@@ -88,10 +115,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the user.
+     * The Amazon Resource name (ARN) for the user.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the user.
+     * @return The Amazon Resource name (ARN) for the user.
      */
 
     public String getArn() {
@@ -100,11 +127,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the user.
+     * The Amazon Resource name (ARN) for the user.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the user.
+     *        The Amazon Resource name (ARN) for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,11 +222,64 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon QuickSight role for the user.
+     * The Amazon QuickSight role for the user. The user role can be one of the following:.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>READER</code>: A user who has read-only access to dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param role
-     *        The Amazon QuickSight role for the user.
+     *        The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>READER</code>: A user who has read-only access to dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
      * @see UserRole
      */
 
@@ -209,10 +289,63 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon QuickSight role for the user.
+     * The Amazon QuickSight role for the user. The user role can be one of the following:.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>READER</code>: A user who has read-only access to dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon QuickSight role for the user.
+     * @return The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>READER</code>: A user who has read-only access to dashboards.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     *         </p>
+     *         </li>
      * @see UserRole
      */
 
@@ -222,11 +355,64 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon QuickSight role for the user.
+     * The Amazon QuickSight role for the user. The user role can be one of the following:.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>READER</code>: A user who has read-only access to dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param role
-     *        The Amazon QuickSight role for the user.
+     *        The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>READER</code>: A user who has read-only access to dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserRole
      */
@@ -238,11 +424,64 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon QuickSight role for the user.
+     * The Amazon QuickSight role for the user. The user role can be one of the following:.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>READER</code>: A user who has read-only access to dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param role
-     *        The Amazon QuickSight role for the user.
+     *        The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>READER</code>: A user who has read-only access to dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserRole
      */
@@ -314,12 +553,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password
+     * is inactive until they sign in and provide a password.
      * </p>
      * 
      * @param active
      *        Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user,
-     *        that user is inactive until they sign in and provide a password
+     *        that user is inactive until they sign in and provide a password.
      */
 
     public void setActive(Boolean active) {
@@ -329,11 +568,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password
+     * is inactive until they sign in and provide a password.
      * </p>
      * 
      * @return Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user,
-     *         that user is inactive until they sign in and provide a password
+     *         that user is inactive until they sign in and provide a password.
      */
 
     public Boolean getActive() {
@@ -343,12 +582,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password
+     * is inactive until they sign in and provide a password.
      * </p>
      * 
      * @param active
      *        Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user,
-     *        that user is inactive until they sign in and provide a password
+     *        that user is inactive until they sign in and provide a password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,11 +599,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password
+     * is inactive until they sign in and provide a password.
      * </p>
      * 
      * @return Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user,
-     *         that user is inactive until they sign in and provide a password
+     *         that user is inactive until they sign in and provide a password.
      */
 
     public Boolean isActive() {

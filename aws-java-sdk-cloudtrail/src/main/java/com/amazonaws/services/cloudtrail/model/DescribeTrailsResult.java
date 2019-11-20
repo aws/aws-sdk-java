@@ -28,17 +28,27 @@ public class DescribeTrailsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of trail objects.
+     * The list of trail objects. Trail objects with string values are only returned if values for the objects exist in
+     * a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in
+     * results if a trail's log files are encrypted with AWS KMS-managed keys.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Trail> trailList;
 
     /**
      * <p>
-     * The list of trail objects.
+     * The list of trail objects. Trail objects with string values are only returned if values for the objects exist in
+     * a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in
+     * results if a trail's log files are encrypted with AWS KMS-managed keys.
      * </p>
      * 
-     * @return The list of trail objects.
+     * @return The list of trail objects. Trail objects with string values are only returned if values for the objects
+     *         exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are
+     *         only returned in results if a trail is configured to send SNS notifications. Similarly,
+     *         <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with AWS KMS-managed
+     *         keys.
      */
 
     public java.util.List<Trail> getTrailList() {
@@ -50,11 +60,18 @@ public class DescribeTrailsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of trail objects.
+     * The list of trail objects. Trail objects with string values are only returned if values for the objects exist in
+     * a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in
+     * results if a trail's log files are encrypted with AWS KMS-managed keys.
      * </p>
      * 
      * @param trailList
-     *        The list of trail objects.
+     *        The list of trail objects. Trail objects with string values are only returned if values for the objects
+     *        exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are
+     *        only returned in results if a trail is configured to send SNS notifications. Similarly,
+     *        <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with AWS KMS-managed
+     *        keys.
      */
 
     public void setTrailList(java.util.Collection<Trail> trailList) {
@@ -68,7 +85,10 @@ public class DescribeTrailsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of trail objects.
+     * The list of trail objects. Trail objects with string values are only returned if values for the objects exist in
+     * a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in
+     * results if a trail's log files are encrypted with AWS KMS-managed keys.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +97,11 @@ public class DescribeTrailsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param trailList
-     *        The list of trail objects.
+     *        The list of trail objects. Trail objects with string values are only returned if values for the objects
+     *        exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are
+     *        only returned in results if a trail is configured to send SNS notifications. Similarly,
+     *        <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with AWS KMS-managed
+     *        keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +117,18 @@ public class DescribeTrailsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of trail objects.
+     * The list of trail objects. Trail objects with string values are only returned if values for the objects exist in
+     * a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in
+     * results if a trail's log files are encrypted with AWS KMS-managed keys.
      * </p>
      * 
      * @param trailList
-     *        The list of trail objects.
+     *        The list of trail objects. Trail objects with string values are only returned if values for the objects
+     *        exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are
+     *        only returned in results if a trail is configured to send SNS notifications. Similarly,
+     *        <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with AWS KMS-managed
+     *        keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

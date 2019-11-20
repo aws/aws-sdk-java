@@ -51,9 +51,12 @@ import com.amazonaws.services.chime.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks,
- * such as creating and managing Amazon Chime accounts and users. This guide provides detailed information about the
- * Amazon Chime API, including operations, types, inputs and outputs, and error codes.
+ * The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as
+ * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
+ * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some
+ * server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
+ * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon
+ * Chime Developer Guide</i>.
  * </p>
  * <p>
  * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
@@ -95,8 +98,8 @@ import com.amazonaws.services.chime.model.transform.*;
  * </dl>
  * <p>
  * Administrative permissions are controlled using AWS Identity and Access Management (IAM). For more information, see
- * <a href="https://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control Access to the Amazon Chime
- * Console</a> in the <i>Amazon Chime Administration Guide</i>.
+ * <a href="https://docs.aws.amazon.com/chime/latest/ag/security-iam.html">Identity and Access Management for Amazon
+ * Chime</a> in the <i>Amazon Chime Administration Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -413,6 +416,78 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
             HttpResponseHandler<AmazonWebServiceResponse<AssociatePhoneNumbersWithVoiceConnectorGroupResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new AssociatePhoneNumbersWithVoiceConnectorGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param batchCreateAttendeeRequest
+     * @return Result of the BatchCreateAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.BatchCreateAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchCreateAttendeeResult batchCreateAttendee(BatchCreateAttendeeRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchCreateAttendee(request);
+    }
+
+    @SdkInternalApi
+    final BatchCreateAttendeeResult executeBatchCreateAttendee(BatchCreateAttendeeRequest batchCreateAttendeeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchCreateAttendeeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchCreateAttendeeRequest> request = null;
+        Response<BatchCreateAttendeeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchCreateAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchCreateAttendeeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchCreateAttendee");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchCreateAttendeeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchCreateAttendeeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -946,6 +1021,78 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
+     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createAttendeeRequest
+     * @return Result of the CreateAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateAttendeeResult createAttendee(CreateAttendeeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAttendee(request);
+    }
+
+    @SdkInternalApi
+    final CreateAttendeeResult executeCreateAttendee(CreateAttendeeRequest createAttendeeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAttendeeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAttendeeRequest> request = null;
+        Response<CreateAttendeeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAttendeeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAttendee");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAttendeeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAttendeeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a bot for an Amazon Chime Enterprise account.
      * </p>
      * 
@@ -1002,6 +1149,77 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateBotResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
+     * information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMeetingRequest
+     * @return Result of the CreateMeeting operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateMeetingResult createMeeting(CreateMeetingRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMeeting(request);
+    }
+
+    @SdkInternalApi
+    final CreateMeetingResult executeCreateMeeting(CreateMeetingRequest createMeetingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMeetingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMeetingRequest> request = null;
+        Response<CreateMeetingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMeetingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMeetingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMeeting");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMeetingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateMeetingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1462,6 +1680,77 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
+     * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
+     * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
+     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteAttendeeRequest
+     * @return Result of the DeleteAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAttendeeResult deleteAttendee(DeleteAttendeeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAttendee(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAttendeeResult executeDeleteAttendee(DeleteAttendeeRequest deleteAttendeeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAttendeeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAttendeeRequest> request = null;
+        Response<DeleteAttendeeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAttendeeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttendee");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAttendeeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAttendeeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the events configuration that allows a bot to receive outgoing events.
      * </p>
      * 
@@ -1518,6 +1807,77 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
             HttpResponseHandler<AmazonWebServiceResponse<DeleteEventsConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteEventsConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
+     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteMeetingRequest
+     * @return Result of the DeleteMeeting operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteMeetingResult deleteMeeting(DeleteMeetingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMeeting(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMeetingResult executeDeleteMeeting(DeleteMeetingRequest deleteMeetingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMeetingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMeetingRequest> request = null;
+        Response<DeleteMeetingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMeetingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMeetingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMeeting");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMeetingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMeetingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2516,6 +2876,76 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
+     * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param getAttendeeRequest
+     * @return Result of the GetAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAttendeeResult getAttendee(GetAttendeeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAttendee(request);
+    }
+
+    @SdkInternalApi
+    final GetAttendeeResult executeGetAttendee(GetAttendeeRequest getAttendeeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAttendeeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAttendeeRequest> request = null;
+        Response<GetAttendeeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAttendeeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttendee");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAttendeeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAttendeeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
      * </p>
      * 
@@ -2707,6 +3137,76 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
             HttpResponseHandler<AmazonWebServiceResponse<GetGlobalSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGlobalSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param getMeetingRequest
+     * @return Result of the GetMeeting operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetMeetingResult getMeeting(GetMeetingRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMeeting(request);
+    }
+
+    @SdkInternalApi
+    final GetMeetingResult executeGetMeeting(GetMeetingRequest getMeetingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMeetingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMeetingRequest> request = null;
+        Response<GetMeetingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMeetingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMeetingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMeeting");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMeetingResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMeetingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3766,6 +4266,76 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
+     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param listAttendeesRequest
+     * @return Result of the ListAttendees operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAttendeesResult listAttendees(ListAttendeesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttendees(request);
+    }
+
+    @SdkInternalApi
+    final ListAttendeesResult executeListAttendees(ListAttendeesRequest listAttendeesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAttendeesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAttendeesRequest> request = null;
+        Response<ListAttendeesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAttendeesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttendeesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttendees");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAttendeesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAttendeesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
      * </p>
      * 
@@ -3820,6 +4390,74 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
             HttpResponseHandler<AmazonWebServiceResponse<ListBotsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBotsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param listMeetingsRequest
+     * @return Result of the ListMeetings operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListMeetings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListMeetingsResult listMeetings(ListMeetingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMeetings(request);
+    }
+
+    @SdkInternalApi
+    final ListMeetingsResult executeListMeetings(ListMeetingsRequest listMeetingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMeetingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMeetingsRequest> request = null;
+        Response<ListMeetingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMeetingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMeetingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMeetings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMeetingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMeetingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

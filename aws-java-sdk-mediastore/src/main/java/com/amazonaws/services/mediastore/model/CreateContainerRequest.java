@@ -39,7 +39,7 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      * represents a category (such as "environment") and the tag value represents a specific value within that category
      * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
      * information about tagging, including naming and usage conventions, see <a
-     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -102,14 +102,14 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      * represents a category (such as "environment") and the tag value represents a specific value within that category
      * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
      * information about tagging, including naming and usage conventions, see <a
-     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      * </p>
      * 
      * @return An array of key:value pairs that you define. These values can be anything that you want. Typically, the
      *         tag key represents a category (such as "environment") and the tag value represents a specific value
      *         within that category (such as "test," "development," or "production"). You can add up to 50 tags to each
      *         container. For more information about tagging, including naming and usage conventions, see <a
-     *         href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     *         href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -122,7 +122,7 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      * represents a category (such as "environment") and the tag value represents a specific value within that category
      * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
      * information about tagging, including naming and usage conventions, see <a
-     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      * </p>
      * 
      * @param tags
@@ -130,7 +130,7 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      *        tag key represents a category (such as "environment") and the tag value represents a specific value within
      *        that category (such as "test," "development," or "production"). You can add up to 50 tags to each
      *        container. For more information about tagging, including naming and usage conventions, see <a
-     *        href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     *        href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -148,7 +148,7 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      * represents a category (such as "environment") and the tag value represents a specific value within that category
      * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
      * information about tagging, including naming and usage conventions, see <a
-     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -161,7 +161,7 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      *        tag key represents a category (such as "environment") and the tag value represents a specific value within
      *        that category (such as "test," "development," or "production"). You can add up to 50 tags to each
      *        container. For more information about tagging, including naming and usage conventions, see <a
-     *        href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     *        href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,7 +181,7 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      * represents a category (such as "environment") and the tag value represents a specific value within that category
      * (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more
      * information about tagging, including naming and usage conventions, see <a
-     * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      * </p>
      * 
      * @param tags
@@ -189,7 +189,7 @@ public class CreateContainerRequest extends com.amazonaws.AmazonWebServiceReques
      *        tag key represents a category (such as "environment") and the tag value represents a specific value within
      *        that category (such as "test," "development," or "production"). You can add up to 50 tags to each
      *        container. For more information about tagging, including naming and usage conventions, see <a
-     *        href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources in MediaStore</a>.
+     *        href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

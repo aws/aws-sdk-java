@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The commit cannot be created because a file mode is required to update mode permissions for an existing file, but no
- * file mode has been specified.
+ * The commit cannot be created because no file mode has been specified. A file mode is required to update mode
+ * permissions for a file.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

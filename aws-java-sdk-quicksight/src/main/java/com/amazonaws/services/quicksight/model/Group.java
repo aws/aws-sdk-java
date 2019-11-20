@@ -31,7 +31,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the group.
+     * The Amazon Resource name (ARN) for the group.
      * </p>
      */
     private String arn;
@@ -56,11 +56,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the group.
+     * The Amazon Resource name (ARN) for the group.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the group.
+     *        The Amazon Resource name (ARN) for the group.
      */
 
     public void setArn(String arn) {
@@ -69,10 +69,10 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the group.
+     * The Amazon Resource name (ARN) for the group.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the group.
+     * @return The Amazon Resource name (ARN) for the group.
      */
 
     public String getArn() {
@@ -81,11 +81,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the group.
+     * The Amazon Resource name (ARN) for the group.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the group.
+     *        The Amazon Resource name (ARN) for the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

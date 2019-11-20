@@ -71,7 +71,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no
- * other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.
+ * other users of that repository can access it until you send them the new HTTPS or SSH URL to use.
  * </p>
  * </li>
  * </ul>
@@ -81,7 +81,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateBranch</a>, which creates a new branch in a specified repository.
+ * <a>CreateBranch</a>, which creates a branch in a specified repository.
  * </p>
  * </li>
  * <li>
@@ -116,7 +116,7 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
+ * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object in a repository.
  * </p>
  * </li>
  * <li>
@@ -141,7 +141,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository
+ * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository.
  * </p>
  * </li>
  * <li>
@@ -158,7 +158,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>GetDifferences</a>, which returns information about the differences in a valid commit specifier (such as a branch,
- * tag, HEAD, commit ID or other fully qualified reference).
+ * tag, HEAD, commit ID, or other fully qualified reference).
  * </p>
  * </li>
  * </ul>
@@ -228,7 +228,23 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>CreatePullRequestApprovalRule</a>, which creates an approval rule for a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePullRequestApprovalRule</a>, which deletes an approval rule for a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>DescribePullRequestEvents</a>, which returns information about one or more pull request events.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>EvaluatePullRequestApprovalRules</a>, which evaluates whether a pull request has met all the conditions specified
+ * in its associated approval rules.
  * </p>
  * </li>
  * <li>
@@ -239,6 +255,19 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>GetPullRequest</a>, which returns information about a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPullRequestApprovalStates</a>, which returns information about the approval states for a specified pull
+ * request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPullRequestOverrideState</a>, which returns information about whether approval rules have been set aside
+ * (overriden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the
+ * rules and their requirements for the pull request.
  * </p>
  * </li>
  * <li>
@@ -266,7 +295,22 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>OverridePullRequestApprovalRules</a>, which sets aside all approval rule requirements for a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>PostCommentForPullRequest</a>, which posts a comment to a pull request at the specified line, file, or request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestApprovalRuleContent</a>, which updates the structure of an approval rule for a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestApprovalState</a>, which updates the state of an approval on a pull request.
  * </p>
  * </li>
  * <li>
@@ -282,6 +326,88 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>UpdatePullRequestTitle</a>, which updates the title of a pull request.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Approval rule templates, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>AssociateApprovalRuleTemplateWithRepository</a>, which associates a template with a specified repository. After
+ * the template is associated with a repository, AWS CodeCommit creates approval rules that match the template
+ * conditions on every pull request created in the specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>BatchAssociateApprovalRuleTemplateWithRepositories</a>, which associates a template with one or more specified
+ * repositories. After the template is associated with a repository, AWS CodeCommit creates approval rules that match
+ * the template conditions on every pull request created in the specified repositories.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>BatchDisassociateApprovalRuleTemplateFromRepositories</a>, which removes the association between a template and
+ * specified repositories so that approval rules based on the template are not automatically created when pull requests
+ * are created in those repositories.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateApprovalRuleTemplate</a>, which creates a template for approval rules that can then be associated with one
+ * or more repositories in your AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteApprovalRuleTemplate</a>, which deletes the specified template. It does not remove approval rules on pull
+ * requests already created with the template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DisassociateApprovalRuleTemplateFromRepository</a>, which removes the association between a template and a
+ * repository so that approval rules based on the template are not automatically created when pull requests are created
+ * in the specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetApprovalRuleTemplate</a>, which returns information about an approval rule template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the AWS Region in your AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListAssociatedApprovalRuleTemplatesForRepository</a>, which lists all approval rule templates that are associated
+ * with a specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListRepositoriesForApprovalRuleTemplate</a>, which lists all repositories associated with the specified approval
+ * rule template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateApprovalRuleTemplateDescription</a>, which updates the description of an approval rule template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateApprovalRuleTemplateName</a>, which updates the name of an approval rule template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateApprovalRuleTemplateContent</a>, which updates the content of an approval rule template.
  * </p>
  * </li>
  * </ul>
@@ -375,6 +501,88 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Creates an association between an approval rule template and a specified repository. Then, the next time a pull
+     * request is created in the repository where the destination reference (if specified) matches the destination
+     * reference (branch) for the pull request, an approval rule that matches the template conditions is automatically
+     * created for that pull request. If no destination references are specified in the template, an approval rule that
+     * matches the template contents is created for all pull requests in that repository.
+     * </p>
+     * 
+     * @param associateApprovalRuleTemplateWithRepositoryRequest
+     * @return A Java Future containing the result of the AssociateApprovalRuleTemplateWithRepository operation returned
+     *         by the service.
+     * @sample AWSCodeCommitAsync.AssociateApprovalRuleTemplateWithRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/AssociateApprovalRuleTemplateWithRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateApprovalRuleTemplateWithRepositoryResult> associateApprovalRuleTemplateWithRepositoryAsync(
+            AssociateApprovalRuleTemplateWithRepositoryRequest associateApprovalRuleTemplateWithRepositoryRequest);
+
+    /**
+     * <p>
+     * Creates an association between an approval rule template and a specified repository. Then, the next time a pull
+     * request is created in the repository where the destination reference (if specified) matches the destination
+     * reference (branch) for the pull request, an approval rule that matches the template conditions is automatically
+     * created for that pull request. If no destination references are specified in the template, an approval rule that
+     * matches the template contents is created for all pull requests in that repository.
+     * </p>
+     * 
+     * @param associateApprovalRuleTemplateWithRepositoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateApprovalRuleTemplateWithRepository operation returned
+     *         by the service.
+     * @sample AWSCodeCommitAsyncHandler.AssociateApprovalRuleTemplateWithRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/AssociateApprovalRuleTemplateWithRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateApprovalRuleTemplateWithRepositoryResult> associateApprovalRuleTemplateWithRepositoryAsync(
+            AssociateApprovalRuleTemplateWithRepositoryRequest associateApprovalRuleTemplateWithRepositoryRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateApprovalRuleTemplateWithRepositoryRequest, AssociateApprovalRuleTemplateWithRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an association between an approval rule template and one or more specified repositories.
+     * </p>
+     * 
+     * @param batchAssociateApprovalRuleTemplateWithRepositoriesRequest
+     * @return A Java Future containing the result of the BatchAssociateApprovalRuleTemplateWithRepositories operation
+     *         returned by the service.
+     * @sample AWSCodeCommitAsync.BatchAssociateApprovalRuleTemplateWithRepositories
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchAssociateApprovalRuleTemplateWithRepositories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateApprovalRuleTemplateWithRepositoriesResult> batchAssociateApprovalRuleTemplateWithRepositoriesAsync(
+            BatchAssociateApprovalRuleTemplateWithRepositoriesRequest batchAssociateApprovalRuleTemplateWithRepositoriesRequest);
+
+    /**
+     * <p>
+     * Creates an association between an approval rule template and one or more specified repositories.
+     * </p>
+     * 
+     * @param batchAssociateApprovalRuleTemplateWithRepositoriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchAssociateApprovalRuleTemplateWithRepositories operation
+     *         returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.BatchAssociateApprovalRuleTemplateWithRepositories
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchAssociateApprovalRuleTemplateWithRepositories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateApprovalRuleTemplateWithRepositoriesResult> batchAssociateApprovalRuleTemplateWithRepositoriesAsync(
+            BatchAssociateApprovalRuleTemplateWithRepositoriesRequest batchAssociateApprovalRuleTemplateWithRepositoriesRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateApprovalRuleTemplateWithRepositoriesRequest, BatchAssociateApprovalRuleTemplateWithRepositoriesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
      * squash or three-way merge strategy.
      * </p>
@@ -407,6 +615,43 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     java.util.concurrent.Future<BatchDescribeMergeConflictsResult> batchDescribeMergeConflictsAsync(
             BatchDescribeMergeConflictsRequest batchDescribeMergeConflictsRequest,
             com.amazonaws.handlers.AsyncHandler<BatchDescribeMergeConflictsRequest, BatchDescribeMergeConflictsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the association between an approval rule template and one or more specified repositories.
+     * </p>
+     * 
+     * @param batchDisassociateApprovalRuleTemplateFromRepositoriesRequest
+     * @return A Java Future containing the result of the BatchDisassociateApprovalRuleTemplateFromRepositories
+     *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.BatchDisassociateApprovalRuleTemplateFromRepositories
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDisassociateApprovalRuleTemplateFromRepositories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateApprovalRuleTemplateFromRepositoriesResult> batchDisassociateApprovalRuleTemplateFromRepositoriesAsync(
+            BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest batchDisassociateApprovalRuleTemplateFromRepositoriesRequest);
+
+    /**
+     * <p>
+     * Removes the association between an approval rule template and one or more specified repositories.
+     * </p>
+     * 
+     * @param batchDisassociateApprovalRuleTemplateFromRepositoriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDisassociateApprovalRuleTemplateFromRepositories
+     *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.BatchDisassociateApprovalRuleTemplateFromRepositories
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDisassociateApprovalRuleTemplateFromRepositories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateApprovalRuleTemplateFromRepositoriesResult> batchDisassociateApprovalRuleTemplateFromRepositoriesAsync(
+            BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest batchDisassociateApprovalRuleTemplateFromRepositoriesRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest, BatchDisassociateApprovalRuleTemplateFromRepositoriesResult> asyncHandler);
 
     /**
      * <p>
@@ -446,9 +691,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -468,9 +713,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -490,7 +735,46 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Creates a new branch in a repository and points the branch to a commit.
+     * Creates a template for approval rules that can then be associated with one or more repositories in your AWS
+     * account. When you associate a template with a repository, AWS CodeCommit creates an approval rule that matches
+     * the conditions of the template for all pull requests that meet the conditions of the template. For more
+     * information, see <a>AssociateApprovalRuleTemplateWithRepository</a>.
+     * </p>
+     * 
+     * @param createApprovalRuleTemplateRequest
+     * @return A Java Future containing the result of the CreateApprovalRuleTemplate operation returned by the service.
+     * @sample AWSCodeCommitAsync.CreateApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApprovalRuleTemplateResult> createApprovalRuleTemplateAsync(
+            CreateApprovalRuleTemplateRequest createApprovalRuleTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a template for approval rules that can then be associated with one or more repositories in your AWS
+     * account. When you associate a template with a repository, AWS CodeCommit creates an approval rule that matches
+     * the conditions of the template for all pull requests that meet the conditions of the template. For more
+     * information, see <a>AssociateApprovalRuleTemplateWithRepository</a>.
+     * </p>
+     * 
+     * @param createApprovalRuleTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApprovalRuleTemplate operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.CreateApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApprovalRuleTemplateResult> createApprovalRuleTemplateAsync(
+            CreateApprovalRuleTemplateRequest createApprovalRuleTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApprovalRuleTemplateRequest, CreateApprovalRuleTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a branch in a repository and points the branch to a commit.
      * </p>
      * <note>
      * <p>
@@ -510,7 +794,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Creates a new branch in a repository and points the branch to a commit.
+     * Creates a branch in a repository and points the branch to a commit.
      * </p>
      * <note>
      * <p>
@@ -597,6 +881,41 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Creates an approval rule for a pull request.
+     * </p>
+     * 
+     * @param createPullRequestApprovalRuleRequest
+     * @return A Java Future containing the result of the CreatePullRequestApprovalRule operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.CreatePullRequestApprovalRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequestApprovalRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePullRequestApprovalRuleResult> createPullRequestApprovalRuleAsync(
+            CreatePullRequestApprovalRuleRequest createPullRequestApprovalRuleRequest);
+
+    /**
+     * <p>
+     * Creates an approval rule for a pull request.
+     * </p>
+     * 
+     * @param createPullRequestApprovalRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePullRequestApprovalRule operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.CreatePullRequestApprovalRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequestApprovalRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePullRequestApprovalRuleResult> createPullRequestApprovalRuleAsync(
+            CreatePullRequestApprovalRuleRequest createPullRequestApprovalRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePullRequestApprovalRuleRequest, CreatePullRequestApprovalRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new, empty repository.
      * </p>
      * 
@@ -632,7 +951,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Creates an unreferenced commit that represents the result of merging two branches using a specified merge
      * strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the
-     * fast-forward merge strategy, as that strategy does not create a merge commit.
+     * fast-forward merge strategy because that strategy does not create a merge commit.
      * </p>
      * <note>
      * <p>
@@ -655,7 +974,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Creates an unreferenced commit that represents the result of merging two branches using a specified merge
      * strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the
-     * fast-forward merge strategy, as that strategy does not create a merge commit.
+     * fast-forward merge strategy because that strategy does not create a merge commit.
      * </p>
      * <note>
      * <p>
@@ -678,6 +997,41 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     java.util.concurrent.Future<CreateUnreferencedMergeCommitResult> createUnreferencedMergeCommitAsync(
             CreateUnreferencedMergeCommitRequest createUnreferencedMergeCommitRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUnreferencedMergeCommitRequest, CreateUnreferencedMergeCommitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified approval rule template. Deleting a template does not remove approval rules on pull requests
+     * already created with the template.
+     * </p>
+     * 
+     * @param deleteApprovalRuleTemplateRequest
+     * @return A Java Future containing the result of the DeleteApprovalRuleTemplate operation returned by the service.
+     * @sample AWSCodeCommitAsync.DeleteApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApprovalRuleTemplateResult> deleteApprovalRuleTemplateAsync(
+            DeleteApprovalRuleTemplateRequest deleteApprovalRuleTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a specified approval rule template. Deleting a template does not remove approval rules on pull requests
+     * already created with the template.
+     * </p>
+     * 
+     * @param deleteApprovalRuleTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApprovalRuleTemplate operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DeleteApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApprovalRuleTemplateResult> deleteApprovalRuleTemplateAsync(
+            DeleteApprovalRuleTemplateRequest deleteApprovalRuleTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApprovalRuleTemplateRequest, DeleteApprovalRuleTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -746,7 +1100,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     /**
      * <p>
      * Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision.
-     * The file will still exist in the commits prior to the commit that contains the deletion.
+     * The file still exists in the commits earlier to the commit that contains the deletion.
      * </p>
      * 
      * @param deleteFileRequest
@@ -760,7 +1114,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     /**
      * <p>
      * Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision.
-     * The file will still exist in the commits prior to the commit that contains the deletion.
+     * The file still exists in the commits earlier to the commit that contains the deletion.
      * </p>
      * 
      * @param deleteFileRequest
@@ -778,12 +1132,53 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.
+     * Deletes an approval rule from a specified pull request. Approval rules can be deleted from a pull request only if
+     * the pull request is open, and if the approval rule was created specifically for a pull request and not generated
+     * from an approval rule template associated with the repository where the pull request was created. You cannot
+     * delete an approval rule from a merged or closed pull request.
+     * </p>
+     * 
+     * @param deletePullRequestApprovalRuleRequest
+     * @return A Java Future containing the result of the DeletePullRequestApprovalRule operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.DeletePullRequestApprovalRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeletePullRequestApprovalRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePullRequestApprovalRuleResult> deletePullRequestApprovalRuleAsync(
+            DeletePullRequestApprovalRuleRequest deletePullRequestApprovalRuleRequest);
+
+    /**
+     * <p>
+     * Deletes an approval rule from a specified pull request. Approval rules can be deleted from a pull request only if
+     * the pull request is open, and if the approval rule was created specifically for a pull request and not generated
+     * from an approval rule template associated with the repository where the pull request was created. You cannot
+     * delete an approval rule from a merged or closed pull request.
+     * </p>
+     * 
+     * @param deletePullRequestApprovalRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePullRequestApprovalRule operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.DeletePullRequestApprovalRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeletePullRequestApprovalRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePullRequestApprovalRuleResult> deletePullRequestApprovalRuleAsync(
+            DeletePullRequestApprovalRuleRequest deletePullRequestApprovalRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePullRequestApprovalRuleRequest, DeletePullRequestApprovalRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a repository. If a specified repository was already deleted, a null repository ID is returned.
      * </p>
      * <important>
      * <p>
      * Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future
-     * push calls to the deleted repository will fail.
+     * push calls to the deleted repository fail.
      * </p>
      * </important>
      * 
@@ -798,12 +1193,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.
+     * Deletes a repository. If a specified repository was already deleted, a null repository ID is returned.
      * </p>
      * <important>
      * <p>
      * Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future
-     * push calls to the deleted repository will fail.
+     * push calls to the deleted repository fail.
      * </p>
      * </important>
      * 
@@ -825,7 +1220,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
      * squash or three-way merge strategy. If the merge option for the attempted merge is specified as
-     * FAST_FORWARD_MERGE, an exception will be thrown.
+     * FAST_FORWARD_MERGE, an exception is thrown.
      * </p>
      * 
      * @param describeMergeConflictsRequest
@@ -840,7 +1235,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
      * squash or three-way merge strategy. If the merge option for the attempted merge is specified as
-     * FAST_FORWARD_MERGE, an exception will be thrown.
+     * FAST_FORWARD_MERGE, an exception is thrown.
      * </p>
      * 
      * @param describeMergeConflictsRequest
@@ -891,7 +1286,114 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Returns the base-64 encoded content of an individual blob within a repository.
+     * Removes the association between a template and a repository so that approval rules based on the template are not
+     * automatically created when pull requests are created in the specified repository. This does not delete any
+     * approval rules previously created for pull requests through the template association.
+     * </p>
+     * 
+     * @param disassociateApprovalRuleTemplateFromRepositoryRequest
+     * @return A Java Future containing the result of the DisassociateApprovalRuleTemplateFromRepository operation
+     *         returned by the service.
+     * @sample AWSCodeCommitAsync.DisassociateApprovalRuleTemplateFromRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DisassociateApprovalRuleTemplateFromRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateApprovalRuleTemplateFromRepositoryResult> disassociateApprovalRuleTemplateFromRepositoryAsync(
+            DisassociateApprovalRuleTemplateFromRepositoryRequest disassociateApprovalRuleTemplateFromRepositoryRequest);
+
+    /**
+     * <p>
+     * Removes the association between a template and a repository so that approval rules based on the template are not
+     * automatically created when pull requests are created in the specified repository. This does not delete any
+     * approval rules previously created for pull requests through the template association.
+     * </p>
+     * 
+     * @param disassociateApprovalRuleTemplateFromRepositoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateApprovalRuleTemplateFromRepository operation
+     *         returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DisassociateApprovalRuleTemplateFromRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DisassociateApprovalRuleTemplateFromRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateApprovalRuleTemplateFromRepositoryResult> disassociateApprovalRuleTemplateFromRepositoryAsync(
+            DisassociateApprovalRuleTemplateFromRepositoryRequest disassociateApprovalRuleTemplateFromRepositoryRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateApprovalRuleTemplateFromRepositoryRequest, DisassociateApprovalRuleTemplateFromRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Evaluates whether a pull request has met all the conditions specified in its associated approval rules.
+     * </p>
+     * 
+     * @param evaluatePullRequestApprovalRulesRequest
+     * @return A Java Future containing the result of the EvaluatePullRequestApprovalRules operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.EvaluatePullRequestApprovalRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/EvaluatePullRequestApprovalRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EvaluatePullRequestApprovalRulesResult> evaluatePullRequestApprovalRulesAsync(
+            EvaluatePullRequestApprovalRulesRequest evaluatePullRequestApprovalRulesRequest);
+
+    /**
+     * <p>
+     * Evaluates whether a pull request has met all the conditions specified in its associated approval rules.
+     * </p>
+     * 
+     * @param evaluatePullRequestApprovalRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EvaluatePullRequestApprovalRules operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.EvaluatePullRequestApprovalRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/EvaluatePullRequestApprovalRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EvaluatePullRequestApprovalRulesResult> evaluatePullRequestApprovalRulesAsync(
+            EvaluatePullRequestApprovalRulesRequest evaluatePullRequestApprovalRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<EvaluatePullRequestApprovalRulesRequest, EvaluatePullRequestApprovalRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specified approval rule template.
+     * </p>
+     * 
+     * @param getApprovalRuleTemplateRequest
+     * @return A Java Future containing the result of the GetApprovalRuleTemplate operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApprovalRuleTemplateResult> getApprovalRuleTemplateAsync(GetApprovalRuleTemplateRequest getApprovalRuleTemplateRequest);
+
+    /**
+     * <p>
+     * Returns information about a specified approval rule template.
+     * </p>
+     * 
+     * @param getApprovalRuleTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApprovalRuleTemplate operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApprovalRuleTemplateResult> getApprovalRuleTemplateAsync(GetApprovalRuleTemplateRequest getApprovalRuleTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApprovalRuleTemplateRequest, GetApprovalRuleTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the base-64 encoded content of an individual blob in a repository.
      * </p>
      * 
      * @param getBlobRequest
@@ -905,7 +1407,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Returns the base-64 encoded content of an individual blob within a repository.
+     * Returns the base-64 encoded content of an individual blob in a repository.
      * </p>
      * 
      * @param getBlobRequest
@@ -1089,7 +1591,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or
+     * Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or
      * other fully qualified reference). Results can be limited to a specified path.
      * </p>
      * 
@@ -1103,7 +1605,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or
+     * Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or
      * other fully qualified reference). Results can be limited to a specified path.
      * </p>
      * 
@@ -1249,7 +1751,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     /**
      * <p>
      * Returns information about the merge options available for merging two specified branches. For details about why a
-     * particular merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
+     * merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
      * </p>
      * 
      * @param getMergeOptionsRequest
@@ -1263,7 +1765,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     /**
      * <p>
      * Returns information about the merge options available for merging two specified branches. For details about why a
-     * particular merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
+     * merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
      * </p>
      * 
      * @param getMergeOptionsRequest
@@ -1312,14 +1814,88 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Gets information about the approval states for a specified pull request. Approval states only apply to pull
+     * requests that have one or more approval rules applied to them.
+     * </p>
+     * 
+     * @param getPullRequestApprovalStatesRequest
+     * @return A Java Future containing the result of the GetPullRequestApprovalStates operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.GetPullRequestApprovalStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestApprovalStates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPullRequestApprovalStatesResult> getPullRequestApprovalStatesAsync(
+            GetPullRequestApprovalStatesRequest getPullRequestApprovalStatesRequest);
+
+    /**
+     * <p>
+     * Gets information about the approval states for a specified pull request. Approval states only apply to pull
+     * requests that have one or more approval rules applied to them.
+     * </p>
+     * 
+     * @param getPullRequestApprovalStatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPullRequestApprovalStates operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.GetPullRequestApprovalStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestApprovalStates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPullRequestApprovalStatesResult> getPullRequestApprovalStatesAsync(
+            GetPullRequestApprovalStatesRequest getPullRequestApprovalStatesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPullRequestApprovalStatesRequest, GetPullRequestApprovalStatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so,
+     * the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the
+     * pull request.
+     * </p>
+     * 
+     * @param getPullRequestOverrideStateRequest
+     * @return A Java Future containing the result of the GetPullRequestOverrideState operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetPullRequestOverrideState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestOverrideState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPullRequestOverrideStateResult> getPullRequestOverrideStateAsync(
+            GetPullRequestOverrideStateRequest getPullRequestOverrideStateRequest);
+
+    /**
+     * <p>
+     * Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so,
+     * the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the
+     * pull request.
+     * </p>
+     * 
+     * @param getPullRequestOverrideStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPullRequestOverrideState operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetPullRequestOverrideState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestOverrideState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPullRequestOverrideStateResult> getPullRequestOverrideStateAsync(
+            GetPullRequestOverrideStateRequest getPullRequestOverrideStateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPullRequestOverrideStateRequest, GetPullRequestOverrideStateResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a repository.
      * </p>
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -1339,9 +1915,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -1391,6 +1967,78 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<GetRepositoryTriggersResult> getRepositoryTriggersAsync(GetRepositoryTriggersRequest getRepositoryTriggersRequest,
             com.amazonaws.handlers.AsyncHandler<GetRepositoryTriggersRequest, GetRepositoryTriggersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not
+     * specified, the AWS Region where you are signed in is used.
+     * </p>
+     * 
+     * @param listApprovalRuleTemplatesRequest
+     * @return A Java Future containing the result of the ListApprovalRuleTemplates operation returned by the service.
+     * @sample AWSCodeCommitAsync.ListApprovalRuleTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListApprovalRuleTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApprovalRuleTemplatesResult> listApprovalRuleTemplatesAsync(
+            ListApprovalRuleTemplatesRequest listApprovalRuleTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not
+     * specified, the AWS Region where you are signed in is used.
+     * </p>
+     * 
+     * @param listApprovalRuleTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApprovalRuleTemplates operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.ListApprovalRuleTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListApprovalRuleTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApprovalRuleTemplatesResult> listApprovalRuleTemplatesAsync(
+            ListApprovalRuleTemplatesRequest listApprovalRuleTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApprovalRuleTemplatesRequest, ListApprovalRuleTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all approval rule templates that are associated with a specified repository.
+     * </p>
+     * 
+     * @param listAssociatedApprovalRuleTemplatesForRepositoryRequest
+     * @return A Java Future containing the result of the ListAssociatedApprovalRuleTemplatesForRepository operation
+     *         returned by the service.
+     * @sample AWSCodeCommitAsync.ListAssociatedApprovalRuleTemplatesForRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListAssociatedApprovalRuleTemplatesForRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssociatedApprovalRuleTemplatesForRepositoryResult> listAssociatedApprovalRuleTemplatesForRepositoryAsync(
+            ListAssociatedApprovalRuleTemplatesForRepositoryRequest listAssociatedApprovalRuleTemplatesForRepositoryRequest);
+
+    /**
+     * <p>
+     * Lists all approval rule templates that are associated with a specified repository.
+     * </p>
+     * 
+     * @param listAssociatedApprovalRuleTemplatesForRepositoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssociatedApprovalRuleTemplatesForRepository operation
+     *         returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.ListAssociatedApprovalRuleTemplatesForRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListAssociatedApprovalRuleTemplatesForRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssociatedApprovalRuleTemplatesForRepositoryResult> listAssociatedApprovalRuleTemplatesForRepositoryAsync(
+            ListAssociatedApprovalRuleTemplatesForRepositoryRequest listAssociatedApprovalRuleTemplatesForRepositoryRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssociatedApprovalRuleTemplatesForRepositoryRequest, ListAssociatedApprovalRuleTemplatesForRepositoryResult> asyncHandler);
 
     /**
      * <p>
@@ -1493,10 +2141,47 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Lists all repositories associated with the specified approval rule template.
+     * </p>
+     * 
+     * @param listRepositoriesForApprovalRuleTemplateRequest
+     * @return A Java Future containing the result of the ListRepositoriesForApprovalRuleTemplate operation returned by
+     *         the service.
+     * @sample AWSCodeCommitAsync.ListRepositoriesForApprovalRuleTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositoriesForApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRepositoriesForApprovalRuleTemplateResult> listRepositoriesForApprovalRuleTemplateAsync(
+            ListRepositoriesForApprovalRuleTemplateRequest listRepositoriesForApprovalRuleTemplateRequest);
+
+    /**
+     * <p>
+     * Lists all repositories associated with the specified approval rule template.
+     * </p>
+     * 
+     * @param listRepositoriesForApprovalRuleTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRepositoriesForApprovalRuleTemplate operation returned by
+     *         the service.
+     * @sample AWSCodeCommitAsyncHandler.ListRepositoriesForApprovalRuleTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositoriesForApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRepositoriesForApprovalRuleTemplateResult> listRepositoriesForApprovalRuleTemplateAsync(
+            ListRepositoriesForApprovalRuleTemplateRequest listRepositoriesForApprovalRuleTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRepositoriesForApprovalRuleTemplateRequest, ListRepositoriesForApprovalRuleTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
      * resources in AWS CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1512,7 +2197,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
      * resources in AWS CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1734,6 +2419,41 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Sets aside (overrides) all approval rule requirements for a specified pull request.
+     * </p>
+     * 
+     * @param overridePullRequestApprovalRulesRequest
+     * @return A Java Future containing the result of the OverridePullRequestApprovalRules operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.OverridePullRequestApprovalRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/OverridePullRequestApprovalRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<OverridePullRequestApprovalRulesResult> overridePullRequestApprovalRulesAsync(
+            OverridePullRequestApprovalRulesRequest overridePullRequestApprovalRulesRequest);
+
+    /**
+     * <p>
+     * Sets aside (overrides) all approval rule requirements for a specified pull request.
+     * </p>
+     * 
+     * @param overridePullRequestApprovalRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the OverridePullRequestApprovalRules operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.OverridePullRequestApprovalRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/OverridePullRequestApprovalRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<OverridePullRequestApprovalRulesResult> overridePullRequestApprovalRulesAsync(
+            OverridePullRequestApprovalRulesRequest overridePullRequestApprovalRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<OverridePullRequestApprovalRulesRequest, OverridePullRequestApprovalRulesResult> asyncHandler);
+
+    /**
+     * <p>
      * Posts a comment on the comparison between two commits.
      * </p>
      * 
@@ -1866,11 +2586,11 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Replaces all triggers for a repository. This can be used to create or delete triggers.
+     * Replaces all triggers for a repository. Used to create or delete triggers.
      * </p>
      * 
      * @param putRepositoryTriggersRequest
-     *        Represents the input ofa put repository triggers operation.
+     *        Represents the input of a put repository triggers operation.
      * @return A Java Future containing the result of the PutRepositoryTriggers operation returned by the service.
      * @sample AWSCodeCommitAsync.PutRepositoryTriggers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers"
@@ -1880,11 +2600,11 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Replaces all triggers for a repository. This can be used to create or delete triggers.
+     * Replaces all triggers for a repository. Used to create or delete triggers.
      * </p>
      * 
      * @param putRepositoryTriggersRequest
-     *        Represents the input ofa put repository triggers operation.
+     *        Represents the input of a put repository triggers operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1902,7 +2622,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
      * href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1918,7 +2638,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
      * href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1937,8 +2657,8 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     /**
      * <p>
      * Tests the functionality of repository triggers by sending information to the trigger target. If real data is
-     * available in the repository, the test will send data from the last commit. If no data is available, sample data
-     * will be generated.
+     * available in the repository, the test sends data from the last commit. If no data is available, sample data is
+     * generated.
      * </p>
      * 
      * @param testRepositoryTriggersRequest
@@ -1953,8 +2673,8 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     /**
      * <p>
      * Tests the functionality of repository triggers by sending information to the trigger target. If real data is
-     * available in the repository, the test will send data from the last commit. If no data is available, sample data
-     * will be generated.
+     * available in the repository, the test sends data from the last commit. If no data is available, sample data is
+     * generated.
      * </p>
      * 
      * @param testRepositoryTriggersRequest
@@ -1975,7 +2695,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1990,7 +2710,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2005,6 +2725,113 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the content of an approval rule template. You can change the number of required approvals, the membership
+     * of the approval rule, and whether an approval pool is defined.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateContentRequest
+     * @return A Java Future containing the result of the UpdateApprovalRuleTemplateContent operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.UpdateApprovalRuleTemplateContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApprovalRuleTemplateContentResult> updateApprovalRuleTemplateContentAsync(
+            UpdateApprovalRuleTemplateContentRequest updateApprovalRuleTemplateContentRequest);
+
+    /**
+     * <p>
+     * Updates the content of an approval rule template. You can change the number of required approvals, the membership
+     * of the approval rule, and whether an approval pool is defined.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApprovalRuleTemplateContent operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.UpdateApprovalRuleTemplateContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApprovalRuleTemplateContentResult> updateApprovalRuleTemplateContentAsync(
+            UpdateApprovalRuleTemplateContentRequest updateApprovalRuleTemplateContentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApprovalRuleTemplateContentRequest, UpdateApprovalRuleTemplateContentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the description for a specified approval rule template.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateDescriptionRequest
+     * @return A Java Future containing the result of the UpdateApprovalRuleTemplateDescription operation returned by
+     *         the service.
+     * @sample AWSCodeCommitAsync.UpdateApprovalRuleTemplateDescription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApprovalRuleTemplateDescriptionResult> updateApprovalRuleTemplateDescriptionAsync(
+            UpdateApprovalRuleTemplateDescriptionRequest updateApprovalRuleTemplateDescriptionRequest);
+
+    /**
+     * <p>
+     * Updates the description for a specified approval rule template.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateDescriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApprovalRuleTemplateDescription operation returned by
+     *         the service.
+     * @sample AWSCodeCommitAsyncHandler.UpdateApprovalRuleTemplateDescription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApprovalRuleTemplateDescriptionResult> updateApprovalRuleTemplateDescriptionAsync(
+            UpdateApprovalRuleTemplateDescriptionRequest updateApprovalRuleTemplateDescriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApprovalRuleTemplateDescriptionRequest, UpdateApprovalRuleTemplateDescriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the name of a specified approval rule template.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateNameRequest
+     * @return A Java Future containing the result of the UpdateApprovalRuleTemplateName operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.UpdateApprovalRuleTemplateName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApprovalRuleTemplateNameResult> updateApprovalRuleTemplateNameAsync(
+            UpdateApprovalRuleTemplateNameRequest updateApprovalRuleTemplateNameRequest);
+
+    /**
+     * <p>
+     * Updates the name of a specified approval rule template.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateNameRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApprovalRuleTemplateName operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.UpdateApprovalRuleTemplateName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApprovalRuleTemplateNameResult> updateApprovalRuleTemplateNameAsync(
+            UpdateApprovalRuleTemplateNameRequest updateApprovalRuleTemplateNameRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApprovalRuleTemplateNameRequest, UpdateApprovalRuleTemplateNameResult> asyncHandler);
 
     /**
      * <p>
@@ -2081,6 +2908,80 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(UpdateDefaultBranchRequest updateDefaultBranchRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the structure of an approval rule created specifically for a pull request. For example, you can change
+     * the number of required approvers and the approval pool for approvers.
+     * </p>
+     * 
+     * @param updatePullRequestApprovalRuleContentRequest
+     * @return A Java Future containing the result of the UpdatePullRequestApprovalRuleContent operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.UpdatePullRequestApprovalRuleContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalRuleContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestApprovalRuleContentResult> updatePullRequestApprovalRuleContentAsync(
+            UpdatePullRequestApprovalRuleContentRequest updatePullRequestApprovalRuleContentRequest);
+
+    /**
+     * <p>
+     * Updates the structure of an approval rule created specifically for a pull request. For example, you can change
+     * the number of required approvers and the approval pool for approvers.
+     * </p>
+     * 
+     * @param updatePullRequestApprovalRuleContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePullRequestApprovalRuleContent operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.UpdatePullRequestApprovalRuleContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalRuleContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestApprovalRuleContentResult> updatePullRequestApprovalRuleContentAsync(
+            UpdatePullRequestApprovalRuleContentRequest updatePullRequestApprovalRuleContentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePullRequestApprovalRuleContentRequest, UpdatePullRequestApprovalRuleContentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the state of a user's approval on a pull request. The user is derived from the signed-in account when the
+     * request is made.
+     * </p>
+     * 
+     * @param updatePullRequestApprovalStateRequest
+     * @return A Java Future containing the result of the UpdatePullRequestApprovalState operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.UpdatePullRequestApprovalState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestApprovalStateResult> updatePullRequestApprovalStateAsync(
+            UpdatePullRequestApprovalStateRequest updatePullRequestApprovalStateRequest);
+
+    /**
+     * <p>
+     * Updates the state of a user's approval on a pull request. The user is derived from the signed-in account when the
+     * request is made.
+     * </p>
+     * 
+     * @param updatePullRequestApprovalStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePullRequestApprovalState operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.UpdatePullRequestApprovalState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestApprovalStateResult> updatePullRequestApprovalStateAsync(
+            UpdatePullRequestApprovalStateRequest updatePullRequestApprovalStateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePullRequestApprovalStateRequest, UpdatePullRequestApprovalStateResult> asyncHandler);
 
     /**
      * <p>
@@ -2186,9 +3087,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -2209,9 +3110,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -2232,9 +3133,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
-     * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
+     * Renames a repository. The repository name must be unique across the calling AWS account. Repository names are
+     * limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix
+     * .git is prohibited. For more information about the limits on repository names, see <a
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
@@ -2250,9 +3151,9 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
-     * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
+     * Renames a repository. The repository name must be unique across the calling AWS account. Repository names are
+     * limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix
+     * .git is prohibited. For more information about the limits on repository names, see <a
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>

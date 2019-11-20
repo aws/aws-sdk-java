@@ -62,7 +62,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -252,7 +252,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -272,7 +272,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      *        </p>
      *        </li>
      *        <li>
@@ -299,7 +299,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -318,7 +318,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     *         <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      *         </p>
      *         </li>
      *         <li>
@@ -345,7 +345,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -365,7 +365,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      *        </p>
      *        </li>
      *        <li>
@@ -394,7 +394,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -414,7 +414,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      *        </p>
      *        </li>
      *        <li>

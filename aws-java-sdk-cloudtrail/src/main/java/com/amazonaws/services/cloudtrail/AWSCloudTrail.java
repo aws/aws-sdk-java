@@ -384,6 +384,36 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws InvalidTrailNameException
+     *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
+     *         requirements:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
+     *         <code>my--namespace</code> are invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @sample AWSCloudTrail.DescribeTrails
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails" target="_top">AWS API
      *      Documentation</a>
@@ -470,6 +500,66 @@ public interface AWSCloudTrail {
      *      API Documentation</a>
      */
     GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest);
+
+    /**
+     * <p>
+     * Describes the settings for the Insights event selectors that you configured for your trail.
+     * <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail, and if it
+     * is, which insight types are enabled. If you run <code>GetInsightSelectors</code> on a trail that does not have
+     * Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param getInsightSelectorsRequest
+     * @return Result of the GetInsightSelectors operation returned by the service.
+     * @throws TrailNotFoundException
+     *         This exception is thrown when the trail with the given name is not found.
+     * @throws InvalidTrailNameException
+     *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
+     *         requirements:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
+     *         <code>my--namespace</code> are invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws InsightNotEnabledException
+     *         If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the
+     *         operation throws the exception <code>InsightNotEnabledException</code>.
+     * @sample AWSCloudTrail.GetInsightSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetInsightSelectorsResult getInsightSelectors(GetInsightSelectorsRequest getInsightSelectorsRequest);
 
     /**
      * <p>
@@ -563,6 +653,10 @@ public interface AWSCloudTrail {
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.GetTrailStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus" target="_top">AWS API
      *      Documentation</a>
@@ -688,8 +782,10 @@ public interface AWSCloudTrail {
      * <p>
      * Looks up <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
-     * >management events</a> captured by CloudTrail. You can look up events that occurred in a region within the last
-     * 90 days. Lookup supports the following attributes:
+     * >management events</a> or <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events"
+     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region
+     * within the last 90 days. Lookup supports the following attributes for management events:
      * </p>
      * <ul>
      * <li>
@@ -734,17 +830,33 @@ public interface AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
+     * Lookup supports the following attributes for Insights events:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Event ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event source
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The
      * response includes a token that you can use to get the next page of results.
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling
+     * The rate of lookup requests is limited to two per second per account. If this limit is exceeded, a throttling
      * error occurs.
-     * </p>
-     * <p>
-     * Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was
-     * not enabled when the events occurred.
      * </p>
      * </important>
      * 
@@ -761,6 +873,12 @@ public interface AWSCloudTrail {
      * @throws InvalidNextTokenException
      *         Invalid token or token that was previously used in a request with different parameters. This exception is
      *         thrown if the token is invalid.
+     * @throws InvalidEventCategoryException
+     *         Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
      * @sample AWSCloudTrail.LookupEvents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents" target="_top">AWS API
      *      Documentation</a>
@@ -914,6 +1032,75 @@ public interface AWSCloudTrail {
      *      API Documentation</a>
      */
     PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest putEventSelectorsRequest);
+
+    /**
+     * <p>
+     * Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an
+     * existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an
+     * empty list of insight types. In this release, only <code>ApiCallRateInsight</code> is supported as an Insights
+     * selector.
+     * </p>
+     * 
+     * @param putInsightSelectorsRequest
+     * @return Result of the PutInsightSelectors operation returned by the service.
+     * @throws TrailNotFoundException
+     *         This exception is thrown when the trail with the given name is not found.
+     * @throws InvalidTrailNameException
+     *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
+     *         requirements:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
+     *         <code>my--namespace</code> are invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
+     * @throws InvalidHomeRegionException
+     *         This exception is thrown when an operation is called on a trail from a region other than the region in
+     *         which the trail was created.
+     * @throws InvalidInsightSelectorsException
+     *         The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your
+     *         <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the
+     *         specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.
+     * @throws InsufficientS3BucketPolicyException
+     *         This exception is thrown when the policy on the S3 bucket is not sufficient.
+     * @throws InsufficientEncryptionPolicyException
+     *         This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @sample AWSCloudTrail.PutInsightSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutInsightSelectorsResult putInsightSelectors(PutInsightSelectorsRequest putInsightSelectorsRequest);
 
     /**
      * <p>
@@ -1180,6 +1367,34 @@ public interface AWSCloudTrail {
      *         </li>
      * @throws TrailNotProvidedException
      *         This exception is no longer in use.
+     * @throws InvalidEventSelectorsException
+     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
+     *         event selectors or data resources that is not valid. The combination of event selectors and data
+     *         resources is not valid. A trail can have up to 5 event selectors. A trail is limited to 250 data
+     *         resources. These data resources can be distributed across event selectors, but the overall total cannot
+     *         exceed 250.</p>
+     *         <p>
+     *         You can:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of event selectors (1 to 5) for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of
+     *         resources on an individual event selector is configurable up to 250. However, this upper limit is allowed
+     *         only if the total number of data resources does not exceed 250 across all event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter
+     *         with a value of <code>read-only</code> is invalid.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws InvalidHomeRegionException

@@ -49,8 +49,8 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
     private String baseCommitId;
     /**
      * <p>
-     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list
-     * will always be empty.
+     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is
+     * always empty.
      * </p>
      */
     private java.util.List<ConflictMetadata> conflictMetadataList;
@@ -235,12 +235,12 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list
-     * will always be empty.
+     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is
+     * always empty.
      * </p>
      * 
      * @return A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this
-     *         list will always be empty.
+     *         list is always empty.
      */
 
     public java.util.List<ConflictMetadata> getConflictMetadataList() {
@@ -249,13 +249,13 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list
-     * will always be empty.
+     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is
+     * always empty.
      * </p>
      * 
      * @param conflictMetadataList
      *        A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this
-     *        list will always be empty.
+     *        list is always empty.
      */
 
     public void setConflictMetadataList(java.util.Collection<ConflictMetadata> conflictMetadataList) {
@@ -269,8 +269,8 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list
-     * will always be empty.
+     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is
+     * always empty.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -280,7 +280,7 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
      * 
      * @param conflictMetadataList
      *        A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this
-     *        list will always be empty.
+     *        list is always empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,13 +296,13 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list
-     * will always be empty.
+     * A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is
+     * always empty.
      * </p>
      * 
      * @param conflictMetadataList
      *        A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this
-     *        list will always be empty.
+     *        list is always empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

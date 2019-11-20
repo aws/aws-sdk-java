@@ -1,3 +1,72 @@
+# __1.11.679__ __2019-11-20__
+## __AWS Application Discovery Service__
+  - ### Features
+    - New exception type for use with Migration Hub home region
+
+## __AWS CloudTrail__
+  - ### Features
+    -  1. This release adds two new APIs, GetInsightSelectors and PutInsightSelectors, which let you configure CloudTrail Insights event delivery on a trail. An Insights event is a new type of event that is generated when CloudTrail detects unusual activity in your AWS account. In this release, only "ApiCallRateInsight" is a supported Insights event type. 2. This release also adds the new "ExcludeManagementEventSource" option to the existing PutEventSelectors API. This field currently supports only AWS Key Management Services.
+
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds support for creating pull request approval rules and pull request approval rule templates in AWS CodeCommit. This allows developers to block merges of pull requests, contingent on the approval rules being satisfiied.
+
+## __AWS DataSync__
+  - ### Features
+    - Update to configure task to run periodically on a schedule
+
+## __AWS Elemental MediaStore__
+  - ### Features
+    - This release fixes a broken link in the SDK documentation.
+
+## __AWS Migration Hub__
+  - ### Features
+    - New exception type for use with Migration Hub home region
+
+## __AWS Migration Hub Config__
+  - ### Features
+    - AWS Migration Hub Config Service allows you to get and set the Migration Hub home region for use with AWS Migration Hub and Application Discovery Service
+
+## __AWS Storage Gateway__
+  - ### Features
+    - The new DescribeAvailabilityMonitorTest API provides the results of the most recent High Availability monitoring test. The new StartAvailabilityMonitorTest API verifies the storage gateway is configured for High Availability monitoring. The new ActiveDirectoryStatus response element has been added to the DescribeSMBSettings and JoinDomain APIs to indicate the status of the gateway after the most recent JoinDomain operation. The new TimeoutInSeconds parameter of the JoinDomain API allows for the configuration of the timeout in which the JoinDomain operation must complete.
+
+## __Amazon Chime__
+  - ### Features
+    - Adds APIs to create and manage meeting session resources for the Amazon Chime SDK
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - DLM now supports Fast Snapshot Restore. You can enable Fast Restore on snapshots created by DLM, provide the AZs and the number of snapshots to be enabled with this capability.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Added support for CPU and memory task-level overrides on the RunTask and StartTask APIs.  Added location information to Tasks.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release of Amazon Elastic Compute Cloud (Amazon EC2) introduces support for Amazon Elastic Block Store (Amazon EBS) fast snapshot restores.
+
+## __Amazon FSx__
+  - ### Features
+    - Announcing a Multi-AZ deployment type for Amazon FSx for Windows File Server, providing fully-managed Windows file storage with high availability and redundancy across multiple AWS Availability Zones.
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - With this release, Amazon Kinesis Data Firehose allows server side encryption with customer managed CMKs. Customer managed CMKs ( "Customer Master Keys") are AWS Key Management Service (KMS) keys that are fully managed by the customer. With customer managed CMKs, customers can establish and maintain their key policies, IAM policies, rotating policies and add tags. For more information about AWS KMS and CMKs, please refer to:  https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html. Please refer to the following link to create CMKs: https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-create-cmk.html
+
+## __Amazon QuickSight__
+  - ### Features
+    - Amazon QuickSight now supports programmatic creation and management of data sources, data sets, dashboards and templates with new APIs. Templates hold dashboard metadata, and can be used to create copies connected to the same or different dataset as required. Also included in this release are APIs for SPICE ingestions, fine-grained access control over AWS resources using AWS Identity and Access Management (IAM) policies, as well AWS tagging. APIs are supported for both Standard and Enterprise Edition, with edition-specific support for specific functionality.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - This release introduces support for Amazon S3 Replication Time Control, a new feature of S3 Replication that provides a predictable replication time backed by a Service Level Agreement. S3 Replication Time Control helps customers meet compliance or business requirements for data replication, and provides visibility into the replication process with new Amazon CloudWatch Metrics.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this release Amazon Transcribe enables alternative transcriptions so that you can see different interpretations of transcribed audio.
+
 # __1.11.678__ __2019-11-19__
 ## __AWS CloudFormation__
   - ### Features

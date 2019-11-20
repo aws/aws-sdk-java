@@ -2398,6 +2398,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFastSnapshotRestoresResult> describeFastSnapshotRestoresAsync(DescribeFastSnapshotRestoresRequest request) {
+
+        return describeFastSnapshotRestoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFastSnapshotRestoresResult> describeFastSnapshotRestoresAsync(DescribeFastSnapshotRestoresRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFastSnapshotRestoresRequest, DescribeFastSnapshotRestoresResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFleetHistoryResult> describeFleetHistoryAsync(DescribeFleetHistoryRequest request) {
 
         return describeFleetHistoryAsync(request, null);
@@ -4420,6 +4433,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DisableFastSnapshotRestoresResult> disableFastSnapshotRestoresAsync(DisableFastSnapshotRestoresRequest request) {
+
+        return disableFastSnapshotRestoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableFastSnapshotRestoresResult> disableFastSnapshotRestoresAsync(DisableFastSnapshotRestoresRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableFastSnapshotRestoresRequest, DisableFastSnapshotRestoresResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableTransitGatewayRouteTablePropagationResult> disableTransitGatewayRouteTablePropagationAsync(
             DisableTransitGatewayRouteTablePropagationRequest request) {
 
@@ -4579,6 +4605,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<EnableEbsEncryptionByDefaultResult> enableEbsEncryptionByDefaultAsync(EnableEbsEncryptionByDefaultRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableEbsEncryptionByDefaultRequest, EnableEbsEncryptionByDefaultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableFastSnapshotRestoresResult> enableFastSnapshotRestoresAsync(EnableFastSnapshotRestoresRequest request) {
+
+        return enableFastSnapshotRestoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableFastSnapshotRestoresResult> enableFastSnapshotRestoresAsync(EnableFastSnapshotRestoresRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableFastSnapshotRestoresRequest, EnableFastSnapshotRestoresResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

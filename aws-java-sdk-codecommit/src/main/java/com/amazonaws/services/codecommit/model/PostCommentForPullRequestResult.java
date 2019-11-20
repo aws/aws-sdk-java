@@ -44,19 +44,19 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
     private String beforeCommitId;
     /**
      * <p>
-     * The full commit ID of the commit in the destination branch where the pull request will be merged.
+     * The full commit ID of the commit in the destination branch where the pull request is merged.
      * </p>
      */
     private String afterCommitId;
     /**
      * <p>
-     * In the directionality of the pull request, the blob ID of the 'before' blob.
+     * In the directionality of the pull request, the blob ID of the before blob.
      * </p>
      */
     private String beforeBlobId;
     /**
      * <p>
-     * In the directionality of the pull request, the blob ID of the 'after' blob.
+     * In the directionality of the pull request, the blob ID of the after blob.
      * </p>
      */
     private String afterBlobId;
@@ -201,11 +201,11 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The full commit ID of the commit in the destination branch where the pull request will be merged.
+     * The full commit ID of the commit in the destination branch where the pull request is merged.
      * </p>
      * 
      * @param afterCommitId
-     *        The full commit ID of the commit in the destination branch where the pull request will be merged.
+     *        The full commit ID of the commit in the destination branch where the pull request is merged.
      */
 
     public void setAfterCommitId(String afterCommitId) {
@@ -214,10 +214,10 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The full commit ID of the commit in the destination branch where the pull request will be merged.
+     * The full commit ID of the commit in the destination branch where the pull request is merged.
      * </p>
      * 
-     * @return The full commit ID of the commit in the destination branch where the pull request will be merged.
+     * @return The full commit ID of the commit in the destination branch where the pull request is merged.
      */
 
     public String getAfterCommitId() {
@@ -226,11 +226,11 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The full commit ID of the commit in the destination branch where the pull request will be merged.
+     * The full commit ID of the commit in the destination branch where the pull request is merged.
      * </p>
      * 
      * @param afterCommitId
-     *        The full commit ID of the commit in the destination branch where the pull request will be merged.
+     *        The full commit ID of the commit in the destination branch where the pull request is merged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +241,11 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * In the directionality of the pull request, the blob ID of the 'before' blob.
+     * In the directionality of the pull request, the blob ID of the before blob.
      * </p>
      * 
      * @param beforeBlobId
-     *        In the directionality of the pull request, the blob ID of the 'before' blob.
+     *        In the directionality of the pull request, the blob ID of the before blob.
      */
 
     public void setBeforeBlobId(String beforeBlobId) {
@@ -254,10 +254,10 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * In the directionality of the pull request, the blob ID of the 'before' blob.
+     * In the directionality of the pull request, the blob ID of the before blob.
      * </p>
      * 
-     * @return In the directionality of the pull request, the blob ID of the 'before' blob.
+     * @return In the directionality of the pull request, the blob ID of the before blob.
      */
 
     public String getBeforeBlobId() {
@@ -266,11 +266,11 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * In the directionality of the pull request, the blob ID of the 'before' blob.
+     * In the directionality of the pull request, the blob ID of the before blob.
      * </p>
      * 
      * @param beforeBlobId
-     *        In the directionality of the pull request, the blob ID of the 'before' blob.
+     *        In the directionality of the pull request, the blob ID of the before blob.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,11 +281,11 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * In the directionality of the pull request, the blob ID of the 'after' blob.
+     * In the directionality of the pull request, the blob ID of the after blob.
      * </p>
      * 
      * @param afterBlobId
-     *        In the directionality of the pull request, the blob ID of the 'after' blob.
+     *        In the directionality of the pull request, the blob ID of the after blob.
      */
 
     public void setAfterBlobId(String afterBlobId) {
@@ -294,10 +294,10 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * In the directionality of the pull request, the blob ID of the 'after' blob.
+     * In the directionality of the pull request, the blob ID of the after blob.
      * </p>
      * 
-     * @return In the directionality of the pull request, the blob ID of the 'after' blob.
+     * @return In the directionality of the pull request, the blob ID of the after blob.
      */
 
     public String getAfterBlobId() {
@@ -306,11 +306,11 @@ public class PostCommentForPullRequestResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * In the directionality of the pull request, the blob ID of the 'after' blob.
+     * In the directionality of the pull request, the blob ID of the after blob.
      * </p>
      * 
      * @param afterBlobId
-     *        In the directionality of the pull request, the blob ID of the 'after' blob.
+     *        In the directionality of the pull request, the blob ID of the after blob.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

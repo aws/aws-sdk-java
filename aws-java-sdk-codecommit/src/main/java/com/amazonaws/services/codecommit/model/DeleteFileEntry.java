@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A file that will be deleted as part of a commit.
+ * A file that is deleted as part of a commit.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFileEntry" target="_top">AWS API
@@ -30,18 +30,18 @@ public class DeleteFileEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The full path of the file that will be deleted, including the name of the file.
+     * The full path of the file to be deleted, including the name of the file.
      * </p>
      */
     private String filePath;
 
     /**
      * <p>
-     * The full path of the file that will be deleted, including the name of the file.
+     * The full path of the file to be deleted, including the name of the file.
      * </p>
      * 
      * @param filePath
-     *        The full path of the file that will be deleted, including the name of the file.
+     *        The full path of the file to be deleted, including the name of the file.
      */
 
     public void setFilePath(String filePath) {
@@ -50,10 +50,10 @@ public class DeleteFileEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The full path of the file that will be deleted, including the name of the file.
+     * The full path of the file to be deleted, including the name of the file.
      * </p>
      * 
-     * @return The full path of the file that will be deleted, including the name of the file.
+     * @return The full path of the file to be deleted, including the name of the file.
      */
 
     public String getFilePath() {
@@ -62,11 +62,11 @@ public class DeleteFileEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The full path of the file that will be deleted, including the name of the file.
+     * The full path of the file to be deleted, including the name of the file.
      * </p>
      * 
      * @param filePath
-     *        The full path of the file that will be deleted, including the name of the file.
+     *        The full path of the file to be deleted, including the name of the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

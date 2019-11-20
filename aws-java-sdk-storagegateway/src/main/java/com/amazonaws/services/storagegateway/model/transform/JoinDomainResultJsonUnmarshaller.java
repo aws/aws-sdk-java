@@ -52,6 +52,10 @@ public class JoinDomainResultJsonUnmarshaller implements Unmarshaller<JoinDomain
                     context.nextToken();
                     joinDomainResult.setGatewayARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ActiveDirectoryStatus", targetDepth)) {
+                    context.nextToken();
+                    joinDomainResult.setActiveDirectoryStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

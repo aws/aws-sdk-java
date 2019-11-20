@@ -33,52 +33,51 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String repositoryName;
     /**
      * <p>
-     * The name of the branch where the commit will be made deleting the file.
+     * The name of the branch where the commit that deletes the file is made.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * The fully-qualified path to the file that will be deleted, including the full name and extension of that file.
-     * For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
+     * The fully qualified path to the file that to be deleted, including the full name and extension of that file. For
+     * example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
      * </p>
      */
     private String filePath;
     /**
      * <p>
-     * The ID of the commit that is the tip of the branch where you want to create the commit that will delete the file.
-     * This must be the HEAD commit for the branch. The commit that deletes the file will be created from this commit
-     * ID.
+     * The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file.
+     * This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.
      * </p>
      */
     private String parentCommitId;
     /**
      * <p>
-     * Specifies whether to delete the folder or directory that contains the file you want to delete if that file is the
-     * only object in the folder or directory. By default, empty folders will be deleted. This includes empty folders
-     * that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and
-     * dir3 are empty, deleting the last file in dir4 will also delete the empty folders dir4, dir3, and dir2.
+     * If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that
+     * contains the file. By default, empty folders are deleted. This includes empty folders that are part of the
+     * directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty,
+     * deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      * </p>
      */
     private Boolean keepEmptyFolders;
     /**
      * <p>
      * The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no
-     * message is specified, a default message will be used.
+     * message is specified, a default message is used.
      * </p>
      */
     private String commitMessage;
     /**
      * <p>
-     * The name of the author of the commit that deletes the file. If no name is specified, the user's ARN will be used
-     * as the author name and committer name.
+     * The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as
+     * the author name and committer name.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The email address for the commit that deletes the file. If no email address is specified, the email address will
-     * be left blank.
+     * The email address for the commit that deletes the file. If no email address is specified, the email address is
+     * left blank.
      * </p>
      */
     private String email;
@@ -125,11 +124,11 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the branch where the commit will be made deleting the file.
+     * The name of the branch where the commit that deletes the file is made.
      * </p>
      * 
      * @param branchName
-     *        The name of the branch where the commit will be made deleting the file.
+     *        The name of the branch where the commit that deletes the file is made.
      */
 
     public void setBranchName(String branchName) {
@@ -138,10 +137,10 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the branch where the commit will be made deleting the file.
+     * The name of the branch where the commit that deletes the file is made.
      * </p>
      * 
-     * @return The name of the branch where the commit will be made deleting the file.
+     * @return The name of the branch where the commit that deletes the file is made.
      */
 
     public String getBranchName() {
@@ -150,11 +149,11 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the branch where the commit will be made deleting the file.
+     * The name of the branch where the commit that deletes the file is made.
      * </p>
      * 
      * @param branchName
-     *        The name of the branch where the commit will be made deleting the file.
+     *        The name of the branch where the commit that deletes the file is made.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,12 +164,12 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The fully-qualified path to the file that will be deleted, including the full name and extension of that file.
-     * For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
+     * The fully qualified path to the file that to be deleted, including the full name and extension of that file. For
+     * example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
      * </p>
      * 
      * @param filePath
-     *        The fully-qualified path to the file that will be deleted, including the full name and extension of that
+     *        The fully qualified path to the file that to be deleted, including the full name and extension of that
      *        file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named
      *        examples.
      */
@@ -181,11 +180,11 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The fully-qualified path to the file that will be deleted, including the full name and extension of that file.
-     * For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
+     * The fully qualified path to the file that to be deleted, including the full name and extension of that file. For
+     * example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
      * </p>
      * 
-     * @return The fully-qualified path to the file that will be deleted, including the full name and extension of that
+     * @return The fully qualified path to the file that to be deleted, including the full name and extension of that
      *         file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named
      *         examples.
      */
@@ -196,12 +195,12 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The fully-qualified path to the file that will be deleted, including the full name and extension of that file.
-     * For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
+     * The fully qualified path to the file that to be deleted, including the full name and extension of that file. For
+     * example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.
      * </p>
      * 
      * @param filePath
-     *        The fully-qualified path to the file that will be deleted, including the full name and extension of that
+     *        The fully qualified path to the file that to be deleted, including the full name and extension of that
      *        file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named
      *        examples.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -214,15 +213,14 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the commit that is the tip of the branch where you want to create the commit that will delete the file.
-     * This must be the HEAD commit for the branch. The commit that deletes the file will be created from this commit
-     * ID.
+     * The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file.
+     * This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.
      * </p>
      * 
      * @param parentCommitId
-     *        The ID of the commit that is the tip of the branch where you want to create the commit that will delete
-     *        the file. This must be the HEAD commit for the branch. The commit that deletes the file will be created
-     *        from this commit ID.
+     *        The ID of the commit that is the tip of the branch where you want to create the commit that deletes the
+     *        file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this
+     *        commit ID.
      */
 
     public void setParentCommitId(String parentCommitId) {
@@ -231,14 +229,13 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the commit that is the tip of the branch where you want to create the commit that will delete the file.
-     * This must be the HEAD commit for the branch. The commit that deletes the file will be created from this commit
-     * ID.
+     * The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file.
+     * This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.
      * </p>
      * 
-     * @return The ID of the commit that is the tip of the branch where you want to create the commit that will delete
-     *         the file. This must be the HEAD commit for the branch. The commit that deletes the file will be created
-     *         from this commit ID.
+     * @return The ID of the commit that is the tip of the branch where you want to create the commit that deletes the
+     *         file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this
+     *         commit ID.
      */
 
     public String getParentCommitId() {
@@ -247,15 +244,14 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the commit that is the tip of the branch where you want to create the commit that will delete the file.
-     * This must be the HEAD commit for the branch. The commit that deletes the file will be created from this commit
-     * ID.
+     * The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file.
+     * This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.
      * </p>
      * 
      * @param parentCommitId
-     *        The ID of the commit that is the tip of the branch where you want to create the commit that will delete
-     *        the file. This must be the HEAD commit for the branch. The commit that deletes the file will be created
-     *        from this commit ID.
+     *        The ID of the commit that is the tip of the branch where you want to create the commit that deletes the
+     *        file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this
+     *        commit ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,18 +262,17 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies whether to delete the folder or directory that contains the file you want to delete if that file is the
-     * only object in the folder or directory. By default, empty folders will be deleted. This includes empty folders
-     * that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and
-     * dir3 are empty, deleting the last file in dir4 will also delete the empty folders dir4, dir3, and dir2.
+     * If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that
+     * contains the file. By default, empty folders are deleted. This includes empty folders that are part of the
+     * directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty,
+     * deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      * </p>
      * 
      * @param keepEmptyFolders
-     *        Specifies whether to delete the folder or directory that contains the file you want to delete if that file
-     *        is the only object in the folder or directory. By default, empty folders will be deleted. This includes
-     *        empty folders that are part of the directory structure. For example, if the path to a file is
-     *        dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 will also delete the
-     *        empty folders dir4, dir3, and dir2.
+     *        If a file is the only object in the folder or directory, specifies whether to delete the folder or
+     *        directory that contains the file. By default, empty folders are deleted. This includes empty folders that
+     *        are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2
+     *        and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      */
 
     public void setKeepEmptyFolders(Boolean keepEmptyFolders) {
@@ -286,17 +281,16 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies whether to delete the folder or directory that contains the file you want to delete if that file is the
-     * only object in the folder or directory. By default, empty folders will be deleted. This includes empty folders
-     * that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and
-     * dir3 are empty, deleting the last file in dir4 will also delete the empty folders dir4, dir3, and dir2.
+     * If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that
+     * contains the file. By default, empty folders are deleted. This includes empty folders that are part of the
+     * directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty,
+     * deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      * </p>
      * 
-     * @return Specifies whether to delete the folder or directory that contains the file you want to delete if that
-     *         file is the only object in the folder or directory. By default, empty folders will be deleted. This
-     *         includes empty folders that are part of the directory structure. For example, if the path to a file is
-     *         dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 will also delete the
-     *         empty folders dir4, dir3, and dir2.
+     * @return If a file is the only object in the folder or directory, specifies whether to delete the folder or
+     *         directory that contains the file. By default, empty folders are deleted. This includes empty folders that
+     *         are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2
+     *         and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      */
 
     public Boolean getKeepEmptyFolders() {
@@ -305,18 +299,17 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies whether to delete the folder or directory that contains the file you want to delete if that file is the
-     * only object in the folder or directory. By default, empty folders will be deleted. This includes empty folders
-     * that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and
-     * dir3 are empty, deleting the last file in dir4 will also delete the empty folders dir4, dir3, and dir2.
+     * If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that
+     * contains the file. By default, empty folders are deleted. This includes empty folders that are part of the
+     * directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty,
+     * deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      * </p>
      * 
      * @param keepEmptyFolders
-     *        Specifies whether to delete the folder or directory that contains the file you want to delete if that file
-     *        is the only object in the folder or directory. By default, empty folders will be deleted. This includes
-     *        empty folders that are part of the directory structure. For example, if the path to a file is
-     *        dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 will also delete the
-     *        empty folders dir4, dir3, and dir2.
+     *        If a file is the only object in the folder or directory, specifies whether to delete the folder or
+     *        directory that contains the file. By default, empty folders are deleted. This includes empty folders that
+     *        are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2
+     *        and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,17 +320,16 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies whether to delete the folder or directory that contains the file you want to delete if that file is the
-     * only object in the folder or directory. By default, empty folders will be deleted. This includes empty folders
-     * that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and
-     * dir3 are empty, deleting the last file in dir4 will also delete the empty folders dir4, dir3, and dir2.
+     * If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that
+     * contains the file. By default, empty folders are deleted. This includes empty folders that are part of the
+     * directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty,
+     * deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      * </p>
      * 
-     * @return Specifies whether to delete the folder or directory that contains the file you want to delete if that
-     *         file is the only object in the folder or directory. By default, empty folders will be deleted. This
-     *         includes empty folders that are part of the directory structure. For example, if the path to a file is
-     *         dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 will also delete the
-     *         empty folders dir4, dir3, and dir2.
+     * @return If a file is the only object in the folder or directory, specifies whether to delete the folder or
+     *         directory that contains the file. By default, empty folders are deleted. This includes empty folders that
+     *         are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2
+     *         and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
      */
 
     public Boolean isKeepEmptyFolders() {
@@ -347,12 +339,12 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no
-     * message is specified, a default message will be used.
+     * message is specified, a default message is used.
      * </p>
      * 
      * @param commitMessage
      *        The commit message you want to include as part of deleting the file. Commit messages are limited to 256
-     *        KB. If no message is specified, a default message will be used.
+     *        KB. If no message is specified, a default message is used.
      */
 
     public void setCommitMessage(String commitMessage) {
@@ -362,11 +354,11 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no
-     * message is specified, a default message will be used.
+     * message is specified, a default message is used.
      * </p>
      * 
      * @return The commit message you want to include as part of deleting the file. Commit messages are limited to 256
-     *         KB. If no message is specified, a default message will be used.
+     *         KB. If no message is specified, a default message is used.
      */
 
     public String getCommitMessage() {
@@ -376,12 +368,12 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no
-     * message is specified, a default message will be used.
+     * message is specified, a default message is used.
      * </p>
      * 
      * @param commitMessage
      *        The commit message you want to include as part of deleting the file. Commit messages are limited to 256
-     *        KB. If no message is specified, a default message will be used.
+     *        KB. If no message is specified, a default message is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,13 +384,13 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the author of the commit that deletes the file. If no name is specified, the user's ARN will be used
-     * as the author name and committer name.
+     * The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as
+     * the author name and committer name.
      * </p>
      * 
      * @param name
-     *        The name of the author of the commit that deletes the file. If no name is specified, the user's ARN will
-     *        be used as the author name and committer name.
+     *        The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is
+     *        used as the author name and committer name.
      */
 
     public void setName(String name) {
@@ -407,12 +399,12 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the author of the commit that deletes the file. If no name is specified, the user's ARN will be used
-     * as the author name and committer name.
+     * The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as
+     * the author name and committer name.
      * </p>
      * 
-     * @return The name of the author of the commit that deletes the file. If no name is specified, the user's ARN will
-     *         be used as the author name and committer name.
+     * @return The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is
+     *         used as the author name and committer name.
      */
 
     public String getName() {
@@ -421,13 +413,13 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the author of the commit that deletes the file. If no name is specified, the user's ARN will be used
-     * as the author name and committer name.
+     * The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as
+     * the author name and committer name.
      * </p>
      * 
      * @param name
-     *        The name of the author of the commit that deletes the file. If no name is specified, the user's ARN will
-     *        be used as the author name and committer name.
+     *        The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is
+     *        used as the author name and committer name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,13 +430,13 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The email address for the commit that deletes the file. If no email address is specified, the email address will
-     * be left blank.
+     * The email address for the commit that deletes the file. If no email address is specified, the email address is
+     * left blank.
      * </p>
      * 
      * @param email
      *        The email address for the commit that deletes the file. If no email address is specified, the email
-     *        address will be left blank.
+     *        address is left blank.
      */
 
     public void setEmail(String email) {
@@ -453,12 +445,12 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The email address for the commit that deletes the file. If no email address is specified, the email address will
-     * be left blank.
+     * The email address for the commit that deletes the file. If no email address is specified, the email address is
+     * left blank.
      * </p>
      * 
      * @return The email address for the commit that deletes the file. If no email address is specified, the email
-     *         address will be left blank.
+     *         address is left blank.
      */
 
     public String getEmail() {
@@ -467,13 +459,13 @@ public class DeleteFileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The email address for the commit that deletes the file. If no email address is specified, the email address will
-     * be left blank.
+     * The email address for the commit that deletes the file. If no email address is specified, the email address is
+     * left blank.
      * </p>
      * 
      * @param email
      *        The email address for the commit that deletes the file. If no email address is specified, the email
-     *        address will be left blank.
+     *        address is left blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

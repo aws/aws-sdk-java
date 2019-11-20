@@ -25,7 +25,7 @@ public class PutFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The full SHA of the commit that contains this file change.
+     * The full SHA ID of the commit that contains this file change.
      * </p>
      */
     private String commitId;
@@ -44,11 +44,11 @@ public class PutFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The full SHA of the commit that contains this file change.
+     * The full SHA ID of the commit that contains this file change.
      * </p>
      * 
      * @param commitId
-     *        The full SHA of the commit that contains this file change.
+     *        The full SHA ID of the commit that contains this file change.
      */
 
     public void setCommitId(String commitId) {
@@ -57,10 +57,10 @@ public class PutFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The full SHA of the commit that contains this file change.
+     * The full SHA ID of the commit that contains this file change.
      * </p>
      * 
-     * @return The full SHA of the commit that contains this file change.
+     * @return The full SHA ID of the commit that contains this file change.
      */
 
     public String getCommitId() {
@@ -69,11 +69,11 @@ public class PutFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The full SHA of the commit that contains this file change.
+     * The full SHA ID of the commit that contains this file change.
      * </p>
      * 
      * @param commitId
-     *        The full SHA of the commit that contains this file change.
+     *        The full SHA ID of the commit that contains this file change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

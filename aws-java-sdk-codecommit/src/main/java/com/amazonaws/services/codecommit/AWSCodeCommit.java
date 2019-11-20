@@ -72,7 +72,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no
- * other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.
+ * other users of that repository can access it until you send them the new HTTPS or SSH URL to use.
  * </p>
  * </li>
  * </ul>
@@ -82,7 +82,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateBranch</a>, which creates a new branch in a specified repository.
+ * <a>CreateBranch</a>, which creates a branch in a specified repository.
  * </p>
  * </li>
  * <li>
@@ -117,7 +117,7 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
+ * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object in a repository.
  * </p>
  * </li>
  * <li>
@@ -142,7 +142,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository
+ * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository.
  * </p>
  * </li>
  * <li>
@@ -159,7 +159,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>GetDifferences</a>, which returns information about the differences in a valid commit specifier (such as a branch,
- * tag, HEAD, commit ID or other fully qualified reference).
+ * tag, HEAD, commit ID, or other fully qualified reference).
  * </p>
  * </li>
  * </ul>
@@ -229,7 +229,23 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>CreatePullRequestApprovalRule</a>, which creates an approval rule for a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePullRequestApprovalRule</a>, which deletes an approval rule for a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>DescribePullRequestEvents</a>, which returns information about one or more pull request events.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>EvaluatePullRequestApprovalRules</a>, which evaluates whether a pull request has met all the conditions specified
+ * in its associated approval rules.
  * </p>
  * </li>
  * <li>
@@ -240,6 +256,19 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>GetPullRequest</a>, which returns information about a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPullRequestApprovalStates</a>, which returns information about the approval states for a specified pull
+ * request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPullRequestOverrideState</a>, which returns information about whether approval rules have been set aside
+ * (overriden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the
+ * rules and their requirements for the pull request.
  * </p>
  * </li>
  * <li>
@@ -267,7 +296,22 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>OverridePullRequestApprovalRules</a>, which sets aside all approval rule requirements for a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>PostCommentForPullRequest</a>, which posts a comment to a pull request at the specified line, file, or request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestApprovalRuleContent</a>, which updates the structure of an approval rule for a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestApprovalState</a>, which updates the state of an approval on a pull request.
  * </p>
  * </li>
  * <li>
@@ -283,6 +327,88 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>UpdatePullRequestTitle</a>, which updates the title of a pull request.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Approval rule templates, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>AssociateApprovalRuleTemplateWithRepository</a>, which associates a template with a specified repository. After
+ * the template is associated with a repository, AWS CodeCommit creates approval rules that match the template
+ * conditions on every pull request created in the specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>BatchAssociateApprovalRuleTemplateWithRepositories</a>, which associates a template with one or more specified
+ * repositories. After the template is associated with a repository, AWS CodeCommit creates approval rules that match
+ * the template conditions on every pull request created in the specified repositories.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>BatchDisassociateApprovalRuleTemplateFromRepositories</a>, which removes the association between a template and
+ * specified repositories so that approval rules based on the template are not automatically created when pull requests
+ * are created in those repositories.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateApprovalRuleTemplate</a>, which creates a template for approval rules that can then be associated with one
+ * or more repositories in your AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteApprovalRuleTemplate</a>, which deletes the specified template. It does not remove approval rules on pull
+ * requests already created with the template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DisassociateApprovalRuleTemplateFromRepository</a>, which removes the association between a template and a
+ * repository so that approval rules based on the template are not automatically created when pull requests are created
+ * in the specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetApprovalRuleTemplate</a>, which returns information about an approval rule template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the AWS Region in your AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListAssociatedApprovalRuleTemplatesForRepository</a>, which lists all approval rule templates that are associated
+ * with a specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListRepositoriesForApprovalRuleTemplate</a>, which lists all repositories associated with the specified approval
+ * rule template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateApprovalRuleTemplateDescription</a>, which updates the description of an approval rule template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateApprovalRuleTemplateName</a>, which updates the name of an approval rule template.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateApprovalRuleTemplateContent</a>, which updates the content of an approval rule template.
  * </p>
  * </li>
  * </ul>
@@ -436,6 +562,95 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Creates an association between an approval rule template and a specified repository. Then, the next time a pull
+     * request is created in the repository where the destination reference (if specified) matches the destination
+     * reference (branch) for the pull request, an approval rule that matches the template conditions is automatically
+     * created for that pull request. If no destination references are specified in the template, an approval rule that
+     * matches the template contents is created for all pull requests in that repository.
+     * </p>
+     * 
+     * @param associateApprovalRuleTemplateWithRepositoryRequest
+     * @return Result of the AssociateApprovalRuleTemplateWithRepository operation returned by the service.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @throws MaximumRuleTemplatesAssociatedWithRepositoryException
+     *         The maximum number of approval rule templates for a repository has been exceeded. You cannot associate
+     *         more than 25 approval rule templates with a repository.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required, but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         A specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.AssociateApprovalRuleTemplateWithRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/AssociateApprovalRuleTemplateWithRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateApprovalRuleTemplateWithRepositoryResult associateApprovalRuleTemplateWithRepository(
+            AssociateApprovalRuleTemplateWithRepositoryRequest associateApprovalRuleTemplateWithRepositoryRequest);
+
+    /**
+     * <p>
+     * Creates an association between an approval rule template and one or more specified repositories.
+     * </p>
+     * 
+     * @param batchAssociateApprovalRuleTemplateWithRepositoriesRequest
+     * @return Result of the BatchAssociateApprovalRuleTemplateWithRepositories operation returned by the service.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @throws RepositoryNamesRequiredException
+     *         At least one repository name object is required, but was not specified.
+     * @throws MaximumRepositoryNamesExceededException
+     *         The maximum number of allowed repository names was exceeded. Currently, this number is 100.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.BatchAssociateApprovalRuleTemplateWithRepositories
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchAssociateApprovalRuleTemplateWithRepositories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchAssociateApprovalRuleTemplateWithRepositoriesResult batchAssociateApprovalRuleTemplateWithRepositories(
+            BatchAssociateApprovalRuleTemplateWithRepositoriesRequest batchAssociateApprovalRuleTemplateWithRepositoriesRequest);
+
+    /**
+     * <p>
      * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
      * squash or three-way merge strategy.
      * </p>
@@ -443,11 +658,11 @@ public interface AWSCodeCommit {
      * @param batchDescribeMergeConflictsRequest
      * @return Result of the BatchDescribeMergeConflicts operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -480,8 +695,8 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -500,21 +715,60 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Removes the association between an approval rule template and one or more specified repositories.
+     * </p>
+     * 
+     * @param batchDisassociateApprovalRuleTemplateFromRepositoriesRequest
+     * @return Result of the BatchDisassociateApprovalRuleTemplateFromRepositories operation returned by the service.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @throws RepositoryNamesRequiredException
+     *         At least one repository name object is required, but was not specified.
+     * @throws MaximumRepositoryNamesExceededException
+     *         The maximum number of allowed repository names was exceeded. Currently, this number is 100.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.BatchDisassociateApprovalRuleTemplateFromRepositories
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDisassociateApprovalRuleTemplateFromRepositories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDisassociateApprovalRuleTemplateFromRepositoriesResult batchDisassociateApprovalRuleTemplateFromRepositories(
+            BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest batchDisassociateApprovalRuleTemplateFromRepositoriesRequest);
+
+    /**
+     * <p>
      * Returns information about the contents of one or more commits in a repository.
      * </p>
      * 
      * @param batchGetCommitsRequest
      * @return Result of the BatchGetCommits operation returned by the service.
      * @throws CommitIdsListRequiredException
+     *         A list of commit IDs is required, but was either not specified or the list was empty.
      * @throws CommitIdsLimitExceededException
      *         The maximum number of allowed commit IDs in a batch request is 100. Verify that your batch requests
      *         contains no more than 100 commit IDs, and then try again.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -542,9 +796,9 @@ public interface AWSCodeCommit {
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -552,13 +806,13 @@ public interface AWSCodeCommit {
      *        Represents the input of a batch get repositories operation.
      * @return Result of the BatchGetRepositories operation returned by the service.
      * @throws RepositoryNamesRequiredException
-     *         A repository names object is required but was not specified.
+     *         At least one repository name object is required, but was not specified.
      * @throws MaximumRepositoryNamesExceededException
-     *         The maximum number of allowed repository names was exceeded. Currently, this number is 25.
+     *         The maximum number of allowed repository names was exceeded. Currently, this number is 100.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws EncryptionIntegrityChecksFailedException
@@ -579,7 +833,43 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Creates a new branch in a repository and points the branch to a commit.
+     * Creates a template for approval rules that can then be associated with one or more repositories in your AWS
+     * account. When you associate a template with a repository, AWS CodeCommit creates an approval rule that matches
+     * the conditions of the template for all pull requests that meet the conditions of the template. For more
+     * information, see <a>AssociateApprovalRuleTemplateWithRepository</a>.
+     * </p>
+     * 
+     * @param createApprovalRuleTemplateRequest
+     * @return Result of the CreateApprovalRuleTemplate operation returned by the service.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateNameAlreadyExistsException
+     *         You cannot create an approval rule template with that name because a template with that name already
+     *         exists in this AWS Region for your AWS account. Approval rule template names must be unique.
+     * @throws ApprovalRuleTemplateContentRequiredException
+     *         The content for the approval rule template is empty. You must provide some content for an approval rule
+     *         template. The content cannot be null.
+     * @throws InvalidApprovalRuleTemplateContentException
+     *         The content of the approval rule template is not valid.
+     * @throws InvalidApprovalRuleTemplateDescriptionException
+     *         The description for the approval rule template is not valid because it exceeds the maximum characters
+     *         allowed for a description. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws NumberOfRuleTemplatesExceededException
+     *         The maximum number of approval rule templates has been exceeded for this AWS Region.
+     * @sample AWSCodeCommit.CreateApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateApprovalRuleTemplateResult createApprovalRuleTemplate(CreateApprovalRuleTemplateRequest createApprovalRuleTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a branch in a repository and points the branch to a commit.
      * </p>
      * <note>
      * <p>
@@ -592,17 +882,17 @@ public interface AWSCodeCommit {
      *        Represents the input of a create branch operation.
      * @return Result of the CreateBranch operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws BranchNameExistsException
      *         The specified branch name already exists.
      * @throws InvalidBranchNameException
@@ -638,11 +928,11 @@ public interface AWSCodeCommit {
      * @param createCommitRequest
      * @return Result of the CreateCommit operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -660,13 +950,13 @@ public interface AWSCodeCommit {
      *         The file could not be added because the provided parent commit ID is not the current tip of the specified
      *         branch. To view the full commit ID of the current head of the branch, use <a>GetBranch</a>.
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws BranchDoesNotExistException
      *         The specified branch does not exist.
      * @throws BranchNameIsTagNameException
-     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         The specified branch name is not valid because it is a tag name. Enter the name of a branch in the
      *         repository. For a list of valid branch names, use <a>ListBranches</a>.
      * @throws FileEntryRequiredException
      *         The commit cannot be created because no files have been specified as added, updated, or changed (PutFile
@@ -681,7 +971,7 @@ public interface AWSCodeCommit {
      *         The commit cannot be created because no source files or file content have been specified for the commit.
      * @throws FileContentAndSourceFileSpecifiedException
      *         The commit cannot be created because both a source file and file content have been specified for the same
-     *         file. You cannot provide both. Either specify a source file, or provide the file content directly.
+     *         file. You cannot provide both. Either specify a source file or provide the file content directly.
      * @throws PathRequiredException
      *         The folderPath for a location cannot be null.
      * @throws InvalidPathException
@@ -691,11 +981,11 @@ public interface AWSCodeCommit {
      *         file path. For example, you cannot make the same delete request to the same file in the same file path
      *         twice, or make a delete request and a move request to the same file as part of the same commit.
      * @throws FileDoesNotExistException
-     *         The specified file does not exist. Verify that you have provided the correct name of the file, including
-     *         its full path and extension.
+     *         The specified file does not exist. Verify that you have used the correct file name, full path, and
+     *         extension.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
-     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     *         The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file
+     *         content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
      *         The commit cannot be created because at least one of the overall changes in the commit results in a
      *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
@@ -705,8 +995,8 @@ public interface AWSCodeCommit {
      * @throws RestrictedSourceFileException
      *         The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.
      * @throws FileModeRequiredException
-     *         The commit cannot be created because a file mode is required to update mode permissions for an existing
-     *         file, but no file mode has been specified.
+     *         The commit cannot be created because no file mode has been specified. A file mode is required to update
+     *         mode permissions for a file.
      * @throws InvalidFileModeException
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
@@ -755,11 +1045,11 @@ public interface AWSCodeCommit {
      * @param createPullRequestRequest
      * @return Result of the CreatePullRequest operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -776,19 +1066,19 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @throws ClientRequestTokenRequiredException
      *         A client request token is required. A client request token is an unique, client-generated idempotency
-     *         token that when provided in a request, ensures the request cannot be repeated with a changed parameter.
-     *         If a request is received with the same parameters and a token is included, the request will return
+     *         token that, when provided in a request, ensures the request cannot be repeated with a changed parameter.
+     *         If a request is received with the same parameters and a token is included, the request returns
      *         information about the initial request that used that token.
      * @throws InvalidClientRequestTokenException
      *         The client request token is not valid.
      * @throws IdempotencyParameterMismatchException
      *         The client request token is not valid. Either the token is not in a valid format, or the token has been
-     *         used in a previous request and cannot be re-used.
+     *         used in a previous request and cannot be reused.
      * @throws ReferenceNameRequiredException
      *         A reference name is required, but none was provided.
      * @throws InvalidReferenceNameException
      *         The specified reference name format is not valid. Reference names must conform to the Git references
-     *         format, for example refs/heads/master. For more information, see <a
+     *         format (for example, refs/heads/master). For more information, see <a
      *         href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or
      *         consult your Git documentation.
      * @throws ReferenceDoesNotExistException
@@ -800,7 +1090,7 @@ public interface AWSCodeCommit {
      * @throws InvalidTitleException
      *         The title of the pull request is not valid. Pull request titles cannot exceed 100 characters in length.
      * @throws InvalidDescriptionException
-     *         The pull request description is not valid. Descriptions are limited to 1,000 characters in length.
+     *         The pull request description is not valid. Descriptions cannot be more than 1,000 characters.
      * @throws TargetsRequiredException
      *         An array of target objects is required. It cannot be empty or null.
      * @throws InvalidTargetsException
@@ -821,13 +1111,61 @@ public interface AWSCodeCommit {
      *         number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then
      *         try again.
      * @throws SourceAndDestinationAreSameException
-     *         The source branch and the destination branch for the pull request are the same. You must specify
-     *         different branches for the source and destination.
+     *         The source branch and destination branch for the pull request are the same. You must specify different
+     *         branches for the source and destination.
      * @sample AWSCodeCommit.CreatePullRequest
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest" target="_top">AWS
      *      API Documentation</a>
      */
     CreatePullRequestResult createPullRequest(CreatePullRequestRequest createPullRequestRequest);
+
+    /**
+     * <p>
+     * Creates an approval rule for a pull request.
+     * </p>
+     * 
+     * @param createPullRequestApprovalRuleRequest
+     * @return Result of the CreatePullRequestApprovalRule operation returned by the service.
+     * @throws ApprovalRuleNameRequiredException
+     *         An approval rule name is required, but was not specified.
+     * @throws InvalidApprovalRuleNameException
+     *         The name for the approval rule is not valid.
+     * @throws ApprovalRuleNameAlreadyExistsException
+     *         An approval rule with that name already exists. Approval rule names must be unique within the scope of a
+     *         pull request.
+     * @throws ApprovalRuleContentRequiredException
+     *         The content for the approval rule is empty. You must provide some content for an approval rule. The
+     *         content cannot be null.
+     * @throws InvalidApprovalRuleContentException
+     *         The content for the approval rule is not valid.
+     * @throws NumberOfRulesExceededException
+     *         The approval rule cannot be added. The pull request has the maximum number of approval rules associated
+     *         with it.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws PullRequestAlreadyClosedException
+     *         The pull request status cannot be updated because it is already closed.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.CreatePullRequestApprovalRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequestApprovalRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreatePullRequestApprovalRuleResult createPullRequestApprovalRule(CreatePullRequestApprovalRuleRequest createPullRequestApprovalRuleRequest);
 
     /**
      * <p>
@@ -840,11 +1178,11 @@ public interface AWSCodeCommit {
      * @throws RepositoryNameExistsException
      *         The specified repository name already exists.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws InvalidRepositoryDescriptionException
@@ -879,7 +1217,7 @@ public interface AWSCodeCommit {
      * <p>
      * Creates an unreferenced commit that represents the result of merging two branches using a specified merge
      * strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the
-     * fast-forward merge strategy, as that strategy does not create a merge commit.
+     * fast-forward merge strategy because that strategy does not create a merge commit.
      * </p>
      * <note>
      * <p>
@@ -891,11 +1229,11 @@ public interface AWSCodeCommit {
      * @param createUnreferencedMergeCommitRequest
      * @return Result of the CreateUnreferencedMergeCommit operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -934,7 +1272,7 @@ public interface AWSCodeCommit {
      * @throws InvalidReplacementTypeException
      *         Automerge was specified for resolving the conflict, but the specified replacement type is not valid.
      * @throws ReplacementContentRequiredException
-     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     *         USE_NEW_CONTENT was specified, but no replacement content has been provided.
      * @throws InvalidReplacementContentException
      *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
      *         missing.
@@ -943,8 +1281,8 @@ public interface AWSCodeCommit {
      * @throws InvalidPathException
      *         The specified path is not valid.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
-     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     *         The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file
+     *         content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
      *         The commit cannot be created because at least one of the overall changes in the commit results in a
      *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
@@ -952,14 +1290,14 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws ConcurrentReferenceUpdateException
      *         The merge cannot be completed because the target branch has been modified. Another user might have
      *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
      * @throws FileModeRequiredException
-     *         The commit cannot be created because a file mode is required to update mode permissions for an existing
-     *         file, but no file mode has been specified.
+     *         The commit cannot be created because no file mode has been specified. A file mode is required to update
+     *         mode permissions for a file.
      * @throws InvalidFileModeException
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
@@ -988,6 +1326,29 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Deletes a specified approval rule template. Deleting a template does not remove approval rules on pull requests
+     * already created with the template.
+     * </p>
+     * 
+     * @param deleteApprovalRuleTemplateRequest
+     * @return Result of the DeleteApprovalRuleTemplate operation returned by the service.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateInUseException
+     *         The approval rule template is associated with one or more repositories. You cannot delete a template that
+     *         is associated with a repository. Remove all associations, and then try again.
+     * @sample AWSCodeCommit.DeleteApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApprovalRuleTemplateResult deleteApprovalRuleTemplate(DeleteApprovalRuleTemplateRequest deleteApprovalRuleTemplateRequest);
+
+    /**
+     * <p>
      * Deletes a branch from a repository, unless that branch is the default branch for the repository.
      * </p>
      * 
@@ -995,17 +1356,17 @@ public interface AWSCodeCommit {
      *        Represents the input of a delete branch operation.
      * @return Result of the DeleteBranch operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws DefaultBranchCannotBeDeletedException
@@ -1035,7 +1396,7 @@ public interface AWSCodeCommit {
      * @param deleteCommentContentRequest
      * @return Result of the DeleteCommentContent operation returned by the service.
      * @throws CommentDoesNotExistException
-     *         No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.
+     *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
      * @throws CommentIdRequiredException
      *         The comment ID is missing or null. A comment ID is required.
      * @throws InvalidCommentIdException
@@ -1051,17 +1412,17 @@ public interface AWSCodeCommit {
     /**
      * <p>
      * Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision.
-     * The file will still exist in the commits prior to the commit that contains the deletion.
+     * The file still exists in the commits earlier to the commit that contains the deletion.
      * </p>
      * 
      * @param deleteFileRequest
      * @return Result of the DeleteFile operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1083,16 +1444,16 @@ public interface AWSCodeCommit {
      * @throws InvalidPathException
      *         The specified path is not valid.
      * @throws FileDoesNotExistException
-     *         The specified file does not exist. Verify that you have provided the correct name of the file, including
-     *         its full path and extension.
+     *         The specified file does not exist. Verify that you have used the correct file name, full path, and
+     *         extension.
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws BranchDoesNotExistException
      *         The specified branch does not exist.
      * @throws BranchNameIsTagNameException
-     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         The specified branch name is not valid because it is a tag name. Enter the name of a branch in the
      *         repository. For a list of valid branch names, use <a>ListBranches</a>.
      * @throws NameLengthExceededException
      *         The user name is not valid because it has exceeded the character limit for author names.
@@ -1119,12 +1480,55 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.
+     * Deletes an approval rule from a specified pull request. Approval rules can be deleted from a pull request only if
+     * the pull request is open, and if the approval rule was created specifically for a pull request and not generated
+     * from an approval rule template associated with the repository where the pull request was created. You cannot
+     * delete an approval rule from a merged or closed pull request.
+     * </p>
+     * 
+     * @param deletePullRequestApprovalRuleRequest
+     * @return Result of the DeletePullRequestApprovalRule operation returned by the service.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws PullRequestAlreadyClosedException
+     *         The pull request status cannot be updated because it is already closed.
+     * @throws ApprovalRuleNameRequiredException
+     *         An approval rule name is required, but was not specified.
+     * @throws InvalidApprovalRuleNameException
+     *         The name for the approval rule is not valid.
+     * @throws CannotDeleteApprovalRuleFromTemplateException
+     *         The approval rule cannot be deleted from the pull request because it was created by an approval rule
+     *         template and applied to the pull request automatically.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.DeletePullRequestApprovalRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeletePullRequestApprovalRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeletePullRequestApprovalRuleResult deletePullRequestApprovalRule(DeletePullRequestApprovalRuleRequest deletePullRequestApprovalRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a repository. If a specified repository was already deleted, a null repository ID is returned.
      * </p>
      * <important>
      * <p>
      * Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future
-     * push calls to the deleted repository will fail.
+     * push calls to the deleted repository fail.
      * </p>
      * </important>
      * 
@@ -1132,11 +1536,11 @@ public interface AWSCodeCommit {
      *        Represents the input of a delete repository operation.
      * @return Result of the DeleteRepository operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws EncryptionIntegrityChecksFailedException
@@ -1159,17 +1563,17 @@ public interface AWSCodeCommit {
      * <p>
      * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
      * squash or three-way merge strategy. If the merge option for the attempted merge is specified as
-     * FAST_FORWARD_MERGE, an exception will be thrown.
+     * FAST_FORWARD_MERGE, an exception is thrown.
      * </p>
      * 
      * @param describeMergeConflictsRequest
      * @return Result of the DescribeMergeConflicts operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1196,8 +1600,8 @@ public interface AWSCodeCommit {
      * @throws InvalidPathException
      *         The specified path is not valid.
      * @throws FileDoesNotExistException
-     *         The specified file does not exist. Verify that you have provided the correct name of the file, including
-     *         its full path and extension.
+     *         The specified file does not exist. Verify that you have used the correct file name, full path, and
+     *         extension.
      * @throws InvalidMaxMergeHunksException
      *         The specified value for the number of merge hunks to return is not valid.
      * @throws InvalidConflictDetailLevelException
@@ -1207,8 +1611,8 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -1269,24 +1673,130 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Returns the base-64 encoded content of an individual blob within a repository.
+     * Removes the association between a template and a repository so that approval rules based on the template are not
+     * automatically created when pull requests are created in the specified repository. This does not delete any
+     * approval rules previously created for pull requests through the template association.
+     * </p>
+     * 
+     * @param disassociateApprovalRuleTemplateFromRepositoryRequest
+     * @return Result of the DisassociateApprovalRuleTemplateFromRepository operation returned by the service.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required, but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         A specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.DisassociateApprovalRuleTemplateFromRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DisassociateApprovalRuleTemplateFromRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateApprovalRuleTemplateFromRepositoryResult disassociateApprovalRuleTemplateFromRepository(
+            DisassociateApprovalRuleTemplateFromRepositoryRequest disassociateApprovalRuleTemplateFromRepositoryRequest);
+
+    /**
+     * <p>
+     * Evaluates whether a pull request has met all the conditions specified in its associated approval rules.
+     * </p>
+     * 
+     * @param evaluatePullRequestApprovalRulesRequest
+     * @return Result of the EvaluatePullRequestApprovalRules operation returned by the service.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws InvalidRevisionIdException
+     *         The revision ID is not valid. Use GetPullRequest to determine the value.
+     * @throws RevisionIdRequiredException
+     *         A revision ID is required, but was not provided.
+     * @throws RevisionNotCurrentException
+     *         The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to
+     *         retrieve the current revision ID.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.EvaluatePullRequestApprovalRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/EvaluatePullRequestApprovalRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EvaluatePullRequestApprovalRulesResult evaluatePullRequestApprovalRules(EvaluatePullRequestApprovalRulesRequest evaluatePullRequestApprovalRulesRequest);
+
+    /**
+     * <p>
+     * Returns information about a specified approval rule template.
+     * </p>
+     * 
+     * @param getApprovalRuleTemplateRequest
+     * @return Result of the GetApprovalRuleTemplate operation returned by the service.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @sample AWSCodeCommit.GetApprovalRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetApprovalRuleTemplateResult getApprovalRuleTemplate(GetApprovalRuleTemplateRequest getApprovalRuleTemplateRequest);
+
+    /**
+     * <p>
+     * Returns the base-64 encoded content of an individual blob in a repository.
      * </p>
      * 
      * @param getBlobRequest
      *        Represents the input of a get blob operation.
      * @return Result of the GetBlob operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws BlobIdRequiredException
-     *         A blob ID is required but was not specified.
+     *         A blob ID is required, but was not specified.
      * @throws InvalidBlobIdException
      *         The specified blob is not valid.
      * @throws BlobIdDoesNotExistException
@@ -1320,17 +1830,17 @@ public interface AWSCodeCommit {
      *        Represents the input of a get branch operation.
      * @return Result of the GetBranch operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws BranchDoesNotExistException
@@ -1359,7 +1869,7 @@ public interface AWSCodeCommit {
      * @param getCommentRequest
      * @return Result of the GetComment operation returned by the service.
      * @throws CommentDoesNotExistException
-     *         No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.
+     *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
      * @throws CommentIdRequiredException
      *         The comment ID is missing or null. A comment ID is required.
      * @throws InvalidCommentIdException
@@ -1380,13 +1890,13 @@ public interface AWSCodeCommit {
      * @param getCommentsForComparedCommitRequest
      * @return Result of the GetCommentsForComparedCommit operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws CommitIdRequiredException
@@ -1432,13 +1942,13 @@ public interface AWSCodeCommit {
      *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
      *         is in the specified repository, and then try again.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws CommitIdRequiredException
@@ -1480,11 +1990,11 @@ public interface AWSCodeCommit {
      *        Represents the input of a get commit operation.
      * @return Result of the GetCommit operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1513,20 +2023,20 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or
+     * Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or
      * other fully qualified reference). Results can be limited to a specified path.
      * </p>
      * 
      * @param getDifferencesRequest
      * @return Result of the GetDifferences operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws InvalidContinuationTokenException
@@ -1570,11 +2080,11 @@ public interface AWSCodeCommit {
      * @param getFileRequest
      * @return Result of the GetFile operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1589,8 +2099,8 @@ public interface AWSCodeCommit {
      * @throws InvalidPathException
      *         The specified path is not valid.
      * @throws FileDoesNotExistException
-     *         The specified file does not exist. Verify that you have provided the correct name of the file, including
-     *         its full path and extension.
+     *         The specified file does not exist. Verify that you have used the correct file name, full path, and
+     *         extension.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -1619,11 +2129,11 @@ public interface AWSCodeCommit {
      * @param getFolderRequest
      * @return Result of the GetFolder operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1638,8 +2148,8 @@ public interface AWSCodeCommit {
      * @throws InvalidPathException
      *         The specified path is not valid.
      * @throws FolderDoesNotExistException
-     *         The specified folder does not exist. Either the folder name is not correct, or you did not provide the
-     *         full path to the folder.
+     *         The specified folder does not exist. Either the folder name is not correct, or you did not enter the full
+     *         path to the folder.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -1664,11 +2174,11 @@ public interface AWSCodeCommit {
      * @param getMergeCommitRequest
      * @return Result of the GetMergeCommit operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1709,11 +2219,11 @@ public interface AWSCodeCommit {
      * @param getMergeConflictsRequest
      * @return Result of the GetMergeConflicts operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1749,8 +2259,8 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -1770,17 +2280,17 @@ public interface AWSCodeCommit {
     /**
      * <p>
      * Returns information about the merge options available for merging two specified branches. For details about why a
-     * particular merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
+     * merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
      * </p>
      * 
      * @param getMergeOptionsRequest
      * @return Result of the GetMergeOptions operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1802,8 +2312,8 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -1853,14 +2363,87 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Gets information about the approval states for a specified pull request. Approval states only apply to pull
+     * requests that have one or more approval rules applied to them.
+     * </p>
+     * 
+     * @param getPullRequestApprovalStatesRequest
+     * @return Result of the GetPullRequestApprovalStates operation returned by the service.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws InvalidRevisionIdException
+     *         The revision ID is not valid. Use GetPullRequest to determine the value.
+     * @throws RevisionIdRequiredException
+     *         A revision ID is required, but was not provided.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.GetPullRequestApprovalStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestApprovalStates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPullRequestApprovalStatesResult getPullRequestApprovalStates(GetPullRequestApprovalStatesRequest getPullRequestApprovalStatesRequest);
+
+    /**
+     * <p>
+     * Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so,
+     * the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the
+     * pull request.
+     * </p>
+     * 
+     * @param getPullRequestOverrideStateRequest
+     * @return Result of the GetPullRequestOverrideState operation returned by the service.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws InvalidRevisionIdException
+     *         The revision ID is not valid. Use GetPullRequest to determine the value.
+     * @throws RevisionIdRequiredException
+     *         A revision ID is required, but was not provided.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.GetPullRequestOverrideState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestOverrideState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPullRequestOverrideStateResult getPullRequestOverrideState(GetPullRequestOverrideStateRequest getPullRequestOverrideStateRequest);
+
+    /**
+     * <p>
      * Returns information about a repository.
      * </p>
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -1868,13 +2451,13 @@ public interface AWSCodeCommit {
      *        Represents the input of a get repository operation.
      * @return Result of the GetRepository operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws EncryptionIntegrityChecksFailedException
@@ -1902,11 +2485,11 @@ public interface AWSCodeCommit {
      *        Represents the input of a get repository triggers operation.
      * @return Result of the GetRepositoryTriggers operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -1929,6 +2512,63 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not
+     * specified, the AWS Region where you are signed in is used.
+     * </p>
+     * 
+     * @param listApprovalRuleTemplatesRequest
+     * @return Result of the ListApprovalRuleTemplates operation returned by the service.
+     * @throws InvalidMaxResultsException
+     *         The specified number of maximum results is not valid.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
+     * @sample AWSCodeCommit.ListApprovalRuleTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListApprovalRuleTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApprovalRuleTemplatesResult listApprovalRuleTemplates(ListApprovalRuleTemplatesRequest listApprovalRuleTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists all approval rule templates that are associated with a specified repository.
+     * </p>
+     * 
+     * @param listAssociatedApprovalRuleTemplatesForRepositoryRequest
+     * @return Result of the ListAssociatedApprovalRuleTemplatesForRepository operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required, but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         A specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidMaxResultsException
+     *         The specified number of maximum results is not valid.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.ListAssociatedApprovalRuleTemplatesForRepository
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListAssociatedApprovalRuleTemplatesForRepository"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssociatedApprovalRuleTemplatesForRepositoryResult listAssociatedApprovalRuleTemplatesForRepository(
+            ListAssociatedApprovalRuleTemplatesForRepositoryRequest listAssociatedApprovalRuleTemplatesForRepositoryRequest);
+
+    /**
+     * <p>
      * Gets information about one or more branches in a repository.
      * </p>
      * 
@@ -1936,13 +2576,13 @@ public interface AWSCodeCommit {
      *        Represents the input of a list branches operation.
      * @return Result of the ListBranches operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws EncryptionIntegrityChecksFailedException
@@ -1980,11 +2620,11 @@ public interface AWSCodeCommit {
      * @throws AuthorDoesNotExistException
      *         The specified Amazon Resource Name (ARN) does not exist in the AWS account.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -2031,10 +2671,48 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Lists all repositories associated with the specified approval rule template.
+     * </p>
+     * 
+     * @param listRepositoriesForApprovalRuleTemplateRequest
+     * @return Result of the ListRepositoriesForApprovalRuleTemplate operation returned by the service.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @throws InvalidMaxResultsException
+     *         The specified number of maximum results is not valid.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.ListRepositoriesForApprovalRuleTemplate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositoriesForApprovalRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRepositoriesForApprovalRuleTemplateResult listRepositoriesForApprovalRuleTemplate(
+            ListRepositoriesForApprovalRuleTemplateRequest listRepositoriesForApprovalRuleTemplateRequest);
+
+    /**
+     * <p>
      * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
      * resources in AWS CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2042,9 +2720,9 @@ public interface AWSCodeCommit {
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws ResourceArnRequiredException
@@ -2071,11 +2749,11 @@ public interface AWSCodeCommit {
      * @param mergeBranchesByFastForwardRequest
      * @return Result of the MergeBranchesByFastForward operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -2095,9 +2773,9 @@ public interface AWSCodeCommit {
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws BranchNameIsTagNameException
-     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         The specified branch name is not valid because it is a tag name. Enter the name of a branch in the
      *         repository. For a list of valid branch names, use <a>ListBranches</a>.
      * @throws BranchDoesNotExistException
      *         The specified branch does not exist.
@@ -2131,11 +2809,11 @@ public interface AWSCodeCommit {
      * @param mergeBranchesBySquashRequest
      * @return Result of the MergeBranchesBySquash operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -2155,9 +2833,9 @@ public interface AWSCodeCommit {
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws BranchNameIsTagNameException
-     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         The specified branch name is not valid because it is a tag name. Enter the name of a branch in the
      *         repository. For a list of valid branch names, use <a>ListBranches</a>.
      * @throws BranchDoesNotExistException
      *         The specified branch does not exist.
@@ -2180,7 +2858,7 @@ public interface AWSCodeCommit {
      * @throws InvalidReplacementTypeException
      *         Automerge was specified for resolving the conflict, but the specified replacement type is not valid.
      * @throws ReplacementContentRequiredException
-     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     *         USE_NEW_CONTENT was specified, but no replacement content has been provided.
      * @throws InvalidReplacementContentException
      *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
      *         missing.
@@ -2189,8 +2867,8 @@ public interface AWSCodeCommit {
      * @throws InvalidPathException
      *         The specified path is not valid.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
-     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     *         The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file
+     *         content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
      *         The commit cannot be created because at least one of the overall changes in the commit results in a
      *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
@@ -2198,11 +2876,11 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws FileModeRequiredException
-     *         The commit cannot be created because a file mode is required to update mode permissions for an existing
-     *         file, but no file mode has been specified.
+     *         The commit cannot be created because no file mode has been specified. A file mode is required to update
+     *         mode permissions for a file.
      * @throws InvalidFileModeException
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
@@ -2240,11 +2918,11 @@ public interface AWSCodeCommit {
      * @param mergeBranchesByThreeWayRequest
      * @return Result of the MergeBranchesByThreeWay operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -2264,9 +2942,9 @@ public interface AWSCodeCommit {
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws BranchNameIsTagNameException
-     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         The specified branch name is not valid because it is a tag name. Enter the name of a branch in the
      *         repository. For a list of valid branch names, use <a>ListBranches</a>.
      * @throws BranchDoesNotExistException
      *         The specified branch does not exist.
@@ -2292,7 +2970,7 @@ public interface AWSCodeCommit {
      * @throws InvalidReplacementTypeException
      *         Automerge was specified for resolving the conflict, but the specified replacement type is not valid.
      * @throws ReplacementContentRequiredException
-     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     *         USE_NEW_CONTENT was specified, but no replacement content has been provided.
      * @throws InvalidReplacementContentException
      *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
      *         missing.
@@ -2301,8 +2979,8 @@ public interface AWSCodeCommit {
      * @throws InvalidPathException
      *         The specified path is not valid.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
-     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     *         The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file
+     *         content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
      *         The commit cannot be created because at least one of the overall changes in the commit results in a
      *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
@@ -2310,11 +2988,11 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws FileModeRequiredException
-     *         The commit cannot be created because a file mode is required to update mode permissions for an existing
-     *         file, but no file mode has been specified.
+     *         The commit cannot be created because no file mode has been specified. A file mode is required to update
+     *         mode permissions for a file.
      * @throws InvalidFileModeException
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
      *         <a>PutFile</a>.
@@ -2375,11 +3053,11 @@ public interface AWSCodeCommit {
      *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
      *         the correct repository name for the pull request ID.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -2387,6 +3065,9 @@ public interface AWSCodeCommit {
      * @throws ConcurrentReferenceUpdateException
      *         The merge cannot be completed because the target branch has been modified. Another user might have
      *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
+     * @throws PullRequestApprovalRulesNotSatisfiedException
+     *         The pull request cannot be merged because one or more approval rules applied to the pull request have
+     *         conditions that have not been met.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -2454,7 +3135,7 @@ public interface AWSCodeCommit {
      *         More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict
      *         resolution entry.
      * @throws ReplacementContentRequiredException
-     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     *         USE_NEW_CONTENT was specified, but no replacement content has been provided.
      * @throws MaximumConflictResolutionEntriesExceededException
      *         The number of allowed conflict resolution entries was exceeded.
      * @throws ConcurrentReferenceUpdateException
@@ -2471,8 +3152,8 @@ public interface AWSCodeCommit {
      *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
      *         missing.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
-     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     *         The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file
+     *         content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
      *         The commit cannot be created because at least one of the overall changes in the commit results in a
      *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
@@ -2480,14 +3161,14 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -2495,6 +3176,9 @@ public interface AWSCodeCommit {
      * @throws RepositoryNotAssociatedWithPullRequestException
      *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
      *         the correct repository name for the pull request ID.
+     * @throws PullRequestApprovalRulesNotSatisfiedException
+     *         The pull request cannot be merged because one or more approval rules applied to the pull request have
+     *         conditions that have not been met.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -2563,7 +3247,7 @@ public interface AWSCodeCommit {
      *         More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict
      *         resolution entry.
      * @throws ReplacementContentRequiredException
-     *         USE_NEW_CONTENT was specified but no replacement content has been provided.
+     *         USE_NEW_CONTENT was specified, but no replacement content has been provided.
      * @throws MaximumConflictResolutionEntriesExceededException
      *         The number of allowed conflict resolution entries was exceeded.
      * @throws PathRequiredException
@@ -2577,8 +3261,8 @@ public interface AWSCodeCommit {
      *         Automerge was specified for resolving the conflict, but the replacement type is not valid or content is
      *         missing.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
-     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     *         The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file
+     *         content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
      *         The commit cannot be created because at least one of the overall changes in the commit results in a
      *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
@@ -2586,14 +3270,14 @@ public interface AWSCodeCommit {
      * @throws MaximumFileContentToLoadExceededException
      *         The number of files to load exceeds the allowed limit.
      * @throws MaximumItemsToCompareExceededException
-     *         The maximum number of items to compare between the source or destination branches and the merge base has
-     *         exceeded the maximum allowed.
+     *         The number of items to compare between the source or destination branches and the merge base has exceeded
+     *         the maximum allowed.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -2604,6 +3288,9 @@ public interface AWSCodeCommit {
      * @throws ConcurrentReferenceUpdateException
      *         The merge cannot be completed because the target branch has been modified. Another user might have
      *         modified the target branch while the merge was in progress. Wait a few minutes, and then try again.
+     * @throws PullRequestApprovalRulesNotSatisfiedException
+     *         The pull request cannot be merged because one or more approval rules applied to the pull request have
+     *         conditions that have not been met.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -2622,38 +3309,83 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Sets aside (overrides) all approval rule requirements for a specified pull request.
+     * </p>
+     * 
+     * @param overridePullRequestApprovalRulesRequest
+     * @return Result of the OverridePullRequestApprovalRules operation returned by the service.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws InvalidRevisionIdException
+     *         The revision ID is not valid. Use GetPullRequest to determine the value.
+     * @throws RevisionIdRequiredException
+     *         A revision ID is required, but was not provided.
+     * @throws InvalidOverrideStatusException
+     *         The override status is not valid. Valid statuses are OVERRIDE and REVOKE.
+     * @throws OverrideStatusRequiredException
+     *         An override status is required, but no value was provided. Valid values include OVERRIDE and REVOKE.
+     * @throws OverrideAlreadySetException
+     *         The pull request has already had its approval rules set to override.
+     * @throws RevisionNotCurrentException
+     *         The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to
+     *         retrieve the current revision ID.
+     * @throws PullRequestAlreadyClosedException
+     *         The pull request status cannot be updated because it is already closed.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.OverridePullRequestApprovalRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/OverridePullRequestApprovalRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    OverridePullRequestApprovalRulesResult overridePullRequestApprovalRules(OverridePullRequestApprovalRulesRequest overridePullRequestApprovalRulesRequest);
+
+    /**
+     * <p>
      * Posts a comment on the comparison between two commits.
      * </p>
      * 
      * @param postCommentForComparedCommitRequest
      * @return Result of the PostCommentForComparedCommit operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws ClientRequestTokenRequiredException
      *         A client request token is required. A client request token is an unique, client-generated idempotency
-     *         token that when provided in a request, ensures the request cannot be repeated with a changed parameter.
-     *         If a request is received with the same parameters and a token is included, the request will return
+     *         token that, when provided in a request, ensures the request cannot be repeated with a changed parameter.
+     *         If a request is received with the same parameters and a token is included, the request returns
      *         information about the initial request that used that token.
      * @throws InvalidClientRequestTokenException
      *         The client request token is not valid.
      * @throws IdempotencyParameterMismatchException
      *         The client request token is not valid. Either the token is not in a valid format, or the token has been
-     *         used in a previous request and cannot be re-used.
+     *         used in a previous request and cannot be reused.
      * @throws CommentContentRequiredException
      *         The comment is empty. You must provide some content for a comment. The content cannot be null.
      * @throws CommentContentSizeLimitExceededException
      *         The comment is too large. Comments are limited to 1,000 characters.
      * @throws InvalidFileLocationException
-     *         The location of the file is not valid. Make sure that you include the extension of the file as well as
-     *         the file name.
+     *         The location of the file is not valid. Make sure that you include the file name and extension.
      * @throws InvalidRelativeFileVersionEnumException
      *         Either the enum is not in a valid format, or the specified file version enum is not valid in respect to
      *         the current file version.
@@ -2711,32 +3443,31 @@ public interface AWSCodeCommit {
      *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
      *         the correct repository name for the pull request ID.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws ClientRequestTokenRequiredException
      *         A client request token is required. A client request token is an unique, client-generated idempotency
-     *         token that when provided in a request, ensures the request cannot be repeated with a changed parameter.
-     *         If a request is received with the same parameters and a token is included, the request will return
+     *         token that, when provided in a request, ensures the request cannot be repeated with a changed parameter.
+     *         If a request is received with the same parameters and a token is included, the request returns
      *         information about the initial request that used that token.
      * @throws InvalidClientRequestTokenException
      *         The client request token is not valid.
      * @throws IdempotencyParameterMismatchException
      *         The client request token is not valid. Either the token is not in a valid format, or the token has been
-     *         used in a previous request and cannot be re-used.
+     *         used in a previous request and cannot be reused.
      * @throws CommentContentRequiredException
      *         The comment is empty. You must provide some content for a comment. The content cannot be null.
      * @throws CommentContentSizeLimitExceededException
      *         The comment is too large. Comments are limited to 1,000 characters.
      * @throws InvalidFileLocationException
-     *         The location of the file is not valid. Make sure that you include the extension of the file as well as
-     *         the file name.
+     *         The location of the file is not valid. Make sure that you include the file name and extension.
      * @throws InvalidRelativeFileVersionEnumException
      *         Either the enum is not in a valid format, or the specified file version enum is not valid in respect to
      *         the current file version.
@@ -2786,20 +3517,20 @@ public interface AWSCodeCommit {
      * @return Result of the PostCommentReply operation returned by the service.
      * @throws ClientRequestTokenRequiredException
      *         A client request token is required. A client request token is an unique, client-generated idempotency
-     *         token that when provided in a request, ensures the request cannot be repeated with a changed parameter.
-     *         If a request is received with the same parameters and a token is included, the request will return
+     *         token that, when provided in a request, ensures the request cannot be repeated with a changed parameter.
+     *         If a request is received with the same parameters and a token is included, the request returns
      *         information about the initial request that used that token.
      * @throws InvalidClientRequestTokenException
      *         The client request token is not valid.
      * @throws IdempotencyParameterMismatchException
      *         The client request token is not valid. Either the token is not in a valid format, or the token has been
-     *         used in a previous request and cannot be re-used.
+     *         used in a previous request and cannot be reused.
      * @throws CommentContentRequiredException
      *         The comment is empty. You must provide some content for a comment. The content cannot be null.
      * @throws CommentContentSizeLimitExceededException
      *         The comment is too large. Comments are limited to 1,000 characters.
      * @throws CommentDoesNotExistException
-     *         No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.
+     *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
      * @throws CommentIdRequiredException
      *         The comment ID is missing or null. A comment ID is required.
      * @throws InvalidCommentIdException
@@ -2819,11 +3550,11 @@ public interface AWSCodeCommit {
      * @param putFileRequest
      * @return Result of the PutFile operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryDoesNotExistException
@@ -2844,8 +3575,8 @@ public interface AWSCodeCommit {
      *         The file cannot be added because it is empty. Empty files cannot be added to the repository with this
      *         API.
      * @throws FileContentSizeLimitExceededException
-     *         The file cannot be added because it is too large. The maximum file size that can be added is 6 MB, and
-     *         the combined file content change size is 7 MB. Consider making these changes using a Git client.
+     *         The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file
+     *         content change size is 7 MB. Consider making these changes using a Git client.
      * @throws FolderContentSizeLimitExceededException
      *         The commit cannot be created because at least one of the overall changes in the commit results in a
      *         folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or
@@ -2855,13 +3586,13 @@ public interface AWSCodeCommit {
      * @throws InvalidPathException
      *         The specified path is not valid.
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws BranchDoesNotExistException
      *         The specified branch does not exist.
      * @throws BranchNameIsTagNameException
-     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         The specified branch name is not valid because it is a tag name. Enter the name of a branch in the
      *         repository. For a list of valid branch names, use <a>ListBranches</a>.
      * @throws InvalidFileModeException
      *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
@@ -2907,24 +3638,24 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Replaces all triggers for a repository. This can be used to create or delete triggers.
+     * Replaces all triggers for a repository. Used to create or delete triggers.
      * </p>
      * 
      * @param putRepositoryTriggersRequest
-     *        Represents the input ofa put repository triggers operation.
+     *        Represents the input of a put repository triggers operation.
      * @return Result of the PutRepositoryTriggers operation returned by the service.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryTriggersListRequiredException
-     *         The list of triggers for the repository is required but was not specified.
+     *         The list of triggers for the repository is required, but was not specified.
      * @throws MaximumRepositoryTriggersExceededException
      *         The number of triggers allowed for the repository was exceeded.
      * @throws InvalidRepositoryTriggerNameException
@@ -2933,8 +3664,8 @@ public interface AWSCodeCommit {
      *         The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most
      *         common reason for this error is that the ARN does not meet the requirements for the service type.
      * @throws InvalidRepositoryTriggerRegionException
-     *         The region for the trigger target does not match the region for the repository. Triggers must be created
-     *         in the same region as the target for the trigger.
+     *         The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be
+     *         created in the same Region as the target for the trigger.
      * @throws InvalidRepositoryTriggerCustomDataException
      *         The custom data provided for the trigger is not valid.
      * @throws MaximumBranchesExceededException
@@ -2945,13 +3676,13 @@ public interface AWSCodeCommit {
      *         One or more events specified for the trigger is not valid. Check to make sure that all events specified
      *         match the requirements for allowed events.
      * @throws RepositoryTriggerNameRequiredException
-     *         A name for the trigger is required but was not specified.
+     *         A name for the trigger is required, but was not specified.
      * @throws RepositoryTriggerDestinationArnRequiredException
-     *         A destination ARN for the target service for the trigger is required but was not specified.
+     *         A destination ARN for the target service for the trigger is required, but was not specified.
      * @throws RepositoryTriggerBranchNameListRequiredException
-     *         At least one branch name is required but was not specified in the trigger configuration.
+     *         At least one branch name is required, but was not specified in the trigger configuration.
      * @throws RepositoryTriggerEventsListRequiredException
-     *         At least one event for the trigger is required but was not specified.
+     *         At least one event for the trigger is required, but was not specified.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -2973,7 +3704,7 @@ public interface AWSCodeCommit {
      * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
      * href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2981,9 +3712,9 @@ public interface AWSCodeCommit {
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws ResourceArnRequiredException
@@ -3015,8 +3746,8 @@ public interface AWSCodeCommit {
     /**
      * <p>
      * Tests the functionality of repository triggers by sending information to the trigger target. If real data is
-     * available in the repository, the test will send data from the last commit. If no data is available, sample data
-     * will be generated.
+     * available in the repository, the test sends data from the last commit. If no data is available, sample data is
+     * generated.
      * </p>
      * 
      * @param testRepositoryTriggersRequest
@@ -3025,15 +3756,15 @@ public interface AWSCodeCommit {
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws RepositoryTriggersListRequiredException
-     *         The list of triggers for the repository is required but was not specified.
+     *         The list of triggers for the repository is required, but was not specified.
      * @throws MaximumRepositoryTriggersExceededException
      *         The number of triggers allowed for the repository was exceeded.
      * @throws InvalidRepositoryTriggerNameException
@@ -3042,8 +3773,8 @@ public interface AWSCodeCommit {
      *         The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most
      *         common reason for this error is that the ARN does not meet the requirements for the service type.
      * @throws InvalidRepositoryTriggerRegionException
-     *         The region for the trigger target does not match the region for the repository. Triggers must be created
-     *         in the same region as the target for the trigger.
+     *         The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be
+     *         created in the same Region as the target for the trigger.
      * @throws InvalidRepositoryTriggerCustomDataException
      *         The custom data provided for the trigger is not valid.
      * @throws MaximumBranchesExceededException
@@ -3054,13 +3785,13 @@ public interface AWSCodeCommit {
      *         One or more events specified for the trigger is not valid. Check to make sure that all events specified
      *         match the requirements for allowed events.
      * @throws RepositoryTriggerNameRequiredException
-     *         A name for the trigger is required but was not specified.
+     *         A name for the trigger is required, but was not specified.
      * @throws RepositoryTriggerDestinationArnRequiredException
-     *         A destination ARN for the target service for the trigger is required but was not specified.
+     *         A destination ARN for the target service for the trigger is required, but was not specified.
      * @throws RepositoryTriggerBranchNameListRequiredException
-     *         At least one branch name is required but was not specified in the trigger configuration.
+     *         At least one branch name is required, but was not specified in the trigger configuration.
      * @throws RepositoryTriggerEventsListRequiredException
-     *         At least one event for the trigger is required but was not specified.
+     *         At least one event for the trigger is required, but was not specified.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -3081,7 +3812,7 @@ public interface AWSCodeCommit {
      * <p>
      * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -3089,9 +3820,9 @@ public interface AWSCodeCommit {
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws ResourceArnRequiredException
@@ -3122,6 +3853,88 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Updates the content of an approval rule template. You can change the number of required approvals, the membership
+     * of the approval rule, and whether an approval pool is defined.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateContentRequest
+     * @return Result of the UpdateApprovalRuleTemplateContent operation returned by the service.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @throws InvalidApprovalRuleTemplateContentException
+     *         The content of the approval rule template is not valid.
+     * @throws InvalidRuleContentSha256Exception
+     *         The SHA-256 hash signature for the rule content is not valid.
+     * @throws ApprovalRuleTemplateContentRequiredException
+     *         The content for the approval rule template is empty. You must provide some content for an approval rule
+     *         template. The content cannot be null.
+     * @sample AWSCodeCommit.UpdateApprovalRuleTemplateContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateApprovalRuleTemplateContentResult updateApprovalRuleTemplateContent(UpdateApprovalRuleTemplateContentRequest updateApprovalRuleTemplateContentRequest);
+
+    /**
+     * <p>
+     * Updates the description for a specified approval rule template.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateDescriptionRequest
+     * @return Result of the UpdateApprovalRuleTemplateDescription operation returned by the service.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @throws InvalidApprovalRuleTemplateDescriptionException
+     *         The description for the approval rule template is not valid because it exceeds the maximum characters
+     *         allowed for a description. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @sample AWSCodeCommit.UpdateApprovalRuleTemplateDescription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateApprovalRuleTemplateDescriptionResult updateApprovalRuleTemplateDescription(
+            UpdateApprovalRuleTemplateDescriptionRequest updateApprovalRuleTemplateDescriptionRequest);
+
+    /**
+     * <p>
+     * Updates the name of a specified approval rule template.
+     * </p>
+     * 
+     * @param updateApprovalRuleTemplateNameRequest
+     * @return Result of the UpdateApprovalRuleTemplateName operation returned by the service.
+     * @throws InvalidApprovalRuleTemplateNameException
+     *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
+     *         characters in length. For more information about limits in AWS CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     * @throws ApprovalRuleTemplateNameRequiredException
+     *         An approval rule template name is required, but was not specified.
+     * @throws ApprovalRuleTemplateDoesNotExistException
+     *         The specified approval rule template does not exist. Verify that the name is correct and that you are
+     *         signed in to the AWS Region where the template was created, and then try again.
+     * @throws ApprovalRuleTemplateNameAlreadyExistsException
+     *         You cannot create an approval rule template with that name because a template with that name already
+     *         exists in this AWS Region for your AWS account. Approval rule template names must be unique.
+     * @sample AWSCodeCommit.UpdateApprovalRuleTemplateName
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateApprovalRuleTemplateNameResult updateApprovalRuleTemplateName(UpdateApprovalRuleTemplateNameRequest updateApprovalRuleTemplateNameRequest);
+
+    /**
+     * <p>
      * Replaces the contents of a comment.
      * </p>
      * 
@@ -3132,7 +3945,7 @@ public interface AWSCodeCommit {
      * @throws CommentContentSizeLimitExceededException
      *         The comment is too large. Comments are limited to 1,000 characters.
      * @throws CommentDoesNotExistException
-     *         No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.
+     *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
      * @throws CommentIdRequiredException
      *         The comment ID is missing or null. A comment ID is required.
      * @throws InvalidCommentIdException
@@ -3162,17 +3975,17 @@ public interface AWSCodeCommit {
      *        Represents the input of an update default branch operation.
      * @return Result of the UpdateDefaultBranch operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws BranchNameRequiredException
-     *         A branch name is required but was not specified.
+     *         A branch name is required, but was not specified.
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws BranchDoesNotExistException
@@ -3195,6 +4008,107 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Updates the structure of an approval rule created specifically for a pull request. For example, you can change
+     * the number of required approvers and the approval pool for approvers.
+     * </p>
+     * 
+     * @param updatePullRequestApprovalRuleContentRequest
+     * @return Result of the UpdatePullRequestApprovalRuleContent operation returned by the service.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws PullRequestAlreadyClosedException
+     *         The pull request status cannot be updated because it is already closed.
+     * @throws ApprovalRuleNameRequiredException
+     *         An approval rule name is required, but was not specified.
+     * @throws InvalidApprovalRuleNameException
+     *         The name for the approval rule is not valid.
+     * @throws ApprovalRuleDoesNotExistException
+     *         The specified approval rule does not exist.
+     * @throws InvalidRuleContentSha256Exception
+     *         The SHA-256 hash signature for the rule content is not valid.
+     * @throws ApprovalRuleContentRequiredException
+     *         The content for the approval rule is empty. You must provide some content for an approval rule. The
+     *         content cannot be null.
+     * @throws InvalidApprovalRuleContentException
+     *         The content for the approval rule is not valid.
+     * @throws CannotModifyApprovalRuleFromTemplateException
+     *         The approval rule cannot be modified for the pull request because it was created by an approval rule
+     *         template and applied to the pull request automatically.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.UpdatePullRequestApprovalRuleContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalRuleContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePullRequestApprovalRuleContentResult updatePullRequestApprovalRuleContent(
+            UpdatePullRequestApprovalRuleContentRequest updatePullRequestApprovalRuleContentRequest);
+
+    /**
+     * <p>
+     * Updates the state of a user's approval on a pull request. The user is derived from the signed-in account when the
+     * request is made.
+     * </p>
+     * 
+     * @param updatePullRequestApprovalStateRequest
+     * @return Result of the UpdatePullRequestApprovalState operation returned by the service.
+     * @throws PullRequestDoesNotExistException
+     *         The pull request ID could not be found. Make sure that you have specified the correct repository name and
+     *         pull request ID, and then try again.
+     * @throws InvalidPullRequestIdException
+     *         The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request
+     *         is in the specified repository, and then try again.
+     * @throws PullRequestIdRequiredException
+     *         A pull request ID is required, but none was provided.
+     * @throws InvalidRevisionIdException
+     *         The revision ID is not valid. Use GetPullRequest to determine the value.
+     * @throws RevisionIdRequiredException
+     *         A revision ID is required, but was not provided.
+     * @throws InvalidApprovalStateException
+     *         The state for the approval is not valid. Valid values include APPROVE and REVOKE.
+     * @throws ApprovalStateRequiredException
+     *         An approval state is required, but was not specified.
+     * @throws PullRequestCannotBeApprovedByAuthorException
+     *         The approval cannot be applied because the user approving the pull request matches the user who created
+     *         the pull request. You cannot approve a pull request that you created.
+     * @throws RevisionNotCurrentException
+     *         The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to
+     *         retrieve the current revision ID.
+     * @throws PullRequestAlreadyClosedException
+     *         The pull request status cannot be updated because it is already closed.
+     * @throws MaximumNumberOfApprovalsExceededException
+     *         The number of approvals required for the approval rule exceeds the maximum number allowed.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.UpdatePullRequestApprovalState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePullRequestApprovalStateResult updatePullRequestApprovalState(UpdatePullRequestApprovalStateRequest updatePullRequestApprovalStateRequest);
+
+    /**
+     * <p>
      * Replaces the contents of the description of a pull request.
      * </p>
      * 
@@ -3209,7 +4123,7 @@ public interface AWSCodeCommit {
      * @throws PullRequestIdRequiredException
      *         A pull request ID is required, but none was provided.
      * @throws InvalidDescriptionException
-     *         The pull request description is not valid. Descriptions are limited to 1,000 characters in length.
+     *         The pull request description is not valid. Descriptions cannot be more than 1,000 characters.
      * @throws PullRequestAlreadyClosedException
      *         The pull request status cannot be updated because it is already closed.
      * @sample AWSCodeCommit.UpdatePullRequestDescription
@@ -3291,9 +4205,9 @@ public interface AWSCodeCommit {
      * <note>
      * <p>
      * The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications
-     * that do not HTML-encode the description and display it in a web page could expose users to potentially malicious
+     * that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious
      * code. Make sure that you HTML-encode the description field in any application that uses this API to display the
-     * repository description on a web page.
+     * repository description on a webpage.
      * </p>
      * </note>
      * 
@@ -3301,13 +4215,13 @@ public interface AWSCodeCommit {
      *        Represents the input of an update repository description operation.
      * @return Result of the UpdateRepositoryDescription operation returned by the service.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws RepositoryDoesNotExistException
      *         The specified repository does not exist.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws InvalidRepositoryDescriptionException
@@ -3330,9 +4244,9 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
-     * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
+     * Renames a repository. The repository name must be unique across the calling AWS account. Repository names are
+     * limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix
+     * .git is prohibited. For more information about the limits on repository names, see <a
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
@@ -3345,11 +4259,11 @@ public interface AWSCodeCommit {
      * @throws RepositoryNameExistsException
      *         The specified repository name already exists.
      * @throws RepositoryNameRequiredException
-     *         A repository name is required but was not specified.
+     *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
-     *         At least one specified repository name is not valid.</p> <note>
+     *         A specified repository name is not valid.</p> <note>
      *         <p>
-     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @sample AWSCodeCommit.UpdateRepositoryName

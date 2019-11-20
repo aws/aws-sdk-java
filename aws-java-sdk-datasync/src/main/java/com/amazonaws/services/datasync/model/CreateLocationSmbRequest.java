@@ -34,6 +34,11 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that
      * path. The path should be such that it can be mounted by other SMB clients in your network.
      * </p>
+     * <note>
+     * <p>
+     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * </p>
+     * </note>
      * <p>
      * To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share,
      * as well as to access all the data in that share. To ensure this, either ensure that the user/password specified
@@ -101,6 +106,11 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that
      * path. The path should be such that it can be mounted by other SMB clients in your network.
      * </p>
+     * <note>
+     * <p>
+     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * </p>
+     * </note>
      * <p>
      * To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share,
      * as well as to access all the data in that share. To ensure this, either ensure that the user/password specified
@@ -114,7 +124,12 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The subdirectory in the SMB file system that is used to read data from the SMB source location or write
      *        data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a
      *        subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
-     *        network.</p>
+     *        network.</p> <note>
+     *        <p>
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
+     *        .
+     *        </p>
+     *        </note>
      *        <p>
      *        To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB
      *        share, as well as to access all the data in that share. To ensure this, either ensure that the
@@ -134,6 +149,11 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that
      * path. The path should be such that it can be mounted by other SMB clients in your network.
      * </p>
+     * <note>
+     * <p>
+     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * </p>
+     * </note>
      * <p>
      * To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share,
      * as well as to access all the data in that share. To ensure this, either ensure that the user/password specified
@@ -146,7 +166,12 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * @return The subdirectory in the SMB file system that is used to read data from the SMB source location or write
      *         data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a
      *         subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
-     *         network.</p>
+     *         network.</p> <note>
+     *         <p>
+     *         <code>Subdirectory</code> must be specified with forward slashes. For example
+     *         <code>/path/to/folder</code>.
+     *         </p>
+     *         </note>
      *         <p>
      *         To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB
      *         share, as well as to access all the data in that share. To ensure this, either ensure that the
@@ -166,6 +191,11 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that
      * path. The path should be such that it can be mounted by other SMB clients in your network.
      * </p>
+     * <note>
+     * <p>
+     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * </p>
+     * </note>
      * <p>
      * To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share,
      * as well as to access all the data in that share. To ensure this, either ensure that the user/password specified
@@ -179,7 +209,12 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The subdirectory in the SMB file system that is used to read data from the SMB source location or write
      *        data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a
      *        subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
-     *        network.</p>
+     *        network.</p> <note>
+     *        <p>
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
+     *        .
+     *        </p>
+     *        </note>
      *        <p>
      *        To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB
      *        share, as well as to access all the data in that share. To ensure this, either ensure that the
@@ -603,7 +638,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword()).append(",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getAgentArns() != null)
             sb.append("AgentArns: ").append(getAgentArns()).append(",");
         if (getMountOptions() != null)

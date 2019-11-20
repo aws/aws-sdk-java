@@ -36,7 +36,7 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
     private String progressUpdateStream;
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      */
     private String migrationTaskName;
@@ -52,7 +52,12 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date updateDateTime;
-    /** <p/> */
+    /**
+     * <p>
+     * Information about the resource that is being migrated. This data will be used to map the task to a resource in
+     * the Application Discovery Service repository.
+     * </p>
+     */
     private java.util.List<ResourceAttribute> resourceAttributeList;
 
     /**
@@ -97,11 +102,11 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public void setMigrationTaskName(String migrationTaskName) {
@@ -110,10 +115,10 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
-     * @return Unique identifier that references the migration task.
+     * @return Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public String getMigrationTaskName() {
@@ -122,11 +127,11 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,9 +221,13 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Information about the resource that is being migrated. This data will be used to map the task to a resource in
+     * the Application Discovery Service repository.
+     * </p>
      * 
-     * @return
+     * @return Information about the resource that is being migrated. This data will be used to map the task to a
+     *         resource in the Application Discovery Service repository.
      */
 
     public java.util.List<ResourceAttribute> getResourceAttributeList() {
@@ -226,9 +235,14 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Information about the resource that is being migrated. This data will be used to map the task to a resource in
+     * the Application Discovery Service repository.
+     * </p>
      * 
      * @param resourceAttributeList
+     *        Information about the resource that is being migrated. This data will be used to map the task to a
+     *        resource in the Application Discovery Service repository.
      */
 
     public void setResourceAttributeList(java.util.Collection<ResourceAttribute> resourceAttributeList) {
@@ -241,7 +255,10 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Information about the resource that is being migrated. This data will be used to map the task to a resource in
+     * the Application Discovery Service repository.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceAttributeList(java.util.Collection)} or
@@ -249,6 +266,8 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resourceAttributeList
+     *        Information about the resource that is being migrated. This data will be used to map the task to a
+     *        resource in the Application Discovery Service repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,9 +282,14 @@ public class MigrationTask implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Information about the resource that is being migrated. This data will be used to map the task to a resource in
+     * the Application Discovery Service repository.
+     * </p>
      * 
      * @param resourceAttributeList
+     *        Information about the resource that is being migrated. This data will be used to map the task to a
+     *        resource in the Application Discovery Service repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

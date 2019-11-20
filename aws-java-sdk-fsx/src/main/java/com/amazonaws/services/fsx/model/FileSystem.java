@@ -55,27 +55,28 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private String fileSystemType;
     /**
      * <p>
-     * The lifecycle status of the file system:
+     * The lifecycle status of the file system, following are the possible values and what they mean:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * <code>CREATING</code> - Amazon FSx is creating the new file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file
+     * system, Amazon FSx was unable to create the file system.
      * </p>
      * </li>
      * <li>
@@ -351,27 +352,28 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lifecycle status of the file system:
+     * The lifecycle status of the file system, following are the possible values and what they mean:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * <code>CREATING</code> - Amazon FSx is creating the new file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file
+     * system, Amazon FSx was unable to create the file system.
      * </p>
      * </li>
      * <li>
@@ -387,26 +389,27 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the file system:</p>
+     *        The lifecycle status of the file system, following are the possible values and what they mean:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     *        <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     *        <code>CREATING</code> - Amazon FSx is creating the new file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     *        <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     *        <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a
+     *        new file system, Amazon FSx was unable to create the file system.
      *        </p>
      *        </li>
      *        <li>
@@ -428,27 +431,28 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lifecycle status of the file system:
+     * The lifecycle status of the file system, following are the possible values and what they mean:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * <code>CREATING</code> - Amazon FSx is creating the new file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file
+     * system, Amazon FSx was unable to create the file system.
      * </p>
      * </li>
      * <li>
@@ -463,26 +467,27 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The lifecycle status of the file system:</p>
+     * @return The lifecycle status of the file system, following are the possible values and what they mean:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     *         <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     *         <code>CREATING</code> - Amazon FSx is creating the new file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     *         <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     *         <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a
+     *         new file system, Amazon FSx was unable to create the file system.
      *         </p>
      *         </li>
      *         <li>
@@ -504,27 +509,28 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lifecycle status of the file system:
+     * The lifecycle status of the file system, following are the possible values and what they mean:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * <code>CREATING</code> - Amazon FSx is creating the new file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file
+     * system, Amazon FSx was unable to create the file system.
      * </p>
      * </li>
      * <li>
@@ -540,26 +546,27 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the file system:</p>
+     *        The lifecycle status of the file system, following are the possible values and what they mean:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     *        <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     *        <code>CREATING</code> - Amazon FSx is creating the new file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     *        <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     *        <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a
+     *        new file system, Amazon FSx was unable to create the file system.
      *        </p>
      *        </li>
      *        <li>
@@ -583,27 +590,28 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lifecycle status of the file system:
+     * The lifecycle status of the file system, following are the possible values and what they mean:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     * <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     * <code>CREATING</code> - Amazon FSx is creating the new file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     * <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     * <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a new file
+     * system, Amazon FSx was unable to create the file system.
      * </p>
      * </li>
      * <li>
@@ -619,26 +627,27 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the file system:</p>
+     *        The lifecycle status of the file system, following are the possible values and what they mean:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AVAILABLE</code> indicates that the file system is reachable and available for use.
+     *        <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> indicates that Amazon FSx is in the process of creating the new file system.
+     *        <code>CREATING</code> - Amazon FSx is creating the new file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETING</code> indicates that Amazon FSx is in the process of deleting the file system.
+     *        <code>DELETING</code> - Amazon FSx is deleting an existing file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> indicates that Amazon FSx was not able to create the file system.
+     *        <code>FAILED</code> - An existing file system has experienced an unrecoverable failure. When creating a
+     *        new file system, Amazon FSx was unable to create the file system.
      *        </p>
      *        </li>
      *        <li>

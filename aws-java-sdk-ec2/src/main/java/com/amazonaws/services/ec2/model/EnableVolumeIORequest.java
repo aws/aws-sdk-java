@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.EnableVolumeIORequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for EnableVolumeIO.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EnableVolumeIORequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<EnableVolumeIORequest> {

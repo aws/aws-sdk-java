@@ -16,11 +16,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * At least one specified repository name is not valid.
+ * A specified repository name is not valid.
  * </p>
  * <note>
  * <p>
- * This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required
+ * This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required
  * repository parameter is missing, or when a specified repository does not exist.
  * </p>
  * </note>

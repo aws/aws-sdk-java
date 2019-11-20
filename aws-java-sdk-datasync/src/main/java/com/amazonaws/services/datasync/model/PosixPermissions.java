@@ -21,7 +21,6 @@ import javax.annotation.Generated;
 public enum PosixPermissions {
 
     NONE("NONE"),
-    BEST_EFFORT("BEST_EFFORT"),
     PRESERVE("PRESERVE");
 
     private String value;

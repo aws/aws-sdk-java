@@ -295,6 +295,53 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Describes the settings for the Insights event selectors that you configured for your trail.
+     * <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail, and if it
+     * is, which insight types are enabled. If you run <code>GetInsightSelectors</code> on a trail that does not have
+     * Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param getInsightSelectorsRequest
+     * @return A Java Future containing the result of the GetInsightSelectors operation returned by the service.
+     * @sample AWSCloudTrailAsync.GetInsightSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightSelectorsResult> getInsightSelectorsAsync(GetInsightSelectorsRequest getInsightSelectorsRequest);
+
+    /**
+     * <p>
+     * Describes the settings for the Insights event selectors that you configured for your trail.
+     * <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail, and if it
+     * is, which insight types are enabled. If you run <code>GetInsightSelectors</code> on a trail that does not have
+     * Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param getInsightSelectorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInsightSelectors operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.GetInsightSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightSelectorsResult> getInsightSelectorsAsync(GetInsightSelectorsRequest getInsightSelectorsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInsightSelectorsRequest, GetInsightSelectorsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns settings information for a specified trail.
      * </p>
      * 
@@ -495,8 +542,10 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Looks up <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
-     * >management events</a> captured by CloudTrail. You can look up events that occurred in a region within the last
-     * 90 days. Lookup supports the following attributes:
+     * >management events</a> or <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events"
+     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region
+     * within the last 90 days. Lookup supports the following attributes for management events:
      * </p>
      * <ul>
      * <li>
@@ -541,17 +590,33 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
+     * Lookup supports the following attributes for Insights events:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Event ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event source
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The
      * response includes a token that you can use to get the next page of results.
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling
+     * The rate of lookup requests is limited to two per second per account. If this limit is exceeded, a throttling
      * error occurs.
-     * </p>
-     * <p>
-     * Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was
-     * not enabled when the events occurred.
      * </p>
      * </important>
      * 
@@ -568,8 +633,10 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Looks up <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
-     * >management events</a> captured by CloudTrail. You can look up events that occurred in a region within the last
-     * 90 days. Lookup supports the following attributes:
+     * >management events</a> or <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events"
+     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region
+     * within the last 90 days. Lookup supports the following attributes for management events:
      * </p>
      * <ul>
      * <li>
@@ -614,17 +681,33 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
+     * Lookup supports the following attributes for Insights events:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Event ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event source
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The
      * response includes a token that you can use to get the next page of results.
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling
+     * The rate of lookup requests is limited to two per second per account. If this limit is exceeded, a throttling
      * error occurs.
-     * </p>
-     * <p>
-     * Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was
-     * not enabled when the events occurred.
      * </p>
      * </important>
      * 
@@ -784,6 +867,43 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<PutEventSelectorsResult> putEventSelectorsAsync(PutEventSelectorsRequest putEventSelectorsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEventSelectorsRequest, PutEventSelectorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an
+     * existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an
+     * empty list of insight types. In this release, only <code>ApiCallRateInsight</code> is supported as an Insights
+     * selector.
+     * </p>
+     * 
+     * @param putInsightSelectorsRequest
+     * @return A Java Future containing the result of the PutInsightSelectors operation returned by the service.
+     * @sample AWSCloudTrailAsync.PutInsightSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInsightSelectorsResult> putInsightSelectorsAsync(PutInsightSelectorsRequest putInsightSelectorsRequest);
+
+    /**
+     * <p>
+     * Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an
+     * existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an
+     * empty list of insight types. In this release, only <code>ApiCallRateInsight</code> is supported as an Insights
+     * selector.
+     * </p>
+     * 
+     * @param putInsightSelectorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutInsightSelectors operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.PutInsightSelectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInsightSelectorsResult> putInsightSelectorsAsync(PutInsightSelectorsRequest putInsightSelectorsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutInsightSelectorsRequest, PutInsightSelectorsResult> asyncHandler);
 
     /**
      * <p>

@@ -264,6 +264,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String memory;
     /**
      * <p>
+     * The Elastic Inference accelerator associated with the task.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InferenceAccelerator> inferenceAccelerators;
+    /**
+     * <p>
      * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
      * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
      * <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon
@@ -2299,6 +2305,79 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Elastic Inference accelerator associated with the task.
+     * </p>
+     * 
+     * @return The Elastic Inference accelerator associated with the task.
+     */
+
+    public java.util.List<InferenceAccelerator> getInferenceAccelerators() {
+        if (inferenceAccelerators == null) {
+            inferenceAccelerators = new com.amazonaws.internal.SdkInternalList<InferenceAccelerator>();
+        }
+        return inferenceAccelerators;
+    }
+
+    /**
+     * <p>
+     * The Elastic Inference accelerator associated with the task.
+     * </p>
+     * 
+     * @param inferenceAccelerators
+     *        The Elastic Inference accelerator associated with the task.
+     */
+
+    public void setInferenceAccelerators(java.util.Collection<InferenceAccelerator> inferenceAccelerators) {
+        if (inferenceAccelerators == null) {
+            this.inferenceAccelerators = null;
+            return;
+        }
+
+        this.inferenceAccelerators = new com.amazonaws.internal.SdkInternalList<InferenceAccelerator>(inferenceAccelerators);
+    }
+
+    /**
+     * <p>
+     * The Elastic Inference accelerator associated with the task.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInferenceAccelerators(java.util.Collection)} or
+     * {@link #withInferenceAccelerators(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param inferenceAccelerators
+     *        The Elastic Inference accelerator associated with the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withInferenceAccelerators(InferenceAccelerator... inferenceAccelerators) {
+        if (this.inferenceAccelerators == null) {
+            setInferenceAccelerators(new com.amazonaws.internal.SdkInternalList<InferenceAccelerator>(inferenceAccelerators.length));
+        }
+        for (InferenceAccelerator ele : inferenceAccelerators) {
+            this.inferenceAccelerators.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Elastic Inference accelerator associated with the task.
+     * </p>
+     * 
+     * @param inferenceAccelerators
+     *        The Elastic Inference accelerator associated with the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withInferenceAccelerators(java.util.Collection<InferenceAccelerator> inferenceAccelerators) {
+        setInferenceAccelerators(inferenceAccelerators);
+        return this;
+    }
+
+    /**
+     * <p>
      * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
      * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
      * <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon
@@ -3106,6 +3185,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
             sb.append("Cpu: ").append(getCpu()).append(",");
         if (getMemory() != null)
             sb.append("Memory: ").append(getMemory()).append(",");
+        if (getInferenceAccelerators() != null)
+            sb.append("InferenceAccelerators: ").append(getInferenceAccelerators()).append(",");
         if (getPidMode() != null)
             sb.append("PidMode: ").append(getPidMode()).append(",");
         if (getIpcMode() != null)
@@ -3186,6 +3267,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
             return false;
+        if (other.getInferenceAccelerators() == null ^ this.getInferenceAccelerators() == null)
+            return false;
+        if (other.getInferenceAccelerators() != null && other.getInferenceAccelerators().equals(this.getInferenceAccelerators()) == false)
+            return false;
         if (other.getPidMode() == null ^ this.getPidMode() == null)
             return false;
         if (other.getPidMode() != null && other.getPidMode().equals(this.getPidMode()) == false)
@@ -3221,6 +3306,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRequiresCompatibilities() == null) ? 0 : getRequiresCompatibilities().hashCode());
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
+        hashCode = prime * hashCode + ((getInferenceAccelerators() == null) ? 0 : getInferenceAccelerators().hashCode());
         hashCode = prime * hashCode + ((getPidMode() == null) ? 0 : getPidMode().hashCode());
         hashCode = prime * hashCode + ((getIpcMode() == null) ? 0 : getIpcMode().hashCode());
         hashCode = prime * hashCode + ((getProxyConfiguration() == null) ? 0 : getProxyConfiguration().hashCode());

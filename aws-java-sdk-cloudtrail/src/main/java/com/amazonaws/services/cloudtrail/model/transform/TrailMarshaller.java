@@ -55,6 +55,8 @@ public class TrailMarshaller {
             .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<Boolean> HASCUSTOMEVENTSELECTORS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasCustomEventSelectors").build();
+    private static final MarshallingInfo<Boolean> HASINSIGHTSELECTORS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasInsightSelectors").build();
     private static final MarshallingInfo<Boolean> ISORGANIZATIONTRAIL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsOrganizationTrail").build();
 
@@ -88,6 +90,7 @@ public class TrailMarshaller {
             protocolMarshaller.marshall(trail.getCloudWatchLogsRoleArn(), CLOUDWATCHLOGSROLEARN_BINDING);
             protocolMarshaller.marshall(trail.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(trail.getHasCustomEventSelectors(), HASCUSTOMEVENTSELECTORS_BINDING);
+            protocolMarshaller.marshall(trail.getHasInsightSelectors(), HASINSIGHTSELECTORS_BINDING);
             protocolMarshaller.marshall(trail.getIsOrganizationTrail(), ISORGANIZATIONTRAIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

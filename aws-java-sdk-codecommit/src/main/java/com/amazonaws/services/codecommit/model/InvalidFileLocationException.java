@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The location of the file is not valid. Make sure that you include the extension of the file as well as the file name.
+ * The location of the file is not valid. Make sure that you include the file name and extension.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

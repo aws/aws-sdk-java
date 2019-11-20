@@ -34,8 +34,7 @@ public class UpdatePullRequestStatusRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to
-     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
-     * <code>CLOSED</code>.
+     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.
      * </p>
      */
     private String pullRequestStatus;
@@ -83,13 +82,12 @@ public class UpdatePullRequestStatusRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to
-     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
-     * <code>CLOSED</code>.
+     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.
      * </p>
      * 
      * @param pullRequestStatus
      *        The status of the pull request. The only valid operations are to update the status from <code>OPEN</code>
-     *        to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
+     *        to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to
      *        <code>CLOSED</code>.
      * @see PullRequestStatusEnum
      */
@@ -101,12 +99,11 @@ public class UpdatePullRequestStatusRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to
-     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
-     * <code>CLOSED</code>.
+     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.
      * </p>
      * 
      * @return The status of the pull request. The only valid operations are to update the status from <code>OPEN</code>
-     *         to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
+     *         to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to
      *         <code>CLOSED</code>.
      * @see PullRequestStatusEnum
      */
@@ -118,13 +115,12 @@ public class UpdatePullRequestStatusRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to
-     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
-     * <code>CLOSED</code>.
+     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.
      * </p>
      * 
      * @param pullRequestStatus
      *        The status of the pull request. The only valid operations are to update the status from <code>OPEN</code>
-     *        to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
+     *        to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to
      *        <code>CLOSED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PullRequestStatusEnum
@@ -138,13 +134,12 @@ public class UpdatePullRequestStatusRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to
-     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
-     * <code>CLOSED</code>.
+     * <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.
      * </p>
      * 
      * @param pullRequestStatus
      *        The status of the pull request. The only valid operations are to update the status from <code>OPEN</code>
-     *        to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from from <code>CLOSED</code> to
+     *        to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to
      *        <code>CLOSED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PullRequestStatusEnum

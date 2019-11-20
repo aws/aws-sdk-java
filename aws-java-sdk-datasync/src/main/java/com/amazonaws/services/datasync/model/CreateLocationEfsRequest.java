@@ -33,6 +33,11 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS
      * source location or write data to the EFS destination. By default, AWS DataSync uses the root directory.
      * </p>
+     * <note>
+     * <p>
+     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * </p>
+     * </note>
      */
     private String subdirectory;
     /**
@@ -86,11 +91,20 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS
      * source location or write data to the EFS destination. By default, AWS DataSync uses the root directory.
      * </p>
+     * <note>
+     * <p>
+     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * </p>
+     * </note>
      * 
      * @param subdirectory
      *        A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from
      *        the EFS source location or write data to the EFS destination. By default, AWS DataSync uses the root
-     *        directory.
+     *        directory.</p> <note>
+     *        <p>
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
+     *        .
+     *        </p>
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -102,10 +116,19 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS
      * source location or write data to the EFS destination. By default, AWS DataSync uses the root directory.
      * </p>
+     * <note>
+     * <p>
+     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * </p>
+     * </note>
      * 
      * @return A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from
      *         the EFS source location or write data to the EFS destination. By default, AWS DataSync uses the root
-     *         directory.
+     *         directory.</p> <note>
+     *         <p>
+     *         <code>Subdirectory</code> must be specified with forward slashes. For example
+     *         <code>/path/to/folder</code>.
+     *         </p>
      */
 
     public String getSubdirectory() {
@@ -117,11 +140,20 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS
      * source location or write data to the EFS destination. By default, AWS DataSync uses the root directory.
      * </p>
+     * <note>
+     * <p>
+     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * </p>
+     * </note>
      * 
      * @param subdirectory
      *        A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from
      *        the EFS source location or write data to the EFS destination. By default, AWS DataSync uses the root
-     *        directory.
+     *        directory.</p> <note>
+     *        <p>
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
+     *        .
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

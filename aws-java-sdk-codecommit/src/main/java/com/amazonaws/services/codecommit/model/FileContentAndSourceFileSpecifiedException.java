@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The commit cannot be created because both a source file and file content have been specified for the same file. You
- * cannot provide both. Either specify a source file, or provide the file content directly.
+ * cannot provide both. Either specify a source file or provide the file content directly.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

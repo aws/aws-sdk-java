@@ -57,6 +57,14 @@ public class CreateFileSystemWindowsConfigurationJsonUnmarshaller implements Unm
                     createFileSystemWindowsConfiguration.setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeploymentType", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemWindowsConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredSubnetId", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemWindowsConfiguration.setPreferredSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ThroughputCapacity", targetDepth)) {
                     context.nextToken();
                     createFileSystemWindowsConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));

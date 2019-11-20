@@ -1116,7 +1116,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachVolumeRequest
-     *        Contains the parameters for AttachVolume.
      * @return A Java Future containing the result of the AttachVolume operation returned by the service.
      * @sample AmazonEC2Async.AttachVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume" target="_top">AWS API
@@ -1172,7 +1171,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param attachVolumeRequest
-     *        Contains the parameters for AttachVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1942,7 +1940,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param copySnapshotRequest
-     *        Contains the parameters for CopySnapshot.
      * @return A Java Future containing the result of the CopySnapshot operation returned by the service.
      * @sample AmazonEC2Async.CopySnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot" target="_top">AWS API
@@ -1976,7 +1973,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param copySnapshotRequest
-     *        Contains the parameters for CopySnapshot.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -3557,7 +3553,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createSnapshotRequest
-     *        Contains the parameters for CreateSnapshot.
      * @return A Java Future containing the result of the CreateSnapshot operation returned by the service.
      * @sample AmazonEC2Async.CreateSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot" target="_top">AWS API
@@ -3605,7 +3600,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createSnapshotRequest
-     *        Contains the parameters for CreateSnapshot.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -4278,7 +4272,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVolumeRequest
-     *        Contains the parameters for CreateVolume.
      * @return A Java Future containing the result of the CreateVolume operation returned by the service.
      * @sample AmazonEC2Async.CreateVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume" target="_top">AWS API
@@ -4314,7 +4307,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createVolumeRequest
-     *        Contains the parameters for CreateVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -5587,7 +5579,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteSnapshotRequest
-     *        Contains the parameters for DeleteSnapshot.
      * @return A Java Future containing the result of the DeleteSnapshot operation returned by the service.
      * @sample AmazonEC2Async.DeleteSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot" target="_top">AWS API
@@ -5616,7 +5607,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteSnapshotRequest
-     *        Contains the parameters for DeleteSnapshot.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -6053,7 +6043,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVolumeRequest
-     *        Contains the parameters for DeleteVolume.
      * @return A Java Future containing the result of the DeleteVolume operation returned by the service.
      * @sample AmazonEC2Async.DeleteVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume" target="_top">AWS API
@@ -6076,7 +6065,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteVolumeRequest
-     *        Contains the parameters for DeleteVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7465,6 +7453,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the state of fast snapshot restores for your snapshots.
+     * </p>
+     * 
+     * @param describeFastSnapshotRestoresRequest
+     * @return A Java Future containing the result of the DescribeFastSnapshotRestores operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFastSnapshotRestoresResult> describeFastSnapshotRestoresAsync(
+            DescribeFastSnapshotRestoresRequest describeFastSnapshotRestoresRequest);
+
+    /**
+     * <p>
+     * Describes the state of fast snapshot restores for your snapshots.
+     * </p>
+     * 
+     * @param describeFastSnapshotRestoresRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFastSnapshotRestores operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFastSnapshotRestoresResult> describeFastSnapshotRestoresAsync(
+            DescribeFastSnapshotRestoresRequest describeFastSnapshotRestoresRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFastSnapshotRestoresRequest, DescribeFastSnapshotRestoresResult> asyncHandler);
 
     /**
      * <p>
@@ -9762,7 +9785,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSnapshotAttributeRequest
-     *        Contains the parameters for DescribeSnapshotAttribute.
      * @return A Java Future containing the result of the DescribeSnapshotAttribute operation returned by the service.
      * @sample AmazonEC2Async.DescribeSnapshotAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute" target="_top">AWS
@@ -9782,7 +9804,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSnapshotAttributeRequest
-     *        Contains the parameters for DescribeSnapshotAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -10707,7 +10728,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumeAttributeRequest
-     *        Contains the parameters for DescribeVolumeAttribute.
      * @return A Java Future containing the result of the DescribeVolumeAttribute operation returned by the service.
      * @sample AmazonEC2Async.DescribeVolumeAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute" target="_top">AWS
@@ -10726,7 +10746,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumeAttributeRequest
-     *        Contains the parameters for DescribeVolumeAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -11677,7 +11696,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachVolumeRequest
-     *        Contains the parameters for DetachVolume.
      * @return A Java Future containing the result of the DetachVolume operation returned by the service.
      * @sample AmazonEC2Async.DetachVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume" target="_top">AWS API
@@ -11705,7 +11723,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param detachVolumeRequest
-     *        Contains the parameters for DetachVolume.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -11819,6 +11836,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DisableEbsEncryptionByDefaultResult> disableEbsEncryptionByDefaultAsync(
             DisableEbsEncryptionByDefaultRequest disableEbsEncryptionByDefaultRequest,
             com.amazonaws.handlers.AsyncHandler<DisableEbsEncryptionByDefaultRequest, DisableEbsEncryptionByDefaultResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables fast snapshot restores for the specified snapshots in the specified Availability Zones.
+     * </p>
+     * 
+     * @param disableFastSnapshotRestoresRequest
+     * @return A Java Future containing the result of the DisableFastSnapshotRestores operation returned by the service.
+     * @sample AmazonEC2Async.DisableFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableFastSnapshotRestoresResult> disableFastSnapshotRestoresAsync(
+            DisableFastSnapshotRestoresRequest disableFastSnapshotRestoresRequest);
+
+    /**
+     * <p>
+     * Disables fast snapshot restores for the specified snapshots in the specified Availability Zones.
+     * </p>
+     * 
+     * @param disableFastSnapshotRestoresRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableFastSnapshotRestores operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisableFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableFastSnapshotRestoresResult> disableFastSnapshotRestoresAsync(
+            DisableFastSnapshotRestoresRequest disableFastSnapshotRestoresRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableFastSnapshotRestoresRequest, DisableFastSnapshotRestoresResult> asyncHandler);
 
     /**
      * <p>
@@ -12366,6 +12416,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Enables fast snapshot restores for the specified snapshots in the specified Availability Zones.
+     * </p>
+     * <p>
+     * You get the full benefit of fast snapshot restores after they enter the <code>enabled</code> state. To get the
+     * current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast snapshot
+     * restores, use <a>DisableFastSnapshotRestores</a>.
+     * </p>
+     * 
+     * @param enableFastSnapshotRestoresRequest
+     * @return A Java Future containing the result of the EnableFastSnapshotRestores operation returned by the service.
+     * @sample AmazonEC2Async.EnableFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableFastSnapshotRestoresResult> enableFastSnapshotRestoresAsync(
+            EnableFastSnapshotRestoresRequest enableFastSnapshotRestoresRequest);
+
+    /**
+     * <p>
+     * Enables fast snapshot restores for the specified snapshots in the specified Availability Zones.
+     * </p>
+     * <p>
+     * You get the full benefit of fast snapshot restores after they enter the <code>enabled</code> state. To get the
+     * current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast snapshot
+     * restores, use <a>DisableFastSnapshotRestores</a>.
+     * </p>
+     * 
+     * @param enableFastSnapshotRestoresRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableFastSnapshotRestores operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.EnableFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableFastSnapshotRestoresResult> enableFastSnapshotRestoresAsync(
+            EnableFastSnapshotRestoresRequest enableFastSnapshotRestoresRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableFastSnapshotRestoresRequest, EnableFastSnapshotRestoresResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables the specified attachment to propagate routes to the specified propagation route table.
      * </p>
      * 
@@ -12441,7 +12534,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVolumeIORequest
-     *        Contains the parameters for EnableVolumeIO.
      * @return A Java Future containing the result of the EnableVolumeIO operation returned by the service.
      * @sample AmazonEC2Async.EnableVolumeIO
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO" target="_top">AWS API
@@ -12456,7 +12548,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param enableVolumeIORequest
-     *        Contains the parameters for EnableVolumeIO.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -14466,7 +14557,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifySnapshotAttributeRequest
-     *        Contains the parameters for ModifySnapshotAttribute.
      * @return A Java Future containing the result of the ModifySnapshotAttribute operation returned by the service.
      * @sample AmazonEC2Async.ModifySnapshotAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute" target="_top">AWS
@@ -14492,7 +14582,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifySnapshotAttributeRequest
-     *        Contains the parameters for ModifySnapshotAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -14909,7 +14998,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVolumeAttributeRequest
-     *        Contains the parameters for ModifyVolumeAttribute.
      * @return A Java Future containing the result of the ModifyVolumeAttribute operation returned by the service.
      * @sample AmazonEC2Async.ModifyVolumeAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute" target="_top">AWS API
@@ -14932,7 +15020,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVolumeAttributeRequest
-     *        Contains the parameters for ModifyVolumeAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -16867,7 +16954,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
-     *        Contains the parameters for ResetSnapshotAttribute.
      * @return A Java Future containing the result of the ResetSnapshotAttribute operation returned by the service.
      * @sample AmazonEC2Async.ResetSnapshotAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute" target="_top">AWS API
@@ -16886,7 +16972,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
-     *        Contains the parameters for ResetSnapshotAttribute.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

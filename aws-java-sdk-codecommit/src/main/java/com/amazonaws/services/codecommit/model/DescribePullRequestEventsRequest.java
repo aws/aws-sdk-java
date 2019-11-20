@@ -40,20 +40,20 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the
-     * pull request with additional commits or changing the status of a pull request.
+     * pull request with more commits or changing the status of a pull request.
      * </p>
      */
     private String actorArn;
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 events, which is also the
-     * maximum number of events that can be returned in a result.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which
+     * is also the maximum number of events that can be returned in a result.
      * </p>
      */
     private Integer maxResults;
@@ -160,12 +160,12 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the
-     * pull request with additional commits or changing the status of a pull request.
+     * pull request with more commits or changing the status of a pull request.
      * </p>
      * 
      * @param actorArn
      *        The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating
-     *        the pull request with additional commits or changing the status of a pull request.
+     *        the pull request with more commits or changing the status of a pull request.
      */
 
     public void setActorArn(String actorArn) {
@@ -175,11 +175,11 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the
-     * pull request with additional commits or changing the status of a pull request.
+     * pull request with more commits or changing the status of a pull request.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating
-     *         the pull request with additional commits or changing the status of a pull request.
+     *         the pull request with more commits or changing the status of a pull request.
      */
 
     public String getActorArn() {
@@ -189,12 +189,12 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the
-     * pull request with additional commits or changing the status of a pull request.
+     * pull request with more commits or changing the status of a pull request.
      * </p>
      * 
      * @param actorArn
      *        The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating
-     *        the pull request with additional commits or changing the status of a pull request.
+     *        the pull request with more commits or changing the status of a pull request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +205,11 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that, when provided in a request, returns the next batch of the results.
      */
 
     public void setNextToken(String nextToken) {
@@ -218,10 +218,10 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
-     * @return An enumeration token that when provided in a request, returns the next batch of the results.
+     * @return An enumeration token that, when provided in a request, returns the next batch of the results.
      */
 
     public String getNextToken() {
@@ -230,11 +230,11 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that, when provided in a request, returns the next batch of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,13 +245,13 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 events, which is also the
-     * maximum number of events that can be returned in a result.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which
+     * is also the maximum number of events that can be returned in a result.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results. The default is 100 events, which is
-     *        also the maximum number of events that can be returned in a result.
+     *        A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events,
+     *        which is also the maximum number of events that can be returned in a result.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -260,12 +260,12 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 events, which is also the
-     * maximum number of events that can be returned in a result.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which
+     * is also the maximum number of events that can be returned in a result.
      * </p>
      * 
-     * @return A non-negative integer used to limit the number of returned results. The default is 100 events, which is
-     *         also the maximum number of events that can be returned in a result.
+     * @return A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events,
+     *         which is also the maximum number of events that can be returned in a result.
      */
 
     public Integer getMaxResults() {
@@ -274,13 +274,13 @@ public class DescribePullRequestEventsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 events, which is also the
-     * maximum number of events that can be returned in a result.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which
+     * is also the maximum number of events that can be returned in a result.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results. The default is 100 events, which is
-     *        also the maximum number of events that can be returned in a result.
+     *        A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events,
+     *        which is also the maximum number of events that can be returned in a result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -42,15 +42,15 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
     private java.util.Date eventDate;
     /**
      * <p>
-     * The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or update
-     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     * The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update
+     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * </p>
      */
     private String pullRequestEventType;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the
-     * pull request with additional commits or changing the status of a pull request.
+     * pull request with more commits or changing the status of a pull request.
      * </p>
      */
     private String actorArn;
@@ -78,6 +78,24 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private PullRequestMergedStateChangedEventMetadata pullRequestMergedStateChangedEventMetadata;
+    /**
+     * <p>
+     * Information about a pull request event.
+     * </p>
+     */
+    private ApprovalRuleEventMetadata approvalRuleEventMetadata;
+    /**
+     * <p>
+     * Information about an approval state change for a pull request.
+     * </p>
+     */
+    private ApprovalStateChangedEventMetadata approvalStateChangedEventMetadata;
+    /**
+     * <p>
+     * Information about an approval rule override event for a pull request.
+     * </p>
+     */
+    private ApprovalRuleOverriddenEventMetadata approvalRuleOverriddenEventMetadata;
 
     /**
      * <p>
@@ -161,13 +179,13 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or update
-     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     * The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update
+     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * </p>
      * 
      * @param pullRequestEventType
-     *        The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or
-     *        update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     *        The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or
+     *        update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * @see PullRequestEventType
      */
 
@@ -177,12 +195,12 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or update
-     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     * The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update
+     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * </p>
      * 
-     * @return The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or
-     *         update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     * @return The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or
+     *         update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * @see PullRequestEventType
      */
 
@@ -192,13 +210,13 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or update
-     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     * The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update
+     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * </p>
      * 
      * @param pullRequestEventType
-     *        The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or
-     *        update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     *        The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or
+     *        update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PullRequestEventType
      */
@@ -210,13 +228,13 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or update
-     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     * The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or update
+     * event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * </p>
      * 
      * @param pullRequestEventType
-     *        The type of the pull request event, for example a status change event (PULL_REQUEST_STATUS_CHANGED) or
-     *        update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).
+     *        The type of the pull request event (for example, a status change event (PULL_REQUEST_STATUS_CHANGED) or
+     *        update event (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PullRequestEventType
      */
@@ -229,12 +247,12 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the
-     * pull request with additional commits or changing the status of a pull request.
+     * pull request with more commits or changing the status of a pull request.
      * </p>
      * 
      * @param actorArn
      *        The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating
-     *        the pull request with additional commits or changing the status of a pull request.
+     *        the pull request with more commits or changing the status of a pull request.
      */
 
     public void setActorArn(String actorArn) {
@@ -244,11 +262,11 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the
-     * pull request with additional commits or changing the status of a pull request.
+     * pull request with more commits or changing the status of a pull request.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating
-     *         the pull request with additional commits or changing the status of a pull request.
+     *         the pull request with more commits or changing the status of a pull request.
      */
 
     public String getActorArn() {
@@ -258,12 +276,12 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the
-     * pull request with additional commits or changing the status of a pull request.
+     * pull request with more commits or changing the status of a pull request.
      * </p>
      * 
      * @param actorArn
      *        The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating
-     *        the pull request with additional commits or changing the status of a pull request.
+     *        the pull request with more commits or changing the status of a pull request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,6 +452,126 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Information about a pull request event.
+     * </p>
+     * 
+     * @param approvalRuleEventMetadata
+     *        Information about a pull request event.
+     */
+
+    public void setApprovalRuleEventMetadata(ApprovalRuleEventMetadata approvalRuleEventMetadata) {
+        this.approvalRuleEventMetadata = approvalRuleEventMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about a pull request event.
+     * </p>
+     * 
+     * @return Information about a pull request event.
+     */
+
+    public ApprovalRuleEventMetadata getApprovalRuleEventMetadata() {
+        return this.approvalRuleEventMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about a pull request event.
+     * </p>
+     * 
+     * @param approvalRuleEventMetadata
+     *        Information about a pull request event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequestEvent withApprovalRuleEventMetadata(ApprovalRuleEventMetadata approvalRuleEventMetadata) {
+        setApprovalRuleEventMetadata(approvalRuleEventMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about an approval state change for a pull request.
+     * </p>
+     * 
+     * @param approvalStateChangedEventMetadata
+     *        Information about an approval state change for a pull request.
+     */
+
+    public void setApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadata approvalStateChangedEventMetadata) {
+        this.approvalStateChangedEventMetadata = approvalStateChangedEventMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about an approval state change for a pull request.
+     * </p>
+     * 
+     * @return Information about an approval state change for a pull request.
+     */
+
+    public ApprovalStateChangedEventMetadata getApprovalStateChangedEventMetadata() {
+        return this.approvalStateChangedEventMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about an approval state change for a pull request.
+     * </p>
+     * 
+     * @param approvalStateChangedEventMetadata
+     *        Information about an approval state change for a pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequestEvent withApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadata approvalStateChangedEventMetadata) {
+        setApprovalStateChangedEventMetadata(approvalStateChangedEventMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about an approval rule override event for a pull request.
+     * </p>
+     * 
+     * @param approvalRuleOverriddenEventMetadata
+     *        Information about an approval rule override event for a pull request.
+     */
+
+    public void setApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadata approvalRuleOverriddenEventMetadata) {
+        this.approvalRuleOverriddenEventMetadata = approvalRuleOverriddenEventMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about an approval rule override event for a pull request.
+     * </p>
+     * 
+     * @return Information about an approval rule override event for a pull request.
+     */
+
+    public ApprovalRuleOverriddenEventMetadata getApprovalRuleOverriddenEventMetadata() {
+        return this.approvalRuleOverriddenEventMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about an approval rule override event for a pull request.
+     * </p>
+     * 
+     * @param approvalRuleOverriddenEventMetadata
+     *        Information about an approval rule override event for a pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequestEvent withApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadata approvalRuleOverriddenEventMetadata) {
+        setApprovalRuleOverriddenEventMetadata(approvalRuleOverriddenEventMetadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -460,7 +598,13 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
         if (getPullRequestSourceReferenceUpdatedEventMetadata() != null)
             sb.append("PullRequestSourceReferenceUpdatedEventMetadata: ").append(getPullRequestSourceReferenceUpdatedEventMetadata()).append(",");
         if (getPullRequestMergedStateChangedEventMetadata() != null)
-            sb.append("PullRequestMergedStateChangedEventMetadata: ").append(getPullRequestMergedStateChangedEventMetadata());
+            sb.append("PullRequestMergedStateChangedEventMetadata: ").append(getPullRequestMergedStateChangedEventMetadata()).append(",");
+        if (getApprovalRuleEventMetadata() != null)
+            sb.append("ApprovalRuleEventMetadata: ").append(getApprovalRuleEventMetadata()).append(",");
+        if (getApprovalStateChangedEventMetadata() != null)
+            sb.append("ApprovalStateChangedEventMetadata: ").append(getApprovalStateChangedEventMetadata()).append(",");
+        if (getApprovalRuleOverriddenEventMetadata() != null)
+            sb.append("ApprovalRuleOverriddenEventMetadata: ").append(getApprovalRuleOverriddenEventMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +655,20 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
         if (other.getPullRequestMergedStateChangedEventMetadata() != null
                 && other.getPullRequestMergedStateChangedEventMetadata().equals(this.getPullRequestMergedStateChangedEventMetadata()) == false)
             return false;
+        if (other.getApprovalRuleEventMetadata() == null ^ this.getApprovalRuleEventMetadata() == null)
+            return false;
+        if (other.getApprovalRuleEventMetadata() != null && other.getApprovalRuleEventMetadata().equals(this.getApprovalRuleEventMetadata()) == false)
+            return false;
+        if (other.getApprovalStateChangedEventMetadata() == null ^ this.getApprovalStateChangedEventMetadata() == null)
+            return false;
+        if (other.getApprovalStateChangedEventMetadata() != null
+                && other.getApprovalStateChangedEventMetadata().equals(this.getApprovalStateChangedEventMetadata()) == false)
+            return false;
+        if (other.getApprovalRuleOverriddenEventMetadata() == null ^ this.getApprovalRuleOverriddenEventMetadata() == null)
+            return false;
+        if (other.getApprovalRuleOverriddenEventMetadata() != null
+                && other.getApprovalRuleOverriddenEventMetadata().equals(this.getApprovalRuleOverriddenEventMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -529,6 +687,9 @@ public class PullRequestEvent implements Serializable, Cloneable, StructuredPojo
                 + ((getPullRequestSourceReferenceUpdatedEventMetadata() == null) ? 0 : getPullRequestSourceReferenceUpdatedEventMetadata().hashCode());
         hashCode = prime * hashCode
                 + ((getPullRequestMergedStateChangedEventMetadata() == null) ? 0 : getPullRequestMergedStateChangedEventMetadata().hashCode());
+        hashCode = prime * hashCode + ((getApprovalRuleEventMetadata() == null) ? 0 : getApprovalRuleEventMetadata().hashCode());
+        hashCode = prime * hashCode + ((getApprovalStateChangedEventMetadata() == null) ? 0 : getApprovalStateChangedEventMetadata().hashCode());
+        hashCode = prime * hashCode + ((getApprovalRuleOverriddenEventMetadata() == null) ? 0 : getApprovalRuleOverriddenEventMetadata().hashCode());
         return hashCode;
     }
 

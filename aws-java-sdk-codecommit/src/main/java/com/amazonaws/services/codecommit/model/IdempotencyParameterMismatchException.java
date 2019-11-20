@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The client request token is not valid. Either the token is not in a valid format, or the token has been used in a
- * previous request and cannot be re-used.
+ * previous request and cannot be reused.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

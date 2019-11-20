@@ -355,6 +355,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAvailabilityMonitorTestResult> describeAvailabilityMonitorTestAsync(
+            DescribeAvailabilityMonitorTestRequest request) {
+
+        return describeAvailabilityMonitorTestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAvailabilityMonitorTestResult> describeAvailabilityMonitorTestAsync(
+            DescribeAvailabilityMonitorTestRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAvailabilityMonitorTestRequest, DescribeAvailabilityMonitorTestResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeBandwidthRateLimitResult> describeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest request) {
 
         return describeBandwidthRateLimitAsync(request, null);
@@ -923,6 +938,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<ShutdownGatewayResult> shutdownGatewayAsync(ShutdownGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<ShutdownGatewayRequest, ShutdownGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAvailabilityMonitorTestResult> startAvailabilityMonitorTestAsync(StartAvailabilityMonitorTestRequest request) {
+
+        return startAvailabilityMonitorTestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAvailabilityMonitorTestResult> startAvailabilityMonitorTestAsync(StartAvailabilityMonitorTestRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartAvailabilityMonitorTestRequest, StartAvailabilityMonitorTestResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

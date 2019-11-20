@@ -36,32 +36,32 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
     private String repositoryName;
     /**
      * <p>
-     * The full commit ID of the commit used to establish the 'before' of the comparison.
+     * The full commit ID of the commit used to establish the before of the comparison.
      * </p>
      */
     private String beforeCommitId;
     /**
      * <p>
-     * The full commit ID of the commit used to establish the 'after' of the comparison.
+     * The full commit ID of the commit used to establish the after of the comparison.
      * </p>
      */
     private String afterCommitId;
     /**
      * <p>
-     * The full blob ID of the commit used to establish the 'before' of the comparison.
+     * The full blob ID of the commit used to establish the before of the comparison.
      * </p>
      */
     private String beforeBlobId;
     /**
      * <p>
-     * The full blob ID of the commit used to establish the 'after' of the comparison.
+     * The full blob ID of the commit used to establish the after of the comparison.
      * </p>
      */
     private String afterBlobId;
     /**
      * <p>
      * Location information about the comment on the comparison, including the file name, line number, and whether the
-     * version of the file where the comment was made is 'BEFORE' or 'AFTER'.
+     * version of the file where the comment was made is BEFORE or AFTER.
      * </p>
      */
     private Location location;
@@ -115,11 +115,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full commit ID of the commit used to establish the 'before' of the comparison.
+     * The full commit ID of the commit used to establish the before of the comparison.
      * </p>
      * 
      * @param beforeCommitId
-     *        The full commit ID of the commit used to establish the 'before' of the comparison.
+     *        The full commit ID of the commit used to establish the before of the comparison.
      */
 
     public void setBeforeCommitId(String beforeCommitId) {
@@ -128,10 +128,10 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full commit ID of the commit used to establish the 'before' of the comparison.
+     * The full commit ID of the commit used to establish the before of the comparison.
      * </p>
      * 
-     * @return The full commit ID of the commit used to establish the 'before' of the comparison.
+     * @return The full commit ID of the commit used to establish the before of the comparison.
      */
 
     public String getBeforeCommitId() {
@@ -140,11 +140,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full commit ID of the commit used to establish the 'before' of the comparison.
+     * The full commit ID of the commit used to establish the before of the comparison.
      * </p>
      * 
      * @param beforeCommitId
-     *        The full commit ID of the commit used to establish the 'before' of the comparison.
+     *        The full commit ID of the commit used to establish the before of the comparison.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +155,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full commit ID of the commit used to establish the 'after' of the comparison.
+     * The full commit ID of the commit used to establish the after of the comparison.
      * </p>
      * 
      * @param afterCommitId
-     *        The full commit ID of the commit used to establish the 'after' of the comparison.
+     *        The full commit ID of the commit used to establish the after of the comparison.
      */
 
     public void setAfterCommitId(String afterCommitId) {
@@ -168,10 +168,10 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full commit ID of the commit used to establish the 'after' of the comparison.
+     * The full commit ID of the commit used to establish the after of the comparison.
      * </p>
      * 
-     * @return The full commit ID of the commit used to establish the 'after' of the comparison.
+     * @return The full commit ID of the commit used to establish the after of the comparison.
      */
 
     public String getAfterCommitId() {
@@ -180,11 +180,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full commit ID of the commit used to establish the 'after' of the comparison.
+     * The full commit ID of the commit used to establish the after of the comparison.
      * </p>
      * 
      * @param afterCommitId
-     *        The full commit ID of the commit used to establish the 'after' of the comparison.
+     *        The full commit ID of the commit used to establish the after of the comparison.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,11 +195,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full blob ID of the commit used to establish the 'before' of the comparison.
+     * The full blob ID of the commit used to establish the before of the comparison.
      * </p>
      * 
      * @param beforeBlobId
-     *        The full blob ID of the commit used to establish the 'before' of the comparison.
+     *        The full blob ID of the commit used to establish the before of the comparison.
      */
 
     public void setBeforeBlobId(String beforeBlobId) {
@@ -208,10 +208,10 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full blob ID of the commit used to establish the 'before' of the comparison.
+     * The full blob ID of the commit used to establish the before of the comparison.
      * </p>
      * 
-     * @return The full blob ID of the commit used to establish the 'before' of the comparison.
+     * @return The full blob ID of the commit used to establish the before of the comparison.
      */
 
     public String getBeforeBlobId() {
@@ -220,11 +220,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full blob ID of the commit used to establish the 'before' of the comparison.
+     * The full blob ID of the commit used to establish the before of the comparison.
      * </p>
      * 
      * @param beforeBlobId
-     *        The full blob ID of the commit used to establish the 'before' of the comparison.
+     *        The full blob ID of the commit used to establish the before of the comparison.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +235,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full blob ID of the commit used to establish the 'after' of the comparison.
+     * The full blob ID of the commit used to establish the after of the comparison.
      * </p>
      * 
      * @param afterBlobId
-     *        The full blob ID of the commit used to establish the 'after' of the comparison.
+     *        The full blob ID of the commit used to establish the after of the comparison.
      */
 
     public void setAfterBlobId(String afterBlobId) {
@@ -248,10 +248,10 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full blob ID of the commit used to establish the 'after' of the comparison.
+     * The full blob ID of the commit used to establish the after of the comparison.
      * </p>
      * 
-     * @return The full blob ID of the commit used to establish the 'after' of the comparison.
+     * @return The full blob ID of the commit used to establish the after of the comparison.
      */
 
     public String getAfterBlobId() {
@@ -260,11 +260,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full blob ID of the commit used to establish the 'after' of the comparison.
+     * The full blob ID of the commit used to establish the after of the comparison.
      * </p>
      * 
      * @param afterBlobId
-     *        The full blob ID of the commit used to establish the 'after' of the comparison.
+     *        The full blob ID of the commit used to establish the after of the comparison.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,12 +276,12 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Location information about the comment on the comparison, including the file name, line number, and whether the
-     * version of the file where the comment was made is 'BEFORE' or 'AFTER'.
+     * version of the file where the comment was made is BEFORE or AFTER.
      * </p>
      * 
      * @param location
      *        Location information about the comment on the comparison, including the file name, line number, and
-     *        whether the version of the file where the comment was made is 'BEFORE' or 'AFTER'.
+     *        whether the version of the file where the comment was made is BEFORE or AFTER.
      */
 
     public void setLocation(Location location) {
@@ -291,11 +291,11 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Location information about the comment on the comparison, including the file name, line number, and whether the
-     * version of the file where the comment was made is 'BEFORE' or 'AFTER'.
+     * version of the file where the comment was made is BEFORE or AFTER.
      * </p>
      * 
      * @return Location information about the comment on the comparison, including the file name, line number, and
-     *         whether the version of the file where the comment was made is 'BEFORE' or 'AFTER'.
+     *         whether the version of the file where the comment was made is BEFORE or AFTER.
      */
 
     public Location getLocation() {
@@ -305,12 +305,12 @@ public class CommentsForComparedCommit implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Location information about the comment on the comparison, including the file name, line number, and whether the
-     * version of the file where the comment was made is 'BEFORE' or 'AFTER'.
+     * version of the file where the comment was made is BEFORE or AFTER.
      * </p>
      * 
      * @param location
      *        Location information about the comment on the comparison, including the file name, line number, and
-     *        whether the version of the file where the comment was made is 'BEFORE' or 'AFTER'.
+     *        whether the version of the file where the comment was made is BEFORE or AFTER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

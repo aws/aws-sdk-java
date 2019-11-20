@@ -5716,6 +5716,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFastSnapshotRestoresResult> describeFastSnapshotRestoresAsync(DescribeFastSnapshotRestoresRequest request) {
+
+        return describeFastSnapshotRestoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFastSnapshotRestoresResult> describeFastSnapshotRestoresAsync(final DescribeFastSnapshotRestoresRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFastSnapshotRestoresRequest, DescribeFastSnapshotRestoresResult> asyncHandler) {
+        final DescribeFastSnapshotRestoresRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFastSnapshotRestoresResult>() {
+            @Override
+            public DescribeFastSnapshotRestoresResult call() throws Exception {
+                DescribeFastSnapshotRestoresResult result = null;
+
+                try {
+                    result = executeDescribeFastSnapshotRestores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFleetHistoryResult> describeFleetHistoryAsync(DescribeFleetHistoryRequest request) {
 
         return describeFleetHistoryAsync(request, null);
@@ -9443,6 +9476,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisableFastSnapshotRestoresResult> disableFastSnapshotRestoresAsync(DisableFastSnapshotRestoresRequest request) {
+
+        return disableFastSnapshotRestoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableFastSnapshotRestoresResult> disableFastSnapshotRestoresAsync(final DisableFastSnapshotRestoresRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableFastSnapshotRestoresRequest, DisableFastSnapshotRestoresResult> asyncHandler) {
+        final DisableFastSnapshotRestoresRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableFastSnapshotRestoresResult>() {
+            @Override
+            public DisableFastSnapshotRestoresResult call() throws Exception {
+                DisableFastSnapshotRestoresResult result = null;
+
+                try {
+                    result = executeDisableFastSnapshotRestores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableTransitGatewayRouteTablePropagationResult> disableTransitGatewayRouteTablePropagationAsync(
             DisableTransitGatewayRouteTablePropagationRequest request) {
 
@@ -9832,6 +9898,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeEnableEbsEncryptionByDefault(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableFastSnapshotRestoresResult> enableFastSnapshotRestoresAsync(EnableFastSnapshotRestoresRequest request) {
+
+        return enableFastSnapshotRestoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableFastSnapshotRestoresResult> enableFastSnapshotRestoresAsync(final EnableFastSnapshotRestoresRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableFastSnapshotRestoresRequest, EnableFastSnapshotRestoresResult> asyncHandler) {
+        final EnableFastSnapshotRestoresRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableFastSnapshotRestoresResult>() {
+            @Override
+            public EnableFastSnapshotRestoresResult call() throws Exception {
+                EnableFastSnapshotRestoresResult result = null;
+
+                try {
+                    result = executeEnableFastSnapshotRestores(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

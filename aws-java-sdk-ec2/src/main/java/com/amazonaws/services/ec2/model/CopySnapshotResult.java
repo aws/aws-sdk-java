@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of CopySnapshot.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CopySnapshotResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -31,7 +29,11 @@ public class CopySnapshotResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String snapshotId;
-
+    /**
+     * <p>
+     * Any tags applied to the new snapshot.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -75,7 +77,11 @@ public class CopySnapshotResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * @return
+     * <p>
+     * Any tags applied to the new snapshot.
+     * </p>
+     * 
+     * @return Any tags applied to the new snapshot.
      */
 
     public java.util.List<Tag> getTags() {
@@ -86,7 +92,12 @@ public class CopySnapshotResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Any tags applied to the new snapshot.
+     * </p>
+     * 
      * @param tags
+     *        Any tags applied to the new snapshot.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -100,12 +111,16 @@ public class CopySnapshotResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
+     * Any tags applied to the new snapshot.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Any tags applied to the new snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +135,12 @@ public class CopySnapshotResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Any tags applied to the new snapshot.
+     * </p>
+     * 
      * @param tags
+     *        Any tags applied to the new snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

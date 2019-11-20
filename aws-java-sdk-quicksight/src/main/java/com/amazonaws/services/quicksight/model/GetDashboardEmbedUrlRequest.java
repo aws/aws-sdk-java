@@ -63,18 +63,13 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean resetDisabled;
     /**
      * <p>
-     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any of
-     * the following:
+     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any
+     * Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon QuickSight users in your account (readers, authors, or admins)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AD users
+     * Active Directory (AD) users or group members
      * </p>
      * </li>
      * <li>
@@ -84,12 +79,8 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Federated IAM users
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Federated IAM role-based sessions
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM Federation
      * </p>
      * </li>
      * </ul>
@@ -385,18 +376,13 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any of
-     * the following:
+     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any
+     * Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon QuickSight users in your account (readers, authors, or admins)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AD users
+     * Active Directory (AD) users or group members
      * </p>
      * </li>
      * <li>
@@ -406,28 +392,20 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Federated IAM users
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Federated IAM role-based sessions
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM Federation
      * </p>
      * </li>
      * </ul>
      * 
      * @param userArn
      *        The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for
-     *        any of the following:</p>
+     *        any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon QuickSight users in your account (readers, authors, or admins)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AD users
+     *        Active Directory (AD) users or group members
      *        </p>
      *        </li>
      *        <li>
@@ -437,12 +415,8 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        Federated IAM users
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Federated IAM role-based sessions
+     *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *        Connect, or IAM Federation
      *        </p>
      *        </li>
      */
@@ -453,18 +427,13 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any of
-     * the following:
+     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any
+     * Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon QuickSight users in your account (readers, authors, or admins)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AD users
+     * Active Directory (AD) users or group members
      * </p>
      * </li>
      * <li>
@@ -474,27 +443,19 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Federated IAM users
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Federated IAM role-based sessions
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM Federation
      * </p>
      * </li>
      * </ul>
      * 
      * @return The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this
-     *         for any of the following:</p>
+     *         for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the
+     *         following:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Amazon QuickSight users in your account (readers, authors, or admins)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         AD users
+     *         Active Directory (AD) users or group members
      *         </p>
      *         </li>
      *         <li>
@@ -504,12 +465,8 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         Federated IAM users
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Federated IAM role-based sessions
+     *         IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *         Connect, or IAM Federation
      *         </p>
      *         </li>
      */
@@ -520,18 +477,13 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any of
-     * the following:
+     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any
+     * Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Amazon QuickSight users in your account (readers, authors, or admins)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AD users
+     * Active Directory (AD) users or group members
      * </p>
      * </li>
      * <li>
@@ -541,28 +493,20 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * Federated IAM users
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Federated IAM role-based sessions
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM Federation
      * </p>
      * </li>
      * </ul>
      * 
      * @param userArn
      *        The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for
-     *        any of the following:</p>
+     *        any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Amazon QuickSight users in your account (readers, authors, or admins)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AD users
+     *        Active Directory (AD) users or group members
      *        </p>
      *        </li>
      *        <li>
@@ -572,12 +516,8 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        Federated IAM users
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Federated IAM role-based sessions
+     *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *        Connect, or IAM Federation
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

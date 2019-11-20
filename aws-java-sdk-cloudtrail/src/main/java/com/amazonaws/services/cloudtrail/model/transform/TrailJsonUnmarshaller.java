@@ -104,6 +104,10 @@ public class TrailJsonUnmarshaller implements Unmarshaller<Trail, JsonUnmarshall
                     context.nextToken();
                     trail.setHasCustomEventSelectors(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("HasInsightSelectors", targetDepth)) {
+                    context.nextToken();
+                    trail.setHasInsightSelectors(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("IsOrganizationTrail", targetDepth)) {
                     context.nextToken();
                     trail.setIsOrganizationTrail(context.getUnmarshaller(Boolean.class).unmarshall(context));

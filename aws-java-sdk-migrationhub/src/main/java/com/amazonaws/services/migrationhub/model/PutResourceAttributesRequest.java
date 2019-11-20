@@ -33,14 +33,14 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
     private String progressUpdateStream;
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      */
     private String migrationTaskName;
     /**
      * <p>
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
-     * the Application Discovery Service (ADS)'s repository.
+     * the Application Discovery Service repository.
      * </p>
      * <note>
      * <p>
@@ -56,7 +56,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM"
      * fields will be discarded and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a href=
+     * Application Discovery Service repository. See the <a href=
      * "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      * >Example</a> section below for a use case of specifying "VM" related values.
      * </p>
@@ -122,11 +122,11 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public void setMigrationTaskName(String migrationTaskName) {
@@ -135,10 +135,10 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
-     * @return Unique identifier that references the migration task.
+     * @return Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public String getMigrationTaskName() {
@@ -147,11 +147,11 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,7 +163,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
-     * the Application Discovery Service (ADS)'s repository.
+     * the Application Discovery Service repository.
      * </p>
      * <note>
      * <p>
@@ -179,7 +179,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM"
      * fields will be discarded and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a href=
+     * Application Discovery Service repository. See the <a href=
      * "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      * >Example</a> section below for a use case of specifying "VM" related values.
      * </p>
@@ -195,7 +195,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * </important>
      * 
      * @return Information about the resource that is being migrated. This data will be used to map the task to a
-     *         resource in the Application Discovery Service (ADS)'s repository.</p> <note>
+     *         resource in the Application Discovery Service repository.</p> <note>
      *         <p>
      *         Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved
      *         for the following values:
@@ -209,7 +209,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      *         If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      *         <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then
      *         all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a
-     *         server in Application Discovery Service (ADS)'s repository. See the <a href=
+     *         server in Application Discovery Service repository. See the <a href=
      *         "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      *         >Example</a> section below for a use case of specifying "VM" related values.
      *         </p>
@@ -231,7 +231,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
-     * the Application Discovery Service (ADS)'s repository.
+     * the Application Discovery Service repository.
      * </p>
      * <note>
      * <p>
@@ -247,7 +247,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM"
      * fields will be discarded and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a href=
+     * Application Discovery Service repository. See the <a href=
      * "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      * >Example</a> section below for a use case of specifying "VM" related values.
      * </p>
@@ -264,7 +264,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * 
      * @param resourceAttributeList
      *        Information about the resource that is being migrated. This data will be used to map the task to a
-     *        resource in the Application Discovery Service (ADS)'s repository.</p> <note>
+     *        resource in the Application Discovery Service repository.</p> <note>
      *        <p>
      *        Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      *        the following values:
@@ -278,7 +278,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      *        If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      *        <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then
      *        all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a
-     *        server in Application Discovery Service (ADS)'s repository. See the <a href=
+     *        server in Application Discovery Service repository. See the <a href=
      *        "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      *        >Example</a> section below for a use case of specifying "VM" related values.
      *        </p>
@@ -305,7 +305,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
-     * the Application Discovery Service (ADS)'s repository.
+     * the Application Discovery Service repository.
      * </p>
      * <note>
      * <p>
@@ -321,7 +321,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM"
      * fields will be discarded and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a href=
+     * Application Discovery Service repository. See the <a href=
      * "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      * >Example</a> section below for a use case of specifying "VM" related values.
      * </p>
@@ -343,7 +343,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * 
      * @param resourceAttributeList
      *        Information about the resource that is being migrated. This data will be used to map the task to a
-     *        resource in the Application Discovery Service (ADS)'s repository.</p> <note>
+     *        resource in the Application Discovery Service repository.</p> <note>
      *        <p>
      *        Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      *        the following values:
@@ -357,7 +357,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      *        If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      *        <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then
      *        all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a
-     *        server in Application Discovery Service (ADS)'s repository. See the <a href=
+     *        server in Application Discovery Service repository. See the <a href=
      *        "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      *        >Example</a> section below for a use case of specifying "VM" related values.
      *        </p>
@@ -386,7 +386,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Information about the resource that is being migrated. This data will be used to map the task to a resource in
-     * the Application Discovery Service (ADS)'s repository.
+     * the Application Discovery Service repository.
      * </p>
      * <note>
      * <p>
@@ -402,7 +402,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM"
      * fields will be discarded and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a href=
+     * Application Discovery Service repository. See the <a href=
      * "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      * >Example</a> section below for a use case of specifying "VM" related values.
      * </p>
@@ -419,7 +419,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      * 
      * @param resourceAttributeList
      *        Information about the resource that is being migrated. This data will be used to map the task to a
-     *        resource in the Application Discovery Service (ADS)'s repository.</p> <note>
+     *        resource in the Application Discovery Service repository.</p> <note>
      *        <p>
      *        Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      *        the following values:
@@ -433,7 +433,7 @@ public class PutResourceAttributesRequest extends com.amazonaws.AmazonWebService
      *        If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that
      *        <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then
      *        all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a
-     *        server in Application Discovery Service (ADS)'s repository. See the <a href=
+     *        server in Application Discovery Service repository. See the <a href=
      *        "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples"
      *        >Example</a> section below for a use case of specifying "VM" related values.
      *        </p>

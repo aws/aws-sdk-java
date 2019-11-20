@@ -287,6 +287,19 @@ public class AmazonEC2Waiters {
     }
 
     /**
+     * Builds a SecurityGroupExists waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeSecurityGroupsRequest> securityGroupExists() {
+
+        return new WaiterBuilder<DescribeSecurityGroupsRequest, DescribeSecurityGroupsResult>().withSdkFunction(new DescribeSecurityGroupsFunction(client))
+                .withAcceptors(new SecurityGroupExists.IsTrueMatcher(), new SecurityGroupExists.IsInvalidGroupNotFoundMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(6), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a InstanceTerminated waiter by using custom parameters waiterParameters and other parameters defined in
      * the waiters specification, and then polls until it determines whether the resource entered the desired state or
      * not, where polling criteria is bound by either default polling strategy or custom polling strategy.

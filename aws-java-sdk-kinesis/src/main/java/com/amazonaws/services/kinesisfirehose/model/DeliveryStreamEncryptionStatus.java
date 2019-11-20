@@ -22,8 +22,10 @@ public enum DeliveryStreamEncryptionStatus {
 
     ENABLED("ENABLED"),
     ENABLING("ENABLING"),
+    ENABLING_FAILED("ENABLING_FAILED"),
     DISABLED("DISABLED"),
-    DISABLING("DISABLING");
+    DISABLING("DISABLING"),
+    DISABLING_FAILED("DISABLING_FAILED");
 
     private String value;
 

@@ -37,7 +37,7 @@ public class PullRequestMergedStateChangedEventMetadata implements Serializable,
     private String repositoryName;
     /**
      * <p>
-     * The name of the branch that the pull request will be merged into.
+     * The name of the branch that the pull request is merged into.
      * </p>
      */
     private String destinationReference;
@@ -90,11 +90,11 @@ public class PullRequestMergedStateChangedEventMetadata implements Serializable,
 
     /**
      * <p>
-     * The name of the branch that the pull request will be merged into.
+     * The name of the branch that the pull request is merged into.
      * </p>
      * 
      * @param destinationReference
-     *        The name of the branch that the pull request will be merged into.
+     *        The name of the branch that the pull request is merged into.
      */
 
     public void setDestinationReference(String destinationReference) {
@@ -103,10 +103,10 @@ public class PullRequestMergedStateChangedEventMetadata implements Serializable,
 
     /**
      * <p>
-     * The name of the branch that the pull request will be merged into.
+     * The name of the branch that the pull request is merged into.
      * </p>
      * 
-     * @return The name of the branch that the pull request will be merged into.
+     * @return The name of the branch that the pull request is merged into.
      */
 
     public String getDestinationReference() {
@@ -115,11 +115,11 @@ public class PullRequestMergedStateChangedEventMetadata implements Serializable,
 
     /**
      * <p>
-     * The name of the branch that the pull request will be merged into.
+     * The name of the branch that the pull request is merged into.
      * </p>
      * 
      * @param destinationReference
-     *        The name of the branch that the pull request will be merged into.
+     *        The name of the branch that the pull request is merged into.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

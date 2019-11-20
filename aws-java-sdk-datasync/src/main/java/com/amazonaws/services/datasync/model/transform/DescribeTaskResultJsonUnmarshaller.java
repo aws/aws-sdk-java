@@ -93,6 +93,10 @@ public class DescribeTaskResultJsonUnmarshaller implements Unmarshaller<Describe
                     context.nextToken();
                     describeTaskResult.setExcludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("Schedule", targetDepth)) {
+                    context.nextToken();
+                    describeTaskResult.setSchedule(TaskScheduleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
                     describeTaskResult.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));

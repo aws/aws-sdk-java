@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The list of triggers for the repository is required but was not specified.
+ * The list of triggers for the repository is required, but was not specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

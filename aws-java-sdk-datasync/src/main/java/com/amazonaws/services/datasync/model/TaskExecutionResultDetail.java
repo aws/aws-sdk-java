@@ -43,6 +43,13 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
     private String prepareStatus;
     /**
      * <p>
+     * The total time in milliseconds that AWS DataSync took to transfer the file from the source to the destination
+     * location.
+     * </p>
+     */
+    private Long totalDuration;
+    /**
+     * <p>
      * The total time in milliseconds that AWS DataSync spent in the TRANSFERRING phase.
      * </p>
      */
@@ -176,6 +183,52 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
     public TaskExecutionResultDetail withPrepareStatus(PhaseStatus prepareStatus) {
         this.prepareStatus = prepareStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total time in milliseconds that AWS DataSync took to transfer the file from the source to the destination
+     * location.
+     * </p>
+     * 
+     * @param totalDuration
+     *        The total time in milliseconds that AWS DataSync took to transfer the file from the source to the
+     *        destination location.
+     */
+
+    public void setTotalDuration(Long totalDuration) {
+        this.totalDuration = totalDuration;
+    }
+
+    /**
+     * <p>
+     * The total time in milliseconds that AWS DataSync took to transfer the file from the source to the destination
+     * location.
+     * </p>
+     * 
+     * @return The total time in milliseconds that AWS DataSync took to transfer the file from the source to the
+     *         destination location.
+     */
+
+    public Long getTotalDuration() {
+        return this.totalDuration;
+    }
+
+    /**
+     * <p>
+     * The total time in milliseconds that AWS DataSync took to transfer the file from the source to the destination
+     * location.
+     * </p>
+     * 
+     * @param totalDuration
+     *        The total time in milliseconds that AWS DataSync took to transfer the file from the source to the
+     *        destination location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskExecutionResultDetail withTotalDuration(Long totalDuration) {
+        setTotalDuration(totalDuration);
         return this;
     }
 
@@ -485,6 +538,8 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
             sb.append("PrepareDuration: ").append(getPrepareDuration()).append(",");
         if (getPrepareStatus() != null)
             sb.append("PrepareStatus: ").append(getPrepareStatus()).append(",");
+        if (getTotalDuration() != null)
+            sb.append("TotalDuration: ").append(getTotalDuration()).append(",");
         if (getTransferDuration() != null)
             sb.append("TransferDuration: ").append(getTransferDuration()).append(",");
         if (getTransferStatus() != null)
@@ -518,6 +573,10 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
         if (other.getPrepareStatus() == null ^ this.getPrepareStatus() == null)
             return false;
         if (other.getPrepareStatus() != null && other.getPrepareStatus().equals(this.getPrepareStatus()) == false)
+            return false;
+        if (other.getTotalDuration() == null ^ this.getTotalDuration() == null)
+            return false;
+        if (other.getTotalDuration() != null && other.getTotalDuration().equals(this.getTotalDuration()) == false)
             return false;
         if (other.getTransferDuration() == null ^ this.getTransferDuration() == null)
             return false;
@@ -553,6 +612,7 @@ public class TaskExecutionResultDetail implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getPrepareDuration() == null) ? 0 : getPrepareDuration().hashCode());
         hashCode = prime * hashCode + ((getPrepareStatus() == null) ? 0 : getPrepareStatus().hashCode());
+        hashCode = prime * hashCode + ((getTotalDuration() == null) ? 0 : getTotalDuration().hashCode());
         hashCode = prime * hashCode + ((getTransferDuration() == null) ? 0 : getTransferDuration().hashCode());
         hashCode = prime * hashCode + ((getTransferStatus() == null) ? 0 : getTransferStatus().hashCode());
         hashCode = prime * hashCode + ((getVerifyDuration() == null) ? 0 : getVerifyDuration().hashCode());

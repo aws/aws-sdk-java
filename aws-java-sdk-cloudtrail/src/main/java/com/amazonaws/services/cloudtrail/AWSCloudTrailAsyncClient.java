@@ -453,6 +453,39 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetInsightSelectorsResult> getInsightSelectorsAsync(GetInsightSelectorsRequest request) {
+
+        return getInsightSelectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightSelectorsResult> getInsightSelectorsAsync(final GetInsightSelectorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInsightSelectorsRequest, GetInsightSelectorsResult> asyncHandler) {
+        final GetInsightSelectorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInsightSelectorsResult>() {
+            @Override
+            public GetInsightSelectorsResult call() throws Exception {
+                GetInsightSelectorsResult result = null;
+
+                try {
+                    result = executeGetInsightSelectors(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTrailResult> getTrailAsync(GetTrailRequest request) {
 
         return getTrailAsync(request, null);
@@ -714,6 +747,39 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
 
                 try {
                     result = executePutEventSelectors(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInsightSelectorsResult> putInsightSelectorsAsync(PutInsightSelectorsRequest request) {
+
+        return putInsightSelectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInsightSelectorsResult> putInsightSelectorsAsync(final PutInsightSelectorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutInsightSelectorsRequest, PutInsightSelectorsResult> asyncHandler) {
+        final PutInsightSelectorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutInsightSelectorsResult>() {
+            @Override
+            public PutInsightSelectorsResult call() throws Exception {
+                PutInsightSelectorsResult result = null;
+
+                try {
+                    result = executePutInsightSelectors(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

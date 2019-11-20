@@ -64,6 +64,14 @@ public class SettingsJsonUnmarshaller implements Unmarshaller<Settings, JsonUnma
                     context.nextToken();
                     settings.setChannelIdentification(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ShowAlternatives", targetDepth)) {
+                    context.nextToken();
+                    settings.setShowAlternatives(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxAlternatives", targetDepth)) {
+                    context.nextToken();
+                    settings.setMaxAlternatives(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

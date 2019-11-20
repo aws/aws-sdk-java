@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * At least one event for the trigger is required but was not specified.
+ * At least one event for the trigger is required, but was not specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

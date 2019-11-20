@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A blob ID is required but was not specified.
+ * A blob ID is required, but was not specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

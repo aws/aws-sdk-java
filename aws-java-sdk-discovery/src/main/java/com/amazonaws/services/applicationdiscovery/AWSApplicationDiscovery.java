@@ -87,6 +87,13 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">
  * <i>AWS Application Discovery Service User Guide</i> </a>.
  * </p>
+ * <note>
+ * <p>
+ * Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a
+ * <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home
+ * region.
+ * </p>
+ * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSApplicationDiscovery {
@@ -168,6 +175,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.AssociateConfigurationItemsToApplication
      */
     AssociateConfigurationItemsToApplicationResult associateConfigurationItemsToApplication(
@@ -190,11 +199,15 @@ public interface AWSApplicationDiscovery {
      * @throws AuthorizationErrorException
      *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
      *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
      *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.BatchDeleteImportData
      */
     BatchDeleteImportDataResult batchDeleteImportData(BatchDeleteImportDataRequest batchDeleteImportDataRequest);
@@ -216,6 +229,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.CreateApplication
      */
     CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
@@ -240,6 +255,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.CreateTags
      */
     CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
@@ -261,6 +278,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DeleteApplications
      */
     DeleteApplicationsResult deleteApplications(DeleteApplicationsRequest deleteApplicationsRequest);
@@ -285,6 +304,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DeleteTags
      */
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
@@ -307,6 +328,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeAgents
      */
     DescribeAgentsResult describeAgents(DescribeAgentsRequest describeAgentsRequest);
@@ -365,6 +388,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeConfigurations
      */
     DescribeConfigurationsResult describeConfigurations(DescribeConfigurationsRequest describeConfigurationsRequest);
@@ -391,6 +416,8 @@ public interface AWSApplicationDiscovery {
      *         This operation is not permitted.
      * @throws ResourceNotFoundException
      *         The specified configuration ID was not located. Verify the configuration ID and try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeContinuousExports
      */
     DescribeContinuousExportsResult describeContinuousExports(DescribeContinuousExportsRequest describeContinuousExportsRequest);
@@ -416,6 +443,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeExportConfigurations
      */
     @Deprecated
@@ -438,6 +467,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeExportTasks
      */
     DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest describeExportTasksRequest);
@@ -453,11 +484,15 @@ public interface AWSApplicationDiscovery {
      * @throws AuthorizationErrorException
      *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
      *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
      *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeImportTasks
      */
     DescribeImportTasksResult describeImportTasks(DescribeImportTasksRequest describeImportTasksRequest);
@@ -506,6 +541,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeTags
      */
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
@@ -527,6 +564,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DisassociateConfigurationItemsFromApplication
      */
     DisassociateConfigurationItemsFromApplicationResult disassociateConfigurationItemsFromApplication(
@@ -557,6 +596,8 @@ public interface AWSApplicationDiscovery {
      *         The server experienced an internal error. Try again.
      * @throws OperationNotPermittedException
      *         This operation is not permitted.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.ExportConfigurations
      */
     @Deprecated
@@ -582,6 +623,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.GetDiscoverySummary
      */
     GetDiscoverySummaryResult getDiscoverySummary(GetDiscoverySummaryRequest getDiscoverySummaryRequest);
@@ -606,6 +649,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.ListConfigurations
      */
     ListConfigurationsResult listConfigurations(ListConfigurationsRequest listConfigurationsRequest);
@@ -627,6 +672,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.ListServerNeighbors
      */
     ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest listServerNeighborsRequest);
@@ -656,6 +703,8 @@ public interface AWSApplicationDiscovery {
      *         <code>StartImportTask</code> action, but with different parameters. For example, you use the same request
      *         token but have two different import URLs, you can encounter this issue. If the import tasks are meant to
      *         be different, use a different <code>clientRequestToken</code>, and try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StartContinuousExport
      */
     StartContinuousExportResult startContinuousExport(StartContinuousExportRequest startContinuousExportRequest);
@@ -677,6 +726,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StartDataCollectionByAgentIds
      */
     StartDataCollectionByAgentIdsResult startDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest startDataCollectionByAgentIdsRequest);
@@ -711,6 +762,8 @@ public interface AWSApplicationDiscovery {
      *         The server experienced an internal error. Try again.
      * @throws OperationNotPermittedException
      *         This operation is not permitted.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StartExportTask
      */
     StartExportTaskResult startExportTask(StartExportTaskRequest startExportTaskRequest);
@@ -775,11 +828,15 @@ public interface AWSApplicationDiscovery {
      * @throws AuthorizationErrorException
      *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
      *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
      *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StartImportTask
      */
     StartImportTaskResult startImportTask(StartImportTaskRequest startImportTaskRequest);
@@ -810,6 +867,8 @@ public interface AWSApplicationDiscovery {
      *         <code>StartImportTask</code> action, but with different parameters. For example, you use the same request
      *         token but have two different import URLs, you can encounter this issue. If the import tasks are meant to
      *         be different, use a different <code>clientRequestToken</code>, and try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StopContinuousExport
      */
     StopContinuousExportResult stopContinuousExport(StopContinuousExportRequest stopContinuousExportRequest);
@@ -831,6 +890,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StopDataCollectionByAgentIds
      */
     StopDataCollectionByAgentIdsResult stopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest stopDataCollectionByAgentIdsRequest);
@@ -852,6 +913,8 @@ public interface AWSApplicationDiscovery {
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.UpdateApplication
      */
     UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);

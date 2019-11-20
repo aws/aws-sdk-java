@@ -27,7 +27,7 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The configurationId in ADS that uniquely identifies the grouped application.
+     * The configurationId in Application Discovery Service that uniquely identifies the grouped application.
      * </p>
      */
     private String applicationId;
@@ -39,6 +39,12 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
     private String status;
     /**
      * <p>
+     * The timestamp when the application state changed.
+     * </p>
+     */
+    private java.util.Date updateDateTime;
+    /**
+     * <p>
      * Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission
      * to make the call.
      * </p>
@@ -47,11 +53,11 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The configurationId in ADS that uniquely identifies the grouped application.
+     * The configurationId in Application Discovery Service that uniquely identifies the grouped application.
      * </p>
      * 
      * @param applicationId
-     *        The configurationId in ADS that uniquely identifies the grouped application.
+     *        The configurationId in Application Discovery Service that uniquely identifies the grouped application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -60,10 +66,10 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The configurationId in ADS that uniquely identifies the grouped application.
+     * The configurationId in Application Discovery Service that uniquely identifies the grouped application.
      * </p>
      * 
-     * @return The configurationId in ADS that uniquely identifies the grouped application.
+     * @return The configurationId in Application Discovery Service that uniquely identifies the grouped application.
      */
 
     public String getApplicationId() {
@@ -72,11 +78,11 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The configurationId in ADS that uniquely identifies the grouped application.
+     * The configurationId in Application Discovery Service that uniquely identifies the grouped application.
      * </p>
      * 
      * @param applicationId
-     *        The configurationId in ADS that uniquely identifies the grouped application.
+     *        The configurationId in Application Discovery Service that uniquely identifies the grouped application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,6 +147,46 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
 
     public NotifyApplicationStateRequest withStatus(ApplicationStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the application state changed.
+     * </p>
+     * 
+     * @param updateDateTime
+     *        The timestamp when the application state changed.
+     */
+
+    public void setUpdateDateTime(java.util.Date updateDateTime) {
+        this.updateDateTime = updateDateTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the application state changed.
+     * </p>
+     * 
+     * @return The timestamp when the application state changed.
+     */
+
+    public java.util.Date getUpdateDateTime() {
+        return this.updateDateTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the application state changed.
+     * </p>
+     * 
+     * @param updateDateTime
+     *        The timestamp when the application state changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotifyApplicationStateRequest withUpdateDateTime(java.util.Date updateDateTime) {
+        setUpdateDateTime(updateDateTime);
         return this;
     }
 
@@ -220,6 +266,8 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getUpdateDateTime() != null)
+            sb.append("UpdateDateTime: ").append(getUpdateDateTime()).append(",");
         if (getDryRun() != null)
             sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
@@ -244,6 +292,10 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getUpdateDateTime() == null ^ this.getUpdateDateTime() == null)
+            return false;
+        if (other.getUpdateDateTime() != null && other.getUpdateDateTime().equals(this.getUpdateDateTime()) == false)
+            return false;
         if (other.getDryRun() == null ^ this.getDryRun() == null)
             return false;
         if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
@@ -258,6 +310,7 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getUpdateDateTime() == null) ? 0 : getUpdateDateTime().hashCode());
         hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }

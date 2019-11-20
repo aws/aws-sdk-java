@@ -33,29 +33,29 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
     private String repositoryName;
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      */
     private String sourceCommitSpecifier;
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      */
     private String destinationCommitSpecifier;
     /**
      * <p>
-     * The branch where the merge will be applied.
+     * The branch where the merge is applied.
      * </p>
      */
     private String targetBranch;
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      */
     private String conflictDetailLevel;
@@ -63,21 +63,21 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      */
     private String conflictResolutionStrategy;
     /**
      * <p>
-     * The name of the author who created the commit. This information will be used as both the author and committer for
-     * the commit.
+     * The name of the author who created the commit. This information is used as both the author and committer for the
+     * commit.
      * </p>
      */
     private String authorName;
     /**
      * <p>
-     * The email address of the person merging the branches. This information will be used in the commit information for
-     * the merge.
+     * The email address of the person merging the branches. This information is used in the commit information for the
+     * merge.
      * </p>
      */
     private String email;
@@ -90,14 +90,14 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a .gitkeep file is created for empty folders. The default is false.
      * </p>
      */
     private Boolean keepEmptyFolders;
     /**
      * <p>
-     * A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict resolution
-     * strategy.
+     * If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a
+     * merge.
      * </p>
      */
     private ConflictResolution conflictResolution;
@@ -144,13 +144,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param sourceCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      */
 
     public void setSourceCommitSpecifier(String sourceCommitSpecifier) {
@@ -159,12 +159,12 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
-     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a
-     *         branch name or a full commit ID.
+     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a
+     *         branch name or a full commit ID).
      */
 
     public String getSourceCommitSpecifier() {
@@ -173,13 +173,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param sourceCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,13 +190,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param destinationCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      */
 
     public void setDestinationCommitSpecifier(String destinationCommitSpecifier) {
@@ -205,12 +205,12 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
-     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a
-     *         branch name or a full commit ID.
+     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a
+     *         branch name or a full commit ID).
      */
 
     public String getDestinationCommitSpecifier() {
@@ -219,13 +219,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param destinationCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch where the merge will be applied.
+     * The branch where the merge is applied.
      * </p>
      * 
      * @param targetBranch
-     *        The branch where the merge will be applied.
+     *        The branch where the merge is applied.
      */
 
     public void setTargetBranch(String targetBranch) {
@@ -249,10 +249,10 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch where the merge will be applied.
+     * The branch where the merge is applied.
      * </p>
      * 
-     * @return The branch where the merge will be applied.
+     * @return The branch where the merge is applied.
      */
 
     public String getTargetBranch() {
@@ -261,11 +261,11 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The branch where the merge will be applied.
+     * The branch where the merge is applied.
      * </p>
      * 
      * @param targetBranch
-     *        The branch where the merge will be applied.
+     *        The branch where the merge is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,16 +276,15 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      * 
      * @param conflictDetailLevel
-     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
-     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
-     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
-     *        line.
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     *        not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict is considered not mergeable if the same file in both branches has differences on the same line.
      * @see ConflictDetailLevelTypeEnum
      */
 
@@ -295,15 +294,14 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      * 
-     * @return The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
-     *         not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
-     *         conflict will be considered not mergeable if the same file in both branches has differences on the same
-     *         line.
+     * @return The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     *         not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *         conflict is considered not mergeable if the same file in both branches has differences on the same line.
      * @see ConflictDetailLevelTypeEnum
      */
 
@@ -313,16 +311,15 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      * 
      * @param conflictDetailLevel
-     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
-     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
-     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
-     *        line.
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     *        not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict is considered not mergeable if the same file in both branches has differences on the same line.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConflictDetailLevelTypeEnum
      */
@@ -334,16 +331,15 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      * 
      * @param conflictDetailLevel
-     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
-     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
-     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
-     *        line.
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     *        not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict is considered not mergeable if the same file in both branches has differences on the same line.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConflictDetailLevelTypeEnum
      */
@@ -357,13 +353,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      * 
      * @param conflictResolutionStrategy
      *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
      *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
-     *        merge operation will be successful.
+     *        merge operation is successful.
      * @see ConflictResolutionStrategyTypeEnum
      */
 
@@ -375,12 +371,12 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      * 
      * @return Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
      *         versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
-     *         merge operation will be successful.
+     *         merge operation is successful.
      * @see ConflictResolutionStrategyTypeEnum
      */
 
@@ -392,13 +388,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      * 
      * @param conflictResolutionStrategy
      *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
      *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
-     *        merge operation will be successful.
+     *        merge operation is successful.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConflictResolutionStrategyTypeEnum
      */
@@ -412,13 +408,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      * 
      * @param conflictResolutionStrategy
      *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
      *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
-     *        merge operation will be successful.
+     *        merge operation is successful.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConflictResolutionStrategyTypeEnum
      */
@@ -430,13 +426,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the author who created the commit. This information will be used as both the author and committer for
-     * the commit.
+     * The name of the author who created the commit. This information is used as both the author and committer for the
+     * commit.
      * </p>
      * 
      * @param authorName
-     *        The name of the author who created the commit. This information will be used as both the author and
-     *        committer for the commit.
+     *        The name of the author who created the commit. This information is used as both the author and committer
+     *        for the commit.
      */
 
     public void setAuthorName(String authorName) {
@@ -445,12 +441,12 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the author who created the commit. This information will be used as both the author and committer for
-     * the commit.
+     * The name of the author who created the commit. This information is used as both the author and committer for the
+     * commit.
      * </p>
      * 
-     * @return The name of the author who created the commit. This information will be used as both the author and
-     *         committer for the commit.
+     * @return The name of the author who created the commit. This information is used as both the author and committer
+     *         for the commit.
      */
 
     public String getAuthorName() {
@@ -459,13 +455,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the author who created the commit. This information will be used as both the author and committer for
-     * the commit.
+     * The name of the author who created the commit. This information is used as both the author and committer for the
+     * commit.
      * </p>
      * 
      * @param authorName
-     *        The name of the author who created the commit. This information will be used as both the author and
-     *        committer for the commit.
+     *        The name of the author who created the commit. This information is used as both the author and committer
+     *        for the commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,13 +472,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The email address of the person merging the branches. This information will be used in the commit information for
-     * the merge.
+     * The email address of the person merging the branches. This information is used in the commit information for the
+     * merge.
      * </p>
      * 
      * @param email
-     *        The email address of the person merging the branches. This information will be used in the commit
-     *        information for the merge.
+     *        The email address of the person merging the branches. This information is used in the commit information
+     *        for the merge.
      */
 
     public void setEmail(String email) {
@@ -491,12 +487,12 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The email address of the person merging the branches. This information will be used in the commit information for
-     * the merge.
+     * The email address of the person merging the branches. This information is used in the commit information for the
+     * merge.
      * </p>
      * 
-     * @return The email address of the person merging the branches. This information will be used in the commit
-     *         information for the merge.
+     * @return The email address of the person merging the branches. This information is used in the commit information
+     *         for the merge.
      */
 
     public String getEmail() {
@@ -505,13 +501,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The email address of the person merging the branches. This information will be used in the commit information for
-     * the merge.
+     * The email address of the person merging the branches. This information is used in the commit information for the
+     * merge.
      * </p>
      * 
      * @param email
-     *        The email address of the person merging the branches. This information will be used in the commit
-     *        information for the merge.
+     *        The email address of the person merging the branches. This information is used in the commit information
+     *        for the merge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,13 +559,12 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a .gitkeep file is created for empty folders. The default is false.
      * </p>
      * 
      * @param keepEmptyFolders
      *        If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *        folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
-     *        default is false.
+     *        folders empty. If true, a .gitkeep file is created for empty folders. The default is false.
      */
 
     public void setKeepEmptyFolders(Boolean keepEmptyFolders) {
@@ -579,12 +574,11 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a .gitkeep file is created for empty folders. The default is false.
      * </p>
      * 
      * @return If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *         folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
-     *         default is false.
+     *         folders empty. If true, a .gitkeep file is created for empty folders. The default is false.
      */
 
     public Boolean getKeepEmptyFolders() {
@@ -594,13 +588,12 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a .gitkeep file is created for empty folders. The default is false.
      * </p>
      * 
      * @param keepEmptyFolders
      *        If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *        folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
-     *        default is false.
+     *        folders empty. If true, a .gitkeep file is created for empty folders. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,12 +605,11 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a .gitkeep file is created for empty folders. The default is false.
      * </p>
      * 
      * @return If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *         folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
-     *         default is false.
+     *         folders empty. If true, a .gitkeep file is created for empty folders. The default is false.
      */
 
     public Boolean isKeepEmptyFolders() {
@@ -626,13 +618,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict resolution
-     * strategy.
+     * If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a
+     * merge.
      * </p>
      * 
      * @param conflictResolution
-     *        A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict
-     *        resolution strategy.
+     *        If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during
+     *        a merge.
      */
 
     public void setConflictResolution(ConflictResolution conflictResolution) {
@@ -641,12 +633,12 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict resolution
-     * strategy.
+     * If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a
+     * merge.
      * </p>
      * 
-     * @return A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict
-     *         resolution strategy.
+     * @return If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during
+     *         a merge.
      */
 
     public ConflictResolution getConflictResolution() {
@@ -655,13 +647,13 @@ public class MergeBranchesByThreeWayRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict resolution
-     * strategy.
+     * If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a
+     * merge.
      * </p>
      * 
      * @param conflictResolution
-     *        A list of inputs to use when resolving conflicts during a merge if AUTOMERGE is chosen as the conflict
-     *        resolution strategy.
+     *        If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during
+     *        a merge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

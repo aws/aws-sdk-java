@@ -29,6 +29,11 @@ import com.amazonaws.services.migrationhub.model.*;
  * The AWS Migration Hub API methods help to obtain server and application migration status and integrate your
  * resource-specific migration tool by providing a programmatic interface to Migration Hub.
  * </p>
+ * <p>
+ * Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a
+ * <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home
+ * region.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSMigrationHubAsync extends AWSMigrationHub {
@@ -106,7 +111,7 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
 
     /**
      * <p>
-     * Associates a discovered resource ID from Application Discovery Service (ADS) with a migration task.
+     * Associates a discovered resource ID from Application Discovery Service with a migration task.
      * </p>
      * 
      * @param associateDiscoveredResourceRequest
@@ -120,7 +125,7 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
 
     /**
      * <p>
-     * Associates a discovered resource ID from Application Discovery Service (ADS) with a migration task.
+     * Associates a discovered resource ID from Application Discovery Service with a migration task.
      * </p>
      * 
      * @param associateDiscoveredResourceRequest
@@ -202,7 +207,7 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * <li>
      * <p>
      * <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>,
-     * and all Associate[*] APIs realted to the tasks belonging to the stream will throw "InvalidInputException" if the
+     * and all Associate[*] APIs related to the tasks belonging to the stream will throw "InvalidInputException" if the
      * stream of the same name is in the process of being deleted.
      * </p>
      * </li>
@@ -250,7 +255,7 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * <li>
      * <p>
      * <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>,
-     * and all Associate[*] APIs realted to the tasks belonging to the stream will throw "InvalidInputException" if the
+     * and all Associate[*] APIs related to the tasks belonging to the stream will throw "InvalidInputException" if the
      * stream of the same name is in the process of being deleted.
      * </p>
      * </li>
@@ -414,7 +419,7 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
 
     /**
      * <p>
-     * Disassociate an Application Discovery Service (ADS) discovered resource from a migration task.
+     * Disassociate an Application Discovery Service discovered resource from a migration task.
      * </p>
      * 
      * @param disassociateDiscoveredResourceRequest
@@ -429,7 +434,7 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
 
     /**
      * <p>
-     * Disassociate an Application Discovery Service (ADS) discovered resource from a migration task.
+     * Disassociate an Application Discovery Service discovered resource from a migration task.
      * </p>
      * 
      * @param disassociateDiscoveredResourceRequest
@@ -793,8 +798,8 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
     /**
      * <p>
      * Provides identifying details of the resource being migrated so that it can be associated in the Application
-     * Discovery Service (ADS)'s repository. This association occurs asynchronously after
-     * <code>PutResourceAttributes</code> returns.
+     * Discovery Service repository. This association occurs asynchronously after <code>PutResourceAttributes</code>
+     * returns.
      * </p>
      * <important>
      * <ul>
@@ -802,7 +807,7 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * <p>
      * Keep in mind that subsequent calls to PutResourceAttributes will override previously stored attributes. For
      * example, if it is first called with a MAC address, but later, it is desired to <i>add</i> an IP address, it will
-     * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overiding the MAC address.
+     * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overriding the MAC address.
      * </p>
      * </li>
      * <li>
@@ -831,8 +836,8 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
     /**
      * <p>
      * Provides identifying details of the resource being migrated so that it can be associated in the Application
-     * Discovery Service (ADS)'s repository. This association occurs asynchronously after
-     * <code>PutResourceAttributes</code> returns.
+     * Discovery Service repository. This association occurs asynchronously after <code>PutResourceAttributes</code>
+     * returns.
      * </p>
      * <important>
      * <ul>
@@ -840,7 +845,7 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * <p>
      * Keep in mind that subsequent calls to PutResourceAttributes will override previously stored attributes. For
      * example, if it is first called with a MAC address, but later, it is desired to <i>add</i> an IP address, it will
-     * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overiding the MAC address.
+     * then be required to call it with <i>both</i> the IP and MAC addresses to prevent overriding the MAC address.
      * </p>
      * </li>
      * <li>

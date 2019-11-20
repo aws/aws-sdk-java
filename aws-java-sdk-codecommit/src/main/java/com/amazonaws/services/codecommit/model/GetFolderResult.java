@@ -25,13 +25,13 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The full commit ID used as a reference for which version of the folder content is returned.
+     * The full commit ID used as a reference for the returned version of the folder content.
      * </p>
      */
     private String commitId;
     /**
      * <p>
-     * The fully-qualified path of the folder whose contents are returned.
+     * The fully qualified path of the folder whose contents are returned.
      * </p>
      */
     private String folderPath;
@@ -43,36 +43,36 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String treeId;
     /**
      * <p>
-     * The list of folders that exist beneath the specified folder, if any.
+     * The list of folders that exist under the specified folder, if any.
      * </p>
      */
     private java.util.List<Folder> subFolders;
     /**
      * <p>
-     * The list of files that exist in the specified folder, if any.
+     * The list of files in the specified folder, if any.
      * </p>
      */
     private java.util.List<File> files;
     /**
      * <p>
-     * The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     * The list of symbolic links to other files and folders in the specified folder, if any.
      * </p>
      */
     private java.util.List<SymbolicLink> symbolicLinks;
     /**
      * <p>
-     * The list of submodules that exist in the specified folder, if any.
+     * The list of submodules in the specified folder, if any.
      * </p>
      */
     private java.util.List<SubModule> subModules;
 
     /**
      * <p>
-     * The full commit ID used as a reference for which version of the folder content is returned.
+     * The full commit ID used as a reference for the returned version of the folder content.
      * </p>
      * 
      * @param commitId
-     *        The full commit ID used as a reference for which version of the folder content is returned.
+     *        The full commit ID used as a reference for the returned version of the folder content.
      */
 
     public void setCommitId(String commitId) {
@@ -81,10 +81,10 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The full commit ID used as a reference for which version of the folder content is returned.
+     * The full commit ID used as a reference for the returned version of the folder content.
      * </p>
      * 
-     * @return The full commit ID used as a reference for which version of the folder content is returned.
+     * @return The full commit ID used as a reference for the returned version of the folder content.
      */
 
     public String getCommitId() {
@@ -93,11 +93,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The full commit ID used as a reference for which version of the folder content is returned.
+     * The full commit ID used as a reference for the returned version of the folder content.
      * </p>
      * 
      * @param commitId
-     *        The full commit ID used as a reference for which version of the folder content is returned.
+     *        The full commit ID used as a reference for the returned version of the folder content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The fully-qualified path of the folder whose contents are returned.
+     * The fully qualified path of the folder whose contents are returned.
      * </p>
      * 
      * @param folderPath
-     *        The fully-qualified path of the folder whose contents are returned.
+     *        The fully qualified path of the folder whose contents are returned.
      */
 
     public void setFolderPath(String folderPath) {
@@ -121,10 +121,10 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The fully-qualified path of the folder whose contents are returned.
+     * The fully qualified path of the folder whose contents are returned.
      * </p>
      * 
-     * @return The fully-qualified path of the folder whose contents are returned.
+     * @return The fully qualified path of the folder whose contents are returned.
      */
 
     public String getFolderPath() {
@@ -133,11 +133,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The fully-qualified path of the folder whose contents are returned.
+     * The fully qualified path of the folder whose contents are returned.
      * </p>
      * 
      * @param folderPath
-     *        The fully-qualified path of the folder whose contents are returned.
+     *        The fully qualified path of the folder whose contents are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,10 +188,10 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of folders that exist beneath the specified folder, if any.
+     * The list of folders that exist under the specified folder, if any.
      * </p>
      * 
-     * @return The list of folders that exist beneath the specified folder, if any.
+     * @return The list of folders that exist under the specified folder, if any.
      */
 
     public java.util.List<Folder> getSubFolders() {
@@ -200,11 +200,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of folders that exist beneath the specified folder, if any.
+     * The list of folders that exist under the specified folder, if any.
      * </p>
      * 
      * @param subFolders
-     *        The list of folders that exist beneath the specified folder, if any.
+     *        The list of folders that exist under the specified folder, if any.
      */
 
     public void setSubFolders(java.util.Collection<Folder> subFolders) {
@@ -218,7 +218,7 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of folders that exist beneath the specified folder, if any.
+     * The list of folders that exist under the specified folder, if any.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -227,7 +227,7 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param subFolders
-     *        The list of folders that exist beneath the specified folder, if any.
+     *        The list of folders that exist under the specified folder, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of folders that exist beneath the specified folder, if any.
+     * The list of folders that exist under the specified folder, if any.
      * </p>
      * 
      * @param subFolders
-     *        The list of folders that exist beneath the specified folder, if any.
+     *        The list of folders that exist under the specified folder, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,10 +258,10 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of files that exist in the specified folder, if any.
+     * The list of files in the specified folder, if any.
      * </p>
      * 
-     * @return The list of files that exist in the specified folder, if any.
+     * @return The list of files in the specified folder, if any.
      */
 
     public java.util.List<File> getFiles() {
@@ -270,11 +270,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of files that exist in the specified folder, if any.
+     * The list of files in the specified folder, if any.
      * </p>
      * 
      * @param files
-     *        The list of files that exist in the specified folder, if any.
+     *        The list of files in the specified folder, if any.
      */
 
     public void setFiles(java.util.Collection<File> files) {
@@ -288,7 +288,7 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of files that exist in the specified folder, if any.
+     * The list of files in the specified folder, if any.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -297,7 +297,7 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param files
-     *        The list of files that exist in the specified folder, if any.
+     *        The list of files in the specified folder, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of files that exist in the specified folder, if any.
+     * The list of files in the specified folder, if any.
      * </p>
      * 
      * @param files
-     *        The list of files that exist in the specified folder, if any.
+     *        The list of files in the specified folder, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,10 +328,10 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     * The list of symbolic links to other files and folders in the specified folder, if any.
      * </p>
      * 
-     * @return The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     * @return The list of symbolic links to other files and folders in the specified folder, if any.
      */
 
     public java.util.List<SymbolicLink> getSymbolicLinks() {
@@ -340,11 +340,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     * The list of symbolic links to other files and folders in the specified folder, if any.
      * </p>
      * 
      * @param symbolicLinks
-     *        The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     *        The list of symbolic links to other files and folders in the specified folder, if any.
      */
 
     public void setSymbolicLinks(java.util.Collection<SymbolicLink> symbolicLinks) {
@@ -358,7 +358,7 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     * The list of symbolic links to other files and folders in the specified folder, if any.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -367,7 +367,7 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param symbolicLinks
-     *        The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     *        The list of symbolic links to other files and folders in the specified folder, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +383,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     * The list of symbolic links to other files and folders in the specified folder, if any.
      * </p>
      * 
      * @param symbolicLinks
-     *        The list of symbolic links to other files and folders that exist in the specified folder, if any.
+     *        The list of symbolic links to other files and folders in the specified folder, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,10 +398,10 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of submodules that exist in the specified folder, if any.
+     * The list of submodules in the specified folder, if any.
      * </p>
      * 
-     * @return The list of submodules that exist in the specified folder, if any.
+     * @return The list of submodules in the specified folder, if any.
      */
 
     public java.util.List<SubModule> getSubModules() {
@@ -410,11 +410,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of submodules that exist in the specified folder, if any.
+     * The list of submodules in the specified folder, if any.
      * </p>
      * 
      * @param subModules
-     *        The list of submodules that exist in the specified folder, if any.
+     *        The list of submodules in the specified folder, if any.
      */
 
     public void setSubModules(java.util.Collection<SubModule> subModules) {
@@ -428,7 +428,7 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of submodules that exist in the specified folder, if any.
+     * The list of submodules in the specified folder, if any.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -437,7 +437,7 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param subModules
-     *        The list of submodules that exist in the specified folder, if any.
+     *        The list of submodules in the specified folder, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,11 +453,11 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of submodules that exist in the specified folder, if any.
+     * The list of submodules in the specified folder, if any.
      * </p>
      * 
      * @param subModules
-     *        The list of submodules that exist in the specified folder, if any.
+     *        The list of submodules in the specified folder, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

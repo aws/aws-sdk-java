@@ -56,7 +56,7 @@
     "defaultEndpoint" : "https://discovery.us-west-2.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "discovery.us-west-2.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<fullname>AWS Application Discovery Service</fullname> <p>AWS Application Discovery Service helps you plan application migration projects by automatically identifying servers, virtual machines (VMs), software, and software dependencies running in your on-premises data centers. Application Discovery Service also collects application performance data, which can help you assess the outcome of your migration. The data collected by Application Discovery Service is securely retained in an AWS-hosted and managed database in the cloud. You can export the data as a CSV or XML file into your preferred visualization tool or cloud-migration solution to plan your migration. For more information, see <a href=\"http://aws.amazon.com/application-discovery/faqs/\">AWS Application Discovery Service FAQ</a>.</p> <p>Application Discovery Service offers two modes of operation:</p> <ul> <li> <p> <b>Agentless discovery</b> mode is recommended for environments that use VMware vCenter Server. This mode doesn't require you to install an agent on each host. Agentless discovery gathers server information regardless of the operating systems, which minimizes the time required for initial on-premises infrastructure assessment. Agentless discovery doesn't collect information about software and software dependencies. It also doesn't work in non-VMware environments. </p> </li> <li> <p> <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery by using the AWS Application Discovery Agent, which you install on one or more hosts in your data center. The agent captures infrastructure and application information, including an inventory of installed software applications, system and process performance, resource utilization, and network dependencies between workloads. The information collected by agents is secured at rest and in transit to the Application Discovery Service database in the cloud. </p> </li> </ul> <p>We recommend that you use agent-based discovery for non-VMware environments and to collect information about software and software dependencies. You can also run agent-based and agentless discovery simultaneously. Use agentless discovery to quickly complete the initial infrastructure assessment and then install agents on select hosts.</p> <p>Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN) partners. Third-party application discovery tools can query Application Discovery Service and write to the Application Discovery Service database using a public API. You can then import the data into either a visualization tool or cloud-migration solution.</p> <important> <p>Application Discovery Service doesn't gather sensitive information. All data is handled according to the <a href=\"http://aws.amazon.com/privacy/\">AWS Privacy Policy</a>. You can operate Application Discovery Service offline to inspect collected data before it is shared with the service.</p> </important> <p>This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for Application Discovery Service. The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're using. For more information, see <a href=\"http://aws.amazon.com/tools/#SDKs\">AWS SDKs</a>.</p> <p>This guide is intended for use with the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/userguide/\"> <i>AWS Application Discovery Service User Guide</i> </a>.</p>",
+    "documentation" : "<fullname>AWS Application Discovery Service</fullname> <p>AWS Application Discovery Service helps you plan application migration projects by automatically identifying servers, virtual machines (VMs), software, and software dependencies running in your on-premises data centers. Application Discovery Service also collects application performance data, which can help you assess the outcome of your migration. The data collected by Application Discovery Service is securely retained in an AWS-hosted and managed database in the cloud. You can export the data as a CSV or XML file into your preferred visualization tool or cloud-migration solution to plan your migration. For more information, see <a href=\"http://aws.amazon.com/application-discovery/faqs/\">AWS Application Discovery Service FAQ</a>.</p> <p>Application Discovery Service offers two modes of operation:</p> <ul> <li> <p> <b>Agentless discovery</b> mode is recommended for environments that use VMware vCenter Server. This mode doesn't require you to install an agent on each host. Agentless discovery gathers server information regardless of the operating systems, which minimizes the time required for initial on-premises infrastructure assessment. Agentless discovery doesn't collect information about software and software dependencies. It also doesn't work in non-VMware environments. </p> </li> <li> <p> <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery by using the AWS Application Discovery Agent, which you install on one or more hosts in your data center. The agent captures infrastructure and application information, including an inventory of installed software applications, system and process performance, resource utilization, and network dependencies between workloads. The information collected by agents is secured at rest and in transit to the Application Discovery Service database in the cloud. </p> </li> </ul> <p>We recommend that you use agent-based discovery for non-VMware environments and to collect information about software and software dependencies. You can also run agent-based and agentless discovery simultaneously. Use agentless discovery to quickly complete the initial infrastructure assessment and then install agents on select hosts.</p> <p>Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN) partners. Third-party application discovery tools can query Application Discovery Service and write to the Application Discovery Service database using a public API. You can then import the data into either a visualization tool or cloud-migration solution.</p> <important> <p>Application Discovery Service doesn't gather sensitive information. All data is handled according to the <a href=\"http://aws.amazon.com/privacy/\">AWS Privacy Policy</a>. You can operate Application Discovery Service offline to inspect collected data before it is shared with the service.</p> </important> <p>This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for Application Discovery Service. The topic for each action shows the API request parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're using. For more information, see <a href=\"http://aws.amazon.com/tools/#SDKs\">AWS SDKs</a>.</p> <p>This guide is intended for use with the <a href=\"http://docs.aws.amazon.com/application-discovery/latest/userguide/\"> <i>AWS Application Discovery Service User Guide</i> </a>.</p> <note> <p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home region.</p> </note>",
     "endpointPrefix" : "discovery",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -112,6 +112,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -149,12 +153,20 @@
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more parameters are not valid. Verify the parameters and try again.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -203,6 +215,10 @@
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -256,6 +272,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -303,6 +323,10 @@
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -356,6 +380,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -404,6 +432,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -451,6 +483,10 @@
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -508,6 +544,10 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified configuration ID was not located. Verify the configuration ID and try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -560,6 +600,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -608,6 +652,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -645,12 +693,20 @@
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more parameters are not valid. Verify the parameters and try again.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -704,6 +760,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -751,6 +811,10 @@
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -804,6 +868,10 @@
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>This operation is not permitted.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -851,6 +919,10 @@
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -904,6 +976,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -951,6 +1027,10 @@
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1012,6 +1092,10 @@
         "exceptionName" : "ResourceInUseException",
         "documentation" : "<p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1059,6 +1143,10 @@
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1112,6 +1200,10 @@
         "exceptionName" : "OperationNotPermittedException",
         "documentation" : "<p>This operation is not permitted.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1153,12 +1245,20 @@
         "documentation" : "<p>The AWS user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>One or more parameters are not valid. Verify the parameters and try again.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidParameterValueException",
         "documentation" : "<p>The value of one or more parameters are either invalid or out of range. Verify the parameter values and try again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1220,6 +1320,10 @@
         "exceptionName" : "ResourceInUseException",
         "documentation" : "<p>This issue occurs when the same <code>clientRequestToken</code> is used with the <code>StartImportTask</code> action, but with different parameters. For example, you use the same request token but have two different import URLs, you can encounter this issue. If the import tasks are meant to be different, use a different <code>clientRequestToken</code>, and try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1268,6 +1372,10 @@
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1315,6 +1423,10 @@
       }, {
         "exceptionName" : "ServerInternalErrorException",
         "documentation" : "<p>The server experienced an internal error. Try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "HomeRegionNotSetException",
+        "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -15238,11 +15350,11 @@
         "c2jName" : "exportIds",
         "c2jShape" : "ExportIds",
         "deprecated" : false,
-        "documentation" : "<p>A list of continuous export ids to search for.</p>",
+        "documentation" : "<p>A list of continuous export IDs to search for.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n@param exportIds A list of continuous export ids to search for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of continuous export IDs to search for.</p>\n@param exportIds A list of continuous export IDs to search for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withExportIds",
-        "getterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n@return A list of continuous export ids to search for.*/",
+        "getterDocumentation" : "/**<p>A list of continuous export IDs to search for.</p>\n@return A list of continuous export IDs to search for.*/",
         "getterMethodName" : "getExportIds",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -15358,7 +15470,7 @@
         "marshallingType" : "LIST",
         "name" : "ExportIds",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n@param exportIds A list of continuous export ids to search for.*/",
+        "setterDocumentation" : "/**<p>A list of continuous export IDs to search for.</p>\n@param exportIds A list of continuous export IDs to search for.*/",
         "setterMethodName" : "setExportIds",
         "setterModel" : {
           "timestampFormat" : null,
@@ -15372,13 +15484,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExportIds(java.util.Collection)} or {@link #withExportIds(java.util.Collection)} if you want to override the existing values.</p>\n@param exportIds A list of continuous export ids to search for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of continuous export IDs to search for.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExportIds(java.util.Collection)} or {@link #withExportIds(java.util.Collection)} if you want to override the existing values.</p>\n@param exportIds A list of continuous export IDs to search for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "exportIds",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>A list of continuous export ids to search for.</p>",
+          "documentation" : "<p>A list of continuous export IDs to search for.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -15523,11 +15635,11 @@
           "c2jName" : "exportIds",
           "c2jShape" : "ExportIds",
           "deprecated" : false,
-          "documentation" : "<p>A list of continuous export ids to search for.</p>",
+          "documentation" : "<p>A list of continuous export IDs to search for.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n@param exportIds A list of continuous export ids to search for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of continuous export IDs to search for.</p>\n@param exportIds A list of continuous export IDs to search for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withExportIds",
-          "getterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n@return A list of continuous export ids to search for.*/",
+          "getterDocumentation" : "/**<p>A list of continuous export IDs to search for.</p>\n@return A list of continuous export IDs to search for.*/",
           "getterMethodName" : "getExportIds",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -15643,7 +15755,7 @@
           "marshallingType" : "LIST",
           "name" : "ExportIds",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n@param exportIds A list of continuous export ids to search for.*/",
+          "setterDocumentation" : "/**<p>A list of continuous export IDs to search for.</p>\n@param exportIds A list of continuous export IDs to search for.*/",
           "setterMethodName" : "setExportIds",
           "setterModel" : {
             "timestampFormat" : null,
@@ -15657,13 +15769,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A list of continuous export ids to search for.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExportIds(java.util.Collection)} or {@link #withExportIds(java.util.Collection)} if you want to override the existing values.</p>\n@param exportIds A list of continuous export ids to search for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of continuous export IDs to search for.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExportIds(java.util.Collection)} or {@link #withExportIds(java.util.Collection)} if you want to override the existing values.</p>\n@param exportIds A list of continuous export IDs to search for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "exportIds",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>A list of continuous export ids to search for.</p>",
+            "documentation" : "<p>A list of continuous export IDs to search for.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -23950,6 +24062,44 @@
         "documentation" : null,
         "simpleType" : "GetDiscoverySummaryResult",
         "variableSetterType" : "GetDiscoverySummaryResult"
+      },
+      "wrapper" : false
+    },
+    "HomeRegionNotSetException" : {
+      "c2jName" : "HomeRegionNotSetException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The home region is not set. Set the home region to continue.</p>",
+      "enums" : null,
+      "errorCode" : "HomeRegionNotSetException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "HomeRegionNotSetException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "HomeRegionNotSetException",
+        "variableName" : "homeRegionNotSetException",
+        "variableType" : "HomeRegionNotSetException",
+        "documentation" : null,
+        "simpleType" : "HomeRegionNotSetException",
+        "variableSetterType" : "HomeRegionNotSetException"
       },
       "wrapper" : false
     },

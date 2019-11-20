@@ -110,6 +110,11 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                     context.nextToken();
                     taskDefinition.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inferenceAccelerators", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setInferenceAccelerators(new ListUnmarshaller<InferenceAccelerator>(InferenceAcceleratorJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("pidMode", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setPidMode(context.getUnmarshaller(String.class).unmarshall(context));

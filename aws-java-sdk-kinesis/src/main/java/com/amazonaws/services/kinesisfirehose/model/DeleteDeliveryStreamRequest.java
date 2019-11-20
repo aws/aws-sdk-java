@@ -31,6 +31,20 @@ public class DeleteDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String deliveryStreamName;
+    /**
+     * <p>
+     * Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the
+     * grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as
+     * when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to
+     * revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS
+     * issue, Kinesis Data Firehose keeps retrying the delete operation.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     */
+    private Boolean allowForceDelete;
 
     /**
      * <p>
@@ -73,6 +87,118 @@ public class DeleteDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the
+     * grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as
+     * when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to
+     * revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS
+     * issue, Kinesis Data Firehose keeps retrying the delete operation.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     * 
+     * @param allowForceDelete
+     *        Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to
+     *        retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer
+     *        error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use
+     *        the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
+     *        operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens
+     *        due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+     *        <p>
+     *        The default value is false.
+     */
+
+    public void setAllowForceDelete(Boolean allowForceDelete) {
+        this.allowForceDelete = allowForceDelete;
+    }
+
+    /**
+     * <p>
+     * Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the
+     * grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as
+     * when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to
+     * revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS
+     * issue, Kinesis Data Firehose keeps retrying the delete operation.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     * 
+     * @return Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to
+     *         retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer
+     *         error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use
+     *         the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
+     *         operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens
+     *         due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+     *         <p>
+     *         The default value is false.
+     */
+
+    public Boolean getAllowForceDelete() {
+        return this.allowForceDelete;
+    }
+
+    /**
+     * <p>
+     * Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the
+     * grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as
+     * when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to
+     * revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS
+     * issue, Kinesis Data Firehose keeps retrying the delete operation.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     * 
+     * @param allowForceDelete
+     *        Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to
+     *        retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer
+     *        error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use
+     *        the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
+     *        operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens
+     *        due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+     *        <p>
+     *        The default value is false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDeliveryStreamRequest withAllowForceDelete(Boolean allowForceDelete) {
+        setAllowForceDelete(allowForceDelete);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the
+     * grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as
+     * when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to
+     * revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an AWS KMS
+     * issue, Kinesis Data Firehose keeps retrying the delete operation.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     * 
+     * @return Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to
+     *         retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer
+     *         error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use
+     *         the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
+     *         operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens
+     *         due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+     *         <p>
+     *         The default value is false.
+     */
+
+    public Boolean isAllowForceDelete() {
+        return this.allowForceDelete;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +211,9 @@ public class DeleteDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName());
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
+        if (getAllowForceDelete() != null)
+            sb.append("AllowForceDelete: ").append(getAllowForceDelete());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +232,10 @@ public class DeleteDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getDeliveryStreamName() != null && other.getDeliveryStreamName().equals(this.getDeliveryStreamName()) == false)
             return false;
+        if (other.getAllowForceDelete() == null ^ this.getAllowForceDelete() == null)
+            return false;
+        if (other.getAllowForceDelete() != null && other.getAllowForceDelete().equals(this.getAllowForceDelete()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +245,7 @@ public class DeleteDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
+        hashCode = prime * hashCode + ((getAllowForceDelete() == null) ? 0 : getAllowForceDelete().hashCode());
         return hashCode;
     }
 

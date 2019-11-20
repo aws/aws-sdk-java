@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The maximum number of allowed repository names was exceeded. Currently, this number is 25.
+ * The maximum number of allowed repository names was exceeded. Currently, this number is 100.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

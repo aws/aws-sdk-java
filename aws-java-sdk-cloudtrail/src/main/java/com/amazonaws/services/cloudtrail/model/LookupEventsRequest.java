@@ -50,6 +50,14 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.Date endTime;
     /**
      * <p>
+     * Specifies the event category. If you do not specify an event category, events of the category are not returned in
+     * the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>,
+     * no Insights events are returned.
+     * </p>
+     */
+    private String eventCategory;
+    /**
+     * <p>
      * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      */
@@ -230,6 +238,81 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Specifies the event category. If you do not specify an event category, events of the category are not returned in
+     * the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>,
+     * no Insights events are returned.
+     * </p>
+     * 
+     * @param eventCategory
+     *        Specifies the event category. If you do not specify an event category, events of the category are not
+     *        returned in the response. For example, if you do not specify <code>insight</code> as the value of
+     *        <code>EventCategory</code>, no Insights events are returned.
+     * @see EventCategory
+     */
+
+    public void setEventCategory(String eventCategory) {
+        this.eventCategory = eventCategory;
+    }
+
+    /**
+     * <p>
+     * Specifies the event category. If you do not specify an event category, events of the category are not returned in
+     * the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>,
+     * no Insights events are returned.
+     * </p>
+     * 
+     * @return Specifies the event category. If you do not specify an event category, events of the category are not
+     *         returned in the response. For example, if you do not specify <code>insight</code> as the value of
+     *         <code>EventCategory</code>, no Insights events are returned.
+     * @see EventCategory
+     */
+
+    public String getEventCategory() {
+        return this.eventCategory;
+    }
+
+    /**
+     * <p>
+     * Specifies the event category. If you do not specify an event category, events of the category are not returned in
+     * the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>,
+     * no Insights events are returned.
+     * </p>
+     * 
+     * @param eventCategory
+     *        Specifies the event category. If you do not specify an event category, events of the category are not
+     *        returned in the response. For example, if you do not specify <code>insight</code> as the value of
+     *        <code>EventCategory</code>, no Insights events are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventCategory
+     */
+
+    public LookupEventsRequest withEventCategory(String eventCategory) {
+        setEventCategory(eventCategory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the event category. If you do not specify an event category, events of the category are not returned in
+     * the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>,
+     * no Insights events are returned.
+     * </p>
+     * 
+     * @param eventCategory
+     *        Specifies the event category. If you do not specify an event category, events of the category are not
+     *        returned in the response. For example, if you do not specify <code>insight</code> as the value of
+     *        <code>EventCategory</code>, no Insights events are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventCategory
+     */
+
+    public LookupEventsRequest withEventCategory(EventCategory eventCategory) {
+        this.eventCategory = eventCategory.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      * 
@@ -341,6 +424,8 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getEventCategory() != null)
+            sb.append("EventCategory: ").append(getEventCategory()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -371,6 +456,10 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getEventCategory() == null ^ this.getEventCategory() == null)
+            return false;
+        if (other.getEventCategory() != null && other.getEventCategory().equals(this.getEventCategory()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -390,6 +479,7 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getLookupAttributes() == null) ? 0 : getLookupAttributes().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getEventCategory() == null) ? 0 : getEventCategory().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

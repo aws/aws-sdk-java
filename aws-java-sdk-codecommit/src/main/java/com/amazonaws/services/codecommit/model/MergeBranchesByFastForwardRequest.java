@@ -33,21 +33,21 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
     private String repositoryName;
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      */
     private String sourceCommitSpecifier;
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      */
     private String destinationCommitSpecifier;
     /**
      * <p>
-     * The branch where the merge will be applied.
+     * The branch where the merge is applied.
      * </p>
      */
     private String targetBranch;
@@ -94,13 +94,13 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param sourceCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      */
 
     public void setSourceCommitSpecifier(String sourceCommitSpecifier) {
@@ -109,12 +109,12 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
-     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a
-     *         branch name or a full commit ID.
+     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a
+     *         branch name or a full commit ID).
      */
 
     public String getSourceCommitSpecifier() {
@@ -123,13 +123,13 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param sourceCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,13 +140,13 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param destinationCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      */
 
     public void setDestinationCommitSpecifier(String destinationCommitSpecifier) {
@@ -155,12 +155,12 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
-     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a
-     *         branch name or a full commit ID.
+     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a
+     *         branch name or a full commit ID).
      */
 
     public String getDestinationCommitSpecifier() {
@@ -169,13 +169,13 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param destinationCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,11 +186,11 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch where the merge will be applied.
+     * The branch where the merge is applied.
      * </p>
      * 
      * @param targetBranch
-     *        The branch where the merge will be applied.
+     *        The branch where the merge is applied.
      */
 
     public void setTargetBranch(String targetBranch) {
@@ -199,10 +199,10 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch where the merge will be applied.
+     * The branch where the merge is applied.
      * </p>
      * 
-     * @return The branch where the merge will be applied.
+     * @return The branch where the merge is applied.
      */
 
     public String getTargetBranch() {
@@ -211,11 +211,11 @@ public class MergeBranchesByFastForwardRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The branch where the merge will be applied.
+     * The branch where the merge is applied.
      * </p>
      * 
      * @param targetBranch
-     *        The branch where the merge will be applied.
+     *        The branch where the merge is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

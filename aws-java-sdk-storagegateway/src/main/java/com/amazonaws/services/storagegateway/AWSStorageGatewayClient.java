@@ -1660,7 +1660,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Deletes the bandwidth rate limits of a gateway. You can delete either the upload and download bandwidth rate
      * limit, or you can delete both. If you delete only one of the limits, the other limit remains unchanged. To
-     * specify which gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your request.
+     * specify which gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your request. This
+     * operation is supported for the stored volume, cached volume and tape gateway types.
      * </p>
      * 
      * @param deleteBandwidthRateLimitRequest
@@ -1729,7 +1730,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator
-     * pair.
+     * pair. This operation is supported in volume and tape gateway types.
      * </p>
      * 
      * @param deleteChapCredentialsRequest
@@ -2204,8 +2205,72 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Returns information about the most recent High Availability monitoring test that was performed on the host in a
+     * cluster. If a test isn't performed, the status and start time in the response would be null.
+     * </p>
+     * 
+     * @param describeAvailabilityMonitorTestRequest
+     * @return Result of the DescribeAvailabilityMonitorTest operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DescribeAvailabilityMonitorTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeAvailabilityMonitorTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAvailabilityMonitorTestResult describeAvailabilityMonitorTest(DescribeAvailabilityMonitorTestRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAvailabilityMonitorTest(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAvailabilityMonitorTestResult executeDescribeAvailabilityMonitorTest(
+            DescribeAvailabilityMonitorTestRequest describeAvailabilityMonitorTestRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAvailabilityMonitorTestRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAvailabilityMonitorTestRequest> request = null;
+        Response<DescribeAvailabilityMonitorTestResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAvailabilityMonitorTestRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAvailabilityMonitorTestRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAvailabilityMonitorTest");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAvailabilityMonitorTestResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAvailabilityMonitorTestResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth
-     * rate limiting is in effect.
+     * rate limiting is in effect. This operation is supported for the stored volume, cached volume and tape gateway
+     * types.'
      * </p>
      * <p>
      * This operation only returns a value for a bandwidth rate limit only if the limit is set. If no limits are set for
@@ -2403,7 +2468,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified
-     * iSCSI target, one for each target-initiator pair.
+     * iSCSI target, one for each target-initiator pair. This operation is supported in the volume and tape gateway
+     * types.
      * </p>
      * 
      * @param describeChapCredentialsRequest
@@ -3307,7 +3373,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * Disconnects a volume from an iSCSI connection and then detaches the volume from the specified gateway. Detaching
      * and attaching a volume enables you to recover your data from one gateway to a different gateway without creating
      * a snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
-     * Amazon EC2 instance.
+     * Amazon EC2 instance. This operation is only supported in the volume gateway type.
      * </p>
      * 
      * @param detachVolumeRequest
@@ -3712,8 +3778,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Lists the tags that have been added to the specified resource. This operation is only supported in the cached
-     * volume, stored volume and tape gateway type.
+     * Lists the tags that have been added to the specified resource. This operation is supported in storage gateways of
+     * all types.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -4158,6 +4224,21 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * gateway file share. You can subscribe to be notified through an CloudWatch event when your
      * <code>RefreshCache</code> operation completes.
      * </p>
+     * <p>
+     * Throttle limit: This API is asynchronous so the gateway will accept no more than two refreshes at any time. We
+     * recommend using the refresh-complete CloudWatch event notification before issuing additional requests. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
+     * >Getting Notified About File Operations</a>.
+     * </p>
+     * <p>
+     * If you invoke the RefreshCache API when two requests are already being processed, any new request will cause an
+     * <code>InvalidGatewayRequestException</code> error because too many requests were sent to the server.
+     * </p>
+     * <p>
+     * For more information, see
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".
+     * </p>
      * 
      * @param refreshCacheRequest
      *        RefreshCacheInput
@@ -4216,8 +4297,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Removes one or more tags from the specified resource. This operation is only supported in the cached volume,
-     * stored volume and tape gateway types.
+     * Removes one or more tags from the specified resource. This operation is supported in storage gateways of all
+     * types.
      * </p>
      * 
      * @param removeTagsFromResourceRequest
@@ -4706,6 +4787,75 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Start a test that verifies that the specified gateway is configured for High Availability monitoring in your host
+     * environment. This request only initiates the test and that a successful response only indicates that the test was
+     * started. It doesn't indicate that the test passed. For the status of the test, invoke the
+     * <code>DescribeAvailabilityMonitorTest</code> API.
+     * </p>
+     * <note>
+     * <p>
+     * Starting this test will cause your gateway to go offline for a brief period.
+     * </p>
+     * </note>
+     * 
+     * @param startAvailabilityMonitorTestRequest
+     * @return Result of the StartAvailabilityMonitorTest operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.StartAvailabilityMonitorTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartAvailabilityMonitorTestResult startAvailabilityMonitorTest(StartAvailabilityMonitorTestRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartAvailabilityMonitorTest(request);
+    }
+
+    @SdkInternalApi
+    final StartAvailabilityMonitorTestResult executeStartAvailabilityMonitorTest(StartAvailabilityMonitorTestRequest startAvailabilityMonitorTestRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startAvailabilityMonitorTestRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartAvailabilityMonitorTestRequest> request = null;
+        Response<StartAvailabilityMonitorTestResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartAvailabilityMonitorTestRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startAvailabilityMonitorTestRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartAvailabilityMonitorTest");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartAvailabilityMonitorTestResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartAvailabilityMonitorTestResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>). After the gateway starts, you can
      * then make other API calls, your applications can read from or write to the gateway's storage volumes and you will
      * be able to take snapshot backups.
@@ -4779,7 +4929,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit
-     * or specify only one of the two. If you don't set a bandwidth rate limit, the existing rate limit remains.
+     * or specify only one of the two. If you don't set a bandwidth rate limit, the existing rate limit remains. This
+     * operation is supported for the stored volume, cached volume and tape gateway types.'
      * </p>
      * <p>
      * By default, a gateway's bandwidth rate limits are not set. If you don't set any limit, the gateway does not have
@@ -4860,7 +5011,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By
-     * default, a gateway does not have CHAP enabled; however, for added security, you might use it.
+     * default, a gateway does not have CHAP enabled; however, for added security, you might use it. This operation is
+     * supported in the volume and tape gateway types.
      * </p>
      * <important>
      * <p>

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A repository names object is required but was not specified.
+ * At least one repository name object is required, but was not specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

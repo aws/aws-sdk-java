@@ -42,12 +42,15 @@ import com.amazonaws.services.s3.model.ExistingObjectReplication;
 import com.amazonaws.services.s3.model.Filter;
 import com.amazonaws.services.s3.model.FilterRule;
 import com.amazonaws.services.s3.model.LambdaConfiguration;
+import com.amazonaws.services.s3.model.Metrics;
 import com.amazonaws.services.s3.model.NotificationConfiguration;
 import com.amazonaws.services.s3.model.PublicAccessBlockConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
 import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.ReplicationDestinationConfig;
 import com.amazonaws.services.s3.model.ReplicationRule;
+import com.amazonaws.services.s3.model.ReplicationTime;
+import com.amazonaws.services.s3.model.ReplicationTimeValue;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
 import com.amazonaws.services.s3.model.S3KeyFilter;
@@ -343,9 +346,42 @@ public class BucketConfigurationXmlFactory {
                 xml.end();
             }
 
+            ReplicationTime replicationTime = config.getReplicationTime();
+            if (replicationTime != null) {
+                xml.start("ReplicationTime");
+                addParameterIfNotNull(xml, "Status", replicationTime.getStatus());
+
+                if (replicationTime.getTime() != null) {
+                    xml.start("Time");
+                    ReplicationTimeValue time = replicationTime.getTime();
+                    if (time.getMinutes() != null) {
+                        xml.start("Minutes").value(time.getMinutes().toString()).end();
+                    }
+                    xml.end();
+                }
+                xml.end();
+            }
+
+            Metrics metrics = config.getMetrics();
+            if (metrics != null) {
+                xml.start("Metrics");
+                addParameterIfNotNull(xml, "Status", metrics.getStatus());
+
+                if (metrics.getEventThreshold() != null) {
+                    xml.start("EventThreshold");
+                    ReplicationTimeValue eventThreshold = metrics.getEventThreshold();
+                    if (eventThreshold.getMinutes() != null) {
+                        xml.start("Minutes").value(eventThreshold.getMinutes().toString()).end();
+                    }
+                    xml.end();
+                }
+                xml.end();
+            }
+
             xml.end();
 
             xml.end();
+
         }
         xml.end();
         return xml.getBytes();

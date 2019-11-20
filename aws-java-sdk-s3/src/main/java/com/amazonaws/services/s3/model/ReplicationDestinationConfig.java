@@ -45,6 +45,9 @@ public class ReplicationDestinationConfig implements Serializable {
 
     private EncryptionConfiguration encryptionConfiguration;
 
+    private ReplicationTime replicationTime;
+
+    private Metrics metrics;
 
     /**
      * Returns the Amazon S3 bucket ARN where the replicas are present.
@@ -205,6 +208,72 @@ public class ReplicationDestinationConfig implements Serializable {
      */
     public ReplicationDestinationConfig withEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
         setEncryptionConfiguration(encryptionConfiguration);
+        return this;
+    }
+
+    /**
+     * Return a container specifying the time when all objects and operations on objects are replicated. Must be
+     * specified together with a <code>Metrics</code> block.
+     */
+    public ReplicationTime getReplicationTime() {
+        return replicationTime;
+    }
+
+    /**
+     * Set a container specifying the time when all objects and operations on objects are replicated. Must be
+     * specified together with a <code>Metrics</code> block.
+     *
+     * @param replicationTime The replication time.
+     */
+    public void setReplicationTime(ReplicationTime replicationTime) {
+        this.replicationTime = replicationTime;
+    }
+
+    /**
+     * Set a container specifying the time when all objects and operations on objects are replicated. Must be
+     * specified together with a <code>Metrics</code> block.
+     *
+     * @param replicationTime The replication time.
+     * @return This object for method chaining.
+     */
+    public ReplicationDestinationConfig withReplicationTime(ReplicationTime replicationTime) {
+        setReplicationTime(replicationTime);
+        return this;
+    }
+
+    /**
+     * Return a container specifying replication metrics-related information including whether emitting metrics and
+     * Amazon S3 events for replication are enabled. In addition, contains configurations related to specific metrics
+     * or events. Must be specified together with a <code>ReplicationTime</code> block. <code>ReplicationTime</code>
+     * block.
+     */
+    public Metrics getMetrics() {
+        return metrics;
+    }
+
+    /**
+     * Set a container specifying replication metrics-related information including whether emitting metrics and
+     * Amazon S3 events for replication are enabled. In addition, contains configurations related to specific metrics
+     * or events. Must be specified together with a <code>ReplicationTime</code> block. <code>ReplicationTime</code>
+     * block.
+     *
+     * @param metrics The metrics information.
+     */
+    public void setMetrics(Metrics metrics) {
+        this.metrics = metrics;
+    }
+
+    /**
+     * Set a container specifying replication metrics-related information including whether emitting metrics and
+     * Amazon S3 events for replication are enabled. In addition, contains configurations related to specific metrics
+     * or events. Must be specified together with a <code>ReplicationTime</code> block. <code>ReplicationTime</code>
+     * block.
+     *
+     * @param metrics The metrics information.
+     * @return This object for method chaining.
+     */
+    public ReplicationDestinationConfig withMetrics(Metrics metrics) {
+        setMetrics(metrics);
         return this;
     }
 

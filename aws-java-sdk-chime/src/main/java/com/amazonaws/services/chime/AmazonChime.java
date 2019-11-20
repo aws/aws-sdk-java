@@ -27,9 +27,12 @@ import com.amazonaws.services.chime.model.*;
  * </p>
  * <p>
  * <p>
- * The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks,
- * such as creating and managing Amazon Chime accounts and users. This guide provides detailed information about the
- * Amazon Chime API, including operations, types, inputs and outputs, and error codes.
+ * The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as
+ * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
+ * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some
+ * server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
+ * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon
+ * Chime Developer Guide</i>.
  * </p>
  * <p>
  * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
@@ -71,8 +74,8 @@ import com.amazonaws.services.chime.model.*;
  * </dl>
  * <p>
  * Administrative permissions are controlled using AWS Identity and Access Management (IAM). For more information, see
- * <a href="https://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control Access to the Amazon Chime
- * Console</a> in the <i>Amazon Chime Administration Guide</i>.
+ * <a href="https://docs.aws.amazon.com/chime/latest/ag/security-iam.html">Identity and Access Management for Amazon
+ * Chime</a> in the <i>Amazon Chime Administration Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -178,6 +181,38 @@ public interface AmazonChime {
      */
     AssociatePhoneNumbersWithVoiceConnectorGroupResult associatePhoneNumbersWithVoiceConnectorGroup(
             AssociatePhoneNumbersWithVoiceConnectorGroupRequest associatePhoneNumbersWithVoiceConnectorGroupRequest);
+
+    /**
+     * <p>
+     * Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param batchCreateAttendeeRequest
+     * @return Result of the BatchCreateAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.BatchCreateAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchCreateAttendeeResult batchCreateAttendee(BatchCreateAttendeeRequest batchCreateAttendeeRequest);
 
     /**
      * <p>
@@ -418,6 +453,38 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
+     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createAttendeeRequest
+     * @return Result of the CreateAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAttendeeResult createAttendee(CreateAttendeeRequest createAttendeeRequest);
+
+    /**
+     * <p>
      * Creates a bot for an Amazon Chime Enterprise account.
      * </p>
      * 
@@ -443,6 +510,37 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     CreateBotResult createBot(CreateBotRequest createBotRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
+     * information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMeetingRequest
+     * @return Result of the CreateMeeting operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateMeetingResult createMeeting(CreateMeetingRequest createMeetingRequest);
 
     /**
      * <p>
@@ -651,6 +749,37 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
+     * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
+     * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
+     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteAttendeeRequest
+     * @return Result of the DeleteAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAttendeeResult deleteAttendee(DeleteAttendeeRequest deleteAttendeeRequest);
+
+    /**
+     * <p>
      * Deletes the events configuration that allows a bot to receive outgoing events.
      * </p>
      * 
@@ -674,6 +803,37 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteEventsConfigurationResult deleteEventsConfiguration(DeleteEventsConfigurationRequest deleteEventsConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
+     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteMeetingRequest
+     * @return Result of the DeleteMeeting operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteMeetingResult deleteMeeting(DeleteMeetingRequest deleteMeetingRequest);
 
     /**
      * <p>
@@ -1083,6 +1243,36 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
+     * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param getAttendeeRequest
+     * @return Result of the GetAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAttendeeResult getAttendee(GetAttendeeRequest getAttendeeRequest);
+
+    /**
+     * <p>
      * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
      * </p>
      * 
@@ -1162,6 +1352,36 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     GetGlobalSettingsResult getGlobalSettings(GetGlobalSettingsRequest getGlobalSettingsRequest);
+
+    /**
+     * <p>
+     * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param getMeetingRequest
+     * @return Result of the GetMeeting operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMeetingResult getMeeting(GetMeetingRequest getMeetingRequest);
 
     /**
      * <p>
@@ -1600,6 +1820,36 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
+     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param listAttendeesRequest
+     * @return Result of the ListAttendees operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAttendeesResult listAttendees(ListAttendeesRequest listAttendeesRequest);
+
+    /**
+     * <p>
      * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
      * </p>
      * 
@@ -1623,6 +1873,34 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     ListBotsResult listBots(ListBotsRequest listBotsRequest);
+
+    /**
+     * <p>
+     * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param listMeetingsRequest
+     * @return Result of the ListMeetings operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListMeetings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListMeetingsResult listMeetings(ListMeetingsRequest listMeetingsRequest);
 
     /**
      * <p>

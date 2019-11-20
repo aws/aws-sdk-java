@@ -33,23 +33,23 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
     private String repositoryName;
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      */
     private String sourceCommitSpecifier;
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      */
     private String destinationCommitSpecifier;
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      */
     private String conflictDetailLevel;
@@ -57,7 +57,7 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      */
     private String conflictResolutionStrategy;
@@ -104,13 +104,13 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param sourceCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      */
 
     public void setSourceCommitSpecifier(String sourceCommitSpecifier) {
@@ -119,12 +119,12 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
-     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a
-     *         branch name or a full commit ID.
+     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a
+     *         branch name or a full commit ID).
      */
 
     public String getSourceCommitSpecifier() {
@@ -133,13 +133,13 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param sourceCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,13 +150,13 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param destinationCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      */
 
     public void setDestinationCommitSpecifier(String destinationCommitSpecifier) {
@@ -165,12 +165,12 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
-     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a
-     *         branch name or a full commit ID.
+     * @return The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a
+     *         branch name or a full commit ID).
      */
 
     public String getDestinationCommitSpecifier() {
@@ -179,13 +179,13 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name
-     * or a full commit ID.
+     * The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name
+     * or a full commit ID).
      * </p>
      * 
      * @param destinationCommitSpecifier
-     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch
-     *        name or a full commit ID.
+     *        The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch
+     *        name or a full commit ID).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,16 +196,15 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      * 
      * @param conflictDetailLevel
-     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
-     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
-     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
-     *        line.
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     *        not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict is considered not mergeable if the same file in both branches has differences on the same line.
      * @see ConflictDetailLevelTypeEnum
      */
 
@@ -215,15 +214,14 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      * 
-     * @return The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
-     *         not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
-     *         conflict will be considered not mergeable if the same file in both branches has differences on the same
-     *         line.
+     * @return The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     *         not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *         conflict is considered not mergeable if the same file in both branches has differences on the same line.
      * @see ConflictDetailLevelTypeEnum
      */
 
@@ -233,16 +231,15 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      * 
      * @param conflictDetailLevel
-     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
-     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
-     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
-     *        line.
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     *        not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict is considered not mergeable if the same file in both branches has differences on the same line.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConflictDetailLevelTypeEnum
      */
@@ -254,16 +251,15 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a not
-     * mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict will
-     * be considered not mergeable if the same file in both branches has differences on the same line.
+     * The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     * not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is
+     * considered not mergeable if the same file in both branches has differences on the same line.
      * </p>
      * 
      * @param conflictDetailLevel
-     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which will return a
-     *        not mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
-     *        conflict will be considered not mergeable if the same file in both branches has differences on the same
-     *        line.
+     *        The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a
+     *        not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a
+     *        conflict is considered not mergeable if the same file in both branches has differences on the same line.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConflictDetailLevelTypeEnum
      */
@@ -277,13 +273,13 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      * 
      * @param conflictResolutionStrategy
      *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
      *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
-     *        merge operation will be successful.
+     *        merge operation is successful.
      * @see ConflictResolutionStrategyTypeEnum
      */
 
@@ -295,12 +291,12 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      * 
      * @return Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
      *         versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
-     *         merge operation will be successful.
+     *         merge operation is successful.
      * @see ConflictResolutionStrategyTypeEnum
      */
 
@@ -312,13 +308,13 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      * 
      * @param conflictResolutionStrategy
      *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
      *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
-     *        merge operation will be successful.
+     *        merge operation is successful.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConflictResolutionStrategyTypeEnum
      */
@@ -332,13 +328,13 @@ public class GetMergeOptionsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions
      * of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation
-     * will be successful.
+     * is successful.
      * </p>
      * 
      * @param conflictResolutionStrategy
      *        Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two
      *        versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the
-     *        merge operation will be successful.
+     *        merge operation is successful.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConflictResolutionStrategyTypeEnum
      */

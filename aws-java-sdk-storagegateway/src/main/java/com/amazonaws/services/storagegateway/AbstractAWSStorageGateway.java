@@ -163,6 +163,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DescribeAvailabilityMonitorTestResult describeAvailabilityMonitorTest(DescribeAvailabilityMonitorTestRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -364,6 +369,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartAvailabilityMonitorTestResult startAvailabilityMonitorTest(StartAvailabilityMonitorTestRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -56,6 +56,10 @@ public class TaskExecutionResultDetailJsonUnmarshaller implements Unmarshaller<T
                     context.nextToken();
                     taskExecutionResultDetail.setPrepareStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TotalDuration", targetDepth)) {
+                    context.nextToken();
+                    taskExecutionResultDetail.setTotalDuration(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("TransferDuration", targetDepth)) {
                     context.nextToken();
                     taskExecutionResultDetail.setTransferDuration(context.getUnmarshaller(Long.class).unmarshall(context));

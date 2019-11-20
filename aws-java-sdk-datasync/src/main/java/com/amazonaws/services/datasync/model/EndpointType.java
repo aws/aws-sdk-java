@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum EndpointType {
 
     PUBLIC("PUBLIC"),
-    PRIVATE_LINK("PRIVATE_LINK");
+    PRIVATE_LINK("PRIVATE_LINK"),
+    FIPS("FIPS");
 
     private String value;
 

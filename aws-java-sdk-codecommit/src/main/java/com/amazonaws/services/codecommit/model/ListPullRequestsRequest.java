@@ -47,13 +47,13 @@ public class ListPullRequestsRequest extends com.amazonaws.AmazonWebServiceReque
     private String pullRequestStatus;
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results.
+     * A non-zero, non-negative integer used to limit the number of returned results.
      * </p>
      */
     private Integer maxResults;
@@ -213,11 +213,11 @@ public class ListPullRequestsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that, when provided in a request, returns the next batch of the results.
      */
 
     public void setNextToken(String nextToken) {
@@ -226,10 +226,10 @@ public class ListPullRequestsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
-     * @return An enumeration token that when provided in a request, returns the next batch of the results.
+     * @return An enumeration token that, when provided in a request, returns the next batch of the results.
      */
 
     public String getNextToken() {
@@ -238,11 +238,11 @@ public class ListPullRequestsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that, when provided in a request, returns the next batch of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,11 +253,11 @@ public class ListPullRequestsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results.
+     * A non-zero, non-negative integer used to limit the number of returned results.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results.
+     *        A non-zero, non-negative integer used to limit the number of returned results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -266,10 +266,10 @@ public class ListPullRequestsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results.
+     * A non-zero, non-negative integer used to limit the number of returned results.
      * </p>
      * 
-     * @return A non-negative integer used to limit the number of returned results.
+     * @return A non-zero, non-negative integer used to limit the number of returned results.
      */
 
     public Integer getMaxResults() {
@@ -278,11 +278,11 @@ public class ListPullRequestsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results.
+     * A non-zero, non-negative integer used to limit the number of returned results.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results.
+     *        A non-zero, non-negative integer used to limit the number of returned results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

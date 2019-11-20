@@ -38,7 +38,7 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
     private String progressUpdateStream;
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      */
     private String migrationTaskName;
@@ -48,7 +48,11 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
      * </p>
      */
     private String status;
-    /** <p/> */
+    /**
+     * <p>
+     * Indication of the percentage completion of the task.
+     * </p>
+     */
     private Integer progressPercent;
     /**
      * <p>
@@ -111,11 +115,11 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public void setMigrationTaskName(String migrationTaskName) {
@@ -124,10 +128,10 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
-     * @return Unique identifier that references the migration task.
+     * @return Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public String getMigrationTaskName() {
@@ -136,11 +140,11 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,9 +213,12 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indication of the percentage completion of the task.
+     * </p>
      * 
      * @param progressPercent
+     *        Indication of the percentage completion of the task.
      */
 
     public void setProgressPercent(Integer progressPercent) {
@@ -219,9 +226,11 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indication of the percentage completion of the task.
+     * </p>
      * 
-     * @return
+     * @return Indication of the percentage completion of the task.
      */
 
     public Integer getProgressPercent() {
@@ -229,9 +238,12 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indication of the percentage completion of the task.
+     * </p>
      * 
      * @param progressPercent
+     *        Indication of the percentage completion of the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

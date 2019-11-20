@@ -33,7 +33,7 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
     private String progressUpdateStream;
     /**
      * <p>
-     * The name of the MigrationTask.
+     * The name of the MigrationTask. <i>Do not store personal data in this field.</i>
      * </p>
      */
     private String migrationTaskName;
@@ -93,11 +93,11 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the MigrationTask.
+     * The name of the MigrationTask. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        The name of the MigrationTask.
+     *        The name of the MigrationTask. <i>Do not store personal data in this field.</i>
      */
 
     public void setMigrationTaskName(String migrationTaskName) {
@@ -106,10 +106,10 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the MigrationTask.
+     * The name of the MigrationTask. <i>Do not store personal data in this field.</i>
      * </p>
      * 
-     * @return The name of the MigrationTask.
+     * @return The name of the MigrationTask. <i>Do not store personal data in this field.</i>
      */
 
     public String getMigrationTaskName() {
@@ -118,11 +118,11 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the MigrationTask.
+     * The name of the MigrationTask. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        The name of the MigrationTask.
+     *        The name of the MigrationTask. <i>Do not store personal data in this field.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

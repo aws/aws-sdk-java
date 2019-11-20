@@ -36,8 +36,8 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
     private String pullRequestId;
     /**
      * <p>
-     * The user-defined title of the pull request. This title is displayed in the list of pull requests to other users
-     * of the repository.
+     * The user-defined title of the pull request. This title is displayed in the list of pull requests to other
+     * repository users.
      * </p>
      */
     private String title;
@@ -81,12 +81,24 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<PullRequestTarget> pullRequestTargets;
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The system-generated revision ID for the pull request.
+     * </p>
+     */
+    private String revisionId;
+    /**
+     * <p>
+     * The approval rules applied to the pull request.
+     * </p>
+     */
+    private java.util.List<ApprovalRule> approvalRules;
 
     /**
      * <p>
@@ -130,13 +142,13 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-defined title of the pull request. This title is displayed in the list of pull requests to other users
-     * of the repository.
+     * The user-defined title of the pull request. This title is displayed in the list of pull requests to other
+     * repository users.
      * </p>
      * 
      * @param title
      *        The user-defined title of the pull request. This title is displayed in the list of pull requests to other
-     *        users of the repository.
+     *        repository users.
      */
 
     public void setTitle(String title) {
@@ -145,12 +157,12 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-defined title of the pull request. This title is displayed in the list of pull requests to other users
-     * of the repository.
+     * The user-defined title of the pull request. This title is displayed in the list of pull requests to other
+     * repository users.
      * </p>
      * 
      * @return The user-defined title of the pull request. This title is displayed in the list of pull requests to other
-     *         users of the repository.
+     *         repository users.
      */
 
     public String getTitle() {
@@ -159,13 +171,13 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-defined title of the pull request. This title is displayed in the list of pull requests to other users
-     * of the repository.
+     * The user-defined title of the pull request. This title is displayed in the list of pull requests to other
+     * repository users.
      * </p>
      * 
      * @param title
      *        The user-defined title of the pull request. This title is displayed in the list of pull requests to other
-     *        users of the repository.
+     *        repository users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -479,15 +491,15 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     *        A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *        included, the request will return information about the initial request that used that token.
+     *        included, the request returns information about the initial request that used that token.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -496,14 +508,14 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
-     * @return A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     * @return A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *         be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *         included, the request will return information about the initial request that used that token.
+     *         included, the request returns information about the initial request that used that token.
      */
 
     public String getClientRequestToken() {
@@ -512,20 +524,130 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     *        A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *        included, the request will return information about the initial request that used that token.
+     *        included, the request returns information about the initial request that used that token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PullRequest withClientRequestToken(String clientRequestToken) {
         setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The system-generated revision ID for the pull request.
+     * </p>
+     * 
+     * @param revisionId
+     *        The system-generated revision ID for the pull request.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * The system-generated revision ID for the pull request.
+     * </p>
+     * 
+     * @return The system-generated revision ID for the pull request.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * The system-generated revision ID for the pull request.
+     * </p>
+     * 
+     * @param revisionId
+     *        The system-generated revision ID for the pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequest withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The approval rules applied to the pull request.
+     * </p>
+     * 
+     * @return The approval rules applied to the pull request.
+     */
+
+    public java.util.List<ApprovalRule> getApprovalRules() {
+        return approvalRules;
+    }
+
+    /**
+     * <p>
+     * The approval rules applied to the pull request.
+     * </p>
+     * 
+     * @param approvalRules
+     *        The approval rules applied to the pull request.
+     */
+
+    public void setApprovalRules(java.util.Collection<ApprovalRule> approvalRules) {
+        if (approvalRules == null) {
+            this.approvalRules = null;
+            return;
+        }
+
+        this.approvalRules = new java.util.ArrayList<ApprovalRule>(approvalRules);
+    }
+
+    /**
+     * <p>
+     * The approval rules applied to the pull request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApprovalRules(java.util.Collection)} or {@link #withApprovalRules(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param approvalRules
+     *        The approval rules applied to the pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequest withApprovalRules(ApprovalRule... approvalRules) {
+        if (this.approvalRules == null) {
+            setApprovalRules(new java.util.ArrayList<ApprovalRule>(approvalRules.length));
+        }
+        for (ApprovalRule ele : approvalRules) {
+            this.approvalRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The approval rules applied to the pull request.
+     * </p>
+     * 
+     * @param approvalRules
+     *        The approval rules applied to the pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequest withApprovalRules(java.util.Collection<ApprovalRule> approvalRules) {
+        setApprovalRules(approvalRules);
         return this;
     }
 
@@ -558,7 +680,11 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
         if (getPullRequestTargets() != null)
             sb.append("PullRequestTargets: ").append(getPullRequestTargets()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
+        if (getApprovalRules() != null)
+            sb.append("ApprovalRules: ").append(getApprovalRules());
         sb.append("}");
         return sb.toString();
     }
@@ -609,6 +735,14 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
+        if (other.getApprovalRules() == null ^ this.getApprovalRules() == null)
+            return false;
+        if (other.getApprovalRules() != null && other.getApprovalRules().equals(this.getApprovalRules()) == false)
+            return false;
         return true;
     }
 
@@ -626,6 +760,8 @@ public class PullRequest implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAuthorArn() == null) ? 0 : getAuthorArn().hashCode());
         hashCode = prime * hashCode + ((getPullRequestTargets() == null) ? 0 : getPullRequestTargets().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
+        hashCode = prime * hashCode + ((getApprovalRules() == null) ? 0 : getApprovalRules().hashCode());
         return hashCode;
     }
 

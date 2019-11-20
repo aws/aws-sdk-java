@@ -25,8 +25,8 @@ public class GetDifferencesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A differences data type object that contains information about the differences, including whether the difference
-     * is added, modified, or deleted (A, D, M).
+     * A data type object that contains information about the differences, including whether the difference is added,
+     * modified, or deleted (A, D, M).
      * </p>
      */
     private java.util.List<Difference> differences;
@@ -39,12 +39,12 @@ public class GetDifferencesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A differences data type object that contains information about the differences, including whether the difference
-     * is added, modified, or deleted (A, D, M).
+     * A data type object that contains information about the differences, including whether the difference is added,
+     * modified, or deleted (A, D, M).
      * </p>
      * 
-     * @return A differences data type object that contains information about the differences, including whether the
-     *         difference is added, modified, or deleted (A, D, M).
+     * @return A data type object that contains information about the differences, including whether the difference is
+     *         added, modified, or deleted (A, D, M).
      */
 
     public java.util.List<Difference> getDifferences() {
@@ -53,13 +53,13 @@ public class GetDifferencesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A differences data type object that contains information about the differences, including whether the difference
-     * is added, modified, or deleted (A, D, M).
+     * A data type object that contains information about the differences, including whether the difference is added,
+     * modified, or deleted (A, D, M).
      * </p>
      * 
      * @param differences
-     *        A differences data type object that contains information about the differences, including whether the
-     *        difference is added, modified, or deleted (A, D, M).
+     *        A data type object that contains information about the differences, including whether the difference is
+     *        added, modified, or deleted (A, D, M).
      */
 
     public void setDifferences(java.util.Collection<Difference> differences) {
@@ -73,8 +73,8 @@ public class GetDifferencesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A differences data type object that contains information about the differences, including whether the difference
-     * is added, modified, or deleted (A, D, M).
+     * A data type object that contains information about the differences, including whether the difference is added,
+     * modified, or deleted (A, D, M).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,8 +83,8 @@ public class GetDifferencesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param differences
-     *        A differences data type object that contains information about the differences, including whether the
-     *        difference is added, modified, or deleted (A, D, M).
+     *        A data type object that contains information about the differences, including whether the difference is
+     *        added, modified, or deleted (A, D, M).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +100,13 @@ public class GetDifferencesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A differences data type object that contains information about the differences, including whether the difference
-     * is added, modified, or deleted (A, D, M).
+     * A data type object that contains information about the differences, including whether the difference is added,
+     * modified, or deleted (A, D, M).
      * </p>
      * 
      * @param differences
-     *        A differences data type object that contains information about the differences, including whether the
-     *        difference is added, modified, or deleted (A, D, M).
+     *        A data type object that contains information about the differences, including whether the difference is
+     *        added, modified, or deleted (A, D, M).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

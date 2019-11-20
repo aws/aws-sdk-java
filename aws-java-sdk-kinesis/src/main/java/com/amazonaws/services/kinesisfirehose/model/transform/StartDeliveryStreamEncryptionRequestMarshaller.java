@@ -29,6 +29,9 @@ public class StartDeliveryStreamEncryptionRequestMarshaller {
 
     private static final MarshallingInfo<String> DELIVERYSTREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamName").build();
+    private static final MarshallingInfo<StructuredPojo> DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamEncryptionConfigurationInput")
+            .build();
 
     private static final StartDeliveryStreamEncryptionRequestMarshaller instance = new StartDeliveryStreamEncryptionRequestMarshaller();
 
@@ -47,6 +50,8 @@ public class StartDeliveryStreamEncryptionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startDeliveryStreamEncryptionRequest.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
+            protocolMarshaller.marshall(startDeliveryStreamEncryptionRequest.getDeliveryStreamEncryptionConfigurationInput(),
+                    DELIVERYSTREAMENCRYPTIONCONFIGURATIONINPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

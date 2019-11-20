@@ -44,10 +44,20 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
     private String deliveryStreamARN;
     /**
      * <p>
-     * The status of the delivery stream.
+     * The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this
+     * status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can
+     * invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * </p>
      */
     private String deliveryStreamStatus;
+    /**
+     * <p>
+     * Provides details in case one of the following operations fails due to an error related to KMS:
+     * <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     * <a>StopDeliveryStreamEncryption</a>.
+     * </p>
+     */
+    private FailureDescription failureDescription;
     /**
      * <p>
      * Indicates the server-side encryption (SSE) status for the delivery stream.
@@ -206,11 +216,15 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the delivery stream.
+     * The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this
+     * status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can
+     * invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * </p>
      * 
      * @param deliveryStreamStatus
-     *        The status of the delivery stream.
+     *        The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>,
+     *        this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However,
+     *        you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * @see DeliveryStreamStatus
      */
 
@@ -220,10 +234,14 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the delivery stream.
+     * The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this
+     * status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can
+     * invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * </p>
      * 
-     * @return The status of the delivery stream.
+     * @return The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>,
+     *         this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However,
+     *         you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * @see DeliveryStreamStatus
      */
 
@@ -233,11 +251,15 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the delivery stream.
+     * The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this
+     * status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can
+     * invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * </p>
      * 
      * @param deliveryStreamStatus
-     *        The status of the delivery stream.
+     *        The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>,
+     *        this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However,
+     *        you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryStreamStatus
      */
@@ -249,11 +271,15 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the delivery stream.
+     * The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this
+     * status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can
+     * invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * </p>
      * 
      * @param deliveryStreamStatus
-     *        The status of the delivery stream.
+     *        The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>,
+     *        this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However,
+     *        you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * @see DeliveryStreamStatus
      */
 
@@ -263,17 +289,73 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the delivery stream.
+     * The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this
+     * status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can
+     * invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * </p>
      * 
      * @param deliveryStreamStatus
-     *        The status of the delivery stream.
+     *        The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>,
+     *        this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However,
+     *        you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryStreamStatus
      */
 
     public DeliveryStreamDescription withDeliveryStreamStatus(DeliveryStreamStatus deliveryStreamStatus) {
         this.deliveryStreamStatus = deliveryStreamStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details in case one of the following operations fails due to an error related to KMS:
+     * <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     * <a>StopDeliveryStreamEncryption</a>.
+     * </p>
+     * 
+     * @param failureDescription
+     *        Provides details in case one of the following operations fails due to an error related to KMS:
+     *        <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     *        <a>StopDeliveryStreamEncryption</a>.
+     */
+
+    public void setFailureDescription(FailureDescription failureDescription) {
+        this.failureDescription = failureDescription;
+    }
+
+    /**
+     * <p>
+     * Provides details in case one of the following operations fails due to an error related to KMS:
+     * <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     * <a>StopDeliveryStreamEncryption</a>.
+     * </p>
+     * 
+     * @return Provides details in case one of the following operations fails due to an error related to KMS:
+     *         <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     *         <a>StopDeliveryStreamEncryption</a>.
+     */
+
+    public FailureDescription getFailureDescription() {
+        return this.failureDescription;
+    }
+
+    /**
+     * <p>
+     * Provides details in case one of the following operations fails due to an error related to KMS:
+     * <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     * <a>StopDeliveryStreamEncryption</a>.
+     * </p>
+     * 
+     * @param failureDescription
+     *        Provides details in case one of the following operations fails due to an error related to KMS:
+     *        <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>,
+     *        <a>StopDeliveryStreamEncryption</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeliveryStreamDescription withFailureDescription(FailureDescription failureDescription) {
+        setFailureDescription(failureDescription);
         return this;
     }
 
@@ -823,6 +905,8 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
             sb.append("DeliveryStreamARN: ").append(getDeliveryStreamARN()).append(",");
         if (getDeliveryStreamStatus() != null)
             sb.append("DeliveryStreamStatus: ").append(getDeliveryStreamStatus()).append(",");
+        if (getFailureDescription() != null)
+            sb.append("FailureDescription: ").append(getFailureDescription()).append(",");
         if (getDeliveryStreamEncryptionConfiguration() != null)
             sb.append("DeliveryStreamEncryptionConfiguration: ").append(getDeliveryStreamEncryptionConfiguration()).append(",");
         if (getDeliveryStreamType() != null)
@@ -864,6 +948,10 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
         if (other.getDeliveryStreamStatus() == null ^ this.getDeliveryStreamStatus() == null)
             return false;
         if (other.getDeliveryStreamStatus() != null && other.getDeliveryStreamStatus().equals(this.getDeliveryStreamStatus()) == false)
+            return false;
+        if (other.getFailureDescription() == null ^ this.getFailureDescription() == null)
+            return false;
+        if (other.getFailureDescription() != null && other.getFailureDescription().equals(this.getFailureDescription()) == false)
             return false;
         if (other.getDeliveryStreamEncryptionConfiguration() == null ^ this.getDeliveryStreamEncryptionConfiguration() == null)
             return false;
@@ -909,6 +997,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
         hashCode = prime * hashCode + ((getDeliveryStreamARN() == null) ? 0 : getDeliveryStreamARN().hashCode());
         hashCode = prime * hashCode + ((getDeliveryStreamStatus() == null) ? 0 : getDeliveryStreamStatus().hashCode());
+        hashCode = prime * hashCode + ((getFailureDescription() == null) ? 0 : getFailureDescription().hashCode());
         hashCode = prime * hashCode + ((getDeliveryStreamEncryptionConfiguration() == null) ? 0 : getDeliveryStreamEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeliveryStreamType() == null) ? 0 : getDeliveryStreamType().hashCode());
         hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());

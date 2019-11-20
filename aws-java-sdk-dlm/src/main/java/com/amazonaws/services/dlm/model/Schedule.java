@@ -66,6 +66,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RetainRule retainRule;
+    /**
+     * <p>
+     * Enable fast snapshot restore.
+     * </p>
+     */
+    private FastRestoreRule fastRestoreRule;
 
     /**
      * <p>
@@ -408,6 +414,46 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Enable fast snapshot restore.
+     * </p>
+     * 
+     * @param fastRestoreRule
+     *        Enable fast snapshot restore.
+     */
+
+    public void setFastRestoreRule(FastRestoreRule fastRestoreRule) {
+        this.fastRestoreRule = fastRestoreRule;
+    }
+
+    /**
+     * <p>
+     * Enable fast snapshot restore.
+     * </p>
+     * 
+     * @return Enable fast snapshot restore.
+     */
+
+    public FastRestoreRule getFastRestoreRule() {
+        return this.fastRestoreRule;
+    }
+
+    /**
+     * <p>
+     * Enable fast snapshot restore.
+     * </p>
+     * 
+     * @param fastRestoreRule
+     *        Enable fast snapshot restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withFastRestoreRule(FastRestoreRule fastRestoreRule) {
+        setFastRestoreRule(fastRestoreRule);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -430,7 +476,9 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         if (getCreateRule() != null)
             sb.append("CreateRule: ").append(getCreateRule()).append(",");
         if (getRetainRule() != null)
-            sb.append("RetainRule: ").append(getRetainRule());
+            sb.append("RetainRule: ").append(getRetainRule()).append(",");
+        if (getFastRestoreRule() != null)
+            sb.append("FastRestoreRule: ").append(getFastRestoreRule());
         sb.append("}");
         return sb.toString();
     }
@@ -469,6 +517,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRetainRule() != null && other.getRetainRule().equals(this.getRetainRule()) == false)
             return false;
+        if (other.getFastRestoreRule() == null ^ this.getFastRestoreRule() == null)
+            return false;
+        if (other.getFastRestoreRule() != null && other.getFastRestoreRule().equals(this.getFastRestoreRule()) == false)
+            return false;
         return true;
     }
 
@@ -483,6 +535,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVariableTags() == null) ? 0 : getVariableTags().hashCode());
         hashCode = prime * hashCode + ((getCreateRule() == null) ? 0 : getCreateRule().hashCode());
         hashCode = prime * hashCode + ((getRetainRule() == null) ? 0 : getRetainRule().hashCode());
+        hashCode = prime * hashCode + ((getFastRestoreRule() == null) ? 0 : getFastRestoreRule().hashCode());
         return hashCode;
     }
 

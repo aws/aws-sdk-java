@@ -27,27 +27,26 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the repository where you will create the commit.
+     * The name of the repository where you create the commit.
      * </p>
      */
     private String repositoryName;
     /**
      * <p>
-     * The name of the branch where you will create the commit.
+     * The name of the branch where you create the commit.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * The ID of the commit that is the parent of the commit you will create. If this is an empty repository, this is
-     * not required.
+     * The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.
      * </p>
      */
     private String parentCommitId;
     /**
      * <p>
-     * The name of the author who created the commit. This information will be used as both the author and committer for
-     * the commit.
+     * The name of the author who created the commit. This information is used as both the author and committer for the
+     * commit.
      * </p>
      */
     private String authorName;
@@ -59,15 +58,15 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String email;
     /**
      * <p>
-     * The commit message you want to include as part of creating the commit. Commit messages are limited to 256 KB. If
-     * no message is specified, a default message will be used.
+     * The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is
+     * specified, a default message is used.
      * </p>
      */
     private String commitMessage;
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      * </p>
      */
     private Boolean keepEmptyFolders;
@@ -79,7 +78,7 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<PutFileEntry> putFiles;
     /**
      * <p>
-     * The files to delete in this commit. These files will still exist in prior commits.
+     * The files to delete in this commit. These files still exist in earlier commits.
      * </p>
      */
     private java.util.List<DeleteFileEntry> deleteFiles;
@@ -92,11 +91,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the repository where you will create the commit.
+     * The name of the repository where you create the commit.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository where you will create the commit.
+     *        The name of the repository where you create the commit.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -105,10 +104,10 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the repository where you will create the commit.
+     * The name of the repository where you create the commit.
      * </p>
      * 
-     * @return The name of the repository where you will create the commit.
+     * @return The name of the repository where you create the commit.
      */
 
     public String getRepositoryName() {
@@ -117,11 +116,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the repository where you will create the commit.
+     * The name of the repository where you create the commit.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the repository where you will create the commit.
+     *        The name of the repository where you create the commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +131,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the branch where you will create the commit.
+     * The name of the branch where you create the commit.
      * </p>
      * 
      * @param branchName
-     *        The name of the branch where you will create the commit.
+     *        The name of the branch where you create the commit.
      */
 
     public void setBranchName(String branchName) {
@@ -145,10 +144,10 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the branch where you will create the commit.
+     * The name of the branch where you create the commit.
      * </p>
      * 
-     * @return The name of the branch where you will create the commit.
+     * @return The name of the branch where you create the commit.
      */
 
     public String getBranchName() {
@@ -157,11 +156,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the branch where you will create the commit.
+     * The name of the branch where you create the commit.
      * </p>
      * 
      * @param branchName
-     *        The name of the branch where you will create the commit.
+     *        The name of the branch where you create the commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,13 +171,12 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the commit that is the parent of the commit you will create. If this is an empty repository, this is
-     * not required.
+     * The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.
      * </p>
      * 
      * @param parentCommitId
-     *        The ID of the commit that is the parent of the commit you will create. If this is an empty repository,
-     *        this is not required.
+     *        The ID of the commit that is the parent of the commit you create. Not required if this is an empty
+     *        repository.
      */
 
     public void setParentCommitId(String parentCommitId) {
@@ -187,12 +185,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the commit that is the parent of the commit you will create. If this is an empty repository, this is
-     * not required.
+     * The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.
      * </p>
      * 
-     * @return The ID of the commit that is the parent of the commit you will create. If this is an empty repository,
-     *         this is not required.
+     * @return The ID of the commit that is the parent of the commit you create. Not required if this is an empty
+     *         repository.
      */
 
     public String getParentCommitId() {
@@ -201,13 +198,12 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the commit that is the parent of the commit you will create. If this is an empty repository, this is
-     * not required.
+     * The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.
      * </p>
      * 
      * @param parentCommitId
-     *        The ID of the commit that is the parent of the commit you will create. If this is an empty repository,
-     *        this is not required.
+     *        The ID of the commit that is the parent of the commit you create. Not required if this is an empty
+     *        repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,13 +214,13 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the author who created the commit. This information will be used as both the author and committer for
-     * the commit.
+     * The name of the author who created the commit. This information is used as both the author and committer for the
+     * commit.
      * </p>
      * 
      * @param authorName
-     *        The name of the author who created the commit. This information will be used as both the author and
-     *        committer for the commit.
+     *        The name of the author who created the commit. This information is used as both the author and committer
+     *        for the commit.
      */
 
     public void setAuthorName(String authorName) {
@@ -233,12 +229,12 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the author who created the commit. This information will be used as both the author and committer for
-     * the commit.
+     * The name of the author who created the commit. This information is used as both the author and committer for the
+     * commit.
      * </p>
      * 
-     * @return The name of the author who created the commit. This information will be used as both the author and
-     *         committer for the commit.
+     * @return The name of the author who created the commit. This information is used as both the author and committer
+     *         for the commit.
      */
 
     public String getAuthorName() {
@@ -247,13 +243,13 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the author who created the commit. This information will be used as both the author and committer for
-     * the commit.
+     * The name of the author who created the commit. This information is used as both the author and committer for the
+     * commit.
      * </p>
      * 
      * @param authorName
-     *        The name of the author who created the commit. This information will be used as both the author and
-     *        committer for the commit.
+     *        The name of the author who created the commit. This information is used as both the author and committer
+     *        for the commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,13 +300,13 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The commit message you want to include as part of creating the commit. Commit messages are limited to 256 KB. If
-     * no message is specified, a default message will be used.
+     * The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is
+     * specified, a default message is used.
      * </p>
      * 
      * @param commitMessage
-     *        The commit message you want to include as part of creating the commit. Commit messages are limited to 256
-     *        KB. If no message is specified, a default message will be used.
+     *        The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message
+     *        is specified, a default message is used.
      */
 
     public void setCommitMessage(String commitMessage) {
@@ -319,12 +315,12 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The commit message you want to include as part of creating the commit. Commit messages are limited to 256 KB. If
-     * no message is specified, a default message will be used.
+     * The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is
+     * specified, a default message is used.
      * </p>
      * 
-     * @return The commit message you want to include as part of creating the commit. Commit messages are limited to 256
-     *         KB. If no message is specified, a default message will be used.
+     * @return The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no
+     *         message is specified, a default message is used.
      */
 
     public String getCommitMessage() {
@@ -333,13 +329,13 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The commit message you want to include as part of creating the commit. Commit messages are limited to 256 KB. If
-     * no message is specified, a default message will be used.
+     * The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is
+     * specified, a default message is used.
      * </p>
      * 
      * @param commitMessage
-     *        The commit message you want to include as part of creating the commit. Commit messages are limited to 256
-     *        KB. If no message is specified, a default message will be used.
+     *        The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message
+     *        is specified, a default message is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,13 +347,12 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      * </p>
      * 
      * @param keepEmptyFolders
      *        If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *        folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
-     *        default is false.
+     *        folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      */
 
     public void setKeepEmptyFolders(Boolean keepEmptyFolders) {
@@ -367,12 +362,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      * </p>
      * 
      * @return If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *         folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
-     *         default is false.
+     *         folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      */
 
     public Boolean getKeepEmptyFolders() {
@@ -382,13 +376,12 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      * </p>
      * 
      * @param keepEmptyFolders
      *        If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *        folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
-     *        default is false.
+     *        folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,12 +393,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
+     * empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      * </p>
      * 
      * @return If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *         folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
-     *         default is false.
+     *         folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.
      */
 
     public Boolean isKeepEmptyFolders() {
@@ -484,10 +476,10 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The files to delete in this commit. These files will still exist in prior commits.
+     * The files to delete in this commit. These files still exist in earlier commits.
      * </p>
      * 
-     * @return The files to delete in this commit. These files will still exist in prior commits.
+     * @return The files to delete in this commit. These files still exist in earlier commits.
      */
 
     public java.util.List<DeleteFileEntry> getDeleteFiles() {
@@ -496,11 +488,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The files to delete in this commit. These files will still exist in prior commits.
+     * The files to delete in this commit. These files still exist in earlier commits.
      * </p>
      * 
      * @param deleteFiles
-     *        The files to delete in this commit. These files will still exist in prior commits.
+     *        The files to delete in this commit. These files still exist in earlier commits.
      */
 
     public void setDeleteFiles(java.util.Collection<DeleteFileEntry> deleteFiles) {
@@ -514,7 +506,7 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The files to delete in this commit. These files will still exist in prior commits.
+     * The files to delete in this commit. These files still exist in earlier commits.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -523,7 +515,7 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param deleteFiles
-     *        The files to delete in this commit. These files will still exist in prior commits.
+     *        The files to delete in this commit. These files still exist in earlier commits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -539,11 +531,11 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The files to delete in this commit. These files will still exist in prior commits.
+     * The files to delete in this commit. These files still exist in earlier commits.
      * </p>
      * 
      * @param deleteFiles
-     *        The files to delete in this commit. These files will still exist in prior commits.
+     *        The files to delete in this commit. These files still exist in earlier commits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

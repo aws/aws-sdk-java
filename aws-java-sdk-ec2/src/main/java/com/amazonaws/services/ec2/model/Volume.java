@@ -115,6 +115,12 @@ public class Volume implements Serializable, Cloneable {
      * </p>
      */
     private String volumeType;
+    /**
+     * <p>
+     * Indicates whether the volume was created using fast snapshot restore.
+     * </p>
+     */
+    private Boolean fastRestored;
 
     /**
      * <p>
@@ -858,6 +864,58 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the volume was created using fast snapshot restore.
+     * </p>
+     * 
+     * @param fastRestored
+     *        Indicates whether the volume was created using fast snapshot restore.
+     */
+
+    public void setFastRestored(Boolean fastRestored) {
+        this.fastRestored = fastRestored;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume was created using fast snapshot restore.
+     * </p>
+     * 
+     * @return Indicates whether the volume was created using fast snapshot restore.
+     */
+
+    public Boolean getFastRestored() {
+        return this.fastRestored;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume was created using fast snapshot restore.
+     * </p>
+     * 
+     * @param fastRestored
+     *        Indicates whether the volume was created using fast snapshot restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withFastRestored(Boolean fastRestored) {
+        setFastRestored(fastRestored);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume was created using fast snapshot restore.
+     * </p>
+     * 
+     * @return Indicates whether the volume was created using fast snapshot restore.
+     */
+
+    public Boolean isFastRestored() {
+        return this.fastRestored;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -892,7 +950,9 @@ public class Volume implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: ").append(getVolumeType());
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
+        if (getFastRestored() != null)
+            sb.append("FastRestored: ").append(getFastRestored());
         sb.append("}");
         return sb.toString();
     }
@@ -955,6 +1015,10 @@ public class Volume implements Serializable, Cloneable {
             return false;
         if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
+        if (other.getFastRestored() == null ^ this.getFastRestored() == null)
+            return false;
+        if (other.getFastRestored() != null && other.getFastRestored().equals(this.getFastRestored()) == false)
+            return false;
         return true;
     }
 
@@ -975,6 +1039,7 @@ public class Volume implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getFastRestored() == null) ? 0 : getFastRestored().hashCode());
         return hashCode;
     }
 

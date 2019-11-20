@@ -43,14 +43,14 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The full commit ID of the commit that was the tip of the destination branch when the pull request was created.
-     * This commit will be superceded by the after commit in the source branch when and if you merge the source branch
-     * into the destination branch.
+     * This commit is superceded by the after commit in the source branch when and if you merge the source branch into
+     * the destination branch.
      * </p>
      */
     private String beforeCommitId;
     /**
      * <p>
-     * he full commit ID of the commit that was the tip of the source branch at the time the comment was made.
+     * The full commit ID of the commit that was the tip of the source branch at the time the comment was made.
      * </p>
      */
     private String afterCommitId;
@@ -69,7 +69,7 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Location information about the comment on the pull request, including the file name, line number, and whether the
-     * version of the file where the comment was made is 'BEFORE' (destination branch) or 'AFTER' (source branch).
+     * version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).
      * </p>
      */
     private Location location;
@@ -163,13 +163,13 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The full commit ID of the commit that was the tip of the destination branch when the pull request was created.
-     * This commit will be superceded by the after commit in the source branch when and if you merge the source branch
-     * into the destination branch.
+     * This commit is superceded by the after commit in the source branch when and if you merge the source branch into
+     * the destination branch.
      * </p>
      * 
      * @param beforeCommitId
      *        The full commit ID of the commit that was the tip of the destination branch when the pull request was
-     *        created. This commit will be superceded by the after commit in the source branch when and if you merge the
+     *        created. This commit is superceded by the after commit in the source branch when and if you merge the
      *        source branch into the destination branch.
      */
 
@@ -180,13 +180,13 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The full commit ID of the commit that was the tip of the destination branch when the pull request was created.
-     * This commit will be superceded by the after commit in the source branch when and if you merge the source branch
-     * into the destination branch.
+     * This commit is superceded by the after commit in the source branch when and if you merge the source branch into
+     * the destination branch.
      * </p>
      * 
      * @return The full commit ID of the commit that was the tip of the destination branch when the pull request was
-     *         created. This commit will be superceded by the after commit in the source branch when and if you merge
-     *         the source branch into the destination branch.
+     *         created. This commit is superceded by the after commit in the source branch when and if you merge the
+     *         source branch into the destination branch.
      */
 
     public String getBeforeCommitId() {
@@ -196,13 +196,13 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The full commit ID of the commit that was the tip of the destination branch when the pull request was created.
-     * This commit will be superceded by the after commit in the source branch when and if you merge the source branch
-     * into the destination branch.
+     * This commit is superceded by the after commit in the source branch when and if you merge the source branch into
+     * the destination branch.
      * </p>
      * 
      * @param beforeCommitId
      *        The full commit ID of the commit that was the tip of the destination branch when the pull request was
-     *        created. This commit will be superceded by the after commit in the source branch when and if you merge the
+     *        created. This commit is superceded by the after commit in the source branch when and if you merge the
      *        source branch into the destination branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -214,11 +214,11 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * he full commit ID of the commit that was the tip of the source branch at the time the comment was made.
+     * The full commit ID of the commit that was the tip of the source branch at the time the comment was made.
      * </p>
      * 
      * @param afterCommitId
-     *        he full commit ID of the commit that was the tip of the source branch at the time the comment was made.
+     *        The full commit ID of the commit that was the tip of the source branch at the time the comment was made.
      */
 
     public void setAfterCommitId(String afterCommitId) {
@@ -227,10 +227,10 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * he full commit ID of the commit that was the tip of the source branch at the time the comment was made.
+     * The full commit ID of the commit that was the tip of the source branch at the time the comment was made.
      * </p>
      * 
-     * @return he full commit ID of the commit that was the tip of the source branch at the time the comment was made.
+     * @return The full commit ID of the commit that was the tip of the source branch at the time the comment was made.
      */
 
     public String getAfterCommitId() {
@@ -239,11 +239,11 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * he full commit ID of the commit that was the tip of the source branch at the time the comment was made.
+     * The full commit ID of the commit that was the tip of the source branch at the time the comment was made.
      * </p>
      * 
      * @param afterCommitId
-     *        he full commit ID of the commit that was the tip of the source branch at the time the comment was made.
+     *        The full commit ID of the commit that was the tip of the source branch at the time the comment was made.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,13 +335,13 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Location information about the comment on the pull request, including the file name, line number, and whether the
-     * version of the file where the comment was made is 'BEFORE' (destination branch) or 'AFTER' (source branch).
+     * version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).
      * </p>
      * 
      * @param location
      *        Location information about the comment on the pull request, including the file name, line number, and
-     *        whether the version of the file where the comment was made is 'BEFORE' (destination branch) or 'AFTER'
-     *        (source branch).
+     *        whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source
+     *        branch).
      */
 
     public void setLocation(Location location) {
@@ -351,11 +351,11 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Location information about the comment on the pull request, including the file name, line number, and whether the
-     * version of the file where the comment was made is 'BEFORE' (destination branch) or 'AFTER' (source branch).
+     * version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).
      * </p>
      * 
      * @return Location information about the comment on the pull request, including the file name, line number, and
-     *         whether the version of the file where the comment was made is 'BEFORE' (destination branch) or 'AFTER'
+     *         whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER
      *         (source branch).
      */
 
@@ -366,13 +366,13 @@ public class CommentsForPullRequest implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Location information about the comment on the pull request, including the file name, line number, and whether the
-     * version of the file where the comment was made is 'BEFORE' (destination branch) or 'AFTER' (source branch).
+     * version of the file where the comment was made is BEFORE (destination branch) or AFTER (source branch).
      * </p>
      * 
      * @param location
      *        Location information about the comment on the pull request, including the file name, line number, and
-     *        whether the version of the file where the comment was made is 'BEFORE' (destination branch) or 'AFTER'
-     *        (source branch).
+     *        whether the version of the file where the comment was made is BEFORE (destination branch) or AFTER (source
+     *        branch).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

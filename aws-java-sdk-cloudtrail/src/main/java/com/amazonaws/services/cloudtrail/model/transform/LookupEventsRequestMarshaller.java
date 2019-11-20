@@ -34,6 +34,8 @@ public class LookupEventsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> EVENTCATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventCategory").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class LookupEventsRequestMarshaller {
             protocolMarshaller.marshall(lookupEventsRequest.getLookupAttributes(), LOOKUPATTRIBUTES_BINDING);
             protocolMarshaller.marshall(lookupEventsRequest.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(lookupEventsRequest.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(lookupEventsRequest.getEventCategory(), EVENTCATEGORY_BINDING);
             protocolMarshaller.marshall(lookupEventsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(lookupEventsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

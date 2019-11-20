@@ -72,9 +72,9 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
     private Boolean deleted;
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      */
     private String clientRequestToken;
@@ -373,15 +373,15 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     *        A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *        included, the request will return information about the initial request that used that token.
+     *        included, the request returns information about the initial request that used that token.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -390,14 +390,14 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
-     * @return A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     * @return A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *         be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *         included, the request will return information about the initial request that used that token.
+     *         included, the request returns information about the initial request that used that token.
      */
 
     public String getClientRequestToken() {
@@ -406,15 +406,15 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     *        A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *        included, the request will return information about the initial request that used that token.
+     *        included, the request returns information about the initial request that used that token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -71,6 +71,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<BatchCreateAttendeeResult> batchCreateAttendeeAsync(BatchCreateAttendeeRequest request) {
+
+        return batchCreateAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateAttendeeResult> batchCreateAttendeeAsync(BatchCreateAttendeeRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateAttendeeRequest, BatchCreateAttendeeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchCreateRoomMembershipResult> batchCreateRoomMembershipAsync(BatchCreateRoomMembershipRequest request) {
 
         return batchCreateRoomMembershipAsync(request, null);
@@ -162,6 +175,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAttendeeResult> createAttendeeAsync(CreateAttendeeRequest request) {
+
+        return createAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAttendeeResult> createAttendeeAsync(CreateAttendeeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAttendeeRequest, CreateAttendeeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest request) {
 
         return createBotAsync(request, null);
@@ -170,6 +196,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateBotRequest, CreateBotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMeetingResult> createMeetingAsync(CreateMeetingRequest request) {
+
+        return createMeetingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMeetingResult> createMeetingAsync(CreateMeetingRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMeetingRequest, CreateMeetingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -253,6 +292,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAttendeeResult> deleteAttendeeAsync(DeleteAttendeeRequest request) {
+
+        return deleteAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttendeeResult> deleteAttendeeAsync(DeleteAttendeeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAttendeeRequest, DeleteAttendeeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(DeleteEventsConfigurationRequest request) {
 
         return deleteEventsConfigurationAsync(request, null);
@@ -261,6 +313,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(DeleteEventsConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEventsConfigurationRequest, DeleteEventsConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMeetingResult> deleteMeetingAsync(DeleteMeetingRequest request) {
+
+        return deleteMeetingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMeetingResult> deleteMeetingAsync(DeleteMeetingRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMeetingRequest, DeleteMeetingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -462,6 +527,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetAttendeeResult> getAttendeeAsync(GetAttendeeRequest request) {
+
+        return getAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAttendeeResult> getAttendeeAsync(GetAttendeeRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAttendeeRequest, GetAttendeeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest request) {
 
         return getBotAsync(request, null);
@@ -496,6 +574,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<GetGlobalSettingsResult> getGlobalSettingsAsync(GetGlobalSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetGlobalSettingsRequest, GetGlobalSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMeetingResult> getMeetingAsync(GetMeetingRequest request) {
+
+        return getMeetingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMeetingResult> getMeetingAsync(GetMeetingRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMeetingRequest, GetMeetingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -702,6 +793,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListAttendeesResult> listAttendeesAsync(ListAttendeesRequest request) {
+
+        return listAttendeesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttendeesResult> listAttendeesAsync(ListAttendeesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAttendeesRequest, ListAttendeesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request) {
 
         return listBotsAsync(request, null);
@@ -710,6 +814,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMeetingsResult> listMeetingsAsync(ListMeetingsRequest request) {
+
+        return listMeetingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMeetingsResult> listMeetingsAsync(ListMeetingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMeetingsRequest, ListMeetingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -106,11 +106,16 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     private String vPCEndpoint;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
-     * gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
      * </p>
      */
     private String cloudWatchLogGroupARN;
+    /**
+     * <p>
+     * The type of hypervisor environment used by the host.
+     * </p>
+     */
+    private String hostEnvironment;
 
     /**
      * @param gatewayARN
@@ -720,13 +725,12 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
-     * gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
      * </p>
      * 
      * @param cloudWatchLogGroupARN
-     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
-     *        in the gateway.
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     *        gateway.
      */
 
     public void setCloudWatchLogGroupARN(String cloudWatchLogGroupARN) {
@@ -735,12 +739,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
-     * gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
-     *         in the gateway.
+     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     *         gateway.
      */
 
     public String getCloudWatchLogGroupARN() {
@@ -749,18 +752,76 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
-     * gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
      * </p>
      * 
      * @param cloudWatchLogGroupARN
-     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
-     *        in the gateway.
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     *        gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeGatewayInformationResult withCloudWatchLogGroupARN(String cloudWatchLogGroupARN) {
         setCloudWatchLogGroupARN(cloudWatchLogGroupARN);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of hypervisor environment used by the host.
+     * </p>
+     * 
+     * @param hostEnvironment
+     *        The type of hypervisor environment used by the host.
+     * @see HostEnvironment
+     */
+
+    public void setHostEnvironment(String hostEnvironment) {
+        this.hostEnvironment = hostEnvironment;
+    }
+
+    /**
+     * <p>
+     * The type of hypervisor environment used by the host.
+     * </p>
+     * 
+     * @return The type of hypervisor environment used by the host.
+     * @see HostEnvironment
+     */
+
+    public String getHostEnvironment() {
+        return this.hostEnvironment;
+    }
+
+    /**
+     * <p>
+     * The type of hypervisor environment used by the host.
+     * </p>
+     * 
+     * @param hostEnvironment
+     *        The type of hypervisor environment used by the host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostEnvironment
+     */
+
+    public DescribeGatewayInformationResult withHostEnvironment(String hostEnvironment) {
+        setHostEnvironment(hostEnvironment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of hypervisor environment used by the host.
+     * </p>
+     * 
+     * @param hostEnvironment
+     *        The type of hypervisor environment used by the host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostEnvironment
+     */
+
+    public DescribeGatewayInformationResult withHostEnvironment(HostEnvironment hostEnvironment) {
+        this.hostEnvironment = hostEnvironment.toString();
         return this;
     }
 
@@ -803,7 +864,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getVPCEndpoint() != null)
             sb.append("VPCEndpoint: ").append(getVPCEndpoint()).append(",");
         if (getCloudWatchLogGroupARN() != null)
-            sb.append("CloudWatchLogGroupARN: ").append(getCloudWatchLogGroupARN());
+            sb.append("CloudWatchLogGroupARN: ").append(getCloudWatchLogGroupARN()).append(",");
+        if (getHostEnvironment() != null)
+            sb.append("HostEnvironment: ").append(getHostEnvironment());
         sb.append("}");
         return sb.toString();
     }
@@ -874,6 +937,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getCloudWatchLogGroupARN() != null && other.getCloudWatchLogGroupARN().equals(this.getCloudWatchLogGroupARN()) == false)
             return false;
+        if (other.getHostEnvironment() == null ^ this.getHostEnvironment() == null)
+            return false;
+        if (other.getHostEnvironment() != null && other.getHostEnvironment().equals(this.getHostEnvironment()) == false)
+            return false;
         return true;
     }
 
@@ -896,6 +963,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVPCEndpoint() == null) ? 0 : getVPCEndpoint().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogGroupARN() == null) ? 0 : getCloudWatchLogGroupARN().hashCode());
+        hashCode = prime * hashCode + ((getHostEnvironment() == null) ? 0 : getHostEnvironment().hashCode());
         return hashCode;
     }
 

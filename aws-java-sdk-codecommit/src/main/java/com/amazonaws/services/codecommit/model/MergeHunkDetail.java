@@ -42,7 +42,7 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
     private Integer endLine;
     /**
      * <p>
-     * The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
+     * The base-64 encoded content of the hunk merged region that might contain a conflict.
      * </p>
      */
     private String hunkContent;
@@ -129,11 +129,11 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
+     * The base-64 encoded content of the hunk merged region that might contain a conflict.
      * </p>
      * 
      * @param hunkContent
-     *        The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
+     *        The base-64 encoded content of the hunk merged region that might contain a conflict.
      */
 
     public void setHunkContent(String hunkContent) {
@@ -142,10 +142,10 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
+     * The base-64 encoded content of the hunk merged region that might contain a conflict.
      * </p>
      * 
-     * @return The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
+     * @return The base-64 encoded content of the hunk merged region that might contain a conflict.
      */
 
     public String getHunkContent() {
@@ -154,11 +154,11 @@ public class MergeHunkDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
+     * The base-64 encoded content of the hunk merged region that might contain a conflict.
      * </p>
      * 
      * @param hunkContent
-     *        The base-64 encoded content of the hunk merged region that might or might not contain a conflict.
+     *        The base-64 encoded content of the hunk merged region that might contain a conflict.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

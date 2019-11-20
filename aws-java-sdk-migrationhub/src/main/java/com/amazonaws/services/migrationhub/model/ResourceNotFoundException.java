@@ -16,8 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception raised when the request references a resource (ADS configuration, update stream, migration task, etc.) that
- * does not exist in ADS (Application Discovery Service) or in Migration Hub's repository.
+ * Exception raised when the request references a resource (Application Discovery Service configuration, update stream,
+ * migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in
+ * Migration Hub's repository.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

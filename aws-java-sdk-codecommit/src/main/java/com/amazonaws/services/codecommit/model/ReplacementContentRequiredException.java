@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * USE_NEW_CONTENT was specified but no replacement content has been provided.
+ * USE_NEW_CONTENT was specified, but no replacement content has been provided.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

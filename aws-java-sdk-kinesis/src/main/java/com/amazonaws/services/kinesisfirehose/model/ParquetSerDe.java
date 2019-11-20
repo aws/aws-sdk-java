@@ -48,7 +48,7 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      * <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code>
-     * for higher decompression speed. Use <code>GZIP</code> if the compression ration is more important than speed.
+     * for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.
      * </p>
      */
     private String compression;
@@ -175,14 +175,14 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      * <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code>
-     * for higher decompression speed. Use <code>GZIP</code> if the compression ration is more important than speed.
+     * for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.
      * </p>
      * 
      * @param compression
      *        The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      *        <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use
-     *        <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ration is
-     *        more important than speed.
+     *        <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more
+     *        important than speed.
      * @see ParquetCompression
      */
 
@@ -194,12 +194,12 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      * <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code>
-     * for higher decompression speed. Use <code>GZIP</code> if the compression ration is more important than speed.
+     * for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.
      * </p>
      * 
      * @return The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      *         <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use
-     *         <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ration is
+     *         <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is
      *         more important than speed.
      * @see ParquetCompression
      */
@@ -212,14 +212,14 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      * <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code>
-     * for higher decompression speed. Use <code>GZIP</code> if the compression ration is more important than speed.
+     * for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.
      * </p>
      * 
      * @param compression
      *        The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      *        <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use
-     *        <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ration is
-     *        more important than speed.
+     *        <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more
+     *        important than speed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParquetCompression
      */
@@ -233,14 +233,14 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      * <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code>
-     * for higher decompression speed. Use <code>GZIP</code> if the compression ration is more important than speed.
+     * for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.
      * </p>
      * 
      * @param compression
      *        The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>,
      *        <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use
-     *        <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ration is
-     *        more important than speed.
+     *        <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more
+     *        important than speed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParquetCompression
      */

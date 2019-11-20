@@ -29,6 +29,8 @@ public class DeleteDeliveryStreamRequestMarshaller {
 
     private static final MarshallingInfo<String> DELIVERYSTREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamName").build();
+    private static final MarshallingInfo<Boolean> ALLOWFORCEDELETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowForceDelete").build();
 
     private static final DeleteDeliveryStreamRequestMarshaller instance = new DeleteDeliveryStreamRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteDeliveryStreamRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteDeliveryStreamRequest.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
+            protocolMarshaller.marshall(deleteDeliveryStreamRequest.getAllowForceDelete(), ALLOWFORCEDELETE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

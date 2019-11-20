@@ -56,6 +56,10 @@ public class DescribeSMBSettingsResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeSMBSettingsResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ActiveDirectoryStatus", targetDepth)) {
+                    context.nextToken();
+                    describeSMBSettingsResult.setActiveDirectoryStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SMBGuestPasswordSet", targetDepth)) {
                     context.nextToken();
                     describeSMBSettingsResult.setSMBGuestPasswordSet(context.getUnmarshaller(Boolean.class).unmarshall(context));

@@ -32,6 +32,50 @@ public class JoinDomainResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private String gatewayARN;
+    /**
+     * <p>
+     * Indicates the status of the gateway as a member of the Active Directory domain.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DETACHED: Indicates that gateway is not joined to a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
+     * the allotted time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String activeDirectoryStatus;
 
     /**
      * <p>
@@ -74,6 +118,370 @@ public class JoinDomainResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * Indicates the status of the gateway as a member of the Active Directory domain.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DETACHED: Indicates that gateway is not joined to a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
+     * the allotted time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param activeDirectoryStatus
+     *        Indicates the status of the gateway as a member of the Active Directory domain.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DETACHED: Indicates that gateway is not joined to a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        JOINED: Indicates that the gateway has successfully joined a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity
+     *        error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete
+     *        within the allotted time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     *        </p>
+     *        </li>
+     * @see ActiveDirectoryStatus
+     */
+
+    public void setActiveDirectoryStatus(String activeDirectoryStatus) {
+        this.activeDirectoryStatus = activeDirectoryStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of the gateway as a member of the Active Directory domain.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DETACHED: Indicates that gateway is not joined to a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
+     * the allotted time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates the status of the gateway as a member of the Active Directory domain.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication
+     *         error.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DETACHED: Indicates that gateway is not joined to a domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         JOINED: Indicates that the gateway has successfully joined a domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity
+     *         error.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't
+     *         complete within the allotted time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     *         </p>
+     *         </li>
+     * @see ActiveDirectoryStatus
+     */
+
+    public String getActiveDirectoryStatus() {
+        return this.activeDirectoryStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of the gateway as a member of the Active Directory domain.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DETACHED: Indicates that gateway is not joined to a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
+     * the allotted time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param activeDirectoryStatus
+     *        Indicates the status of the gateway as a member of the Active Directory domain.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DETACHED: Indicates that gateway is not joined to a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        JOINED: Indicates that the gateway has successfully joined a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity
+     *        error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete
+     *        within the allotted time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActiveDirectoryStatus
+     */
+
+    public JoinDomainResult withActiveDirectoryStatus(String activeDirectoryStatus) {
+        setActiveDirectoryStatus(activeDirectoryStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the status of the gateway as a member of the Active Directory domain.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DETACHED: Indicates that gateway is not joined to a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINED: Indicates that the gateway has successfully joined a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within
+     * the allotted time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param activeDirectoryStatus
+     *        Indicates the status of the gateway as a member of the Active Directory domain.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACCESS_DENIED: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DETACHED: Indicates that gateway is not joined to a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        JOINED: Indicates that the gateway has successfully joined a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        JOINING: Indicates that a <code>JoinDomain</code> operation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NETWORK_ERROR: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity
+     *        error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TIMEOUT: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete
+     *        within the allotted time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN_ERROR: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActiveDirectoryStatus
+     */
+
+    public JoinDomainResult withActiveDirectoryStatus(ActiveDirectoryStatus activeDirectoryStatus) {
+        this.activeDirectoryStatus = activeDirectoryStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -86,7 +494,9 @@ public class JoinDomainResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: ").append(getGatewayARN());
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
+        if (getActiveDirectoryStatus() != null)
+            sb.append("ActiveDirectoryStatus: ").append(getActiveDirectoryStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -105,6 +515,10 @@ public class JoinDomainResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
+        if (other.getActiveDirectoryStatus() == null ^ this.getActiveDirectoryStatus() == null)
+            return false;
+        if (other.getActiveDirectoryStatus() != null && other.getActiveDirectoryStatus().equals(this.getActiveDirectoryStatus()) == false)
+            return false;
         return true;
     }
 
@@ -114,6 +528,7 @@ public class JoinDomainResult extends com.amazonaws.AmazonWebServiceResult<com.a
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getActiveDirectoryStatus() == null) ? 0 : getActiveDirectoryStatus().hashCode());
         return hashCode;
     }
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The pull request description is not valid. Descriptions are limited to 1,000 characters in length.
+ * The pull request description is not valid. Descriptions cannot be more than 1,000 characters.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

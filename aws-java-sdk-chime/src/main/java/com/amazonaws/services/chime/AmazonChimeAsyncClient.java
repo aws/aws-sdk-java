@@ -26,9 +26,12 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks,
- * such as creating and managing Amazon Chime accounts and users. This guide provides detailed information about the
- * Amazon Chime API, including operations, types, inputs and outputs, and error codes.
+ * The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as
+ * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
+ * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some
+ * server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
+ * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon
+ * Chime Developer Guide</i>.
  * </p>
  * <p>
  * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
@@ -70,8 +73,8 @@ import java.util.concurrent.ExecutorService;
  * </dl>
  * <p>
  * Administrative permissions are controlled using AWS Identity and Access Management (IAM). For more information, see
- * <a href="https://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control Access to the Amazon Chime
- * Console</a> in the <i>Amazon Chime Administration Guide</i>.
+ * <a href="https://docs.aws.amazon.com/chime/latest/ag/security-iam.html">Identity and Access Management for Amazon
+ * Chime</a> in the <i>Amazon Chime Administration Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -194,6 +197,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeAssociatePhoneNumbersWithVoiceConnectorGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateAttendeeResult> batchCreateAttendeeAsync(BatchCreateAttendeeRequest request) {
+
+        return batchCreateAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateAttendeeResult> batchCreateAttendeeAsync(final BatchCreateAttendeeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchCreateAttendeeRequest, BatchCreateAttendeeResult> asyncHandler) {
+        final BatchCreateAttendeeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchCreateAttendeeResult>() {
+            @Override
+            public BatchCreateAttendeeResult call() throws Exception {
+                BatchCreateAttendeeResult result = null;
+
+                try {
+                    result = executeBatchCreateAttendee(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -441,6 +477,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAttendeeResult> createAttendeeAsync(CreateAttendeeRequest request) {
+
+        return createAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAttendeeResult> createAttendeeAsync(final CreateAttendeeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAttendeeRequest, CreateAttendeeResult> asyncHandler) {
+        final CreateAttendeeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAttendeeResult>() {
+            @Override
+            public CreateAttendeeResult call() throws Exception {
+                CreateAttendeeResult result = null;
+
+                try {
+                    result = executeCreateAttendee(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest request) {
 
         return createBotAsync(request, null);
@@ -458,6 +527,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeCreateBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMeetingResult> createMeetingAsync(CreateMeetingRequest request) {
+
+        return createMeetingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMeetingResult> createMeetingAsync(final CreateMeetingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMeetingRequest, CreateMeetingResult> asyncHandler) {
+        final CreateMeetingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMeetingResult>() {
+            @Override
+            public CreateMeetingResult call() throws Exception {
+                CreateMeetingResult result = null;
+
+                try {
+                    result = executeCreateMeeting(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -672,6 +774,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAttendeeResult> deleteAttendeeAsync(DeleteAttendeeRequest request) {
+
+        return deleteAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttendeeResult> deleteAttendeeAsync(final DeleteAttendeeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAttendeeRequest, DeleteAttendeeResult> asyncHandler) {
+        final DeleteAttendeeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAttendeeResult>() {
+            @Override
+            public DeleteAttendeeResult call() throws Exception {
+                DeleteAttendeeResult result = null;
+
+                try {
+                    result = executeDeleteAttendee(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(DeleteEventsConfigurationRequest request) {
 
         return deleteEventsConfigurationAsync(request, null);
@@ -689,6 +824,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeDeleteEventsConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMeetingResult> deleteMeetingAsync(DeleteMeetingRequest request) {
+
+        return deleteMeetingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMeetingResult> deleteMeetingAsync(final DeleteMeetingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMeetingRequest, DeleteMeetingResult> asyncHandler) {
+        final DeleteMeetingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMeetingResult>() {
+            @Override
+            public DeleteMeetingResult call() throws Exception {
+                DeleteMeetingResult result = null;
+
+                try {
+                    result = executeDeleteMeeting(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1181,6 +1349,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<GetAttendeeResult> getAttendeeAsync(GetAttendeeRequest request) {
+
+        return getAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAttendeeResult> getAttendeeAsync(final GetAttendeeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAttendeeRequest, GetAttendeeResult> asyncHandler) {
+        final GetAttendeeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAttendeeResult>() {
+            @Override
+            public GetAttendeeResult call() throws Exception {
+                GetAttendeeResult result = null;
+
+                try {
+                    result = executeGetAttendee(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest request) {
 
         return getBotAsync(request, null);
@@ -1264,6 +1465,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeGetGlobalSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMeetingResult> getMeetingAsync(GetMeetingRequest request) {
+
+        return getMeetingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMeetingResult> getMeetingAsync(final GetMeetingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMeetingRequest, GetMeetingResult> asyncHandler) {
+        final GetMeetingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMeetingResult>() {
+            @Override
+            public GetMeetingResult call() throws Exception {
+                GetMeetingResult result = null;
+
+                try {
+                    result = executeGetMeeting(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1781,6 +2015,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<ListAttendeesResult> listAttendeesAsync(ListAttendeesRequest request) {
+
+        return listAttendeesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttendeesResult> listAttendeesAsync(final ListAttendeesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAttendeesRequest, ListAttendeesResult> asyncHandler) {
+        final ListAttendeesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAttendeesResult>() {
+            @Override
+            public ListAttendeesResult call() throws Exception {
+                ListAttendeesResult result = null;
+
+                try {
+                    result = executeListAttendees(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request) {
 
         return listBotsAsync(request, null);
@@ -1798,6 +2065,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeListBots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMeetingsResult> listMeetingsAsync(ListMeetingsRequest request) {
+
+        return listMeetingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMeetingsResult> listMeetingsAsync(final ListMeetingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMeetingsRequest, ListMeetingsResult> asyncHandler) {
+        final ListMeetingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMeetingsResult>() {
+            @Override
+            public ListMeetingsResult call() throws Exception {
+                ListMeetingsResult result = null;
+
+                try {
+                    result = executeListMeetings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

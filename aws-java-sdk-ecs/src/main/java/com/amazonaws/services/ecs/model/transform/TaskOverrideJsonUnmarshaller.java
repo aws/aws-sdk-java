@@ -53,18 +53,26 @@ public class TaskOverrideJsonUnmarshaller implements Unmarshaller<TaskOverride, 
                     taskOverride.setContainerOverrides(new ListUnmarshaller<ContainerOverride>(ContainerOverrideJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("cpu", targetDepth)) {
+                    context.nextToken();
+                    taskOverride.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("inferenceAcceleratorOverrides", targetDepth)) {
                     context.nextToken();
                     taskOverride.setInferenceAcceleratorOverrides(new ListUnmarshaller<InferenceAcceleratorOverride>(
                             InferenceAcceleratorOverrideJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("taskRoleArn", targetDepth)) {
-                    context.nextToken();
-                    taskOverride.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("executionRoleArn", targetDepth)) {
                     context.nextToken();
                     taskOverride.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    taskOverride.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("taskRoleArn", targetDepth)) {
+                    context.nextToken();
+                    taskOverride.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

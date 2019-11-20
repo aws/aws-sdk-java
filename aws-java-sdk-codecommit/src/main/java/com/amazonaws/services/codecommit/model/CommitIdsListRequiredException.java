@@ -15,7 +15,9 @@ package com.amazonaws.services.codecommit.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * A list of commit IDs is required, but was either not specified or the list was empty.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CommitIdsListRequiredException extends com.amazonaws.services.codecommit.model.AWSCodeCommitException {

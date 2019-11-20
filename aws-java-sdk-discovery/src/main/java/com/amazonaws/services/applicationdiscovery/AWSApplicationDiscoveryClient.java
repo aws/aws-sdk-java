@@ -111,6 +111,13 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">
  * <i>AWS Application Discovery Service User Guide</i> </a>.
  * </p>
+ * <note>
+ * <p>
+ * Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a
+ * <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home
+ * region.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -155,6 +162,9 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationdiscovery.model.transform.OperationNotPermittedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("HomeRegionNotSetException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.HomeRegionNotSetExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AuthorizationErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationdiscovery.model.transform.AuthorizationErrorExceptionUnmarshaller.getInstance()))
@@ -379,6 +389,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.AssociateConfigurationItemsToApplication
      */
     @Override
@@ -443,11 +455,15 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @throws AuthorizationErrorException
      *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
      *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
      *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.BatchDeleteImportData
      */
     @Override
@@ -510,6 +526,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.CreateApplication
      */
     @Override
@@ -574,6 +592,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.CreateTags
      */
     @Override
@@ -635,6 +655,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DeleteApplications
      */
     @Override
@@ -699,6 +721,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DeleteTags
      */
     @Override
@@ -761,6 +785,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeAgents
      */
     @Override
@@ -859,6 +885,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeConfigurations
      */
     @Override
@@ -926,6 +954,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         This operation is not permitted.
      * @throws ResourceNotFoundException
      *         The specified configuration ID was not located. Verify the configuration ID and try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeContinuousExports
      */
     @Override
@@ -993,6 +1023,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeExportConfigurations
      */
     @Override
@@ -1057,6 +1089,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeExportTasks
      */
     @Override
@@ -1112,11 +1146,15 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @throws AuthorizationErrorException
      *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
      *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
      *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeImportTasks
      */
     @Override
@@ -1205,6 +1243,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DescribeTags
      */
     @Override
@@ -1266,6 +1306,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.DisassociateConfigurationItemsFromApplication
      */
     @Override
@@ -1339,6 +1381,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         The server experienced an internal error. Try again.
      * @throws OperationNotPermittedException
      *         This operation is not permitted.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.ExportConfigurations
      */
     @Override
@@ -1404,6 +1448,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.GetDiscoverySummary
      */
     @Override
@@ -1468,6 +1514,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.ListConfigurations
      */
     @Override
@@ -1529,6 +1577,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.ListServerNeighbors
      */
     @Override
@@ -1598,6 +1648,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         <code>StartImportTask</code> action, but with different parameters. For example, you use the same request
      *         token but have two different import URLs, you can encounter this issue. If the import tasks are meant to
      *         be different, use a different <code>clientRequestToken</code>, and try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StartContinuousExport
      */
     @Override
@@ -1660,6 +1712,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StartDataCollectionByAgentIds
      */
     @Override
@@ -1736,6 +1790,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         The server experienced an internal error. Try again.
      * @throws OperationNotPermittedException
      *         This operation is not permitted.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StartExportTask
      */
     @Override
@@ -1840,11 +1896,15 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @throws AuthorizationErrorException
      *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
      *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
      * @throws InvalidParameterValueException
      *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StartImportTask
      */
     @Override
@@ -1915,6 +1975,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         <code>StartImportTask</code> action, but with different parameters. For example, you use the same request
      *         token but have two different import URLs, you can encounter this issue. If the import tasks are meant to
      *         be different, use a different <code>clientRequestToken</code>, and try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StopContinuousExport
      */
     @Override
@@ -1976,6 +2038,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.StopDataCollectionByAgentIds
      */
     @Override
@@ -2039,6 +2103,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      *         try again.
      * @throws ServerInternalErrorException
      *         The server experienced an internal error. Try again.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
      * @sample AWSApplicationDiscovery.UpdateApplication
      */
     @Override

@@ -30,7 +30,7 @@ public class DiscoveredResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The configurationId in ADS that uniquely identifies the on-premise resource.
+     * The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
      * </p>
      */
     private String configurationId;
@@ -44,11 +44,11 @@ public class DiscoveredResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The configurationId in ADS that uniquely identifies the on-premise resource.
+     * The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
      * </p>
      * 
      * @param configurationId
-     *        The configurationId in ADS that uniquely identifies the on-premise resource.
+     *        The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
      */
 
     public void setConfigurationId(String configurationId) {
@@ -57,10 +57,10 @@ public class DiscoveredResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The configurationId in ADS that uniquely identifies the on-premise resource.
+     * The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
      * </p>
      * 
-     * @return The configurationId in ADS that uniquely identifies the on-premise resource.
+     * @return The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
      */
 
     public String getConfigurationId() {
@@ -69,11 +69,11 @@ public class DiscoveredResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The configurationId in ADS that uniquely identifies the on-premise resource.
+     * The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
      * </p>
      * 
      * @param configurationId
-     *        The configurationId in ADS that uniquely identifies the on-premise resource.
+     *        The configurationId in Application Discovery Service that uniquely identifies the on-premise resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

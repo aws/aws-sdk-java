@@ -45,6 +45,12 @@ public class PullRequestEventMarshaller {
     private static final MarshallingInfo<StructuredPojo> PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullRequestMergedStateChangedEventMetadata")
             .build();
+    private static final MarshallingInfo<StructuredPojo> APPROVALRULEEVENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("approvalRuleEventMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> APPROVALSTATECHANGEDEVENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("approvalStateChangedEventMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> APPROVALRULEOVERRIDDENEVENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("approvalRuleOverriddenEventMetadata").build();
 
     private static final PullRequestEventMarshaller instance = new PullRequestEventMarshaller();
 
@@ -71,6 +77,9 @@ public class PullRequestEventMarshaller {
             protocolMarshaller.marshall(pullRequestEvent.getPullRequestSourceReferenceUpdatedEventMetadata(),
                     PULLREQUESTSOURCEREFERENCEUPDATEDEVENTMETADATA_BINDING);
             protocolMarshaller.marshall(pullRequestEvent.getPullRequestMergedStateChangedEventMetadata(), PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_BINDING);
+            protocolMarshaller.marshall(pullRequestEvent.getApprovalRuleEventMetadata(), APPROVALRULEEVENTMETADATA_BINDING);
+            protocolMarshaller.marshall(pullRequestEvent.getApprovalStateChangedEventMetadata(), APPROVALSTATECHANGEDEVENTMETADATA_BINDING);
+            protocolMarshaller.marshall(pullRequestEvent.getApprovalRuleOverriddenEventMetadata(), APPROVALRULEOVERRIDDENEVENTMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

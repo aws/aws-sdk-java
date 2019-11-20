@@ -85,6 +85,13 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<FilterRule> excludes;
     /**
      * <p>
+     * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
+     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * </p>
+     */
+    private TaskSchedule schedule;
+    /**
+     * <p>
      * The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
      * string.
      * </p>
@@ -478,6 +485,52 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
+     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * </p>
+     * 
+     * @param schedule
+     *        Specifies a schedule used to periodically transfer files from a source to a destination location. The
+     *        schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     */
+
+    public void setSchedule(TaskSchedule schedule) {
+        this.schedule = schedule;
+    }
+
+    /**
+     * <p>
+     * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
+     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * </p>
+     * 
+     * @return Specifies a schedule used to periodically transfer files from a source to a destination location. The
+     *         schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     */
+
+    public TaskSchedule getSchedule() {
+        return this.schedule;
+    }
+
+    /**
+     * <p>
+     * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
+     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * </p>
+     * 
+     * @param schedule
+     *        Specifies a schedule used to periodically transfer files from a source to a destination location. The
+     *        schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTaskRequest withSchedule(TaskSchedule schedule) {
+        setSchedule(schedule);
+        return this;
+    }
+
+    /**
+     * <p>
      * The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
      * string.
      * </p>
@@ -578,6 +631,8 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("Options: ").append(getOptions()).append(",");
         if (getExcludes() != null)
             sb.append("Excludes: ").append(getExcludes()).append(",");
+        if (getSchedule() != null)
+            sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -618,6 +673,10 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getExcludes() != null && other.getExcludes().equals(this.getExcludes()) == false)
             return false;
+        if (other.getSchedule() == null ^ this.getSchedule() == null)
+            return false;
+        if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -636,6 +695,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         hashCode = prime * hashCode + ((getExcludes() == null) ? 0 : getExcludes().hashCode());
+        hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

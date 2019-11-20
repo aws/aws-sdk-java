@@ -53,9 +53,10 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
     /**
      * <p>
      * (Optional) The name of the domain group whose members are granted administrative privileges for the file system.
-     * Administrative privileges include taking ownership of files and folders, and setting audit controls (audit ACLs)
-     * on files and folders. The group that you specify must already exist in your domain. If you don't provide one,
-     * your AD domain's Domain Admins group is used.
+     * Administrative privileges include taking ownership of files and folders, setting audit controls (audit ACLs) on
+     * files and folders, and administering the file system remotely by using the FSx Remote PowerShell. The group that
+     * you specify must already exist in your domain. If you don't provide one, your AD domain's Domain Admins group is
+     * used.
      * </p>
      */
     private String fileSystemAdministratorsGroup;
@@ -232,16 +233,18 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
     /**
      * <p>
      * (Optional) The name of the domain group whose members are granted administrative privileges for the file system.
-     * Administrative privileges include taking ownership of files and folders, and setting audit controls (audit ACLs)
-     * on files and folders. The group that you specify must already exist in your domain. If you don't provide one,
-     * your AD domain's Domain Admins group is used.
+     * Administrative privileges include taking ownership of files and folders, setting audit controls (audit ACLs) on
+     * files and folders, and administering the file system remotely by using the FSx Remote PowerShell. The group that
+     * you specify must already exist in your domain. If you don't provide one, your AD domain's Domain Admins group is
+     * used.
      * </p>
      * 
      * @param fileSystemAdministratorsGroup
      *        (Optional) The name of the domain group whose members are granted administrative privileges for the file
-     *        system. Administrative privileges include taking ownership of files and folders, and setting audit
-     *        controls (audit ACLs) on files and folders. The group that you specify must already exist in your domain.
-     *        If you don't provide one, your AD domain's Domain Admins group is used.
+     *        system. Administrative privileges include taking ownership of files and folders, setting audit controls
+     *        (audit ACLs) on files and folders, and administering the file system remotely by using the FSx Remote
+     *        PowerShell. The group that you specify must already exist in your domain. If you don't provide one, your
+     *        AD domain's Domain Admins group is used.
      */
 
     public void setFileSystemAdministratorsGroup(String fileSystemAdministratorsGroup) {
@@ -251,15 +254,17 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
     /**
      * <p>
      * (Optional) The name of the domain group whose members are granted administrative privileges for the file system.
-     * Administrative privileges include taking ownership of files and folders, and setting audit controls (audit ACLs)
-     * on files and folders. The group that you specify must already exist in your domain. If you don't provide one,
-     * your AD domain's Domain Admins group is used.
+     * Administrative privileges include taking ownership of files and folders, setting audit controls (audit ACLs) on
+     * files and folders, and administering the file system remotely by using the FSx Remote PowerShell. The group that
+     * you specify must already exist in your domain. If you don't provide one, your AD domain's Domain Admins group is
+     * used.
      * </p>
      * 
      * @return (Optional) The name of the domain group whose members are granted administrative privileges for the file
-     *         system. Administrative privileges include taking ownership of files and folders, and setting audit
-     *         controls (audit ACLs) on files and folders. The group that you specify must already exist in your domain.
-     *         If you don't provide one, your AD domain's Domain Admins group is used.
+     *         system. Administrative privileges include taking ownership of files and folders, setting audit controls
+     *         (audit ACLs) on files and folders, and administering the file system remotely by using the FSx Remote
+     *         PowerShell. The group that you specify must already exist in your domain. If you don't provide one, your
+     *         AD domain's Domain Admins group is used.
      */
 
     public String getFileSystemAdministratorsGroup() {
@@ -269,16 +274,18 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
     /**
      * <p>
      * (Optional) The name of the domain group whose members are granted administrative privileges for the file system.
-     * Administrative privileges include taking ownership of files and folders, and setting audit controls (audit ACLs)
-     * on files and folders. The group that you specify must already exist in your domain. If you don't provide one,
-     * your AD domain's Domain Admins group is used.
+     * Administrative privileges include taking ownership of files and folders, setting audit controls (audit ACLs) on
+     * files and folders, and administering the file system remotely by using the FSx Remote PowerShell. The group that
+     * you specify must already exist in your domain. If you don't provide one, your AD domain's Domain Admins group is
+     * used.
      * </p>
      * 
      * @param fileSystemAdministratorsGroup
      *        (Optional) The name of the domain group whose members are granted administrative privileges for the file
-     *        system. Administrative privileges include taking ownership of files and folders, and setting audit
-     *        controls (audit ACLs) on files and folders. The group that you specify must already exist in your domain.
-     *        If you don't provide one, your AD domain's Domain Admins group is used.
+     *        system. Administrative privileges include taking ownership of files and folders, setting audit controls
+     *        (audit ACLs) on files and folders, and administering the file system remotely by using the FSx Remote
+     *        PowerShell. The group that you specify must already exist in your domain. If you don't provide one, your
+     *        AD domain's Domain Admins group is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

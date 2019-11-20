@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVolumeAttributeRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVolumeAttribute.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

@@ -27,13 +27,13 @@ public class ImportMigrationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the ProgressUpdateStream.
+     * The name of the ProgressUpdateStream. &gt;
      * </p>
      */
     private String progressUpdateStream;
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      */
     private String migrationTaskName;
@@ -47,11 +47,11 @@ public class ImportMigrationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the ProgressUpdateStream.
+     * The name of the ProgressUpdateStream. &gt;
      * </p>
      * 
      * @param progressUpdateStream
-     *        The name of the ProgressUpdateStream.
+     *        The name of the ProgressUpdateStream. &gt;
      */
 
     public void setProgressUpdateStream(String progressUpdateStream) {
@@ -60,10 +60,10 @@ public class ImportMigrationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the ProgressUpdateStream.
+     * The name of the ProgressUpdateStream. &gt;
      * </p>
      * 
-     * @return The name of the ProgressUpdateStream.
+     * @return The name of the ProgressUpdateStream. &gt;
      */
 
     public String getProgressUpdateStream() {
@@ -72,11 +72,11 @@ public class ImportMigrationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the ProgressUpdateStream.
+     * The name of the ProgressUpdateStream. &gt;
      * </p>
      * 
      * @param progressUpdateStream
-     *        The name of the ProgressUpdateStream.
+     *        The name of the ProgressUpdateStream. &gt;
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ImportMigrationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public void setMigrationTaskName(String migrationTaskName) {
@@ -100,10 +100,10 @@ public class ImportMigrationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
-     * @return Unique identifier that references the migration task.
+     * @return Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public String getMigrationTaskName() {
@@ -112,11 +112,11 @@ public class ImportMigrationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

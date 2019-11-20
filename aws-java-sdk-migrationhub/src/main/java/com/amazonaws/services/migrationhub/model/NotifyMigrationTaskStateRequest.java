@@ -33,7 +33,7 @@ public class NotifyMigrationTaskStateRequest extends com.amazonaws.AmazonWebServ
     private String progressUpdateStream;
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      */
     private String migrationTaskName;
@@ -106,11 +106,11 @@ public class NotifyMigrationTaskStateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public void setMigrationTaskName(String migrationTaskName) {
@@ -119,10 +119,10 @@ public class NotifyMigrationTaskStateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
-     * @return Unique identifier that references the migration task.
+     * @return Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      */
 
     public String getMigrationTaskName() {
@@ -131,11 +131,11 @@ public class NotifyMigrationTaskStateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier that references the migration task.
+     * Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task.
+     *        Unique identifier that references the migration task. <i>Do not store personal data in this field.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,18 +33,14 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
     private String repositoryName;
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * To establish the directionality of the comparison, the full commit ID of the before commit. Required for
+     * commenting on any commit unless that commit is the initial commit.
      * </p>
-     * <note>
-     * <p>
-     * This is required for commenting on any commit unless that commit is the initial commit.
-     * </p>
-     * </note>
      */
     private String beforeCommitId;
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * To establish the directionality of the comparison, the full commit ID of the after commit.
      * </p>
      */
     private String afterCommitId;
@@ -62,9 +58,9 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
     private String content;
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      */
     private String clientRequestToken;
@@ -111,19 +107,13 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * To establish the directionality of the comparison, the full commit ID of the before commit. Required for
+     * commenting on any commit unless that commit is the initial commit.
      * </p>
-     * <note>
-     * <p>
-     * This is required for commenting on any commit unless that commit is the initial commit.
-     * </p>
-     * </note>
      * 
      * @param beforeCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'before' commit.</p> <note>
-     *        <p>
-     *        This is required for commenting on any commit unless that commit is the initial commit.
-     *        </p>
+     *        To establish the directionality of the comparison, the full commit ID of the before commit. Required for
+     *        commenting on any commit unless that commit is the initial commit.
      */
 
     public void setBeforeCommitId(String beforeCommitId) {
@@ -132,18 +122,12 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * To establish the directionality of the comparison, the full commit ID of the before commit. Required for
+     * commenting on any commit unless that commit is the initial commit.
      * </p>
-     * <note>
-     * <p>
-     * This is required for commenting on any commit unless that commit is the initial commit.
-     * </p>
-     * </note>
      * 
-     * @return To establish the directionality of the comparison, the full commit ID of the 'before' commit.</p> <note>
-     *         <p>
-     *         This is required for commenting on any commit unless that commit is the initial commit.
-     *         </p>
+     * @return To establish the directionality of the comparison, the full commit ID of the before commit. Required for
+     *         commenting on any commit unless that commit is the initial commit.
      */
 
     public String getBeforeCommitId() {
@@ -152,19 +136,13 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * To establish the directionality of the comparison, the full commit ID of the before commit. Required for
+     * commenting on any commit unless that commit is the initial commit.
      * </p>
-     * <note>
-     * <p>
-     * This is required for commenting on any commit unless that commit is the initial commit.
-     * </p>
-     * </note>
      * 
      * @param beforeCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'before' commit.</p> <note>
-     *        <p>
-     *        This is required for commenting on any commit unless that commit is the initial commit.
-     *        </p>
+     *        To establish the directionality of the comparison, the full commit ID of the before commit. Required for
+     *        commenting on any commit unless that commit is the initial commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +153,11 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * To establish the directionality of the comparison, the full commit ID of the after commit.
      * </p>
      * 
      * @param afterCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     *        To establish the directionality of the comparison, the full commit ID of the after commit.
      */
 
     public void setAfterCommitId(String afterCommitId) {
@@ -188,10 +166,10 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * To establish the directionality of the comparison, the full commit ID of the after commit.
      * </p>
      * 
-     * @return To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * @return To establish the directionality of the comparison, the full commit ID of the after commit.
      */
 
     public String getAfterCommitId() {
@@ -200,11 +178,11 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * To establish the directionality of the comparison, the full commit ID of the after commit.
      * </p>
      * 
      * @param afterCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     *        To establish the directionality of the comparison, the full commit ID of the after commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,15 +273,15 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     *        A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *        included, the request will return information about the initial request that used that token.
+     *        included, the request returns information about the initial request that used that token.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -312,14 +290,14 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
-     * @return A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     * @return A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *         be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *         included, the request will return information about the initial request that used that token.
+     *         included, the request returns information about the initial request that used that token.
      */
 
     public String getClientRequestToken() {
@@ -328,15 +306,15 @@ public class PostCommentForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     *        A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *        included, the request will return information about the initial request that used that token.
+     *        included, the request returns information about the initial request that used that token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CopySnapshot.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CopySnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CopySnapshotRequest> {
@@ -124,7 +122,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private String sourceSnapshotId;
-
+    /**
+     * <p>
+     * The tags to apply to the new snapshot.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
@@ -752,7 +754,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to apply to the new snapshot.
+     * </p>
+     * 
+     * @return The tags to apply to the new snapshot.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -763,7 +769,12 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * The tags to apply to the new snapshot.
+     * </p>
+     * 
      * @param tagSpecifications
+     *        The tags to apply to the new snapshot.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -777,12 +788,16 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * The tags to apply to the new snapshot.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param tagSpecifications
+     *        The tags to apply to the new snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -797,7 +812,12 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * The tags to apply to the new snapshot.
+     * </p>
+     * 
      * @param tagSpecifications
+     *        The tags to apply to the new snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -91,6 +91,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">
  * <i>AWS Application Discovery Service User Guide</i> </a>.
  * </p>
+ * <note>
+ * <p>
+ * Remember that you must set your AWS Migration Hub home region before you call any of these APIs, or a
+ * <code>HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while in your home
+ * region.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

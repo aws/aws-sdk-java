@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifySnapshotAttributeRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ModifySnapshotAttribute.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

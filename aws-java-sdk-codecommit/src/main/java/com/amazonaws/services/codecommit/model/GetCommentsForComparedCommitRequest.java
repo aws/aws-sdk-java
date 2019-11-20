@@ -33,13 +33,13 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
     private String repositoryName;
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * To establish the directionality of the comparison, the full commit ID of the before commit.
      * </p>
      */
     private String beforeCommitId;
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * To establish the directionality of the comparison, the full commit ID of the after commit.
      * </p>
      */
     private String afterCommitId;
@@ -51,8 +51,8 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
     private String nextToken;
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 comments, and is
-     * configurable up to 500.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but
+     * you can configure up to 500.
      * </p>
      */
     private Integer maxResults;
@@ -99,11 +99,11 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * To establish the directionality of the comparison, the full commit ID of the before commit.
      * </p>
      * 
      * @param beforeCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     *        To establish the directionality of the comparison, the full commit ID of the before commit.
      */
 
     public void setBeforeCommitId(String beforeCommitId) {
@@ -112,10 +112,10 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * To establish the directionality of the comparison, the full commit ID of the before commit.
      * </p>
      * 
-     * @return To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * @return To establish the directionality of the comparison, the full commit ID of the before commit.
      */
 
     public String getBeforeCommitId() {
@@ -124,11 +124,11 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     * To establish the directionality of the comparison, the full commit ID of the before commit.
      * </p>
      * 
      * @param beforeCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'before' commit.
+     *        To establish the directionality of the comparison, the full commit ID of the before commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * To establish the directionality of the comparison, the full commit ID of the after commit.
      * </p>
      * 
      * @param afterCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     *        To establish the directionality of the comparison, the full commit ID of the after commit.
      */
 
     public void setAfterCommitId(String afterCommitId) {
@@ -152,10 +152,10 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * To establish the directionality of the comparison, the full commit ID of the after commit.
      * </p>
      * 
-     * @return To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * @return To establish the directionality of the comparison, the full commit ID of the after commit.
      */
 
     public String getAfterCommitId() {
@@ -164,11 +164,11 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     * To establish the directionality of the comparison, the full commit ID of the after commit.
      * </p>
      * 
      * @param afterCommitId
-     *        To establish the directionality of the comparison, the full commit ID of the 'after' commit.
+     *        To establish the directionality of the comparison, the full commit ID of the after commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,13 +219,13 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 comments, and is
-     * configurable up to 500.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but
+     * you can configure up to 500.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results. The default is 100 comments, and is
-     *        configurable up to 500.
+     *        A non-zero, non-negative integer used to limit the number of returned results. The default is 100
+     *        comments, but you can configure up to 500.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -234,12 +234,12 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 comments, and is
-     * configurable up to 500.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but
+     * you can configure up to 500.
      * </p>
      * 
-     * @return A non-negative integer used to limit the number of returned results. The default is 100 comments, and is
-     *         configurable up to 500.
+     * @return A non-zero, non-negative integer used to limit the number of returned results. The default is 100
+     *         comments, but you can configure up to 500.
      */
 
     public Integer getMaxResults() {
@@ -248,13 +248,13 @@ public class GetCommentsForComparedCommitRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 comments, and is
-     * configurable up to 500.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but
+     * you can configure up to 500.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results. The default is 100 comments, and is
-     *        configurable up to 500.
+     *        A non-zero, non-negative integer used to limit the number of returned results. The default is 100
+     *        comments, but you can configure up to 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

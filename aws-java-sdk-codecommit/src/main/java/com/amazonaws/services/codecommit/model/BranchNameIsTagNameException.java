@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified branch name is not valid because it is a tag name. Type the name of a current branch in the repository.
- * For a list of valid branch names, use <a>ListBranches</a>.
+ * The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a
+ * list of valid branch names, use <a>ListBranches</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

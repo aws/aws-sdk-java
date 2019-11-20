@@ -35,8 +35,8 @@ public class TestRepositoryTriggersResult extends com.amazonaws.AmazonWebService
     private java.util.List<String> successfulExecutions;
     /**
      * <p>
-     * The list of triggers that were not able to be tested. This list provides the names of the triggers that could not
-     * be tested, separated by commas.
+     * The list of triggers that were not tested. This list provides the names of the triggers that could not be tested,
+     * separated by commas.
      * </p>
      */
     private java.util.List<RepositoryTriggerExecutionFailure> failedExecutions;
@@ -121,12 +121,12 @@ public class TestRepositoryTriggersResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of triggers that were not able to be tested. This list provides the names of the triggers that could not
-     * be tested, separated by commas.
+     * The list of triggers that were not tested. This list provides the names of the triggers that could not be tested,
+     * separated by commas.
      * </p>
      * 
-     * @return The list of triggers that were not able to be tested. This list provides the names of the triggers that
-     *         could not be tested, separated by commas.
+     * @return The list of triggers that were not tested. This list provides the names of the triggers that could not be
+     *         tested, separated by commas.
      */
 
     public java.util.List<RepositoryTriggerExecutionFailure> getFailedExecutions() {
@@ -135,13 +135,13 @@ public class TestRepositoryTriggersResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of triggers that were not able to be tested. This list provides the names of the triggers that could not
-     * be tested, separated by commas.
+     * The list of triggers that were not tested. This list provides the names of the triggers that could not be tested,
+     * separated by commas.
      * </p>
      * 
      * @param failedExecutions
-     *        The list of triggers that were not able to be tested. This list provides the names of the triggers that
-     *        could not be tested, separated by commas.
+     *        The list of triggers that were not tested. This list provides the names of the triggers that could not be
+     *        tested, separated by commas.
      */
 
     public void setFailedExecutions(java.util.Collection<RepositoryTriggerExecutionFailure> failedExecutions) {
@@ -155,8 +155,8 @@ public class TestRepositoryTriggersResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of triggers that were not able to be tested. This list provides the names of the triggers that could not
-     * be tested, separated by commas.
+     * The list of triggers that were not tested. This list provides the names of the triggers that could not be tested,
+     * separated by commas.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -165,8 +165,8 @@ public class TestRepositoryTriggersResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param failedExecutions
-     *        The list of triggers that were not able to be tested. This list provides the names of the triggers that
-     *        could not be tested, separated by commas.
+     *        The list of triggers that were not tested. This list provides the names of the triggers that could not be
+     *        tested, separated by commas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,13 +182,13 @@ public class TestRepositoryTriggersResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of triggers that were not able to be tested. This list provides the names of the triggers that could not
-     * be tested, separated by commas.
+     * The list of triggers that were not tested. This list provides the names of the triggers that could not be tested,
+     * separated by commas.
      * </p>
      * 
      * @param failedExecutions
-     *        The list of triggers that were not able to be tested. This list provides the names of the triggers that
-     *        could not be tested, separated by commas.
+     *        The list of triggers that were not tested. This list provides the names of the triggers that could not be
+     *        tested, separated by commas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

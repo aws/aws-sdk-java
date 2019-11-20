@@ -32,6 +32,14 @@ public class WindowsFileSystemConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveDirectoryId").build();
     private static final MarshallingInfo<StructuredPojo> SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedActiveDirectoryConfiguration").build();
+    private static final MarshallingInfo<String> DEPLOYMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentType").build();
+    private static final MarshallingInfo<String> REMOTEADMINISTRATIONENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoteAdministrationEndpoint").build();
+    private static final MarshallingInfo<String> PREFERREDSUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredSubnetId").build();
+    private static final MarshallingInfo<String> PREFERREDFILESERVERIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredFileServerIp").build();
     private static final MarshallingInfo<Integer> THROUGHPUTCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputCapacity").build();
     private static final MarshallingInfo<List> MAINTENANCEOPERATIONSINPROGRESS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -64,6 +72,10 @@ public class WindowsFileSystemConfigurationMarshaller {
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getActiveDirectoryId(), ACTIVEDIRECTORYID_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getSelfManagedActiveDirectoryConfiguration(),
                     SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(windowsFileSystemConfiguration.getDeploymentType(), DEPLOYMENTTYPE_BINDING);
+            protocolMarshaller.marshall(windowsFileSystemConfiguration.getRemoteAdministrationEndpoint(), REMOTEADMINISTRATIONENDPOINT_BINDING);
+            protocolMarshaller.marshall(windowsFileSystemConfiguration.getPreferredSubnetId(), PREFERREDSUBNETID_BINDING);
+            protocolMarshaller.marshall(windowsFileSystemConfiguration.getPreferredFileServerIp(), PREFERREDFILESERVERIP_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getThroughputCapacity(), THROUGHPUTCAPACITY_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getMaintenanceOperationsInProgress(), MAINTENANCEOPERATIONSINPROGRESS_BINDING);
             protocolMarshaller.marshall(windowsFileSystemConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);

@@ -42,8 +42,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private String sourceReference;
     /**
      * <p>
-     * The branch of the repository where the pull request changes will be merged into. Also known as the destination
-     * branch.
+     * The branch of the repository where the pull request changes are merged. Also known as the destination branch.
      * </p>
      */
     private String destinationReference;
@@ -133,13 +132,12 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The branch of the repository where the pull request changes will be merged into. Also known as the destination
-     * branch.
+     * The branch of the repository where the pull request changes are merged. Also known as the destination branch.
      * </p>
      * 
      * @param destinationReference
-     *        The branch of the repository where the pull request changes will be merged into. Also known as the
-     *        destination branch.
+     *        The branch of the repository where the pull request changes are merged. Also known as the destination
+     *        branch.
      */
 
     public void setDestinationReference(String destinationReference) {
@@ -148,12 +146,11 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The branch of the repository where the pull request changes will be merged into. Also known as the destination
-     * branch.
+     * The branch of the repository where the pull request changes are merged. Also known as the destination branch.
      * </p>
      * 
-     * @return The branch of the repository where the pull request changes will be merged into. Also known as the
-     *         destination branch.
+     * @return The branch of the repository where the pull request changes are merged. Also known as the destination
+     *         branch.
      */
 
     public String getDestinationReference() {
@@ -162,13 +159,12 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The branch of the repository where the pull request changes will be merged into. Also known as the destination
-     * branch.
+     * The branch of the repository where the pull request changes are merged. Also known as the destination branch.
      * </p>
      * 
      * @param destinationReference
-     *        The branch of the repository where the pull request changes will be merged into. Also known as the
-     *        destination branch.
+     *        The branch of the repository where the pull request changes are merged. Also known as the destination
+     *        branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

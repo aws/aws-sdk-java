@@ -34,12 +34,33 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String cluster;
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-     * used.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
      * </p>
      */
-    private String taskDefinition;
+    private com.amazonaws.internal.SdkInternalList<String> containerInstances;
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean enableECSManagedTags;
+    /**
+     * <p>
+     * The name of the task group to associate with the task. The default value is the family name of the task
+     * definition (for example, family:my-family-name).
+     * </p>
+     */
+    private String group;
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     */
+    private NetworkConfiguration networkConfiguration;
     /**
      * <p>
      * A list of container overrides in JSON format that specify the name of a container in the specified task
@@ -58,11 +79,17 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private TaskOverride overrides;
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
-     * task. You can specify up to 10 container instances.
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<String> containerInstances;
+    private String propagateTags;
+    /**
+     * <p>
+     * The reference ID to use for the task.
+     * </p>
+     */
+    private String referenceId;
     /**
      * <p>
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
@@ -77,20 +104,6 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String startedBy;
-    /**
-     * <p>
-     * The name of the task group to associate with the task. The default value is the family name of the task
-     * definition (for example, family:my-family-name).
-     * </p>
-     */
-    private String group;
-    /**
-     * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
-     * using the <code>awsvpc</code> networking mode.
-     * </p>
-     */
-    private NetworkConfiguration networkConfiguration;
     /**
      * <p>
      * The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and
@@ -144,19 +157,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     * used.
      * </p>
      */
-    private Boolean enableECSManagedTags;
-    /**
-     * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
-     * </p>
-     */
-    private String propagateTags;
+    private String taskDefinition;
 
     /**
      * <p>
@@ -206,53 +212,242 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-     * used.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
      * </p>
      * 
-     * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *        definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     *        is used.
+     * @return The container instance IDs or full ARN entries for the container instances on which you would like to
+     *         place your task. You can specify up to 10 container instances.
      */
 
-    public void setTaskDefinition(String taskDefinition) {
-        this.taskDefinition = taskDefinition;
+    public java.util.List<String> getContainerInstances() {
+        if (containerInstances == null) {
+            containerInstances = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return containerInstances;
     }
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-     * used.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
      * </p>
      * 
-     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *         definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     *         is used.
+     * @param containerInstances
+     *        The container instance IDs or full ARN entries for the container instances on which you would like to
+     *        place your task. You can specify up to 10 container instances.
      */
 
-    public String getTaskDefinition() {
-        return this.taskDefinition;
+    public void setContainerInstances(java.util.Collection<String> containerInstances) {
+        if (containerInstances == null) {
+            this.containerInstances = null;
+            return;
+        }
+
+        this.containerInstances = new com.amazonaws.internal.SdkInternalList<String>(containerInstances);
     }
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
-     * used.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContainerInstances(java.util.Collection)} or {@link #withContainerInstances(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
-     * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
-     *        definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     *        is used.
+     * @param containerInstances
+     *        The container instance IDs or full ARN entries for the container instances on which you would like to
+     *        place your task. You can specify up to 10 container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartTaskRequest withTaskDefinition(String taskDefinition) {
-        setTaskDefinition(taskDefinition);
+    public StartTaskRequest withContainerInstances(String... containerInstances) {
+        if (this.containerInstances == null) {
+            setContainerInstances(new com.amazonaws.internal.SdkInternalList<String>(containerInstances.length));
+        }
+        for (String ele : containerInstances) {
+            this.containerInstances.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
+     * </p>
+     * 
+     * @param containerInstances
+     *        The container instance IDs or full ARN entries for the container instances on which you would like to
+     *        place your task. You can specify up to 10 container instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskRequest withContainerInstances(java.util.Collection<String> containerInstances) {
+        setContainerInstances(containerInstances);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param enableECSManagedTags
+     *        Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
+     *        ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setEnableECSManagedTags(Boolean enableECSManagedTags) {
+        this.enableECSManagedTags = enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
+     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public Boolean getEnableECSManagedTags() {
+        return this.enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param enableECSManagedTags
+     *        Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
+     *        ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskRequest withEnableECSManagedTags(Boolean enableECSManagedTags) {
+        setEnableECSManagedTags(enableECSManagedTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
+     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public Boolean isEnableECSManagedTags() {
+        return this.enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * The name of the task group to associate with the task. The default value is the family name of the task
+     * definition (for example, family:my-family-name).
+     * </p>
+     * 
+     * @param group
+     *        The name of the task group to associate with the task. The default value is the family name of the task
+     *        definition (for example, family:my-family-name).
+     */
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    /**
+     * <p>
+     * The name of the task group to associate with the task. The default value is the family name of the task
+     * definition (for example, family:my-family-name).
+     * </p>
+     * 
+     * @return The name of the task group to associate with the task. The default value is the family name of the task
+     *         definition (for example, family:my-family-name).
+     */
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    /**
+     * <p>
+     * The name of the task group to associate with the task. The default value is the family name of the task
+     * definition (for example, family:my-family-name).
+     * </p>
+     * 
+     * @param group
+     *        The name of the task group to associate with the task. The default value is the family name of the task
+     *        definition (for example, family:my-family-name).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskRequest withGroup(String group) {
+        setGroup(group);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The VPC subnet and security group configuration for tasks that receive their own elastic network interface
+     *        by using the <code>awsvpc</code> networking mode.
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @return The VPC subnet and security group configuration for tasks that receive their own elastic network
+     *         interface by using the <code>awsvpc</code> networking mode.
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The VPC subnet and security group configuration for tasks that receive their own elastic network interface
+     *        by using the <code>awsvpc</code> networking mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskRequest withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
         return this;
     }
 
@@ -353,82 +548,108 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
-     * task. You can specify up to 10 container instances.
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
      * </p>
      * 
-     * @return The container instance IDs or full ARN entries for the container instances on which you would like to
-     *         place your task. You can specify up to 10 container instances.
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags are not propagated.
+     * @see PropagateTags
      */
 
-    public java.util.List<String> getContainerInstances() {
-        if (containerInstances == null) {
-            containerInstances = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return containerInstances;
+    public void setPropagateTags(String propagateTags) {
+        this.propagateTags = propagateTags;
     }
 
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
-     * task. You can specify up to 10 container instances.
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
      * </p>
      * 
-     * @param containerInstances
-     *        The container instance IDs or full ARN entries for the container instances on which you would like to
-     *        place your task. You can specify up to 10 container instances.
+     * @return Specifies whether to propagate the tags from the task definition or the service to the task. If no value
+     *         is specified, the tags are not propagated.
+     * @see PropagateTags
      */
 
-    public void setContainerInstances(java.util.Collection<String> containerInstances) {
-        if (containerInstances == null) {
-            this.containerInstances = null;
-            return;
-        }
-
-        this.containerInstances = new com.amazonaws.internal.SdkInternalList<String>(containerInstances);
+    public String getPropagateTags() {
+        return this.propagateTags;
     }
 
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
-     * task. You can specify up to 10 container instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setContainerInstances(java.util.Collection)} or {@link #withContainerInstances(java.util.Collection)} if
-     * you want to override the existing values.
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
      * </p>
      * 
-     * @param containerInstances
-     *        The container instance IDs or full ARN entries for the container instances on which you would like to
-     *        place your task. You can specify up to 10 container instances.
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags are not propagated.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PropagateTags
      */
 
-    public StartTaskRequest withContainerInstances(String... containerInstances) {
-        if (this.containerInstances == null) {
-            setContainerInstances(new com.amazonaws.internal.SdkInternalList<String>(containerInstances.length));
-        }
-        for (String ele : containerInstances) {
-            this.containerInstances.add(ele);
-        }
+    public StartTaskRequest withPropagateTags(String propagateTags) {
+        setPropagateTags(propagateTags);
         return this;
     }
 
     /**
      * <p>
-     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
-     * task. You can specify up to 10 container instances.
+     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
+     * specified, the tags are not propagated.
      * </p>
      * 
-     * @param containerInstances
-     *        The container instance IDs or full ARN entries for the container instances on which you would like to
-     *        place your task. You can specify up to 10 container instances.
+     * @param propagateTags
+     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
+     *        is specified, the tags are not propagated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PropagateTags
+     */
+
+    public StartTaskRequest withPropagateTags(PropagateTags propagateTags) {
+        this.propagateTags = propagateTags.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reference ID to use for the task.
+     * </p>
+     * 
+     * @param referenceId
+     *        The reference ID to use for the task.
+     */
+
+    public void setReferenceId(String referenceId) {
+        this.referenceId = referenceId;
+    }
+
+    /**
+     * <p>
+     * The reference ID to use for the task.
+     * </p>
+     * 
+     * @return The reference ID to use for the task.
+     */
+
+    public String getReferenceId() {
+        return this.referenceId;
+    }
+
+    /**
+     * <p>
+     * The reference ID to use for the task.
+     * </p>
+     * 
+     * @param referenceId
+     *        The reference ID to use for the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartTaskRequest withContainerInstances(java.util.Collection<String> containerInstances) {
-        setContainerInstances(containerInstances);
+    public StartTaskRequest withReferenceId(String referenceId) {
+        setReferenceId(referenceId);
         return this;
     }
 
@@ -514,98 +735,6 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public StartTaskRequest withStartedBy(String startedBy) {
         setStartedBy(startedBy);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the task group to associate with the task. The default value is the family name of the task
-     * definition (for example, family:my-family-name).
-     * </p>
-     * 
-     * @param group
-     *        The name of the task group to associate with the task. The default value is the family name of the task
-     *        definition (for example, family:my-family-name).
-     */
-
-    public void setGroup(String group) {
-        this.group = group;
-    }
-
-    /**
-     * <p>
-     * The name of the task group to associate with the task. The default value is the family name of the task
-     * definition (for example, family:my-family-name).
-     * </p>
-     * 
-     * @return The name of the task group to associate with the task. The default value is the family name of the task
-     *         definition (for example, family:my-family-name).
-     */
-
-    public String getGroup() {
-        return this.group;
-    }
-
-    /**
-     * <p>
-     * The name of the task group to associate with the task. The default value is the family name of the task
-     * definition (for example, family:my-family-name).
-     * </p>
-     * 
-     * @param group
-     *        The name of the task group to associate with the task. The default value is the family name of the task
-     *        definition (for example, family:my-family-name).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartTaskRequest withGroup(String group) {
-        setGroup(group);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
-     * using the <code>awsvpc</code> networking mode.
-     * </p>
-     * 
-     * @param networkConfiguration
-     *        The VPC subnet and security group configuration for tasks that receive their own elastic network interface
-     *        by using the <code>awsvpc</code> networking mode.
-     */
-
-    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
-        this.networkConfiguration = networkConfiguration;
-    }
-
-    /**
-     * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
-     * using the <code>awsvpc</code> networking mode.
-     * </p>
-     * 
-     * @return The VPC subnet and security group configuration for tasks that receive their own elastic network
-     *         interface by using the <code>awsvpc</code> networking mode.
-     */
-
-    public NetworkConfiguration getNetworkConfiguration() {
-        return this.networkConfiguration;
-    }
-
-    /**
-     * <p>
-     * The VPC subnet and security group configuration for tasks that receive their own elastic network interface by
-     * using the <code>awsvpc</code> networking mode.
-     * </p>
-     * 
-     * @param networkConfiguration
-     *        The VPC subnet and security group configuration for tasks that receive their own elastic network interface
-     *        by using the <code>awsvpc</code> networking mode.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartTaskRequest withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
-        setNetworkConfiguration(networkConfiguration);
         return this;
     }
 
@@ -1040,136 +1169,53 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     * used.
      * </p>
      * 
-     * @param enableECSManagedTags
-     *        Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
-     *        ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @param taskDefinition
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *        is used.
      */
 
-    public void setEnableECSManagedTags(Boolean enableECSManagedTags) {
-        this.enableECSManagedTags = enableECSManagedTags;
+    public void setTaskDefinition(String taskDefinition) {
+        this.taskDefinition = taskDefinition;
     }
 
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     * used.
      * </p>
      * 
-     * @return Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
-     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *         definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *         is used.
      */
 
-    public Boolean getEnableECSManagedTags() {
-        return this.enableECSManagedTags;
+    public String getTaskDefinition() {
+        return this.taskDefinition;
     }
 
     /**
      * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     * used.
      * </p>
      * 
-     * @param enableECSManagedTags
-     *        Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
-     *        ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @param taskDefinition
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *        is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartTaskRequest withEnableECSManagedTags(Boolean enableECSManagedTags) {
-        setEnableECSManagedTags(enableECSManagedTags);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
-     * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * 
-     * @return Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
-     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     */
-
-    public Boolean isEnableECSManagedTags() {
-        return this.enableECSManagedTags;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
-     * </p>
-     * 
-     * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
-     * @see PropagateTags
-     */
-
-    public void setPropagateTags(String propagateTags) {
-        this.propagateTags = propagateTags;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
-     * </p>
-     * 
-     * @return Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *         is specified, the tags are not propagated.
-     * @see PropagateTags
-     */
-
-    public String getPropagateTags() {
-        return this.propagateTags;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
-     * </p>
-     * 
-     * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PropagateTags
-     */
-
-    public StartTaskRequest withPropagateTags(String propagateTags) {
-        setPropagateTags(propagateTags);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
-     * </p>
-     * 
-     * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PropagateTags
-     */
-
-    public StartTaskRequest withPropagateTags(PropagateTags propagateTags) {
-        this.propagateTags = propagateTags.toString();
+    public StartTaskRequest withTaskDefinition(String taskDefinition) {
+        setTaskDefinition(taskDefinition);
         return this;
     }
 
@@ -1187,24 +1233,26 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         sb.append("{");
         if (getCluster() != null)
             sb.append("Cluster: ").append(getCluster()).append(",");
-        if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
-        if (getOverrides() != null)
-            sb.append("Overrides: ").append(getOverrides()).append(",");
         if (getContainerInstances() != null)
             sb.append("ContainerInstances: ").append(getContainerInstances()).append(",");
-        if (getStartedBy() != null)
-            sb.append("StartedBy: ").append(getStartedBy()).append(",");
+        if (getEnableECSManagedTags() != null)
+            sb.append("EnableECSManagedTags: ").append(getEnableECSManagedTags()).append(",");
         if (getGroup() != null)
             sb.append("Group: ").append(getGroup()).append(",");
         if (getNetworkConfiguration() != null)
             sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getOverrides() != null)
+            sb.append("Overrides: ").append(getOverrides()).append(",");
+        if (getPropagateTags() != null)
+            sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
+        if (getReferenceId() != null)
+            sb.append("ReferenceId: ").append(getReferenceId()).append(",");
+        if (getStartedBy() != null)
+            sb.append("StartedBy: ").append(getStartedBy()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
-        if (getEnableECSManagedTags() != null)
-            sb.append("EnableECSManagedTags: ").append(getEnableECSManagedTags()).append(",");
-        if (getPropagateTags() != null)
-            sb.append("PropagateTags: ").append(getPropagateTags());
+        if (getTaskDefinition() != null)
+            sb.append("TaskDefinition: ").append(getTaskDefinition());
         sb.append("}");
         return sb.toString();
     }
@@ -1223,21 +1271,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getCluster() != null && other.getCluster().equals(this.getCluster()) == false)
             return false;
-        if (other.getTaskDefinition() == null ^ this.getTaskDefinition() == null)
-            return false;
-        if (other.getTaskDefinition() != null && other.getTaskDefinition().equals(this.getTaskDefinition()) == false)
-            return false;
-        if (other.getOverrides() == null ^ this.getOverrides() == null)
-            return false;
-        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
-            return false;
         if (other.getContainerInstances() == null ^ this.getContainerInstances() == null)
             return false;
         if (other.getContainerInstances() != null && other.getContainerInstances().equals(this.getContainerInstances()) == false)
             return false;
-        if (other.getStartedBy() == null ^ this.getStartedBy() == null)
+        if (other.getEnableECSManagedTags() == null ^ this.getEnableECSManagedTags() == null)
             return false;
-        if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false)
+        if (other.getEnableECSManagedTags() != null && other.getEnableECSManagedTags().equals(this.getEnableECSManagedTags()) == false)
             return false;
         if (other.getGroup() == null ^ this.getGroup() == null)
             return false;
@@ -1247,17 +1287,29 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
-        if (other.getTags() == null ^ this.getTags() == null)
+        if (other.getOverrides() == null ^ this.getOverrides() == null)
             return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
-        if (other.getEnableECSManagedTags() == null ^ this.getEnableECSManagedTags() == null)
-            return false;
-        if (other.getEnableECSManagedTags() != null && other.getEnableECSManagedTags().equals(this.getEnableECSManagedTags()) == false)
+        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
             return false;
         if (other.getPropagateTags() == null ^ this.getPropagateTags() == null)
             return false;
         if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
+            return false;
+        if (other.getReferenceId() == null ^ this.getReferenceId() == null)
+            return false;
+        if (other.getReferenceId() != null && other.getReferenceId().equals(this.getReferenceId()) == false)
+            return false;
+        if (other.getStartedBy() == null ^ this.getStartedBy() == null)
+            return false;
+        if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getTaskDefinition() == null ^ this.getTaskDefinition() == null)
+            return false;
+        if (other.getTaskDefinition() != null && other.getTaskDefinition().equals(this.getTaskDefinition()) == false)
             return false;
         return true;
     }
@@ -1268,15 +1320,16 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
-        hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
-        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getContainerInstances() == null) ? 0 : getContainerInstances().hashCode());
-        hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
+        hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
+        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
+        hashCode = prime * hashCode + ((getReferenceId() == null) ? 0 : getReferenceId().hashCode());
+        hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
         return hashCode;
     }
 

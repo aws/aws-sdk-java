@@ -16,8 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception raised when there are problems accessing ADS (Application Discovery Service); most likely due to a
- * misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.
+ * Exception raised when there are problems accessing Application Discovery Service (Application Discovery Service);
+ * most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not
+ * configured correctly.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

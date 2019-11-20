@@ -217,12 +217,12 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     private Long bytesPerSecond;
     /**
      * <p>
-     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
-     * , the tasks will queued. The default is <code>Enabled</code>.
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>ENABLED</code>
+     * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
-     * see <a>task-queue</a>.
+     * see <a>queue-task-execution</a>.
      * </p>
      */
     private String taskQueueing;
@@ -1730,20 +1730,20 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
-     * , the tasks will queued. The default is <code>Enabled</code>.
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>ENABLED</code>
+     * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
-     * see <a>task-queue</a>.
+     * see <a>queue-task-execution</a>.
      * </p>
      * 
      * @param taskQueueing
      *        A value that determines whether tasks should be queued before executing the tasks. If set to
-     *        <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p>
+     *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
      *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
-     *        information see <a>task-queue</a>.
+     *        information see <a>queue-task-execution</a>.
      * @see TaskQueueing
      */
 
@@ -1753,19 +1753,19 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
-     * , the tasks will queued. The default is <code>Enabled</code>.
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>ENABLED</code>
+     * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
-     * see <a>task-queue</a>.
+     * see <a>queue-task-execution</a>.
      * </p>
      * 
      * @return A value that determines whether tasks should be queued before executing the tasks. If set to
-     *         <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p>
+     *         <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *         <p>
      *         If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
-     *         information see <a>task-queue</a>.
+     *         information see <a>queue-task-execution</a>.
      * @see TaskQueueing
      */
 
@@ -1775,20 +1775,20 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
-     * , the tasks will queued. The default is <code>Enabled</code>.
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>ENABLED</code>
+     * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
-     * see <a>task-queue</a>.
+     * see <a>queue-task-execution</a>.
      * </p>
      * 
      * @param taskQueueing
      *        A value that determines whether tasks should be queued before executing the tasks. If set to
-     *        <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p>
+     *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
      *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
-     *        information see <a>task-queue</a>.
+     *        information see <a>queue-task-execution</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskQueueing
      */
@@ -1800,20 +1800,20 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>Enabled</code>
-     * , the tasks will queued. The default is <code>Enabled</code>.
+     * A value that determines whether tasks should be queued before executing the tasks. If set to <code>ENABLED</code>
+     * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
-     * see <a>task-queue</a>.
+     * see <a>queue-task-execution</a>.
      * </p>
      * 
      * @param taskQueueing
      *        A value that determines whether tasks should be queued before executing the tasks. If set to
-     *        <code>Enabled</code>, the tasks will queued. The default is <code>Enabled</code>.</p>
+     *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
      *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
-     *        information see <a>task-queue</a>.
+     *        information see <a>queue-task-execution</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskQueueing
      */

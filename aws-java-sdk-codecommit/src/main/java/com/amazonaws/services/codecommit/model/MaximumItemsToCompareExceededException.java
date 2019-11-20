@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The maximum number of items to compare between the source or destination branches and the merge base has exceeded the
- * maximum allowed.
+ * The number of items to compare between the source or destination branches and the merge base has exceeded the maximum
+ * allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

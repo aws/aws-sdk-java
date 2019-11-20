@@ -53,14 +53,14 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
     private String afterCommitId;
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 comments. You can return
-     * up to 500 comments with a single request.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You
+     * can return up to 500 comments with a single request.
      * </p>
      */
     private Integer maxResults;
@@ -239,11 +239,11 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that, when provided in a request, returns the next batch of the results.
      */
 
     public void setNextToken(String nextToken) {
@@ -252,10 +252,10 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
-     * @return An enumeration token that when provided in a request, returns the next batch of the results.
+     * @return An enumeration token that, when provided in a request, returns the next batch of the results.
      */
 
     public String getNextToken() {
@@ -264,11 +264,11 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that, when provided in a request, returns the next batch of the results.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that, when provided in a request, returns the next batch of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,13 +279,13 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 comments. You can return
-     * up to 500 comments with a single request.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You
+     * can return up to 500 comments with a single request.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results. The default is 100 comments. You can
-     *        return up to 500 comments with a single request.
+     *        A non-zero, non-negative integer used to limit the number of returned results. The default is 100
+     *        comments. You can return up to 500 comments with a single request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -294,12 +294,12 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 comments. You can return
-     * up to 500 comments with a single request.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You
+     * can return up to 500 comments with a single request.
      * </p>
      * 
-     * @return A non-negative integer used to limit the number of returned results. The default is 100 comments. You can
-     *         return up to 500 comments with a single request.
+     * @return A non-zero, non-negative integer used to limit the number of returned results. The default is 100
+     *         comments. You can return up to 500 comments with a single request.
      */
 
     public Integer getMaxResults() {
@@ -308,13 +308,13 @@ public class GetCommentsForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A non-negative integer used to limit the number of returned results. The default is 100 comments. You can return
-     * up to 500 comments with a single request.
+     * A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You
+     * can return up to 500 comments with a single request.
      * </p>
      * 
      * @param maxResults
-     *        A non-negative integer used to limit the number of returned results. The default is 100 comments. You can
-     *        return up to 500 comments with a single request.
+     *        A non-zero, non-negative integer used to limit the number of returned results. The default is 100
+     *        comments. You can return up to 500 comments with a single request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The region for the trigger target does not match the region for the repository. Triggers must be created in the same
- * region as the target for the trigger.
+ * The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in
+ * the same Region as the target for the trigger.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

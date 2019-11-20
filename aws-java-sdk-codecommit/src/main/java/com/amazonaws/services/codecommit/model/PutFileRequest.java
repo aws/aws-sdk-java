@@ -33,8 +33,8 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String repositoryName;
     /**
      * <p>
-     * The name of the branch where you want to add or update the file. If this is an empty repository, this branch will
-     * be created.
+     * The name of the branch where you want to add or update the file. If this is an empty repository, this branch is
+     * created.
      * </p>
      */
     private String branchName;
@@ -50,14 +50,14 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <note>
      * <p>
-     * If the path does not currently exist in the repository, the path will be created as part of adding the file.
+     * If the path does not currently exist in the repository, the path is created as part of adding the file.
      * </p>
      * </note>
      */
     private String filePath;
     /**
      * <p>
-     * The file mode permissions of the blob. Valid file mode permissions are listed below.
+     * The file mode permissions of the blob. Valid file mode permissions are listed here.
      * </p>
      */
     private String fileMode;
@@ -67,22 +67,22 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * repository, no commit ID is required. If this is not an empty repository, a commit ID is required.
      * </p>
      * <p>
-     * The commit ID must match the ID of the head commit at the time of the operation, or an error will occur, and the
-     * file will not be added or updated.
+     * The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and
+     * the file is not added or updated.
      * </p>
      */
     private String parentCommitId;
     /**
      * <p>
-     * A message about why this file was added or updated. While optional, adding a message is strongly encouraged in
-     * order to provide a more useful commit history for your repository.
+     * A message about why this file was added or updated. Although it is optional, a message makes the commit history
+     * for your repository more useful.
      * </p>
      */
     private String commitMessage;
     /**
      * <p>
-     * The name of the person adding or updating the file. While optional, adding a name is strongly encouraged in order
-     * to provide a more useful commit history for your repository.
+     * The name of the person adding or updating the file. Although it is optional, a name makes the commit history for
+     * your repository more useful.
      * </p>
      */
     private String name;
@@ -135,13 +135,13 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the branch where you want to add or update the file. If this is an empty repository, this branch will
-     * be created.
+     * The name of the branch where you want to add or update the file. If this is an empty repository, this branch is
+     * created.
      * </p>
      * 
      * @param branchName
      *        The name of the branch where you want to add or update the file. If this is an empty repository, this
-     *        branch will be created.
+     *        branch is created.
      */
 
     public void setBranchName(String branchName) {
@@ -150,12 +150,12 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the branch where you want to add or update the file. If this is an empty repository, this branch will
-     * be created.
+     * The name of the branch where you want to add or update the file. If this is an empty repository, this branch is
+     * created.
      * </p>
      * 
      * @return The name of the branch where you want to add or update the file. If this is an empty repository, this
-     *         branch will be created.
+     *         branch is created.
      */
 
     public String getBranchName() {
@@ -164,13 +164,13 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the branch where you want to add or update the file. If this is an empty repository, this branch will
-     * be created.
+     * The name of the branch where you want to add or update the file. If this is an empty repository, this branch is
+     * created.
      * </p>
      * 
      * @param branchName
      *        The name of the branch where you want to add or update the file. If this is an empty repository, this
-     *        branch will be created.
+     *        branch is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,7 +252,7 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <note>
      * <p>
-     * If the path does not currently exist in the repository, the path will be created as part of adding the file.
+     * If the path does not currently exist in the repository, the path is created as part of adding the file.
      * </p>
      * </note>
      * 
@@ -260,8 +260,7 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        The name of the file you want to add or update, including the relative path to the file in the
      *        repository.</p> <note>
      *        <p>
-     *        If the path does not currently exist in the repository, the path will be created as part of adding the
-     *        file.
+     *        If the path does not currently exist in the repository, the path is created as part of adding the file.
      *        </p>
      */
 
@@ -275,15 +274,14 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <note>
      * <p>
-     * If the path does not currently exist in the repository, the path will be created as part of adding the file.
+     * If the path does not currently exist in the repository, the path is created as part of adding the file.
      * </p>
      * </note>
      * 
      * @return The name of the file you want to add or update, including the relative path to the file in the
      *         repository.</p> <note>
      *         <p>
-     *         If the path does not currently exist in the repository, the path will be created as part of adding the
-     *         file.
+     *         If the path does not currently exist in the repository, the path is created as part of adding the file.
      *         </p>
      */
 
@@ -297,7 +295,7 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <note>
      * <p>
-     * If the path does not currently exist in the repository, the path will be created as part of adding the file.
+     * If the path does not currently exist in the repository, the path is created as part of adding the file.
      * </p>
      * </note>
      * 
@@ -305,8 +303,7 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        The name of the file you want to add or update, including the relative path to the file in the
      *        repository.</p> <note>
      *        <p>
-     *        If the path does not currently exist in the repository, the path will be created as part of adding the
-     *        file.
+     *        If the path does not currently exist in the repository, the path is created as part of adding the file.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -318,11 +315,11 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The file mode permissions of the blob. Valid file mode permissions are listed below.
+     * The file mode permissions of the blob. Valid file mode permissions are listed here.
      * </p>
      * 
      * @param fileMode
-     *        The file mode permissions of the blob. Valid file mode permissions are listed below.
+     *        The file mode permissions of the blob. Valid file mode permissions are listed here.
      * @see FileModeTypeEnum
      */
 
@@ -332,10 +329,10 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The file mode permissions of the blob. Valid file mode permissions are listed below.
+     * The file mode permissions of the blob. Valid file mode permissions are listed here.
      * </p>
      * 
-     * @return The file mode permissions of the blob. Valid file mode permissions are listed below.
+     * @return The file mode permissions of the blob. Valid file mode permissions are listed here.
      * @see FileModeTypeEnum
      */
 
@@ -345,11 +342,11 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The file mode permissions of the blob. Valid file mode permissions are listed below.
+     * The file mode permissions of the blob. Valid file mode permissions are listed here.
      * </p>
      * 
      * @param fileMode
-     *        The file mode permissions of the blob. Valid file mode permissions are listed below.
+     *        The file mode permissions of the blob. Valid file mode permissions are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileModeTypeEnum
      */
@@ -361,11 +358,11 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The file mode permissions of the blob. Valid file mode permissions are listed below.
+     * The file mode permissions of the blob. Valid file mode permissions are listed here.
      * </p>
      * 
      * @param fileMode
-     *        The file mode permissions of the blob. Valid file mode permissions are listed below.
+     *        The file mode permissions of the blob. Valid file mode permissions are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileModeTypeEnum
      */
@@ -381,8 +378,8 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * repository, no commit ID is required. If this is not an empty repository, a commit ID is required.
      * </p>
      * <p>
-     * The commit ID must match the ID of the head commit at the time of the operation, or an error will occur, and the
-     * file will not be added or updated.
+     * The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and
+     * the file is not added or updated.
      * </p>
      * 
      * @param parentCommitId
@@ -390,8 +387,8 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is
      *        required. </p>
      *        <p>
-     *        The commit ID must match the ID of the head commit at the time of the operation, or an error will occur,
-     *        and the file will not be added or updated.
+     *        The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error
+     *        occurs, and the file is not added or updated.
      */
 
     public void setParentCommitId(String parentCommitId) {
@@ -404,16 +401,16 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * repository, no commit ID is required. If this is not an empty repository, a commit ID is required.
      * </p>
      * <p>
-     * The commit ID must match the ID of the head commit at the time of the operation, or an error will occur, and the
-     * file will not be added or updated.
+     * The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and
+     * the file is not added or updated.
      * </p>
      * 
      * @return The full commit ID of the head commit in the branch where you want to add or update the file. If this is
      *         an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is
      *         required. </p>
      *         <p>
-     *         The commit ID must match the ID of the head commit at the time of the operation, or an error will occur,
-     *         and the file will not be added or updated.
+     *         The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error
+     *         occurs, and the file is not added or updated.
      */
 
     public String getParentCommitId() {
@@ -426,8 +423,8 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * repository, no commit ID is required. If this is not an empty repository, a commit ID is required.
      * </p>
      * <p>
-     * The commit ID must match the ID of the head commit at the time of the operation, or an error will occur, and the
-     * file will not be added or updated.
+     * The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and
+     * the file is not added or updated.
      * </p>
      * 
      * @param parentCommitId
@@ -435,8 +432,8 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is
      *        required. </p>
      *        <p>
-     *        The commit ID must match the ID of the head commit at the time of the operation, or an error will occur,
-     *        and the file will not be added or updated.
+     *        The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error
+     *        occurs, and the file is not added or updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,13 +444,13 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A message about why this file was added or updated. While optional, adding a message is strongly encouraged in
-     * order to provide a more useful commit history for your repository.
+     * A message about why this file was added or updated. Although it is optional, a message makes the commit history
+     * for your repository more useful.
      * </p>
      * 
      * @param commitMessage
-     *        A message about why this file was added or updated. While optional, adding a message is strongly
-     *        encouraged in order to provide a more useful commit history for your repository.
+     *        A message about why this file was added or updated. Although it is optional, a message makes the commit
+     *        history for your repository more useful.
      */
 
     public void setCommitMessage(String commitMessage) {
@@ -462,12 +459,12 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A message about why this file was added or updated. While optional, adding a message is strongly encouraged in
-     * order to provide a more useful commit history for your repository.
+     * A message about why this file was added or updated. Although it is optional, a message makes the commit history
+     * for your repository more useful.
      * </p>
      * 
-     * @return A message about why this file was added or updated. While optional, adding a message is strongly
-     *         encouraged in order to provide a more useful commit history for your repository.
+     * @return A message about why this file was added or updated. Although it is optional, a message makes the commit
+     *         history for your repository more useful.
      */
 
     public String getCommitMessage() {
@@ -476,13 +473,13 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * A message about why this file was added or updated. While optional, adding a message is strongly encouraged in
-     * order to provide a more useful commit history for your repository.
+     * A message about why this file was added or updated. Although it is optional, a message makes the commit history
+     * for your repository more useful.
      * </p>
      * 
      * @param commitMessage
-     *        A message about why this file was added or updated. While optional, adding a message is strongly
-     *        encouraged in order to provide a more useful commit history for your repository.
+     *        A message about why this file was added or updated. Although it is optional, a message makes the commit
+     *        history for your repository more useful.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,13 +490,13 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the person adding or updating the file. While optional, adding a name is strongly encouraged in order
-     * to provide a more useful commit history for your repository.
+     * The name of the person adding or updating the file. Although it is optional, a name makes the commit history for
+     * your repository more useful.
      * </p>
      * 
      * @param name
-     *        The name of the person adding or updating the file. While optional, adding a name is strongly encouraged
-     *        in order to provide a more useful commit history for your repository.
+     *        The name of the person adding or updating the file. Although it is optional, a name makes the commit
+     *        history for your repository more useful.
      */
 
     public void setName(String name) {
@@ -508,12 +505,12 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the person adding or updating the file. While optional, adding a name is strongly encouraged in order
-     * to provide a more useful commit history for your repository.
+     * The name of the person adding or updating the file. Although it is optional, a name makes the commit history for
+     * your repository more useful.
      * </p>
      * 
-     * @return The name of the person adding or updating the file. While optional, adding a name is strongly encouraged
-     *         in order to provide a more useful commit history for your repository.
+     * @return The name of the person adding or updating the file. Although it is optional, a name makes the commit
+     *         history for your repository more useful.
      */
 
     public String getName() {
@@ -522,13 +519,13 @@ public class PutFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the person adding or updating the file. While optional, adding a name is strongly encouraged in order
-     * to provide a more useful commit history for your repository.
+     * The name of the person adding or updating the file. Although it is optional, a name makes the commit history for
+     * your repository more useful.
      * </p>
      * 
      * @param name
-     *        The name of the person adding or updating the file. While optional, adding a name is strongly encouraged
-     *        in order to provide a more useful commit history for your repository.
+     *        The name of the person adding or updating the file. Although it is optional, a name makes the commit
+     *        history for your repository more useful.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

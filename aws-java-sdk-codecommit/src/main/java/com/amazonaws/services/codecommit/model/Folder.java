@@ -36,7 +36,7 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
     private String treeId;
     /**
      * <p>
-     * The fully-qualified path of the folder in the repository.
+     * The fully qualified path of the folder in the repository.
      * </p>
      */
     private String absolutePath;
@@ -89,11 +89,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully-qualified path of the folder in the repository.
+     * The fully qualified path of the folder in the repository.
      * </p>
      * 
      * @param absolutePath
-     *        The fully-qualified path of the folder in the repository.
+     *        The fully qualified path of the folder in the repository.
      */
 
     public void setAbsolutePath(String absolutePath) {
@@ -102,10 +102,10 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully-qualified path of the folder in the repository.
+     * The fully qualified path of the folder in the repository.
      * </p>
      * 
-     * @return The fully-qualified path of the folder in the repository.
+     * @return The fully qualified path of the folder in the repository.
      */
 
     public String getAbsolutePath() {
@@ -114,11 +114,11 @@ public class Folder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully-qualified path of the folder in the repository.
+     * The fully qualified path of the folder in the repository.
      * </p>
      * 
      * @param absolutePath
-     *        The fully-qualified path of the folder in the repository.
+     *        The fully qualified path of the folder in the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

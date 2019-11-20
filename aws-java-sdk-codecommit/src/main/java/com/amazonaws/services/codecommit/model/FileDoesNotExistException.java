@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified file does not exist. Verify that you have provided the correct name of the file, including its full
- * path and extension.
+ * The specified file does not exist. Verify that you have used the correct file name, full path, and extension.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

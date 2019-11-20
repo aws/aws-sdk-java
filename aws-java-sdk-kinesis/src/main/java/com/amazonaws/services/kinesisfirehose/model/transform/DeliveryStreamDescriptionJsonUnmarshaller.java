@@ -60,6 +60,10 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     deliveryStreamDescription.setDeliveryStreamStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FailureDescription", targetDepth)) {
+                    context.nextToken();
+                    deliveryStreamDescription.setFailureDescription(FailureDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DeliveryStreamEncryptionConfiguration", targetDepth)) {
                     context.nextToken();
                     deliveryStreamDescription.setDeliveryStreamEncryptionConfiguration(DeliveryStreamEncryptionConfigurationJsonUnmarshaller.getInstance()

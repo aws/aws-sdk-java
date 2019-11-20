@@ -114,6 +114,12 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.List<FilterRule> excludes;
     /**
      * <p>
+     * The schedule used to periodically transfer files from a source to a destination location.
+     * </p>
+     */
+    private TaskSchedule schedule;
+    /**
+     * <p>
      * Errors that AWS DataSync encountered during execution of the task. You can use this error code to help
      * troubleshoot issues.
      * </p>
@@ -812,6 +818,46 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
+     * The schedule used to periodically transfer files from a source to a destination location.
+     * </p>
+     * 
+     * @param schedule
+     *        The schedule used to periodically transfer files from a source to a destination location.
+     */
+
+    public void setSchedule(TaskSchedule schedule) {
+        this.schedule = schedule;
+    }
+
+    /**
+     * <p>
+     * The schedule used to periodically transfer files from a source to a destination location.
+     * </p>
+     * 
+     * @return The schedule used to periodically transfer files from a source to a destination location.
+     */
+
+    public TaskSchedule getSchedule() {
+        return this.schedule;
+    }
+
+    /**
+     * <p>
+     * The schedule used to periodically transfer files from a source to a destination location.
+     * </p>
+     * 
+     * @param schedule
+     *        The schedule used to periodically transfer files from a source to a destination location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskResult withSchedule(TaskSchedule schedule) {
+        setSchedule(schedule);
+        return this;
+    }
+
+    /**
+     * <p>
      * Errors that AWS DataSync encountered during execution of the task. You can use this error code to help
      * troubleshoot issues.
      * </p>
@@ -976,6 +1022,8 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("Options: ").append(getOptions()).append(",");
         if (getExcludes() != null)
             sb.append("Excludes: ").append(getExcludes()).append(",");
+        if (getSchedule() != null)
+            sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getErrorCode() != null)
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorDetail() != null)
@@ -1041,6 +1089,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getExcludes() != null && other.getExcludes().equals(this.getExcludes()) == false)
             return false;
+        if (other.getSchedule() == null ^ this.getSchedule() == null)
+            return false;
+        if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
+            return false;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
         if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
@@ -1072,6 +1124,7 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getDestinationNetworkInterfaceArns() == null) ? 0 : getDestinationNetworkInterfaceArns().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         hashCode = prime * hashCode + ((getExcludes() == null) ? 0 : getExcludes().hashCode());
+        hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorDetail() == null) ? 0 : getErrorDetail().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

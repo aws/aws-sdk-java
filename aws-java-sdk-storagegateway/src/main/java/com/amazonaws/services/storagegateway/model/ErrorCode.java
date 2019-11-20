@@ -51,6 +51,7 @@ public enum ErrorCode {
     LocalStorageLimitExceeded("LocalStorageLimitExceeded"),
     LunAlreadyAllocated("LunAlreadyAllocated "),
     LunInvalid("LunInvalid"),
+    JoinDomainInProgress("JoinDomainInProgress"),
     MaximumContentLengthExceeded("MaximumContentLengthExceeded"),
     MaximumTapeCartridgeCountExceeded("MaximumTapeCartridgeCountExceeded"),
     MaximumVolumeCountExceeded("MaximumVolumeCountExceeded"),

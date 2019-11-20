@@ -33,15 +33,15 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String repositoryName;
     /**
      * <p>
-     * A fully-qualified reference used to identify a commit that contains the version of the folder's content to
-     * return. A fully-qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
-     * specifier is provided, the folder content will be returned as it exists in the HEAD commit.
+     * A fully qualified reference used to identify a commit that contains the version of the folder's content to
+     * return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
+     * specifier is provided, the folder content is returned as it exists in the HEAD commit.
      * </p>
      */
     private String commitSpecifier;
     /**
      * <p>
-     * The fully-qualified path to the folder whose contents will be returned, including the folder name. For example,
+     * The fully qualified path to the folder whose contents are returned, including the folder name. For example,
      * /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of
      * a repository.
      * </p>
@@ -90,15 +90,15 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A fully-qualified reference used to identify a commit that contains the version of the folder's content to
-     * return. A fully-qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
-     * specifier is provided, the folder content will be returned as it exists in the HEAD commit.
+     * A fully qualified reference used to identify a commit that contains the version of the folder's content to
+     * return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
+     * specifier is provided, the folder content is returned as it exists in the HEAD commit.
      * </p>
      * 
      * @param commitSpecifier
-     *        A fully-qualified reference used to identify a commit that contains the version of the folder's content to
-     *        return. A fully-qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
-     *        specifier is provided, the folder content will be returned as it exists in the HEAD commit.
+     *        A fully qualified reference used to identify a commit that contains the version of the folder's content to
+     *        return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
+     *        specifier is provided, the folder content is returned as it exists in the HEAD commit.
      */
 
     public void setCommitSpecifier(String commitSpecifier) {
@@ -107,14 +107,14 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A fully-qualified reference used to identify a commit that contains the version of the folder's content to
-     * return. A fully-qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
-     * specifier is provided, the folder content will be returned as it exists in the HEAD commit.
+     * A fully qualified reference used to identify a commit that contains the version of the folder's content to
+     * return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
+     * specifier is provided, the folder content is returned as it exists in the HEAD commit.
      * </p>
      * 
-     * @return A fully-qualified reference used to identify a commit that contains the version of the folder's content
-     *         to return. A fully-qualified reference can be a commit ID, branch name, tag, or reference such as HEAD.
-     *         If no specifier is provided, the folder content will be returned as it exists in the HEAD commit.
+     * @return A fully qualified reference used to identify a commit that contains the version of the folder's content
+     *         to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD.
+     *         If no specifier is provided, the folder content is returned as it exists in the HEAD commit.
      */
 
     public String getCommitSpecifier() {
@@ -123,15 +123,15 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A fully-qualified reference used to identify a commit that contains the version of the folder's content to
-     * return. A fully-qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
-     * specifier is provided, the folder content will be returned as it exists in the HEAD commit.
+     * A fully qualified reference used to identify a commit that contains the version of the folder's content to
+     * return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
+     * specifier is provided, the folder content is returned as it exists in the HEAD commit.
      * </p>
      * 
      * @param commitSpecifier
-     *        A fully-qualified reference used to identify a commit that contains the version of the folder's content to
-     *        return. A fully-qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
-     *        specifier is provided, the folder content will be returned as it exists in the HEAD commit.
+     *        A fully qualified reference used to identify a commit that contains the version of the folder's content to
+     *        return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no
+     *        specifier is provided, the folder content is returned as it exists in the HEAD commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,13 +142,13 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The fully-qualified path to the folder whose contents will be returned, including the folder name. For example,
+     * The fully qualified path to the folder whose contents are returned, including the folder name. For example,
      * /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of
      * a repository.
      * </p>
      * 
      * @param folderPath
-     *        The fully-qualified path to the folder whose contents will be returned, including the folder name. For
+     *        The fully qualified path to the folder whose contents are returned, including the folder name. For
      *        example, /examples is a fully-qualified path to a folder named examples that was created off of the root
      *        directory (/) of a repository.
      */
@@ -159,12 +159,12 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The fully-qualified path to the folder whose contents will be returned, including the folder name. For example,
+     * The fully qualified path to the folder whose contents are returned, including the folder name. For example,
      * /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of
      * a repository.
      * </p>
      * 
-     * @return The fully-qualified path to the folder whose contents will be returned, including the folder name. For
+     * @return The fully qualified path to the folder whose contents are returned, including the folder name. For
      *         example, /examples is a fully-qualified path to a folder named examples that was created off of the root
      *         directory (/) of a repository.
      */
@@ -175,13 +175,13 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The fully-qualified path to the folder whose contents will be returned, including the folder name. For example,
+     * The fully qualified path to the folder whose contents are returned, including the folder name. For example,
      * /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of
      * a repository.
      * </p>
      * 
      * @param folderPath
-     *        The fully-qualified path to the folder whose contents will be returned, including the folder name. For
+     *        The fully qualified path to the folder whose contents are returned, including the folder name. For
      *        example, /examples is a fully-qualified path to a folder named examples that was created off of the root
      *        directory (/) of a repository.
      * @return Returns a reference to this object so that method calls can be chained together.

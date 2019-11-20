@@ -27,9 +27,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results
+     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
+     * it is possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -53,9 +53,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results
+     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
+     * it is possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -65,9 +65,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request
-     *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+     *        The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more
+     *        results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
+     *        was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -80,9 +80,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results
+     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
+     * it is possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -91,9 +91,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request
-     *         where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *         continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+     * @return The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more
+     *         results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
+     *         was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -106,9 +106,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results
+     * are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided,
+     * it is possible the number of results to be fewer than <code>maxResults</code>.
      * </p>
      * <note>
      * <p>
@@ -118,9 +118,9 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request
-     *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+     *        The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more
+     *        results are available to fulfill the request and further calls will be needed. If <code>maxResults</code>
+     *        was provided, it is possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.

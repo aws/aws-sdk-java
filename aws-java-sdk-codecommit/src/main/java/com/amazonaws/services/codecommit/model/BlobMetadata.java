@@ -36,7 +36,7 @@ public class BlobMetadata implements Serializable, Cloneable, StructuredPojo {
     private String blobId;
     /**
      * <p>
-     * The path to the blob and any associated file name, if any.
+     * The path to the blob and associated file name, if any.
      * </p>
      */
     private String path;
@@ -111,11 +111,11 @@ public class BlobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the blob and any associated file name, if any.
+     * The path to the blob and associated file name, if any.
      * </p>
      * 
      * @param path
-     *        The path to the blob and any associated file name, if any.
+     *        The path to the blob and associated file name, if any.
      */
 
     public void setPath(String path) {
@@ -124,10 +124,10 @@ public class BlobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the blob and any associated file name, if any.
+     * The path to the blob and associated file name, if any.
      * </p>
      * 
-     * @return The path to the blob and any associated file name, if any.
+     * @return The path to the blob and associated file name, if any.
      */
 
     public String getPath() {
@@ -136,11 +136,11 @@ public class BlobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the blob and any associated file name, if any.
+     * The path to the blob and associated file name, if any.
      * </p>
      * 
      * @param path
-     *        The path to the blob and any associated file name, if any.
+     *        The path to the blob and associated file name, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

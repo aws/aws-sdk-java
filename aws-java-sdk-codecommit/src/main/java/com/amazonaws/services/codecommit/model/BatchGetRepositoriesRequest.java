@@ -32,6 +32,11 @@ public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The names of the repositories to get information about.
      * </p>
+     * <note>
+     * <p>
+     * The length constraint limit is for each string in the array. The array itself can be empty.
+     * </p>
+     * </note>
      */
     private java.util.List<String> repositoryNames;
 
@@ -39,8 +44,16 @@ public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The names of the repositories to get information about.
      * </p>
+     * <note>
+     * <p>
+     * The length constraint limit is for each string in the array. The array itself can be empty.
+     * </p>
+     * </note>
      * 
-     * @return The names of the repositories to get information about.
+     * @return The names of the repositories to get information about.</p> <note>
+     *         <p>
+     *         The length constraint limit is for each string in the array. The array itself can be empty.
+     *         </p>
      */
 
     public java.util.List<String> getRepositoryNames() {
@@ -51,9 +64,17 @@ public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The names of the repositories to get information about.
      * </p>
+     * <note>
+     * <p>
+     * The length constraint limit is for each string in the array. The array itself can be empty.
+     * </p>
+     * </note>
      * 
      * @param repositoryNames
-     *        The names of the repositories to get information about.
+     *        The names of the repositories to get information about.</p> <note>
+     *        <p>
+     *        The length constraint limit is for each string in the array. The array itself can be empty.
+     *        </p>
      */
 
     public void setRepositoryNames(java.util.Collection<String> repositoryNames) {
@@ -69,6 +90,11 @@ public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The names of the repositories to get information about.
      * </p>
+     * <note>
+     * <p>
+     * The length constraint limit is for each string in the array. The array itself can be empty.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRepositoryNames(java.util.Collection)} or {@link #withRepositoryNames(java.util.Collection)} if you
@@ -76,7 +102,10 @@ public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param repositoryNames
-     *        The names of the repositories to get information about.
+     *        The names of the repositories to get information about.</p> <note>
+     *        <p>
+     *        The length constraint limit is for each string in the array. The array itself can be empty.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,9 +123,17 @@ public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The names of the repositories to get information about.
      * </p>
+     * <note>
+     * <p>
+     * The length constraint limit is for each string in the array. The array itself can be empty.
+     * </p>
+     * </note>
      * 
      * @param repositoryNames
-     *        The names of the repositories to get information about.
+     *        The names of the repositories to get information about.</p> <note>
+     *        <p>
+     *        The length constraint limit is for each string in the array. The array itself can be empty.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

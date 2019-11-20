@@ -53,8 +53,8 @@ public class PostCommentForPullRequestRequest extends com.amazonaws.AmazonWebSer
     private String afterCommitId;
     /**
      * <p>
-     * The location of the change where you want to post your comment. If no location is provided, the comment will be
-     * posted as a general comment on the pull request difference between the before commit ID and the after commit ID.
+     * The location of the change where you want to post your comment. If no location is provided, the comment is posted
+     * as a general comment on the pull request difference between the before commit ID and the after commit ID.
      * </p>
      */
     private Location location;
@@ -66,9 +66,9 @@ public class PostCommentForPullRequestRequest extends com.amazonaws.AmazonWebSer
     private String content;
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      */
     private String clientRequestToken;
@@ -247,14 +247,14 @@ public class PostCommentForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The location of the change where you want to post your comment. If no location is provided, the comment will be
-     * posted as a general comment on the pull request difference between the before commit ID and the after commit ID.
+     * The location of the change where you want to post your comment. If no location is provided, the comment is posted
+     * as a general comment on the pull request difference between the before commit ID and the after commit ID.
      * </p>
      * 
      * @param location
-     *        The location of the change where you want to post your comment. If no location is provided, the comment
-     *        will be posted as a general comment on the pull request difference between the before commit ID and the
-     *        after commit ID.
+     *        The location of the change where you want to post your comment. If no location is provided, the comment is
+     *        posted as a general comment on the pull request difference between the before commit ID and the after
+     *        commit ID.
      */
 
     public void setLocation(Location location) {
@@ -263,13 +263,13 @@ public class PostCommentForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The location of the change where you want to post your comment. If no location is provided, the comment will be
-     * posted as a general comment on the pull request difference between the before commit ID and the after commit ID.
+     * The location of the change where you want to post your comment. If no location is provided, the comment is posted
+     * as a general comment on the pull request difference between the before commit ID and the after commit ID.
      * </p>
      * 
      * @return The location of the change where you want to post your comment. If no location is provided, the comment
-     *         will be posted as a general comment on the pull request difference between the before commit ID and the
-     *         after commit ID.
+     *         is posted as a general comment on the pull request difference between the before commit ID and the after
+     *         commit ID.
      */
 
     public Location getLocation() {
@@ -278,14 +278,14 @@ public class PostCommentForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The location of the change where you want to post your comment. If no location is provided, the comment will be
-     * posted as a general comment on the pull request difference between the before commit ID and the after commit ID.
+     * The location of the change where you want to post your comment. If no location is provided, the comment is posted
+     * as a general comment on the pull request difference between the before commit ID and the after commit ID.
      * </p>
      * 
      * @param location
-     *        The location of the change where you want to post your comment. If no location is provided, the comment
-     *        will be posted as a general comment on the pull request difference between the before commit ID and the
-     *        after commit ID.
+     *        The location of the change where you want to post your comment. If no location is provided, the comment is
+     *        posted as a general comment on the pull request difference between the before commit ID and the after
+     *        commit ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,15 +336,15 @@ public class PostCommentForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     *        A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *        included, the request will return information about the initial request that used that token.
+     *        included, the request returns information about the initial request that used that token.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -353,14 +353,14 @@ public class PostCommentForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
-     * @return A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     * @return A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *         be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *         included, the request will return information about the initial request that used that token.
+     *         included, the request returns information about the initial request that used that token.
      */
 
     public String getClientRequestToken() {
@@ -369,15 +369,15 @@ public class PostCommentForPullRequestRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be
+     * A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be
      * repeated with a changed parameter. If a request is received with the same parameters and a token is included, the
-     * request will return information about the initial request that used that token.
+     * request returns information about the initial request that used that token.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, client-generated idempotency token that when provided in a request, ensures the request cannot
+     *        A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot
      *        be repeated with a changed parameter. If a request is received with the same parameters and a token is
-     *        included, the request will return information about the initial request that used that token.
+     *        included, the request returns information about the initial request that used that token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

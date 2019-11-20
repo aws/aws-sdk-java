@@ -82,20 +82,23 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisfirehose.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisfirehose.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisfirehose.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisfirehose.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisfirehose.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisfirehose.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKMSResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisfirehose.model.transform.InvalidKMSResourceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisfirehose.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisfirehose.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException.class));
 
     /**
@@ -307,8 +310,14 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * <p>
      * This is an asynchronous operation that immediately returns. The initial status of the delivery stream is
      * <code>CREATING</code>. After the delivery stream is created, its status is <code>ACTIVE</code> and it now accepts
-     * data. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception.
-     * To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * data. If the delivery stream creation fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to
+     * send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the
+     * state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * </p>
+     * <p>
+     * If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't
+     * invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <a>DeleteDeliveryStream</a>
+     * operation to delete it.
      * </p>
      * <p>
      * A Kinesis Data Firehose delivery stream can be configured to receive records directly from providers using
@@ -316,6 +325,12 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * source. To specify a Kinesis data stream as input, set the <code>DeliveryStreamType</code> parameter to
      * <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the
      * <code>KinesisStreamSourceConfiguration</code> parameter.
+     * </p>
+     * <p>
+     * To create a delivery stream with server-side encryption (SSE) enabled, include
+     * <a>DeliveryStreamEncryptionConfigurationInput</a> in your request. This is optional. You can also invoke
+     * <a>StartDeliveryStreamEncryption</a> to turn on SSE for an existing delivery stream that doesn't have SSE
+     * enabled.
      * </p>
      * <p>
      * A delivery stream is configured with a single destination: Amazon S3, Amazon ES, Amazon Redshift, or Splunk. You
@@ -374,6 +389,11 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         You have already reached the limit for a requested resource.
      * @throws ResourceInUseException
      *         The resource is already in use and not available for this operation.
+     * @throws InvalidKMSResourceException
+     *         Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery
+     *         stream encryption fails. This happens when the KMS service throws one of the following exception types:
+     *         <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>,
+     *         or <code>NotFoundException</code>.
      * @sample AmazonKinesisFirehose.CreateDeliveryStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream" target="_top">AWS
      *      API Documentation</a>
@@ -425,17 +445,15 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * Deletes a delivery stream and its data.
      * </p>
      * <p>
-     * You can delete a delivery stream only if it is in <code>ACTIVE</code> or <code>DELETING</code> state, and not in
-     * the <code>CREATING</code> state. While the deletion request is in process, the delivery stream is in the
-     * <code>DELETING</code> state.
+     * To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>. You can delete a delivery stream only
+     * if it is in one of the following states: <code>ACTIVE</code>, <code>DELETING</code>, <code>CREATING_FAILED</code>
+     * , or <code>DELETING_FAILED</code>. You can't delete a delivery stream that is in the <code>CREATING</code> state.
+     * While the deletion request is in process, the delivery stream is in the <code>DELETING</code> state.
      * </p>
      * <p>
-     * To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.
-     * </p>
-     * <p>
-     * While the delivery stream is <code>DELETING</code> state, the service might continue to accept the records, but
-     * it doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, you should
-     * first stop any applications that are sending records before deleting a delivery stream.
+     * While the delivery stream is in the <code>DELETING</code> state, the service might continue to accept records,
+     * but it doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, first stop
+     * any applications that are sending records before you delete a delivery stream.
      * </p>
      * 
      * @param deleteDeliveryStreamRequest
@@ -492,9 +510,15 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Describes the specified delivery stream and gets the status. For example, after your delivery stream is created,
-     * call <code>DescribeDeliveryStream</code> to see whether the delivery stream is <code>ACTIVE</code> and therefore
-     * ready for data to be sent to it.
+     * Describes the specified delivery stream and its status. For example, after your delivery stream is created, call
+     * <code>DescribeDeliveryStream</code> to see whether the delivery stream is <code>ACTIVE</code> and therefore ready
+     * for data to be sent to it.
+     * </p>
+     * <p>
+     * If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't
+     * invoke <a>CreateDeliveryStream</a> again on it. However, you can invoke the <a>DeleteDeliveryStream</a> operation
+     * to delete it. If the status is <code>DELETING_FAILED</code>, you can force deletion by invoking
+     * <a>DeleteDeliveryStream</a> again but with <a>DeleteDeliveryStreamInput$AllowForceDelete</a> set to true.
      * </p>
      * 
      * @param describeDeliveryStreamRequest
@@ -720,6 +744,11 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         The specified resource could not be found.
      * @throws InvalidArgumentException
      *         The specified input parameter has a value that is not valid.
+     * @throws InvalidKMSResourceException
+     *         Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery
+     *         stream encryption fails. This happens when the KMS service throws one of the following exception types:
+     *         <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>,
+     *         or <code>NotFoundException</code>.
      * @throws ServiceUnavailableException
      *         The service is unavailable. Back off and retry the operation. If you continue to see the exception,
      *         throughput limits for the delivery stream may have been exceeded. For more information about limits and
@@ -845,6 +874,11 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         The specified resource could not be found.
      * @throws InvalidArgumentException
      *         The specified input parameter has a value that is not valid.
+     * @throws InvalidKMSResourceException
+     *         Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery
+     *         stream encryption fails. This happens when the KMS service throws one of the following exception types:
+     *         <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>,
+     *         or <code>NotFoundException</code>.
      * @throws ServiceUnavailableException
      *         The service is unavailable. Back off and retry the operation. If you continue to see the exception,
      *         throughput limits for the delivery stream may have been exceeded. For more information about limits and
@@ -903,14 +937,32 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * </p>
      * <p>
      * This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data Firehose first sets the
-     * status of the stream to <code>ENABLING</code>, and then to <code>ENABLED</code>. You can continue to read and
-     * write data to your stream while its status is <code>ENABLING</code>, but the data is not encrypted. It can take
-     * up to 5 seconds after the encryption status changes to <code>ENABLED</code> before all records written to the
-     * delivery stream are encrypted. To find out whether a record or a batch of records was encrypted, check the
-     * response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.
+     * encryption status of the stream to <code>ENABLING</code>, and then to <code>ENABLED</code>. The encryption status
+     * of a delivery stream is the <code>Status</code> property in <a>DeliveryStreamEncryptionConfiguration</a>. If the
+     * operation fails, the encryption status changes to <code>ENABLING_FAILED</code>. You can continue to read and
+     * write data to your delivery stream while the encryption status is <code>ENABLING</code>, but the data is not
+     * encrypted. It can take up to 5 seconds after the encryption status changes to <code>ENABLED</code> before all
+     * records written to the delivery stream are encrypted. To find out whether a record or a batch of records was
+     * encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and
+     * <a>PutRecordBatchOutput$Encrypted</a>, respectively.
      * </p>
      * <p>
-     * To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * To check the encryption status of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * </p>
+     * <p>
+     * Even if encryption is currently enabled for a delivery stream, you can still invoke this operation on it to
+     * change the ARN of the CMK or both its type and ARN. In this case, Kinesis Data Firehose schedules the grant it
+     * had on the old CMK for retirement and creates a grant that enables it to use the new CMK to encrypt and decrypt
+     * data and to manage the grant.
+     * </p>
+     * <p>
+     * If a delivery stream already has encryption enabled and then you invoke this operation to change the ARN of the
+     * CMK or both its type and ARN and you get <code>ENABLING_FAILED</code>, this only means that the attempt to change
+     * the CMK failed. In this case, encryption remains enabled with the old CMK.
+     * </p>
+     * <p>
+     * If the encryption status of your delivery stream is <code>ENABLING_FAILED</code>, you can invoke this operation
+     * again.
      * </p>
      * <p>
      * You can only enable SSE for a delivery stream that uses <code>DirectPut</code> as its source.
@@ -932,6 +984,11 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         The specified input parameter has a value that is not valid.
      * @throws LimitExceededException
      *         You have already reached the limit for a requested resource.
+     * @throws InvalidKMSResourceException
+     *         Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery
+     *         stream encryption fails. This happens when the KMS service throws one of the following exception types:
+     *         <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>,
+     *         or <code>NotFoundException</code>.
      * @sample AmazonKinesisFirehose.StartDeliveryStreamEncryption
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption"
      *      target="_top">AWS API Documentation</a>
@@ -986,14 +1043,19 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * </p>
      * <p>
      * This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data Firehose first sets the
-     * status of the stream to <code>DISABLING</code>, and then to <code>DISABLED</code>. You can continue to read and
-     * write data to your stream while its status is <code>DISABLING</code>. It can take up to 5 seconds after the
-     * encryption status changes to <code>DISABLED</code> before all records written to the delivery stream are no
+     * encryption status of the stream to <code>DISABLING</code>, and then to <code>DISABLED</code>. You can continue to
+     * read and write data to your stream while its status is <code>DISABLING</code>. It can take up to 5 seconds after
+     * the encryption status changes to <code>DISABLED</code> before all records written to the delivery stream are no
      * longer subject to encryption. To find out whether a record or a batch of records was encrypted, check the
      * response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.
      * </p>
      * <p>
      * To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * </p>
+     * <p>
+     * If SSE is enabled using a customer managed CMK and then you invoke <code>StopDeliveryStreamEncryption</code>,
+     * Kinesis Data Firehose schedules the related KMS grant for retirement and then retires it after it ensures that it
+     * is finished delivering records to the destination.
      * </p>
      * <p>
      * The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a

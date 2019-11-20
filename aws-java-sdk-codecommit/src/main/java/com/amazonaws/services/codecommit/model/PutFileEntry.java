@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a file that will be added or updated as part of a commit.
+ * Information about a file added or updated as part of a commit.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFileEntry" target="_top">AWS API

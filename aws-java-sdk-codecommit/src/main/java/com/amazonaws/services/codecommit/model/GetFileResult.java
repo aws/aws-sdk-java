@@ -37,7 +37,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     private String blobId;
     /**
      * <p>
-     * The fully qualified path to the specified file. This returns the name and extension of the file.
+     * The fully qualified path to the specified file. Returns the name and extension of the file.
      * </p>
      */
     private String filePath;
@@ -49,7 +49,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <note>
      * <p>
      * The file mode permissions returned by this API are not the standard file mode permission values, such as 100644,
-     * but rather extrapolated values. See below for a full list of supported return values.
+     * but rather extrapolated values. See the supported return values.
      * </p>
      * </note>
      */
@@ -149,11 +149,11 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The fully qualified path to the specified file. This returns the name and extension of the file.
+     * The fully qualified path to the specified file. Returns the name and extension of the file.
      * </p>
      * 
      * @param filePath
-     *        The fully qualified path to the specified file. This returns the name and extension of the file.
+     *        The fully qualified path to the specified file. Returns the name and extension of the file.
      */
 
     public void setFilePath(String filePath) {
@@ -162,10 +162,10 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The fully qualified path to the specified file. This returns the name and extension of the file.
+     * The fully qualified path to the specified file. Returns the name and extension of the file.
      * </p>
      * 
-     * @return The fully qualified path to the specified file. This returns the name and extension of the file.
+     * @return The fully qualified path to the specified file. Returns the name and extension of the file.
      */
 
     public String getFilePath() {
@@ -174,11 +174,11 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The fully qualified path to the specified file. This returns the name and extension of the file.
+     * The fully qualified path to the specified file. Returns the name and extension of the file.
      * </p>
      * 
      * @param filePath
-     *        The fully qualified path to the specified file. This returns the name and extension of the file.
+     *        The fully qualified path to the specified file. Returns the name and extension of the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,7 +195,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <note>
      * <p>
      * The file mode permissions returned by this API are not the standard file mode permission values, such as 100644,
-     * but rather extrapolated values. See below for a full list of supported return values.
+     * but rather extrapolated values. See the supported return values.
      * </p>
      * </note>
      * 
@@ -204,7 +204,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        not numeric values.</p> <note>
      *        <p>
      *        The file mode permissions returned by this API are not the standard file mode permission values, such as
-     *        100644, but rather extrapolated values. See below for a full list of supported return values.
+     *        100644, but rather extrapolated values. See the supported return values.
      *        </p>
      * @see FileModeTypeEnum
      */
@@ -221,7 +221,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <note>
      * <p>
      * The file mode permissions returned by this API are not the standard file mode permission values, such as 100644,
-     * but rather extrapolated values. See below for a full list of supported return values.
+     * but rather extrapolated values. See the supported return values.
      * </p>
      * </note>
      * 
@@ -229,7 +229,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *         not numeric values.</p> <note>
      *         <p>
      *         The file mode permissions returned by this API are not the standard file mode permission values, such as
-     *         100644, but rather extrapolated values. See below for a full list of supported return values.
+     *         100644, but rather extrapolated values. See the supported return values.
      *         </p>
      * @see FileModeTypeEnum
      */
@@ -246,7 +246,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <note>
      * <p>
      * The file mode permissions returned by this API are not the standard file mode permission values, such as 100644,
-     * but rather extrapolated values. See below for a full list of supported return values.
+     * but rather extrapolated values. See the supported return values.
      * </p>
      * </note>
      * 
@@ -255,7 +255,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        not numeric values.</p> <note>
      *        <p>
      *        The file mode permissions returned by this API are not the standard file mode permission values, such as
-     *        100644, but rather extrapolated values. See below for a full list of supported return values.
+     *        100644, but rather extrapolated values. See the supported return values.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileModeTypeEnum
@@ -274,7 +274,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <note>
      * <p>
      * The file mode permissions returned by this API are not the standard file mode permission values, such as 100644,
-     * but rather extrapolated values. See below for a full list of supported return values.
+     * but rather extrapolated values. See the supported return values.
      * </p>
      * </note>
      * 
@@ -283,7 +283,7 @@ public class GetFileResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        not numeric values.</p> <note>
      *        <p>
      *        The file mode permissions returned by this API are not the standard file mode permission values, such as
-     *        100644, but rather extrapolated values. See below for a full list of supported return values.
+     *        100644, but rather extrapolated values. See the supported return values.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileModeTypeEnum

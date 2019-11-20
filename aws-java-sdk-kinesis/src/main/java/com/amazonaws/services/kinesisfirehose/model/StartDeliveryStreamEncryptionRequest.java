@@ -31,6 +31,12 @@ public class StartDeliveryStreamEncryptionRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String deliveryStreamName;
+    /**
+     * <p>
+     * Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+     * </p>
+     */
+    private DeliveryStreamEncryptionConfigurationInput deliveryStreamEncryptionConfigurationInput;
 
     /**
      * <p>
@@ -73,6 +79,50 @@ public class StartDeliveryStreamEncryptionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+     * </p>
+     * 
+     * @param deliveryStreamEncryptionConfigurationInput
+     *        Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption
+     *        (SSE).
+     */
+
+    public void setDeliveryStreamEncryptionConfigurationInput(DeliveryStreamEncryptionConfigurationInput deliveryStreamEncryptionConfigurationInput) {
+        this.deliveryStreamEncryptionConfigurationInput = deliveryStreamEncryptionConfigurationInput;
+    }
+
+    /**
+     * <p>
+     * Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+     * </p>
+     * 
+     * @return Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption
+     *         (SSE).
+     */
+
+    public DeliveryStreamEncryptionConfigurationInput getDeliveryStreamEncryptionConfigurationInput() {
+        return this.deliveryStreamEncryptionConfigurationInput;
+    }
+
+    /**
+     * <p>
+     * Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+     * </p>
+     * 
+     * @param deliveryStreamEncryptionConfigurationInput
+     *        Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption
+     *        (SSE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartDeliveryStreamEncryptionRequest withDeliveryStreamEncryptionConfigurationInput(
+            DeliveryStreamEncryptionConfigurationInput deliveryStreamEncryptionConfigurationInput) {
+        setDeliveryStreamEncryptionConfigurationInput(deliveryStreamEncryptionConfigurationInput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +135,9 @@ public class StartDeliveryStreamEncryptionRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName());
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
+        if (getDeliveryStreamEncryptionConfigurationInput() != null)
+            sb.append("DeliveryStreamEncryptionConfigurationInput: ").append(getDeliveryStreamEncryptionConfigurationInput());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +156,11 @@ public class StartDeliveryStreamEncryptionRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getDeliveryStreamName() != null && other.getDeliveryStreamName().equals(this.getDeliveryStreamName()) == false)
             return false;
+        if (other.getDeliveryStreamEncryptionConfigurationInput() == null ^ this.getDeliveryStreamEncryptionConfigurationInput() == null)
+            return false;
+        if (other.getDeliveryStreamEncryptionConfigurationInput() != null
+                && other.getDeliveryStreamEncryptionConfigurationInput().equals(this.getDeliveryStreamEncryptionConfigurationInput()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +170,8 @@ public class StartDeliveryStreamEncryptionRequest extends com.amazonaws.AmazonWe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
+        hashCode = prime * hashCode
+                + ((getDeliveryStreamEncryptionConfigurationInput() == null) ? 0 : getDeliveryStreamEncryptionConfigurationInput().hashCode());
         return hashCode;
     }
 

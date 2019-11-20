@@ -25,10 +25,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTrailsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The token to use to get the next page of results after a previous API call. This token must be passed in with the
+     * same parameters that were specified in the the original call. For example, if the original call specified an
+     * AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The token to use to get the next page of results after a previous API call. This token must be passed in with the
+     * same parameters that were specified in the the original call. For example, if the original call specified an
+     * AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to use to get the next page of results after a previous API call. This token must be passed in
+     *        with the same parameters that were specified in the the original call. For example, if the original call
+     *        specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include
+     *        those same parameters.
      */
 
     public void setNextToken(String nextToken) {
@@ -36,7 +53,16 @@ public class ListTrailsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * The token to use to get the next page of results after a previous API call. This token must be passed in with the
+     * same parameters that were specified in the the original call. For example, if the original call specified an
+     * AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.
+     * </p>
+     * 
+     * @return The token to use to get the next page of results after a previous API call. This token must be passed in
+     *         with the same parameters that were specified in the the original call. For example, if the original call
+     *         specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include
+     *         those same parameters.
      */
 
     public String getNextToken() {
@@ -44,7 +70,17 @@ public class ListTrailsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The token to use to get the next page of results after a previous API call. This token must be passed in with the
+     * same parameters that were specified in the the original call. For example, if the original call specified an
+     * AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to use to get the next page of results after a previous API call. This token must be passed in
+     *        with the same parameters that were specified in the the original call. For example, if the original call
+     *        specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include
+     *        those same parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

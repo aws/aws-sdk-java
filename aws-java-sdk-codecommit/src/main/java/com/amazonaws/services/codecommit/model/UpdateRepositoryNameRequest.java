@@ -30,7 +30,7 @@ public class UpdateRepositoryNameRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The existing name of the repository.
+     * The current name of the repository.
      * </p>
      */
     private String oldName;
@@ -43,11 +43,11 @@ public class UpdateRepositoryNameRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The existing name of the repository.
+     * The current name of the repository.
      * </p>
      * 
      * @param oldName
-     *        The existing name of the repository.
+     *        The current name of the repository.
      */
 
     public void setOldName(String oldName) {
@@ -56,10 +56,10 @@ public class UpdateRepositoryNameRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The existing name of the repository.
+     * The current name of the repository.
      * </p>
      * 
-     * @return The existing name of the repository.
+     * @return The current name of the repository.
      */
 
     public String getOldName() {
@@ -68,11 +68,11 @@ public class UpdateRepositoryNameRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The existing name of the repository.
+     * The current name of the repository.
      * </p>
      * 
      * @param oldName
-     *        The existing name of the repository.
+     *        The current name of the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

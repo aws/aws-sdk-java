@@ -132,6 +132,12 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     private Boolean hasCustomEventSelectors;
     /**
      * <p>
+     * Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     * </p>
+     */
+    private Boolean hasInsightSelectors;
+    /**
+     * <p>
      * Specifies whether the trail is an organization trail.
      * </p>
      */
@@ -842,6 +848,58 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     * </p>
+     * 
+     * @param hasInsightSelectors
+     *        Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     */
+
+    public void setHasInsightSelectors(Boolean hasInsightSelectors) {
+        this.hasInsightSelectors = hasInsightSelectors;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     * </p>
+     * 
+     * @return Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     */
+
+    public Boolean getHasInsightSelectors() {
+        return this.hasInsightSelectors;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     * </p>
+     * 
+     * @param hasInsightSelectors
+     *        Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Trail withHasInsightSelectors(Boolean hasInsightSelectors) {
+        setHasInsightSelectors(hasInsightSelectors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     * </p>
+     * 
+     * @return Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.
+     */
+
+    public Boolean isHasInsightSelectors() {
+        return this.hasInsightSelectors;
+    }
+
+    /**
+     * <p>
      * Specifies whether the trail is an organization trail.
      * </p>
      * 
@@ -932,6 +990,8 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getHasCustomEventSelectors() != null)
             sb.append("HasCustomEventSelectors: ").append(getHasCustomEventSelectors()).append(",");
+        if (getHasInsightSelectors() != null)
+            sb.append("HasInsightSelectors: ").append(getHasInsightSelectors()).append(",");
         if (getIsOrganizationTrail() != null)
             sb.append("IsOrganizationTrail: ").append(getIsOrganizationTrail());
         sb.append("}");
@@ -1004,6 +1064,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHasCustomEventSelectors() != null && other.getHasCustomEventSelectors().equals(this.getHasCustomEventSelectors()) == false)
             return false;
+        if (other.getHasInsightSelectors() == null ^ this.getHasInsightSelectors() == null)
+            return false;
+        if (other.getHasInsightSelectors() != null && other.getHasInsightSelectors().equals(this.getHasInsightSelectors()) == false)
+            return false;
         if (other.getIsOrganizationTrail() == null ^ this.getIsOrganizationTrail() == null)
             return false;
         if (other.getIsOrganizationTrail() != null && other.getIsOrganizationTrail().equals(this.getIsOrganizationTrail()) == false)
@@ -1030,6 +1094,7 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getHasCustomEventSelectors() == null) ? 0 : getHasCustomEventSelectors().hashCode());
+        hashCode = prime * hashCode + ((getHasInsightSelectors() == null) ? 0 : getHasInsightSelectors().hashCode());
         hashCode = prime * hashCode + ((getIsOrganizationTrail() == null) ? 0 : getIsOrganizationTrail().hashCode());
         return hashCode;
     }

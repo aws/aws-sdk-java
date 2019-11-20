@@ -48,9 +48,21 @@ public class DeliveryStreamEncryptionConfigurationJsonUnmarshaller implements Un
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("KeyARN", targetDepth)) {
+                    context.nextToken();
+                    deliveryStreamEncryptionConfiguration.setKeyARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KeyType", targetDepth)) {
+                    context.nextToken();
+                    deliveryStreamEncryptionConfiguration.setKeyType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     deliveryStreamEncryptionConfiguration.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FailureDescription", targetDepth)) {
+                    context.nextToken();
+                    deliveryStreamEncryptionConfiguration.setFailureDescription(FailureDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

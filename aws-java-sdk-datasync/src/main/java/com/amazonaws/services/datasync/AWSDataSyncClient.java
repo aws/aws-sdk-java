@@ -464,7 +464,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Defines a file system on an Server Message Block (SMB) server that can be read from or written to
+     * Defines a file system on an Server Message Block (SMB) server that can be read from or written to.
      * </p>
      * 
      * @param createLocationSmbRequest

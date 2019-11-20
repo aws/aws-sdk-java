@@ -33,7 +33,8 @@ public class DisassociateCreatedArtifactRequest extends com.amazonaws.AmazonWebS
     private String progressUpdateStream;
     /**
      * <p>
-     * Unique identifier that references the migration task to be disassociated with the artifact.
+     * Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store
+     * personal data in this field.</i>
      * </p>
      */
     private String migrationTaskName;
@@ -93,11 +94,13 @@ public class DisassociateCreatedArtifactRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique identifier that references the migration task to be disassociated with the artifact.
+     * Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store
+     * personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task to be disassociated with the artifact.
+     *        Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not
+     *        store personal data in this field.</i>
      */
 
     public void setMigrationTaskName(String migrationTaskName) {
@@ -106,10 +109,12 @@ public class DisassociateCreatedArtifactRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique identifier that references the migration task to be disassociated with the artifact.
+     * Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store
+     * personal data in this field.</i>
      * </p>
      * 
-     * @return Unique identifier that references the migration task to be disassociated with the artifact.
+     * @return Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not
+     *         store personal data in this field.</i>
      */
 
     public String getMigrationTaskName() {
@@ -118,11 +123,13 @@ public class DisassociateCreatedArtifactRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique identifier that references the migration task to be disassociated with the artifact.
+     * Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store
+     * personal data in this field.</i>
      * </p>
      * 
      * @param migrationTaskName
-     *        Unique identifier that references the migration task to be disassociated with the artifact.
+     *        Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not
+     *        store personal data in this field.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

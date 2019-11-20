@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * At least one branch name is required but was not specified in the trigger configuration.
+ * At least one branch name is required, but was not specified in the trigger configuration.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

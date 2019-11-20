@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum DeliveryStreamStatus {
 
     CREATING("CREATING"),
+    CREATING_FAILED("CREATING_FAILED"),
     DELETING("DELETING"),
+    DELETING_FAILED("DELETING_FAILED"),
     ACTIVE("ACTIVE");
 
     private String value;

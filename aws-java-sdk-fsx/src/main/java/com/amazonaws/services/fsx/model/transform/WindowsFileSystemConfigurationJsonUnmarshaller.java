@@ -57,6 +57,22 @@ public class WindowsFileSystemConfigurationJsonUnmarshaller implements Unmarshal
                     windowsFileSystemConfiguration.setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeploymentType", targetDepth)) {
+                    context.nextToken();
+                    windowsFileSystemConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RemoteAdministrationEndpoint", targetDepth)) {
+                    context.nextToken();
+                    windowsFileSystemConfiguration.setRemoteAdministrationEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredSubnetId", targetDepth)) {
+                    context.nextToken();
+                    windowsFileSystemConfiguration.setPreferredSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredFileServerIp", targetDepth)) {
+                    context.nextToken();
+                    windowsFileSystemConfiguration.setPreferredFileServerIp(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ThroughputCapacity", targetDepth)) {
                     context.nextToken();
                     windowsFileSystemConfiguration.setThroughputCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));

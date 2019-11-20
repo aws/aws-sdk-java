@@ -33,16 +33,16 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String repositoryName;
     /**
      * <p>
-     * The fully-quaified reference that identifies the commit that contains the file. For example, you could specify a
-     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, then the
-     * head commit will be used.
+     * The fully quaified reference that identifies the commit that contains the file. For example, you can specify a
+     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head
+     * commit is used.
      * </p>
      */
     private String commitSpecifier;
     /**
      * <p>
-     * The fully-qualified path to the file, including the full name and extension of the file. For example,
-     * /examples/file.md is the fully-qualified path to a file named file.md in a folder named examples.
+     * The fully qualified path to the file, including the full name and extension of the file. For example,
+     * /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.
      * </p>
      */
     private String filePath;
@@ -89,15 +89,15 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The fully-quaified reference that identifies the commit that contains the file. For example, you could specify a
-     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, then the
-     * head commit will be used.
+     * The fully quaified reference that identifies the commit that contains the file. For example, you can specify a
+     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head
+     * commit is used.
      * </p>
      * 
      * @param commitSpecifier
-     *        The fully-quaified reference that identifies the commit that contains the file. For example, you could
+     *        The fully quaified reference that identifies the commit that contains the file. For example, you can
      *        specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is
-     *        provided, then the head commit will be used.
+     *        provided, the head commit is used.
      */
 
     public void setCommitSpecifier(String commitSpecifier) {
@@ -106,14 +106,14 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The fully-quaified reference that identifies the commit that contains the file. For example, you could specify a
-     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, then the
-     * head commit will be used.
+     * The fully quaified reference that identifies the commit that contains the file. For example, you can specify a
+     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head
+     * commit is used.
      * </p>
      * 
-     * @return The fully-quaified reference that identifies the commit that contains the file. For example, you could
+     * @return The fully quaified reference that identifies the commit that contains the file. For example, you can
      *         specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is
-     *         provided, then the head commit will be used.
+     *         provided, the head commit is used.
      */
 
     public String getCommitSpecifier() {
@@ -122,15 +122,15 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The fully-quaified reference that identifies the commit that contains the file. For example, you could specify a
-     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, then the
-     * head commit will be used.
+     * The fully quaified reference that identifies the commit that contains the file. For example, you can specify a
+     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head
+     * commit is used.
      * </p>
      * 
      * @param commitSpecifier
-     *        The fully-quaified reference that identifies the commit that contains the file. For example, you could
+     *        The fully quaified reference that identifies the commit that contains the file. For example, you can
      *        specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is
-     *        provided, then the head commit will be used.
+     *        provided, the head commit is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,13 +141,13 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The fully-qualified path to the file, including the full name and extension of the file. For example,
-     * /examples/file.md is the fully-qualified path to a file named file.md in a folder named examples.
+     * The fully qualified path to the file, including the full name and extension of the file. For example,
+     * /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.
      * </p>
      * 
      * @param filePath
-     *        The fully-qualified path to the file, including the full name and extension of the file. For example,
-     *        /examples/file.md is the fully-qualified path to a file named file.md in a folder named examples.
+     *        The fully qualified path to the file, including the full name and extension of the file. For example,
+     *        /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.
      */
 
     public void setFilePath(String filePath) {
@@ -156,12 +156,12 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The fully-qualified path to the file, including the full name and extension of the file. For example,
-     * /examples/file.md is the fully-qualified path to a file named file.md in a folder named examples.
+     * The fully qualified path to the file, including the full name and extension of the file. For example,
+     * /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.
      * </p>
      * 
-     * @return The fully-qualified path to the file, including the full name and extension of the file. For example,
-     *         /examples/file.md is the fully-qualified path to a file named file.md in a folder named examples.
+     * @return The fully qualified path to the file, including the full name and extension of the file. For example,
+     *         /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.
      */
 
     public String getFilePath() {
@@ -170,13 +170,13 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The fully-qualified path to the file, including the full name and extension of the file. For example,
-     * /examples/file.md is the fully-qualified path to a file named file.md in a folder named examples.
+     * The fully qualified path to the file, including the full name and extension of the file. For example,
+     * /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.
      * </p>
      * 
      * @param filePath
-     *        The fully-qualified path to the file, including the full name and extension of the file. For example,
-     *        /examples/file.md is the fully-qualified path to a file named file.md in a folder named examples.
+     *        The fully qualified path to the file, including the full name and extension of the file. For example,
+     *        /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,6 +34,8 @@ public class DeliveryStreamDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamARN").build();
     private static final MarshallingInfo<String> DELIVERYSTREAMSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamStatus").build();
+    private static final MarshallingInfo<StructuredPojo> FAILUREDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureDescription").build();
     private static final MarshallingInfo<StructuredPojo> DELIVERYSTREAMENCRYPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamEncryptionConfiguration").build();
     private static final MarshallingInfo<String> DELIVERYSTREAMTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -70,6 +72,7 @@ public class DeliveryStreamDescriptionMarshaller {
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamARN(), DELIVERYSTREAMARN_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamStatus(), DELIVERYSTREAMSTATUS_BINDING);
+            protocolMarshaller.marshall(deliveryStreamDescription.getFailureDescription(), FAILUREDESCRIPTION_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamEncryptionConfiguration(), DELIVERYSTREAMENCRYPTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamType(), DELIVERYSTREAMTYPE_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getVersionId(), VERSIONID_BINDING);

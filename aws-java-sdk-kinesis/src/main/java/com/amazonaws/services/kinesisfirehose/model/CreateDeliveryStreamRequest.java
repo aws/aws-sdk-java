@@ -61,6 +61,12 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     private KinesisStreamSourceConfiguration kinesisStreamSourceConfiguration;
     /**
      * <p>
+     * Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+     * </p>
+     */
+    private DeliveryStreamEncryptionConfigurationInput deliveryStreamEncryptionConfigurationInput;
+    /**
+     * <p>
      * [Deprecated] The destination in Amazon S3. You can specify only one destination.
      * </p>
      */
@@ -356,6 +362,50 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     public CreateDeliveryStreamRequest withKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration kinesisStreamSourceConfiguration) {
         setKinesisStreamSourceConfiguration(kinesisStreamSourceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+     * </p>
+     * 
+     * @param deliveryStreamEncryptionConfigurationInput
+     *        Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption
+     *        (SSE).
+     */
+
+    public void setDeliveryStreamEncryptionConfigurationInput(DeliveryStreamEncryptionConfigurationInput deliveryStreamEncryptionConfigurationInput) {
+        this.deliveryStreamEncryptionConfigurationInput = deliveryStreamEncryptionConfigurationInput;
+    }
+
+    /**
+     * <p>
+     * Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+     * </p>
+     * 
+     * @return Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption
+     *         (SSE).
+     */
+
+    public DeliveryStreamEncryptionConfigurationInput getDeliveryStreamEncryptionConfigurationInput() {
+        return this.deliveryStreamEncryptionConfigurationInput;
+    }
+
+    /**
+     * <p>
+     * Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).
+     * </p>
+     * 
+     * @param deliveryStreamEncryptionConfigurationInput
+     *        Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption
+     *        (SSE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withDeliveryStreamEncryptionConfigurationInput(
+            DeliveryStreamEncryptionConfigurationInput deliveryStreamEncryptionConfigurationInput) {
+        setDeliveryStreamEncryptionConfigurationInput(deliveryStreamEncryptionConfigurationInput);
         return this;
     }
 
@@ -699,6 +749,8 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("DeliveryStreamType: ").append(getDeliveryStreamType()).append(",");
         if (getKinesisStreamSourceConfiguration() != null)
             sb.append("KinesisStreamSourceConfiguration: ").append(getKinesisStreamSourceConfiguration()).append(",");
+        if (getDeliveryStreamEncryptionConfigurationInput() != null)
+            sb.append("DeliveryStreamEncryptionConfigurationInput: ").append(getDeliveryStreamEncryptionConfigurationInput()).append(",");
         if (getS3DestinationConfiguration() != null)
             sb.append("S3DestinationConfiguration: ").append(getS3DestinationConfiguration()).append(",");
         if (getExtendedS3DestinationConfiguration() != null)
@@ -737,6 +789,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getKinesisStreamSourceConfiguration() != null
                 && other.getKinesisStreamSourceConfiguration().equals(this.getKinesisStreamSourceConfiguration()) == false)
+            return false;
+        if (other.getDeliveryStreamEncryptionConfigurationInput() == null ^ this.getDeliveryStreamEncryptionConfigurationInput() == null)
+            return false;
+        if (other.getDeliveryStreamEncryptionConfigurationInput() != null
+                && other.getDeliveryStreamEncryptionConfigurationInput().equals(this.getDeliveryStreamEncryptionConfigurationInput()) == false)
             return false;
         if (other.getS3DestinationConfiguration() == null ^ this.getS3DestinationConfiguration() == null)
             return false;
@@ -777,6 +834,8 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
         hashCode = prime * hashCode + ((getDeliveryStreamType() == null) ? 0 : getDeliveryStreamType().hashCode());
         hashCode = prime * hashCode + ((getKinesisStreamSourceConfiguration() == null) ? 0 : getKinesisStreamSourceConfiguration().hashCode());
+        hashCode = prime * hashCode
+                + ((getDeliveryStreamEncryptionConfigurationInput() == null) ? 0 : getDeliveryStreamEncryptionConfigurationInput().hashCode());
         hashCode = prime * hashCode + ((getS3DestinationConfiguration() == null) ? 0 : getS3DestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getExtendedS3DestinationConfiguration() == null) ? 0 : getExtendedS3DestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRedshiftDestinationConfiguration() == null) ? 0 : getRedshiftDestinationConfiguration().hashCode());

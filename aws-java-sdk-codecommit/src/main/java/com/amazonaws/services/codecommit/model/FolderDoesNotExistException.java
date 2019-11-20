@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified folder does not exist. Either the folder name is not correct, or you did not provide the full path to
- * the folder.
+ * The specified folder does not exist. Either the folder name is not correct, or you did not enter the full path to the
+ * folder.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

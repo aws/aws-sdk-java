@@ -39,6 +39,12 @@ public class Failure implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String reason;
+    /**
+     * <p>
+     * The details of the failure.
+     * </p>
+     */
+    private String detail;
 
     /**
      * <p>
@@ -121,6 +127,46 @@ public class Failure implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The details of the failure.
+     * </p>
+     * 
+     * @param detail
+     *        The details of the failure.
+     */
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    /**
+     * <p>
+     * The details of the failure.
+     * </p>
+     * 
+     * @return The details of the failure.
+     */
+
+    public String getDetail() {
+        return this.detail;
+    }
+
+    /**
+     * <p>
+     * The details of the failure.
+     * </p>
+     * 
+     * @param detail
+     *        The details of the failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Failure withDetail(String detail) {
+        setDetail(detail);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -135,7 +181,9 @@ public class Failure implements Serializable, Cloneable, StructuredPojo {
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getReason() != null)
-            sb.append("Reason: ").append(getReason());
+            sb.append("Reason: ").append(getReason()).append(",");
+        if (getDetail() != null)
+            sb.append("Detail: ").append(getDetail());
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +206,10 @@ public class Failure implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
+        if (other.getDetail() == null ^ this.getDetail() == null)
+            return false;
+        if (other.getDetail() != null && other.getDetail().equals(this.getDetail()) == false)
+            return false;
         return true;
     }
 
@@ -168,6 +220,7 @@ public class Failure implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getDetail() == null) ? 0 : getDetail().hashCode());
         return hashCode;
     }
 

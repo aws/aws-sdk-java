@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The source branch and the destination branch for the pull request are the same. You must specify different branches
- * for the source and destination.
+ * The source branch and destination branch for the pull request are the same. You must specify different branches for
+ * the source and destination.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -36,7 +36,7 @@ public class RepositoryTriggerExecutionFailure implements Serializable, Cloneabl
     private String trigger;
     /**
      * <p>
-     * Additional message information about the trigger that did not run.
+     * Message information about the trigger that did not run.
      * </p>
      */
     private String failureMessage;
@@ -83,11 +83,11 @@ public class RepositoryTriggerExecutionFailure implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Additional message information about the trigger that did not run.
+     * Message information about the trigger that did not run.
      * </p>
      * 
      * @param failureMessage
-     *        Additional message information about the trigger that did not run.
+     *        Message information about the trigger that did not run.
      */
 
     public void setFailureMessage(String failureMessage) {
@@ -96,10 +96,10 @@ public class RepositoryTriggerExecutionFailure implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Additional message information about the trigger that did not run.
+     * Message information about the trigger that did not run.
      * </p>
      * 
-     * @return Additional message information about the trigger that did not run.
+     * @return Message information about the trigger that did not run.
      */
 
     public String getFailureMessage() {
@@ -108,11 +108,11 @@ public class RepositoryTriggerExecutionFailure implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Additional message information about the trigger that did not run.
+     * Message information about the trigger that did not run.
      * </p>
      * 
      * @param failureMessage
-     *        Additional message information about the trigger that did not run.
+     *        Message information about the trigger that did not run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

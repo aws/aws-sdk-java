@@ -46,18 +46,23 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * The storage capacity of the file system being created.
      * </p>
      * <p>
-     * For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
+     * For Windows file systems, valid values are 32 GiB - 65,536 GiB.
      * </p>
      * <p>
-     * For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned in
-     * increments of 3,600 GiB.
+     * For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of 3600 GiB.
      * </p>
      */
     private Integer storageCapacity;
     /**
      * <p>
-     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
-     * file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standy file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide exactly one
+     * subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      */
     private java.util.List<String> subnetIds;
@@ -200,21 +205,19 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * The storage capacity of the file system being created.
      * </p>
      * <p>
-     * For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
+     * For Windows file systems, valid values are 32 GiB - 65,536 GiB.
      * </p>
      * <p>
-     * For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned in
-     * increments of 3,600 GiB.
+     * For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of 3600 GiB.
      * </p>
      * 
      * @param storageCapacity
      *        The storage capacity of the file system being created.</p>
      *        <p>
-     *        For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
+     *        For Windows file systems, valid values are 32 GiB - 65,536 GiB.
      *        </p>
      *        <p>
-     *        For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned
-     *        in increments of 3,600 GiB.
+     *        For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of 3600 GiB.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -226,20 +229,18 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * The storage capacity of the file system being created.
      * </p>
      * <p>
-     * For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
+     * For Windows file systems, valid values are 32 GiB - 65,536 GiB.
      * </p>
      * <p>
-     * For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned in
-     * increments of 3,600 GiB.
+     * For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of 3600 GiB.
      * </p>
      * 
      * @return The storage capacity of the file system being created.</p>
      *         <p>
-     *         For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
+     *         For Windows file systems, valid values are 32 GiB - 65,536 GiB.
      *         </p>
      *         <p>
-     *         For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned
-     *         in increments of 3,600 GiB.
+     *         For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of 3600 GiB.
      */
 
     public Integer getStorageCapacity() {
@@ -251,21 +252,19 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * The storage capacity of the file system being created.
      * </p>
      * <p>
-     * For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
+     * For Windows file systems, valid values are 32 GiB - 65,536 GiB.
      * </p>
      * <p>
-     * For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned in
-     * increments of 3,600 GiB.
+     * For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of 3600 GiB.
      * </p>
      * 
      * @param storageCapacity
      *        The storage capacity of the file system being created.</p>
      *        <p>
-     *        For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
+     *        For Windows file systems, valid values are 32 GiB - 65,536 GiB.
      *        </p>
      *        <p>
-     *        For Lustre file systems, the storage capacity has a minimum of 3,600 GiB. Storage capacity is provisioned
-     *        in increments of 3,600 GiB.
+     *        For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of 3600 GiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,12 +275,23 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
-     * file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standy file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide exactly one
+     * subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      * 
-     * @return The IDs of the subnets that the file system will be accessible from. File systems support only one
-     *         subnet. The file server is also launched in that subnet's Availability Zone.
+     * @return Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     *         <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
+     *         preferred file server and one for the standy file server. You specify one of these subnets as the
+     *         preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *         <p>
+     *         For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide
+     *         exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -290,13 +300,24 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
-     * file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standy file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide exactly one
+     * subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      * 
      * @param subnetIds
-     *        The IDs of the subnets that the file system will be accessible from. File systems support only one subnet.
-     *        The file server is also launched in that subnet's Availability Zone.
+     *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
+     *        preferred file server and one for the standy file server. You specify one of these subnets as the
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        <p>
+     *        For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide exactly
+     *        one subnet ID. The file server is launched in that subnet's Availability Zone.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -310,8 +331,14 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
-     * file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standy file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide exactly one
+     * subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -320,8 +347,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param subnetIds
-     *        The IDs of the subnets that the file system will be accessible from. File systems support only one subnet.
-     *        The file server is also launched in that subnet's Availability Zone.
+     *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
+     *        preferred file server and one for the standy file server. You specify one of these subnets as the
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        <p>
+     *        For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide exactly
+     *        one subnet ID. The file server is launched in that subnet's Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,13 +369,24 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of the subnets that the file system will be accessible from. File systems support only one subnet. The
-     * file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standy file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide exactly one
+     * subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      * 
      * @param subnetIds
-     *        The IDs of the subnets that the file system will be accessible from. File systems support only one subnet.
-     *        The file server is also launched in that subnet's Availability Zone.
+     *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
+     *        preferred file server and one for the standy file server. You specify one of these subnets as the
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        <p>
+     *        For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file systems, provide exactly
+     *        one subnet ID. The file server is launched in that subnet's Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

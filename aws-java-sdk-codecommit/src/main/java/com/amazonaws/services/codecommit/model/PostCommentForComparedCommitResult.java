@@ -31,25 +31,25 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
     private String repositoryName;
     /**
      * <p>
-     * In the directionality you established, the full commit ID of the 'before' commit.
+     * In the directionality you established, the full commit ID of the before commit.
      * </p>
      */
     private String beforeCommitId;
     /**
      * <p>
-     * In the directionality you established, the full commit ID of the 'after' commit.
+     * In the directionality you established, the full commit ID of the after commit.
      * </p>
      */
     private String afterCommitId;
     /**
      * <p>
-     * In the directionality you established, the blob ID of the 'before' blob.
+     * In the directionality you established, the blob ID of the before blob.
      * </p>
      */
     private String beforeBlobId;
     /**
      * <p>
-     * In the directionality you established, the blob ID of the 'after' blob.
+     * In the directionality you established, the blob ID of the after blob.
      * </p>
      */
     private String afterBlobId;
@@ -108,11 +108,11 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the full commit ID of the 'before' commit.
+     * In the directionality you established, the full commit ID of the before commit.
      * </p>
      * 
      * @param beforeCommitId
-     *        In the directionality you established, the full commit ID of the 'before' commit.
+     *        In the directionality you established, the full commit ID of the before commit.
      */
 
     public void setBeforeCommitId(String beforeCommitId) {
@@ -121,10 +121,10 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the full commit ID of the 'before' commit.
+     * In the directionality you established, the full commit ID of the before commit.
      * </p>
      * 
-     * @return In the directionality you established, the full commit ID of the 'before' commit.
+     * @return In the directionality you established, the full commit ID of the before commit.
      */
 
     public String getBeforeCommitId() {
@@ -133,11 +133,11 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the full commit ID of the 'before' commit.
+     * In the directionality you established, the full commit ID of the before commit.
      * </p>
      * 
      * @param beforeCommitId
-     *        In the directionality you established, the full commit ID of the 'before' commit.
+     *        In the directionality you established, the full commit ID of the before commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the full commit ID of the 'after' commit.
+     * In the directionality you established, the full commit ID of the after commit.
      * </p>
      * 
      * @param afterCommitId
-     *        In the directionality you established, the full commit ID of the 'after' commit.
+     *        In the directionality you established, the full commit ID of the after commit.
      */
 
     public void setAfterCommitId(String afterCommitId) {
@@ -161,10 +161,10 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the full commit ID of the 'after' commit.
+     * In the directionality you established, the full commit ID of the after commit.
      * </p>
      * 
-     * @return In the directionality you established, the full commit ID of the 'after' commit.
+     * @return In the directionality you established, the full commit ID of the after commit.
      */
 
     public String getAfterCommitId() {
@@ -173,11 +173,11 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the full commit ID of the 'after' commit.
+     * In the directionality you established, the full commit ID of the after commit.
      * </p>
      * 
      * @param afterCommitId
-     *        In the directionality you established, the full commit ID of the 'after' commit.
+     *        In the directionality you established, the full commit ID of the after commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,11 +188,11 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the blob ID of the 'before' blob.
+     * In the directionality you established, the blob ID of the before blob.
      * </p>
      * 
      * @param beforeBlobId
-     *        In the directionality you established, the blob ID of the 'before' blob.
+     *        In the directionality you established, the blob ID of the before blob.
      */
 
     public void setBeforeBlobId(String beforeBlobId) {
@@ -201,10 +201,10 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the blob ID of the 'before' blob.
+     * In the directionality you established, the blob ID of the before blob.
      * </p>
      * 
-     * @return In the directionality you established, the blob ID of the 'before' blob.
+     * @return In the directionality you established, the blob ID of the before blob.
      */
 
     public String getBeforeBlobId() {
@@ -213,11 +213,11 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the blob ID of the 'before' blob.
+     * In the directionality you established, the blob ID of the before blob.
      * </p>
      * 
      * @param beforeBlobId
-     *        In the directionality you established, the blob ID of the 'before' blob.
+     *        In the directionality you established, the blob ID of the before blob.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +228,11 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the blob ID of the 'after' blob.
+     * In the directionality you established, the blob ID of the after blob.
      * </p>
      * 
      * @param afterBlobId
-     *        In the directionality you established, the blob ID of the 'after' blob.
+     *        In the directionality you established, the blob ID of the after blob.
      */
 
     public void setAfterBlobId(String afterBlobId) {
@@ -241,10 +241,10 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the blob ID of the 'after' blob.
+     * In the directionality you established, the blob ID of the after blob.
      * </p>
      * 
-     * @return In the directionality you established, the blob ID of the 'after' blob.
+     * @return In the directionality you established, the blob ID of the after blob.
      */
 
     public String getAfterBlobId() {
@@ -253,11 +253,11 @@ public class PostCommentForComparedCommitResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * In the directionality you established, the blob ID of the 'after' blob.
+     * In the directionality you established, the blob ID of the after blob.
      * </p>
      * 
      * @param afterBlobId
-     *        In the directionality you established, the blob ID of the 'after' blob.
+     *        In the directionality you established, the blob ID of the after blob.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

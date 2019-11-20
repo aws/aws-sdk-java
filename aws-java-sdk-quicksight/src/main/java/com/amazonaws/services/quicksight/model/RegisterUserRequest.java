@@ -51,7 +51,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String email;
     /**
      * <p>
-     * The Amazon QuickSight role of the user. The user role can be one of the following:
+     * The Amazon QuickSight role for the user. The user role can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -61,12 +61,22 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
      * </p>
      * </li>
      * </ul>
@@ -84,7 +94,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
      * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
      * name. For more information on assuming IAM roles, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
      * the <i>AWS CLI Reference.</i>
      * </p>
      */
@@ -306,7 +316,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon QuickSight role of the user. The user role can be one of the following:
+     * The Amazon QuickSight role for the user. The user role can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -316,7 +326,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -324,10 +334,20 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userRole
-     *        The Amazon QuickSight role of the user. The user role can be one of the following:</p>
+     *        The Amazon QuickSight role for the user. The user role can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -336,12 +356,22 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
      *        </p>
      *        </li>
      * @see UserRole
@@ -353,7 +383,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon QuickSight role of the user. The user role can be one of the following:
+     * The Amazon QuickSight role for the user. The user role can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -363,7 +393,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -371,9 +401,19 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The Amazon QuickSight role of the user. The user role can be one of the following:</p>
+     * @return The Amazon QuickSight role for the user. The user role can be one of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -382,12 +422,22 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     *         <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
      *         </p>
      *         </li>
      * @see UserRole
@@ -399,7 +449,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon QuickSight role of the user. The user role can be one of the following:
+     * The Amazon QuickSight role for the user. The user role can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -409,7 +459,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -417,10 +467,20 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userRole
-     *        The Amazon QuickSight role of the user. The user role can be one of the following:</p>
+     *        The Amazon QuickSight role for the user. The user role can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -429,12 +489,22 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -448,7 +518,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon QuickSight role of the user. The user role can be one of the following:
+     * The Amazon QuickSight role for the user. The user role can be one of the following:
      * </p>
      * <ul>
      * <li>
@@ -458,7 +528,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     * <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      * </p>
      * </li>
      * <li>
@@ -466,10 +536,20 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userRole
-     *        The Amazon QuickSight role of the user. The user role can be one of the following:</p>
+     *        The Amazon QuickSight role for the user. The user role can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -478,12 +558,22 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AUTHOR</code>: A user who can create data sources, data sets, analyses, and dashboards.
+     *        <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -541,7 +631,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
      * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
      * name. For more information on assuming IAM roles, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
      * the <i>AWS CLI Reference.</i>
      * </p>
      * 
@@ -550,7 +640,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        don't need to provide the session name for other scenarios, for example when you are registering an IAM
      *        user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
      *        has a different session name. For more information on assuming IAM roles, see <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
+     *        href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
      *        </a> in the <i>AWS CLI Reference.</i>
      */
 
@@ -564,7 +654,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
      * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
      * name. For more information on assuming IAM roles, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
      * the <i>AWS CLI Reference.</i>
      * </p>
      * 
@@ -572,7 +662,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         don't need to provide the session name for other scenarios, for example when you are registering an IAM
      *         user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
      *         has a different session name. For more information on assuming IAM roles, see <a
-     *         href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
+     *         href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
      *         </a> in the <i>AWS CLI Reference.</i>
      */
 
@@ -586,7 +676,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
      * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
      * name. For more information on assuming IAM roles, see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
      * the <i>AWS CLI Reference.</i>
      * </p>
      * 
@@ -595,7 +685,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        don't need to provide the session name for other scenarios, for example when you are registering an IAM
      *        user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
      *        has a different session name. For more information on assuming IAM roles, see <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
+     *        href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
      *        </a> in the <i>AWS CLI Reference.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -36,7 +36,7 @@ public class File implements Serializable, Cloneable, StructuredPojo {
     private String blobId;
     /**
      * <p>
-     * The fully-qualified path to the file in the repository.
+     * The fully qualified path to the file in the repository.
      * </p>
      */
     private String absolutePath;
@@ -95,11 +95,11 @@ public class File implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully-qualified path to the file in the repository.
+     * The fully qualified path to the file in the repository.
      * </p>
      * 
      * @param absolutePath
-     *        The fully-qualified path to the file in the repository.
+     *        The fully qualified path to the file in the repository.
      */
 
     public void setAbsolutePath(String absolutePath) {
@@ -108,10 +108,10 @@ public class File implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully-qualified path to the file in the repository.
+     * The fully qualified path to the file in the repository.
      * </p>
      * 
-     * @return The fully-qualified path to the file in the repository.
+     * @return The fully qualified path to the file in the repository.
      */
 
     public String getAbsolutePath() {
@@ -120,11 +120,11 @@ public class File implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully-qualified path to the file in the repository.
+     * The fully qualified path to the file in the repository.
      * </p>
      * 
      * @param absolutePath
-     *        The fully-qualified path to the file in the repository.
+     *        The fully qualified path to the file in the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

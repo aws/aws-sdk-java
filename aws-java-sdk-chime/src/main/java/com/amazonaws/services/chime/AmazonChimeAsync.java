@@ -26,9 +26,12 @@ import com.amazonaws.services.chime.model.*;
  * </p>
  * <p>
  * <p>
- * The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks,
- * such as creating and managing Amazon Chime accounts and users. This guide provides detailed information about the
- * Amazon Chime API, including operations, types, inputs and outputs, and error codes.
+ * The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as
+ * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
+ * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some
+ * server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
+ * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon
+ * Chime Developer Guide</i>.
  * </p>
  * <p>
  * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
@@ -70,8 +73,8 @@ import com.amazonaws.services.chime.model.*;
  * </dl>
  * <p>
  * Administrative permissions are controlled using AWS Identity and Access Management (IAM). For more information, see
- * <a href="https://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control Access to the Amazon Chime
- * Console</a> in the <i>Amazon Chime Administration Guide</i>.
+ * <a href="https://docs.aws.amazon.com/chime/latest/ag/security-iam.html">Identity and Access Management for Amazon
+ * Chime</a> in the <i>Amazon Chime Administration Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -183,6 +186,41 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<AssociatePhoneNumbersWithVoiceConnectorGroupResult> associatePhoneNumbersWithVoiceConnectorGroupAsync(
             AssociatePhoneNumbersWithVoiceConnectorGroupRequest associatePhoneNumbersWithVoiceConnectorGroupRequest,
             com.amazonaws.handlers.AsyncHandler<AssociatePhoneNumbersWithVoiceConnectorGroupRequest, AssociatePhoneNumbersWithVoiceConnectorGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param batchCreateAttendeeRequest
+     * @return A Java Future containing the result of the BatchCreateAttendee operation returned by the service.
+     * @sample AmazonChimeAsync.BatchCreateAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateAttendeeResult> batchCreateAttendeeAsync(BatchCreateAttendeeRequest batchCreateAttendeeRequest);
+
+    /**
+     * <p>
+     * Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param batchCreateAttendeeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchCreateAttendee operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.BatchCreateAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateAttendeeResult> batchCreateAttendeeAsync(BatchCreateAttendeeRequest batchCreateAttendeeRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateAttendeeRequest, BatchCreateAttendeeResult> asyncHandler);
 
     /**
      * <p>
@@ -491,6 +529,41 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
+     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createAttendeeRequest
+     * @return A Java Future containing the result of the CreateAttendee operation returned by the service.
+     * @sample AmazonChimeAsync.CreateAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAttendeeResult> createAttendeeAsync(CreateAttendeeRequest createAttendeeRequest);
+
+    /**
+     * <p>
+     * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
+     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createAttendeeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAttendee operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAttendeeResult> createAttendeeAsync(CreateAttendeeRequest createAttendeeRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAttendeeRequest, CreateAttendeeResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a bot for an Amazon Chime Enterprise account.
      * </p>
      * 
@@ -519,6 +592,43 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest createBotRequest,
             com.amazonaws.handlers.AsyncHandler<CreateBotRequest, CreateBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
+     * information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMeetingRequest
+     * @return A Java Future containing the result of the CreateMeeting operation returned by the service.
+     * @sample AmazonChimeAsync.CreateMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMeetingResult> createMeetingAsync(CreateMeetingRequest createMeetingRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
+     * information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMeetingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMeeting operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMeetingResult> createMeetingAsync(CreateMeetingRequest createMeetingRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMeetingRequest, CreateMeetingResult> asyncHandler);
 
     /**
      * <p>
@@ -764,6 +874,43 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
+     * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
+     * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
+     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteAttendeeRequest
+     * @return A Java Future containing the result of the DeleteAttendee operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAttendeeResult> deleteAttendeeAsync(DeleteAttendeeRequest deleteAttendeeRequest);
+
+    /**
+     * <p>
+     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
+     * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
+     * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
+     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteAttendeeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAttendee operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAttendeeResult> deleteAttendeeAsync(DeleteAttendeeRequest deleteAttendeeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAttendeeRequest, DeleteAttendeeResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the events configuration that allows a bot to receive outgoing events.
      * </p>
      * 
@@ -794,6 +941,43 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(
             DeleteEventsConfigurationRequest deleteEventsConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventsConfigurationRequest, DeleteEventsConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
+     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteMeetingRequest
+     * @return A Java Future containing the result of the DeleteMeeting operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMeetingResult> deleteMeetingAsync(DeleteMeetingRequest deleteMeetingRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
+     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteMeetingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMeeting operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMeetingResult> deleteMeetingAsync(DeleteMeetingRequest deleteMeetingRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMeetingRequest, DeleteMeetingResult> asyncHandler);
 
     /**
      * <p>
@@ -1281,6 +1465,41 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
+     * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param getAttendeeRequest
+     * @return A Java Future containing the result of the GetAttendee operation returned by the service.
+     * @sample AmazonChimeAsync.GetAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAttendeeResult> getAttendeeAsync(GetAttendeeRequest getAttendeeRequest);
+
+    /**
+     * <p>
+     * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
+     * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param getAttendeeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAttendee operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAttendeeResult> getAttendeeAsync(GetAttendeeRequest getAttendeeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAttendeeRequest, GetAttendeeResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
      * </p>
      * 
@@ -1375,6 +1594,41 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<GetGlobalSettingsResult> getGlobalSettingsAsync(GetGlobalSettingsRequest getGlobalSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<GetGlobalSettingsRequest, GetGlobalSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param getMeetingRequest
+     * @return A Java Future containing the result of the GetMeeting operation returned by the service.
+     * @sample AmazonChimeAsync.GetMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMeetingResult> getMeetingAsync(GetMeetingRequest getMeetingRequest);
+
+    /**
+     * <p>
+     * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param getMeetingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMeeting operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMeetingResult> getMeetingAsync(GetMeetingRequest getMeetingRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMeetingRequest, GetMeetingResult> asyncHandler);
 
     /**
      * <p>
@@ -1895,6 +2149,41 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
+     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param listAttendeesRequest
+     * @return A Java Future containing the result of the ListAttendees operation returned by the service.
+     * @sample AmazonChimeAsync.ListAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttendeesResult> listAttendeesAsync(ListAttendeesRequest listAttendeesRequest);
+
+    /**
+     * <p>
+     * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
+     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param listAttendeesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAttendees operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttendeesResult> listAttendeesAsync(ListAttendeesRequest listAttendeesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAttendeesRequest, ListAttendeesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
      * </p>
      * 
@@ -1923,6 +2212,41 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest,
             com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param listMeetingsRequest
+     * @return A Java Future containing the result of the ListMeetings operation returned by the service.
+     * @sample AmazonChimeAsync.ListMeetings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMeetingsResult> listMeetingsAsync(ListMeetingsRequest listMeetingsRequest);
+
+    /**
+     * <p>
+     * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i>.
+     * </p>
+     * 
+     * @param listMeetingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMeetings operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListMeetings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMeetingsResult> listMeetingsAsync(ListMeetingsRequest listMeetingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMeetingsRequest, ListMeetingsResult> asyncHandler);
 
     /**
      * <p>

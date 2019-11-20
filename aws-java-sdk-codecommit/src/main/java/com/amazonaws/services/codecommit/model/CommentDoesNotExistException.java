@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * No comment exists with the provided ID. Verify that you have provided the correct ID, and then try again.
+ * No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

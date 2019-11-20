@@ -270,7 +270,7 @@
         {"shape":"ContainerNotFoundException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate with AWS resources. For example, the tag key might be \"customer\" and the tag value might be \"companyA.\" You can specify one or more tags to add to each container. You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href=\"https://aws.amazon.com/documentation/mediastore/tagging\">Tagging Resources in MediaStore</a>.</p>"
+      "documentation":"<p>Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate with AWS resources. For example, the tag key might be \"customer\" and the tag value might be \"companyA.\" You can specify one or more tags to add to each container. You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href=\"https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html\">Tagging Resources in MediaStore</a>.</p>"
     },
     "UntagResource":{
       "name":"UntagResource",
@@ -446,7 +446,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as \"environment\") and the tag value represents a specific value within that category (such as \"test,\" \"development,\" or \"production\"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href=\"https://aws.amazon.com/documentation/mediastore/tagging\">Tagging Resources in MediaStore</a>.</p>"
+          "documentation":"<p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as \"environment\") and the tag value represents a specific value within that category (such as \"test,\" \"development,\" or \"production\"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href=\"https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html\">Tagging Resources in MediaStore</a>.</p>"
         }
       }
     },
@@ -541,7 +541,8 @@
     "Endpoint":{
       "type":"string",
       "max":255,
-      "min":1
+      "min":1,
+      "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+"
     },
     "ErrorMessage":{
       "type":"string",
@@ -822,6 +823,7 @@
     },
     "Tag":{
       "type":"structure",
+      "required":["Key"],
       "members":{
         "Key":{
           "shape":"TagKey",
@@ -832,7 +834,7 @@
           "documentation":"<p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as \"companyA\" or \"companyB.\" Tag values are case-sensitive.</p>"
         }
       },
-      "documentation":"<p>A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as \"environment\") and the tag value represents a specific value within that category (such as \"test,\" \"development,\" or \"production\"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href=\"https://aws.amazon.com/documentation/mediastore/tagging\">Tagging Resources in MediaStore</a>.</p>"
+      "documentation":"<p>A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as \"environment\") and the tag value represents a specific value within that category (such as \"test,\" \"development,\" or \"production\"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href=\"https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html\">Tagging Resources in MediaStore</a>.</p>"
     },
     "TagKey":{
       "type":"string",

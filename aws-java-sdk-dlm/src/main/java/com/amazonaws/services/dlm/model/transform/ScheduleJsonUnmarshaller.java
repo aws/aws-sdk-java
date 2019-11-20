@@ -72,6 +72,10 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                     context.nextToken();
                     schedule.setRetainRule(RetainRuleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FastRestoreRule", targetDepth)) {
+                    context.nextToken();
+                    schedule.setFastRestoreRule(FastRestoreRuleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

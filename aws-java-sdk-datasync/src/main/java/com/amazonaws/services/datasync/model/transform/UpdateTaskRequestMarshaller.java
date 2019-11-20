@@ -34,6 +34,8 @@ public class UpdateTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Options").build();
     private static final MarshallingInfo<List> EXCLUDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Excludes").build();
+    private static final MarshallingInfo<StructuredPojo> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Schedule").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> CLOUDWATCHLOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,7 @@ public class UpdateTaskRequestMarshaller {
             protocolMarshaller.marshall(updateTaskRequest.getTaskArn(), TASKARN_BINDING);
             protocolMarshaller.marshall(updateTaskRequest.getOptions(), OPTIONS_BINDING);
             protocolMarshaller.marshall(updateTaskRequest.getExcludes(), EXCLUDES_BINDING);
+            protocolMarshaller.marshall(updateTaskRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(updateTaskRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateTaskRequest.getCloudWatchLogGroupArn(), CLOUDWATCHLOGGROUPARN_BINDING);
         } catch (Exception e) {

@@ -31,6 +31,8 @@ public class NotifyApplicationStateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<java.util.Date> UPDATEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DryRun").build();
 
@@ -52,6 +54,7 @@ public class NotifyApplicationStateRequestMarshaller {
         try {
             protocolMarshaller.marshall(notifyApplicationStateRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(notifyApplicationStateRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(notifyApplicationStateRequest.getUpdateDateTime(), UPDATEDATETIME_BINDING);
             protocolMarshaller.marshall(notifyApplicationStateRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

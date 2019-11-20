@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception raised when there is an internal, configuration, or dependency error encountered.
+ * Exception raised when an internal, configuration, or dependency error is encountered.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

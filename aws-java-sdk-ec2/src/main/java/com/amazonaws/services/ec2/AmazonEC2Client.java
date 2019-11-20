@@ -1636,7 +1636,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param attachVolumeRequest
-     *        Contains the parameters for AttachVolume.
      * @return Result of the AttachVolume operation returned by the service.
      * @sample AmazonEC2.AttachVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume" target="_top">AWS API
@@ -2661,7 +2660,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param copySnapshotRequest
-     *        Contains the parameters for CopySnapshot.
      * @return Result of the CopySnapshot operation returned by the service.
      * @sample AmazonEC2.CopySnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot" target="_top">AWS API
@@ -4512,7 +4510,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param createSnapshotRequest
-     *        Contains the parameters for CreateSnapshot.
      * @return Result of the CreateSnapshot operation returned by the service.
      * @sample AmazonEC2.CreateSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot" target="_top">AWS API
@@ -5341,7 +5338,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param createVolumeRequest
-     *        Contains the parameters for CreateVolume.
      * @return Result of the CreateVolume operation returned by the service.
      * @sample AmazonEC2.CreateVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume" target="_top">AWS API
@@ -7140,7 +7136,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param deleteSnapshotRequest
-     *        Contains the parameters for DeleteSnapshot.
      * @return Result of the DeleteSnapshot operation returned by the service.
      * @sample AmazonEC2.DeleteSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot" target="_top">AWS API
@@ -7804,7 +7799,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param deleteVolumeRequest
-     *        Contains the parameters for DeleteVolume.
      * @return Result of the DeleteVolume operation returned by the service.
      * @sample AmazonEC2.DeleteVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume" target="_top">AWS API
@@ -9627,6 +9621,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeExportTasksResult describeExportTasks() {
         return describeExportTasks(new DescribeExportTasksRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the state of fast snapshot restores for your snapshots.
+     * </p>
+     * 
+     * @param describeFastSnapshotRestoresRequest
+     * @return Result of the DescribeFastSnapshotRestores operation returned by the service.
+     * @sample AmazonEC2.DescribeFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFastSnapshotRestoresResult describeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFastSnapshotRestores(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFastSnapshotRestoresResult executeDescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest describeFastSnapshotRestoresRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFastSnapshotRestoresRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFastSnapshotRestoresRequest> request = null;
+        Response<DescribeFastSnapshotRestoresResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFastSnapshotRestoresRequestMarshaller().marshall(super.beforeMarshalling(describeFastSnapshotRestoresRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFastSnapshotRestores");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<DescribeFastSnapshotRestoresResult>(
+                    new DescribeFastSnapshotRestoresResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -12362,7 +12409,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param describeSnapshotAttributeRequest
-     *        Contains the parameters for DescribeSnapshotAttribute.
      * @return Result of the DescribeSnapshotAttribute operation returned by the service.
      * @sample AmazonEC2.DescribeSnapshotAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute" target="_top">AWS
@@ -13475,7 +13521,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param describeVolumeAttributeRequest
-     *        Contains the parameters for DescribeVolumeAttribute.
      * @return Result of the DescribeVolumeAttribute operation returned by the service.
      * @sample AmazonEC2.DescribeVolumeAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute" target="_top">AWS
@@ -14683,7 +14728,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param detachVolumeRequest
-     *        Contains the parameters for DetachVolume.
      * @return Result of the DetachVolume operation returned by the service.
      * @sample AmazonEC2.DetachVolume
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume" target="_top">AWS API
@@ -14844,6 +14888,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableEbsEncryptionByDefaultResult> responseHandler = new StaxResponseHandler<DisableEbsEncryptionByDefaultResult>(
                     new DisableEbsEncryptionByDefaultResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables fast snapshot restores for the specified snapshots in the specified Availability Zones.
+     * </p>
+     * 
+     * @param disableFastSnapshotRestoresRequest
+     * @return Result of the DisableFastSnapshotRestores operation returned by the service.
+     * @sample AmazonEC2.DisableFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisableFastSnapshotRestoresResult disableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableFastSnapshotRestores(request);
+    }
+
+    @SdkInternalApi
+    final DisableFastSnapshotRestoresResult executeDisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest disableFastSnapshotRestoresRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableFastSnapshotRestoresRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableFastSnapshotRestoresRequest> request = null;
+        Response<DisableFastSnapshotRestoresResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableFastSnapshotRestoresRequestMarshaller().marshall(super.beforeMarshalling(disableFastSnapshotRestoresRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableFastSnapshotRestores");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<DisableFastSnapshotRestoresResult>(
+                    new DisableFastSnapshotRestoresResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15571,6 +15668,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Enables fast snapshot restores for the specified snapshots in the specified Availability Zones.
+     * </p>
+     * <p>
+     * You get the full benefit of fast snapshot restores after they enter the <code>enabled</code> state. To get the
+     * current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast snapshot
+     * restores, use <a>DisableFastSnapshotRestores</a>.
+     * </p>
+     * 
+     * @param enableFastSnapshotRestoresRequest
+     * @return Result of the EnableFastSnapshotRestores operation returned by the service.
+     * @sample AmazonEC2.EnableFastSnapshotRestores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EnableFastSnapshotRestoresResult enableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableFastSnapshotRestores(request);
+    }
+
+    @SdkInternalApi
+    final EnableFastSnapshotRestoresResult executeEnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest enableFastSnapshotRestoresRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableFastSnapshotRestoresRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableFastSnapshotRestoresRequest> request = null;
+        Response<EnableFastSnapshotRestoresResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableFastSnapshotRestoresRequestMarshaller().marshall(super.beforeMarshalling(enableFastSnapshotRestoresRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableFastSnapshotRestores");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<EnableFastSnapshotRestoresResult>(
+                    new EnableFastSnapshotRestoresResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables the specified attachment to propagate routes to the specified propagation route table.
      * </p>
      * 
@@ -15685,7 +15840,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param enableVolumeIORequest
-     *        Contains the parameters for EnableVolumeIO.
      * @return Result of the EnableVolumeIO operation returned by the service.
      * @sample AmazonEC2.EnableVolumeIO
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO" target="_top">AWS API
@@ -18294,7 +18448,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param modifySnapshotAttributeRequest
-     *        Contains the parameters for ModifySnapshotAttribute.
      * @return Result of the ModifySnapshotAttribute operation returned by the service.
      * @sample AmazonEC2.ModifySnapshotAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute" target="_top">AWS
@@ -18809,7 +18962,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param modifyVolumeAttributeRequest
-     *        Contains the parameters for ModifyVolumeAttribute.
      * @return Result of the ModifyVolumeAttribute operation returned by the service.
      * @sample AmazonEC2.ModifyVolumeAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute" target="_top">AWS API
@@ -21193,7 +21345,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
-     *        Contains the parameters for ResetSnapshotAttribute.
      * @return Result of the ResetSnapshotAttribute operation returned by the service.
      * @sample AmazonEC2.ResetSnapshotAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute" target="_top">AWS API

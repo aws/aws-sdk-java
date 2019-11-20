@@ -31,6 +31,8 @@ public class FailureMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("reason").build();
+    private static final MarshallingInfo<String> DETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("detail").build();
 
     private static final FailureMarshaller instance = new FailureMarshaller();
 
@@ -50,6 +52,7 @@ public class FailureMarshaller {
         try {
             protocolMarshaller.marshall(failure.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(failure.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(failure.getDetail(), DETAIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

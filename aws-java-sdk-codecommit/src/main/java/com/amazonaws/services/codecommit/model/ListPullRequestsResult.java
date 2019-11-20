@@ -31,7 +31,7 @@ public class ListPullRequestsResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.List<String> pullRequestIds;
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that allows the operation to batch the next results of the operation.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class ListPullRequestsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that allows the operation to batch the next results of the operation.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that allows the operation to batch the next results of the operation.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListPullRequestsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that allows the operation to batch the next results of the operation.
      * </p>
      * 
-     * @return An enumeration token that when provided in a request, returns the next batch of the results.
+     * @return An enumeration token that allows the operation to batch the next results of the operation.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListPullRequestsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An enumeration token that when provided in a request, returns the next batch of the results.
+     * An enumeration token that allows the operation to batch the next results of the operation.
      * </p>
      * 
      * @param nextToken
-     *        An enumeration token that when provided in a request, returns the next batch of the results.
+     *        An enumeration token that allows the operation to batch the next results of the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

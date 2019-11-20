@@ -32,8 +32,8 @@ public class BatchGetCommitsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a
-     * shortened SHA or that commit was not found in the specified repository, the ID will return an error object with
-     * additional information.
+     * shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with
+     * more information.
      * </p>
      */
     private java.util.List<BatchGetCommitsError> errors;
@@ -111,13 +111,13 @@ public class BatchGetCommitsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a
-     * shortened SHA or that commit was not found in the specified repository, the ID will return an error object with
-     * additional information.
+     * shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with
+     * more information.
      * </p>
      * 
      * @return Returns any commit IDs for which information could not be found. For example, if one of the commit IDs
-     *         was a shortened SHA or that commit was not found in the specified repository, the ID will return an error
-     *         object with additional information.
+     *         was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error
+     *         object with more information.
      */
 
     public java.util.List<BatchGetCommitsError> getErrors() {
@@ -127,14 +127,14 @@ public class BatchGetCommitsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a
-     * shortened SHA or that commit was not found in the specified repository, the ID will return an error object with
-     * additional information.
+     * shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with
+     * more information.
      * </p>
      * 
      * @param errors
      *        Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was
-     *        a shortened SHA or that commit was not found in the specified repository, the ID will return an error
-     *        object with additional information.
+     *        a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error
+     *        object with more information.
      */
 
     public void setErrors(java.util.Collection<BatchGetCommitsError> errors) {
@@ -149,8 +149,8 @@ public class BatchGetCommitsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a
-     * shortened SHA or that commit was not found in the specified repository, the ID will return an error object with
-     * additional information.
+     * shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with
+     * more information.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -160,8 +160,8 @@ public class BatchGetCommitsResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param errors
      *        Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was
-     *        a shortened SHA or that commit was not found in the specified repository, the ID will return an error
-     *        object with additional information.
+     *        a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error
+     *        object with more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,14 +178,14 @@ public class BatchGetCommitsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a
-     * shortened SHA or that commit was not found in the specified repository, the ID will return an error object with
-     * additional information.
+     * shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with
+     * more information.
      * </p>
      * 
      * @param errors
      *        Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was
-     *        a shortened SHA or that commit was not found in the specified repository, the ID will return an error
-     *        object with additional information.
+     *        a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error
+     *        object with more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

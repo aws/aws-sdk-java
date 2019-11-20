@@ -30,18 +30,18 @@ public class ProgressUpdateStreamSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the ProgressUpdateStream.
+     * The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
      * </p>
      */
     private String progressUpdateStreamName;
 
     /**
      * <p>
-     * The name of the ProgressUpdateStream.
+     * The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param progressUpdateStreamName
-     *        The name of the ProgressUpdateStream.
+     *        The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
      */
 
     public void setProgressUpdateStreamName(String progressUpdateStreamName) {
@@ -50,10 +50,10 @@ public class ProgressUpdateStreamSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the ProgressUpdateStream.
+     * The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
      * </p>
      * 
-     * @return The name of the ProgressUpdateStream.
+     * @return The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
      */
 
     public String getProgressUpdateStreamName() {
@@ -62,11 +62,11 @@ public class ProgressUpdateStreamSummary implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the ProgressUpdateStream.
+     * The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
      * </p>
      * 
      * @param progressUpdateStreamName
-     *        The name of the ProgressUpdateStream.
+     *        The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
