@@ -416,6 +416,20 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
     private String latestStreamArn;
     /**
      * <p>
+     * Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in
+     * use, if the table is replicated across AWS Regions.
+     * </p>
+     */
+    private String globalTableVersion;
+    /**
+     * <p>
+     * Represents replicas of the table.
+     * </p>
+     */
+    private java.util.List<ReplicaDescription> replicas;
+    /**
+     * <p>
      * Contains details for the restore.
      * </p>
      */
@@ -3523,6 +3537,128 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in
+     * use, if the table is replicated across AWS Regions.
+     * </p>
+     * 
+     * @param globalTableVersion
+     *        Represents the version of <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     *        tables</a> in use, if the table is replicated across AWS Regions.
+     */
+
+    public void setGlobalTableVersion(String globalTableVersion) {
+        this.globalTableVersion = globalTableVersion;
+    }
+
+    /**
+     * <p>
+     * Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in
+     * use, if the table is replicated across AWS Regions.
+     * </p>
+     * 
+     * @return Represents the version of <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     *         tables</a> in use, if the table is replicated across AWS Regions.
+     */
+
+    public String getGlobalTableVersion() {
+        return this.globalTableVersion;
+    }
+
+    /**
+     * <p>
+     * Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in
+     * use, if the table is replicated across AWS Regions.
+     * </p>
+     * 
+     * @param globalTableVersion
+     *        Represents the version of <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     *        tables</a> in use, if the table is replicated across AWS Regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withGlobalTableVersion(String globalTableVersion) {
+        setGlobalTableVersion(globalTableVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents replicas of the table.
+     * </p>
+     * 
+     * @return Represents replicas of the table.
+     */
+
+    public java.util.List<ReplicaDescription> getReplicas() {
+        return replicas;
+    }
+
+    /**
+     * <p>
+     * Represents replicas of the table.
+     * </p>
+     * 
+     * @param replicas
+     *        Represents replicas of the table.
+     */
+
+    public void setReplicas(java.util.Collection<ReplicaDescription> replicas) {
+        if (replicas == null) {
+            this.replicas = null;
+            return;
+        }
+
+        this.replicas = new java.util.ArrayList<ReplicaDescription>(replicas);
+    }
+
+    /**
+     * <p>
+     * Represents replicas of the table.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicas(java.util.Collection)} or {@link #withReplicas(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param replicas
+     *        Represents replicas of the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withReplicas(ReplicaDescription... replicas) {
+        if (this.replicas == null) {
+            setReplicas(new java.util.ArrayList<ReplicaDescription>(replicas.length));
+        }
+        for (ReplicaDescription ele : replicas) {
+            this.replicas.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents replicas of the table.
+     * </p>
+     * 
+     * @param replicas
+     *        Represents replicas of the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withReplicas(java.util.Collection<ReplicaDescription> replicas) {
+        setReplicas(replicas);
+        return this;
+    }
+
+    /**
+     * <p>
      * Contains details for the restore.
      * </p>
      * 
@@ -3645,6 +3781,10 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
             sb.append("LatestStreamLabel: ").append(getLatestStreamLabel()).append(",");
         if (getLatestStreamArn() != null)
             sb.append("LatestStreamArn: ").append(getLatestStreamArn()).append(",");
+        if (getGlobalTableVersion() != null)
+            sb.append("GlobalTableVersion: ").append(getGlobalTableVersion()).append(",");
+        if (getReplicas() != null)
+            sb.append("Replicas: ").append(getReplicas()).append(",");
         if (getRestoreSummary() != null)
             sb.append("RestoreSummary: ").append(getRestoreSummary()).append(",");
         if (getSSEDescription() != null)
@@ -3727,6 +3867,14 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getLatestStreamArn() != null && other.getLatestStreamArn().equals(this.getLatestStreamArn()) == false)
             return false;
+        if (other.getGlobalTableVersion() == null ^ this.getGlobalTableVersion() == null)
+            return false;
+        if (other.getGlobalTableVersion() != null && other.getGlobalTableVersion().equals(this.getGlobalTableVersion()) == false)
+            return false;
+        if (other.getReplicas() == null ^ this.getReplicas() == null)
+            return false;
+        if (other.getReplicas() != null && other.getReplicas().equals(this.getReplicas()) == false)
+            return false;
         if (other.getRestoreSummary() == null ^ this.getRestoreSummary() == null)
             return false;
         if (other.getRestoreSummary() != null && other.getRestoreSummary().equals(this.getRestoreSummary()) == false)
@@ -3759,6 +3907,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getStreamSpecification() == null) ? 0 : getStreamSpecification().hashCode());
         hashCode = prime * hashCode + ((getLatestStreamLabel() == null) ? 0 : getLatestStreamLabel().hashCode());
         hashCode = prime * hashCode + ((getLatestStreamArn() == null) ? 0 : getLatestStreamArn().hashCode());
+        hashCode = prime * hashCode + ((getGlobalTableVersion() == null) ? 0 : getGlobalTableVersion().hashCode());
+        hashCode = prime * hashCode + ((getReplicas() == null) ? 0 : getReplicas().hashCode());
         hashCode = prime * hashCode + ((getRestoreSummary() == null) ? 0 : getRestoreSummary().hashCode());
         hashCode = prime * hashCode + ((getSSEDescription() == null) ? 0 : getSSEDescription().hashCode());
         return hashCode;

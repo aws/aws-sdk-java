@@ -640,6 +640,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public UpdateResourceDataSyncResult updateResourceDataSync(UpdateResourceDataSyncRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateServiceSettingResult updateServiceSetting(UpdateServiceSettingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

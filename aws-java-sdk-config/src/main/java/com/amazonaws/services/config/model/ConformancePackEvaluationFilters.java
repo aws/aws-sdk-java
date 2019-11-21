@@ -53,6 +53,11 @@ public class ConformancePackEvaluationFilters implements Serializable, Cloneable
      * <p>
      * Filters the results by resource IDs.
      * </p>
+     * <note>
+     * <p>
+     * This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIds;
 
@@ -252,8 +257,16 @@ public class ConformancePackEvaluationFilters implements Serializable, Cloneable
      * <p>
      * Filters the results by resource IDs.
      * </p>
+     * <note>
+     * <p>
+     * This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     * </p>
+     * </note>
      * 
-     * @return Filters the results by resource IDs.
+     * @return Filters the results by resource IDs.</p> <note>
+     *         <p>
+     *         This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     *         </p>
      */
 
     public java.util.List<String> getResourceIds() {
@@ -267,9 +280,17 @@ public class ConformancePackEvaluationFilters implements Serializable, Cloneable
      * <p>
      * Filters the results by resource IDs.
      * </p>
+     * <note>
+     * <p>
+     * This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     * </p>
+     * </note>
      * 
      * @param resourceIds
-     *        Filters the results by resource IDs.
+     *        Filters the results by resource IDs.</p> <note>
+     *        <p>
+     *        This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     *        </p>
      */
 
     public void setResourceIds(java.util.Collection<String> resourceIds) {
@@ -285,6 +306,11 @@ public class ConformancePackEvaluationFilters implements Serializable, Cloneable
      * <p>
      * Filters the results by resource IDs.
      * </p>
+     * <note>
+     * <p>
+     * This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceIds(java.util.Collection)} or {@link #withResourceIds(java.util.Collection)} if you want to
@@ -292,7 +318,10 @@ public class ConformancePackEvaluationFilters implements Serializable, Cloneable
      * </p>
      * 
      * @param resourceIds
-     *        Filters the results by resource IDs.
+     *        Filters the results by resource IDs.</p> <note>
+     *        <p>
+     *        This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,9 +339,17 @@ public class ConformancePackEvaluationFilters implements Serializable, Cloneable
      * <p>
      * Filters the results by resource IDs.
      * </p>
+     * <note>
+     * <p>
+     * This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     * </p>
+     * </note>
      * 
      * @param resourceIds
-     *        Filters the results by resource IDs.
+     *        Filters the results by resource IDs.</p> <note>
+     *        <p>
+     *        This is valid only when you provide resource type. If there is no resource type, you will see an error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

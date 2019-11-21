@@ -160,6 +160,71 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Creates a cache for the GraphQL API.
+     * </p>
+     * 
+     * @param createApiCacheRequest
+     *        Represents the input of a <code>CreateApiCache</code> operation.
+     * @return Result of the CreateApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.CreateApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateApiCacheResult createApiCache(CreateApiCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApiCache(request);
+    }
+
+    @SdkInternalApi
+    final CreateApiCacheResult executeCreateApiCache(CreateApiCacheRequest createApiCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createApiCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApiCacheRequest> request = null;
+        Response<CreateApiCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApiCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApiCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApiCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApiCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateApiCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a unique key that you can distribute to clients who are executing your API.
      * </p>
      * 
@@ -554,6 +619,71 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Deletes an <code>ApiCache</code> object.
+     * </p>
+     * 
+     * @param deleteApiCacheRequest
+     *        Represents the input of a <code>DeleteApiCache</code> operation.
+     * @return Result of the DeleteApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.DeleteApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteApiCacheResult deleteApiCache(DeleteApiCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApiCache(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApiCacheResult executeDeleteApiCache(DeleteApiCacheRequest deleteApiCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApiCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApiCacheRequest> request = null;
+        Response<DeleteApiCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApiCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApiCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApiCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApiCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteApiCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an API key.
      * </p>
      * 
@@ -920,6 +1050,136 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTypeResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Flushes an <code>ApiCache</code> object.
+     * </p>
+     * 
+     * @param flushApiCacheRequest
+     *        Represents the input of a <code>FlushApiCache</code> operation.
+     * @return Result of the FlushApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.FlushApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public FlushApiCacheResult flushApiCache(FlushApiCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeFlushApiCache(request);
+    }
+
+    @SdkInternalApi
+    final FlushApiCacheResult executeFlushApiCache(FlushApiCacheRequest flushApiCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(flushApiCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<FlushApiCacheRequest> request = null;
+        Response<FlushApiCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new FlushApiCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(flushApiCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FlushApiCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<FlushApiCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new FlushApiCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves an <code>ApiCache</code> object.
+     * </p>
+     * 
+     * @param getApiCacheRequest
+     *        Represents the input of a <code>GetApiCache</code> operation.
+     * @return Result of the GetApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.GetApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetApiCacheResult getApiCache(GetApiCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApiCache(request);
+    }
+
+    @SdkInternalApi
+    final GetApiCacheResult executeGetApiCache(GetApiCacheRequest getApiCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getApiCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApiCacheRequest> request = null;
+        Response<GetApiCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApiCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApiCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApiCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetApiCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetApiCacheResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2064,6 +2324,71 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the cache for the GraphQL API.
+     * </p>
+     * 
+     * @param updateApiCacheRequest
+     *        Represents the input of a <code>UpdateApiCache</code> operation.
+     * @return Result of the UpdateApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.UpdateApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateApiCacheResult updateApiCache(UpdateApiCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApiCache(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApiCacheResult executeUpdateApiCache(UpdateApiCacheRequest updateApiCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApiCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApiCacheRequest> request = null;
+        Response<UpdateApiCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApiCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApiCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApiCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApiCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApiCacheResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

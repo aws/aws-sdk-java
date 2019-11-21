@@ -95,6 +95,39 @@ public class AWSAmplifyAsyncClient extends AWSAmplifyClient implements AWSAmplif
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBackendEnvironmentResult> createBackendEnvironmentAsync(CreateBackendEnvironmentRequest request) {
+
+        return createBackendEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBackendEnvironmentResult> createBackendEnvironmentAsync(final CreateBackendEnvironmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBackendEnvironmentRequest, CreateBackendEnvironmentResult> asyncHandler) {
+        final CreateBackendEnvironmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBackendEnvironmentResult>() {
+            @Override
+            public CreateBackendEnvironmentResult call() throws Exception {
+                CreateBackendEnvironmentResult result = null;
+
+                try {
+                    result = executeCreateBackendEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBranchResult> createBranchAsync(CreateBranchRequest request) {
 
         return createBranchAsync(request, null);
@@ -244,6 +277,39 @@ public class AWSAmplifyAsyncClient extends AWSAmplifyClient implements AWSAmplif
 
                 try {
                     result = executeDeleteApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBackendEnvironmentResult> deleteBackendEnvironmentAsync(DeleteBackendEnvironmentRequest request) {
+
+        return deleteBackendEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBackendEnvironmentResult> deleteBackendEnvironmentAsync(final DeleteBackendEnvironmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBackendEnvironmentRequest, DeleteBackendEnvironmentResult> asyncHandler) {
+        final DeleteBackendEnvironmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBackendEnvironmentResult>() {
+            @Override
+            public DeleteBackendEnvironmentResult call() throws Exception {
+                DeleteBackendEnvironmentResult result = null;
+
+                try {
+                    result = executeDeleteBackendEnvironment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -491,6 +557,39 @@ public class AWSAmplifyAsyncClient extends AWSAmplifyClient implements AWSAmplif
     }
 
     @Override
+    public java.util.concurrent.Future<GetBackendEnvironmentResult> getBackendEnvironmentAsync(GetBackendEnvironmentRequest request) {
+
+        return getBackendEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBackendEnvironmentResult> getBackendEnvironmentAsync(final GetBackendEnvironmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBackendEnvironmentRequest, GetBackendEnvironmentResult> asyncHandler) {
+        final GetBackendEnvironmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBackendEnvironmentResult>() {
+            @Override
+            public GetBackendEnvironmentResult call() throws Exception {
+                GetBackendEnvironmentResult result = null;
+
+                try {
+                    result = executeGetBackendEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBranchResult> getBranchAsync(GetBranchRequest request) {
 
         return getBranchAsync(request, null);
@@ -673,6 +772,39 @@ public class AWSAmplifyAsyncClient extends AWSAmplifyClient implements AWSAmplif
 
                 try {
                     result = executeListArtifacts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBackendEnvironmentsResult> listBackendEnvironmentsAsync(ListBackendEnvironmentsRequest request) {
+
+        return listBackendEnvironmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBackendEnvironmentsResult> listBackendEnvironmentsAsync(final ListBackendEnvironmentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBackendEnvironmentsRequest, ListBackendEnvironmentsResult> asyncHandler) {
+        final ListBackendEnvironmentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBackendEnvironmentsResult>() {
+            @Override
+            public ListBackendEnvironmentsResult call() throws Exception {
+                ListBackendEnvironmentsResult result = null;
+
+                try {
+                    result = executeListBackendEnvironments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

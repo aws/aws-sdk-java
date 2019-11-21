@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the limit (20) of the number of conformance packs in an account.
+ * You have reached the limit (6) of the number of conformance packs in an account (6 conformance pack with 25 AWS
+ * Config rules per pack).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

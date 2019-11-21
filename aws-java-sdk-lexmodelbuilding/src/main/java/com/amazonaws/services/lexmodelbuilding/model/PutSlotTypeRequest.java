@@ -101,7 +101,13 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String valueSelectionStrategy;
-
+    /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the
+     * <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     */
     private Boolean createVersion;
 
     /**
@@ -672,7 +678,16 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the
+     * <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
      * @param createVersion
+     *        When set to <code>true</code> a new numbered version of the slot type is created. This is the same as
+     *        calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>
+     *        , the default is <code>false</code>.
      */
 
     public void setCreateVersion(Boolean createVersion) {
@@ -680,7 +695,15 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the
+     * <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code> a new numbered version of the slot type is created. This is the same as
+     *         calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify
+     *         <code>createVersion</code>, the default is <code>false</code>.
      */
 
     public Boolean getCreateVersion() {
@@ -688,7 +711,16 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the
+     * <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
      * @param createVersion
+     *        When set to <code>true</code> a new numbered version of the slot type is created. This is the same as
+     *        calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>
+     *        , the default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,7 +730,15 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the
+     * <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code> a new numbered version of the slot type is created. This is the same as
+     *         calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify
+     *         <code>createVersion</code>, the default is <code>false</code>.
      */
 
     public Boolean isCreateVersion() {

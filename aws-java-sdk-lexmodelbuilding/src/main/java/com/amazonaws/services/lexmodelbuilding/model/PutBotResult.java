@@ -57,14 +57,22 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex
-     * sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code>
-     * to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response
-     * element.
+     * sets the <code>status</code> response element to <code>BUILDING</code>.
      * </p>
      * <p>
-     * When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     * In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     * utterances configured for the bot's intents and values in the slot types.
+     * </p>
+     * <p>
+     * If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
+     * the reason for the failure in the <code>failureReason</code> response element.
+     * </p>
+     * <p>
+     * When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      * <code>NOT BUILT</code>.
+     * </p>
+     * <p>
+     * When the bot is in the <code>READY</code> state you can test and publish the bot.
      * </p>
      */
     private String status;
@@ -143,8 +151,21 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private Boolean childDirected;
-
+    /**
+     * <p>
+     * <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     */
     private Boolean createVersion;
+    /**
+     * <p>
+     * <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis.
+     * If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code>
+     * field is <code>false</code> in the response.
+     * </p>
+     */
+    private Boolean detectSentiment;
 
     /**
      * <p>
@@ -385,25 +406,41 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex
-     * sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code>
-     * to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response
-     * element.
+     * sets the <code>status</code> response element to <code>BUILDING</code>.
      * </p>
      * <p>
-     * When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     * In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     * utterances configured for the bot's intents and values in the slot types.
+     * </p>
+     * <p>
+     * If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
+     * the reason for the failure in the <code>failureReason</code> response element.
+     * </p>
+     * <p>
+     * When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      * <code>NOT BUILT</code>.
+     * </p>
+     * <p>
+     * When the bot is in the <code>READY</code> state you can test and publish the bot.
      * </p>
      * 
      * @param status
      *        When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>,
-     *        Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds
-     *        the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex
-     *        sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
-     *        <code>failureReason</code> response element. </p>
+     *        Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
      *        <p>
-     *        When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     *        In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     *        utterances configured for the bot's intents and values in the slot types.
+     *        </p>
+     *        <p>
+     *        If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex
+     *        returns the reason for the failure in the <code>failureReason</code> response element.
+     *        </p>
+     *        <p>
+     *        When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      *        <code>NOT BUILT</code>.
+     *        </p>
+     *        <p>
+     *        When the bot is in the <code>READY</code> state you can test and publish the bot.
      * @see Status
      */
 
@@ -414,24 +451,40 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex
-     * sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code>
-     * to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response
-     * element.
+     * sets the <code>status</code> response element to <code>BUILDING</code>.
      * </p>
      * <p>
-     * When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     * In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     * utterances configured for the bot's intents and values in the slot types.
+     * </p>
+     * <p>
+     * If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
+     * the reason for the failure in the <code>failureReason</code> response element.
+     * </p>
+     * <p>
+     * When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      * <code>NOT BUILT</code>.
+     * </p>
+     * <p>
+     * When the bot is in the <code>READY</code> state you can test and publish the bot.
      * </p>
      * 
      * @return When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>,
-     *         Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex
-     *         builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot,
-     *         Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure
-     *         in the <code>failureReason</code> response element. </p>
+     *         Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
      *         <p>
-     *         When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     *         In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match
+     *         the utterances configured for the bot's intents and values in the slot types.
+     *         </p>
+     *         <p>
+     *         If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex
+     *         returns the reason for the failure in the <code>failureReason</code> response element.
+     *         </p>
+     *         <p>
+     *         When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      *         <code>NOT BUILT</code>.
+     *         </p>
+     *         <p>
+     *         When the bot is in the <code>READY</code> state you can test and publish the bot.
      * @see Status
      */
 
@@ -442,25 +495,41 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex
-     * sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code>
-     * to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response
-     * element.
+     * sets the <code>status</code> response element to <code>BUILDING</code>.
      * </p>
      * <p>
-     * When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     * In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     * utterances configured for the bot's intents and values in the slot types.
+     * </p>
+     * <p>
+     * If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
+     * the reason for the failure in the <code>failureReason</code> response element.
+     * </p>
+     * <p>
+     * When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      * <code>NOT BUILT</code>.
+     * </p>
+     * <p>
+     * When the bot is in the <code>READY</code> state you can test and publish the bot.
      * </p>
      * 
      * @param status
      *        When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>,
-     *        Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds
-     *        the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex
-     *        sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
-     *        <code>failureReason</code> response element. </p>
+     *        Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
      *        <p>
-     *        When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     *        In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     *        utterances configured for the bot's intents and values in the slot types.
+     *        </p>
+     *        <p>
+     *        If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex
+     *        returns the reason for the failure in the <code>failureReason</code> response element.
+     *        </p>
+     *        <p>
+     *        When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      *        <code>NOT BUILT</code>.
+     *        </p>
+     *        <p>
+     *        When the bot is in the <code>READY</code> state you can test and publish the bot.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -473,25 +542,41 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex
-     * sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code>
-     * to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response
-     * element.
+     * sets the <code>status</code> response element to <code>BUILDING</code>.
      * </p>
      * <p>
-     * When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     * In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     * utterances configured for the bot's intents and values in the slot types.
+     * </p>
+     * <p>
+     * If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
+     * the reason for the failure in the <code>failureReason</code> response element.
+     * </p>
+     * <p>
+     * When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      * <code>NOT BUILT</code>.
+     * </p>
+     * <p>
+     * When the bot is in the <code>READY</code> state you can test and publish the bot.
      * </p>
      * 
      * @param status
      *        When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>,
-     *        Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds
-     *        the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex
-     *        sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
-     *        <code>failureReason</code> response element. </p>
+     *        Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
      *        <p>
-     *        When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     *        In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     *        utterances configured for the bot's intents and values in the slot types.
+     *        </p>
+     *        <p>
+     *        If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex
+     *        returns the reason for the failure in the <code>failureReason</code> response element.
+     *        </p>
+     *        <p>
+     *        When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      *        <code>NOT BUILT</code>.
+     *        </p>
+     *        <p>
+     *        When the bot is in the <code>READY</code> state you can test and publish the bot.
      * @see Status
      */
 
@@ -502,25 +587,41 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex
-     * sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code>
-     * to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response
-     * element.
+     * sets the <code>status</code> response element to <code>BUILDING</code>.
      * </p>
      * <p>
-     * When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     * In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     * utterances configured for the bot's intents and values in the slot types.
+     * </p>
+     * <p>
+     * If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
+     * the reason for the failure in the <code>failureReason</code> response element.
+     * </p>
+     * <p>
+     * When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      * <code>NOT BUILT</code>.
+     * </p>
+     * <p>
+     * When the bot is in the <code>READY</code> state you can test and publish the bot.
      * </p>
      * 
      * @param status
      *        When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>,
-     *        Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds
-     *        the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, Amazon Lex
-     *        sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
-     *        <code>failureReason</code> response element. </p>
+     *        Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>
      *        <p>
-     *        When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon Lex sets the status code to
+     *        In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the
+     *        utterances configured for the bot's intents and values in the slot types.
+     *        </p>
+     *        <p>
+     *        If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex
+     *        returns the reason for the failure in the <code>failureReason</code> response element.
+     *        </p>
+     *        <p>
+     *        When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to
      *        <code>NOT BUILT</code>.
+     *        </p>
+     *        <p>
+     *        When the bot is in the <code>READY</code> state you can test and publish the bot.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -1101,7 +1202,14 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     * 
      * @param createVersion
+     *        <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not
+     *        specified in the request, the <code>createVersion</code> field is set to false in the response.
      */
 
     public void setCreateVersion(Boolean createVersion) {
@@ -1109,7 +1217,13 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * <p>
+     * <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     * 
+     * @return <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was
+     *         not specified in the request, the <code>createVersion</code> field is set to false in the response.
      */
 
     public Boolean getCreateVersion() {
@@ -1117,7 +1231,14 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     * 
      * @param createVersion
+     *        <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not
+     *        specified in the request, the <code>createVersion</code> field is set to false in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1127,11 +1248,85 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * <p>
+     * <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     * 
+     * @return <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was
+     *         not specified in the request, the <code>createVersion</code> field is set to false in the response.
      */
 
     public Boolean isCreateVersion() {
         return this.createVersion;
+    }
+
+    /**
+     * <p>
+     * <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis.
+     * If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code>
+     * field is <code>false</code> in the response.
+     * </p>
+     * 
+     * @param detectSentiment
+     *        <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment
+     *        analysis. If the <code>detectSentiment</code> field was not specified in the request, the
+     *        <code>detectSentiment</code> field is <code>false</code> in the response.
+     */
+
+    public void setDetectSentiment(Boolean detectSentiment) {
+        this.detectSentiment = detectSentiment;
+    }
+
+    /**
+     * <p>
+     * <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis.
+     * If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code>
+     * field is <code>false</code> in the response.
+     * </p>
+     * 
+     * @return <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment
+     *         analysis. If the <code>detectSentiment</code> field was not specified in the request, the
+     *         <code>detectSentiment</code> field is <code>false</code> in the response.
+     */
+
+    public Boolean getDetectSentiment() {
+        return this.detectSentiment;
+    }
+
+    /**
+     * <p>
+     * <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis.
+     * If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code>
+     * field is <code>false</code> in the response.
+     * </p>
+     * 
+     * @param detectSentiment
+     *        <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment
+     *        analysis. If the <code>detectSentiment</code> field was not specified in the request, the
+     *        <code>detectSentiment</code> field is <code>false</code> in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotResult withDetectSentiment(Boolean detectSentiment) {
+        setDetectSentiment(detectSentiment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis.
+     * If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code>
+     * field is <code>false</code> in the response.
+     * </p>
+     * 
+     * @return <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment
+     *         analysis. If the <code>detectSentiment</code> field was not specified in the request, the
+     *         <code>detectSentiment</code> field is <code>false</code> in the response.
+     */
+
+    public Boolean isDetectSentiment() {
+        return this.detectSentiment;
     }
 
     /**
@@ -1177,7 +1372,9 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getChildDirected() != null)
             sb.append("ChildDirected: ").append(getChildDirected()).append(",");
         if (getCreateVersion() != null)
-            sb.append("CreateVersion: ").append(getCreateVersion());
+            sb.append("CreateVersion: ").append(getCreateVersion()).append(",");
+        if (getDetectSentiment() != null)
+            sb.append("DetectSentiment: ").append(getDetectSentiment());
         sb.append("}");
         return sb.toString();
     }
@@ -1256,6 +1453,10 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
             return false;
+        if (other.getDetectSentiment() == null ^ this.getDetectSentiment() == null)
+            return false;
+        if (other.getDetectSentiment() != null && other.getDetectSentiment().equals(this.getDetectSentiment()) == false)
+            return false;
         return true;
     }
 
@@ -1280,6 +1481,7 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
         hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
+        hashCode = prime * hashCode + ((getDetectSentiment() == null) ? 0 : getDetectSentiment().hashCode());
         return hashCode;
     }
 

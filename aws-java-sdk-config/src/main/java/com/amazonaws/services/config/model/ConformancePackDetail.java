@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Returns details of a conformance pack. A conformance pack is a collection of AWS Config rules that can be easily
- * deployed in an account and a region.
+ * Returns details of a conformance pack. A conformance pack is a collection of AWS Config rules and remediation actions
+ * that can be easily deployed in an account and a region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackDetail" target="_top">AWS API
@@ -49,14 +49,14 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
     private String conformancePackId;
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template
-     * that is used to create a pack.
+     * Conformance pack template that is used to create a pack. The delivery bucket name should start with
+     * awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
      * </p>
      */
     private String deliveryS3Bucket;
     /**
      * <p>
-     * Any folder structure you want to add to an Amazon S3 bucket.
+     * The prefix for the Amazon S3 bucket.
      * </p>
      */
     private String deliveryS3KeyPrefix;
@@ -72,7 +72,11 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date lastUpdateRequestedTime;
-
+    /**
+     * <p>
+     * AWS service that created the conformance pack.
+     * </p>
+     */
     private String createdBy;
 
     /**
@@ -197,13 +201,13 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template
-     * that is used to create a pack.
+     * Conformance pack template that is used to create a pack. The delivery bucket name should start with
+     * awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
      * </p>
      * 
      * @param deliveryS3Bucket
-     *        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack
-     *        template that is used to create a pack.
+     *        Conformance pack template that is used to create a pack. The delivery bucket name should start with
+     *        awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
      */
 
     public void setDeliveryS3Bucket(String deliveryS3Bucket) {
@@ -212,12 +216,12 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template
-     * that is used to create a pack.
+     * Conformance pack template that is used to create a pack. The delivery bucket name should start with
+     * awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
      * </p>
      * 
-     * @return Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack
-     *         template that is used to create a pack.
+     * @return Conformance pack template that is used to create a pack. The delivery bucket name should start with
+     *         awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
      */
 
     public String getDeliveryS3Bucket() {
@@ -226,13 +230,13 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template
-     * that is used to create a pack.
+     * Conformance pack template that is used to create a pack. The delivery bucket name should start with
+     * awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
      * </p>
      * 
      * @param deliveryS3Bucket
-     *        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack
-     *        template that is used to create a pack.
+     *        Conformance pack template that is used to create a pack. The delivery bucket name should start with
+     *        awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +247,11 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Any folder structure you want to add to an Amazon S3 bucket.
+     * The prefix for the Amazon S3 bucket.
      * </p>
      * 
      * @param deliveryS3KeyPrefix
-     *        Any folder structure you want to add to an Amazon S3 bucket.
+     *        The prefix for the Amazon S3 bucket.
      */
 
     public void setDeliveryS3KeyPrefix(String deliveryS3KeyPrefix) {
@@ -256,10 +260,10 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Any folder structure you want to add to an Amazon S3 bucket.
+     * The prefix for the Amazon S3 bucket.
      * </p>
      * 
-     * @return Any folder structure you want to add to an Amazon S3 bucket.
+     * @return The prefix for the Amazon S3 bucket.
      */
 
     public String getDeliveryS3KeyPrefix() {
@@ -268,11 +272,11 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Any folder structure you want to add to an Amazon S3 bucket.
+     * The prefix for the Amazon S3 bucket.
      * </p>
      * 
      * @param deliveryS3KeyPrefix
-     *        Any folder structure you want to add to an Amazon S3 bucket.
+     *        The prefix for the Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,7 +399,12 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * AWS service that created the conformance pack.
+     * </p>
+     * 
      * @param createdBy
+     *        AWS service that created the conformance pack.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -403,7 +412,11 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * AWS service that created the conformance pack.
+     * </p>
+     * 
+     * @return AWS service that created the conformance pack.
      */
 
     public String getCreatedBy() {
@@ -411,7 +424,12 @@ public class ConformancePackDetail implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * AWS service that created the conformance pack.
+     * </p>
+     * 
      * @param createdBy
+     *        AWS service that created the conformance pack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

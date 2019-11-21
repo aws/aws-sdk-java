@@ -3544,6 +3544,31 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Update a resource data sync. After you create a resource data sync for a Region, you can't change the account
+     * options for that sync. For example, if you create a sync in the us-east-2 (Ohio) Region and you choose the
+     * Include only the current account option, you can't edit that sync later and choose the Include all accounts from
+     * my AWS Organizations configuration option. Instead, you must delete the first resource data sync, and create a
+     * new one.
+     * </p>
+     * 
+     * @param updateResourceDataSyncRequest
+     * @return Result of the UpdateResourceDataSync operation returned by the service.
+     * @throws ResourceDataSyncNotFoundException
+     *         The specified sync name was not found.
+     * @throws ResourceDataSyncInvalidConfigurationException
+     *         The specified sync configuration is invalid.
+     * @throws ResourceDataSyncConflictException
+     *         Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateResourceDataSyncResult updateResourceDataSync(UpdateResourceDataSyncRequest updateResourceDataSyncRequest);
+
+    /**
+     * <p>
      * <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user
      * interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the
      * account based on feature or service usage, then the AWS service team might create a default setting of "false".

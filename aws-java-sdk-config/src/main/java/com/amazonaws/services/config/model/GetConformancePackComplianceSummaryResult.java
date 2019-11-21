@@ -24,12 +24,26 @@ import javax.annotation.Generated;
 public class GetConformancePackComplianceSummaryResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * A list of <code>ConformancePackComplianceSummary</code> objects.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<ConformancePackComplianceSummary> conformancePackComplianceSummaryList;
-
+    /**
+     * <p>
+     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
+     * response.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of <code>ConformancePackComplianceSummary</code> objects.
+     * </p>
+     * 
+     * @return A list of <code>ConformancePackComplianceSummary</code> objects.
      */
 
     public java.util.List<ConformancePackComplianceSummary> getConformancePackComplianceSummaryList() {
@@ -40,7 +54,12 @@ public class GetConformancePackComplianceSummaryResult extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * A list of <code>ConformancePackComplianceSummary</code> objects.
+     * </p>
+     * 
      * @param conformancePackComplianceSummaryList
+     *        A list of <code>ConformancePackComplianceSummary</code> objects.
      */
 
     public void setConformancePackComplianceSummaryList(java.util.Collection<ConformancePackComplianceSummary> conformancePackComplianceSummaryList) {
@@ -55,6 +74,9 @@ public class GetConformancePackComplianceSummaryResult extends com.amazonaws.Ama
 
     /**
      * <p>
+     * A list of <code>ConformancePackComplianceSummary</code> objects.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConformancePackComplianceSummaryList(java.util.Collection)} or
      * {@link #withConformancePackComplianceSummaryList(java.util.Collection)} if you want to override the existing
@@ -62,6 +84,7 @@ public class GetConformancePackComplianceSummaryResult extends com.amazonaws.Ama
      * </p>
      * 
      * @param conformancePackComplianceSummaryList
+     *        A list of <code>ConformancePackComplianceSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +101,12 @@ public class GetConformancePackComplianceSummaryResult extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * A list of <code>ConformancePackComplianceSummary</code> objects.
+     * </p>
+     * 
      * @param conformancePackComplianceSummaryList
+     *        A list of <code>ConformancePackComplianceSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,7 +117,14 @@ public class GetConformancePackComplianceSummaryResult extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
+     * response.
+     * </p>
+     * 
      * @param nextToken
+     *        The nextToken string returned on a previous page that you use to get the next page of results in a
+     *        paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -97,7 +132,13 @@ public class GetConformancePackComplianceSummaryResult extends com.amazonaws.Ama
     }
 
     /**
-     * @return
+     * <p>
+     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
+     * response.
+     * </p>
+     * 
+     * @return The nextToken string returned on a previous page that you use to get the next page of results in a
+     *         paginated response.
      */
 
     public String getNextToken() {
@@ -105,7 +146,14 @@ public class GetConformancePackComplianceSummaryResult extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
+     * response.
+     * </p>
+     * 
      * @param nextToken
+     *        The nextToken string returned on a previous page that you use to get the next page of results in a
+     *        paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

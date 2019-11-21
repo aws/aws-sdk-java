@@ -33,6 +33,10 @@ public class DynamodbDataSourceConfigMarshaller {
             .marshallLocationName("awsRegion").build();
     private static final MarshallingInfo<Boolean> USECALLERCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useCallerCredentials").build();
+    private static final MarshallingInfo<StructuredPojo> DELTASYNCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deltaSyncConfig").build();
+    private static final MarshallingInfo<Boolean> VERSIONED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versioned").build();
 
     private static final DynamodbDataSourceConfigMarshaller instance = new DynamodbDataSourceConfigMarshaller();
 
@@ -53,6 +57,8 @@ public class DynamodbDataSourceConfigMarshaller {
             protocolMarshaller.marshall(dynamodbDataSourceConfig.getTableName(), TABLENAME_BINDING);
             protocolMarshaller.marshall(dynamodbDataSourceConfig.getAwsRegion(), AWSREGION_BINDING);
             protocolMarshaller.marshall(dynamodbDataSourceConfig.getUseCallerCredentials(), USECALLERCREDENTIALS_BINDING);
+            protocolMarshaller.marshall(dynamodbDataSourceConfig.getDeltaSyncConfig(), DELTASYNCCONFIG_BINDING);
+            protocolMarshaller.marshall(dynamodbDataSourceConfig.getVersioned(), VERSIONED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

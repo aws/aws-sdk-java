@@ -49,6 +49,16 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
     private String status;
     /**
      * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     */
+    private String glueVersion;
+    /**
+     * <p>
      * The time and date before which the transforms were created.
      * </p>
      */
@@ -244,6 +254,70 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
 
     public TransformFilterCriteria withStatus(TransformStatusType status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @param glueVersion
+     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *        0.9. For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        Versions</a> in the developer guide.
+     */
+
+    public void setGlueVersion(String glueVersion) {
+        this.glueVersion = glueVersion;
+    }
+
+    /**
+     * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @return This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *         1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *         0.9. For more information, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *         Versions</a> in the developer guide.
+     */
+
+    public String getGlueVersion() {
+        return this.glueVersion;
+    }
+
+    /**
+     * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @param glueVersion
+     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *        0.9. For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        Versions</a> in the developer guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransformFilterCriteria withGlueVersion(String glueVersion) {
+        setGlueVersion(glueVersion);
         return this;
     }
 
@@ -519,6 +593,8 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
             sb.append("TransformType: ").append(getTransformType()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getGlueVersion() != null)
+            sb.append("GlueVersion: ").append(getGlueVersion()).append(",");
         if (getCreatedBefore() != null)
             sb.append("CreatedBefore: ").append(getCreatedBefore()).append(",");
         if (getCreatedAfter() != null)
@@ -555,6 +631,10 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getGlueVersion() == null ^ this.getGlueVersion() == null)
+            return false;
+        if (other.getGlueVersion() != null && other.getGlueVersion().equals(this.getGlueVersion()) == false)
+            return false;
         if (other.getCreatedBefore() == null ^ this.getCreatedBefore() == null)
             return false;
         if (other.getCreatedBefore() != null && other.getCreatedBefore().equals(this.getCreatedBefore()) == false)
@@ -586,6 +666,7 @@ public class TransformFilterCriteria implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTransformType() == null) ? 0 : getTransformType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getGlueVersion() == null) ? 0 : getGlueVersion().hashCode());
         hashCode = prime * hashCode + ((getCreatedBefore() == null) ? 0 : getCreatedBefore().hashCode());
         hashCode = prime * hashCode + ((getCreatedAfter() == null) ? 0 : getCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBefore() == null) ? 0 : getLastModifiedBefore().hashCode());

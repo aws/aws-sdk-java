@@ -1325,6 +1325,78 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Initiates a contact flow to start a new chat for the customer. Response of this API provides a token required to
+     * obtain credentials from the <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
+     * >CreateParticipantConnection</a> API in the Amazon Connect Participant Service.
+     * </p>
+     * <p>
+     * When a new chat contact is successfully created, clients need to subscribe to the participant’s connection for
+     * the created chat within 5 minutes. This is achieved by invoking <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
+     * >CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.
+     * </p>
+     * 
+     * @param startChatContactRequest
+     * @return Result of the StartChatContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed due to an error or failure with the service.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @sample AmazonConnect.StartChatContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartChatContactResult startChatContact(StartChatContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartChatContact(request);
+    }
+
+    @SdkInternalApi
+    final StartChatContactResult executeStartChatContact(StartChatContactRequest startChatContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startChatContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartChatContactRequest> request = null;
+        Response<StartChatContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartChatContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startChatContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartChatContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartChatContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartChatContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Initiates a contact flow to place an outbound call to a customer.
      * </p>
      * <p>

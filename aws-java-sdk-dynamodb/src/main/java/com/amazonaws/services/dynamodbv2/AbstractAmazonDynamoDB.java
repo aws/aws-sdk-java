@@ -156,6 +156,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeTableReplicaAutoScalingResult describeTableReplicaAutoScaling(DescribeTableReplicaAutoScalingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTimeToLiveResult describeTimeToLive(DescribeTimeToLiveRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -324,6 +329,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public UpdateTableResult updateTable(String tableName, ProvisionedThroughput provisionedThroughput) {
         return updateTable(new UpdateTableRequest().withTableName(tableName).withProvisionedThroughput(provisionedThroughput));
+    }
+
+    @Override
+    public UpdateTableReplicaAutoScalingResult updateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -136,6 +136,12 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private Boolean childDirected;
+    /**
+     * <p>
+     * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     */
+    private Boolean detectSentiment;
 
     /**
      * <p>
@@ -1035,6 +1041,62 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     * 
+     * @param detectSentiment
+     *        Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment
+     *        analysis.
+     */
+
+    public void setDetectSentiment(Boolean detectSentiment) {
+        this.detectSentiment = detectSentiment;
+    }
+
+    /**
+     * <p>
+     * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     * 
+     * @return Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment
+     *         analysis.
+     */
+
+    public Boolean getDetectSentiment() {
+        return this.detectSentiment;
+    }
+
+    /**
+     * <p>
+     * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     * 
+     * @param detectSentiment
+     *        Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment
+     *        analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBotVersionResult withDetectSentiment(Boolean detectSentiment) {
+        setDetectSentiment(detectSentiment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     * 
+     * @return Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment
+     *         analysis.
+     */
+
+    public Boolean isDetectSentiment() {
+        return this.detectSentiment;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1075,7 +1137,9 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
         if (getLocale() != null)
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getChildDirected() != null)
-            sb.append("ChildDirected: ").append(getChildDirected());
+            sb.append("ChildDirected: ").append(getChildDirected()).append(",");
+        if (getDetectSentiment() != null)
+            sb.append("DetectSentiment: ").append(getDetectSentiment());
         sb.append("}");
         return sb.toString();
     }
@@ -1150,6 +1214,10 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getChildDirected() != null && other.getChildDirected().equals(this.getChildDirected()) == false)
             return false;
+        if (other.getDetectSentiment() == null ^ this.getDetectSentiment() == null)
+            return false;
+        if (other.getDetectSentiment() != null && other.getDetectSentiment().equals(this.getDetectSentiment()) == false)
+            return false;
         return true;
     }
 
@@ -1173,6 +1241,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
+        hashCode = prime * hashCode + ((getDetectSentiment() == null) ? 0 : getDetectSentiment().hashCode());
         return hashCode;
     }
 

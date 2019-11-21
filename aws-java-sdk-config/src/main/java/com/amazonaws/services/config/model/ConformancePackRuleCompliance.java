@@ -31,13 +31,13 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Filters the results by AWS Config rule name.
+     * Name of the config rule.
      * </p>
      */
     private String configRuleName;
     /**
      * <p>
-     * Filters the results by compliance.
+     * Compliance of the AWS Config rule
      * </p>
      * <p>
      * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
@@ -47,11 +47,11 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Filters the results by AWS Config rule name.
+     * Name of the config rule.
      * </p>
      * 
      * @param configRuleName
-     *        Filters the results by AWS Config rule name.
+     *        Name of the config rule.
      */
 
     public void setConfigRuleName(String configRuleName) {
@@ -60,10 +60,10 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Filters the results by AWS Config rule name.
+     * Name of the config rule.
      * </p>
      * 
-     * @return Filters the results by AWS Config rule name.
+     * @return Name of the config rule.
      */
 
     public String getConfigRuleName() {
@@ -72,11 +72,11 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Filters the results by AWS Config rule name.
+     * Name of the config rule.
      * </p>
      * 
      * @param configRuleName
-     *        Filters the results by AWS Config rule name.
+     *        Name of the config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,14 +87,14 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Filters the results by compliance.
+     * Compliance of the AWS Config rule
      * </p>
      * <p>
      * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param complianceType
-     *        Filters the results by compliance.</p>
+     *        Compliance of the AWS Config rule</p>
      *        <p>
      *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * @see ConformancePackComplianceType
@@ -106,13 +106,13 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Filters the results by compliance.
+     * Compliance of the AWS Config rule
      * </p>
      * <p>
      * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return Filters the results by compliance.</p>
+     * @return Compliance of the AWS Config rule</p>
      *         <p>
      *         The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * @see ConformancePackComplianceType
@@ -124,14 +124,14 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Filters the results by compliance.
+     * Compliance of the AWS Config rule
      * </p>
      * <p>
      * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param complianceType
-     *        Filters the results by compliance.</p>
+     *        Compliance of the AWS Config rule</p>
      *        <p>
      *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -145,14 +145,14 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Filters the results by compliance.
+     * Compliance of the AWS Config rule
      * </p>
      * <p>
      * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param complianceType
-     *        Filters the results by compliance.</p>
+     *        Compliance of the AWS Config rule</p>
      *        <p>
      *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

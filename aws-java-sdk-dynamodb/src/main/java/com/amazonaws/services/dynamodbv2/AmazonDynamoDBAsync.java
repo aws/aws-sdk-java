@@ -594,6 +594,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * Creates a global table from an existing table. A global table creates a replication relationship between two or
      * more DynamoDB tables with the same table name in the provided Regions.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * <p>
      * If you want to add a new replica table to a global table, each of the following conditions must be true:
      * </p>
@@ -661,6 +668,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * Creates a global table from an existing table. A global table creates a replication relationship between two or
      * more DynamoDB tables with the same table name in the provided Regions.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * <p>
      * If you want to add a new replica table to a global table, each of the following conditions must be true:
      * </p>
@@ -1157,6 +1171,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Returns information about the specified global table.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param describeGlobalTableRequest
      * @return A Java Future containing the result of the DescribeGlobalTable operation returned by the service.
@@ -1170,6 +1191,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Returns information about the specified global table.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param describeGlobalTableRequest
      * @param asyncHandler
@@ -1188,6 +1216,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Describes Region-specific settings for a global table.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param describeGlobalTableSettingsRequest
      * @return A Java Future containing the result of the DescribeGlobalTableSettings operation returned by the service.
@@ -1202,6 +1237,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Describes Region-specific settings for a global table.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param describeGlobalTableSettingsRequest
      * @param asyncHandler
@@ -1494,6 +1536,55 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Describes auto scaling settings across replicas of the global table at once.
+     * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @param describeTableReplicaAutoScalingRequest
+     * @return A Java Future containing the result of the DescribeTableReplicaAutoScaling operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsync.DescribeTableReplicaAutoScaling
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTableReplicaAutoScalingResult> describeTableReplicaAutoScalingAsync(
+            DescribeTableReplicaAutoScalingRequest describeTableReplicaAutoScalingRequest);
+
+    /**
+     * <p>
+     * Describes auto scaling settings across replicas of the global table at once.
+     * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @param describeTableReplicaAutoScalingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTableReplicaAutoScaling operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeTableReplicaAutoScaling
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTableReplicaAutoScalingResult> describeTableReplicaAutoScalingAsync(
+            DescribeTableReplicaAutoScalingRequest describeTableReplicaAutoScalingRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTableReplicaAutoScalingRequest, DescribeTableReplicaAutoScalingResult> asyncHandler);
+
+    /**
+     * <p>
      * Gives a description of the Time to Live (TTL) status on the specified table.
      * </p>
      * 
@@ -1653,6 +1744,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Lists all global tables that have a replica in the specified Region.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param listGlobalTablesRequest
      * @return A Java Future containing the result of the ListGlobalTables operation returned by the service.
@@ -1666,6 +1764,13 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Lists all global tables that have a replica in the specified Region.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param listGlobalTablesRequest
      * @param asyncHandler
@@ -3351,6 +3456,55 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<UpdateTableResult> updateTableAsync(String tableName, ProvisionedThroughput provisionedThroughput,
             com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates auto scaling settings on your global tables at once.
+     * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @param updateTableReplicaAutoScalingRequest
+     * @return A Java Future containing the result of the UpdateTableReplicaAutoScaling operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsync.UpdateTableReplicaAutoScaling
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTableReplicaAutoScalingResult> updateTableReplicaAutoScalingAsync(
+            UpdateTableReplicaAutoScalingRequest updateTableReplicaAutoScalingRequest);
+
+    /**
+     * <p>
+     * Updates auto scaling settings on your global tables at once.
+     * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @param updateTableReplicaAutoScalingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTableReplicaAutoScaling operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsyncHandler.UpdateTableReplicaAutoScaling
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTableReplicaAutoScalingResult> updateTableReplicaAutoScalingAsync(
+            UpdateTableReplicaAutoScalingRequest updateTableReplicaAutoScalingRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTableReplicaAutoScalingRequest, UpdateTableReplicaAutoScalingResult> asyncHandler);
 
     /**
      * <p>

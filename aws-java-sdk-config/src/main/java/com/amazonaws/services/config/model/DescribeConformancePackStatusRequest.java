@@ -33,7 +33,7 @@ public class DescribeConformancePackStatusRequest extends com.amazonaws.AmazonWe
     private com.amazonaws.internal.SdkInternalList<String> conformancePackNames;
     /**
      * <p>
-     * The maximum number of conformance packs returned on each page.
+     * The maximum number of conformance packs status returned on each page.
      * </p>
      */
     private Integer limit;
@@ -120,11 +120,11 @@ public class DescribeConformancePackStatusRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of conformance packs returned on each page.
+     * The maximum number of conformance packs status returned on each page.
      * </p>
      * 
      * @param limit
-     *        The maximum number of conformance packs returned on each page.
+     *        The maximum number of conformance packs status returned on each page.
      */
 
     public void setLimit(Integer limit) {
@@ -133,10 +133,10 @@ public class DescribeConformancePackStatusRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of conformance packs returned on each page.
+     * The maximum number of conformance packs status returned on each page.
      * </p>
      * 
-     * @return The maximum number of conformance packs returned on each page.
+     * @return The maximum number of conformance packs status returned on each page.
      */
 
     public Integer getLimit() {
@@ -145,11 +145,11 @@ public class DescribeConformancePackStatusRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of conformance packs returned on each page.
+     * The maximum number of conformance packs status returned on each page.
      * </p>
      * 
      * @param limit
-     *        The maximum number of conformance packs returned on each page.
+     *        The maximum number of conformance packs status returned on each page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

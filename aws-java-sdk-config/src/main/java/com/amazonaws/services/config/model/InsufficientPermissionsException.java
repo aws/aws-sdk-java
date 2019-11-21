@@ -39,7 +39,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase you do not
+ * For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not
  * have permissions:
  * </p>
  * <ul>
@@ -51,11 +51,6 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * To read Amazon S3 bucket.
- * </p>
- * </li>
- * <li>
- * <p>
- * To create a rule and a stack.
  * </p>
  * </li>
  * </ul>

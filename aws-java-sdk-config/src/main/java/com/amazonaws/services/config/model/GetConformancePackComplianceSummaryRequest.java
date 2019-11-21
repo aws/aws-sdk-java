@@ -25,14 +25,32 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Names of conformance packs.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> conformancePackNames;
-
+    /**
+     * <p>
+     * The maximum number of conformance packs returned on each page.
+     * </p>
+     */
     private Integer limit;
-
+    /**
+     * <p>
+     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
+     * response.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * Names of conformance packs.
+     * </p>
+     * 
+     * @return Names of conformance packs.
      */
 
     public java.util.List<String> getConformancePackNames() {
@@ -43,7 +61,12 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
+     * Names of conformance packs.
+     * </p>
+     * 
      * @param conformancePackNames
+     *        Names of conformance packs.
      */
 
     public void setConformancePackNames(java.util.Collection<String> conformancePackNames) {
@@ -57,12 +80,16 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
 
     /**
      * <p>
+     * Names of conformance packs.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConformancePackNames(java.util.Collection)} or {@link #withConformancePackNames(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param conformancePackNames
+     *        Names of conformance packs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,7 +104,12 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
+     * Names of conformance packs.
+     * </p>
+     * 
      * @param conformancePackNames
+     *        Names of conformance packs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,7 +119,12 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
+     * The maximum number of conformance packs returned on each page.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of conformance packs returned on each page.
      */
 
     public void setLimit(Integer limit) {
@@ -95,7 +132,11 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of conformance packs returned on each page.
+     * </p>
+     * 
+     * @return The maximum number of conformance packs returned on each page.
      */
 
     public Integer getLimit() {
@@ -103,7 +144,12 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
+     * The maximum number of conformance packs returned on each page.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of conformance packs returned on each page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,7 +159,14 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
+     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
+     * response.
+     * </p>
+     * 
      * @param nextToken
+     *        The nextToken string returned on a previous page that you use to get the next page of results in a
+     *        paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,7 +174,13 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
     }
 
     /**
-     * @return
+     * <p>
+     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
+     * response.
+     * </p>
+     * 
+     * @return The nextToken string returned on a previous page that you use to get the next page of results in a
+     *         paginated response.
      */
 
     public String getNextToken() {
@@ -129,7 +188,14 @@ public class GetConformancePackComplianceSummaryRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
+     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
+     * response.
+     * </p>
+     * 
      * @param nextToken
+     *        The nextToken string returned on a previous page that you use to get the next page of results in a
+     *        paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

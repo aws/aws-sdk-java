@@ -45,6 +45,30 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      */
     private String hostRecovery;
+    /**
+     * <p>
+     * Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated
+     * Host to support only a specific instance type.
+     * </p>
+     * <p>
+     * If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit
+     * this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
+     * Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated
+     * Host to support multiple instance types within its current instance family.
+     * </p>
+     * <p>
+     * If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify
+     * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     * request.
+     * </p>
+     */
+    private String instanceFamily;
 
     /**
      * <p>
@@ -286,6 +310,152 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * <p>
+     * Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated
+     * Host to support only a specific instance type.
+     * </p>
+     * <p>
+     * If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit
+     * this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.
+     * </p>
+     * 
+     * @param instanceType
+     *        Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a
+     *        Dedicated Host to support only a specific instance type.</p>
+     *        <p>
+     *        If you want to modify a Dedicated Host to support multiple instance types in its current instance family,
+     *        omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     *        <b>InstanceFamily</b> in the same request.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated
+     * Host to support only a specific instance type.
+     * </p>
+     * <p>
+     * If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit
+     * this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.
+     * </p>
+     * 
+     * @return Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a
+     *         Dedicated Host to support only a specific instance type.</p>
+     *         <p>
+     *         If you want to modify a Dedicated Host to support multiple instance types in its current instance family,
+     *         omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     *         <b>InstanceFamily</b> in the same request.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated
+     * Host to support only a specific instance type.
+     * </p>
+     * <p>
+     * If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit
+     * this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.
+     * </p>
+     * 
+     * @param instanceType
+     *        Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a
+     *        Dedicated Host to support only a specific instance type.</p>
+     *        <p>
+     *        If you want to modify a Dedicated Host to support multiple instance types in its current instance family,
+     *        omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     *        <b>InstanceFamily</b> in the same request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyHostsRequest withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated
+     * Host to support multiple instance types within its current instance family.
+     * </p>
+     * <p>
+     * If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify
+     * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     * request.
+     * </p>
+     * 
+     * @param instanceFamily
+     *        Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a
+     *        Dedicated Host to support multiple instance types within its current instance family.</p>
+     *        <p>
+     *        If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and
+     *        specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in
+     *        the same request.
+     */
+
+    public void setInstanceFamily(String instanceFamily) {
+        this.instanceFamily = instanceFamily;
+    }
+
+    /**
+     * <p>
+     * Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated
+     * Host to support multiple instance types within its current instance family.
+     * </p>
+     * <p>
+     * If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify
+     * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     * request.
+     * </p>
+     * 
+     * @return Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a
+     *         Dedicated Host to support multiple instance types within its current instance family.</p>
+     *         <p>
+     *         If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and
+     *         specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in
+     *         the same request.
+     */
+
+    public String getInstanceFamily() {
+        return this.instanceFamily;
+    }
+
+    /**
+     * <p>
+     * Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated
+     * Host to support multiple instance types within its current instance family.
+     * </p>
+     * <p>
+     * If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify
+     * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     * request.
+     * </p>
+     * 
+     * @param instanceFamily
+     *        Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a
+     *        Dedicated Host to support multiple instance types within its current instance family.</p>
+     *        <p>
+     *        If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and
+     *        specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in
+     *        the same request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyHostsRequest withInstanceFamily(String instanceFamily) {
+        setInstanceFamily(instanceFamily);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -313,7 +483,11 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         if (getHostIds() != null)
             sb.append("HostIds: ").append(getHostIds()).append(",");
         if (getHostRecovery() != null)
-            sb.append("HostRecovery: ").append(getHostRecovery());
+            sb.append("HostRecovery: ").append(getHostRecovery()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getInstanceFamily() != null)
+            sb.append("InstanceFamily: ").append(getInstanceFamily());
         sb.append("}");
         return sb.toString();
     }
@@ -340,6 +514,14 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getHostRecovery() != null && other.getHostRecovery().equals(this.getHostRecovery()) == false)
             return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getInstanceFamily() == null ^ this.getInstanceFamily() == null)
+            return false;
+        if (other.getInstanceFamily() != null && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
+            return false;
         return true;
     }
 
@@ -351,6 +533,8 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode());
         hashCode = prime * hashCode + ((getHostIds() == null) ? 0 : getHostIds().hashCode());
         hashCode = prime * hashCode + ((getHostRecovery() == null) ? 0 : getHostRecovery().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFamily() == null) ? 0 : getInstanceFamily().hashCode());
         return hashCode;
     }
 

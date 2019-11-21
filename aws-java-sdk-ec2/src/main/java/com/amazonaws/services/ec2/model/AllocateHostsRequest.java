@@ -55,11 +55,28 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     private String clientToken;
     /**
      * <p>
-     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
-     * is the only instance type that you can launch onto that host.
+     * Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the
+     * Dedicated Hosts support instances of the specified instance type only.
+     * </p>
+     * <p>
+     * If you want the Dedicated Hosts to support multiple instance types in a specific instance family, omit this
+     * parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.
      * </p>
      */
     private String instanceType;
+    /**
+     * <p>
+     * Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the
+     * Dedicated Hosts support multiple instance types within that instance family.
+     * </p>
+     * <p>
+     * If you want the Dedicated Hosts to support a specific instance type only, omit this parameter and specify
+     * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     * request.
+     * </p>
+     */
+    private String instanceFamily;
     /**
      * <p>
      * The number of Dedicated Hosts to allocate to your account with these parameters.
@@ -328,13 +345,22 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
-     * is the only instance type that you can launch onto that host.
+     * Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the
+     * Dedicated Hosts support instances of the specified instance type only.
+     * </p>
+     * <p>
+     * If you want the Dedicated Hosts to support multiple instance types in a specific instance family, omit this
+     * parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.
      * </p>
      * 
      * @param instanceType
-     *        Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
-     *        type, that is the only instance type that you can launch onto that host.
+     *        Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the
+     *        Dedicated Hosts support instances of the specified instance type only.</p>
+     *        <p>
+     *        If you want the Dedicated Hosts to support multiple instance types in a specific instance family, omit
+     *        this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     *        <b>InstanceFamily</b> in the same request.
      */
 
     public void setInstanceType(String instanceType) {
@@ -343,12 +369,21 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
-     * is the only instance type that you can launch onto that host.
+     * Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the
+     * Dedicated Hosts support instances of the specified instance type only.
+     * </p>
+     * <p>
+     * If you want the Dedicated Hosts to support multiple instance types in a specific instance family, omit this
+     * parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.
      * </p>
      * 
-     * @return Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
-     *         type, that is the only instance type that you can launch onto that host.
+     * @return Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the
+     *         Dedicated Hosts support instances of the specified instance type only.</p>
+     *         <p>
+     *         If you want the Dedicated Hosts to support multiple instance types in a specific instance family, omit
+     *         this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     *         <b>InstanceFamily</b> in the same request.
      */
 
     public String getInstanceType() {
@@ -357,18 +392,100 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
-     * is the only instance type that you can launch onto that host.
+     * Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the
+     * Dedicated Hosts support instances of the specified instance type only.
+     * </p>
+     * <p>
+     * If you want the Dedicated Hosts to support multiple instance types in a specific instance family, omit this
+     * parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.
      * </p>
      * 
      * @param instanceType
-     *        Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
-     *        type, that is the only instance type that you can launch onto that host.
+     *        Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the
+     *        Dedicated Hosts support instances of the specified instance type only.</p>
+     *        <p>
+     *        If you want the Dedicated Hosts to support multiple instance types in a specific instance family, omit
+     *        this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     *        <b>InstanceFamily</b> in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocateHostsRequest withInstanceType(String instanceType) {
         setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the
+     * Dedicated Hosts support multiple instance types within that instance family.
+     * </p>
+     * <p>
+     * If you want the Dedicated Hosts to support a specific instance type only, omit this parameter and specify
+     * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     * request.
+     * </p>
+     * 
+     * @param instanceFamily
+     *        Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family,
+     *        the Dedicated Hosts support multiple instance types within that instance family.</p>
+     *        <p>
+     *        If you want the Dedicated Hosts to support a specific instance type only, omit this parameter and specify
+     *        <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     *        request.
+     */
+
+    public void setInstanceFamily(String instanceFamily) {
+        this.instanceFamily = instanceFamily;
+    }
+
+    /**
+     * <p>
+     * Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the
+     * Dedicated Hosts support multiple instance types within that instance family.
+     * </p>
+     * <p>
+     * If you want the Dedicated Hosts to support a specific instance type only, omit this parameter and specify
+     * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     * request.
+     * </p>
+     * 
+     * @return Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family,
+     *         the Dedicated Hosts support multiple instance types within that instance family.</p>
+     *         <p>
+     *         If you want the Dedicated Hosts to support a specific instance type only, omit this parameter and specify
+     *         <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     *         request.
+     */
+
+    public String getInstanceFamily() {
+        return this.instanceFamily;
+    }
+
+    /**
+     * <p>
+     * Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family, the
+     * Dedicated Hosts support multiple instance types within that instance family.
+     * </p>
+     * <p>
+     * If you want the Dedicated Hosts to support a specific instance type only, omit this parameter and specify
+     * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     * request.
+     * </p>
+     * 
+     * @param instanceFamily
+     *        Specifies the instance family to be supported by the Dedicated Hosts. If you specify an instance family,
+     *        the Dedicated Hosts support multiple instance types within that instance family.</p>
+     *        <p>
+     *        If you want the Dedicated Hosts to support a specific instance type only, omit this parameter and specify
+     *        <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same
+     *        request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateHostsRequest withInstanceFamily(String instanceFamily) {
+        setInstanceFamily(instanceFamily);
         return this;
     }
 
@@ -644,6 +761,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getInstanceFamily() != null)
+            sb.append("InstanceFamily: ").append(getInstanceFamily()).append(",");
         if (getQuantity() != null)
             sb.append("Quantity: ").append(getQuantity()).append(",");
         if (getTagSpecifications() != null)
@@ -680,6 +799,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getInstanceFamily() == null ^ this.getInstanceFamily() == null)
+            return false;
+        if (other.getInstanceFamily() != null && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
+            return false;
         if (other.getQuantity() == null ^ this.getQuantity() == null)
             return false;
         if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false)
@@ -704,6 +827,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFamily() == null) ? 0 : getInstanceFamily().hashCode());
         hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getHostRecovery() == null) ? 0 : getHostRecovery().hashCode());

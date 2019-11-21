@@ -67,6 +67,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
+     * Creates a new backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param createBackendEnvironmentRequest
+     *        Request structure for a backend environment create request.
+     * @return A Java Future containing the result of the CreateBackendEnvironment operation returned by the service.
+     * @sample AWSAmplifyAsync.CreateBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBackendEnvironmentResult> createBackendEnvironmentAsync(CreateBackendEnvironmentRequest createBackendEnvironmentRequest);
+
+    /**
+     * <p>
+     * Creates a new backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param createBackendEnvironmentRequest
+     *        Request structure for a backend environment create request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBackendEnvironment operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.CreateBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBackendEnvironmentResult> createBackendEnvironmentAsync(CreateBackendEnvironmentRequest createBackendEnvironmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBackendEnvironmentRequest, CreateBackendEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Branch for an Amplify App.
      * </p>
      * 
@@ -229,6 +262,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      */
     java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest deleteAppRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param deleteBackendEnvironmentRequest
+     *        Request structure for delete backend environment request.
+     * @return A Java Future containing the result of the DeleteBackendEnvironment operation returned by the service.
+     * @sample AWSAmplifyAsync.DeleteBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBackendEnvironmentResult> deleteBackendEnvironmentAsync(DeleteBackendEnvironmentRequest deleteBackendEnvironmentRequest);
+
+    /**
+     * <p>
+     * Delete backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param deleteBackendEnvironmentRequest
+     *        Request structure for delete backend environment request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBackendEnvironment operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.DeleteBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBackendEnvironmentResult> deleteBackendEnvironmentAsync(DeleteBackendEnvironmentRequest deleteBackendEnvironmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBackendEnvironmentRequest, DeleteBackendEnvironmentResult> asyncHandler);
 
     /**
      * <p>
@@ -463,6 +529,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
+     * Retrieves a backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param getBackendEnvironmentRequest
+     *        Request structure for get backend environment request.
+     * @return A Java Future containing the result of the GetBackendEnvironment operation returned by the service.
+     * @sample AWSAmplifyAsync.GetBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBackendEnvironmentResult> getBackendEnvironmentAsync(GetBackendEnvironmentRequest getBackendEnvironmentRequest);
+
+    /**
+     * <p>
+     * Retrieves a backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param getBackendEnvironmentRequest
+     *        Request structure for get backend environment request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBackendEnvironment operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.GetBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBackendEnvironmentResult> getBackendEnvironmentAsync(GetBackendEnvironmentRequest getBackendEnvironmentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBackendEnvironmentRequest, GetBackendEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a branch for an Amplify App.
      * </p>
      * 
@@ -658,6 +757,39 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      */
     java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(ListArtifactsRequest listArtifactsRequest,
             com.amazonaws.handlers.AsyncHandler<ListArtifactsRequest, ListArtifactsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists backend environments for an Amplify App.
+     * </p>
+     * 
+     * @param listBackendEnvironmentsRequest
+     *        Request structure for list backend environments request.
+     * @return A Java Future containing the result of the ListBackendEnvironments operation returned by the service.
+     * @sample AWSAmplifyAsync.ListBackendEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBackendEnvironmentsResult> listBackendEnvironmentsAsync(ListBackendEnvironmentsRequest listBackendEnvironmentsRequest);
+
+    /**
+     * <p>
+     * Lists backend environments for an Amplify App.
+     * </p>
+     * 
+     * @param listBackendEnvironmentsRequest
+     *        Request structure for list backend environments request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBackendEnvironments operation returned by the service.
+     * @sample AWSAmplifyAsyncHandler.ListBackendEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBackendEnvironmentsResult> listBackendEnvironmentsAsync(ListBackendEnvironmentsRequest listBackendEnvironmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBackendEnvironmentsRequest, ListBackendEnvironmentsResult> asyncHandler);
 
     /**
      * <p>

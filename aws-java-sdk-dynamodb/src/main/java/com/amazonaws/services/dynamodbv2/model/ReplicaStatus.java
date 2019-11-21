@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum ReplicaStatus {
 
     CREATING("CREATING"),
+    CREATION_FAILED("CREATION_FAILED"),
     UPDATING("UPDATING"),
     DELETING("DELETING"),
     ACTIVE("ACTIVE");

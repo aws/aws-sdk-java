@@ -668,6 +668,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<StartChatContactResult> startChatContactAsync(StartChatContactRequest request) {
+
+        return startChatContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartChatContactResult> startChatContactAsync(final StartChatContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartChatContactRequest, StartChatContactResult> asyncHandler) {
+        final StartChatContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartChatContactResult>() {
+            @Override
+            public StartChatContactResult call() throws Exception {
+                StartChatContactResult result = null;
+
+                try {
+                    result = executeStartChatContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartOutboundVoiceContactResult> startOutboundVoiceContactAsync(StartOutboundVoiceContactRequest request) {
 
         return startOutboundVoiceContactAsync(request, null);

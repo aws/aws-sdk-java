@@ -33,8 +33,8 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
     private String organizationConformancePackName;
     /**
      * <p>
-     * Location of file containing the template body. The uri must point to the conformance pack template (max size:
-     * 300,000 bytes).
+     * Location of file containing the template body. The uri must point to the conformance pack template (max size: 300
+     * KB).
      * </p>
      * <note>
      * <p>
@@ -54,6 +54,12 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * <p>
      * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate
      * files while processing conformance pack template.
+     * </p>
+     * <p>
+     * The delivery bucket name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/*". For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
+     * >Permissions for cross account bucket access</a>.
      * </p>
      */
     private String deliveryS3Bucket;
@@ -118,8 +124,8 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Location of file containing the template body. The uri must point to the conformance pack template (max size:
-     * 300,000 bytes).
+     * Location of file containing the template body. The uri must point to the conformance pack template (max size: 300
+     * KB).
      * </p>
      * <note>
      * <p>
@@ -129,7 +135,7 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * 
      * @param templateS3Uri
      *        Location of file containing the template body. The uri must point to the conformance pack template (max
-     *        size: 300,000 bytes).</p> <note>
+     *        size: 300 KB).</p> <note>
      *        <p>
      *        You must have access to read Amazon S3 bucket.
      *        </p>
@@ -141,8 +147,8 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Location of file containing the template body. The uri must point to the conformance pack template (max size:
-     * 300,000 bytes).
+     * Location of file containing the template body. The uri must point to the conformance pack template (max size: 300
+     * KB).
      * </p>
      * <note>
      * <p>
@@ -151,7 +157,7 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </note>
      * 
      * @return Location of file containing the template body. The uri must point to the conformance pack template (max
-     *         size: 300,000 bytes).</p> <note>
+     *         size: 300 KB).</p> <note>
      *         <p>
      *         You must have access to read Amazon S3 bucket.
      *         </p>
@@ -163,8 +169,8 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Location of file containing the template body. The uri must point to the conformance pack template (max size:
-     * 300,000 bytes).
+     * Location of file containing the template body. The uri must point to the conformance pack template (max size: 300
+     * KB).
      * </p>
      * <note>
      * <p>
@@ -174,7 +180,7 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * 
      * @param templateS3Uri
      *        Location of file containing the template body. The uri must point to the conformance pack template (max
-     *        size: 300,000 bytes).</p> <note>
+     *        size: 300 KB).</p> <note>
      *        <p>
      *        You must have access to read Amazon S3 bucket.
      *        </p>
@@ -237,10 +243,21 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate
      * files while processing conformance pack template.
      * </p>
+     * <p>
+     * The delivery bucket name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/*". For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
+     * >Permissions for cross account bucket access</a>.
+     * </p>
      * 
      * @param deliveryS3Bucket
      *        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores
-     *        intermediate files while processing conformance pack template.
+     *        intermediate files while processing conformance pack template. </p>
+     *        <p>
+     *        The delivery bucket name should start with awsconfigconforms. For example: "Resource":
+     *        "arn:aws:s3:::your_bucket_name/*". For more information, see <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
+     *        >Permissions for cross account bucket access</a>.
      */
 
     public void setDeliveryS3Bucket(String deliveryS3Bucket) {
@@ -252,9 +269,20 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate
      * files while processing conformance pack template.
      * </p>
+     * <p>
+     * The delivery bucket name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/*". For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
+     * >Permissions for cross account bucket access</a>.
+     * </p>
      * 
      * @return Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores
-     *         intermediate files while processing conformance pack template.
+     *         intermediate files while processing conformance pack template. </p>
+     *         <p>
+     *         The delivery bucket name should start with awsconfigconforms. For example: "Resource":
+     *         "arn:aws:s3:::your_bucket_name/*". For more information, see <a
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
+     *         >Permissions for cross account bucket access</a>.
      */
 
     public String getDeliveryS3Bucket() {
@@ -266,10 +294,21 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate
      * files while processing conformance pack template.
      * </p>
+     * <p>
+     * The delivery bucket name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/*". For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
+     * >Permissions for cross account bucket access</a>.
+     * </p>
      * 
      * @param deliveryS3Bucket
      *        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores
-     *        intermediate files while processing conformance pack template.
+     *        intermediate files while processing conformance pack template. </p>
+     *        <p>
+     *        The delivery bucket name should start with awsconfigconforms. For example: "Resource":
+     *        "arn:aws:s3:::your_bucket_name/*". For more information, see <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
+     *        >Permissions for cross account bucket access</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

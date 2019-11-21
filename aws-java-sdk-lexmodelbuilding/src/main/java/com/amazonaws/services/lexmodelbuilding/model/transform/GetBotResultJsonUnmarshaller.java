@@ -108,6 +108,10 @@ public class GetBotResultJsonUnmarshaller implements Unmarshaller<GetBotResult, 
                     context.nextToken();
                     getBotResult.setChildDirected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("detectSentiment", targetDepth)) {
+                    context.nextToken();
+                    getBotResult.setDetectSentiment(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

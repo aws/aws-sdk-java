@@ -43,6 +43,10 @@ public class CreateResolverRequestMarshaller {
             .marshallLocationName("kind").build();
     private static final MarshallingInfo<StructuredPojo> PIPELINECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineConfig").build();
+    private static final MarshallingInfo<StructuredPojo> SYNCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("syncConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CACHINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cachingConfig").build();
 
     private static final CreateResolverRequestMarshaller instance = new CreateResolverRequestMarshaller();
 
@@ -68,6 +72,8 @@ public class CreateResolverRequestMarshaller {
             protocolMarshaller.marshall(createResolverRequest.getResponseMappingTemplate(), RESPONSEMAPPINGTEMPLATE_BINDING);
             protocolMarshaller.marshall(createResolverRequest.getKind(), KIND_BINDING);
             protocolMarshaller.marshall(createResolverRequest.getPipelineConfig(), PIPELINECONFIG_BINDING);
+            protocolMarshaller.marshall(createResolverRequest.getSyncConfig(), SYNCCONFIG_BINDING);
+            protocolMarshaller.marshall(createResolverRequest.getCachingConfig(), CACHINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

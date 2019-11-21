@@ -53,6 +53,11 @@ public class HostPropertiesStaxUnmarshaller implements Unmarshaller<HostProperti
                     continue;
                 }
 
+                if (context.testExpression("instanceFamily", targetDepth)) {
+                    hostProperties.setInstanceFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("sockets", targetDepth)) {
                     hostProperties.setSockets(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

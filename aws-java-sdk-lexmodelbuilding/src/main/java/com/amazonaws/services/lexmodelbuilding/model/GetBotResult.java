@@ -57,9 +57,22 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private Statement abortStatement;
     /**
      * <p>
-     * The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a problem with
-     * building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT BUILT</code>.
+     * The status of the bot.
+     * </p>
+     * <p>
+     * When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     * </p>
+     * <p>
+     * If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances
+     * specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     * <code>READY</code>.
+     * </p>
+     * <p>
+     * If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.
+     * </p>
+     * <p>
+     * If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * </p>
      */
     private String status;
@@ -138,6 +151,12 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private Boolean childDirected;
+    /**
+     * <p>
+     * Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     */
+    private Boolean detectSentiment;
 
     /**
      * <p>
@@ -383,16 +402,40 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a problem with
-     * building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT BUILT</code>.
+     * The status of the bot.
+     * </p>
+     * <p>
+     * When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     * </p>
+     * <p>
+     * If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances
+     * specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     * <code>READY</code>.
+     * </p>
+     * <p>
+     * If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.
+     * </p>
+     * <p>
+     * If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * </p>
      * 
      * @param status
-     *        The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a
-     *        problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code>
-     *        explains why the bot did not build. If the bot was saved but not built, the status is
-     *        <code>NOT BUILT</code>.
+     *        The status of the bot. </p>
+     *        <p>
+     *        When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     *        </p>
+     *        <p>
+     *        If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     *        utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     *        <code>READY</code>.
+     *        </p>
+     *        <p>
+     *        If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     *        <code>failureReason</code> field explains why the bot did not build.
+     *        </p>
+     *        <p>
+     *        If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * @see Status
      */
 
@@ -402,15 +445,39 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a problem with
-     * building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT BUILT</code>.
+     * The status of the bot.
+     * </p>
+     * <p>
+     * When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     * </p>
+     * <p>
+     * If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances
+     * specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     * <code>READY</code>.
+     * </p>
+     * <p>
+     * If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.
+     * </p>
+     * <p>
+     * If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * </p>
      * 
-     * @return The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a
-     *         problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code>
-     *         explains why the bot did not build. If the bot was saved but not built, the status is
-     *         <code>NOT BUILT</code>.
+     * @return The status of the bot. </p>
+     *         <p>
+     *         When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     *         </p>
+     *         <p>
+     *         If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     *         utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status
+     *         is <code>READY</code>.
+     *         </p>
+     *         <p>
+     *         If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     *         <code>failureReason</code> field explains why the bot did not build.
+     *         </p>
+     *         <p>
+     *         If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * @see Status
      */
 
@@ -420,16 +487,40 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a problem with
-     * building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT BUILT</code>.
+     * The status of the bot.
+     * </p>
+     * <p>
+     * When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     * </p>
+     * <p>
+     * If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances
+     * specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     * <code>READY</code>.
+     * </p>
+     * <p>
+     * If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.
+     * </p>
+     * <p>
+     * If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * </p>
      * 
      * @param status
-     *        The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a
-     *        problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code>
-     *        explains why the bot did not build. If the bot was saved but not built, the status is
-     *        <code>NOT BUILT</code>.
+     *        The status of the bot. </p>
+     *        <p>
+     *        When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     *        </p>
+     *        <p>
+     *        If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     *        utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     *        <code>READY</code>.
+     *        </p>
+     *        <p>
+     *        If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     *        <code>failureReason</code> field explains why the bot did not build.
+     *        </p>
+     *        <p>
+     *        If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -441,16 +532,40 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a problem with
-     * building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT BUILT</code>.
+     * The status of the bot.
+     * </p>
+     * <p>
+     * When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     * </p>
+     * <p>
+     * If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances
+     * specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     * <code>READY</code>.
+     * </p>
+     * <p>
+     * If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.
+     * </p>
+     * <p>
+     * If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * </p>
      * 
      * @param status
-     *        The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a
-     *        problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code>
-     *        explains why the bot did not build. If the bot was saved but not built, the status is
-     *        <code>NOT BUILT</code>.
+     *        The status of the bot. </p>
+     *        <p>
+     *        When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     *        </p>
+     *        <p>
+     *        If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     *        utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     *        <code>READY</code>.
+     *        </p>
+     *        <p>
+     *        If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     *        <code>failureReason</code> field explains why the bot did not build.
+     *        </p>
+     *        <p>
+     *        If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * @see Status
      */
 
@@ -460,16 +575,40 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a problem with
-     * building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT BUILT</code>.
+     * The status of the bot.
+     * </p>
+     * <p>
+     * When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     * </p>
+     * <p>
+     * If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances
+     * specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     * <code>READY</code>.
+     * </p>
+     * <p>
+     * If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.
+     * </p>
+     * <p>
+     * If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * </p>
      * 
      * @param status
-     *        The status of the bot. If the bot is ready to run, the status is <code>READY</code>. If there was a
-     *        problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code>
-     *        explains why the bot did not build. If the bot was saved but not built, the status is
-     *        <code>NOT BUILT</code>.
+     *        The status of the bot. </p>
+     *        <p>
+     *        When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.
+     *        </p>
+     *        <p>
+     *        If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     *        utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is
+     *        <code>READY</code>.
+     *        </p>
+     *        <p>
+     *        If there was a problem with building the bot, the status is <code>FAILED</code> and the
+     *        <code>failureReason</code> field explains why the bot did not build.
+     *        </p>
+     *        <p>
+     *        If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -1047,6 +1186,58 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     * 
+     * @param detectSentiment
+     *        Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     */
+
+    public void setDetectSentiment(Boolean detectSentiment) {
+        this.detectSentiment = detectSentiment;
+    }
+
+    /**
+     * <p>
+     * Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     * 
+     * @return Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     */
+
+    public Boolean getDetectSentiment() {
+        return this.detectSentiment;
+    }
+
+    /**
+     * <p>
+     * Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     * 
+     * @param detectSentiment
+     *        Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBotResult withDetectSentiment(Boolean detectSentiment) {
+        setDetectSentiment(detectSentiment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     * </p>
+     * 
+     * @return Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.
+     */
+
+    public Boolean isDetectSentiment() {
+        return this.detectSentiment;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1087,7 +1278,9 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getLocale() != null)
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getChildDirected() != null)
-            sb.append("ChildDirected: ").append(getChildDirected());
+            sb.append("ChildDirected: ").append(getChildDirected()).append(",");
+        if (getDetectSentiment() != null)
+            sb.append("DetectSentiment: ").append(getDetectSentiment());
         sb.append("}");
         return sb.toString();
     }
@@ -1162,6 +1355,10 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getChildDirected() != null && other.getChildDirected().equals(this.getChildDirected()) == false)
             return false;
+        if (other.getDetectSentiment() == null ^ this.getDetectSentiment() == null)
+            return false;
+        if (other.getDetectSentiment() != null && other.getDetectSentiment().equals(this.getDetectSentiment()) == false)
+            return false;
         return true;
     }
 
@@ -1185,6 +1382,7 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
+        hashCode = prime * hashCode + ((getDetectSentiment() == null) ? 0 : getDetectSentiment().hashCode());
         return hashCode;
     }
 

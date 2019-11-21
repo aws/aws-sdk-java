@@ -60,6 +60,10 @@ public class TransformFilterCriteriaJsonUnmarshaller implements Unmarshaller<Tra
                     context.nextToken();
                     transformFilterCriteria.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GlueVersion", targetDepth)) {
+                    context.nextToken();
+                    transformFilterCriteria.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedBefore", targetDepth)) {
                     context.nextToken();
                     transformFilterCriteria.setCreatedBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

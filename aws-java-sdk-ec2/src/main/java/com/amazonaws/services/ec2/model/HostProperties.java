@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes properties of a Dedicated Host.
+ * Describes the properties of a Dedicated Host.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HostProperties" target="_top">AWS API
@@ -34,10 +34,17 @@ public class HostProperties implements Serializable, Cloneable {
     private Integer cores;
     /**
      * <p>
-     * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+     * The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports
+     * multiple instance types, no <b>instanceType</b> is returned.
      * </p>
      */
     private String instanceType;
+    /**
+     * <p>
+     * The instance family supported by the Dedicated Host. For example, <code>m5</code>.
+     * </p>
+     */
+    private String instanceFamily;
     /**
      * <p>
      * The number of sockets on the Dedicated Host.
@@ -46,7 +53,7 @@ public class HostProperties implements Serializable, Cloneable {
     private Integer sockets;
     /**
      * <p>
-     * The number of vCPUs on the Dedicated Host.
+     * The total number of vCPUs on the Dedicated Host.
      * </p>
      */
     private Integer totalVCpus;
@@ -93,11 +100,13 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+     * The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports
+     * multiple instance types, no <b>instanceType</b> is returned.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+     *        The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host
+     *        supports multiple instance types, no <b>instanceType</b> is returned.
      */
 
     public void setInstanceType(String instanceType) {
@@ -106,10 +115,12 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+     * The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports
+     * multiple instance types, no <b>instanceType</b> is returned.
      * </p>
      * 
-     * @return The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+     * @return The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host
+     *         supports multiple instance types, no <b>instanceType</b> is returned.
      */
 
     public String getInstanceType() {
@@ -118,16 +129,58 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+     * The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports
+     * multiple instance types, no <b>instanceType</b> is returned.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
+     *        The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host
+     *        supports multiple instance types, no <b>instanceType</b> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostProperties withInstanceType(String instanceType) {
         setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance family supported by the Dedicated Host. For example, <code>m5</code>.
+     * </p>
+     * 
+     * @param instanceFamily
+     *        The instance family supported by the Dedicated Host. For example, <code>m5</code>.
+     */
+
+    public void setInstanceFamily(String instanceFamily) {
+        this.instanceFamily = instanceFamily;
+    }
+
+    /**
+     * <p>
+     * The instance family supported by the Dedicated Host. For example, <code>m5</code>.
+     * </p>
+     * 
+     * @return The instance family supported by the Dedicated Host. For example, <code>m5</code>.
+     */
+
+    public String getInstanceFamily() {
+        return this.instanceFamily;
+    }
+
+    /**
+     * <p>
+     * The instance family supported by the Dedicated Host. For example, <code>m5</code>.
+     * </p>
+     * 
+     * @param instanceFamily
+     *        The instance family supported by the Dedicated Host. For example, <code>m5</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostProperties withInstanceFamily(String instanceFamily) {
+        setInstanceFamily(instanceFamily);
         return this;
     }
 
@@ -173,11 +226,11 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs on the Dedicated Host.
+     * The total number of vCPUs on the Dedicated Host.
      * </p>
      * 
      * @param totalVCpus
-     *        The number of vCPUs on the Dedicated Host.
+     *        The total number of vCPUs on the Dedicated Host.
      */
 
     public void setTotalVCpus(Integer totalVCpus) {
@@ -186,10 +239,10 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs on the Dedicated Host.
+     * The total number of vCPUs on the Dedicated Host.
      * </p>
      * 
-     * @return The number of vCPUs on the Dedicated Host.
+     * @return The total number of vCPUs on the Dedicated Host.
      */
 
     public Integer getTotalVCpus() {
@@ -198,11 +251,11 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs on the Dedicated Host.
+     * The total number of vCPUs on the Dedicated Host.
      * </p>
      * 
      * @param totalVCpus
-     *        The number of vCPUs on the Dedicated Host.
+     *        The total number of vCPUs on the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,6 +280,8 @@ public class HostProperties implements Serializable, Cloneable {
             sb.append("Cores: ").append(getCores()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getInstanceFamily() != null)
+            sb.append("InstanceFamily: ").append(getInstanceFamily()).append(",");
         if (getSockets() != null)
             sb.append("Sockets: ").append(getSockets()).append(",");
         if (getTotalVCpus() != null)
@@ -253,6 +308,10 @@ public class HostProperties implements Serializable, Cloneable {
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getInstanceFamily() == null ^ this.getInstanceFamily() == null)
+            return false;
+        if (other.getInstanceFamily() != null && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
+            return false;
         if (other.getSockets() == null ^ this.getSockets() == null)
             return false;
         if (other.getSockets() != null && other.getSockets().equals(this.getSockets()) == false)
@@ -271,6 +330,7 @@ public class HostProperties implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getCores() == null) ? 0 : getCores().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFamily() == null) ? 0 : getInstanceFamily().hashCode());
         hashCode = prime * hashCode + ((getSockets() == null) ? 0 : getSockets().hashCode());
         hashCode = prime * hashCode + ((getTotalVCpus() == null) ? 0 : getTotalVCpus().hashCode());
         return hashCode;

@@ -76,7 +76,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * DELETE_FAILED when a conformance pack deletion failed from your account.
+     * DELETE_FAILED when a conformance pack deletion failed in your account.
      * </p>
      * </li>
      * </ul>
@@ -257,7 +257,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * DELETE_FAILED when a conformance pack deletion failed from your account.
+     * DELETE_FAILED when a conformance pack deletion failed in your account.
      * </p>
      * </li>
      * </ul>
@@ -290,7 +290,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        DELETE_FAILED when a conformance pack deletion failed from your account.
+     *        DELETE_FAILED when a conformance pack deletion failed in your account.
      *        </p>
      *        </li>
      * @see ConformancePackState
@@ -330,7 +330,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * DELETE_FAILED when a conformance pack deletion failed from your account.
+     * DELETE_FAILED when a conformance pack deletion failed in your account.
      * </p>
      * </li>
      * </ul>
@@ -362,7 +362,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      *         </li>
      *         <li>
      *         <p>
-     *         DELETE_FAILED when a conformance pack deletion failed from your account.
+     *         DELETE_FAILED when a conformance pack deletion failed in your account.
      *         </p>
      *         </li>
      * @see ConformancePackState
@@ -402,7 +402,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * DELETE_FAILED when a conformance pack deletion failed from your account.
+     * DELETE_FAILED when a conformance pack deletion failed in your account.
      * </p>
      * </li>
      * </ul>
@@ -435,7 +435,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        DELETE_FAILED when a conformance pack deletion failed from your account.
+     *        DELETE_FAILED when a conformance pack deletion failed in your account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -477,7 +477,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * DELETE_FAILED when a conformance pack deletion failed from your account.
+     * DELETE_FAILED when a conformance pack deletion failed in your account.
      * </p>
      * </li>
      * </ul>
@@ -510,7 +510,7 @@ public class ConformancePackStatusDetail implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        DELETE_FAILED when a conformance pack deletion failed from your account.
+     *        DELETE_FAILED when a conformance pack deletion failed in your account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

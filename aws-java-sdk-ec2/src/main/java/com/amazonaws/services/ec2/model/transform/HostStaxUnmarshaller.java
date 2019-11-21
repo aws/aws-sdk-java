@@ -119,6 +119,21 @@ public class HostStaxUnmarshaller implements Unmarshaller<Host, StaxUnmarshaller
                     host.setHostRecovery(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("allowsMultipleInstanceTypes", targetDepth)) {
+                    host.setAllowsMultipleInstanceTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    host.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("availabilityZoneId", targetDepth)) {
+                    host.setAvailabilityZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return host;

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about the instance type that the Dedicated Host supports.
+ * Information about the number of instances that can be launched onto the Dedicated Host.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceCapacity" target="_top">AWS API
@@ -28,30 +28,32 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that can still be launched onto the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.
      * </p>
      */
     private Integer availableCapacity;
     /**
      * <p>
-     * The instance type size supported by the Dedicated Host.
+     * The instance type supported by the Dedicated Host.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The total number of instances that can be launched onto the Dedicated Host.
+     * The total number of instances that can be launched onto the Dedicated Host if there are no instances running on
+     * it.
      * </p>
      */
     private Integer totalCapacity;
 
     /**
      * <p>
-     * The number of instances that can still be launched onto the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.
      * </p>
      * 
      * @param availableCapacity
-     *        The number of instances that can still be launched onto the Dedicated Host.
+     *        The number of instances that can be launched onto the Dedicated Host based on the host's available
+     *        capacity.
      */
 
     public void setAvailableCapacity(Integer availableCapacity) {
@@ -60,10 +62,11 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that can still be launched onto the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.
      * </p>
      * 
-     * @return The number of instances that can still be launched onto the Dedicated Host.
+     * @return The number of instances that can be launched onto the Dedicated Host based on the host's available
+     *         capacity.
      */
 
     public Integer getAvailableCapacity() {
@@ -72,11 +75,12 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that can still be launched onto the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.
      * </p>
      * 
      * @param availableCapacity
-     *        The number of instances that can still be launched onto the Dedicated Host.
+     *        The number of instances that can be launched onto the Dedicated Host based on the host's available
+     *        capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +91,11 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size supported by the Dedicated Host.
+     * The instance type supported by the Dedicated Host.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size supported by the Dedicated Host.
+     *        The instance type supported by the Dedicated Host.
      */
 
     public void setInstanceType(String instanceType) {
@@ -100,10 +104,10 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size supported by the Dedicated Host.
+     * The instance type supported by the Dedicated Host.
      * </p>
      * 
-     * @return The instance type size supported by the Dedicated Host.
+     * @return The instance type supported by the Dedicated Host.
      */
 
     public String getInstanceType() {
@@ -112,11 +116,11 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size supported by the Dedicated Host.
+     * The instance type supported by the Dedicated Host.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size supported by the Dedicated Host.
+     *        The instance type supported by the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +131,13 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances that can be launched onto the Dedicated Host.
+     * The total number of instances that can be launched onto the Dedicated Host if there are no instances running on
+     * it.
      * </p>
      * 
      * @param totalCapacity
-     *        The total number of instances that can be launched onto the Dedicated Host.
+     *        The total number of instances that can be launched onto the Dedicated Host if there are no instances
+     *        running on it.
      */
 
     public void setTotalCapacity(Integer totalCapacity) {
@@ -140,10 +146,12 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances that can be launched onto the Dedicated Host.
+     * The total number of instances that can be launched onto the Dedicated Host if there are no instances running on
+     * it.
      * </p>
      * 
-     * @return The total number of instances that can be launched onto the Dedicated Host.
+     * @return The total number of instances that can be launched onto the Dedicated Host if there are no instances
+     *         running on it.
      */
 
     public Integer getTotalCapacity() {
@@ -152,11 +160,13 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances that can be launched onto the Dedicated Host.
+     * The total number of instances that can be launched onto the Dedicated Host if there are no instances running on
+     * it.
      * </p>
      * 
      * @param totalCapacity
-     *        The total number of instances that can be launched onto the Dedicated Host.
+     *        The total number of instances that can be launched onto the Dedicated Host if there are no instances
+     *        running on it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

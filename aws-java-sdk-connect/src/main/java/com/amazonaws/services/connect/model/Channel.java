@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Channel {
 
-    VOICE("VOICE");
+    VOICE("VOICE"),
+    CHAT("CHAT");
 
     private String value;
 

@@ -62,6 +62,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApiCacheResult> createApiCacheAsync(CreateApiCacheRequest request) {
+
+        return createApiCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApiCacheResult> createApiCacheAsync(final CreateApiCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateApiCacheRequest, CreateApiCacheResult> asyncHandler) {
+        final CreateApiCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateApiCacheResult>() {
+            @Override
+            public CreateApiCacheResult call() throws Exception {
+                CreateApiCacheResult result = null;
+
+                try {
+                    result = executeCreateApiCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApiKeyResult> createApiKeyAsync(CreateApiKeyRequest request) {
 
         return createApiKeyAsync(request, null);
@@ -260,6 +293,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteApiCacheResult> deleteApiCacheAsync(DeleteApiCacheRequest request) {
+
+        return deleteApiCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApiCacheResult> deleteApiCacheAsync(final DeleteApiCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApiCacheRequest, DeleteApiCacheResult> asyncHandler) {
+        final DeleteApiCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApiCacheResult>() {
+            @Override
+            public DeleteApiCacheResult call() throws Exception {
+                DeleteApiCacheResult result = null;
+
+                try {
+                    result = executeDeleteApiCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(DeleteApiKeyRequest request) {
 
         return deleteApiKeyAsync(request, null);
@@ -442,6 +508,72 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
 
                 try {
                     result = executeDeleteType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<FlushApiCacheResult> flushApiCacheAsync(FlushApiCacheRequest request) {
+
+        return flushApiCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<FlushApiCacheResult> flushApiCacheAsync(final FlushApiCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<FlushApiCacheRequest, FlushApiCacheResult> asyncHandler) {
+        final FlushApiCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<FlushApiCacheResult>() {
+            @Override
+            public FlushApiCacheResult call() throws Exception {
+                FlushApiCacheResult result = null;
+
+                try {
+                    result = executeFlushApiCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApiCacheResult> getApiCacheAsync(GetApiCacheRequest request) {
+
+        return getApiCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApiCacheResult> getApiCacheAsync(final GetApiCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetApiCacheRequest, GetApiCacheResult> asyncHandler) {
+        final GetApiCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetApiCacheResult>() {
+            @Override
+            public GetApiCacheResult call() throws Exception {
+                GetApiCacheResult result = null;
+
+                try {
+                    result = executeGetApiCache(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1036,6 +1168,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApiCacheResult> updateApiCacheAsync(UpdateApiCacheRequest request) {
+
+        return updateApiCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApiCacheResult> updateApiCacheAsync(final UpdateApiCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateApiCacheRequest, UpdateApiCacheResult> asyncHandler) {
+        final UpdateApiCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateApiCacheResult>() {
+            @Override
+            public UpdateApiCacheResult call() throws Exception {
+                UpdateApiCacheResult result = null;
+
+                try {
+                    result = executeUpdateApiCache(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

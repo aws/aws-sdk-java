@@ -46,6 +46,18 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
      * </p>
      */
     private Boolean useCallerCredentials;
+    /**
+     * <p>
+     * The <code>DeltaSyncConfig</code> for a versioned datasource.
+     * </p>
+     */
+    private DeltaSyncConfig deltaSyncConfig;
+    /**
+     * <p>
+     * Set to TRUE to use Conflict Detection and Resolution with this data source.
+     * </p>
+     */
+    private Boolean versioned;
 
     /**
      * <p>
@@ -180,6 +192,98 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The <code>DeltaSyncConfig</code> for a versioned datasource.
+     * </p>
+     * 
+     * @param deltaSyncConfig
+     *        The <code>DeltaSyncConfig</code> for a versioned datasource.
+     */
+
+    public void setDeltaSyncConfig(DeltaSyncConfig deltaSyncConfig) {
+        this.deltaSyncConfig = deltaSyncConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>DeltaSyncConfig</code> for a versioned datasource.
+     * </p>
+     * 
+     * @return The <code>DeltaSyncConfig</code> for a versioned datasource.
+     */
+
+    public DeltaSyncConfig getDeltaSyncConfig() {
+        return this.deltaSyncConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>DeltaSyncConfig</code> for a versioned datasource.
+     * </p>
+     * 
+     * @param deltaSyncConfig
+     *        The <code>DeltaSyncConfig</code> for a versioned datasource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DynamodbDataSourceConfig withDeltaSyncConfig(DeltaSyncConfig deltaSyncConfig) {
+        setDeltaSyncConfig(deltaSyncConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to use Conflict Detection and Resolution with this data source.
+     * </p>
+     * 
+     * @param versioned
+     *        Set to TRUE to use Conflict Detection and Resolution with this data source.
+     */
+
+    public void setVersioned(Boolean versioned) {
+        this.versioned = versioned;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to use Conflict Detection and Resolution with this data source.
+     * </p>
+     * 
+     * @return Set to TRUE to use Conflict Detection and Resolution with this data source.
+     */
+
+    public Boolean getVersioned() {
+        return this.versioned;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to use Conflict Detection and Resolution with this data source.
+     * </p>
+     * 
+     * @param versioned
+     *        Set to TRUE to use Conflict Detection and Resolution with this data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DynamodbDataSourceConfig withVersioned(Boolean versioned) {
+        setVersioned(versioned);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to use Conflict Detection and Resolution with this data source.
+     * </p>
+     * 
+     * @return Set to TRUE to use Conflict Detection and Resolution with this data source.
+     */
+
+    public Boolean isVersioned() {
+        return this.versioned;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -196,7 +300,11 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
         if (getAwsRegion() != null)
             sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getUseCallerCredentials() != null)
-            sb.append("UseCallerCredentials: ").append(getUseCallerCredentials());
+            sb.append("UseCallerCredentials: ").append(getUseCallerCredentials()).append(",");
+        if (getDeltaSyncConfig() != null)
+            sb.append("DeltaSyncConfig: ").append(getDeltaSyncConfig()).append(",");
+        if (getVersioned() != null)
+            sb.append("Versioned: ").append(getVersioned());
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +331,14 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
             return false;
         if (other.getUseCallerCredentials() != null && other.getUseCallerCredentials().equals(this.getUseCallerCredentials()) == false)
             return false;
+        if (other.getDeltaSyncConfig() == null ^ this.getDeltaSyncConfig() == null)
+            return false;
+        if (other.getDeltaSyncConfig() != null && other.getDeltaSyncConfig().equals(this.getDeltaSyncConfig()) == false)
+            return false;
+        if (other.getVersioned() == null ^ this.getVersioned() == null)
+            return false;
+        if (other.getVersioned() != null && other.getVersioned().equals(this.getVersioned()) == false)
+            return false;
         return true;
     }
 
@@ -234,6 +350,8 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
         hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getUseCallerCredentials() == null) ? 0 : getUseCallerCredentials().hashCode());
+        hashCode = prime * hashCode + ((getDeltaSyncConfig() == null) ? 0 : getDeltaSyncConfig().hashCode());
+        hashCode = prime * hashCode + ((getVersioned() == null) ? 0 : getVersioned().hashCode());
         return hashCode;
     }
 

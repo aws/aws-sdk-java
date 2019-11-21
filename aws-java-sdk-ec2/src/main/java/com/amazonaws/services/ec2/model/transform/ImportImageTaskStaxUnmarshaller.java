@@ -114,6 +114,17 @@ public class ImportImageTaskStaxUnmarshaller implements Unmarshaller<ImportImage
                     importImageTask.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("licenseSpecifications", targetDepth)) {
+                    importImageTask.withLicenseSpecifications(new ArrayList<ImportImageLicenseConfigurationResponse>());
+                    continue;
+                }
+
+                if (context.testExpression("licenseSpecifications/item", targetDepth)) {
+                    importImageTask.withLicenseSpecifications(ImportImageLicenseConfigurationResponseStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return importImageTask;

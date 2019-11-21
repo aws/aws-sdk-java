@@ -67,6 +67,30 @@ public interface AWSAmplify {
 
     /**
      * <p>
+     * Creates a new backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param createBackendEnvironmentRequest
+     *        Request structure for a backend environment create request.
+     * @return Result of the CreateBackendEnvironment operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws LimitExceededException
+     *         Exception thrown when a resource could not be created because of service limits.
+     * @sample AWSAmplify.CreateBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateBackendEnvironmentResult createBackendEnvironment(CreateBackendEnvironmentRequest createBackendEnvironmentRequest);
+
+    /**
+     * <p>
      * Creates a new Branch for an Amplify App.
      * </p>
      * 
@@ -188,6 +212,30 @@ public interface AWSAmplify {
      *      Documentation</a>
      */
     DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest);
+
+    /**
+     * <p>
+     * Delete backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param deleteBackendEnvironmentRequest
+     *        Request structure for delete backend environment request.
+     * @return Result of the DeleteBackendEnvironment operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws DependentServiceFailureException
+     *         Exception thrown when an operation fails due to a dependent service throwing an exception.
+     * @sample AWSAmplify.DeleteBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteBackendEnvironmentResult deleteBackendEnvironment(DeleteBackendEnvironmentRequest deleteBackendEnvironmentRequest);
 
     /**
      * <p>
@@ -355,6 +403,28 @@ public interface AWSAmplify {
 
     /**
      * <p>
+     * Retrieves a backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param getBackendEnvironmentRequest
+     *        Request structure for get backend environment request.
+     * @return Result of the GetBackendEnvironment operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @sample AWSAmplify.GetBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetBackendEnvironmentResult getBackendEnvironment(GetBackendEnvironmentRequest getBackendEnvironmentRequest);
+
+    /**
+     * <p>
      * Retrieves a branch for an Amplify App.
      * </p>
      * 
@@ -486,6 +556,26 @@ public interface AWSAmplify {
      *      Documentation</a>
      */
     ListArtifactsResult listArtifacts(ListArtifactsRequest listArtifactsRequest);
+
+    /**
+     * <p>
+     * Lists backend environments for an Amplify App.
+     * </p>
+     * 
+     * @param listBackendEnvironmentsRequest
+     *        Request structure for list backend environments request.
+     * @return Result of the ListBackendEnvironments operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @sample AWSAmplify.ListBackendEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBackendEnvironmentsResult listBackendEnvironments(ListBackendEnvironmentsRequest listBackendEnvironmentsRequest);
 
     /**
      * <p>

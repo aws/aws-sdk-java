@@ -28,6 +28,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public CreateApiCacheResult createApiCache(CreateApiCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateApiKeyResult createApiKey(CreateApiKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,6 +63,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public DeleteApiCacheResult deleteApiCache(DeleteApiCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApiKeyResult deleteApiKey(DeleteApiKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +94,16 @@ public class AbstractAWSAppSync implements AWSAppSync {
 
     @Override
     public DeleteTypeResult deleteType(DeleteTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public FlushApiCacheResult flushApiCache(FlushApiCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetApiCacheResult getApiCache(GetApiCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +194,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateApiCacheResult updateApiCache(UpdateApiCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

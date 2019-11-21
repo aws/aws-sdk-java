@@ -1,3 +1,56 @@
+# __1.11.680__ __2019-11-21__
+## __AWS Amplify__
+  - ### Features
+    - This release of AWS Amplify Console introduces support for backend environments. Backend environments are containers for AWS deployments. Each environment is a collection of AWS resources.
+
+## __AWS AppSync__
+  - ### Features
+    - AppSync: AWS AppSync now supports the ability to add, configure, and maintain caching for your AWS AppSync GraphQL API.
+
+## __AWS Config__
+  - ### Features
+    - AWS Config launches Custom Configuration Items. A new feature which allows customers to publish resource configuration for third-party resources, custom, or on-premises servers.
+
+## __AWS Glue__
+  - ### Features
+    - This release adds support for Glue 1.0 compatible ML Transforms.
+
+## __AWSMarketplace Metering__
+  - ### Features
+    - Documentation updates for the AWS Marketplace Metering Service.
+
+## __Amazon Connect Participant Service__
+  - ### Features
+    - This release adds 5 new APIs: CreateParticipantConnection, DisconnectParticipant, GetTranscript, SendEvent, and SendMessage. For Amazon Connect chat, you can use them to programmatically perform participant actions on the configured Amazon Connect instance. Learn more here: https://docs.aws.amazon.com/connect-participant/latest/APIReference/Welcome.html
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release adds a new API: StartChatContact. You can use it to programmatically start a chat on the specified Amazon Connect instance. Learn more here: https://docs.aws.amazon.com/connect/latest/APIReference/Welcome.html 
+
+## __Amazon DynamoDB__
+  - ### Features
+    - With this release, you can convert an existing Amazon DynamoDB table to a global table by adding replicas in other AWS Regions.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for attaching AWS License Manager Configurations to Amazon Machine Image (AMI) using ImportImage API; and adds support for running different instance sizes on EC2 Dedicated Hosts
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex now supports Sentiment Analysis
+
+## __Amazon Lex Runtime Service__
+  - ### Features
+    - Amazon Lex now supports Sentiment Analysis
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - The release contains new API and API changes for AWS Systems Manager Explorer product.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this release, Amazon Transcribe now supports transcriptions from audio sources in Hebrew (he-IL), Swiss German (de-CH), Japanese (ja-JP), Turkish (tr-TR), Arabic-Gulf (ar-AE), Malay (ms-MY), Telugu (te-IN)
+
 # __1.11.679__ __2019-11-20__
 ## __AWS Application Discovery Service__
   - ### Features

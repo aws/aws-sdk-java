@@ -49,6 +49,10 @@ public class PostContentResultJsonUnmarshaller implements Unmarshaller<PostConte
                 postContentResult.setSessionAttributes(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(
                         context));
             }
+            if (context.getHeader("x-amz-lex-sentiment") != null) {
+                context.setCurrentHeader("x-amz-lex-sentiment");
+                postContentResult.setSentimentResponse(context.getUnmarshaller(String.class).unmarshall(context));
+            }
             if (context.getHeader("x-amz-lex-message") != null) {
                 context.setCurrentHeader("x-amz-lex-message");
                 postContentResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));

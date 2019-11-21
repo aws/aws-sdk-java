@@ -262,6 +262,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<StartChatContactResult> startChatContactAsync(StartChatContactRequest request) {
+
+        return startChatContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartChatContactResult> startChatContactAsync(StartChatContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartChatContactRequest, StartChatContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartOutboundVoiceContactResult> startOutboundVoiceContactAsync(StartOutboundVoiceContactRequest request) {
 
         return startOutboundVoiceContactAsync(request, null);

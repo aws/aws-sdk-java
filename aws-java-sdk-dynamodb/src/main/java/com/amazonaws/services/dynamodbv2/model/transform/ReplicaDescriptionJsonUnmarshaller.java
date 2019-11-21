@@ -52,6 +52,31 @@ public class ReplicaDescriptionJsonUnmarshaller implements Unmarshaller<ReplicaD
                     context.nextToken();
                     replicaDescription.setRegionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ReplicaStatus", targetDepth)) {
+                    context.nextToken();
+                    replicaDescription.setReplicaStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReplicaStatusDescription", targetDepth)) {
+                    context.nextToken();
+                    replicaDescription.setReplicaStatusDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReplicaStatusPercentProgress", targetDepth)) {
+                    context.nextToken();
+                    replicaDescription.setReplicaStatusPercentProgress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KMSMasterKeyId", targetDepth)) {
+                    context.nextToken();
+                    replicaDescription.setKMSMasterKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProvisionedThroughputOverride", targetDepth)) {
+                    context.nextToken();
+                    replicaDescription.setProvisionedThroughputOverride(ProvisionedThroughputOverrideJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("GlobalSecondaryIndexes", targetDepth)) {
+                    context.nextToken();
+                    replicaDescription.setGlobalSecondaryIndexes(new ListUnmarshaller<ReplicaGlobalSecondaryIndexDescription>(
+                            ReplicaGlobalSecondaryIndexDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

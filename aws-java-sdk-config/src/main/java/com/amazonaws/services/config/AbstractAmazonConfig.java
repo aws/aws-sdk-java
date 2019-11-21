@@ -108,6 +108,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DeleteResourceConfigResult deleteResourceConfig(DeleteResourceConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRetentionConfigurationResult deleteRetentionConfiguration(DeleteRetentionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -427,6 +432,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public PutRemediationExceptionsResult putRemediationExceptions(PutRemediationExceptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResourceConfigResult putResourceConfig(PutResourceConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

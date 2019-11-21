@@ -88,6 +88,18 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private PipelineConfig pipelineConfig;
+    /**
+     * <p>
+     * The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+     * </p>
+     */
+    private SyncConfig syncConfig;
+    /**
+     * <p>
+     * The caching configuration for the resolver.
+     * </p>
+     */
+    private CachingConfig cachingConfig;
 
     /**
      * <p>
@@ -545,6 +557,86 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+     * </p>
+     * 
+     * @param syncConfig
+     *        The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+     */
+
+    public void setSyncConfig(SyncConfig syncConfig) {
+        this.syncConfig = syncConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+     * </p>
+     * 
+     * @return The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+     */
+
+    public SyncConfig getSyncConfig() {
+        return this.syncConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+     * </p>
+     * 
+     * @param syncConfig
+     *        The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResolverRequest withSyncConfig(SyncConfig syncConfig) {
+        setSyncConfig(syncConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The caching configuration for the resolver.
+     * </p>
+     * 
+     * @param cachingConfig
+     *        The caching configuration for the resolver.
+     */
+
+    public void setCachingConfig(CachingConfig cachingConfig) {
+        this.cachingConfig = cachingConfig;
+    }
+
+    /**
+     * <p>
+     * The caching configuration for the resolver.
+     * </p>
+     * 
+     * @return The caching configuration for the resolver.
+     */
+
+    public CachingConfig getCachingConfig() {
+        return this.cachingConfig;
+    }
+
+    /**
+     * <p>
+     * The caching configuration for the resolver.
+     * </p>
+     * 
+     * @param cachingConfig
+     *        The caching configuration for the resolver.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResolverRequest withCachingConfig(CachingConfig cachingConfig) {
+        setCachingConfig(cachingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -571,7 +663,11 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getKind() != null)
             sb.append("Kind: ").append(getKind()).append(",");
         if (getPipelineConfig() != null)
-            sb.append("PipelineConfig: ").append(getPipelineConfig());
+            sb.append("PipelineConfig: ").append(getPipelineConfig()).append(",");
+        if (getSyncConfig() != null)
+            sb.append("SyncConfig: ").append(getSyncConfig()).append(",");
+        if (getCachingConfig() != null)
+            sb.append("CachingConfig: ").append(getCachingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -618,6 +714,14 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getPipelineConfig() != null && other.getPipelineConfig().equals(this.getPipelineConfig()) == false)
             return false;
+        if (other.getSyncConfig() == null ^ this.getSyncConfig() == null)
+            return false;
+        if (other.getSyncConfig() != null && other.getSyncConfig().equals(this.getSyncConfig()) == false)
+            return false;
+        if (other.getCachingConfig() == null ^ this.getCachingConfig() == null)
+            return false;
+        if (other.getCachingConfig() != null && other.getCachingConfig().equals(this.getCachingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -634,6 +738,8 @@ public class UpdateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getResponseMappingTemplate() == null) ? 0 : getResponseMappingTemplate().hashCode());
         hashCode = prime * hashCode + ((getKind() == null) ? 0 : getKind().hashCode());
         hashCode = prime * hashCode + ((getPipelineConfig() == null) ? 0 : getPipelineConfig().hashCode());
+        hashCode = prime * hashCode + ((getSyncConfig() == null) ? 0 : getSyncConfig().hashCode());
+        hashCode = prime * hashCode + ((getCachingConfig() == null) ? 0 : getCachingConfig().hashCode());
         return hashCode;
     }
 

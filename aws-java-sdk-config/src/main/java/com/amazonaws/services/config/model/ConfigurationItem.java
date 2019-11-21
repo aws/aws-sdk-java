@@ -127,7 +127,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * CloudTrail</a>.
      * </p>
      * <p>
-     * An empty field indicates that the current configuration was not initiated by any event.
+     * An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a>
+     * in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> relatedEvents;
@@ -830,7 +833,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * CloudTrail</a>.
      * </p>
      * <p>
-     * An empty field indicates that the current configuration was not initiated by any event.
+     * An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a>
+     * in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      * </p>
      * 
      * @return A list of CloudTrail event IDs.</p>
@@ -841,7 +847,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *         Is AWS CloudTrail</a>.
      *         </p>
      *         <p>
-     *         An empty field indicates that the current configuration was not initiated by any event.
+     *         An empty field indicates that the current configuration was not initiated by any event. As of Version
+     *         1.3, the relatedEvents field is empty. You can access the <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     *         API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      */
 
     public java.util.List<String> getRelatedEvents() {
@@ -862,7 +871,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * CloudTrail</a>.
      * </p>
      * <p>
-     * An empty field indicates that the current configuration was not initiated by any event.
+     * An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a>
+     * in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      * </p>
      * 
      * @param relatedEvents
@@ -874,7 +886,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        Is AWS CloudTrail</a>.
      *        </p>
      *        <p>
-     *        An empty field indicates that the current configuration was not initiated by any event.
+     *        An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3,
+     *        the relatedEvents field is empty. You can access the <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     *        API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      */
 
     public void setRelatedEvents(java.util.Collection<String> relatedEvents) {
@@ -897,7 +912,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * CloudTrail</a>.
      * </p>
      * <p>
-     * An empty field indicates that the current configuration was not initiated by any event.
+     * An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a>
+     * in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -914,7 +932,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        Is AWS CloudTrail</a>.
      *        </p>
      *        <p>
-     *        An empty field indicates that the current configuration was not initiated by any event.
+     *        An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3,
+     *        the relatedEvents field is empty. You can access the <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     *        API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -939,7 +960,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * CloudTrail</a>.
      * </p>
      * <p>
-     * An empty field indicates that the current configuration was not initiated by any event.
+     * An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a>
+     * in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      * </p>
      * 
      * @param relatedEvents
@@ -951,7 +975,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        Is AWS CloudTrail</a>.
      *        </p>
      *        <p>
-     *        An empty field indicates that the current configuration was not initiated by any event.
+     *        An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3,
+     *        the relatedEvents field is empty. You can access the <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     *        API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

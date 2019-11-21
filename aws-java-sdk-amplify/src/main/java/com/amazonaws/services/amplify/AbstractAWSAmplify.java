@@ -33,6 +33,11 @@ public class AbstractAWSAmplify implements AWSAmplify {
     }
 
     @Override
+    public CreateBackendEnvironmentResult createBackendEnvironment(CreateBackendEnvironmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBranchResult createBranch(CreateBranchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,11 @@ public class AbstractAWSAmplify implements AWSAmplify {
 
     @Override
     public DeleteAppResult deleteApp(DeleteAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBackendEnvironmentResult deleteBackendEnvironment(DeleteBackendEnvironmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,6 +103,11 @@ public class AbstractAWSAmplify implements AWSAmplify {
     }
 
     @Override
+    public GetBackendEnvironmentResult getBackendEnvironment(GetBackendEnvironmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetBranchResult getBranch(GetBranchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +134,11 @@ public class AbstractAWSAmplify implements AWSAmplify {
 
     @Override
     public ListArtifactsResult listArtifacts(ListArtifactsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBackendEnvironmentsResult listBackendEnvironments(ListBackendEnvironmentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

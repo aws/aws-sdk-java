@@ -144,6 +144,21 @@ public class ImportImageRequestMarshaller implements Marshaller<Request<ImportIm
             request.addParameter("RoleName", StringUtils.fromString(importImageRequest.getRoleName()));
         }
 
+        com.amazonaws.internal.SdkInternalList<ImportImageLicenseConfigurationRequest> importImageRequestLicenseSpecificationsList = (com.amazonaws.internal.SdkInternalList<ImportImageLicenseConfigurationRequest>) importImageRequest
+                .getLicenseSpecifications();
+        if (!importImageRequestLicenseSpecificationsList.isEmpty() || !importImageRequestLicenseSpecificationsList.isAutoConstruct()) {
+            int licenseSpecificationsListIndex = 1;
+
+            for (ImportImageLicenseConfigurationRequest importImageRequestLicenseSpecificationsListValue : importImageRequestLicenseSpecificationsList) {
+
+                if (importImageRequestLicenseSpecificationsListValue.getLicenseConfigurationArn() != null) {
+                    request.addParameter("LicenseSpecifications." + licenseSpecificationsListIndex + ".LicenseConfigurationArn",
+                            StringUtils.fromString(importImageRequestLicenseSpecificationsListValue.getLicenseConfigurationArn()));
+                }
+                licenseSpecificationsListIndex++;
+            }
+        }
+
         return request;
     }
 

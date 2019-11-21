@@ -34,6 +34,8 @@ public class TransformFilterCriteriaMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformType").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> GLUEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlueVersion").build();
     private static final MarshallingInfo<java.util.Date> CREATEDBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedBefore").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -64,6 +66,7 @@ public class TransformFilterCriteriaMarshaller {
             protocolMarshaller.marshall(transformFilterCriteria.getName(), NAME_BINDING);
             protocolMarshaller.marshall(transformFilterCriteria.getTransformType(), TRANSFORMTYPE_BINDING);
             protocolMarshaller.marshall(transformFilterCriteria.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(transformFilterCriteria.getGlueVersion(), GLUEVERSION_BINDING);
             protocolMarshaller.marshall(transformFilterCriteria.getCreatedBefore(), CREATEDBEFORE_BINDING);
             protocolMarshaller.marshall(transformFilterCriteria.getCreatedAfter(), CREATEDAFTER_BINDING);
             protocolMarshaller.marshall(transformFilterCriteria.getLastModifiedBefore(), LASTMODIFIEDBEFORE_BINDING);

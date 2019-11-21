@@ -838,6 +838,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * Creates a global table from an existing table. A global table creates a replication relationship between two or
      * more DynamoDB tables with the same table name in the provided Regions.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * <p>
      * If you want to add a new replica table to a global table, each of the following conditions must be true:
      * </p>
@@ -1563,6 +1570,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Returns information about the specified global table.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param describeGlobalTableRequest
      * @return Result of the DescribeGlobalTable operation returned by the service.
@@ -1625,6 +1639,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Describes Region-specific settings for a global table.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param describeGlobalTableSettingsRequest
      * @return Result of the DescribeGlobalTableSettings operation returned by the service.
@@ -1914,6 +1935,74 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Describes auto scaling settings across replicas of the global table at once.
+     * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @param describeTableReplicaAutoScalingRequest
+     * @return Result of the DescribeTableReplicaAutoScaling operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeTableReplicaAutoScaling
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTableReplicaAutoScalingResult describeTableReplicaAutoScaling(DescribeTableReplicaAutoScalingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTableReplicaAutoScaling(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTableReplicaAutoScalingResult executeDescribeTableReplicaAutoScaling(
+            DescribeTableReplicaAutoScalingRequest describeTableReplicaAutoScalingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTableReplicaAutoScalingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTableReplicaAutoScalingRequest> request = null;
+        Response<DescribeTableReplicaAutoScalingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTableReplicaAutoScalingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTableReplicaAutoScalingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTableReplicaAutoScaling");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTableReplicaAutoScalingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeTableReplicaAutoScalingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gives a description of the Time to Live (TTL) status on the specified table.
      * </p>
      * 
@@ -2138,6 +2227,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Lists all global tables that have a replica in the specified Region.
      * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+     * 2017.11.29</a> of global tables.
+     * </p>
+     * </note>
      * 
      * @param listGlobalTablesRequest
      * @return Result of the ListGlobalTables operation returned by the service.
@@ -4556,6 +4652,91 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     @Override
     public UpdateTableResult updateTable(String tableName, ProvisionedThroughput provisionedThroughput) {
         return updateTable(new UpdateTableRequest().withTableName(tableName).withProvisionedThroughput(provisionedThroughput));
+    }
+
+    /**
+     * <p>
+     * Updates auto scaling settings on your global tables at once.
+     * </p>
+     * <note>
+     * <p>
+     * This method only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @param updateTableReplicaAutoScalingRequest
+     * @return Result of the UpdateTableReplicaAutoScaling operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account limit of 256 tables.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateTableReplicaAutoScaling
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTableReplicaAutoScalingResult updateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTableReplicaAutoScaling(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTableReplicaAutoScalingResult executeUpdateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest updateTableReplicaAutoScalingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTableReplicaAutoScalingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTableReplicaAutoScalingRequest> request = null;
+        Response<UpdateTableReplicaAutoScalingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTableReplicaAutoScalingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateTableReplicaAutoScalingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTableReplicaAutoScaling");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTableReplicaAutoScalingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateTableReplicaAutoScalingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

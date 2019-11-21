@@ -41,6 +41,19 @@ public class AbstractAWSAmplifyAsync extends AbstractAWSAmplify implements AWSAm
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBackendEnvironmentResult> createBackendEnvironmentAsync(CreateBackendEnvironmentRequest request) {
+
+        return createBackendEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBackendEnvironmentResult> createBackendEnvironmentAsync(CreateBackendEnvironmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateBackendEnvironmentRequest, CreateBackendEnvironmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBranchResult> createBranchAsync(CreateBranchRequest request) {
 
         return createBranchAsync(request, null);
@@ -101,6 +114,19 @@ public class AbstractAWSAmplifyAsync extends AbstractAWSAmplify implements AWSAm
     @Override
     public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBackendEnvironmentResult> deleteBackendEnvironmentAsync(DeleteBackendEnvironmentRequest request) {
+
+        return deleteBackendEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBackendEnvironmentResult> deleteBackendEnvironmentAsync(DeleteBackendEnvironmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteBackendEnvironmentRequest, DeleteBackendEnvironmentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -197,6 +223,19 @@ public class AbstractAWSAmplifyAsync extends AbstractAWSAmplify implements AWSAm
     }
 
     @Override
+    public java.util.concurrent.Future<GetBackendEnvironmentResult> getBackendEnvironmentAsync(GetBackendEnvironmentRequest request) {
+
+        return getBackendEnvironmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBackendEnvironmentResult> getBackendEnvironmentAsync(GetBackendEnvironmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetBackendEnvironmentRequest, GetBackendEnvironmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBranchResult> getBranchAsync(GetBranchRequest request) {
 
         return getBranchAsync(request, null);
@@ -270,6 +309,19 @@ public class AbstractAWSAmplifyAsync extends AbstractAWSAmplify implements AWSAm
     @Override
     public java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(ListArtifactsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListArtifactsRequest, ListArtifactsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBackendEnvironmentsResult> listBackendEnvironmentsAsync(ListBackendEnvironmentsRequest request) {
+
+        return listBackendEnvironmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBackendEnvironmentsResult> listBackendEnvironmentsAsync(ListBackendEnvironmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBackendEnvironmentsRequest, ListBackendEnvironmentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -38,7 +38,8 @@ import com.amazonaws.services.marketplacemetering.model.*;
  * <ul>
  * <li>
  * <p>
- * <i>MeterUsage</i>- Submits the metering record for a Marketplace product. MeterUsage is called from an EC2 instance.
+ * <i>MeterUsage</i>- Submits the metering record for a Marketplace product. MeterUsage is called from an EC2 instance
+ * or a container running on EKS or ECS.
  * </p>
  * </li>
  * <li>
@@ -151,8 +152,8 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      * record ID.
      * </p>
      * <p>
-     * MeterUsage is authenticated on the buyer's AWS account, generally when running from an EC2 instance on the AWS
-     * Marketplace.
+     * MeterUsage is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS
+     * pod.
      * </p>
      * 
      * @param meterUsageRequest
@@ -169,8 +170,8 @@ public interface AWSMarketplaceMeteringAsync extends AWSMarketplaceMetering {
      * record ID.
      * </p>
      * <p>
-     * MeterUsage is authenticated on the buyer's AWS account, generally when running from an EC2 instance on the AWS
-     * Marketplace.
+     * MeterUsage is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS
+     * pod.
      * </p>
      * 
      * @param meterUsageRequest

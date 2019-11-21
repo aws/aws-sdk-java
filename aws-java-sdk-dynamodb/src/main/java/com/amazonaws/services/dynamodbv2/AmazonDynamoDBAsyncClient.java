@@ -943,6 +943,41 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTableReplicaAutoScalingResult> describeTableReplicaAutoScalingAsync(
+            DescribeTableReplicaAutoScalingRequest request) {
+
+        return describeTableReplicaAutoScalingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTableReplicaAutoScalingResult> describeTableReplicaAutoScalingAsync(
+            final DescribeTableReplicaAutoScalingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTableReplicaAutoScalingRequest, DescribeTableReplicaAutoScalingResult> asyncHandler) {
+        final DescribeTableReplicaAutoScalingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTableReplicaAutoScalingResult>() {
+            @Override
+            public DescribeTableReplicaAutoScalingResult call() throws Exception {
+                DescribeTableReplicaAutoScalingResult result = null;
+
+                try {
+                    result = executeDescribeTableReplicaAutoScaling(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest request) {
 
         return describeTimeToLiveAsync(request, null);
@@ -1928,6 +1963,40 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
             com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler) {
 
         return updateTableAsync(new UpdateTableRequest().withTableName(tableName).withProvisionedThroughput(provisionedThroughput), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTableReplicaAutoScalingResult> updateTableReplicaAutoScalingAsync(UpdateTableReplicaAutoScalingRequest request) {
+
+        return updateTableReplicaAutoScalingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTableReplicaAutoScalingResult> updateTableReplicaAutoScalingAsync(
+            final UpdateTableReplicaAutoScalingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTableReplicaAutoScalingRequest, UpdateTableReplicaAutoScalingResult> asyncHandler) {
+        final UpdateTableReplicaAutoScalingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTableReplicaAutoScalingResult>() {
+            @Override
+            public UpdateTableReplicaAutoScalingResult call() throws Exception {
+                UpdateTableReplicaAutoScalingResult result = null;
+
+                try {
+                    result = executeUpdateTableReplicaAutoScaling(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

@@ -31,10 +31,7 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Filters the results by compliance.
-     * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      */
     private String complianceType;
@@ -61,16 +58,11 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Filters the results by compliance.
-     * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param complianceType
-     *        Filters the results by compliance.</p>
-     *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * @see ConformancePackComplianceType
      */
 
@@ -80,15 +72,10 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Filters the results by compliance.
-     * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      * 
-     * @return Filters the results by compliance.</p>
-     *         <p>
-     *         The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * @return The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * @see ConformancePackComplianceType
      */
 
@@ -98,16 +85,11 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Filters the results by compliance.
-     * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param complianceType
-     *        Filters the results by compliance.</p>
-     *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */
@@ -119,16 +101,11 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Filters the results by compliance.
-     * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      * 
      * @param complianceType
-     *        Filters the results by compliance.</p>
-     *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */

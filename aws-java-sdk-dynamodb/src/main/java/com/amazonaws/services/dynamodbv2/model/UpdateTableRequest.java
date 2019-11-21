@@ -124,6 +124,19 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private SSESpecification sSESpecification;
+    /**
+     * <p>
+     * A list of replica update actions (create, delete, or update) for the table.
+     * </p>
+     * <note>
+     * <p>
+     * This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     */
+    private java.util.List<ReplicationGroupUpdate> replicaUpdates;
 
     /**
      * Default constructor for UpdateTableRequest object. Callers should use the setter or fluent setter (with...)
@@ -916,6 +929,124 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A list of replica update actions (create, delete, or update) for the table.
+     * </p>
+     * <note>
+     * <p>
+     * This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @return A list of replica update actions (create, delete, or update) for the table.</p> <note>
+     *         <p>
+     *         This property only applies to <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     *         2019.11.21</a> of global tables.
+     *         </p>
+     */
+
+    public java.util.List<ReplicationGroupUpdate> getReplicaUpdates() {
+        return replicaUpdates;
+    }
+
+    /**
+     * <p>
+     * A list of replica update actions (create, delete, or update) for the table.
+     * </p>
+     * <note>
+     * <p>
+     * This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @param replicaUpdates
+     *        A list of replica update actions (create, delete, or update) for the table.</p> <note>
+     *        <p>
+     *        This property only applies to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     *        2019.11.21</a> of global tables.
+     *        </p>
+     */
+
+    public void setReplicaUpdates(java.util.Collection<ReplicationGroupUpdate> replicaUpdates) {
+        if (replicaUpdates == null) {
+            this.replicaUpdates = null;
+            return;
+        }
+
+        this.replicaUpdates = new java.util.ArrayList<ReplicationGroupUpdate>(replicaUpdates);
+    }
+
+    /**
+     * <p>
+     * A list of replica update actions (create, delete, or update) for the table.
+     * </p>
+     * <note>
+     * <p>
+     * This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicaUpdates(java.util.Collection)} or {@link #withReplicaUpdates(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param replicaUpdates
+     *        A list of replica update actions (create, delete, or update) for the table.</p> <note>
+     *        <p>
+     *        This property only applies to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     *        2019.11.21</a> of global tables.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTableRequest withReplicaUpdates(ReplicationGroupUpdate... replicaUpdates) {
+        if (this.replicaUpdates == null) {
+            setReplicaUpdates(new java.util.ArrayList<ReplicationGroupUpdate>(replicaUpdates.length));
+        }
+        for (ReplicationGroupUpdate ele : replicaUpdates) {
+            this.replicaUpdates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of replica update actions (create, delete, or update) for the table.
+     * </p>
+     * <note>
+     * <p>
+     * This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.
+     * </p>
+     * </note>
+     * 
+     * @param replicaUpdates
+     *        A list of replica update actions (create, delete, or update) for the table.</p> <note>
+     *        <p>
+     *        This property only applies to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     *        2019.11.21</a> of global tables.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTableRequest withReplicaUpdates(java.util.Collection<ReplicationGroupUpdate> replicaUpdates) {
+        setReplicaUpdates(replicaUpdates);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -940,7 +1071,9 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getStreamSpecification() != null)
             sb.append("StreamSpecification: ").append(getStreamSpecification()).append(",");
         if (getSSESpecification() != null)
-            sb.append("SSESpecification: ").append(getSSESpecification());
+            sb.append("SSESpecification: ").append(getSSESpecification()).append(",");
+        if (getReplicaUpdates() != null)
+            sb.append("ReplicaUpdates: ").append(getReplicaUpdates());
         sb.append("}");
         return sb.toString();
     }
@@ -983,6 +1116,10 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getSSESpecification() != null && other.getSSESpecification().equals(this.getSSESpecification()) == false)
             return false;
+        if (other.getReplicaUpdates() == null ^ this.getReplicaUpdates() == null)
+            return false;
+        if (other.getReplicaUpdates() != null && other.getReplicaUpdates().equals(this.getReplicaUpdates()) == false)
+            return false;
         return true;
     }
 
@@ -998,6 +1135,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexUpdates() == null) ? 0 : getGlobalSecondaryIndexUpdates().hashCode());
         hashCode = prime * hashCode + ((getStreamSpecification() == null) ? 0 : getStreamSpecification().hashCode());
         hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
+        hashCode = prime * hashCode + ((getReplicaUpdates() == null) ? 0 : getReplicaUpdates().hashCode());
         return hashCode;
     }
 

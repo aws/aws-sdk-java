@@ -52,6 +52,11 @@ public class HostInstanceStaxUnmarshaller implements Unmarshaller<HostInstance, 
                     hostInstance.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    hostInstance.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return hostInstance;

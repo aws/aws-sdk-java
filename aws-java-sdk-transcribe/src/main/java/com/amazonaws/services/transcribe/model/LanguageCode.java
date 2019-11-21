@@ -43,7 +43,14 @@ public enum LanguageCode {
     EnIE("en-IE"),
     EnAB("en-AB"),
     EnWL("en-WL"),
-    PtPT("pt-PT");
+    PtPT("pt-PT"),
+    TeIN("te-IN"),
+    TrTR("tr-TR"),
+    DeCH("de-CH"),
+    HeIL("he-IL"),
+    MsMY("ms-MY"),
+    JaJP("ja-JP"),
+    ArAE("ar-AE");
 
     private String value;
 

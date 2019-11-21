@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a
- * different usageQuantity.
+ * A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given
+ * {usageDimension, timestamp} with a different usageQuantity.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

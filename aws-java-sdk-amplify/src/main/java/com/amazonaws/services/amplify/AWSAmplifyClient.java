@@ -81,23 +81,23 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                             new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.amplify.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DependentServiceFailureException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.amplify.model.transform.DependentServiceFailureExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.amplify.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.amplify.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.amplify.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.amplify.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.amplify.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DependentServiceFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.amplify.model.transform.DependentServiceFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.amplify.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.amplify.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.amplify.model.AWSAmplifyException.class));
 
     public static AWSAmplifyClientBuilder builder() {
@@ -200,6 +200,72 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateAppResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAppResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param createBackendEnvironmentRequest
+     *        Request structure for a backend environment create request.
+     * @return Result of the CreateBackendEnvironment operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws LimitExceededException
+     *         Exception thrown when a resource could not be created because of service limits.
+     * @sample AWSAmplify.CreateBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateBackendEnvironmentResult createBackendEnvironment(CreateBackendEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBackendEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final CreateBackendEnvironmentResult executeCreateBackendEnvironment(CreateBackendEnvironmentRequest createBackendEnvironmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBackendEnvironmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBackendEnvironmentRequest> request = null;
+        Response<CreateBackendEnvironmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBackendEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createBackendEnvironmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackendEnvironment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBackendEnvironmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateBackendEnvironmentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -526,6 +592,72 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAppResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param deleteBackendEnvironmentRequest
+     *        Request structure for delete backend environment request.
+     * @return Result of the DeleteBackendEnvironment operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @throws DependentServiceFailureException
+     *         Exception thrown when an operation fails due to a dependent service throwing an exception.
+     * @sample AWSAmplify.DeleteBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteBackendEnvironmentResult deleteBackendEnvironment(DeleteBackendEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBackendEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBackendEnvironmentResult executeDeleteBackendEnvironment(DeleteBackendEnvironmentRequest deleteBackendEnvironmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBackendEnvironmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBackendEnvironmentRequest> request = null;
+        Response<DeleteBackendEnvironmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBackendEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteBackendEnvironmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackendEnvironment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBackendEnvironmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteBackendEnvironmentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -984,6 +1116,69 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
     /**
      * <p>
+     * Retrieves a backend environment for an Amplify App.
+     * </p>
+     * 
+     * @param getBackendEnvironmentRequest
+     *        Request structure for get backend environment request.
+     * @return Result of the GetBackendEnvironment operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws NotFoundException
+     *         Exception thrown when an entity has not been found during an operation.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @sample AWSAmplify.GetBackendEnvironment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetBackendEnvironmentResult getBackendEnvironment(GetBackendEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBackendEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final GetBackendEnvironmentResult executeGetBackendEnvironment(GetBackendEnvironmentRequest getBackendEnvironmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBackendEnvironmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBackendEnvironmentRequest> request = null;
+        Response<GetBackendEnvironmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetBackendEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackendEnvironmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackendEnvironment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetBackendEnvironmentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetBackendEnvironmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a branch for an Amplify App.
      * </p>
      * 
@@ -1346,6 +1541,68 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
 
             HttpResponseHandler<AmazonWebServiceResponse<ListArtifactsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListArtifactsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists backend environments for an Amplify App.
+     * </p>
+     * 
+     * @param listBackendEnvironmentsRequest
+     *        Request structure for list backend environments request.
+     * @return Result of the ListBackendEnvironments operation returned by the service.
+     * @throws BadRequestException
+     *         Exception thrown when a request contains unexpected data.
+     * @throws UnauthorizedException
+     *         Exception thrown when an operation fails due to a lack of access.
+     * @throws InternalFailureException
+     *         Exception thrown when the service fails to perform an operation due to an internal issue.
+     * @sample AWSAmplify.ListBackendEnvironments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListBackendEnvironmentsResult listBackendEnvironments(ListBackendEnvironmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBackendEnvironments(request);
+    }
+
+    @SdkInternalApi
+    final ListBackendEnvironmentsResult executeListBackendEnvironments(ListBackendEnvironmentsRequest listBackendEnvironmentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBackendEnvironmentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBackendEnvironmentsRequest> request = null;
+        Response<ListBackendEnvironmentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBackendEnvironmentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listBackendEnvironmentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackendEnvironments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBackendEnvironmentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListBackendEnvironmentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

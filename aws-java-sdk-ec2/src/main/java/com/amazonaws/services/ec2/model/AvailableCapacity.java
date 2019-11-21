@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The capacity information for instances launched onto the Dedicated Host.
+ * The capacity information for instances that can be launched onto the Dedicated Host.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailableCapacity" target="_top">AWS API
@@ -28,23 +28,29 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances supported by the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity.
+     * For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for
+     * each instance size that is supported on the host.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceCapacity> availableInstanceCapacity;
     /**
      * <p>
-     * The number of vCPUs available on the Dedicated Host.
+     * The number of vCPUs available for launching instances onto the Dedicated Host.
      * </p>
      */
     private Integer availableVCpus;
 
     /**
      * <p>
-     * The total number of instances supported by the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity.
+     * For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for
+     * each instance size that is supported on the host.
      * </p>
      * 
-     * @return The total number of instances supported by the Dedicated Host.
+     * @return The number of instances that can be launched onto the Dedicated Host depending on the host's available
+     *         capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number
+     *         of instances for each instance size that is supported on the host.
      */
 
     public java.util.List<InstanceCapacity> getAvailableInstanceCapacity() {
@@ -56,11 +62,15 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances supported by the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity.
+     * For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for
+     * each instance size that is supported on the host.
      * </p>
      * 
      * @param availableInstanceCapacity
-     *        The total number of instances supported by the Dedicated Host.
+     *        The number of instances that can be launched onto the Dedicated Host depending on the host's available
+     *        capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number
+     *        of instances for each instance size that is supported on the host.
      */
 
     public void setAvailableInstanceCapacity(java.util.Collection<InstanceCapacity> availableInstanceCapacity) {
@@ -74,7 +84,9 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances supported by the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity.
+     * For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for
+     * each instance size that is supported on the host.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +95,9 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * </p>
      * 
      * @param availableInstanceCapacity
-     *        The total number of instances supported by the Dedicated Host.
+     *        The number of instances that can be launched onto the Dedicated Host depending on the host's available
+     *        capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number
+     *        of instances for each instance size that is supported on the host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +113,15 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances supported by the Dedicated Host.
+     * The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity.
+     * For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for
+     * each instance size that is supported on the host.
      * </p>
      * 
      * @param availableInstanceCapacity
-     *        The total number of instances supported by the Dedicated Host.
+     *        The number of instances that can be launched onto the Dedicated Host depending on the host's available
+     *        capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number
+     *        of instances for each instance size that is supported on the host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +132,11 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs available on the Dedicated Host.
+     * The number of vCPUs available for launching instances onto the Dedicated Host.
      * </p>
      * 
      * @param availableVCpus
-     *        The number of vCPUs available on the Dedicated Host.
+     *        The number of vCPUs available for launching instances onto the Dedicated Host.
      */
 
     public void setAvailableVCpus(Integer availableVCpus) {
@@ -127,10 +145,10 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs available on the Dedicated Host.
+     * The number of vCPUs available for launching instances onto the Dedicated Host.
      * </p>
      * 
-     * @return The number of vCPUs available on the Dedicated Host.
+     * @return The number of vCPUs available for launching instances onto the Dedicated Host.
      */
 
     public Integer getAvailableVCpus() {
@@ -139,11 +157,11 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs available on the Dedicated Host.
+     * The number of vCPUs available for launching instances onto the Dedicated Host.
      * </p>
      * 
      * @param availableVCpus
-     *        The number of vCPUs available on the Dedicated Host.
+     *        The number of vCPUs available for launching instances onto the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

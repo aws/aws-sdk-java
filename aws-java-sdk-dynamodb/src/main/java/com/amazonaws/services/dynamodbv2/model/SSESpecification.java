@@ -52,9 +52,9 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
     private String sSEType;
     /**
      * <p>
-     * The KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use its key
-     * ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the
-     * key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+     * The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use its
+     * key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if
+     * the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
      * </p>
      */
     private String kMSMasterKeyId;
@@ -248,15 +248,15 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use its key
-     * ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the
-     * key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+     * The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use its
+     * key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if
+     * the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
      * </p>
      * 
      * @param kMSMasterKeyId
-     *        The KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use
-     *        its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     *        parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+     *        The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK,
+     *        use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide
+     *        this parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
      */
 
     public void setKMSMasterKeyId(String kMSMasterKeyId) {
@@ -265,14 +265,14 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use its key
-     * ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the
-     * key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+     * The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use its
+     * key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if
+     * the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
      * </p>
      * 
-     * @return The KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use
-     *         its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     *         parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+     * @return The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK,
+     *         use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide
+     *         this parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
      */
 
     public String getKMSMasterKeyId() {
@@ -281,15 +281,15 @@ public class SSESpecification implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use its key
-     * ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the
-     * key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+     * The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use its
+     * key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if
+     * the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
      * </p>
      * 
      * @param kMSMasterKeyId
-     *        The KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK, use
-     *        its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this
-     *        parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
+     *        The AWS KMS customer master key (CMK) that should be used for the AWS KMS encryption. To specify a CMK,
+     *        use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide
+     *        this parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

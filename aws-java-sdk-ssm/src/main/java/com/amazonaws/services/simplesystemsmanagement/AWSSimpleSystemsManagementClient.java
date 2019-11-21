@@ -238,6 +238,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("AssociationLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AssociationLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceDataSyncConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.ResourceDataSyncConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInventoryGroupException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidInventoryGroupExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -8964,6 +8967,72 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePatchBaselineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update a resource data sync. After you create a resource data sync for a Region, you can't change the account
+     * options for that sync. For example, if you create a sync in the us-east-2 (Ohio) Region and you choose the
+     * Include only the current account option, you can't edit that sync later and choose the Include all accounts from
+     * my AWS Organizations configuration option. Instead, you must delete the first resource data sync, and create a
+     * new one.
+     * </p>
+     * 
+     * @param updateResourceDataSyncRequest
+     * @return Result of the UpdateResourceDataSync operation returned by the service.
+     * @throws ResourceDataSyncNotFoundException
+     *         The specified sync name was not found.
+     * @throws ResourceDataSyncInvalidConfigurationException
+     *         The specified sync configuration is invalid.
+     * @throws ResourceDataSyncConflictException
+     *         Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateResourceDataSyncResult updateResourceDataSync(UpdateResourceDataSyncRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateResourceDataSync(request);
+    }
+
+    @SdkInternalApi
+    final UpdateResourceDataSyncResult executeUpdateResourceDataSync(UpdateResourceDataSyncRequest updateResourceDataSyncRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateResourceDataSyncRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateResourceDataSyncRequest> request = null;
+        Response<UpdateResourceDataSyncResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateResourceDataSyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceDataSyncRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceDataSync");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceDataSyncResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateResourceDataSyncResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

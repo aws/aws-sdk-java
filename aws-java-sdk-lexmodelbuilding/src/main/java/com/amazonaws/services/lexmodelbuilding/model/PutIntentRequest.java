@@ -196,7 +196,13 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String checksum;
-
+    /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the
+     * <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     */
     private Boolean createVersion;
 
     /**
@@ -1326,7 +1332,16 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the
+     * <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
      * @param createVersion
+     *        When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling
+     *        the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the
+     *        default is <code>false</code>.
      */
 
     public void setCreateVersion(Boolean createVersion) {
@@ -1334,7 +1349,15 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * @return
+     * <p>
+     * When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the
+     * <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code> a new numbered version of the intent is created. This is the same as
+     *         calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>,
+     *         the default is <code>false</code>.
      */
 
     public Boolean getCreateVersion() {
@@ -1342,7 +1365,16 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the
+     * <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
      * @param createVersion
+     *        When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling
+     *        the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the
+     *        default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1352,7 +1384,15 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * @return
+     * <p>
+     * When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the
+     * <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code> a new numbered version of the intent is created. This is the same as
+     *         calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>,
+     *         the default is <code>false</code>.
      */
 
     public Boolean isCreateVersion() {

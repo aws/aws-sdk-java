@@ -61,6 +61,14 @@ public class ModifyHostsRequestMarshaller implements Marshaller<Request<ModifyHo
             request.addParameter("HostRecovery", StringUtils.fromString(modifyHostsRequest.getHostRecovery()));
         }
 
+        if (modifyHostsRequest.getInstanceType() != null) {
+            request.addParameter("InstanceType", StringUtils.fromString(modifyHostsRequest.getInstanceType()));
+        }
+
+        if (modifyHostsRequest.getInstanceFamily() != null) {
+            request.addParameter("InstanceFamily", StringUtils.fromString(modifyHostsRequest.getInstanceFamily()));
+        }
+
         return request;
     }
 

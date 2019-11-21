@@ -104,7 +104,7 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
     private String status;
     /**
      * <p>
-     * An error code that is returned when organization conformance pack creation or deletion has failed in the member
+     * An error code that is returned when organization conformance pack creation or deletion has failed in a member
      * account.
      * </p>
      */
@@ -715,12 +715,12 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An error code that is returned when organization conformance pack creation or deletion has failed in the member
+     * An error code that is returned when organization conformance pack creation or deletion has failed in a member
      * account.
      * </p>
      * 
      * @param errorCode
-     *        An error code that is returned when organization conformance pack creation or deletion has failed in the
+     *        An error code that is returned when organization conformance pack creation or deletion has failed in a
      *        member account.
      */
 
@@ -730,11 +730,11 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An error code that is returned when organization conformance pack creation or deletion has failed in the member
+     * An error code that is returned when organization conformance pack creation or deletion has failed in a member
      * account.
      * </p>
      * 
-     * @return An error code that is returned when organization conformance pack creation or deletion has failed in the
+     * @return An error code that is returned when organization conformance pack creation or deletion has failed in a
      *         member account.
      */
 
@@ -744,12 +744,12 @@ public class OrganizationConformancePackStatus implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An error code that is returned when organization conformance pack creation or deletion has failed in the member
+     * An error code that is returned when organization conformance pack creation or deletion has failed in a member
      * account.
      * </p>
      * 
      * @param errorCode
-     *        An error code that is returned when organization conformance pack creation or deletion has failed in the
+     *        An error code that is returned when organization conformance pack creation or deletion has failed in a
      *        member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

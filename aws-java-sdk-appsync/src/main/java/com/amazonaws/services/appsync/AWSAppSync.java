@@ -43,6 +43,31 @@ public interface AWSAppSync {
 
     /**
      * <p>
+     * Creates a cache for the GraphQL API.
+     * </p>
+     * 
+     * @param createApiCacheRequest
+     *        Represents the input of a <code>CreateApiCache</code> operation.
+     * @return Result of the CreateApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.CreateApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateApiCacheResult createApiCache(CreateApiCacheRequest createApiCacheRequest);
+
+    /**
+     * <p>
      * Creates a unique key that you can distribute to clients who are executing your API.
      * </p>
      * 
@@ -197,6 +222,31 @@ public interface AWSAppSync {
 
     /**
      * <p>
+     * Deletes an <code>ApiCache</code> object.
+     * </p>
+     * 
+     * @param deleteApiCacheRequest
+     *        Represents the input of a <code>DeleteApiCache</code> operation.
+     * @return Result of the DeleteApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.DeleteApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteApiCacheResult deleteApiCache(DeleteApiCacheRequest deleteApiCacheRequest);
+
+    /**
+     * <p>
      * Deletes an API key.
      * </p>
      * 
@@ -332,6 +382,56 @@ public interface AWSAppSync {
      *      Documentation</a>
      */
     DeleteTypeResult deleteType(DeleteTypeRequest deleteTypeRequest);
+
+    /**
+     * <p>
+     * Flushes an <code>ApiCache</code> object.
+     * </p>
+     * 
+     * @param flushApiCacheRequest
+     *        Represents the input of a <code>FlushApiCache</code> operation.
+     * @return Result of the FlushApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.FlushApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    FlushApiCacheResult flushApiCache(FlushApiCacheRequest flushApiCacheRequest);
+
+    /**
+     * <p>
+     * Retrieves an <code>ApiCache</code> object.
+     * </p>
+     * 
+     * @param getApiCacheRequest
+     *        Represents the input of a <code>GetApiCache</code> operation.
+     * @return Result of the GetApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.GetApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetApiCacheResult getApiCache(GetApiCacheRequest getApiCacheRequest);
 
     /**
      * <p>
@@ -751,6 +851,31 @@ public interface AWSAppSync {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates the cache for the GraphQL API.
+     * </p>
+     * 
+     * @param updateApiCacheRequest
+     *        Represents the input of a <code>UpdateApiCache</code> operation.
+     * @return Result of the UpdateApiCache operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.UpdateApiCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateApiCacheResult updateApiCache(UpdateApiCacheRequest updateApiCacheRequest);
 
     /**
      * <p>

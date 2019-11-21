@@ -304,8 +304,8 @@ public interface AmazonConfig {
 
     /**
      * <p>
-     * Deletes the specified conformance pack and all the AWS Config rules and all evaluation results within that
-     * conformance pack.
+     * Deletes the specified conformance pack and all the AWS Config rules, remediation actions, and all evaluation
+     * results within that conformance pack.
      * </p>
      * <p>
      * AWS Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You
@@ -640,6 +640,25 @@ public interface AmazonConfig {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteRemediationExceptionsResult deleteRemediationExceptions(DeleteRemediationExceptionsRequest deleteRemediationExceptionsRequest);
+
+    /**
+     * <p>
+     * Records the configuration state for a custom resource that has been deleted. This API records a new
+     * ConfigurationItem with a ResourceDeleted status. You can retrieve the ConfigurationItems recorded for this
+     * resource in your AWS Config History.
+     * </p>
+     * 
+     * @param deleteResourceConfigRequest
+     * @return Result of the DeleteResourceConfig operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws NoRunningConfigurationRecorderException
+     *         There is no configuration recorder running.
+     * @sample AmazonConfig.DeleteResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteResourceConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteResourceConfigResult deleteResourceConfig(DeleteResourceConfigRequest deleteResourceConfigRequest);
 
     /**
      * <p>
@@ -1032,11 +1051,11 @@ public interface AmazonConfig {
 
     /**
      * <p>
-     * Returns compliance information for each rule in that conformance pack.
+     * Returns compliance details for each rule in that conformance pack.
      * </p>
      * <note>
      * <p>
-     * You must provide exact rule names otherwise AWS Config cannot return evaluation results due to insufficient data.
+     * You must provide exact rule names.
      * </p>
      * </note>
      * 
@@ -1063,6 +1082,11 @@ public interface AmazonConfig {
      * <p>
      * Provides one or more conformance packs deployment status.
      * </p>
+     * <note>
+     * <p>
+     * If there are no conformance packs then you will see an empty result.
+     * </p>
+     * </note>
      * 
      * @param describeConformancePackStatusRequest
      * @return Result of the DescribeConformancePackStatus operation returned by the service.
@@ -1281,9 +1305,14 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
-     * applicable if you specify organization conformance packs names. They are only applicable, when you request all
-     * the organization conformance packs. Only a master account can call this API.
+     * When you specify the limit and the next token, you receive a paginated response.
+     * </p>
+     * <p>
+     * Limit and next token are not applicable if you specify organization conformance packs names. They are only
+     * applicable, when you request all the organization conformance packs.
+     * </p>
+     * <p>
+     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1640,6 +1669,11 @@ public interface AmazonConfig {
             GetConformancePackComplianceDetailsRequest getConformancePackComplianceDetailsRequest);
 
     /**
+     * <p>
+     * Returns compliance details for the conformance pack based on the cumulative compliance results of all the rules
+     * in that conformance pack.
+     * </p>
+     * 
      * @param getConformancePackComplianceSummaryRequest
      * @return Result of the GetConformancePackComplianceSummary operation returned by the service.
      * @throws NoSuchConformancePackException
@@ -2077,7 +2111,7 @@ public interface AmazonConfig {
      *         </li>
      *         <li>
      *         <p>
-     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
      *         you do not have permissions:
      *         </p>
      *         <ul>
@@ -2089,11 +2123,6 @@ public interface AmazonConfig {
      *         <li>
      *         <p>
      *         To read Amazon S3 bucket.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         To create a rule and a stack.
      *         </p>
      *         </li>
      *         </ul>
@@ -2190,7 +2219,7 @@ public interface AmazonConfig {
     /**
      * <p>
      * Creates or updates a conformance pack. A conformance pack is a collection of AWS Config rules that can be easily
-     * deployed in an account and a region.
+     * deployed in an account and a region and across AWS Organization.
      * </p>
      * <p>
      * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
@@ -2230,7 +2259,7 @@ public interface AmazonConfig {
      *         </li>
      *         <li>
      *         <p>
-     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
      *         you do not have permissions:
      *         </p>
      *         <ul>
@@ -2242,11 +2271,6 @@ public interface AmazonConfig {
      *         <li>
      *         <p>
      *         To read Amazon S3 bucket.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         To create a rule and a stack.
      *         </p>
      *         </li>
      *         </ul>
@@ -2300,7 +2324,8 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws MaxNumberOfConformancePacksExceededException
-     *         You have reached the limit (20) of the number of conformance packs in an account.
+     *         You have reached the limit (6) of the number of conformance packs in an account (6 conformance pack with
+     *         25 AWS Config rules per pack).
      * @sample AmazonConfig.PutConformancePack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack" target="_top">AWS API
      *      Documentation</a>
@@ -2484,7 +2509,7 @@ public interface AmazonConfig {
      *         </li>
      *         <li>
      *         <p>
-     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
      *         you do not have permissions:
      *         </p>
      *         <ul>
@@ -2496,11 +2521,6 @@ public interface AmazonConfig {
      *         <li>
      *         <p>
      *         To read Amazon S3 bucket.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         To create a rule and a stack.
      *         </p>
      *         </li>
      *         </ul>
@@ -2516,26 +2536,32 @@ public interface AmazonConfig {
      * Deploys conformance packs across member accounts in an AWS Organization.
      * </p>
      * <p>
-     * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service linked role AWSServiceRoleForConfigMultiAccountSetup in the master account of your organization. The
-     * service linked role is created only when the role does not exist in the master account. AWS Config verifies the
-     * existence of role with GetRole action.
+     * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
+     * <code>EnableAWSServiceAccess</code> action and creates a service linked role
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your organization. The service
+     * linked role is created only when the role does not exist in the master account. AWS Config verifies the existence
+     * of role with GetRole action.
      * </p>
      * <note>
-     * <p>
-     * The SPN is <code>config-multiaccountsetup.amazonaws.com</code>.
-     * </p>
      * <p>
      * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
      * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
      * <code>TemplateBody</code> parameter.
+     * </p>
+     * <p>
+     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the confomance
+     * pack is created or updated. You cannot update a conformance pack while it is in this state.
+     * </p>
+     * <p>
+     * You can create 6 conformance packs with 25 AWS Config rules in each pack.
      * </p>
      * </note>
      * 
      * @param putOrganizationConformancePackRequest
      * @return Result of the PutOrganizationConformancePack operation returned by the service.
      * @throws MaxNumberOfOrganizationConformancePacksExceededException
-     *         You have reached the limit (10) of the number of organization conformance packs in an account.
+     *         You have reached the limit (6) of the number of organization conformance packs in an account (6
+     *         conformance pack with 25 AWS Config rules per pack per account).
      * @throws ResourceInUseException
      *         You see this exception in the following cases: </p>
      *         <ul>
@@ -2611,7 +2637,7 @@ public interface AmazonConfig {
      *         </li>
      *         <li>
      *         <p>
-     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
      *         you do not have permissions:
      *         </p>
      *         <ul>
@@ -2623,11 +2649,6 @@ public interface AmazonConfig {
      *         <li>
      *         <p>
      *         To read Amazon S3 bucket.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         To create a rule and a stack.
      *         </p>
      *         </li>
      *         </ul>
@@ -2677,7 +2698,7 @@ public interface AmazonConfig {
      *         </li>
      *         <li>
      *         <p>
-     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
      *         you do not have permissions:
      *         </p>
      *         <ul>
@@ -2689,11 +2710,6 @@ public interface AmazonConfig {
      *         <li>
      *         <p>
      *         To read Amazon S3 bucket.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         To create a rule and a stack.
      *         </p>
      *         </li>
      *         </ul>
@@ -2721,6 +2737,77 @@ public interface AmazonConfig {
      *      target="_top">AWS API Documentation</a>
      */
     PutRemediationExceptionsResult putRemediationExceptions(PutRemediationExceptionsRequest putRemediationExceptionsRequest);
+
+    /**
+     * <p>
+     * Records the configuration state for the resource provided in the request. The configuration state of a resource
+     * is represented in AWS Config as Configuration Items. Once this API records the configuration item, you can
+     * retrieve the list of configuration items for the custom resource type using existing AWS Config APIs.
+     * </p>
+     * <note>
+     * <p>
+     * The custom resource type must be registered with AWS CloudFormation. This API accepts the configuration item
+     * registered with AWS CloudFormation.
+     * </p>
+     * <p>
+     * When you call this API, AWS Config only stores configuration state of the resource provided in the request. This
+     * API does not change or remediate the configuration of the resource.
+     * </p>
+     * </note>
+     * 
+     * @param putResourceConfigRequest
+     * @return Result of the PutResourceConfig operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS Config lacks
+     *         permissions to perform the config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN, and check the
+     *         function's permissions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     * @throws NoRunningConfigurationRecorderException
+     *         There is no configuration recorder running.
+     * @throws MaxActiveResourcesExceededException
+     *         You have reached the limit (100,000) of active custom resource types in your account. Delete unused
+     *         resources using <code>DeleteResourceConfig</code>.
+     * @sample AmazonConfig.PutResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutResourceConfigResult putResourceConfig(PutResourceConfigRequest putResourceConfigRequest);
 
     /**
      * <p>
@@ -2950,7 +3037,7 @@ public interface AmazonConfig {
      *         </li>
      *         <li>
      *         <p>
-     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created becuase
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
      *         you do not have permissions:
      *         </p>
      *         <ul>
@@ -2962,11 +3049,6 @@ public interface AmazonConfig {
      *         <li>
      *         <p>
      *         To read Amazon S3 bucket.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         To create a rule and a stack.
      *         </p>
      *         </li>
      *         </ul>

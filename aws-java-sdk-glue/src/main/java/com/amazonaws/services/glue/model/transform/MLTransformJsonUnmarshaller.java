@@ -96,6 +96,10 @@ public class MLTransformJsonUnmarshaller implements Unmarshaller<MLTransform, Js
                     context.nextToken();
                     mLTransform.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GlueVersion", targetDepth)) {
+                    context.nextToken();
+                    mLTransform.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
                     context.nextToken();
                     mLTransform.setMaxCapacity(context.getUnmarshaller(Double.class).unmarshall(context));

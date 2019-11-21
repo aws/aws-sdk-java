@@ -66,6 +66,10 @@ public class PostTextResultJsonUnmarshaller implements Unmarshaller<PostTextResu
                     context.nextToken();
                     postTextResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("sentimentResponse", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setSentimentResponse(SentimentResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("messageFormat", targetDepth)) {
                     context.nextToken();
                     postTextResult.setMessageFormat(context.getUnmarshaller(String.class).unmarshall(context));

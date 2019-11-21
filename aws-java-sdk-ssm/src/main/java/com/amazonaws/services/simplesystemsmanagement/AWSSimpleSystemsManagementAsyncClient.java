@@ -4266,6 +4266,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateResourceDataSyncResult> updateResourceDataSyncAsync(UpdateResourceDataSyncRequest request) {
+
+        return updateResourceDataSyncAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceDataSyncResult> updateResourceDataSyncAsync(final UpdateResourceDataSyncRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResourceDataSyncRequest, UpdateResourceDataSyncResult> asyncHandler) {
+        final UpdateResourceDataSyncRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResourceDataSyncResult>() {
+            @Override
+            public UpdateResourceDataSyncResult call() throws Exception {
+                UpdateResourceDataSyncResult result = null;
+
+                try {
+                    result = executeUpdateResourceDataSync(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateServiceSettingResult> updateServiceSettingAsync(UpdateServiceSettingRequest request) {
 
         return updateServiceSettingAsync(request, null);

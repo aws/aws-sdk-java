@@ -104,19 +104,72 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<SchemaColumn> schema;
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. This role needs permission
-     * to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any
-     * libraries used by the task run for this transform.
+     * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions
+     * include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That
+     * Access AWS Glue</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary
+     * directory, scripts, and any libraries used by the task run for this transform.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String role;
+    /**
+     * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     */
+    private String glueVersion;
     /**
      * <p>
      * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      * <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -148,11 +201,42 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String workerType;
     /**
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.
+     * </p>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
      * </p>
      */
     private Integer numberOfWorkers;
@@ -740,15 +824,44 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. This role needs permission
-     * to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any
-     * libraries used by the task run for this transform.
+     * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions
+     * include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That
+     * Access AWS Glue</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary
+     * directory, scripts, and any libraries used by the task run for this transform.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param role
-     *        The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. This role needs
-     *        permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory,
-     *        scripts, and any libraries used by the task run for this transform.
+     *        The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required
+     *        permissions include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3
+     *        permissions required by the transform. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users
+     *        That Access AWS Glue</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary
+     *        directory, scripts, and any libraries used by the task run for this transform.
+     *        </p>
+     *        </li>
      */
 
     public void setRole(String role) {
@@ -757,14 +870,43 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. This role needs permission
-     * to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any
-     * libraries used by the task run for this transform.
+     * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions
+     * include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That
+     * Access AWS Glue</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary
+     * directory, scripts, and any libraries used by the task run for this transform.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. This role needs
-     *         permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory,
-     *         scripts, and any libraries used by the task run for this transform.
+     * @return The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required
+     *         permissions include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3
+     *         permissions required by the transform. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM
+     *         Users That Access AWS Glue</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary
+     *         directory, scripts, and any libraries used by the task run for this transform.
+     *         </p>
+     *         </li>
      */
 
     public String getRole() {
@@ -773,15 +915,44 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. This role needs permission
-     * to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any
-     * libraries used by the task run for this transform.
+     * The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions
+     * include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That
+     * Access AWS Glue</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary
+     * directory, scripts, and any libraries used by the task run for this transform.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param role
-     *        The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. This role needs
-     *        permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory,
-     *        scripts, and any libraries used by the task run for this transform.
+     *        The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required
+     *        permissions include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3
+     *        permissions required by the transform. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users
+     *        That Access AWS Glue</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary
+     *        directory, scripts, and any libraries used by the task run for this transform.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -792,11 +963,103 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @param glueVersion
+     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *        0.9. For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        Versions</a> in the developer guide.
+     */
+
+    public void setGlueVersion(String glueVersion) {
+        this.glueVersion = glueVersion;
+    }
+
+    /**
+     * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @return This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *         1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *         0.9. For more information, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *         Versions</a> in the developer guide.
+     */
+
+    public String getGlueVersion() {
+        return this.glueVersion;
+    }
+
+    /**
+     * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @param glueVersion
+     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *        0.9. For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        Versions</a> in the developer guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MLTransform withGlueVersion(String glueVersion) {
+        setGlueVersion(glueVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      * <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -806,7 +1069,35 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      *        The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
      *        You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
      *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *        href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *        <p>
+     *        <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     *        <code>WorkerType</code>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+     *        cannot be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+     *        can be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      *        <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -821,8 +1112,36 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      * <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -831,7 +1150,35 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * @return The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
      *         You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
      *         that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *         href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *         href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *         <p>
+     *         <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     *         <code>WorkerType</code>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+     *         cannot be set.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+     *         can be set.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      *         <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -846,8 +1193,36 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      * <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -857,7 +1232,35 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      *        The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform.
      *        You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power
      *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *        href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
+     *        <p>
+     *        <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     *        <code>WorkerType</code>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+     *        cannot be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+     *        can be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the
      *        <code>MaxCapacity</code> field is set automatically and becomes read-only.
@@ -894,6 +1297,34 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param workerType
      *        The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of
@@ -915,6 +1346,34 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
      *        1 executor per worker.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     *        <code>WorkerType</code>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+     *        cannot be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+     *        can be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
      *        </p>
      *        </li>
      * @see WorkerType
@@ -949,6 +1408,34 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of
      *         Standard, G.1X, or G.2X.</p>
@@ -969,6 +1456,34 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
      *         1 executor per worker.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     *         <code>WorkerType</code>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+     *         cannot be set.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+     *         can be set.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
      *         </p>
      *         </li>
      * @see WorkerType
@@ -1003,6 +1518,34 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param workerType
      *        The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of
@@ -1024,6 +1567,34 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
      *        1 executor per worker.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     *        <code>WorkerType</code>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+     *        cannot be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+     *        can be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1060,6 +1631,34 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     * <code>WorkerType</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be
+     * set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param workerType
      *        The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of
@@ -1083,6 +1682,34 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      *        1 executor per worker.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and
+     *        <code>WorkerType</code>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+     *        cannot be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+     *        can be set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkerType
      */
@@ -1096,10 +1723,15 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.
      * </p>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
      * 
      * @param numberOfWorkers
      *        The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform
-     *        runs.
+     *        runs.</p>
+     *        <p>
+     *        If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
      */
 
     public void setNumberOfWorkers(Integer numberOfWorkers) {
@@ -1110,9 +1742,14 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.
      * </p>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
      * 
      * @return The number of workers of a defined <code>workerType</code> that are allocated when a task of the
-     *         transform runs.
+     *         transform runs.</p>
+     *         <p>
+     *         If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
      */
 
     public Integer getNumberOfWorkers() {
@@ -1123,10 +1760,15 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.
      * </p>
+     * <p>
+     * If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
+     * </p>
      * 
      * @param numberOfWorkers
      *        The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform
-     *        runs.
+     *        runs.</p>
+     *        <p>
+     *        If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1254,6 +1896,8 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
             sb.append("Schema: ").append(getSchema()).append(",");
         if (getRole() != null)
             sb.append("Role: ").append(getRole()).append(",");
+        if (getGlueVersion() != null)
+            sb.append("GlueVersion: ").append(getGlueVersion()).append(",");
         if (getMaxCapacity() != null)
             sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getWorkerType() != null)
@@ -1326,6 +1970,10 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
             return false;
+        if (other.getGlueVersion() == null ^ this.getGlueVersion() == null)
+            return false;
+        if (other.getGlueVersion() != null && other.getGlueVersion().equals(this.getGlueVersion()) == false)
+            return false;
         if (other.getMaxCapacity() == null ^ this.getMaxCapacity() == null)
             return false;
         if (other.getMaxCapacity() != null && other.getMaxCapacity().equals(this.getMaxCapacity()) == false)
@@ -1366,6 +2014,7 @@ public class MLTransform implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLabelCount() == null) ? 0 : getLabelCount().hashCode());
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getGlueVersion() == null) ? 0 : getGlueVersion().hashCode());
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getWorkerType() == null) ? 0 : getWorkerType().hashCode());
         hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());

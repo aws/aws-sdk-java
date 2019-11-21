@@ -63,7 +63,8 @@ import com.amazonaws.services.marketplacemetering.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <i>MeterUsage</i>- Submits the metering record for a Marketplace product. MeterUsage is called from an EC2 instance.
+ * <i>MeterUsage</i>- Submits the metering record for a Marketplace product. MeterUsage is called from an EC2 instance
+ * or a container running on EKS or ECS.
  * </p>
  * </li>
  * <li>
@@ -465,8 +466,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * record ID.
      * </p>
      * <p>
-     * MeterUsage is authenticated on the buyer's AWS account, generally when running from an EC2 instance on the AWS
-     * Marketplace.
+     * MeterUsage is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS
+     * pod.
      * </p>
      * 
      * @param meterUsageRequest
@@ -479,13 +480,13 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @throws InvalidUsageDimensionException
      *         The usage dimension does not match one of the UsageDimensions associated with products.
      * @throws InvalidEndpointRegionException
-     *         The endpoint being called is in a Region different from your EC2 instance. The Region of the Metering
-     *         Service endpoint and the Region of the EC2 instance must match.
+     *         The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The
+     *         Region of the Metering Service endpoint and the AWS Region of the resource must match.
      * @throws TimestampOutOfBoundsException
      *         The timestamp value passed in the meterUsage() is out of allowed range.
      * @throws DuplicateRequestException
-     *         A metering record has already been emitted by the same EC2 instance for the given {usageDimension,
-     *         timestamp} with a different usageQuantity.
+     *         A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given
+     *         {usageDimension, timestamp} with a different usageQuantity.
      * @throws ThrottlingException
      *         The calls to the API are throttled.
      * @throws CustomerNotEntitledException

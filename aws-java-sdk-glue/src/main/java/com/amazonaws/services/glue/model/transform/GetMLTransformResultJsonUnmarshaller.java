@@ -96,6 +96,10 @@ public class GetMLTransformResultJsonUnmarshaller implements Unmarshaller<GetMLT
                     context.nextToken();
                     getMLTransformResult.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GlueVersion", targetDepth)) {
+                    context.nextToken();
+                    getMLTransformResult.setGlueVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("MaxCapacity", targetDepth)) {
                     context.nextToken();
                     getMLTransformResult.setMaxCapacity(context.getUnmarshaller(Double.class).unmarshall(context));

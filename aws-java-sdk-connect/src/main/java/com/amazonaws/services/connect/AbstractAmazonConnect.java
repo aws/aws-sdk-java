@@ -118,6 +118,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public StartChatContactResult startChatContact(StartChatContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartOutboundVoiceContactResult startOutboundVoiceContact(StartOutboundVoiceContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

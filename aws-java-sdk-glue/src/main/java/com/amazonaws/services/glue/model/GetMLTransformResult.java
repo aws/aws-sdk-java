@@ -99,6 +99,16 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
     private String role;
     /**
      * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     */
+    private String glueVersion;
+    /**
+     * <p>
      * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
@@ -734,6 +744,70 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @param glueVersion
+     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *        0.9. For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        Versions</a> in the developer guide.
+     */
+
+    public void setGlueVersion(String glueVersion) {
+        this.glueVersion = glueVersion;
+    }
+
+    /**
+     * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @return This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *         1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *         0.9. For more information, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *         Versions</a> in the developer guide.
+     */
+
+    public String getGlueVersion() {
+        return this.glueVersion;
+    }
+
+    /**
+     * <p>
+     * This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is
+     * recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue Versions</a>
+     * in the developer guide.
+     * </p>
+     * 
+     * @param glueVersion
+     *        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue
+     *        1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue
+     *        0.9. For more information, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS Glue
+     *        Versions</a> in the developer guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMLTransformResult withGlueVersion(String glueVersion) {
+        setGlueVersion(glueVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of AWS Glue data processing units (DPUs) that are allocated to task runs for this transform. You can
      * allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
@@ -1198,6 +1272,8 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("Schema: ").append(getSchema()).append(",");
         if (getRole() != null)
             sb.append("Role: ").append(getRole()).append(",");
+        if (getGlueVersion() != null)
+            sb.append("GlueVersion: ").append(getGlueVersion()).append(",");
         if (getMaxCapacity() != null)
             sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getWorkerType() != null)
@@ -1270,6 +1346,10 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
             return false;
+        if (other.getGlueVersion() == null ^ this.getGlueVersion() == null)
+            return false;
+        if (other.getGlueVersion() != null && other.getGlueVersion().equals(this.getGlueVersion()) == false)
+            return false;
         if (other.getMaxCapacity() == null ^ this.getMaxCapacity() == null)
             return false;
         if (other.getMaxCapacity() != null && other.getMaxCapacity().equals(this.getMaxCapacity()) == false)
@@ -1310,6 +1390,7 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getLabelCount() == null) ? 0 : getLabelCount().hashCode());
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getGlueVersion() == null) ? 0 : getGlueVersion().hashCode());
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getWorkerType() == null) ? 0 : getWorkerType().hashCode());
         hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());

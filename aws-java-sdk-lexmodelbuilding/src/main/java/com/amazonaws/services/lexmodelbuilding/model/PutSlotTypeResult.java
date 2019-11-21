@@ -73,7 +73,12 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String valueSelectionStrategy;
-
+    /**
+     * <p>
+     * <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     */
     private Boolean createVersion;
 
     /**
@@ -460,7 +465,14 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     * 
      * @param createVersion
+     *        <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field
+     *        was not specified in the request, the <code>createVersion</code> field is set to false in the response.
      */
 
     public void setCreateVersion(Boolean createVersion) {
@@ -468,7 +480,13 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     * 
+     * @return <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field
+     *         was not specified in the request, the <code>createVersion</code> field is set to false in the response.
      */
 
     public Boolean getCreateVersion() {
@@ -476,7 +494,14 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     * 
      * @param createVersion
+     *        <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field
+     *        was not specified in the request, the <code>createVersion</code> field is set to false in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -486,7 +511,13 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not
+     * specified in the request, the <code>createVersion</code> field is set to false in the response.
+     * </p>
+     * 
+     * @return <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field
+     *         was not specified in the request, the <code>createVersion</code> field is set to false in the response.
      */
 
     public Boolean isCreateVersion() {

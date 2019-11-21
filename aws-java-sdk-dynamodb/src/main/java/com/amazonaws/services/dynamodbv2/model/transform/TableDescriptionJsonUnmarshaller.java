@@ -115,6 +115,15 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                     context.nextToken();
                     tableDescription.setLatestStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GlobalTableVersion", targetDepth)) {
+                    context.nextToken();
+                    tableDescription.setGlobalTableVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Replicas", targetDepth)) {
+                    context.nextToken();
+                    tableDescription
+                            .setReplicas(new ListUnmarshaller<ReplicaDescription>(ReplicaDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("RestoreSummary", targetDepth)) {
                     context.nextToken();
                     tableDescription.setRestoreSummary(RestoreSummaryJsonUnmarshaller.getInstance().unmarshall(context));

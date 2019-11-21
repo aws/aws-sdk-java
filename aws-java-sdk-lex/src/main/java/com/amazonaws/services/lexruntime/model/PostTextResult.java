@@ -72,6 +72,16 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private String message;
     /**
      * <p>
+     * The sentiment expressed in and utterance.
+     * </p>
+     * <p>
+     * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.
+     * </p>
+     */
+    private SentimentResponse sentimentResponse;
+    /**
+     * <p>
      * The format of the response message. One of the following values:
      * </p>
      * <ul>
@@ -518,6 +528,67 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     public PostTextResult withMessage(String message) {
         setMessage(message);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sentiment expressed in and utterance.
+     * </p>
+     * <p>
+     * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.
+     * </p>
+     * 
+     * @param sentimentResponse
+     *        The sentiment expressed in and utterance.</p>
+     *        <p>
+     *        When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field
+     *        contains the result of the analysis.
+     */
+
+    public void setSentimentResponse(SentimentResponse sentimentResponse) {
+        this.sentimentResponse = sentimentResponse;
+    }
+
+    /**
+     * <p>
+     * The sentiment expressed in and utterance.
+     * </p>
+     * <p>
+     * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.
+     * </p>
+     * 
+     * @return The sentiment expressed in and utterance.</p>
+     *         <p>
+     *         When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field
+     *         contains the result of the analysis.
+     */
+
+    public SentimentResponse getSentimentResponse() {
+        return this.sentimentResponse;
+    }
+
+    /**
+     * <p>
+     * The sentiment expressed in and utterance.
+     * </p>
+     * <p>
+     * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains
+     * the result of the analysis.
+     * </p>
+     * 
+     * @param sentimentResponse
+     *        The sentiment expressed in and utterance.</p>
+     *        <p>
+     *        When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field
+     *        contains the result of the analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostTextResult withSentimentResponse(SentimentResponse sentimentResponse) {
+        setSentimentResponse(sentimentResponse);
         return this;
     }
 
@@ -1585,6 +1656,8 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             sb.append("SessionAttributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getMessage() != null)
             sb.append("Message: ").append("***Sensitive Data Redacted***").append(",");
+        if (getSentimentResponse() != null)
+            sb.append("SentimentResponse: ").append(getSentimentResponse()).append(",");
         if (getMessageFormat() != null)
             sb.append("MessageFormat: ").append(getMessageFormat()).append(",");
         if (getDialogState() != null)
@@ -1623,6 +1696,10 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getSentimentResponse() == null ^ this.getSentimentResponse() == null)
+            return false;
+        if (other.getSentimentResponse() != null && other.getSentimentResponse().equals(this.getSentimentResponse()) == false)
+            return false;
         if (other.getMessageFormat() == null ^ this.getMessageFormat() == null)
             return false;
         if (other.getMessageFormat() != null && other.getMessageFormat().equals(this.getMessageFormat()) == false)
@@ -1651,6 +1728,7 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         hashCode = prime * hashCode + ((getSlots() == null) ? 0 : getSlots().hashCode());
         hashCode = prime * hashCode + ((getSessionAttributes() == null) ? 0 : getSessionAttributes().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getSentimentResponse() == null) ? 0 : getSentimentResponse().hashCode());
         hashCode = prime * hashCode + ((getMessageFormat() == null) ? 0 : getMessageFormat().hashCode());
         hashCode = prime * hashCode + ((getDialogState() == null) ? 0 : getDialogState().hashCode());
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());

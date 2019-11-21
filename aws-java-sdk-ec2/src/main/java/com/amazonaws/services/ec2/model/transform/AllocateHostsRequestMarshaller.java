@@ -56,6 +56,10 @@ public class AllocateHostsRequestMarshaller implements Marshaller<Request<Alloca
             request.addParameter("InstanceType", StringUtils.fromString(allocateHostsRequest.getInstanceType()));
         }
 
+        if (allocateHostsRequest.getInstanceFamily() != null) {
+            request.addParameter("InstanceFamily", StringUtils.fromString(allocateHostsRequest.getInstanceFamily()));
+        }
+
         if (allocateHostsRequest.getQuantity() != null) {
             request.addParameter("Quantity", StringUtils.fromInteger(allocateHostsRequest.getQuantity()));
         }

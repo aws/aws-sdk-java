@@ -28,24 +28,30 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * the IDs of instances that are running on the Dedicated Host.
+     * The ID of instance that is running on the Dedicated Host.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * The instance type size (for example, <code>m3.medium</code>) of the running instance.
+     * The instance type (for example, <code>m3.medium</code>) of the running instance.
      * </p>
      */
     private String instanceType;
+    /**
+     * <p>
+     * The ID of the AWS account that owns the instance.
+     * </p>
+     */
+    private String ownerId;
 
     /**
      * <p>
-     * the IDs of instances that are running on the Dedicated Host.
+     * The ID of instance that is running on the Dedicated Host.
      * </p>
      * 
      * @param instanceId
-     *        the IDs of instances that are running on the Dedicated Host.
+     *        The ID of instance that is running on the Dedicated Host.
      */
 
     public void setInstanceId(String instanceId) {
@@ -54,10 +60,10 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * the IDs of instances that are running on the Dedicated Host.
+     * The ID of instance that is running on the Dedicated Host.
      * </p>
      * 
-     * @return the IDs of instances that are running on the Dedicated Host.
+     * @return The ID of instance that is running on the Dedicated Host.
      */
 
     public String getInstanceId() {
@@ -66,11 +72,11 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * the IDs of instances that are running on the Dedicated Host.
+     * The ID of instance that is running on the Dedicated Host.
      * </p>
      * 
      * @param instanceId
-     *        the IDs of instances that are running on the Dedicated Host.
+     *        The ID of instance that is running on the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +87,11 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (for example, <code>m3.medium</code>) of the running instance.
+     * The instance type (for example, <code>m3.medium</code>) of the running instance.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size (for example, <code>m3.medium</code>) of the running instance.
+     *        The instance type (for example, <code>m3.medium</code>) of the running instance.
      */
 
     public void setInstanceType(String instanceType) {
@@ -94,10 +100,10 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (for example, <code>m3.medium</code>) of the running instance.
+     * The instance type (for example, <code>m3.medium</code>) of the running instance.
      * </p>
      * 
-     * @return The instance type size (for example, <code>m3.medium</code>) of the running instance.
+     * @return The instance type (for example, <code>m3.medium</code>) of the running instance.
      */
 
     public String getInstanceType() {
@@ -106,16 +112,56 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (for example, <code>m3.medium</code>) of the running instance.
+     * The instance type (for example, <code>m3.medium</code>) of the running instance.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size (for example, <code>m3.medium</code>) of the running instance.
+     *        The instance type (for example, <code>m3.medium</code>) of the running instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HostInstance withInstanceType(String instanceType) {
         setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the instance.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the instance.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the instance.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the instance.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the instance.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostInstance withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
         return this;
     }
 
@@ -134,7 +180,9 @@ public class HostInstance implements Serializable, Cloneable {
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType());
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +205,10 @@ public class HostInstance implements Serializable, Cloneable {
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +219,7 @@ public class HostInstance implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         return hashCode;
     }
 

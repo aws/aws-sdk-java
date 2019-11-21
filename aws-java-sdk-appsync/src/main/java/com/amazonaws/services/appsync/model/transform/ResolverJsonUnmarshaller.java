@@ -80,6 +80,14 @@ public class ResolverJsonUnmarshaller implements Unmarshaller<Resolver, JsonUnma
                     context.nextToken();
                     resolver.setPipelineConfig(PipelineConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("syncConfig", targetDepth)) {
+                    context.nextToken();
+                    resolver.setSyncConfig(SyncConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("cachingConfig", targetDepth)) {
+                    context.nextToken();
+                    resolver.setCachingConfig(CachingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

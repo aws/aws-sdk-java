@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Summary includes the name and status of the conformance pack.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackComplianceSummary"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConformancePackComplianceSummary implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the conformance pack name.
+     * </p>
+     */
     private String conformancePackName;
-
+    /**
+     * <p>
+     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * </p>
+     */
     private String conformancePackComplianceStatus;
 
     /**
+     * <p>
+     * The name of the conformance pack name.
+     * </p>
+     * 
      * @param conformancePackName
+     *        The name of the conformance pack name.
      */
 
     public void setConformancePackName(String conformancePackName) {
@@ -38,7 +55,11 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the conformance pack name.
+     * </p>
+     * 
+     * @return The name of the conformance pack name.
      */
 
     public String getConformancePackName() {
@@ -46,7 +67,12 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The name of the conformance pack name.
+     * </p>
+     * 
      * @param conformancePackName
+     *        The name of the conformance pack name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * </p>
+     * 
      * @param conformancePackComplianceStatus
+     *        The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
      * @see ConformancePackComplianceType
      */
 
@@ -65,7 +96,11 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * </p>
+     * 
+     * @return The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
      * @see ConformancePackComplianceType
      */
 
@@ -74,7 +109,12 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * </p>
+     * 
      * @param conformancePackComplianceStatus
+     *        The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */
@@ -85,7 +125,12 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * </p>
+     * 
      * @param conformancePackComplianceStatus
+     *        The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */

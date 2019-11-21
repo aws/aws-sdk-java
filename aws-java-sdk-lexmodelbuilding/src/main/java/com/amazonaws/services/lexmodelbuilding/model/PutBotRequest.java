@@ -47,7 +47,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how
-     * many times Amazon Lex should repeate the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
+     * many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
      * Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.
      * </p>
      * <p>
@@ -55,6 +55,38 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * example, for a bot that orders pizza and drinks, you might create this clarification prompt:
      * "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * </p>
+     * <p>
+     * If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of
+     * times defined in the <code>maxAttempts</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     * </p>
+     * <p>
+     * If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in
+     * three cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in
+     * response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex
+     * will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to
+     * get an intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon
+     * Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code>
+     * dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a
+     * 400 Bad Request exception.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Prompt clarificationPrompt;
     /**
@@ -72,6 +104,11 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent
      * might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you
      * create the <code>CrustType</code> slot.
+     * </p>
+     * <p>
+     * If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is
+     * used instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      * </p>
      */
     private Statement abortStatement;
@@ -101,8 +138,8 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon Polly
-     * Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon
+     * Polly Developer Guide</i>.
      * </p>
      */
     private String voiceId;
@@ -165,7 +202,20 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      */
     private Boolean childDirected;
-
+    /**
+     * <p>
+     * When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't
+     * specify <code>detectSentiment</code>, the default is <code>false</code>.
+     * </p>
+     */
+    private Boolean detectSentiment;
+    /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the
+     * <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     */
     private Boolean createVersion;
 
     /**
@@ -333,7 +383,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how
-     * many times Amazon Lex should repeate the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
+     * many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
      * Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.
      * </p>
      * <p>
@@ -341,16 +391,81 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * example, for a bot that orders pizza and drinks, you might create this clarification prompt:
      * "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * </p>
+     * <p>
+     * If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of
+     * times defined in the <code>maxAttempts</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     * </p>
+     * <p>
+     * If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in
+     * three cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in
+     * response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex
+     * will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to
+     * get an intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon
+     * Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code>
+     * dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a
+     * 400 Bad Request exception.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param clarificationPrompt
      *        When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To
-     *        specify how many times Amazon Lex should repeate the clarification prompt, use the
-     *        <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the
-     *        <code>abortStatement</code> field. </p>
+     *        specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code>
+     *        field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code>
+     *        field. </p>
      *        <p>
      *        When you create a clarification prompt, make sure that it suggests the correct response from the user. for
      *        example, for a bot that orders pizza and drinks, you might create this clarification prompt:
      *        "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
+     *        </p>
+     *        <p>
+     *        If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the
+     *        number of times defined in the <code>maxAttempts</code> field. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     *        </p>
+     *        <p>
+     *        If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception
+     *        in three cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For
+     *        example, in response to a follow-up prompt that says "Would you like anything else today?" the user says
+     *        "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt
+     *        to send to the user to get an intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since
+     *        Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad
+     *        Request exception.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PutSession operation - When using the <code>PutSession</code> operation, you send an
+     *        <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an
+     *        intent from the user, it returns a 400 Bad Request exception.
+     *        </p>
+     *        </li>
      */
 
     public void setClarificationPrompt(Prompt clarificationPrompt) {
@@ -360,7 +475,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how
-     * many times Amazon Lex should repeate the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
+     * many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
      * Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.
      * </p>
      * <p>
@@ -368,15 +483,81 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * example, for a bot that orders pizza and drinks, you might create this clarification prompt:
      * "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * </p>
+     * <p>
+     * If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of
+     * times defined in the <code>maxAttempts</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     * </p>
+     * <p>
+     * If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in
+     * three cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in
+     * response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex
+     * will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to
+     * get an intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon
+     * Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code>
+     * dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a
+     * 400 Bad Request exception.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To
-     *         specify how many times Amazon Lex should repeate the clarification prompt, use the
+     *         specify how many times Amazon Lex should repeat the clarification prompt, use the
      *         <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the
      *         <code>abortStatement</code> field. </p>
      *         <p>
      *         When you create a clarification prompt, make sure that it suggests the correct response from the user.
      *         for example, for a bot that orders pizza and drinks, you might create this clarification prompt:
      *         "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
+     *         </p>
+     *         <p>
+     *         If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the
+     *         number of times defined in the <code>maxAttempts</code> field. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
+     *         AMAZON.FallbackIntent</a>.
+     *         </p>
+     *         <p>
+     *         If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception
+     *         in three cases:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For
+     *         example, in response to a follow-up prompt that says "Would you like anything else today?" the user says
+     *         "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt
+     *         to send to the user to get an intent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type.
+     *         Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400
+     *         Bad Request exception.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PutSession operation - When using the <code>PutSession</code> operation, you send an
+     *         <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an
+     *         intent from the user, it returns a 400 Bad Request exception.
+     *         </p>
+     *         </li>
      */
 
     public Prompt getClarificationPrompt() {
@@ -386,7 +567,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how
-     * many times Amazon Lex should repeate the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
+     * many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
      * Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.
      * </p>
      * <p>
@@ -394,16 +575,81 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * example, for a bot that orders pizza and drinks, you might create this clarification prompt:
      * "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * </p>
+     * <p>
+     * If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of
+     * times defined in the <code>maxAttempts</code> field. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     * </p>
+     * <p>
+     * If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in
+     * three cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in
+     * response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex
+     * will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to
+     * get an intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon
+     * Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code>
+     * dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a
+     * 400 Bad Request exception.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param clarificationPrompt
      *        When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To
-     *        specify how many times Amazon Lex should repeate the clarification prompt, use the
-     *        <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the
-     *        <code>abortStatement</code> field. </p>
+     *        specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code>
+     *        field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code>
+     *        field. </p>
      *        <p>
      *        When you create a clarification prompt, make sure that it suggests the correct response from the user. for
      *        example, for a bot that orders pizza and drinks, you might create this clarification prompt:
      *        "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
+     *        </p>
+     *        <p>
+     *        If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the
+     *        number of times defined in the <code>maxAttempts</code> field. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     *        </p>
+     *        <p>
+     *        If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception
+     *        in three cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For
+     *        example, in response to a follow-up prompt that says "Would you like anything else today?" the user says
+     *        "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt
+     *        to send to the user to get an intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since
+     *        Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad
+     *        Request exception.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PutSession operation - When using the <code>PutSession</code> operation, you send an
+     *        <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an
+     *        intent from the user, it returns a 400 Bad Request exception.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,6 +674,11 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you
      * create the <code>CrustType</code> slot.
      * </p>
+     * <p>
+     * If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is
+     * used instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     * </p>
      * 
      * @param abortStatement
      *        When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few
@@ -443,6 +694,11 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This
      *        intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code>
      *        field when you create the <code>CrustType</code> slot.
+     *        </p>
+     *        <p>
+     *        If you have defined a fallback intent the abort statement will not be sent to the user, the fallback
+     *        intent is used instead. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      */
 
     public void setAbortStatement(Statement abortStatement) {
@@ -465,6 +721,11 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you
      * create the <code>CrustType</code> slot.
      * </p>
+     * <p>
+     * If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is
+     * used instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     * </p>
      * 
      * @return When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few
      *         times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and
@@ -479,6 +740,12 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This
      *         intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code>
      *         field when you create the <code>CrustType</code> slot.
+     *         </p>
+     *         <p>
+     *         If you have defined a fallback intent the abort statement will not be sent to the user, the fallback
+     *         intent is used instead. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
+     *         AMAZON.FallbackIntent</a>.
      */
 
     public Statement getAbortStatement() {
@@ -501,6 +768,11 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you
      * create the <code>CrustType</code> slot.
      * </p>
+     * <p>
+     * If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is
+     * used instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
+     * </p>
      * 
      * @param abortStatement
      *        When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few
@@ -516,6 +788,11 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This
      *        intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code>
      *        field when you create the <code>CrustType</code> slot.
+     *        </p>
+     *        <p>
+     *        If you have defined a fallback intent the abort statement will not be sent to the user, the fallback
+     *        intent is used instead. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -661,15 +938,15 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon Polly
-     * Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon
+     * Polly Developer Guide</i>.
      * </p>
      * 
      * @param voiceId
      *        The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      *        configured for the voice must match the locale of the bot. For more information, see <a
-     *        href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon
-     *        Polly Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the
+     *        <i>Amazon Polly Developer Guide</i>.
      */
 
     public void setVoiceId(String voiceId) {
@@ -680,14 +957,14 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon Polly
-     * Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon
+     * Polly Developer Guide</i>.
      * </p>
      * 
      * @return The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The
      *         locale configured for the voice must match the locale of the bot. For more information, see <a
-     *         href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon
-     *         Polly Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the
+     *         <i>Amazon Polly Developer Guide</i>.
      */
 
     public String getVoiceId() {
@@ -698,15 +975,15 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon Polly
-     * Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon
+     * Polly Developer Guide</i>.
      * </p>
      * 
      * @param voiceId
      *        The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      *        configured for the voice must match the locale of the bot. For more information, see <a
-     *        href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon
-     *        Polly Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the
+     *        <i>Amazon Polly Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1227,7 +1504,76 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't
+     * specify <code>detectSentiment</code>, the default is <code>false</code>.
+     * </p>
+     * 
+     * @param detectSentiment
+     *        When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you
+     *        don't specify <code>detectSentiment</code>, the default is <code>false</code>.
+     */
+
+    public void setDetectSentiment(Boolean detectSentiment) {
+        this.detectSentiment = detectSentiment;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't
+     * specify <code>detectSentiment</code>, the default is <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If
+     *         you don't specify <code>detectSentiment</code>, the default is <code>false</code>.
+     */
+
+    public Boolean getDetectSentiment() {
+        return this.detectSentiment;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't
+     * specify <code>detectSentiment</code>, the default is <code>false</code>.
+     * </p>
+     * 
+     * @param detectSentiment
+     *        When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you
+     *        don't specify <code>detectSentiment</code>, the default is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotRequest withDetectSentiment(Boolean detectSentiment) {
+        setDetectSentiment(detectSentiment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't
+     * specify <code>detectSentiment</code>, the default is <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If
+     *         you don't specify <code>detectSentiment</code>, the default is <code>false</code>.
+     */
+
+    public Boolean isDetectSentiment() {
+        return this.detectSentiment;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the
+     * <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
      * @param createVersion
+     *        When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling
+     *        the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default
+     *        is <code>false</code>.
      */
 
     public void setCreateVersion(Boolean createVersion) {
@@ -1235,7 +1581,15 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
-     * @return
+     * <p>
+     * When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the
+     * <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling
+     *         the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default
+     *         is <code>false</code>.
      */
 
     public Boolean getCreateVersion() {
@@ -1243,7 +1597,16 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the
+     * <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
      * @param createVersion
+     *        When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling
+     *        the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default
+     *        is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1253,7 +1616,15 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
-     * @return
+     * <p>
+     * When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the
+     * <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling
+     *         the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default
+     *         is <code>false</code>.
      */
 
     public Boolean isCreateVersion() {
@@ -1294,6 +1665,8 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getChildDirected() != null)
             sb.append("ChildDirected: ").append(getChildDirected()).append(",");
+        if (getDetectSentiment() != null)
+            sb.append("DetectSentiment: ").append(getDetectSentiment()).append(",");
         if (getCreateVersion() != null)
             sb.append("CreateVersion: ").append(getCreateVersion());
         sb.append("}");
@@ -1354,6 +1727,10 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
             return false;
         if (other.getChildDirected() != null && other.getChildDirected().equals(this.getChildDirected()) == false)
             return false;
+        if (other.getDetectSentiment() == null ^ this.getDetectSentiment() == null)
+            return false;
+        if (other.getDetectSentiment() != null && other.getDetectSentiment().equals(this.getDetectSentiment()) == false)
+            return false;
         if (other.getCreateVersion() == null ^ this.getCreateVersion() == null)
             return false;
         if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
@@ -1377,6 +1754,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getProcessBehavior() == null) ? 0 : getProcessBehavior().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
+        hashCode = prime * hashCode + ((getDetectSentiment() == null) ? 0 : getDetectSentiment().hashCode());
         hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
         return hashCode;
     }

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -4008,6 +4008,27 @@
       }, {
         "name" : "PtPT",
         "value" : "pt-PT"
+      }, {
+        "name" : "TeIN",
+        "value" : "te-IN"
+      }, {
+        "name" : "TrTR",
+        "value" : "tr-TR"
+      }, {
+        "name" : "DeCH",
+        "value" : "de-CH"
+      }, {
+        "name" : "HeIL",
+        "value" : "he-IL"
+      }, {
+        "name" : "MsMY",
+        "value" : "ms-MY"
+      }, {
+        "name" : "JaJP",
+        "value" : "ja-JP"
+      }, {
+        "name" : "ArAE",
+        "value" : "ar-AE"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

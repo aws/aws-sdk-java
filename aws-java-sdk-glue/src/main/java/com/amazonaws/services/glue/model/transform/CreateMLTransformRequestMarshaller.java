@@ -38,6 +38,8 @@ public class CreateMLTransformRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Parameters").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
+    private static final MarshallingInfo<String> GLUEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlueVersion").build();
     private static final MarshallingInfo<Double> MAXCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxCapacity").build();
     private static final MarshallingInfo<String> WORKERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -70,6 +72,7 @@ public class CreateMLTransformRequestMarshaller {
             protocolMarshaller.marshall(createMLTransformRequest.getInputRecordTables(), INPUTRECORDTABLES_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(createMLTransformRequest.getGlueVersion(), GLUEVERSION_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getMaxCapacity(), MAXCAPACITY_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getWorkerType(), WORKERTYPE_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getNumberOfWorkers(), NUMBEROFWORKERS_BINDING);
