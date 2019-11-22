@@ -33,11 +33,15 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String datasetName;
     /**
      * <p>
-     * The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you choose
-     * determine the fields that must be present in the training data that you import to the dataset. For example, if
-     * you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>,
-     * Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     * present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
+     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * </p>
+     * <p>
+     * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
+     * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.
      * </p>
      */
     private String domain;
@@ -49,7 +53,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String datasetType;
     /**
      * <p>
-     * The frequency of data collection.
+     * The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
      * </p>
      * <p>
      * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
@@ -117,20 +121,27 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you choose
-     * determine the fields that must be present in the training data that you import to the dataset. For example, if
-     * you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>,
-     * Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     * present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
+     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * </p>
+     * <p>
+     * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
+     * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.
      * </p>
      * 
      * @param domain
-     *        The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you
-     *        choose determine the fields that must be present in the training data that you import to the dataset. For
-     *        example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     *        <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     *        <code>demand</code> fields to be present in your data. For more information, see
-     *        <a>howitworks-datasets-groups</a>.
+     *        The domain associated with the dataset. When you add a dataset to a dataset group, this value and the
+     *        value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must
+     *        match.</p>
+     *        <p>
+     *        The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be
+     *        present in the training data that you import to the dataset. For example, if you choose the
+     *        <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon
+     *        Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
+     *        present in your data. For more information, see <a>howitworks-datasets-groups</a>.
      * @see Domain
      */
 
@@ -140,19 +151,26 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you choose
-     * determine the fields that must be present in the training data that you import to the dataset. For example, if
-     * you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>,
-     * Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     * present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
+     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * </p>
+     * <p>
+     * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
+     * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.
      * </p>
      * 
-     * @return The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you
-     *         choose determine the fields that must be present in the training data that you import to the dataset. For
-     *         example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     *         <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     *         <code>demand</code> fields to be present in your data. For more information, see
-     *         <a>howitworks-datasets-groups</a>.
+     * @return The domain associated with the dataset. When you add a dataset to a dataset group, this value and the
+     *         value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must
+     *         match.</p>
+     *         <p>
+     *         The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be
+     *         present in the training data that you import to the dataset. For example, if you choose the
+     *         <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon
+     *         Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
+     *         present in your data. For more information, see <a>howitworks-datasets-groups</a>.
      * @see Domain
      */
 
@@ -162,20 +180,27 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you choose
-     * determine the fields that must be present in the training data that you import to the dataset. For example, if
-     * you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>,
-     * Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     * present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
+     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * </p>
+     * <p>
+     * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
+     * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.
      * </p>
      * 
      * @param domain
-     *        The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you
-     *        choose determine the fields that must be present in the training data that you import to the dataset. For
-     *        example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     *        <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     *        <code>demand</code> fields to be present in your data. For more information, see
-     *        <a>howitworks-datasets-groups</a>.
+     *        The domain associated with the dataset. When you add a dataset to a dataset group, this value and the
+     *        value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must
+     *        match.</p>
+     *        <p>
+     *        The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be
+     *        present in the training data that you import to the dataset. For example, if you choose the
+     *        <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon
+     *        Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
+     *        present in your data. For more information, see <a>howitworks-datasets-groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -187,20 +212,27 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you choose
-     * determine the fields that must be present in the training data that you import to the dataset. For example, if
-     * you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>,
-     * Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
-     * present in your data. For more information, see <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value
+     * specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.
+     * </p>
+     * <p>
+     * The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in
+     * the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.
      * </p>
      * 
      * @param domain
-     *        The domain associated with the dataset. The <code>Domain</code> and <code>DatasetType</code> that you
-     *        choose determine the fields that must be present in the training data that you import to the dataset. For
-     *        example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     *        <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     *        <code>demand</code> fields to be present in your data. For more information, see
-     *        <a>howitworks-datasets-groups</a>.
+     *        The domain associated with the dataset. When you add a dataset to a dataset group, this value and the
+     *        value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must
+     *        match.</p>
+     *        <p>
+     *        The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be
+     *        present in the training data that you import to the dataset. For example, if you choose the
+     *        <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon
+     *        Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be
+     *        present in your data. For more information, see <a>howitworks-datasets-groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -271,7 +303,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The frequency of data collection.
+     * The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
      * </p>
      * <p>
      * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
@@ -280,7 +312,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param dataFrequency
-     *        The frequency of data collection.</p>
+     *        The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
      *        <p>
      *        Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
      *        minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day
@@ -293,7 +325,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The frequency of data collection.
+     * The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
      * </p>
      * <p>
      * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
@@ -301,7 +333,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * indicates every 15 minutes.
      * </p>
      * 
-     * @return The frequency of data collection.</p>
+     * @return The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
      *         <p>
      *         Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
      *         minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day
@@ -314,7 +346,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The frequency of data collection.
+     * The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
      * </p>
      * <p>
      * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
@@ -323,7 +355,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param dataFrequency
-     *        The frequency of data collection.</p>
+     *        The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
      *        <p>
      *        Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
      *        minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day

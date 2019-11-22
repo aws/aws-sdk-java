@@ -73,7 +73,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * The maximum length constraint listed below includes capacity for additional system attributes that are not part
-     * of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     * of the name. The maximum length for the fully qualified parameter name is 1011 characters, including the full
+     * length of the parameter ARN. For example, the following fully qualified parameter name is 65 characters, not 20
+     * characters:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p>
      * </note>
      */
@@ -348,7 +353,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * The maximum length constraint listed below includes capacity for additional system attributes that are not part
-     * of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     * of the name. The maximum length for the fully qualified parameter name is 1011 characters, including the full
+     * length of the parameter ARN. For example, the following fully qualified parameter name is 65 characters, not 20
+     * characters:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p>
      * </note>
      * 
@@ -399,7 +409,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        The maximum length constraint listed below includes capacity for additional system attributes that are not
-     *        part of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     *        part of the name. The maximum length for the fully qualified parameter name is 1011 characters, including
+     *        the full length of the parameter ARN. For example, the following fully qualified parameter name is 65
+     *        characters, not 20 characters:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      *        </p>
      */
 
@@ -455,7 +470,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * The maximum length constraint listed below includes capacity for additional system attributes that are not part
-     * of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     * of the name. The maximum length for the fully qualified parameter name is 1011 characters, including the full
+     * length of the parameter ARN. For example, the following fully qualified parameter name is 65 characters, not 20
+     * characters:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p>
      * </note>
      * 
@@ -505,7 +525,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <note>
      *         <p>
      *         The maximum length constraint listed below includes capacity for additional system attributes that are
-     *         not part of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     *         not part of the name. The maximum length for the fully qualified parameter name is 1011 characters,
+     *         including the full length of the parameter ARN. For example, the following fully qualified parameter name
+     *         is 65 characters, not 20 characters:
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      *         </p>
      */
 
@@ -561,7 +586,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * The maximum length constraint listed below includes capacity for additional system attributes that are not part
-     * of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     * of the name. The maximum length for the fully qualified parameter name is 1011 characters, including the full
+     * length of the parameter ARN. For example, the following fully qualified parameter name is 65 characters, not 20
+     * characters:
+     * </p>
+     * <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p>
      * </note>
      * 
@@ -612,7 +642,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        The maximum length constraint listed below includes capacity for additional system attributes that are not
-     *        part of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     *        part of the name. The maximum length for the fully qualified parameter name is 1011 characters, including
+     *        the full length of the parameter ARN. For example, the following fully qualified parameter name is 65
+     *        characters, not 20 characters:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

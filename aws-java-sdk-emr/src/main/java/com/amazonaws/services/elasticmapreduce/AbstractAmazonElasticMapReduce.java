@@ -146,6 +146,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public ModifyClusterResult modifyCluster(ModifyClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyInstanceFleetResult modifyInstanceFleet(ModifyInstanceFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

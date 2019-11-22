@@ -32,6 +32,8 @@ public class CancelStepsRequestMarshaller {
             .marshallLocationName("ClusterId").build();
     private static final MarshallingInfo<List> STEPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("StepIds").build();
+    private static final MarshallingInfo<String> STEPCANCELLATIONOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepCancellationOption").build();
 
     private static final CancelStepsRequestMarshaller instance = new CancelStepsRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class CancelStepsRequestMarshaller {
         try {
             protocolMarshaller.marshall(cancelStepsRequest.getClusterId(), CLUSTERID_BINDING);
             protocolMarshaller.marshall(cancelStepsRequest.getStepIds(), STEPIDS_BINDING);
+            protocolMarshaller.marshall(cancelStepsRequest.getStepCancellationOption(), STEPCANCELLATIONOPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -223,6 +223,18 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String clusterArn;
+    /**
+     * <p>
+     * Specifies the number of steps that can be executed concurrently.
+     * </p>
+     */
+    private Integer stepConcurrencyLevel;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    private String outpostArn;
 
     /**
      * <p>
@@ -1827,6 +1839,86 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the number of steps that can be executed concurrently.
+     * </p>
+     * 
+     * @param stepConcurrencyLevel
+     *        Specifies the number of steps that can be executed concurrently.
+     */
+
+    public void setStepConcurrencyLevel(Integer stepConcurrencyLevel) {
+        this.stepConcurrencyLevel = stepConcurrencyLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies the number of steps that can be executed concurrently.
+     * </p>
+     * 
+     * @return Specifies the number of steps that can be executed concurrently.
+     */
+
+    public Integer getStepConcurrencyLevel() {
+        return this.stepConcurrencyLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies the number of steps that can be executed concurrently.
+     * </p>
+     * 
+     * @param stepConcurrencyLevel
+     *        Specifies the number of steps that can be executed concurrently.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withStepConcurrencyLevel(Integer stepConcurrencyLevel) {
+        setStepConcurrencyLevel(stepConcurrencyLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1889,7 +1981,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getKerberosAttributes() != null)
             sb.append("KerberosAttributes: ").append(getKerberosAttributes()).append(",");
         if (getClusterArn() != null)
-            sb.append("ClusterArn: ").append(getClusterArn());
+            sb.append("ClusterArn: ").append(getClusterArn()).append(",");
+        if (getStepConcurrencyLevel() != null)
+            sb.append("StepConcurrencyLevel: ").append(getStepConcurrencyLevel()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -2008,6 +2104,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
             return false;
+        if (other.getStepConcurrencyLevel() == null ^ this.getStepConcurrencyLevel() == null)
+            return false;
+        if (other.getStepConcurrencyLevel() != null && other.getStepConcurrencyLevel().equals(this.getStepConcurrencyLevel()) == false)
+            return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         return true;
     }
 
@@ -2042,6 +2146,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
         hashCode = prime * hashCode + ((getKerberosAttributes() == null) ? 0 : getKerberosAttributes().hashCode());
         hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getStepConcurrencyLevel() == null) ? 0 : getStepConcurrencyLevel().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         return hashCode;
     }
 

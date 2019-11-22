@@ -76,7 +76,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -89,12 +89,12 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+     * For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+     * For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
      * </p>
      * </li>
      * <li>
@@ -124,7 +124,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -158,6 +158,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * created for Amazon SNS metadata.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -166,15 +174,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
-     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
-     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
-     * token.
+     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
+     * is not yet confirmed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     * subscription is not yet confirmed.
+     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
+     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you set this parameter to <code>true</code>, .
      * </p>
      * <p>
      * The default value is <code>false</code>.
@@ -235,7 +252,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
      *        </p>
      *        </li>
      * @param endpoint
@@ -243,12 +260,12 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+     *        For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+     *        For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
      *        </p>
      *        </li>
      *        <li>
@@ -278,7 +295,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
      *        </p>
      *        </li>
      */
@@ -370,7 +387,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -415,7 +432,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
      *        </p>
      *        </li>
      */
@@ -466,7 +483,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -511,7 +528,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+     *         <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
      *         </p>
      *         </li>
      */
@@ -562,7 +579,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -607,7 +624,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -625,12 +642,12 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+     * For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+     * For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
      * </p>
      * </li>
      * <li>
@@ -660,7 +677,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -670,12 +687,12 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+     *        For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+     *        For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
      *        </p>
      *        </li>
      *        <li>
@@ -705,7 +722,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
      *        </p>
      *        </li>
      */
@@ -721,12 +738,12 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+     * For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+     * For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
      * </p>
      * </li>
      * <li>
@@ -756,7 +773,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -765,12 +782,12 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+     *         For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+     *         For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
      *         </p>
      *         </li>
      *         <li>
@@ -800,7 +817,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *         For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
      *         </p>
      *         </li>
      */
@@ -816,12 +833,12 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+     * For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+     * For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
      * </p>
      * </li>
      * <li>
@@ -851,7 +868,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -861,12 +878,12 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
+     *        For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>https</code> protocol, the endpoint is a URL beginning with "https://"
+     *        For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
      *        </p>
      *        </li>
      *        <li>
@@ -896,7 +913,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -935,6 +952,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * created for Amazon SNS metadata.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A map of attributes with their corresponding values.</p>
@@ -960,6 +985,15 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
      *         SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
      *         otherwise created for Amazon SNS metadata.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *         dead-letter queue. Messages that can't be delivered due to client errors (for example, when the
+     *         subscribed endpoint is unreachable) or server errors (for example, when the service that powers the
+     *         subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or
+     *         reprocessing.
      *         </p>
      *         </li>
      */
@@ -999,6 +1033,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * created for Amazon SNS metadata.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attributes
@@ -1025,6 +1067,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
      *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
      *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
+     *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
+     *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
      *        </p>
      *        </li>
      */
@@ -1061,6 +1111,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * created for Amazon SNS metadata.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attributes
@@ -1087,6 +1145,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
      *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
      *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
+     *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
+     *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1123,15 +1189,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
-     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
-     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
-     * token.
+     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
+     * is not yet confirmed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     * subscription is not yet confirmed.
+     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
+     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you set this parameter to <code>true</code>, .
      * </p>
      * <p>
      * The default value is <code>false</code>.
@@ -1140,15 +1215,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param returnSubscriptionArn
      *        Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
      *        the subscription is not yet confirmed.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you set this parameter to <code>false</code>, the response includes the ARN for confirmed
-     *        subscriptions, but it includes an ARN value of "pending subscription" for subscriptions that are not yet
+     *        If you have the subscription ARN returned, the response includes the ARN in all cases, even if the
+     *        subscription is not yet confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the
+     *        response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet
      *        confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code>
      *        action with a confirmation token.
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     *        subscription is not yet confirmed.
+     *        If you set this parameter to <code>true</code>, .
      *        </p>
      *        <p>
      *        The default value is <code>false</code>.
@@ -1163,15 +1247,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
-     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
-     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
-     * token.
+     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
+     * is not yet confirmed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     * subscription is not yet confirmed.
+     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
+     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you set this parameter to <code>true</code>, .
      * </p>
      * <p>
      * The default value is <code>false</code>.
@@ -1179,15 +1272,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @return Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
      *         the subscription is not yet confirmed.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you set this parameter to <code>false</code>, the response includes the ARN for confirmed
-     *         subscriptions, but it includes an ARN value of "pending subscription" for subscriptions that are not yet
+     *         If you have the subscription ARN returned, the response includes the ARN in all cases, even if the
+     *         subscription is not yet confirmed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the
+     *         response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet
      *         confirmed. A subscription becomes confirmed when the subscriber calls the
      *         <code>ConfirmSubscription</code> action with a confirmation token.
      *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
-     *         If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     *         subscription is not yet confirmed.
+     *         If you set this parameter to <code>true</code>, .
      *         </p>
      *         <p>
      *         The default value is <code>false</code>.
@@ -1202,15 +1304,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
-     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
-     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
-     * token.
+     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
+     * is not yet confirmed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     * subscription is not yet confirmed.
+     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
+     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you set this parameter to <code>true</code>, .
      * </p>
      * <p>
      * The default value is <code>false</code>.
@@ -1219,15 +1330,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param returnSubscriptionArn
      *        Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
      *        the subscription is not yet confirmed.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you set this parameter to <code>false</code>, the response includes the ARN for confirmed
-     *        subscriptions, but it includes an ARN value of "pending subscription" for subscriptions that are not yet
+     *        If you have the subscription ARN returned, the response includes the ARN in all cases, even if the
+     *        subscription is not yet confirmed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the
+     *        response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet
      *        confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code>
      *        action with a confirmation token.
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     *        subscription is not yet confirmed.
+     *        If you set this parameter to <code>true</code>, .
      *        </p>
      *        <p>
      *        The default value is <code>false</code>.
@@ -1244,15 +1364,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
-     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
-     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
-     * token.
+     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
+     * is not yet confirmed.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     * subscription is not yet confirmed.
+     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
+     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you set this parameter to <code>true</code>, .
      * </p>
      * <p>
      * The default value is <code>false</code>.
@@ -1260,15 +1389,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @return Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
      *         the subscription is not yet confirmed.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you set this parameter to <code>false</code>, the response includes the ARN for confirmed
-     *         subscriptions, but it includes an ARN value of "pending subscription" for subscriptions that are not yet
+     *         If you have the subscription ARN returned, the response includes the ARN in all cases, even if the
+     *         subscription is not yet confirmed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the
+     *         response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet
      *         confirmed. A subscription becomes confirmed when the subscriber calls the
      *         <code>ConfirmSubscription</code> action with a confirmation token.
      *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
-     *         If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
-     *         subscription is not yet confirmed.
+     *         If you set this parameter to <code>true</code>, .
      *         </p>
      *         <p>
      *         The default value is <code>false</code>.

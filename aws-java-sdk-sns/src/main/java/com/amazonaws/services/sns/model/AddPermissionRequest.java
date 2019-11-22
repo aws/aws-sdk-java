@@ -49,7 +49,7 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The action you want to allow for the specified principal(s).
      * </p>
      * <p>
-     * Valid values: any Amazon SNS action name.
+     * Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> actionNames;
@@ -75,7 +75,7 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param actionNames
      *        The action you want to allow for the specified principal(s).</p>
      *        <p>
-     *        Valid values: any Amazon SNS action name.
+     *        Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      */
     public AddPermissionRequest(String topicArn, String label, java.util.List<String> aWSAccountIds, java.util.List<String> actionNames) {
         setTopicArn(topicArn);
@@ -250,12 +250,12 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The action you want to allow for the specified principal(s).
      * </p>
      * <p>
-     * Valid values: any Amazon SNS action name.
+     * Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      * </p>
      * 
      * @return The action you want to allow for the specified principal(s).</p>
      *         <p>
-     *         Valid values: any Amazon SNS action name.
+     *         Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      */
 
     public java.util.List<String> getActionNames() {
@@ -270,13 +270,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The action you want to allow for the specified principal(s).
      * </p>
      * <p>
-     * Valid values: any Amazon SNS action name.
+     * Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      * </p>
      * 
      * @param actionNames
      *        The action you want to allow for the specified principal(s).</p>
      *        <p>
-     *        Valid values: any Amazon SNS action name.
+     *        Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      */
 
     public void setActionNames(java.util.Collection<String> actionNames) {
@@ -293,7 +293,7 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The action you want to allow for the specified principal(s).
      * </p>
      * <p>
-     * Valid values: any Amazon SNS action name.
+     * Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -304,7 +304,7 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param actionNames
      *        The action you want to allow for the specified principal(s).</p>
      *        <p>
-     *        Valid values: any Amazon SNS action name.
+     *        Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,13 +323,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The action you want to allow for the specified principal(s).
      * </p>
      * <p>
-     * Valid values: any Amazon SNS action name.
+     * Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      * </p>
      * 
      * @param actionNames
      *        The action you want to allow for the specified principal(s).</p>
      *        <p>
-     *        Valid values: any Amazon SNS action name.
+     *        Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

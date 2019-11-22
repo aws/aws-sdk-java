@@ -23,28 +23,28 @@ import com.amazonaws.auth.policy.Action;
 public enum AutoscalingActions implements Action {
 
     /** Represents any action executed on Application Auto Scaling. */
-    AllAutoscalingActions("autoscaling:*"),
+    AllAutoscalingActions("application-autoscaling:*"),
 
     /** Action for the DeleteScalingPolicy operation. */
-    DeleteScalingPolicy("autoscaling:DeleteScalingPolicy"),
+    DeleteScalingPolicy("application-autoscaling:DeleteScalingPolicy"),
     /** Action for the DeleteScheduledAction operation. */
-    DeleteScheduledAction("autoscaling:DeleteScheduledAction"),
+    DeleteScheduledAction("application-autoscaling:DeleteScheduledAction"),
     /** Action for the DeregisterScalableTarget operation. */
-    DeregisterScalableTarget("autoscaling:DeregisterScalableTarget"),
+    DeregisterScalableTarget("application-autoscaling:DeregisterScalableTarget"),
     /** Action for the DescribeScalableTargets operation. */
-    DescribeScalableTargets("autoscaling:DescribeScalableTargets"),
+    DescribeScalableTargets("application-autoscaling:DescribeScalableTargets"),
     /** Action for the DescribeScalingActivities operation. */
-    DescribeScalingActivities("autoscaling:DescribeScalingActivities"),
+    DescribeScalingActivities("application-autoscaling:DescribeScalingActivities"),
     /** Action for the DescribeScalingPolicies operation. */
-    DescribeScalingPolicies("autoscaling:DescribeScalingPolicies"),
+    DescribeScalingPolicies("application-autoscaling:DescribeScalingPolicies"),
     /** Action for the DescribeScheduledActions operation. */
-    DescribeScheduledActions("autoscaling:DescribeScheduledActions"),
+    DescribeScheduledActions("application-autoscaling:DescribeScheduledActions"),
     /** Action for the PutScalingPolicy operation. */
-    PutScalingPolicy("autoscaling:PutScalingPolicy"),
+    PutScalingPolicy("application-autoscaling:PutScalingPolicy"),
     /** Action for the PutScheduledAction operation. */
-    PutScheduledAction("autoscaling:PutScheduledAction"),
+    PutScheduledAction("application-autoscaling:PutScheduledAction"),
     /** Action for the RegisterScalableTarget operation. */
-    RegisterScalableTarget("autoscaling:RegisterScalableTarget"),
+    RegisterScalableTarget("application-autoscaling:RegisterScalableTarget"),
 
     ;
 

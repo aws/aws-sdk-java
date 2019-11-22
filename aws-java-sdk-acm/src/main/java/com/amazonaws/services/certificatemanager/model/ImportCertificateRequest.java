@@ -50,6 +50,15 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.nio.ByteBuffer certificateChain;
+    /**
+     * <p>
+     * One or more resource tags to associate with the imported certificate.
+     * </p>
+     * <p>
+     * Note: You cannot apply tags when reimporting a certificate.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -299,6 +308,96 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * One or more resource tags to associate with the imported certificate.
+     * </p>
+     * <p>
+     * Note: You cannot apply tags when reimporting a certificate.
+     * </p>
+     * 
+     * @return One or more resource tags to associate with the imported certificate. </p>
+     *         <p>
+     *         Note: You cannot apply tags when reimporting a certificate.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more resource tags to associate with the imported certificate.
+     * </p>
+     * <p>
+     * Note: You cannot apply tags when reimporting a certificate.
+     * </p>
+     * 
+     * @param tags
+     *        One or more resource tags to associate with the imported certificate. </p>
+     *        <p>
+     *        Note: You cannot apply tags when reimporting a certificate.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * One or more resource tags to associate with the imported certificate.
+     * </p>
+     * <p>
+     * Note: You cannot apply tags when reimporting a certificate.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        One or more resource tags to associate with the imported certificate. </p>
+     *        <p>
+     *        Note: You cannot apply tags when reimporting a certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportCertificateRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more resource tags to associate with the imported certificate.
+     * </p>
+     * <p>
+     * Note: You cannot apply tags when reimporting a certificate.
+     * </p>
+     * 
+     * @param tags
+     *        One or more resource tags to associate with the imported certificate. </p>
+     *        <p>
+     *        Note: You cannot apply tags when reimporting a certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportCertificateRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -317,7 +416,9 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getPrivateKey() != null)
             sb.append("PrivateKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getCertificateChain() != null)
-            sb.append("CertificateChain: ").append(getCertificateChain());
+            sb.append("CertificateChain: ").append(getCertificateChain()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -348,6 +449,10 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getCertificateChain() != null && other.getCertificateChain().equals(this.getCertificateChain()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -360,6 +465,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
         hashCode = prime * hashCode + ((getPrivateKey() == null) ? 0 : getPrivateKey().hashCode());
         hashCode = prime * hashCode + ((getCertificateChain() == null) ? 0 : getCertificateChain().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

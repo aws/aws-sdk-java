@@ -21,8 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access
  * Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key
- * Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> and
- * <a>CreateForecastExportJob</a> requests.
+ * Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the
+ * <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object that is submitted in the
+ * <a>CreateForecastExportJob</a> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/S3Config" target="_top">AWS API
@@ -40,11 +41,12 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-     * S3 bucket or file(s).
+     * S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
+     * key.
      * </p>
      * <p>
-     * Cross-account pass role is not allowed. If you pass a role that doesn't belong to your account, an
-     * <code>InvalidInputException</code> is thrown.
+     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.
      * </p>
      */
     private String roleArn;
@@ -98,19 +100,21 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-     * S3 bucket or file(s).
+     * S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
+     * key.
      * </p>
      * <p>
-     * Cross-account pass role is not allowed. If you pass a role that doesn't belong to your account, an
-     * <code>InvalidInputException</code> is thrown.
+     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
-     *        Amazon S3 bucket or file(s).</p>
+     *        Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow
+     *        access to the key.</p>
      *        <p>
-     *        Cross-account pass role is not allowed. If you pass a role that doesn't belong to your account, an
-     *        <code>InvalidInputException</code> is thrown.
+     *        Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
+     *        an <code>InvalidInputException</code> error.
      */
 
     public void setRoleArn(String roleArn) {
@@ -120,18 +124,20 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-     * S3 bucket or file(s).
+     * S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
+     * key.
      * </p>
      * <p>
-     * Cross-account pass role is not allowed. If you pass a role that doesn't belong to your account, an
-     * <code>InvalidInputException</code> is thrown.
+     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.
      * </p>
      * 
      * @return The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-     *         the Amazon S3 bucket or file(s).</p>
+     *         the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must
+     *         allow access to the key.</p>
      *         <p>
-     *         Cross-account pass role is not allowed. If you pass a role that doesn't belong to your account, an
-     *         <code>InvalidInputException</code> is thrown.
+     *         Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
+     *         an <code>InvalidInputException</code> error.
      */
 
     public String getRoleArn() {
@@ -141,19 +147,21 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-     * S3 bucket or file(s).
+     * S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
+     * key.
      * </p>
      * <p>
-     * Cross-account pass role is not allowed. If you pass a role that doesn't belong to your account, an
-     * <code>InvalidInputException</code> is thrown.
+     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
+     * <code>InvalidInputException</code> error.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
-     *        Amazon S3 bucket or file(s).</p>
+     *        Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow
+     *        access to the key.</p>
      *        <p>
-     *        Cross-account pass role is not allowed. If you pass a role that doesn't belong to your account, an
-     *        <code>InvalidInputException</code> is thrown.
+     *        Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
+     *        an <code>InvalidInputException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

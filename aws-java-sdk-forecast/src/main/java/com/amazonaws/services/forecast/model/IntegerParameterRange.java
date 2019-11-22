@@ -49,10 +49,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
     private Integer minValue;
     /**
      * <p>
-     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
-     * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Scaling</a>. One of the following values:
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -73,7 +70,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
-     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * Logarithmic scaling works only for ranges that have values greater than 0.
      * </p>
      * </dd>
      * <dt>ReverseLogarithmic</dt>
@@ -86,6 +83,11 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * For information about choosing a hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
      */
     private String scalingType;
 
@@ -211,10 +213,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
-     * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Scaling</a>. One of the following values:
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -235,7 +234,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
-     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * Logarithmic scaling works only for ranges that have values greater than 0.
      * </p>
      * </dd>
      * <dt>ReverseLogarithmic</dt>
@@ -248,12 +247,14 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * For information about choosing a hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
      * 
      * @param scalingType
-     *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
-     *        choosing a hyperparameter scale, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     *        >Hyperparameter Scaling</a>. One of the following values:</p>
+     *        The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
      *        <dl>
      *        <dt>Auto</dt>
      *        <dd>
@@ -273,7 +274,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      *        </p>
      *        <p>
-     *        Logarithmic scaling works only for ranges that have only values greater than 0.
+     *        Logarithmic scaling works only for ranges that have values greater than 0.
      *        </p>
      *        </dd>
      *        <dt>ReverseLogarithmic</dt>
@@ -285,6 +286,11 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.
      *        </p>
      *        </dd>
+     *        </dl>
+     *        <p>
+     *        For information about choosing a hyperparameter scale, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        >Hyperparameter Scaling</a>. One of the following values:
      * @see ScalingType
      */
 
@@ -294,10 +300,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
-     * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Scaling</a>. One of the following values:
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -318,7 +321,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
-     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * Logarithmic scaling works only for ranges that have values greater than 0.
      * </p>
      * </dd>
      * <dt>ReverseLogarithmic</dt>
@@ -331,11 +334,13 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * For information about choosing a hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
      * 
-     * @return The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
-     *         choosing a hyperparameter scale, see <a href=
-     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     *         >Hyperparameter Scaling</a>. One of the following values:</p>
+     * @return The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
      *         <dl>
      *         <dt>Auto</dt>
      *         <dd>
@@ -355,7 +360,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *         Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      *         </p>
      *         <p>
-     *         Logarithmic scaling works only for ranges that have only values greater than 0.
+     *         Logarithmic scaling works only for ranges that have values greater than 0.
      *         </p>
      *         </dd>
      *         <dt>ReverseLogarithmic</dt>
@@ -367,6 +372,11 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *         Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.
      *         </p>
      *         </dd>
+     *         </dl>
+     *         <p>
+     *         For information about choosing a hyperparameter scale, see <a href=
+     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *         >Hyperparameter Scaling</a>. One of the following values:
      * @see ScalingType
      */
 
@@ -376,10 +386,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
-     * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Scaling</a>. One of the following values:
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -400,7 +407,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
-     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * Logarithmic scaling works only for ranges that have values greater than 0.
      * </p>
      * </dd>
      * <dt>ReverseLogarithmic</dt>
@@ -413,12 +420,14 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * For information about choosing a hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
      * 
      * @param scalingType
-     *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
-     *        choosing a hyperparameter scale, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     *        >Hyperparameter Scaling</a>. One of the following values:</p>
+     *        The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
      *        <dl>
      *        <dt>Auto</dt>
      *        <dd>
@@ -438,7 +447,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      *        </p>
      *        <p>
-     *        Logarithmic scaling works only for ranges that have only values greater than 0.
+     *        Logarithmic scaling works only for ranges that have values greater than 0.
      *        </p>
      *        </dd>
      *        <dt>ReverseLogarithmic</dt>
@@ -450,6 +459,11 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.
      *        </p>
      *        </dd>
+     *        </dl>
+     *        <p>
+     *        For information about choosing a hyperparameter scale, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        >Hyperparameter Scaling</a>. One of the following values:
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingType
      */
@@ -461,10 +475,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
-     * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Scaling</a>. One of the following values:
+     * The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -485,7 +496,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      * </p>
      * <p>
-     * Logarithmic scaling works only for ranges that have only values greater than 0.
+     * Logarithmic scaling works only for ranges that have values greater than 0.
      * </p>
      * </dd>
      * <dt>ReverseLogarithmic</dt>
@@ -498,12 +509,14 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * For information about choosing a hyperparameter scale, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * >Hyperparameter Scaling</a>. One of the following values:
+     * </p>
      * 
      * @param scalingType
-     *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
-     *        choosing a hyperparameter scale, see <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     *        >Hyperparameter Scaling</a>. One of the following values:</p>
+     *        The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
      *        <dl>
      *        <dt>Auto</dt>
      *        <dd>
@@ -523,7 +536,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        Hyperparameter tuning searches the values in the hyperparameter range by using a logarithmic scale.
      *        </p>
      *        <p>
-     *        Logarithmic scaling works only for ranges that have only values greater than 0.
+     *        Logarithmic scaling works only for ranges that have values greater than 0.
      *        </p>
      *        </dd>
      *        <dt>ReverseLogarithmic</dt>
@@ -535,6 +548,11 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        Reverse logarithmic scaling works only for ranges that are entirely within the range 0 &lt;= x &lt; 1.0.
      *        </p>
      *        </dd>
+     *        </dl>
+     *        <p>
+     *        For information about choosing a hyperparameter scale, see <a href=
+     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        >Hyperparameter Scaling</a>. One of the following values:
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingType
      */

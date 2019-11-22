@@ -370,7 +370,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        setEndpoint("https://autoscaling.us-east-1.amazonaws.com");
+        setEndpoint("https://application-autoscaling.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/applicationautoscaling/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/applicationautoscaling/request.handler2s"));

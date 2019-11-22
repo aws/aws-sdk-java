@@ -212,28 +212,17 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * Creates a platform application object for one of the supported push notification services, such as APNS and FCM,
      * to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential
      * attributes when using the <code>CreatePlatformApplication</code> action. The PlatformPrincipal is received from
-     * the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
+     * the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client id". The PlatformCredential is also
      * received from the notification service. For WNS, PlatformPrincipal is "Package Security Identifier". For MPNS,
      * PlatformPrincipal is "TLS certificate". For Baidu, PlatformPrincipal is "API key".
      * </p>
      * <p>
-     * For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM, PlatformCredential is "API key". For ADM,
+     * For APNS/APNS_SANDBOX, PlatformCredential is "private key". For FCM, PlatformCredential is "API key". For ADM,
      * PlatformCredential is "client secret". For WNS, PlatformCredential is "secret key". For MPNS, PlatformCredential
      * is "private key". For Baidu, PlatformCredential is "secret key". The PlatformApplicationArn that is returned when
      * using <code>CreatePlatformApplication</code> is then used as an attribute for the
-     * <code>CreatePlatformEndpoint</code> action. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
-     * Notifications</a>. For more information about obtaining the PlatformPrincipal and PlatformCredential for each of
-     * the supported push notification services, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting Started with Apple Push
-     * Notification Service</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
-     * Started with Amazon Device Messaging</a>, <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting Started with Baidu Cloud
-     * Push</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting Started with Google
-     * Cloud Messaging for Android</a>, <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting Started with MPNS</a>, or <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting Started with WNS</a>.
+     * <code>CreatePlatformEndpoint</code> action.
      * </p>
      * 
      * @param createPlatformApplicationRequest
@@ -251,28 +240,17 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * Creates a platform application object for one of the supported push notification services, such as APNS and FCM,
      * to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential
      * attributes when using the <code>CreatePlatformApplication</code> action. The PlatformPrincipal is received from
-     * the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
+     * the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client id". The PlatformCredential is also
      * received from the notification service. For WNS, PlatformPrincipal is "Package Security Identifier". For MPNS,
      * PlatformPrincipal is "TLS certificate". For Baidu, PlatformPrincipal is "API key".
      * </p>
      * <p>
-     * For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM, PlatformCredential is "API key". For ADM,
+     * For APNS/APNS_SANDBOX, PlatformCredential is "private key". For FCM, PlatformCredential is "API key". For ADM,
      * PlatformCredential is "client secret". For WNS, PlatformCredential is "secret key". For MPNS, PlatformCredential
      * is "private key". For Baidu, PlatformCredential is "secret key". The PlatformApplicationArn that is returned when
      * using <code>CreatePlatformApplication</code> is then used as an attribute for the
-     * <code>CreatePlatformEndpoint</code> action. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
-     * Notifications</a>. For more information about obtaining the PlatformPrincipal and PlatformCredential for each of
-     * the supported push notification services, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting Started with Apple Push
-     * Notification Service</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
-     * Started with Amazon Device Messaging</a>, <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting Started with Baidu Cloud
-     * Push</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting Started with Google
-     * Cloud Messaging for Android</a>, <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting Started with MPNS</a>, or <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting Started with WNS</a>.
+     * <code>CreatePlatformEndpoint</code> action.
      * </p>
      * 
      * @param createPlatformApplicationRequest
@@ -292,7 +270,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Creates an endpoint for a device and mobile app on one of the supported push notification services, such as GCM
+     * Creates an endpoint for a device and mobile app on one of the supported push notification services, such as FCM
      * and APNS. <code>CreatePlatformEndpoint</code> requires the PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code>. The EndpointArn that is returned when using
      * <code>CreatePlatformEndpoint</code> can then be used by the <code>Publish</code> action to send a message to a
@@ -320,7 +298,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Creates an endpoint for a device and mobile app on one of the supported push notification services, such as GCM
+     * Creates an endpoint for a device and mobile app on one of the supported push notification services, such as FCM
      * and APNS. <code>CreatePlatformEndpoint</code> requires the PlatformApplicationArn that is returned from
      * <code>CreatePlatformApplication</code>. The EndpointArn that is returned when using
      * <code>CreatePlatformEndpoint</code> can then be used by the <code>Publish</code> action to send a message to a
@@ -452,7 +430,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Deletes a platform application object for one of the supported push notification services, such as APNS and GCM.
+     * Deletes a platform application object for one of the supported push notification services, such as APNS and FCM.
      * For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
      * Mobile Push Notifications</a>.
      * </p>
@@ -469,7 +447,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Deletes a platform application object for one of the supported push notification services, such as APNS and GCM.
+     * Deletes a platform application object for one of the supported push notification services, such as APNS and FCM.
      * For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
      * Mobile Push Notifications</a>.
      * </p>
@@ -541,7 +519,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
+     * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as FCM
      * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
@@ -557,7 +535,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
+     * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as FCM
      * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
@@ -579,7 +557,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Retrieves the attributes of the platform application object for the supported push notification services, such as
-     * APNS and GCM. For more information, see <a
+     * APNS and FCM. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
@@ -598,7 +576,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Retrieves the attributes of the platform application object for the supported push notification services, such as
-     * APNS and GCM. For more information, see <a
+     * APNS and FCM. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
@@ -760,7 +738,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM and
+     * Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as FCM and
      * APNS. The results for <code>ListEndpointsByPlatformApplication</code> are paginated and return a limited list of
      * endpoints, up to 100. If additional records are available after the first page results, then a NextToken string
      * will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using
@@ -785,7 +763,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM and
+     * Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as FCM and
      * APNS. The results for <code>ListEndpointsByPlatformApplication</code> are paginated and return a limited list of
      * endpoints, up to 100. If additional records are available after the first page results, then a NextToken string
      * will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using
@@ -862,7 +840,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Lists the platform application objects for the supported push notification services, such as APNS and GCM. The
+     * Lists the platform application objects for the supported push notification services, such as APNS and FCM. The
      * results for <code>ListPlatformApplications</code> are paginated and return a limited list of applications, up to
      * 100. If additional records are available after the first page results, then a NextToken string will be returned.
      * To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from
@@ -885,7 +863,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Lists the platform application objects for the supported push notification services, such as APNS and GCM. The
+     * Lists the platform application objects for the supported push notification services, such as APNS and FCM. The
      * results for <code>ListPlatformApplications</code> are paginated and return a limited list of applications, up to
      * 100. If additional records are available after the first page results, then a NextToken string will be returned.
      * To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from
@@ -1367,7 +1345,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM
+     * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as FCM
      * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
@@ -1383,7 +1361,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM
+     * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as FCM
      * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
@@ -1405,7 +1383,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Sets the attributes of the platform application object for the supported push notification services, such as APNS
-     * and GCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and FCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status,
      * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
      * Attributes for Message Delivery Status</a>.
@@ -1425,7 +1403,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Sets the attributes of the platform application object for the supported push notification services, such as APNS
-     * and GCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and FCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status,
      * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
      * Attributes for Message Delivery Status</a>.
@@ -1681,17 +1659,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </li>
      * <li>
      * <p>
-     * Tagging actions are limited to 10 TPS per AWS account. If your application requires a higher throughput, file a
-     * <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * Tagging actions are limited to 10 TPS per AWS account, per AWS region. If your application requires a higher
+     * throughput, file a <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
      * request</a>.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For a full list of tag restrictions, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-limits.html#limits-topics">Limits Related to Topics</a> in
-     * the <i>Amazon SNS Developer Guide</i>.
-     * </p>
      * 
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
@@ -1733,17 +1707,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </li>
      * <li>
      * <p>
-     * Tagging actions are limited to 10 TPS per AWS account. If your application requires a higher throughput, file a
-     * <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * Tagging actions are limited to 10 TPS per AWS account, per AWS region. If your application requires a higher
+     * throughput, file a <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
      * request</a>.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For a full list of tag restrictions, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-limits.html#limits-topics">Limits Related to Topics</a> in
-     * the <i>Amazon SNS Developer Guide</i>.
-     * </p>
      * 
      * @param tagResourceRequest
      * @param asyncHandler

@@ -75,6 +75,43 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
             request.addParameter("DurationSeconds", StringUtils.fromInteger(assumeRoleRequest.getDurationSeconds()));
         }
 
+        if (assumeRoleRequest.getTags() != null) {
+            java.util.List<Tag> tagsList = assumeRoleRequest.getTags();
+            if (tagsList.isEmpty()) {
+                request.addParameter("Tags", "");
+            } else {
+                int tagsListIndex = 1;
+
+                for (Tag tagsListValue : tagsList) {
+
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
+
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
+                    tagsListIndex++;
+                }
+            }
+        }
+
+        if (assumeRoleRequest.getTransitiveTagKeys() != null) {
+            java.util.List<String> transitiveTagKeysList = assumeRoleRequest.getTransitiveTagKeys();
+            if (transitiveTagKeysList.isEmpty()) {
+                request.addParameter("TransitiveTagKeys", "");
+            } else {
+                int transitiveTagKeysListIndex = 1;
+
+                for (String transitiveTagKeysListValue : transitiveTagKeysList) {
+                    if (transitiveTagKeysListValue != null) {
+                        request.addParameter("TransitiveTagKeys.member." + transitiveTagKeysListIndex, StringUtils.fromString(transitiveTagKeysListValue));
+                    }
+                    transitiveTagKeysListIndex++;
+                }
+            }
+        }
+
         if (assumeRoleRequest.getExternalId() != null) {
             request.addParameter("ExternalId", StringUtils.fromString(assumeRoleRequest.getExternalId()));
         }

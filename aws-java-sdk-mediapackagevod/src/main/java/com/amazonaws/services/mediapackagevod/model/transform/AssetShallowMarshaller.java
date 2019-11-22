@@ -29,6 +29,8 @@ public class AssetShallowMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("createdAt").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> PACKAGINGGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +59,7 @@ public class AssetShallowMarshaller {
 
         try {
             protocolMarshaller.marshall(assetShallow.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(assetShallow.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(assetShallow.getId(), ID_BINDING);
             protocolMarshaller.marshall(assetShallow.getPackagingGroupId(), PACKAGINGGROUPID_BINDING);
             protocolMarshaller.marshall(assetShallow.getResourceId(), RESOURCEID_BINDING);

@@ -44,13 +44,13 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
     private String forecastExportJobName;
     /**
      * <p>
-     * The path to the S3 bucket where the forecast is stored.
+     * The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * </p>
      */
     private DataDestination destination;
     /**
      * <p>
-     * The status of the forecast export job. One of the following states:
+     * The status of the forecast export job. States include:
      * </p>
      * <ul>
      * <li>
@@ -72,7 +72,7 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
      * <note>
      * <p>
      * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
-     * in your Amazon S3 bucket.
+     * in your S3 bucket.
      * </p>
      * </note>
      */
@@ -178,11 +178,11 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The path to the S3 bucket where the forecast is stored.
+     * The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * </p>
      * 
      * @param destination
-     *        The path to the S3 bucket where the forecast is stored.
+     *        The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      */
 
     public void setDestination(DataDestination destination) {
@@ -191,10 +191,10 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The path to the S3 bucket where the forecast is stored.
+     * The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * </p>
      * 
-     * @return The path to the S3 bucket where the forecast is stored.
+     * @return The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      */
 
     public DataDestination getDestination() {
@@ -203,11 +203,11 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The path to the S3 bucket where the forecast is stored.
+     * The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * </p>
      * 
      * @param destination
-     *        The path to the S3 bucket where the forecast is stored.
+     *        The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,7 +218,7 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the forecast export job. One of the following states:
+     * The status of the forecast export job. States include:
      * </p>
      * <ul>
      * <li>
@@ -240,12 +240,12 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
      * <note>
      * <p>
      * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
-     * in your Amazon S3 bucket.
+     * in your S3 bucket.
      * </p>
      * </note>
      * 
      * @param status
-     *        The status of the forecast export job. One of the following states:</p>
+     *        The status of the forecast export job. States include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -266,7 +266,7 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
      *        <note>
      *        <p>
      *        The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the
-     *        forecast in your Amazon S3 bucket.
+     *        forecast in your S3 bucket.
      *        </p>
      */
 
@@ -276,7 +276,7 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the forecast export job. One of the following states:
+     * The status of the forecast export job. States include:
      * </p>
      * <ul>
      * <li>
@@ -298,11 +298,11 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
      * <note>
      * <p>
      * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
-     * in your Amazon S3 bucket.
+     * in your S3 bucket.
      * </p>
      * </note>
      * 
-     * @return The status of the forecast export job. One of the following states:</p>
+     * @return The status of the forecast export job. States include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -323,7 +323,7 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
      *         <note>
      *         <p>
      *         The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the
-     *         forecast in your Amazon S3 bucket.
+     *         forecast in your S3 bucket.
      *         </p>
      */
 
@@ -333,7 +333,7 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The status of the forecast export job. One of the following states:
+     * The status of the forecast export job. States include:
      * </p>
      * <ul>
      * <li>
@@ -355,12 +355,12 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
      * <note>
      * <p>
      * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
-     * in your Amazon S3 bucket.
+     * in your S3 bucket.
      * </p>
      * </note>
      * 
      * @param status
-     *        The status of the forecast export job. One of the following states:</p>
+     *        The status of the forecast export job. States include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -381,7 +381,7 @@ public class ForecastExportJobSummary implements Serializable, Cloneable, Struct
      *        <note>
      *        <p>
      *        The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the
-     *        forecast in your Amazon S3 bucket.
+     *        forecast in your S3 bucket.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

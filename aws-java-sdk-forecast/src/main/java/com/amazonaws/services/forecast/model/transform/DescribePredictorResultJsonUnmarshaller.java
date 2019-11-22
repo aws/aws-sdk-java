@@ -97,6 +97,10 @@ public class DescribePredictorResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describePredictorResult.setEncryptionConfig(EncryptionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("PredictorExecutionDetails", targetDepth)) {
+                    context.nextToken();
+                    describePredictorResult.setPredictorExecutionDetails(PredictorExecutionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DatasetImportJobArns", targetDepth)) {
                     context.nextToken();
                     describePredictorResult.setDatasetImportJobArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

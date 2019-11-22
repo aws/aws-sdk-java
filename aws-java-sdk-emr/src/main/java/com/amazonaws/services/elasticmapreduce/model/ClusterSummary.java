@@ -61,6 +61,12 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String clusterArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    private String outpostArn;
 
     /**
      * <p>
@@ -281,6 +287,46 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterSummary withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -301,7 +347,9 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
         if (getNormalizedInstanceHours() != null)
             sb.append("NormalizedInstanceHours: ").append(getNormalizedInstanceHours()).append(",");
         if (getClusterArn() != null)
-            sb.append("ClusterArn: ").append(getClusterArn());
+            sb.append("ClusterArn: ").append(getClusterArn()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -336,6 +384,10 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClusterArn() != null && other.getClusterArn().equals(this.getClusterArn()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         return true;
     }
 
@@ -349,6 +401,7 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getNormalizedInstanceHours() == null) ? 0 : getNormalizedInstanceHours().hashCode());
         hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         return hashCode;
     }
 

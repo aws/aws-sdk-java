@@ -92,7 +92,7 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
     private Sunglasses sunglasses;
     /**
      * <p>
-     * Gender of the face and the confidence level in the determination.
+     * The predicted gender of a detected face.
      * </p>
      */
     private Gender gender;
@@ -363,11 +363,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Gender of the face and the confidence level in the determination.
+     * The predicted gender of a detected face.
      * </p>
      * 
      * @param gender
-     *        Gender of the face and the confidence level in the determination.
+     *        The predicted gender of a detected face.
      */
 
     public void setGender(Gender gender) {
@@ -376,10 +376,10 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Gender of the face and the confidence level in the determination.
+     * The predicted gender of a detected face.
      * </p>
      * 
-     * @return Gender of the face and the confidence level in the determination.
+     * @return The predicted gender of a detected face.
      */
 
     public Gender getGender() {
@@ -388,11 +388,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Gender of the face and the confidence level in the determination.
+     * The predicted gender of a detected face.
      * </p>
      * 
      * @param gender
-     *        Gender of the face and the confidence level in the determination.
+     *        The predicted gender of a detected face.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

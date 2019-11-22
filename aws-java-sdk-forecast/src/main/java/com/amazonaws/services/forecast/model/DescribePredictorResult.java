@@ -55,14 +55,15 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     private Boolean performAutoML;
     /**
      * <p>
-     * Whether the predictor is set to perform HPO.
+     * Whether the predictor is set to perform hyperparameter optimization (HPO).
      * </p>
      */
     private Boolean performHPO;
     /**
      * <p>
-     * The training parameters to override for model training. The parameters that you can override are listed in the
-     * individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * The default training parameters or overrides selected during model training. If using the AutoML algorithm or if
+     * HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen hyperparameters are
+     * returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      */
     private java.util.Map<String, String> trainingParameters;
@@ -101,7 +102,14 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     private EncryptionConfig encryptionConfig;
     /**
      * <p>
-     * An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     * Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You
+     * specify the number of backtests to perform when you call the operation.
+     * </p>
+     */
+    private PredictorExecutionDetails predictorExecutionDetails;
+    /**
+     * <p>
+     * An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      * </p>
      */
     private java.util.List<String> datasetImportJobArns;
@@ -139,7 +147,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <note>
      * <p>
-     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create a
+     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a
      * forecast.
      * </p>
      * </note>
@@ -159,9 +167,10 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date creationTime;
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when training
-     * starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed to
-     * <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * Initially, the same as <code>CreationTime</code> (when the status is <code>CREATE_PENDING</code>). This value is
+     * updated when training starts (when the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the status changes to
+     * <code>CREATE_FAILED</code>).
      * </p>
      */
     private java.util.Date lastModificationTime;
@@ -380,11 +389,11 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Whether the predictor is set to perform HPO.
+     * Whether the predictor is set to perform hyperparameter optimization (HPO).
      * </p>
      * 
      * @param performHPO
-     *        Whether the predictor is set to perform HPO.
+     *        Whether the predictor is set to perform hyperparameter optimization (HPO).
      */
 
     public void setPerformHPO(Boolean performHPO) {
@@ -393,10 +402,10 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Whether the predictor is set to perform HPO.
+     * Whether the predictor is set to perform hyperparameter optimization (HPO).
      * </p>
      * 
-     * @return Whether the predictor is set to perform HPO.
+     * @return Whether the predictor is set to perform hyperparameter optimization (HPO).
      */
 
     public Boolean getPerformHPO() {
@@ -405,11 +414,11 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Whether the predictor is set to perform HPO.
+     * Whether the predictor is set to perform hyperparameter optimization (HPO).
      * </p>
      * 
      * @param performHPO
-     *        Whether the predictor is set to perform HPO.
+     *        Whether the predictor is set to perform hyperparameter optimization (HPO).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -420,10 +429,10 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Whether the predictor is set to perform HPO.
+     * Whether the predictor is set to perform hyperparameter optimization (HPO).
      * </p>
      * 
-     * @return Whether the predictor is set to perform HPO.
+     * @return Whether the predictor is set to perform hyperparameter optimization (HPO).
      */
 
     public Boolean isPerformHPO() {
@@ -432,12 +441,14 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The training parameters to override for model training. The parameters that you can override are listed in the
-     * individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * The default training parameters or overrides selected during model training. If using the AutoML algorithm or if
+     * HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen hyperparameters are
+     * returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
-     * @return The training parameters to override for model training. The parameters that you can override are listed
-     *         in the individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * @return The default training parameters or overrides selected during model training. If using the AutoML
+     *         algorithm or if HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen
+     *         hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
      */
 
     public java.util.Map<String, String> getTrainingParameters() {
@@ -446,13 +457,15 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The training parameters to override for model training. The parameters that you can override are listed in the
-     * individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * The default training parameters or overrides selected during model training. If using the AutoML algorithm or if
+     * HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen hyperparameters are
+     * returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
      * @param trainingParameters
-     *        The training parameters to override for model training. The parameters that you can override are listed in
-     *        the individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     *        The default training parameters or overrides selected during model training. If using the AutoML algorithm
+     *        or if HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen
+     *        hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
      */
 
     public void setTrainingParameters(java.util.Map<String, String> trainingParameters) {
@@ -461,13 +474,15 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The training parameters to override for model training. The parameters that you can override are listed in the
-     * individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * The default training parameters or overrides selected during model training. If using the AutoML algorithm or if
+     * HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen hyperparameters are
+     * returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
      * @param trainingParameters
-     *        The training parameters to override for model training. The parameters that you can override are listed in
-     *        the individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     *        The default training parameters or overrides selected during model training. If using the AutoML algorithm
+     *        or if HPO is turned on while using the DeepAR+ algorithms, the optimized values for the chosen
+     *        hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -717,10 +732,56 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     * Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You
+     * specify the number of backtests to perform when you call the operation.
      * </p>
      * 
-     * @return An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     * @param predictorExecutionDetails
+     *        Details on the the status and results of the backtests performed to evaluate the accuracy of the
+     *        predictor. You specify the number of backtests to perform when you call the operation.
+     */
+
+    public void setPredictorExecutionDetails(PredictorExecutionDetails predictorExecutionDetails) {
+        this.predictorExecutionDetails = predictorExecutionDetails;
+    }
+
+    /**
+     * <p>
+     * Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You
+     * specify the number of backtests to perform when you call the operation.
+     * </p>
+     * 
+     * @return Details on the the status and results of the backtests performed to evaluate the accuracy of the
+     *         predictor. You specify the number of backtests to perform when you call the operation.
+     */
+
+    public PredictorExecutionDetails getPredictorExecutionDetails() {
+        return this.predictorExecutionDetails;
+    }
+
+    /**
+     * <p>
+     * Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You
+     * specify the number of backtests to perform when you call the operation.
+     * </p>
+     * 
+     * @param predictorExecutionDetails
+     *        Details on the the status and results of the backtests performed to evaluate the accuracy of the
+     *        predictor. You specify the number of backtests to perform when you call the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePredictorResult withPredictorExecutionDetails(PredictorExecutionDetails predictorExecutionDetails) {
+        setPredictorExecutionDetails(predictorExecutionDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of the ARNs of the dataset import jobs used to import training data for the predictor.
+     * </p>
+     * 
+     * @return An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      */
 
     public java.util.List<String> getDatasetImportJobArns() {
@@ -729,11 +790,11 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     * An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      * </p>
      * 
      * @param datasetImportJobArns
-     *        An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     *        An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      */
 
     public void setDatasetImportJobArns(java.util.Collection<String> datasetImportJobArns) {
@@ -747,7 +808,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     * An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -756,7 +817,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param datasetImportJobArns
-     *        An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     *        An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -772,11 +833,11 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     * An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      * </p>
      * 
      * @param datasetImportJobArns
-     *        An array of ARNs of the dataset import jobs used to import training data for the predictor.
+     *        An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -883,7 +944,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <note>
      * <p>
-     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create a
+     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a
      * forecast.
      * </p>
      * </note>
@@ -914,8 +975,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      *        </ul>
      *        <note>
      *        <p>
-     *        The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create
-     *        a forecast.
+     *        The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     *        create a forecast.
      *        </p>
      */
 
@@ -951,7 +1012,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <note>
      * <p>
-     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create a
+     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a
      * forecast.
      * </p>
      * </note>
@@ -981,8 +1042,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      *         </ul>
      *         <note>
      *         <p>
-     *         The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create
-     *         a forecast.
+     *         The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     *         create a forecast.
      *         </p>
      */
 
@@ -1018,7 +1079,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * </ul>
      * <note>
      * <p>
-     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create a
+     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a
      * forecast.
      * </p>
      * </note>
@@ -1049,8 +1110,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      *        </ul>
      *        <note>
      *        <p>
-     *        The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create
-     *        a forecast.
+     *        The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     *        create a forecast.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1142,15 +1203,17 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when training
-     * starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed to
-     * <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * Initially, the same as <code>CreationTime</code> (when the status is <code>CREATE_PENDING</code>). This value is
+     * updated when training starts (when the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the status changes to
+     * <code>CREATE_FAILED</code>).
      * </p>
      * 
      * @param lastModificationTime
-     *        Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *        training starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status
-     *        changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     *        Initially, the same as <code>CreationTime</code> (when the status is <code>CREATE_PENDING</code>). This
+     *        value is updated when training starts (when the status changes to <code>CREATE_IN_PROGRESS</code>), and
+     *        when training has completed (when the status changes to <code>ACTIVE</code>) or fails (when the status
+     *        changes to <code>CREATE_FAILED</code>).
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -1159,14 +1222,16 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when training
-     * starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed to
-     * <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * Initially, the same as <code>CreationTime</code> (when the status is <code>CREATE_PENDING</code>). This value is
+     * updated when training starts (when the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the status changes to
+     * <code>CREATE_FAILED</code>).
      * </p>
      * 
-     * @return Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *         training starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete
-     *         (status changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * @return Initially, the same as <code>CreationTime</code> (when the status is <code>CREATE_PENDING</code>). This
+     *         value is updated when training starts (when the status changes to <code>CREATE_IN_PROGRESS</code>), and
+     *         when training has completed (when the status changes to <code>ACTIVE</code>) or fails (when the status
+     *         changes to <code>CREATE_FAILED</code>).
      */
 
     public java.util.Date getLastModificationTime() {
@@ -1175,15 +1240,17 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when training
-     * starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed to
-     * <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * Initially, the same as <code>CreationTime</code> (when the status is <code>CREATE_PENDING</code>). This value is
+     * updated when training starts (when the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the status changes to
+     * <code>CREATE_FAILED</code>).
      * </p>
      * 
      * @param lastModificationTime
-     *        Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *        training starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when training is complete (status
-     *        changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     *        Initially, the same as <code>CreationTime</code> (when the status is <code>CREATE_PENDING</code>). This
+     *        value is updated when training starts (when the status changes to <code>CREATE_IN_PROGRESS</code>), and
+     *        when training has completed (when the status changes to <code>ACTIVE</code>) or fails (when the status
+     *        changes to <code>CREATE_FAILED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1228,6 +1295,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("FeaturizationConfig: ").append(getFeaturizationConfig()).append(",");
         if (getEncryptionConfig() != null)
             sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
+        if (getPredictorExecutionDetails() != null)
+            sb.append("PredictorExecutionDetails: ").append(getPredictorExecutionDetails()).append(",");
         if (getDatasetImportJobArns() != null)
             sb.append("DatasetImportJobArns: ").append(getDatasetImportJobArns()).append(",");
         if (getAutoMLAlgorithmArns() != null)
@@ -1302,6 +1371,10 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getEncryptionConfig() != null && other.getEncryptionConfig().equals(this.getEncryptionConfig()) == false)
             return false;
+        if (other.getPredictorExecutionDetails() == null ^ this.getPredictorExecutionDetails() == null)
+            return false;
+        if (other.getPredictorExecutionDetails() != null && other.getPredictorExecutionDetails().equals(this.getPredictorExecutionDetails()) == false)
+            return false;
         if (other.getDatasetImportJobArns() == null ^ this.getDatasetImportJobArns() == null)
             return false;
         if (other.getDatasetImportJobArns() != null && other.getDatasetImportJobArns().equals(this.getDatasetImportJobArns()) == false)
@@ -1346,6 +1419,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getFeaturizationConfig() == null) ? 0 : getFeaturizationConfig().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
+        hashCode = prime * hashCode + ((getPredictorExecutionDetails() == null) ? 0 : getPredictorExecutionDetails().hashCode());
         hashCode = prime * hashCode + ((getDatasetImportJobArns() == null) ? 0 : getDatasetImportJobArns().hashCode());
         hashCode = prime * hashCode + ((getAutoMLAlgorithmArns() == null) ? 0 : getAutoMLAlgorithmArns().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

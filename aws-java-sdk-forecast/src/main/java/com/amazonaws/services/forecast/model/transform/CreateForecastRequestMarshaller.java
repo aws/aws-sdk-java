@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.forecast.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateForecastRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForecastName").build();
     private static final MarshallingInfo<String> PREDICTORARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PredictorArn").build();
+    private static final MarshallingInfo<List> FORECASTTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ForecastTypes").build();
 
     private static final CreateForecastRequestMarshaller instance = new CreateForecastRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateForecastRequestMarshaller {
         try {
             protocolMarshaller.marshall(createForecastRequest.getForecastName(), FORECASTNAME_BINDING);
             protocolMarshaller.marshall(createForecastRequest.getPredictorArn(), PREDICTORARN_BINDING);
+            protocolMarshaller.marshall(createForecastRequest.getForecastTypes(), FORECASTTYPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

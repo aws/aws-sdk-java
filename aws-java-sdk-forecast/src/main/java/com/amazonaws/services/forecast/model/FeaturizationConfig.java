@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations,
- * one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> in your
+ * one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your
  * <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the
  * <code>TARGET_TIME_SERIES</code> dataset before model training.
  * </p>
@@ -49,6 +49,13 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min"
      * indicates every five minutes.
      * </p>
+     * <p>
+     * The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
+     * </p>
+     * <p>
+     * When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset
+     * frequency.
+     * </p>
      */
     private String forecastFrequency;
     /**
@@ -60,12 +67,17 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would
      * specify <code>store_id</code> as the dimension.
      * </p>
+     * <p>
+     * All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in
+     * the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     * <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
+     * </p>
      */
     private java.util.List<String> forecastDimensions;
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. In this release, only a
-     * single featurization is supported.
+     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
+     * is supported.
      * </p>
      */
     private java.util.List<Featurization> featurizations;
@@ -79,6 +91,13 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min"
      * indicates every five minutes.
      * </p>
+     * <p>
+     * The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
+     * </p>
+     * <p>
+     * When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset
+     * frequency.
+     * </p>
      * 
      * @param forecastFrequency
      *        The frequency of predictions in a forecast.</p>
@@ -86,6 +105,13 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      *        Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
      *        minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year
      *        and "5min" indicates every five minutes.
+     *        </p>
+     *        <p>
+     *        The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
+     *        </p>
+     *        <p>
+     *        When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES
+     *        dataset frequency.
      */
 
     public void setForecastFrequency(String forecastFrequency) {
@@ -101,12 +127,26 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min"
      * indicates every five minutes.
      * </p>
+     * <p>
+     * The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
+     * </p>
+     * <p>
+     * When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset
+     * frequency.
+     * </p>
      * 
      * @return The frequency of predictions in a forecast.</p>
      *         <p>
      *         Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
      *         minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every
      *         year and "5min" indicates every five minutes.
+     *         </p>
+     *         <p>
+     *         The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
+     *         </p>
+     *         <p>
+     *         When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES
+     *         dataset frequency.
      */
 
     public String getForecastFrequency() {
@@ -122,6 +162,13 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min"
      * indicates every five minutes.
      * </p>
+     * <p>
+     * The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
+     * </p>
+     * <p>
+     * When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset
+     * frequency.
+     * </p>
      * 
      * @param forecastFrequency
      *        The frequency of predictions in a forecast.</p>
@@ -129,6 +176,13 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      *        Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
      *        minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year
      *        and "5min" indicates every five minutes.
+     *        </p>
+     *        <p>
+     *        The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
+     *        </p>
+     *        <p>
+     *        When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES
+     *        dataset frequency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,12 +200,22 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would
      * specify <code>store_id</code> as the dimension.
      * </p>
+     * <p>
+     * All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in
+     * the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     * <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
+     * </p>
      * 
      * @return An array of dimension (field) names that specify how to group the generated forecast.</p>
      *         <p>
      *         For example, suppose that you are generating a forecast for item sales across all of your stores, and
      *         your dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by
      *         store, you would specify <code>store_id</code> as the dimension.
+     *         </p>
+     *         <p>
+     *         All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be
+     *         specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     *         <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
      */
 
     public java.util.List<String> getForecastDimensions() {
@@ -167,6 +231,11 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would
      * specify <code>store_id</code> as the dimension.
      * </p>
+     * <p>
+     * All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in
+     * the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     * <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
+     * </p>
      * 
      * @param forecastDimensions
      *        An array of dimension (field) names that specify how to group the generated forecast.</p>
@@ -174,6 +243,11 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      *        For example, suppose that you are generating a forecast for item sales across all of your stores, and your
      *        dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you
      *        would specify <code>store_id</code> as the dimension.
+     *        </p>
+     *        <p>
+     *        All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be
+     *        specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     *        <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
      */
 
     public void setForecastDimensions(java.util.Collection<String> forecastDimensions) {
@@ -195,6 +269,11 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * specify <code>store_id</code> as the dimension.
      * </p>
      * <p>
+     * All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in
+     * the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     * <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setForecastDimensions(java.util.Collection)} or {@link #withForecastDimensions(java.util.Collection)} if
      * you want to override the existing values.
@@ -206,6 +285,11 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      *        For example, suppose that you are generating a forecast for item sales across all of your stores, and your
      *        dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you
      *        would specify <code>store_id</code> as the dimension.
+     *        </p>
+     *        <p>
+     *        All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be
+     *        specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     *        <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,6 +312,11 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you would
      * specify <code>store_id</code> as the dimension.
      * </p>
+     * <p>
+     * All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be specified in
+     * the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     * <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
+     * </p>
      * 
      * @param forecastDimensions
      *        An array of dimension (field) names that specify how to group the generated forecast.</p>
@@ -235,6 +324,11 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      *        For example, suppose that you are generating a forecast for item sales across all of your stores, and your
      *        dataset contains a <code>store_id</code> field. If you want the sales forecast for each item by store, you
      *        would specify <code>store_id</code> as the dimension.
+     *        </p>
+     *        <p>
+     *        All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't need to be
+     *        specified in the <code>CreatePredictor</code> request. All forecast dimensions specified in the
+     *        <code>RELATED_TIME_SERIES</code> dataset must be specified in the <code>CreatePredictor</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,12 +339,12 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. In this release, only a
-     * single featurization is supported.
+     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
+     * is supported.
      * </p>
      * 
-     * @return An array of featurization (transformation) information for the fields of a dataset. In this release, only
-     *         a single featurization is supported.
+     * @return An array of featurization (transformation) information for the fields of a dataset. Only a single
+     *         featurization is supported.
      */
 
     public java.util.List<Featurization> getFeaturizations() {
@@ -259,13 +353,13 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. In this release, only a
-     * single featurization is supported.
+     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
+     * is supported.
      * </p>
      * 
      * @param featurizations
-     *        An array of featurization (transformation) information for the fields of a dataset. In this release, only
-     *        a single featurization is supported.
+     *        An array of featurization (transformation) information for the fields of a dataset. Only a single
+     *        featurization is supported.
      */
 
     public void setFeaturizations(java.util.Collection<Featurization> featurizations) {
@@ -279,8 +373,8 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. In this release, only a
-     * single featurization is supported.
+     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
+     * is supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -289,8 +383,8 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param featurizations
-     *        An array of featurization (transformation) information for the fields of a dataset. In this release, only
-     *        a single featurization is supported.
+     *        An array of featurization (transformation) information for the fields of a dataset. Only a single
+     *        featurization is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,13 +400,13 @@ public class FeaturizationConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An array of featurization (transformation) information for the fields of a dataset. In this release, only a
-     * single featurization is supported.
+     * An array of featurization (transformation) information for the fields of a dataset. Only a single featurization
+     * is supported.
      * </p>
      * 
      * @param featurizations
-     *        An array of featurization (transformation) information for the fields of a dataset. In this release, only
-     *        a single featurization is supported.
+     *        An array of featurization (transformation) information for the fields of a dataset. Only a single
+     *        featurization is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

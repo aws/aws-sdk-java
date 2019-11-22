@@ -42,14 +42,14 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      * <li>
      * <p>
      * <code>PlatformCredential</code> – The credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For ADM, PlatformCredential is
      * "client secret".
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
+     * PlatformPrincipal is SSL certificate. For FCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
      * "client id".
      * </p>
      * </li>
@@ -143,14 +143,14 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      * <li>
      * <p>
      * <code>PlatformCredential</code> – The credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For ADM, PlatformCredential is
      * "client secret".
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
+     * PlatformPrincipal is SSL certificate. For FCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
      * "client id".
      * </p>
      * </li>
@@ -199,14 +199,14 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      *         <li>
      *         <p>
      *         <code>PlatformCredential</code> – The credential received from the notification service. For
-     *         APNS/APNS_SANDBOX, PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM,
+     *         APNS/APNS_SANDBOX, PlatformCredential is private key. For FCM, PlatformCredential is "API key". For ADM,
      *         PlatformCredential is "client secret".
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>PlatformPrincipal</code> – The principal received from the notification service. For
-     *         APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable.
+     *         APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM, PlatformPrincipal is not applicable.
      *         For ADM, PlatformPrincipal is "client id".
      *         </p>
      *         </li>
@@ -268,14 +268,14 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      * <li>
      * <p>
      * <code>PlatformCredential</code> – The credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For ADM, PlatformCredential is
      * "client secret".
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
+     * PlatformPrincipal is SSL certificate. For FCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
      * "client id".
      * </p>
      * </li>
@@ -325,14 +325,14 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      *        <li>
      *        <p>
      *        <code>PlatformCredential</code> – The credential received from the notification service. For
-     *        APNS/APNS_SANDBOX, PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM,
+     *        APNS/APNS_SANDBOX, PlatformCredential is private key. For FCM, PlatformCredential is "API key". For ADM,
      *        PlatformCredential is "client secret".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>PlatformPrincipal</code> – The principal received from the notification service. For
-     *        APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For
+     *        APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM, PlatformPrincipal is not applicable. For
      *        ADM, PlatformPrincipal is "client id".
      *        </p>
      *        </li>
@@ -389,14 +389,14 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      * <li>
      * <p>
      * <code>PlatformCredential</code> – The credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For ADM, PlatformCredential is
      * "client secret".
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
+     * PlatformPrincipal is SSL certificate. For FCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
      * "client id".
      * </p>
      * </li>
@@ -446,14 +446,14 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      *        <li>
      *        <p>
      *        <code>PlatformCredential</code> – The credential received from the notification service. For
-     *        APNS/APNS_SANDBOX, PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM,
+     *        APNS/APNS_SANDBOX, PlatformCredential is private key. For FCM, PlatformCredential is "API key". For ADM,
      *        PlatformCredential is "client secret".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>PlatformPrincipal</code> – The principal received from the notification service. For
-     *        APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For
+     *        APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM, PlatformPrincipal is not applicable. For
      *        ADM, PlatformPrincipal is "client id".
      *        </p>
      *        </li>

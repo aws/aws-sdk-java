@@ -3367,6 +3367,10 @@ public interface AmazonEC2 {
      * <p>
      * Describes the events for the specified EC2 Fleet during the specified time.
      * </p>
+     * <p>
+     * EC2 Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query by
+     * the last evaluated time and not miss a recorded event. EC2 Fleet events are available for 48 hours.
+     * </p>
      * 
      * @param describeFleetHistoryRequest
      * @return Result of the DescribeFleetHistory operation returned by the service.
@@ -3787,6 +3791,34 @@ public interface AmazonEC2 {
      * @see #describeInstanceStatus(DescribeInstanceStatusRequest)
      */
     DescribeInstanceStatusResult describeInstanceStatus();
+
+    /**
+     * <p>
+     * Returns a list of all instance types offered. The results can be filtered by location (Region or Availability
+     * Zone). If no location is specified, the instance types offered in the current Region are returned.
+     * </p>
+     * 
+     * @param describeInstanceTypeOfferingsRequest
+     * @return Result of the DescribeInstanceTypeOfferings operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceTypeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInstanceTypeOfferingsResult describeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest describeInstanceTypeOfferingsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all instance types offered in your current AWS Region. The results can be filtered by the
+     * attributes of the instance types.
+     * </p>
+     * 
+     * @param describeInstanceTypesRequest
+     * @return Result of the DescribeInstanceTypes operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeInstanceTypesResult describeInstanceTypes(DescribeInstanceTypesRequest describeInstanceTypesRequest);
 
     /**
      * <p>

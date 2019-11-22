@@ -850,6 +850,37 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Modifies the number of steps that can be executed concurrently for the cluster specified using ClusterID.
+     * </p>
+     * 
+     * @param modifyClusterRequest
+     * @return A Java Future containing the result of the ModifyCluster operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest modifyClusterRequest);
+
+    /**
+     * <p>
+     * Modifies the number of steps that can be executed concurrently for the cluster specified using ClusterID.
+     * </p>
+     * 
+     * @param modifyClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyCluster operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest modifyClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyClusterRequest, ModifyClusterResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified
      * InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.
      * </p>

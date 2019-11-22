@@ -43,8 +43,8 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private String datasetArn;
     /**
      * <p>
-     * The format of timestamps in the dataset. Two formats are supported dependent on the <code>DataFrequency</code>
-     * specified when the dataset was created.
+     * The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code>
+     * specified when the dataset was created. The following formats are supported
      * </p>
      * <ul>
      * <li>
@@ -52,7 +52,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * "yyyy-MM-dd"
      * </p>
      * <p>
-     * For data frequencies: Y, M, W, and D
+     * For the following data frequencies: Y, M, W, and D
      * </p>
      * </li>
      * <li>
@@ -60,7 +60,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * "yyyy-MM-dd HH:mm:ss"
      * </p>
      * <p>
-     * For data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
+     * For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
      * </p>
      * </li>
      * </ul>
@@ -68,7 +68,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private String timestampFormat;
     /**
      * <p>
-     * The location of the training data to import. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
+     * Forecast can assume to access the data.
+     * </p>
+     * <p>
+     * If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
      * </p>
      */
     private DataSource dataSource;
@@ -80,7 +84,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private java.util.Map<String, Statistics> fieldStatistics;
     /**
      * <p>
-     * The size of the dataset in gigabytes (GB) after completion of the import job.
+     * The size of the dataset in gigabytes (GB) after the import job has finished.
      * </p>
      */
     private Double dataSize;
@@ -123,22 +127,22 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private java.util.Date creationTime;
     /**
      * <p>
-     * Dependent on the status as follows:
+     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code>
+     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_IN_PROGRESS</code> - the current timestamp
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      * </p>
      * </li>
      * </ul>
@@ -267,8 +271,8 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The format of timestamps in the dataset. Two formats are supported dependent on the <code>DataFrequency</code>
-     * specified when the dataset was created.
+     * The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code>
+     * specified when the dataset was created. The following formats are supported
      * </p>
      * <ul>
      * <li>
@@ -276,7 +280,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * "yyyy-MM-dd"
      * </p>
      * <p>
-     * For data frequencies: Y, M, W, and D
+     * For the following data frequencies: Y, M, W, and D
      * </p>
      * </li>
      * <li>
@@ -284,21 +288,21 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * "yyyy-MM-dd HH:mm:ss"
      * </p>
      * <p>
-     * For data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
+     * For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
      * </p>
      * </li>
      * </ul>
      * 
      * @param timestampFormat
-     *        The format of timestamps in the dataset. Two formats are supported dependent on the
-     *        <code>DataFrequency</code> specified when the dataset was created.</p>
+     *        The format of timestamps in the dataset. The format that you specify depends on the
+     *        <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
      *        <ul>
      *        <li>
      *        <p>
      *        "yyyy-MM-dd"
      *        </p>
      *        <p>
-     *        For data frequencies: Y, M, W, and D
+     *        For the following data frequencies: Y, M, W, and D
      *        </p>
      *        </li>
      *        <li>
@@ -306,7 +310,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      *        "yyyy-MM-dd HH:mm:ss"
      *        </p>
      *        <p>
-     *        For data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
+     *        For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
      *        </p>
      *        </li>
      */
@@ -317,8 +321,8 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The format of timestamps in the dataset. Two formats are supported dependent on the <code>DataFrequency</code>
-     * specified when the dataset was created.
+     * The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code>
+     * specified when the dataset was created. The following formats are supported
      * </p>
      * <ul>
      * <li>
@@ -326,7 +330,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * "yyyy-MM-dd"
      * </p>
      * <p>
-     * For data frequencies: Y, M, W, and D
+     * For the following data frequencies: Y, M, W, and D
      * </p>
      * </li>
      * <li>
@@ -334,20 +338,21 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * "yyyy-MM-dd HH:mm:ss"
      * </p>
      * <p>
-     * For data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
+     * For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The format of timestamps in the dataset. Two formats are supported dependent on the
-     *         <code>DataFrequency</code> specified when the dataset was created.</p>
+     * @return The format of timestamps in the dataset. The format that you specify depends on the
+     *         <code>DataFrequency</code> specified when the dataset was created. The following formats are
+     *         supported</p>
      *         <ul>
      *         <li>
      *         <p>
      *         "yyyy-MM-dd"
      *         </p>
      *         <p>
-     *         For data frequencies: Y, M, W, and D
+     *         For the following data frequencies: Y, M, W, and D
      *         </p>
      *         </li>
      *         <li>
@@ -355,7 +360,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      *         "yyyy-MM-dd HH:mm:ss"
      *         </p>
      *         <p>
-     *         For data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
+     *         For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
      *         </p>
      *         </li>
      */
@@ -366,8 +371,8 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The format of timestamps in the dataset. Two formats are supported dependent on the <code>DataFrequency</code>
-     * specified when the dataset was created.
+     * The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code>
+     * specified when the dataset was created. The following formats are supported
      * </p>
      * <ul>
      * <li>
@@ -375,7 +380,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * "yyyy-MM-dd"
      * </p>
      * <p>
-     * For data frequencies: Y, M, W, and D
+     * For the following data frequencies: Y, M, W, and D
      * </p>
      * </li>
      * <li>
@@ -383,21 +388,21 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * "yyyy-MM-dd HH:mm:ss"
      * </p>
      * <p>
-     * For data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
+     * For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
      * </p>
      * </li>
      * </ul>
      * 
      * @param timestampFormat
-     *        The format of timestamps in the dataset. Two formats are supported dependent on the
-     *        <code>DataFrequency</code> specified when the dataset was created.</p>
+     *        The format of timestamps in the dataset. The format that you specify depends on the
+     *        <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
      *        <ul>
      *        <li>
      *        <p>
      *        "yyyy-MM-dd"
      *        </p>
      *        <p>
-     *        For data frequencies: Y, M, W, and D
+     *        For the following data frequencies: Y, M, W, and D
      *        </p>
      *        </li>
      *        <li>
@@ -405,7 +410,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      *        "yyyy-MM-dd HH:mm:ss"
      *        </p>
      *        <p>
-     *        For data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
+     *        For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -418,11 +423,18 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location of the training data to import. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
+     * Forecast can assume to access the data.
+     * </p>
+     * <p>
+     * If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
      * </p>
      * 
      * @param dataSource
-     *        The location of the training data to import. The training data must be stored in an Amazon S3 bucket.
+     *        The location of the training data to import and an AWS Identity and Access Management (IAM) role that
+     *        Amazon Forecast can assume to access the data.</p>
+     *        <p>
+     *        If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
      */
 
     public void setDataSource(DataSource dataSource) {
@@ -431,10 +443,17 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location of the training data to import. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
+     * Forecast can assume to access the data.
+     * </p>
+     * <p>
+     * If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
      * </p>
      * 
-     * @return The location of the training data to import. The training data must be stored in an Amazon S3 bucket.
+     * @return The location of the training data to import and an AWS Identity and Access Management (IAM) role that
+     *         Amazon Forecast can assume to access the data.</p>
+     *         <p>
+     *         If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
      */
 
     public DataSource getDataSource() {
@@ -443,11 +462,18 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location of the training data to import. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
+     * Forecast can assume to access the data.
+     * </p>
+     * <p>
+     * If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
      * </p>
      * 
      * @param dataSource
-     *        The location of the training data to import. The training data must be stored in an Amazon S3 bucket.
+     *        The location of the training data to import and an AWS Identity and Access Management (IAM) role that
+     *        Amazon Forecast can assume to access the data.</p>
+     *        <p>
+     *        If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,11 +545,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The size of the dataset in gigabytes (GB) after completion of the import job.
+     * The size of the dataset in gigabytes (GB) after the import job has finished.
      * </p>
      * 
      * @param dataSize
-     *        The size of the dataset in gigabytes (GB) after completion of the import job.
+     *        The size of the dataset in gigabytes (GB) after the import job has finished.
      */
 
     public void setDataSize(Double dataSize) {
@@ -532,10 +558,10 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The size of the dataset in gigabytes (GB) after completion of the import job.
+     * The size of the dataset in gigabytes (GB) after the import job has finished.
      * </p>
      * 
-     * @return The size of the dataset in gigabytes (GB) after completion of the import job.
+     * @return The size of the dataset in gigabytes (GB) after the import job has finished.
      */
 
     public Double getDataSize() {
@@ -544,11 +570,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The size of the dataset in gigabytes (GB) after completion of the import job.
+     * The size of the dataset in gigabytes (GB) after the import job has finished.
      * </p>
      * 
      * @param dataSize
-     *        The size of the dataset in gigabytes (GB) after completion of the import job.
+     *        The size of the dataset in gigabytes (GB) after the import job has finished.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -790,42 +816,42 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Dependent on the status as follows:
+     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code>
+     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_IN_PROGRESS</code> - the current timestamp
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param lastModificationTime
-     *        Dependent on the status as follows:</p>
+     *        The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_PENDING</code> - same as <code>CreationTime</code>
+     *        <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATE_IN_PROGRESS</code> - the current timestamp
+     *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      *        </p>
      *        </li>
      */
@@ -836,41 +862,41 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Dependent on the status as follows:
+     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code>
+     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_IN_PROGRESS</code> - the current timestamp
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Dependent on the status as follows:</p>
+     * @return The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATE_PENDING</code> - same as <code>CreationTime</code>
+     *         <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CREATE_IN_PROGRESS</code> - the current timestamp
+     *         <code>CREATE_IN_PROGRESS</code> - The current timestamp.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+     *         <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      *         </p>
      *         </li>
      */
@@ -881,42 +907,42 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Dependent on the status as follows:
+     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code>
+     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CREATE_IN_PROGRESS</code> - the current timestamp
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param lastModificationTime
-     *        Dependent on the status as follows:</p>
+     *        The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_PENDING</code> - same as <code>CreationTime</code>
+     *        <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CREATE_IN_PROGRESS</code> - the current timestamp
+     *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or failed
+     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

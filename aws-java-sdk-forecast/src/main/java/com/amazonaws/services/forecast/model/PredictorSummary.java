@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a summary of the predictor properties used in the <a>ListPredictors</a> operation. To get the complete set
- * of properties, call the <a>DescribePredictor</a> operation, and provide the listed <code>PredictorArn</code>.
+ * Provides a summary of the predictor properties that are used in the <a>ListPredictors</a> operation. To get the
+ * complete set of properties, call the <a>DescribePredictor</a> operation, and provide the listed
+ * <code>PredictorArn</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorSummary" target="_top">AWS API
@@ -75,7 +76,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <note>
      * <p>
-     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create a
+     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a
      * forecast.
      * </p>
      * </note>
@@ -250,7 +251,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <note>
      * <p>
-     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create a
+     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a
      * forecast.
      * </p>
      * </note>
@@ -281,8 +282,8 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <note>
      *        <p>
-     *        The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create
-     *        a forecast.
+     *        The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     *        create a forecast.
      *        </p>
      */
 
@@ -318,7 +319,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <note>
      * <p>
-     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create a
+     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a
      * forecast.
      * </p>
      * </note>
@@ -348,8 +349,8 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      *         </ul>
      *         <note>
      *         <p>
-     *         The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create
-     *         a forecast.
+     *         The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     *         create a forecast.
      *         </p>
      */
 
@@ -385,7 +386,7 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <note>
      * <p>
-     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create a
+     * The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a
      * forecast.
      * </p>
      * </note>
@@ -416,8 +417,8 @@ public class PredictorSummary implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <note>
      *        <p>
-     *        The <code>Status</code> of the predictor must be <code>ACTIVE</code> before using the predictor to create
-     *        a forecast.
+     *        The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to
+     *        create a forecast.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

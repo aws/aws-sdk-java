@@ -37,7 +37,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * is not set to <code>true</code>.
      * </p>
      * <p class="title">
-     * <b>Supported algorithms</b>
+     * <b>Supported algorithms:</b>
      * </p>
      * <ul>
      * <li>
@@ -50,7 +50,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * <p>
-     * <code>- supports hyperparameter optimization (HPO)</code>
+     * Supports hyperparameter optimization (HPO)
      * </p>
      * </li>
      * <li>
@@ -81,36 +81,43 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * of the <a>CreateDataset</a> operation) and set the forecast horizon to 10, the model returns predictions for 10
      * days.
      * </p>
+     * <p>
+     * The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+     * </p>
      */
     private Integer forecastHorizon;
     /**
      * <p>
-     * Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to specify an
-     * algorithm.
+     * Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and
+     * chooses the best algorithm and configuration for your training dataset.
      * </p>
      * <p>
-     * If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     * configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a good
-     * option if you aren't sure which algorithm is suitable for your application.
+     * The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     * </p>
+     * <p>
+     * Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option
+     * if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must
+     * be false.
      * </p>
      */
     private Boolean performAutoML;
     /**
      * <p>
      * Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training
-     * data. The process of performing HPO is known as a hyperparameter tuning job.
+     * data. The process of performing HPO is known as running a hyperparameter tuning job.
      * </p>
      * <p>
      * The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from
      * the chosen algorithm.
      * </p>
      * <p>
-     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the hyperparameters to
-     * optimize, and the valid range for each hyperparameter.
+     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which hyperparameters
+     * participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to
+     * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithms support HPO:
+     * The following algorithm supports HPO:
      * </p>
      * <ul>
      * <li>
@@ -123,8 +130,8 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean performHPO;
     /**
      * <p>
-     * The training parameters to override for model training. The parameters that you can override are listed in the
-     * individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * The hyperparameters to override for model training. The hyperparameters that you can override are listed in the
+     * individual algorithms. For the list of supported algorithms, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      */
     private java.util.Map<String, String> trainingParameters;
@@ -141,6 +148,9 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast
      * uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization
      * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.
+     * </p>
+     * <p>
+     * If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.
      * </p>
      */
     private HyperParameterTuningJobConfig hPOConfig;
@@ -210,7 +220,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * is not set to <code>true</code>.
      * </p>
      * <p class="title">
-     * <b>Supported algorithms</b>
+     * <b>Supported algorithms:</b>
      * </p>
      * <ul>
      * <li>
@@ -223,7 +233,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * <p>
-     * <code>- supports hyperparameter optimization (HPO)</code>
+     * Supports hyperparameter optimization (HPO)
      * </p>
      * </li>
      * <li>
@@ -247,7 +257,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
      *        <code>PerformAutoML</code> is not set to <code>true</code>.</p>
      *        <p class="title">
-     *        <b>Supported algorithms</b>
+     *        <b>Supported algorithms:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -260,7 +270,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *        </p>
      *        <p>
-     *        <code>- supports hyperparameter optimization (HPO)</code>
+     *        Supports hyperparameter optimization (HPO)
      *        </p>
      *        </li>
      *        <li>
@@ -290,7 +300,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * is not set to <code>true</code>.
      * </p>
      * <p class="title">
-     * <b>Supported algorithms</b>
+     * <b>Supported algorithms:</b>
      * </p>
      * <ul>
      * <li>
@@ -303,7 +313,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * <p>
-     * <code>- supports hyperparameter optimization (HPO)</code>
+     * Supports hyperparameter optimization (HPO)
      * </p>
      * </li>
      * <li>
@@ -326,7 +336,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
      *         <code>PerformAutoML</code> is not set to <code>true</code>.</p>
      *         <p class="title">
-     *         <b>Supported algorithms</b>
+     *         <b>Supported algorithms:</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -339,7 +349,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *         <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *         </p>
      *         <p>
-     *         <code>- supports hyperparameter optimization (HPO)</code>
+     *         Supports hyperparameter optimization (HPO)
      *         </p>
      *         </li>
      *         <li>
@@ -369,7 +379,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * is not set to <code>true</code>.
      * </p>
      * <p class="title">
-     * <b>Supported algorithms</b>
+     * <b>Supported algorithms:</b>
      * </p>
      * <ul>
      * <li>
@@ -382,7 +392,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * <p>
-     * <code>- supports hyperparameter optimization (HPO)</code>
+     * Supports hyperparameter optimization (HPO)
      * </p>
      * </li>
      * <li>
@@ -406,7 +416,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
      *        <code>PerformAutoML</code> is not set to <code>true</code>.</p>
      *        <p class="title">
-     *        <b>Supported algorithms</b>
+     *        <b>Supported algorithms:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -419,7 +429,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *        </p>
      *        <p>
-     *        <code>- supports hyperparameter optimization (HPO)</code>
+     *        Supports hyperparameter optimization (HPO)
      *        </p>
      *        </li>
      *        <li>
@@ -455,6 +465,9 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * of the <a>CreateDataset</a> operation) and set the forecast horizon to 10, the model returns predictions for 10
      * days.
      * </p>
+     * <p>
+     * The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+     * </p>
      * 
      * @param forecastHorizon
      *        Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also
@@ -463,6 +476,10 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code>
      *        parameter of the <a>CreateDataset</a> operation) and set the forecast horizon to 10, the model returns
      *        predictions for 10 days.
+     *        </p>
+     *        <p>
+     *        The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset
+     *        length.
      */
 
     public void setForecastHorizon(Integer forecastHorizon) {
@@ -479,6 +496,9 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * of the <a>CreateDataset</a> operation) and set the forecast horizon to 10, the model returns predictions for 10
      * days.
      * </p>
+     * <p>
+     * The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+     * </p>
      * 
      * @return Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also
      *         called the prediction length.</p>
@@ -486,6 +506,10 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *         For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code>
      *         parameter of the <a>CreateDataset</a> operation) and set the forecast horizon to 10, the model returns
      *         predictions for 10 days.
+     *         </p>
+     *         <p>
+     *         The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset
+     *         length.
      */
 
     public Integer getForecastHorizon() {
@@ -502,6 +526,9 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * of the <a>CreateDataset</a> operation) and set the forecast horizon to 10, the model returns predictions for 10
      * days.
      * </p>
+     * <p>
+     * The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+     * </p>
      * 
      * @param forecastHorizon
      *        Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also
@@ -510,6 +537,10 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code>
      *        parameter of the <a>CreateDataset</a> operation) and set the forecast horizon to 10, the model returns
      *        predictions for 10 days.
+     *        </p>
+     *        <p>
+     *        The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset
+     *        length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -520,22 +551,28 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to specify an
-     * algorithm.
+     * Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and
+     * chooses the best algorithm and configuration for your training dataset.
      * </p>
      * <p>
-     * If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     * configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a good
-     * option if you aren't sure which algorithm is suitable for your application.
+     * The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     * </p>
+     * <p>
+     * Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option
+     * if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must
+     * be false.
      * </p>
      * 
      * @param performAutoML
-     *        Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to
-     *        specify an algorithm.</p>
+     *        Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides
+     *        and chooses the best algorithm and configuration for your training dataset.</p>
      *        <p>
-     *        If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     *        configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a
-     *        good option if you aren't sure which algorithm is suitable for your application.
+     *        The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     *        </p>
+     *        <p>
+     *        Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good
+     *        option if you aren't sure which algorithm is suitable for your training data. In this case,
+     *        <code>PerformHPO</code> must be false.
      */
 
     public void setPerformAutoML(Boolean performAutoML) {
@@ -544,21 +581,27 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to specify an
-     * algorithm.
+     * Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and
+     * chooses the best algorithm and configuration for your training dataset.
      * </p>
      * <p>
-     * If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     * configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a good
-     * option if you aren't sure which algorithm is suitable for your application.
+     * The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     * </p>
+     * <p>
+     * Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option
+     * if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must
+     * be false.
      * </p>
      * 
-     * @return Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to
-     *         specify an algorithm.</p>
+     * @return Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides
+     *         and chooses the best algorithm and configuration for your training dataset.</p>
      *         <p>
-     *         If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     *         configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a
-     *         good option if you aren't sure which algorithm is suitable for your application.
+     *         The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     *         </p>
+     *         <p>
+     *         Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a
+     *         good option if you aren't sure which algorithm is suitable for your training data. In this case,
+     *         <code>PerformHPO</code> must be false.
      */
 
     public Boolean getPerformAutoML() {
@@ -567,22 +610,28 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to specify an
-     * algorithm.
+     * Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and
+     * chooses the best algorithm and configuration for your training dataset.
      * </p>
      * <p>
-     * If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     * configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a good
-     * option if you aren't sure which algorithm is suitable for your application.
+     * The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     * </p>
+     * <p>
+     * Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option
+     * if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must
+     * be false.
      * </p>
      * 
      * @param performAutoML
-     *        Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to
-     *        specify an algorithm.</p>
+     *        Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides
+     *        and chooses the best algorithm and configuration for your training dataset.</p>
      *        <p>
-     *        If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     *        configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a
-     *        good option if you aren't sure which algorithm is suitable for your application.
+     *        The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     *        </p>
+     *        <p>
+     *        Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good
+     *        option if you aren't sure which algorithm is suitable for your training data. In this case,
+     *        <code>PerformHPO</code> must be false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -593,21 +642,27 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to specify an
-     * algorithm.
+     * Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and
+     * chooses the best algorithm and configuration for your training dataset.
      * </p>
      * <p>
-     * If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     * configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a good
-     * option if you aren't sure which algorithm is suitable for your application.
+     * The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     * </p>
+     * <p>
+     * Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option
+     * if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must
+     * be false.
      * </p>
      * 
-     * @return Whether to perform AutoML. The default value is <code>false</code>. In this case, you are required to
-     *         specify an algorithm.</p>
+     * @return Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides
+     *         and chooses the best algorithm and configuration for your training dataset.</p>
      *         <p>
-     *         If you want Amazon Forecast to evaluate the algorithms it provides and choose the best algorithm and
-     *         configuration for your training dataset, set <code>PerformAutoML</code> to <code>true</code>. This is a
-     *         good option if you aren't sure which algorithm is suitable for your application.
+     *         The default value is <code>false</code>. In this case, you are required to specify an algorithm.
+     *         </p>
+     *         <p>
+     *         Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a
+     *         good option if you aren't sure which algorithm is suitable for your training data. In this case,
+     *         <code>PerformHPO</code> must be false.
      */
 
     public Boolean isPerformAutoML() {
@@ -617,19 +672,20 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training
-     * data. The process of performing HPO is known as a hyperparameter tuning job.
+     * data. The process of performing HPO is known as running a hyperparameter tuning job.
      * </p>
      * <p>
      * The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from
      * the chosen algorithm.
      * </p>
      * <p>
-     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the hyperparameters to
-     * optimize, and the valid range for each hyperparameter.
+     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which hyperparameters
+     * participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to
+     * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithms support HPO:
+     * The following algorithm supports HPO:
      * </p>
      * <ul>
      * <li>
@@ -641,18 +697,19 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param performHPO
      *        Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your
-     *        training data. The process of performing HPO is known as a hyperparameter tuning job.</p>
+     *        training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
      *        <p>
      *        The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values
      *        from the chosen algorithm.
      *        </p>
      *        <p>
-     *        To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     *        <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the
-     *        hyperparameters to optimize, and the valid range for each hyperparameter.
+     *        To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply
+     *        the <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which
+     *        hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case,
+     *        you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *        </p>
      *        <p>
-     *        The following algorithms support HPO:
+     *        The following algorithm supports HPO:
      *        </p>
      *        <ul>
      *        <li>
@@ -669,19 +726,20 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training
-     * data. The process of performing HPO is known as a hyperparameter tuning job.
+     * data. The process of performing HPO is known as running a hyperparameter tuning job.
      * </p>
      * <p>
      * The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from
      * the chosen algorithm.
      * </p>
      * <p>
-     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the hyperparameters to
-     * optimize, and the valid range for each hyperparameter.
+     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which hyperparameters
+     * participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to
+     * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithms support HPO:
+     * The following algorithm supports HPO:
      * </p>
      * <ul>
      * <li>
@@ -692,18 +750,19 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your
-     *         training data. The process of performing HPO is known as a hyperparameter tuning job.</p>
+     *         training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
      *         <p>
      *         The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values
      *         from the chosen algorithm.
      *         </p>
      *         <p>
-     *         To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     *         <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the
-     *         hyperparameters to optimize, and the valid range for each hyperparameter.
+     *         To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply
+     *         the <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which
+     *         hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case,
+     *         you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *         </p>
      *         <p>
-     *         The following algorithms support HPO:
+     *         The following algorithm supports HPO:
      *         </p>
      *         <ul>
      *         <li>
@@ -720,19 +779,20 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training
-     * data. The process of performing HPO is known as a hyperparameter tuning job.
+     * data. The process of performing HPO is known as running a hyperparameter tuning job.
      * </p>
      * <p>
      * The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from
      * the chosen algorithm.
      * </p>
      * <p>
-     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the hyperparameters to
-     * optimize, and the valid range for each hyperparameter.
+     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which hyperparameters
+     * participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to
+     * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithms support HPO:
+     * The following algorithm supports HPO:
      * </p>
      * <ul>
      * <li>
@@ -744,18 +804,19 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param performHPO
      *        Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your
-     *        training data. The process of performing HPO is known as a hyperparameter tuning job.</p>
+     *        training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
      *        <p>
      *        The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values
      *        from the chosen algorithm.
      *        </p>
      *        <p>
-     *        To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     *        <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the
-     *        hyperparameters to optimize, and the valid range for each hyperparameter.
+     *        To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply
+     *        the <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which
+     *        hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case,
+     *        you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *        </p>
      *        <p>
-     *        The following algorithms support HPO:
+     *        The following algorithm supports HPO:
      *        </p>
      *        <ul>
      *        <li>
@@ -774,19 +835,20 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training
-     * data. The process of performing HPO is known as a hyperparameter tuning job.
+     * data. The process of performing HPO is known as running a hyperparameter tuning job.
      * </p>
      * <p>
      * The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from
      * the chosen algorithm.
      * </p>
      * <p>
-     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the hyperparameters to
-     * optimize, and the valid range for each hyperparameter.
+     * To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which hyperparameters
+     * participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to
+     * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithms support HPO:
+     * The following algorithm supports HPO:
      * </p>
      * <ul>
      * <li>
@@ -797,18 +859,19 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your
-     *         training data. The process of performing HPO is known as a hyperparameter tuning job.</p>
+     *         training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
      *         <p>
      *         The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values
      *         from the chosen algorithm.
      *         </p>
      *         <p>
-     *         To override the default values, set <code>PerformHPO</code> to <code>true</code> and supply the
-     *         <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an objective metric, the
-     *         hyperparameters to optimize, and the valid range for each hyperparameter.
+     *         To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply
+     *         the <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric to optimize, which
+     *         hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case,
+     *         you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *         </p>
      *         <p>
-     *         The following algorithms support HPO:
+     *         The following algorithm supports HPO:
      *         </p>
      *         <ul>
      *         <li>
@@ -824,12 +887,13 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The training parameters to override for model training. The parameters that you can override are listed in the
-     * individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * The hyperparameters to override for model training. The hyperparameters that you can override are listed in the
+     * individual algorithms. For the list of supported algorithms, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
-     * @return The training parameters to override for model training. The parameters that you can override are listed
-     *         in the individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * @return The hyperparameters to override for model training. The hyperparameters that you can override are listed
+     *         in the individual algorithms. For the list of supported algorithms, see
+     *         <a>aws-forecast-choosing-recipes</a>.
      */
 
     public java.util.Map<String, String> getTrainingParameters() {
@@ -838,13 +902,14 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The training parameters to override for model training. The parameters that you can override are listed in the
-     * individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * The hyperparameters to override for model training. The hyperparameters that you can override are listed in the
+     * individual algorithms. For the list of supported algorithms, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
      * @param trainingParameters
-     *        The training parameters to override for model training. The parameters that you can override are listed in
-     *        the individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     *        The hyperparameters to override for model training. The hyperparameters that you can override are listed
+     *        in the individual algorithms. For the list of supported algorithms, see
+     *        <a>aws-forecast-choosing-recipes</a>.
      */
 
     public void setTrainingParameters(java.util.Map<String, String> trainingParameters) {
@@ -853,13 +918,14 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The training parameters to override for model training. The parameters that you can override are listed in the
-     * individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     * The hyperparameters to override for model training. The hyperparameters that you can override are listed in the
+     * individual algorithms. For the list of supported algorithms, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
      * 
      * @param trainingParameters
-     *        The training parameters to override for model training. The parameters that you can override are listed in
-     *        the individual algorithms in <a>aws-forecast-choosing-recipes</a>.
+     *        The hyperparameters to override for model training. The hyperparameters that you can override are listed
+     *        in the individual algorithms. For the list of supported algorithms, see
+     *        <a>aws-forecast-choosing-recipes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -947,11 +1013,16 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization
      * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
+     * <p>
+     * If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.
+     * </p>
      * 
      * @param hPOConfig
      *        Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon
      *        Forecast uses default values. The individual algorithms specify which hyperparameters support
-     *        hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.
+     *        hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     *        <p>
+     *        If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.
      */
 
     public void setHPOConfig(HyperParameterTuningJobConfig hPOConfig) {
@@ -964,10 +1035,15 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization
      * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
+     * <p>
+     * If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.
+     * </p>
      * 
      * @return Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon
      *         Forecast uses default values. The individual algorithms specify which hyperparameters support
-     *         hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.
+     *         hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     *         <p>
+     *         If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.
      */
 
     public HyperParameterTuningJobConfig getHPOConfig() {
@@ -980,11 +1056,16 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization
      * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.
      * </p>
+     * <p>
+     * If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.
+     * </p>
      * 
      * @param hPOConfig
      *        Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon
      *        Forecast uses default values. The individual algorithms specify which hyperparameters support
-     *        hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.
+     *        hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     *        <p>
+     *        If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,7 +37,7 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     private String datasetName;
     /**
      * <p>
-     * The dataset domain.
+     * The domain associated with the dataset.
      * </p>
      */
     private String domain;
@@ -67,7 +67,7 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     private Schema schema;
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
+     * The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the key.
      * </p>
      */
@@ -100,8 +100,8 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      * </ul>
      * <p>
      * The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the
-     * <a>CreateDatasetImportJob</a> operation. During this time, the status reflects the status of the dataset import
-     * job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the
+     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
      * <code>UPDATE_IN_PROGRESS</code>.
      * </p>
      * <note>
@@ -119,10 +119,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.Date creationTime;
     /**
      * <p>
-     * When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. After a
-     * <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code> is when the import job
-     * finished or failed. While data is being imported to the dataset, <code>LastModificationTime</code> is the current
-     * query time.
+     * When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data
+     * is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
+     * <code>LastModificationTime</code> is when the import job completed or failed.
      * </p>
      */
     private java.util.Date lastModificationTime;
@@ -209,11 +209,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The dataset domain.
+     * The domain associated with the dataset.
      * </p>
      * 
      * @param domain
-     *        The dataset domain.
+     *        The domain associated with the dataset.
      * @see Domain
      */
 
@@ -223,10 +223,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The dataset domain.
+     * The domain associated with the dataset.
      * </p>
      * 
-     * @return The dataset domain.
+     * @return The domain associated with the dataset.
      * @see Domain
      */
 
@@ -236,11 +236,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The dataset domain.
+     * The domain associated with the dataset.
      * </p>
      * 
      * @param domain
-     *        The dataset domain.
+     *        The domain associated with the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -252,11 +252,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The dataset domain.
+     * The domain associated with the dataset.
      * </p>
      * 
      * @param domain
-     *        The dataset domain.
+     *        The domain associated with the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -440,12 +440,12 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
+     * The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the key.
      * </p>
      * 
      * @param encryptionConfig
-     *        An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
+     *        The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
      *        Forecast can assume to access the key.
      */
 
@@ -455,12 +455,12 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
+     * The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the key.
      * </p>
      * 
-     * @return An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     *         Forecast can assume to access the key.
+     * @return The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that
+     *         Amazon Forecast can assume to access the key.
      */
 
     public EncryptionConfig getEncryptionConfig() {
@@ -469,12 +469,12 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
+     * The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the key.
      * </p>
      * 
      * @param encryptionConfig
-     *        An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
+     *        The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
      *        Forecast can assume to access the key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -512,8 +512,8 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      * </ul>
      * <p>
      * The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the
-     * <a>CreateDatasetImportJob</a> operation. During this time, the status reflects the status of the dataset import
-     * job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the
+     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
      * <code>UPDATE_IN_PROGRESS</code>.
      * </p>
      * <note>
@@ -548,9 +548,9 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      *        </ul>
      *        <p>
      *        The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the
-     *        <a>CreateDatasetImportJob</a> operation. During this time, the status reflects the status of the dataset
-     *        import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
-     *        dataset is <code>UPDATE_IN_PROGRESS</code>.
+     *        <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example,
+     *        when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     *        <code>UPDATE_IN_PROGRESS</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -590,8 +590,8 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      * </ul>
      * <p>
      * The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the
-     * <a>CreateDatasetImportJob</a> operation. During this time, the status reflects the status of the dataset import
-     * job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the
+     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
      * <code>UPDATE_IN_PROGRESS</code>.
      * </p>
      * <note>
@@ -625,9 +625,9 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      *         </ul>
      *         <p>
      *         The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the
-     *         <a>CreateDatasetImportJob</a> operation. During this time, the status reflects the status of the dataset
-     *         import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
-     *         dataset is <code>UPDATE_IN_PROGRESS</code>.
+     *         <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example,
+     *         when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     *         <code>UPDATE_IN_PROGRESS</code>.
      *         </p>
      *         <note>
      *         <p>
@@ -667,8 +667,8 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      * </ul>
      * <p>
      * The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the
-     * <a>CreateDatasetImportJob</a> operation. During this time, the status reflects the status of the dataset import
-     * job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the
+     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
      * <code>UPDATE_IN_PROGRESS</code>.
      * </p>
      * <note>
@@ -703,9 +703,9 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      *        </ul>
      *        <p>
      *        The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the
-     *        <a>CreateDatasetImportJob</a> operation. During this time, the status reflects the status of the dataset
-     *        import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the
-     *        dataset is <code>UPDATE_IN_PROGRESS</code>.
+     *        <a>CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example,
+     *        when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     *        <code>UPDATE_IN_PROGRESS</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -761,17 +761,17 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. After a
-     * <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code> is when the import job
-     * finished or failed. While data is being imported to the dataset, <code>LastModificationTime</code> is the current
-     * query time.
+     * When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data
+     * is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
+     * <code>LastModificationTime</code> is when the import job completed or failed.
      * </p>
      * 
      * @param lastModificationTime
-     *        When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
-     *        After a <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code> is when the
-     *        import job finished or failed. While data is being imported to the dataset,
-     *        <code>LastModificationTime</code> is the current query time.
+     *        When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
+     *        While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
+     *        <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
+     *        <code>LastModificationTime</code> is when the import job completed or failed.
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -780,16 +780,16 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. After a
-     * <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code> is when the import job
-     * finished or failed. While data is being imported to the dataset, <code>LastModificationTime</code> is the current
-     * query time.
+     * When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data
+     * is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
+     * <code>LastModificationTime</code> is when the import job completed or failed.
      * </p>
      * 
-     * @return When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
-     *         After a <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code> is when the
-     *         import job finished or failed. While data is being imported to the dataset,
-     *         <code>LastModificationTime</code> is the current query time.
+     * @return When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
+     *         While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
+     *         <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
+     *         <code>LastModificationTime</code> is when the import job completed or failed.
      */
 
     public java.util.Date getLastModificationTime() {
@@ -798,17 +798,17 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. After a
-     * <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code> is when the import job
-     * finished or failed. While data is being imported to the dataset, <code>LastModificationTime</code> is the current
-     * query time.
+     * When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data
+     * is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
+     * <code>LastModificationTime</code> is when the import job completed or failed.
      * </p>
      * 
      * @param lastModificationTime
-     *        When the dataset is created, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
-     *        After a <a>CreateDatasetImportJob</a> operation is called, <code>LastModificationTime</code> is when the
-     *        import job finished or failed. While data is being imported to the dataset,
-     *        <code>LastModificationTime</code> is the current query time.
+     *        When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
+     *        While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the
+     *        <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a> operation has finished,
+     *        <code>LastModificationTime</code> is when the import job completed or failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

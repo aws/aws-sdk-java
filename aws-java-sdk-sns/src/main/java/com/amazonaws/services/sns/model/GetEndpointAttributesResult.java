@@ -50,7 +50,11 @@ public class GetEndpointAttributesResult extends com.amazonaws.AmazonWebServiceR
      * returned from the notification service when an app and mobile device are registered with the notification
      * service.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The device token for the iOS platform is returned in lowercase.
+     * </p>
+     * </note></li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -79,7 +83,11 @@ public class GetEndpointAttributesResult extends com.amazonaws.AmazonWebServiceR
      * returned from the notification service when an app and mobile device are registered with the notification
      * service.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The device token for the iOS platform is returned in lowercase.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @return Attributes include the following:</p>
@@ -103,7 +111,11 @@ public class GetEndpointAttributesResult extends com.amazonaws.AmazonWebServiceR
      *         This is returned from the notification service when an app and mobile device are registered with the
      *         notification service.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         The device token for the iOS platform is returned in lowercase.
+     *         </p>
+     *         </note></li>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -137,7 +149,11 @@ public class GetEndpointAttributesResult extends com.amazonaws.AmazonWebServiceR
      * returned from the notification service when an app and mobile device are registered with the notification
      * service.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The device token for the iOS platform is returned in lowercase.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param attributes
@@ -162,7 +178,11 @@ public class GetEndpointAttributesResult extends com.amazonaws.AmazonWebServiceR
      *        This is returned from the notification service when an app and mobile device are registered with the
      *        notification service.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        The device token for the iOS platform is returned in lowercase.
+     *        </p>
+     *        </note></li>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -193,7 +213,11 @@ public class GetEndpointAttributesResult extends com.amazonaws.AmazonWebServiceR
      * returned from the notification service when an app and mobile device are registered with the notification
      * service.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * The device token for the iOS platform is returned in lowercase.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param attributes
@@ -218,7 +242,11 @@ public class GetEndpointAttributesResult extends com.amazonaws.AmazonWebServiceR
      *        This is returned from the notification service when an app and mobile device are registered with the
      *        notification service.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        The device token for the iOS platform is returned in lowercase.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

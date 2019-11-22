@@ -520,6 +520,23 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Modifies the number of steps that can be executed concurrently for the cluster specified using ClusterID.
+     * </p>
+     * 
+     * @param modifyClusterRequest
+     * @return Result of the ModifyCluster operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyClusterResult modifyCluster(ModifyClusterRequest modifyClusterRequest);
+
+    /**
+     * <p>
      * Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified
      * InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.
      * </p>

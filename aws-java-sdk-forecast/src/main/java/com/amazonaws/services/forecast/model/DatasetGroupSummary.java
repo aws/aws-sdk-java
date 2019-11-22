@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a> operation. To get the
- * complete set of properties, call the <a>DescribeDatasetGroup</a> operation, and provide the listed
+ * complete set of properties, call the <a>DescribeDatasetGroup</a> operation, and provide the
  * <code>DatasetGroupArn</code>.
  * </p>
  * 
@@ -44,14 +44,15 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
     private String datasetGroupName;
     /**
      * <p>
-     * When the datase group was created.
+     * When the dataset group was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
      * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.
      * </p>
      */
     private java.util.Date lastModificationTime;
@@ -138,11 +139,11 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the datase group was created.
+     * When the dataset group was created.
      * </p>
      * 
      * @param creationTime
-     *        When the datase group was created.
+     *        When the dataset group was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -151,10 +152,10 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the datase group was created.
+     * When the dataset group was created.
      * </p>
      * 
-     * @return When the datase group was created.
+     * @return When the dataset group was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -163,11 +164,11 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When the datase group was created.
+     * When the dataset group was created.
      * </p>
      * 
      * @param creationTime
-     *        When the datase group was created.
+     *        When the dataset group was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,12 +180,14 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.
      * </p>
      * 
      * @param lastModificationTime
      *        When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation.
-     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     *        <code>ListDatasetGroups</code> call.
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -194,12 +197,13 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.
      * </p>
      * 
      * @return When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a>
      *         operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current
-     *         query time.
+     *         time of the <code>ListDatasetGroups</code> call.
      */
 
     public java.util.Date getLastModificationTime() {
@@ -209,12 +213,14 @@ public class DatasetGroupSummary implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.
      * </p>
      * 
      * @param lastModificationTime
      *        When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation.
-     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     *        <code>ListDatasetGroups</code> call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

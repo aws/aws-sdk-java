@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum QualityFilter {
 
     NONE("NONE"),
-    AUTO("AUTO");
+    AUTO("AUTO"),
+    LOW("LOW"),
+    MEDIUM("MEDIUM"),
+    HIGH("HIGH");
 
     private String value;
 

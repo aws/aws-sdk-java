@@ -25,6 +25,8 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /** The ARN of the Asset. */
     private String arn;
+    /** The time the Asset was initially submitted for Ingest. */
+    private String createdAt;
     /** The list of egress endpoints available for the Asset. */
     private java.util.List<EgressEndpoint> egressEndpoints;
     /** The unique identifier for the Asset. */
@@ -69,6 +71,40 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public CreateAssetResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     * 
+     * @param createdAt
+     *        The time the Asset was initially submitted for Ingest.
+     */
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     * 
+     * @return The time the Asset was initially submitted for Ingest.
+     */
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     * 
+     * @param createdAt
+     *        The time the Asset was initially submitted for Ingest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssetResult withCreatedAt(String createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -318,6 +354,8 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getEgressEndpoints() != null)
             sb.append("EgressEndpoints: ").append(getEgressEndpoints()).append(",");
         if (getId() != null)
@@ -347,6 +385,10 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getEgressEndpoints() == null ^ this.getEgressEndpoints() == null)
             return false;
@@ -381,6 +423,7 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getEgressEndpoints() == null) ? 0 : getEgressEndpoints().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getPackagingGroupId() == null) ? 0 : getPackagingGroupId().hashCode());

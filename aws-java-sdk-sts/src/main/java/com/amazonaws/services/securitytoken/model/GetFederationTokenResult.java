@@ -50,8 +50,9 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
     private FederatedUser federatedUser;
     /**
      * <p>
-     * A percentage value indicating the size of the policy in packed form. The service rejects policies for which the
-     * packed size is greater than 100 percent of the allowed value.
+     * A percentage value that indicates the packed size of the session policies and session tags combined passed in the
+     * request. The request fails if the packed size is greater than 100 percent, which means the policies and tags
+     * exceeded the allowed space.
      * </p>
      */
     private Integer packedPolicySize;
@@ -186,13 +187,15 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A percentage value indicating the size of the policy in packed form. The service rejects policies for which the
-     * packed size is greater than 100 percent of the allowed value.
+     * A percentage value that indicates the packed size of the session policies and session tags combined passed in the
+     * request. The request fails if the packed size is greater than 100 percent, which means the policies and tags
+     * exceeded the allowed space.
      * </p>
      * 
      * @param packedPolicySize
-     *        A percentage value indicating the size of the policy in packed form. The service rejects policies for
-     *        which the packed size is greater than 100 percent of the allowed value.
+     *        A percentage value that indicates the packed size of the session policies and session tags combined passed
+     *        in the request. The request fails if the packed size is greater than 100 percent, which means the policies
+     *        and tags exceeded the allowed space.
      */
 
     public void setPackedPolicySize(Integer packedPolicySize) {
@@ -201,12 +204,14 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A percentage value indicating the size of the policy in packed form. The service rejects policies for which the
-     * packed size is greater than 100 percent of the allowed value.
+     * A percentage value that indicates the packed size of the session policies and session tags combined passed in the
+     * request. The request fails if the packed size is greater than 100 percent, which means the policies and tags
+     * exceeded the allowed space.
      * </p>
      * 
-     * @return A percentage value indicating the size of the policy in packed form. The service rejects policies for
-     *         which the packed size is greater than 100 percent of the allowed value.
+     * @return A percentage value that indicates the packed size of the session policies and session tags combined
+     *         passed in the request. The request fails if the packed size is greater than 100 percent, which means the
+     *         policies and tags exceeded the allowed space.
      */
 
     public Integer getPackedPolicySize() {
@@ -215,13 +220,15 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A percentage value indicating the size of the policy in packed form. The service rejects policies for which the
-     * packed size is greater than 100 percent of the allowed value.
+     * A percentage value that indicates the packed size of the session policies and session tags combined passed in the
+     * request. The request fails if the packed size is greater than 100 percent, which means the policies and tags
+     * exceeded the allowed space.
      * </p>
      * 
      * @param packedPolicySize
-     *        A percentage value indicating the size of the policy in packed form. The service rejects policies for
-     *        which the packed size is greater than 100 percent of the allowed value.
+     *        A percentage value that indicates the packed size of the session policies and session tags combined passed
+     *        in the request. The request fails if the packed size is greater than 100 percent, which means the policies
+     *        and tags exceeded the allowed space.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

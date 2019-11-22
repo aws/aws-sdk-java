@@ -37,8 +37,8 @@ public class WeightedQuantileLoss implements Serializable, Cloneable, Structured
     private Double quantile;
     /**
      * <p>
-     * The difference between the predicted value and actual value over the quantile, weighted (normalized) by dividing
-     * by the sum over all quantiles.
+     * The difference between the predicted value and the actual value over the quantile, weighted (normalized) by
+     * dividing by the sum over all quantiles.
      * </p>
      */
     private Double lossValue;
@@ -94,13 +94,13 @@ public class WeightedQuantileLoss implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The difference between the predicted value and actual value over the quantile, weighted (normalized) by dividing
-     * by the sum over all quantiles.
+     * The difference between the predicted value and the actual value over the quantile, weighted (normalized) by
+     * dividing by the sum over all quantiles.
      * </p>
      * 
      * @param lossValue
-     *        The difference between the predicted value and actual value over the quantile, weighted (normalized) by
-     *        dividing by the sum over all quantiles.
+     *        The difference between the predicted value and the actual value over the quantile, weighted (normalized)
+     *        by dividing by the sum over all quantiles.
      */
 
     public void setLossValue(Double lossValue) {
@@ -109,12 +109,12 @@ public class WeightedQuantileLoss implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The difference between the predicted value and actual value over the quantile, weighted (normalized) by dividing
-     * by the sum over all quantiles.
+     * The difference between the predicted value and the actual value over the quantile, weighted (normalized) by
+     * dividing by the sum over all quantiles.
      * </p>
      * 
-     * @return The difference between the predicted value and actual value over the quantile, weighted (normalized) by
-     *         dividing by the sum over all quantiles.
+     * @return The difference between the predicted value and the actual value over the quantile, weighted (normalized)
+     *         by dividing by the sum over all quantiles.
      */
 
     public Double getLossValue() {
@@ -123,13 +123,13 @@ public class WeightedQuantileLoss implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The difference between the predicted value and actual value over the quantile, weighted (normalized) by dividing
-     * by the sum over all quantiles.
+     * The difference between the predicted value and the actual value over the quantile, weighted (normalized) by
+     * dividing by the sum over all quantiles.
      * </p>
      * 
      * @param lossValue
-     *        The difference between the predicted value and actual value over the quantile, weighted (normalized) by
-     *        dividing by the sum over all quantiles.
+     *        The difference between the predicted value and the actual value over the quantile, weighted (normalized)
+     *        by dividing by the sum over all quantiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

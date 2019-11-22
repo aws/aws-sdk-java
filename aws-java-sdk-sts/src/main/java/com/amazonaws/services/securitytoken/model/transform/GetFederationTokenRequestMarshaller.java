@@ -71,6 +71,27 @@ public class GetFederationTokenRequestMarshaller implements Marshaller<Request<G
             request.addParameter("DurationSeconds", StringUtils.fromInteger(getFederationTokenRequest.getDurationSeconds()));
         }
 
+        if (getFederationTokenRequest.getTags() != null) {
+            java.util.List<Tag> tagsList = getFederationTokenRequest.getTags();
+            if (tagsList.isEmpty()) {
+                request.addParameter("Tags", "");
+            } else {
+                int tagsListIndex = 1;
+
+                for (Tag tagsListValue : tagsList) {
+
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
+
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
+                    tagsListIndex++;
+                }
+            }
+        }
+
         return request;
     }
 

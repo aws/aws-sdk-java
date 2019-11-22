@@ -140,6 +140,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Session Duration</b>
+     * </p>
+     * <p>
      * By default, the temporary security credentials created by <code>AssumeRole</code> last for one hour. However, you
      * can use the optional <code>DurationSeconds</code> parameter to specify the duration of your session. You can
      * provide a value from 900 seconds (15 minutes) up to the maximum session duration setting for the role. This
@@ -152,6 +155,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
      * The temporary security credentials created by <code>AssumeRole</code> can be used to make API calls to any AWS
      * service with the following exception: You cannot call the AWS STS <code>GetFederationToken</code> or
      * <code>GetSessionToken</code> API operations.
@@ -161,7 +167,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
      * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters. Passing policies to this operation
+     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -198,6 +204,27 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * need explicit permission to assume the role. For more information about trust policies and resource-based
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a> in
      * the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can pass tag key-value pairs to your session. These tags are called session tags. For more
+     * information about session tags, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
+     * the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * An administrator must grant you the permissions necessary to pass session tags. The administrator can also create
+     * granular permissions to allow you to pass only specific session tags. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+     * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can set the session tags as transitive. Transitive tags persist during role chaining. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">
+     * Chaining Roles with Session Tags</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * <b>Using MFA with AssumeRole</b>
@@ -258,6 +285,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Session Duration</b>
+     * </p>
+     * <p>
      * By default, the temporary security credentials created by <code>AssumeRole</code> last for one hour. However, you
      * can use the optional <code>DurationSeconds</code> parameter to specify the duration of your session. You can
      * provide a value from 900 seconds (15 minutes) up to the maximum session duration setting for the role. This
@@ -270,6 +300,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
      * The temporary security credentials created by <code>AssumeRole</code> can be used to make API calls to any AWS
      * service with the following exception: You cannot call the AWS STS <code>GetFederationToken</code> or
      * <code>GetSessionToken</code> API operations.
@@ -279,7 +312,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
      * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters. Passing policies to this operation
+     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -316,6 +349,27 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * need explicit permission to assume the role. For more information about trust policies and resource-based
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a> in
      * the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can pass tag key-value pairs to your session. These tags are called session tags. For more
+     * information about session tags, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
+     * the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * An administrator must grant you the permissions necessary to pass session tags. The administrator can also create
+     * granular permissions to allow you to pass only specific session tags. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+     * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can set the session tags as transitive. Transitive tags persist during role chaining. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">
+     * Chaining Roles with Session Tags</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * <b>Using MFA with AssumeRole</b>
@@ -371,6 +425,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * and a security token. Applications can use these temporary security credentials to sign calls to AWS services.
      * </p>
      * <p>
+     * <b>Session Duration</b>
+     * </p>
+     * <p>
      * By default, the temporary security credentials created by <code>AssumeRoleWithSAML</code> last for one hour.
      * However, you can use the optional <code>DurationSeconds</code> parameter to specify the duration of your session.
      * Your role session lasts for the duration that you specify, or until the time specified in the SAML authentication
@@ -386,6 +443,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
      * The temporary security credentials created by <code>AssumeRoleWithSAML</code> can be used to make API calls to
      * any AWS service with the following exception: you cannot call the STS <code>GetFederationToken</code> or
      * <code>GetSessionToken</code> API operations.
@@ -395,7 +455,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
      * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters. Passing policies to this operation
+     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -403,12 +463,6 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
-     * </p>
-     * <p>
-     * Before your application can call <code>AssumeRoleWithSAML</code>, you must configure your SAML identity provider
-     * (IdP) to issue the claims required by AWS. Additionally, you must use AWS Identity and Access Management (IAM) to
-     * create a SAML provider entity in your AWS account that represents your identity provider. You must also create an
-     * IAM role that specifies this SAML provider in its trust policy.
      * </p>
      * <p>
      * Calling <code>AssumeRoleWithSAML</code> does not require the use of AWS security credentials. The identity of the
@@ -420,10 +474,58 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * Calling <code>AssumeRoleWithSAML</code> can result in an entry in your AWS CloudTrail logs. The entry includes
      * the value in the <code>NameID</code> element of the SAML assertion. We recommend that you use a
      * <code>NameIDType</code> that is not associated with any personally identifiable information (PII). For example,
-     * you could instead use the Persistent Identifier (
+     * you could instead use the persistent identifier (
      * <code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).
      * </p>
      * </important>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can configure your IdP to pass attributes into your SAML assertion as session tags. Each session
+     * tag consists of a key name and an associated value. For more information about session tags, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
+     * the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters and the values
+     * can’t exceed 256 characters. For these and additional limits, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
+     * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
+     * request are to the upper size limit.
+     * </p>
+     * </note>
+     * <p>
+     * You can pass a session tag with the same key as a tag that is attached to the role. When you do, session tags
+     * override the role's tags with the same key.
+     * </p>
+     * <p>
+     * An administrator must grant you the permissions necessary to pass session tags. The administrator can also create
+     * granular permissions to allow you to pass only specific session tags. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+     * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can set the session tags as transitive. Transitive tags persist during role chaining. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">
+     * Chaining Roles with Session Tags</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>SAML Configuration</b>
+     * </p>
+     * <p>
+     * Before your application can call <code>AssumeRoleWithSAML</code>, you must configure your SAML identity provider
+     * (IdP) to issue the claims required by AWS. Additionally, you must use AWS Identity and Access Management (IAM) to
+     * create a SAML provider entity in your AWS account that represents your identity provider. You must also create an
+     * IAM role that specifies this SAML provider in its trust policy.
+     * </p>
      * <p>
      * For more information, see the following resources:
      * </p>
@@ -478,6 +580,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * and a security token. Applications can use these temporary security credentials to sign calls to AWS services.
      * </p>
      * <p>
+     * <b>Session Duration</b>
+     * </p>
+     * <p>
      * By default, the temporary security credentials created by <code>AssumeRoleWithSAML</code> last for one hour.
      * However, you can use the optional <code>DurationSeconds</code> parameter to specify the duration of your session.
      * Your role session lasts for the duration that you specify, or until the time specified in the SAML authentication
@@ -493,6 +598,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
      * The temporary security credentials created by <code>AssumeRoleWithSAML</code> can be used to make API calls to
      * any AWS service with the following exception: you cannot call the STS <code>GetFederationToken</code> or
      * <code>GetSessionToken</code> API operations.
@@ -502,7 +610,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
      * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters. Passing policies to this operation
+     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -510,12 +618,6 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
-     * </p>
-     * <p>
-     * Before your application can call <code>AssumeRoleWithSAML</code>, you must configure your SAML identity provider
-     * (IdP) to issue the claims required by AWS. Additionally, you must use AWS Identity and Access Management (IAM) to
-     * create a SAML provider entity in your AWS account that represents your identity provider. You must also create an
-     * IAM role that specifies this SAML provider in its trust policy.
      * </p>
      * <p>
      * Calling <code>AssumeRoleWithSAML</code> does not require the use of AWS security credentials. The identity of the
@@ -527,10 +629,58 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * Calling <code>AssumeRoleWithSAML</code> can result in an entry in your AWS CloudTrail logs. The entry includes
      * the value in the <code>NameID</code> element of the SAML assertion. We recommend that you use a
      * <code>NameIDType</code> that is not associated with any personally identifiable information (PII). For example,
-     * you could instead use the Persistent Identifier (
+     * you could instead use the persistent identifier (
      * <code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).
      * </p>
      * </important>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can configure your IdP to pass attributes into your SAML assertion as session tags. Each session
+     * tag consists of a key name and an associated value. For more information about session tags, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
+     * the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters and the values
+     * can’t exceed 256 characters. For these and additional limits, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
+     * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
+     * request are to the upper size limit.
+     * </p>
+     * </note>
+     * <p>
+     * You can pass a session tag with the same key as a tag that is attached to the role. When you do, session tags
+     * override the role's tags with the same key.
+     * </p>
+     * <p>
+     * An administrator must grant you the permissions necessary to pass session tags. The administrator can also create
+     * granular permissions to allow you to pass only specific session tags. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+     * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can set the session tags as transitive. Transitive tags persist during role chaining. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">
+     * Chaining Roles with Session Tags</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>SAML Configuration</b>
+     * </p>
+     * <p>
+     * Before your application can call <code>AssumeRoleWithSAML</code>, you must configure your SAML identity provider
+     * (IdP) to issue the claims required by AWS. Additionally, you must use AWS Identity and Access Management (IAM) to
+     * create a SAML provider entity in your AWS account that represents your identity provider. You must also create an
+     * IAM role that specifies this SAML provider in its trust policy.
+     * </p>
      * <p>
      * For more information, see the following resources:
      * </p>
@@ -613,6 +763,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * operations.
      * </p>
      * <p>
+     * <b>Session Duration</b>
+     * </p>
+     * <p>
      * By default, the temporary security credentials created by <code>AssumeRoleWithWebIdentity</code> last for one
      * hour. However, you can use the optional <code>DurationSeconds</code> parameter to specify the duration of your
      * session. You can provide a value from 900 seconds (15 minutes) up to the maximum session duration setting for the
@@ -626,6 +779,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
      * The temporary security credentials created by <code>AssumeRoleWithWebIdentity</code> can be used to make API
      * calls to any AWS service with the following exception: you cannot call the STS <code>GetFederationToken</code> or
      * <code>GetSessionToken</code> API operations.
@@ -635,7 +791,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
      * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters. Passing policies to this operation
+     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -643,6 +799,48 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can configure your IdP to pass attributes into your web identity token as session tags. Each
+     * session tag consists of a key name and an associated value. For more information about session tags, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
+     * the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters and the values
+     * can’t exceed 256 characters. For these and additional limits, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
+     * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
+     * request are to the upper size limit.
+     * </p>
+     * </note>
+     * <p>
+     * You can pass a session tag with the same key as a tag that is attached to the role. When you do, the session tag
+     * overrides the role tag with the same key.
+     * </p>
+     * <p>
+     * An administrator must grant you the permissions necessary to pass session tags. The administrator can also create
+     * granular permissions to allow you to pass only specific session tags. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+     * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can set the session tags as transitive. Transitive tags persist during role chaining. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">
+     * Chaining Roles with Session Tags</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Identities</b>
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithWebIdentity</code>, you must have an identity token from a
@@ -684,8 +882,8 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * <p>
      * <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS Developer Guide</a> and <a
      * href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android Developer Guide</a>. These toolkits contain
-     * sample apps that show how to invoke the identity providers, and then how to use the information from these
-     * providers to get and use temporary security credentials.
+     * sample apps that show how to invoke the identity providers. The toolkits then show how to use the information
+     * from these providers to get and use temporary security credentials.
      * </p>
      * </li>
      * <li>
@@ -745,6 +943,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * operations.
      * </p>
      * <p>
+     * <b>Session Duration</b>
+     * </p>
+     * <p>
      * By default, the temporary security credentials created by <code>AssumeRoleWithWebIdentity</code> last for one
      * hour. However, you can use the optional <code>DurationSeconds</code> parameter to specify the duration of your
      * session. You can provide a value from 900 seconds (15 minutes) up to the maximum session duration setting for the
@@ -758,6 +959,9 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
      * The temporary security credentials created by <code>AssumeRoleWithWebIdentity</code> can be used to make API
      * calls to any AWS service with the following exception: you cannot call the STS <code>GetFederationToken</code> or
      * <code>GetSessionToken</code> API operations.
@@ -767,7 +971,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
      * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters. Passing policies to this operation
+     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -775,6 +979,48 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can configure your IdP to pass attributes into your web identity token as session tags. Each
+     * session tag consists of a key name and an associated value. For more information about session tags, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
+     * the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters and the values
+     * can’t exceed 256 characters. For these and additional limits, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
+     * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
+     * request are to the upper size limit.
+     * </p>
+     * </note>
+     * <p>
+     * You can pass a session tag with the same key as a tag that is attached to the role. When you do, the session tag
+     * overrides the role tag with the same key.
+     * </p>
+     * <p>
+     * An administrator must grant you the permissions necessary to pass session tags. The administrator can also create
+     * granular permissions to allow you to pass only specific session tags. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+     * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * You can set the session tags as transitive. Transitive tags persist during role chaining. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">
+     * Chaining Roles with Session Tags</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Identities</b>
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithWebIdentity</code>, you must have an identity token from a
@@ -816,8 +1062,8 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * <p>
      * <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS Developer Guide</a> and <a
      * href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android Developer Guide</a>. These toolkits contain
-     * sample apps that show how to invoke the identity providers, and then how to use the information from these
-     * providers to get and use temporary security credentials.
+     * sample apps that show how to invoke the identity providers. The toolkits then show how to use the information
+     * from these providers to get and use temporary security credentials.
      * </p>
      * </li>
      * <li>
@@ -998,7 +1244,8 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials report</a>
      * to learn which IAM user owns the keys. To learn who requested the temporary credentials for an <code>ASIA</code>
      * access key, view the STS events in your <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail logs</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail logs</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This operation does not indicate the state of the access key. The key might be active, inactive, or deleted.
@@ -1034,7 +1281,8 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials report</a>
      * to learn which IAM user owns the keys. To learn who requested the temporary credentials for an <code>ASIA</code>
      * access key, view the STS events in your <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail logs</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail logs</a> in the
+     * <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This operation does not indicate the state of the access key. The key might be active, inactive, or deleted.
@@ -1066,7 +1314,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * operation. Permissions are not required because the same information is returned when an IAM user or role is
      * denied access. To view an example response, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa"
-     * >I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a>.
+     * >I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1089,7 +1337,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * operation. Permissions are not required because the same information is returned when an IAM user or role is
      * denied access. To view an example response, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa"
-     * >I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a>.
+     * >I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1127,7 +1375,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon Cognito</a> or
      * <code>AssumeRoleWithWebIdentity</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"
-     * >Federation Through a Web-based Identity Provider</a>.
+     * >Federation Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -1139,49 +1387,77 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * User Guide</i>.
      * </p>
      * <p>
-     * The temporary credentials are valid for the specified duration, from 900 seconds (15 minutes) up to a maximum of
-     * 129,600 seconds (36 hours). The default is 43,200 seconds (12 hours). Temporary credentials that are obtained by
-     * using AWS account root user credentials have a maximum duration of 3,600 seconds (1 hour).
+     * <b>Session duration</b>
      * </p>
      * <p>
-     * The temporary security credentials created by <code>GetFederationToken</code> can be used to make API calls to
-     * any AWS service with the following exceptions:
+     * The temporary credentials are valid for the specified duration, from 900 seconds (15 minutes) up to a maximum of
+     * 129,600 seconds (36 hours). The default session duration is 43,200 seconds (12 hours). Temporary credentials that
+     * are obtained by using AWS account root user credentials have a maximum duration of 3,600 seconds (1 hour).
+     * </p>
+     * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
+     * You can use the temporary credentials created by <code>GetFederationToken</code> in any AWS service except the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You cannot use these credentials to call any IAM API operations.
+     * You cannot call any IAM operations using the AWS CLI or the AWS API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You cannot call any STS API operations except <code>GetCallerIdentity</code>.
+     * You cannot call any STS operations except <code>GetCallerIdentity</code>.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * <b>Permissions</b>
-     * </p>
      * <p>
      * You must pass an inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a>
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
      * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
-     * and managed session policies shouldn't exceed 2048 characters.
+     * and managed session policies can't exceed 2,048 characters.
      * </p>
      * <p>
      * Though the session policy parameters are optional, if you do not pass a policy, then the resulting federated user
-     * session has no permissions. The only exception is when the credentials are used to access a resource that has a
-     * resource-based policy that specifically references the federated user session in the <code>Principal</code>
-     * element of the policy. When you pass session policies, the session permissions are the intersection of the IAM
-     * user policies and the session policies that you pass. This gives you a way to further restrict the permissions
-     * for a federated user. You cannot use session policies to grant more permissions than those that are defined in
-     * the permissions policy of the IAM user. For more information, see <a
+     * session has no permissions. When you pass session policies, the session permissions are the intersection of the
+     * IAM user policies and the session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more permissions than those that are
+     * defined in the permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code> to create
      * temporary security credentials, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"
      * >GetFederationToken—Federation Through a Custom Identity Broker</a>.
+     * </p>
+     * <p>
+     * You can use the credentials to access a resource that has a resource-based policy. If that policy specifically
+     * references the federated user session in the <code>Principal</code> element of the policy, the session has the
+     * permissions allowed by the policy. These permissions are granted in addition to the permissions granted by the
+     * session policies.
+     * </p>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can pass tag key-value pairs to your session. These are called session tags. For more information
+     * about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+     * Session Tags in STS</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * An administrator must grant you the permissions necessary to pass session tags. The administrator can also create
+     * granular permissions to allow you to pass only specific session tags. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+     * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * Tag key–value pairs are not case sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the user that you are federating has
+     * the <code>Department</code>=<code>Marketing</code> tag and you pass the <code>department</code>=
+     * <code>engineering</code> session tag. <code>Department</code> and <code>department</code> are not saved as
+     * separate tags, and the session tag passed in the request takes precedence over the user tag.
      * </p>
      * 
      * @param getFederationTokenRequest
@@ -1213,7 +1489,7 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon Cognito</a> or
      * <code>AssumeRoleWithWebIdentity</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"
-     * >Federation Through a Web-based Identity Provider</a>.
+     * >Federation Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -1225,49 +1501,77 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * User Guide</i>.
      * </p>
      * <p>
-     * The temporary credentials are valid for the specified duration, from 900 seconds (15 minutes) up to a maximum of
-     * 129,600 seconds (36 hours). The default is 43,200 seconds (12 hours). Temporary credentials that are obtained by
-     * using AWS account root user credentials have a maximum duration of 3,600 seconds (1 hour).
+     * <b>Session duration</b>
      * </p>
      * <p>
-     * The temporary security credentials created by <code>GetFederationToken</code> can be used to make API calls to
-     * any AWS service with the following exceptions:
+     * The temporary credentials are valid for the specified duration, from 900 seconds (15 minutes) up to a maximum of
+     * 129,600 seconds (36 hours). The default session duration is 43,200 seconds (12 hours). Temporary credentials that
+     * are obtained by using AWS account root user credentials have a maximum duration of 3,600 seconds (1 hour).
+     * </p>
+     * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
+     * You can use the temporary credentials created by <code>GetFederationToken</code> in any AWS service except the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You cannot use these credentials to call any IAM API operations.
+     * You cannot call any IAM operations using the AWS CLI or the AWS API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You cannot call any STS API operations except <code>GetCallerIdentity</code>.
+     * You cannot call any STS operations except <code>GetCallerIdentity</code>.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * <b>Permissions</b>
-     * </p>
      * <p>
      * You must pass an inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a>
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
      * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
-     * and managed session policies shouldn't exceed 2048 characters.
+     * and managed session policies can't exceed 2,048 characters.
      * </p>
      * <p>
      * Though the session policy parameters are optional, if you do not pass a policy, then the resulting federated user
-     * session has no permissions. The only exception is when the credentials are used to access a resource that has a
-     * resource-based policy that specifically references the federated user session in the <code>Principal</code>
-     * element of the policy. When you pass session policies, the session permissions are the intersection of the IAM
-     * user policies and the session policies that you pass. This gives you a way to further restrict the permissions
-     * for a federated user. You cannot use session policies to grant more permissions than those that are defined in
-     * the permissions policy of the IAM user. For more information, see <a
+     * session has no permissions. When you pass session policies, the session permissions are the intersection of the
+     * IAM user policies and the session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more permissions than those that are
+     * defined in the permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code> to create
      * temporary security credentials, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"
      * >GetFederationToken—Federation Through a Custom Identity Broker</a>.
+     * </p>
+     * <p>
+     * You can use the credentials to access a resource that has a resource-based policy. If that policy specifically
+     * references the federated user session in the <code>Principal</code> element of the policy, the session has the
+     * permissions allowed by the policy. These permissions are granted in addition to the permissions granted by the
+     * session policies.
+     * </p>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can pass tag key-value pairs to your session. These are called session tags. For more information
+     * about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+     * Session Tags in STS</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * An administrator must grant you the permissions necessary to pass session tags. The administrator can also create
+     * granular permissions to allow you to pass only specific session tags. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html">Tutorial:
+     * Using Tags for Attribute-Based Access Control</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * Tag key–value pairs are not case sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the user that you are federating has
+     * the <code>Department</code>=<code>Marketing</code> tag and you pass the <code>department</code>=
+     * <code>engineering</code> session tag. <code>Department</code> and <code>department</code> are not saved as
+     * separate tags, and the session tag passed in the request takes precedence over the user tag.
      * </p>
      * 
      * @param getFederationTokenRequest
@@ -1299,11 +1603,17 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * >Comparing the AWS STS API operations</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Session Duration</b>
+     * </p>
+     * <p>
      * The <code>GetSessionToken</code> operation must be called by using the long-term AWS security credentials of the
      * AWS account root user or an IAM user. Credentials that are created by IAM users are valid for the duration that
      * you specify. This duration can range from 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours),
      * with a default of 43,200 seconds (12 hours). Credentials based on account credentials can range from 900 seconds
      * (15 minutes) up to 3,600 seconds (1 hour), with a default of 1 hour.
+     * </p>
+     * <p>
+     * <b>Permissions</b>
      * </p>
      * <p>
      * The temporary security credentials created by <code>GetSessionToken</code> can be used to make API calls to any
@@ -1366,11 +1676,17 @@ public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
      * >Comparing the AWS STS API operations</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
+     * <b>Session Duration</b>
+     * </p>
+     * <p>
      * The <code>GetSessionToken</code> operation must be called by using the long-term AWS security credentials of the
      * AWS account root user or an IAM user. Credentials that are created by IAM users are valid for the duration that
      * you specify. This duration can range from 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours),
      * with a default of 43,200 seconds (12 hours). Credentials based on account credentials can range from 900 seconds
      * (15 minutes) up to 3,600 seconds (1 hour), with a default of 1 hour.
+     * </p>
+     * <p>
+     * <b>Permissions</b>
      * </p>
      * <p>
      * The temporary security credentials created by <code>GetSessionToken</code> can be used to make API calls to any

@@ -39,8 +39,12 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
     private String forecastArn;
     /**
      * <p>
-     * The path to the Amazon S3 bucket where you want to save the forecast and an AWS Identity and Access Management
-     * (IAM) role that Amazon Forecast can assume to access the bucket.
+     * The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon
+     * Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
+     * </p>
+     * <p>
+     * If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM
+     * role must allow Amazon Forecast permission to access the key.
      * </p>
      */
     private DataDestination destination;
@@ -127,13 +131,21 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the Amazon S3 bucket where you want to save the forecast and an AWS Identity and Access Management
-     * (IAM) role that Amazon Forecast can assume to access the bucket.
+     * The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon
+     * Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
+     * </p>
+     * <p>
+     * If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM
+     * role must allow Amazon Forecast permission to access the key.
      * </p>
      * 
      * @param destination
-     *        The path to the Amazon S3 bucket where you want to save the forecast and an AWS Identity and Access
-     *        Management (IAM) role that Amazon Forecast can assume to access the bucket.
+     *        The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
+     *        Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
+     *        bucket.</p>
+     *        <p>
+     *        If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
+     *        IAM role must allow Amazon Forecast permission to access the key.
      */
 
     public void setDestination(DataDestination destination) {
@@ -142,12 +154,20 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the Amazon S3 bucket where you want to save the forecast and an AWS Identity and Access Management
-     * (IAM) role that Amazon Forecast can assume to access the bucket.
+     * The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon
+     * Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
+     * </p>
+     * <p>
+     * If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM
+     * role must allow Amazon Forecast permission to access the key.
      * </p>
      * 
-     * @return The path to the Amazon S3 bucket where you want to save the forecast and an AWS Identity and Access
-     *         Management (IAM) role that Amazon Forecast can assume to access the bucket.
+     * @return The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role
+     *         that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
+     *         bucket.</p>
+     *         <p>
+     *         If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
+     *         IAM role must allow Amazon Forecast permission to access the key.
      */
 
     public DataDestination getDestination() {
@@ -156,13 +176,21 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The path to the Amazon S3 bucket where you want to save the forecast and an AWS Identity and Access Management
-     * (IAM) role that Amazon Forecast can assume to access the bucket.
+     * The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon
+     * Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
+     * </p>
+     * <p>
+     * If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM
+     * role must allow Amazon Forecast permission to access the key.
      * </p>
      * 
      * @param destination
-     *        The path to the Amazon S3 bucket where you want to save the forecast and an AWS Identity and Access
-     *        Management (IAM) role that Amazon Forecast can assume to access the bucket.
+     *        The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
+     *        Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
+     *        bucket.</p>
+     *        <p>
+     *        If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
+     *        IAM role must allow Amazon Forecast permission to access the key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

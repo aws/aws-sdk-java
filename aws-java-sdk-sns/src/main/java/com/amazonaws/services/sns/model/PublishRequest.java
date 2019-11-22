@@ -58,12 +58,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The message you want to send.
      * </p>
-     * <important>
-     * <p>
-     * The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     * </p>
-     * </important>
      * <p>
      * If you are publishing to a topic and you want to send the same message to all transport protocols, include the
      * text of the message as a String value. If you want to send different messages for each transport protocol, set
@@ -184,11 +178,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * (e.g., "http").
      * </p>
      * <p>
-     * For information about sending different messages for each protocol using the AWS Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
-     * </p>
-     * <p>
      * Valid value: <code>json</code>
      * </p>
      */
@@ -219,12 +208,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @param message
      *        The message you want to send.
      *        </p>
-     *        <important>
-     *        <p>
-     *        The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     *        <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     *        </p>
-     *        </important>
      *        <p>
      *        If you are publishing to a topic and you want to send the same message to all transport protocols, include
      *        the text of the message as a String value. If you want to send different messages for each transport
@@ -328,12 +311,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @param message
      *        The message you want to send.
      *        </p>
-     *        <important>
-     *        <p>
-     *        The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     *        <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     *        </p>
-     *        </important>
      *        <p>
      *        If you are publishing to a topic and you want to send the same message to all transport protocols, include
      *        the text of the message as a String value. If you want to send different messages for each transport
@@ -604,12 +581,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The message you want to send.
      * </p>
-     * <important>
-     * <p>
-     * The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     * </p>
-     * </important>
      * <p>
      * If you are publishing to a topic and you want to send the same message to all transport protocols, include the
      * text of the message as a String value. If you want to send different messages for each transport protocol, set
@@ -695,12 +666,7 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </ul>
      * 
      * @param message
-     *        The message you want to send.</p> <important>
-     *        <p>
-     *        The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     *        <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     *        </p>
-     *        </important>
+     *        The message you want to send.</p>
      *        <p>
      *        If you are publishing to a topic and you want to send the same message to all transport protocols, include
      *        the text of the message as a String value. If you want to send different messages for each transport
@@ -796,12 +762,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The message you want to send.
      * </p>
-     * <important>
-     * <p>
-     * The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     * </p>
-     * </important>
      * <p>
      * If you are publishing to a topic and you want to send the same message to all transport protocols, include the
      * text of the message as a String value. If you want to send different messages for each transport protocol, set
@@ -886,12 +846,7 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * </ul>
      * 
-     * @return The message you want to send.</p> <important>
-     *         <p>
-     *         The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     *         <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     *         </p>
-     *         </important>
+     * @return The message you want to send.</p>
      *         <p>
      *         If you are publishing to a topic and you want to send the same message to all transport protocols,
      *         include the text of the message as a String value. If you want to send different messages for each
@@ -987,12 +942,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The message you want to send.
      * </p>
-     * <important>
-     * <p>
-     * The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     * </p>
-     * </important>
      * <p>
      * If you are publishing to a topic and you want to send the same message to all transport protocols, include the
      * text of the message as a String value. If you want to send different messages for each transport protocol, set
@@ -1078,12 +1027,7 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </ul>
      * 
      * @param message
-     *        The message you want to send.</p> <important>
-     *        <p>
-     *        The <code>Message</code> parameter is always a string. If you set <code>MessageStructure</code> to
-     *        <code>json</code>, you must string-encode the <code>Message</code> parameter.
-     *        </p>
-     *        </important>
+     *        The message you want to send.</p>
      *        <p>
      *        If you are publishing to a topic and you want to send the same message to all transport protocols, include
      *        the text of the message as a String value. If you want to send different messages for each transport
@@ -1269,11 +1213,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * (e.g., "http").
      * </p>
      * <p>
-     * For information about sending different messages for each protocol using the AWS Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
-     * </p>
-     * <p>
      * Valid value: <code>json</code>
      * </p>
      * 
@@ -1297,13 +1236,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        You can define other top-level keys that define the message you want to send to a specific transport
      *        protocol (e.g., "http").
-     *        </p>
-     *        <p>
-     *        For information about sending different messages for each protocol using the AWS Management Console, go to
-     *        <a
-     *        href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     *        Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started
-     *        Guide</i>.
      *        </p>
      *        <p>
      *        Valid value: <code>json</code>
@@ -1337,11 +1269,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * (e.g., "http").
      * </p>
      * <p>
-     * For information about sending different messages for each protocol using the AWS Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
-     * </p>
-     * <p>
      * Valid value: <code>json</code>
      * </p>
      * 
@@ -1364,12 +1291,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         <p>
      *         You can define other top-level keys that define the message you want to send to a specific transport
      *         protocol (e.g., "http").
-     *         </p>
-     *         <p>
-     *         For information about sending different messages for each protocol using the AWS Management Console, go
-     *         to <a href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">
-     *         Create Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting
-     *         Started Guide</i>.
      *         </p>
      *         <p>
      *         Valid value: <code>json</code>
@@ -1403,11 +1324,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * (e.g., "http").
      * </p>
      * <p>
-     * For information about sending different messages for each protocol using the AWS Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
-     * </p>
-     * <p>
      * Valid value: <code>json</code>
      * </p>
      * 
@@ -1431,13 +1347,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        You can define other top-level keys that define the message you want to send to a specific transport
      *        protocol (e.g., "http").
-     *        </p>
-     *        <p>
-     *        For information about sending different messages for each protocol using the AWS Management Console, go to
-     *        <a
-     *        href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     *        Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started
-     *        Guide</i>.
      *        </p>
      *        <p>
      *        Valid value: <code>json</code>

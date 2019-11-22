@@ -72,6 +72,14 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SubscriptionArn</code> – The subscription's ARN.
      * </p>
      * </li>
@@ -130,6 +138,14 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SubscriptionArn</code> – The subscription's ARN.
      * </p>
      * </li>
@@ -181,6 +197,15 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *         <code>RawMessageDelivery</code> – <code>true</code> if raw message delivery is enabled for the
      *         subscription. Raw messages are free of JSON formatting and can be sent to HTTP/S and Amazon SQS
      *         endpoints.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *         dead-letter queue. Messages that can't be delivered due to client errors (for example, when the
+     *         subscribed endpoint is unreachable) or server errors (for example, when the service that powers the
+     *         subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or
+     *         reprocessing.
      *         </p>
      *         </li>
      *         <li>
@@ -248,6 +273,14 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SubscriptionArn</code> – The subscription's ARN.
      * </p>
      * </li>
@@ -298,6 +331,14 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *        <p>
      *        <code>RawMessageDelivery</code> – <code>true</code> if raw message delivery is enabled for the
      *        subscription. Raw messages are free of JSON formatting and can be sent to HTTP/S and Amazon SQS endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
+     *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
+     *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
      *        </p>
      *        </li>
      *        <li>
@@ -362,6 +403,14 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SubscriptionArn</code> – The subscription's ARN.
      * </p>
      * </li>
@@ -412,6 +461,14 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
      *        <p>
      *        <code>RawMessageDelivery</code> – <code>true</code> if raw message delivery is enabled for the
      *        subscription. Raw messages are free of JSON formatting and can be sent to HTTP/S and Amazon SQS endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
+     *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
+     *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
      *        </p>
      *        </li>
      *        <li>

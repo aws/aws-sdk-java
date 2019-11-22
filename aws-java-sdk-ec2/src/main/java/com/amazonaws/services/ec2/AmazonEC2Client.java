@@ -9680,6 +9680,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Describes the events for the specified EC2 Fleet during the specified time.
      * </p>
+     * <p>
+     * EC2 Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query by
+     * the last evaluated time and not miss a recorded event. EC2 Fleet events are available for 48 hours.
+     * </p>
      * 
      * @param describeFleetHistoryRequest
      * @return Result of the DescribeFleetHistory operation returned by the service.
@@ -10847,6 +10851,114 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeInstanceStatusResult describeInstanceStatus() {
         return describeInstanceStatus(new DescribeInstanceStatusRequest());
+    }
+
+    /**
+     * <p>
+     * Returns a list of all instance types offered. The results can be filtered by location (Region or Availability
+     * Zone). If no location is specified, the instance types offered in the current Region are returned.
+     * </p>
+     * 
+     * @param describeInstanceTypeOfferingsRequest
+     * @return Result of the DescribeInstanceTypeOfferings operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceTypeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInstanceTypeOfferingsResult describeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceTypeOfferings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceTypeOfferingsResult executeDescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest describeInstanceTypeOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceTypeOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceTypeOfferingsRequest> request = null;
+        Response<DescribeInstanceTypeOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceTypeOfferingsRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceTypeOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceTypeOfferings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeInstanceTypeOfferingsResult> responseHandler = new StaxResponseHandler<DescribeInstanceTypeOfferingsResult>(
+                    new DescribeInstanceTypeOfferingsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of all instance types offered in your current AWS Region. The results can be filtered by the
+     * attributes of the instance types.
+     * </p>
+     * 
+     * @param describeInstanceTypesRequest
+     * @return Result of the DescribeInstanceTypes operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeInstanceTypesResult describeInstanceTypes(DescribeInstanceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceTypesResult executeDescribeInstanceTypes(DescribeInstanceTypesRequest describeInstanceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceTypesRequest> request = null;
+        Response<DescribeInstanceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceTypesRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeInstanceTypesResult> responseHandler = new StaxResponseHandler<DescribeInstanceTypesResult>(
+                    new DescribeInstanceTypesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

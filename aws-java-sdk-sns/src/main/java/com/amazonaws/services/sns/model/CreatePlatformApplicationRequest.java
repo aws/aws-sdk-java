@@ -38,7 +38,7 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
-     * APNS_SANDBOX, and GCM (Google Cloud Messaging).
+     * APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
      * </p>
      */
     private String platform;
@@ -100,12 +100,12 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
-     * APNS_SANDBOX, and GCM (Google Cloud Messaging).
+     * APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
      * </p>
      * 
      * @param platform
      *        The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
-     *        Service), APNS_SANDBOX, and GCM (Google Cloud Messaging).
+     *        Service), APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
      */
 
     public void setPlatform(String platform) {
@@ -115,11 +115,11 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
-     * APNS_SANDBOX, and GCM (Google Cloud Messaging).
+     * APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
      * </p>
      * 
      * @return The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
-     *         Service), APNS_SANDBOX, and GCM (Google Cloud Messaging).
+     *         Service), APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
      */
 
     public String getPlatform() {
@@ -129,12 +129,12 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
-     * APNS_SANDBOX, and GCM (Google Cloud Messaging).
+     * APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
      * </p>
      * 
      * @param platform
      *        The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
-     *        Service), APNS_SANDBOX, and GCM (Google Cloud Messaging).
+     *        Service), APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

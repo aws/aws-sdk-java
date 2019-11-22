@@ -43,12 +43,7 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<String> datasetArns;
     /**
      * <p>
-     * The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that you
-     * choose determine the fields that must be present in the training data that you import to the dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset group.
      * </p>
      */
     private String domain;
@@ -79,12 +74,12 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a> operation is called.
+     * The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
      * </p>
      * <note>
      * <p>
-     * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating a predictor using the
-     * dataset group.
+     * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to
+     * create a predictor.
      * </p>
      * </note>
      */
@@ -98,7 +93,8 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.
      * </p>
      */
     private java.util.Date lastModificationTime;
@@ -255,21 +251,11 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that you
-     * choose determine the fields that must be present in the training data that you import to the dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset group.
      * </p>
      * 
      * @param domain
-     *        The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that
-     *        you choose determine the fields that must be present in the training data that you import to the dataset.
-     *        For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     *        <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     *        <code>demand</code> fields to be present in your data. For more information, see
-     *        <a>howitworks-datasets-groups</a>.
+     *        The domain associated with the dataset group.
      * @see Domain
      */
 
@@ -279,20 +265,10 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that you
-     * choose determine the fields that must be present in the training data that you import to the dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset group.
      * </p>
      * 
-     * @return The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that
-     *         you choose determine the fields that must be present in the training data that you import to the dataset.
-     *         For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     *         <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     *         <code>demand</code> fields to be present in your data. For more information, see
-     *         <a>howitworks-datasets-groups</a>.
+     * @return The domain associated with the dataset group.
      * @see Domain
      */
 
@@ -302,21 +278,11 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that you
-     * choose determine the fields that must be present in the training data that you import to the dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset group.
      * </p>
      * 
      * @param domain
-     *        The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that
-     *        you choose determine the fields that must be present in the training data that you import to the dataset.
-     *        For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     *        <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     *        <code>demand</code> fields to be present in your data. For more information, see
-     *        <a>howitworks-datasets-groups</a>.
+     *        The domain associated with the dataset group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -328,21 +294,11 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that you
-     * choose determine the fields that must be present in the training data that you import to the dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields to be present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.
+     * The domain associated with the dataset group.
      * </p>
      * 
      * @param domain
-     *        The domain associated with the dataset group. The <code>Domain</code> and <code>DatasetType</code> that
-     *        you choose determine the fields that must be present in the training data that you import to the dataset.
-     *        For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     *        <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and
-     *        <code>demand</code> fields to be present in your data. For more information, see
-     *        <a>howitworks-datasets-groups</a>.
+     *        The domain associated with the dataset group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -379,12 +335,12 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a> operation is called.
+     * The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
      * </p>
      * <note>
      * <p>
-     * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating a predictor using the
-     * dataset group.
+     * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to
+     * create a predictor.
      * </p>
      * </note>
      * 
@@ -413,12 +369,12 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a> operation is called.
+     *        The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating a predictor using
-     *        the dataset group.
+     *        The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     *        group to create a predictor.
      *        </p>
      */
 
@@ -453,12 +409,12 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a> operation is called.
+     * The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
      * </p>
      * <note>
      * <p>
-     * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating a predictor using the
-     * dataset group.
+     * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to
+     * create a predictor.
      * </p>
      * </note>
      * 
@@ -486,12 +442,12 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         </ul>
      *         <p>
-     *         The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a> operation is called.
+     *         The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating a predictor
-     *         using the dataset group.
+     *         The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     *         group to create a predictor.
      *         </p>
      */
 
@@ -526,12 +482,12 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a> operation is called.
+     * The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
      * </p>
      * <note>
      * <p>
-     * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating a predictor using the
-     * dataset group.
+     * The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to
+     * create a predictor.
      * </p>
      * </note>
      * 
@@ -560,12 +516,12 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a> operation is called.
+     *        The <code>UPDATE</code> states apply when you call the <a>UpdateDatasetGroup</a> operation.
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before creating a predictor using
-     *        the dataset group.
+     *        The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     *        group to create a predictor.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -618,12 +574,14 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.
      * </p>
      * 
      * @param lastModificationTime
      *        When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation.
-     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     *        <code>DescribeDatasetGroup</code> call.
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -633,12 +591,13 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.
      * </p>
      * 
      * @return When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a>
      *         operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current
-     *         query time.
+     *         time of the <code>DescribeDatasetGroup</code> call.
      */
 
     public java.util.Date getLastModificationTime() {
@@ -648,12 +607,14 @@ public class DescribeDatasetGroupResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation. While
-     * the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     * the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.
      * </p>
      * 
      * @param lastModificationTime
      *        When the dataset group was created or last updated from a call to the <a>UpdateDatasetGroup</a> operation.
-     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current query time.
+     *        While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the
+     *        <code>DescribeDatasetGroup</code> call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

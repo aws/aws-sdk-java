@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * There is already a resource with that Amazon Resource Name (ARN). Try again with a different ARN.
+ * There is already a resource with this name. Try again with a different name.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -67,6 +67,19 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * information about the face in the source image, including the bounding box of the face and confidence value.
      * </p>
      * <p>
+     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
+     * quality bar. The quality bar is based on a variety of common use cases. By default, <code>CompareFaces</code>
+     * chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
+     * <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
+     * <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
+     * </p>
+     * <note>
+     * <p>
+     * To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the
+     * version of the face model associated with a collection, call <a>DescribeCollection</a>.
+     * </p>
+     * </note>
+     * <p>
      * If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation information for the
      * source and target images. Use these values to display the images with the correct image orientation.
      * </p>
@@ -126,6 +139,19 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * returns a bounding box, confidence value, landmarks, pose details, and quality. The response also returns
      * information about the face in the source image, including the bounding box of the face and confidence value.
      * </p>
+     * <p>
+     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
+     * quality bar. The quality bar is based on a variety of common use cases. By default, <code>CompareFaces</code>
+     * chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
+     * <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
+     * <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
+     * </p>
+     * <note>
+     * <p>
+     * To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the
+     * version of the face model associated with a collection, call <a>DescribeCollection</a>.
+     * </p>
+     * </note>
      * <p>
      * If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation information for the
      * source and target images. Use these values to display the images with the correct image orientation.
@@ -450,7 +476,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <code>DetectFaces</code> detects the 100 largest faces in the image. For each face detected, the operation
      * returns face details. These details include a bounding box of the face, a confidence value (that the bounding box
      * contains a face), and a fixed set of attributes such as facial landmarks (for example, coordinates of eye and
-     * mouth), gender, presence of beard, sunglasses, and so on.
+     * mouth), presence of beard, sunglasses, and so on.
      * </p>
      * <p>
      * The face-detection algorithm is most effective on frontal faces. For non-frontal or obscured faces, the algorithm
@@ -484,7 +510,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <code>DetectFaces</code> detects the 100 largest faces in the image. For each face detected, the operation
      * returns face details. These details include a bounding box of the face, a confidence value (that the bounding box
      * contains a face), and a fixed set of attributes such as facial landmarks (for example, coordinates of eye and
-     * mouth), gender, presence of beard, sunglasses, and so on.
+     * mouth), presence of beard, sunglasses, and so on.
      * </p>
      * <p>
      * The face-detection algorithm is most effective on frontal faces. For non-frontal or obscured faces, the algorithm
@@ -1487,16 +1513,16 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * belonging to people standing in the background.
      * </p>
      * <p>
-     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet the
-     * required quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases. By
-     * default, <code>IndexFaces</code> filters detected faces. You can also explicitly filter detected faces by
-     * specifying <code>AUTO</code> for the value of <code>QualityFilter</code>. If you do not want to filter detected
-     * faces, specify <code>NONE</code>.
+     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
+     * quality bar. The quality bar is based on a variety of common use cases. By default, <code>IndexFaces</code>
+     * chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
+     * <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
+     * <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
      * </p>
      * <note>
      * <p>
-     * To use quality filtering, you need a collection associated with version 3 of the face model. To get the version
-     * of the face model associated with a collection, call <a>DescribeCollection</a>.
+     * To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the
+     * version of the face model associated with a collection, call <a>DescribeCollection</a>.
      * </p>
      * </note>
      * <p>
@@ -1527,6 +1553,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <li>
      * <p>
      * The face has an extreme pose.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The face doesn’t have enough detail to be suitable for face search.
      * </p>
      * </li>
      * </ul>
@@ -1560,9 +1591,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * If you request all facial attributes (by using the <code>detectionAttributes</code> parameter), Amazon
      * Rekognition returns detailed facial attributes, such as facial landmarks (for example, location of eye and mouth)
-     * and other facial attributes like gender. If you provide the same image, specify the same collection, and use the
-     * same external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face
-     * metadata.
+     * and other facial attributes. If you provide the same image, specify the same collection, and use the same
+     * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
      * </p>
      * <p/>
      * <p>
@@ -1624,16 +1654,16 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * belonging to people standing in the background.
      * </p>
      * <p>
-     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet the
-     * required quality bar chosen by Amazon Rekognition. The quality bar is based on a variety of common use cases. By
-     * default, <code>IndexFaces</code> filters detected faces. You can also explicitly filter detected faces by
-     * specifying <code>AUTO</code> for the value of <code>QualityFilter</code>. If you do not want to filter detected
-     * faces, specify <code>NONE</code>.
+     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
+     * quality bar. The quality bar is based on a variety of common use cases. By default, <code>IndexFaces</code>
+     * chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
+     * <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
+     * <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
      * </p>
      * <note>
      * <p>
-     * To use quality filtering, you need a collection associated with version 3 of the face model. To get the version
-     * of the face model associated with a collection, call <a>DescribeCollection</a>.
+     * To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the
+     * version of the face model associated with a collection, call <a>DescribeCollection</a>.
      * </p>
      * </note>
      * <p>
@@ -1664,6 +1694,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <li>
      * <p>
      * The face has an extreme pose.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The face doesn’t have enough detail to be suitable for face search.
      * </p>
      * </li>
      * </ul>
@@ -1697,9 +1732,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * If you request all facial attributes (by using the <code>detectionAttributes</code> parameter), Amazon
      * Rekognition returns detailed facial attributes, such as facial landmarks (for example, location of eye and mouth)
-     * and other facial attributes like gender. If you provide the same image, specify the same collection, and use the
-     * same external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face
-     * metadata.
+     * and other facial attributes. If you provide the same image, specify the same collection, and use the same
+     * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
      * </p>
      * <p/>
      * <p>
@@ -2010,6 +2044,20 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
+     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
+     * quality bar. The quality bar is based on a variety of common use cases. By default, Amazon Rekognition chooses
+     * the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
+     * <code>QualityFilter</code>, to set the quality bar for filtering by specifying <code>LOW</code>,
+     * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>
+     * .
+     * </p>
+     * <note>
+     * <p>
+     * To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the
+     * version of the face model associated with a collection, call <a>DescribeCollection</a>.
+     * </p>
+     * </note>
+     * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code> action.
      * </p>
      * 
@@ -2049,6 +2097,20 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer Guide.
      * </p>
+     * <p>
+     * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
+     * quality bar. The quality bar is based on a variety of common use cases. By default, Amazon Rekognition chooses
+     * the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
+     * <code>QualityFilter</code>, to set the quality bar for filtering by specifying <code>LOW</code>,
+     * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>
+     * .
+     * </p>
+     * <note>
+     * <p>
+     * To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the
+     * version of the face model associated with a collection, call <a>DescribeCollection</a>.
+     * </p>
+     * </note>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code> action.
      * </p>

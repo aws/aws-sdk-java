@@ -87,6 +87,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The list of tags to add to a new topic.
      * </p>
+     * <note>
+     * <p>
+     * To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
@@ -474,8 +480,18 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The list of tags to add to a new topic.
      * </p>
+     * <note>
+     * <p>
+     * To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.
+     * </p>
+     * </note>
      * 
-     * @return The list of tags to add to a new topic.
+     * @return The list of tags to add to a new topic.</p> <note>
+     *         <p>
+     *         To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     *         <code>sns:TagResource</code> permissions.
+     *         </p>
      */
 
     public java.util.List<Tag> getTags() {
@@ -489,9 +505,19 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The list of tags to add to a new topic.
      * </p>
+     * <note>
+     * <p>
+     * To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        The list of tags to add to a new topic.
+     *        The list of tags to add to a new topic.</p> <note>
+     *        <p>
+     *        To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     *        <code>sns:TagResource</code> permissions.
+     *        </p>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -507,6 +533,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The list of tags to add to a new topic.
      * </p>
+     * <note>
+     * <p>
+     * To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -514,7 +546,11 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The list of tags to add to a new topic.
+     *        The list of tags to add to a new topic.</p> <note>
+     *        <p>
+     *        To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     *        <code>sns:TagResource</code> permissions.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -532,9 +568,19 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The list of tags to add to a new topic.
      * </p>
+     * <note>
+     * <p>
+     * To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        The list of tags to add to a new topic.
+     *        The list of tags to add to a new topic.</p> <note>
+     *        <p>
+     *        To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and
+     *        <code>sns:TagResource</code> permissions.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

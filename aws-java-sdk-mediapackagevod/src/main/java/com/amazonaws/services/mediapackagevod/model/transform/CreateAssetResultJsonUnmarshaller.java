@@ -52,6 +52,10 @@ public class CreateAssetResultJsonUnmarshaller implements Unmarshaller<CreateAss
                     context.nextToken();
                     createAssetResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    createAssetResult.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
                     createAssetResult

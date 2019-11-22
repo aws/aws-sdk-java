@@ -52,6 +52,10 @@ public class AssetShallowJsonUnmarshaller implements Unmarshaller<AssetShallow, 
                     context.nextToken();
                     assetShallow.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    assetShallow.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     assetShallow.setId(context.getUnmarshaller(String.class).unmarshall(context));

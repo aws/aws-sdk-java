@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The data used to train a predictor. The data includes a dataset group and any supplementary features. This object is
- * specified in the <a>CreatePredictor</a> request.
+ * The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify
+ * this object in the <a>CreatePredictor</a> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/InputDataConfig" target="_top">AWS API
@@ -37,7 +37,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
     private String datasetGroupArn;
     /**
      * <p>
-     * An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     * An array of supplementary features. The only supported feature is a holiday calendar.
      * </p>
      */
     private java.util.List<SupplementaryFeature> supplementaryFeatures;
@@ -84,10 +84,10 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     * An array of supplementary features. The only supported feature is a holiday calendar.
      * </p>
      * 
-     * @return An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     * @return An array of supplementary features. The only supported feature is a holiday calendar.
      */
 
     public java.util.List<SupplementaryFeature> getSupplementaryFeatures() {
@@ -96,11 +96,11 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     * An array of supplementary features. The only supported feature is a holiday calendar.
      * </p>
      * 
      * @param supplementaryFeatures
-     *        An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     *        An array of supplementary features. The only supported feature is a holiday calendar.
      */
 
     public void setSupplementaryFeatures(java.util.Collection<SupplementaryFeature> supplementaryFeatures) {
@@ -114,7 +114,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     * An array of supplementary features. The only supported feature is a holiday calendar.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param supplementaryFeatures
-     *        An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     *        An array of supplementary features. The only supported feature is a holiday calendar.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     * An array of supplementary features. The only supported feature is a holiday calendar.
      * </p>
      * 
      * @param supplementaryFeatures
-     *        An array of supplementary features. For this release, the only supported feature is a holiday calendar.
+     *        An array of supplementary features. The only supported feature is a holiday calendar.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

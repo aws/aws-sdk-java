@@ -19,7 +19,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Gender of the face and the confidence level in the determination.
+ * The predicted gender of a detected face.
+ * </p>
+ * <p>
+ * Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a
+ * particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't
+ * use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings
+ * for a role might be predicted as female.
+ * </p>
+ * <p>
+ * Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender
+ * distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female
+ * users compared to male users on a social media platform.
+ * </p>
+ * <p>
+ * We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights,
+ * privacy, or access to services.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +42,24 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Gender of the face.
+     * The predicted gender of the face.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * Level of confidence in the determination.
+     * Level of confidence in the prediction.
      * </p>
      */
     private Float confidence;
 
     /**
      * <p>
-     * Gender of the face.
+     * The predicted gender of the face.
      * </p>
      * 
      * @param value
-     *        Gender of the face.
+     *        The predicted gender of the face.
      * @see GenderType
      */
 
@@ -54,10 +69,10 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Gender of the face.
+     * The predicted gender of the face.
      * </p>
      * 
-     * @return Gender of the face.
+     * @return The predicted gender of the face.
      * @see GenderType
      */
 
@@ -67,11 +82,11 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Gender of the face.
+     * The predicted gender of the face.
      * </p>
      * 
      * @param value
-     *        Gender of the face.
+     *        The predicted gender of the face.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GenderType
      */
@@ -83,11 +98,11 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Gender of the face.
+     * The predicted gender of the face.
      * </p>
      * 
      * @param value
-     *        Gender of the face.
+     *        The predicted gender of the face.
      * @see GenderType
      */
 
@@ -97,11 +112,11 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Gender of the face.
+     * The predicted gender of the face.
      * </p>
      * 
      * @param value
-     *        Gender of the face.
+     *        The predicted gender of the face.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GenderType
      */
@@ -113,11 +128,11 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Level of confidence in the determination.
+     * Level of confidence in the prediction.
      * </p>
      * 
      * @param confidence
-     *        Level of confidence in the determination.
+     *        Level of confidence in the prediction.
      */
 
     public void setConfidence(Float confidence) {
@@ -126,10 +141,10 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Level of confidence in the determination.
+     * Level of confidence in the prediction.
      * </p>
      * 
-     * @return Level of confidence in the determination.
+     * @return Level of confidence in the prediction.
      */
 
     public Float getConfidence() {
@@ -138,11 +153,11 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Level of confidence in the determination.
+     * Level of confidence in the prediction.
      * </p>
      * 
      * @param confidence
-     *        Level of confidence in the determination.
+     *        Level of confidence in the prediction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

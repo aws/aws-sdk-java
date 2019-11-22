@@ -49,6 +49,22 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Float similarityThreshold;
+    /**
+     * <p>
+     * A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't
+     * compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify
+     * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the
+     * chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use
+     * cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified
+     * as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify
+     * <code>NONE</code>, no filtering is performed.
+     * </p>
+     * <p>
+     * To use quality filtering, the collection you are using must be associated with version 3 of the face model or
+     * higher.
+     * </p>
+     */
+    private String qualityFilter;
 
     /**
      * <p>
@@ -237,6 +253,141 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't
+     * compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify
+     * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the
+     * chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use
+     * cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified
+     * as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify
+     * <code>NONE</code>, no filtering is performed.
+     * </p>
+     * <p>
+     * To use quality filtering, the collection you are using must be associated with version 3 of the face model or
+     * higher.
+     * </p>
+     * 
+     * @param qualityFilter
+     *        A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces
+     *        aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you
+     *        specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+     *        don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a
+     *        variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are
+     *        an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too
+     *        extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
+     *        <p>
+     *        To use quality filtering, the collection you are using must be associated with version 3 of the face model
+     *        or higher.
+     * @see QualityFilter
+     */
+
+    public void setQualityFilter(String qualityFilter) {
+        this.qualityFilter = qualityFilter;
+    }
+
+    /**
+     * <p>
+     * A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't
+     * compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify
+     * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the
+     * chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use
+     * cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified
+     * as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify
+     * <code>NONE</code>, no filtering is performed.
+     * </p>
+     * <p>
+     * To use quality filtering, the collection you are using must be associated with version 3 of the face model or
+     * higher.
+     * </p>
+     * 
+     * @return A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces
+     *         aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you
+     *         specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+     *         don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a
+     *         variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are
+     *         an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too
+     *         extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
+     *         <p>
+     *         To use quality filtering, the collection you are using must be associated with version 3 of the face
+     *         model or higher.
+     * @see QualityFilter
+     */
+
+    public String getQualityFilter() {
+        return this.qualityFilter;
+    }
+
+    /**
+     * <p>
+     * A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't
+     * compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify
+     * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the
+     * chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use
+     * cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified
+     * as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify
+     * <code>NONE</code>, no filtering is performed.
+     * </p>
+     * <p>
+     * To use quality filtering, the collection you are using must be associated with version 3 of the face model or
+     * higher.
+     * </p>
+     * 
+     * @param qualityFilter
+     *        A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces
+     *        aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you
+     *        specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+     *        don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a
+     *        variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are
+     *        an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too
+     *        extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
+     *        <p>
+     *        To use quality filtering, the collection you are using must be associated with version 3 of the face model
+     *        or higher.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QualityFilter
+     */
+
+    public CompareFacesRequest withQualityFilter(String qualityFilter) {
+        setQualityFilter(qualityFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't
+     * compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify
+     * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the
+     * chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use
+     * cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified
+     * as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify
+     * <code>NONE</code>, no filtering is performed.
+     * </p>
+     * <p>
+     * To use quality filtering, the collection you are using must be associated with version 3 of the face model or
+     * higher.
+     * </p>
+     * 
+     * @param qualityFilter
+     *        A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces
+     *        aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you
+     *        specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+     *        don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a
+     *        variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are
+     *        an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too
+     *        extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
+     *        <p>
+     *        To use quality filtering, the collection you are using must be associated with version 3 of the face model
+     *        or higher.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QualityFilter
+     */
+
+    public CompareFacesRequest withQualityFilter(QualityFilter qualityFilter) {
+        this.qualityFilter = qualityFilter.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -253,7 +404,9 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTargetImage() != null)
             sb.append("TargetImage: ").append(getTargetImage()).append(",");
         if (getSimilarityThreshold() != null)
-            sb.append("SimilarityThreshold: ").append(getSimilarityThreshold());
+            sb.append("SimilarityThreshold: ").append(getSimilarityThreshold()).append(",");
+        if (getQualityFilter() != null)
+            sb.append("QualityFilter: ").append(getQualityFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -280,6 +433,10 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getSimilarityThreshold() != null && other.getSimilarityThreshold().equals(this.getSimilarityThreshold()) == false)
             return false;
+        if (other.getQualityFilter() == null ^ this.getQualityFilter() == null)
+            return false;
+        if (other.getQualityFilter() != null && other.getQualityFilter().equals(this.getQualityFilter()) == false)
+            return false;
         return true;
     }
 
@@ -291,6 +448,7 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSourceImage() == null) ? 0 : getSourceImage().hashCode());
         hashCode = prime * hashCode + ((getTargetImage() == null) ? 0 : getTargetImage().hashCode());
         hashCode = prime * hashCode + ((getSimilarityThreshold() == null) ? 0 : getSimilarityThreshold().hashCode());
+        hashCode = prime * hashCode + ((getQualityFilter() == null) ? 0 : getQualityFilter().hashCode());
         return hashCode;
     }
 

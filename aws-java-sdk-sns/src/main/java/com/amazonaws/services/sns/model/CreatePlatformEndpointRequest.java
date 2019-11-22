@@ -38,7 +38,7 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Unique identifier created by the notification service for an app on a device. The specific name for Token will
      * vary, depending on which notification service is being used. For example, when using APNS as the notification
-     * service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called
+     * service, you need the device token. Alternatively, when using FCM or ADM, the device token equivalent is called
      * the registration ID.
      * </p>
      */
@@ -102,14 +102,14 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Unique identifier created by the notification service for an app on a device. The specific name for Token will
      * vary, depending on which notification service is being used. For example, when using APNS as the notification
-     * service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called
+     * service, you need the device token. Alternatively, when using FCM or ADM, the device token equivalent is called
      * the registration ID.
      * </p>
      * 
      * @param token
      *        Unique identifier created by the notification service for an app on a device. The specific name for Token
      *        will vary, depending on which notification service is being used. For example, when using APNS as the
-     *        notification service, you need the device token. Alternatively, when using GCM or ADM, the device token
+     *        notification service, you need the device token. Alternatively, when using FCM or ADM, the device token
      *        equivalent is called the registration ID.
      */
 
@@ -121,13 +121,13 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Unique identifier created by the notification service for an app on a device. The specific name for Token will
      * vary, depending on which notification service is being used. For example, when using APNS as the notification
-     * service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called
+     * service, you need the device token. Alternatively, when using FCM or ADM, the device token equivalent is called
      * the registration ID.
      * </p>
      * 
      * @return Unique identifier created by the notification service for an app on a device. The specific name for Token
      *         will vary, depending on which notification service is being used. For example, when using APNS as the
-     *         notification service, you need the device token. Alternatively, when using GCM or ADM, the device token
+     *         notification service, you need the device token. Alternatively, when using FCM or ADM, the device token
      *         equivalent is called the registration ID.
      */
 
@@ -139,14 +139,14 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Unique identifier created by the notification service for an app on a device. The specific name for Token will
      * vary, depending on which notification service is being used. For example, when using APNS as the notification
-     * service, you need the device token. Alternatively, when using GCM or ADM, the device token equivalent is called
+     * service, you need the device token. Alternatively, when using FCM or ADM, the device token equivalent is called
      * the registration ID.
      * </p>
      * 
      * @param token
      *        Unique identifier created by the notification service for an app on a device. The specific name for Token
      *        will vary, depending on which notification service is being used. For example, when using APNS as the
-     *        notification service, you need the device token. Alternatively, when using GCM or ADM, the device token
+     *        notification service, you need the device token. Alternatively, when using FCM or ADM, the device token
      *        equivalent is called the registration ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

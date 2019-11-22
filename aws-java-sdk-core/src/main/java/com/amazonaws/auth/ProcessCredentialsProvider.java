@@ -43,7 +43,7 @@ import org.joda.time.DateTime;
  *     <li>ExpirationBuffer - The amount of time between when the credentials expire and when the credentials should start to be
  *     refreshed. This allows the credentials to be refreshed *before* they are reported to expire. Default: 15 seconds.</li>
  *     <li>ProcessOutputLimit - The maximum amount of data that can be returned by the external process before an exception is
- *     raised. Default: 1024 bytes.</li>
+ *     raised. Default: 64000 bytes.</li>
  * </ul>
  */
 public final class ProcessCredentialsProvider implements AWSCredentialsProvider {
@@ -234,7 +234,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
         private String command;
         private int expirationBufferValue = 15;
         private TimeUnit expirationBufferUnit = TimeUnit.SECONDS;
-        private long processOutputLimit = 1024;
+        private long processOutputLimit = 64000;
 
         /**
          * @see #builder()
@@ -279,7 +279,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
          * Configure the maximum amount of data that can be returned by the external process before an exception is
          * raised.
          *
-         * Default: 1024 bytes.
+         * Default: 64000 bytes.
          */
         private void setProcessOutputLimit(long outputByteLimit) {
             this.processOutputLimit = outputByteLimit;

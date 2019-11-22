@@ -80,6 +80,10 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KerberosAttributes").build();
     private static final MarshallingInfo<String> CLUSTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterArn").build();
+    private static final MarshallingInfo<Integer> STEPCONCURRENCYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepConcurrencyLevel").build();
+    private static final MarshallingInfo<String> OUTPOSTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutpostArn").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -123,6 +127,8 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getRepoUpgradeOnBoot(), REPOUPGRADEONBOOT_BINDING);
             protocolMarshaller.marshall(cluster.getKerberosAttributes(), KERBEROSATTRIBUTES_BINDING);
             protocolMarshaller.marshall(cluster.getClusterArn(), CLUSTERARN_BINDING);
+            protocolMarshaller.marshall(cluster.getStepConcurrencyLevel(), STEPCONCURRENCYLEVEL_BINDING);
+            protocolMarshaller.marshall(cluster.getOutpostArn(), OUTPOSTARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

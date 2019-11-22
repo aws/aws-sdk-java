@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The
- * condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
- * respectively, the objects that match the statement. The match statement consists of a key and a value.
+ * condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects
+ * that match the statement, respectively. The match statement consists of a key and a value.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Filter" target="_top">AWS API
@@ -38,13 +38,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * A valid value for <code>Key</code>.
+     * The value to match.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The condition to apply.
+     * The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude
+     * matching objects, specify <code>IS_NOT</code>.
      * </p>
      */
     private String condition;
@@ -91,11 +92,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A valid value for <code>Key</code>.
+     * The value to match.
      * </p>
      * 
      * @param value
-     *        A valid value for <code>Key</code>.
+     *        The value to match.
      */
 
     public void setValue(String value) {
@@ -104,10 +105,10 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A valid value for <code>Key</code>.
+     * The value to match.
      * </p>
      * 
-     * @return A valid value for <code>Key</code>.
+     * @return The value to match.
      */
 
     public String getValue() {
@@ -116,11 +117,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A valid value for <code>Key</code>.
+     * The value to match.
      * </p>
      * 
      * @param value
-     *        A valid value for <code>Key</code>.
+     *        The value to match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +132,13 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to apply.
+     * The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude
+     * matching objects, specify <code>IS_NOT</code>.
      * </p>
      * 
      * @param condition
-     *        The condition to apply.
+     *        The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To
+     *        exclude matching objects, specify <code>IS_NOT</code>.
      * @see FilterConditionString
      */
 
@@ -145,10 +148,12 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to apply.
+     * The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude
+     * matching objects, specify <code>IS_NOT</code>.
      * </p>
      * 
-     * @return The condition to apply.
+     * @return The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To
+     *         exclude matching objects, specify <code>IS_NOT</code>.
      * @see FilterConditionString
      */
 
@@ -158,11 +163,13 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to apply.
+     * The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude
+     * matching objects, specify <code>IS_NOT</code>.
      * </p>
      * 
      * @param condition
-     *        The condition to apply.
+     *        The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To
+     *        exclude matching objects, specify <code>IS_NOT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterConditionString
      */
@@ -174,11 +181,13 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to apply.
+     * The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To exclude
+     * matching objects, specify <code>IS_NOT</code>.
      * </p>
      * 
      * @param condition
-     *        The condition to apply.
+     *        The condition to apply. To include the objects that match the statement, specify <code>IS</code>. To
+     *        exclude matching objects, specify <code>IS_NOT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterConditionString
      */

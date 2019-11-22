@@ -19,12 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a method that featurizes (transforms) a dataset field. The method is part of the
- * <code>FeaturizationPipeline</code> of the <a>Featurization</a> object. If <code>FeaturizationMethodParameters</code>
- * isn't specified, Amazon Forecast uses default parameters.
+ * Provides information about the method that featurizes (transforms) a dataset field. The method is part of the
+ * <code>FeaturizationPipeline</code> of the <a>Featurization</a> object. If you don't specify
+ * <code>FeaturizationMethodParameters</code>, Amazon Forecast uses default parameters.
  * </p>
  * <p>
- * For example:
+ * The following is an example of how you specify a <code>FeaturizationMethod</code> object.
  * </p>
  * <p>
  * <code>{</code>
@@ -47,14 +47,14 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the method. In this release, "filling" is the only supported method.
+     * The name of the method. The "filling" method is the only supported method.
      * </p>
      */
     private String featurizationMethodName;
     /**
      * <p>
-     * The method parameters (key-value pairs). Specify these to override the default values. The following list shows
-     * the parameters and their valid values. Bold signifies the default value.
+     * The method parameters (key-value pairs). Specify these parameters to override the default values. The following
+     * list shows the parameters and their valid values. Bold signifies the default value.
      * </p>
      * <ul>
      * <li>
@@ -83,11 +83,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the method. In this release, "filling" is the only supported method.
+     * The name of the method. The "filling" method is the only supported method.
      * </p>
      * 
      * @param featurizationMethodName
-     *        The name of the method. In this release, "filling" is the only supported method.
+     *        The name of the method. The "filling" method is the only supported method.
      * @see FeaturizationMethodName
      */
 
@@ -97,10 +97,10 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the method. In this release, "filling" is the only supported method.
+     * The name of the method. The "filling" method is the only supported method.
      * </p>
      * 
-     * @return The name of the method. In this release, "filling" is the only supported method.
+     * @return The name of the method. The "filling" method is the only supported method.
      * @see FeaturizationMethodName
      */
 
@@ -110,11 +110,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the method. In this release, "filling" is the only supported method.
+     * The name of the method. The "filling" method is the only supported method.
      * </p>
      * 
      * @param featurizationMethodName
-     *        The name of the method. In this release, "filling" is the only supported method.
+     *        The name of the method. The "filling" method is the only supported method.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeaturizationMethodName
      */
@@ -126,11 +126,11 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the method. In this release, "filling" is the only supported method.
+     * The name of the method. The "filling" method is the only supported method.
      * </p>
      * 
      * @param featurizationMethodName
-     *        The name of the method. In this release, "filling" is the only supported method.
+     *        The name of the method. The "filling" method is the only supported method.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeaturizationMethodName
      */
@@ -142,8 +142,8 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The method parameters (key-value pairs). Specify these to override the default values. The following list shows
-     * the parameters and their valid values. Bold signifies the default value.
+     * The method parameters (key-value pairs). Specify these parameters to override the default values. The following
+     * list shows the parameters and their valid values. Bold signifies the default value.
      * </p>
      * <ul>
      * <li>
@@ -168,8 +168,8 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * 
-     * @return The method parameters (key-value pairs). Specify these to override the default values. The following list
-     *         shows the parameters and their valid values. Bold signifies the default value.</p>
+     * @return The method parameters (key-value pairs). Specify these parameters to override the default values. The
+     *         following list shows the parameters and their valid values. Bold signifies the default value.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -200,8 +200,8 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The method parameters (key-value pairs). Specify these to override the default values. The following list shows
-     * the parameters and their valid values. Bold signifies the default value.
+     * The method parameters (key-value pairs). Specify these parameters to override the default values. The following
+     * list shows the parameters and their valid values. Bold signifies the default value.
      * </p>
      * <ul>
      * <li>
@@ -227,8 +227,8 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param featurizationMethodParameters
-     *        The method parameters (key-value pairs). Specify these to override the default values. The following list
-     *        shows the parameters and their valid values. Bold signifies the default value.</p>
+     *        The method parameters (key-value pairs). Specify these parameters to override the default values. The
+     *        following list shows the parameters and their valid values. Bold signifies the default value.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -259,8 +259,8 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The method parameters (key-value pairs). Specify these to override the default values. The following list shows
-     * the parameters and their valid values. Bold signifies the default value.
+     * The method parameters (key-value pairs). Specify these parameters to override the default values. The following
+     * list shows the parameters and their valid values. Bold signifies the default value.
      * </p>
      * <ul>
      * <li>
@@ -286,8 +286,8 @@ public class FeaturizationMethod implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param featurizationMethodParameters
-     *        The method parameters (key-value pairs). Specify these to override the default values. The following list
-     *        shows the parameters and their valid values. Bold signifies the default value.</p>
+     *        The method parameters (key-value pairs). Specify these parameters to override the default values. The
+     *        following list shows the parameters and their valid values. Bold signifies the default value.</p>
      *        <ul>
      *        <li>
      *        <p>

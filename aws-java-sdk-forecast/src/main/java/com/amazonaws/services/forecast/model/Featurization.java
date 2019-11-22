@@ -55,31 +55,30 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the schema attribute specifying the data field to be featurized. In this release, only the
-     * <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target
-     * is <code>target_value</code>.
+     * The name of the schema attribute that specifies the data field to be featurized. Only the <code>target</code>
+     * field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the <code>RETAIL</code>
+     * domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>.
      * </p>
      */
     private String attributeName;
     /**
      * <p>
-     * An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For this
-     * release, the number of methods is limited to one.
+     * An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      * </p>
      */
     private java.util.List<FeaturizationMethod> featurizationPipeline;
 
     /**
      * <p>
-     * The name of the schema attribute specifying the data field to be featurized. In this release, only the
-     * <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target
-     * is <code>target_value</code>.
+     * The name of the schema attribute that specifies the data field to be featurized. Only the <code>target</code>
+     * field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the <code>RETAIL</code>
+     * domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>.
      * </p>
      * 
      * @param attributeName
-     *        The name of the schema attribute specifying the data field to be featurized. In this release, only the
+     *        The name of the schema attribute that specifies the data field to be featurized. Only the
      *        <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example,
      *        for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
      *        domain, the target is <code>target_value</code>.
@@ -91,13 +90,13 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the schema attribute specifying the data field to be featurized. In this release, only the
-     * <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target
-     * is <code>target_value</code>.
+     * The name of the schema attribute that specifies the data field to be featurized. Only the <code>target</code>
+     * field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the <code>RETAIL</code>
+     * domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>.
      * </p>
      * 
-     * @return The name of the schema attribute specifying the data field to be featurized. In this release, only the
+     * @return The name of the schema attribute that specifies the data field to be featurized. Only the
      *         <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example,
      *         for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
      *         domain, the target is <code>target_value</code>.
@@ -109,14 +108,14 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the schema attribute specifying the data field to be featurized. In this release, only the
-     * <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target
-     * is <code>target_value</code>.
+     * The name of the schema attribute that specifies the data field to be featurized. Only the <code>target</code>
+     * field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the <code>RETAIL</code>
+     * domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>.
      * </p>
      * 
      * @param attributeName
-     *        The name of the schema attribute specifying the data field to be featurized. In this release, only the
+     *        The name of the schema attribute that specifies the data field to be featurized. Only the
      *        <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example,
      *        for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
      *        domain, the target is <code>target_value</code>.
@@ -130,12 +129,10 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For this
-     * release, the number of methods is limited to one.
+     * An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      * </p>
      * 
-     * @return An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For
-     *         this release, the number of methods is limited to one.
+     * @return An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      */
 
     public java.util.List<FeaturizationMethod> getFeaturizationPipeline() {
@@ -144,13 +141,11 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For this
-     * release, the number of methods is limited to one.
+     * An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      * </p>
      * 
      * @param featurizationPipeline
-     *        An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For
-     *        this release, the number of methods is limited to one.
+     *        An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      */
 
     public void setFeaturizationPipeline(java.util.Collection<FeaturizationMethod> featurizationPipeline) {
@@ -164,8 +159,7 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For this
-     * release, the number of methods is limited to one.
+     * An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -174,8 +168,7 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param featurizationPipeline
-     *        An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For
-     *        this release, the number of methods is limited to one.
+     *        An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,13 +184,11 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For this
-     * release, the number of methods is limited to one.
+     * An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      * </p>
      * 
      * @param featurizationPipeline
-     *        An array <code>FeaturizationMethod</code> objects that specifies the feature transformation methods. For
-     *        this release, the number of methods is limited to one.
+     *        An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

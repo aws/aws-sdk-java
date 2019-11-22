@@ -51,7 +51,7 @@ public interface AWSAutoScalingPlans {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "autoscaling";
+    String ENDPOINT_PREFIX = "autoscaling-plans";
 
     /**
      * <p>

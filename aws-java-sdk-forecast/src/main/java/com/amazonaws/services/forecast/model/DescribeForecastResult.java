@@ -25,7 +25,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The same forecast ARN as given in the request.
+     * The forecast ARN as specified in the request.
      * </p>
      */
     private String forecastArn;
@@ -35,6 +35,12 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String forecastName;
+    /**
+     * <p>
+     * The quantiles at which proababilistic forecasts were generated.
+     * </p>
+     */
+    private java.util.List<String> forecastTypes;
     /**
      * <p>
      * The ARN of the predictor used to generate the forecast.
@@ -98,11 +104,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The same forecast ARN as given in the request.
+     * The forecast ARN as specified in the request.
      * </p>
      * 
      * @param forecastArn
-     *        The same forecast ARN as given in the request.
+     *        The forecast ARN as specified in the request.
      */
 
     public void setForecastArn(String forecastArn) {
@@ -111,10 +117,10 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The same forecast ARN as given in the request.
+     * The forecast ARN as specified in the request.
      * </p>
      * 
-     * @return The same forecast ARN as given in the request.
+     * @return The forecast ARN as specified in the request.
      */
 
     public String getForecastArn() {
@@ -123,11 +129,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The same forecast ARN as given in the request.
+     * The forecast ARN as specified in the request.
      * </p>
      * 
      * @param forecastArn
-     *        The same forecast ARN as given in the request.
+     *        The forecast ARN as specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,6 +179,76 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     public DescribeForecastResult withForecastName(String forecastName) {
         setForecastName(forecastName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The quantiles at which proababilistic forecasts were generated.
+     * </p>
+     * 
+     * @return The quantiles at which proababilistic forecasts were generated.
+     */
+
+    public java.util.List<String> getForecastTypes() {
+        return forecastTypes;
+    }
+
+    /**
+     * <p>
+     * The quantiles at which proababilistic forecasts were generated.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The quantiles at which proababilistic forecasts were generated.
+     */
+
+    public void setForecastTypes(java.util.Collection<String> forecastTypes) {
+        if (forecastTypes == null) {
+            this.forecastTypes = null;
+            return;
+        }
+
+        this.forecastTypes = new java.util.ArrayList<String>(forecastTypes);
+    }
+
+    /**
+     * <p>
+     * The quantiles at which proababilistic forecasts were generated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setForecastTypes(java.util.Collection)} or {@link #withForecastTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The quantiles at which proababilistic forecasts were generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeForecastResult withForecastTypes(String... forecastTypes) {
+        if (this.forecastTypes == null) {
+            setForecastTypes(new java.util.ArrayList<String>(forecastTypes.length));
+        }
+        for (String ele : forecastTypes) {
+            this.forecastTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The quantiles at which proababilistic forecasts were generated.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The quantiles at which proababilistic forecasts were generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeForecastResult withForecastTypes(java.util.Collection<String> forecastTypes) {
+        setForecastTypes(forecastTypes);
         return this;
     }
 
@@ -579,6 +655,8 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("ForecastArn: ").append(getForecastArn()).append(",");
         if (getForecastName() != null)
             sb.append("ForecastName: ").append(getForecastName()).append(",");
+        if (getForecastTypes() != null)
+            sb.append("ForecastTypes: ").append(getForecastTypes()).append(",");
         if (getPredictorArn() != null)
             sb.append("PredictorArn: ").append(getPredictorArn()).append(",");
         if (getDatasetGroupArn() != null)
@@ -612,6 +690,10 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
         if (other.getForecastName() == null ^ this.getForecastName() == null)
             return false;
         if (other.getForecastName() != null && other.getForecastName().equals(this.getForecastName()) == false)
+            return false;
+        if (other.getForecastTypes() == null ^ this.getForecastTypes() == null)
+            return false;
+        if (other.getForecastTypes() != null && other.getForecastTypes().equals(this.getForecastTypes()) == false)
             return false;
         if (other.getPredictorArn() == null ^ this.getPredictorArn() == null)
             return false;
@@ -647,6 +729,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getForecastArn() == null) ? 0 : getForecastArn().hashCode());
         hashCode = prime * hashCode + ((getForecastName() == null) ? 0 : getForecastName().hashCode());
+        hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getPredictorArn() == null) ? 0 : getPredictorArn().hashCode());
         hashCode = prime * hashCode + ((getDatasetGroupArn() == null) ? 0 : getDatasetGroupArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

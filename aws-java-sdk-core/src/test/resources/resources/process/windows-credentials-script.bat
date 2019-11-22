@@ -2,11 +2,14 @@
 SET input=%1
 ECHO {
 ECHO "Version": 1,
-ECHO "AccessKeyId": "accessKeyId",
-ECHO "SecretAccessKey": "secretAccessKey"
-IF "%input%"=="SESSION_CREDENTIALS" (
+ECHO "AccessKeyId": "%1",
+ECHO "SecretAccessKey": "%2"
+IF NOT "%3"=="" (
     ECHO ,
-    ECHO "SessionToken": "sessionToken",
-    ECHO "Expiration": "2018-12-11T17:46:28Z"
+    ECHO "SessionToken": "%3"
+)
+IF NOT "%4"=="" (
+    ECHO ,
+    ECHO "Expiration": "%4"
 )
 echo }

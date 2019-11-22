@@ -33,6 +33,8 @@ public class CompareFacesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetImage").build();
     private static final MarshallingInfo<Float> SIMILARITYTHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SimilarityThreshold").build();
+    private static final MarshallingInfo<String> QUALITYFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QualityFilter").build();
 
     private static final CompareFacesRequestMarshaller instance = new CompareFacesRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class CompareFacesRequestMarshaller {
             protocolMarshaller.marshall(compareFacesRequest.getSourceImage(), SOURCEIMAGE_BINDING);
             protocolMarshaller.marshall(compareFacesRequest.getTargetImage(), TARGETIMAGE_BINDING);
             protocolMarshaller.marshall(compareFacesRequest.getSimilarityThreshold(), SIMILARITYTHRESHOLD_BINDING);
+            protocolMarshaller.marshall(compareFacesRequest.getQualityFilter(), QUALITYFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

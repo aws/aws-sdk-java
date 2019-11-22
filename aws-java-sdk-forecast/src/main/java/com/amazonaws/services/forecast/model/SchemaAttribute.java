@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An attribute of a schema, which defines a field of a dataset. A schema attribute is required for every field in a
- * dataset. The <a>Schema</a> object contains an array of <code>SchemaAttribute</code> objects.
+ * An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset.
+ * The <a>Schema</a> object contains an array of <code>SchemaAttribute</code> objects.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SchemaAttribute" target="_top">AWS API

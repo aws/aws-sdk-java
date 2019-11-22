@@ -7493,6 +7493,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the events for the specified EC2 Fleet during the specified time.
      * </p>
+     * <p>
+     * EC2 Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query by
+     * the last evaluated time and not miss a recorded event. EC2 Fleet events are available for 48 hours.
+     * </p>
      * 
      * @param describeFleetHistoryRequest
      * @return A Java Future containing the result of the DescribeFleetHistory operation returned by the service.
@@ -7505,6 +7509,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes the events for the specified EC2 Fleet during the specified time.
+     * </p>
+     * <p>
+     * EC2 Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query by
+     * the last evaluated time and not miss a recorded event. EC2 Fleet events are available for 48 hours.
      * </p>
      * 
      * @param describeFleetHistoryRequest
@@ -8454,6 +8462,76 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeInstanceStatusResult> describeInstanceStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceStatusRequest, DescribeInstanceStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of all instance types offered. The results can be filtered by location (Region or Availability
+     * Zone). If no location is specified, the instance types offered in the current Region are returned.
+     * </p>
+     * 
+     * @param describeInstanceTypeOfferingsRequest
+     * @return A Java Future containing the result of the DescribeInstanceTypeOfferings operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeInstanceTypeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceTypeOfferingsResult> describeInstanceTypeOfferingsAsync(
+            DescribeInstanceTypeOfferingsRequest describeInstanceTypeOfferingsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all instance types offered. The results can be filtered by location (Region or Availability
+     * Zone). If no location is specified, the instance types offered in the current Region are returned.
+     * </p>
+     * 
+     * @param describeInstanceTypeOfferingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceTypeOfferings operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeInstanceTypeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceTypeOfferingsResult> describeInstanceTypeOfferingsAsync(
+            DescribeInstanceTypeOfferingsRequest describeInstanceTypeOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceTypeOfferingsRequest, DescribeInstanceTypeOfferingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of all instance types offered in your current AWS Region. The results can be filtered by the
+     * attributes of the instance types.
+     * </p>
+     * 
+     * @param describeInstanceTypesRequest
+     * @return A Java Future containing the result of the DescribeInstanceTypes operation returned by the service.
+     * @sample AmazonEC2Async.DescribeInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceTypesResult> describeInstanceTypesAsync(DescribeInstanceTypesRequest describeInstanceTypesRequest);
+
+    /**
+     * <p>
+     * Returns a list of all instance types offered in your current AWS Region. The results can be filtered by the
+     * attributes of the instance types.
+     * </p>
+     * 
+     * @param describeInstanceTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceTypes operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceTypesResult> describeInstanceTypesAsync(DescribeInstanceTypesRequest describeInstanceTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceTypesRequest, DescribeInstanceTypesResult> asyncHandler);
 
     /**
      * <p>

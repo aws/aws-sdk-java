@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines the fields of a dataset. This object is specified in the <a>CreateDataset</a> request.
+ * Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Schema" target="_top">AWS API

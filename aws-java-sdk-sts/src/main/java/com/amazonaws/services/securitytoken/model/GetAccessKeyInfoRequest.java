@@ -31,7 +31,7 @@ public class GetAccessKeyInfoRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.
+     * lowercase letter or digit.
      * </p>
      */
     private String accessKeyId;
@@ -42,14 +42,14 @@ public class GetAccessKeyInfoRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.
+     * lowercase letter or digit.
      * </p>
      * 
      * @param accessKeyId
      *        The identifier of an access key.</p>
      *        <p>
      *        This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or
-     *        lowercased letter or digit.
+     *        lowercase letter or digit.
      */
 
     public void setAccessKeyId(String accessKeyId) {
@@ -62,13 +62,13 @@ public class GetAccessKeyInfoRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.
+     * lowercase letter or digit.
      * </p>
      * 
      * @return The identifier of an access key.</p>
      *         <p>
      *         This parameter allows (through its regex pattern) a string of characters that can consist of any upper-
-     *         or lowercased letter or digit.
+     *         or lowercase letter or digit.
      */
 
     public String getAccessKeyId() {
@@ -81,14 +81,14 @@ public class GetAccessKeyInfoRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.
+     * lowercase letter or digit.
      * </p>
      * 
      * @param accessKeyId
      *        The identifier of an access key.</p>
      *        <p>
      *        This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or
-     *        lowercased letter or digit.
+     *        lowercase letter or digit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

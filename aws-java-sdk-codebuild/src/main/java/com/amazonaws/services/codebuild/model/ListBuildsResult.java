@@ -32,8 +32,8 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string
-     * called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the
-     * next token to the call.
+     * called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next
+     * token to the call.
      * </p>
      */
     private String nextToken;
@@ -111,13 +111,13 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string
-     * called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the
-     * next token to the call.
+     * called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next
+     * token to the call.
      * </p>
      * 
      * @param nextToken
      *        If there are more than 100 items in the list, only the first 100 items are returned, along with a unique
-     *        string called a <i>next token</i>. To get the next batch of items in the list, call this operation again,
+     *        string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again,
      *        adding the next token to the call.
      */
 
@@ -128,12 +128,12 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string
-     * called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the
-     * next token to the call.
+     * called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next
+     * token to the call.
      * </p>
      * 
      * @return If there are more than 100 items in the list, only the first 100 items are returned, along with a unique
-     *         string called a <i>next token</i>. To get the next batch of items in the list, call this operation again,
+     *         string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again,
      *         adding the next token to the call.
      */
 
@@ -144,13 +144,13 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string
-     * called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the
-     * next token to the call.
+     * called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next
+     * token to the call.
      * </p>
      * 
      * @param nextToken
      *        If there are more than 100 items in the list, only the first 100 items are returned, along with a unique
-     *        string called a <i>next token</i>. To get the next batch of items in the list, call this operation again,
+     *        string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again,
      *        adding the next token to the call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

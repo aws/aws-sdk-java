@@ -33,49 +33,65 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <ul>
      * <li>
      * <p>
-     * <code>TopicArn</code> – the topic's ARN
+     * <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> – the AWS account ID of the topic's owner
+     * <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to
+     * <code>email</code> and <code>email-json</code> endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Policy</code> – the JSON serialization of the topic's access control policy
+     * <code>Owner</code> – The AWS account ID of the topic's owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
-     * email-json endpoints
+     * <code>Policy</code> – The JSON serialization of the topic's access control policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
+     * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
+     * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
+     * <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
+     * <code>TopicArn</code> – The topic's ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes into
-     * account system defaults
+     * <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking system
+     * defaults into account.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -89,49 +105,65 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <ul>
      * <li>
      * <p>
-     * <code>TopicArn</code> – the topic's ARN
+     * <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> – the AWS account ID of the topic's owner
+     * <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to
+     * <code>email</code> and <code>email-json</code> endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Policy</code> – the JSON serialization of the topic's access control policy
+     * <code>Owner</code> – The AWS account ID of the topic's owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
-     * email-json endpoints
+     * <code>Policy</code> – The JSON serialization of the topic's access control policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
+     * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
+     * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
+     * <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
+     * <code>TopicArn</code> – The topic's ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes into
-     * account system defaults
+     * <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking system
+     * defaults into account.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -140,49 +172,66 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>TopicArn</code> – the topic's ARN
+     *         <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Owner</code> – the AWS account ID of the topic's owner
+     *         <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications
+     *         to <code>email</code> and <code>email-json</code> endpoints.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Policy</code> – the JSON serialization of the topic's access control policy
+     *         <code>Owner</code> – The AWS account ID of the topic's owner.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email
-     *         and email-json endpoints
+     *         <code>Policy</code> – The JSON serialization of the topic's access control policy.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
+     *         <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
+     *         <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
+     *         <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
+     *         <code>TopicArn</code> – The topic's ARN.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes
-     *         into account system defaults
+     *         <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking
+     *         system defaults into account.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attribute applies only to <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *         >server-side-encryption</a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *         custom CMK. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *         Terms</a>. For more examples, see <a href=
+     *         "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *         >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *         </p>
      *         </li>
      */
@@ -201,49 +250,65 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <ul>
      * <li>
      * <p>
-     * <code>TopicArn</code> – the topic's ARN
+     * <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> – the AWS account ID of the topic's owner
+     * <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to
+     * <code>email</code> and <code>email-json</code> endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Policy</code> – the JSON serialization of the topic's access control policy
+     * <code>Owner</code> – The AWS account ID of the topic's owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
-     * email-json endpoints
+     * <code>Policy</code> – The JSON serialization of the topic's access control policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
+     * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
+     * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
+     * <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
+     * <code>TopicArn</code> – The topic's ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes into
-     * account system defaults
+     * <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking system
+     * defaults into account.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -253,49 +318,66 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>TopicArn</code> – the topic's ARN
+     *        <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Owner</code> – the AWS account ID of the topic's owner
+     *        <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications
+     *        to <code>email</code> and <code>email-json</code> endpoints.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Policy</code> – the JSON serialization of the topic's access control policy
+     *        <code>Owner</code> – The AWS account ID of the topic's owner.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
-     *        email-json endpoints
+     *        <code>Policy</code> – The JSON serialization of the topic's access control policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
+     *        <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
+     *        <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
+     *        <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
+     *        <code>TopicArn</code> – The topic's ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes
-     *        into account system defaults
+     *        <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking
+     *        system defaults into account.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        custom CMK. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *        Terms</a>. For more examples, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      */
@@ -311,49 +393,65 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <ul>
      * <li>
      * <p>
-     * <code>TopicArn</code> – the topic's ARN
+     * <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Owner</code> – the AWS account ID of the topic's owner
+     * <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to
+     * <code>email</code> and <code>email-json</code> endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Policy</code> – the JSON serialization of the topic's access control policy
+     * <code>Owner</code> – The AWS account ID of the topic's owner.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
-     * email-json endpoints
+     * <code>Policy</code> – The JSON serialization of the topic's access control policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
+     * <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
+     * <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
+     * <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
+     * <code>TopicArn</code> – The topic's ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes into
-     * account system defaults
+     * <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking system
+     * defaults into account.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -363,49 +461,66 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>TopicArn</code> – the topic's ARN
+     *        <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Owner</code> – the AWS account ID of the topic's owner
+     *        <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications
+     *        to <code>email</code> and <code>email-json</code> endpoints.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Policy</code> – the JSON serialization of the topic's access control policy
+     *        <code>Owner</code> – The AWS account ID of the topic's owner.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DisplayName</code> – the human-readable name used in the "From" field for notifications to email and
-     *        email-json endpoints
+     *        <code>Policy</code> – The JSON serialization of the topic's access control policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation on this topic
+     *        <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this topic
+     *        <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
+     *        <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
+     *        <code>TopicArn</code> – The topic's ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery policy that takes
-     *        into account system defaults
+     *        <code>EffectiveDeliveryPolicy</code> – Yhe JSON serialization of the effective delivery policy, taking
+     *        system defaults into account.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        custom CMK. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *        Terms</a>. For more examples, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

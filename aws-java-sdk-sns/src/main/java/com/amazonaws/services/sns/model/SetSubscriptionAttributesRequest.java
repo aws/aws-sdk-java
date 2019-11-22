@@ -62,6 +62,14 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * created for Amazon SNS metadata.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
      * </ul>
      */
     private String attributeName;
@@ -109,6 +117,14 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
      *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
      *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
+     *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
+     *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
      *        </p>
      *        </li>
      * @param attributeValue
@@ -188,6 +204,14 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * created for Amazon SNS metadata.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attributeName
@@ -214,6 +238,14 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
      *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
      *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
+     *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
+     *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
      *        </p>
      *        </li>
      */
@@ -250,6 +282,14 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * created for Amazon SNS metadata.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A map of attributes with their corresponding values.</p>
@@ -275,6 +315,15 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      *         <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
      *         SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
      *         otherwise created for Amazon SNS metadata.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *         dead-letter queue. Messages that can't be delivered due to client errors (for example, when the
+     *         subscribed endpoint is unreachable) or server errors (for example, when the service that powers the
+     *         subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or
+     *         reprocessing.
      *         </p>
      *         </li>
      */
@@ -311,6 +360,14 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * created for Amazon SNS metadata.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter
+     * queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is
+     * unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes
+     * unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attributeName
@@ -337,6 +394,14 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
      *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
      *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS
+     *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
+     *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
+     *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

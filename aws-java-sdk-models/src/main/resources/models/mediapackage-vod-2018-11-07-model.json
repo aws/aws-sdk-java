@@ -463,6 +463,11 @@
           "locationName": "arn",
           "shape": "__string"
         },
+        "CreatedAt": {
+          "documentation": "The time the Asset was initially submitted for Ingest.",
+          "locationName": "createdAt",
+          "shape": "__string"
+        },
         "EgressEndpoints": {
           "documentation": "The list of egress endpoints available for the Asset.",
           "locationName": "egressEndpoints",
@@ -555,6 +560,11 @@
         "Arn": {
           "documentation": "The ARN of the Asset.",
           "locationName": "arn",
+          "shape": "__string"
+        },
+        "CreatedAt": {
+          "documentation": "The time the Asset was initially submitted for Ingest.",
+          "locationName": "createdAt",
           "shape": "__string"
         },
         "Id": {
@@ -663,6 +673,11 @@
         "Arn": {
           "documentation": "The ARN of the Asset.",
           "locationName": "arn",
+          "shape": "__string"
+        },
+        "CreatedAt": {
+          "documentation": "The time the Asset was initially submitted for Ingest.",
+          "locationName": "createdAt",
           "shape": "__string"
         },
         "EgressEndpoints": {
@@ -933,6 +948,11 @@
         "Arn": {
           "documentation": "The ARN of the Asset.",
           "locationName": "arn",
+          "shape": "__string"
+        },
+        "CreatedAt": {
+          "documentation": "The time the Asset was initially submitted for Ingest.",
+          "locationName": "createdAt",
           "shape": "__string"
         },
         "EgressEndpoints": {

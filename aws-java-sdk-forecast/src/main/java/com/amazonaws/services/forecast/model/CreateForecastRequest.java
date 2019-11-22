@@ -27,7 +27,7 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the forecast.
+     * A name for the forecast.
      * </p>
      */
     private String forecastName;
@@ -37,14 +37,23 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String predictorArn;
+    /**
+     * <p>
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
+     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
+     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
+     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * </p>
+     */
+    private java.util.List<String> forecastTypes;
 
     /**
      * <p>
-     * The name for the forecast.
+     * A name for the forecast.
      * </p>
      * 
      * @param forecastName
-     *        The name for the forecast.
+     *        A name for the forecast.
      */
 
     public void setForecastName(String forecastName) {
@@ -53,10 +62,10 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the forecast.
+     * A name for the forecast.
      * </p>
      * 
-     * @return The name for the forecast.
+     * @return A name for the forecast.
      */
 
     public String getForecastName() {
@@ -65,11 +74,11 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the forecast.
+     * A name for the forecast.
      * </p>
      * 
      * @param forecastName
-     *        The name for the forecast.
+     *        A name for the forecast.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,6 +128,100 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
+     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
+     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
+     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * </p>
+     * 
+     * @return The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
+     *         forecast. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and
+     *         <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not
+     *         symmetric (e.g. Beta, Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     */
+
+    public java.util.List<String> getForecastTypes() {
+        return forecastTypes;
+    }
+
+    /**
+     * <p>
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
+     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
+     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
+     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
+     *        forecast. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>
+     *        . The mean forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta,
+     *        Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     */
+
+    public void setForecastTypes(java.util.Collection<String> forecastTypes) {
+        if (forecastTypes == null) {
+            this.forecastTypes = null;
+            return;
+        }
+
+        this.forecastTypes = new java.util.ArrayList<String>(forecastTypes);
+    }
+
+    /**
+     * <p>
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
+     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
+     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
+     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setForecastTypes(java.util.Collection)} or {@link #withForecastTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
+     *        forecast. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>
+     *        . The mean forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta,
+     *        Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateForecastRequest withForecastTypes(String... forecastTypes) {
+        if (this.forecastTypes == null) {
+            setForecastTypes(new java.util.ArrayList<String>(forecastTypes.length));
+        }
+        for (String ele : forecastTypes) {
+            this.forecastTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per forecast.
+     * Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean
+     * forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta, Negative
+     * Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
+     *        forecast. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>
+     *        . The mean forecast is different from the median (0.50) when the distribution is not symmetric (e.g. Beta,
+     *        Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateForecastRequest withForecastTypes(java.util.Collection<String> forecastTypes) {
+        setForecastTypes(forecastTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +236,9 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getForecastName() != null)
             sb.append("ForecastName: ").append(getForecastName()).append(",");
         if (getPredictorArn() != null)
-            sb.append("PredictorArn: ").append(getPredictorArn());
+            sb.append("PredictorArn: ").append(getPredictorArn()).append(",");
+        if (getForecastTypes() != null)
+            sb.append("ForecastTypes: ").append(getForecastTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +261,10 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getPredictorArn() != null && other.getPredictorArn().equals(this.getPredictorArn()) == false)
             return false;
+        if (other.getForecastTypes() == null ^ this.getForecastTypes() == null)
+            return false;
+        if (other.getForecastTypes() != null && other.getForecastTypes().equals(this.getForecastTypes()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +275,7 @@ public class CreateForecastRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getForecastName() == null) ? 0 : getForecastName().hashCode());
         hashCode = prime * hashCode + ((getPredictorArn() == null) ? 0 : getPredictorArn().hashCode());
+        hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         return hashCode;
     }
 

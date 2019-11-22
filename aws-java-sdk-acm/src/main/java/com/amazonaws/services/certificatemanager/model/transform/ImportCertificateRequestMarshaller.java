@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.certificatemanager.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class ImportCertificateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivateKey").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> CERTIFICATECHAIN_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateChain").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final ImportCertificateRequestMarshaller instance = new ImportCertificateRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class ImportCertificateRequestMarshaller {
             protocolMarshaller.marshall(importCertificateRequest.getCertificate(), CERTIFICATE_BINDING);
             protocolMarshaller.marshall(importCertificateRequest.getPrivateKey(), PRIVATEKEY_BINDING);
             protocolMarshaller.marshall(importCertificateRequest.getCertificateChain(), CERTIFICATECHAIN_BINDING);
+            protocolMarshaller.marshall(importCertificateRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

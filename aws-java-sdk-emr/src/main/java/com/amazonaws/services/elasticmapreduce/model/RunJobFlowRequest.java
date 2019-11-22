@@ -279,6 +279,13 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private KerberosAttributes kerberosAttributes;
+    /**
+     * <p>
+     * Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum
+     * value is <code>256</code>.
+     * </p>
+     */
+    private Integer stepConcurrencyLevel;
 
     /**
      * Default constructor for RunJobFlowRequest object. Callers should use the setter or fluent setter (with...)
@@ -2423,6 +2430,52 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum
+     * value is <code>256</code>.
+     * </p>
+     * 
+     * @param stepConcurrencyLevel
+     *        Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The
+     *        maximum value is <code>256</code>.
+     */
+
+    public void setStepConcurrencyLevel(Integer stepConcurrencyLevel) {
+        this.stepConcurrencyLevel = stepConcurrencyLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum
+     * value is <code>256</code>.
+     * </p>
+     * 
+     * @return Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The
+     *         maximum value is <code>256</code>.
+     */
+
+    public Integer getStepConcurrencyLevel() {
+        return this.stepConcurrencyLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum
+     * value is <code>256</code>.
+     * </p>
+     * 
+     * @param stepConcurrencyLevel
+     *        Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The
+     *        maximum value is <code>256</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withStepConcurrencyLevel(Integer stepConcurrencyLevel) {
+        setStepConcurrencyLevel(stepConcurrencyLevel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2479,7 +2532,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getRepoUpgradeOnBoot() != null)
             sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot()).append(",");
         if (getKerberosAttributes() != null)
-            sb.append("KerberosAttributes: ").append(getKerberosAttributes());
+            sb.append("KerberosAttributes: ").append(getKerberosAttributes()).append(",");
+        if (getStepConcurrencyLevel() != null)
+            sb.append("StepConcurrencyLevel: ").append(getStepConcurrencyLevel());
         sb.append("}");
         return sb.toString();
     }
@@ -2586,6 +2641,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getKerberosAttributes() != null && other.getKerberosAttributes().equals(this.getKerberosAttributes()) == false)
             return false;
+        if (other.getStepConcurrencyLevel() == null ^ this.getStepConcurrencyLevel() == null)
+            return false;
+        if (other.getStepConcurrencyLevel() != null && other.getStepConcurrencyLevel().equals(this.getStepConcurrencyLevel()) == false)
+            return false;
         return true;
     }
 
@@ -2617,6 +2676,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getEbsRootVolumeSize() == null) ? 0 : getEbsRootVolumeSize().hashCode());
         hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
         hashCode = prime * hashCode + ((getKerberosAttributes() == null) ? 0 : getKerberosAttributes().hashCode());
+        hashCode = prime * hashCode + ((getStepConcurrencyLevel() == null) ? 0 : getStepConcurrencyLevel().hashCode());
         return hashCode;
     }
 

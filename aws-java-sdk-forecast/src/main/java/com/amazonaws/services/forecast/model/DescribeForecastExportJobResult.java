@@ -43,7 +43,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
     private String forecastArn;
     /**
      * <p>
-     * The path to the AWS S3 bucket where the forecast is exported.
+     * The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * </p>
      */
     private DataDestination destination;
@@ -55,7 +55,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
     private String message;
     /**
      * <p>
-     * The status of the forecast export job. One of the following states:
+     * The status of the forecast export job. States include:
      * </p>
      * <ul>
      * <li>
@@ -77,7 +77,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
-     * in your Amazon S3 bucket.
+     * in your S3 bucket.
      * </p>
      * </note>
      */
@@ -217,11 +217,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The path to the AWS S3 bucket where the forecast is exported.
+     * The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * </p>
      * 
      * @param destination
-     *        The path to the AWS S3 bucket where the forecast is exported.
+     *        The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      */
 
     public void setDestination(DataDestination destination) {
@@ -230,10 +230,10 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The path to the AWS S3 bucket where the forecast is exported.
+     * The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * </p>
      * 
-     * @return The path to the AWS S3 bucket where the forecast is exported.
+     * @return The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      */
 
     public DataDestination getDestination() {
@@ -242,11 +242,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The path to the AWS S3 bucket where the forecast is exported.
+     * The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * </p>
      * 
      * @param destination
-     *        The path to the AWS S3 bucket where the forecast is exported.
+     *        The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,7 +297,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the forecast export job. One of the following states:
+     * The status of the forecast export job. States include:
      * </p>
      * <ul>
      * <li>
@@ -319,12 +319,12 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
-     * in your Amazon S3 bucket.
+     * in your S3 bucket.
      * </p>
      * </note>
      * 
      * @param status
-     *        The status of the forecast export job. One of the following states:</p>
+     *        The status of the forecast export job. States include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -345,7 +345,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      *        <note>
      *        <p>
      *        The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the
-     *        forecast in your Amazon S3 bucket.
+     *        forecast in your S3 bucket.
      *        </p>
      */
 
@@ -355,7 +355,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the forecast export job. One of the following states:
+     * The status of the forecast export job. States include:
      * </p>
      * <ul>
      * <li>
@@ -377,11 +377,11 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
-     * in your Amazon S3 bucket.
+     * in your S3 bucket.
      * </p>
      * </note>
      * 
-     * @return The status of the forecast export job. One of the following states:</p>
+     * @return The status of the forecast export job. States include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -402,7 +402,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      *         <note>
      *         <p>
      *         The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the
-     *         forecast in your Amazon S3 bucket.
+     *         forecast in your S3 bucket.
      *         </p>
      */
 
@@ -412,7 +412,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the forecast export job. One of the following states:
+     * The status of the forecast export job. States include:
      * </p>
      * <ul>
      * <li>
@@ -434,12 +434,12 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast
-     * in your Amazon S3 bucket.
+     * in your S3 bucket.
      * </p>
      * </note>
      * 
      * @param status
-     *        The status of the forecast export job. One of the following states:</p>
+     *        The status of the forecast export job. States include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -460,7 +460,7 @@ public class DescribeForecastExportJobResult extends com.amazonaws.AmazonWebServ
      *        <note>
      *        <p>
      *        The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the
-     *        forecast in your Amazon S3 bucket.
+     *        forecast in your S3 bucket.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

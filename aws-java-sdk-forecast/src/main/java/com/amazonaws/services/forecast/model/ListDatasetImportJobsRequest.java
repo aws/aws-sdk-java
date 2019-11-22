@@ -41,33 +41,37 @@ public class ListDatasetImportJobsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>DatasetImportJobName</code>
-     * property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the
+     * statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     * For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -161,62 +165,71 @@ public class ListDatasetImportJobsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>DatasetImportJobName</code>
-     * property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the
+     * statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     * For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      * 
      * @return An array of filters. For each filter, you provide a condition and a match statement. The condition is
-     *         either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
-     *         respectively, from the list, the predictors that match the statement. The match statement consists of a
-     *         key and a value. In this release, <code>Name</code> is the only valid key, which filters on the
-     *         <code>DatasetImportJobName</code> property.</p>
+     *         either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets
+     *         that match the statement from the list, respectively. The match statement consists of a key and a
+     *         value.</p>
+     *         <p>
+     *         <b>Filter properties</b>
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     *         <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>
+     *         . To include the datasets that match the statement, specify <code>IS</code>. To exclude matching
+     *         datasets, specify <code>IS_NOT</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Key</code> - <code>Name</code>
+     *         <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     *         <code>Status</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Value</code> - the value to match
+     *         <code>Value</code> - The value to match.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     *         For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      *         </p>
      *         <p>
-     *         <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     *         <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -226,63 +239,72 @@ public class ListDatasetImportJobsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>DatasetImportJobName</code>
-     * property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the
+     * statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     * For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      * 
      * @param filters
      *        An array of filters. For each filter, you provide a condition and a match statement. The condition is
-     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
-     *        respectively, from the list, the predictors that match the statement. The match statement consists of a
-     *        key and a value. In this release, <code>Name</code> is the only valid key, which filters on the
-     *        <code>DatasetImportJobName</code> property.</p>
+     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets
+     *        that match the statement from the list, respectively. The match statement consists of a key and a
+     *        value.</p>
+     *        <p>
+     *        <b>Filter properties</b>
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     *        <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.
+     *        To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets,
+     *        specify <code>IS_NOT</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - <code>Name</code>
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     *        <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Value</code> - the value to match
+     *        <code>Value</code> - The value to match.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     *        For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      *        </p>
      *        <p>
-     *        <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     *        <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -297,33 +319,37 @@ public class ListDatasetImportJobsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>DatasetImportJobName</code>
-     * property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the
+     * statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     * For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -333,32 +359,37 @@ public class ListDatasetImportJobsRequest extends com.amazonaws.AmazonWebService
      * 
      * @param filters
      *        An array of filters. For each filter, you provide a condition and a match statement. The condition is
-     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
-     *        respectively, from the list, the predictors that match the statement. The match statement consists of a
-     *        key and a value. In this release, <code>Name</code> is the only valid key, which filters on the
-     *        <code>DatasetImportJobName</code> property.</p>
+     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets
+     *        that match the statement from the list, respectively. The match statement consists of a key and a
+     *        value.</p>
+     *        <p>
+     *        <b>Filter properties</b>
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     *        <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.
+     *        To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets,
+     *        specify <code>IS_NOT</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - <code>Name</code>
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     *        <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Value</code> - the value to match
+     *        <code>Value</code> - The value to match.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     *        For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      *        </p>
      *        <p>
-     *        <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     *        <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,63 +406,72 @@ public class ListDatasetImportJobsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>DatasetImportJobName</code>
-     * property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the
+     * statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     * For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      * 
      * @param filters
      *        An array of filters. For each filter, you provide a condition and a match statement. The condition is
-     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
-     *        respectively, from the list, the predictors that match the statement. The match statement consists of a
-     *        key and a value. In this release, <code>Name</code> is the only valid key, which filters on the
-     *        <code>DatasetImportJobName</code> property.</p>
+     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets
+     *        that match the statement from the list, respectively. The match statement consists of a key and a
+     *        value.</p>
+     *        <p>
+     *        <b>Filter properties</b>
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     *        <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.
+     *        To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets,
+     *        specify <code>IS_NOT</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - <code>Name</code>
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and
+     *        <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Value</code> - the value to match
+     *        <code>Value</code> - The value to match.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to list all dataset import jobs named <i>my_dataset_import_job</i>, you would specify:
+     *        For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
      *        </p>
      *        <p>
-     *        <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_dataset_import_job" } ]</code>
+     *        <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

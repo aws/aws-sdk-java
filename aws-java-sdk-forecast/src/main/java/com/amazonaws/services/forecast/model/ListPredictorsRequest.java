@@ -41,32 +41,37 @@ public class ListPredictorsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>PredictorName</code> property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match
+     * the statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     * For example, to list all predictors whose status is ACTIVE, you would specify:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -160,61 +165,71 @@ public class ListPredictorsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>PredictorName</code> property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match
+     * the statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     * For example, to list all predictors whose status is ACTIVE, you would specify:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      * 
      * @return An array of filters. For each filter, you provide a condition and a match statement. The condition is
-     *         either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
-     *         respectively, from the list, the predictors that match the statement. The match statement consists of a
-     *         key and a value. In this release, <code>Name</code> is the only valid key, which filters on the
-     *         <code>PredictorName</code> property.</p>
+     *         either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the
+     *         predictors that match the statement from the list, respectively. The match statement consists of a key
+     *         and a value.</p>
+     *         <p>
+     *         <b>Filter properties</b>
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     *         <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>
+     *         . To include the predictors that match the statement, specify <code>IS</code>. To exclude matching
+     *         predictors, specify <code>IS_NOT</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Key</code> - <code>Name</code>
+     *         <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>
+     *         and <code>Status</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Value</code> - the value to match
+     *         <code>Value</code> - The value to match.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     *         For example, to list all predictors whose status is ACTIVE, you would specify:
      *         </p>
      *         <p>
-     *         <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     *         <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -224,62 +239,72 @@ public class ListPredictorsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>PredictorName</code> property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match
+     * the statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     * For example, to list all predictors whose status is ACTIVE, you would specify:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      * 
      * @param filters
      *        An array of filters. For each filter, you provide a condition and a match statement. The condition is
-     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
-     *        respectively, from the list, the predictors that match the statement. The match statement consists of a
-     *        key and a value. In this release, <code>Name</code> is the only valid key, which filters on the
-     *        <code>PredictorName</code> property.</p>
+     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the
+     *        predictors that match the statement from the list, respectively. The match statement consists of a key and
+     *        a value.</p>
+     *        <p>
+     *        <b>Filter properties</b>
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     *        <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.
+     *        To include the predictors that match the statement, specify <code>IS</code>. To exclude matching
+     *        predictors, specify <code>IS_NOT</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - <code>Name</code>
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>
+     *        and <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Value</code> - the value to match
+     *        <code>Value</code> - The value to match.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     *        For example, to list all predictors whose status is ACTIVE, you would specify:
      *        </p>
      *        <p>
-     *        <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     *        <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -294,32 +319,37 @@ public class ListPredictorsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>PredictorName</code> property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match
+     * the statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     * For example, to list all predictors whose status is ACTIVE, you would specify:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -329,32 +359,37 @@ public class ListPredictorsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param filters
      *        An array of filters. For each filter, you provide a condition and a match statement. The condition is
-     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
-     *        respectively, from the list, the predictors that match the statement. The match statement consists of a
-     *        key and a value. In this release, <code>Name</code> is the only valid key, which filters on the
-     *        <code>PredictorName</code> property.</p>
+     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the
+     *        predictors that match the statement from the list, respectively. The match statement consists of a key and
+     *        a value.</p>
+     *        <p>
+     *        <b>Filter properties</b>
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     *        <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.
+     *        To include the predictors that match the statement, specify <code>IS</code>. To exclude matching
+     *        predictors, specify <code>IS_NOT</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - <code>Name</code>
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>
+     *        and <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Value</code> - the value to match
+     *        <code>Value</code> - The value to match.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     *        For example, to list all predictors whose status is ACTIVE, you would specify:
      *        </p>
      *        <p>
-     *        <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     *        <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,62 +406,72 @@ public class ListPredictorsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of filters. For each filter, you provide a condition and a match statement. The condition is either
-     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude, respectively, from the
-     * list, the predictors that match the statement. The match statement consists of a key and a value. In this
-     * release, <code>Name</code> is the only valid key, which filters on the <code>PredictorName</code> property.
+     * <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match
+     * the statement from the list, respectively. The match statement consists of a key and a value.
+     * </p>
+     * <p>
+     * <b>Filter properties</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     * <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To
+     * include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify
+     * <code>IS_NOT</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Key</code> - <code>Name</code>
+     * <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and
+     * <code>Status</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Value</code> - the value to match
+     * <code>Value</code> - The value to match.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     * For example, to list all predictors whose status is ACTIVE, you would specify:
      * </p>
      * <p>
-     * <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     * <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * </p>
      * 
      * @param filters
      *        An array of filters. For each filter, you provide a condition and a match statement. The condition is
-     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude,
-     *        respectively, from the list, the predictors that match the statement. The match statement consists of a
-     *        key and a value. In this release, <code>Name</code> is the only valid key, which filters on the
-     *        <code>PredictorName</code> property.</p>
+     *        either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the
+     *        predictors that match the statement from the list, respectively. The match statement consists of a key and
+     *        a value.</p>
+     *        <p>
+     *        <b>Filter properties</b>
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Condition</code> - <code>IS</code> or <code>IS_NOT</code>
+     *        <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.
+     *        To include the predictors that match the statement, specify <code>IS</code>. To exclude matching
+     *        predictors, specify <code>IS_NOT</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Key</code> - <code>Name</code>
+     *        <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>
+     *        and <code>Status</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Value</code> - the value to match
+     *        <code>Value</code> - The value to match.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to list all predictors named <i>my_predictor</i>, you would specify:
+     *        For example, to list all predictors whose status is ACTIVE, you would specify:
      *        </p>
      *        <p>
-     *        <code>"Filters": [ { "Condition": "IS", "Key": "Name", "Value": "my_predictor" } ]</code>
+     *        <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

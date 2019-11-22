@@ -16,10 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request could not be fulfilled because the non-AWS identity provider (IDP) that was asked to verify the incoming
- * identity token could not be reached. This is often a transient error caused by network conditions. Retry the request
- * a limited number of times so that you don't exceed the request rate. If the error persists, the non-AWS identity
- * provider might be down or not responding.
+ * The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity
+ * token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited
+ * number of times so that you don't exceed the request rate. If the error persists, the identity provider might be down
+ * or not responding.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -28,6 +28,8 @@ public class AssetShallow implements Serializable, Cloneable, StructuredPojo {
 
     /** The ARN of the Asset. */
     private String arn;
+    /** The time the Asset was initially submitted for Ingest. */
+    private String createdAt;
     /** The unique identifier for the Asset. */
     private String id;
     /** The ID of the PackagingGroup for the Asset. */
@@ -70,6 +72,40 @@ public class AssetShallow implements Serializable, Cloneable, StructuredPojo {
 
     public AssetShallow withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     * 
+     * @param createdAt
+     *        The time the Asset was initially submitted for Ingest.
+     */
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     * 
+     * @return The time the Asset was initially submitted for Ingest.
+     */
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     * 
+     * @param createdAt
+     *        The time the Asset was initially submitted for Ingest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetShallow withCreatedAt(String createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -257,6 +293,8 @@ public class AssetShallow implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getPackagingGroupId() != null)
@@ -284,6 +322,10 @@ public class AssetShallow implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
@@ -314,6 +356,7 @@ public class AssetShallow implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getPackagingGroupId() == null) ? 0 : getPackagingGroupId().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());

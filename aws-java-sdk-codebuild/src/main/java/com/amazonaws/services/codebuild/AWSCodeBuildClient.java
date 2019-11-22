@@ -85,6 +85,16 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <code>BatchGetReportGroups</code>: Returns an array of report groups.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>BatchGetReports</code>: Returns an array of reports.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>CreateProject</code>: Creates a build project.
  * </p>
  * </li>
@@ -150,6 +160,26 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartBuild</code>: Starts running a build.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StopBuild</code>: Attempts to stop running a build.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateProject</code>: Changes the settings of an existing build project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
  * </p>
  * </li>
  * <li>
@@ -713,7 +743,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Deletes a build project.
+     * Deletes a build project. When you delete a project, its builds are not deleted.
      * </p>
      * 
      * @param deleteProjectRequest

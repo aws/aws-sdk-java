@@ -63,6 +63,8 @@ public enum ElasticMapReduceActions implements Action {
     ListSecurityConfigurations("elasticmapreduce:ListSecurityConfigurations"),
     /** Action for the ListSteps operation. */
     ListSteps("elasticmapreduce:ListSteps"),
+    /** Action for the ModifyCluster operation. */
+    ModifyCluster("elasticmapreduce:ModifyCluster"),
     /** Action for the ModifyInstanceFleet operation. */
     ModifyInstanceFleet("elasticmapreduce:ModifyInstanceFleet"),
     /** Action for the ModifyInstanceGroups operation. */
