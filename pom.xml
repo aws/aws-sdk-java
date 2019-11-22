@@ -245,7 +245,7 @@
   <properties>
       <awsjavasdk.version>${project.version}</awsjavasdk.version>
       <!-- The SDK requires Jackson 2.6 to support Java 6 customers. Feel free to override in your own application -->
-      <jackson.version>2.6.7</jackson.version>
+      <jackson.version>2.10.1</jackson.version>
       <jackson.databind.version>2.6.7.3</jackson.databind.version>
       <ion.java.version>1.0.2</ion.java.version>
       <junit.version>4.12</junit.version>
