@@ -15,14 +15,15 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater
- * than 1080 lines
+ * Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080
+ * lines, UHD is greater than 1080 lines
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReservationResolution {
 
     SD("SD"),
     HD("HD"),
+    FHD("FHD"),
     UHD("UHD");
 
     private String value;

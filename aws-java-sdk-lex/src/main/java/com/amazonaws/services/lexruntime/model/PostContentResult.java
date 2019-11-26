@@ -203,6 +203,12 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private java.io.InputStream audioStream;
+    /**
+     * <p>
+     * The unique identifier for the session.
+     * </p>
+     */
+    private String sessionId;
 
     /**
      * <p>
@@ -1745,6 +1751,46 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The unique identifier for the session.
+     * </p>
+     * 
+     * @param sessionId
+     *        The unique identifier for the session.
+     */
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the session.
+     * </p>
+     * 
+     * @return The unique identifier for the session.
+     */
+
+    public String getSessionId() {
+        return this.sessionId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the session.
+     * </p>
+     * 
+     * @param sessionId
+     *        The unique identifier for the session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostContentResult withSessionId(String sessionId) {
+        setSessionId(sessionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1777,7 +1823,9 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getInputTranscript() != null)
             sb.append("InputTranscript: ").append(getInputTranscript()).append(",");
         if (getAudioStream() != null)
-            sb.append("AudioStream: ").append(getAudioStream());
+            sb.append("AudioStream: ").append(getAudioStream()).append(",");
+        if (getSessionId() != null)
+            sb.append("SessionId: ").append(getSessionId());
         sb.append("}");
         return sb.toString();
     }
@@ -1836,6 +1884,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getAudioStream() != null && other.getAudioStream().equals(this.getAudioStream()) == false)
             return false;
+        if (other.getSessionId() == null ^ this.getSessionId() == null)
+            return false;
+        if (other.getSessionId() != null && other.getSessionId().equals(this.getSessionId()) == false)
+            return false;
         return true;
     }
 
@@ -1855,6 +1907,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());
         hashCode = prime * hashCode + ((getInputTranscript() == null) ? 0 : getInputTranscript().hashCode());
         hashCode = prime * hashCode + ((getAudioStream() == null) ? 0 : getAudioStream().hashCode());
+        hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
         return hashCode;
     }
 

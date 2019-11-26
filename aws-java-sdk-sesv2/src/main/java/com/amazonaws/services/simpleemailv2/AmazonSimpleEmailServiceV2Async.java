@@ -464,6 +464,41 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Used to delete a suppressed email destination from your suppression list.
+     * </p>
+     * 
+     * @param deleteSuppressedDestinationRequest
+     *        A request to delete a suppressed email destination.
+     * @return A Java Future containing the result of the DeleteSuppressedDestination operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.DeleteSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSuppressedDestinationResult> deleteSuppressedDestinationAsync(
+            DeleteSuppressedDestinationRequest deleteSuppressedDestinationRequest);
+
+    /**
+     * <p>
+     * Used to delete a suppressed email destination from your suppression list.
+     * </p>
+     * 
+     * @param deleteSuppressedDestinationRequest
+     *        A request to delete a suppressed email destination.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSuppressedDestination operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.DeleteSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSuppressedDestinationResult> deleteSuppressedDestinationAsync(
+            DeleteSuppressedDestinationRequest deleteSuppressedDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSuppressedDestinationRequest, DeleteSuppressedDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * Obtain information about the email-sending status and capabilities of your Amazon SES account in the current AWS
      * Region.
      * </p>
@@ -909,6 +944,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Used to fetch a single suppressed email destination from your suppression list.
+     * </p>
+     * 
+     * @param getSuppressedDestinationRequest
+     *        A request to get a suppressed email destination.
+     * @return A Java Future containing the result of the GetSuppressedDestination operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(GetSuppressedDestinationRequest getSuppressedDestinationRequest);
+
+    /**
+     * <p>
+     * Used to fetch a single suppressed email destination from your suppression list.
+     * </p>
+     * 
+     * @param getSuppressedDestinationRequest
+     *        A request to get a suppressed email destination.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSuppressedDestination operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(GetSuppressedDestinationRequest getSuppressedDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSuppressedDestinationRequest, GetSuppressedDestinationResult> asyncHandler);
+
+    /**
+     * <p>
      * List all of the configuration sets associated with your account in the current region.
      * </p>
      * <p>
@@ -1110,6 +1178,41 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Used to fetch a list suppressed email destinations from your suppression list.
+     * </p>
+     * 
+     * @param listSuppressedDestinationsRequest
+     *        A request to obtain a list of suppressed email destinations.
+     * @return A Java Future containing the result of the ListSuppressedDestinations operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.ListSuppressedDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(
+            ListSuppressedDestinationsRequest listSuppressedDestinationsRequest);
+
+    /**
+     * <p>
+     * Used to fetch a list suppressed email destinations from your suppression list.
+     * </p>
+     * 
+     * @param listSuppressedDestinationsRequest
+     *        A request to obtain a list of suppressed email destinations.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSuppressedDestinations operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.ListSuppressedDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(
+            ListSuppressedDestinationsRequest listSuppressedDestinationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSuppressedDestinationsRequest, ListSuppressedDestinationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieve a list of the tags (keys and values) that are associated with a specified resource. A <i>tag</i> is a
      * label that you optionally define and associate with a resource. Each tag consists of a required <i>tag
      * key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a category for
@@ -1216,6 +1319,43 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<PutAccountSendingAttributesResult> putAccountSendingAttributesAsync(
             PutAccountSendingAttributesRequest putAccountSendingAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<PutAccountSendingAttributesRequest, PutAccountSendingAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Change your account's suppression preferences for your account.
+     * </p>
+     * 
+     * @param putAccountSuppressionAttributesRequest
+     *        A request to change your account's suppression preferences.
+     * @return A Java Future containing the result of the PutAccountSuppressionAttributes operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutAccountSuppressionAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountSuppressionAttributesResult> putAccountSuppressionAttributesAsync(
+            PutAccountSuppressionAttributesRequest putAccountSuppressionAttributesRequest);
+
+    /**
+     * <p>
+     * Change your account's suppression preferences for your account.
+     * </p>
+     * 
+     * @param putAccountSuppressionAttributesRequest
+     *        A request to change your account's suppression preferences.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccountSuppressionAttributes operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutAccountSuppressionAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountSuppressionAttributesResult> putAccountSuppressionAttributesAsync(
+            PutAccountSuppressionAttributesRequest putAccountSuppressionAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccountSuppressionAttributesRequest, PutAccountSuppressionAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -1333,6 +1473,43 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<PutConfigurationSetSendingOptionsResult> putConfigurationSetSendingOptionsAsync(
             PutConfigurationSetSendingOptionsRequest putConfigurationSetSendingOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetSendingOptionsRequest, PutConfigurationSetSendingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Specify your account's suppression preferences for a configuration set.
+     * </p>
+     * 
+     * @param putConfigurationSetSuppressionOptionsRequest
+     *        A request to change your account's suppression preferences for an specific configuration set.
+     * @return A Java Future containing the result of the PutConfigurationSetSuppressionOptions operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutConfigurationSetSuppressionOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConfigurationSetSuppressionOptionsResult> putConfigurationSetSuppressionOptionsAsync(
+            PutConfigurationSetSuppressionOptionsRequest putConfigurationSetSuppressionOptionsRequest);
+
+    /**
+     * <p>
+     * Specify your account's suppression preferences for a configuration set.
+     * </p>
+     * 
+     * @param putConfigurationSetSuppressionOptionsRequest
+     *        A request to change your account's suppression preferences for an specific configuration set.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutConfigurationSetSuppressionOptions operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutConfigurationSetSuppressionOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConfigurationSetSuppressionOptionsResult> putConfigurationSetSuppressionOptionsAsync(
+            PutConfigurationSetSuppressionOptionsRequest putConfigurationSetSuppressionOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationSetSuppressionOptionsRequest, PutConfigurationSetSuppressionOptionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1656,6 +1833,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<PutEmailIdentityMailFromAttributesResult> putEmailIdentityMailFromAttributesAsync(
             PutEmailIdentityMailFromAttributesRequest putEmailIdentityMailFromAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<PutEmailIdentityMailFromAttributesRequest, PutEmailIdentityMailFromAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts (overwrites) an email destination in your suppression list.
+     * </p>
+     * 
+     * @param putSuppressedDestinationRequest
+     *        A request to suppress an email destination.
+     * @return A Java Future containing the result of the PutSuppressedDestination operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutSuppressedDestinationResult> putSuppressedDestinationAsync(PutSuppressedDestinationRequest putSuppressedDestinationRequest);
+
+    /**
+     * <p>
+     * Puts (overwrites) an email destination in your suppression list.
+     * </p>
+     * 
+     * @param putSuppressedDestinationRequest
+     *        A request to suppress an email destination.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutSuppressedDestination operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutSuppressedDestinationResult> putSuppressedDestinationAsync(PutSuppressedDestinationRequest putSuppressedDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutSuppressedDestinationRequest, PutSuppressedDestinationResult> asyncHandler);
 
     /**
      * <p>

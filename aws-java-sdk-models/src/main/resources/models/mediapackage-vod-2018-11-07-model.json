@@ -806,6 +806,11 @@
           "locationName": "arn",
           "shape": "__string"
         },
+        "DomainName": {
+          "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
+          "locationName": "domainName",
+          "shape": "__string"
+        },
         "Id": {
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
@@ -1057,6 +1062,11 @@
         "Arn": {
           "documentation": "The ARN of the PackagingGroup.",
           "locationName": "arn",
+          "shape": "__string"
+        },
+        "DomainName": {
+          "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
+          "locationName": "domainName",
           "shape": "__string"
         },
         "Id": {
@@ -1477,6 +1487,11 @@
         "Arn": {
           "documentation": "The ARN of the PackagingGroup.",
           "locationName": "arn",
+          "shape": "__string"
+        },
+        "DomainName": {
+          "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
+          "locationName": "domainName",
           "shape": "__string"
         },
         "Id": {

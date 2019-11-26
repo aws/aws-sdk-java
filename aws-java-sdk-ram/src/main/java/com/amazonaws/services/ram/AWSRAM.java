@@ -122,6 +122,33 @@ public interface AWSRAM {
 
     /**
      * <p>
+     * Associates a permission with a resource share.
+     * </p>
+     * 
+     * @param associateResourceSharePermissionRequest
+     * @return Result of the AssociateResourceSharePermission operation returned by the service.
+     * @throws MalformedArnException
+     *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @throws InvalidClientTokenException
+     *         A client token is not valid.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @throws OperationNotPermittedException
+     *         The requested operation is not permitted.
+     * @sample AWSRAM.AssociateResourceSharePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateResourceSharePermissionResult associateResourceSharePermission(AssociateResourceSharePermissionRequest associateResourceSharePermissionRequest);
+
+    /**
+     * <p>
      * Creates a resource share.
      * </p>
      * 
@@ -224,6 +251,34 @@ public interface AWSRAM {
 
     /**
      * <p>
+     * Disassociates an AWS RAM permission from a resource share.
+     * </p>
+     * 
+     * @param disassociateResourceSharePermissionRequest
+     * @return Result of the DisassociateResourceSharePermission operation returned by the service.
+     * @throws MalformedArnException
+     *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @throws InvalidClientTokenException
+     *         A client token is not valid.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @throws OperationNotPermittedException
+     *         The requested operation is not permitted.
+     * @sample AWSRAM.DisassociateResourceSharePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateResourceSharePermissionResult disassociateResourceSharePermission(
+            DisassociateResourceSharePermissionRequest disassociateResourceSharePermissionRequest);
+
+    /**
+     * <p>
      * Enables resource sharing within your AWS Organization.
      * </p>
      * <p>
@@ -243,6 +298,31 @@ public interface AWSRAM {
      *      target="_top">AWS API Documentation</a>
      */
     EnableSharingWithAwsOrganizationResult enableSharingWithAwsOrganization(EnableSharingWithAwsOrganizationRequest enableSharingWithAwsOrganizationRequest);
+
+    /**
+     * <p>
+     * Gets the contents of an AWS RAM permission in JSON format.
+     * </p>
+     * 
+     * @param getPermissionRequest
+     * @return Result of the GetPermission operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @throws MalformedArnException
+     *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @throws OperationNotPermittedException
+     *         The requested operation is not permitted.
+     * @sample AWSRAM.GetPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPermissionResult getPermission(GetPermissionRequest getPermissionRequest);
 
     /**
      * <p>
@@ -379,7 +459,30 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Lists the principals that you have shared resources with or the principals that have shared resources with you.
+     * Lists the AWS RAM permissions.
+     * </p>
+     * 
+     * @param listPermissionsRequest
+     * @return Result of the ListPermissions operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @throws InvalidNextTokenException
+     *         The specified value for NextToken is not valid.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @throws OperationNotPermittedException
+     *         The requested operation is not permitted.
+     * @sample AWSRAM.ListPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListPermissionsResult listPermissions(ListPermissionsRequest listPermissionsRequest);
+
+    /**
+     * <p>
+     * Lists the principals that you have shared resources with or that have shared resources with you.
      * </p>
      * 
      * @param listPrincipalsRequest
@@ -401,6 +504,33 @@ public interface AWSRAM {
      *      Documentation</a>
      */
     ListPrincipalsResult listPrincipals(ListPrincipalsRequest listPrincipalsRequest);
+
+    /**
+     * <p>
+     * Lists the AWS RAM permissions that are associated with a resource share.
+     * </p>
+     * 
+     * @param listResourceSharePermissionsRequest
+     * @return Result of the ListResourceSharePermissions operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @throws MalformedArnException
+     *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
+     * @throws InvalidNextTokenException
+     *         The specified value for NextToken is not valid.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @throws OperationNotPermittedException
+     *         The requested operation is not permitted.
+     * @sample AWSRAM.ListResourceSharePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourceSharePermissionsResult listResourceSharePermissions(ListResourceSharePermissionsRequest listResourceSharePermissionsRequest);
 
     /**
      * <p>
@@ -428,6 +558,48 @@ public interface AWSRAM {
      *      Documentation</a>
      */
     ListResourcesResult listResources(ListResourcesRequest listResourcesRequest);
+
+    /**
+     * <p>
+     * Resource shares that were created by attaching a policy to a resource are visible only to the resource share
+     * owner, and the resource share cannot be modified in AWS RAM.
+     * </p>
+     * <p>
+     * Use this API action to promote the resource share. When you promote the resource share, it becomes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Visible to all principals that it is shared with.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifiable in AWS RAM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param promoteResourceShareCreatedFromPolicyRequest
+     * @return Result of the PromoteResourceShareCreatedFromPolicy operation returned by the service.
+     * @throws MalformedArnException
+     *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws OperationNotPermittedException
+     *         The requested operation is not permitted.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required input parameter is missing.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @sample AWSRAM.PromoteResourceShareCreatedFromPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PromoteResourceShareCreatedFromPolicyResult promoteResourceShareCreatedFromPolicy(
+            PromoteResourceShareCreatedFromPolicyRequest promoteResourceShareCreatedFromPolicyRequest);
 
     /**
      * <p>

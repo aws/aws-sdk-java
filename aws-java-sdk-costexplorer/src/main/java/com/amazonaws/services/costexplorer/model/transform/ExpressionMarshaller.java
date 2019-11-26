@@ -38,6 +38,8 @@ public class ExpressionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Dimensions").build();
     private static final MarshallingInfo<StructuredPojo> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> COSTCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CostCategories").build();
 
     private static final ExpressionMarshaller instance = new ExpressionMarshaller();
 
@@ -60,6 +62,7 @@ public class ExpressionMarshaller {
             protocolMarshaller.marshall(expression.getNot(), NOT_BINDING);
             protocolMarshaller.marshall(expression.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(expression.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(expression.getCostCategories(), COSTCATEGORIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

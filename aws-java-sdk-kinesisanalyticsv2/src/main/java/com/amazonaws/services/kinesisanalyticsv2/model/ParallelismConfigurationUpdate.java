@@ -32,13 +32,21 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service,
-     * or if a custom parallelism is used.
+     * or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your
+     * application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code>
+     * properties.
      * </p>
      */
     private String configurationTypeUpdate;
     /**
      * <p>
-     * Describes updates to the initial number of parallel tasks an application can perform.
+     * Describes updates to the initial number of parallel tasks an application can perform. If
+     * <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * <code>CurrentParallelism</code> value in response to application load. The service can increase
+     * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
+     * requesting a limit increase. If application load is reduced, the service will reduce
+     * <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.
      * </p>
      */
     private Integer parallelismUpdate;
@@ -60,12 +68,16 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service,
-     * or if a custom parallelism is used.
+     * or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your
+     * application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code>
+     * properties.
      * </p>
      * 
      * @param configurationTypeUpdate
      *        Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics
-     *        service, or if a custom parallelism is used.
+     *        service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to
+     *        change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     *        <code>ParallelismPerKPU</code> properties.
      * @see ConfigurationType
      */
 
@@ -76,11 +88,15 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service,
-     * or if a custom parallelism is used.
+     * or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your
+     * application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code>
+     * properties.
      * </p>
      * 
      * @return Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics
-     *         service, or if a custom parallelism is used.
+     *         service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order
+     *         to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     *         <code>ParallelismPerKPU</code> properties.
      * @see ConfigurationType
      */
 
@@ -91,12 +107,16 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service,
-     * or if a custom parallelism is used.
+     * or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your
+     * application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code>
+     * properties.
      * </p>
      * 
      * @param configurationTypeUpdate
      *        Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics
-     *        service, or if a custom parallelism is used.
+     *        service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to
+     *        change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     *        <code>ParallelismPerKPU</code> properties.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationType
      */
@@ -109,12 +129,16 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service,
-     * or if a custom parallelism is used.
+     * or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your
+     * application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code>
+     * properties.
      * </p>
      * 
      * @param configurationTypeUpdate
      *        Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics
-     *        service, or if a custom parallelism is used.
+     *        service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to
+     *        change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     *        <code>ParallelismPerKPU</code> properties.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationType
      */
@@ -126,11 +150,23 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the initial number of parallel tasks an application can perform.
+     * Describes updates to the initial number of parallel tasks an application can perform. If
+     * <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * <code>CurrentParallelism</code> value in response to application load. The service can increase
+     * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
+     * requesting a limit increase. If application load is reduced, the service will reduce
+     * <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @param parallelismUpdate
-     *        Describes updates to the initial number of parallel tasks an application can perform.
+     *        Describes updates to the initial number of parallel tasks an application can perform. If
+     *        <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     *        <code>CurrentParallelism</code> value in response to application load. The service can increase
+     *        <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
+     *        times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
+     *        be increased by requesting a limit increase. If application load is reduced, the service will reduce
+     *        <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.
      */
 
     public void setParallelismUpdate(Integer parallelismUpdate) {
@@ -139,10 +175,22 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the initial number of parallel tasks an application can perform.
+     * Describes updates to the initial number of parallel tasks an application can perform. If
+     * <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * <code>CurrentParallelism</code> value in response to application load. The service can increase
+     * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
+     * requesting a limit increase. If application load is reduced, the service will reduce
+     * <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.
      * </p>
      * 
-     * @return Describes updates to the initial number of parallel tasks an application can perform.
+     * @return Describes updates to the initial number of parallel tasks an application can perform. If
+     *         <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     *         <code>CurrentParallelism</code> value in response to application load. The service can increase
+     *         <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
+     *         times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
+     *         be increased by requesting a limit increase. If application load is reduced, the service will reduce
+     *         <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.
      */
 
     public Integer getParallelismUpdate() {
@@ -151,11 +199,23 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the initial number of parallel tasks an application can perform.
+     * Describes updates to the initial number of parallel tasks an application can perform. If
+     * <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * <code>CurrentParallelism</code> value in response to application load. The service can increase
+     * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
+     * requesting a limit increase. If application load is reduced, the service will reduce
+     * <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @param parallelismUpdate
-     *        Describes updates to the initial number of parallel tasks an application can perform.
+     *        Describes updates to the initial number of parallel tasks an application can perform. If
+     *        <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     *        <code>CurrentParallelism</code> value in response to application load. The service can increase
+     *        <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
+     *        times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
+     *        be increased by requesting a limit increase. If application load is reduced, the service will reduce
+     *        <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

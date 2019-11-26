@@ -33,6 +33,8 @@ public class M3u8SettingsMarshaller {
             .marshallLocationName("audioPids").build();
     private static final MarshallingInfo<String> ECMPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ecmPid").build();
+    private static final MarshallingInfo<String> NIELSENID3BEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenId3Behavior").build();
     private static final MarshallingInfo<Integer> PATINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("patInterval").build();
     private static final MarshallingInfo<String> PCRCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +81,7 @@ public class M3u8SettingsMarshaller {
             protocolMarshaller.marshall(m3u8Settings.getAudioFramesPerPes(), AUDIOFRAMESPERPES_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getAudioPids(), AUDIOPIDS_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getEcmPid(), ECMPID_BINDING);
+            protocolMarshaller.marshall(m3u8Settings.getNielsenId3Behavior(), NIELSENID3BEHAVIOR_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getPatInterval(), PATINTERVAL_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getPcrControl(), PCRCONTROL_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getPcrPeriod(), PCRPERIOD_BINDING);

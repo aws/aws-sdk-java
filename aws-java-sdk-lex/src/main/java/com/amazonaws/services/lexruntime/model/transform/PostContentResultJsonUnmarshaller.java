@@ -73,6 +73,10 @@ public class PostContentResultJsonUnmarshaller implements Unmarshaller<PostConte
                 context.setCurrentHeader("x-amz-lex-input-transcript");
                 postContentResult.setInputTranscript(context.getUnmarshaller(String.class).unmarshall(context));
             }
+            if (context.getHeader("x-amz-lex-session-id") != null) {
+                context.setCurrentHeader("x-amz-lex-session-id");
+                postContentResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
+            }
         }
 
         postContentResult.setAudioStream(context.getHttpResponse().getContent());

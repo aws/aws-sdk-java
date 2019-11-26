@@ -36,7 +36,7 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The value of a tag. Tag values are case-sensitive and can be null.
+     * The value of a tag. Tag values are case sensitive and can be null.
      * </p>
      */
     private String value;
@@ -83,11 +83,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of a tag. Tag values are case-sensitive and can be null.
+     * The value of a tag. Tag values are case sensitive and can be null.
      * </p>
      * 
      * @param value
-     *        The value of a tag. Tag values are case-sensitive and can be null.
+     *        The value of a tag. Tag values are case sensitive and can be null.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of a tag. Tag values are case-sensitive and can be null.
+     * The value of a tag. Tag values are case sensitive and can be null.
      * </p>
      * 
-     * @return The value of a tag. Tag values are case-sensitive and can be null.
+     * @return The value of a tag. Tag values are case sensitive and can be null.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of a tag. Tag values are case-sensitive and can be null.
+     * The value of a tag. Tag values are case sensitive and can be null.
      * </p>
      * 
      * @param value
-     *        The value of a tag. Tag values are case-sensitive and can be null.
+     *        The value of a tag. Tag values are case sensitive and can be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

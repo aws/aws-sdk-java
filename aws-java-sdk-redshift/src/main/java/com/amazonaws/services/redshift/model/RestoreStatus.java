@@ -36,32 +36,35 @@ public class RestoreStatus implements Serializable, Cloneable {
     /**
      * <p>
      * The number of megabytes per second being transferred from the backup storage. Returns the average rate for a
-     * completed backup.
+     * completed backup. This field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      */
     private Double currentRestoreRateInMegaBytesPerSecond;
     /**
      * <p>
-     * The size of the set of snapshot data used to restore the cluster.
+     * The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to
+     * DC2 and DS2 node types.
      * </p>
      */
     private Long snapshotSizeInMegaBytes;
     /**
      * <p>
-     * The number of megabytes that have been transferred from snapshot storage.
+     * The number of megabytes that have been transferred from snapshot storage. This field is only updated when you
+     * restore to DC2 and DS2 node types.
      * </p>
      */
     private Long progressInMegaBytes;
     /**
      * <p>
      * The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to
-     * finish.
+     * finish. This field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      */
     private Long elapsedTimeInSeconds;
     /**
      * <p>
-     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This
+     * field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      */
     private Long estimatedTimeToCompletionInSeconds;
@@ -109,12 +112,12 @@ public class RestoreStatus implements Serializable, Cloneable {
     /**
      * <p>
      * The number of megabytes per second being transferred from the backup storage. Returns the average rate for a
-     * completed backup.
+     * completed backup. This field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @param currentRestoreRateInMegaBytesPerSecond
      *        The number of megabytes per second being transferred from the backup storage. Returns the average rate for
-     *        a completed backup.
+     *        a completed backup. This field is only updated when you restore to DC2 and DS2 node types.
      */
 
     public void setCurrentRestoreRateInMegaBytesPerSecond(Double currentRestoreRateInMegaBytesPerSecond) {
@@ -124,11 +127,11 @@ public class RestoreStatus implements Serializable, Cloneable {
     /**
      * <p>
      * The number of megabytes per second being transferred from the backup storage. Returns the average rate for a
-     * completed backup.
+     * completed backup. This field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @return The number of megabytes per second being transferred from the backup storage. Returns the average rate
-     *         for a completed backup.
+     *         for a completed backup. This field is only updated when you restore to DC2 and DS2 node types.
      */
 
     public Double getCurrentRestoreRateInMegaBytesPerSecond() {
@@ -138,12 +141,12 @@ public class RestoreStatus implements Serializable, Cloneable {
     /**
      * <p>
      * The number of megabytes per second being transferred from the backup storage. Returns the average rate for a
-     * completed backup.
+     * completed backup. This field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @param currentRestoreRateInMegaBytesPerSecond
      *        The number of megabytes per second being transferred from the backup storage. Returns the average rate for
-     *        a completed backup.
+     *        a completed backup. This field is only updated when you restore to DC2 and DS2 node types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +157,13 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size of the set of snapshot data used to restore the cluster.
+     * The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to
+     * DC2 and DS2 node types.
      * </p>
      * 
      * @param snapshotSizeInMegaBytes
-     *        The size of the set of snapshot data used to restore the cluster.
+     *        The size of the set of snapshot data used to restore the cluster. This field is only updated when you
+     *        restore to DC2 and DS2 node types.
      */
 
     public void setSnapshotSizeInMegaBytes(Long snapshotSizeInMegaBytes) {
@@ -167,10 +172,12 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size of the set of snapshot data used to restore the cluster.
+     * The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to
+     * DC2 and DS2 node types.
      * </p>
      * 
-     * @return The size of the set of snapshot data used to restore the cluster.
+     * @return The size of the set of snapshot data used to restore the cluster. This field is only updated when you
+     *         restore to DC2 and DS2 node types.
      */
 
     public Long getSnapshotSizeInMegaBytes() {
@@ -179,11 +186,13 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size of the set of snapshot data used to restore the cluster.
+     * The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to
+     * DC2 and DS2 node types.
      * </p>
      * 
      * @param snapshotSizeInMegaBytes
-     *        The size of the set of snapshot data used to restore the cluster.
+     *        The size of the set of snapshot data used to restore the cluster. This field is only updated when you
+     *        restore to DC2 and DS2 node types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +203,13 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of megabytes that have been transferred from snapshot storage.
+     * The number of megabytes that have been transferred from snapshot storage. This field is only updated when you
+     * restore to DC2 and DS2 node types.
      * </p>
      * 
      * @param progressInMegaBytes
-     *        The number of megabytes that have been transferred from snapshot storage.
+     *        The number of megabytes that have been transferred from snapshot storage. This field is only updated when
+     *        you restore to DC2 and DS2 node types.
      */
 
     public void setProgressInMegaBytes(Long progressInMegaBytes) {
@@ -207,10 +218,12 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of megabytes that have been transferred from snapshot storage.
+     * The number of megabytes that have been transferred from snapshot storage. This field is only updated when you
+     * restore to DC2 and DS2 node types.
      * </p>
      * 
-     * @return The number of megabytes that have been transferred from snapshot storage.
+     * @return The number of megabytes that have been transferred from snapshot storage. This field is only updated when
+     *         you restore to DC2 and DS2 node types.
      */
 
     public Long getProgressInMegaBytes() {
@@ -219,11 +232,13 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of megabytes that have been transferred from snapshot storage.
+     * The number of megabytes that have been transferred from snapshot storage. This field is only updated when you
+     * restore to DC2 and DS2 node types.
      * </p>
      * 
      * @param progressInMegaBytes
-     *        The number of megabytes that have been transferred from snapshot storage.
+     *        The number of megabytes that have been transferred from snapshot storage. This field is only updated when
+     *        you restore to DC2 and DS2 node types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,12 +250,12 @@ public class RestoreStatus implements Serializable, Cloneable {
     /**
      * <p>
      * The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to
-     * finish.
+     * finish. This field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @param elapsedTimeInSeconds
      *        The amount of time an in-progress restore has been running, or the amount of time it took a completed
-     *        restore to finish.
+     *        restore to finish. This field is only updated when you restore to DC2 and DS2 node types.
      */
 
     public void setElapsedTimeInSeconds(Long elapsedTimeInSeconds) {
@@ -250,11 +265,11 @@ public class RestoreStatus implements Serializable, Cloneable {
     /**
      * <p>
      * The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to
-     * finish.
+     * finish. This field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @return The amount of time an in-progress restore has been running, or the amount of time it took a completed
-     *         restore to finish.
+     *         restore to finish. This field is only updated when you restore to DC2 and DS2 node types.
      */
 
     public Long getElapsedTimeInSeconds() {
@@ -264,12 +279,12 @@ public class RestoreStatus implements Serializable, Cloneable {
     /**
      * <p>
      * The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to
-     * finish.
+     * finish. This field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @param elapsedTimeInSeconds
      *        The amount of time an in-progress restore has been running, or the amount of time it took a completed
-     *        restore to finish.
+     *        restore to finish. This field is only updated when you restore to DC2 and DS2 node types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +295,13 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This
+     * field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @param estimatedTimeToCompletionInSeconds
      *        The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+     *        This field is only updated when you restore to DC2 and DS2 node types.
      */
 
     public void setEstimatedTimeToCompletionInSeconds(Long estimatedTimeToCompletionInSeconds) {
@@ -293,10 +310,12 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This
+     * field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @return The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+     *         This field is only updated when you restore to DC2 and DS2 node types.
      */
 
     public Long getEstimatedTimeToCompletionInSeconds() {
@@ -305,11 +324,13 @@ public class RestoreStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+     * The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This
+     * field is only updated when you restore to DC2 and DS2 node types.
      * </p>
      * 
      * @param estimatedTimeToCompletionInSeconds
      *        The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+     *        This field is only updated when you restore to DC2 and DS2 node types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

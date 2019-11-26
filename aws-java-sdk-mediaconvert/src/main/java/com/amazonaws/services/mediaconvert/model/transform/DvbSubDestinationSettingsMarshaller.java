@@ -55,6 +55,8 @@ public class DvbSubDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("shadowXOffset").build();
     private static final MarshallingInfo<Integer> SHADOWYOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("shadowYOffset").build();
+    private static final MarshallingInfo<String> SUBTITLINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subtitlingType").build();
     private static final MarshallingInfo<String> TELETEXTSPACING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("teletextSpacing").build();
     private static final MarshallingInfo<Integer> XPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -92,6 +94,7 @@ public class DvbSubDestinationSettingsMarshaller {
             protocolMarshaller.marshall(dvbSubDestinationSettings.getShadowOpacity(), SHADOWOPACITY_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getShadowXOffset(), SHADOWXOFFSET_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getShadowYOffset(), SHADOWYOFFSET_BINDING);
+            protocolMarshaller.marshall(dvbSubDestinationSettings.getSubtitlingType(), SUBTITLINGTYPE_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getTeletextSpacing(), TELETEXTSPACING_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getXPosition(), XPOSITION_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getYPosition(), YPOSITION_BINDING);

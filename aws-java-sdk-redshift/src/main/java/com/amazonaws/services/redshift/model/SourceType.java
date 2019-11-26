@@ -23,7 +23,8 @@ public enum SourceType {
     Cluster("cluster"),
     ClusterParameterGroup("cluster-parameter-group"),
     ClusterSecurityGroup("cluster-security-group"),
-    ClusterSnapshot("cluster-snapshot");
+    ClusterSnapshot("cluster-snapshot"),
+    ScheduledAction("scheduled-action");
 
     private String value;
 

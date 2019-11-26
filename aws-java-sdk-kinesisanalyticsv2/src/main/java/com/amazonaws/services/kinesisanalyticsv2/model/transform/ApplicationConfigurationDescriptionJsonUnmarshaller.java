@@ -79,6 +79,11 @@ public class ApplicationConfigurationDescriptionJsonUnmarshaller implements Unma
                             .setApplicationSnapshotConfigurationDescription(ApplicationSnapshotConfigurationDescriptionJsonUnmarshaller.getInstance()
                                     .unmarshall(context));
                 }
+                if (context.testExpression("VpcConfigurationDescriptions", targetDepth)) {
+                    context.nextToken();
+                    applicationConfigurationDescription.setVpcConfigurationDescriptions(new ListUnmarshaller<VpcConfigurationDescription>(
+                            VpcConfigurationDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

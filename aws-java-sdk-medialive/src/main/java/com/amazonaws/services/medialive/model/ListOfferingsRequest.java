@@ -36,6 +36,8 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String channelConfiguration;
     /** Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO' */
     private String codec;
+    /** Filter by offering duration, e.g. '12' */
+    private String duration;
 
     private Integer maxResults;
     /**
@@ -46,9 +48,9 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String maximumFramerate;
 
     private String nextToken;
-    /** Filter by resolution, 'SD', 'HD', or 'UHD' */
+    /** Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD' */
     private String resolution;
-    /** Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL' */
+    /** Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL' */
     private String resourceType;
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
@@ -158,6 +160,40 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public ListOfferingsRequest withCodec(String codec) {
         setCodec(codec);
+        return this;
+    }
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     * 
+     * @param duration
+     *        Filter by offering duration, e.g. '12'
+     */
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     * 
+     * @return Filter by offering duration, e.g. '12'
+     */
+
+    public String getDuration() {
+        return this.duration;
+    }
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     * 
+     * @param duration
+     *        Filter by offering duration, e.g. '12'
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListOfferingsRequest withDuration(String duration) {
+        setDuration(duration);
         return this;
     }
 
@@ -282,10 +318,10 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      * 
      * @param resolution
-     *        Filter by resolution, 'SD', 'HD', or 'UHD'
+     *        Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
 
     public void setResolution(String resolution) {
@@ -293,9 +329,9 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      * 
-     * @return Filter by resolution, 'SD', 'HD', or 'UHD'
+     * @return Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
 
     public String getResolution() {
@@ -303,10 +339,10 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      * 
      * @param resolution
-     *        Filter by resolution, 'SD', 'HD', or 'UHD'
+     *        Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,10 +352,10 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
      * @param resourceType
-     *        Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     *        Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
 
     public void setResourceType(String resourceType) {
@@ -327,9 +363,9 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
-     * @return Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * @return Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
 
     public String getResourceType() {
@@ -337,10 +373,10 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
      * @param resourceType
-     *        Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     *        Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,6 +471,8 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ChannelConfiguration: ").append(getChannelConfiguration()).append(",");
         if (getCodec() != null)
             sb.append("Codec: ").append(getCodec()).append(",");
+        if (getDuration() != null)
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getMaximumBitrate() != null)
@@ -476,6 +514,10 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getCodec() == null ^ this.getCodec() == null)
             return false;
         if (other.getCodec() != null && other.getCodec().equals(this.getCodec()) == false)
+            return false;
+        if (other.getDuration() == null ^ this.getDuration() == null)
+            return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -520,6 +562,7 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getChannelClass() == null) ? 0 : getChannelClass().hashCode());
         hashCode = prime * hashCode + ((getChannelConfiguration() == null) ? 0 : getChannelConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCodec() == null) ? 0 : getCodec().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getMaximumBitrate() == null) ? 0 : getMaximumBitrate().hashCode());
         hashCode = prime * hashCode + ((getMaximumFramerate() == null) ? 0 : getMaximumFramerate().hashCode());

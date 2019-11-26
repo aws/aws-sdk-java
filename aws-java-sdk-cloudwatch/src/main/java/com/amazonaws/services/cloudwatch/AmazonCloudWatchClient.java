@@ -283,15 +283,15 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     private void init() {
         exceptionUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidParameterCombinationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidFormatExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingRequiredParameterExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidParameterCombinationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DashboardNotFoundErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DashboardInvalidInputErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalServiceExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -470,6 +470,67 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeleteDashboardsResult> responseHandler = new StaxResponseHandler<DeleteDashboardsResult>(
                     new DeleteDashboardsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes the specified Contributor Insights rules.
+     * </p>
+     * <p>
+     * If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
+     * the rule was created may or may not be available.
+     * </p>
+     * 
+     * @param deleteInsightRulesRequest
+     * @return Result of the DeleteInsightRules operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @sample AmazonCloudWatch.DeleteInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteInsightRulesResult deleteInsightRules(DeleteInsightRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInsightRules(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInsightRulesResult executeDeleteInsightRules(DeleteInsightRulesRequest deleteInsightRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteInsightRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteInsightRulesRequest> request = null;
+        Response<DeleteInsightRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInsightRulesRequestMarshaller().marshall(super.beforeMarshalling(deleteInsightRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInsightRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteInsightRulesResult> responseHandler = new StaxResponseHandler<DeleteInsightRulesResult>(
+                    new DeleteInsightRulesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -721,6 +782,67 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Returns a list of all the Contributor Insights rules in your account. All rules in your account are returned with
+     * a single operation.
+     * </p>
+     * <p>
+     * For more information about Contributor Insights, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor
+     * Insights to Analyze High-Cardinality Data</a>.
+     * </p>
+     * 
+     * @param describeInsightRulesRequest
+     * @return Result of the DescribeInsightRules operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The next token specified is invalid.
+     * @sample AmazonCloudWatch.DescribeInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInsightRulesResult describeInsightRules(DescribeInsightRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInsightRules(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInsightRulesResult executeDescribeInsightRules(DescribeInsightRulesRequest describeInsightRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInsightRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInsightRulesRequest> request = null;
+        Response<DescribeInsightRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInsightRulesRequestMarshaller().marshall(super.beforeMarshalling(describeInsightRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInsightRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeInsightRulesResult> responseHandler = new StaxResponseHandler<DescribeInsightRulesResult>(
+                    new DescribeInsightRulesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables the actions for the specified alarms. When an alarm's actions are disabled, the alarm actions do not
      * execute when the alarm state changes.
      * </p>
@@ -775,6 +897,64 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Disables the specified Contributor Insights rules. When rules are disabled, they do not analyze log groups and do
+     * not incur costs.
+     * </p>
+     * 
+     * @param disableInsightRulesRequest
+     * @return Result of the DisableInsightRules operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @sample AmazonCloudWatch.DisableInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisableInsightRulesResult disableInsightRules(DisableInsightRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableInsightRules(request);
+    }
+
+    @SdkInternalApi
+    final DisableInsightRulesResult executeDisableInsightRules(DisableInsightRulesRequest disableInsightRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableInsightRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableInsightRulesRequest> request = null;
+        Response<DisableInsightRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableInsightRulesRequestMarshaller().marshall(super.beforeMarshalling(disableInsightRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableInsightRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableInsightRulesResult> responseHandler = new StaxResponseHandler<DisableInsightRulesResult>(
+                    new DisableInsightRulesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables the actions for the specified alarms.
      * </p>
      * 
@@ -816,6 +996,66 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<EnableAlarmActionsResult> responseHandler = new StaxResponseHandler<EnableAlarmActionsResult>(
                     new EnableAlarmActionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables the specified Contributor Insights rules. When rules are enabled, they immediately begin analyzing log
+     * data.
+     * </p>
+     * 
+     * @param enableInsightRulesRequest
+     * @return Result of the EnableInsightRules operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @throws LimitExceededException
+     *         The operation exceeded one or more limits.
+     * @sample AmazonCloudWatch.EnableInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EnableInsightRulesResult enableInsightRules(EnableInsightRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableInsightRules(request);
+    }
+
+    @SdkInternalApi
+    final EnableInsightRulesResult executeEnableInsightRules(EnableInsightRulesRequest enableInsightRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableInsightRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableInsightRulesRequest> request = null;
+        Response<EnableInsightRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableInsightRulesRequestMarshaller().marshall(super.beforeMarshalling(enableInsightRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableInsightRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableInsightRulesResult> responseHandler = new StaxResponseHandler<EnableInsightRulesResult>(
+                    new EnableInsightRulesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -891,8 +1131,119 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * This operation returns the time series data collected by a Contributor Insights rule. The data includes the
+     * identity and number of contributors to the log group.
+     * </p>
+     * <p>
+     * You can also optionally return one or more statistics about each data point in the time series. These statistics
+     * can include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UniqueContributors</code> -- the number of unique contributors for each data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
+     * contributor may change for each data point in the graph.
+     * </p>
+     * <p>
+     * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
+     * occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the
+     * highest sum in the log field specified by the rule's <code>Value</code>, during that period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> -- the number of data points matched by the rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data
+     * point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that
+     * data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that
+     * data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> -- the average value from all contributors during the time period represented by that data
+     * point.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getInsightRuleReportRequest
+     * @return Result of the GetInsightRuleReport operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @throws ResourceNotFoundException
+     *         The named resource does not exist.
+     * @sample AmazonCloudWatch.GetInsightRuleReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetInsightRuleReportResult getInsightRuleReport(GetInsightRuleReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInsightRuleReport(request);
+    }
+
+    @SdkInternalApi
+    final GetInsightRuleReportResult executeGetInsightRuleReport(GetInsightRuleReportRequest getInsightRuleReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getInsightRuleReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetInsightRuleReportRequest> request = null;
+        Response<GetInsightRuleReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetInsightRuleReportRequestMarshaller().marshall(super.beforeMarshalling(getInsightRuleReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsightRuleReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetInsightRuleReportResult> responseHandler = new StaxResponseHandler<GetInsightRuleReportResult>(
+                    new GetInsightRuleReportResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * You can use the <code>GetMetricData</code> API to retrieve as many as 100 different metrics in a single request,
-     * with a total of as many as 100,800 datapoints. You can also optionally perform math expressions on the values of
+     * with a total of as many as 100,800 data points. You can also optionally perform math expressions on the values of
      * the returned statistics, to create new time series that represent new insights into your data. For example, using
      * Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series.
      * For more information about metric math expressions, see <a
@@ -1536,6 +1887,72 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs log group, enabling you to
+     * find contributor data for the log events in that log group. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor
+     * Insights to Analyze High-Cardinality Data</a>.
+     * </p>
+     * <p>
+     * If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
+     * the rule was created may or may not be available.
+     * </p>
+     * 
+     * @param putInsightRuleRequest
+     * @return Result of the PutInsightRule operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @throws LimitExceededException
+     *         The operation exceeded one or more limits.
+     * @sample AmazonCloudWatch.PutInsightRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutInsightRuleResult putInsightRule(PutInsightRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executePutInsightRule(request);
+    }
+
+    @SdkInternalApi
+    final PutInsightRuleResult executePutInsightRule(PutInsightRuleRequest putInsightRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putInsightRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutInsightRuleRequest> request = null;
+        Response<PutInsightRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutInsightRuleRequestMarshaller().marshall(super.beforeMarshalling(putInsightRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutInsightRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutInsightRuleResult> responseHandler = new StaxResponseHandler<PutInsightRuleResult>(
+                    new PutInsightRuleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly
      * detection model.
      * </p>
@@ -1673,9 +2090,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values
-     * that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
-     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not
-     * supported.
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special
+     * values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
      * <p>
      * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension

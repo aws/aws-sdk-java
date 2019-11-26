@@ -30,7 +30,9 @@ public enum MetricType {
     EC2SpotFleetRequestAverageNetworkOut("EC2SpotFleetRequestAverageNetworkOut"),
     SageMakerVariantInvocationsPerInstance("SageMakerVariantInvocationsPerInstance"),
     ECSServiceAverageCPUUtilization("ECSServiceAverageCPUUtilization"),
-    ECSServiceAverageMemoryUtilization("ECSServiceAverageMemoryUtilization");
+    ECSServiceAverageMemoryUtilization("ECSServiceAverageMemoryUtilization"),
+    AppStreamAverageCapacityUtilization("AppStreamAverageCapacityUtilization"),
+    ComprehendInferenceUtilization("ComprehendInferenceUtilization");
 
     private String value;
 

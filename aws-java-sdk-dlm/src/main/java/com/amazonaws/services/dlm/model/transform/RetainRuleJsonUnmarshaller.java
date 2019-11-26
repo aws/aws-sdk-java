@@ -52,6 +52,14 @@ public class RetainRuleJsonUnmarshaller implements Unmarshaller<RetainRule, Json
                     context.nextToken();
                     retainRule.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Interval", targetDepth)) {
+                    context.nextToken();
+                    retainRule.setInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("IntervalUnit", targetDepth)) {
+                    context.nextToken();
+                    retainRule.setIntervalUnit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

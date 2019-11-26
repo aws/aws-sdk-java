@@ -40,8 +40,18 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
      * </p>
      */
     private Integer batchSize;
-
+    /**
+     * <p>
+     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * </p>
+     */
     private Integer maximumBatchingWindowInSeconds;
+    /**
+     * <p>
+     * (Streams) The number of batches to process from each shard concurrently.
+     * </p>
+     */
+    private Integer parallelizationFactor;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the event source.
@@ -56,7 +66,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private String functionArn;
     /**
      * <p>
-     * The date that the event source mapping was last updated.
+     * The date that the event source mapping was last updated, or its state changed.
      * </p>
      */
     private java.util.Date lastModified;
@@ -76,10 +86,34 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private String state;
     /**
      * <p>
-     * The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
+     * Indicates whether the last change to the event source mapping was made by a user, or by the Lambda service.
      * </p>
      */
     private String stateTransitionReason;
+    /**
+     * <p>
+     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * </p>
+     */
+    private DestinationConfig destinationConfig;
+    /**
+     * <p>
+     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * </p>
+     */
+    private Integer maximumRecordAgeInSeconds;
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     */
+    private Boolean bisectBatchOnFunctionError;
+    /**
+     * <p>
+     * (Streams) The maximum number of times to retry when the function returns an error.
+     * </p>
+     */
+    private Integer maximumRetryAttempts;
 
     /**
      * <p>
@@ -162,7 +196,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * </p>
+     * 
      * @param maximumBatchingWindowInSeconds
+     *        The maximum amount of time to gather records before invoking the function, in seconds.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -170,7 +209,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * </p>
+     * 
+     * @return The maximum amount of time to gather records before invoking the function, in seconds.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -178,12 +221,57 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * </p>
+     * 
      * @param maximumBatchingWindowInSeconds
+     *        The maximum amount of time to gather records before invoking the function, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSourceMappingConfiguration withMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
         setMaximumBatchingWindowInSeconds(maximumBatchingWindowInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) The number of batches to process from each shard concurrently.
+     * </p>
+     * 
+     * @param parallelizationFactor
+     *        (Streams) The number of batches to process from each shard concurrently.
+     */
+
+    public void setParallelizationFactor(Integer parallelizationFactor) {
+        this.parallelizationFactor = parallelizationFactor;
+    }
+
+    /**
+     * <p>
+     * (Streams) The number of batches to process from each shard concurrently.
+     * </p>
+     * 
+     * @return (Streams) The number of batches to process from each shard concurrently.
+     */
+
+    public Integer getParallelizationFactor() {
+        return this.parallelizationFactor;
+    }
+
+    /**
+     * <p>
+     * (Streams) The number of batches to process from each shard concurrently.
+     * </p>
+     * 
+     * @param parallelizationFactor
+     *        (Streams) The number of batches to process from each shard concurrently.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withParallelizationFactor(Integer parallelizationFactor) {
+        setParallelizationFactor(parallelizationFactor);
         return this;
     }
 
@@ -269,11 +357,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The date that the event source mapping was last updated.
+     * The date that the event source mapping was last updated, or its state changed.
      * </p>
      * 
      * @param lastModified
-     *        The date that the event source mapping was last updated.
+     *        The date that the event source mapping was last updated, or its state changed.
      */
 
     public void setLastModified(java.util.Date lastModified) {
@@ -282,10 +370,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The date that the event source mapping was last updated.
+     * The date that the event source mapping was last updated, or its state changed.
      * </p>
      * 
-     * @return The date that the event source mapping was last updated.
+     * @return The date that the event source mapping was last updated, or its state changed.
      */
 
     public java.util.Date getLastModified() {
@@ -294,11 +382,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The date that the event source mapping was last updated.
+     * The date that the event source mapping was last updated, or its state changed.
      * </p>
      * 
      * @param lastModified
-     *        The date that the event source mapping was last updated.
+     *        The date that the event source mapping was last updated, or its state changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,11 +489,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
+     * Indicates whether the last change to the event source mapping was made by a user, or by the Lambda service.
      * </p>
      * 
      * @param stateTransitionReason
-     *        The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
+     *        Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
+     *        service.
      */
 
     public void setStateTransitionReason(String stateTransitionReason) {
@@ -414,10 +503,11 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
+     * Indicates whether the last change to the event source mapping was made by a user, or by the Lambda service.
      * </p>
      * 
-     * @return The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
+     * @return Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
+     *         service.
      */
 
     public String getStateTransitionReason() {
@@ -426,16 +516,189 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
+     * Indicates whether the last change to the event source mapping was made by a user, or by the Lambda service.
      * </p>
      * 
      * @param stateTransitionReason
-     *        The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
+     *        Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
+     *        service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EventSourceMappingConfiguration withStateTransitionReason(String stateTransitionReason) {
         setStateTransitionReason(stateTransitionReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * </p>
+     * 
+     * @param destinationConfig
+     *        (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     */
+
+    public void setDestinationConfig(DestinationConfig destinationConfig) {
+        this.destinationConfig = destinationConfig;
+    }
+
+    /**
+     * <p>
+     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * </p>
+     * 
+     * @return (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     */
+
+    public DestinationConfig getDestinationConfig() {
+        return this.destinationConfig;
+    }
+
+    /**
+     * <p>
+     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * </p>
+     * 
+     * @param destinationConfig
+     *        (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withDestinationConfig(DestinationConfig destinationConfig) {
+        setDestinationConfig(destinationConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * </p>
+     * 
+     * @param maximumRecordAgeInSeconds
+     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     */
+
+    public void setMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
+        this.maximumRecordAgeInSeconds = maximumRecordAgeInSeconds;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * </p>
+     * 
+     * @return (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     */
+
+    public Integer getMaximumRecordAgeInSeconds() {
+        return this.maximumRecordAgeInSeconds;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * </p>
+     * 
+     * @param maximumRecordAgeInSeconds
+     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
+        setMaximumRecordAgeInSeconds(maximumRecordAgeInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     * 
+     * @param bisectBatchOnFunctionError
+     *        (Streams) If the function returns an error, split the batch in two and retry.
+     */
+
+    public void setBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
+        this.bisectBatchOnFunctionError = bisectBatchOnFunctionError;
+    }
+
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     * 
+     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     */
+
+    public Boolean getBisectBatchOnFunctionError() {
+        return this.bisectBatchOnFunctionError;
+    }
+
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     * 
+     * @param bisectBatchOnFunctionError
+     *        (Streams) If the function returns an error, split the batch in two and retry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
+        setBisectBatchOnFunctionError(bisectBatchOnFunctionError);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     * 
+     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     */
+
+    public Boolean isBisectBatchOnFunctionError() {
+        return this.bisectBatchOnFunctionError;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum number of times to retry when the function returns an error.
+     * </p>
+     * 
+     * @param maximumRetryAttempts
+     *        (Streams) The maximum number of times to retry when the function returns an error.
+     */
+
+    public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
+        this.maximumRetryAttempts = maximumRetryAttempts;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum number of times to retry when the function returns an error.
+     * </p>
+     * 
+     * @return (Streams) The maximum number of times to retry when the function returns an error.
+     */
+
+    public Integer getMaximumRetryAttempts() {
+        return this.maximumRetryAttempts;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum number of times to retry when the function returns an error.
+     * </p>
+     * 
+     * @param maximumRetryAttempts
+     *        (Streams) The maximum number of times to retry when the function returns an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withMaximumRetryAttempts(Integer maximumRetryAttempts) {
+        setMaximumRetryAttempts(maximumRetryAttempts);
         return this;
     }
 
@@ -457,6 +720,8 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
             sb.append("BatchSize: ").append(getBatchSize()).append(",");
         if (getMaximumBatchingWindowInSeconds() != null)
             sb.append("MaximumBatchingWindowInSeconds: ").append(getMaximumBatchingWindowInSeconds()).append(",");
+        if (getParallelizationFactor() != null)
+            sb.append("ParallelizationFactor: ").append(getParallelizationFactor()).append(",");
         if (getEventSourceArn() != null)
             sb.append("EventSourceArn: ").append(getEventSourceArn()).append(",");
         if (getFunctionArn() != null)
@@ -468,7 +733,15 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStateTransitionReason() != null)
-            sb.append("StateTransitionReason: ").append(getStateTransitionReason());
+            sb.append("StateTransitionReason: ").append(getStateTransitionReason()).append(",");
+        if (getDestinationConfig() != null)
+            sb.append("DestinationConfig: ").append(getDestinationConfig()).append(",");
+        if (getMaximumRecordAgeInSeconds() != null)
+            sb.append("MaximumRecordAgeInSeconds: ").append(getMaximumRecordAgeInSeconds()).append(",");
+        if (getBisectBatchOnFunctionError() != null)
+            sb.append("BisectBatchOnFunctionError: ").append(getBisectBatchOnFunctionError()).append(",");
+        if (getMaximumRetryAttempts() != null)
+            sb.append("MaximumRetryAttempts: ").append(getMaximumRetryAttempts());
         sb.append("}");
         return sb.toString();
     }
@@ -496,6 +769,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
         if (other.getMaximumBatchingWindowInSeconds() != null
                 && other.getMaximumBatchingWindowInSeconds().equals(this.getMaximumBatchingWindowInSeconds()) == false)
             return false;
+        if (other.getParallelizationFactor() == null ^ this.getParallelizationFactor() == null)
+            return false;
+        if (other.getParallelizationFactor() != null && other.getParallelizationFactor().equals(this.getParallelizationFactor()) == false)
+            return false;
         if (other.getEventSourceArn() == null ^ this.getEventSourceArn() == null)
             return false;
         if (other.getEventSourceArn() != null && other.getEventSourceArn().equals(this.getEventSourceArn()) == false)
@@ -520,6 +797,22 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
             return false;
         if (other.getStateTransitionReason() != null && other.getStateTransitionReason().equals(this.getStateTransitionReason()) == false)
             return false;
+        if (other.getDestinationConfig() == null ^ this.getDestinationConfig() == null)
+            return false;
+        if (other.getDestinationConfig() != null && other.getDestinationConfig().equals(this.getDestinationConfig()) == false)
+            return false;
+        if (other.getMaximumRecordAgeInSeconds() == null ^ this.getMaximumRecordAgeInSeconds() == null)
+            return false;
+        if (other.getMaximumRecordAgeInSeconds() != null && other.getMaximumRecordAgeInSeconds().equals(this.getMaximumRecordAgeInSeconds()) == false)
+            return false;
+        if (other.getBisectBatchOnFunctionError() == null ^ this.getBisectBatchOnFunctionError() == null)
+            return false;
+        if (other.getBisectBatchOnFunctionError() != null && other.getBisectBatchOnFunctionError().equals(this.getBisectBatchOnFunctionError()) == false)
+            return false;
+        if (other.getMaximumRetryAttempts() == null ^ this.getMaximumRetryAttempts() == null)
+            return false;
+        if (other.getMaximumRetryAttempts() != null && other.getMaximumRetryAttempts().equals(this.getMaximumRetryAttempts()) == false)
+            return false;
         return true;
     }
 
@@ -531,12 +824,17 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getUUID() == null) ? 0 : getUUID().hashCode());
         hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
         hashCode = prime * hashCode + ((getMaximumBatchingWindowInSeconds() == null) ? 0 : getMaximumBatchingWindowInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getParallelizationFactor() == null) ? 0 : getParallelizationFactor().hashCode());
         hashCode = prime * hashCode + ((getEventSourceArn() == null) ? 0 : getEventSourceArn().hashCode());
         hashCode = prime * hashCode + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode());
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
         hashCode = prime * hashCode + ((getLastProcessingResult() == null) ? 0 : getLastProcessingResult().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStateTransitionReason() == null) ? 0 : getStateTransitionReason().hashCode());
+        hashCode = prime * hashCode + ((getDestinationConfig() == null) ? 0 : getDestinationConfig().hashCode());
+        hashCode = prime * hashCode + ((getMaximumRecordAgeInSeconds() == null) ? 0 : getMaximumRecordAgeInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getBisectBatchOnFunctionError() == null) ? 0 : getBisectBatchOnFunctionError().hashCode());
+        hashCode = prime * hashCode + ((getMaximumRetryAttempts() == null) ? 0 : getMaximumRetryAttempts().hashCode());
         return hashCode;
     }
 

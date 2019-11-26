@@ -81,6 +81,10 @@ public class AuthorizerDescriptionJsonUnmarshaller implements Unmarshaller<Autho
                     context.nextToken();
                     authorizerDescription.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("signingDisabled", targetDepth)) {
+                    context.nextToken();
+                    authorizerDescription.setSigningDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

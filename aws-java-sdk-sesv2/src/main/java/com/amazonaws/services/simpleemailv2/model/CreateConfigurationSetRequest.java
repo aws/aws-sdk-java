@@ -67,6 +67,8 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
      */
     private java.util.List<Tag> tags;
 
+    private SuppressionOptions suppressionOptions;
+
     /**
      * <p>
      * The name of the configuration set.
@@ -358,6 +360,32 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * @param suppressionOptions
+     */
+
+    public void setSuppressionOptions(SuppressionOptions suppressionOptions) {
+        this.suppressionOptions = suppressionOptions;
+    }
+
+    /**
+     * @return
+     */
+
+    public SuppressionOptions getSuppressionOptions() {
+        return this.suppressionOptions;
+    }
+
+    /**
+     * @param suppressionOptions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationSetRequest withSuppressionOptions(SuppressionOptions suppressionOptions) {
+        setSuppressionOptions(suppressionOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -380,7 +408,9 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
         if (getSendingOptions() != null)
             sb.append("SendingOptions: ").append(getSendingOptions()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSuppressionOptions() != null)
+            sb.append("SuppressionOptions: ").append(getSuppressionOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +449,10 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSuppressionOptions() == null ^ this.getSuppressionOptions() == null)
+            return false;
+        if (other.getSuppressionOptions() != null && other.getSuppressionOptions().equals(this.getSuppressionOptions()) == false)
+            return false;
         return true;
     }
 
@@ -433,6 +467,7 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getReputationOptions() == null) ? 0 : getReputationOptions().hashCode());
         hashCode = prime * hashCode + ((getSendingOptions() == null) ? 0 : getSendingOptions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSuppressionOptions() == null) ? 0 : getSuppressionOptions().hashCode());
         return hashCode;
     }
 

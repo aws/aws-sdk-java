@@ -26,14 +26,14 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     * Otherwise, it is not encoded.
+     * Otherwise, it is not Base64-encoded.
      * </p>
      */
     private java.nio.ByteBuffer ciphertextBlob;
     /**
      * <p>
      * The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as
+     * not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as
      * possible.
      * </p>
      */
@@ -48,7 +48,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     * Otherwise, it is not encoded.
+     * Otherwise, it is not Base64-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -63,7 +63,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param ciphertextBlob
      *        The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     *        Otherwise, it is not encoded.
+     *        Otherwise, it is not Base64-encoded.
      */
 
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
@@ -73,7 +73,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     * Otherwise, it is not encoded.
+     * Otherwise, it is not Base64-encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -84,7 +84,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @return The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is
-     *         Base64-encoded. Otherwise, it is not encoded.
+     *         Base64-encoded. Otherwise, it is not Base64-encoded.
      */
 
     public java.nio.ByteBuffer getCiphertextBlob() {
@@ -94,7 +94,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     * Otherwise, it is not encoded.
+     * Otherwise, it is not Base64-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -109,7 +109,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param ciphertextBlob
      *        The encrypted copy of the data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     *        Otherwise, it is not encoded.
+     *        Otherwise, it is not Base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,7 +121,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as
+     * not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as
      * possible.
      * </p>
      * <p>
@@ -137,8 +137,8 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param plaintext
      *        The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *        it is not encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as
-     *        soon as possible.
+     *        it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from
+     *        memory as soon as possible.
      */
 
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
@@ -148,7 +148,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as
+     * not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as
      * possible.
      * </p>
      * <p>
@@ -160,8 +160,8 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @return The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *         it is not encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as
-     *         soon as possible.
+     *         it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from
+     *         memory as soon as possible.
      */
 
     public java.nio.ByteBuffer getPlaintext() {
@@ -171,7 +171,7 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as
+     * not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as
      * possible.
      * </p>
      * <p>
@@ -187,8 +187,8 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param plaintext
      *        The plaintext data key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *        it is not encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as
-     *        soon as possible.
+     *        it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from
+     *        memory as soon as possible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

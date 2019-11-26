@@ -536,6 +536,88 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Adds a Virtual Private Cloud (VPC) configuration to the application. Applications can use VPCs to store and
+     * access resources securely.
+     * </p>
+     * <p>
+     * Note the following about VPC configurations for Kinesis Data Analytics applications:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VPC configurations are not supported for SQL applications.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a VPC is added to a Kinesis Data Analytics application, the application can no longer be accessed from the
+     * Internet directly. To enable Internet access to the application, add an Internet gateway to your VPC.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param addApplicationVpcConfigurationRequest
+     * @return Result of the AddApplicationVpcConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @sample AmazonKinesisAnalyticsV2.AddApplicationVpcConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AddApplicationVpcConfigurationResult addApplicationVpcConfiguration(AddApplicationVpcConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddApplicationVpcConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final AddApplicationVpcConfigurationResult executeAddApplicationVpcConfiguration(AddApplicationVpcConfigurationRequest addApplicationVpcConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addApplicationVpcConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddApplicationVpcConfigurationRequest> request = null;
+        Response<AddApplicationVpcConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddApplicationVpcConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(addApplicationVpcConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationVpcConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddApplicationVpcConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AddApplicationVpcConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
      * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
      * an Application</a>.
@@ -1089,6 +1171,72 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Removes a VPC configuration from a Kinesis Data Analytics application.
+     * </p>
+     * 
+     * @param deleteApplicationVpcConfigurationRequest
+     * @return Result of the DeleteApplicationVpcConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @sample AmazonKinesisAnalyticsV2.DeleteApplicationVpcConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteApplicationVpcConfigurationResult deleteApplicationVpcConfiguration(DeleteApplicationVpcConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationVpcConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationVpcConfigurationResult executeDeleteApplicationVpcConfiguration(
+            DeleteApplicationVpcConfigurationRequest deleteApplicationVpcConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationVpcConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationVpcConfigurationRequest> request = null;
+        Response<DeleteApplicationVpcConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationVpcConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteApplicationVpcConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationVpcConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApplicationVpcConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteApplicationVpcConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a specific Amazon Kinesis Data Analytics application.
      * </p>
      * <p>
@@ -1407,7 +1555,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Retrieves the list of key-value tags assigned to the application.
+     * Retrieves the list of key-value tags assigned to the application. For more information, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1596,7 +1745,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
     /**
      * <p>
      * Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application
-     * tags includes system tags. The maximum number of user-defined application tags is 50.
+     * tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see
+     * <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1662,7 +1812,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Removes one or more tags from a Kinesis Analytics application.
+     * Removes one or more tags from a Kinesis Analytics application. For more information, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.
      * </p>
      * 
      * @param untagResourceRequest

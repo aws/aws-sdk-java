@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kinesisanalyticsv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -40,6 +41,8 @@ public class ApplicationConfigurationDescriptionMarshaller {
     private static final MarshallingInfo<StructuredPojo> APPLICATIONSNAPSHOTCONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationSnapshotConfigurationDescription")
             .build();
+    private static final MarshallingInfo<List> VPCCONFIGURATIONDESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfigurationDescriptions").build();
 
     private static final ApplicationConfigurationDescriptionMarshaller instance = new ApplicationConfigurationDescriptionMarshaller();
 
@@ -67,6 +70,7 @@ public class ApplicationConfigurationDescriptionMarshaller {
             protocolMarshaller.marshall(applicationConfigurationDescription.getEnvironmentPropertyDescriptions(), ENVIRONMENTPROPERTYDESCRIPTIONS_BINDING);
             protocolMarshaller.marshall(applicationConfigurationDescription.getApplicationSnapshotConfigurationDescription(),
                     APPLICATIONSNAPSHOTCONFIGURATIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(applicationConfigurationDescription.getVpcConfigurationDescriptions(), VPCCONFIGURATIONDESCRIPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

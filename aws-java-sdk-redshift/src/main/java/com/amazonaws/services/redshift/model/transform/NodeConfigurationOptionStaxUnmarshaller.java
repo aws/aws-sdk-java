@@ -57,6 +57,11 @@ public class NodeConfigurationOptionStaxUnmarshaller implements Unmarshaller<Nod
                     nodeConfigurationOption.setEstimatedDiskUtilizationPercent(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Mode", targetDepth)) {
+                    nodeConfigurationOption.setMode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return nodeConfigurationOption;

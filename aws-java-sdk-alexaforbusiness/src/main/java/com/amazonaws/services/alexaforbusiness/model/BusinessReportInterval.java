@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum BusinessReportInterval {
 
     ONE_DAY("ONE_DAY"),
-    ONE_WEEK("ONE_WEEK");
+    ONE_WEEK("ONE_WEEK"),
+    THIRTY_DAYS("THIRTY_DAYS");
 
     private String value;
 

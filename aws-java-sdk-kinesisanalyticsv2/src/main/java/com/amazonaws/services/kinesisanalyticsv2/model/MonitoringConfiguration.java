@@ -32,7 +32,9 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether to use the default CloudWatch logging configuration for an application.
+     * Describes whether to use the default CloudWatch logging configuration for an application. You must set this
+     * property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code>
+     * parameters.
      * </p>
      */
     private String configurationType;
@@ -51,11 +53,15 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether to use the default CloudWatch logging configuration for an application.
+     * Describes whether to use the default CloudWatch logging configuration for an application. You must set this
+     * property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code>
+     * parameters.
      * </p>
      * 
      * @param configurationType
-     *        Describes whether to use the default CloudWatch logging configuration for an application.
+     *        Describes whether to use the default CloudWatch logging configuration for an application. You must set
+     *        this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     *        <code>MetricsLevel</code> parameters.
      * @see ConfigurationType
      */
 
@@ -65,10 +71,14 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether to use the default CloudWatch logging configuration for an application.
+     * Describes whether to use the default CloudWatch logging configuration for an application. You must set this
+     * property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code>
+     * parameters.
      * </p>
      * 
-     * @return Describes whether to use the default CloudWatch logging configuration for an application.
+     * @return Describes whether to use the default CloudWatch logging configuration for an application. You must set
+     *         this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     *         <code>MetricsLevel</code> parameters.
      * @see ConfigurationType
      */
 
@@ -78,11 +88,15 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether to use the default CloudWatch logging configuration for an application.
+     * Describes whether to use the default CloudWatch logging configuration for an application. You must set this
+     * property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code>
+     * parameters.
      * </p>
      * 
      * @param configurationType
-     *        Describes whether to use the default CloudWatch logging configuration for an application.
+     *        Describes whether to use the default CloudWatch logging configuration for an application. You must set
+     *        this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     *        <code>MetricsLevel</code> parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationType
      */
@@ -94,11 +108,15 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether to use the default CloudWatch logging configuration for an application.
+     * Describes whether to use the default CloudWatch logging configuration for an application. You must set this
+     * property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code>
+     * parameters.
      * </p>
      * 
      * @param configurationType
-     *        Describes whether to use the default CloudWatch logging configuration for an application.
+     *        Describes whether to use the default CloudWatch logging configuration for an application. You must set
+     *        this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     *        <code>MetricsLevel</code> parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationType
      */

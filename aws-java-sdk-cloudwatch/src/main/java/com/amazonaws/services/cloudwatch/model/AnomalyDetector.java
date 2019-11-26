@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An anomaly detection model associated with a particular CloudWatch metric athresnd statistic. You can use the model
- * to display a band of expected normal values when the metric is graphed.
+ * An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to
+ * display a band of expected normal values when the metric is graphed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/AnomalyDetector" target="_top">AWS API

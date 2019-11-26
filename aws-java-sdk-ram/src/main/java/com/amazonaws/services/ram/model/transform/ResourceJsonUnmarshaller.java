@@ -60,6 +60,10 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                     context.nextToken();
                     resource.setResourceShareArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resourceGroupArn", targetDepth)) {
+                    context.nextToken();
+                    resource.setResourceGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     resource.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

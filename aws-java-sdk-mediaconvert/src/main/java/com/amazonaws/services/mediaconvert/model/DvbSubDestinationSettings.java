@@ -102,6 +102,11 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
      */
     private Integer shadowYOffset;
     /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     * subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+     */
+    private String subtitlingType;
+    /**
      * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters
      * in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to
      * the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if
@@ -848,6 +853,69 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     * subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+     * 
+     * @param subtitlingType
+     *        Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     *        subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only
+     *        dialogue.
+     * @see DvbSubtitlingType
+     */
+
+    public void setSubtitlingType(String subtitlingType) {
+        this.subtitlingType = subtitlingType;
+    }
+
+    /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     * subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+     * 
+     * @return Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     *         subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only
+     *         dialogue.
+     * @see DvbSubtitlingType
+     */
+
+    public String getSubtitlingType() {
+        return this.subtitlingType;
+    }
+
+    /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     * subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+     * 
+     * @param subtitlingType
+     *        Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     *        subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only
+     *        dialogue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DvbSubtitlingType
+     */
+
+    public DvbSubDestinationSettings withSubtitlingType(String subtitlingType) {
+        setSubtitlingType(subtitlingType);
+        return this;
+    }
+
+    /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     * subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
+     * 
+     * @param subtitlingType
+     *        Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your
+     *        subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only
+     *        dialogue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DvbSubtitlingType
+     */
+
+    public DvbSubDestinationSettings withSubtitlingType(DvbSubtitlingType subtitlingType) {
+        this.subtitlingType = subtitlingType.toString();
+        return this;
+    }
+
+    /**
      * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters
      * in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to
      * the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if
@@ -1078,6 +1146,8 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
             sb.append("ShadowXOffset: ").append(getShadowXOffset()).append(",");
         if (getShadowYOffset() != null)
             sb.append("ShadowYOffset: ").append(getShadowYOffset()).append(",");
+        if (getSubtitlingType() != null)
+            sb.append("SubtitlingType: ").append(getSubtitlingType()).append(",");
         if (getTeletextSpacing() != null)
             sb.append("TeletextSpacing: ").append(getTeletextSpacing()).append(",");
         if (getXPosition() != null)
@@ -1154,6 +1224,10 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
             return false;
         if (other.getShadowYOffset() != null && other.getShadowYOffset().equals(this.getShadowYOffset()) == false)
             return false;
+        if (other.getSubtitlingType() == null ^ this.getSubtitlingType() == null)
+            return false;
+        if (other.getSubtitlingType() != null && other.getSubtitlingType().equals(this.getSubtitlingType()) == false)
+            return false;
         if (other.getTeletextSpacing() == null ^ this.getTeletextSpacing() == null)
             return false;
         if (other.getTeletextSpacing() != null && other.getTeletextSpacing().equals(this.getTeletextSpacing()) == false)
@@ -1188,6 +1262,7 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getShadowOpacity() == null) ? 0 : getShadowOpacity().hashCode());
         hashCode = prime * hashCode + ((getShadowXOffset() == null) ? 0 : getShadowXOffset().hashCode());
         hashCode = prime * hashCode + ((getShadowYOffset() == null) ? 0 : getShadowYOffset().hashCode());
+        hashCode = prime * hashCode + ((getSubtitlingType() == null) ? 0 : getSubtitlingType().hashCode());
         hashCode = prime * hashCode + ((getTeletextSpacing() == null) ? 0 : getTeletextSpacing().hashCode());
         hashCode = prime * hashCode + ((getXPosition() == null) ? 0 : getXPosition().hashCode());
         hashCode = prime * hashCode + ((getYPosition() == null) ? 0 : getYPosition().hashCode());

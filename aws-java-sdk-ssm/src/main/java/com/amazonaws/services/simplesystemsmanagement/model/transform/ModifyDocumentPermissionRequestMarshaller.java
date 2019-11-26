@@ -36,6 +36,8 @@ public class ModifyDocumentPermissionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountIdsToAdd").build();
     private static final MarshallingInfo<List> ACCOUNTIDSTOREMOVE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountIdsToRemove").build();
+    private static final MarshallingInfo<String> SHAREDDOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SharedDocumentVersion").build();
 
     private static final ModifyDocumentPermissionRequestMarshaller instance = new ModifyDocumentPermissionRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class ModifyDocumentPermissionRequestMarshaller {
             protocolMarshaller.marshall(modifyDocumentPermissionRequest.getPermissionType(), PERMISSIONTYPE_BINDING);
             protocolMarshaller.marshall(modifyDocumentPermissionRequest.getAccountIdsToAdd(), ACCOUNTIDSTOADD_BINDING);
             protocolMarshaller.marshall(modifyDocumentPermissionRequest.getAccountIdsToRemove(), ACCOUNTIDSTOREMOVE_BINDING);
+            protocolMarshaller.marshall(modifyDocumentPermissionRequest.getSharedDocumentVersion(), SHAREDDOCUMENTVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

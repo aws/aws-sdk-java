@@ -33,6 +33,12 @@ public class TestInvokeAuthorizerRequestMarshaller {
             .marshallLocationName("token").build();
     private static final MarshallingInfo<String> TOKENSIGNATURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tokenSignature").build();
+    private static final MarshallingInfo<StructuredPojo> HTTPCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpContext").build();
+    private static final MarshallingInfo<StructuredPojo> MQTTCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mqttContext").build();
+    private static final MarshallingInfo<StructuredPojo> TLSCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tlsContext").build();
 
     private static final TestInvokeAuthorizerRequestMarshaller instance = new TestInvokeAuthorizerRequestMarshaller();
 
@@ -53,6 +59,9 @@ public class TestInvokeAuthorizerRequestMarshaller {
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getAuthorizerName(), AUTHORIZERNAME_BINDING);
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getToken(), TOKEN_BINDING);
             protocolMarshaller.marshall(testInvokeAuthorizerRequest.getTokenSignature(), TOKENSIGNATURE_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getHttpContext(), HTTPCONTEXT_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getMqttContext(), MQTTCONTEXT_BINDING);
+            protocolMarshaller.marshall(testInvokeAuthorizerRequest.getTlsContext(), TLSCONTEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

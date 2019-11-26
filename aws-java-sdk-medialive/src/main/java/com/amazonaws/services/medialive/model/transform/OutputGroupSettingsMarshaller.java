@@ -37,6 +37,8 @@ public class OutputGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaPackageGroupSettings").build();
     private static final MarshallingInfo<StructuredPojo> MSSMOOTHGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("msSmoothGroupSettings").build();
+    private static final MarshallingInfo<StructuredPojo> MULTIPLEXGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multiplexGroupSettings").build();
     private static final MarshallingInfo<StructuredPojo> RTMPGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rtmpGroupSettings").build();
     private static final MarshallingInfo<StructuredPojo> UDPGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -63,6 +65,7 @@ public class OutputGroupSettingsMarshaller {
             protocolMarshaller.marshall(outputGroupSettings.getHlsGroupSettings(), HLSGROUPSETTINGS_BINDING);
             protocolMarshaller.marshall(outputGroupSettings.getMediaPackageGroupSettings(), MEDIAPACKAGEGROUPSETTINGS_BINDING);
             protocolMarshaller.marshall(outputGroupSettings.getMsSmoothGroupSettings(), MSSMOOTHGROUPSETTINGS_BINDING);
+            protocolMarshaller.marshall(outputGroupSettings.getMultiplexGroupSettings(), MULTIPLEXGROUPSETTINGS_BINDING);
             protocolMarshaller.marshall(outputGroupSettings.getRtmpGroupSettings(), RTMPGROUPSETTINGS_BINDING);
             protocolMarshaller.marshall(outputGroupSettings.getUdpGroupSettings(), UDPGROUPSETTINGS_BINDING);
         } catch (Exception e) {

@@ -33,10 +33,16 @@ public class ReEncryptRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CiphertextBlob").build();
     private static final MarshallingInfo<Map> SOURCEENCRYPTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceEncryptionContext").build();
+    private static final MarshallingInfo<String> SOURCEKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceKeyId").build();
     private static final MarshallingInfo<String> DESTINATIONKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationKeyId").build();
     private static final MarshallingInfo<Map> DESTINATIONENCRYPTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationEncryptionContext").build();
+    private static final MarshallingInfo<String> SOURCEENCRYPTIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceEncryptionAlgorithm").build();
+    private static final MarshallingInfo<String> DESTINATIONENCRYPTIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationEncryptionAlgorithm").build();
     private static final MarshallingInfo<List> GRANTTOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GrantTokens").build();
 
@@ -58,8 +64,11 @@ public class ReEncryptRequestMarshaller {
         try {
             protocolMarshaller.marshall(reEncryptRequest.getCiphertextBlob(), CIPHERTEXTBLOB_BINDING);
             protocolMarshaller.marshall(reEncryptRequest.getSourceEncryptionContext(), SOURCEENCRYPTIONCONTEXT_BINDING);
+            protocolMarshaller.marshall(reEncryptRequest.getSourceKeyId(), SOURCEKEYID_BINDING);
             protocolMarshaller.marshall(reEncryptRequest.getDestinationKeyId(), DESTINATIONKEYID_BINDING);
             protocolMarshaller.marshall(reEncryptRequest.getDestinationEncryptionContext(), DESTINATIONENCRYPTIONCONTEXT_BINDING);
+            protocolMarshaller.marshall(reEncryptRequest.getSourceEncryptionAlgorithm(), SOURCEENCRYPTIONALGORITHM_BINDING);
+            protocolMarshaller.marshall(reEncryptRequest.getDestinationEncryptionAlgorithm(), DESTINATIONENCRYPTIONALGORITHM_BINDING);
             protocolMarshaller.marshall(reEncryptRequest.getGrantTokens(), GRANTTOKENS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

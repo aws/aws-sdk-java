@@ -60,6 +60,22 @@ public class QueryExecutionStatisticsJsonUnmarshaller implements Unmarshaller<Qu
                     context.nextToken();
                     queryExecutionStatistics.setDataManifestLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TotalExecutionTimeInMillis", targetDepth)) {
+                    context.nextToken();
+                    queryExecutionStatistics.setTotalExecutionTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("QueryQueueTimeInMillis", targetDepth)) {
+                    context.nextToken();
+                    queryExecutionStatistics.setQueryQueueTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("QueryPlanningTimeInMillis", targetDepth)) {
+                    context.nextToken();
+                    queryExecutionStatistics.setQueryPlanningTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ServiceProcessingTimeInMillis", targetDepth)) {
+                    context.nextToken();
+                    queryExecutionStatistics.setServiceProcessingTimeInMillis(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

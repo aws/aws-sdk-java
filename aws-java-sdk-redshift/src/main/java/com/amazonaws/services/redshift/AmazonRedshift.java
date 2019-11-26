@@ -650,6 +650,32 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For
+     * example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation.
+     * </p>
+     * 
+     * @param createScheduledActionRequest
+     * @return Result of the CreateScheduledAction operation returned by the service.
+     * @throws ScheduledActionAlreadyExistsException
+     *         The scheduled action already exists.
+     * @throws ScheduledActionQuotaExceededException
+     *         The quota for scheduled actions exceeded.
+     * @throws ScheduledActionTypeUnsupportedException
+     *         The action type specified for a scheduled action is not supported.
+     * @throws InvalidScheduleException
+     *         The schedule you submitted isn't valid.
+     * @throws InvalidScheduledActionException
+     *         The scheduled action is not valid.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.CreateScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateScheduledActionResult createScheduledAction(CreateScheduledActionRequest createScheduledActionRequest);
+
+    /**
+     * <p>
      * Creates a snapshot copy grant that permits Amazon Redshift to use a customer master key (CMK) from AWS Key
      * Management Service (AWS KMS) to encrypt copied snapshots in a destination region.
      * </p>
@@ -921,6 +947,23 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteHsmConfigurationResult deleteHsmConfiguration(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a scheduled action.
+     * </p>
+     * 
+     * @param deleteScheduledActionRequest
+     * @return Result of the DeleteScheduledAction operation returned by the service.
+     * @throws ScheduledActionNotFoundException
+     *         The scheduled action cannot be found.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest);
 
     /**
      * <p>
@@ -1465,6 +1508,10 @@ public interface AmazonRedshift {
      * @throws InvalidClusterSnapshotStateException
      *         The specified cluster snapshot is not in the <code>available</code> state, or other accounts are
      *         authorized to access the snapshot.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws AccessToSnapshotDeniedException
+     *         The owner of the specified snapshot has not authorized your account to access the snapshot.
      * @sample AmazonRedshift.DescribeNodeConfigurationOptions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions"
      *      target="_top">AWS API Documentation</a>
@@ -1580,6 +1627,23 @@ public interface AmazonRedshift {
      *      Documentation</a>
      */
     DescribeResizeResult describeResize(DescribeResizeRequest describeResizeRequest);
+
+    /**
+     * <p>
+     * Describes properties of scheduled actions.
+     * </p>
+     * 
+     * @param describeScheduledActionsRequest
+     * @return Result of the DescribeScheduledActions operation returned by the service.
+     * @throws ScheduledActionNotFoundException
+     *         The scheduled action cannot be found.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest);
 
     /**
      * <p>
@@ -2149,6 +2213,29 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Modify a scheduled action.
+     * </p>
+     * 
+     * @param modifyScheduledActionRequest
+     * @return Result of the ModifyScheduledAction operation returned by the service.
+     * @throws ScheduledActionNotFoundException
+     *         The scheduled action cannot be found.
+     * @throws ScheduledActionTypeUnsupportedException
+     *         The action type specified for a scheduled action is not supported.
+     * @throws InvalidScheduleException
+     *         The schedule you submitted isn't valid.
+     * @throws InvalidScheduledActionException
+     *         The scheduled action is not valid.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.ModifyScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyScheduledActionResult modifyScheduledAction(ModifyScheduledActionRequest modifyScheduledActionRequest);
 
     /**
      * <p>

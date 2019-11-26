@@ -4811,6 +4811,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<GetDefaultCreditSpecificationResult> getDefaultCreditSpecificationAsync(GetDefaultCreditSpecificationRequest request) {
+
+        return getDefaultCreditSpecificationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDefaultCreditSpecificationResult> getDefaultCreditSpecificationAsync(GetDefaultCreditSpecificationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDefaultCreditSpecificationRequest, GetDefaultCreditSpecificationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEbsDefaultKmsKeyIdResult> getEbsDefaultKmsKeyIdAsync(GetEbsDefaultKmsKeyIdRequest request) {
 
         return getEbsDefaultKmsKeyIdAsync(request, null);
@@ -5085,6 +5098,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ModifyClientVpnEndpointResult> modifyClientVpnEndpointAsync(ModifyClientVpnEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClientVpnEndpointRequest, ModifyClientVpnEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDefaultCreditSpecificationResult> modifyDefaultCreditSpecificationAsync(
+            ModifyDefaultCreditSpecificationRequest request) {
+
+        return modifyDefaultCreditSpecificationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDefaultCreditSpecificationResult> modifyDefaultCreditSpecificationAsync(
+            ModifyDefaultCreditSpecificationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyDefaultCreditSpecificationRequest, ModifyDefaultCreditSpecificationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

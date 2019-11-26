@@ -73,6 +73,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public DeleteSuppressedDestinationResult deleteSuppressedDestination(DeleteSuppressedDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccountResult getAccount(GetAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -128,6 +133,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public GetSuppressedDestinationResult getSuppressedDestination(GetSuppressedDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -153,6 +163,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public ListSuppressedDestinationsResult listSuppressedDestinations(ListSuppressedDestinationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -168,6 +183,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public PutAccountSuppressionAttributesResult putAccountSuppressionAttributes(PutAccountSuppressionAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutConfigurationSetDeliveryOptionsResult putConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +199,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public PutConfigurationSetSendingOptionsResult putConfigurationSetSendingOptions(PutConfigurationSetSendingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutConfigurationSetSuppressionOptionsResult putConfigurationSetSuppressionOptions(PutConfigurationSetSuppressionOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -214,6 +239,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public PutEmailIdentityMailFromAttributesResult putEmailIdentityMailFromAttributes(PutEmailIdentityMailFromAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutSuppressedDestinationResult putSuppressedDestination(PutSuppressedDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -58,6 +58,12 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
      * </p>
      */
     private ApplicationSnapshotConfiguration applicationSnapshotConfiguration;
+    /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     */
+    private java.util.List<VpcConfiguration> vpcConfigurations;
 
     /**
      * <p>
@@ -260,6 +266,76 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @return The array of descriptions of VPC configurations available to the application.
+     */
+
+    public java.util.List<VpcConfiguration> getVpcConfigurations() {
+        return vpcConfigurations;
+    }
+
+    /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @param vpcConfigurations
+     *        The array of descriptions of VPC configurations available to the application.
+     */
+
+    public void setVpcConfigurations(java.util.Collection<VpcConfiguration> vpcConfigurations) {
+        if (vpcConfigurations == null) {
+            this.vpcConfigurations = null;
+            return;
+        }
+
+        this.vpcConfigurations = new java.util.ArrayList<VpcConfiguration>(vpcConfigurations);
+    }
+
+    /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcConfigurations(java.util.Collection)} or {@link #withVpcConfigurations(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param vpcConfigurations
+     *        The array of descriptions of VPC configurations available to the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfiguration withVpcConfigurations(VpcConfiguration... vpcConfigurations) {
+        if (this.vpcConfigurations == null) {
+            setVpcConfigurations(new java.util.ArrayList<VpcConfiguration>(vpcConfigurations.length));
+        }
+        for (VpcConfiguration ele : vpcConfigurations) {
+            this.vpcConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @param vpcConfigurations
+     *        The array of descriptions of VPC configurations available to the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfiguration withVpcConfigurations(java.util.Collection<VpcConfiguration> vpcConfigurations) {
+        setVpcConfigurations(vpcConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +356,9 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
         if (getApplicationCodeConfiguration() != null)
             sb.append("ApplicationCodeConfiguration: ").append(getApplicationCodeConfiguration()).append(",");
         if (getApplicationSnapshotConfiguration() != null)
-            sb.append("ApplicationSnapshotConfiguration: ").append(getApplicationSnapshotConfiguration());
+            sb.append("ApplicationSnapshotConfiguration: ").append(getApplicationSnapshotConfiguration()).append(",");
+        if (getVpcConfigurations() != null)
+            sb.append("VpcConfigurations: ").append(getVpcConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +395,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
         if (other.getApplicationSnapshotConfiguration() != null
                 && other.getApplicationSnapshotConfiguration().equals(this.getApplicationSnapshotConfiguration()) == false)
             return false;
+        if (other.getVpcConfigurations() == null ^ this.getVpcConfigurations() == null)
+            return false;
+        if (other.getVpcConfigurations() != null && other.getVpcConfigurations().equals(this.getVpcConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +412,7 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getEnvironmentProperties() == null) ? 0 : getEnvironmentProperties().hashCode());
         hashCode = prime * hashCode + ((getApplicationCodeConfiguration() == null) ? 0 : getApplicationCodeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getApplicationSnapshotConfiguration() == null) ? 0 : getApplicationSnapshotConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfigurations() == null) ? 0 : getVpcConfigurations().hashCode());
         return hashCode;
     }
 

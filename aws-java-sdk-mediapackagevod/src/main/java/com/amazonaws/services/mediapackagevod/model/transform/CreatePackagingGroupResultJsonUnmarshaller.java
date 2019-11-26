@@ -52,6 +52,10 @@ public class CreatePackagingGroupResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     createPackagingGroupResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("domainName", targetDepth)) {
+                    context.nextToken();
+                    createPackagingGroupResult.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     createPackagingGroupResult.setId(context.getUnmarshaller(String.class).unmarshall(context));

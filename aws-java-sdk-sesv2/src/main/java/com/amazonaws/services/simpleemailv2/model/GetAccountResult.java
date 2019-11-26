@@ -28,19 +28,6 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
-     * in the current AWS Region.
-     * </p>
-     */
-    private SendQuota sendQuota;
-    /**
-     * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
-     * </p>
-     */
-    private Boolean sendingEnabled;
-    /**
-     * <p>
      * Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated
      * with your account.
      * </p>
@@ -89,104 +76,25 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private Boolean productionAccessEnabled;
-
     /**
      * <p>
      * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
      * in the current AWS Region.
      * </p>
-     * 
-     * @param sendQuota
-     *        An object that contains information about the per-day and per-second sending limits for your Amazon SES
-     *        account in the current AWS Region.
      */
-
-    public void setSendQuota(SendQuota sendQuota) {
-        this.sendQuota = sendQuota;
-    }
-
-    /**
-     * <p>
-     * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
-     * in the current AWS Region.
-     * </p>
-     * 
-     * @return An object that contains information about the per-day and per-second sending limits for your Amazon SES
-     *         account in the current AWS Region.
-     */
-
-    public SendQuota getSendQuota() {
-        return this.sendQuota;
-    }
-
-    /**
-     * <p>
-     * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
-     * in the current AWS Region.
-     * </p>
-     * 
-     * @param sendQuota
-     *        An object that contains information about the per-day and per-second sending limits for your Amazon SES
-     *        account in the current AWS Region.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetAccountResult withSendQuota(SendQuota sendQuota) {
-        setSendQuota(sendQuota);
-        return this;
-    }
-
+    private SendQuota sendQuota;
     /**
      * <p>
      * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
      * </p>
-     * 
-     * @param sendingEnabled
-     *        Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
      */
-
-    public void setSendingEnabled(Boolean sendingEnabled) {
-        this.sendingEnabled = sendingEnabled;
-    }
-
+    private Boolean sendingEnabled;
     /**
      * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * An object that contains information about your account's suppression preferences.
      * </p>
-     * 
-     * @return Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
      */
-
-    public Boolean getSendingEnabled() {
-        return this.sendingEnabled;
-    }
-
-    /**
-     * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
-     * </p>
-     * 
-     * @param sendingEnabled
-     *        Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetAccountResult withSendingEnabled(Boolean sendingEnabled) {
-        setSendingEnabled(sendingEnabled);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
-     * </p>
-     * 
-     * @return Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
-     */
-
-    public Boolean isSendingEnabled() {
-        return this.sendingEnabled;
-    }
+    private SuppressionAttributes suppressionAttributes;
 
     /**
      * <p>
@@ -542,6 +450,144 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
+     * in the current AWS Region.
+     * </p>
+     * 
+     * @param sendQuota
+     *        An object that contains information about the per-day and per-second sending limits for your Amazon SES
+     *        account in the current AWS Region.
+     */
+
+    public void setSendQuota(SendQuota sendQuota) {
+        this.sendQuota = sendQuota;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
+     * in the current AWS Region.
+     * </p>
+     * 
+     * @return An object that contains information about the per-day and per-second sending limits for your Amazon SES
+     *         account in the current AWS Region.
+     */
+
+    public SendQuota getSendQuota() {
+        return this.sendQuota;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about the per-day and per-second sending limits for your Amazon SES account
+     * in the current AWS Region.
+     * </p>
+     * 
+     * @param sendQuota
+     *        An object that contains information about the per-day and per-second sending limits for your Amazon SES
+     *        account in the current AWS Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccountResult withSendQuota(SendQuota sendQuota) {
+        setSendQuota(sendQuota);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * </p>
+     * 
+     * @param sendingEnabled
+     *        Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     */
+
+    public void setSendingEnabled(Boolean sendingEnabled) {
+        this.sendingEnabled = sendingEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * </p>
+     * 
+     * @return Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     */
+
+    public Boolean getSendingEnabled() {
+        return this.sendingEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * </p>
+     * 
+     * @param sendingEnabled
+     *        Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccountResult withSendingEnabled(Boolean sendingEnabled) {
+        setSendingEnabled(sendingEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     * </p>
+     * 
+     * @return Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.
+     */
+
+    public Boolean isSendingEnabled() {
+        return this.sendingEnabled;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about your account's suppression preferences.
+     * </p>
+     * 
+     * @param suppressionAttributes
+     *        An object that contains information about your account's suppression preferences.
+     */
+
+    public void setSuppressionAttributes(SuppressionAttributes suppressionAttributes) {
+        this.suppressionAttributes = suppressionAttributes;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about your account's suppression preferences.
+     * </p>
+     * 
+     * @return An object that contains information about your account's suppression preferences.
+     */
+
+    public SuppressionAttributes getSuppressionAttributes() {
+        return this.suppressionAttributes;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about your account's suppression preferences.
+     * </p>
+     * 
+     * @param suppressionAttributes
+     *        An object that contains information about your account's suppression preferences.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccountResult withSuppressionAttributes(SuppressionAttributes suppressionAttributes) {
+        setSuppressionAttributes(suppressionAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -553,16 +599,18 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSendQuota() != null)
-            sb.append("SendQuota: ").append(getSendQuota()).append(",");
-        if (getSendingEnabled() != null)
-            sb.append("SendingEnabled: ").append(getSendingEnabled()).append(",");
         if (getDedicatedIpAutoWarmupEnabled() != null)
             sb.append("DedicatedIpAutoWarmupEnabled: ").append(getDedicatedIpAutoWarmupEnabled()).append(",");
         if (getEnforcementStatus() != null)
             sb.append("EnforcementStatus: ").append(getEnforcementStatus()).append(",");
         if (getProductionAccessEnabled() != null)
-            sb.append("ProductionAccessEnabled: ").append(getProductionAccessEnabled());
+            sb.append("ProductionAccessEnabled: ").append(getProductionAccessEnabled()).append(",");
+        if (getSendQuota() != null)
+            sb.append("SendQuota: ").append(getSendQuota()).append(",");
+        if (getSendingEnabled() != null)
+            sb.append("SendingEnabled: ").append(getSendingEnabled()).append(",");
+        if (getSuppressionAttributes() != null)
+            sb.append("SuppressionAttributes: ").append(getSuppressionAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -577,14 +625,6 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (obj instanceof GetAccountResult == false)
             return false;
         GetAccountResult other = (GetAccountResult) obj;
-        if (other.getSendQuota() == null ^ this.getSendQuota() == null)
-            return false;
-        if (other.getSendQuota() != null && other.getSendQuota().equals(this.getSendQuota()) == false)
-            return false;
-        if (other.getSendingEnabled() == null ^ this.getSendingEnabled() == null)
-            return false;
-        if (other.getSendingEnabled() != null && other.getSendingEnabled().equals(this.getSendingEnabled()) == false)
-            return false;
         if (other.getDedicatedIpAutoWarmupEnabled() == null ^ this.getDedicatedIpAutoWarmupEnabled() == null)
             return false;
         if (other.getDedicatedIpAutoWarmupEnabled() != null && other.getDedicatedIpAutoWarmupEnabled().equals(this.getDedicatedIpAutoWarmupEnabled()) == false)
@@ -597,6 +637,18 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getProductionAccessEnabled() != null && other.getProductionAccessEnabled().equals(this.getProductionAccessEnabled()) == false)
             return false;
+        if (other.getSendQuota() == null ^ this.getSendQuota() == null)
+            return false;
+        if (other.getSendQuota() != null && other.getSendQuota().equals(this.getSendQuota()) == false)
+            return false;
+        if (other.getSendingEnabled() == null ^ this.getSendingEnabled() == null)
+            return false;
+        if (other.getSendingEnabled() != null && other.getSendingEnabled().equals(this.getSendingEnabled()) == false)
+            return false;
+        if (other.getSuppressionAttributes() == null ^ this.getSuppressionAttributes() == null)
+            return false;
+        if (other.getSuppressionAttributes() != null && other.getSuppressionAttributes().equals(this.getSuppressionAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -605,11 +657,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSendQuota() == null) ? 0 : getSendQuota().hashCode());
-        hashCode = prime * hashCode + ((getSendingEnabled() == null) ? 0 : getSendingEnabled().hashCode());
         hashCode = prime * hashCode + ((getDedicatedIpAutoWarmupEnabled() == null) ? 0 : getDedicatedIpAutoWarmupEnabled().hashCode());
         hashCode = prime * hashCode + ((getEnforcementStatus() == null) ? 0 : getEnforcementStatus().hashCode());
         hashCode = prime * hashCode + ((getProductionAccessEnabled() == null) ? 0 : getProductionAccessEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSendQuota() == null) ? 0 : getSendQuota().hashCode());
+        hashCode = prime * hashCode + ((getSendingEnabled() == null) ? 0 : getSendingEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSuppressionAttributes() == null) ? 0 : getSuppressionAttributes().hashCode());
         return hashCode;
     }
 

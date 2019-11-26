@@ -22,7 +22,8 @@ public enum NodeConfigurationOptionsFilterName {
 
     NodeType("NodeType"),
     NumberOfNodes("NumberOfNodes"),
-    EstimatedDiskUtilizationPercent("EstimatedDiskUtilizationPercent");
+    EstimatedDiskUtilizationPercent("EstimatedDiskUtilizationPercent"),
+    Mode("Mode");
 
     private String value;
 

@@ -156,6 +156,10 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                     context.nextToken();
                     m2tsSettings.setKlvDataPids(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("nielsenId3Behavior", targetDepth)) {
+                    context.nextToken();
+                    m2tsSettings.setNielsenId3Behavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("nullPacketBitrate", targetDepth)) {
                     context.nextToken();
                     m2tsSettings.setNullPacketBitrate(context.getUnmarshaller(Double.class).unmarshall(context));

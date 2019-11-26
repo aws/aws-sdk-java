@@ -108,6 +108,37 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
 
     /**
      * <p>
+     * Adds an log pattern to a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param createLogPatternRequest
+     * @return A Java Future containing the result of the CreateLogPattern operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.CreateLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLogPatternResult> createLogPatternAsync(CreateLogPatternRequest createLogPatternRequest);
+
+    /**
+     * <p>
+     * Adds an log pattern to a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param createLogPatternRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLogPattern operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.CreateLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLogPatternResult> createLogPatternAsync(CreateLogPatternRequest createLogPatternRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLogPatternRequest, CreateLogPatternResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the specified application from monitoring. Does not delete the application.
      * </p>
      * 
@@ -169,6 +200,37 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
      */
     java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest deleteComponentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified log pattern from a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param deleteLogPatternRequest
+     * @return A Java Future containing the result of the DeleteLogPattern operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.DeleteLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLogPatternResult> deleteLogPatternAsync(DeleteLogPatternRequest deleteLogPatternRequest);
+
+    /**
+     * <p>
+     * Removes the specified log pattern from a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param deleteLogPatternRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLogPattern operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.DeleteLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLogPatternResult> deleteLogPatternAsync(DeleteLogPatternRequest deleteLogPatternRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLogPatternRequest, DeleteLogPatternResult> asyncHandler);
 
     /**
      * <p>
@@ -305,6 +367,37 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
     java.util.concurrent.Future<DescribeComponentConfigurationRecommendationResult> describeComponentConfigurationRecommendationAsync(
             DescribeComponentConfigurationRecommendationRequest describeComponentConfigurationRecommendationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeComponentConfigurationRecommendationRequest, DescribeComponentConfigurationRecommendationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describe a specific log pattern from a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param describeLogPatternRequest
+     * @return A Java Future containing the result of the DescribeLogPattern operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.DescribeLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLogPatternResult> describeLogPatternAsync(DescribeLogPatternRequest describeLogPatternRequest);
+
+    /**
+     * <p>
+     * Describe a specific log pattern from a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param describeLogPatternRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLogPattern operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.DescribeLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLogPatternResult> describeLogPatternAsync(DescribeLogPatternRequest describeLogPatternRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLogPatternRequest, DescribeLogPatternResult> asyncHandler);
 
     /**
      * <p>
@@ -465,6 +558,68 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
 
     /**
      * <p>
+     * Lists the log pattern sets in the specific application.
+     * </p>
+     * 
+     * @param listLogPatternSetsRequest
+     * @return A Java Future containing the result of the ListLogPatternSets operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.ListLogPatternSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLogPatternSetsResult> listLogPatternSetsAsync(ListLogPatternSetsRequest listLogPatternSetsRequest);
+
+    /**
+     * <p>
+     * Lists the log pattern sets in the specific application.
+     * </p>
+     * 
+     * @param listLogPatternSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLogPatternSets operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.ListLogPatternSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLogPatternSetsResult> listLogPatternSetsAsync(ListLogPatternSetsRequest listLogPatternSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLogPatternSetsRequest, ListLogPatternSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the log patterns in the specific log <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param listLogPatternsRequest
+     * @return A Java Future containing the result of the ListLogPatterns operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.ListLogPatterns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLogPatternsResult> listLogPatternsAsync(ListLogPatternsRequest listLogPatternsRequest);
+
+    /**
+     * <p>
+     * Lists the log patterns in the specific log <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param listLogPatternsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLogPatterns operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.ListLogPatterns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLogPatternsResult> listLogPatternsAsync(ListLogPatternsRequest listLogPatternsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLogPatternsRequest, ListLogPatternsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the problems with your application.
      * </p>
      * 
@@ -493,6 +648,119 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
      */
     java.util.concurrent.Future<ListProblemsResult> listProblemsAsync(ListProblemsRequest listProblemsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProblemsRequest, ListProblemsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve a list of the tags (keys and values) that are associated with a specified application. A <i>tag</i> is a
+     * label that you optionally define and associate with an application. Each tag consists of a required <i>tag
+     * key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a category for
+     * more specific tag values. A tag value acts as a descriptor within a tag key.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Retrieve a list of the tags (keys and values) that are associated with a specified application. A <i>tag</i> is a
+     * label that you optionally define and associate with an application. Each tag consists of a required <i>tag
+     * key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a category for
+     * more specific tag values. A tag value acts as a descriptor within a tag key.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Add one or more tags (keys and values) to a specified application. A <i>tag</i> is a label that you optionally
+     * define and associate with an application. Tags can help you categorize and manage application in different ways,
+     * such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * <p>
+     * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A
+     * tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor
+     * within a tag key.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Add one or more tags (keys and values) to a specified application. A <i>tag</i> is a label that you optionally
+     * define and associate with an application. Tags can help you categorize and manage application in different ways,
+     * such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * <p>
+     * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A
+     * tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor
+     * within a tag key.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove one or more tags (keys and values) from a specified application.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Remove one or more tags (keys and values) from a specified application.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -596,5 +864,36 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
     java.util.concurrent.Future<UpdateComponentConfigurationResult> updateComponentConfigurationAsync(
             UpdateComponentConfigurationRequest updateComponentConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateComponentConfigurationRequest, UpdateComponentConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a log pattern to a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param updateLogPatternRequest
+     * @return A Java Future containing the result of the UpdateLogPattern operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.UpdateLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLogPatternResult> updateLogPatternAsync(UpdateLogPatternRequest updateLogPatternRequest);
+
+    /**
+     * <p>
+     * Adds a log pattern to a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param updateLogPatternRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLogPattern operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.UpdateLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLogPatternResult> updateLogPatternAsync(UpdateLogPatternRequest updateLogPatternRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLogPatternRequest, UpdateLogPatternResult> asyncHandler);
 
 }

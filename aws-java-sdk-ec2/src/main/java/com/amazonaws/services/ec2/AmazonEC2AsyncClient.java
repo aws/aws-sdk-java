@@ -10417,6 +10417,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<GetDefaultCreditSpecificationResult> getDefaultCreditSpecificationAsync(GetDefaultCreditSpecificationRequest request) {
+
+        return getDefaultCreditSpecificationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDefaultCreditSpecificationResult> getDefaultCreditSpecificationAsync(
+            final GetDefaultCreditSpecificationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDefaultCreditSpecificationRequest, GetDefaultCreditSpecificationResult> asyncHandler) {
+        final GetDefaultCreditSpecificationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDefaultCreditSpecificationResult>() {
+            @Override
+            public GetDefaultCreditSpecificationResult call() throws Exception {
+                GetDefaultCreditSpecificationResult result = null;
+
+                try {
+                    result = executeGetDefaultCreditSpecification(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEbsDefaultKmsKeyIdResult> getEbsDefaultKmsKeyIdAsync(GetEbsDefaultKmsKeyIdRequest request) {
 
         return getEbsDefaultKmsKeyIdAsync(request, null);
@@ -11020,6 +11054,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeModifyClientVpnEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDefaultCreditSpecificationResult> modifyDefaultCreditSpecificationAsync(
+            ModifyDefaultCreditSpecificationRequest request) {
+
+        return modifyDefaultCreditSpecificationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDefaultCreditSpecificationResult> modifyDefaultCreditSpecificationAsync(
+            final ModifyDefaultCreditSpecificationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyDefaultCreditSpecificationRequest, ModifyDefaultCreditSpecificationResult> asyncHandler) {
+        final ModifyDefaultCreditSpecificationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyDefaultCreditSpecificationResult>() {
+            @Override
+            public ModifyDefaultCreditSpecificationResult call() throws Exception {
+                ModifyDefaultCreditSpecificationResult result = null;
+
+                try {
+                    result = executeModifyDefaultCreditSpecification(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

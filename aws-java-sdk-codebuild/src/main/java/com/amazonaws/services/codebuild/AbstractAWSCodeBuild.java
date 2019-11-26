@@ -53,7 +53,22 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public BatchGetReportGroupsResult batchGetReportGroups(BatchGetReportGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetReportsResult batchGetReports(BatchGetReportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateProjectResult createProject(CreateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateReportGroupResult createReportGroup(CreateReportGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,12 +83,27 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public DeleteReportResult deleteReport(DeleteReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteReportGroupResult deleteReportGroup(DeleteReportGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSourceCredentialsResult deleteSourceCredentials(DeleteSourceCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteWebhookResult deleteWebhook(DeleteWebhookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTestCasesResult describeTestCases(DescribeTestCasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,6 +138,21 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public ListReportGroupsResult listReportGroups(ListReportGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReportsResult listReports(ListReportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReportsForReportGroupResult listReportsForReportGroup(ListReportsForReportGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSourceCredentialsResult listSourceCredentials(ListSourceCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +169,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
 
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateReportGroupResult updateReportGroup(UpdateReportGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

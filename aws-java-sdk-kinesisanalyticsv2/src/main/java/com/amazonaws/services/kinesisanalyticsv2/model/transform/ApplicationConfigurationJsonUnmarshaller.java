@@ -69,6 +69,11 @@ public class ApplicationConfigurationJsonUnmarshaller implements Unmarshaller<Ap
                     applicationConfiguration.setApplicationSnapshotConfiguration(ApplicationSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("VpcConfigurations", targetDepth)) {
+                    context.nextToken();
+                    applicationConfiguration.setVpcConfigurations(new ListUnmarshaller<VpcConfiguration>(VpcConfigurationJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

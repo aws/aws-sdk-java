@@ -22,7 +22,8 @@ public enum UpdateTargetsOperatingSystem {
 
     Ubuntu("ubuntu"),
     Raspbian("raspbian"),
-    Amazon_linux("amazon_linux");
+    Amazon_linux("amazon_linux"),
+    Openwrt("openwrt");
 
     private String value;
 

@@ -15,13 +15,14 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+ * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReservationResourceType {
 
     INPUT("INPUT"),
     OUTPUT("OUTPUT"),
+    MULTIPLEX("MULTIPLEX"),
     CHANNEL("CHANNEL");
 
     private String value;

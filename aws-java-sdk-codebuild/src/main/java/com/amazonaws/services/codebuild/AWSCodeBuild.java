@@ -76,6 +76,11 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>CreateReportGroup</code>: Creates a report group. A report group contains a collection of reports.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
  * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed
  * to the repository.
@@ -88,6 +93,16 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>DeleteReport</code>: Deletes a report.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeleteReportGroup</code>: Deletes a report group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
@@ -96,6 +111,11 @@ import com.amazonaws.services.codebuild.model.*;
  * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
  * or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to
  * the repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
  * </p>
  * </li>
  * <li>
@@ -133,6 +153,22 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListReportGroups</code>: Gets a list ARNs for the report groups in the current AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListReports</code>: Gets a list ARNs for the reports in the current AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports that belong to a
+ * <code>ReportGroup</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
@@ -155,22 +191,7 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
- * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StartBuild</code>: Starts running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StopBuild</code>: Attempts to stop running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateProject</code>: Changes the settings of an existing build project.
+ * <code>UpdateReportGroup</code>: Changes a report group.
  * </p>
  * </li>
  * <li>
@@ -290,6 +311,36 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Returns an array of report groups.
+     * </p>
+     * 
+     * @param batchGetReportGroupsRequest
+     * @return Result of the BatchGetReportGroups operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.BatchGetReportGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReportGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchGetReportGroupsResult batchGetReportGroups(BatchGetReportGroupsRequest batchGetReportGroupsRequest);
+
+    /**
+     * <p>
+     * Returns an array of reports.
+     * </p>
+     * 
+     * @param batchGetReportsRequest
+     * @return Result of the BatchGetReports operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.BatchGetReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchGetReportsResult batchGetReports(BatchGetReportsRequest batchGetReportsRequest);
+
+    /**
+     * <p>
      * Creates a build project.
      * </p>
      * 
@@ -307,6 +358,26 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     CreateProjectResult createProject(CreateProjectRequest createProjectRequest);
+
+    /**
+     * <p>
+     * Creates a report group. A report group contains a collection of reports.
+     * </p>
+     * 
+     * @param createReportGroupRequest
+     * @return Result of the CreateReportGroup operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The specified AWS resource cannot be created, because an AWS resource with the same settings already
+     *         exists.
+     * @throws AccountLimitExceededException
+     *         An AWS service limit was exceeded for the calling AWS account.
+     * @sample AWSCodeBuild.CreateReportGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateReportGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateReportGroupResult createReportGroup(CreateReportGroupRequest createReportGroupRequest);
 
     /**
      * <p>
@@ -359,6 +430,42 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Deletes a report.
+     * </p>
+     * 
+     * @param deleteReportRequest
+     * @return Result of the DeleteReport operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DeleteReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteReportResult deleteReport(DeleteReportRequest deleteReportRequest);
+
+    /**
+     * <p>
+     * <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a report group, you must delete its
+     * reports. Use <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html"
+     * >ListReportsForReportGroup</a> to get the reports in a report group. Use <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete
+     * the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an
+     * exception is thrown.
+     * </p>
+     * 
+     * @param deleteReportGroupRequest
+     * @return Result of the DeleteReportGroup operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DeleteReportGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteReportGroupResult deleteReportGroup(DeleteReportGroupRequest deleteReportGroupRequest);
+
+    /**
+     * <p>
      * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
      * </p>
      * 
@@ -393,6 +500,23 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     DeleteWebhookResult deleteWebhook(DeleteWebhookRequest deleteWebhookRequest);
+
+    /**
+     * <p>
+     * Returns a list of details about test cases for a report.
+     * </p>
+     * 
+     * @param describeTestCasesRequest
+     * @return Result of the DescribeTestCases operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.DescribeTestCases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeTestCasesResult describeTestCases(DescribeTestCasesRequest describeTestCasesRequest);
 
     /**
      * <p>
@@ -494,6 +618,53 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Gets a list ARNs for the report groups in the current AWS account.
+     * </p>
+     * 
+     * @param listReportGroupsRequest
+     * @return Result of the ListReportGroups operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListReportGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListReportGroupsResult listReportGroups(ListReportGroupsRequest listReportGroupsRequest);
+
+    /**
+     * <p>
+     * Returns a list of ARNs for the reports in the current AWS account.
+     * </p>
+     * 
+     * @param listReportsRequest
+     * @return Result of the ListReports operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListReportsResult listReports(ListReportsRequest listReportsRequest);
+
+    /**
+     * <p>
+     * Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>.
+     * </p>
+     * 
+     * @param listReportsForReportGroupRequest
+     * @return Result of the ListReportsForReportGroup operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.ListReportsForReportGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListReportsForReportGroupResult listReportsForReportGroup(ListReportsForReportGroupRequest listReportsForReportGroupRequest);
+
+    /**
+     * <p>
      * Returns a list of <code>SourceCredentialsInfo</code> objects.
      * </p>
      * 
@@ -557,6 +728,23 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);
+
+    /**
+     * <p>
+     * Updates a report group.
+     * </p>
+     * 
+     * @param updateReportGroupRequest
+     * @return Result of the UpdateReportGroup operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.UpdateReportGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateReportGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateReportGroupResult updateReportGroup(UpdateReportGroupRequest updateReportGroupRequest);
 
     /**
      * <p>

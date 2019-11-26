@@ -128,6 +128,30 @@ public class GetFunctionConfigurationResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     getFunctionConfigurationResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("State", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StateReason", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StateReasonCode", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setStateReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastUpdateStatus", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setLastUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastUpdateStatusReason", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setLastUpdateStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastUpdateStatusReasonCode", targetDepth)) {
+                    context.nextToken();
+                    getFunctionConfigurationResult.setLastUpdateStatusReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

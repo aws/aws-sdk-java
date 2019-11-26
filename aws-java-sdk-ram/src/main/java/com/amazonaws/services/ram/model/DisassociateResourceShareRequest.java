@@ -33,7 +33,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
     private String resourceShareArn;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      */
     private java.util.List<String> resourceArns;
@@ -92,10 +92,10 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the resources.
+     * @return The Amazon Resource Names (ARNs) of the resources.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -104,11 +104,11 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARN) of the resources.
+     *        The Amazon Resource Names (ARNs) of the resources.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -122,7 +122,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -131,7 +131,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARN) of the resources.
+     *        The Amazon Resource Names (ARNs) of the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARNs) of the resources.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARN) of the resources.
+     *        The Amazon Resource Names (ARNs) of the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

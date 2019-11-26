@@ -984,7 +984,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance.
+     * Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the
+     * storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the
+     * storage amount for the DB instance.
      * </p>
      */
     private Integer iops;
@@ -7691,7 +7693,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance.
+     * Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the
+     * storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the
+     * storage amount for the DB instance.
      * </p>
      * 
      * @param iops
@@ -7700,7 +7704,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *        Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
-     *        Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance.
+     *        Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50
+     *        of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and
+     *        50 of the storage amount for the DB instance.
      */
 
     public void setIops(Integer iops) {
@@ -7715,7 +7721,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance.
+     * Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the
+     * storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the
+     * storage amount for the DB instance.
      * </p>
      * 
      * @return The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
@@ -7723,7 +7731,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *         Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>. </p>
      *         <p>
-     *         Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance.
+     *         Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and
+     *         50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1
+     *         and 50 of the storage amount for the DB instance.
      */
 
     public Integer getIops() {
@@ -7738,7 +7748,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance.
+     * Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the
+     * storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the
+     * storage amount for the DB instance.
      * </p>
      * 
      * @param iops
@@ -7747,7 +7759,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *        Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
-     *        Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB instance.
+     *        Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50
+     *        of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and
+     *        50 of the storage amount for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

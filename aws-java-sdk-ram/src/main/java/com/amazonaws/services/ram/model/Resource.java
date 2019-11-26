@@ -47,6 +47,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private String resourceShareArn;
     /**
      * <p>
+     * The ARN of the resource group. This value is returned only if the resource is a resource group.
+     * </p>
+     */
+    private String resourceGroupArn;
+    /**
+     * <p>
      * The status of the resource.
      * </p>
      */
@@ -187,6 +193,46 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     public Resource withResourceShareArn(String resourceShareArn) {
         setResourceShareArn(resourceShareArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the resource group. This value is returned only if the resource is a resource group.
+     * </p>
+     * 
+     * @param resourceGroupArn
+     *        The ARN of the resource group. This value is returned only if the resource is a resource group.
+     */
+
+    public void setResourceGroupArn(String resourceGroupArn) {
+        this.resourceGroupArn = resourceGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the resource group. This value is returned only if the resource is a resource group.
+     * </p>
+     * 
+     * @return The ARN of the resource group. This value is returned only if the resource is a resource group.
+     */
+
+    public String getResourceGroupArn() {
+        return this.resourceGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the resource group. This value is returned only if the resource is a resource group.
+     * </p>
+     * 
+     * @param resourceGroupArn
+     *        The ARN of the resource group. This value is returned only if the resource is a resource group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withResourceGroupArn(String resourceGroupArn) {
+        setResourceGroupArn(resourceGroupArn);
         return this;
     }
 
@@ -387,6 +433,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Type: ").append(getType()).append(",");
         if (getResourceShareArn() != null)
             sb.append("ResourceShareArn: ").append(getResourceShareArn()).append(",");
+        if (getResourceGroupArn() != null)
+            sb.append("ResourceGroupArn: ").append(getResourceGroupArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
@@ -421,6 +469,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceShareArn() != null && other.getResourceShareArn().equals(this.getResourceShareArn()) == false)
             return false;
+        if (other.getResourceGroupArn() == null ^ this.getResourceGroupArn() == null)
+            return false;
+        if (other.getResourceGroupArn() != null && other.getResourceGroupArn().equals(this.getResourceGroupArn()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -448,6 +500,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getResourceShareArn() == null) ? 0 : getResourceShareArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceGroupArn() == null) ? 0 : getResourceGroupArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

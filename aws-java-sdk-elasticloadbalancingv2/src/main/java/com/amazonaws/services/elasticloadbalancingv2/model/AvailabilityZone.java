@@ -41,7 +41,8 @@ public class AvailabilityZone implements Serializable, Cloneable {
     /**
      * <p>
      * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
-     * address per Availability Zone when you create the load balancer.
+     * address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you
+     * can specify a private IP address from the IPv4 range of the subnet.
      * </p>
      */
     private java.util.List<LoadBalancerAddress> loadBalancerAddresses;
@@ -129,11 +130,13 @@ public class AvailabilityZone implements Serializable, Cloneable {
     /**
      * <p>
      * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
-     * address per Availability Zone when you create the load balancer.
+     * address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you
+     * can specify a private IP address from the IPv4 range of the subnet.
      * </p>
      * 
      * @return [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one
-     *         Elastic IP address per Availability Zone when you create the load balancer.
+     *         Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal
+     *         load balancers, you can specify a private IP address from the IPv4 range of the subnet.
      */
 
     public java.util.List<LoadBalancerAddress> getLoadBalancerAddresses() {
@@ -143,12 +146,14 @@ public class AvailabilityZone implements Serializable, Cloneable {
     /**
      * <p>
      * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
-     * address per Availability Zone when you create the load balancer.
+     * address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you
+     * can specify a private IP address from the IPv4 range of the subnet.
      * </p>
      * 
      * @param loadBalancerAddresses
      *        [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one
-     *        Elastic IP address per Availability Zone when you create the load balancer.
+     *        Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal
+     *        load balancers, you can specify a private IP address from the IPv4 range of the subnet.
      */
 
     public void setLoadBalancerAddresses(java.util.Collection<LoadBalancerAddress> loadBalancerAddresses) {
@@ -163,7 +168,8 @@ public class AvailabilityZone implements Serializable, Cloneable {
     /**
      * <p>
      * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
-     * address per Availability Zone when you create the load balancer.
+     * address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you
+     * can specify a private IP address from the IPv4 range of the subnet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -173,7 +179,8 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * 
      * @param loadBalancerAddresses
      *        [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one
-     *        Elastic IP address per Availability Zone when you create the load balancer.
+     *        Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal
+     *        load balancers, you can specify a private IP address from the IPv4 range of the subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,12 +197,14 @@ public class AvailabilityZone implements Serializable, Cloneable {
     /**
      * <p>
      * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
-     * address per Availability Zone when you create the load balancer.
+     * address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you
+     * can specify a private IP address from the IPv4 range of the subnet.
      * </p>
      * 
      * @param loadBalancerAddresses
      *        [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one
-     *        Elastic IP address per Availability Zone when you create the load balancer.
+     *        Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal
+     *        load balancers, you can specify a private IP address from the IPv4 range of the subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

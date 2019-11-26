@@ -59,7 +59,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
-     * IP address per subnet if you need static IP addresses for your load balancer.
+     * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
      */
     private java.util.List<SubnetMapping> subnetMappings;
@@ -303,7 +304,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
-     * IP address per subnet if you need static IP addresses for your load balancer.
+     * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
      * 
      * @return The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
@@ -314,7 +316,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <p>
      *         [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
-     *         Elastic IP address per subnet if you need static IP addresses for your load balancer.
+     *         Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
+     *         internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
+     *         subnet.
      */
 
     public java.util.List<SubnetMapping> getSubnetMappings() {
@@ -332,7 +336,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
-     * IP address per subnet if you need static IP addresses for your load balancer.
+     * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
      * 
      * @param subnetMappings
@@ -344,7 +349,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
-     *        Elastic IP address per subnet if you need static IP addresses for your load balancer.
+     *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
+     *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
+     *        subnet.
      */
 
     public void setSubnetMappings(java.util.Collection<SubnetMapping> subnetMappings) {
@@ -367,7 +374,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
-     * IP address per subnet if you need static IP addresses for your load balancer.
+     * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -384,7 +392,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
-     *        Elastic IP address per subnet if you need static IP addresses for your load balancer.
+     *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
+     *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
+     *        subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,7 +419,8 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
-     * IP address per subnet if you need static IP addresses for your load balancer.
+     * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
+     * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
      * </p>
      * 
      * @param subnetMappings
@@ -421,7 +432,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
-     *        Elastic IP address per subnet if you need static IP addresses for your load balancer.
+     *        Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For
+     *        internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the
+     *        subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

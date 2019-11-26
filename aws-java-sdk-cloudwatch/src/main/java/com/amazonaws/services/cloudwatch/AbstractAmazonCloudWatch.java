@@ -54,6 +54,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public DeleteInsightRulesResult deleteInsightRules(DeleteInsightRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAlarmHistoryResult describeAlarmHistory(DescribeAlarmHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,7 +89,17 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public DescribeInsightRulesResult describeInsightRules(DescribeInsightRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableAlarmActionsResult disableAlarmActions(DisableAlarmActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisableInsightRulesResult disableInsightRules(DisableInsightRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +109,17 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public EnableInsightRulesResult enableInsightRules(EnableInsightRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDashboardResult getDashboard(GetDashboardRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetInsightRuleReportResult getInsightRuleReport(GetInsightRuleReportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,6 +165,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
 
     @Override
     public PutDashboardResult putDashboard(PutDashboardRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutInsightRuleResult putInsightRule(PutInsightRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

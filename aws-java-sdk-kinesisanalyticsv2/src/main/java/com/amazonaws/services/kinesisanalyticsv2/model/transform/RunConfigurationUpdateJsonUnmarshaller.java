@@ -48,6 +48,10 @@ public class RunConfigurationUpdateJsonUnmarshaller implements Unmarshaller<RunC
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("FlinkRunConfiguration", targetDepth)) {
+                    context.nextToken();
+                    runConfigurationUpdate.setFlinkRunConfiguration(FlinkRunConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ApplicationRestoreConfiguration", targetDepth)) {
                     context.nextToken();
                     runConfigurationUpdate

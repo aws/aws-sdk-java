@@ -33,9 +33,8 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String text;
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend:
-     * German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents
-     * must be in the same language.
+     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
+     * All documents must be in the same language.
      * </p>
      */
     private String languageCode;
@@ -82,15 +81,13 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend:
-     * German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents
-     * must be in the same language.
+     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
+     * All documents must be in the same language.
      * </p>
      * 
      * @param languageCode
      *        The language of the input documents. You can specify any of the primary languages supported by Amazon
-     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
-     *        ("pt"). All documents must be in the same language.
+     *        Comprehend. All documents must be in the same language.
      * @see LanguageCode
      */
 
@@ -100,14 +97,12 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend:
-     * German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents
-     * must be in the same language.
+     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
+     * All documents must be in the same language.
      * </p>
      * 
      * @return The language of the input documents. You can specify any of the primary languages supported by Amazon
-     *         Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
-     *         ("pt"). All documents must be in the same language.
+     *         Comprehend. All documents must be in the same language.
      * @see LanguageCode
      */
 
@@ -117,15 +112,13 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend:
-     * German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents
-     * must be in the same language.
+     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
+     * All documents must be in the same language.
      * </p>
      * 
      * @param languageCode
      *        The language of the input documents. You can specify any of the primary languages supported by Amazon
-     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
-     *        ("pt"). All documents must be in the same language.
+     *        Comprehend. All documents must be in the same language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -137,15 +130,13 @@ public class DetectEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend:
-     * German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents
-     * must be in the same language.
+     * The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend.
+     * All documents must be in the same language.
      * </p>
      * 
      * @param languageCode
      *        The language of the input documents. You can specify any of the primary languages supported by Amazon
-     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
-     *        ("pt"). All documents must be in the same language.
+     *        Comprehend. All documents must be in the same language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */

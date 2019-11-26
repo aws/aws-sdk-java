@@ -33,6 +33,8 @@ public class ListOfferingsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("channelConfiguration").build();
     private static final MarshallingInfo<String> CODEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("codec").build();
+    private static final MarshallingInfo<String> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("duration").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> MAXIMUMBITRATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class ListOfferingsRequestMarshaller {
             protocolMarshaller.marshall(listOfferingsRequest.getChannelClass(), CHANNELCLASS_BINDING);
             protocolMarshaller.marshall(listOfferingsRequest.getChannelConfiguration(), CHANNELCONFIGURATION_BINDING);
             protocolMarshaller.marshall(listOfferingsRequest.getCodec(), CODEC_BINDING);
+            protocolMarshaller.marshall(listOfferingsRequest.getDuration(), DURATION_BINDING);
             protocolMarshaller.marshall(listOfferingsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listOfferingsRequest.getMaximumBitrate(), MAXIMUMBITRATE_BINDING);
             protocolMarshaller.marshall(listOfferingsRequest.getMaximumFramerate(), MAXIMUMFRAMERATE_BINDING);

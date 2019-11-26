@@ -56,6 +56,10 @@ public class EncryptResultJsonUnmarshaller implements Unmarshaller<EncryptResult
                     context.nextToken();
                     encryptResult.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EncryptionAlgorithm", targetDepth)) {
+                    context.nextToken();
+                    encryptResult.setEncryptionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

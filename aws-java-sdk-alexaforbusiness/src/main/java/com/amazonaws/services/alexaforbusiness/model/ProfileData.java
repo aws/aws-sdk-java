@@ -54,7 +54,7 @@ public class ProfileData implements Serializable, Cloneable, StructuredPojo {
     private String address;
     /**
      * <p>
-     * The timezone of a room profile.
+     * The time zone of a room profile.
      * </p>
      */
     private String timezone;
@@ -78,7 +78,7 @@ public class ProfileData implements Serializable, Cloneable, StructuredPojo {
     private String wakeWord;
     /**
      * <p>
-     * The locale of a room profile.
+     * The locale of a room profile. (This is currently available only to a limited preview audience.)
      * </p>
      */
     private String locale;
@@ -257,11 +257,11 @@ public class ProfileData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timezone of a room profile.
+     * The time zone of a room profile.
      * </p>
      * 
      * @param timezone
-     *        The timezone of a room profile.
+     *        The time zone of a room profile.
      */
 
     public void setTimezone(String timezone) {
@@ -270,10 +270,10 @@ public class ProfileData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timezone of a room profile.
+     * The time zone of a room profile.
      * </p>
      * 
-     * @return The timezone of a room profile.
+     * @return The time zone of a room profile.
      */
 
     public String getTimezone() {
@@ -282,11 +282,11 @@ public class ProfileData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timezone of a room profile.
+     * The time zone of a room profile.
      * </p>
      * 
      * @param timezone
-     *        The timezone of a room profile.
+     *        The time zone of a room profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -474,11 +474,11 @@ public class ProfileData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The locale of a room profile.
+     * The locale of a room profile. (This is currently available only to a limited preview audience.)
      * </p>
      * 
      * @param locale
-     *        The locale of a room profile.
+     *        The locale of a room profile. (This is currently available only to a limited preview audience.)
      */
 
     public void setLocale(String locale) {
@@ -487,10 +487,10 @@ public class ProfileData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The locale of a room profile.
+     * The locale of a room profile. (This is currently available only to a limited preview audience.)
      * </p>
      * 
-     * @return The locale of a room profile.
+     * @return The locale of a room profile. (This is currently available only to a limited preview audience.)
      */
 
     public String getLocale() {
@@ -499,11 +499,11 @@ public class ProfileData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The locale of a room profile.
+     * The locale of a room profile. (This is currently available only to a limited preview audience.)
      * </p>
      * 
      * @param locale
-     *        The locale of a room profile.
+     *        The locale of a room profile. (This is currently available only to a limited preview audience.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

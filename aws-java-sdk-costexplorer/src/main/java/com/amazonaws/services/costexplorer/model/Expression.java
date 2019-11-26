@@ -103,6 +103,17 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TagValues tags;
+    /**
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * <p>
+     * The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * </p>
+     */
+    private CostCategoryValues costCategories;
 
     /**
      * <p>
@@ -365,6 +376,73 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * <p>
+     * The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * </p>
+     * 
+     * @param costCategories
+     *        <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change.
+     *        Your use of Cost Categories is subject to the Beta Service Participation terms of the <a
+     *        href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i> </p>
+     *        <p>
+     *        The specific <code>CostCategory</code> used for <code>Expression</code>.
+     */
+
+    public void setCostCategories(CostCategoryValues costCategories) {
+        this.costCategories = costCategories;
+    }
+
+    /**
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * <p>
+     * The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * </p>
+     * 
+     * @return <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change.
+     *         Your use of Cost Categories is subject to the Beta Service Participation terms of the <a
+     *         href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i> </p>
+     *         <p>
+     *         The specific <code>CostCategory</code> used for <code>Expression</code>.
+     */
+
+    public CostCategoryValues getCostCategories() {
+        return this.costCategories;
+    }
+
+    /**
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * <p>
+     * The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * </p>
+     * 
+     * @param costCategories
+     *        <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change.
+     *        Your use of Cost Categories is subject to the Beta Service Participation terms of the <a
+     *        href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i> </p>
+     *        <p>
+     *        The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Expression withCostCategories(CostCategoryValues costCategories) {
+        setCostCategories(costCategories);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -385,7 +463,9 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
         if (getDimensions() != null)
             sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getCostCategories() != null)
+            sb.append("CostCategories: ").append(getCostCategories());
         sb.append("}");
         return sb.toString();
     }
@@ -420,6 +500,10 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getCostCategories() == null ^ this.getCostCategories() == null)
+            return false;
+        if (other.getCostCategories() != null && other.getCostCategories().equals(this.getCostCategories()) == false)
+            return false;
         return true;
     }
 
@@ -433,6 +517,7 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNot() == null) ? 0 : getNot().hashCode());
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getCostCategories() == null) ? 0 : getCostCategories().hashCode());
         return hashCode;
     }
 

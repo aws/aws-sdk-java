@@ -2112,11 +2112,11 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the version."
+          "documentation" : "The ID of the parent definition that the version is associated with."
         },
         "Version" : {
           "shape" : "__string",
-          "documentation" : "The unique ID of the version."
+          "documentation" : "The ID of the version."
         }
       }
     },
@@ -2212,11 +2212,11 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the version."
+          "documentation" : "The ID of the parent definition that the version is associated with."
         },
         "Version" : {
           "shape" : "__string",
-          "documentation" : "The unique ID of the version."
+          "documentation" : "The ID of the version."
         }
       }
     },
@@ -2354,11 +2354,11 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the version."
+          "documentation" : "The ID of the parent definition that the version is associated with."
         },
         "Version" : {
           "shape" : "__string",
-          "documentation" : "The unique ID of the version."
+          "documentation" : "The ID of the version."
         }
       }
     },
@@ -2458,11 +2458,11 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the version."
+          "documentation" : "The ID of the parent definition that the version is associated with."
         },
         "Version" : {
           "shape" : "__string",
-          "documentation" : "The unique ID of the version."
+          "documentation" : "The ID of the version."
         }
       }
     },
@@ -2608,11 +2608,11 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the version."
+          "documentation" : "The ID of the parent definition that the version is associated with."
         },
         "Version" : {
           "shape" : "__string",
-          "documentation" : "The unique ID of the version."
+          "documentation" : "The ID of the version."
         }
       }
     },
@@ -2707,11 +2707,11 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the version."
+          "documentation" : "The ID of the parent definition that the version is associated with."
         },
         "Version" : {
           "shape" : "__string",
-          "documentation" : "The unique ID of the version."
+          "documentation" : "The ID of the version."
         }
       }
     },
@@ -2806,11 +2806,11 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the version."
+          "documentation" : "The ID of the parent definition that the version is associated with."
         },
         "Version" : {
           "shape" : "__string",
-          "documentation" : "The unique ID of the version."
+          "documentation" : "The ID of the version."
         }
       }
     },
@@ -2952,11 +2952,11 @@
         },
         "Id" : {
           "shape" : "__string",
-          "documentation" : "The ID of the version."
+          "documentation" : "The ID of the parent definition that the version is associated with."
         },
         "Version" : {
           "shape" : "__string",
-          "documentation" : "The unique ID of the version."
+          "documentation" : "The ID of the version."
         }
       }
     },
@@ -5451,12 +5451,30 @@
       },
       "documentation" : "Information about a resource definition version."
     },
+    "ResourceDownloadOwnerSetting" : {
+      "type" : "structure",
+      "members" : {
+        "GroupOwner" : {
+          "shape" : "__string",
+          "documentation" : "The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process."
+        },
+        "GroupPermission" : {
+          "shape" : "Permission",
+          "documentation" : "The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only)."
+        }
+      },
+      "documentation" : "The owner setting for downloaded machine learning resources.",
+      "required" : [ "GroupOwner", "GroupPermission" ]
+    },
     "S3MachineLearningModelResourceData" : {
       "type" : "structure",
       "members" : {
         "DestinationPath" : {
           "shape" : "__string",
           "documentation" : "The absolute local path of the resource inside the Lambda environment."
+        },
+        "OwnerSetting" : {
+          "shape" : "ResourceDownloadOwnerSetting"
         },
         "S3Uri" : {
           "shape" : "__string",
@@ -5475,6 +5493,9 @@
         "DestinationPath" : {
           "shape" : "__string",
           "documentation" : "The absolute local path of the resource inside the Lambda environment."
+        },
+        "OwnerSetting" : {
+          "shape" : "ResourceDownloadOwnerSetting"
         },
         "SageMakerJobArn" : {
           "shape" : "__string",
@@ -5871,12 +5892,12 @@
     "UpdateTargetsArchitecture" : {
       "type" : "string",
       "documentation" : "The architecture of the cores which are the targets of an update.",
-      "enum" : [ "armv6l", "armv7l", "x86_64", "aarch64", "openwrt" ]
+      "enum" : [ "armv6l", "armv7l", "x86_64", "aarch64" ]
     },
     "UpdateTargetsOperatingSystem" : {
       "type" : "string",
       "documentation" : "The operating system of the cores which are the targets of an update.",
-      "enum" : [ "ubuntu", "raspbian", "amazon_linux" ]
+      "enum" : [ "ubuntu", "raspbian", "amazon_linux", "openwrt" ]
     },
     "VersionInformation" : {
       "type" : "structure",

@@ -72,8 +72,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
-     * which means you can use the CMK to encrypt and decrypt data.
+     * The cryptographic operations for which you can use the CMK.
      * </p>
      */
     private String keyUsage;
@@ -146,6 +145,32 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String keyManager;
+    /**
+     * <p>
+     * Describes the type of key material in the CMK.
+     * </p>
+     */
+    private String customerMasterKeySpec;
+    /**
+     * <p>
+     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     * within AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> encryptionAlgorithms;
+    /**
+     * <p>
+     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     * AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> signingAlgorithms;
 
     /**
      * <p>
@@ -421,13 +446,11 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
-     * which means you can use the CMK to encrypt and decrypt data.
+     * The cryptographic operations for which you can use the CMK.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. The only valid value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
+     *        The cryptographic operations for which you can use the CMK.
      * @see KeyUsageType
      */
 
@@ -437,12 +460,10 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
-     * which means you can use the CMK to encrypt and decrypt data.
+     * The cryptographic operations for which you can use the CMK.
      * </p>
      * 
-     * @return The cryptographic operations for which you can use the CMK. The only valid value is
-     *         <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
+     * @return The cryptographic operations for which you can use the CMK.
      * @see KeyUsageType
      */
 
@@ -452,13 +473,11 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
-     * which means you can use the CMK to encrypt and decrypt data.
+     * The cryptographic operations for which you can use the CMK.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. The only valid value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
+     *        The cryptographic operations for which you can use the CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyUsageType
      */
@@ -470,13 +489,11 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
-     * which means you can use the CMK to encrypt and decrypt data.
+     * The cryptographic operations for which you can use the CMK.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. The only valid value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
+     *        The cryptographic operations for which you can use the CMK.
      * @see KeyUsageType
      */
 
@@ -486,13 +503,11 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
-     * which means you can use the CMK to encrypt and decrypt data.
+     * The cryptographic operations for which you can use the CMK.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. The only valid value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
+     *        The cryptographic operations for which you can use the CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyUsageType
      */
@@ -1128,6 +1143,352 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the type of key material in the CMK.
+     * </p>
+     * 
+     * @param customerMasterKeySpec
+     *        Describes the type of key material in the CMK.
+     * @see CustomerMasterKeySpec
+     */
+
+    public void setCustomerMasterKeySpec(String customerMasterKeySpec) {
+        this.customerMasterKeySpec = customerMasterKeySpec;
+    }
+
+    /**
+     * <p>
+     * Describes the type of key material in the CMK.
+     * </p>
+     * 
+     * @return Describes the type of key material in the CMK.
+     * @see CustomerMasterKeySpec
+     */
+
+    public String getCustomerMasterKeySpec() {
+        return this.customerMasterKeySpec;
+    }
+
+    /**
+     * <p>
+     * Describes the type of key material in the CMK.
+     * </p>
+     * 
+     * @param customerMasterKeySpec
+     *        Describes the type of key material in the CMK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomerMasterKeySpec
+     */
+
+    public KeyMetadata withCustomerMasterKeySpec(String customerMasterKeySpec) {
+        setCustomerMasterKeySpec(customerMasterKeySpec);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the type of key material in the CMK.
+     * </p>
+     * 
+     * @param customerMasterKeySpec
+     *        Describes the type of key material in the CMK.
+     * @see CustomerMasterKeySpec
+     */
+
+    public void setCustomerMasterKeySpec(CustomerMasterKeySpec customerMasterKeySpec) {
+        withCustomerMasterKeySpec(customerMasterKeySpec);
+    }
+
+    /**
+     * <p>
+     * Describes the type of key material in the CMK.
+     * </p>
+     * 
+     * @param customerMasterKeySpec
+     *        Describes the type of key material in the CMK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomerMasterKeySpec
+     */
+
+    public KeyMetadata withCustomerMasterKeySpec(CustomerMasterKeySpec customerMasterKeySpec) {
+        this.customerMasterKeySpec = customerMasterKeySpec.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     * within AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * </p>
+     * 
+     * @return A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
+     *         algorithms within AWS KMS.</p>
+     *         <p>
+     *         This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public java.util.List<String> getEncryptionAlgorithms() {
+        if (encryptionAlgorithms == null) {
+            encryptionAlgorithms = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return encryptionAlgorithms;
+    }
+
+    /**
+     * <p>
+     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     * within AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * </p>
+     * 
+     * @param encryptionAlgorithms
+     *        A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
+     *        algorithms within AWS KMS.</p>
+     *        <p>
+     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public void setEncryptionAlgorithms(java.util.Collection<String> encryptionAlgorithms) {
+        if (encryptionAlgorithms == null) {
+            this.encryptionAlgorithms = null;
+            return;
+        }
+
+        this.encryptionAlgorithms = new com.amazonaws.internal.SdkInternalList<String>(encryptionAlgorithms);
+    }
+
+    /**
+     * <p>
+     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     * within AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEncryptionAlgorithms(java.util.Collection)} or {@link #withEncryptionAlgorithms(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param encryptionAlgorithms
+     *        A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
+     *        algorithms within AWS KMS.</p>
+     *        <p>
+     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public KeyMetadata withEncryptionAlgorithms(String... encryptionAlgorithms) {
+        if (this.encryptionAlgorithms == null) {
+            setEncryptionAlgorithms(new com.amazonaws.internal.SdkInternalList<String>(encryptionAlgorithms.length));
+        }
+        for (String ele : encryptionAlgorithms) {
+            this.encryptionAlgorithms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     * within AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * </p>
+     * 
+     * @param encryptionAlgorithms
+     *        A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
+     *        algorithms within AWS KMS.</p>
+     *        <p>
+     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public KeyMetadata withEncryptionAlgorithms(java.util.Collection<String> encryptionAlgorithms) {
+        setEncryptionAlgorithms(encryptionAlgorithms);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     * within AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * </p>
+     * 
+     * @param encryptionAlgorithms
+     *        A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
+     *        algorithms within AWS KMS.</p>
+     *        <p>
+     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public KeyMetadata withEncryptionAlgorithms(EncryptionAlgorithmSpec... encryptionAlgorithms) {
+        com.amazonaws.internal.SdkInternalList<String> encryptionAlgorithmsCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                encryptionAlgorithms.length);
+        for (EncryptionAlgorithmSpec value : encryptionAlgorithms) {
+            encryptionAlgorithmsCopy.add(value.toString());
+        }
+        if (getEncryptionAlgorithms() == null) {
+            setEncryptionAlgorithms(encryptionAlgorithmsCopy);
+        } else {
+            getEncryptionAlgorithms().addAll(encryptionAlgorithmsCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     * AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * </p>
+     * 
+     * @return A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
+     *         within AWS KMS.</p>
+     *         <p>
+     *         This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * @see SigningAlgorithmSpec
+     */
+
+    public java.util.List<String> getSigningAlgorithms() {
+        if (signingAlgorithms == null) {
+            signingAlgorithms = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return signingAlgorithms;
+    }
+
+    /**
+     * <p>
+     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     * AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * </p>
+     * 
+     * @param signingAlgorithms
+     *        A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
+     *        within AWS KMS.</p>
+     *        <p>
+     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * @see SigningAlgorithmSpec
+     */
+
+    public void setSigningAlgorithms(java.util.Collection<String> signingAlgorithms) {
+        if (signingAlgorithms == null) {
+            this.signingAlgorithms = null;
+            return;
+        }
+
+        this.signingAlgorithms = new com.amazonaws.internal.SdkInternalList<String>(signingAlgorithms);
+    }
+
+    /**
+     * <p>
+     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     * AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSigningAlgorithms(java.util.Collection)} or {@link #withSigningAlgorithms(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param signingAlgorithms
+     *        A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
+     *        within AWS KMS.</p>
+     *        <p>
+     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SigningAlgorithmSpec
+     */
+
+    public KeyMetadata withSigningAlgorithms(String... signingAlgorithms) {
+        if (this.signingAlgorithms == null) {
+            setSigningAlgorithms(new com.amazonaws.internal.SdkInternalList<String>(signingAlgorithms.length));
+        }
+        for (String ele : signingAlgorithms) {
+            this.signingAlgorithms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     * AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * </p>
+     * 
+     * @param signingAlgorithms
+     *        A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
+     *        within AWS KMS.</p>
+     *        <p>
+     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SigningAlgorithmSpec
+     */
+
+    public KeyMetadata withSigningAlgorithms(java.util.Collection<String> signingAlgorithms) {
+        setSigningAlgorithms(signingAlgorithms);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     * AWS KMS.
+     * </p>
+     * <p>
+     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * </p>
+     * 
+     * @param signingAlgorithms
+     *        A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
+     *        within AWS KMS.</p>
+     *        <p>
+     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SigningAlgorithmSpec
+     */
+
+    public KeyMetadata withSigningAlgorithms(SigningAlgorithmSpec... signingAlgorithms) {
+        com.amazonaws.internal.SdkInternalList<String> signingAlgorithmsCopy = new com.amazonaws.internal.SdkInternalList<String>(signingAlgorithms.length);
+        for (SigningAlgorithmSpec value : signingAlgorithms) {
+            signingAlgorithmsCopy.add(value.toString());
+        }
+        if (getSigningAlgorithms() == null) {
+            setSigningAlgorithms(signingAlgorithmsCopy);
+        } else {
+            getSigningAlgorithms().addAll(signingAlgorithmsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1168,7 +1529,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getExpirationModel() != null)
             sb.append("ExpirationModel: ").append(getExpirationModel()).append(",");
         if (getKeyManager() != null)
-            sb.append("KeyManager: ").append(getKeyManager());
+            sb.append("KeyManager: ").append(getKeyManager()).append(",");
+        if (getCustomerMasterKeySpec() != null)
+            sb.append("CustomerMasterKeySpec: ").append(getCustomerMasterKeySpec()).append(",");
+        if (getEncryptionAlgorithms() != null)
+            sb.append("EncryptionAlgorithms: ").append(getEncryptionAlgorithms()).append(",");
+        if (getSigningAlgorithms() != null)
+            sb.append("SigningAlgorithms: ").append(getSigningAlgorithms());
         sb.append("}");
         return sb.toString();
     }
@@ -1243,6 +1610,18 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKeyManager() != null && other.getKeyManager().equals(this.getKeyManager()) == false)
             return false;
+        if (other.getCustomerMasterKeySpec() == null ^ this.getCustomerMasterKeySpec() == null)
+            return false;
+        if (other.getCustomerMasterKeySpec() != null && other.getCustomerMasterKeySpec().equals(this.getCustomerMasterKeySpec()) == false)
+            return false;
+        if (other.getEncryptionAlgorithms() == null ^ this.getEncryptionAlgorithms() == null)
+            return false;
+        if (other.getEncryptionAlgorithms() != null && other.getEncryptionAlgorithms().equals(this.getEncryptionAlgorithms()) == false)
+            return false;
+        if (other.getSigningAlgorithms() == null ^ this.getSigningAlgorithms() == null)
+            return false;
+        if (other.getSigningAlgorithms() != null && other.getSigningAlgorithms().equals(this.getSigningAlgorithms()) == false)
+            return false;
         return true;
     }
 
@@ -1266,6 +1645,9 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCloudHsmClusterId() == null) ? 0 : getCloudHsmClusterId().hashCode());
         hashCode = prime * hashCode + ((getExpirationModel() == null) ? 0 : getExpirationModel().hashCode());
         hashCode = prime * hashCode + ((getKeyManager() == null) ? 0 : getKeyManager().hashCode());
+        hashCode = prime * hashCode + ((getCustomerMasterKeySpec() == null) ? 0 : getCustomerMasterKeySpec().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionAlgorithms() == null) ? 0 : getEncryptionAlgorithms().hashCode());
+        hashCode = prime * hashCode + ((getSigningAlgorithms() == null) ? 0 : getSigningAlgorithms().hashCode());
         return hashCode;
     }
 

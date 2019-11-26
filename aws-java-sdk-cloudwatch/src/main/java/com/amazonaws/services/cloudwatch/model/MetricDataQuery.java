@@ -118,11 +118,10 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <code>StorageResolution of 1 second</code>.
      * </p>
      * <p>
-     * Use this field only when you are performing a <code>GetMetricData</code> operation, and only when you are
-     * specifying the <code>Expression</code> field. Do not use this field with a <code>PutMetricAlarm</code> operation
-     * or when you are specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
+     * If you are performing a <code>GetMetricData</code> operation, use this field only if you are specifying an
+     * <code>Expression</code>. Do not use this field when you are specifying a <code>MetricStat</code> in a
+     * <code>GetMetricData</code> operation.
      * </p>
-     * <p/>
      */
     private Integer period;
 
@@ -511,24 +510,21 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <code>StorageResolution of 1 second</code>.
      * </p>
      * <p>
-     * Use this field only when you are performing a <code>GetMetricData</code> operation, and only when you are
-     * specifying the <code>Expression</code> field. Do not use this field with a <code>PutMetricAlarm</code> operation
-     * or when you are specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
+     * If you are performing a <code>GetMetricData</code> operation, use this field only if you are specifying an
+     * <code>Expression</code>. Do not use this field when you are specifying a <code>MetricStat</code> in a
+     * <code>GetMetricData</code> operation.
      * </p>
-     * <p/>
      * 
      * @param period
      *        The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period
      *        can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that
      *        are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      *        60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that
-     *        includes a <code>StorageResolution of 1 second</code>.
-     *        </p>
+     *        includes a <code>StorageResolution of 1 second</code>.</p>
      *        <p>
-     *        Use this field only when you are performing a <code>GetMetricData</code> operation, and only when you are
-     *        specifying the <code>Expression</code> field. Do not use this field with a <code>PutMetricAlarm</code>
-     *        operation or when you are specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
-     *        </p>
+     *        If you are performing a <code>GetMetricData</code> operation, use this field only if you are specifying an
+     *        <code>Expression</code>. Do not use this field when you are specifying a <code>MetricStat</code> in a
+     *        <code>GetMetricData</code> operation.
      */
 
     public void setPeriod(Integer period) {
@@ -544,23 +540,20 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <code>StorageResolution of 1 second</code>.
      * </p>
      * <p>
-     * Use this field only when you are performing a <code>GetMetricData</code> operation, and only when you are
-     * specifying the <code>Expression</code> field. Do not use this field with a <code>PutMetricAlarm</code> operation
-     * or when you are specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
+     * If you are performing a <code>GetMetricData</code> operation, use this field only if you are specifying an
+     * <code>Expression</code>. Do not use this field when you are specifying a <code>MetricStat</code> in a
+     * <code>GetMetricData</code> operation.
      * </p>
-     * <p/>
      * 
      * @return The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period
      *         can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that
      *         are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple
      *         of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that
-     *         includes a <code>StorageResolution of 1 second</code>.
-     *         </p>
+     *         includes a <code>StorageResolution of 1 second</code>.</p>
      *         <p>
-     *         Use this field only when you are performing a <code>GetMetricData</code> operation, and only when you are
-     *         specifying the <code>Expression</code> field. Do not use this field with a <code>PutMetricAlarm</code>
-     *         operation or when you are specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
-     *         </p>
+     *         If you are performing a <code>GetMetricData</code> operation, use this field only if you are specifying
+     *         an <code>Expression</code>. Do not use this field when you are specifying a <code>MetricStat</code> in a
+     *         <code>GetMetricData</code> operation.
      */
 
     public Integer getPeriod() {
@@ -576,24 +569,21 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <code>StorageResolution of 1 second</code>.
      * </p>
      * <p>
-     * Use this field only when you are performing a <code>GetMetricData</code> operation, and only when you are
-     * specifying the <code>Expression</code> field. Do not use this field with a <code>PutMetricAlarm</code> operation
-     * or when you are specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
+     * If you are performing a <code>GetMetricData</code> operation, use this field only if you are specifying an
+     * <code>Expression</code>. Do not use this field when you are specifying a <code>MetricStat</code> in a
+     * <code>GetMetricData</code> operation.
      * </p>
-     * <p/>
      * 
      * @param period
      *        The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period
      *        can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that
      *        are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      *        60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> operation that
-     *        includes a <code>StorageResolution of 1 second</code>.
-     *        </p>
+     *        includes a <code>StorageResolution of 1 second</code>.</p>
      *        <p>
-     *        Use this field only when you are performing a <code>GetMetricData</code> operation, and only when you are
-     *        specifying the <code>Expression</code> field. Do not use this field with a <code>PutMetricAlarm</code>
-     *        operation or when you are specifying a <code>MetricStat</code> in a <code>GetMetricData</code> operation.
-     *        </p>
+     *        If you are performing a <code>GetMetricData</code> operation, use this field only if you are specifying an
+     *        <code>Expression</code>. Do not use this field when you are specifying a <code>MetricStat</code> in a
+     *        <code>GetMetricData</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

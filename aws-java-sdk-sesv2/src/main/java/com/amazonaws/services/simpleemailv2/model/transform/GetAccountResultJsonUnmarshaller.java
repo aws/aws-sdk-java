@@ -48,14 +48,6 @@ public class GetAccountResultJsonUnmarshaller implements Unmarshaller<GetAccount
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("SendQuota", targetDepth)) {
-                    context.nextToken();
-                    getAccountResult.setSendQuota(SendQuotaJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("SendingEnabled", targetDepth)) {
-                    context.nextToken();
-                    getAccountResult.setSendingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
                 if (context.testExpression("DedicatedIpAutoWarmupEnabled", targetDepth)) {
                     context.nextToken();
                     getAccountResult.setDedicatedIpAutoWarmupEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -67,6 +59,18 @@ public class GetAccountResultJsonUnmarshaller implements Unmarshaller<GetAccount
                 if (context.testExpression("ProductionAccessEnabled", targetDepth)) {
                     context.nextToken();
                     getAccountResult.setProductionAccessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("SendQuota", targetDepth)) {
+                    context.nextToken();
+                    getAccountResult.setSendQuota(SendQuotaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SendingEnabled", targetDepth)) {
+                    context.nextToken();
+                    getAccountResult.setSendingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("SuppressionAttributes", targetDepth)) {
+                    context.nextToken();
+                    getAccountResult.setSuppressionAttributes(SuppressionAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

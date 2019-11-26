@@ -49,6 +49,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer
+     * selects targets when routing requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
      * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
@@ -131,6 +138,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer
+     * selects targets when routing requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
      * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
@@ -202,6 +216,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        function:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer
+     *        selects targets when routing requests. The value is <code>round_robin</code> or
+     *        <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
@@ -283,6 +304,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer
+     * selects targets when routing requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
      * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
@@ -353,6 +381,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         function:
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load
+     *         balancer selects targets when routing requests. The value is <code>round_robin</code> or
+     *         <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
@@ -434,6 +469,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer
+     * selects targets when routing requests. The value is <code>round_robin</code> or
+     * <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
      * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
@@ -505,6 +547,13 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        function:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer
+     *        selects targets when routing requests. The value is <code>round_robin</code> or
+     *        <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered

@@ -57,6 +57,10 @@ public class OutputDestinationJsonUnmarshaller implements Unmarshaller<OutputDes
                     outputDestination.setMediaPackageSettings(new ListUnmarshaller<MediaPackageOutputDestinationSettings>(
                             MediaPackageOutputDestinationSettingsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("multiplexSettings", targetDepth)) {
+                    context.nextToken();
+                    outputDestination.setMultiplexSettings(MultiplexProgramChannelDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("settings", targetDepth)) {
                     context.nextToken();
                     outputDestination.setSettings(new ListUnmarshaller<OutputDestinationSettings>(OutputDestinationSettingsJsonUnmarshaller.getInstance())

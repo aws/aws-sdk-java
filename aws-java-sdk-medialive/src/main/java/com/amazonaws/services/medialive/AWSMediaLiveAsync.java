@@ -147,6 +147,64 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<CreateInputSecurityGroupRequest, CreateInputSecurityGroupResult> asyncHandler);
 
     /**
+     * Create a new multiplex.
+     * 
+     * @param createMultiplexRequest
+     *        A request to create a multiplex.
+     * @return A Java Future containing the result of the CreateMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsync.CreateMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMultiplexResult> createMultiplexAsync(CreateMultiplexRequest createMultiplexRequest);
+
+    /**
+     * Create a new multiplex.
+     * 
+     * @param createMultiplexRequest
+     *        A request to create a multiplex.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.CreateMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMultiplexResult> createMultiplexAsync(CreateMultiplexRequest createMultiplexRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMultiplexRequest, CreateMultiplexResult> asyncHandler);
+
+    /**
+     * Create a new program in the multiplex.
+     * 
+     * @param createMultiplexProgramRequest
+     *        A request to create a program in a multiplex.
+     * @return A Java Future containing the result of the CreateMultiplexProgram operation returned by the service.
+     * @sample AWSMediaLiveAsync.CreateMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMultiplexProgramResult> createMultiplexProgramAsync(CreateMultiplexProgramRequest createMultiplexProgramRequest);
+
+    /**
+     * Create a new program in the multiplex.
+     * 
+     * @param createMultiplexProgramRequest
+     *        A request to create a program in a multiplex.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMultiplexProgram operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.CreateMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMultiplexProgramResult> createMultiplexProgramAsync(CreateMultiplexProgramRequest createMultiplexProgramRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMultiplexProgramRequest, CreateMultiplexProgramResult> asyncHandler);
+
+    /**
      * Create tags for a resource
      * 
      * @param createTagsRequest
@@ -261,6 +319,64 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<DeleteInputSecurityGroupResult> deleteInputSecurityGroupAsync(DeleteInputSecurityGroupRequest deleteInputSecurityGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInputSecurityGroupRequest, DeleteInputSecurityGroupResult> asyncHandler);
+
+    /**
+     * Delete a multiplex. The multiplex must be idle.
+     * 
+     * @param deleteMultiplexRequest
+     *        Placeholder documentation for DeleteMultiplexRequest
+     * @return A Java Future containing the result of the DeleteMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsync.DeleteMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMultiplexResult> deleteMultiplexAsync(DeleteMultiplexRequest deleteMultiplexRequest);
+
+    /**
+     * Delete a multiplex. The multiplex must be idle.
+     * 
+     * @param deleteMultiplexRequest
+     *        Placeholder documentation for DeleteMultiplexRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DeleteMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMultiplexResult> deleteMultiplexAsync(DeleteMultiplexRequest deleteMultiplexRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMultiplexRequest, DeleteMultiplexResult> asyncHandler);
+
+    /**
+     * Delete a program from a multiplex.
+     * 
+     * @param deleteMultiplexProgramRequest
+     *        Placeholder documentation for DeleteMultiplexProgramRequest
+     * @return A Java Future containing the result of the DeleteMultiplexProgram operation returned by the service.
+     * @sample AWSMediaLiveAsync.DeleteMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMultiplexProgramResult> deleteMultiplexProgramAsync(DeleteMultiplexProgramRequest deleteMultiplexProgramRequest);
+
+    /**
+     * Delete a program from a multiplex.
+     * 
+     * @param deleteMultiplexProgramRequest
+     *        Placeholder documentation for DeleteMultiplexProgramRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMultiplexProgram operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DeleteMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMultiplexProgramResult> deleteMultiplexProgramAsync(DeleteMultiplexProgramRequest deleteMultiplexProgramRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMultiplexProgramRequest, DeleteMultiplexProgramResult> asyncHandler);
 
     /**
      * Delete an expired reservation.
@@ -439,6 +555,64 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<DescribeInputSecurityGroupRequest, DescribeInputSecurityGroupResult> asyncHandler);
 
     /**
+     * Gets details about a multiplex.
+     * 
+     * @param describeMultiplexRequest
+     *        Placeholder documentation for DescribeMultiplexRequest
+     * @return A Java Future containing the result of the DescribeMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsync.DescribeMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMultiplexResult> describeMultiplexAsync(DescribeMultiplexRequest describeMultiplexRequest);
+
+    /**
+     * Gets details about a multiplex.
+     * 
+     * @param describeMultiplexRequest
+     *        Placeholder documentation for DescribeMultiplexRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMultiplexResult> describeMultiplexAsync(DescribeMultiplexRequest describeMultiplexRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMultiplexRequest, DescribeMultiplexResult> asyncHandler);
+
+    /**
+     * Get the details for a program in a multiplex.
+     * 
+     * @param describeMultiplexProgramRequest
+     *        Placeholder documentation for DescribeMultiplexProgramRequest
+     * @return A Java Future containing the result of the DescribeMultiplexProgram operation returned by the service.
+     * @sample AWSMediaLiveAsync.DescribeMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMultiplexProgramResult> describeMultiplexProgramAsync(DescribeMultiplexProgramRequest describeMultiplexProgramRequest);
+
+    /**
+     * Get the details for a program in a multiplex.
+     * 
+     * @param describeMultiplexProgramRequest
+     *        Placeholder documentation for DescribeMultiplexProgramRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMultiplexProgram operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMultiplexProgramResult> describeMultiplexProgramAsync(DescribeMultiplexProgramRequest describeMultiplexProgramRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMultiplexProgramRequest, DescribeMultiplexProgramResult> asyncHandler);
+
+    /**
      * Get details for an offering.
      * 
      * @param describeOfferingRequest
@@ -613,6 +787,64 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<ListInputsRequest, ListInputsResult> asyncHandler);
 
     /**
+     * List the programs that currently exist for a specific multiplex.
+     * 
+     * @param listMultiplexProgramsRequest
+     *        Placeholder documentation for ListMultiplexProgramsRequest
+     * @return A Java Future containing the result of the ListMultiplexPrograms operation returned by the service.
+     * @sample AWSMediaLiveAsync.ListMultiplexPrograms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMultiplexProgramsResult> listMultiplexProgramsAsync(ListMultiplexProgramsRequest listMultiplexProgramsRequest);
+
+    /**
+     * List the programs that currently exist for a specific multiplex.
+     * 
+     * @param listMultiplexProgramsRequest
+     *        Placeholder documentation for ListMultiplexProgramsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMultiplexPrograms operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.ListMultiplexPrograms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMultiplexProgramsResult> listMultiplexProgramsAsync(ListMultiplexProgramsRequest listMultiplexProgramsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMultiplexProgramsRequest, ListMultiplexProgramsResult> asyncHandler);
+
+    /**
+     * Retrieve a list of the existing multiplexes.
+     * 
+     * @param listMultiplexesRequest
+     *        Placeholder documentation for ListMultiplexesRequest
+     * @return A Java Future containing the result of the ListMultiplexes operation returned by the service.
+     * @sample AWSMediaLiveAsync.ListMultiplexes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMultiplexesResult> listMultiplexesAsync(ListMultiplexesRequest listMultiplexesRequest);
+
+    /**
+     * Retrieve a list of the existing multiplexes.
+     * 
+     * @param listMultiplexesRequest
+     *        Placeholder documentation for ListMultiplexesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMultiplexes operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.ListMultiplexes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMultiplexesResult> listMultiplexesAsync(ListMultiplexesRequest listMultiplexesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMultiplexesRequest, ListMultiplexesResult> asyncHandler);
+
+    /**
      * List offerings available for purchase.
      * 
      * @param listOfferingsRequest
@@ -758,6 +990,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<StartChannelRequest, StartChannelResult> asyncHandler);
 
     /**
+     * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each
+     * channel.
+     * 
+     * @param startMultiplexRequest
+     *        Placeholder documentation for StartMultiplexRequest
+     * @return A Java Future containing the result of the StartMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsync.StartMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartMultiplexResult> startMultiplexAsync(StartMultiplexRequest startMultiplexRequest);
+
+    /**
+     * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each
+     * channel.
+     * 
+     * @param startMultiplexRequest
+     *        Placeholder documentation for StartMultiplexRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.StartMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartMultiplexResult> startMultiplexAsync(StartMultiplexRequest startMultiplexRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMultiplexRequest, StartMultiplexResult> asyncHandler);
+
+    /**
      * Stops a running channel
      * 
      * @param stopChannelRequest
@@ -785,6 +1048,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<StopChannelResult> stopChannelAsync(StopChannelRequest stopChannelRequest,
             com.amazonaws.handlers.AsyncHandler<StopChannelRequest, StopChannelResult> asyncHandler);
+
+    /**
+     * Stops a running multiplex. If the multiplex isn't running, this action has no effect.
+     * 
+     * @param stopMultiplexRequest
+     *        Placeholder documentation for StopMultiplexRequest
+     * @return A Java Future containing the result of the StopMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsync.StopMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopMultiplexResult> stopMultiplexAsync(StopMultiplexRequest stopMultiplexRequest);
+
+    /**
+     * Stops a running multiplex. If the multiplex isn't running, this action has no effect.
+     * 
+     * @param stopMultiplexRequest
+     *        Placeholder documentation for StopMultiplexRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.StopMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopMultiplexResult> stopMultiplexAsync(StopMultiplexRequest stopMultiplexRequest,
+            com.amazonaws.handlers.AsyncHandler<StopMultiplexRequest, StopMultiplexResult> asyncHandler);
 
     /**
      * Updates a channel.
@@ -903,6 +1195,64 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<UpdateInputSecurityGroupResult> updateInputSecurityGroupAsync(UpdateInputSecurityGroupRequest updateInputSecurityGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInputSecurityGroupRequest, UpdateInputSecurityGroupResult> asyncHandler);
+
+    /**
+     * Updates a multiplex.
+     * 
+     * @param updateMultiplexRequest
+     *        A request to update a multiplex.
+     * @return A Java Future containing the result of the UpdateMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsync.UpdateMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMultiplexResult> updateMultiplexAsync(UpdateMultiplexRequest updateMultiplexRequest);
+
+    /**
+     * Updates a multiplex.
+     * 
+     * @param updateMultiplexRequest
+     *        A request to update a multiplex.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMultiplex operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMultiplexResult> updateMultiplexAsync(UpdateMultiplexRequest updateMultiplexRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMultiplexRequest, UpdateMultiplexResult> asyncHandler);
+
+    /**
+     * Update a program in a multiplex.
+     * 
+     * @param updateMultiplexProgramRequest
+     *        A request to update a program in a multiplex.
+     * @return A Java Future containing the result of the UpdateMultiplexProgram operation returned by the service.
+     * @sample AWSMediaLiveAsync.UpdateMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMultiplexProgramResult> updateMultiplexProgramAsync(UpdateMultiplexProgramRequest updateMultiplexProgramRequest);
+
+    /**
+     * Update a program in a multiplex.
+     * 
+     * @param updateMultiplexProgramRequest
+     *        A request to update a program in a multiplex.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMultiplexProgram operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMultiplexProgramResult> updateMultiplexProgramAsync(UpdateMultiplexProgramRequest updateMultiplexProgramRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMultiplexProgramRequest, UpdateMultiplexProgramResult> asyncHandler);
 
     /**
      * Update reservation.

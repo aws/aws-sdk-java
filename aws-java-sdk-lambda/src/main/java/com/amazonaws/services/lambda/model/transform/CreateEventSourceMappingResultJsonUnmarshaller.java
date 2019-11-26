@@ -60,6 +60,10 @@ public class CreateEventSourceMappingResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     createEventSourceMappingResult.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ParallelizationFactor", targetDepth)) {
+                    context.nextToken();
+                    createEventSourceMappingResult.setParallelizationFactor(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("EventSourceArn", targetDepth)) {
                     context.nextToken();
                     createEventSourceMappingResult.setEventSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -83,6 +87,22 @@ public class CreateEventSourceMappingResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("StateTransitionReason", targetDepth)) {
                     context.nextToken();
                     createEventSourceMappingResult.setStateTransitionReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DestinationConfig", targetDepth)) {
+                    context.nextToken();
+                    createEventSourceMappingResult.setDestinationConfig(DestinationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MaximumRecordAgeInSeconds", targetDepth)) {
+                    context.nextToken();
+                    createEventSourceMappingResult.setMaximumRecordAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("BisectBatchOnFunctionError", targetDepth)) {
+                    context.nextToken();
+                    createEventSourceMappingResult.setBisectBatchOnFunctionError(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("MaximumRetryAttempts", targetDepth)) {
+                    context.nextToken();
+                    createEventSourceMappingResult.setMaximumRetryAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

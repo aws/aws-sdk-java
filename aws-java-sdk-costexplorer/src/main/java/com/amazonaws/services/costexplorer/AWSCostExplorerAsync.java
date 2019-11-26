@@ -52,6 +52,165 @@ import com.amazonaws.services.costexplorer.model.*;
 public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Creates a new Cost Category with the requested name and rules.
+     * </p>
+     * 
+     * @param createCostCategoryDefinitionRequest
+     * @return A Java Future containing the result of the CreateCostCategoryDefinition operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.CreateCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCostCategoryDefinitionResult> createCostCategoryDefinitionAsync(
+            CreateCostCategoryDefinitionRequest createCostCategoryDefinitionRequest);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Creates a new Cost Category with the requested name and rules.
+     * </p>
+     * 
+     * @param createCostCategoryDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCostCategoryDefinition operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.CreateCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCostCategoryDefinitionResult> createCostCategoryDefinitionAsync(
+            CreateCostCategoryDefinitionRequest createCostCategoryDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCostCategoryDefinitionRequest, CreateCostCategoryDefinitionResult> asyncHandler);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost
+     * Category.
+     * </p>
+     * 
+     * @param deleteCostCategoryDefinitionRequest
+     * @return A Java Future containing the result of the DeleteCostCategoryDefinition operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.DeleteCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCostCategoryDefinitionResult> deleteCostCategoryDefinitionAsync(
+            DeleteCostCategoryDefinitionRequest deleteCostCategoryDefinitionRequest);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost
+     * Category.
+     * </p>
+     * 
+     * @param deleteCostCategoryDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCostCategoryDefinition operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.DeleteCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCostCategoryDefinitionResult> deleteCostCategoryDefinitionAsync(
+            DeleteCostCategoryDefinitionRequest deleteCostCategoryDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCostCategoryDefinitionRequest, DeleteCostCategoryDefinitionResult> asyncHandler);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's defined in the account.
+     * </p>
+     * <p>
+     * You have the option to use <code>EffectiveOn</code> to return a Cost Category that is active on a specific date.
+     * If there is no <code>EffectiveOn</code> specified, you’ll see a Cost Category that is effective on the current
+     * date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * </p>
+     * 
+     * @param describeCostCategoryDefinitionRequest
+     * @return A Java Future containing the result of the DescribeCostCategoryDefinition operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.DescribeCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCostCategoryDefinitionResult> describeCostCategoryDefinitionAsync(
+            DescribeCostCategoryDefinitionRequest describeCostCategoryDefinitionRequest);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's defined in the account.
+     * </p>
+     * <p>
+     * You have the option to use <code>EffectiveOn</code> to return a Cost Category that is active on a specific date.
+     * If there is no <code>EffectiveOn</code> specified, you’ll see a Cost Category that is effective on the current
+     * date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * </p>
+     * 
+     * @param describeCostCategoryDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCostCategoryDefinition operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.DescribeCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCostCategoryDefinitionResult> describeCostCategoryDefinitionAsync(
+            DescribeCostCategoryDefinitionRequest describeCostCategoryDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCostCategoryDefinitionRequest, DescribeCostCategoryDefinitionResult> asyncHandler);
+
+    /**
      * <p>
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
@@ -828,5 +987,109 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      */
     java.util.concurrent.Future<GetUsageForecastResult> getUsageForecastAsync(GetUsageForecastRequest getUsageForecastRequest,
             com.amazonaws.handlers.AsyncHandler<GetUsageForecastRequest, GetUsageForecastResult> asyncHandler);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Returns the name, ARN and effective dates of all Cost Categories defined in the account. You have the option to
+     * use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is
+     * no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost
+     * Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * </p>
+     * 
+     * @param listCostCategoryDefinitionsRequest
+     * @return A Java Future containing the result of the ListCostCategoryDefinitions operation returned by the service.
+     * @sample AWSCostExplorerAsync.ListCostCategoryDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCostCategoryDefinitionsResult> listCostCategoryDefinitionsAsync(
+            ListCostCategoryDefinitionsRequest listCostCategoryDefinitionsRequest);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Returns the name, ARN and effective dates of all Cost Categories defined in the account. You have the option to
+     * use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is
+     * no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost
+     * Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * </p>
+     * 
+     * @param listCostCategoryDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCostCategoryDefinitions operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.ListCostCategoryDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCostCategoryDefinitionsResult> listCostCategoryDefinitionsAsync(
+            ListCostCategoryDefinitionsRequest listCostCategoryDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCostCategoryDefinitionsRequest, ListCostCategoryDefinitionsResult> asyncHandler);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current
+     * month’s expenses and future expenses. This won’t change categorization for the previous months.
+     * </p>
+     * 
+     * @param updateCostCategoryDefinitionRequest
+     * @return A Java Future containing the result of the UpdateCostCategoryDefinition operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.UpdateCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCostCategoryDefinitionResult> updateCostCategoryDefinitionAsync(
+            UpdateCostCategoryDefinitionRequest updateCostCategoryDefinitionRequest);
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current
+     * month’s expenses and future expenses. This won’t change categorization for the previous months.
+     * </p>
+     * 
+     * @param updateCostCategoryDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCostCategoryDefinition operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.UpdateCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCostCategoryDefinitionResult> updateCostCategoryDefinitionAsync(
+            UpdateCostCategoryDefinitionRequest updateCostCategoryDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCostCategoryDefinitionRequest, UpdateCostCategoryDefinitionResult> asyncHandler);
 
 }

@@ -80,6 +80,10 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
                     context.nextToken();
                     getDocumentResult.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Requires", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("AttachmentsContent", targetDepth)) {
                     context.nextToken();
                     getDocumentResult.setAttachmentsContent(new ListUnmarshaller<AttachmentContent>(AttachmentContentJsonUnmarshaller.getInstance())

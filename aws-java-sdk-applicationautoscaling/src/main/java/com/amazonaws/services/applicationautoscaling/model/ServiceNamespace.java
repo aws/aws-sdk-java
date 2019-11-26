@@ -27,7 +27,8 @@ public enum ServiceNamespace {
     Dynamodb("dynamodb"),
     Rds("rds"),
     Sagemaker("sagemaker"),
-    CustomResource("custom-resource");
+    CustomResource("custom-resource"),
+    Comprehend("comprehend");
 
     private String value;
 

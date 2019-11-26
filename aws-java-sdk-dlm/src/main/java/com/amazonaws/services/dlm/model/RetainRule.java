@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the number of snapshots to keep for each EBS volume.
+ * Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time
+ * interval.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/RetainRule" target="_top">AWS API
@@ -30,18 +31,31 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of snapshots to keep for each volume, up to a maximum of 1000.
+     * The number of snapshots to retain for each volume, up to a maximum of 1000.
      * </p>
      */
     private Integer count;
+    /**
+     * <p>
+     * The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200
+     * weeks, or 36500 days.
+     * </p>
+     */
+    private Integer interval;
+    /**
+     * <p>
+     * The unit of time for time-based retention.
+     * </p>
+     */
+    private String intervalUnit;
 
     /**
      * <p>
-     * The number of snapshots to keep for each volume, up to a maximum of 1000.
+     * The number of snapshots to retain for each volume, up to a maximum of 1000.
      * </p>
      * 
      * @param count
-     *        The number of snapshots to keep for each volume, up to a maximum of 1000.
+     *        The number of snapshots to retain for each volume, up to a maximum of 1000.
      */
 
     public void setCount(Integer count) {
@@ -50,10 +64,10 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of snapshots to keep for each volume, up to a maximum of 1000.
+     * The number of snapshots to retain for each volume, up to a maximum of 1000.
      * </p>
      * 
-     * @return The number of snapshots to keep for each volume, up to a maximum of 1000.
+     * @return The number of snapshots to retain for each volume, up to a maximum of 1000.
      */
 
     public Integer getCount() {
@@ -62,16 +76,121 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of snapshots to keep for each volume, up to a maximum of 1000.
+     * The number of snapshots to retain for each volume, up to a maximum of 1000.
      * </p>
      * 
      * @param count
-     *        The number of snapshots to keep for each volume, up to a maximum of 1000.
+     *        The number of snapshots to retain for each volume, up to a maximum of 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RetainRule withCount(Integer count) {
         setCount(count);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200
+     * weeks, or 36500 days.
+     * </p>
+     * 
+     * @param interval
+     *        The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months,
+     *        5200 weeks, or 36500 days.
+     */
+
+    public void setInterval(Integer interval) {
+        this.interval = interval;
+    }
+
+    /**
+     * <p>
+     * The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200
+     * weeks, or 36500 days.
+     * </p>
+     * 
+     * @return The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months,
+     *         5200 weeks, or 36500 days.
+     */
+
+    public Integer getInterval() {
+        return this.interval;
+    }
+
+    /**
+     * <p>
+     * The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200
+     * weeks, or 36500 days.
+     * </p>
+     * 
+     * @param interval
+     *        The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months,
+     *        5200 weeks, or 36500 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetainRule withInterval(Integer interval) {
+        setInterval(interval);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unit of time for time-based retention.
+     * </p>
+     * 
+     * @param intervalUnit
+     *        The unit of time for time-based retention.
+     * @see RetentionIntervalUnitValues
+     */
+
+    public void setIntervalUnit(String intervalUnit) {
+        this.intervalUnit = intervalUnit;
+    }
+
+    /**
+     * <p>
+     * The unit of time for time-based retention.
+     * </p>
+     * 
+     * @return The unit of time for time-based retention.
+     * @see RetentionIntervalUnitValues
+     */
+
+    public String getIntervalUnit() {
+        return this.intervalUnit;
+    }
+
+    /**
+     * <p>
+     * The unit of time for time-based retention.
+     * </p>
+     * 
+     * @param intervalUnit
+     *        The unit of time for time-based retention.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RetentionIntervalUnitValues
+     */
+
+    public RetainRule withIntervalUnit(String intervalUnit) {
+        setIntervalUnit(intervalUnit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unit of time for time-based retention.
+     * </p>
+     * 
+     * @param intervalUnit
+     *        The unit of time for time-based retention.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RetentionIntervalUnitValues
+     */
+
+    public RetainRule withIntervalUnit(RetentionIntervalUnitValues intervalUnit) {
+        this.intervalUnit = intervalUnit.toString();
         return this;
     }
 
@@ -88,7 +207,11 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCount() != null)
-            sb.append("Count: ").append(getCount());
+            sb.append("Count: ").append(getCount()).append(",");
+        if (getInterval() != null)
+            sb.append("Interval: ").append(getInterval()).append(",");
+        if (getIntervalUnit() != null)
+            sb.append("IntervalUnit: ").append(getIntervalUnit());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +230,14 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
+        if (other.getInterval() == null ^ this.getInterval() == null)
+            return false;
+        if (other.getInterval() != null && other.getInterval().equals(this.getInterval()) == false)
+            return false;
+        if (other.getIntervalUnit() == null ^ this.getIntervalUnit() == null)
+            return false;
+        if (other.getIntervalUnit() != null && other.getIntervalUnit().equals(this.getIntervalUnit()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +247,8 @@ public class RetainRule implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getInterval() == null) ? 0 : getInterval().hashCode());
+        hashCode = prime * hashCode + ((getIntervalUnit() == null) ? 0 : getIntervalUnit().hashCode());
         return hashCode;
     }
 

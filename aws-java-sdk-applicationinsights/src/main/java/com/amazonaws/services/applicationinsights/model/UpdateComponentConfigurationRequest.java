@@ -46,7 +46,7 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * </p>
      */
     private String tier;
@@ -56,7 +56,9 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
      * information about the JSON format, see <a
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with
      * JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the
-     * recommended configuration for a component.
+     * recommended configuration for a component. For the complete format of the component configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.
      * </p>
      */
     private String componentConfiguration;
@@ -196,12 +198,13 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * </p>
      * 
      * @param tier
      *        The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *        <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * @see Tier
      */
 
     public void setTier(String tier) {
@@ -211,11 +214,12 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * </p>
      * 
      * @return The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *         <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *         <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * @see Tier
      */
 
     public String getTier() {
@@ -225,13 +229,14 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * </p>
      * 
      * @param tier
      *        The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-     *        <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     *        <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Tier
      */
 
     public UpdateComponentConfigurationRequest withTier(String tier) {
@@ -241,11 +246,31 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
+     * <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * </p>
+     * 
+     * @param tier
+     *        The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
+     *        <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Tier
+     */
+
+    public UpdateComponentConfigurationRequest withTier(Tier tier) {
+        this.tier = tier.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration settings of the component. The value is the escaped JSON of the configuration. For more
      * information about the JSON format, see <a
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with
      * JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the
-     * recommended configuration for a component.
+     * recommended configuration for a component. For the complete format of the component configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.
      * </p>
      * 
      * @param componentConfiguration
@@ -253,7 +278,10 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
      *        information about the JSON format, see <a
      *        href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      *        with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see
-     *        the recommended configuration for a component.
+     *        the recommended configuration for a component. For the complete format of the component configuration
+     *        file, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     *        Configuration</a>.
      */
 
     public void setComponentConfiguration(String componentConfiguration) {
@@ -266,14 +294,19 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
      * information about the JSON format, see <a
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with
      * JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the
-     * recommended configuration for a component.
+     * recommended configuration for a component. For the complete format of the component configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.
      * </p>
      * 
      * @return The configuration settings of the component. The value is the escaped JSON of the configuration. For more
      *         information about the JSON format, see <a
      *         href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      *         with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see
-     *         the recommended configuration for a component.
+     *         the recommended configuration for a component. For the complete format of the component configuration
+     *         file, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     *         Configuration</a>.
      */
 
     public String getComponentConfiguration() {
@@ -286,7 +319,9 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
      * information about the JSON format, see <a
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with
      * JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the
-     * recommended configuration for a component.
+     * recommended configuration for a component. For the complete format of the component configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.
      * </p>
      * 
      * @param componentConfiguration
@@ -294,7 +329,10 @@ public class UpdateComponentConfigurationRequest extends com.amazonaws.AmazonWeb
      *        information about the JSON format, see <a
      *        href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      *        with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see
-     *        the recommended configuration for a component.
+     *        the recommended configuration for a component. For the complete format of the component configuration
+     *        file, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     *        Configuration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

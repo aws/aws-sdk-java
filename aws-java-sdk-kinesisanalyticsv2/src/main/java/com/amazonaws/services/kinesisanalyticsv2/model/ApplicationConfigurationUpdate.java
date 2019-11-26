@@ -58,6 +58,12 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
      * </p>
      */
     private ApplicationSnapshotConfigurationUpdate applicationSnapshotConfigurationUpdate;
+    /**
+     * <p>
+     * Updates to the array of descriptions of VPC configurations available to the application.
+     * </p>
+     */
+    private java.util.List<VpcConfigurationUpdate> vpcConfigurationUpdates;
 
     /**
      * <p>
@@ -261,6 +267,76 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Updates to the array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @return Updates to the array of descriptions of VPC configurations available to the application.
+     */
+
+    public java.util.List<VpcConfigurationUpdate> getVpcConfigurationUpdates() {
+        return vpcConfigurationUpdates;
+    }
+
+    /**
+     * <p>
+     * Updates to the array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @param vpcConfigurationUpdates
+     *        Updates to the array of descriptions of VPC configurations available to the application.
+     */
+
+    public void setVpcConfigurationUpdates(java.util.Collection<VpcConfigurationUpdate> vpcConfigurationUpdates) {
+        if (vpcConfigurationUpdates == null) {
+            this.vpcConfigurationUpdates = null;
+            return;
+        }
+
+        this.vpcConfigurationUpdates = new java.util.ArrayList<VpcConfigurationUpdate>(vpcConfigurationUpdates);
+    }
+
+    /**
+     * <p>
+     * Updates to the array of descriptions of VPC configurations available to the application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcConfigurationUpdates(java.util.Collection)} or
+     * {@link #withVpcConfigurationUpdates(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param vpcConfigurationUpdates
+     *        Updates to the array of descriptions of VPC configurations available to the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfigurationUpdate withVpcConfigurationUpdates(VpcConfigurationUpdate... vpcConfigurationUpdates) {
+        if (this.vpcConfigurationUpdates == null) {
+            setVpcConfigurationUpdates(new java.util.ArrayList<VpcConfigurationUpdate>(vpcConfigurationUpdates.length));
+        }
+        for (VpcConfigurationUpdate ele : vpcConfigurationUpdates) {
+            this.vpcConfigurationUpdates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Updates to the array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @param vpcConfigurationUpdates
+     *        Updates to the array of descriptions of VPC configurations available to the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfigurationUpdate withVpcConfigurationUpdates(java.util.Collection<VpcConfigurationUpdate> vpcConfigurationUpdates) {
+        setVpcConfigurationUpdates(vpcConfigurationUpdates);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +357,9 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
         if (getEnvironmentPropertyUpdates() != null)
             sb.append("EnvironmentPropertyUpdates: ").append(getEnvironmentPropertyUpdates()).append(",");
         if (getApplicationSnapshotConfigurationUpdate() != null)
-            sb.append("ApplicationSnapshotConfigurationUpdate: ").append(getApplicationSnapshotConfigurationUpdate());
+            sb.append("ApplicationSnapshotConfigurationUpdate: ").append(getApplicationSnapshotConfigurationUpdate()).append(",");
+        if (getVpcConfigurationUpdates() != null)
+            sb.append("VpcConfigurationUpdates: ").append(getVpcConfigurationUpdates());
         sb.append("}");
         return sb.toString();
     }
@@ -320,6 +398,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
         if (other.getApplicationSnapshotConfigurationUpdate() != null
                 && other.getApplicationSnapshotConfigurationUpdate().equals(this.getApplicationSnapshotConfigurationUpdate()) == false)
             return false;
+        if (other.getVpcConfigurationUpdates() == null ^ this.getVpcConfigurationUpdates() == null)
+            return false;
+        if (other.getVpcConfigurationUpdates() != null && other.getVpcConfigurationUpdates().equals(this.getVpcConfigurationUpdates()) == false)
+            return false;
         return true;
     }
 
@@ -333,6 +415,7 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getFlinkApplicationConfigurationUpdate() == null) ? 0 : getFlinkApplicationConfigurationUpdate().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentPropertyUpdates() == null) ? 0 : getEnvironmentPropertyUpdates().hashCode());
         hashCode = prime * hashCode + ((getApplicationSnapshotConfigurationUpdate() == null) ? 0 : getApplicationSnapshotConfigurationUpdate().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfigurationUpdates() == null) ? 0 : getVpcConfigurationUpdates().hashCode());
         return hashCode;
     }
 

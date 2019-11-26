@@ -128,6 +128,30 @@ public class CreateFunctionResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createFunctionResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("State", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StateReason", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setStateReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StateReasonCode", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setStateReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastUpdateStatus", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setLastUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastUpdateStatusReason", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setLastUpdateStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastUpdateStatusReasonCode", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setLastUpdateStatusReasonCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

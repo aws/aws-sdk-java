@@ -236,6 +236,40 @@ public class AmazonKinesisAnalyticsV2AsyncClient extends AmazonKinesisAnalyticsV
     }
 
     @Override
+    public java.util.concurrent.Future<AddApplicationVpcConfigurationResult> addApplicationVpcConfigurationAsync(AddApplicationVpcConfigurationRequest request) {
+
+        return addApplicationVpcConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationVpcConfigurationResult> addApplicationVpcConfigurationAsync(
+            final AddApplicationVpcConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddApplicationVpcConfigurationRequest, AddApplicationVpcConfigurationResult> asyncHandler) {
+        final AddApplicationVpcConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddApplicationVpcConfigurationResult>() {
+            @Override
+            public AddApplicationVpcConfigurationResult call() throws Exception {
+                AddApplicationVpcConfigurationResult result = null;
+
+                try {
+                    result = executeAddApplicationVpcConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
 
         return createApplicationAsync(request, null);
@@ -490,6 +524,41 @@ public class AmazonKinesisAnalyticsV2AsyncClient extends AmazonKinesisAnalyticsV
 
                 try {
                     result = executeDeleteApplicationSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationVpcConfigurationResult> deleteApplicationVpcConfigurationAsync(
+            DeleteApplicationVpcConfigurationRequest request) {
+
+        return deleteApplicationVpcConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationVpcConfigurationResult> deleteApplicationVpcConfigurationAsync(
+            final DeleteApplicationVpcConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationVpcConfigurationRequest, DeleteApplicationVpcConfigurationResult> asyncHandler) {
+        final DeleteApplicationVpcConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationVpcConfigurationResult>() {
+            @Override
+            public DeleteApplicationVpcConfigurationResult call() throws Exception {
+                DeleteApplicationVpcConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteApplicationVpcConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

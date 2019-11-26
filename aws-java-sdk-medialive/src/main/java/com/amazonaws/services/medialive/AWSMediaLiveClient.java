@@ -420,6 +420,145 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Create a new multiplex.
+     * 
+     * @param createMultiplexRequest
+     *        A request to create a multiplex.
+     * @return Result of the CreateMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws UnprocessableEntityException
+     *         The Multiplex failed validation and could not be created.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to create the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on create multiplex calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex is unable to create due to an issue with multiplex resources.
+     * @sample AWSMediaLive.CreateMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateMultiplexResult createMultiplex(CreateMultiplexRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMultiplex(request);
+    }
+
+    @SdkInternalApi
+    final CreateMultiplexResult executeCreateMultiplex(CreateMultiplexRequest createMultiplexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMultiplexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMultiplexRequest> request = null;
+        Response<CreateMultiplexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMultiplexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultiplex");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMultiplexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateMultiplexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Create a new program in the multiplex.
+     * 
+     * @param createMultiplexProgramRequest
+     *        A request to create a program in a multiplex.
+     * @return Result of the CreateMultiplexProgram operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws UnprocessableEntityException
+     *         The Multiplex program failed validation and could not be created.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to create a program.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on create multiplex program calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex program is unable to create due to an issue with multiplex resources.
+     * @sample AWSMediaLive.CreateMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMultiplexProgramResult createMultiplexProgram(CreateMultiplexProgramRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMultiplexProgram(request);
+    }
+
+    @SdkInternalApi
+    final CreateMultiplexProgramResult executeCreateMultiplexProgram(CreateMultiplexProgramRequest createMultiplexProgramRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMultiplexProgramRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMultiplexProgramRequest> request = null;
+        Response<CreateMultiplexProgramResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMultiplexProgramRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultiplexProgram");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMultiplexProgramResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMultiplexProgramResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Create tags for a resource
      * 
      * @param createTagsRequest
@@ -673,6 +812,143 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
             HttpResponseHandler<AmazonWebServiceResponse<DeleteInputSecurityGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteInputSecurityGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Delete a multiplex. The multiplex must be idle.
+     * 
+     * @param deleteMultiplexRequest
+     *        Placeholder documentation for DeleteMultiplexRequest
+     * @return Result of the DeleteMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to delete the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to delete doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete multiplex calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex is unable to delete due to an issue with multiplex resources.
+     * @sample AWSMediaLive.DeleteMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteMultiplexResult deleteMultiplex(DeleteMultiplexRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMultiplex(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMultiplexResult executeDeleteMultiplex(DeleteMultiplexRequest deleteMultiplexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMultiplexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMultiplexRequest> request = null;
+        Response<DeleteMultiplexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMultiplexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMultiplex");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMultiplexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMultiplexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Delete a program from a multiplex.
+     * 
+     * @param deleteMultiplexProgramRequest
+     *        Placeholder documentation for DeleteMultiplexProgramRequest
+     * @return Result of the DeleteMultiplexProgram operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to delete the multiplex program.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The program that you are trying to delete doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete multiplex program calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex program is unable to delete due to an issue with multiplex resources.
+     * @sample AWSMediaLive.DeleteMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMultiplexProgramResult deleteMultiplexProgram(DeleteMultiplexProgramRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMultiplexProgram(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMultiplexProgramResult executeDeleteMultiplexProgram(DeleteMultiplexProgramRequest deleteMultiplexProgramRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMultiplexProgramRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMultiplexProgramRequest> request = null;
+        Response<DeleteMultiplexProgramResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMultiplexProgramRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMultiplexProgram");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMultiplexProgramResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteMultiplexProgramResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1078,6 +1354,141 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Gets details about a multiplex.
+     * 
+     * @param describeMultiplexRequest
+     *        Placeholder documentation for DescribeMultiplexRequest
+     * @return Result of the DescribeMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to describe the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to describe doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe multiplex calls to multiplex service.
+     * @sample AWSMediaLive.DescribeMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeMultiplexResult describeMultiplex(DescribeMultiplexRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMultiplex(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMultiplexResult executeDescribeMultiplex(DescribeMultiplexRequest describeMultiplexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMultiplexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMultiplexRequest> request = null;
+        Response<DescribeMultiplexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMultiplexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMultiplex");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMultiplexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeMultiplexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Get the details for a program in a multiplex.
+     * 
+     * @param describeMultiplexProgramRequest
+     *        Placeholder documentation for DescribeMultiplexProgramRequest
+     * @return Result of the DescribeMultiplexProgram operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to describe the multiplex program.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         MediaLive can't describe the program. The multiplex or the program that you specified doesn’t exist.
+     *         Check the IDs and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe multiplex program calls to multiplex service.
+     * @sample AWSMediaLive.DescribeMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeMultiplexProgramResult describeMultiplexProgram(DescribeMultiplexProgramRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMultiplexProgram(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMultiplexProgramResult executeDescribeMultiplexProgram(DescribeMultiplexProgramRequest describeMultiplexProgramRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMultiplexProgramRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMultiplexProgramRequest> request = null;
+        Response<DescribeMultiplexProgramResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMultiplexProgramRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMultiplexProgram");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMultiplexProgramResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeMultiplexProgramResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Get details for an offering.
      * 
      * @param describeOfferingRequest
@@ -1470,6 +1881,140 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * List the programs that currently exist for a specific multiplex.
+     * 
+     * @param listMultiplexProgramsRequest
+     *        Placeholder documentation for ListMultiplexProgramsRequest
+     * @return Result of the ListMultiplexPrograms operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to list multiplex programs.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         MediaLive can't provide the list of programs. The multiplex that you specified doesn’t exist. Check the
+     *         ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list multiplex calls to multiplex service.
+     * @sample AWSMediaLive.ListMultiplexPrograms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMultiplexProgramsResult listMultiplexPrograms(ListMultiplexProgramsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMultiplexPrograms(request);
+    }
+
+    @SdkInternalApi
+    final ListMultiplexProgramsResult executeListMultiplexPrograms(ListMultiplexProgramsRequest listMultiplexProgramsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMultiplexProgramsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMultiplexProgramsRequest> request = null;
+        Response<ListMultiplexProgramsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMultiplexProgramsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultiplexProgramsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultiplexPrograms");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMultiplexProgramsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListMultiplexProgramsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieve a list of the existing multiplexes.
+     * 
+     * @param listMultiplexesRequest
+     *        Placeholder documentation for ListMultiplexesRequest
+     * @return Result of the ListMultiplexes operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to list multiplexes.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list multiplex calls to multiplex service.
+     * @sample AWSMediaLive.ListMultiplexes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListMultiplexesResult listMultiplexes(ListMultiplexesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMultiplexes(request);
+    }
+
+    @SdkInternalApi
+    final ListMultiplexesResult executeListMultiplexes(ListMultiplexesRequest listMultiplexesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMultiplexesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMultiplexesRequest> request = null;
+        Response<ListMultiplexesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMultiplexesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultiplexesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultiplexes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMultiplexesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMultiplexesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * List offerings available for purchase.
      * 
      * @param listOfferingsRequest
@@ -1794,6 +2339,76 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each
+     * channel.
+     * 
+     * @param startMultiplexRequest
+     *        Placeholder documentation for StartMultiplexRequest
+     * @return Result of the StartMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to start the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to start doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start multiplex calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex is unable to start due to an issue with multiplex resources.
+     * @sample AWSMediaLive.StartMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartMultiplexResult startMultiplex(StartMultiplexRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMultiplex(request);
+    }
+
+    @SdkInternalApi
+    final StartMultiplexResult executeStartMultiplex(StartMultiplexRequest startMultiplexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMultiplexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMultiplexRequest> request = null;
+        Response<StartMultiplexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMultiplexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMultiplex");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartMultiplexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartMultiplexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Stops a running channel
      * 
      * @param stopChannelRequest
@@ -1851,6 +2466,75 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<StopChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Stops a running multiplex. If the multiplex isn't running, this action has no effect.
+     * 
+     * @param stopMultiplexRequest
+     *        Placeholder documentation for StopMultiplexRequest
+     * @return Result of the StopMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to stop the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to stop doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on stop multiplex calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex is unable to stop due to an issue with multiplex resources.
+     * @sample AWSMediaLive.StopMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopMultiplexResult stopMultiplex(StopMultiplexRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopMultiplex(request);
+    }
+
+    @SdkInternalApi
+    final StopMultiplexResult executeStopMultiplex(StopMultiplexRequest stopMultiplexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopMultiplexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopMultiplexRequest> request = null;
+        Response<StopMultiplexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopMultiplexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopMultiplex");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopMultiplexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopMultiplexResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2122,6 +2806,146 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
             HttpResponseHandler<AmazonWebServiceResponse<UpdateInputSecurityGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateInputSecurityGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates a multiplex.
+     * 
+     * @param updateMultiplexRequest
+     *        A request to update a multiplex.
+     * @return Result of the UpdateMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws UnprocessableEntityException
+     *         The multiplex configuration failed validation and could not be updated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to update the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to update doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws ConflictException
+     *         The multiplex is unable to update due to an issue with multiplex resources.
+     * @sample AWSMediaLive.UpdateMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateMultiplexResult updateMultiplex(UpdateMultiplexRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMultiplex(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMultiplexResult executeUpdateMultiplex(UpdateMultiplexRequest updateMultiplexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMultiplexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMultiplexRequest> request = null;
+        Response<UpdateMultiplexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMultiplexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMultiplex");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMultiplexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateMultiplexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Update a program in a multiplex.
+     * 
+     * @param updateMultiplexProgramRequest
+     *        A request to update a program in a multiplex.
+     * @return Result of the UpdateMultiplexProgram operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws UnprocessableEntityException
+     *         The multiplex program failed validation and could not be updated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to update the multiplex program.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         MediaLive can't update the program. The multiplex or the program that you specified doesn’t exist. Check
+     *         the IDs and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws ConflictException
+     *         The multiplex program is unable to update due to an issue with multiplex resources.
+     * @sample AWSMediaLive.UpdateMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMultiplexProgramResult updateMultiplexProgram(UpdateMultiplexProgramRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMultiplexProgram(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMultiplexProgramResult executeUpdateMultiplexProgram(UpdateMultiplexProgramRequest updateMultiplexProgramRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMultiplexProgramRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMultiplexProgramRequest> request = null;
+        Response<UpdateMultiplexProgramResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMultiplexProgramRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMultiplexProgram");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMultiplexProgramResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateMultiplexProgramResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

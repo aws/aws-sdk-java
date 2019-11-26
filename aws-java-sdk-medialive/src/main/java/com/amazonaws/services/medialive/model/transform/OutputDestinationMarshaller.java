@@ -32,6 +32,8 @@ public class OutputDestinationMarshaller {
             .marshallLocationName("id").build();
     private static final MarshallingInfo<List> MEDIAPACKAGESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaPackageSettings").build();
+    private static final MarshallingInfo<StructuredPojo> MULTIPLEXSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multiplexSettings").build();
     private static final MarshallingInfo<List> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("settings").build();
 
@@ -53,6 +55,7 @@ public class OutputDestinationMarshaller {
         try {
             protocolMarshaller.marshall(outputDestination.getId(), ID_BINDING);
             protocolMarshaller.marshall(outputDestination.getMediaPackageSettings(), MEDIAPACKAGESETTINGS_BINDING);
+            protocolMarshaller.marshall(outputDestination.getMultiplexSettings(), MULTIPLEXSETTINGS_BINDING);
             protocolMarshaller.marshall(outputDestination.getSettings(), SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

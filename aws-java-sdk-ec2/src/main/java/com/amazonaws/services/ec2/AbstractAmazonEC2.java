@@ -1641,6 +1641,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetDefaultCreditSpecificationResult getDefaultCreditSpecification(GetDefaultCreditSpecificationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEbsDefaultKmsKeyIdResult getEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1733,6 +1738,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyClientVpnEndpointResult modifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyDefaultCreditSpecificationResult modifyDefaultCreditSpecification(ModifyDefaultCreditSpecificationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

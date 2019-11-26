@@ -27,15 +27,19 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
-     * name, such as <code>alias/ExampleAlias</code>.
+     * Identifies the alias that is changing its CMK. This value must begin with <code>alias/</code> followed by the
+     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.
      * </p>
      */
     private String aliasName;
     /**
      * <p>
-     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
-     * completes, the alias will point to this CMK.
+     * Identifies the CMK to associate with the alias. When the update operation completes, the alias will point to this
+     * CMK.
+     * </p>
+     * <p>
+     * The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same type
+     * as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -66,13 +70,14 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
-     * name, such as <code>alias/ExampleAlias</code>.
+     * Identifies the alias that is changing its CMK. This value must begin with <code>alias/</code> followed by the
+     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.
      * </p>
      * 
      * @param aliasName
-     *        Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
-     *        alias name, such as <code>alias/ExampleAlias</code>.
+     *        Identifies the alias that is changing its CMK. This value must begin with <code>alias/</code> followed by
+     *        the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
+     *        name.
      */
 
     public void setAliasName(String aliasName) {
@@ -81,12 +86,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
-     * name, such as <code>alias/ExampleAlias</code>.
+     * Identifies the alias that is changing its CMK. This value must begin with <code>alias/</code> followed by the
+     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.
      * </p>
      * 
-     * @return Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
-     *         alias name, such as <code>alias/ExampleAlias</code>.
+     * @return Identifies the alias that is changing its CMK. This value must begin with <code>alias/</code> followed by
+     *         the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
+     *         name.
      */
 
     public String getAliasName() {
@@ -95,13 +101,14 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
-     * name, such as <code>alias/ExampleAlias</code>.
+     * Identifies the alias that is changing its CMK. This value must begin with <code>alias/</code> followed by the
+     * alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.
      * </p>
      * 
      * @param aliasName
-     *        Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
-     *        alias name, such as <code>alias/ExampleAlias</code>.
+     *        Identifies the alias that is changing its CMK. This value must begin with <code>alias/</code> followed by
+     *        the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias
+     *        name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,8 +119,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
-     * completes, the alias will point to this CMK.
+     * Identifies the CMK to associate with the alias. When the update operation completes, the alias will point to this
+     * CMK.
+     * </p>
+     * <p>
+     * The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same type
+     * as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -141,8 +152,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param targetKeyId
-     *        Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
-     *        completes, the alias will point to this CMK.</p>
+     *        Identifies the CMK to associate with the alias. When the update operation completes, the alias will point
+     *        to this CMK. </p>
+     *        <p>
+     *        The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same
+     *        type as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     *        </p>
      *        <p>
      *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *        </p>
@@ -174,8 +189,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
-     * completes, the alias will point to this CMK.
+     * Identifies the CMK to associate with the alias. When the update operation completes, the alias will point to this
+     * CMK.
+     * </p>
+     * <p>
+     * The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same type
+     * as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -202,8 +221,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
-     * @return Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
-     *         completes, the alias will point to this CMK.</p>
+     * @return Identifies the CMK to associate with the alias. When the update operation completes, the alias will point
+     *         to this CMK. </p>
+     *         <p>
+     *         The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the
+     *         same type as the current target CMK (both symmetric or both asymmetric) and they must have the same key
+     *         usage.
+     *         </p>
      *         <p>
      *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *         </p>
@@ -235,8 +259,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
-     * completes, the alias will point to this CMK.
+     * Identifies the CMK to associate with the alias. When the update operation completes, the alias will point to this
+     * CMK.
+     * </p>
+     * <p>
+     * The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same type
+     * as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -264,8 +292,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param targetKeyId
-     *        Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
-     *        completes, the alias will point to this CMK.</p>
+     *        Identifies the CMK to associate with the alias. When the update operation completes, the alias will point
+     *        to this CMK. </p>
+     *        <p>
+     *        The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same
+     *        type as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
+     *        </p>
      *        <p>
      *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *        </p>

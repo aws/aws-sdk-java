@@ -152,7 +152,7 @@ public class MetricAlarm implements Serializable, Cloneable {
     private Integer evaluationPeriods;
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm.
+     * The number of data points that must be breaching to trigger the alarm.
      * </p>
      */
     private Integer datapointsToAlarm;
@@ -1279,11 +1279,11 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm.
+     * The number of data points that must be breaching to trigger the alarm.
      * </p>
      * 
      * @param datapointsToAlarm
-     *        The number of datapoints that must be breaching to trigger the alarm.
+     *        The number of data points that must be breaching to trigger the alarm.
      */
 
     public void setDatapointsToAlarm(Integer datapointsToAlarm) {
@@ -1292,10 +1292,10 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm.
+     * The number of data points that must be breaching to trigger the alarm.
      * </p>
      * 
-     * @return The number of datapoints that must be breaching to trigger the alarm.
+     * @return The number of data points that must be breaching to trigger the alarm.
      */
 
     public Integer getDatapointsToAlarm() {
@@ -1304,11 +1304,11 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm.
+     * The number of data points that must be breaching to trigger the alarm.
      * </p>
      * 
      * @param datapointsToAlarm
-     *        The number of datapoints that must be breaching to trigger the alarm.
+     *        The number of data points that must be breaching to trigger the alarm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

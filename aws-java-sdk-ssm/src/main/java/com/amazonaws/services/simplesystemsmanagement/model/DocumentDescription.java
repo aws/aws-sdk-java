@@ -169,6 +169,13 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AttachmentInformation> attachmentsInformation;
+    /**
+     * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DocumentRequires> requires;
 
     /**
      * <p>
@@ -1397,6 +1404,87 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     * 
+     * @return A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+     *         document requires an <code>ApplicationConfigurationSchema</code> document.
+     */
+
+    public java.util.List<DocumentRequires> getRequires() {
+        if (requires == null) {
+            requires = new com.amazonaws.internal.SdkInternalList<DocumentRequires>();
+        }
+        return requires;
+    }
+
+    /**
+     * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     * 
+     * @param requires
+     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     */
+
+    public void setRequires(java.util.Collection<DocumentRequires> requires) {
+        if (requires == null) {
+            this.requires = null;
+            return;
+        }
+
+        this.requires = new com.amazonaws.internal.SdkInternalList<DocumentRequires>(requires);
+    }
+
+    /**
+     * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRequires(java.util.Collection)} or {@link #withRequires(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param requires
+     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withRequires(DocumentRequires... requires) {
+        if (this.requires == null) {
+            setRequires(new com.amazonaws.internal.SdkInternalList<DocumentRequires>(requires.length));
+        }
+        for (DocumentRequires ele : requires) {
+            this.requires.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     * 
+     * @param requires
+     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withRequires(java.util.Collection<DocumentRequires> requires) {
+        setRequires(requires);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1449,7 +1537,9 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getAttachmentsInformation() != null)
-            sb.append("AttachmentsInformation: ").append(getAttachmentsInformation());
+            sb.append("AttachmentsInformation: ").append(getAttachmentsInformation()).append(",");
+        if (getRequires() != null)
+            sb.append("Requires: ").append(getRequires());
         sb.append("}");
         return sb.toString();
     }
@@ -1548,6 +1638,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAttachmentsInformation() != null && other.getAttachmentsInformation().equals(this.getAttachmentsInformation()) == false)
             return false;
+        if (other.getRequires() == null ^ this.getRequires() == null)
+            return false;
+        if (other.getRequires() != null && other.getRequires().equals(this.getRequires()) == false)
+            return false;
         return true;
     }
 
@@ -1577,6 +1671,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAttachmentsInformation() == null) ? 0 : getAttachmentsInformation().hashCode());
+        hashCode = prime * hashCode + ((getRequires() == null) ? 0 : getRequires().hashCode());
         return hashCode;
     }
 

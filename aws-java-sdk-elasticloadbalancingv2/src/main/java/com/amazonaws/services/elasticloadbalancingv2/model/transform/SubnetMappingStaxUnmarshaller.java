@@ -52,6 +52,11 @@ public class SubnetMappingStaxUnmarshaller implements Unmarshaller<SubnetMapping
                     subnetMapping.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PrivateIPv4Address", targetDepth)) {
+                    subnetMapping.setPrivateIPv4Address(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return subnetMapping;

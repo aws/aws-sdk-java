@@ -145,6 +145,64 @@ public interface AWSMediaLive {
     CreateInputSecurityGroupResult createInputSecurityGroup(CreateInputSecurityGroupRequest createInputSecurityGroupRequest);
 
     /**
+     * Create a new multiplex.
+     * 
+     * @param createMultiplexRequest
+     *        A request to create a multiplex.
+     * @return Result of the CreateMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws UnprocessableEntityException
+     *         The Multiplex failed validation and could not be created.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to create the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on create multiplex calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex is unable to create due to an issue with multiplex resources.
+     * @sample AWSMediaLive.CreateMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateMultiplexResult createMultiplex(CreateMultiplexRequest createMultiplexRequest);
+
+    /**
+     * Create a new program in the multiplex.
+     * 
+     * @param createMultiplexProgramRequest
+     *        A request to create a program in a multiplex.
+     * @return Result of the CreateMultiplexProgram operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws UnprocessableEntityException
+     *         The Multiplex program failed validation and could not be created.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to create a program.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on create multiplex program calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex program is unable to create due to an issue with multiplex resources.
+     * @sample AWSMediaLive.CreateMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMultiplexProgramResult createMultiplexProgram(CreateMultiplexProgramRequest createMultiplexProgramRequest);
+
+    /**
      * Create tags for a resource
      * 
      * @param createTagsRequest
@@ -245,6 +303,62 @@ public interface AWSMediaLive {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteInputSecurityGroupResult deleteInputSecurityGroup(DeleteInputSecurityGroupRequest deleteInputSecurityGroupRequest);
+
+    /**
+     * Delete a multiplex. The multiplex must be idle.
+     * 
+     * @param deleteMultiplexRequest
+     *        Placeholder documentation for DeleteMultiplexRequest
+     * @return Result of the DeleteMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to delete the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to delete doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete multiplex calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex is unable to delete due to an issue with multiplex resources.
+     * @sample AWSMediaLive.DeleteMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteMultiplexResult deleteMultiplex(DeleteMultiplexRequest deleteMultiplexRequest);
+
+    /**
+     * Delete a program from a multiplex.
+     * 
+     * @param deleteMultiplexProgramRequest
+     *        Placeholder documentation for DeleteMultiplexProgramRequest
+     * @return Result of the DeleteMultiplexProgram operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to delete the multiplex program.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The program that you are trying to delete doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete multiplex program calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex program is unable to delete due to an issue with multiplex resources.
+     * @sample AWSMediaLive.DeleteMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMultiplexProgramResult deleteMultiplexProgram(DeleteMultiplexProgramRequest deleteMultiplexProgramRequest);
 
     /**
      * Delete an expired reservation.
@@ -399,6 +513,59 @@ public interface AWSMediaLive {
     DescribeInputSecurityGroupResult describeInputSecurityGroup(DescribeInputSecurityGroupRequest describeInputSecurityGroupRequest);
 
     /**
+     * Gets details about a multiplex.
+     * 
+     * @param describeMultiplexRequest
+     *        Placeholder documentation for DescribeMultiplexRequest
+     * @return Result of the DescribeMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to describe the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to describe doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe multiplex calls to multiplex service.
+     * @sample AWSMediaLive.DescribeMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeMultiplexResult describeMultiplex(DescribeMultiplexRequest describeMultiplexRequest);
+
+    /**
+     * Get the details for a program in a multiplex.
+     * 
+     * @param describeMultiplexProgramRequest
+     *        Placeholder documentation for DescribeMultiplexProgramRequest
+     * @return Result of the DescribeMultiplexProgram operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to describe the multiplex program.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         MediaLive can't describe the program. The multiplex or the program that you specified doesn’t exist.
+     *         Check the IDs and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe multiplex program calls to multiplex service.
+     * @sample AWSMediaLive.DescribeMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMultiplexProgramResult describeMultiplexProgram(DescribeMultiplexProgramRequest describeMultiplexProgramRequest);
+
+    /**
      * Get details for an offering.
      * 
      * @param describeOfferingRequest
@@ -549,6 +716,59 @@ public interface AWSMediaLive {
     ListInputsResult listInputs(ListInputsRequest listInputsRequest);
 
     /**
+     * List the programs that currently exist for a specific multiplex.
+     * 
+     * @param listMultiplexProgramsRequest
+     *        Placeholder documentation for ListMultiplexProgramsRequest
+     * @return Result of the ListMultiplexPrograms operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to list multiplex programs.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         MediaLive can't provide the list of programs. The multiplex that you specified doesn’t exist. Check the
+     *         ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list multiplex calls to multiplex service.
+     * @sample AWSMediaLive.ListMultiplexPrograms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMultiplexProgramsResult listMultiplexPrograms(ListMultiplexProgramsRequest listMultiplexProgramsRequest);
+
+    /**
+     * Retrieve a list of the existing multiplexes.
+     * 
+     * @param listMultiplexesRequest
+     *        Placeholder documentation for ListMultiplexesRequest
+     * @return Result of the ListMultiplexes operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to list multiplexes.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list multiplex calls to multiplex service.
+     * @sample AWSMediaLive.ListMultiplexes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListMultiplexesResult listMultiplexes(ListMultiplexesRequest listMultiplexesRequest);
+
+    /**
      * List offerings available for purchase.
      * 
      * @param listOfferingsRequest
@@ -673,6 +893,36 @@ public interface AWSMediaLive {
     StartChannelResult startChannel(StartChannelRequest startChannelRequest);
 
     /**
+     * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each
+     * channel.
+     * 
+     * @param startMultiplexRequest
+     *        Placeholder documentation for StartMultiplexRequest
+     * @return Result of the StartMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to start the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to start doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start multiplex calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex is unable to start due to an issue with multiplex resources.
+     * @sample AWSMediaLive.StartMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartMultiplexResult startMultiplex(StartMultiplexRequest startMultiplexRequest);
+
+    /**
      * Stops a running channel
      * 
      * @param stopChannelRequest
@@ -699,6 +949,35 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     StopChannelResult stopChannel(StopChannelRequest stopChannelRequest);
+
+    /**
+     * Stops a running multiplex. If the multiplex isn't running, this action has no effect.
+     * 
+     * @param stopMultiplexRequest
+     *        Placeholder documentation for StopMultiplexRequest
+     * @return Result of the StopMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to stop the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to stop doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on stop multiplex calls to multiplex service.
+     * @throws ConflictException
+     *         The multiplex is unable to stop due to an issue with multiplex resources.
+     * @sample AWSMediaLive.StopMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopMultiplexResult stopMultiplex(StopMultiplexRequest stopMultiplexRequest);
 
     /**
      * Updates a channel.
@@ -808,6 +1087,65 @@ public interface AWSMediaLive {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateInputSecurityGroupResult updateInputSecurityGroup(UpdateInputSecurityGroupRequest updateInputSecurityGroupRequest);
+
+    /**
+     * Updates a multiplex.
+     * 
+     * @param updateMultiplexRequest
+     *        A request to update a multiplex.
+     * @return Result of the UpdateMultiplex operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws UnprocessableEntityException
+     *         The multiplex configuration failed validation and could not be updated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to update the multiplex.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         The multiplex that you are trying to update doesn’t exist. Check the ID and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws ConflictException
+     *         The multiplex is unable to update due to an issue with multiplex resources.
+     * @sample AWSMediaLive.UpdateMultiplex
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateMultiplexResult updateMultiplex(UpdateMultiplexRequest updateMultiplexRequest);
+
+    /**
+     * Update a program in a multiplex.
+     * 
+     * @param updateMultiplexProgramRequest
+     *        A request to update a program in a multiplex.
+     * @return Result of the UpdateMultiplexProgram operation returned by the service.
+     * @throws BadRequestException
+     *         MediaLive can't process your request because of a problem in the request. Please check your request form
+     *         and syntax.
+     * @throws UnprocessableEntityException
+     *         The multiplex program failed validation and could not be updated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You don't have permission to update the multiplex program.
+     * @throws BadGatewayException
+     *         Bad Gateway Error.
+     * @throws NotFoundException
+     *         MediaLive can't update the program. The multiplex or the program that you specified doesn’t exist. Check
+     *         the IDs and try again.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error.
+     * @throws ConflictException
+     *         The multiplex program is unable to update due to an issue with multiplex resources.
+     * @sample AWSMediaLive.UpdateMultiplexProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMultiplexProgramResult updateMultiplexProgram(UpdateMultiplexProgramRequest updateMultiplexProgramRequest);
 
     /**
      * Update reservation.

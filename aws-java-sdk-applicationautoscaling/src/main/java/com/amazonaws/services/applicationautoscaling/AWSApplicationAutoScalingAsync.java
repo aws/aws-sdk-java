@@ -69,6 +69,11 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * Custom resources provided by your own applications or services
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Amazon Comprehend document classification endpoints
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>API Summary</b>

@@ -74,6 +74,10 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                     context.nextToken();
                     encoderSettings.setGlobalConfiguration(GlobalConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("nielsenConfiguration", targetDepth)) {
+                    context.nextToken();
+                    encoderSettings.setNielsenConfiguration(NielsenConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("outputGroups", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance()).unmarshall(context));

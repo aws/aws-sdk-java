@@ -187,6 +187,12 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      */
     private ResponseCard responseCard;
+    /**
+     * <p>
+     * A unique identifier for the session.
+     * </p>
+     */
+    private String sessionId;
 
     /**
      * <p>
@@ -1637,6 +1643,46 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
+     * <p>
+     * A unique identifier for the session.
+     * </p>
+     * 
+     * @param sessionId
+     *        A unique identifier for the session.
+     */
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the session.
+     * </p>
+     * 
+     * @return A unique identifier for the session.
+     */
+
+    public String getSessionId() {
+        return this.sessionId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the session.
+     * </p>
+     * 
+     * @param sessionId
+     *        A unique identifier for the session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostTextResult withSessionId(String sessionId) {
+        setSessionId(sessionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1665,7 +1711,9 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         if (getSlotToElicit() != null)
             sb.append("SlotToElicit: ").append(getSlotToElicit()).append(",");
         if (getResponseCard() != null)
-            sb.append("ResponseCard: ").append(getResponseCard());
+            sb.append("ResponseCard: ").append(getResponseCard()).append(",");
+        if (getSessionId() != null)
+            sb.append("SessionId: ").append(getSessionId());
         sb.append("}");
         return sb.toString();
     }
@@ -1716,6 +1764,10 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getResponseCard() != null && other.getResponseCard().equals(this.getResponseCard()) == false)
             return false;
+        if (other.getSessionId() == null ^ this.getSessionId() == null)
+            return false;
+        if (other.getSessionId() != null && other.getSessionId().equals(this.getSessionId()) == false)
+            return false;
         return true;
     }
 
@@ -1733,6 +1785,7 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         hashCode = prime * hashCode + ((getDialogState() == null) ? 0 : getDialogState().hashCode());
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());
         hashCode = prime * hashCode + ((getResponseCard() == null) ? 0 : getResponseCard().hashCode());
+        hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
         return hashCode;
     }
 

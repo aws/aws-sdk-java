@@ -100,6 +100,10 @@ public class ProfileJsonUnmarshaller implements Unmarshaller<Profile, JsonUnmars
                     context.nextToken();
                     profile.setAddressBookArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MeetingRoomConfiguration", targetDepth)) {
+                    context.nextToken();
+                    profile.setMeetingRoomConfiguration(MeetingRoomConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -34,6 +34,8 @@ public class CreateKeyRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> KEYUSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KeyUsage").build();
+    private static final MarshallingInfo<String> CUSTOMERMASTERKEYSPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerMasterKeySpec").build();
     private static final MarshallingInfo<String> ORIGIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Origin").build();
     private static final MarshallingInfo<String> CUSTOMKEYSTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,7 @@ public class CreateKeyRequestMarshaller {
             protocolMarshaller.marshall(createKeyRequest.getPolicy(), POLICY_BINDING);
             protocolMarshaller.marshall(createKeyRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createKeyRequest.getKeyUsage(), KEYUSAGE_BINDING);
+            protocolMarshaller.marshall(createKeyRequest.getCustomerMasterKeySpec(), CUSTOMERMASTERKEYSPEC_BINDING);
             protocolMarshaller.marshall(createKeyRequest.getOrigin(), ORIGIN_BINDING);
             protocolMarshaller.marshall(createKeyRequest.getCustomKeyStoreId(), CUSTOMKEYSTOREID_BINDING);
             protocolMarshaller.marshall(createKeyRequest.getBypassPolicyLockoutSafetyCheck(), BYPASSPOLICYLOCKOUTSAFETYCHECK_BINDING);

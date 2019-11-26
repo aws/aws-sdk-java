@@ -93,6 +93,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     }
 
     @Override
+    public java.util.concurrent.Future<ClassifyDocumentResult> classifyDocumentAsync(ClassifyDocumentRequest request) {
+
+        return classifyDocumentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ClassifyDocumentResult> classifyDocumentAsync(ClassifyDocumentRequest request,
+            com.amazonaws.handlers.AsyncHandler<ClassifyDocumentRequest, ClassifyDocumentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDocumentClassifierResult> createDocumentClassifierAsync(CreateDocumentClassifierRequest request) {
 
         return createDocumentClassifierAsync(request, null);
@@ -101,6 +114,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<CreateDocumentClassifierResult> createDocumentClassifierAsync(CreateDocumentClassifierRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDocumentClassifierRequest, CreateDocumentClassifierResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointResult> createEndpointAsync(CreateEndpointRequest request) {
+
+        return createEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointResult> createEndpointAsync(CreateEndpointRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEndpointRequest, CreateEndpointResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -127,6 +153,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<DeleteDocumentClassifierResult> deleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDocumentClassifierRequest, DeleteDocumentClassifierResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest request) {
+
+        return deleteEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -183,6 +222,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     public java.util.concurrent.Future<DescribeDominantLanguageDetectionJobResult> describeDominantLanguageDetectionJobAsync(
             DescribeDominantLanguageDetectionJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDominantLanguageDetectionJobRequest, DescribeDominantLanguageDetectionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointResult> describeEndpointAsync(DescribeEndpointRequest request) {
+
+        return describeEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointResult> describeEndpointAsync(DescribeEndpointRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointRequest, DescribeEndpointResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -354,6 +406,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     public java.util.concurrent.Future<ListDominantLanguageDetectionJobsResult> listDominantLanguageDetectionJobsAsync(
             ListDominantLanguageDetectionJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDominantLanguageDetectionJobsRequest, ListDominantLanguageDetectionJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEndpointsResult> listEndpointsAsync(ListEndpointsRequest request) {
+
+        return listEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEndpointsResult> listEndpointsAsync(ListEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEndpointsRequest, ListEndpointsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -618,6 +683,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(UpdateEndpointRequest request) {
+
+        return updateEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(UpdateEndpointRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

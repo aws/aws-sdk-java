@@ -84,6 +84,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public DeleteFunctionEventInvokeConfigResult deleteFunctionEventInvokeConfig(DeleteFunctionEventInvokeConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteLayerVersionResult deleteLayerVersion(DeleteLayerVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +115,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFunctionEventInvokeConfigResult getFunctionEventInvokeConfig(GetFunctionEventInvokeConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -160,6 +170,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public ListFunctionEventInvokeConfigsResult listFunctionEventInvokeConfigs(ListFunctionEventInvokeConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListFunctionsResult listFunctions(ListFunctionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -205,6 +220,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public PutFunctionEventInvokeConfigResult putFunctionEventInvokeConfig(PutFunctionEventInvokeConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveLayerVersionPermissionResult removeLayerVersionPermission(RemoveLayerVersionPermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -241,6 +261,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public UpdateFunctionConfigurationResult updateFunctionConfiguration(UpdateFunctionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFunctionEventInvokeConfigResult updateFunctionEventInvokeConfig(UpdateFunctionEventInvokeConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

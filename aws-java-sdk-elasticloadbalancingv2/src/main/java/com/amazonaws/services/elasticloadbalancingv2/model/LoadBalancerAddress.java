@@ -34,10 +34,16 @@ public class LoadBalancerAddress implements Serializable, Cloneable {
     private String ipAddress;
     /**
      * <p>
-     * [Network Load Balancers] The allocation ID of the Elastic IP address.
+     * [Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.
      * </p>
      */
     private String allocationId;
+    /**
+     * <p>
+     * [Network Load Balancers] The private IPv4 address for an internal load balancer.
+     * </p>
+     */
+    private String privateIPv4Address;
 
     /**
      * <p>
@@ -81,11 +87,11 @@ public class LoadBalancerAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [Network Load Balancers] The allocation ID of the Elastic IP address.
+     * [Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.
      * </p>
      * 
      * @param allocationId
-     *        [Network Load Balancers] The allocation ID of the Elastic IP address.
+     *        [Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.
      */
 
     public void setAllocationId(String allocationId) {
@@ -94,10 +100,11 @@ public class LoadBalancerAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [Network Load Balancers] The allocation ID of the Elastic IP address.
+     * [Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.
      * </p>
      * 
-     * @return [Network Load Balancers] The allocation ID of the Elastic IP address.
+     * @return [Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load
+     *         balancer.
      */
 
     public String getAllocationId() {
@@ -106,16 +113,56 @@ public class LoadBalancerAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [Network Load Balancers] The allocation ID of the Elastic IP address.
+     * [Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.
      * </p>
      * 
      * @param allocationId
-     *        [Network Load Balancers] The allocation ID of the Elastic IP address.
+     *        [Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancerAddress withAllocationId(String allocationId) {
         setAllocationId(allocationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The private IPv4 address for an internal load balancer.
+     * </p>
+     * 
+     * @param privateIPv4Address
+     *        [Network Load Balancers] The private IPv4 address for an internal load balancer.
+     */
+
+    public void setPrivateIPv4Address(String privateIPv4Address) {
+        this.privateIPv4Address = privateIPv4Address;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The private IPv4 address for an internal load balancer.
+     * </p>
+     * 
+     * @return [Network Load Balancers] The private IPv4 address for an internal load balancer.
+     */
+
+    public String getPrivateIPv4Address() {
+        return this.privateIPv4Address;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The private IPv4 address for an internal load balancer.
+     * </p>
+     * 
+     * @param privateIPv4Address
+     *        [Network Load Balancers] The private IPv4 address for an internal load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancerAddress withPrivateIPv4Address(String privateIPv4Address) {
+        setPrivateIPv4Address(privateIPv4Address);
         return this;
     }
 
@@ -134,7 +181,9 @@ public class LoadBalancerAddress implements Serializable, Cloneable {
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: ").append(getAllocationId());
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
+        if (getPrivateIPv4Address() != null)
+            sb.append("PrivateIPv4Address: ").append(getPrivateIPv4Address());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +206,10 @@ public class LoadBalancerAddress implements Serializable, Cloneable {
             return false;
         if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
             return false;
+        if (other.getPrivateIPv4Address() == null ^ this.getPrivateIPv4Address() == null)
+            return false;
+        if (other.getPrivateIPv4Address() != null && other.getPrivateIPv4Address().equals(this.getPrivateIPv4Address()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +220,7 @@ public class LoadBalancerAddress implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIPv4Address() == null) ? 0 : getPrivateIPv4Address().hashCode());
         return hashCode;
     }
 

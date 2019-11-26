@@ -37,6 +37,16 @@ public class UpdateEventSourceMappingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
     private static final MarshallingInfo<Integer> MAXIMUMBATCHINGWINDOWINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumBatchingWindowInSeconds").build();
+    private static final MarshallingInfo<StructuredPojo> DESTINATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationConfig").build();
+    private static final MarshallingInfo<Integer> MAXIMUMRECORDAGEINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumRecordAgeInSeconds").build();
+    private static final MarshallingInfo<Boolean> BISECTBATCHONFUNCTIONERROR_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BisectBatchOnFunctionError").build();
+    private static final MarshallingInfo<Integer> MAXIMUMRETRYATTEMPTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumRetryAttempts").build();
+    private static final MarshallingInfo<Integer> PARALLELIZATIONFACTOR_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParallelizationFactor").build();
 
     private static final UpdateEventSourceMappingRequestMarshaller instance = new UpdateEventSourceMappingRequestMarshaller();
 
@@ -59,6 +69,11 @@ public class UpdateEventSourceMappingRequestMarshaller {
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getBatchSize(), BATCHSIZE_BINDING);
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getMaximumBatchingWindowInSeconds(), MAXIMUMBATCHINGWINDOWINSECONDS_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getDestinationConfig(), DESTINATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getMaximumRecordAgeInSeconds(), MAXIMUMRECORDAGEINSECONDS_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getBisectBatchOnFunctionError(), BISECTBATCHONFUNCTIONERROR_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getMaximumRetryAttempts(), MAXIMUMRETRYATTEMPTS_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getParallelizationFactor(), PARALLELIZATIONFACTOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

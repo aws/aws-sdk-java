@@ -136,6 +136,41 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateResourceSharePermissionResult> associateResourceSharePermissionAsync(
+            AssociateResourceSharePermissionRequest request) {
+
+        return associateResourceSharePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateResourceSharePermissionResult> associateResourceSharePermissionAsync(
+            final AssociateResourceSharePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResult> asyncHandler) {
+        final AssociateResourceSharePermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateResourceSharePermissionResult>() {
+            @Override
+            public AssociateResourceSharePermissionResult call() throws Exception {
+                AssociateResourceSharePermissionResult result = null;
+
+                try {
+                    result = executeAssociateResourceSharePermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResourceShareResult> createResourceShareAsync(CreateResourceShareRequest request) {
 
         return createResourceShareAsync(request, null);
@@ -235,6 +270,41 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateResourceSharePermissionResult> disassociateResourceSharePermissionAsync(
+            DisassociateResourceSharePermissionRequest request) {
+
+        return disassociateResourceSharePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateResourceSharePermissionResult> disassociateResourceSharePermissionAsync(
+            final DisassociateResourceSharePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResult> asyncHandler) {
+        final DisassociateResourceSharePermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateResourceSharePermissionResult>() {
+            @Override
+            public DisassociateResourceSharePermissionResult call() throws Exception {
+                DisassociateResourceSharePermissionResult result = null;
+
+                try {
+                    result = executeDisassociateResourceSharePermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableSharingWithAwsOrganizationResult> enableSharingWithAwsOrganizationAsync(
             EnableSharingWithAwsOrganizationRequest request) {
 
@@ -254,6 +324,39 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
 
                 try {
                     result = executeEnableSharingWithAwsOrganization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionResult> getPermissionAsync(GetPermissionRequest request) {
+
+        return getPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionResult> getPermissionAsync(final GetPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPermissionRequest, GetPermissionResult> asyncHandler) {
+        final GetPermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPermissionResult>() {
+            @Override
+            public GetPermissionResult call() throws Exception {
+                GetPermissionResult result = null;
+
+                try {
+                    result = executeGetPermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -436,6 +539,39 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request) {
+
+        return listPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(final ListPermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPermissionsRequest, ListPermissionsResult> asyncHandler) {
+        final ListPermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPermissionsResult>() {
+            @Override
+            public ListPermissionsResult call() throws Exception {
+                ListPermissionsResult result = null;
+
+                try {
+                    result = executeListPermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPrincipalsResult> listPrincipalsAsync(ListPrincipalsRequest request) {
 
         return listPrincipalsAsync(request, null);
@@ -469,6 +605,39 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourceSharePermissionsResult> listResourceSharePermissionsAsync(ListResourceSharePermissionsRequest request) {
+
+        return listResourceSharePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceSharePermissionsResult> listResourceSharePermissionsAsync(final ListResourceSharePermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResult> asyncHandler) {
+        final ListResourceSharePermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceSharePermissionsResult>() {
+            @Override
+            public ListResourceSharePermissionsResult call() throws Exception {
+                ListResourceSharePermissionsResult result = null;
+
+                try {
+                    result = executeListResourceSharePermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourcesResult> listResourcesAsync(ListResourcesRequest request) {
 
         return listResourcesAsync(request, null);
@@ -486,6 +655,41 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
 
                 try {
                     result = executeListResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromoteResourceShareCreatedFromPolicyResult> promoteResourceShareCreatedFromPolicyAsync(
+            PromoteResourceShareCreatedFromPolicyRequest request) {
+
+        return promoteResourceShareCreatedFromPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromoteResourceShareCreatedFromPolicyResult> promoteResourceShareCreatedFromPolicyAsync(
+            final PromoteResourceShareCreatedFromPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PromoteResourceShareCreatedFromPolicyRequest, PromoteResourceShareCreatedFromPolicyResult> asyncHandler) {
+        final PromoteResourceShareCreatedFromPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PromoteResourceShareCreatedFromPolicyResult>() {
+            @Override
+            public PromoteResourceShareCreatedFromPolicyResult call() throws Exception {
+                PromoteResourceShareCreatedFromPolicyResult result = null;
+
+                try {
+                    result = executePromoteResourceShareCreatedFromPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

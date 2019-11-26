@@ -130,7 +130,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Cached directories are linked to your build before it downloads its project sources. Cached items are overriden
+     * Cached directories are linked to your build before it downloads its project sources. Cached items are overridden
      * if a source item has the same name. Directories are specified using cache paths in the buildspec file.
      * </p>
      * </li>
@@ -508,7 +508,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Cached directories are linked to your build before it downloads its project sources. Cached items are overriden
+     * Cached directories are linked to your build before it downloads its project sources. Cached items are overridden
      * if a source item has the same name. Directories are specified using cache paths in the buildspec file.
      * </p>
      * </li>
@@ -575,7 +575,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         Cached directories are linked to your build before it downloads its project sources. Cached items are
-     *         overriden if a source item has the same name. Directories are specified using cache paths in the
+     *         overridden if a source item has the same name. Directories are specified using cache paths in the
      *         buildspec file.
      *         </p>
      *         </li>
@@ -648,7 +648,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Cached directories are linked to your build before it downloads its project sources. Cached items are overriden
+     * Cached directories are linked to your build before it downloads its project sources. Cached items are overridden
      * if a source item has the same name. Directories are specified using cache paths in the buildspec file.
      * </p>
      * </li>
@@ -716,8 +716,8 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Cached directories are linked to your build before it downloads its project sources. Cached items are
-     *        overriden if a source item has the same name. Directories are specified using cache paths in the buildspec
-     *        file.
+     *        overridden if a source item has the same name. Directories are specified using cache paths in the
+     *        buildspec file.
      *        </p>
      *        </li>
      *        </ul>
@@ -794,7 +794,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Cached directories are linked to your build before it downloads its project sources. Cached items are overriden
+     * Cached directories are linked to your build before it downloads its project sources. Cached items are overridden
      * if a source item has the same name. Directories are specified using cache paths in the buildspec file.
      * </p>
      * </li>
@@ -867,8 +867,8 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Cached directories are linked to your build before it downloads its project sources. Cached items are
-     *        overriden if a source item has the same name. Directories are specified using cache paths in the buildspec
-     *        file.
+     *        overridden if a source item has the same name. Directories are specified using cache paths in the
+     *        buildspec file.
      *        </p>
      *        </li>
      *        </ul>
@@ -947,7 +947,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Cached directories are linked to your build before it downloads its project sources. Cached items are overriden
+     * Cached directories are linked to your build before it downloads its project sources. Cached items are overridden
      * if a source item has the same name. Directories are specified using cache paths in the buildspec file.
      * </p>
      * </li>
@@ -1015,8 +1015,8 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Cached directories are linked to your build before it downloads its project sources. Cached items are
-     *        overriden if a source item has the same name. Directories are specified using cache paths in the buildspec
-     *        file.
+     *        overridden if a source item has the same name. Directories are specified using cache paths in the
+     *        buildspec file.
      *        </p>
      *        </li>
      *        </ul>
@@ -1090,7 +1090,7 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Cached directories are linked to your build before it downloads its project sources. Cached items are overriden
+     * Cached directories are linked to your build before it downloads its project sources. Cached items are overridden
      * if a source item has the same name. Directories are specified using cache paths in the buildspec file.
      * </p>
      * </li>
@@ -1158,8 +1158,8 @@ public class ProjectCache implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Cached directories are linked to your build before it downloads its project sources. Cached items are
-     *        overriden if a source item has the same name. Directories are specified using cache paths in the buildspec
-     *        file.
+     *        overridden if a source item has the same name. Directories are specified using cache paths in the
+     *        buildspec file.
      *        </p>
      *        </li>
      *        </ul>

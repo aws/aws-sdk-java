@@ -27,8 +27,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>.
+     * The identifier of the symmetric CMK that receives the imported key material. The CMK's <code>Origin</code> must
+     * be <code>EXTERNAL</code>. This must be the same CMK specified in the <code>KeyID</code> parameter of the
+     * corresponding <a>GetParametersForImport</a> request.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -62,9 +63,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.nio.ByteBuffer importToken;
     /**
      * <p>
-     * The encrypted key material to import. It must be encrypted with the public key that you received in the response
-     * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
-     * request.
+     * The encrypted key material to import. The key material must be encrypted with the public wrapping key that
+     * <a>GetParametersForImport</a> returned, using the wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.
      * </p>
      */
     private java.nio.ByteBuffer encryptedKeyMaterial;
@@ -87,8 +88,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>.
+     * The identifier of the symmetric CMK that receives the imported key material. The CMK's <code>Origin</code> must
+     * be <code>EXTERNAL</code>. This must be the same CMK specified in the <code>KeyID</code> parameter of the
+     * corresponding <a>GetParametersForImport</a> request.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -113,8 +115,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param keyId
-     *        The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
-     *        <code>EXTERNAL</code>.</p>
+     *        The identifier of the symmetric CMK that receives the imported key material. The CMK's <code>Origin</code>
+     *        must be <code>EXTERNAL</code>. This must be the same CMK specified in the <code>KeyID</code> parameter of
+     *        the corresponding <a>GetParametersForImport</a> request.</p>
      *        <p>
      *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *        </p>
@@ -143,8 +146,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>.
+     * The identifier of the symmetric CMK that receives the imported key material. The CMK's <code>Origin</code> must
+     * be <code>EXTERNAL</code>. This must be the same CMK specified in the <code>KeyID</code> parameter of the
+     * corresponding <a>GetParametersForImport</a> request.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -168,8 +172,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * 
-     * @return The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
-     *         <code>EXTERNAL</code>.</p>
+     * @return The identifier of the symmetric CMK that receives the imported key material. The CMK's
+     *         <code>Origin</code> must be <code>EXTERNAL</code>. This must be the same CMK specified in the
+     *         <code>KeyID</code> parameter of the corresponding <a>GetParametersForImport</a> request.</p>
      *         <p>
      *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *         </p>
@@ -198,8 +203,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>.
+     * The identifier of the symmetric CMK that receives the imported key material. The CMK's <code>Origin</code> must
+     * be <code>EXTERNAL</code>. This must be the same CMK specified in the <code>KeyID</code> parameter of the
+     * corresponding <a>GetParametersForImport</a> request.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -224,8 +230,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param keyId
-     *        The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
-     *        <code>EXTERNAL</code>.</p>
+     *        The identifier of the symmetric CMK that receives the imported key material. The CMK's <code>Origin</code>
+     *        must be <code>EXTERNAL</code>. This must be the same CMK specified in the <code>KeyID</code> parameter of
+     *        the corresponding <a>GetParametersForImport</a> request.</p>
      *        <p>
      *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *        </p>
@@ -330,9 +337,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The encrypted key material to import. It must be encrypted with the public key that you received in the response
-     * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
-     * request.
+     * The encrypted key material to import. The key material must be encrypted with the public wrapping key that
+     * <a>GetParametersForImport</a> returned, using the wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -346,9 +353,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param encryptedKeyMaterial
-     *        The encrypted key material to import. It must be encrypted with the public key that you received in the
-     *        response to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     *        specified in that request.
+     *        The encrypted key material to import. The key material must be encrypted with the public wrapping key that
+     *        <a>GetParametersForImport</a> returned, using the wrapping algorithm that you specified in the same
+     *        <code>GetParametersForImport</code> request.
      */
 
     public void setEncryptedKeyMaterial(java.nio.ByteBuffer encryptedKeyMaterial) {
@@ -357,9 +364,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The encrypted key material to import. It must be encrypted with the public key that you received in the response
-     * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
-     * request.
+     * The encrypted key material to import. The key material must be encrypted with the public wrapping key that
+     * <a>GetParametersForImport</a> returned, using the wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -369,9 +376,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * {@code position}.
      * </p>
      * 
-     * @return The encrypted key material to import. It must be encrypted with the public key that you received in the
-     *         response to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     *         specified in that request.
+     * @return The encrypted key material to import. The key material must be encrypted with the public wrapping key
+     *         that <a>GetParametersForImport</a> returned, using the wrapping algorithm that you specified in the same
+     *         <code>GetParametersForImport</code> request.
      */
 
     public java.nio.ByteBuffer getEncryptedKeyMaterial() {
@@ -380,9 +387,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The encrypted key material to import. It must be encrypted with the public key that you received in the response
-     * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
-     * request.
+     * The encrypted key material to import. The key material must be encrypted with the public wrapping key that
+     * <a>GetParametersForImport</a> returned, using the wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -396,9 +403,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param encryptedKeyMaterial
-     *        The encrypted key material to import. It must be encrypted with the public key that you received in the
-     *        response to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     *        specified in that request.
+     *        The encrypted key material to import. The key material must be encrypted with the public wrapping key that
+     *        <a>GetParametersForImport</a> returned, using the wrapping algorithm that you specified in the same
+     *        <code>GetParametersForImport</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

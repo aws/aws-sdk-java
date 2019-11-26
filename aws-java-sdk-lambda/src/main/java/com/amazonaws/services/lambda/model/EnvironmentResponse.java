@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The results of a configuration update that applied environment variables.
+ * The results of an operation to update or read environment variables. If the operation is successful, the response
+ * contains the environment variables. If it failed, the response contains details about the error.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentResponse" target="_top">AWS API

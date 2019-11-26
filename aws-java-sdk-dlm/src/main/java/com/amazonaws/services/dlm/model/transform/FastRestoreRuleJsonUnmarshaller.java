@@ -52,6 +52,14 @@ public class FastRestoreRuleJsonUnmarshaller implements Unmarshaller<FastRestore
                     context.nextToken();
                     fastRestoreRule.setCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Interval", targetDepth)) {
+                    context.nextToken();
+                    fastRestoreRule.setInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("IntervalUnit", targetDepth)) {
+                    context.nextToken();
+                    fastRestoreRule.setIntervalUnit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
                     fastRestoreRule.setAvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

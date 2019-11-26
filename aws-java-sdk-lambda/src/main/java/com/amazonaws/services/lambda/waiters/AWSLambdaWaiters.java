@@ -43,6 +43,20 @@ public class AWSLambdaWaiters {
     }
 
     /**
+     * Builds a FunctionUpdated waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetFunctionConfigurationRequest> functionUpdated() {
+
+        return new WaiterBuilder<GetFunctionConfigurationRequest, GetFunctionConfigurationResult>()
+                .withSdkFunction(new GetFunctionConfigurationFunction(client))
+                .withAcceptors(new FunctionUpdated.IsSuccessfulMatcher(), new FunctionUpdated.IsFailedMatcher(), new FunctionUpdated.IsInProgressMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a FunctionExists waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -52,6 +66,20 @@ public class AWSLambdaWaiters {
         return new WaiterBuilder<GetFunctionRequest, GetFunctionResult>().withSdkFunction(new GetFunctionFunction(client))
                 .withAcceptors(new HttpSuccessStatusAcceptor(WaiterState.SUCCESS), new FunctionExists.IsResourceNotFoundExceptionMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(1)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a FunctionActive waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetFunctionConfigurationRequest> functionActive() {
+
+        return new WaiterBuilder<GetFunctionConfigurationRequest, GetFunctionConfigurationResult>()
+                .withSdkFunction(new GetFunctionConfigurationFunction(client))
+                .withAcceptors(new FunctionActive.IsActiveMatcher(), new FunctionActive.IsFailedMatcher(), new FunctionActive.IsPendingMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();
     }
 

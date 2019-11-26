@@ -144,6 +144,45 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Permanently deletes the specified Contributor Insights rules.
+     * </p>
+     * <p>
+     * If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
+     * the rule was created may or may not be available.
+     * </p>
+     * 
+     * @param deleteInsightRulesRequest
+     * @return A Java Future containing the result of the DeleteInsightRules operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DeleteInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInsightRulesResult> deleteInsightRulesAsync(DeleteInsightRulesRequest deleteInsightRulesRequest);
+
+    /**
+     * <p>
+     * Permanently deletes the specified Contributor Insights rules.
+     * </p>
+     * <p>
+     * If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
+     * the rule was created may or may not be available.
+     * </p>
+     * 
+     * @param deleteInsightRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInsightRules operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DeleteInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInsightRulesResult> deleteInsightRulesAsync(DeleteInsightRulesRequest deleteInsightRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInsightRulesRequest, DeleteInsightRulesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm
      * name is not specified, the histories for all alarms are returned.
      * </p>
@@ -312,6 +351,49 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Returns a list of all the Contributor Insights rules in your account. All rules in your account are returned with
+     * a single operation.
+     * </p>
+     * <p>
+     * For more information about Contributor Insights, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor
+     * Insights to Analyze High-Cardinality Data</a>.
+     * </p>
+     * 
+     * @param describeInsightRulesRequest
+     * @return A Java Future containing the result of the DescribeInsightRules operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DescribeInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInsightRulesResult> describeInsightRulesAsync(DescribeInsightRulesRequest describeInsightRulesRequest);
+
+    /**
+     * <p>
+     * Returns a list of all the Contributor Insights rules in your account. All rules in your account are returned with
+     * a single operation.
+     * </p>
+     * <p>
+     * For more information about Contributor Insights, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor
+     * Insights to Analyze High-Cardinality Data</a>.
+     * </p>
+     * 
+     * @param describeInsightRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInsightRules operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DescribeInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInsightRulesResult> describeInsightRulesAsync(DescribeInsightRulesRequest describeInsightRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInsightRulesRequest, DescribeInsightRulesResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables the actions for the specified alarms. When an alarm's actions are disabled, the alarm actions do not
      * execute when the alarm state changes.
      * </p>
@@ -345,6 +427,39 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Disables the specified Contributor Insights rules. When rules are disabled, they do not analyze log groups and do
+     * not incur costs.
+     * </p>
+     * 
+     * @param disableInsightRulesRequest
+     * @return A Java Future containing the result of the DisableInsightRules operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DisableInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableInsightRulesResult> disableInsightRulesAsync(DisableInsightRulesRequest disableInsightRulesRequest);
+
+    /**
+     * <p>
+     * Disables the specified Contributor Insights rules. When rules are disabled, they do not analyze log groups and do
+     * not incur costs.
+     * </p>
+     * 
+     * @param disableInsightRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableInsightRules operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DisableInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableInsightRulesResult> disableInsightRulesAsync(DisableInsightRulesRequest disableInsightRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableInsightRulesRequest, DisableInsightRulesResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables the actions for the specified alarms.
      * </p>
      * 
@@ -373,6 +488,39 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      */
     java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(EnableAlarmActionsRequest enableAlarmActionsRequest,
             com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, EnableAlarmActionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables the specified Contributor Insights rules. When rules are enabled, they immediately begin analyzing log
+     * data.
+     * </p>
+     * 
+     * @param enableInsightRulesRequest
+     * @return A Java Future containing the result of the EnableInsightRules operation returned by the service.
+     * @sample AmazonCloudWatchAsync.EnableInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableInsightRulesResult> enableInsightRulesAsync(EnableInsightRulesRequest enableInsightRulesRequest);
+
+    /**
+     * <p>
+     * Enables the specified Contributor Insights rules. When rules are enabled, they immediately begin analyzing log
+     * data.
+     * </p>
+     * 
+     * @param enableInsightRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableInsightRules operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.EnableInsightRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableInsightRulesResult> enableInsightRulesAsync(EnableInsightRulesRequest enableInsightRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableInsightRulesRequest, EnableInsightRulesResult> asyncHandler);
 
     /**
      * <p>
@@ -417,8 +565,143 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * This operation returns the time series data collected by a Contributor Insights rule. The data includes the
+     * identity and number of contributors to the log group.
+     * </p>
+     * <p>
+     * You can also optionally return one or more statistics about each data point in the time series. These statistics
+     * can include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UniqueContributors</code> -- the number of unique contributors for each data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
+     * contributor may change for each data point in the graph.
+     * </p>
+     * <p>
+     * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
+     * occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the
+     * highest sum in the log field specified by the rule's <code>Value</code>, during that period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> -- the number of data points matched by the rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data
+     * point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that
+     * data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that
+     * data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> -- the average value from all contributors during the time period represented by that data
+     * point.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getInsightRuleReportRequest
+     * @return A Java Future containing the result of the GetInsightRuleReport operation returned by the service.
+     * @sample AmazonCloudWatchAsync.GetInsightRuleReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightRuleReportResult> getInsightRuleReportAsync(GetInsightRuleReportRequest getInsightRuleReportRequest);
+
+    /**
+     * <p>
+     * This operation returns the time series data collected by a Contributor Insights rule. The data includes the
+     * identity and number of contributors to the log group.
+     * </p>
+     * <p>
+     * You can also optionally return one or more statistics about each data point in the time series. These statistics
+     * can include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UniqueContributors</code> -- the number of unique contributors for each data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
+     * contributor may change for each data point in the graph.
+     * </p>
+     * <p>
+     * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
+     * occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the
+     * highest sum in the log field specified by the rule's <code>Value</code>, during that period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> -- the number of data points matched by the rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data
+     * point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that
+     * data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that
+     * data point.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> -- the average value from all contributors during the time period represented by that data
+     * point.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getInsightRuleReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInsightRuleReport operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.GetInsightRuleReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInsightRuleReportResult> getInsightRuleReportAsync(GetInsightRuleReportRequest getInsightRuleReportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInsightRuleReportRequest, GetInsightRuleReportResult> asyncHandler);
+
+    /**
+     * <p>
      * You can use the <code>GetMetricData</code> API to retrieve as many as 100 different metrics in a single request,
-     * with a total of as many as 100,800 datapoints. You can also optionally perform math expressions on the values of
+     * with a total of as many as 100,800 data points. You can also optionally perform math expressions on the values of
      * the returned statistics, to create new time series that represent new insights into your data. For example, using
      * Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series.
      * For more information about metric math expressions, see <a
@@ -481,7 +764,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
     /**
      * <p>
      * You can use the <code>GetMetricData</code> API to retrieve as many as 100 different metrics in a single request,
-     * with a total of as many as 100,800 datapoints. You can also optionally perform math expressions on the values of
+     * with a total of as many as 100,800 data points. You can also optionally perform math expressions on the values of
      * the returned statistics, to create new time series that represent new insights into your data. For example, using
      * Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series.
      * For more information about metric math expressions, see <a
@@ -1045,6 +1328,51 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs log group, enabling you to
+     * find contributor data for the log events in that log group. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor
+     * Insights to Analyze High-Cardinality Data</a>.
+     * </p>
+     * <p>
+     * If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
+     * the rule was created may or may not be available.
+     * </p>
+     * 
+     * @param putInsightRuleRequest
+     * @return A Java Future containing the result of the PutInsightRule operation returned by the service.
+     * @sample AmazonCloudWatchAsync.PutInsightRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutInsightRuleResult> putInsightRuleAsync(PutInsightRuleRequest putInsightRuleRequest);
+
+    /**
+     * <p>
+     * Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs log group, enabling you to
+     * find contributor data for the log events in that log group. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor
+     * Insights to Analyze High-Cardinality Data</a>.
+     * </p>
+     * <p>
+     * If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
+     * the rule was created may or may not be available.
+     * </p>
+     * 
+     * @param putInsightRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutInsightRule operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.PutInsightRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutInsightRuleResult> putInsightRuleAsync(PutInsightRuleRequest putInsightRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<PutInsightRuleRequest, PutInsightRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly
      * detection model.
      * </p>
@@ -1223,9 +1551,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * <p>
      * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values
-     * that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
-     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not
-     * supported.
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special
+     * values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
      * <p>
      * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
@@ -1283,9 +1610,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * <p>
      * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values
-     * that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
-     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not
-     * supported.
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special
+     * values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
      * <p>
      * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension

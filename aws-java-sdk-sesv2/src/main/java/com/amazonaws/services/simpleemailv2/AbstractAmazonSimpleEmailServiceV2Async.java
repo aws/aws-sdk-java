@@ -149,6 +149,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSuppressedDestinationResult> deleteSuppressedDestinationAsync(DeleteSuppressedDestinationRequest request) {
+
+        return deleteSuppressedDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSuppressedDestinationResult> deleteSuppressedDestinationAsync(DeleteSuppressedDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSuppressedDestinationRequest, DeleteSuppressedDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccountResult> getAccountAsync(GetAccountRequest request) {
 
         return getAccountAsync(request, null);
@@ -298,6 +311,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(GetSuppressedDestinationRequest request) {
+
+        return getSuppressedDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(GetSuppressedDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSuppressedDestinationRequest, GetSuppressedDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request) {
 
         return listConfigurationSetsAsync(request, null);
@@ -365,6 +391,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(ListSuppressedDestinationsRequest request) {
+
+        return listSuppressedDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(ListSuppressedDestinationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSuppressedDestinationsRequest, ListSuppressedDestinationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -401,6 +440,21 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     @Override
     public java.util.concurrent.Future<PutAccountSendingAttributesResult> putAccountSendingAttributesAsync(PutAccountSendingAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAccountSendingAttributesRequest, PutAccountSendingAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSuppressionAttributesResult> putAccountSuppressionAttributesAsync(
+            PutAccountSuppressionAttributesRequest request) {
+
+        return putAccountSuppressionAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSuppressionAttributesResult> putAccountSuppressionAttributesAsync(
+            PutAccountSuppressionAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAccountSuppressionAttributesRequest, PutAccountSuppressionAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -446,6 +500,21 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<PutConfigurationSetSendingOptionsResult> putConfigurationSetSendingOptionsAsync(
             PutConfigurationSetSendingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetSendingOptionsRequest, PutConfigurationSetSendingOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetSuppressionOptionsResult> putConfigurationSetSuppressionOptionsAsync(
+            PutConfigurationSetSuppressionOptionsRequest request) {
+
+        return putConfigurationSetSuppressionOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetSuppressionOptionsResult> putConfigurationSetSuppressionOptionsAsync(
+            PutConfigurationSetSuppressionOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationSetSuppressionOptionsRequest, PutConfigurationSetSuppressionOptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -545,6 +614,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<PutEmailIdentityMailFromAttributesResult> putEmailIdentityMailFromAttributesAsync(
             PutEmailIdentityMailFromAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEmailIdentityMailFromAttributesRequest, PutEmailIdentityMailFromAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSuppressedDestinationResult> putSuppressedDestinationAsync(PutSuppressedDestinationRequest request) {
+
+        return putSuppressedDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSuppressedDestinationResult> putSuppressedDestinationAsync(PutSuppressedDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutSuppressedDestinationRequest, PutSuppressedDestinationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

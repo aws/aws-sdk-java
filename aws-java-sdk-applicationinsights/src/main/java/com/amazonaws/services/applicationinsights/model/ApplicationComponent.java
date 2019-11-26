@@ -147,6 +147,7 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
      * 
      * @param tier
      *        The stack tier of the application component.
+     * @see Tier
      */
 
     public void setTier(String tier) {
@@ -159,6 +160,7 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @return The stack tier of the application component.
+     * @see Tier
      */
 
     public String getTier() {
@@ -173,10 +175,27 @@ public class ApplicationComponent implements Serializable, Cloneable, Structured
      * @param tier
      *        The stack tier of the application component.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Tier
      */
 
     public ApplicationComponent withTier(String tier) {
         setTier(tier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stack tier of the application component.
+     * </p>
+     * 
+     * @param tier
+     *        The stack tier of the application component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Tier
+     */
+
+    public ApplicationComponent withTier(Tier tier) {
+        this.tier = tier.toString();
         return this;
     }
 

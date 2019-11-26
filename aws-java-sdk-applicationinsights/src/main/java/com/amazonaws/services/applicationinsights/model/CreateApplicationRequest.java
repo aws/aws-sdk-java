@@ -44,6 +44,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String opsItemSNSTopicArn;
+    /**
+     * <p>
+     * List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     * <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * characters.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -184,6 +192,92 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     * <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * characters.
+     * </p>
+     * 
+     * @return List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     *         <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value
+     *         is 256 characters.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     * <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * characters.
+     * </p>
+     * 
+     * @param tags
+     *        List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     *        <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value
+     *        is 256 characters.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     * <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     *        <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value
+     *        is 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     * <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     * characters.
+     * </p>
+     * 
+     * @param tags
+     *        List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (
+     *        <code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value
+     *        is 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -200,7 +294,9 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getOpsCenterEnabled() != null)
             sb.append("OpsCenterEnabled: ").append(getOpsCenterEnabled()).append(",");
         if (getOpsItemSNSTopicArn() != null)
-            sb.append("OpsItemSNSTopicArn: ").append(getOpsItemSNSTopicArn());
+            sb.append("OpsItemSNSTopicArn: ").append(getOpsItemSNSTopicArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +323,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getOpsItemSNSTopicArn() != null && other.getOpsItemSNSTopicArn().equals(this.getOpsItemSNSTopicArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +338,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
         hashCode = prime * hashCode + ((getOpsCenterEnabled() == null) ? 0 : getOpsCenterEnabled().hashCode());
         hashCode = prime * hashCode + ((getOpsItemSNSTopicArn() == null) ? 0 : getOpsItemSNSTopicArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

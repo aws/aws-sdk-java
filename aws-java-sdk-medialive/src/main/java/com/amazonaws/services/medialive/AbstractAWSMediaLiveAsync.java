@@ -80,6 +80,32 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMultiplexResult> createMultiplexAsync(CreateMultiplexRequest request) {
+
+        return createMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultiplexResult> createMultiplexAsync(CreateMultiplexRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMultiplexRequest, CreateMultiplexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultiplexProgramResult> createMultiplexProgramAsync(CreateMultiplexProgramRequest request) {
+
+        return createMultiplexProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultiplexProgramResult> createMultiplexProgramAsync(CreateMultiplexProgramRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMultiplexProgramRequest, CreateMultiplexProgramResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
@@ -127,6 +153,32 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     @Override
     public java.util.concurrent.Future<DeleteInputSecurityGroupResult> deleteInputSecurityGroupAsync(DeleteInputSecurityGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInputSecurityGroupRequest, DeleteInputSecurityGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMultiplexResult> deleteMultiplexAsync(DeleteMultiplexRequest request) {
+
+        return deleteMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMultiplexResult> deleteMultiplexAsync(DeleteMultiplexRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMultiplexRequest, DeleteMultiplexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMultiplexProgramResult> deleteMultiplexProgramAsync(DeleteMultiplexProgramRequest request) {
+
+        return deleteMultiplexProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMultiplexProgramResult> deleteMultiplexProgramAsync(DeleteMultiplexProgramRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMultiplexProgramRequest, DeleteMultiplexProgramResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -210,6 +262,32 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeMultiplexResult> describeMultiplexAsync(DescribeMultiplexRequest request) {
+
+        return describeMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMultiplexResult> describeMultiplexAsync(DescribeMultiplexRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeMultiplexRequest, DescribeMultiplexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMultiplexProgramResult> describeMultiplexProgramAsync(DescribeMultiplexProgramRequest request) {
+
+        return describeMultiplexProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMultiplexProgramResult> describeMultiplexProgramAsync(DescribeMultiplexProgramRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeMultiplexProgramRequest, DescribeMultiplexProgramResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOfferingResult> describeOfferingAsync(DescribeOfferingRequest request) {
 
         return describeOfferingAsync(request, null);
@@ -288,6 +366,32 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListMultiplexProgramsResult> listMultiplexProgramsAsync(ListMultiplexProgramsRequest request) {
+
+        return listMultiplexProgramsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultiplexProgramsResult> listMultiplexProgramsAsync(ListMultiplexProgramsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMultiplexProgramsRequest, ListMultiplexProgramsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultiplexesResult> listMultiplexesAsync(ListMultiplexesRequest request) {
+
+        return listMultiplexesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultiplexesResult> listMultiplexesAsync(ListMultiplexesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMultiplexesRequest, ListMultiplexesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(ListOfferingsRequest request) {
 
         return listOfferingsAsync(request, null);
@@ -353,6 +457,19 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<StartMultiplexResult> startMultiplexAsync(StartMultiplexRequest request) {
+
+        return startMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMultiplexResult> startMultiplexAsync(StartMultiplexRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMultiplexRequest, StartMultiplexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopChannelResult> stopChannelAsync(StopChannelRequest request) {
 
         return stopChannelAsync(request, null);
@@ -361,6 +478,19 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     @Override
     public java.util.concurrent.Future<StopChannelResult> stopChannelAsync(StopChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<StopChannelRequest, StopChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMultiplexResult> stopMultiplexAsync(StopMultiplexRequest request) {
+
+        return stopMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMultiplexResult> stopMultiplexAsync(StopMultiplexRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopMultiplexRequest, StopMultiplexResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -413,6 +543,32 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     @Override
     public java.util.concurrent.Future<UpdateInputSecurityGroupResult> updateInputSecurityGroupAsync(UpdateInputSecurityGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInputSecurityGroupRequest, UpdateInputSecurityGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMultiplexResult> updateMultiplexAsync(UpdateMultiplexRequest request) {
+
+        return updateMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMultiplexResult> updateMultiplexAsync(UpdateMultiplexRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMultiplexRequest, UpdateMultiplexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMultiplexProgramResult> updateMultiplexProgramAsync(UpdateMultiplexProgramRequest request) {
+
+        return updateMultiplexProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMultiplexProgramResult> updateMultiplexProgramAsync(UpdateMultiplexProgramRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMultiplexProgramRequest, UpdateMultiplexProgramResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

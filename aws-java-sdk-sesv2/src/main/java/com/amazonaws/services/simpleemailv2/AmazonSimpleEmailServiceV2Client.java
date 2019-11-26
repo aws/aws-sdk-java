@@ -117,6 +117,9 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("SendingPausedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simpleemailv2.model.transform.SendingPausedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simpleemailv2.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simpleemailv2.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -805,6 +808,68 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteEmailIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEmailIdentityResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used to delete a suppressed email destination from your suppression list.
+     * </p>
+     * 
+     * @param deleteSuppressedDestinationRequest
+     *        A request to delete a suppressed email destination.
+     * @return Result of the DeleteSuppressedDestination operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.DeleteSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSuppressedDestinationResult deleteSuppressedDestination(DeleteSuppressedDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSuppressedDestination(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSuppressedDestinationResult executeDeleteSuppressedDestination(DeleteSuppressedDestinationRequest deleteSuppressedDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSuppressedDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSuppressedDestinationRequest> request = null;
+        Response<DeleteSuppressedDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSuppressedDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSuppressedDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSuppressedDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSuppressedDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteSuppressedDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1521,6 +1586,68 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Used to fetch a single suppressed email destination from your suppression list.
+     * </p>
+     * 
+     * @param getSuppressedDestinationRequest
+     *        A request to get a suppressed email destination.
+     * @return Result of the GetSuppressedDestination operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.GetSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSuppressedDestinationResult getSuppressedDestination(GetSuppressedDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSuppressedDestination(request);
+    }
+
+    @SdkInternalApi
+    final GetSuppressedDestinationResult executeGetSuppressedDestination(GetSuppressedDestinationRequest getSuppressedDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSuppressedDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSuppressedDestinationRequest> request = null;
+        Response<GetSuppressedDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSuppressedDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSuppressedDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSuppressedDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSuppressedDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSuppressedDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List all of the configuration sets associated with your account in the current region.
      * </p>
      * <p>
@@ -1835,6 +1962,68 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Used to fetch a list suppressed email destinations from your suppression list.
+     * </p>
+     * 
+     * @param listSuppressedDestinationsRequest
+     *        A request to obtain a list of suppressed email destinations.
+     * @return Result of the ListSuppressedDestinations operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws InvalidNextTokenException
+     *         The specified request includes an invalid or expired token. Please attempt to get a new token.
+     * @sample AmazonSimpleEmailServiceV2.ListSuppressedDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSuppressedDestinationsResult listSuppressedDestinations(ListSuppressedDestinationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSuppressedDestinations(request);
+    }
+
+    @SdkInternalApi
+    final ListSuppressedDestinationsResult executeListSuppressedDestinations(ListSuppressedDestinationsRequest listSuppressedDestinationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSuppressedDestinationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSuppressedDestinationsRequest> request = null;
+        Response<ListSuppressedDestinationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSuppressedDestinationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSuppressedDestinationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSuppressedDestinations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSuppressedDestinationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSuppressedDestinationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieve a list of the tags (keys and values) that are associated with a specified resource. A <i>tag</i> is a
      * label that you optionally define and associate with a resource. Each tag consists of a required <i>tag
      * key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a category for
@@ -2006,6 +2195,67 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<PutAccountSendingAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutAccountSendingAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Change your account's suppression preferences for your account.
+     * </p>
+     * 
+     * @param putAccountSuppressionAttributesRequest
+     *        A request to change your account's suppression preferences.
+     * @return Result of the PutAccountSuppressionAttributes operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.PutAccountSuppressionAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutAccountSuppressionAttributesResult putAccountSuppressionAttributes(PutAccountSuppressionAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAccountSuppressionAttributes(request);
+    }
+
+    @SdkInternalApi
+    final PutAccountSuppressionAttributesResult executePutAccountSuppressionAttributes(
+            PutAccountSuppressionAttributesRequest putAccountSuppressionAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAccountSuppressionAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAccountSuppressionAttributesRequest> request = null;
+        Response<PutAccountSuppressionAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAccountSuppressionAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putAccountSuppressionAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSuppressionAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAccountSuppressionAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutAccountSuppressionAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2198,6 +2448,69 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<PutConfigurationSetSendingOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutConfigurationSetSendingOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Specify your account's suppression preferences for a configuration set.
+     * </p>
+     * 
+     * @param putConfigurationSetSuppressionOptionsRequest
+     *        A request to change your account's suppression preferences for an specific configuration set.
+     * @return Result of the PutConfigurationSetSuppressionOptions operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.PutConfigurationSetSuppressionOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutConfigurationSetSuppressionOptionsResult putConfigurationSetSuppressionOptions(PutConfigurationSetSuppressionOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutConfigurationSetSuppressionOptions(request);
+    }
+
+    @SdkInternalApi
+    final PutConfigurationSetSuppressionOptionsResult executePutConfigurationSetSuppressionOptions(
+            PutConfigurationSetSuppressionOptionsRequest putConfigurationSetSuppressionOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putConfigurationSetSuppressionOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutConfigurationSetSuppressionOptionsRequest> request = null;
+        Response<PutConfigurationSetSuppressionOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutConfigurationSetSuppressionOptionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putConfigurationSetSuppressionOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetSuppressionOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutConfigurationSetSuppressionOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutConfigurationSetSuppressionOptionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2672,6 +2985,66 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<PutEmailIdentityMailFromAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutEmailIdentityMailFromAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Puts (overwrites) an email destination in your suppression list.
+     * </p>
+     * 
+     * @param putSuppressedDestinationRequest
+     *        A request to suppress an email destination.
+     * @return Result of the PutSuppressedDestination operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.PutSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutSuppressedDestinationResult putSuppressedDestination(PutSuppressedDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutSuppressedDestination(request);
+    }
+
+    @SdkInternalApi
+    final PutSuppressedDestinationResult executePutSuppressedDestination(PutSuppressedDestinationRequest putSuppressedDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putSuppressedDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutSuppressedDestinationRequest> request = null;
+        Response<PutSuppressedDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutSuppressedDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putSuppressedDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSuppressedDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutSuppressedDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutSuppressedDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

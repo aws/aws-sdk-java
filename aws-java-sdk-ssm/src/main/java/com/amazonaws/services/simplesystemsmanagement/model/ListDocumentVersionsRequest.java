@@ -27,7 +27,7 @@ public class ListDocumentVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the document about which you want version information.
+     * The name of the document. You can specify an Amazon Resource Name (ARN).
      * </p>
      */
     private String name;
@@ -47,11 +47,11 @@ public class ListDocumentVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the document about which you want version information.
+     * The name of the document. You can specify an Amazon Resource Name (ARN).
      * </p>
      * 
      * @param name
-     *        The name of the document about which you want version information.
+     *        The name of the document. You can specify an Amazon Resource Name (ARN).
      */
 
     public void setName(String name) {
@@ -60,10 +60,10 @@ public class ListDocumentVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the document about which you want version information.
+     * The name of the document. You can specify an Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The name of the document about which you want version information.
+     * @return The name of the document. You can specify an Amazon Resource Name (ARN).
      */
 
     public String getName() {
@@ -72,11 +72,11 @@ public class ListDocumentVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the document about which you want version information.
+     * The name of the document. You can specify an Amazon Resource Name (ARN).
      * </p>
      * 
      * @param name
-     *        The name of the document about which you want version information.
+     *        The name of the document. You can specify an Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

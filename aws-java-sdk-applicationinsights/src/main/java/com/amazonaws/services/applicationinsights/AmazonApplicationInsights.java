@@ -68,6 +68,8 @@ public interface AmazonApplicationInsights {
      *         The parameter is not valid.
      * @throws InternalServerException
      *         The server encountered an internal error and is unable to complete the request.
+     * @throws TagsAlreadyExistException
+     *         Tags are already registered for the specified application ARN.
      * @sample AmazonApplicationInsights.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -94,6 +96,27 @@ public interface AmazonApplicationInsights {
      *      target="_top">AWS API Documentation</a>
      */
     CreateComponentResult createComponent(CreateComponentRequest createComponentRequest);
+
+    /**
+     * <p>
+     * Adds an log pattern to a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param createLogPatternRequest
+     * @return Result of the CreateLogPattern operation returned by the service.
+     * @throws ResourceInUseException
+     *         The resource is already created or in use.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.CreateLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLogPatternResult createLogPattern(CreateLogPatternRequest createLogPatternRequest);
 
     /**
      * <p>
@@ -135,6 +158,27 @@ public interface AmazonApplicationInsights {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteComponentResult deleteComponent(DeleteComponentRequest deleteComponentRequest);
+
+    /**
+     * <p>
+     * Removes the specified log pattern from a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param deleteLogPatternRequest
+     * @return Result of the DeleteLogPattern operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws BadRequestException
+     *         The request is not understood by the server.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.DeleteLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLogPatternResult deleteLogPattern(DeleteLogPatternRequest deleteLogPatternRequest);
 
     /**
      * <p>
@@ -214,6 +258,25 @@ public interface AmazonApplicationInsights {
      */
     DescribeComponentConfigurationRecommendationResult describeComponentConfigurationRecommendation(
             DescribeComponentConfigurationRecommendationRequest describeComponentConfigurationRecommendationRequest);
+
+    /**
+     * <p>
+     * Describe a specific log pattern from a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param describeLogPatternRequest
+     * @return Result of the DescribeLogPattern operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.DescribeLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLogPatternResult describeLogPattern(DescribeLogPatternRequest describeLogPatternRequest);
 
     /**
      * <p>
@@ -310,6 +373,44 @@ public interface AmazonApplicationInsights {
 
     /**
      * <p>
+     * Lists the log pattern sets in the specific application.
+     * </p>
+     * 
+     * @param listLogPatternSetsRequest
+     * @return Result of the ListLogPatternSets operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.ListLogPatternSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLogPatternSetsResult listLogPatternSets(ListLogPatternSetsRequest listLogPatternSetsRequest);
+
+    /**
+     * <p>
+     * Lists the log patterns in the specific log <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param listLogPatternsRequest
+     * @return Result of the ListLogPatterns operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.ListLogPatterns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLogPatternsResult listLogPatterns(ListLogPatternsRequest listLogPatternsRequest);
+
+    /**
+     * <p>
      * Lists the problems with your application.
      * </p>
      * 
@@ -326,6 +427,70 @@ public interface AmazonApplicationInsights {
      *      target="_top">AWS API Documentation</a>
      */
     ListProblemsResult listProblems(ListProblemsRequest listProblemsRequest);
+
+    /**
+     * <p>
+     * Retrieve a list of the tags (keys and values) that are associated with a specified application. A <i>tag</i> is a
+     * label that you optionally define and associate with an application. Each tag consists of a required <i>tag
+     * key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a category for
+     * more specific tag values. A tag value acts as a descriptor within a tag key.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @sample AmazonApplicationInsights.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Add one or more tags (keys and values) to a specified application. A <i>tag</i> is a label that you optionally
+     * define and associate with an application. Tags can help you categorize and manage application in different ways,
+     * such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * <p>
+     * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A
+     * tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor
+     * within a tag key.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws TooManyTagsException
+     *         The number of the provided tags is beyond the limit, or the number of total tags you are trying to attach
+     *         to the specified resource exceeds the limit.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @sample AmazonApplicationInsights.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Remove one or more tags (keys and values) from a specified application.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @sample AmazonApplicationInsights.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>
@@ -388,6 +553,27 @@ public interface AmazonApplicationInsights {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateComponentConfigurationResult updateComponentConfiguration(UpdateComponentConfigurationRequest updateComponentConfigurationRequest);
+
+    /**
+     * <p>
+     * Adds a log pattern to a <code>LogPatternSet</code>.
+     * </p>
+     * 
+     * @param updateLogPatternRequest
+     * @return Result of the UpdateLogPattern operation returned by the service.
+     * @throws ResourceInUseException
+     *         The resource is already created or in use.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.UpdateLogPattern
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLogPatternResult updateLogPattern(UpdateLogPatternRequest updateLogPatternRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

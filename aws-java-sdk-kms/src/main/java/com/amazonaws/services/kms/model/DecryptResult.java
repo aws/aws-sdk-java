@@ -24,28 +24,31 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the
-     * operation.
+     * The ARN of the customer master key that was used to perform the decryption.
      * </p>
      */
     private String keyId;
     /**
      * <p>
      * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded.
+     * not Base64-encoded.
      * </p>
      */
     private java.nio.ByteBuffer plaintext;
+    /**
+     * <p>
+     * The encryption algorithm that was used to decrypt the ciphertext.
+     * </p>
+     */
+    private String encryptionAlgorithm;
 
     /**
      * <p>
-     * ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the
-     * operation.
+     * The ARN of the customer master key that was used to perform the decryption.
      * </p>
      * 
      * @param keyId
-     *        ARN of the key used to perform the decryption. This value is returned if no errors are encountered during
-     *        the operation.
+     *        The ARN of the customer master key that was used to perform the decryption.
      */
 
     public void setKeyId(String keyId) {
@@ -54,12 +57,10 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the
-     * operation.
+     * The ARN of the customer master key that was used to perform the decryption.
      * </p>
      * 
-     * @return ARN of the key used to perform the decryption. This value is returned if no errors are encountered during
-     *         the operation.
+     * @return The ARN of the customer master key that was used to perform the decryption.
      */
 
     public String getKeyId() {
@@ -68,13 +69,11 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * ARN of the key used to perform the decryption. This value is returned if no errors are encountered during the
-     * operation.
+     * The ARN of the customer master key that was used to perform the decryption.
      * </p>
      * 
      * @param keyId
-     *        ARN of the key used to perform the decryption. This value is returned if no errors are encountered during
-     *        the operation.
+     *        The ARN of the customer master key that was used to perform the decryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +85,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded.
+     * not Base64-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -101,7 +100,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * 
      * @param plaintext
      *        Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     *        Otherwise, it is not encoded.
+     *        Otherwise, it is not Base64-encoded.
      */
 
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
@@ -111,7 +110,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded.
+     * not Base64-encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -122,7 +121,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @return Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     *         Otherwise, it is not encoded.
+     *         Otherwise, it is not Base64-encoded.
      */
 
     public java.nio.ByteBuffer getPlaintext() {
@@ -132,7 +131,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded.
+     * not Base64-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -147,12 +146,71 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * 
      * @param plaintext
      *        Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     *        Otherwise, it is not encoded.
+     *        Otherwise, it is not Base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DecryptResult withPlaintext(java.nio.ByteBuffer plaintext) {
         setPlaintext(plaintext);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The encryption algorithm that was used to decrypt the ciphertext.
+     * </p>
+     * 
+     * @param encryptionAlgorithm
+     *        The encryption algorithm that was used to decrypt the ciphertext.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+        this.encryptionAlgorithm = encryptionAlgorithm;
+    }
+
+    /**
+     * <p>
+     * The encryption algorithm that was used to decrypt the ciphertext.
+     * </p>
+     * 
+     * @return The encryption algorithm that was used to decrypt the ciphertext.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public String getEncryptionAlgorithm() {
+        return this.encryptionAlgorithm;
+    }
+
+    /**
+     * <p>
+     * The encryption algorithm that was used to decrypt the ciphertext.
+     * </p>
+     * 
+     * @param encryptionAlgorithm
+     *        The encryption algorithm that was used to decrypt the ciphertext.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public DecryptResult withEncryptionAlgorithm(String encryptionAlgorithm) {
+        setEncryptionAlgorithm(encryptionAlgorithm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The encryption algorithm that was used to decrypt the ciphertext.
+     * </p>
+     * 
+     * @param encryptionAlgorithm
+     *        The encryption algorithm that was used to decrypt the ciphertext.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public DecryptResult withEncryptionAlgorithm(EncryptionAlgorithmSpec encryptionAlgorithm) {
+        this.encryptionAlgorithm = encryptionAlgorithm.toString();
         return this;
     }
 
@@ -171,7 +229,9 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         if (getKeyId() != null)
             sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getPlaintext() != null)
-            sb.append("Plaintext: ").append("***Sensitive Data Redacted***");
+            sb.append("Plaintext: ").append("***Sensitive Data Redacted***").append(",");
+        if (getEncryptionAlgorithm() != null)
+            sb.append("EncryptionAlgorithm: ").append(getEncryptionAlgorithm());
         sb.append("}");
         return sb.toString();
     }
@@ -194,6 +254,10 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             return false;
         if (other.getPlaintext() != null && other.getPlaintext().equals(this.getPlaintext()) == false)
             return false;
+        if (other.getEncryptionAlgorithm() == null ^ this.getEncryptionAlgorithm() == null)
+            return false;
+        if (other.getEncryptionAlgorithm() != null && other.getEncryptionAlgorithm().equals(this.getEncryptionAlgorithm()) == false)
+            return false;
         return true;
     }
 
@@ -204,6 +268,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
         hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         hashCode = prime * hashCode + ((getPlaintext() == null) ? 0 : getPlaintext().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionAlgorithm() == null) ? 0 : getEncryptionAlgorithm().hashCode());
         return hashCode;
     }
 

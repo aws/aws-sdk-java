@@ -29,6 +29,8 @@ public class S3MachineLearningModelResourceDataMarshaller {
 
     private static final MarshallingInfo<String> DESTINATIONPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationPath").build();
+    private static final MarshallingInfo<StructuredPojo> OWNERSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerSetting").build();
     private static final MarshallingInfo<String> S3URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("S3Uri").build();
 
@@ -49,6 +51,7 @@ public class S3MachineLearningModelResourceDataMarshaller {
 
         try {
             protocolMarshaller.marshall(s3MachineLearningModelResourceData.getDestinationPath(), DESTINATIONPATH_BINDING);
+            protocolMarshaller.marshall(s3MachineLearningModelResourceData.getOwnerSetting(), OWNERSETTING_BINDING);
             protocolMarshaller.marshall(s3MachineLearningModelResourceData.getS3Uri(), S3URI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

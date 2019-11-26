@@ -391,6 +391,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSuppressedDestinationResult> deleteSuppressedDestinationAsync(DeleteSuppressedDestinationRequest request) {
+
+        return deleteSuppressedDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSuppressedDestinationResult> deleteSuppressedDestinationAsync(final DeleteSuppressedDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSuppressedDestinationRequest, DeleteSuppressedDestinationResult> asyncHandler) {
+        final DeleteSuppressedDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSuppressedDestinationResult>() {
+            @Override
+            public DeleteSuppressedDestinationResult call() throws Exception {
+                DeleteSuppressedDestinationResult result = null;
+
+                try {
+                    result = executeDeleteSuppressedDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccountResult> getAccountAsync(GetAccountRequest request) {
 
         return getAccountAsync(request, null);
@@ -760,6 +793,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(GetSuppressedDestinationRequest request) {
+
+        return getSuppressedDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(final GetSuppressedDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSuppressedDestinationRequest, GetSuppressedDestinationResult> asyncHandler) {
+        final GetSuppressedDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSuppressedDestinationResult>() {
+            @Override
+            public GetSuppressedDestinationResult call() throws Exception {
+                GetSuppressedDestinationResult result = null;
+
+                try {
+                    result = executeGetSuppressedDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request) {
 
         return listConfigurationSetsAsync(request, null);
@@ -928,6 +994,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(ListSuppressedDestinationsRequest request) {
+
+        return listSuppressedDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(final ListSuppressedDestinationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSuppressedDestinationsRequest, ListSuppressedDestinationsResult> asyncHandler) {
+        final ListSuppressedDestinationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSuppressedDestinationsResult>() {
+            @Override
+            public ListSuppressedDestinationsResult call() throws Exception {
+                ListSuppressedDestinationsResult result = null;
+
+                try {
+                    result = executeListSuppressedDestinations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1013,6 +1112,41 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executePutAccountSendingAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSuppressionAttributesResult> putAccountSuppressionAttributesAsync(
+            PutAccountSuppressionAttributesRequest request) {
+
+        return putAccountSuppressionAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSuppressionAttributesResult> putAccountSuppressionAttributesAsync(
+            final PutAccountSuppressionAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccountSuppressionAttributesRequest, PutAccountSuppressionAttributesResult> asyncHandler) {
+        final PutAccountSuppressionAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccountSuppressionAttributesResult>() {
+            @Override
+            public PutAccountSuppressionAttributesResult call() throws Exception {
+                PutAccountSuppressionAttributesResult result = null;
+
+                try {
+                    result = executePutAccountSuppressionAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1118,6 +1252,41 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executePutConfigurationSetSendingOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetSuppressionOptionsResult> putConfigurationSetSuppressionOptionsAsync(
+            PutConfigurationSetSuppressionOptionsRequest request) {
+
+        return putConfigurationSetSuppressionOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetSuppressionOptionsResult> putConfigurationSetSuppressionOptionsAsync(
+            final PutConfigurationSetSuppressionOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutConfigurationSetSuppressionOptionsRequest, PutConfigurationSetSuppressionOptionsResult> asyncHandler) {
+        final PutConfigurationSetSuppressionOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutConfigurationSetSuppressionOptionsResult>() {
+            @Override
+            public PutConfigurationSetSuppressionOptionsResult call() throws Exception {
+                PutConfigurationSetSuppressionOptionsResult result = null;
+
+                try {
+                    result = executePutConfigurationSetSuppressionOptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1359,6 +1528,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executePutEmailIdentityMailFromAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSuppressedDestinationResult> putSuppressedDestinationAsync(PutSuppressedDestinationRequest request) {
+
+        return putSuppressedDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSuppressedDestinationResult> putSuppressedDestinationAsync(final PutSuppressedDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutSuppressedDestinationRequest, PutSuppressedDestinationResult> asyncHandler) {
+        final PutSuppressedDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutSuppressedDestinationResult>() {
+            @Override
+            public PutSuppressedDestinationResult call() throws Exception {
+                PutSuppressedDestinationResult result = null;
+
+                try {
+                    result = executePutSuppressedDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

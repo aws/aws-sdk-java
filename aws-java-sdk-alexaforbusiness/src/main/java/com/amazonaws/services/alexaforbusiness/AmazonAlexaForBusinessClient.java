@@ -3069,7 +3069,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists the details of the schedules that a user configured.
+     * Lists the details of the schedules that a user configured. A download URL of the report associated with each
+     * schedule is returned every time this action is called. A new download URL is returned each time, and is valid for
+     * 24 hours.
      * </p>
      * 
      * @param listBusinessReportSchedulesRequest

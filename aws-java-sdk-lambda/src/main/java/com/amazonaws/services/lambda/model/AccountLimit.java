@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Limits that are related to concurrency and code storage. All file and storage sizes are in bytes.
+ * Limits that are related to concurrency and storage. All file and storage sizes are in bytes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit" target="_top">AWS API
@@ -36,7 +36,7 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     private Long totalCodeSize;
     /**
      * <p>
-     * The maximum size of your function's code and layers when they're extracted.
+     * The maximum size of a function's deployment package and layers when they're extracted.
      * </p>
      */
     private Long codeSizeUnzipped;
@@ -103,11 +103,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of your function's code and layers when they're extracted.
+     * The maximum size of a function's deployment package and layers when they're extracted.
      * </p>
      * 
      * @param codeSizeUnzipped
-     *        The maximum size of your function's code and layers when they're extracted.
+     *        The maximum size of a function's deployment package and layers when they're extracted.
      */
 
     public void setCodeSizeUnzipped(Long codeSizeUnzipped) {
@@ -116,10 +116,10 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of your function's code and layers when they're extracted.
+     * The maximum size of a function's deployment package and layers when they're extracted.
      * </p>
      * 
-     * @return The maximum size of your function's code and layers when they're extracted.
+     * @return The maximum size of a function's deployment package and layers when they're extracted.
      */
 
     public Long getCodeSizeUnzipped() {
@@ -128,11 +128,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of your function's code and layers when they're extracted.
+     * The maximum size of a function's deployment package and layers when they're extracted.
      * </p>
      * 
      * @param codeSizeUnzipped
-     *        The maximum size of your function's code and layers when they're extracted.
+     *        The maximum size of a function's deployment package and layers when they're extracted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

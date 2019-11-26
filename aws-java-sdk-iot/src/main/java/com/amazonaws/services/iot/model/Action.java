@@ -118,6 +118,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private IotEventsAction iotEvents;
     /**
      * <p>
+     * Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+     * </p>
+     */
+    private IotSiteWiseAction iotSiteWise;
+    /**
+     * <p>
      * Starts execution of a Step Functions state machine.
      * </p>
      */
@@ -737,6 +743,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+     * </p>
+     * 
+     * @param iotSiteWise
+     *        Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+     */
+
+    public void setIotSiteWise(IotSiteWiseAction iotSiteWise) {
+        this.iotSiteWise = iotSiteWise;
+    }
+
+    /**
+     * <p>
+     * Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+     * </p>
+     * 
+     * @return Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+     */
+
+    public IotSiteWiseAction getIotSiteWise() {
+        return this.iotSiteWise;
+    }
+
+    /**
+     * <p>
+     * Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+     * </p>
+     * 
+     * @param iotSiteWise
+     *        Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withIotSiteWise(IotSiteWiseAction iotSiteWise) {
+        setIotSiteWise(iotSiteWise);
+        return this;
+    }
+
+    /**
+     * <p>
      * Starts execution of a Step Functions state machine.
      * </p>
      * 
@@ -857,6 +903,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             sb.append("IotAnalytics: ").append(getIotAnalytics()).append(",");
         if (getIotEvents() != null)
             sb.append("IotEvents: ").append(getIotEvents()).append(",");
+        if (getIotSiteWise() != null)
+            sb.append("IotSiteWise: ").append(getIotSiteWise()).append(",");
         if (getStepFunctions() != null)
             sb.append("StepFunctions: ").append(getStepFunctions()).append(",");
         if (getHttp() != null)
@@ -935,6 +983,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIotEvents() != null && other.getIotEvents().equals(this.getIotEvents()) == false)
             return false;
+        if (other.getIotSiteWise() == null ^ this.getIotSiteWise() == null)
+            return false;
+        if (other.getIotSiteWise() != null && other.getIotSiteWise().equals(this.getIotSiteWise()) == false)
+            return false;
         if (other.getStepFunctions() == null ^ this.getStepFunctions() == null)
             return false;
         if (other.getStepFunctions() != null && other.getStepFunctions().equals(this.getStepFunctions()) == false)
@@ -966,6 +1018,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
         hashCode = prime * hashCode + ((getIotAnalytics() == null) ? 0 : getIotAnalytics().hashCode());
         hashCode = prime * hashCode + ((getIotEvents() == null) ? 0 : getIotEvents().hashCode());
+        hashCode = prime * hashCode + ((getIotSiteWise() == null) ? 0 : getIotSiteWise().hashCode());
         hashCode = prime * hashCode + ((getStepFunctions() == null) ? 0 : getStepFunctions().hashCode());
         hashCode = prime * hashCode + ((getHttp() == null) ? 0 : getHttp().hashCode());
         return hashCode;

@@ -53,6 +53,8 @@ public class ProfileMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PSTNEnabled").build();
     private static final MarshallingInfo<String> ADDRESSBOOKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddressBookArn").build();
+    private static final MarshallingInfo<StructuredPojo> MEETINGROOMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeetingRoomConfiguration").build();
 
     private static final ProfileMarshaller instance = new ProfileMarshaller();
 
@@ -83,6 +85,7 @@ public class ProfileMarshaller {
             protocolMarshaller.marshall(profile.getMaxVolumeLimit(), MAXVOLUMELIMIT_BINDING);
             protocolMarshaller.marshall(profile.getPSTNEnabled(), PSTNENABLED_BINDING);
             protocolMarshaller.marshall(profile.getAddressBookArn(), ADDRESSBOOKARN_BINDING);
+            protocolMarshaller.marshall(profile.getMeetingRoomConfiguration(), MEETINGROOMCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

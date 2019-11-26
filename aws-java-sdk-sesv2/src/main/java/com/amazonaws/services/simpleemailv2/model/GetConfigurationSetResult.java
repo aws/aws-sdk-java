@@ -64,6 +64,12 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * An object that contains information about your account's suppression preferences.
+     * </p>
+     */
+    private SuppressionOptions suppressionOptions;
 
     /**
      * <p>
@@ -353,6 +359,46 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * An object that contains information about your account's suppression preferences.
+     * </p>
+     * 
+     * @param suppressionOptions
+     *        An object that contains information about your account's suppression preferences.
+     */
+
+    public void setSuppressionOptions(SuppressionOptions suppressionOptions) {
+        this.suppressionOptions = suppressionOptions;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about your account's suppression preferences.
+     * </p>
+     * 
+     * @return An object that contains information about your account's suppression preferences.
+     */
+
+    public SuppressionOptions getSuppressionOptions() {
+        return this.suppressionOptions;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about your account's suppression preferences.
+     * </p>
+     * 
+     * @param suppressionOptions
+     *        An object that contains information about your account's suppression preferences.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetConfigurationSetResult withSuppressionOptions(SuppressionOptions suppressionOptions) {
+        setSuppressionOptions(suppressionOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -375,7 +421,9 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
         if (getSendingOptions() != null)
             sb.append("SendingOptions: ").append(getSendingOptions()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSuppressionOptions() != null)
+            sb.append("SuppressionOptions: ").append(getSuppressionOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -414,6 +462,10 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSuppressionOptions() == null ^ this.getSuppressionOptions() == null)
+            return false;
+        if (other.getSuppressionOptions() != null && other.getSuppressionOptions().equals(this.getSuppressionOptions()) == false)
+            return false;
         return true;
     }
 
@@ -428,6 +480,7 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getReputationOptions() == null) ? 0 : getReputationOptions().hashCode());
         hashCode = prime * hashCode + ((getSendingOptions() == null) ? 0 : getSendingOptions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSuppressionOptions() == null) ? 0 : getSuppressionOptions().hashCode());
         return hashCode;
     }
 

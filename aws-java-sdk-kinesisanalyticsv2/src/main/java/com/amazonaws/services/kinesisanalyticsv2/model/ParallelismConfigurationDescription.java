@@ -38,6 +38,12 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     /**
      * <p>
      * Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * <code>CurrentParallelism</code> value in response to application load. The service can increase
+     * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
+     * requesting a limit increase. If application load is reduced, the service can reduce the
+     * <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      */
     private Integer parallelism;
@@ -51,6 +57,11 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     /**
      * <p>
      * Describes the current number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to
+     * application load. The service can increase this value up to the maximum parallelism, which is
+     * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is
+     * 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service
+     * can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      */
     private Integer currentParallelism;
@@ -124,11 +135,22 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     /**
      * <p>
      * Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * <code>CurrentParallelism</code> value in response to application load. The service can increase
+     * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
+     * requesting a limit increase. If application load is reduced, the service can reduce the
+     * <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @param parallelism
      *        Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can
-     *        perform.
+     *        perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     *        <code>CurrentParallelism</code> value in response to application load. The service can increase
+     *        <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
+     *        times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
+     *        be increased by requesting a limit increase. If application load is reduced, the service can reduce the
+     *        <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      */
 
     public void setParallelism(Integer parallelism) {
@@ -138,10 +160,21 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     /**
      * <p>
      * Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * <code>CurrentParallelism</code> value in response to application load. The service can increase
+     * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
+     * requesting a limit increase. If application load is reduced, the service can reduce the
+     * <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @return Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can
-     *         perform.
+     *         perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     *         <code>CurrentParallelism</code> value in response to application load. The service can increase
+     *         <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
+     *         times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
+     *         be increased by requesting a limit increase. If application load is reduced, the service can reduce the
+     *         <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      */
 
     public Integer getParallelism() {
@@ -151,11 +184,22 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     /**
      * <p>
      * Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * <code>CurrentParallelism</code> value in response to application load. The service can increase
+     * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
+     * requesting a limit increase. If application load is reduced, the service can reduce the
+     * <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @param parallelism
      *        Describes the initial number of parallel tasks that a Java-based Kinesis Data Analytics application can
-     *        perform.
+     *        perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     *        <code>CurrentParallelism</code> value in response to application load. The service can increase
+     *        <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
+     *        times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
+     *        be increased by requesting a limit increase. If application load is reduced, the service can reduce the
+     *        <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +257,21 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     /**
      * <p>
      * Describes the current number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to
+     * application load. The service can increase this value up to the maximum parallelism, which is
+     * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is
+     * 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service
+     * can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @param currentParallelism
      *        Describes the current number of parallel tasks that a Java-based Kinesis Data Analytics application can
-     *        perform.
+     *        perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value
+     *        in response to application load. The service can increase this value up to the maximum parallelism, which
+     *        is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an
+     *        application is 32 by default, and can be increased by requesting a limit increase. If application load is
+     *        reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     *        <code>Parallelism</code> setting.
      */
 
     public void setCurrentParallelism(Integer currentParallelism) {
@@ -227,10 +281,20 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     /**
      * <p>
      * Describes the current number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to
+     * application load. The service can increase this value up to the maximum parallelism, which is
+     * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is
+     * 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service
+     * can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @return Describes the current number of parallel tasks that a Java-based Kinesis Data Analytics application can
-     *         perform.
+     *         perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this
+     *         value in response to application load. The service can increase this value up to the maximum parallelism,
+     *         which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for
+     *         an application is 32 by default, and can be increased by requesting a limit increase. If application load
+     *         is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     *         <code>Parallelism</code> setting.
      */
 
     public Integer getCurrentParallelism() {
@@ -240,11 +304,21 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     /**
      * <p>
      * Describes the current number of parallel tasks that a Java-based Kinesis Data Analytics application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to
+     * application load. The service can increase this value up to the maximum parallelism, which is
+     * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is
+     * 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service
+     * can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @param currentParallelism
      *        Describes the current number of parallel tasks that a Java-based Kinesis Data Analytics application can
-     *        perform.
+     *        perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value
+     *        in response to application load. The service can increase this value up to the maximum parallelism, which
+     *        is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an
+     *        application is 32 by default, and can be increased by requesting a limit increase. If application load is
+     *        reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     *        <code>Parallelism</code> setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -86,6 +86,10 @@ public class PostTextResultJsonUnmarshaller implements Unmarshaller<PostTextResu
                     context.nextToken();
                     postTextResult.setResponseCard(ResponseCardJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("sessionId", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

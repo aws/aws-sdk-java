@@ -108,6 +108,10 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setIotEvents(IotEventsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("iotSiteWise", targetDepth)) {
+                    context.nextToken();
+                    action.setIotSiteWise(IotSiteWiseActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("stepFunctions", targetDepth)) {
                     context.nextToken();
                     action.setStepFunctions(StepFunctionsActionJsonUnmarshaller.getInstance().unmarshall(context));

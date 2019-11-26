@@ -25,7 +25,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded.
+     * not Base64-encoded.
      * </p>
      */
     private java.nio.ByteBuffer ciphertextBlob;
@@ -35,11 +35,17 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      */
     private String keyId;
+    /**
+     * <p>
+     * The encryption algorithm that was used to encrypt the plaintext.
+     * </p>
+     */
+    private String encryptionAlgorithm;
 
     /**
      * <p>
      * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded.
+     * not Base64-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -54,7 +60,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * 
      * @param ciphertextBlob
      *        The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *        it is not encoded.
+     *        it is not Base64-encoded.
      */
 
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
@@ -64,7 +70,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded.
+     * not Base64-encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -75,7 +81,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @return The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
-     *         Otherwise, it is not encoded.
+     *         Otherwise, it is not Base64-encoded.
      */
 
     public java.nio.ByteBuffer getCiphertextBlob() {
@@ -85,7 +91,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     /**
      * <p>
      * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
-     * not encoded.
+     * not Base64-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -100,7 +106,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * 
      * @param ciphertextBlob
      *        The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *        it is not encoded.
+     *        it is not Base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,6 +156,65 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * The encryption algorithm that was used to encrypt the plaintext.
+     * </p>
+     * 
+     * @param encryptionAlgorithm
+     *        The encryption algorithm that was used to encrypt the plaintext.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public void setEncryptionAlgorithm(String encryptionAlgorithm) {
+        this.encryptionAlgorithm = encryptionAlgorithm;
+    }
+
+    /**
+     * <p>
+     * The encryption algorithm that was used to encrypt the plaintext.
+     * </p>
+     * 
+     * @return The encryption algorithm that was used to encrypt the plaintext.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public String getEncryptionAlgorithm() {
+        return this.encryptionAlgorithm;
+    }
+
+    /**
+     * <p>
+     * The encryption algorithm that was used to encrypt the plaintext.
+     * </p>
+     * 
+     * @param encryptionAlgorithm
+     *        The encryption algorithm that was used to encrypt the plaintext.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public EncryptResult withEncryptionAlgorithm(String encryptionAlgorithm) {
+        setEncryptionAlgorithm(encryptionAlgorithm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The encryption algorithm that was used to encrypt the plaintext.
+     * </p>
+     * 
+     * @param encryptionAlgorithm
+     *        The encryption algorithm that was used to encrypt the plaintext.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public EncryptResult withEncryptionAlgorithm(EncryptionAlgorithmSpec encryptionAlgorithm) {
+        this.encryptionAlgorithm = encryptionAlgorithm.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -164,7 +229,9 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         if (getCiphertextBlob() != null)
             sb.append("CiphertextBlob: ").append(getCiphertextBlob()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: ").append(getKeyId());
+            sb.append("KeyId: ").append(getKeyId()).append(",");
+        if (getEncryptionAlgorithm() != null)
+            sb.append("EncryptionAlgorithm: ").append(getEncryptionAlgorithm());
         sb.append("}");
         return sb.toString();
     }
@@ -187,6 +254,10 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             return false;
         if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
             return false;
+        if (other.getEncryptionAlgorithm() == null ^ this.getEncryptionAlgorithm() == null)
+            return false;
+        if (other.getEncryptionAlgorithm() != null && other.getEncryptionAlgorithm().equals(this.getEncryptionAlgorithm()) == false)
+            return false;
         return true;
     }
 
@@ -197,6 +268,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
         hashCode = prime * hashCode + ((getCiphertextBlob() == null) ? 0 : getCiphertextBlob().hashCode());
         hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionAlgorithm() == null) ? 0 : getEncryptionAlgorithm().hashCode());
         return hashCode;
     }
 

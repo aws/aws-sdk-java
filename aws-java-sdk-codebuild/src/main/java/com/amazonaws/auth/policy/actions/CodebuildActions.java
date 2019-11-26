@@ -31,16 +31,28 @@ public enum CodebuildActions implements Action {
     BatchGetBuilds("codebuild:BatchGetBuilds"),
     /** Action for the BatchGetProjects operation. */
     BatchGetProjects("codebuild:BatchGetProjects"),
+    /** Action for the BatchGetReportGroups operation. */
+    BatchGetReportGroups("codebuild:BatchGetReportGroups"),
+    /** Action for the BatchGetReports operation. */
+    BatchGetReports("codebuild:BatchGetReports"),
     /** Action for the CreateProject operation. */
     CreateProject("codebuild:CreateProject"),
+    /** Action for the CreateReportGroup operation. */
+    CreateReportGroup("codebuild:CreateReportGroup"),
     /** Action for the CreateWebhook operation. */
     CreateWebhook("codebuild:CreateWebhook"),
     /** Action for the DeleteProject operation. */
     DeleteProject("codebuild:DeleteProject"),
+    /** Action for the DeleteReport operation. */
+    DeleteReport("codebuild:DeleteReport"),
+    /** Action for the DeleteReportGroup operation. */
+    DeleteReportGroup("codebuild:DeleteReportGroup"),
     /** Action for the DeleteSourceCredentials operation. */
     DeleteSourceCredentials("codebuild:DeleteSourceCredentials"),
     /** Action for the DeleteWebhook operation. */
     DeleteWebhook("codebuild:DeleteWebhook"),
+    /** Action for the DescribeTestCases operation. */
+    DescribeTestCases("codebuild:DescribeTestCases"),
     /** Action for the ImportSourceCredentials operation. */
     ImportSourceCredentials("codebuild:ImportSourceCredentials"),
     /** Action for the InvalidateProjectCache operation. */
@@ -53,6 +65,12 @@ public enum CodebuildActions implements Action {
     ListCuratedEnvironmentImages("codebuild:ListCuratedEnvironmentImages"),
     /** Action for the ListProjects operation. */
     ListProjects("codebuild:ListProjects"),
+    /** Action for the ListReportGroups operation. */
+    ListReportGroups("codebuild:ListReportGroups"),
+    /** Action for the ListReports operation. */
+    ListReports("codebuild:ListReports"),
+    /** Action for the ListReportsForReportGroup operation. */
+    ListReportsForReportGroup("codebuild:ListReportsForReportGroup"),
     /** Action for the ListSourceCredentials operation. */
     ListSourceCredentials("codebuild:ListSourceCredentials"),
     /** Action for the StartBuild operation. */
@@ -61,6 +79,8 @@ public enum CodebuildActions implements Action {
     StopBuild("codebuild:StopBuild"),
     /** Action for the UpdateProject operation. */
     UpdateProject("codebuild:UpdateProject"),
+    /** Action for the UpdateReportGroup operation. */
+    UpdateReportGroup("codebuild:UpdateReportGroup"),
     /** Action for the UpdateWebhook operation. */
     UpdateWebhook("codebuild:UpdateWebhook"),
 

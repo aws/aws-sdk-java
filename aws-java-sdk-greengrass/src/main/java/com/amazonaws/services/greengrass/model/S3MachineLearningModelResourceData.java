@@ -28,6 +28,8 @@ public class S3MachineLearningModelResourceData implements Serializable, Cloneab
 
     /** The absolute local path of the resource inside the Lambda environment. */
     private String destinationPath;
+
+    private ResourceDownloadOwnerSetting ownerSetting;
     /** The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format. */
     private String s3Uri;
 
@@ -62,6 +64,32 @@ public class S3MachineLearningModelResourceData implements Serializable, Cloneab
 
     public S3MachineLearningModelResourceData withDestinationPath(String destinationPath) {
         setDestinationPath(destinationPath);
+        return this;
+    }
+
+    /**
+     * @param ownerSetting
+     */
+
+    public void setOwnerSetting(ResourceDownloadOwnerSetting ownerSetting) {
+        this.ownerSetting = ownerSetting;
+    }
+
+    /**
+     * @return
+     */
+
+    public ResourceDownloadOwnerSetting getOwnerSetting() {
+        return this.ownerSetting;
+    }
+
+    /**
+     * @param ownerSetting
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3MachineLearningModelResourceData withOwnerSetting(ResourceDownloadOwnerSetting ownerSetting) {
+        setOwnerSetting(ownerSetting);
         return this;
     }
 
@@ -113,6 +141,8 @@ public class S3MachineLearningModelResourceData implements Serializable, Cloneab
         sb.append("{");
         if (getDestinationPath() != null)
             sb.append("DestinationPath: ").append(getDestinationPath()).append(",");
+        if (getOwnerSetting() != null)
+            sb.append("OwnerSetting: ").append(getOwnerSetting()).append(",");
         if (getS3Uri() != null)
             sb.append("S3Uri: ").append(getS3Uri());
         sb.append("}");
@@ -133,6 +163,10 @@ public class S3MachineLearningModelResourceData implements Serializable, Cloneab
             return false;
         if (other.getDestinationPath() != null && other.getDestinationPath().equals(this.getDestinationPath()) == false)
             return false;
+        if (other.getOwnerSetting() == null ^ this.getOwnerSetting() == null)
+            return false;
+        if (other.getOwnerSetting() != null && other.getOwnerSetting().equals(this.getOwnerSetting()) == false)
+            return false;
         if (other.getS3Uri() == null ^ this.getS3Uri() == null)
             return false;
         if (other.getS3Uri() != null && other.getS3Uri().equals(this.getS3Uri()) == false)
@@ -146,6 +180,7 @@ public class S3MachineLearningModelResourceData implements Serializable, Cloneab
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestinationPath() == null) ? 0 : getDestinationPath().hashCode());
+        hashCode = prime * hashCode + ((getOwnerSetting() == null) ? 0 : getOwnerSetting().hashCode());
         hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
         return hashCode;
     }

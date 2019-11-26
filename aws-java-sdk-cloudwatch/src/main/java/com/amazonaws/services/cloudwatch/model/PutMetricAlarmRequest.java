@@ -207,7 +207,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer evaluationPeriods;
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an
+     * The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an
      * "M out of N" alarm. In that case, this value is the M. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
      * >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
@@ -1809,15 +1809,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an
+     * The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an
      * "M out of N" alarm. In that case, this value is the M. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
      * >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param datapointsToAlarm
-     *        The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting
-     *        an "M out of N" alarm. In that case, this value is the M. For more information, see <a href=
+     *        The number of data points that must be breaching to trigger the alarm. This is used only if you are
+     *        setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
      *        >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
@@ -1828,13 +1828,13 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an
+     * The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an
      * "M out of N" alarm. In that case, this value is the M. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
      * >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
-     * @return The number of datapoints that must be breaching to trigger the alarm. This is used only if you are
+     * @return The number of data points that must be breaching to trigger the alarm. This is used only if you are
      *         setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
      *         >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
@@ -1846,15 +1846,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an
+     * The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an
      * "M out of N" alarm. In that case, this value is the M. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
      * >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param datapointsToAlarm
-     *        The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting
-     *        an "M out of N" alarm. In that case, this value is the M. For more information, see <a href=
+     *        The number of data points that must be breaching to trigger the alarm. This is used only if you are
+     *        setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
      *        >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

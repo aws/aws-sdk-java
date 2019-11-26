@@ -35,6 +35,10 @@ public class DecryptRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionContext").build();
     private static final MarshallingInfo<List> GRANTTOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GrantTokens").build();
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<String> ENCRYPTIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAlgorithm").build();
 
     private static final DecryptRequestMarshaller instance = new DecryptRequestMarshaller();
 
@@ -55,6 +59,8 @@ public class DecryptRequestMarshaller {
             protocolMarshaller.marshall(decryptRequest.getCiphertextBlob(), CIPHERTEXTBLOB_BINDING);
             protocolMarshaller.marshall(decryptRequest.getEncryptionContext(), ENCRYPTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(decryptRequest.getGrantTokens(), GRANTTOKENS_BINDING);
+            protocolMarshaller.marshall(decryptRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(decryptRequest.getEncryptionAlgorithm(), ENCRYPTIONALGORITHM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

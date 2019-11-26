@@ -24,7 +24,10 @@ public enum DocumentType {
     Policy("Policy"),
     Automation("Automation"),
     Session("Session"),
-    Package("Package");
+    Package("Package"),
+    ApplicationConfiguration("ApplicationConfiguration"),
+    ApplicationConfigurationSchema("ApplicationConfigurationSchema"),
+    DeploymentStrategy("DeploymentStrategy");
 
     private String value;
 

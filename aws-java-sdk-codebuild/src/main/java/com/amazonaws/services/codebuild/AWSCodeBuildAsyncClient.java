@@ -80,6 +80,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <code>CreateReportGroup</code>: Creates a report group. A report group contains a collection of reports.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
  * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed
  * to the repository.
@@ -92,6 +97,16 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <code>DeleteReport</code>: Deletes a report.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeleteReportGroup</code>: Deletes a report group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
@@ -100,6 +115,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
  * or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to
  * the repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
  * </p>
  * </li>
  * <li>
@@ -137,6 +157,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <code>ListReportGroups</code>: Gets a list ARNs for the report groups in the current AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListReports</code>: Gets a list ARNs for the reports in the current AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports that belong to a
+ * <code>ReportGroup</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
@@ -159,22 +195,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StartBuild</code>: Starts running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StopBuild</code>: Attempts to stop running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateProject</code>: Changes the settings of an existing build project.
+ * <code>UpdateReportGroup</code>: Changes a report group.
  * </p>
  * </li>
  * <li>
@@ -493,6 +514,72 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetReportGroupsResult> batchGetReportGroupsAsync(BatchGetReportGroupsRequest request) {
+
+        return batchGetReportGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetReportGroupsResult> batchGetReportGroupsAsync(final BatchGetReportGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetReportGroupsRequest, BatchGetReportGroupsResult> asyncHandler) {
+        final BatchGetReportGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetReportGroupsResult>() {
+            @Override
+            public BatchGetReportGroupsResult call() throws Exception {
+                BatchGetReportGroupsResult result = null;
+
+                try {
+                    result = executeBatchGetReportGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetReportsResult> batchGetReportsAsync(BatchGetReportsRequest request) {
+
+        return batchGetReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetReportsResult> batchGetReportsAsync(final BatchGetReportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetReportsRequest, BatchGetReportsResult> asyncHandler) {
+        final BatchGetReportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetReportsResult>() {
+            @Override
+            public BatchGetReportsResult call() throws Exception {
+                BatchGetReportsResult result = null;
+
+                try {
+                    result = executeBatchGetReports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request) {
 
         return createProjectAsync(request, null);
@@ -510,6 +597,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeCreateProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReportGroupResult> createReportGroupAsync(CreateReportGroupRequest request) {
+
+        return createReportGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReportGroupResult> createReportGroupAsync(final CreateReportGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateReportGroupRequest, CreateReportGroupResult> asyncHandler) {
+        final CreateReportGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateReportGroupResult>() {
+            @Override
+            public CreateReportGroupResult call() throws Exception {
+                CreateReportGroupResult result = null;
+
+                try {
+                    result = executeCreateReportGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -592,6 +712,72 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteReportResult> deleteReportAsync(DeleteReportRequest request) {
+
+        return deleteReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReportResult> deleteReportAsync(final DeleteReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteReportRequest, DeleteReportResult> asyncHandler) {
+        final DeleteReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteReportResult>() {
+            @Override
+            public DeleteReportResult call() throws Exception {
+                DeleteReportResult result = null;
+
+                try {
+                    result = executeDeleteReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReportGroupResult> deleteReportGroupAsync(DeleteReportGroupRequest request) {
+
+        return deleteReportGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReportGroupResult> deleteReportGroupAsync(final DeleteReportGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteReportGroupRequest, DeleteReportGroupResult> asyncHandler) {
+        final DeleteReportGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteReportGroupResult>() {
+            @Override
+            public DeleteReportGroupResult call() throws Exception {
+                DeleteReportGroupResult result = null;
+
+                try {
+                    result = executeDeleteReportGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSourceCredentialsResult> deleteSourceCredentialsAsync(DeleteSourceCredentialsRequest request) {
 
         return deleteSourceCredentialsAsync(request, null);
@@ -642,6 +828,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeDeleteWebhook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTestCasesResult> describeTestCasesAsync(DescribeTestCasesRequest request) {
+
+        return describeTestCasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTestCasesResult> describeTestCasesAsync(final DescribeTestCasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTestCasesRequest, DescribeTestCasesResult> asyncHandler) {
+        final DescribeTestCasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTestCasesResult>() {
+            @Override
+            public DescribeTestCasesResult call() throws Exception {
+                DescribeTestCasesResult result = null;
+
+                try {
+                    result = executeDescribeTestCases(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -856,6 +1075,105 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<ListReportGroupsResult> listReportGroupsAsync(ListReportGroupsRequest request) {
+
+        return listReportGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReportGroupsResult> listReportGroupsAsync(final ListReportGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListReportGroupsRequest, ListReportGroupsResult> asyncHandler) {
+        final ListReportGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListReportGroupsResult>() {
+            @Override
+            public ListReportGroupsResult call() throws Exception {
+                ListReportGroupsResult result = null;
+
+                try {
+                    result = executeListReportGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReportsResult> listReportsAsync(ListReportsRequest request) {
+
+        return listReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReportsResult> listReportsAsync(final ListReportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListReportsRequest, ListReportsResult> asyncHandler) {
+        final ListReportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListReportsResult>() {
+            @Override
+            public ListReportsResult call() throws Exception {
+                ListReportsResult result = null;
+
+                try {
+                    result = executeListReports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReportsForReportGroupResult> listReportsForReportGroupAsync(ListReportsForReportGroupRequest request) {
+
+        return listReportsForReportGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReportsForReportGroupResult> listReportsForReportGroupAsync(final ListReportsForReportGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListReportsForReportGroupRequest, ListReportsForReportGroupResult> asyncHandler) {
+        final ListReportsForReportGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListReportsForReportGroupResult>() {
+            @Override
+            public ListReportsForReportGroupResult call() throws Exception {
+                ListReportsForReportGroupResult result = null;
+
+                try {
+                    result = executeListReportsForReportGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(ListSourceCredentialsRequest request) {
 
         return listSourceCredentialsAsync(request, null);
@@ -972,6 +1290,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeUpdateProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateReportGroupResult> updateReportGroupAsync(UpdateReportGroupRequest request) {
+
+        return updateReportGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateReportGroupResult> updateReportGroupAsync(final UpdateReportGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateReportGroupRequest, UpdateReportGroupResult> asyncHandler) {
+        final UpdateReportGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateReportGroupResult>() {
+            @Override
+            public UpdateReportGroupResult call() throws Exception {
+                UpdateReportGroupResult result = null;
+
+                try {
+                    result = executeUpdateReportGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

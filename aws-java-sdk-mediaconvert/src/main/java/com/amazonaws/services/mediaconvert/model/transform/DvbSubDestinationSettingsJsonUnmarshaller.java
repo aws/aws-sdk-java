@@ -104,6 +104,10 @@ public class DvbSubDestinationSettingsJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     dvbSubDestinationSettings.setShadowYOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("subtitlingType", targetDepth)) {
+                    context.nextToken();
+                    dvbSubDestinationSettings.setSubtitlingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("teletextSpacing", targetDepth)) {
                     context.nextToken();
                     dvbSubDestinationSettings.setTeletextSpacing(context.getUnmarshaller(String.class).unmarshall(context));

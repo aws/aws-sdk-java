@@ -129,6 +129,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateDomainConfigurationResult createDomainConfiguration(CreateDomainConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDynamicThingGroupResult createDynamicThingGroup(CreateDynamicThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,6 +165,21 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProvisioningClaimResult createProvisioningClaim(CreateProvisioningClaimRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProvisioningTemplateResult createProvisioningTemplate(CreateProvisioningTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProvisioningTemplateVersionResult createProvisioningTemplateVersion(CreateProvisioningTemplateVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -234,6 +254,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DeleteDomainConfigurationResult deleteDomainConfiguration(DeleteDomainConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDynamicThingGroupResult deleteDynamicThingGroup(DeleteDynamicThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -265,6 +290,16 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeletePolicyVersionResult deletePolicyVersion(DeletePolicyVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProvisioningTemplateResult deleteProvisioningTemplate(DeleteProvisioningTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProvisioningTemplateVersionResult deleteProvisioningTemplateVersion(DeleteProvisioningTemplateVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -374,6 +409,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DescribeDomainConfigurationResult describeDomainConfiguration(DescribeDomainConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEndpointResult describeEndpoint(DescribeEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -400,6 +440,16 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DescribeMitigationActionResult describeMitigationAction(DescribeMitigationActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeProvisioningTemplateResult describeProvisioningTemplate(DescribeProvisioningTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeProvisioningTemplateVersionResult describeProvisioningTemplateVersion(DescribeProvisioningTemplateVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -600,6 +650,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListDomainConfigurationsResult listDomainConfigurations(ListDomainConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListIndicesResult listIndices(ListIndicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -658,6 +713,16 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListPrincipalThingsResult listPrincipalThings(ListPrincipalThingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProvisioningTemplateVersionsResult listProvisioningTemplateVersions(ListProvisioningTemplateVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProvisioningTemplatesResult listProvisioningTemplates(ListProvisioningTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -902,6 +967,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public UpdateDomainConfigurationResult updateDomainConfiguration(UpdateDomainConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateDynamicThingGroupResult updateDynamicThingGroup(UpdateDynamicThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -923,6 +993,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public UpdateMitigationActionResult updateMitigationAction(UpdateMitigationActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProvisioningTemplateResult updateProvisioningTemplate(UpdateProvisioningTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

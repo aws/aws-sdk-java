@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ActionType {
 
-    RestoreCluster("restore-cluster");
+    RestoreCluster("restore-cluster"),
+    RecommendNodeConfig("recommend-node-config");
 
     private String value;
 

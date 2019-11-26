@@ -165,6 +165,21 @@
       ],
       "documentation":"<p>Deletes an email identity. An identity can be either an email address or a domain name.</p>"
     },
+    "DeleteSuppressedDestination":{
+      "name":"DeleteSuppressedDestination",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/v2/email/suppression/addresses/{EmailAddress}"
+      },
+      "input":{"shape":"DeleteSuppressedDestinationRequest"},
+      "output":{"shape":"DeleteSuppressedDestinationResponse"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"BadRequestException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Used to delete a suppressed email destination from your suppression list.</p>"
+    },
     "GetAccount":{
       "name":"GetAccount",
       "http":{
@@ -329,6 +344,21 @@
       ],
       "documentation":"<p>Provides information about a specific identity, including the identity's verification status, its DKIM authentication status, and its custom Mail-From settings.</p>"
     },
+    "GetSuppressedDestination":{
+      "name":"GetSuppressedDestination",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/email/suppression/addresses/{EmailAddress}"
+      },
+      "input":{"shape":"GetSuppressedDestinationRequest"},
+      "output":{"shape":"GetSuppressedDestinationResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"TooManyRequestsException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"<p>Used to fetch a single suppressed email destination from your suppression list.</p>"
+    },
     "ListConfigurationSets":{
       "name":"ListConfigurationSets",
       "http":{
@@ -401,6 +431,21 @@
       ],
       "documentation":"<p>Returns a list of all of the email identities that are associated with your AWS account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't. This operation returns identities that are associated with Amazon SES and Amazon Pinpoint.</p>"
     },
+    "ListSuppressedDestinations":{
+      "name":"ListSuppressedDestinations",
+      "http":{
+        "method":"GET",
+        "requestUri":"/v2/email/suppression/addresses"
+      },
+      "input":{"shape":"ListSuppressedDestinationsRequest"},
+      "output":{"shape":"ListSuppressedDestinationsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"TooManyRequestsException"},
+        {"shape":"InvalidNextTokenException"}
+      ],
+      "documentation":"<p>Used to fetch a list suppressed email destinations from your suppression list.</p>"
+    },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
       "http":{
@@ -443,6 +488,20 @@
         {"shape":"BadRequestException"}
       ],
       "documentation":"<p>Enable or disable the ability of your account to send email.</p>"
+    },
+    "PutAccountSuppressionAttributes":{
+      "name":"PutAccountSuppressionAttributes",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/v2/email/account/suppression"
+      },
+      "input":{"shape":"PutAccountSuppressionAttributesRequest"},
+      "output":{"shape":"PutAccountSuppressionAttributesResponse"},
+      "errors":[
+        {"shape":"TooManyRequestsException"},
+        {"shape":"BadRequestException"}
+      ],
+      "documentation":"<p>Change your account's suppression preferences for your account.</p>"
     },
     "PutConfigurationSetDeliveryOptions":{
       "name":"PutConfigurationSetDeliveryOptions",
@@ -488,6 +547,21 @@
         {"shape":"BadRequestException"}
       ],
       "documentation":"<p>Enable or disable email sending for messages that use a particular configuration set in a specific AWS Region.</p>"
+    },
+    "PutConfigurationSetSuppressionOptions":{
+      "name":"PutConfigurationSetSuppressionOptions",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/v2/email/configuration-sets/{ConfigurationSetName}/suppression-options"
+      },
+      "input":{"shape":"PutConfigurationSetSuppressionOptionsRequest"},
+      "output":{"shape":"PutConfigurationSetSuppressionOptionsResponse"},
+      "errors":[
+        {"shape":"NotFoundException"},
+        {"shape":"TooManyRequestsException"},
+        {"shape":"BadRequestException"}
+      ],
+      "documentation":"<p>Specify your account's suppression preferences for a configuration set.</p>"
     },
     "PutConfigurationSetTrackingOptions":{
       "name":"PutConfigurationSetTrackingOptions",
@@ -595,6 +669,20 @@
         {"shape":"BadRequestException"}
       ],
       "documentation":"<p>Used to enable or disable the custom Mail-From domain configuration for an email identity.</p>"
+    },
+    "PutSuppressedDestination":{
+      "name":"PutSuppressedDestination",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/v2/email/suppression/addresses"
+      },
+      "input":{"shape":"PutSuppressedDestinationRequest"},
+      "output":{"shape":"PutSuppressedDestinationResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"TooManyRequestsException"}
+      ],
+      "documentation":"<p>Puts (overwrites) an email destination in your suppression list.</p>"
     },
     "SendEmail":{
       "name":"SendEmail",
@@ -880,7 +968,8 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>"
-        }
+        },
+        "SuppressionOptions":{"shape":"SuppressionOptions"}
       },
       "documentation":"<p>A request to create a configuration set.</p>"
     },
@@ -1130,6 +1219,25 @@
       "documentation":"<p>A request to delete an existing email identity. When you delete an identity, you lose the ability to send email from that identity. You can restore your ability to send email by completing the verification process for the identity again.</p>"
     },
     "DeleteEmailIdentityResponse":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>"
+    },
+    "DeleteSuppressedDestinationRequest":{
+      "type":"structure",
+      "required":["EmailAddress"],
+      "members":{
+        "EmailAddress":{
+          "shape":"EmailAddress",
+          "documentation":"<p>The suppressed email destination to delete.</p>",
+          "location":"uri",
+          "locationName":"EmailAddress"
+        }
+      },
+      "documentation":"<p>A request to delete a suppressed email destination.</p>"
+    },
+    "DeleteSuppressedDestinationResponse":{
       "type":"structure",
       "members":{
       },
@@ -1513,6 +1621,7 @@
       "type":"list",
       "member":{"shape":"EventType"}
     },
+    "FeedbackId":{"type":"string"},
     "GeneralEnforcementStatus":{"type":"string"},
     "GetAccountRequest":{
       "type":"structure",
@@ -1523,14 +1632,6 @@
     "GetAccountResponse":{
       "type":"structure",
       "members":{
-        "SendQuota":{
-          "shape":"SendQuota",
-          "documentation":"<p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current AWS Region.</p>"
-        },
-        "SendingEnabled":{
-          "shape":"Enabled",
-          "documentation":"<p>Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.</p>"
-        },
         "DedicatedIpAutoWarmupEnabled":{
           "shape":"Enabled",
           "documentation":"<p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>"
@@ -1542,6 +1643,18 @@
         "ProductionAccessEnabled":{
           "shape":"Enabled",
           "documentation":"<p>Indicates whether or not your account has production access in the current AWS Region.</p> <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p> <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>"
+        },
+        "SendQuota":{
+          "shape":"SendQuota",
+          "documentation":"<p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current AWS Region.</p>"
+        },
+        "SendingEnabled":{
+          "shape":"Enabled",
+          "documentation":"<p>Indicates whether or not email sending is enabled for your Amazon SES account in the current AWS Region.</p>"
+        },
+        "SuppressionAttributes":{
+          "shape":"SuppressionAttributes",
+          "documentation":"<p>An object that contains information about your account's suppression preferences.</p>"
         }
       },
       "documentation":"<p>A list of details about the email-sending capabilities of your Amazon SES account in the current AWS Region.</p>"
@@ -1632,6 +1745,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>"
+        },
+        "SuppressionOptions":{
+          "shape":"SuppressionOptions",
+          "documentation":"<p>An object that contains information about your account's suppression preferences.</p>"
         }
       },
       "documentation":"<p>Information about a configuration set.</p>"
@@ -1888,6 +2005,30 @@
       },
       "documentation":"<p>Details about an email identity.</p>"
     },
+    "GetSuppressedDestinationRequest":{
+      "type":"structure",
+      "required":["EmailAddress"],
+      "members":{
+        "EmailAddress":{
+          "shape":"EmailAddress",
+          "documentation":"<p>Email destination to fetch from the suppression list.</p>",
+          "location":"uri",
+          "locationName":"EmailAddress"
+        }
+      },
+      "documentation":"<p>A request to get a suppressed email destination.</p>"
+    },
+    "GetSuppressedDestinationResponse":{
+      "type":"structure",
+      "required":["SuppressedDestination"],
+      "members":{
+        "SuppressedDestination":{
+          "shape":"SuppressedDestination",
+          "documentation":"<p>An object containing information about the suppressed email destination.</p>"
+        }
+      },
+      "documentation":"<p>Information about the suppressed email destination.</p>"
+    },
     "Identity":{"type":"string"},
     "IdentityInfo":{
       "type":"structure",
@@ -1934,6 +2075,14 @@
         }
       },
       "documentation":"<p>An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain.</p>"
+    },
+    "InvalidNextTokenException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The specified request includes an invalid or expired token. Please attempt to get a new token.</p>",
+      "error":{"httpStatusCode":400},
+      "exception":true
     },
     "Ip":{
       "type":"string",
@@ -2189,6 +2338,56 @@
       "member":{"shape":"PoolName"},
       "documentation":"<p>A list of dedicated IP pools that are associated with your AWS account.</p>"
     },
+    "ListSuppressedDestinationsRequest":{
+      "type":"structure",
+      "members":{
+        "Reasons":{
+          "shape":"SuppressionListReasons",
+          "documentation":"<p>Filters email destinations suppressed by the given reasons.</p>",
+          "location":"querystring",
+          "locationName":"Reason"
+        },
+        "StartDate":{
+          "shape":"Timestamp",
+          "documentation":"<p>Filters email destinations suppressed before the given time.</p>",
+          "location":"querystring",
+          "locationName":"StartDate"
+        },
+        "EndDate":{
+          "shape":"Timestamp",
+          "documentation":"<p>Filters email destinations suppressed after the given time.</p>",
+          "location":"querystring",
+          "locationName":"EndDate"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the list of suppressed email destinations.</p>",
+          "location":"querystring",
+          "locationName":"NextToken"
+        },
+        "PageSize":{
+          "shape":"MaxItems",
+          "documentation":"<p>The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>",
+          "location":"querystring",
+          "locationName":"PageSize"
+        }
+      },
+      "documentation":"<p>A request to obtain a list of suppressed email destinations.</p>"
+    },
+    "ListSuppressedDestinationsResponse":{
+      "type":"structure",
+      "members":{
+        "SuppressedDestinationSummaries":{
+          "shape":"SuppressedDestinationSummaries",
+          "documentation":"<p>A list of summaries, each containing a summary for a suppressed email destination.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token that indicates that there are additional suppressed destinations to list. To view additional suppressed destinations, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>"
+        }
+      },
+      "documentation":"<p>A list of suppressed email destinations.</p>"
+    },
     "ListTagsForResourceRequest":{
       "type":"structure",
       "required":["ResourceArn"],
@@ -2426,6 +2625,22 @@
       },
       "documentation":"<p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>"
     },
+    "PutAccountSuppressionAttributesRequest":{
+      "type":"structure",
+      "members":{
+        "SuppressedReasons":{
+          "shape":"SuppressionListReasons",
+          "documentation":"<p>A list of reasons to suppress email addresses. The only valid reasons are:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>A request to change your account's suppression preferences.</p>"
+    },
+    "PutAccountSuppressionAttributesResponse":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>"
+    },
     "PutConfigurationSetDeliveryOptionsRequest":{
       "type":"structure",
       "required":["ConfigurationSetName"],
@@ -2494,6 +2709,29 @@
       "documentation":"<p>A request to enable or disable the ability of Amazon SES to send emails that use a specific configuration set.</p>"
     },
     "PutConfigurationSetSendingOptionsResponse":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>"
+    },
+    "PutConfigurationSetSuppressionOptionsRequest":{
+      "type":"structure",
+      "required":["ConfigurationSetName"],
+      "members":{
+        "ConfigurationSetName":{
+          "shape":"ConfigurationSetName",
+          "documentation":"<p>The name of the configuration set that you want to enable or disable email sending for.</p>",
+          "location":"uri",
+          "locationName":"ConfigurationSetName"
+        },
+        "SuppressedReasons":{
+          "shape":"SuppressionListReasons",
+          "documentation":"<p>A list of reasons to suppress email addresses. The only valid reasons are:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>A request to change your account's suppression preferences for an specific configuration set.</p>"
+    },
+    "PutConfigurationSetSuppressionOptionsResponse":{
       "type":"structure",
       "members":{
       },
@@ -2668,6 +2906,30 @@
       },
       "documentation":"<p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>"
     },
+    "PutSuppressedDestinationRequest":{
+      "type":"structure",
+      "required":[
+        "EmailAddress",
+        "Reason"
+      ],
+      "members":{
+        "EmailAddress":{
+          "shape":"EmailAddress",
+          "documentation":"<p>Email destination to be suppressed.</p>"
+        },
+        "Reason":{
+          "shape":"SuppressionListReason",
+          "documentation":"<p>Reason for which the email destination is suppressed.</p>"
+        }
+      },
+      "documentation":"<p>A request to suppress an email destination.</p>"
+    },
+    "PutSuppressedDestinationResponse":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>"
+    },
     "RawMessage":{
       "type":"structure",
       "required":["Data"],
@@ -2810,6 +3072,106 @@
       "documentation":"<p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>"
     },
     "Subject":{"type":"string"},
+    "SuppressedDestination":{
+      "type":"structure",
+      "required":[
+        "EmailAddress",
+        "Reason",
+        "LastUpdateTime"
+      ],
+      "members":{
+        "EmailAddress":{
+          "shape":"EmailAddress",
+          "documentation":"<p>The suppressed email destination.</p>"
+        },
+        "Reason":{
+          "shape":"SuppressionListReason",
+          "documentation":"<p>The reason for which the email destination is suppressed.</p>"
+        },
+        "LastUpdateTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The last time the suppressed destination was updated.</p>"
+        },
+        "Attributes":{
+          "shape":"SuppressedDestinationAttributes",
+          "documentation":"<p> <code>Optional</code> value with information about the sources of the suppression.</p>"
+        }
+      },
+      "documentation":"<p>An object containing information about the suppressed email destination.</p>"
+    },
+    "SuppressedDestinationAttributes":{
+      "type":"structure",
+      "members":{
+        "MessageId":{
+          "shape":"OutboundMessageId",
+          "documentation":"<p>A unique identifier of the message that caused the suppression of the email destination.</p>"
+        },
+        "FeedbackId":{
+          "shape":"FeedbackId",
+          "documentation":"<p>A unique identifier of the suppression cause.</p>"
+        }
+      },
+      "documentation":"<p>An object containing additional attributes related to a suppressed destination.</p>"
+    },
+    "SuppressedDestinationSummaries":{
+      "type":"list",
+      "member":{"shape":"SuppressedDestinationSummary"}
+    },
+    "SuppressedDestinationSummary":{
+      "type":"structure",
+      "required":[
+        "EmailAddress",
+        "Reason",
+        "LastUpdateTime"
+      ],
+      "members":{
+        "EmailAddress":{
+          "shape":"EmailAddress",
+          "documentation":"<p>The suppressed email destination.</p>"
+        },
+        "Reason":{
+          "shape":"SuppressionListReason",
+          "documentation":"<p>The reason for which the email destination is suppressed.</p>"
+        },
+        "LastUpdateTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The last time the suppressed destination was updated.</p>"
+        }
+      },
+      "documentation":"<p>A summary for the suppressed email destination.</p>"
+    },
+    "SuppressionAttributes":{
+      "type":"structure",
+      "members":{
+        "SuppressedReasons":{
+          "shape":"SuppressionListReasons",
+          "documentation":"<p>A list of reasons to suppress email addresses. The only valid reasons are:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>An object that contains information about your account's suppression preferences.</p>"
+    },
+    "SuppressionListReason":{
+      "type":"string",
+      "documentation":"<p>A string representing the cause for suppression for an email destination. It can be one of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES will suppress an email address that receive a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.</p> </li> </ul>",
+      "enum":[
+        "BOUNCE",
+        "COMPLAINT"
+      ]
+    },
+    "SuppressionListReasons":{
+      "type":"list",
+      "member":{"shape":"SuppressionListReason"}
+    },
+    "SuppressionOptions":{
+      "type":"structure",
+      "members":{
+        "SuppressedReasons":{
+          "shape":"SuppressionListReasons",
+          "documentation":"<p>A list of reasons to suppress email addresses. The only valid reasons are:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>An object that contains information about your account's suppression preferences.</p>"
+    },
     "Tag":{
       "type":"structure",
       "required":[

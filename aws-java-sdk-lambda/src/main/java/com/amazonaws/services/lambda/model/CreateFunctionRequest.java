@@ -112,7 +112,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
      * When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC Settings</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -120,7 +120,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -744,14 +744,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
      * When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC Settings</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      * </p>
      * 
      * @param vpcConfig
      *        For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the
      *        VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
-     *        For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
-     *        Settings</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -762,13 +762,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
      * When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC Settings</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      * </p>
      * 
      * @return For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the
      *         VPC. When you connect a function to a VPC, it can only access resources and the internet through that
-     *         VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
-     *         Settings</a>.
+     *         VPC. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -779,14 +779,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
      * When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC Settings</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      * </p>
      * 
      * @param vpcConfig
      *        For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the
      *        VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
-     *        For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
-     *        Settings</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -799,13 +799,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
      * </p>
      * 
      * @param deadLetterConfig
      *        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
      *        when they fail processing. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
      */
 
     public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
@@ -816,12 +816,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
      * </p>
      * 
      * @return A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous
      *         events when they fail processing. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
      */
 
     public DeadLetterConfig getDeadLetterConfig() {
@@ -832,13 +832,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
      * </p>
      * 
      * @param deadLetterConfig
      *        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
      *        when they fail processing. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

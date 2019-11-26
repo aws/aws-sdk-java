@@ -80,6 +80,11 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
                         request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".AllocationId",
                                 StringUtils.fromString(subnetMappingsListValue.getAllocationId()));
                     }
+
+                    if (subnetMappingsListValue.getPrivateIPv4Address() != null) {
+                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".PrivateIPv4Address",
+                                StringUtils.fromString(subnetMappingsListValue.getPrivateIPv4Address()));
+                    }
                     subnetMappingsListIndex++;
                 }
             }

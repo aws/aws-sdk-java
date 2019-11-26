@@ -84,6 +84,10 @@ public class ResourceShareJsonUnmarshaller implements Unmarshaller<ResourceShare
                     context.nextToken();
                     resourceShare.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("featureSet", targetDepth)) {
+                    context.nextToken();
+                    resourceShare.setFeatureSet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

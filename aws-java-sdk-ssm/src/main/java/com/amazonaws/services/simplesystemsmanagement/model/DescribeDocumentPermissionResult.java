@@ -29,6 +29,12 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accountIds;
+    /**
+     * <p>
+     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AccountSharingInfo> accountSharingInfoList;
 
     /**
      * <p>
@@ -108,6 +114,79 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * </p>
+     * 
+     * @return A list of of AWS accounts where the current document is shared and the version shared with each account.
+     */
+
+    public java.util.List<AccountSharingInfo> getAccountSharingInfoList() {
+        if (accountSharingInfoList == null) {
+            accountSharingInfoList = new com.amazonaws.internal.SdkInternalList<AccountSharingInfo>();
+        }
+        return accountSharingInfoList;
+    }
+
+    /**
+     * <p>
+     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * </p>
+     * 
+     * @param accountSharingInfoList
+     *        A list of of AWS accounts where the current document is shared and the version shared with each account.
+     */
+
+    public void setAccountSharingInfoList(java.util.Collection<AccountSharingInfo> accountSharingInfoList) {
+        if (accountSharingInfoList == null) {
+            this.accountSharingInfoList = null;
+            return;
+        }
+
+        this.accountSharingInfoList = new com.amazonaws.internal.SdkInternalList<AccountSharingInfo>(accountSharingInfoList);
+    }
+
+    /**
+     * <p>
+     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountSharingInfoList(java.util.Collection)} or
+     * {@link #withAccountSharingInfoList(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param accountSharingInfoList
+     *        A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDocumentPermissionResult withAccountSharingInfoList(AccountSharingInfo... accountSharingInfoList) {
+        if (this.accountSharingInfoList == null) {
+            setAccountSharingInfoList(new com.amazonaws.internal.SdkInternalList<AccountSharingInfo>(accountSharingInfoList.length));
+        }
+        for (AccountSharingInfo ele : accountSharingInfoList) {
+            this.accountSharingInfoList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * </p>
+     * 
+     * @param accountSharingInfoList
+     *        A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDocumentPermissionResult withAccountSharingInfoList(java.util.Collection<AccountSharingInfo> accountSharingInfoList) {
+        setAccountSharingInfoList(accountSharingInfoList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -120,7 +199,9 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountIds() != null)
-            sb.append("AccountIds: ").append(getAccountIds());
+            sb.append("AccountIds: ").append(getAccountIds()).append(",");
+        if (getAccountSharingInfoList() != null)
+            sb.append("AccountSharingInfoList: ").append(getAccountSharingInfoList());
         sb.append("}");
         return sb.toString();
     }
@@ -139,6 +220,10 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
             return false;
+        if (other.getAccountSharingInfoList() == null ^ this.getAccountSharingInfoList() == null)
+            return false;
+        if (other.getAccountSharingInfoList() != null && other.getAccountSharingInfoList().equals(this.getAccountSharingInfoList()) == false)
+            return false;
         return true;
     }
 
@@ -148,6 +233,7 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
+        hashCode = prime * hashCode + ((getAccountSharingInfoList() == null) ? 0 : getAccountSharingInfoList().hashCode());
         return hashCode;
     }
 

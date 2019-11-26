@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum GroupDefinitionType {
 
     DIMENSION("DIMENSION"),
-    TAG("TAG");
+    TAG("TAG"),
+    COST_CATEGORY("COST_CATEGORY");
 
     private String value;
 

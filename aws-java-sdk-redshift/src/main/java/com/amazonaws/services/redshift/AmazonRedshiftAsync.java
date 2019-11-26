@@ -741,6 +741,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For
+     * example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation.
+     * </p>
+     * 
+     * @param createScheduledActionRequest
+     * @return A Java Future containing the result of the CreateScheduledAction operation returned by the service.
+     * @sample AmazonRedshiftAsync.CreateScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(CreateScheduledActionRequest createScheduledActionRequest);
+
+    /**
+     * <p>
+     * Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For
+     * example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation.
+     * </p>
+     * 
+     * @param createScheduledActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateScheduledAction operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.CreateScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(CreateScheduledActionRequest createScheduledActionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateScheduledActionRequest, CreateScheduledActionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a snapshot copy grant that permits Amazon Redshift to use a customer master key (CMK) from AWS Key
      * Management Service (AWS KMS) to encrypt copied snapshots in a destination region.
      * </p>
@@ -1195,6 +1228,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DeleteHsmConfigurationResult> deleteHsmConfigurationAsync(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHsmConfigurationRequest, DeleteHsmConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a scheduled action.
+     * </p>
+     * 
+     * @param deleteScheduledActionRequest
+     * @return A Java Future containing the result of the DeleteScheduledAction operation returned by the service.
+     * @sample AmazonRedshiftAsync.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest deleteScheduledActionRequest);
+
+    /**
+     * <p>
+     * Deletes a scheduled action.
+     * </p>
+     * 
+     * @param deleteScheduledActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteScheduledAction operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest deleteScheduledActionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler);
 
     /**
      * <p>
@@ -2540,6 +2604,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Describes properties of scheduled actions.
+     * </p>
+     * 
+     * @param describeScheduledActionsRequest
+     * @return A Java Future containing the result of the DescribeScheduledActions operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest describeScheduledActionsRequest);
+
+    /**
+     * <p>
+     * Describes properties of scheduled actions.
+     * </p>
+     * 
+     * @param describeScheduledActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeScheduledActions operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeScheduledActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest describeScheduledActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeScheduledActionsRequest, DescribeScheduledActionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of snapshot copy grants owned by the AWS account in the destination region.
      * </p>
      * <p>
@@ -3407,6 +3502,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyEventSubscriptionRequest, EventSubscription> asyncHandler);
+
+    /**
+     * <p>
+     * Modify a scheduled action.
+     * </p>
+     * 
+     * @param modifyScheduledActionRequest
+     * @return A Java Future containing the result of the ModifyScheduledAction operation returned by the service.
+     * @sample AmazonRedshiftAsync.ModifyScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyScheduledActionResult> modifyScheduledActionAsync(ModifyScheduledActionRequest modifyScheduledActionRequest);
+
+    /**
+     * <p>
+     * Modify a scheduled action.
+     * </p>
+     * 
+     * @param modifyScheduledActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyScheduledAction operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyScheduledAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyScheduledActionResult> modifyScheduledActionAsync(ModifyScheduledActionRequest modifyScheduledActionRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyScheduledActionRequest, ModifyScheduledActionResult> asyncHandler);
 
     /**
      * <p>

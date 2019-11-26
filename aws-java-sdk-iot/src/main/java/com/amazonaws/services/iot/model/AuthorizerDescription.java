@@ -73,6 +73,12 @@ public class AuthorizerDescription implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date lastModifiedDate;
+    /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     */
+    private Boolean signingDisabled;
 
     /**
      * <p>
@@ -435,6 +441,58 @@ public class AuthorizerDescription implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     * 
+     * @param signingDisabled
+     *        Specifies whether AWS IoT validates the token signature in an authorization request.
+     */
+
+    public void setSigningDisabled(Boolean signingDisabled) {
+        this.signingDisabled = signingDisabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     * 
+     * @return Specifies whether AWS IoT validates the token signature in an authorization request.
+     */
+
+    public Boolean getSigningDisabled() {
+        return this.signingDisabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     * 
+     * @param signingDisabled
+     *        Specifies whether AWS IoT validates the token signature in an authorization request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizerDescription withSigningDisabled(Boolean signingDisabled) {
+        setSigningDisabled(signingDisabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     * 
+     * @return Specifies whether AWS IoT validates the token signature in an authorization request.
+     */
+
+    public Boolean isSigningDisabled() {
+        return this.signingDisabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -461,7 +519,9 @@ public class AuthorizerDescription implements Serializable, Cloneable, Structure
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: ").append(getLastModifiedDate());
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getSigningDisabled() != null)
+            sb.append("SigningDisabled: ").append(getSigningDisabled());
         sb.append("}");
         return sb.toString();
     }
@@ -508,6 +568,10 @@ public class AuthorizerDescription implements Serializable, Cloneable, Structure
             return false;
         if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
+        if (other.getSigningDisabled() == null ^ this.getSigningDisabled() == null)
+            return false;
+        if (other.getSigningDisabled() != null && other.getSigningDisabled().equals(this.getSigningDisabled()) == false)
+            return false;
         return true;
     }
 
@@ -524,6 +588,7 @@ public class AuthorizerDescription implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getSigningDisabled() == null) ? 0 : getSigningDisabled().hashCode());
         return hashCode;
     }
 

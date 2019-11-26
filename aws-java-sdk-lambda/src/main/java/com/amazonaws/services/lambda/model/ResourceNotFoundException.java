@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource (for example, a Lambda function or access policy statement) specified in the request does not exist.
+ * The resource specified in the request does not exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

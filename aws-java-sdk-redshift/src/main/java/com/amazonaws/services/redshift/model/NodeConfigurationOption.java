@@ -44,6 +44,12 @@ public class NodeConfigurationOption implements Serializable, Cloneable {
      * </p>
      */
     private Double estimatedDiskUtilizationPercent;
+    /**
+     * <p>
+     * The category of the node configuration recommendation.
+     * </p>
+     */
+    private String mode;
 
     /**
      * <p>
@@ -166,6 +172,65 @@ public class NodeConfigurationOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The category of the node configuration recommendation.
+     * </p>
+     * 
+     * @param mode
+     *        The category of the node configuration recommendation.
+     * @see Mode
+     */
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    /**
+     * <p>
+     * The category of the node configuration recommendation.
+     * </p>
+     * 
+     * @return The category of the node configuration recommendation.
+     * @see Mode
+     */
+
+    public String getMode() {
+        return this.mode;
+    }
+
+    /**
+     * <p>
+     * The category of the node configuration recommendation.
+     * </p>
+     * 
+     * @param mode
+     *        The category of the node configuration recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Mode
+     */
+
+    public NodeConfigurationOption withMode(String mode) {
+        setMode(mode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The category of the node configuration recommendation.
+     * </p>
+     * 
+     * @param mode
+     *        The category of the node configuration recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Mode
+     */
+
+    public NodeConfigurationOption withMode(Mode mode) {
+        this.mode = mode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +247,9 @@ public class NodeConfigurationOption implements Serializable, Cloneable {
         if (getNumberOfNodes() != null)
             sb.append("NumberOfNodes: ").append(getNumberOfNodes()).append(",");
         if (getEstimatedDiskUtilizationPercent() != null)
-            sb.append("EstimatedDiskUtilizationPercent: ").append(getEstimatedDiskUtilizationPercent());
+            sb.append("EstimatedDiskUtilizationPercent: ").append(getEstimatedDiskUtilizationPercent()).append(",");
+        if (getMode() != null)
+            sb.append("Mode: ").append(getMode());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +277,10 @@ public class NodeConfigurationOption implements Serializable, Cloneable {
         if (other.getEstimatedDiskUtilizationPercent() != null
                 && other.getEstimatedDiskUtilizationPercent().equals(this.getEstimatedDiskUtilizationPercent()) == false)
             return false;
+        if (other.getMode() == null ^ this.getMode() == null)
+            return false;
+        if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
+            return false;
         return true;
     }
 
@@ -221,6 +292,7 @@ public class NodeConfigurationOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNodeType() == null) ? 0 : getNodeType().hashCode());
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
         hashCode = prime * hashCode + ((getEstimatedDiskUtilizationPercent() == null) ? 0 : getEstimatedDiskUtilizationPercent().hashCode());
+        hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         return hashCode;
     }
 

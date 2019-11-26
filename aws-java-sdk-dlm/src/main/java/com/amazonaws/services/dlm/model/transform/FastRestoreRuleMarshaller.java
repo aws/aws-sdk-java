@@ -30,6 +30,10 @@ public class FastRestoreRuleMarshaller {
 
     private static final MarshallingInfo<Integer> COUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Count").build();
+    private static final MarshallingInfo<Integer> INTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Interval").build();
+    private static final MarshallingInfo<String> INTERVALUNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IntervalUnit").build();
     private static final MarshallingInfo<List> AVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZones").build();
 
@@ -50,6 +54,8 @@ public class FastRestoreRuleMarshaller {
 
         try {
             protocolMarshaller.marshall(fastRestoreRule.getCount(), COUNT_BINDING);
+            protocolMarshaller.marshall(fastRestoreRule.getInterval(), INTERVAL_BINDING);
+            protocolMarshaller.marshall(fastRestoreRule.getIntervalUnit(), INTERVALUNIT_BINDING);
             protocolMarshaller.marshall(fastRestoreRule.getAvailabilityZones(), AVAILABILITYZONES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

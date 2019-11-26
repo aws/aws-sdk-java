@@ -44,6 +44,15 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String versionName;
+    /**
+     * <p>
+     * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
+     * For example, you must specify a <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * Identity and Access Management (IAM) policy.
+     * </p>
+     */
+    private Boolean force;
 
     /**
      * <p>
@@ -175,6 +184,82 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
+     * For example, you must specify a <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * Identity and Access Management (IAM) policy.
+     * </p>
+     * 
+     * @param force
+     *        Some SSM document types require that you specify a <code>Force</code> flag before you can delete the
+     *        document. For example, you must specify a <code>Force</code> flag to delete a document of type
+     *        <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
+     *        AWS Identity and Access Management (IAM) policy.
+     */
+
+    public void setForce(Boolean force) {
+        this.force = force;
+    }
+
+    /**
+     * <p>
+     * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
+     * For example, you must specify a <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * Identity and Access Management (IAM) policy.
+     * </p>
+     * 
+     * @return Some SSM document types require that you specify a <code>Force</code> flag before you can delete the
+     *         document. For example, you must specify a <code>Force</code> flag to delete a document of type
+     *         <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
+     *         AWS Identity and Access Management (IAM) policy.
+     */
+
+    public Boolean getForce() {
+        return this.force;
+    }
+
+    /**
+     * <p>
+     * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
+     * For example, you must specify a <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * Identity and Access Management (IAM) policy.
+     * </p>
+     * 
+     * @param force
+     *        Some SSM document types require that you specify a <code>Force</code> flag before you can delete the
+     *        document. For example, you must specify a <code>Force</code> flag to delete a document of type
+     *        <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
+     *        AWS Identity and Access Management (IAM) policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDocumentRequest withForce(Boolean force) {
+        setForce(force);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document.
+     * For example, you must specify a <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an AWS
+     * Identity and Access Management (IAM) policy.
+     * </p>
+     * 
+     * @return Some SSM document types require that you specify a <code>Force</code> flag before you can delete the
+     *         document. For example, you must specify a <code>Force</code> flag to delete a document of type
+     *         <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an
+     *         AWS Identity and Access Management (IAM) policy.
+     */
+
+    public Boolean isForce() {
+        return this.force;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +276,9 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getVersionName() != null)
-            sb.append("VersionName: ").append(getVersionName());
+            sb.append("VersionName: ").append(getVersionName()).append(",");
+        if (getForce() != null)
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +305,10 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
             return false;
+        if (other.getForce() == null ^ this.getForce() == null)
+            return false;
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +320,7 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

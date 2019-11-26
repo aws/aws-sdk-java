@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -57,6 +58,12 @@ public class KeyMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationModel").build();
     private static final MarshallingInfo<String> KEYMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyManager").build();
+    private static final MarshallingInfo<String> CUSTOMERMASTERKEYSPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerMasterKeySpec").build();
+    private static final MarshallingInfo<List> ENCRYPTIONALGORITHMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAlgorithms").build();
+    private static final MarshallingInfo<List> SIGNINGALGORITHMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningAlgorithms").build();
 
     private static final KeyMetadataMarshaller instance = new KeyMetadataMarshaller();
 
@@ -89,6 +96,9 @@ public class KeyMetadataMarshaller {
             protocolMarshaller.marshall(keyMetadata.getCloudHsmClusterId(), CLOUDHSMCLUSTERID_BINDING);
             protocolMarshaller.marshall(keyMetadata.getExpirationModel(), EXPIRATIONMODEL_BINDING);
             protocolMarshaller.marshall(keyMetadata.getKeyManager(), KEYMANAGER_BINDING);
+            protocolMarshaller.marshall(keyMetadata.getCustomerMasterKeySpec(), CUSTOMERMASTERKEYSPEC_BINDING);
+            protocolMarshaller.marshall(keyMetadata.getEncryptionAlgorithms(), ENCRYPTIONALGORITHMS_BINDING);
+            protocolMarshaller.marshall(keyMetadata.getSigningAlgorithms(), SIGNINGALGORITHMS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

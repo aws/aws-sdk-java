@@ -36,6 +36,11 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /** This parameter is unused and deprecated. */
     private String ecmPid;
     /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     */
+    private String nielsenId3Behavior;
+    /**
      * The number of milliseconds between instances of this table in the output transport stream. A value of \"0\"
      * writes out the PMT once per segment file.
      */
@@ -195,6 +200,65 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
 
     public M3u8Settings withEcmPid(String ecmPid) {
         setEcmPid(ecmPid);
+        return this;
+    }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     * 
+     * @param nielsenId3Behavior
+     *        If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and
+     *        an equivalent ID3 tag will be inserted in the output.
+     * @see M3u8NielsenId3Behavior
+     */
+
+    public void setNielsenId3Behavior(String nielsenId3Behavior) {
+        this.nielsenId3Behavior = nielsenId3Behavior;
+    }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     * 
+     * @return If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and
+     *         an equivalent ID3 tag will be inserted in the output.
+     * @see M3u8NielsenId3Behavior
+     */
+
+    public String getNielsenId3Behavior() {
+        return this.nielsenId3Behavior;
+    }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     * 
+     * @param nielsenId3Behavior
+     *        If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and
+     *        an equivalent ID3 tag will be inserted in the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M3u8NielsenId3Behavior
+     */
+
+    public M3u8Settings withNielsenId3Behavior(String nielsenId3Behavior) {
+        setNielsenId3Behavior(nielsenId3Behavior);
+        return this;
+    }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     * 
+     * @param nielsenId3Behavior
+     *        If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and
+     *        an equivalent ID3 tag will be inserted in the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M3u8NielsenId3Behavior
+     */
+
+    public M3u8Settings withNielsenId3Behavior(M3u8NielsenId3Behavior nielsenId3Behavior) {
+        this.nielsenId3Behavior = nielsenId3Behavior.toString();
         return this;
     }
 
@@ -770,6 +834,8 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("AudioPids: ").append(getAudioPids()).append(",");
         if (getEcmPid() != null)
             sb.append("EcmPid: ").append(getEcmPid()).append(",");
+        if (getNielsenId3Behavior() != null)
+            sb.append("NielsenId3Behavior: ").append(getNielsenId3Behavior()).append(",");
         if (getPatInterval() != null)
             sb.append("PatInterval: ").append(getPatInterval()).append(",");
         if (getPcrControl() != null)
@@ -821,6 +887,10 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getEcmPid() == null ^ this.getEcmPid() == null)
             return false;
         if (other.getEcmPid() != null && other.getEcmPid().equals(this.getEcmPid()) == false)
+            return false;
+        if (other.getNielsenId3Behavior() == null ^ this.getNielsenId3Behavior() == null)
+            return false;
+        if (other.getNielsenId3Behavior() != null && other.getNielsenId3Behavior().equals(this.getNielsenId3Behavior()) == false)
             return false;
         if (other.getPatInterval() == null ^ this.getPatInterval() == null)
             return false;
@@ -885,6 +955,7 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAudioFramesPerPes() == null) ? 0 : getAudioFramesPerPes().hashCode());
         hashCode = prime * hashCode + ((getAudioPids() == null) ? 0 : getAudioPids().hashCode());
         hashCode = prime * hashCode + ((getEcmPid() == null) ? 0 : getEcmPid().hashCode());
+        hashCode = prime * hashCode + ((getNielsenId3Behavior() == null) ? 0 : getNielsenId3Behavior().hashCode());
         hashCode = prime * hashCode + ((getPatInterval() == null) ? 0 : getPatInterval().hashCode());
         hashCode = prime * hashCode + ((getPcrControl() == null) ? 0 : getPcrControl().hashCode());
         hashCode = prime * hashCode + ((getPcrPeriod() == null) ? 0 : getPcrPeriod().hashCode());

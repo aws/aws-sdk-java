@@ -67,6 +67,12 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
      * </p>
      */
     private ApplicationSnapshotConfigurationDescription applicationSnapshotConfigurationDescription;
+    /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     */
+    private java.util.List<VpcConfigurationDescription> vpcConfigurationDescriptions;
 
     /**
      * <p>
@@ -319,6 +325,76 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @return The array of descriptions of VPC configurations available to the application.
+     */
+
+    public java.util.List<VpcConfigurationDescription> getVpcConfigurationDescriptions() {
+        return vpcConfigurationDescriptions;
+    }
+
+    /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @param vpcConfigurationDescriptions
+     *        The array of descriptions of VPC configurations available to the application.
+     */
+
+    public void setVpcConfigurationDescriptions(java.util.Collection<VpcConfigurationDescription> vpcConfigurationDescriptions) {
+        if (vpcConfigurationDescriptions == null) {
+            this.vpcConfigurationDescriptions = null;
+            return;
+        }
+
+        this.vpcConfigurationDescriptions = new java.util.ArrayList<VpcConfigurationDescription>(vpcConfigurationDescriptions);
+    }
+
+    /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcConfigurationDescriptions(java.util.Collection)} or
+     * {@link #withVpcConfigurationDescriptions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param vpcConfigurationDescriptions
+     *        The array of descriptions of VPC configurations available to the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfigurationDescription withVpcConfigurationDescriptions(VpcConfigurationDescription... vpcConfigurationDescriptions) {
+        if (this.vpcConfigurationDescriptions == null) {
+            setVpcConfigurationDescriptions(new java.util.ArrayList<VpcConfigurationDescription>(vpcConfigurationDescriptions.length));
+        }
+        for (VpcConfigurationDescription ele : vpcConfigurationDescriptions) {
+            this.vpcConfigurationDescriptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The array of descriptions of VPC configurations available to the application.
+     * </p>
+     * 
+     * @param vpcConfigurationDescriptions
+     *        The array of descriptions of VPC configurations available to the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfigurationDescription withVpcConfigurationDescriptions(java.util.Collection<VpcConfigurationDescription> vpcConfigurationDescriptions) {
+        setVpcConfigurationDescriptions(vpcConfigurationDescriptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -341,7 +417,9 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
         if (getEnvironmentPropertyDescriptions() != null)
             sb.append("EnvironmentPropertyDescriptions: ").append(getEnvironmentPropertyDescriptions()).append(",");
         if (getApplicationSnapshotConfigurationDescription() != null)
-            sb.append("ApplicationSnapshotConfigurationDescription: ").append(getApplicationSnapshotConfigurationDescription());
+            sb.append("ApplicationSnapshotConfigurationDescription: ").append(getApplicationSnapshotConfigurationDescription()).append(",");
+        if (getVpcConfigurationDescriptions() != null)
+            sb.append("VpcConfigurationDescriptions: ").append(getVpcConfigurationDescriptions());
         sb.append("}");
         return sb.toString();
     }
@@ -385,6 +463,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
         if (other.getApplicationSnapshotConfigurationDescription() != null
                 && other.getApplicationSnapshotConfigurationDescription().equals(this.getApplicationSnapshotConfigurationDescription()) == false)
             return false;
+        if (other.getVpcConfigurationDescriptions() == null ^ this.getVpcConfigurationDescriptions() == null)
+            return false;
+        if (other.getVpcConfigurationDescriptions() != null && other.getVpcConfigurationDescriptions().equals(this.getVpcConfigurationDescriptions()) == false)
+            return false;
         return true;
     }
 
@@ -400,6 +482,7 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
         hashCode = prime * hashCode + ((getEnvironmentPropertyDescriptions() == null) ? 0 : getEnvironmentPropertyDescriptions().hashCode());
         hashCode = prime * hashCode
                 + ((getApplicationSnapshotConfigurationDescription() == null) ? 0 : getApplicationSnapshotConfigurationDescription().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfigurationDescriptions() == null) ? 0 : getVpcConfigurationDescriptions().hashCode());
         return hashCode;
     }
 

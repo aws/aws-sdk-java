@@ -27,8 +27,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>.
+     * The identifier of the symmetric CMK into which you will import key material. The <code>Origin</code> of the CMK
+     * must be <code>EXTERNAL</code>.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -71,8 +71,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>.
+     * The identifier of the symmetric CMK into which you will import key material. The <code>Origin</code> of the CMK
+     * must be <code>EXTERNAL</code>.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -97,8 +97,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param keyId
-     *        The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
-     *        <code>EXTERNAL</code>.</p>
+     *        The identifier of the symmetric CMK into which you will import key material. The <code>Origin</code> of
+     *        the CMK must be <code>EXTERNAL</code>.</p>
      *        <p>
      *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *        </p>
@@ -127,8 +127,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>.
+     * The identifier of the symmetric CMK into which you will import key material. The <code>Origin</code> of the CMK
+     * must be <code>EXTERNAL</code>.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -152,8 +152,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * 
-     * @return The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
-     *         <code>EXTERNAL</code>.</p>
+     * @return The identifier of the symmetric CMK into which you will import key material. The <code>Origin</code> of
+     *         the CMK must be <code>EXTERNAL</code>.</p>
      *         <p>
      *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *         </p>
@@ -182,8 +182,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>.
+     * The identifier of the symmetric CMK into which you will import key material. The <code>Origin</code> of the CMK
+     * must be <code>EXTERNAL</code>.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -208,8 +208,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param keyId
-     *        The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
-     *        <code>EXTERNAL</code>.</p>
+     *        The identifier of the symmetric CMK into which you will import key material. The <code>Origin</code> of
+     *        the CMK must be <code>EXTERNAL</code>.</p>
      *        <p>
      *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *        </p>

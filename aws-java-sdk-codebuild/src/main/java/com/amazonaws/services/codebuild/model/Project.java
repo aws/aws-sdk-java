@@ -66,7 +66,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -455,7 +455,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -496,7 +496,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID to use.
+     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -543,7 +543,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -583,7 +583,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         For AWS CodeCommit: the commit ID to use.
+     *         For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *         </p>
      *         </li>
      *         <li>
@@ -630,7 +630,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -671,7 +671,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID to use.
+     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>

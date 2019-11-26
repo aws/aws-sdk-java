@@ -30,6 +30,12 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * </p>
+     */
+    private FlinkRunConfiguration flinkRunConfiguration;
+    /**
+     * <p>
      * Describes the starting parameters for an SQL-based Kinesis Data Analytics application.
      * </p>
      */
@@ -40,6 +46,46 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private ApplicationRestoreConfiguration applicationRestoreConfiguration;
+
+    /**
+     * <p>
+     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * </p>
+     * 
+     * @param flinkRunConfiguration
+     *        Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     */
+
+    public void setFlinkRunConfiguration(FlinkRunConfiguration flinkRunConfiguration) {
+        this.flinkRunConfiguration = flinkRunConfiguration;
+    }
+
+    /**
+     * <p>
+     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * </p>
+     * 
+     * @return Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     */
+
+    public FlinkRunConfiguration getFlinkRunConfiguration() {
+        return this.flinkRunConfiguration;
+    }
+
+    /**
+     * <p>
+     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * </p>
+     * 
+     * @param flinkRunConfiguration
+     *        Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunConfiguration withFlinkRunConfiguration(FlinkRunConfiguration flinkRunConfiguration) {
+        setFlinkRunConfiguration(flinkRunConfiguration);
+        return this;
+    }
 
     /**
      * <p>
@@ -163,6 +209,8 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFlinkRunConfiguration() != null)
+            sb.append("FlinkRunConfiguration: ").append(getFlinkRunConfiguration()).append(",");
         if (getSqlRunConfigurations() != null)
             sb.append("SqlRunConfigurations: ").append(getSqlRunConfigurations()).append(",");
         if (getApplicationRestoreConfiguration() != null)
@@ -181,6 +229,10 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof RunConfiguration == false)
             return false;
         RunConfiguration other = (RunConfiguration) obj;
+        if (other.getFlinkRunConfiguration() == null ^ this.getFlinkRunConfiguration() == null)
+            return false;
+        if (other.getFlinkRunConfiguration() != null && other.getFlinkRunConfiguration().equals(this.getFlinkRunConfiguration()) == false)
+            return false;
         if (other.getSqlRunConfigurations() == null ^ this.getSqlRunConfigurations() == null)
             return false;
         if (other.getSqlRunConfigurations() != null && other.getSqlRunConfigurations().equals(this.getSqlRunConfigurations()) == false)
@@ -198,6 +250,7 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFlinkRunConfiguration() == null) ? 0 : getFlinkRunConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSqlRunConfigurations() == null) ? 0 : getSqlRunConfigurations().hashCode());
         hashCode = prime * hashCode + ((getApplicationRestoreConfiguration() == null) ? 0 : getApplicationRestoreConfiguration().hashCode());
         return hashCode;

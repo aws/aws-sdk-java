@@ -66,14 +66,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name. Example:
      * <code>table/my-table</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index
+     * name. Example: <code>table/my-table/index/my-table-index</code>.
      * </p>
      * </li>
      * <li>
@@ -84,7 +84,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
@@ -94,6 +94,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
      * service provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using
+     * the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
      * </ul>
@@ -163,6 +170,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by
      * your own application or service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend document classification endpoint.
      * </p>
      * </li>
      * </ul>
@@ -322,14 +335,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name. Example:
      * <code>table/my-table</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index
+     * name. Example: <code>table/my-table/index/my-table-index</code>.
      * </p>
      * </li>
      * <li>
@@ -340,7 +353,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
@@ -350,6 +363,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
      * service provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using
+     * the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
      * </ul>
@@ -384,14 +404,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *         DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name.
      *         Example: <code>table/my-table</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is
-     *         the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     *         the index name. Example: <code>table/my-table/index/my-table-index</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -402,7 +422,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
+     *         Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier
      *         is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *         </p>
      *         </li>
@@ -412,6 +432,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *         <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
      *         identifier is defined by the service provider. More information is available in our <a
      *         href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Comprehend document classification endpoint - The resource type and unique identifier are
+     *         specified using the endpoint ARN. Example:
+     *         <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      *         </p>
      *         </li>
      */
@@ -452,14 +479,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name. Example:
      * <code>table/my-table</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index
+     * name. Example: <code>table/my-table/index/my-table-index</code>.
      * </p>
      * </li>
      * <li>
@@ -470,7 +497,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
@@ -480,6 +507,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
      * service provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using
+     * the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
      * </ul>
@@ -514,14 +548,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name.
      *        Example: <code>table/my-table</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     *        index name. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -532,8 +566,8 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
-     *        is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is
+     *        the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -542,6 +576,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
      *        identifier is defined by the service provider. More information is available in our <a
      *        href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified
+     *        using the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      *        </p>
      *        </li>
      */
@@ -587,14 +628,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name. Example:
      * <code>table/my-table</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index
+     * name. Example: <code>table/my-table/index/my-table-index</code>.
      * </p>
      * </li>
      * <li>
@@ -605,7 +646,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
@@ -615,6 +656,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
      * service provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using
+     * the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
      * </ul>
@@ -654,14 +702,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name.
      *        Example: <code>table/my-table</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     *        index name. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -672,8 +720,8 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
-     *        is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is
+     *        the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -682,6 +730,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
      *        identifier is defined by the service provider. More information is available in our <a
      *        href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified
+     *        using the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -729,14 +784,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name. Example:
      * <code>table/my-table</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index
+     * name. Example: <code>table/my-table/index/my-table-index</code>.
      * </p>
      * </li>
      * <li>
@@ -747,7 +802,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
@@ -757,6 +812,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
      * service provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using
+     * the endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
      * </ul>
@@ -791,14 +853,14 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name.
      *        Example: <code>table/my-table</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
-     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     *        index name. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -809,8 +871,8 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
-     *        is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is
+     *        the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -819,6 +881,13 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
      *        identifier is defined by the service provider. More information is available in our <a
      *        href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified
+     *        using the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -895,6 +964,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * your own application or service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend document classification endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -960,6 +1035,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided
      *        by your own application or service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend document classification endpoint.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1035,6 +1116,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * your own application or service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend document classification endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension associated with the scalable target. This string consists of the service
@@ -1099,6 +1186,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource
      *         provided by your own application or service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference
+     *         units for an Amazon Comprehend document classification endpoint.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1174,6 +1267,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * your own application or service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend document classification endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1239,6 +1338,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided
      *        by your own application or service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend document classification endpoint.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1316,6 +1421,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * your own application or service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend document classification endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1381,6 +1492,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided
      *        by your own application or service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend document classification endpoint.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1456,6 +1573,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * your own application or service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend document classification endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1521,6 +1644,12 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided
      *        by your own application or service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend document classification endpoint.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

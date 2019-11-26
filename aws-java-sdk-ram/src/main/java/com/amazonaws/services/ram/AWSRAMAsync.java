@@ -107,6 +107,41 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
+     * Associates a permission with a resource share.
+     * </p>
+     * 
+     * @param associateResourceSharePermissionRequest
+     * @return A Java Future containing the result of the AssociateResourceSharePermission operation returned by the
+     *         service.
+     * @sample AWSRAMAsync.AssociateResourceSharePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateResourceSharePermissionResult> associateResourceSharePermissionAsync(
+            AssociateResourceSharePermissionRequest associateResourceSharePermissionRequest);
+
+    /**
+     * <p>
+     * Associates a permission with a resource share.
+     * </p>
+     * 
+     * @param associateResourceSharePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateResourceSharePermission operation returned by the
+     *         service.
+     * @sample AWSRAMAsyncHandler.AssociateResourceSharePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateResourceSharePermissionResult> associateResourceSharePermissionAsync(
+            AssociateResourceSharePermissionRequest associateResourceSharePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a resource share.
      * </p>
      * 
@@ -202,6 +237,41 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
+     * Disassociates an AWS RAM permission from a resource share.
+     * </p>
+     * 
+     * @param disassociateResourceSharePermissionRequest
+     * @return A Java Future containing the result of the DisassociateResourceSharePermission operation returned by the
+     *         service.
+     * @sample AWSRAMAsync.DisassociateResourceSharePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateResourceSharePermissionResult> disassociateResourceSharePermissionAsync(
+            DisassociateResourceSharePermissionRequest disassociateResourceSharePermissionRequest);
+
+    /**
+     * <p>
+     * Disassociates an AWS RAM permission from a resource share.
+     * </p>
+     * 
+     * @param disassociateResourceSharePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateResourceSharePermission operation returned by the
+     *         service.
+     * @sample AWSRAMAsyncHandler.DisassociateResourceSharePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateResourceSharePermissionResult> disassociateResourceSharePermissionAsync(
+            DisassociateResourceSharePermissionRequest disassociateResourceSharePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables resource sharing within your AWS Organization.
      * </p>
      * <p>
@@ -240,6 +310,37 @@ public interface AWSRAMAsync extends AWSRAM {
     java.util.concurrent.Future<EnableSharingWithAwsOrganizationResult> enableSharingWithAwsOrganizationAsync(
             EnableSharingWithAwsOrganizationRequest enableSharingWithAwsOrganizationRequest,
             com.amazonaws.handlers.AsyncHandler<EnableSharingWithAwsOrganizationRequest, EnableSharingWithAwsOrganizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the contents of an AWS RAM permission in JSON format.
+     * </p>
+     * 
+     * @param getPermissionRequest
+     * @return A Java Future containing the result of the GetPermission operation returned by the service.
+     * @sample AWSRAMAsync.GetPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPermissionResult> getPermissionAsync(GetPermissionRequest getPermissionRequest);
+
+    /**
+     * <p>
+     * Gets the contents of an AWS RAM permission in JSON format.
+     * </p>
+     * 
+     * @param getPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPermission operation returned by the service.
+     * @sample AWSRAMAsyncHandler.GetPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPermissionResult> getPermissionAsync(GetPermissionRequest getPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPermissionRequest, GetPermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -408,7 +509,38 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Lists the principals that you have shared resources with or the principals that have shared resources with you.
+     * Lists the AWS RAM permissions.
+     * </p>
+     * 
+     * @param listPermissionsRequest
+     * @return A Java Future containing the result of the ListPermissions operation returned by the service.
+     * @sample AWSRAMAsync.ListPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest listPermissionsRequest);
+
+    /**
+     * <p>
+     * Lists the AWS RAM permissions.
+     * </p>
+     * 
+     * @param listPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPermissions operation returned by the service.
+     * @sample AWSRAMAsyncHandler.ListPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest listPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionsRequest, ListPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the principals that you have shared resources with or that have shared resources with you.
      * </p>
      * 
      * @param listPrincipalsRequest
@@ -421,7 +553,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Lists the principals that you have shared resources with or the principals that have shared resources with you.
+     * Lists the principals that you have shared resources with or that have shared resources with you.
      * </p>
      * 
      * @param listPrincipalsRequest
@@ -436,6 +568,41 @@ public interface AWSRAMAsync extends AWSRAM {
      */
     java.util.concurrent.Future<ListPrincipalsResult> listPrincipalsAsync(ListPrincipalsRequest listPrincipalsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPrincipalsRequest, ListPrincipalsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the AWS RAM permissions that are associated with a resource share.
+     * </p>
+     * 
+     * @param listResourceSharePermissionsRequest
+     * @return A Java Future containing the result of the ListResourceSharePermissions operation returned by the
+     *         service.
+     * @sample AWSRAMAsync.ListResourceSharePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSharePermissionsResult> listResourceSharePermissionsAsync(
+            ListResourceSharePermissionsRequest listResourceSharePermissionsRequest);
+
+    /**
+     * <p>
+     * Lists the AWS RAM permissions that are associated with a resource share.
+     * </p>
+     * 
+     * @param listResourceSharePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceSharePermissions operation returned by the
+     *         service.
+     * @sample AWSRAMAsyncHandler.ListResourceSharePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSharePermissionsResult> listResourceSharePermissionsAsync(
+            ListResourceSharePermissionsRequest listResourceSharePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResult> asyncHandler);
 
     /**
      * <p>
@@ -467,6 +634,73 @@ public interface AWSRAMAsync extends AWSRAM {
      */
     java.util.concurrent.Future<ListResourcesResult> listResourcesAsync(ListResourcesRequest listResourcesRequest,
             com.amazonaws.handlers.AsyncHandler<ListResourcesRequest, ListResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Resource shares that were created by attaching a policy to a resource are visible only to the resource share
+     * owner, and the resource share cannot be modified in AWS RAM.
+     * </p>
+     * <p>
+     * Use this API action to promote the resource share. When you promote the resource share, it becomes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Visible to all principals that it is shared with.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifiable in AWS RAM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param promoteResourceShareCreatedFromPolicyRequest
+     * @return A Java Future containing the result of the PromoteResourceShareCreatedFromPolicy operation returned by
+     *         the service.
+     * @sample AWSRAMAsync.PromoteResourceShareCreatedFromPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PromoteResourceShareCreatedFromPolicyResult> promoteResourceShareCreatedFromPolicyAsync(
+            PromoteResourceShareCreatedFromPolicyRequest promoteResourceShareCreatedFromPolicyRequest);
+
+    /**
+     * <p>
+     * Resource shares that were created by attaching a policy to a resource are visible only to the resource share
+     * owner, and the resource share cannot be modified in AWS RAM.
+     * </p>
+     * <p>
+     * Use this API action to promote the resource share. When you promote the resource share, it becomes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Visible to all principals that it is shared with.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifiable in AWS RAM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param promoteResourceShareCreatedFromPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PromoteResourceShareCreatedFromPolicy operation returned by
+     *         the service.
+     * @sample AWSRAMAsyncHandler.PromoteResourceShareCreatedFromPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PromoteResourceShareCreatedFromPolicyResult> promoteResourceShareCreatedFromPolicyAsync(
+            PromoteResourceShareCreatedFromPolicyRequest promoteResourceShareCreatedFromPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PromoteResourceShareCreatedFromPolicyRequest, PromoteResourceShareCreatedFromPolicyResult> asyncHandler);
 
     /**
      * <p>

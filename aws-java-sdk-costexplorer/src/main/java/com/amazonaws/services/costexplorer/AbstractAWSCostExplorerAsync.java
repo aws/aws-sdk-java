@@ -28,6 +28,45 @@ public class AbstractAWSCostExplorerAsync extends AbstractAWSCostExplorer implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCostCategoryDefinitionResult> createCostCategoryDefinitionAsync(CreateCostCategoryDefinitionRequest request) {
+
+        return createCostCategoryDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCostCategoryDefinitionResult> createCostCategoryDefinitionAsync(CreateCostCategoryDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCostCategoryDefinitionRequest, CreateCostCategoryDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCostCategoryDefinitionResult> deleteCostCategoryDefinitionAsync(DeleteCostCategoryDefinitionRequest request) {
+
+        return deleteCostCategoryDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCostCategoryDefinitionResult> deleteCostCategoryDefinitionAsync(DeleteCostCategoryDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCostCategoryDefinitionRequest, DeleteCostCategoryDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCostCategoryDefinitionResult> describeCostCategoryDefinitionAsync(DescribeCostCategoryDefinitionRequest request) {
+
+        return describeCostCategoryDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCostCategoryDefinitionResult> describeCostCategoryDefinitionAsync(DescribeCostCategoryDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCostCategoryDefinitionRequest, DescribeCostCategoryDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCostAndUsageResult> getCostAndUsageAsync(GetCostAndUsageRequest request) {
 
         return getCostAndUsageAsync(request, null);
@@ -211,6 +250,32 @@ public class AbstractAWSCostExplorerAsync extends AbstractAWSCostExplorer implem
     @Override
     public java.util.concurrent.Future<GetUsageForecastResult> getUsageForecastAsync(GetUsageForecastRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUsageForecastRequest, GetUsageForecastResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCostCategoryDefinitionsResult> listCostCategoryDefinitionsAsync(ListCostCategoryDefinitionsRequest request) {
+
+        return listCostCategoryDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCostCategoryDefinitionsResult> listCostCategoryDefinitionsAsync(ListCostCategoryDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCostCategoryDefinitionsRequest, ListCostCategoryDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCostCategoryDefinitionResult> updateCostCategoryDefinitionAsync(UpdateCostCategoryDefinitionRequest request) {
+
+        return updateCostCategoryDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCostCategoryDefinitionResult> updateCostCategoryDefinitionAsync(UpdateCostCategoryDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCostCategoryDefinitionRequest, UpdateCostCategoryDefinitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

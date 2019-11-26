@@ -26,9 +26,14 @@ public enum GrantOperation {
     GenerateDataKeyWithoutPlaintext("GenerateDataKeyWithoutPlaintext"),
     ReEncryptFrom("ReEncryptFrom"),
     ReEncryptTo("ReEncryptTo"),
+    Sign("Sign"),
+    Verify("Verify"),
+    GetPublicKey("GetPublicKey"),
     CreateGrant("CreateGrant"),
     RetireGrant("RetireGrant"),
-    DescribeKey("DescribeKey");
+    DescribeKey("DescribeKey"),
+    GenerateDataKeyPair("GenerateDataKeyPair"),
+    GenerateDataKeyPairWithoutPlaintext("GenerateDataKeyPairWithoutPlaintext");
 
     private String value;
 

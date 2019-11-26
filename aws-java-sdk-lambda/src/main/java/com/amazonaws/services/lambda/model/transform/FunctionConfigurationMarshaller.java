@@ -68,6 +68,18 @@ public class FunctionConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
     private static final MarshallingInfo<List> LAYERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Layers").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("State").build();
+    private static final MarshallingInfo<String> STATEREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateReason").build();
+    private static final MarshallingInfo<String> STATEREASONCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateReasonCode").build();
+    private static final MarshallingInfo<String> LASTUPDATESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateStatus").build();
+    private static final MarshallingInfo<String> LASTUPDATESTATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateStatusReason").build();
+    private static final MarshallingInfo<String> LASTUPDATESTATUSREASONCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateStatusReasonCode").build();
 
     private static final FunctionConfigurationMarshaller instance = new FunctionConfigurationMarshaller();
 
@@ -105,6 +117,12 @@ public class FunctionConfigurationMarshaller {
             protocolMarshaller.marshall(functionConfiguration.getMasterArn(), MASTERARN_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getRevisionId(), REVISIONID_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getLayers(), LAYERS_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getStateReason(), STATEREASON_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getStateReasonCode(), STATEREASONCODE_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getLastUpdateStatus(), LASTUPDATESTATUS_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getLastUpdateStatusReason(), LASTUPDATESTATUSREASON_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getLastUpdateStatusReasonCode(), LASTUPDATESTATUSREASONCODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

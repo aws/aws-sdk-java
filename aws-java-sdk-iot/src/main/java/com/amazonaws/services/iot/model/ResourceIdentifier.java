@@ -61,6 +61,18 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String account;
+    /**
+     * <p>
+     * The ARN of the IAM role that has overly permissive actions.
+     * </p>
+     */
+    private String iamRoleArn;
+    /**
+     * <p>
+     * The ARN of the role alias that has overly permissive actions.
+     * </p>
+     */
+    private String roleAliasArn;
 
     /**
      * <p>
@@ -303,6 +315,86 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The ARN of the IAM role that has overly permissive actions.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The ARN of the IAM role that has overly permissive actions.
+     */
+
+    public void setIamRoleArn(String iamRoleArn) {
+        this.iamRoleArn = iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that has overly permissive actions.
+     * </p>
+     * 
+     * @return The ARN of the IAM role that has overly permissive actions.
+     */
+
+    public String getIamRoleArn() {
+        return this.iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that has overly permissive actions.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The ARN of the IAM role that has overly permissive actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceIdentifier withIamRoleArn(String iamRoleArn) {
+        setIamRoleArn(iamRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the role alias that has overly permissive actions.
+     * </p>
+     * 
+     * @param roleAliasArn
+     *        The ARN of the role alias that has overly permissive actions.
+     */
+
+    public void setRoleAliasArn(String roleAliasArn) {
+        this.roleAliasArn = roleAliasArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the role alias that has overly permissive actions.
+     * </p>
+     * 
+     * @return The ARN of the role alias that has overly permissive actions.
+     */
+
+    public String getRoleAliasArn() {
+        return this.roleAliasArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the role alias that has overly permissive actions.
+     * </p>
+     * 
+     * @param roleAliasArn
+     *        The ARN of the role alias that has overly permissive actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceIdentifier withRoleAliasArn(String roleAliasArn) {
+        setRoleAliasArn(roleAliasArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -325,7 +417,11 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
         if (getPolicyVersionIdentifier() != null)
             sb.append("PolicyVersionIdentifier: ").append(getPolicyVersionIdentifier()).append(",");
         if (getAccount() != null)
-            sb.append("Account: ").append(getAccount());
+            sb.append("Account: ").append(getAccount()).append(",");
+        if (getIamRoleArn() != null)
+            sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
+        if (getRoleAliasArn() != null)
+            sb.append("RoleAliasArn: ").append(getRoleAliasArn());
         sb.append("}");
         return sb.toString();
     }
@@ -364,6 +460,14 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAccount() != null && other.getAccount().equals(this.getAccount()) == false)
             return false;
+        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
+            return false;
+        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+            return false;
+        if (other.getRoleAliasArn() == null ^ this.getRoleAliasArn() == null)
+            return false;
+        if (other.getRoleAliasArn() != null && other.getRoleAliasArn().equals(this.getRoleAliasArn()) == false)
+            return false;
         return true;
     }
 
@@ -378,6 +482,8 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         hashCode = prime * hashCode + ((getPolicyVersionIdentifier() == null) ? 0 : getPolicyVersionIdentifier().hashCode());
         hashCode = prime * hashCode + ((getAccount() == null) ? 0 : getAccount().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getRoleAliasArn() == null) ? 0 : getRoleAliasArn().hashCode());
         return hashCode;
     }
 

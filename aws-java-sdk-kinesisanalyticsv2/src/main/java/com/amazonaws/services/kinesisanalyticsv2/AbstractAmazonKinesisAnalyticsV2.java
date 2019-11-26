@@ -53,6 +53,11 @@ public class AbstractAmazonKinesisAnalyticsV2 implements AmazonKinesisAnalyticsV
     }
 
     @Override
+    public AddApplicationVpcConfigurationResult addApplicationVpcConfiguration(AddApplicationVpcConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,6 +95,11 @@ public class AbstractAmazonKinesisAnalyticsV2 implements AmazonKinesisAnalyticsV
 
     @Override
     public DeleteApplicationSnapshotResult deleteApplicationSnapshot(DeleteApplicationSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteApplicationVpcConfigurationResult deleteApplicationVpcConfiguration(DeleteApplicationVpcConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

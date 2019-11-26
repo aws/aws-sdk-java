@@ -29,6 +29,8 @@ public class SageMakerMachineLearningModelResourceDataMarshaller {
 
     private static final MarshallingInfo<String> DESTINATIONPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationPath").build();
+    private static final MarshallingInfo<StructuredPojo> OWNERSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerSetting").build();
     private static final MarshallingInfo<String> SAGEMAKERJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerJobArn").build();
 
@@ -49,6 +51,7 @@ public class SageMakerMachineLearningModelResourceDataMarshaller {
 
         try {
             protocolMarshaller.marshall(sageMakerMachineLearningModelResourceData.getDestinationPath(), DESTINATIONPATH_BINDING);
+            protocolMarshaller.marshall(sageMakerMachineLearningModelResourceData.getOwnerSetting(), OWNERSETTING_BINDING);
             protocolMarshaller.marshall(sageMakerMachineLearningModelResourceData.getSageMakerJobArn(), SAGEMAKERJOBARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

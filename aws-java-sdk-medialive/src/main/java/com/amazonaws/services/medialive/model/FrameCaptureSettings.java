@@ -27,18 +27,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class FrameCaptureSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The frequency, in seconds, for capturing frames for inclusion in the output. For example, "10" means capture a
-     * frame every 10 seconds.
+     * The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or
+     * milliseconds, as specified by captureIntervalUnits.
      */
     private Integer captureInterval;
 
     /**
-     * The frequency, in seconds, for capturing frames for inclusion in the output. For example, "10" means capture a
-     * frame every 10 seconds.
+     * The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or
+     * milliseconds, as specified by captureIntervalUnits.
      * 
      * @param captureInterval
-     *        The frequency, in seconds, for capturing frames for inclusion in the output. For example, "10" means
-     *        capture a frame every 10 seconds.
+     *        The frequency at which to capture frames for inclusion in the output. May be specified in either seconds
+     *        or milliseconds, as specified by captureIntervalUnits.
      */
 
     public void setCaptureInterval(Integer captureInterval) {
@@ -46,11 +46,11 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The frequency, in seconds, for capturing frames for inclusion in the output. For example, "10" means capture a
-     * frame every 10 seconds.
+     * The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or
+     * milliseconds, as specified by captureIntervalUnits.
      * 
-     * @return The frequency, in seconds, for capturing frames for inclusion in the output. For example, "10" means
-     *         capture a frame every 10 seconds.
+     * @return The frequency at which to capture frames for inclusion in the output. May be specified in either seconds
+     *         or milliseconds, as specified by captureIntervalUnits.
      */
 
     public Integer getCaptureInterval() {
@@ -58,12 +58,12 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The frequency, in seconds, for capturing frames for inclusion in the output. For example, "10" means capture a
-     * frame every 10 seconds.
+     * The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or
+     * milliseconds, as specified by captureIntervalUnits.
      * 
      * @param captureInterval
-     *        The frequency, in seconds, for capturing frames for inclusion in the output. For example, "10" means
-     *        capture a frame every 10 seconds.
+     *        The frequency at which to capture frames for inclusion in the output. May be specified in either seconds
+     *        or milliseconds, as specified by captureIntervalUnits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum KeyUsageType {
 
+    SIGN_VERIFY("SIGN_VERIFY"),
     ENCRYPT_DECRYPT("ENCRYPT_DECRYPT");
 
     private String value;

@@ -40,7 +40,8 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * The pending maintenance action to apply to this resource.
      * </p>
      * <p>
-     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>
+     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     * <code>ca-certificate-rotation</code>
      * </p>
      */
     private String applyAction;
@@ -135,13 +136,15 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * The pending maintenance action to apply to this resource.
      * </p>
      * <p>
-     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>
+     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     * <code>ca-certificate-rotation</code>
      * </p>
      * 
      * @param applyAction
      *        The pending maintenance action to apply to this resource.</p>
      *        <p>
-     *        Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>
+     *        Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     *        <code>ca-certificate-rotation</code>
      */
 
     public void setApplyAction(String applyAction) {
@@ -153,12 +156,14 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * The pending maintenance action to apply to this resource.
      * </p>
      * <p>
-     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>
+     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     * <code>ca-certificate-rotation</code>
      * </p>
      * 
      * @return The pending maintenance action to apply to this resource.</p>
      *         <p>
-     *         Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>
+     *         Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     *         <code>ca-certificate-rotation</code>
      */
 
     public String getApplyAction() {
@@ -170,13 +175,15 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * The pending maintenance action to apply to this resource.
      * </p>
      * <p>
-     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>
+     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     * <code>ca-certificate-rotation</code>
      * </p>
      * 
      * @param applyAction
      *        The pending maintenance action to apply to this resource.</p>
      *        <p>
-     *        Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>
+     *        Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     *        <code>ca-certificate-rotation</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

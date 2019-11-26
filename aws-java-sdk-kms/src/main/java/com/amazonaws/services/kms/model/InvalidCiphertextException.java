@@ -16,8 +16,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because the specified ciphertext, or additional authenticated data incorporated into the
- * ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.
+ * From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request was rejected because the specified ciphertext, or
+ * additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted,
+ * missing, or otherwise invalid.
+ * </p>
+ * <p>
+ * From the <a>ImportKeyMaterial</a> operation, the request was rejected because AWS KMS could not decrypt the encrypted
+ * (wrapped) key material.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

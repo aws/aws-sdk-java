@@ -62,7 +62,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private CreateRule createRule;
     /**
      * <p>
-     * The retain rule.
+     * The retention rule.
      * </p>
      */
     private RetainRule retainRule;
@@ -375,11 +375,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retain rule.
+     * The retention rule.
      * </p>
      * 
      * @param retainRule
-     *        The retain rule.
+     *        The retention rule.
      */
 
     public void setRetainRule(RetainRule retainRule) {
@@ -388,10 +388,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retain rule.
+     * The retention rule.
      * </p>
      * 
-     * @return The retain rule.
+     * @return The retention rule.
      */
 
     public RetainRule getRetainRule() {
@@ -400,11 +400,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The retain rule.
+     * The retention rule.
      * </p>
      * 
      * @param retainRule
-     *        The retain rule.
+     *        The retention rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

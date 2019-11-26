@@ -333,6 +333,26 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Used to delete a suppressed email destination from your suppression list.
+     * </p>
+     * 
+     * @param deleteSuppressedDestinationRequest
+     *        A request to delete a suppressed email destination.
+     * @return Result of the DeleteSuppressedDestination operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.DeleteSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteSuppressedDestinationResult deleteSuppressedDestination(DeleteSuppressedDestinationRequest deleteSuppressedDestinationRequest);
+
+    /**
+     * <p>
      * Obtain information about the email-sending status and capabilities of your Amazon SES account in the current AWS
      * Region.
      * </p>
@@ -585,6 +605,26 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Used to fetch a single suppressed email destination from your suppression list.
+     * </p>
+     * 
+     * @param getSuppressedDestinationRequest
+     *        A request to get a suppressed email destination.
+     * @return Result of the GetSuppressedDestination operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @sample AmazonSimpleEmailServiceV2.GetSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetSuppressedDestinationResult getSuppressedDestination(GetSuppressedDestinationRequest getSuppressedDestinationRequest);
+
+    /**
+     * <p>
      * List all of the configuration sets associated with your account in the current region.
      * </p>
      * <p>
@@ -693,6 +733,26 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Used to fetch a list suppressed email destinations from your suppression list.
+     * </p>
+     * 
+     * @param listSuppressedDestinationsRequest
+     *        A request to obtain a list of suppressed email destinations.
+     * @return Result of the ListSuppressedDestinations operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws InvalidNextTokenException
+     *         The specified request includes an invalid or expired token. Please attempt to get a new token.
+     * @sample AmazonSimpleEmailServiceV2.ListSuppressedDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSuppressedDestinationsResult listSuppressedDestinations(ListSuppressedDestinationsRequest listSuppressedDestinationsRequest);
+
+    /**
+     * <p>
      * Retrieve a list of the tags (keys and values) that are associated with a specified resource. A <i>tag</i> is a
      * label that you optionally define and associate with a resource. Each tag consists of a required <i>tag
      * key</i> and an optional associated <i>tag value</i>. A tag key is a general label that acts as a category for
@@ -749,6 +809,24 @@ public interface AmazonSimpleEmailServiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     PutAccountSendingAttributesResult putAccountSendingAttributes(PutAccountSendingAttributesRequest putAccountSendingAttributesRequest);
+
+    /**
+     * <p>
+     * Change your account's suppression preferences for your account.
+     * </p>
+     * 
+     * @param putAccountSuppressionAttributesRequest
+     *        A request to change your account's suppression preferences.
+     * @return Result of the PutAccountSuppressionAttributes operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.PutAccountSuppressionAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutAccountSuppressionAttributesResult putAccountSuppressionAttributes(PutAccountSuppressionAttributesRequest putAccountSuppressionAttributesRequest);
 
     /**
      * <p>
@@ -814,6 +892,27 @@ public interface AmazonSimpleEmailServiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     PutConfigurationSetSendingOptionsResult putConfigurationSetSendingOptions(PutConfigurationSetSendingOptionsRequest putConfigurationSetSendingOptionsRequest);
+
+    /**
+     * <p>
+     * Specify your account's suppression preferences for a configuration set.
+     * </p>
+     * 
+     * @param putConfigurationSetSuppressionOptionsRequest
+     *        A request to change your account's suppression preferences for an specific configuration set.
+     * @return Result of the PutConfigurationSetSuppressionOptions operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.PutConfigurationSetSuppressionOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutConfigurationSetSuppressionOptionsResult putConfigurationSetSuppressionOptions(
+            PutConfigurationSetSuppressionOptionsRequest putConfigurationSetSuppressionOptionsRequest);
 
     /**
      * <p>
@@ -995,6 +1094,24 @@ public interface AmazonSimpleEmailServiceV2 {
      */
     PutEmailIdentityMailFromAttributesResult putEmailIdentityMailFromAttributes(
             PutEmailIdentityMailFromAttributesRequest putEmailIdentityMailFromAttributesRequest);
+
+    /**
+     * <p>
+     * Puts (overwrites) an email destination in your suppression list.
+     * </p>
+     * 
+     * @param putSuppressedDestinationRequest
+     *        A request to suppress an email destination.
+     * @return Result of the PutSuppressedDestination operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.PutSuppressedDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutSuppressedDestinationResult putSuppressedDestination(PutSuppressedDestinationRequest putSuppressedDestinationRequest);
 
     /**
      * <p>

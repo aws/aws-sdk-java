@@ -105,11 +105,17 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("DataUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costexplorer.model.transform.DataUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costexplorer.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costexplorer.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BillExpirationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costexplorer.model.transform.BillExpirationExceptionUnmarshaller.getInstance()))
@@ -159,6 +165,211 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/costexplorer/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/costexplorer/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Creates a new Cost Category with the requested name and rules.
+     * </p>
+     * 
+     * @param createCostCategoryDefinitionRequest
+     * @return Result of the CreateCostCategoryDefinition operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
+     *         resources.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.CreateCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCostCategoryDefinitionResult createCostCategoryDefinition(CreateCostCategoryDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCostCategoryDefinition(request);
+    }
+
+    @SdkInternalApi
+    final CreateCostCategoryDefinitionResult executeCreateCostCategoryDefinition(CreateCostCategoryDefinitionRequest createCostCategoryDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCostCategoryDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCostCategoryDefinitionRequest> request = null;
+        Response<CreateCostCategoryDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCostCategoryDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCostCategoryDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCostCategoryDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCostCategoryDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCostCategoryDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost
+     * Category.
+     * </p>
+     * 
+     * @param deleteCostCategoryDefinitionRequest
+     * @return Result of the DeleteCostCategoryDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified ARN in the request doesn't exist.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.DeleteCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCostCategoryDefinitionResult deleteCostCategoryDefinition(DeleteCostCategoryDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCostCategoryDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCostCategoryDefinitionResult executeDeleteCostCategoryDefinition(DeleteCostCategoryDefinitionRequest deleteCostCategoryDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCostCategoryDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCostCategoryDefinitionRequest> request = null;
+        Response<DeleteCostCategoryDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCostCategoryDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCostCategoryDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCostCategoryDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCostCategoryDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCostCategoryDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's defined in the account.
+     * </p>
+     * <p>
+     * You have the option to use <code>EffectiveOn</code> to return a Cost Category that is active on a specific date.
+     * If there is no <code>EffectiveOn</code> specified, you’ll see a Cost Category that is effective on the current
+     * date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * </p>
+     * 
+     * @param describeCostCategoryDefinitionRequest
+     * @return Result of the DescribeCostCategoryDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified ARN in the request doesn't exist.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.DescribeCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeCostCategoryDefinitionResult describeCostCategoryDefinition(DescribeCostCategoryDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCostCategoryDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCostCategoryDefinitionResult executeDescribeCostCategoryDefinition(DescribeCostCategoryDefinitionRequest describeCostCategoryDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCostCategoryDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCostCategoryDefinitionRequest> request = null;
+        Response<DescribeCostCategoryDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCostCategoryDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeCostCategoryDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCostCategoryDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCostCategoryDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeCostCategoryDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1170,6 +1381,143 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<GetUsageForecastResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUsageForecastResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Returns the name, ARN and effective dates of all Cost Categories defined in the account. You have the option to
+     * use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is
+     * no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost
+     * Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * </p>
+     * 
+     * @param listCostCategoryDefinitionsRequest
+     * @return Result of the ListCostCategoryDefinitions operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.ListCostCategoryDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListCostCategoryDefinitionsResult listCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCostCategoryDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListCostCategoryDefinitionsResult executeListCostCategoryDefinitions(ListCostCategoryDefinitionsRequest listCostCategoryDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCostCategoryDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCostCategoryDefinitionsRequest> request = null;
+        Response<ListCostCategoryDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCostCategoryDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCostCategoryDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCostCategoryDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCostCategoryDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCostCategoryDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <important>
+     * <p>
+     * <i> <b>Cost Category is in preview release for AWS Billing and Cost Management and is subject to change. Your use
+     * of Cost Categories is subject to the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * </p>
+     * </important>
+     * <p>
+     * Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current
+     * month’s expenses and future expenses. This won’t change categorization for the previous months.
+     * </p>
+     * 
+     * @param updateCostCategoryDefinitionRequest
+     * @return Result of the UpdateCostCategoryDefinition operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified ARN in the request doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
+     *         resources.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.UpdateCostCategoryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCostCategoryDefinitionResult updateCostCategoryDefinition(UpdateCostCategoryDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCostCategoryDefinition(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCostCategoryDefinitionResult executeUpdateCostCategoryDefinition(UpdateCostCategoryDefinitionRequest updateCostCategoryDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCostCategoryDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCostCategoryDefinitionRequest> request = null;
+        Response<UpdateCostCategoryDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCostCategoryDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCostCategoryDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCostCategoryDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCostCategoryDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCostCategoryDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

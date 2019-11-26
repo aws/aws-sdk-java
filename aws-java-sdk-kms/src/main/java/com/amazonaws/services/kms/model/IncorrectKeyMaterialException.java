@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because the provided key material is invalid or is not the same key material that was
- * previously imported into this customer master key (CMK).
+ * The request was rejected because the key material in the request is, expired, invalid, or is not the same key
+ * material that was previously imported into this customer master key (CMK).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

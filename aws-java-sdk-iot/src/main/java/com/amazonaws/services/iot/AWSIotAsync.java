@@ -730,6 +730,45 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Creates a domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param createDomainConfigurationRequest
+     * @return A Java Future containing the result of the CreateDomainConfiguration operation returned by the service.
+     * @sample AWSIotAsync.CreateDomainConfiguration
+     */
+    java.util.concurrent.Future<CreateDomainConfigurationResult> createDomainConfigurationAsync(
+            CreateDomainConfigurationRequest createDomainConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param createDomainConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDomainConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateDomainConfiguration
+     */
+    java.util.concurrent.Future<CreateDomainConfigurationResult> createDomainConfigurationAsync(
+            CreateDomainConfigurationRequest createDomainConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDomainConfigurationRequest, CreateDomainConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a dynamic thing group.
      * </p>
      * 
@@ -784,7 +823,10 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.
+     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key. You can also call
+     * <code>CreateKeysAndCertificate</code> over MQTT from a device, for more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api"
+     * >Provisioning MQTT API</a>.
      * </p>
      * <p>
      * <b>Note</b> This is the only time AWS IoT issues the private key for this certificate, so it is important to keep
@@ -800,7 +842,10 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.
+     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key. You can also call
+     * <code>CreateKeysAndCertificate</code> over MQTT from a device, for more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api"
+     * >Provisioning MQTT API</a>.
      * </p>
      * <p>
      * <b>Note</b> This is the only time AWS IoT issues the private key for this certificate, so it is important to keep
@@ -952,6 +997,93 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreatePolicyVersionResult> createPolicyVersionAsync(CreatePolicyVersionRequest createPolicyVersionRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePolicyVersionRequest, CreatePolicyVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a provisioning claim.
+     * </p>
+     * 
+     * @param createProvisioningClaimRequest
+     * @return A Java Future containing the result of the CreateProvisioningClaim operation returned by the service.
+     * @sample AWSIotAsync.CreateProvisioningClaim
+     */
+    java.util.concurrent.Future<CreateProvisioningClaimResult> createProvisioningClaimAsync(CreateProvisioningClaimRequest createProvisioningClaimRequest);
+
+    /**
+     * <p>
+     * Creates a provisioning claim.
+     * </p>
+     * 
+     * @param createProvisioningClaimRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProvisioningClaim operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateProvisioningClaim
+     */
+    java.util.concurrent.Future<CreateProvisioningClaimResult> createProvisioningClaimAsync(CreateProvisioningClaimRequest createProvisioningClaimRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProvisioningClaimRequest, CreateProvisioningClaimResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a fleet provisioning template.
+     * </p>
+     * 
+     * @param createProvisioningTemplateRequest
+     * @return A Java Future containing the result of the CreateProvisioningTemplate operation returned by the service.
+     * @sample AWSIotAsync.CreateProvisioningTemplate
+     */
+    java.util.concurrent.Future<CreateProvisioningTemplateResult> createProvisioningTemplateAsync(
+            CreateProvisioningTemplateRequest createProvisioningTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a fleet provisioning template.
+     * </p>
+     * 
+     * @param createProvisioningTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProvisioningTemplate operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateProvisioningTemplate
+     */
+    java.util.concurrent.Future<CreateProvisioningTemplateResult> createProvisioningTemplateAsync(
+            CreateProvisioningTemplateRequest createProvisioningTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProvisioningTemplateRequest, CreateProvisioningTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new version of a fleet provisioning template.
+     * </p>
+     * 
+     * @param createProvisioningTemplateVersionRequest
+     * @return A Java Future containing the result of the CreateProvisioningTemplateVersion operation returned by the
+     *         service.
+     * @sample AWSIotAsync.CreateProvisioningTemplateVersion
+     */
+    java.util.concurrent.Future<CreateProvisioningTemplateVersionResult> createProvisioningTemplateVersionAsync(
+            CreateProvisioningTemplateVersionRequest createProvisioningTemplateVersionRequest);
+
+    /**
+     * <p>
+     * Creates a new version of a fleet provisioning template.
+     * </p>
+     * 
+     * @param createProvisioningTemplateVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProvisioningTemplateVersion operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.CreateProvisioningTemplateVersion
+     */
+    java.util.concurrent.Future<CreateProvisioningTemplateVersionResult> createProvisioningTemplateVersionAsync(
+            CreateProvisioningTemplateVersionRequest createProvisioningTemplateVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProvisioningTemplateVersionRequest, CreateProvisioningTemplateVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1399,6 +1531,45 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Deletes the specified domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param deleteDomainConfigurationRequest
+     * @return A Java Future containing the result of the DeleteDomainConfiguration operation returned by the service.
+     * @sample AWSIotAsync.DeleteDomainConfiguration
+     */
+    java.util.concurrent.Future<DeleteDomainConfigurationResult> deleteDomainConfigurationAsync(
+            DeleteDomainConfigurationRequest deleteDomainConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param deleteDomainConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDomainConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteDomainConfiguration
+     */
+    java.util.concurrent.Future<DeleteDomainConfigurationResult> deleteDomainConfigurationAsync(
+            DeleteDomainConfigurationRequest deleteDomainConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDomainConfigurationRequest, DeleteDomainConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a dynamic thing group.
      * </p>
      * 
@@ -1631,6 +1802,66 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(DeletePolicyVersionRequest deletePolicyVersionRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a fleet provisioning template.
+     * </p>
+     * 
+     * @param deleteProvisioningTemplateRequest
+     * @return A Java Future containing the result of the DeleteProvisioningTemplate operation returned by the service.
+     * @sample AWSIotAsync.DeleteProvisioningTemplate
+     */
+    java.util.concurrent.Future<DeleteProvisioningTemplateResult> deleteProvisioningTemplateAsync(
+            DeleteProvisioningTemplateRequest deleteProvisioningTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a fleet provisioning template.
+     * </p>
+     * 
+     * @param deleteProvisioningTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProvisioningTemplate operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteProvisioningTemplate
+     */
+    java.util.concurrent.Future<DeleteProvisioningTemplateResult> deleteProvisioningTemplateAsync(
+            DeleteProvisioningTemplateRequest deleteProvisioningTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProvisioningTemplateRequest, DeleteProvisioningTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a fleet provisioning template version.
+     * </p>
+     * 
+     * @param deleteProvisioningTemplateVersionRequest
+     * @return A Java Future containing the result of the DeleteProvisioningTemplateVersion operation returned by the
+     *         service.
+     * @sample AWSIotAsync.DeleteProvisioningTemplateVersion
+     */
+    java.util.concurrent.Future<DeleteProvisioningTemplateVersionResult> deleteProvisioningTemplateVersionAsync(
+            DeleteProvisioningTemplateVersionRequest deleteProvisioningTemplateVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a fleet provisioning template version.
+     * </p>
+     * 
+     * @param deleteProvisioningTemplateVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProvisioningTemplateVersion operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.DeleteProvisioningTemplateVersion
+     */
+    java.util.concurrent.Future<DeleteProvisioningTemplateVersionResult> deleteProvisioningTemplateVersionAsync(
+            DeleteProvisioningTemplateVersionRequest deleteProvisioningTemplateVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProvisioningTemplateVersionRequest, DeleteProvisioningTemplateVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -2243,6 +2474,45 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Gets summary information about a domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param describeDomainConfigurationRequest
+     * @return A Java Future containing the result of the DescribeDomainConfiguration operation returned by the service.
+     * @sample AWSIotAsync.DescribeDomainConfiguration
+     */
+    java.util.concurrent.Future<DescribeDomainConfigurationResult> describeDomainConfigurationAsync(
+            DescribeDomainConfigurationRequest describeDomainConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets summary information about a domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param describeDomainConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDomainConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeDomainConfiguration
+     */
+    java.util.concurrent.Future<DescribeDomainConfigurationResult> describeDomainConfigurationAsync(
+            DescribeDomainConfigurationRequest describeDomainConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainConfigurationRequest, DescribeDomainConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a unique endpoint specific to the AWS account making the call.
      * </p>
      * 
@@ -2406,6 +2676,68 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DescribeMitigationActionResult> describeMitigationActionAsync(DescribeMitigationActionRequest describeMitigationActionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeMitigationActionRequest, DescribeMitigationActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a fleet provisioning template.
+     * </p>
+     * 
+     * @param describeProvisioningTemplateRequest
+     * @return A Java Future containing the result of the DescribeProvisioningTemplate operation returned by the
+     *         service.
+     * @sample AWSIotAsync.DescribeProvisioningTemplate
+     */
+    java.util.concurrent.Future<DescribeProvisioningTemplateResult> describeProvisioningTemplateAsync(
+            DescribeProvisioningTemplateRequest describeProvisioningTemplateRequest);
+
+    /**
+     * <p>
+     * Returns information about a fleet provisioning template.
+     * </p>
+     * 
+     * @param describeProvisioningTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProvisioningTemplate operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.DescribeProvisioningTemplate
+     */
+    java.util.concurrent.Future<DescribeProvisioningTemplateResult> describeProvisioningTemplateAsync(
+            DescribeProvisioningTemplateRequest describeProvisioningTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProvisioningTemplateRequest, DescribeProvisioningTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a fleet provisioning template version.
+     * </p>
+     * 
+     * @param describeProvisioningTemplateVersionRequest
+     * @return A Java Future containing the result of the DescribeProvisioningTemplateVersion operation returned by the
+     *         service.
+     * @sample AWSIotAsync.DescribeProvisioningTemplateVersion
+     */
+    java.util.concurrent.Future<DescribeProvisioningTemplateVersionResult> describeProvisioningTemplateVersionAsync(
+            DescribeProvisioningTemplateVersionRequest describeProvisioningTemplateVersionRequest);
+
+    /**
+     * <p>
+     * Returns information about a fleet provisioning template version.
+     * </p>
+     * 
+     * @param describeProvisioningTemplateVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProvisioningTemplateVersion operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.DescribeProvisioningTemplateVersion
+     */
+    java.util.concurrent.Future<DescribeProvisioningTemplateVersionResult> describeProvisioningTemplateVersionAsync(
+            DescribeProvisioningTemplateVersionRequest describeProvisioningTemplateVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProvisioningTemplateVersionRequest, DescribeProvisioningTemplateVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -2879,7 +3211,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets the search configuration.
+     * Gets the indexing configuration.
      * </p>
      * 
      * @param getIndexingConfigurationRequest
@@ -2890,7 +3222,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets the search configuration.
+     * Gets the indexing configuration.
      * </p>
      * 
      * @param getIndexingConfigurationRequest
@@ -3121,7 +3453,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets statistics about things that match the specified query.
+     * Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard deviation for the
+     * specified aggregated field. If the aggregation field is of type <code>String</code>, only the count statistic is
+     * returned.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -3132,7 +3466,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets statistics about things that match the specified query.
+     * Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard deviation for the
+     * specified aggregated field. If the aggregation field is of type <code>String</code>, only the count statistic is
+     * returned.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -3560,6 +3896,45 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
+     * name.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param listDomainConfigurationsRequest
+     * @return A Java Future containing the result of the ListDomainConfigurations operation returned by the service.
+     * @sample AWSIotAsync.ListDomainConfigurations
+     */
+    java.util.concurrent.Future<ListDomainConfigurationsResult> listDomainConfigurationsAsync(ListDomainConfigurationsRequest listDomainConfigurationsRequest);
+
+    /**
+     * <p>
+     * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
+     * name.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param listDomainConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDomainConfigurations operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListDomainConfigurations
+     */
+    java.util.concurrent.Future<ListDomainConfigurationsResult> listDomainConfigurationsAsync(ListDomainConfigurationsRequest listDomainConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDomainConfigurationsRequest, ListDomainConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the search indices.
      * </p>
      * 
@@ -3919,6 +4294,66 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ListPrincipalThingsResult> listPrincipalThingsAsync(ListPrincipalThingsRequest listPrincipalThingsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPrincipalThingsRequest, ListPrincipalThingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of fleet provisioning template versions.
+     * </p>
+     * 
+     * @param listProvisioningTemplateVersionsRequest
+     * @return A Java Future containing the result of the ListProvisioningTemplateVersions operation returned by the
+     *         service.
+     * @sample AWSIotAsync.ListProvisioningTemplateVersions
+     */
+    java.util.concurrent.Future<ListProvisioningTemplateVersionsResult> listProvisioningTemplateVersionsAsync(
+            ListProvisioningTemplateVersionsRequest listProvisioningTemplateVersionsRequest);
+
+    /**
+     * <p>
+     * A list of fleet provisioning template versions.
+     * </p>
+     * 
+     * @param listProvisioningTemplateVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProvisioningTemplateVersions operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.ListProvisioningTemplateVersions
+     */
+    java.util.concurrent.Future<ListProvisioningTemplateVersionsResult> listProvisioningTemplateVersionsAsync(
+            ListProvisioningTemplateVersionsRequest listProvisioningTemplateVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProvisioningTemplateVersionsRequest, ListProvisioningTemplateVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the fleet provisioning templates in your AWS account.
+     * </p>
+     * 
+     * @param listProvisioningTemplatesRequest
+     * @return A Java Future containing the result of the ListProvisioningTemplates operation returned by the service.
+     * @sample AWSIotAsync.ListProvisioningTemplates
+     */
+    java.util.concurrent.Future<ListProvisioningTemplatesResult> listProvisioningTemplatesAsync(
+            ListProvisioningTemplatesRequest listProvisioningTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists the fleet provisioning templates in your AWS account.
+     * </p>
+     * 
+     * @param listProvisioningTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProvisioningTemplates operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListProvisioningTemplates
+     */
+    java.util.concurrent.Future<ListProvisioningTemplatesResult> listProvisioningTemplatesAsync(
+            ListProvisioningTemplatesRequest listProvisioningTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResult> asyncHandler);
 
     /**
      * <p>
@@ -4593,7 +5028,11 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Provisions a thing.
+     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
+     * might exceed your account level <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
+     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
+     * Customer Support</a> to raise your throttling limits if necessary.
      * </p>
      * 
      * @param registerThingRequest
@@ -4604,7 +5043,11 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Provisions a thing.
+     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
+     * might exceed your account level <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
+     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
+     * Customer Support</a> to raise your throttling limits if necessary.
      * </p>
      * 
      * @param registerThingRequest
@@ -5380,6 +5823,45 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param updateDomainConfigurationRequest
+     * @return A Java Future containing the result of the UpdateDomainConfiguration operation returned by the service.
+     * @sample AWSIotAsync.UpdateDomainConfiguration
+     */
+    java.util.concurrent.Future<UpdateDomainConfigurationResult> updateDomainConfigurationAsync(
+            UpdateDomainConfigurationRequest updateDomainConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param updateDomainConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDomainConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateDomainConfiguration
+     */
+    java.util.concurrent.Future<UpdateDomainConfigurationResult> updateDomainConfigurationAsync(
+            UpdateDomainConfigurationRequest updateDomainConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDomainConfigurationRequest, UpdateDomainConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a dynamic thing group.
      * </p>
      * 
@@ -5516,6 +5998,35 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<UpdateMitigationActionResult> updateMitigationActionAsync(UpdateMitigationActionRequest updateMitigationActionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMitigationActionRequest, UpdateMitigationActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a fleet provisioning template.
+     * </p>
+     * 
+     * @param updateProvisioningTemplateRequest
+     * @return A Java Future containing the result of the UpdateProvisioningTemplate operation returned by the service.
+     * @sample AWSIotAsync.UpdateProvisioningTemplate
+     */
+    java.util.concurrent.Future<UpdateProvisioningTemplateResult> updateProvisioningTemplateAsync(
+            UpdateProvisioningTemplateRequest updateProvisioningTemplateRequest);
+
+    /**
+     * <p>
+     * Updates a fleet provisioning template.
+     * </p>
+     * 
+     * @param updateProvisioningTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProvisioningTemplate operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateProvisioningTemplate
+     */
+    java.util.concurrent.Future<UpdateProvisioningTemplateResult> updateProvisioningTemplateAsync(
+            UpdateProvisioningTemplateRequest updateProvisioningTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProvisioningTemplateRequest, UpdateProvisioningTemplateResult> asyncHandler);
 
     /**
      * <p>

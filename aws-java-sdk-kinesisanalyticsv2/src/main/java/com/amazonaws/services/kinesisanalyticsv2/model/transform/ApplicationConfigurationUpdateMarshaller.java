@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kinesisanalyticsv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class ApplicationConfigurationUpdateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnvironmentPropertyUpdates").build();
     private static final MarshallingInfo<StructuredPojo> APPLICATIONSNAPSHOTCONFIGURATIONUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationSnapshotConfigurationUpdate").build();
+    private static final MarshallingInfo<List> VPCCONFIGURATIONUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfigurationUpdates").build();
 
     private static final ApplicationConfigurationUpdateMarshaller instance = new ApplicationConfigurationUpdateMarshaller();
 
@@ -60,6 +63,7 @@ public class ApplicationConfigurationUpdateMarshaller {
             protocolMarshaller.marshall(applicationConfigurationUpdate.getEnvironmentPropertyUpdates(), ENVIRONMENTPROPERTYUPDATES_BINDING);
             protocolMarshaller.marshall(applicationConfigurationUpdate.getApplicationSnapshotConfigurationUpdate(),
                     APPLICATIONSNAPSHOTCONFIGURATIONUPDATE_BINDING);
+            protocolMarshaller.marshall(applicationConfigurationUpdate.getVpcConfigurationUpdates(), VPCCONFIGURATIONUPDATES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

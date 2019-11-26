@@ -48,6 +48,10 @@ public class VideoSelectorJsonUnmarshaller implements Unmarshaller<VideoSelector
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("alphaBehavior", targetDepth)) {
+                    context.nextToken();
+                    videoSelector.setAlphaBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("colorSpace", targetDepth)) {
                     context.nextToken();
                     videoSelector.setColorSpace(context.getUnmarshaller(String.class).unmarshall(context));

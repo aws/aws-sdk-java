@@ -514,6 +514,69 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a new document classification request to analyze a single document in real-time, using a previously
+     * created and trained custom model and an endpoint.
+     * </p>
+     * 
+     * @param classifyDocumentRequest
+     * @return Result of the ClassifyDocument operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws TextSizeLimitExceededException
+     *         The size of the input text exceeds the limit. Use a smaller document.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ClassifyDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ClassifyDocumentResult classifyDocument(ClassifyDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeClassifyDocument(request);
+    }
+
+    @SdkInternalApi
+    final ClassifyDocumentResult executeClassifyDocument(ClassifyDocumentRequest classifyDocumentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(classifyDocumentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ClassifyDocumentRequest> request = null;
+        Response<ClassifyDocumentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ClassifyDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(classifyDocumentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ClassifyDocument");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ClassifyDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ClassifyDocumentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
      * you can use it to categorize a set of labeled documents into the categories. For more information, see
@@ -581,6 +644,78 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<CreateDocumentClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateDocumentClassifierResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a model-specific endpoint for synchronous inference for a previously trained custom model
+     * </p>
+     * 
+     * @param createEndpointRequest
+     * @return Result of the CreateEndpoint operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
+     *         and then try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateEndpointResult createEndpoint(CreateEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateEndpointResult executeCreateEndpoint(CreateEndpointRequest createEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEndpointRequest> request = null;
+        Response<CreateEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -733,6 +868,70 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentClassifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteDocumentClassifierResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a model-specific endpoint for a previously-trained custom model. All endpoints must be deleted in order
+     * for the model to be deleted.
+     * </p>
+     * 
+     * @param deleteEndpointRequest
+     * @return Result of the DeleteEndpoint operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DeleteEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEndpointResult executeDeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEndpointRequest> request = null;
+        Response<DeleteEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1001,6 +1200,67 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDominantLanguageDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeDominantLanguageDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the properties associated with a specific endpoint. Use this operation to get the status of an endpoint.
+     * </p>
+     * 
+     * @param describeEndpointRequest
+     * @return Result of the DescribeEndpoint operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeEndpointResult describeEndpoint(DescribeEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEndpointResult executeDescribeEndpoint(DescribeEndpointRequest describeEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEndpointRequest> request = null;
+        Response<DescribeEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1832,6 +2092,65 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<ListDominantLanguageDetectionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListDominantLanguageDetectionJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of all existing endpoints that you've created.
+     * </p>
+     * 
+     * @param listEndpointsRequest
+     * @return Result of the ListEndpoints operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListEndpointsResult listEndpoints(ListEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final ListEndpointsResult executeListEndpoints(ListEndpointsRequest listEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEndpointsRequest> request = null;
+        Response<ListEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEndpointsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3169,6 +3488,75 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates information about the specified endpoint.
+     * </p>
+     * 
+     * @param updateEndpointRequest
+     * @return Result of the UpdateEndpoint operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
+     *         and then try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.UpdateEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateEndpointResult updateEndpoint(UpdateEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEndpointResult executeUpdateEndpoint(UpdateEndpointRequest updateEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEndpointRequest> request = null;
+        Response<UpdateEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

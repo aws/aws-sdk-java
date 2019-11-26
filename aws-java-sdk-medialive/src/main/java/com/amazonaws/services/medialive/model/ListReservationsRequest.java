@@ -42,9 +42,9 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     private String maximumFramerate;
 
     private String nextToken;
-    /** Filter by resolution, 'SD', 'HD', or 'UHD' */
+    /** Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD' */
     private String resolution;
-    /** Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL' */
+    /** Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL' */
     private String resourceType;
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
@@ -244,10 +244,10 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      * 
      * @param resolution
-     *        Filter by resolution, 'SD', 'HD', or 'UHD'
+     *        Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
 
     public void setResolution(String resolution) {
@@ -255,9 +255,9 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      * 
-     * @return Filter by resolution, 'SD', 'HD', or 'UHD'
+     * @return Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
 
     public String getResolution() {
@@ -265,10 +265,10 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      * 
      * @param resolution
-     *        Filter by resolution, 'SD', 'HD', or 'UHD'
+     *        Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,10 +278,10 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
      * @param resourceType
-     *        Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     *        Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
 
     public void setResourceType(String resourceType) {
@@ -289,9 +289,9 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
-     * @return Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * @return Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
 
     public String getResourceType() {
@@ -299,10 +299,10 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
      * @param resourceType
-     *        Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     *        Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -230,6 +230,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ClassifyDocumentResult> classifyDocumentAsync(ClassifyDocumentRequest request) {
+
+        return classifyDocumentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ClassifyDocumentResult> classifyDocumentAsync(final ClassifyDocumentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ClassifyDocumentRequest, ClassifyDocumentResult> asyncHandler) {
+        final ClassifyDocumentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ClassifyDocumentResult>() {
+            @Override
+            public ClassifyDocumentResult call() throws Exception {
+                ClassifyDocumentResult result = null;
+
+                try {
+                    result = executeClassifyDocument(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDocumentClassifierResult> createDocumentClassifierAsync(CreateDocumentClassifierRequest request) {
 
         return createDocumentClassifierAsync(request, null);
@@ -247,6 +280,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeCreateDocumentClassifier(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointResult> createEndpointAsync(CreateEndpointRequest request) {
+
+        return createEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointResult> createEndpointAsync(final CreateEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEndpointRequest, CreateEndpointResult> asyncHandler) {
+        final CreateEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEndpointResult>() {
+            @Override
+            public CreateEndpointResult call() throws Exception {
+                CreateEndpointResult result = null;
+
+                try {
+                    result = executeCreateEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -313,6 +379,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeDeleteDocumentClassifier(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest request) {
+
+        return deleteEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(final DeleteEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler) {
+        final DeleteEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEndpointResult>() {
+            @Override
+            public DeleteEndpointResult call() throws Exception {
+                DeleteEndpointResult result = null;
+
+                try {
+                    result = executeDeleteEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -449,6 +548,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeDescribeDominantLanguageDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointResult> describeEndpointAsync(DescribeEndpointRequest request) {
+
+        return describeEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointResult> describeEndpointAsync(final DescribeEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEndpointRequest, DescribeEndpointResult> asyncHandler) {
+        final DescribeEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEndpointResult>() {
+            @Override
+            public DescribeEndpointResult call() throws Exception {
+                DescribeEndpointResult result = null;
+
+                try {
+                    result = executeDescribeEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -883,6 +1015,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeListDominantLanguageDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEndpointsResult> listEndpointsAsync(ListEndpointsRequest request) {
+
+        return listEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEndpointsResult> listEndpointsAsync(final ListEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEndpointsRequest, ListEndpointsResult> asyncHandler) {
+        final ListEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEndpointsResult>() {
+            @Override
+            public ListEndpointsResult call() throws Exception {
+                ListEndpointsResult result = null;
+
+                try {
+                    result = executeListEndpoints(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1549,6 +1714,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(UpdateEndpointRequest request) {
+
+        return updateEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(final UpdateEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResult> asyncHandler) {
+        final UpdateEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEndpointResult>() {
+            @Override
+            public UpdateEndpointResult call() throws Exception {
+                UpdateEndpointResult result = null;
+
+                try {
+                    result = executeUpdateEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

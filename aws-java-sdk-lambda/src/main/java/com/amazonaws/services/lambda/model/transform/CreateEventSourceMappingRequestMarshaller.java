@@ -37,10 +37,20 @@ public class CreateEventSourceMappingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
     private static final MarshallingInfo<Integer> MAXIMUMBATCHINGWINDOWINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumBatchingWindowInSeconds").build();
+    private static final MarshallingInfo<Integer> PARALLELIZATIONFACTOR_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParallelizationFactor").build();
     private static final MarshallingInfo<String> STARTINGPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPosition").build();
     private static final MarshallingInfo<java.util.Date> STARTINGPOSITIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPositionTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> DESTINATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationConfig").build();
+    private static final MarshallingInfo<Integer> MAXIMUMRECORDAGEINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumRecordAgeInSeconds").build();
+    private static final MarshallingInfo<Boolean> BISECTBATCHONFUNCTIONERROR_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BisectBatchOnFunctionError").build();
+    private static final MarshallingInfo<Integer> MAXIMUMRETRYATTEMPTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumRetryAttempts").build();
 
     private static final CreateEventSourceMappingRequestMarshaller instance = new CreateEventSourceMappingRequestMarshaller();
 
@@ -63,8 +73,13 @@ public class CreateEventSourceMappingRequestMarshaller {
             protocolMarshaller.marshall(createEventSourceMappingRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getBatchSize(), BATCHSIZE_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getMaximumBatchingWindowInSeconds(), MAXIMUMBATCHINGWINDOWINSECONDS_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getParallelizationFactor(), PARALLELIZATIONFACTOR_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getStartingPosition(), STARTINGPOSITION_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getStartingPositionTimestamp(), STARTINGPOSITIONTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getDestinationConfig(), DESTINATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getMaximumRecordAgeInSeconds(), MAXIMUMRECORDAGEINSECONDS_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getBisectBatchOnFunctionError(), BISECTBATCHONFUNCTIONERROR_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getMaximumRetryAttempts(), MAXIMUMRETRYATTEMPTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

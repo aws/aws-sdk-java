@@ -28,6 +28,8 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
 
     /** The absolute local path of the resource inside the Lambda environment. */
     private String destinationPath;
+
+    private ResourceDownloadOwnerSetting ownerSetting;
     /** The ARN of the Amazon SageMaker training job that represents the source model. */
     private String sageMakerJobArn;
 
@@ -62,6 +64,32 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
 
     public SageMakerMachineLearningModelResourceData withDestinationPath(String destinationPath) {
         setDestinationPath(destinationPath);
+        return this;
+    }
+
+    /**
+     * @param ownerSetting
+     */
+
+    public void setOwnerSetting(ResourceDownloadOwnerSetting ownerSetting) {
+        this.ownerSetting = ownerSetting;
+    }
+
+    /**
+     * @return
+     */
+
+    public ResourceDownloadOwnerSetting getOwnerSetting() {
+        return this.ownerSetting;
+    }
+
+    /**
+     * @param ownerSetting
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SageMakerMachineLearningModelResourceData withOwnerSetting(ResourceDownloadOwnerSetting ownerSetting) {
+        setOwnerSetting(ownerSetting);
         return this;
     }
 
@@ -113,6 +141,8 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
         sb.append("{");
         if (getDestinationPath() != null)
             sb.append("DestinationPath: ").append(getDestinationPath()).append(",");
+        if (getOwnerSetting() != null)
+            sb.append("OwnerSetting: ").append(getOwnerSetting()).append(",");
         if (getSageMakerJobArn() != null)
             sb.append("SageMakerJobArn: ").append(getSageMakerJobArn());
         sb.append("}");
@@ -133,6 +163,10 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
             return false;
         if (other.getDestinationPath() != null && other.getDestinationPath().equals(this.getDestinationPath()) == false)
             return false;
+        if (other.getOwnerSetting() == null ^ this.getOwnerSetting() == null)
+            return false;
+        if (other.getOwnerSetting() != null && other.getOwnerSetting().equals(this.getOwnerSetting()) == false)
+            return false;
         if (other.getSageMakerJobArn() == null ^ this.getSageMakerJobArn() == null)
             return false;
         if (other.getSageMakerJobArn() != null && other.getSageMakerJobArn().equals(this.getSageMakerJobArn()) == false)
@@ -146,6 +180,7 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestinationPath() == null) ? 0 : getDestinationPath().hashCode());
+        hashCode = prime * hashCode + ((getOwnerSetting() == null) ? 0 : getOwnerSetting().hashCode());
         hashCode = prime * hashCode + ((getSageMakerJobArn() == null) ? 0 : getSageMakerJobArn().hashCode());
         return hashCode;
     }

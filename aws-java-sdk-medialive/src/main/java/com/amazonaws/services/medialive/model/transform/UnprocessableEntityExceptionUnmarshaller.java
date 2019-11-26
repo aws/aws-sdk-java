@@ -55,8 +55,8 @@ public class UnprocessableEntityExceptionUnmarshaller extends EnhancedJsonErrorU
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("validationErrors", targetDepth)) {
                     context.nextToken();
-                    unprocessableEntityException.setValidationErrors(new ListUnmarshaller<ValidationError>(ValidationErrorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    unprocessableEntityException.setValidationErrors(new ListUnmarshaller<MultiplexValidationError>(MultiplexValidationErrorJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

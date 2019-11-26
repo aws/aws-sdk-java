@@ -53,6 +53,10 @@ public class SageMakerMachineLearningModelResourceDataJsonUnmarshaller implement
                     context.nextToken();
                     sageMakerMachineLearningModelResourceData.setDestinationPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OwnerSetting", targetDepth)) {
+                    context.nextToken();
+                    sageMakerMachineLearningModelResourceData.setOwnerSetting(ResourceDownloadOwnerSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SageMakerJobArn", targetDepth)) {
                     context.nextToken();
                     sageMakerMachineLearningModelResourceData.setSageMakerJobArn(context.getUnmarshaller(String.class).unmarshall(context));

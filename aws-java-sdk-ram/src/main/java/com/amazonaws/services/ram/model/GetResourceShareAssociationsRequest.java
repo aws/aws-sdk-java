@@ -27,7 +27,9 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type.
+     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.
      * </p>
      */
     private String associationType;
@@ -72,11 +74,15 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type.
+     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.
      * </p>
      * 
      * @param associationType
-     *        The association type.
+     *        The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     *        specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
+     *        specified resource share.
      * @see ResourceShareAssociationType
      */
 
@@ -86,10 +92,14 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type.
+     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.
      * </p>
      * 
-     * @return The association type.
+     * @return The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     *         specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with
+     *         the specified resource share.
      * @see ResourceShareAssociationType
      */
 
@@ -99,11 +109,15 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type.
+     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.
      * </p>
      * 
      * @param associationType
-     *        The association type.
+     *        The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     *        specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
+     *        specified resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationType
      */
@@ -115,11 +129,15 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The association type.
+     * The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     * specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.
      * </p>
      * 
      * @param associationType
-     *        The association type.
+     *        The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the
+     *        specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the
+     *        specified resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationType
      */

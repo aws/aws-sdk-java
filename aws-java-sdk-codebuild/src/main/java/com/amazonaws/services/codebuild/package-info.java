@@ -62,6 +62,11 @@
  * </li>
  * <li>
  * <p>
+ * <code>CreateReportGroup</code>: Creates a report group. A report group contains a collection of reports.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
  * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed
  * to the repository.
@@ -74,6 +79,16 @@
  * </li>
  * <li>
  * <p>
+ * <code>DeleteReport</code>: Deletes a report.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeleteReportGroup</code>: Deletes a report group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
@@ -82,6 +97,11 @@
  * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
  * or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to
  * the repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
  * </p>
  * </li>
  * <li>
@@ -119,6 +139,22 @@
  * </li>
  * <li>
  * <p>
+ * <code>ListReportGroups</code>: Gets a list ARNs for the report groups in the current AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListReports</code>: Gets a list ARNs for the reports in the current AWS account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports that belong to a
+ * <code>ReportGroup</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
@@ -141,22 +177,7 @@
  * </li>
  * <li>
  * <p>
- * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StartBuild</code>: Starts running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StopBuild</code>: Attempts to stop running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateProject</code>: Changes the settings of an existing build project.
+ * <code>UpdateReportGroup</code>: Changes a report group.
  * </p>
  * </li>
  * <li>

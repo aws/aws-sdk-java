@@ -81,6 +81,8 @@ public class M2tsSettingsMarshaller {
             .marshallLocationName("klv").build();
     private static final MarshallingInfo<String> KLVDATAPIDS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("klvDataPids").build();
+    private static final MarshallingInfo<String> NIELSENID3BEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenId3Behavior").build();
     private static final MarshallingInfo<Double> NULLPACKETBITRATE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nullPacketBitrate").build();
     private static final MarshallingInfo<Integer> PATINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -163,6 +165,7 @@ public class M2tsSettingsMarshaller {
             protocolMarshaller.marshall(m2tsSettings.getFragmentTime(), FRAGMENTTIME_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getKlv(), KLV_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getKlvDataPids(), KLVDATAPIDS_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getNielsenId3Behavior(), NIELSENID3BEHAVIOR_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getNullPacketBitrate(), NULLPACKETBITRATE_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getPatInterval(), PATINTERVAL_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getPcrControl(), PCRCONTROL_BINDING);

@@ -30,6 +30,8 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
     private String id;
     /** Destination settings for a MediaPackage output; one destination for both encoders. */
     private java.util.List<MediaPackageOutputDestinationSettings> mediaPackageSettings;
+    /** Destination settings for a Multiplex output; one destination for both encoders. */
+    private MultiplexProgramChannelDestinationSettings multiplexSettings;
     /** Destination settings for a standard output; one destination for each redundant encoder. */
     private java.util.List<OutputDestinationSettings> settings;
 
@@ -130,6 +132,40 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Destination settings for a Multiplex output; one destination for both encoders.
+     * 
+     * @param multiplexSettings
+     *        Destination settings for a Multiplex output; one destination for both encoders.
+     */
+
+    public void setMultiplexSettings(MultiplexProgramChannelDestinationSettings multiplexSettings) {
+        this.multiplexSettings = multiplexSettings;
+    }
+
+    /**
+     * Destination settings for a Multiplex output; one destination for both encoders.
+     * 
+     * @return Destination settings for a Multiplex output; one destination for both encoders.
+     */
+
+    public MultiplexProgramChannelDestinationSettings getMultiplexSettings() {
+        return this.multiplexSettings;
+    }
+
+    /**
+     * Destination settings for a Multiplex output; one destination for both encoders.
+     * 
+     * @param multiplexSettings
+     *        Destination settings for a Multiplex output; one destination for both encoders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputDestination withMultiplexSettings(MultiplexProgramChannelDestinationSettings multiplexSettings) {
+        setMultiplexSettings(multiplexSettings);
+        return this;
+    }
+
+    /**
      * Destination settings for a standard output; one destination for each redundant encoder.
      * 
      * @return Destination settings for a standard output; one destination for each redundant encoder.
@@ -207,6 +243,8 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
             sb.append("Id: ").append(getId()).append(",");
         if (getMediaPackageSettings() != null)
             sb.append("MediaPackageSettings: ").append(getMediaPackageSettings()).append(",");
+        if (getMultiplexSettings() != null)
+            sb.append("MultiplexSettings: ").append(getMultiplexSettings()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings());
         sb.append("}");
@@ -231,6 +269,10 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMediaPackageSettings() != null && other.getMediaPackageSettings().equals(this.getMediaPackageSettings()) == false)
             return false;
+        if (other.getMultiplexSettings() == null ^ this.getMultiplexSettings() == null)
+            return false;
+        if (other.getMultiplexSettings() != null && other.getMultiplexSettings().equals(this.getMultiplexSettings()) == false)
+            return false;
         if (other.getSettings() == null ^ this.getSettings() == null)
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
@@ -245,6 +287,7 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getMediaPackageSettings() == null) ? 0 : getMediaPackageSettings().hashCode());
+        hashCode = prime * hashCode + ((getMultiplexSettings() == null) ? 0 : getMultiplexSettings().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }

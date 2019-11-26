@@ -77,6 +77,13 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String documentFormat;
     /**
      * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DocumentRequires> requires;
+    /**
+     * <p>
      * A description of the document attachments, including names, locations, sizes, etc.
      * </p>
      */
@@ -531,6 +538,87 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     * 
+     * @return A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+     *         document requires an <code>ApplicationConfigurationSchema</code> document.
+     */
+
+    public java.util.List<DocumentRequires> getRequires() {
+        if (requires == null) {
+            requires = new com.amazonaws.internal.SdkInternalList<DocumentRequires>();
+        }
+        return requires;
+    }
+
+    /**
+     * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     * 
+     * @param requires
+     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     */
+
+    public void setRequires(java.util.Collection<DocumentRequires> requires) {
+        if (requires == null) {
+            this.requires = null;
+            return;
+        }
+
+        this.requires = new com.amazonaws.internal.SdkInternalList<DocumentRequires>(requires);
+    }
+
+    /**
+     * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRequires(java.util.Collection)} or {@link #withRequires(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param requires
+     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withRequires(DocumentRequires... requires) {
+        if (this.requires == null) {
+            setRequires(new com.amazonaws.internal.SdkInternalList<DocumentRequires>(requires.length));
+        }
+        for (DocumentRequires ele : requires) {
+            this.requires.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * </p>
+     * 
+     * @param requires
+     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
+     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withRequires(java.util.Collection<DocumentRequires> requires) {
+        setRequires(requires);
+        return this;
+    }
+
+    /**
+     * <p>
      * A description of the document attachments, including names, locations, sizes, etc.
      * </p>
      * 
@@ -630,6 +718,8 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("DocumentType: ").append(getDocumentType()).append(",");
         if (getDocumentFormat() != null)
             sb.append("DocumentFormat: ").append(getDocumentFormat()).append(",");
+        if (getRequires() != null)
+            sb.append("Requires: ").append(getRequires()).append(",");
         if (getAttachmentsContent() != null)
             sb.append("AttachmentsContent: ").append(getAttachmentsContent());
         sb.append("}");
@@ -678,6 +768,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getDocumentFormat() != null && other.getDocumentFormat().equals(this.getDocumentFormat()) == false)
             return false;
+        if (other.getRequires() == null ^ this.getRequires() == null)
+            return false;
+        if (other.getRequires() != null && other.getRequires().equals(this.getRequires()) == false)
+            return false;
         if (other.getAttachmentsContent() == null ^ this.getAttachmentsContent() == null)
             return false;
         if (other.getAttachmentsContent() != null && other.getAttachmentsContent().equals(this.getAttachmentsContent()) == false)
@@ -698,6 +792,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
+        hashCode = prime * hashCode + ((getRequires() == null) ? 0 : getRequires().hashCode());
         hashCode = prime * hashCode + ((getAttachmentsContent() == null) ? 0 : getAttachmentsContent().hashCode());
         return hashCode;
     }

@@ -30,10 +30,56 @@ public class RunConfigurationUpdate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * </p>
+     */
+    private FlinkRunConfiguration flinkRunConfiguration;
+    /**
+     * <p>
      * Describes updates to the restore behavior of a restarting application.
      * </p>
      */
     private ApplicationRestoreConfiguration applicationRestoreConfiguration;
+
+    /**
+     * <p>
+     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * </p>
+     * 
+     * @param flinkRunConfiguration
+     *        Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     */
+
+    public void setFlinkRunConfiguration(FlinkRunConfiguration flinkRunConfiguration) {
+        this.flinkRunConfiguration = flinkRunConfiguration;
+    }
+
+    /**
+     * <p>
+     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * </p>
+     * 
+     * @return Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     */
+
+    public FlinkRunConfiguration getFlinkRunConfiguration() {
+        return this.flinkRunConfiguration;
+    }
+
+    /**
+     * <p>
+     * Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * </p>
+     * 
+     * @param flinkRunConfiguration
+     *        Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunConfigurationUpdate withFlinkRunConfiguration(FlinkRunConfiguration flinkRunConfiguration) {
+        setFlinkRunConfiguration(flinkRunConfiguration);
+        return this;
+    }
 
     /**
      * <p>
@@ -87,6 +133,8 @@ public class RunConfigurationUpdate implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFlinkRunConfiguration() != null)
+            sb.append("FlinkRunConfiguration: ").append(getFlinkRunConfiguration()).append(",");
         if (getApplicationRestoreConfiguration() != null)
             sb.append("ApplicationRestoreConfiguration: ").append(getApplicationRestoreConfiguration());
         sb.append("}");
@@ -103,6 +151,10 @@ public class RunConfigurationUpdate implements Serializable, Cloneable, Structur
         if (obj instanceof RunConfigurationUpdate == false)
             return false;
         RunConfigurationUpdate other = (RunConfigurationUpdate) obj;
+        if (other.getFlinkRunConfiguration() == null ^ this.getFlinkRunConfiguration() == null)
+            return false;
+        if (other.getFlinkRunConfiguration() != null && other.getFlinkRunConfiguration().equals(this.getFlinkRunConfiguration()) == false)
+            return false;
         if (other.getApplicationRestoreConfiguration() == null ^ this.getApplicationRestoreConfiguration() == null)
             return false;
         if (other.getApplicationRestoreConfiguration() != null
@@ -116,6 +168,7 @@ public class RunConfigurationUpdate implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFlinkRunConfiguration() == null) ? 0 : getFlinkRunConfiguration().hashCode());
         hashCode = prime * hashCode + ((getApplicationRestoreConfiguration() == null) ? 0 : getApplicationRestoreConfiguration().hashCode());
         return hashCode;
     }

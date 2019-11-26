@@ -994,6 +994,74 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateDataKeyPairResult> generateDataKeyPairAsync(GenerateDataKeyPairRequest request) {
+
+        return generateDataKeyPairAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateDataKeyPairResult> generateDataKeyPairAsync(final GenerateDataKeyPairRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateDataKeyPairRequest, GenerateDataKeyPairResult> asyncHandler) {
+        final GenerateDataKeyPairRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateDataKeyPairResult>() {
+            @Override
+            public GenerateDataKeyPairResult call() throws Exception {
+                GenerateDataKeyPairResult result = null;
+
+                try {
+                    result = executeGenerateDataKeyPair(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateDataKeyPairWithoutPlaintextResult> generateDataKeyPairWithoutPlaintextAsync(
+            GenerateDataKeyPairWithoutPlaintextRequest request) {
+
+        return generateDataKeyPairWithoutPlaintextAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateDataKeyPairWithoutPlaintextResult> generateDataKeyPairWithoutPlaintextAsync(
+            final GenerateDataKeyPairWithoutPlaintextRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateDataKeyPairWithoutPlaintextRequest, GenerateDataKeyPairWithoutPlaintextResult> asyncHandler) {
+        final GenerateDataKeyPairWithoutPlaintextRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateDataKeyPairWithoutPlaintextResult>() {
+            @Override
+            public GenerateDataKeyPairWithoutPlaintextResult call() throws Exception {
+                GenerateDataKeyPairWithoutPlaintextResult result = null;
+
+                try {
+                    result = executeGenerateDataKeyPairWithoutPlaintext(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateDataKeyWithoutPlaintextResult> generateDataKeyWithoutPlaintextAsync(
             GenerateDataKeyWithoutPlaintextRequest request) {
 
@@ -1168,6 +1236,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
                 try {
                     result = executeGetParametersForImport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest request) {
+
+        return getPublicKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(final GetPublicKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPublicKeyRequest, GetPublicKeyResult> asyncHandler) {
+        final GetPublicKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPublicKeyResult>() {
+            @Override
+            public GetPublicKeyResult call() throws Exception {
+                GetPublicKeyResult result = null;
+
+                try {
+                    result = executeGetPublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1648,6 +1749,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SignResult> signAsync(SignRequest request) {
+
+        return signAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SignResult> signAsync(final SignRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SignRequest, SignResult> asyncHandler) {
+        final SignRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SignResult>() {
+            @Override
+            public SignResult call() throws Exception {
+                SignResult result = null;
+
+                try {
+                    result = executeSign(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1797,6 +1931,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
                 try {
                     result = executeUpdateKeyDescription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResult> verifyAsync(VerifyRequest request) {
+
+        return verifyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResult> verifyAsync(final VerifyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<VerifyRequest, VerifyResult> asyncHandler) {
+        final VerifyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<VerifyResult>() {
+            @Override
+            public VerifyResult call() throws Exception {
+                VerifyResult result = null;
+
+                try {
+                    result = executeVerify(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

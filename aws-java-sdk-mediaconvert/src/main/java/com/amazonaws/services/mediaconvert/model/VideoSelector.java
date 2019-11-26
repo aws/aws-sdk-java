@@ -27,6 +27,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
+     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
+     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
+     * your outputs.
+     */
+    private String alphaBehavior;
+    /**
      * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to
      * the default value Follow (FOLLOW). The service will automatically detect your input color space. If your input
      * video has metadata indicating the wrong color space, specify the accurate color space here. If your input video is
@@ -77,6 +84,81 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
      * doesn't pass through rotation metadata.
      */
     private String rotate;
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
+     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
+     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
+     * your outputs.
+     * 
+     * @param alphaBehavior
+     *        Ignore this setting unless this input is a QuickTime animation. Specify which part of this input
+     *        MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel
+     *        and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel
+     *        to the luma channel of your outputs.
+     * @see AlphaBehavior
+     */
+
+    public void setAlphaBehavior(String alphaBehavior) {
+        this.alphaBehavior = alphaBehavior;
+    }
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
+     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
+     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
+     * your outputs.
+     * 
+     * @return Ignore this setting unless this input is a QuickTime animation. Specify which part of this input
+     *         MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha
+     *         channel and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha
+     *         channel to the luma channel of your outputs.
+     * @see AlphaBehavior
+     */
+
+    public String getAlphaBehavior() {
+        return this.alphaBehavior;
+    }
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
+     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
+     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
+     * your outputs.
+     * 
+     * @param alphaBehavior
+     *        Ignore this setting unless this input is a QuickTime animation. Specify which part of this input
+     *        MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel
+     *        and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel
+     *        to the luma channel of your outputs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlphaBehavior
+     */
+
+    public VideoSelector withAlphaBehavior(String alphaBehavior) {
+        setAlphaBehavior(alphaBehavior);
+        return this;
+    }
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
+     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
+     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
+     * your outputs.
+     * 
+     * @param alphaBehavior
+     *        Ignore this setting unless this input is a QuickTime animation. Specify which part of this input
+     *        MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel
+     *        and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel
+     *        to the luma channel of your outputs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlphaBehavior
+     */
+
+    public VideoSelector withAlphaBehavior(AlphaBehavior alphaBehavior) {
+        this.alphaBehavior = alphaBehavior.toString();
+        return this;
+    }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to
@@ -548,6 +630,8 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAlphaBehavior() != null)
+            sb.append("AlphaBehavior: ").append(getAlphaBehavior()).append(",");
         if (getColorSpace() != null)
             sb.append("ColorSpace: ").append(getColorSpace()).append(",");
         if (getColorSpaceUsage() != null)
@@ -574,6 +658,10 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof VideoSelector == false)
             return false;
         VideoSelector other = (VideoSelector) obj;
+        if (other.getAlphaBehavior() == null ^ this.getAlphaBehavior() == null)
+            return false;
+        if (other.getAlphaBehavior() != null && other.getAlphaBehavior().equals(this.getAlphaBehavior()) == false)
+            return false;
         if (other.getColorSpace() == null ^ this.getColorSpace() == null)
             return false;
         if (other.getColorSpace() != null && other.getColorSpace().equals(this.getColorSpace()) == false)
@@ -606,6 +694,7 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAlphaBehavior() == null) ? 0 : getAlphaBehavior().hashCode());
         hashCode = prime * hashCode + ((getColorSpace() == null) ? 0 : getColorSpace().hashCode());
         hashCode = prime * hashCode + ((getColorSpaceUsage() == null) ? 0 : getColorSpaceUsage().hashCode());
         hashCode = prime * hashCode + ((getHdr10Metadata() == null) ? 0 : getHdr10Metadata().hashCode());

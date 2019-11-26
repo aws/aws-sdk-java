@@ -48,6 +48,10 @@ public class RunConfigurationJsonUnmarshaller implements Unmarshaller<RunConfigu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("FlinkRunConfiguration", targetDepth)) {
+                    context.nextToken();
+                    runConfiguration.setFlinkRunConfiguration(FlinkRunConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SqlRunConfigurations", targetDepth)) {
                     context.nextToken();
                     runConfiguration.setSqlRunConfigurations(new ListUnmarshaller<SqlRunConfiguration>(SqlRunConfigurationJsonUnmarshaller.getInstance())

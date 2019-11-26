@@ -37,6 +37,8 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<CaptionDescription> captionDescriptions;
     /** Configuration settings that apply to the event as a whole. */
     private GlobalConfiguration globalConfiguration;
+    /** Nielsen configuration settings. */
+    private NielsenConfiguration nielsenConfiguration;
 
     private java.util.List<OutputGroup> outputGroups;
     /** Contains settings used to acquire and adjust timecode information from inputs. */
@@ -295,6 +297,40 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Nielsen configuration settings.
+     * 
+     * @param nielsenConfiguration
+     *        Nielsen configuration settings.
+     */
+
+    public void setNielsenConfiguration(NielsenConfiguration nielsenConfiguration) {
+        this.nielsenConfiguration = nielsenConfiguration;
+    }
+
+    /**
+     * Nielsen configuration settings.
+     * 
+     * @return Nielsen configuration settings.
+     */
+
+    public NielsenConfiguration getNielsenConfiguration() {
+        return this.nielsenConfiguration;
+    }
+
+    /**
+     * Nielsen configuration settings.
+     * 
+     * @param nielsenConfiguration
+     *        Nielsen configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncoderSettings withNielsenConfiguration(NielsenConfiguration nielsenConfiguration) {
+        setNielsenConfiguration(nielsenConfiguration);
+        return this;
+    }
+
+    /**
      * @return
      */
 
@@ -456,6 +492,8 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             sb.append("CaptionDescriptions: ").append(getCaptionDescriptions()).append(",");
         if (getGlobalConfiguration() != null)
             sb.append("GlobalConfiguration: ").append(getGlobalConfiguration()).append(",");
+        if (getNielsenConfiguration() != null)
+            sb.append("NielsenConfiguration: ").append(getNielsenConfiguration()).append(",");
         if (getOutputGroups() != null)
             sb.append("OutputGroups: ").append(getOutputGroups()).append(",");
         if (getTimecodeConfig() != null)
@@ -500,6 +538,10 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getGlobalConfiguration() != null && other.getGlobalConfiguration().equals(this.getGlobalConfiguration()) == false)
             return false;
+        if (other.getNielsenConfiguration() == null ^ this.getNielsenConfiguration() == null)
+            return false;
+        if (other.getNielsenConfiguration() != null && other.getNielsenConfiguration().equals(this.getNielsenConfiguration()) == false)
+            return false;
         if (other.getOutputGroups() == null ^ this.getOutputGroups() == null)
             return false;
         if (other.getOutputGroups() != null && other.getOutputGroups().equals(this.getOutputGroups()) == false)
@@ -526,6 +568,7 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getBlackoutSlate() == null) ? 0 : getBlackoutSlate().hashCode());
         hashCode = prime * hashCode + ((getCaptionDescriptions() == null) ? 0 : getCaptionDescriptions().hashCode());
         hashCode = prime * hashCode + ((getGlobalConfiguration() == null) ? 0 : getGlobalConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());
         hashCode = prime * hashCode + ((getTimecodeConfig() == null) ? 0 : getTimecodeConfig().hashCode());
         hashCode = prime * hashCode + ((getVideoDescriptions() == null) ? 0 : getVideoDescriptions().hashCode());

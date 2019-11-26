@@ -49,6 +49,16 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public CreateMultiplexResult createMultiplex(CreateMultiplexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMultiplexProgramResult createMultiplexProgram(CreateMultiplexProgramRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTagsResult createTags(CreateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -65,6 +75,16 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public DeleteInputSecurityGroupResult deleteInputSecurityGroup(DeleteInputSecurityGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMultiplexResult deleteMultiplex(DeleteMultiplexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMultiplexProgramResult deleteMultiplexProgram(DeleteMultiplexProgramRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +119,16 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public DescribeMultiplexResult describeMultiplex(DescribeMultiplexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMultiplexProgramResult describeMultiplexProgram(DescribeMultiplexProgramRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeOfferingResult describeOffering(DescribeOfferingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +159,16 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public ListMultiplexProgramsResult listMultiplexPrograms(ListMultiplexProgramsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMultiplexesResult listMultiplexes(ListMultiplexesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListOfferingsResult listOfferings(ListOfferingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,7 +194,17 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public StartMultiplexResult startMultiplex(StartMultiplexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopChannelResult stopChannel(StopChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopMultiplexResult stopMultiplex(StopMultiplexRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -175,6 +225,16 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public UpdateInputSecurityGroupResult updateInputSecurityGroup(UpdateInputSecurityGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMultiplexResult updateMultiplex(UpdateMultiplexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMultiplexProgramResult updateMultiplexProgram(UpdateMultiplexProgramRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

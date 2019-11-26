@@ -73,8 +73,8 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     * >ListPendingInvitationResources</a>.
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     * ListPendingInvitationResources</a>.
      * </p>
      */
     @Deprecated
@@ -382,13 +382,13 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     * >ListPendingInvitationResources</a>.
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     * ListPendingInvitationResources</a>.
      * </p>
      * 
      * @return To view the resources associated with a pending resource share invitation, use <a
-     *         href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     *         >ListPendingInvitationResources</a>.
+     *         href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     *         ListPendingInvitationResources</a>.
      */
     @Deprecated
     public java.util.List<ResourceShareAssociation> getResourceShareAssociations() {
@@ -398,14 +398,14 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     * >ListPendingInvitationResources</a>.
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     * ListPendingInvitationResources</a>.
      * </p>
      * 
      * @param resourceShareAssociations
      *        To view the resources associated with a pending resource share invitation, use <a
-     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     *        >ListPendingInvitationResources</a>.
+     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     *        ListPendingInvitationResources</a>.
      */
     @Deprecated
     public void setResourceShareAssociations(java.util.Collection<ResourceShareAssociation> resourceShareAssociations) {
@@ -420,8 +420,8 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     * >ListPendingInvitationResources</a>.
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     * ListPendingInvitationResources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -431,8 +431,8 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
      * 
      * @param resourceShareAssociations
      *        To view the resources associated with a pending resource share invitation, use <a
-     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     *        >ListPendingInvitationResources</a>.
+     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     *        ListPendingInvitationResources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -449,14 +449,14 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
     /**
      * <p>
      * To view the resources associated with a pending resource share invitation, use <a
-     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     * >ListPendingInvitationResources</a>.
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     * ListPendingInvitationResources</a>.
      * </p>
      * 
      * @param resourceShareAssociations
      *        To view the resources associated with a pending resource share invitation, use <a
-     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html"
-     *        >ListPendingInvitationResources</a>.
+     *        href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+     *        ListPendingInvitationResources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

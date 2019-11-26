@@ -60,6 +60,14 @@ public class ReEncryptResultJsonUnmarshaller implements Unmarshaller<ReEncryptRe
                     context.nextToken();
                     reEncryptResult.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SourceEncryptionAlgorithm", targetDepth)) {
+                    context.nextToken();
+                    reEncryptResult.setSourceEncryptionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DestinationEncryptionAlgorithm", targetDepth)) {
+                    context.nextToken();
+                    reEncryptResult.setDestinationEncryptionAlgorithm(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

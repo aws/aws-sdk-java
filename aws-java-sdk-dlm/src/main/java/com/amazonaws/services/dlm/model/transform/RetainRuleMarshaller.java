@@ -29,6 +29,10 @@ public class RetainRuleMarshaller {
 
     private static final MarshallingInfo<Integer> COUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Count").build();
+    private static final MarshallingInfo<Integer> INTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Interval").build();
+    private static final MarshallingInfo<String> INTERVALUNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IntervalUnit").build();
 
     private static final RetainRuleMarshaller instance = new RetainRuleMarshaller();
 
@@ -47,6 +51,8 @@ public class RetainRuleMarshaller {
 
         try {
             protocolMarshaller.marshall(retainRule.getCount(), COUNT_BINDING);
+            protocolMarshaller.marshall(retainRule.getInterval(), INTERVAL_BINDING);
+            protocolMarshaller.marshall(retainRule.getIntervalUnit(), INTERVALUNIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -36,7 +36,7 @@ public class ReservationResourceSpecification implements Serializable, Cloneable
     private String maximumFramerate;
     /** Resolution, e.g. 'HD' */
     private String resolution;
-    /** Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL' */
+    /** Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL' */
     private String resourceType;
     /** Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only) */
     private String specialFeature;
@@ -299,10 +299,10 @@ public class ReservationResourceSpecification implements Serializable, Cloneable
     }
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
      * @param resourceType
-     *        Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     *        Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * @see ReservationResourceType
      */
 
@@ -311,9 +311,9 @@ public class ReservationResourceSpecification implements Serializable, Cloneable
     }
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
-     * @return Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * @return Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * @see ReservationResourceType
      */
 
@@ -322,10 +322,10 @@ public class ReservationResourceSpecification implements Serializable, Cloneable
     }
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
      * @param resourceType
-     *        Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     *        Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservationResourceType
      */
@@ -336,10 +336,10 @@ public class ReservationResourceSpecification implements Serializable, Cloneable
     }
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * 
      * @param resourceType
-     *        Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     *        Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservationResourceType
      */

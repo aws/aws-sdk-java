@@ -114,6 +114,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public CreateScheduledActionResult createScheduledAction(CreateScheduledActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SnapshotCopyGrant createSnapshotCopyGrant(CreateSnapshotCopyGrantRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -165,6 +170,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DeleteHsmConfigurationResult deleteHsmConfiguration(DeleteHsmConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -364,6 +374,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSnapshotCopyGrantsResult describeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -475,6 +490,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyScheduledActionResult modifyScheduledAction(ModifyScheduledActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

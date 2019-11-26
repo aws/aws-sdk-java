@@ -33,13 +33,77 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.nio.ByteBuffer ciphertextBlob;
     /**
      * <p>
-     * Encryption context used to encrypt and decrypt the data specified in the <code>CiphertextBlob</code> parameter.
+     * Specifies the encryption context to use to decrypt the ciphertext. Enter the same encryption context that was
+     * used to encrypt the ciphertext.
+     * </p>
+     * <p>
+     * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
+     * case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting
+     * with a symmetric CMK, but it is highly recommended.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> sourceEncryptionContext;
     /**
      * <p>
-     * A unique identifier for the CMK that is used to reencrypt the data.
+     * A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
+     * destination CMK.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS
+     * uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the ciphertext.
+     * However, you can use this parameter to ensure that a particular CMK (of any kind) is used to decrypt the
+     * ciphertext before it is reencrypted.
+     * </p>
+     * <p>
+     * If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation succeeds only
+     * if the specified CMK was used to encrypt the ciphertext.
+     * </p>
+     * <p>
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with <code>"alias/"</code>.
+     * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
+     */
+    private String sourceKeyId;
+    /**
+     * <p>
+     * A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or asymmetric CMK with a
+     * <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code> value of a CMK,
+     * use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -79,10 +143,49 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String destinationKeyId;
     /**
      * <p>
-     * Encryption context to use when the data is reencrypted.
+     * Specifies that encryption context to use when the reencrypting the data.
+     * </p>
+     * <p>
+     * A destination encryption context is valid only when the destination CMK is a symmetric CMK. The standard
+     * ciphertext format for asymmetric CMKs does not include fields for metadata.
+     * </p>
+     * <p>
+     * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
+     * case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting
+     * with a symmetric CMK, but it is highly recommended.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> destinationEncryptionContext;
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is reencrypted. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm, the
+     * decrypt attempt fails.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * </p>
+     */
+    private String sourceEncryptionAlgorithm;
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * This parameter is required only when the destination CMK is an asymmetric CMK.
+     * </p>
+     */
+    private String destinationEncryptionAlgorithm;
     /**
      * <p>
      * A list of grant tokens.
@@ -164,11 +267,33 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Encryption context used to encrypt and decrypt the data specified in the <code>CiphertextBlob</code> parameter.
+     * Specifies the encryption context to use to decrypt the ciphertext. Enter the same encryption context that was
+     * used to encrypt the ciphertext.
+     * </p>
+     * <p>
+     * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
+     * case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting
+     * with a symmetric CMK, but it is highly recommended.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return Encryption context used to encrypt and decrypt the data specified in the <code>CiphertextBlob</code>
-     *         parameter.
+     * @return Specifies the encryption context to use to decrypt the ciphertext. Enter the same encryption context that
+     *         was used to encrypt the ciphertext.</p>
+     *         <p>
+     *         An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     *         authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
+     *         exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional
+     *         when encrypting with a symmetric CMK, but it is highly recommended.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     *         Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getSourceEncryptionContext() {
@@ -180,12 +305,34 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Encryption context used to encrypt and decrypt the data specified in the <code>CiphertextBlob</code> parameter.
+     * Specifies the encryption context to use to decrypt the ciphertext. Enter the same encryption context that was
+     * used to encrypt the ciphertext.
+     * </p>
+     * <p>
+     * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
+     * case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting
+     * with a symmetric CMK, but it is highly recommended.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param sourceEncryptionContext
-     *        Encryption context used to encrypt and decrypt the data specified in the <code>CiphertextBlob</code>
-     *        parameter.
+     *        Specifies the encryption context to use to decrypt the ciphertext. Enter the same encryption context that
+     *        was used to encrypt the ciphertext.</p>
+     *        <p>
+     *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
+     *        exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when
+     *        encrypting with a symmetric CMK, but it is highly recommended.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     *        Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public void setSourceEncryptionContext(java.util.Map<String, String> sourceEncryptionContext) {
@@ -195,12 +342,34 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Encryption context used to encrypt and decrypt the data specified in the <code>CiphertextBlob</code> parameter.
+     * Specifies the encryption context to use to decrypt the ciphertext. Enter the same encryption context that was
+     * used to encrypt the ciphertext.
+     * </p>
+     * <p>
+     * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
+     * case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting
+     * with a symmetric CMK, but it is highly recommended.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param sourceEncryptionContext
-     *        Encryption context used to encrypt and decrypt the data specified in the <code>CiphertextBlob</code>
-     *        parameter.
+     *        Specifies the encryption context to use to decrypt the ciphertext. Enter the same encryption context that
+     *        was used to encrypt the ciphertext.</p>
+     *        <p>
+     *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
+     *        exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when
+     *        encrypting with a symmetric CMK, but it is highly recommended.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     *        Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,7 +401,310 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the CMK that is used to reencrypt the data.
+     * A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
+     * destination CMK.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS
+     * uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the ciphertext.
+     * However, you can use this parameter to ensure that a particular CMK (of any kind) is used to decrypt the
+     * ciphertext before it is reencrypted.
+     * </p>
+     * <p>
+     * If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation succeeds only
+     * if the specified CMK was used to encrypt the ciphertext.
+     * </p>
+     * <p>
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with <code>"alias/"</code>.
+     * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
+     * 
+     * @param sourceKeyId
+     *        A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
+     *        destination CMK.</p>
+     *        <p>
+     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS
+     *        KMS uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the
+     *        ciphertext. However, you can use this parameter to ensure that a particular CMK (of any kind) is used to
+     *        decrypt the ciphertext before it is reencrypted.
+     *        </p>
+     *        <p>
+     *        If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation
+     *        succeeds only if the specified CMK was used to encrypt the ciphertext.
+     *        </p>
+     *        <p>
+     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *        alias name, prefix it with <code>"alias/"</code>.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name: <code>alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *        and alias ARN, use <a>ListAliases</a>.
+     */
+
+    public void setSourceKeyId(String sourceKeyId) {
+        this.sourceKeyId = sourceKeyId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
+     * destination CMK.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS
+     * uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the ciphertext.
+     * However, you can use this parameter to ensure that a particular CMK (of any kind) is used to decrypt the
+     * ciphertext before it is reencrypted.
+     * </p>
+     * <p>
+     * If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation succeeds only
+     * if the specified CMK was used to encrypt the ciphertext.
+     * </p>
+     * <p>
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with <code>"alias/"</code>.
+     * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
+     * 
+     * @return A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
+     *         destination CMK.</p>
+     *         <p>
+     *         This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS
+     *         KMS uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the
+     *         ciphertext. However, you can use this parameter to ensure that a particular CMK (of any kind) is used to
+     *         decrypt the ciphertext before it is reencrypted.
+     *         </p>
+     *         <p>
+     *         If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation
+     *         succeeds only if the specified CMK was used to encrypt the ciphertext.
+     *         </p>
+     *         <p>
+     *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *         alias name, prefix it with <code>"alias/"</code>.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias name: <code>alias/ExampleAlias</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *         and alias ARN, use <a>ListAliases</a>.
+     */
+
+    public String getSourceKeyId() {
+        return this.sourceKeyId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
+     * destination CMK.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS KMS
+     * uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the ciphertext.
+     * However, you can use this parameter to ensure that a particular CMK (of any kind) is used to decrypt the
+     * ciphertext before it is reencrypted.
+     * </p>
+     * <p>
+     * If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation succeeds only
+     * if the specified CMK was used to encrypt the ciphertext.
+     * </p>
+     * <p>
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with <code>"alias/"</code>.
+     * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name: <code>alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
+     * 
+     * @param sourceKeyId
+     *        A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts it using the
+     *        destination CMK.</p>
+     *        <p>
+     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK. Otherwise, AWS
+     *        KMS uses the metadata that it adds to the ciphertext blob to determine which CMK was used to encrypt the
+     *        ciphertext. However, you can use this parameter to ensure that a particular CMK (of any kind) is used to
+     *        decrypt the ciphertext before it is reencrypted.
+     *        </p>
+     *        <p>
+     *        If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code> operation
+     *        succeeds only if the specified CMK was used to encrypt the ciphertext.
+     *        </p>
+     *        <p>
+     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *        alias name, prefix it with <code>"alias/"</code>.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name: <code>alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *        and alias ARN, use <a>ListAliases</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReEncryptRequest withSourceKeyId(String sourceKeyId) {
+        setSourceKeyId(sourceKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or asymmetric CMK with a
+     * <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code> value of a CMK,
+     * use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -270,7 +742,9 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param destinationKeyId
-     *        A unique identifier for the CMK that is used to reencrypt the data.</p>
+     *        A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or asymmetric CMK
+     *        with a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code>
+     *        value of a CMK, use the <a>DescribeKey</a> operation.</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
@@ -312,7 +786,9 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the CMK that is used to reencrypt the data.
+     * A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or asymmetric CMK with a
+     * <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code> value of a CMK,
+     * use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -349,7 +825,9 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * alias ARN, use <a>ListAliases</a>.
      * </p>
      * 
-     * @return A unique identifier for the CMK that is used to reencrypt the data.</p>
+     * @return A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or asymmetric CMK
+     *         with a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code>
+     *         value of a CMK, use the <a>DescribeKey</a> operation.</p>
      *         <p>
      *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *         alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
@@ -391,7 +869,9 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the CMK that is used to reencrypt the data.
+     * A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or asymmetric CMK with a
+     * <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code> value of a CMK,
+     * use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -429,7 +909,9 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param destinationKeyId
-     *        A unique identifier for the CMK that is used to reencrypt the data.</p>
+     *        A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or asymmetric CMK
+     *        with a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code>
+     *        value of a CMK, use the <a>DescribeKey</a> operation.</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
@@ -473,10 +955,39 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Encryption context to use when the data is reencrypted.
+     * Specifies that encryption context to use when the reencrypting the data.
+     * </p>
+     * <p>
+     * A destination encryption context is valid only when the destination CMK is a symmetric CMK. The standard
+     * ciphertext format for asymmetric CMKs does not include fields for metadata.
+     * </p>
+     * <p>
+     * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
+     * case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting
+     * with a symmetric CMK, but it is highly recommended.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return Encryption context to use when the data is reencrypted.
+     * @return Specifies that encryption context to use when the reencrypting the data.</p>
+     *         <p>
+     *         A destination encryption context is valid only when the destination CMK is a symmetric CMK. The standard
+     *         ciphertext format for asymmetric CMKs does not include fields for metadata.
+     *         </p>
+     *         <p>
+     *         An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     *         authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
+     *         exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional
+     *         when encrypting with a symmetric CMK, but it is highly recommended.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     *         Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getDestinationEncryptionContext() {
@@ -488,11 +999,40 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Encryption context to use when the data is reencrypted.
+     * Specifies that encryption context to use when the reencrypting the data.
+     * </p>
+     * <p>
+     * A destination encryption context is valid only when the destination CMK is a symmetric CMK. The standard
+     * ciphertext format for asymmetric CMKs does not include fields for metadata.
+     * </p>
+     * <p>
+     * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
+     * case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting
+     * with a symmetric CMK, but it is highly recommended.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param destinationEncryptionContext
-     *        Encryption context to use when the data is reencrypted.
+     *        Specifies that encryption context to use when the reencrypting the data.</p>
+     *        <p>
+     *        A destination encryption context is valid only when the destination CMK is a symmetric CMK. The standard
+     *        ciphertext format for asymmetric CMKs does not include fields for metadata.
+     *        </p>
+     *        <p>
+     *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
+     *        exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when
+     *        encrypting with a symmetric CMK, but it is highly recommended.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     *        Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public void setDestinationEncryptionContext(java.util.Map<String, String> destinationEncryptionContext) {
@@ -502,11 +1042,40 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Encryption context to use when the data is reencrypted.
+     * Specifies that encryption context to use when the reencrypting the data.
+     * </p>
+     * <p>
+     * A destination encryption context is valid only when the destination CMK is a symmetric CMK. The standard
+     * ciphertext format for asymmetric CMKs does not include fields for metadata.
+     * </p>
+     * <p>
+     * An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
+     * case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting
+     * with a symmetric CMK, but it is highly recommended.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param destinationEncryptionContext
-     *        Encryption context to use when the data is reencrypted.
+     *        Specifies that encryption context to use when the reencrypting the data.</p>
+     *        <p>
+     *        A destination encryption context is valid only when the destination CMK is a symmetric CMK. The standard
+     *        ciphertext format for asymmetric CMKs does not include fields for metadata.
+     *        </p>
+     *        <p>
+     *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional
+     *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
+     *        exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when
+     *        encrypting with a symmetric CMK, but it is highly recommended.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     *        Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,6 +1102,220 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public ReEncryptRequest clearDestinationEncryptionContextEntries() {
         this.destinationEncryptionContext = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is reencrypted. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm, the
+     * decrypt attempt fails.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * </p>
+     * 
+     * @param sourceEncryptionAlgorithm
+     *        Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is
+     *        reencrypted. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for
+     *        symmetric CMKs.</p>
+     *        <p>
+     *        Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm,
+     *        the decrypt attempt fails.
+     *        </p>
+     *        <p>
+     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public void setSourceEncryptionAlgorithm(String sourceEncryptionAlgorithm) {
+        this.sourceEncryptionAlgorithm = sourceEncryptionAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is reencrypted. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm, the
+     * decrypt attempt fails.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * </p>
+     * 
+     * @return Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is
+     *         reencrypted. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for
+     *         symmetric CMKs.</p>
+     *         <p>
+     *         Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm,
+     *         the decrypt attempt fails.
+     *         </p>
+     *         <p>
+     *         This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public String getSourceEncryptionAlgorithm() {
+        return this.sourceEncryptionAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is reencrypted. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm, the
+     * decrypt attempt fails.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * </p>
+     * 
+     * @param sourceEncryptionAlgorithm
+     *        Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is
+     *        reencrypted. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for
+     *        symmetric CMKs.</p>
+     *        <p>
+     *        Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm,
+     *        the decrypt attempt fails.
+     *        </p>
+     *        <p>
+     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public ReEncryptRequest withSourceEncryptionAlgorithm(String sourceEncryptionAlgorithm) {
+        setSourceEncryptionAlgorithm(sourceEncryptionAlgorithm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is reencrypted. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm, the
+     * decrypt attempt fails.
+     * </p>
+     * <p>
+     * This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * </p>
+     * 
+     * @param sourceEncryptionAlgorithm
+     *        Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it is
+     *        reencrypted. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm used for
+     *        symmetric CMKs.</p>
+     *        <p>
+     *        Specify the same algorithm that was used to encrypt the ciphertext. If you specify a different algorithm,
+     *        the decrypt attempt fails.
+     *        </p>
+     *        <p>
+     *        This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public ReEncryptRequest withSourceEncryptionAlgorithm(EncryptionAlgorithmSpec sourceEncryptionAlgorithm) {
+        this.sourceEncryptionAlgorithm = sourceEncryptionAlgorithm.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * This parameter is required only when the destination CMK is an asymmetric CMK.
+     * </p>
+     * 
+     * @param destinationEncryptionAlgorithm
+     *        Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it.
+     *        The default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric
+     *        CMKs.</p>
+     *        <p>
+     *        This parameter is required only when the destination CMK is an asymmetric CMK.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public void setDestinationEncryptionAlgorithm(String destinationEncryptionAlgorithm) {
+        this.destinationEncryptionAlgorithm = destinationEncryptionAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * This parameter is required only when the destination CMK is an asymmetric CMK.
+     * </p>
+     * 
+     * @return Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it.
+     *         The default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric
+     *         CMKs.</p>
+     *         <p>
+     *         This parameter is required only when the destination CMK is an asymmetric CMK.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public String getDestinationEncryptionAlgorithm() {
+        return this.destinationEncryptionAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * This parameter is required only when the destination CMK is an asymmetric CMK.
+     * </p>
+     * 
+     * @param destinationEncryptionAlgorithm
+     *        Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it.
+     *        The default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric
+     *        CMKs.</p>
+     *        <p>
+     *        This parameter is required only when the destination CMK is an asymmetric CMK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public ReEncryptRequest withDestinationEncryptionAlgorithm(String destinationEncryptionAlgorithm) {
+        setDestinationEncryptionAlgorithm(destinationEncryptionAlgorithm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it. The
+     * default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric CMKs.
+     * </p>
+     * <p>
+     * This parameter is required only when the destination CMK is an asymmetric CMK.
+     * </p>
+     * 
+     * @param destinationEncryptionAlgorithm
+     *        Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has decrypted it.
+     *        The default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption algorithm used for symmetric
+     *        CMKs.</p>
+     *        <p>
+     *        This parameter is required only when the destination CMK is an asymmetric CMK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionAlgorithmSpec
+     */
+
+    public ReEncryptRequest withDestinationEncryptionAlgorithm(EncryptionAlgorithmSpec destinationEncryptionAlgorithm) {
+        this.destinationEncryptionAlgorithm = destinationEncryptionAlgorithm.toString();
         return this;
     }
 
@@ -661,10 +1444,16 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("CiphertextBlob: ").append(getCiphertextBlob()).append(",");
         if (getSourceEncryptionContext() != null)
             sb.append("SourceEncryptionContext: ").append(getSourceEncryptionContext()).append(",");
+        if (getSourceKeyId() != null)
+            sb.append("SourceKeyId: ").append(getSourceKeyId()).append(",");
         if (getDestinationKeyId() != null)
             sb.append("DestinationKeyId: ").append(getDestinationKeyId()).append(",");
         if (getDestinationEncryptionContext() != null)
             sb.append("DestinationEncryptionContext: ").append(getDestinationEncryptionContext()).append(",");
+        if (getSourceEncryptionAlgorithm() != null)
+            sb.append("SourceEncryptionAlgorithm: ").append(getSourceEncryptionAlgorithm()).append(",");
+        if (getDestinationEncryptionAlgorithm() != null)
+            sb.append("DestinationEncryptionAlgorithm: ").append(getDestinationEncryptionAlgorithm()).append(",");
         if (getGrantTokens() != null)
             sb.append("GrantTokens: ").append(getGrantTokens());
         sb.append("}");
@@ -689,6 +1478,10 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getSourceEncryptionContext() != null && other.getSourceEncryptionContext().equals(this.getSourceEncryptionContext()) == false)
             return false;
+        if (other.getSourceKeyId() == null ^ this.getSourceKeyId() == null)
+            return false;
+        if (other.getSourceKeyId() != null && other.getSourceKeyId().equals(this.getSourceKeyId()) == false)
+            return false;
         if (other.getDestinationKeyId() == null ^ this.getDestinationKeyId() == null)
             return false;
         if (other.getDestinationKeyId() != null && other.getDestinationKeyId().equals(this.getDestinationKeyId()) == false)
@@ -696,6 +1489,15 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (other.getDestinationEncryptionContext() == null ^ this.getDestinationEncryptionContext() == null)
             return false;
         if (other.getDestinationEncryptionContext() != null && other.getDestinationEncryptionContext().equals(this.getDestinationEncryptionContext()) == false)
+            return false;
+        if (other.getSourceEncryptionAlgorithm() == null ^ this.getSourceEncryptionAlgorithm() == null)
+            return false;
+        if (other.getSourceEncryptionAlgorithm() != null && other.getSourceEncryptionAlgorithm().equals(this.getSourceEncryptionAlgorithm()) == false)
+            return false;
+        if (other.getDestinationEncryptionAlgorithm() == null ^ this.getDestinationEncryptionAlgorithm() == null)
+            return false;
+        if (other.getDestinationEncryptionAlgorithm() != null
+                && other.getDestinationEncryptionAlgorithm().equals(this.getDestinationEncryptionAlgorithm()) == false)
             return false;
         if (other.getGrantTokens() == null ^ this.getGrantTokens() == null)
             return false;
@@ -711,8 +1513,11 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getCiphertextBlob() == null) ? 0 : getCiphertextBlob().hashCode());
         hashCode = prime * hashCode + ((getSourceEncryptionContext() == null) ? 0 : getSourceEncryptionContext().hashCode());
+        hashCode = prime * hashCode + ((getSourceKeyId() == null) ? 0 : getSourceKeyId().hashCode());
         hashCode = prime * hashCode + ((getDestinationKeyId() == null) ? 0 : getDestinationKeyId().hashCode());
         hashCode = prime * hashCode + ((getDestinationEncryptionContext() == null) ? 0 : getDestinationEncryptionContext().hashCode());
+        hashCode = prime * hashCode + ((getSourceEncryptionAlgorithm() == null) ? 0 : getSourceEncryptionAlgorithm().hashCode());
+        hashCode = prime * hashCode + ((getDestinationEncryptionAlgorithm() == null) ? 0 : getDestinationEncryptionAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
         return hashCode;
     }

@@ -50,6 +50,12 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     */
+    private Boolean signingDisabled;
 
     /**
      * <p>
@@ -292,6 +298,58 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     * 
+     * @param signingDisabled
+     *        Specifies whether AWS IoT validates the token signature in an authorization request.
+     */
+
+    public void setSigningDisabled(Boolean signingDisabled) {
+        this.signingDisabled = signingDisabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     * 
+     * @return Specifies whether AWS IoT validates the token signature in an authorization request.
+     */
+
+    public Boolean getSigningDisabled() {
+        return this.signingDisabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     * 
+     * @param signingDisabled
+     *        Specifies whether AWS IoT validates the token signature in an authorization request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAuthorizerRequest withSigningDisabled(Boolean signingDisabled) {
+        setSigningDisabled(signingDisabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS IoT validates the token signature in an authorization request.
+     * </p>
+     * 
+     * @return Specifies whether AWS IoT validates the token signature in an authorization request.
+     */
+
+    public Boolean isSigningDisabled() {
+        return this.signingDisabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -312,7 +370,9 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTokenSigningPublicKeys() != null)
             sb.append("TokenSigningPublicKeys: ").append(getTokenSigningPublicKeys()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getSigningDisabled() != null)
+            sb.append("SigningDisabled: ").append(getSigningDisabled());
         sb.append("}");
         return sb.toString();
     }
@@ -347,6 +407,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getSigningDisabled() == null ^ this.getSigningDisabled() == null)
+            return false;
+        if (other.getSigningDisabled() != null && other.getSigningDisabled().equals(this.getSigningDisabled()) == false)
+            return false;
         return true;
     }
 
@@ -360,6 +424,7 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getTokenKeyName() == null) ? 0 : getTokenKeyName().hashCode());
         hashCode = prime * hashCode + ((getTokenSigningPublicKeys() == null) ? 0 : getTokenSigningPublicKeys().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSigningDisabled() == null) ? 0 : getSigningDisabled().hashCode());
         return hashCode;
     }
 

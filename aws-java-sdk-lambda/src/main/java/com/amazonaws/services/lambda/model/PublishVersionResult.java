@@ -120,7 +120,7 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-     * configured a customer-managed CMK.
+     * configured a customer managed CMK.
      * </p>
      */
     private String kMSKeyArn;
@@ -148,6 +148,44 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Layer> layers;
+    /**
+     * <p>
+     * The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+     * invoking it.
+     * </p>
+     */
+    private String state;
+    /**
+     * <p>
+     * The reason for the function's current state.
+     * </p>
+     */
+    private String stateReason;
+    /**
+     * <p>
+     * The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+     * modify the function.
+     * </p>
+     */
+    private String stateReasonCode;
+    /**
+     * <p>
+     * The status of the last update that was performed on the function.
+     * </p>
+     */
+    private String lastUpdateStatus;
+    /**
+     * <p>
+     * The reason for the last update that was performed on the function.
+     * </p>
+     */
+    private String lastUpdateStatusReason;
+    /**
+     * <p>
+     * The reason code for the last update that was performed on the function.
+     * </p>
+     */
+    private String lastUpdateStatusReasonCode;
 
     /**
      * <p>
@@ -791,12 +829,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-     * configured a customer-managed CMK.
+     * configured a customer managed CMK.
      * </p>
      * 
      * @param kMSKeyArn
      *        The KMS key that's used to encrypt the function's environment variables. This key is only returned if
-     *        you've configured a customer-managed CMK.
+     *        you've configured a customer managed CMK.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -806,11 +844,11 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-     * configured a customer-managed CMK.
+     * configured a customer managed CMK.
      * </p>
      * 
      * @return The KMS key that's used to encrypt the function's environment variables. This key is only returned if
-     *         you've configured a customer-managed CMK.
+     *         you've configured a customer managed CMK.
      */
 
     public String getKMSKeyArn() {
@@ -820,12 +858,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-     * configured a customer-managed CMK.
+     * configured a customer managed CMK.
      * </p>
      * 
      * @param kMSKeyArn
      *        The KMS key that's used to encrypt the function's environment variables. This key is only returned if
-     *        you've configured a customer-managed CMK.
+     *        you've configured a customer managed CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1032,6 +1070,398 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+     * invoking it.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the function. When the state is <code>Inactive</code>, you can reactivate the
+     *        function by invoking it.
+     * @see State
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+     * invoking it.
+     * </p>
+     * 
+     * @return The current state of the function. When the state is <code>Inactive</code>, you can reactivate the
+     *         function by invoking it.
+     * @see State
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+     * invoking it.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the function. When the state is <code>Inactive</code>, you can reactivate the
+     *        function by invoking it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see State
+     */
+
+    public PublishVersionResult withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+     * invoking it.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the function. When the state is <code>Inactive</code>, you can reactivate the
+     *        function by invoking it.
+     * @see State
+     */
+
+    public void setState(State state) {
+        withState(state);
+    }
+
+    /**
+     * <p>
+     * The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
+     * invoking it.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the function. When the state is <code>Inactive</code>, you can reactivate the
+     *        function by invoking it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see State
+     */
+
+    public PublishVersionResult withState(State state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason for the function's current state.
+     * </p>
+     * 
+     * @param stateReason
+     *        The reason for the function's current state.
+     */
+
+    public void setStateReason(String stateReason) {
+        this.stateReason = stateReason;
+    }
+
+    /**
+     * <p>
+     * The reason for the function's current state.
+     * </p>
+     * 
+     * @return The reason for the function's current state.
+     */
+
+    public String getStateReason() {
+        return this.stateReason;
+    }
+
+    /**
+     * <p>
+     * The reason for the function's current state.
+     * </p>
+     * 
+     * @param stateReason
+     *        The reason for the function's current state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishVersionResult withStateReason(String stateReason) {
+        setStateReason(stateReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+     * modify the function.
+     * </p>
+     * 
+     * @param stateReasonCode
+     *        The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke
+     *        or modify the function.
+     * @see StateReasonCode
+     */
+
+    public void setStateReasonCode(String stateReasonCode) {
+        this.stateReasonCode = stateReasonCode;
+    }
+
+    /**
+     * <p>
+     * The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+     * modify the function.
+     * </p>
+     * 
+     * @return The reason code for the function's current state. When the code is <code>Creating</code>, you can't
+     *         invoke or modify the function.
+     * @see StateReasonCode
+     */
+
+    public String getStateReasonCode() {
+        return this.stateReasonCode;
+    }
+
+    /**
+     * <p>
+     * The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+     * modify the function.
+     * </p>
+     * 
+     * @param stateReasonCode
+     *        The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke
+     *        or modify the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateReasonCode
+     */
+
+    public PublishVersionResult withStateReasonCode(String stateReasonCode) {
+        setStateReasonCode(stateReasonCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+     * modify the function.
+     * </p>
+     * 
+     * @param stateReasonCode
+     *        The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke
+     *        or modify the function.
+     * @see StateReasonCode
+     */
+
+    public void setStateReasonCode(StateReasonCode stateReasonCode) {
+        withStateReasonCode(stateReasonCode);
+    }
+
+    /**
+     * <p>
+     * The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
+     * modify the function.
+     * </p>
+     * 
+     * @param stateReasonCode
+     *        The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke
+     *        or modify the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateReasonCode
+     */
+
+    public PublishVersionResult withStateReasonCode(StateReasonCode stateReasonCode) {
+        this.stateReasonCode = stateReasonCode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatus
+     *        The status of the last update that was performed on the function.
+     * @see LastUpdateStatus
+     */
+
+    public void setLastUpdateStatus(String lastUpdateStatus) {
+        this.lastUpdateStatus = lastUpdateStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the last update that was performed on the function.
+     * </p>
+     * 
+     * @return The status of the last update that was performed on the function.
+     * @see LastUpdateStatus
+     */
+
+    public String getLastUpdateStatus() {
+        return this.lastUpdateStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatus
+     *        The status of the last update that was performed on the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LastUpdateStatus
+     */
+
+    public PublishVersionResult withLastUpdateStatus(String lastUpdateStatus) {
+        setLastUpdateStatus(lastUpdateStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatus
+     *        The status of the last update that was performed on the function.
+     * @see LastUpdateStatus
+     */
+
+    public void setLastUpdateStatus(LastUpdateStatus lastUpdateStatus) {
+        withLastUpdateStatus(lastUpdateStatus);
+    }
+
+    /**
+     * <p>
+     * The status of the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatus
+     *        The status of the last update that was performed on the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LastUpdateStatus
+     */
+
+    public PublishVersionResult withLastUpdateStatus(LastUpdateStatus lastUpdateStatus) {
+        this.lastUpdateStatus = lastUpdateStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason for the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatusReason
+     *        The reason for the last update that was performed on the function.
+     */
+
+    public void setLastUpdateStatusReason(String lastUpdateStatusReason) {
+        this.lastUpdateStatusReason = lastUpdateStatusReason;
+    }
+
+    /**
+     * <p>
+     * The reason for the last update that was performed on the function.
+     * </p>
+     * 
+     * @return The reason for the last update that was performed on the function.
+     */
+
+    public String getLastUpdateStatusReason() {
+        return this.lastUpdateStatusReason;
+    }
+
+    /**
+     * <p>
+     * The reason for the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatusReason
+     *        The reason for the last update that was performed on the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishVersionResult withLastUpdateStatusReason(String lastUpdateStatusReason) {
+        setLastUpdateStatusReason(lastUpdateStatusReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason code for the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatusReasonCode
+     *        The reason code for the last update that was performed on the function.
+     * @see LastUpdateStatusReasonCode
+     */
+
+    public void setLastUpdateStatusReasonCode(String lastUpdateStatusReasonCode) {
+        this.lastUpdateStatusReasonCode = lastUpdateStatusReasonCode;
+    }
+
+    /**
+     * <p>
+     * The reason code for the last update that was performed on the function.
+     * </p>
+     * 
+     * @return The reason code for the last update that was performed on the function.
+     * @see LastUpdateStatusReasonCode
+     */
+
+    public String getLastUpdateStatusReasonCode() {
+        return this.lastUpdateStatusReasonCode;
+    }
+
+    /**
+     * <p>
+     * The reason code for the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatusReasonCode
+     *        The reason code for the last update that was performed on the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LastUpdateStatusReasonCode
+     */
+
+    public PublishVersionResult withLastUpdateStatusReasonCode(String lastUpdateStatusReasonCode) {
+        setLastUpdateStatusReasonCode(lastUpdateStatusReasonCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason code for the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatusReasonCode
+     *        The reason code for the last update that was performed on the function.
+     * @see LastUpdateStatusReasonCode
+     */
+
+    public void setLastUpdateStatusReasonCode(LastUpdateStatusReasonCode lastUpdateStatusReasonCode) {
+        withLastUpdateStatusReasonCode(lastUpdateStatusReasonCode);
+    }
+
+    /**
+     * <p>
+     * The reason code for the last update that was performed on the function.
+     * </p>
+     * 
+     * @param lastUpdateStatusReasonCode
+     *        The reason code for the last update that was performed on the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LastUpdateStatusReasonCode
+     */
+
+    public PublishVersionResult withLastUpdateStatusReasonCode(LastUpdateStatusReasonCode lastUpdateStatusReasonCode) {
+        this.lastUpdateStatusReasonCode = lastUpdateStatusReasonCode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1082,7 +1512,19 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getRevisionId() != null)
             sb.append("RevisionId: ").append(getRevisionId()).append(",");
         if (getLayers() != null)
-            sb.append("Layers: ").append(getLayers());
+            sb.append("Layers: ").append(getLayers()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getStateReason() != null)
+            sb.append("StateReason: ").append(getStateReason()).append(",");
+        if (getStateReasonCode() != null)
+            sb.append("StateReasonCode: ").append(getStateReasonCode()).append(",");
+        if (getLastUpdateStatus() != null)
+            sb.append("LastUpdateStatus: ").append(getLastUpdateStatus()).append(",");
+        if (getLastUpdateStatusReason() != null)
+            sb.append("LastUpdateStatusReason: ").append(getLastUpdateStatusReason()).append(",");
+        if (getLastUpdateStatusReasonCode() != null)
+            sb.append("LastUpdateStatusReasonCode: ").append(getLastUpdateStatusReasonCode());
         sb.append("}");
         return sb.toString();
     }
@@ -1177,6 +1619,30 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getLayers() != null && other.getLayers().equals(this.getLayers()) == false)
             return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getStateReason() == null ^ this.getStateReason() == null)
+            return false;
+        if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false)
+            return false;
+        if (other.getStateReasonCode() == null ^ this.getStateReasonCode() == null)
+            return false;
+        if (other.getStateReasonCode() != null && other.getStateReasonCode().equals(this.getStateReasonCode()) == false)
+            return false;
+        if (other.getLastUpdateStatus() == null ^ this.getLastUpdateStatus() == null)
+            return false;
+        if (other.getLastUpdateStatus() != null && other.getLastUpdateStatus().equals(this.getLastUpdateStatus()) == false)
+            return false;
+        if (other.getLastUpdateStatusReason() == null ^ this.getLastUpdateStatusReason() == null)
+            return false;
+        if (other.getLastUpdateStatusReason() != null && other.getLastUpdateStatusReason().equals(this.getLastUpdateStatusReason()) == false)
+            return false;
+        if (other.getLastUpdateStatusReasonCode() == null ^ this.getLastUpdateStatusReasonCode() == null)
+            return false;
+        if (other.getLastUpdateStatusReasonCode() != null && other.getLastUpdateStatusReasonCode().equals(this.getLastUpdateStatusReasonCode()) == false)
+            return false;
         return true;
     }
 
@@ -1205,6 +1671,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getMasterArn() == null) ? 0 : getMasterArn().hashCode());
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
+        hashCode = prime * hashCode + ((getStateReasonCode() == null) ? 0 : getStateReasonCode().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdateStatus() == null) ? 0 : getLastUpdateStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdateStatusReason() == null) ? 0 : getLastUpdateStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdateStatusReasonCode() == null) ? 0 : getLastUpdateStatusReasonCode().hashCode());
         return hashCode;
     }
 

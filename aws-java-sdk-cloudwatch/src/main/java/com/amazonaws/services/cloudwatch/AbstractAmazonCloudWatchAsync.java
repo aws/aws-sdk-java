@@ -67,6 +67,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteInsightRulesResult> deleteInsightRulesAsync(DeleteInsightRulesRequest request) {
+
+        return deleteInsightRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInsightRulesResult> deleteInsightRulesAsync(DeleteInsightRulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteInsightRulesRequest, DeleteInsightRulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(DescribeAlarmHistoryRequest request) {
 
         return describeAlarmHistoryAsync(request, null);
@@ -165,6 +178,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInsightRulesResult> describeInsightRulesAsync(DescribeInsightRulesRequest request) {
+
+        return describeInsightRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInsightRulesResult> describeInsightRulesAsync(DescribeInsightRulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInsightRulesRequest, DescribeInsightRulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(DisableAlarmActionsRequest request) {
 
         return disableAlarmActionsAsync(request, null);
@@ -173,6 +199,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     @Override
     public java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(DisableAlarmActionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, DisableAlarmActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableInsightRulesResult> disableInsightRulesAsync(DisableInsightRulesRequest request) {
+
+        return disableInsightRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableInsightRulesResult> disableInsightRulesAsync(DisableInsightRulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableInsightRulesRequest, DisableInsightRulesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -191,6 +230,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<EnableInsightRulesResult> enableInsightRulesAsync(EnableInsightRulesRequest request) {
+
+        return enableInsightRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableInsightRulesResult> enableInsightRulesAsync(EnableInsightRulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableInsightRulesRequest, EnableInsightRulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDashboardResult> getDashboardAsync(GetDashboardRequest request) {
 
         return getDashboardAsync(request, null);
@@ -199,6 +251,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     @Override
     public java.util.concurrent.Future<GetDashboardResult> getDashboardAsync(GetDashboardRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDashboardRequest, GetDashboardResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightRuleReportResult> getInsightRuleReportAsync(GetInsightRuleReportRequest request) {
+
+        return getInsightRuleReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInsightRuleReportResult> getInsightRuleReportAsync(GetInsightRuleReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInsightRuleReportRequest, GetInsightRuleReportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -326,6 +391,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     @Override
     public java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(PutDashboardRequest request,
             com.amazonaws.handlers.AsyncHandler<PutDashboardRequest, PutDashboardResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInsightRuleResult> putInsightRuleAsync(PutInsightRuleRequest request) {
+
+        return putInsightRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInsightRuleResult> putInsightRuleAsync(PutInsightRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutInsightRuleRequest, PutInsightRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -99,6 +99,19 @@ public class AbstractAmazonKinesisAnalyticsV2Async extends AbstractAmazonKinesis
     }
 
     @Override
+    public java.util.concurrent.Future<AddApplicationVpcConfigurationResult> addApplicationVpcConfigurationAsync(AddApplicationVpcConfigurationRequest request) {
+
+        return addApplicationVpcConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationVpcConfigurationResult> addApplicationVpcConfigurationAsync(AddApplicationVpcConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddApplicationVpcConfigurationRequest, AddApplicationVpcConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
 
         return createApplicationAsync(request, null);
@@ -204,6 +217,21 @@ public class AbstractAmazonKinesisAnalyticsV2Async extends AbstractAmazonKinesis
     @Override
     public java.util.concurrent.Future<DeleteApplicationSnapshotResult> deleteApplicationSnapshotAsync(DeleteApplicationSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationSnapshotRequest, DeleteApplicationSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationVpcConfigurationResult> deleteApplicationVpcConfigurationAsync(
+            DeleteApplicationVpcConfigurationRequest request) {
+
+        return deleteApplicationVpcConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationVpcConfigurationResult> deleteApplicationVpcConfigurationAsync(
+            DeleteApplicationVpcConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationVpcConfigurationRequest, DeleteApplicationVpcConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

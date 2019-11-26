@@ -33,6 +33,14 @@ public class QueryExecutionStatisticsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataScannedInBytes").build();
     private static final MarshallingInfo<String> DATAMANIFESTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataManifestLocation").build();
+    private static final MarshallingInfo<Long> TOTALEXECUTIONTIMEINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalExecutionTimeInMillis").build();
+    private static final MarshallingInfo<Long> QUERYQUEUETIMEINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryQueueTimeInMillis").build();
+    private static final MarshallingInfo<Long> QUERYPLANNINGTIMEINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryPlanningTimeInMillis").build();
+    private static final MarshallingInfo<Long> SERVICEPROCESSINGTIMEINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceProcessingTimeInMillis").build();
 
     private static final QueryExecutionStatisticsMarshaller instance = new QueryExecutionStatisticsMarshaller();
 
@@ -53,6 +61,10 @@ public class QueryExecutionStatisticsMarshaller {
             protocolMarshaller.marshall(queryExecutionStatistics.getEngineExecutionTimeInMillis(), ENGINEEXECUTIONTIMEINMILLIS_BINDING);
             protocolMarshaller.marshall(queryExecutionStatistics.getDataScannedInBytes(), DATASCANNEDINBYTES_BINDING);
             protocolMarshaller.marshall(queryExecutionStatistics.getDataManifestLocation(), DATAMANIFESTLOCATION_BINDING);
+            protocolMarshaller.marshall(queryExecutionStatistics.getTotalExecutionTimeInMillis(), TOTALEXECUTIONTIMEINMILLIS_BINDING);
+            protocolMarshaller.marshall(queryExecutionStatistics.getQueryQueueTimeInMillis(), QUERYQUEUETIMEINMILLIS_BINDING);
+            protocolMarshaller.marshall(queryExecutionStatistics.getQueryPlanningTimeInMillis(), QUERYPLANNINGTIMEINMILLIS_BINDING);
+            protocolMarshaller.marshall(queryExecutionStatistics.getServiceProcessingTimeInMillis(), SERVICEPROCESSINGTIMEINMILLIS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

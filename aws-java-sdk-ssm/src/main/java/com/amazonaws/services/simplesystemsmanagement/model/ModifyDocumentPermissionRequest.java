@@ -52,6 +52,13 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accountIdsToRemove;
+    /**
+     * <p>
+     * (Optional) The version of the document to share. If it's not specified, the system choose the
+     * <code>Default</code> version to share.
+     * </p>
+     */
+    private String sharedDocumentVersion;
 
     /**
      * <p>
@@ -337,6 +344,52 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * (Optional) The version of the document to share. If it's not specified, the system choose the
+     * <code>Default</code> version to share.
+     * </p>
+     * 
+     * @param sharedDocumentVersion
+     *        (Optional) The version of the document to share. If it's not specified, the system choose the
+     *        <code>Default</code> version to share.
+     */
+
+    public void setSharedDocumentVersion(String sharedDocumentVersion) {
+        this.sharedDocumentVersion = sharedDocumentVersion;
+    }
+
+    /**
+     * <p>
+     * (Optional) The version of the document to share. If it's not specified, the system choose the
+     * <code>Default</code> version to share.
+     * </p>
+     * 
+     * @return (Optional) The version of the document to share. If it's not specified, the system choose the
+     *         <code>Default</code> version to share.
+     */
+
+    public String getSharedDocumentVersion() {
+        return this.sharedDocumentVersion;
+    }
+
+    /**
+     * <p>
+     * (Optional) The version of the document to share. If it's not specified, the system choose the
+     * <code>Default</code> version to share.
+     * </p>
+     * 
+     * @param sharedDocumentVersion
+     *        (Optional) The version of the document to share. If it's not specified, the system choose the
+     *        <code>Default</code> version to share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDocumentPermissionRequest withSharedDocumentVersion(String sharedDocumentVersion) {
+        setSharedDocumentVersion(sharedDocumentVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,7 +408,9 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
         if (getAccountIdsToAdd() != null)
             sb.append("AccountIdsToAdd: ").append(getAccountIdsToAdd()).append(",");
         if (getAccountIdsToRemove() != null)
-            sb.append("AccountIdsToRemove: ").append(getAccountIdsToRemove());
+            sb.append("AccountIdsToRemove: ").append(getAccountIdsToRemove()).append(",");
+        if (getSharedDocumentVersion() != null)
+            sb.append("SharedDocumentVersion: ").append(getSharedDocumentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +441,10 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getAccountIdsToRemove() != null && other.getAccountIdsToRemove().equals(this.getAccountIdsToRemove()) == false)
             return false;
+        if (other.getSharedDocumentVersion() == null ^ this.getSharedDocumentVersion() == null)
+            return false;
+        if (other.getSharedDocumentVersion() != null && other.getSharedDocumentVersion().equals(this.getSharedDocumentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -398,6 +457,7 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
         hashCode = prime * hashCode + ((getAccountIdsToAdd() == null) ? 0 : getAccountIdsToAdd().hashCode());
         hashCode = prime * hashCode + ((getAccountIdsToRemove() == null) ? 0 : getAccountIdsToRemove().hashCode());
+        hashCode = prime * hashCode + ((getSharedDocumentVersion() == null) ? 0 : getSharedDocumentVersion().hashCode());
         return hashCode;
     }
 

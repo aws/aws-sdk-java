@@ -68,6 +68,10 @@ public class ExpressionJsonUnmarshaller implements Unmarshaller<Expression, Json
                     context.nextToken();
                     expression.setTags(TagValuesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CostCategories", targetDepth)) {
+                    context.nextToken();
+                    expression.setCostCategories(CostCategoryValuesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

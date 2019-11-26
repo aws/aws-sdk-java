@@ -25,6 +25,8 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
 
     /** The ARN of the PackagingGroup. */
     private String arn;
+    /** The fully qualified domain name for Assets in the PackagingGroup. */
+    private String domainName;
     /** The ID of the PackagingGroup. */
     private String id;
 
@@ -59,6 +61,40 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
 
     public DescribePackagingGroupResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     * 
+     * @param domainName
+     *        The fully qualified domain name for Assets in the PackagingGroup.
+     */
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     * 
+     * @return The fully qualified domain name for Assets in the PackagingGroup.
+     */
+
+    public String getDomainName() {
+        return this.domainName;
+    }
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     * 
+     * @param domainName
+     *        The fully qualified domain name for Assets in the PackagingGroup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackagingGroupResult withDomainName(String domainName) {
+        setDomainName(domainName);
         return this;
     }
 
@@ -110,6 +146,8 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getDomainName() != null)
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId());
         sb.append("}");
@@ -130,6 +168,10 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getDomainName() == null ^ this.getDomainName() == null)
+            return false;
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -143,6 +185,7 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         return hashCode;
     }

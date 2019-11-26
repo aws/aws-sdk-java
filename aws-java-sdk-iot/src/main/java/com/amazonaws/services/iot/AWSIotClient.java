@@ -1608,6 +1608,80 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Creates a domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param createDomainConfigurationRequest
+     * @return Result of the CreateDomainConfiguration operation returned by the service.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws CertificateValidationException
+     *         The certificate is invalid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @sample AWSIot.CreateDomainConfiguration
+     */
+    @Override
+    public CreateDomainConfigurationResult createDomainConfiguration(CreateDomainConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDomainConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateDomainConfigurationResult executeCreateDomainConfiguration(CreateDomainConfigurationRequest createDomainConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDomainConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDomainConfigurationRequest> request = null;
+        Response<CreateDomainConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDomainConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDomainConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomainConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDomainConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDomainConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a dynamic thing group.
      * </p>
      * 
@@ -1738,7 +1812,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.
+     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key. You can also call
+     * <code>CreateKeysAndCertificate</code> over MQTT from a device, for more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api"
+     * >Provisioning MQTT API</a>.
      * </p>
      * <p>
      * <b>Note</b> This is the only time AWS IoT issues the private key for this certificate, so it is important to keep
@@ -2068,6 +2145,205 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<CreatePolicyVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePolicyVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a provisioning claim.
+     * </p>
+     * 
+     * @param createProvisioningClaimRequest
+     * @return Result of the CreateProvisioningClaim operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateProvisioningClaim
+     */
+    @Override
+    public CreateProvisioningClaimResult createProvisioningClaim(CreateProvisioningClaimRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProvisioningClaim(request);
+    }
+
+    @SdkInternalApi
+    final CreateProvisioningClaimResult executeCreateProvisioningClaim(CreateProvisioningClaimRequest createProvisioningClaimRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProvisioningClaimRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProvisioningClaimRequest> request = null;
+        Response<CreateProvisioningClaimResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProvisioningClaimRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createProvisioningClaimRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProvisioningClaim");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProvisioningClaimResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateProvisioningClaimResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a fleet provisioning template.
+     * </p>
+     * 
+     * @param createProvisioningTemplateRequest
+     * @return Result of the CreateProvisioningTemplate operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @sample AWSIot.CreateProvisioningTemplate
+     */
+    @Override
+    public CreateProvisioningTemplateResult createProvisioningTemplate(CreateProvisioningTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProvisioningTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateProvisioningTemplateResult executeCreateProvisioningTemplate(CreateProvisioningTemplateRequest createProvisioningTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProvisioningTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProvisioningTemplateRequest> request = null;
+        Response<CreateProvisioningTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProvisioningTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createProvisioningTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProvisioningTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProvisioningTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateProvisioningTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new version of a fleet provisioning template.
+     * </p>
+     * 
+     * @param createProvisioningTemplateVersionRequest
+     * @return Result of the CreateProvisioningTemplateVersion operation returned by the service.
+     * @throws VersionsLimitExceededException
+     *         The number of policy versions exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
+     * @sample AWSIot.CreateProvisioningTemplateVersion
+     */
+    @Override
+    public CreateProvisioningTemplateVersionResult createProvisioningTemplateVersion(CreateProvisioningTemplateVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProvisioningTemplateVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateProvisioningTemplateVersionResult executeCreateProvisioningTemplateVersion(
+            CreateProvisioningTemplateVersionRequest createProvisioningTemplateVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProvisioningTemplateVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProvisioningTemplateVersionRequest> request = null;
+        Response<CreateProvisioningTemplateVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProvisioningTemplateVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createProvisioningTemplateVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProvisioningTemplateVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProvisioningTemplateVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateProvisioningTemplateVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2997,6 +3273,76 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Deletes the specified domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param deleteDomainConfigurationRequest
+     * @return Result of the DeleteDomainConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @sample AWSIot.DeleteDomainConfiguration
+     */
+    @Override
+    public DeleteDomainConfigurationResult deleteDomainConfiguration(DeleteDomainConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDomainConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDomainConfigurationResult executeDeleteDomainConfiguration(DeleteDomainConfigurationRequest deleteDomainConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDomainConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDomainConfigurationRequest> request = null;
+        Response<DeleteDomainConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDomainConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDomainConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomainConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDomainConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteDomainConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a dynamic thing group.
      * </p>
      * 
@@ -3450,6 +3796,137 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeletePolicyVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePolicyVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a fleet provisioning template.
+     * </p>
+     * 
+     * @param deleteProvisioningTemplateRequest
+     * @return Result of the DeleteProvisioningTemplate operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws DeleteConflictException
+     *         You can't delete the resource because it is attached to one or more resources.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.DeleteProvisioningTemplate
+     */
+    @Override
+    public DeleteProvisioningTemplateResult deleteProvisioningTemplate(DeleteProvisioningTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProvisioningTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProvisioningTemplateResult executeDeleteProvisioningTemplate(DeleteProvisioningTemplateRequest deleteProvisioningTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProvisioningTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProvisioningTemplateRequest> request = null;
+        Response<DeleteProvisioningTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProvisioningTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteProvisioningTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProvisioningTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProvisioningTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteProvisioningTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a fleet provisioning template version.
+     * </p>
+     * 
+     * @param deleteProvisioningTemplateVersionRequest
+     * @return Result of the DeleteProvisioningTemplateVersion operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws DeleteConflictException
+     *         You can't delete the resource because it is attached to one or more resources.
+     * @sample AWSIot.DeleteProvisioningTemplateVersion
+     */
+    @Override
+    public DeleteProvisioningTemplateVersionResult deleteProvisioningTemplateVersion(DeleteProvisioningTemplateVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProvisioningTemplateVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProvisioningTemplateVersionResult executeDeleteProvisioningTemplateVersion(
+            DeleteProvisioningTemplateVersionRequest deleteProvisioningTemplateVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProvisioningTemplateVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProvisioningTemplateVersionRequest> request = null;
+        Response<DeleteProvisioningTemplateVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProvisioningTemplateVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteProvisioningTemplateVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProvisioningTemplateVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProvisioningTemplateVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteProvisioningTemplateVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4776,6 +5253,74 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Gets summary information about a domain configuration.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param describeDomainConfigurationRequest
+     * @return Result of the DescribeDomainConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeDomainConfiguration
+     */
+    @Override
+    public DescribeDomainConfigurationResult describeDomainConfiguration(DescribeDomainConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDomainConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDomainConfigurationResult executeDescribeDomainConfiguration(DescribeDomainConfigurationRequest describeDomainConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDomainConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDomainConfigurationRequest> request = null;
+        Response<DescribeDomainConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDomainConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDomainConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomainConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDomainConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDomainConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a unique endpoint specific to the AWS account making the call.
      * </p>
      * 
@@ -5123,6 +5668,133 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<DescribeMitigationActionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeMitigationActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a fleet provisioning template.
+     * </p>
+     * 
+     * @param describeProvisioningTemplateRequest
+     * @return Result of the DescribeProvisioningTemplate operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.DescribeProvisioningTemplate
+     */
+    @Override
+    public DescribeProvisioningTemplateResult describeProvisioningTemplate(DescribeProvisioningTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProvisioningTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProvisioningTemplateResult executeDescribeProvisioningTemplate(DescribeProvisioningTemplateRequest describeProvisioningTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeProvisioningTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProvisioningTemplateRequest> request = null;
+        Response<DescribeProvisioningTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProvisioningTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeProvisioningTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisioningTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProvisioningTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeProvisioningTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a fleet provisioning template version.
+     * </p>
+     * 
+     * @param describeProvisioningTemplateVersionRequest
+     * @return Result of the DescribeProvisioningTemplateVersion operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.DescribeProvisioningTemplateVersion
+     */
+    @Override
+    public DescribeProvisioningTemplateVersionResult describeProvisioningTemplateVersion(DescribeProvisioningTemplateVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProvisioningTemplateVersion(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProvisioningTemplateVersionResult executeDescribeProvisioningTemplateVersion(
+            DescribeProvisioningTemplateVersionRequest describeProvisioningTemplateVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeProvisioningTemplateVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProvisioningTemplateVersionRequest> request = null;
+        Response<DescribeProvisioningTemplateVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProvisioningTemplateVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeProvisioningTemplateVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisioningTemplateVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProvisioningTemplateVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeProvisioningTemplateVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6155,7 +6827,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Gets the search configuration.
+     * Gets the indexing configuration.
      * </p>
      * 
      * @param getIndexingConfigurationRequest
@@ -6666,7 +7338,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Gets statistics about things that match the specified query.
+     * Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard deviation for the
+     * specified aggregated field. If the aggregation field is of type <code>String</code>, only the count statistic is
+     * returned.
      * </p>
      * 
      * @param getStatisticsRequest
@@ -7586,6 +8260,75 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
+     * name.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param listDomainConfigurationsRequest
+     * @return Result of the ListDomainConfigurations operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListDomainConfigurations
+     */
+    @Override
+    public ListDomainConfigurationsResult listDomainConfigurations(ListDomainConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomainConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainConfigurationsResult executeListDomainConfigurations(ListDomainConfigurationsRequest listDomainConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDomainConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDomainConfigurationsRequest> request = null;
+        Response<ListDomainConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDomainConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDomainConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDomainConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDomainConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the search indices.
      * </p>
      * 
@@ -8330,6 +9073,131 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListPrincipalThingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPrincipalThingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A list of fleet provisioning template versions.
+     * </p>
+     * 
+     * @param listProvisioningTemplateVersionsRequest
+     * @return Result of the ListProvisioningTemplateVersions operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.ListProvisioningTemplateVersions
+     */
+    @Override
+    public ListProvisioningTemplateVersionsResult listProvisioningTemplateVersions(ListProvisioningTemplateVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProvisioningTemplateVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListProvisioningTemplateVersionsResult executeListProvisioningTemplateVersions(
+            ListProvisioningTemplateVersionsRequest listProvisioningTemplateVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listProvisioningTemplateVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProvisioningTemplateVersionsRequest> request = null;
+        Response<ListProvisioningTemplateVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProvisioningTemplateVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listProvisioningTemplateVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisioningTemplateVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProvisioningTemplateVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListProvisioningTemplateVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the fleet provisioning templates in your AWS account.
+     * </p>
+     * 
+     * @param listProvisioningTemplatesRequest
+     * @return Result of the ListProvisioningTemplates operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @sample AWSIot.ListProvisioningTemplates
+     */
+    @Override
+    public ListProvisioningTemplatesResult listProvisioningTemplates(ListProvisioningTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProvisioningTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListProvisioningTemplatesResult executeListProvisioningTemplates(ListProvisioningTemplatesRequest listProvisioningTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listProvisioningTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProvisioningTemplatesRequest> request = null;
+        Response<ListProvisioningTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProvisioningTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listProvisioningTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisioningTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProvisioningTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListProvisioningTemplatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9759,7 +10627,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Provisions a thing.
+     * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
+     * might exceed your account level <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
+     * Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">AWS
+     * Customer Support</a> to raise your throttling limits if necessary.
      * </p>
      * 
      * @param registerThingRequest
@@ -11376,6 +12248,78 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.
+     * </p>
+     * <note>
+     * <p>
+     * The domain configuration feature is in public preview and is subject to change.
+     * </p>
+     * </note>
+     * 
+     * @param updateDomainConfigurationRequest
+     * @return Result of the UpdateDomainConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws CertificateValidationException
+     *         The certificate is invalid.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateDomainConfiguration
+     */
+    @Override
+    public UpdateDomainConfigurationResult updateDomainConfiguration(UpdateDomainConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainConfigurationResult executeUpdateDomainConfiguration(UpdateDomainConfigurationRequest updateDomainConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDomainConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDomainConfigurationRequest> request = null;
+        Response<UpdateDomainConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDomainConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDomainConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDomainConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a dynamic thing group.
      * </p>
      * 
@@ -11671,6 +12615,70 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<UpdateMitigationActionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateMitigationActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a fleet provisioning template.
+     * </p>
+     * 
+     * @param updateProvisioningTemplateRequest
+     * @return Result of the UpdateProvisioningTemplate operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
+     * @sample AWSIot.UpdateProvisioningTemplate
+     */
+    @Override
+    public UpdateProvisioningTemplateResult updateProvisioningTemplate(UpdateProvisioningTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProvisioningTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProvisioningTemplateResult executeUpdateProvisioningTemplate(UpdateProvisioningTemplateRequest updateProvisioningTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateProvisioningTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProvisioningTemplateRequest> request = null;
+        Response<UpdateProvisioningTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProvisioningTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateProvisioningTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProvisioningTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateProvisioningTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateProvisioningTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

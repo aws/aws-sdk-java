@@ -82,6 +82,33 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * Indicates how the resource share was created. Possible values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and Access
+     * Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the AWS account
+     * that created it. They cannot be modified in AWS RAM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     * information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or APIs. These
+     * resource shares are visible to all principals. They can be modified in AWS RAM.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String featureSet;
 
     /**
      * <p>
@@ -505,6 +532,229 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates how the resource share was created. Possible values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and Access
+     * Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the AWS account
+     * that created it. They cannot be modified in AWS RAM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     * information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or APIs. These
+     * resource shares are visible to all principals. They can be modified in AWS RAM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param featureSet
+     *        Indicates how the resource share was created. Possible values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and
+     *        Access Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the
+     *        AWS account that created it. They cannot be modified in AWS RAM.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     *        information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or
+     *        APIs. These resource shares are visible to all principals. They can be modified in AWS RAM.
+     *        </p>
+     *        </li>
+     * @see ResourceShareFeatureSet
+     */
+
+    public void setFeatureSet(String featureSet) {
+        this.featureSet = featureSet;
+    }
+
+    /**
+     * <p>
+     * Indicates how the resource share was created. Possible values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and Access
+     * Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the AWS account
+     * that created it. They cannot be modified in AWS RAM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     * information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or APIs. These
+     * resource shares are visible to all principals. They can be modified in AWS RAM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates how the resource share was created. Possible values include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and
+     *         Access Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the
+     *         AWS account that created it. They cannot be modified in AWS RAM.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     *         information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or
+     *         APIs. These resource shares are visible to all principals. They can be modified in AWS RAM.
+     *         </p>
+     *         </li>
+     * @see ResourceShareFeatureSet
+     */
+
+    public String getFeatureSet() {
+        return this.featureSet;
+    }
+
+    /**
+     * <p>
+     * Indicates how the resource share was created. Possible values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and Access
+     * Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the AWS account
+     * that created it. They cannot be modified in AWS RAM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     * information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or APIs. These
+     * resource shares are visible to all principals. They can be modified in AWS RAM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param featureSet
+     *        Indicates how the resource share was created. Possible values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and
+     *        Access Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the
+     *        AWS account that created it. They cannot be modified in AWS RAM.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     *        information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or
+     *        APIs. These resource shares are visible to all principals. They can be modified in AWS RAM.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceShareFeatureSet
+     */
+
+    public ResourceShare withFeatureSet(String featureSet) {
+        setFeatureSet(featureSet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates how the resource share was created. Possible values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and Access
+     * Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the AWS account
+     * that created it. They cannot be modified in AWS RAM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     * information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or APIs. These
+     * resource shares are visible to all principals. They can be modified in AWS RAM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param featureSet
+     *        Indicates how the resource share was created. Possible values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an AWS Identity and
+     *        Access Management (AWS IAM) policy attached to a resource. These resource shares are visible only to the
+     *        AWS account that created it. They cannot be modified in AWS RAM.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being promoted. For more
+     *        information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM using the console or
+     *        APIs. These resource shares are visible to all principals. They can be modified in AWS RAM.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceShareFeatureSet
+     */
+
+    public ResourceShare withFeatureSet(ResourceShareFeatureSet featureSet) {
+        this.featureSet = featureSet.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -533,7 +783,9 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getFeatureSet() != null)
+            sb.append("FeatureSet: ").append(getFeatureSet());
         sb.append("}");
         return sb.toString();
     }
@@ -584,6 +836,10 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getFeatureSet() == null ^ this.getFeatureSet() == null)
+            return false;
+        if (other.getFeatureSet() != null && other.getFeatureSet().equals(this.getFeatureSet()) == false)
+            return false;
         return true;
     }
 
@@ -601,6 +857,7 @@ public class ResourceShare implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getFeatureSet() == null) ? 0 : getFeatureSet().hashCode());
         return hashCode;
     }
 

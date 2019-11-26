@@ -52,6 +52,10 @@ public class S3MachineLearningModelResourceDataJsonUnmarshaller implements Unmar
                     context.nextToken();
                     s3MachineLearningModelResourceData.setDestinationPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OwnerSetting", targetDepth)) {
+                    context.nextToken();
+                    s3MachineLearningModelResourceData.setOwnerSetting(ResourceDownloadOwnerSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("S3Uri", targetDepth)) {
                     context.nextToken();
                     s3MachineLearningModelResourceData.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));

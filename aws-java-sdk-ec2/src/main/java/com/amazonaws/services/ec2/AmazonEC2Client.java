@@ -10685,19 +10685,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the credit option for CPU usage of the specified T2 or T3 instances. The credit options are
-     * <code>standard</code> and <code>unlimited</code>.
+     * Describes the credit option for CPU usage of the specified burstable performance instances. The credit options
+     * are <code>standard</code> and <code>unlimited</code>.
      * </p>
      * <p>
-     * If you do not specify an instance ID, Amazon EC2 returns T2 and T3 instances with the <code>unlimited</code>
-     * credit option, as well as instances that were previously configured as T2 or T3 with the <code>unlimited</code>
-     * credit option. For example, if you resize a T2 instance, while it is configured as <code>unlimited</code>, to an
-     * M4 instance, Amazon EC2 returns the M4 instance.
+     * If you do not specify an instance ID, Amazon EC2 returns burstable performance instances with the
+     * <code>unlimited</code> credit option, as well as instances that were previously configured as T2, T3, and T3a
+     * with the <code>unlimited</code> credit option. For example, if you resize a T2 instance, while it is configured
+     * as <code>unlimited</code>, to an M4 instance, Amazon EC2 returns the M4 instance.
      * </p>
      * <p>
      * If you specify one or more instance IDs, Amazon EC2 returns the credit option (<code>standard</code> or
      * <code>unlimited</code>) of those instances. If you specify an instance ID that is not valid, such as an instance
-     * that is not a T2 or T3 instance, an error is returned.
+     * that is not a burstable performance instance, an error is returned.
      * </p>
      * <p>
      * Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
@@ -16520,6 +16520,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes the default credit option for CPU usage of a burstable performance instance family.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param getDefaultCreditSpecificationRequest
+     * @return Result of the GetDefaultCreditSpecification operation returned by the service.
+     * @sample AmazonEC2.GetDefaultCreditSpecification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDefaultCreditSpecificationResult getDefaultCreditSpecification(GetDefaultCreditSpecificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDefaultCreditSpecification(request);
+    }
+
+    @SdkInternalApi
+    final GetDefaultCreditSpecificationResult executeGetDefaultCreditSpecification(GetDefaultCreditSpecificationRequest getDefaultCreditSpecificationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDefaultCreditSpecificationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDefaultCreditSpecificationRequest> request = null;
+        Response<GetDefaultCreditSpecificationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDefaultCreditSpecificationRequestMarshaller().marshall(super.beforeMarshalling(getDefaultCreditSpecificationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDefaultCreditSpecification");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetDefaultCreditSpecificationResult> responseHandler = new StaxResponseHandler<GetDefaultCreditSpecificationResult>(
+                    new GetDefaultCreditSpecificationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the default customer master key (CMK) for EBS encryption by default for your account in this Region.
      * You can change the default CMK for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a> or
      * <a>ResetEbsDefaultKmsKeyId</a>.
@@ -17512,6 +17570,74 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Modifies the default credit option for CPU usage of burstable performance instances. The default credit option is
+     * set at the account level per AWS Region, and is specified per instance family. All new burstable performance
+     * instances in the account launch using the default credit option.
+     * </p>
+     * <p>
+     * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which works at an AWS Region level
+     * and modifies the credit option for each Availability Zone. All zones in a Region are updated within five minutes.
+     * But if instances are launched during this operation, they might not get the new credit option until the zone is
+     * updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code> and
+     * check <code>DefaultCreditSpecification</code> for updates.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param modifyDefaultCreditSpecificationRequest
+     * @return Result of the ModifyDefaultCreditSpecification operation returned by the service.
+     * @sample AmazonEC2.ModifyDefaultCreditSpecification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyDefaultCreditSpecificationResult modifyDefaultCreditSpecification(ModifyDefaultCreditSpecificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDefaultCreditSpecification(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDefaultCreditSpecificationResult executeModifyDefaultCreditSpecification(
+            ModifyDefaultCreditSpecificationRequest modifyDefaultCreditSpecificationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyDefaultCreditSpecificationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDefaultCreditSpecificationRequest> request = null;
+        Response<ModifyDefaultCreditSpecificationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDefaultCreditSpecificationRequestMarshaller().marshall(super.beforeMarshalling(modifyDefaultCreditSpecificationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDefaultCreditSpecification");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyDefaultCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyDefaultCreditSpecificationResult>(
+                    new ModifyDefaultCreditSpecificationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Changes the default customer master key (CMK) for EBS encryption by default for your account in this Region.
      * </p>
      * <p>
@@ -18116,8 +18242,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Modifies the credit option for CPU usage on a running or stopped T2 or T3 instance. The credit options are
-     * <code>standard</code> and <code>unlimited</code>.
+     * Modifies the credit option for CPU usage on a running or stopped burstable performance instance. The credit
+     * options are <code>standard</code> and <code>unlimited</code>.
      * </p>
      * <p>
      * For more information, see <a

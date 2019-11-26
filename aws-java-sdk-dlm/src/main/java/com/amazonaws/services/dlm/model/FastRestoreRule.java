@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies when to enable fast snapshot restore.
+ * Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or
+ * a time interval.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/FastRestoreRule" target="_top">AWS API
@@ -34,6 +35,19 @@ public class FastRestoreRule implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Integer count;
+    /**
+     * <p>
+     * The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months,
+     * 5200 weeks, or 36500 days.
+     * </p>
+     */
+    private Integer interval;
+    /**
+     * <p>
+     * The unit of time for enabling fast snapshot restore.
+     * </p>
+     */
+    private String intervalUnit;
     /**
      * <p>
      * The Availability Zones in which to enable fast snapshot restore.
@@ -78,6 +92,111 @@ public class FastRestoreRule implements Serializable, Cloneable, StructuredPojo 
 
     public FastRestoreRule withCount(Integer count) {
         setCount(count);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months,
+     * 5200 weeks, or 36500 days.
+     * </p>
+     * 
+     * @param interval
+     *        The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200
+     *        months, 5200 weeks, or 36500 days.
+     */
+
+    public void setInterval(Integer interval) {
+        this.interval = interval;
+    }
+
+    /**
+     * <p>
+     * The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months,
+     * 5200 weeks, or 36500 days.
+     * </p>
+     * 
+     * @return The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200
+     *         months, 5200 weeks, or 36500 days.
+     */
+
+    public Integer getInterval() {
+        return this.interval;
+    }
+
+    /**
+     * <p>
+     * The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months,
+     * 5200 weeks, or 36500 days.
+     * </p>
+     * 
+     * @param interval
+     *        The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200
+     *        months, 5200 weeks, or 36500 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FastRestoreRule withInterval(Integer interval) {
+        setInterval(interval);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unit of time for enabling fast snapshot restore.
+     * </p>
+     * 
+     * @param intervalUnit
+     *        The unit of time for enabling fast snapshot restore.
+     * @see RetentionIntervalUnitValues
+     */
+
+    public void setIntervalUnit(String intervalUnit) {
+        this.intervalUnit = intervalUnit;
+    }
+
+    /**
+     * <p>
+     * The unit of time for enabling fast snapshot restore.
+     * </p>
+     * 
+     * @return The unit of time for enabling fast snapshot restore.
+     * @see RetentionIntervalUnitValues
+     */
+
+    public String getIntervalUnit() {
+        return this.intervalUnit;
+    }
+
+    /**
+     * <p>
+     * The unit of time for enabling fast snapshot restore.
+     * </p>
+     * 
+     * @param intervalUnit
+     *        The unit of time for enabling fast snapshot restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RetentionIntervalUnitValues
+     */
+
+    public FastRestoreRule withIntervalUnit(String intervalUnit) {
+        setIntervalUnit(intervalUnit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unit of time for enabling fast snapshot restore.
+     * </p>
+     * 
+     * @param intervalUnit
+     *        The unit of time for enabling fast snapshot restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RetentionIntervalUnitValues
+     */
+
+    public FastRestoreRule withIntervalUnit(RetentionIntervalUnitValues intervalUnit) {
+        this.intervalUnit = intervalUnit.toString();
         return this;
     }
 
@@ -165,6 +284,10 @@ public class FastRestoreRule implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getCount() != null)
             sb.append("Count: ").append(getCount()).append(",");
+        if (getInterval() != null)
+            sb.append("Interval: ").append(getInterval()).append(",");
+        if (getIntervalUnit() != null)
+            sb.append("IntervalUnit: ").append(getIntervalUnit()).append(",");
         if (getAvailabilityZones() != null)
             sb.append("AvailabilityZones: ").append(getAvailabilityZones());
         sb.append("}");
@@ -185,6 +308,14 @@ public class FastRestoreRule implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
+        if (other.getInterval() == null ^ this.getInterval() == null)
+            return false;
+        if (other.getInterval() != null && other.getInterval().equals(this.getInterval()) == false)
+            return false;
+        if (other.getIntervalUnit() == null ^ this.getIntervalUnit() == null)
+            return false;
+        if (other.getIntervalUnit() != null && other.getIntervalUnit().equals(this.getIntervalUnit()) == false)
+            return false;
         if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
             return false;
         if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
@@ -198,6 +329,8 @@ public class FastRestoreRule implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getInterval() == null) ? 0 : getInterval().hashCode());
+        hashCode = prime * hashCode + ((getIntervalUnit() == null) ? 0 : getIntervalUnit().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         return hashCode;
     }

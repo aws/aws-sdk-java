@@ -38,12 +38,22 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public CreateLogPatternResult createLogPattern(CreateLogPatternRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteComponentResult deleteComponent(DeleteComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLogPatternResult deleteLogPattern(DeleteLogPatternRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,6 +75,11 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     @Override
     public DescribeComponentConfigurationRecommendationResult describeComponentConfigurationRecommendation(
             DescribeComponentConfigurationRecommendationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLogPatternResult describeLogPattern(DescribeLogPatternRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +109,32 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public ListLogPatternSetsResult listLogPatternSets(ListLogPatternSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLogPatternsResult listLogPatterns(ListLogPatternsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListProblemsResult listProblems(ListProblemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,6 +150,11 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
 
     @Override
     public UpdateComponentConfigurationResult updateComponentConfiguration(UpdateComponentConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLogPatternResult updateLogPattern(UpdateLogPatternRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -43,6 +43,66 @@ public class AWSMediaLiveWaiters {
     }
 
     /**
+     * Builds a MultiplexCreated waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeMultiplexRequest> multiplexCreated() {
+
+        return new WaiterBuilder<DescribeMultiplexRequest, DescribeMultiplexResult>()
+                .withSdkFunction(new DescribeMultiplexFunction(client))
+                .withAcceptors(new MultiplexCreated.IsIDLEMatcher(), new MultiplexCreated.IsCREATINGMatcher(),
+                        new HttpFailureStatusAcceptor(500, WaiterState.RETRY), new MultiplexCreated.IsCREATE_FAILEDMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(5), new FixedDelayStrategy(3)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a ChannelRunning waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeChannelRequest> channelRunning() {
+
+        return new WaiterBuilder<DescribeChannelRequest, DescribeChannelResult>()
+                .withSdkFunction(new DescribeChannelFunction(client))
+                .withAcceptors(new ChannelRunning.IsRUNNINGMatcher(), new ChannelRunning.IsSTARTINGMatcher(),
+                        new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a MultiplexRunning waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeMultiplexRequest> multiplexRunning() {
+
+        return new WaiterBuilder<DescribeMultiplexRequest, DescribeMultiplexResult>()
+                .withSdkFunction(new DescribeMultiplexFunction(client))
+                .withAcceptors(new MultiplexRunning.IsRUNNINGMatcher(), new MultiplexRunning.IsSTARTINGMatcher(),
+                        new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a MultiplexStopped waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeMultiplexRequest> multiplexStopped() {
+
+        return new WaiterBuilder<DescribeMultiplexRequest, DescribeMultiplexResult>()
+                .withSdkFunction(new DescribeMultiplexFunction(client))
+                .withAcceptors(new MultiplexStopped.IsIDLEMatcher(), new MultiplexStopped.IsSTOPPINGMatcher(),
+                        new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(28), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a ChannelCreated waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -73,21 +133,6 @@ public class AWSMediaLiveWaiters {
     }
 
     /**
-     * Builds a ChannelRunning waiter by using custom parameters waiterParameters and other parameters defined in the
-     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
-     * where polling criteria is bound by either default polling strategy or custom polling strategy.
-     */
-    public Waiter<DescribeChannelRequest> channelRunning() {
-
-        return new WaiterBuilder<DescribeChannelRequest, DescribeChannelResult>()
-                .withSdkFunction(new DescribeChannelFunction(client))
-                .withAcceptors(new ChannelRunning.IsRUNNINGMatcher(), new ChannelRunning.IsSTARTINGMatcher(),
-                        new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
-                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(5)))
-                .withExecutorService(executorService).build();
-    }
-
-    /**
      * Builds a ChannelDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -97,6 +142,21 @@ public class AWSMediaLiveWaiters {
         return new WaiterBuilder<DescribeChannelRequest, DescribeChannelResult>()
                 .withSdkFunction(new DescribeChannelFunction(client))
                 .withAcceptors(new ChannelDeleted.IsDELETEDMatcher(), new ChannelDeleted.IsDELETINGMatcher(),
+                        new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a MultiplexDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeMultiplexRequest> multiplexDeleted() {
+
+        return new WaiterBuilder<DescribeMultiplexRequest, DescribeMultiplexResult>()
+                .withSdkFunction(new DescribeMultiplexFunction(client))
+                .withAcceptors(new MultiplexDeleted.IsDELETEDMatcher(), new MultiplexDeleted.IsDELETINGMatcher(),
                         new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();

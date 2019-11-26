@@ -46,6 +46,10 @@ public class DescribeNodeConfigurationOptionsRequestMarshaller implements
             request.addParameter("ActionType", StringUtils.fromString(describeNodeConfigurationOptionsRequest.getActionType()));
         }
 
+        if (describeNodeConfigurationOptionsRequest.getClusterIdentifier() != null) {
+            request.addParameter("ClusterIdentifier", StringUtils.fromString(describeNodeConfigurationOptionsRequest.getClusterIdentifier()));
+        }
+
         if (describeNodeConfigurationOptionsRequest.getSnapshotIdentifier() != null) {
             request.addParameter("SnapshotIdentifier", StringUtils.fromString(describeNodeConfigurationOptionsRequest.getSnapshotIdentifier()));
         }

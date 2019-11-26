@@ -77,7 +77,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer gopClosedCadence;
     /** Number of B-frames between reference frames. */
     private Integer gopNumBFrames;
-    /** GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. Must be greater than zero. */
+    /**
+     * GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames,
+     * gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be
+     * greater than 0, but need not be an integer.
+     */
     private Double gopSize;
     /**
      * Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a
@@ -98,11 +102,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer maxBitrate;
     /**
-     * Only meaningful if sceneChangeDetect is set to enabled. Enforces separation between repeated (cadence) I-frames
-     * and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a
-     * cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling
-     * lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch =
-     * GOP size + Min-I-interval - 1
+     * Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces
+     * separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change
+     * I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
+     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the
+     * next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
      */
     private Integer minIInterval;
     /**
@@ -926,11 +930,14 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. Must be greater than zero.
+     * GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames,
+     * gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be
+     * greater than 0, but need not be an integer.
      * 
      * @param gopSize
-     *        GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. Must be greater than
-     *        zero.
+     *        GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is
+     *        frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds,
+     *        gopSize must be greater than 0, but need not be an integer.
      */
 
     public void setGopSize(Double gopSize) {
@@ -938,10 +945,13 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. Must be greater than zero.
+     * GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames,
+     * gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be
+     * greater than 0, but need not be an integer.
      * 
-     * @return GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. Must be greater than
-     *         zero.
+     * @return GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is
+     *         frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds,
+     *         gopSize must be greater than 0, but need not be an integer.
      */
 
     public Double getGopSize() {
@@ -949,11 +959,14 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. Must be greater than zero.
+     * GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames,
+     * gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be
+     * greater than 0, but need not be an integer.
      * 
      * @param gopSize
-     *        GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. Must be greater than
-     *        zero.
+     *        GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is
+     *        frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds,
+     *        gopSize must be greater than 0, but need not be an integer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1178,18 +1191,19 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only meaningful if sceneChangeDetect is set to enabled. Enforces separation between repeated (cadence) I-frames
-     * and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a
-     * cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling
-     * lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch =
-     * GOP size + Min-I-interval - 1
+     * Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces
+     * separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change
+     * I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
+     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the
+     * next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
      * 
      * @param minIInterval
-     *        Only meaningful if sceneChangeDetect is set to enabled. Enforces separation between repeated (cadence)
-     *        I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval
-     *        frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch
-     *        requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP.
-     *        Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+     *        Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used.
+     *        Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection.
+     *        If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or
+     *        stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting
+     *        I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size +
+     *        Min-I-interval - 1
      */
 
     public void setMinIInterval(Integer minIInterval) {
@@ -1197,17 +1211,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only meaningful if sceneChangeDetect is set to enabled. Enforces separation between repeated (cadence) I-frames
-     * and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a
-     * cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling
-     * lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch =
-     * GOP size + Min-I-interval - 1
+     * Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces
+     * separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change
+     * I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
+     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the
+     * next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
      * 
-     * @return Only meaningful if sceneChangeDetect is set to enabled. Enforces separation between repeated (cadence)
-     *         I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval
-     *         frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch
-     *         requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP.
-     *         Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+     * @return Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used.
+     *         Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection.
+     *         If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or
+     *         stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting
+     *         I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size +
+     *         Min-I-interval - 1
      */
 
     public Integer getMinIInterval() {
@@ -1215,18 +1230,19 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only meaningful if sceneChangeDetect is set to enabled. Enforces separation between repeated (cadence) I-frames
-     * and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a
-     * cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling
-     * lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch =
-     * GOP size + Min-I-interval - 1
+     * Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces
+     * separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change
+     * I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
+     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the
+     * next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
      * 
      * @param minIInterval
-     *        Only meaningful if sceneChangeDetect is set to enabled. Enforces separation between repeated (cadence)
-     *        I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval
-     *        frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch
-     *        requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP.
-     *        Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
+     *        Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used.
+     *        Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection.
+     *        If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or
+     *        stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting
+     *        I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size +
+     *        Min-I-interval - 1
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

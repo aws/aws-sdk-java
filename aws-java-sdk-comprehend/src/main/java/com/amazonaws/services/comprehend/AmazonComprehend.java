@@ -180,6 +180,29 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Creates a new document classification request to analyze a single document in real-time, using a previously
+     * created and trained custom model and an endpoint.
+     * </p>
+     * 
+     * @param classifyDocumentRequest
+     * @return Result of the ClassifyDocument operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws TextSizeLimitExceededException
+     *         The size of the input text exceeds the limit. Use a smaller document.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ClassifyDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ClassifyDocumentResult classifyDocument(ClassifyDocumentRequest classifyDocumentRequest);
+
+    /**
+     * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
      * you can use it to categorize a set of labeled documents into the categories. For more information, see
@@ -214,6 +237,38 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     CreateDocumentClassifierResult createDocumentClassifier(CreateDocumentClassifierRequest createDocumentClassifierRequest);
+
+    /**
+     * <p>
+     * Creates a model-specific endpoint for synchronous inference for a previously trained custom model
+     * </p>
+     * 
+     * @param createEndpointRequest
+     * @return Result of the CreateEndpoint operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
+     *         and then try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateEndpointResult createEndpoint(CreateEndpointRequest createEndpointRequest);
 
     /**
      * <p>
@@ -283,6 +338,30 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteDocumentClassifierResult deleteDocumentClassifier(DeleteDocumentClassifierRequest deleteDocumentClassifierRequest);
+
+    /**
+     * <p>
+     * Deletes a model-specific endpoint for a previously-trained custom model. All endpoints must be deleted in order
+     * for the model to be deleted.
+     * </p>
+     * 
+     * @param deleteEndpointRequest
+     * @return Result of the DeleteEndpoint operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DeleteEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest);
 
     /**
      * <p>
@@ -383,6 +462,27 @@ public interface AmazonComprehend {
      */
     DescribeDominantLanguageDetectionJobResult describeDominantLanguageDetectionJob(
             DescribeDominantLanguageDetectionJobRequest describeDominantLanguageDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with a specific endpoint. Use this operation to get the status of an endpoint.
+     * </p>
+     * 
+     * @param describeEndpointRequest
+     * @return Result of the DescribeEndpoint operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeEndpointResult describeEndpoint(DescribeEndpointRequest describeEndpointRequest);
 
     /**
      * <p>
@@ -676,6 +776,25 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     ListDominantLanguageDetectionJobsResult listDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest listDominantLanguageDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of all existing endpoints that you've created.
+     * </p>
+     * 
+     * @param listEndpointsRequest
+     * @return Result of the ListEndpoints operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListEndpointsResult listEndpoints(ListEndpointsRequest listEndpointsRequest);
 
     /**
      * <p>
@@ -1178,6 +1297,35 @@ public interface AmazonComprehend {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates information about the specified endpoint.
+     * </p>
+     * 
+     * @param updateEndpointRequest
+     * @return Result of the UpdateEndpoint operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceInUseException
+     *         The specified name is already in use. Use a different name and try your request again.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
+     *         and then try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+     *         state and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.UpdateEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

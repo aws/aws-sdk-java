@@ -766,6 +766,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(CreateScheduledActionRequest request) {
+
+        return createScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(final CreateScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateScheduledActionRequest, CreateScheduledActionResult> asyncHandler) {
+        final CreateScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateScheduledActionResult>() {
+            @Override
+            public CreateScheduledActionResult call() throws Exception {
+                CreateScheduledActionResult result = null;
+
+                try {
+                    result = executeCreateScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SnapshotCopyGrant> createSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest request) {
 
         return createSnapshotCopyGrantAsync(request, null);
@@ -1113,6 +1146,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeDeleteHsmConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest request) {
+
+        return deleteScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(final DeleteScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler) {
+        final DeleteScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteScheduledActionResult>() {
+            @Override
+            public DeleteScheduledActionResult call() throws Exception {
+                DeleteScheduledActionResult result = null;
+
+                try {
+                    result = executeDeleteScheduledAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2289,6 +2355,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest request) {
+
+        return describeScheduledActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(final DescribeScheduledActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeScheduledActionsRequest, DescribeScheduledActionsResult> asyncHandler) {
+        final DescribeScheduledActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeScheduledActionsResult>() {
+            @Override
+            public DescribeScheduledActionsResult call() throws Exception {
+                DescribeScheduledActionsResult result = null;
+
+                try {
+                    result = executeDescribeScheduledActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotCopyGrantsResult> describeSnapshotCopyGrantsAsync(DescribeSnapshotCopyGrantsRequest request) {
 
         return describeSnapshotCopyGrantsAsync(request, null);
@@ -3005,6 +3104,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeModifyEventSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyScheduledActionResult> modifyScheduledActionAsync(ModifyScheduledActionRequest request) {
+
+        return modifyScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyScheduledActionResult> modifyScheduledActionAsync(final ModifyScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyScheduledActionRequest, ModifyScheduledActionResult> asyncHandler) {
+        final ModifyScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyScheduledActionResult>() {
+            @Override
+            public ModifyScheduledActionResult call() throws Exception {
+                ModifyScheduledActionResult result = null;
+
+                try {
+                    result = executeModifyScheduledAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

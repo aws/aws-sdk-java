@@ -112,8 +112,18 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      */
     private Integer batchSize;
-
+    /**
+     * <p>
+     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * </p>
+     */
     private Integer maximumBatchingWindowInSeconds;
+    /**
+     * <p>
+     * (Streams) The number of batches to process from each shard concurrently.
+     * </p>
+     */
+    private Integer parallelizationFactor;
     /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
@@ -127,6 +137,30 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private java.util.Date startingPositionTimestamp;
+    /**
+     * <p>
+     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * </p>
+     */
+    private DestinationConfig destinationConfig;
+    /**
+     * <p>
+     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * </p>
+     */
+    private Integer maximumRecordAgeInSeconds;
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     */
+    private Boolean bisectBatchOnFunctionError;
+    /**
+     * <p>
+     * (Streams) The maximum number of times to retry when the function returns an error.
+     * </p>
+     */
+    private Integer maximumRetryAttempts;
 
     /**
      * <p>
@@ -671,7 +705,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * </p>
+     * 
      * @param maximumBatchingWindowInSeconds
+     *        The maximum amount of time to gather records before invoking the function, in seconds.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -679,7 +718,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * </p>
+     * 
+     * @return The maximum amount of time to gather records before invoking the function, in seconds.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -687,12 +730,57 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * </p>
+     * 
      * @param maximumBatchingWindowInSeconds
+     *        The maximum amount of time to gather records before invoking the function, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateEventSourceMappingRequest withMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
         setMaximumBatchingWindowInSeconds(maximumBatchingWindowInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) The number of batches to process from each shard concurrently.
+     * </p>
+     * 
+     * @param parallelizationFactor
+     *        (Streams) The number of batches to process from each shard concurrently.
+     */
+
+    public void setParallelizationFactor(Integer parallelizationFactor) {
+        this.parallelizationFactor = parallelizationFactor;
+    }
+
+    /**
+     * <p>
+     * (Streams) The number of batches to process from each shard concurrently.
+     * </p>
+     * 
+     * @return (Streams) The number of batches to process from each shard concurrently.
+     */
+
+    public Integer getParallelizationFactor() {
+        return this.parallelizationFactor;
+    }
+
+    /**
+     * <p>
+     * (Streams) The number of batches to process from each shard concurrently.
+     * </p>
+     * 
+     * @param parallelizationFactor
+     *        (Streams) The number of batches to process from each shard concurrently.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withParallelizationFactor(Integer parallelizationFactor) {
+        setParallelizationFactor(parallelizationFactor);
         return this;
     }
 
@@ -821,6 +909,178 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * </p>
+     * 
+     * @param destinationConfig
+     *        (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     */
+
+    public void setDestinationConfig(DestinationConfig destinationConfig) {
+        this.destinationConfig = destinationConfig;
+    }
+
+    /**
+     * <p>
+     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * </p>
+     * 
+     * @return (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     */
+
+    public DestinationConfig getDestinationConfig() {
+        return this.destinationConfig;
+    }
+
+    /**
+     * <p>
+     * (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * </p>
+     * 
+     * @param destinationConfig
+     *        (Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withDestinationConfig(DestinationConfig destinationConfig) {
+        setDestinationConfig(destinationConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * </p>
+     * 
+     * @param maximumRecordAgeInSeconds
+     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     */
+
+    public void setMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
+        this.maximumRecordAgeInSeconds = maximumRecordAgeInSeconds;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * </p>
+     * 
+     * @return (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     */
+
+    public Integer getMaximumRecordAgeInSeconds() {
+        return this.maximumRecordAgeInSeconds;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * </p>
+     * 
+     * @param maximumRecordAgeInSeconds
+     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
+        setMaximumRecordAgeInSeconds(maximumRecordAgeInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     * 
+     * @param bisectBatchOnFunctionError
+     *        (Streams) If the function returns an error, split the batch in two and retry.
+     */
+
+    public void setBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
+        this.bisectBatchOnFunctionError = bisectBatchOnFunctionError;
+    }
+
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     * 
+     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     */
+
+    public Boolean getBisectBatchOnFunctionError() {
+        return this.bisectBatchOnFunctionError;
+    }
+
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     * 
+     * @param bisectBatchOnFunctionError
+     *        (Streams) If the function returns an error, split the batch in two and retry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
+        setBisectBatchOnFunctionError(bisectBatchOnFunctionError);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) If the function returns an error, split the batch in two and retry.
+     * </p>
+     * 
+     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     */
+
+    public Boolean isBisectBatchOnFunctionError() {
+        return this.bisectBatchOnFunctionError;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum number of times to retry when the function returns an error.
+     * </p>
+     * 
+     * @param maximumRetryAttempts
+     *        (Streams) The maximum number of times to retry when the function returns an error.
+     */
+
+    public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
+        this.maximumRetryAttempts = maximumRetryAttempts;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum number of times to retry when the function returns an error.
+     * </p>
+     * 
+     * @return (Streams) The maximum number of times to retry when the function returns an error.
+     */
+
+    public Integer getMaximumRetryAttempts() {
+        return this.maximumRetryAttempts;
+    }
+
+    /**
+     * <p>
+     * (Streams) The maximum number of times to retry when the function returns an error.
+     * </p>
+     * 
+     * @param maximumRetryAttempts
+     *        (Streams) The maximum number of times to retry when the function returns an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withMaximumRetryAttempts(Integer maximumRetryAttempts) {
+        setMaximumRetryAttempts(maximumRetryAttempts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -842,10 +1102,20 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             sb.append("BatchSize: ").append(getBatchSize()).append(",");
         if (getMaximumBatchingWindowInSeconds() != null)
             sb.append("MaximumBatchingWindowInSeconds: ").append(getMaximumBatchingWindowInSeconds()).append(",");
+        if (getParallelizationFactor() != null)
+            sb.append("ParallelizationFactor: ").append(getParallelizationFactor()).append(",");
         if (getStartingPosition() != null)
             sb.append("StartingPosition: ").append(getStartingPosition()).append(",");
         if (getStartingPositionTimestamp() != null)
-            sb.append("StartingPositionTimestamp: ").append(getStartingPositionTimestamp());
+            sb.append("StartingPositionTimestamp: ").append(getStartingPositionTimestamp()).append(",");
+        if (getDestinationConfig() != null)
+            sb.append("DestinationConfig: ").append(getDestinationConfig()).append(",");
+        if (getMaximumRecordAgeInSeconds() != null)
+            sb.append("MaximumRecordAgeInSeconds: ").append(getMaximumRecordAgeInSeconds()).append(",");
+        if (getBisectBatchOnFunctionError() != null)
+            sb.append("BisectBatchOnFunctionError: ").append(getBisectBatchOnFunctionError()).append(",");
+        if (getMaximumRetryAttempts() != null)
+            sb.append("MaximumRetryAttempts: ").append(getMaximumRetryAttempts());
         sb.append("}");
         return sb.toString();
     }
@@ -881,6 +1151,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (other.getMaximumBatchingWindowInSeconds() != null
                 && other.getMaximumBatchingWindowInSeconds().equals(this.getMaximumBatchingWindowInSeconds()) == false)
             return false;
+        if (other.getParallelizationFactor() == null ^ this.getParallelizationFactor() == null)
+            return false;
+        if (other.getParallelizationFactor() != null && other.getParallelizationFactor().equals(this.getParallelizationFactor()) == false)
+            return false;
         if (other.getStartingPosition() == null ^ this.getStartingPosition() == null)
             return false;
         if (other.getStartingPosition() != null && other.getStartingPosition().equals(this.getStartingPosition()) == false)
@@ -888,6 +1162,22 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (other.getStartingPositionTimestamp() == null ^ this.getStartingPositionTimestamp() == null)
             return false;
         if (other.getStartingPositionTimestamp() != null && other.getStartingPositionTimestamp().equals(this.getStartingPositionTimestamp()) == false)
+            return false;
+        if (other.getDestinationConfig() == null ^ this.getDestinationConfig() == null)
+            return false;
+        if (other.getDestinationConfig() != null && other.getDestinationConfig().equals(this.getDestinationConfig()) == false)
+            return false;
+        if (other.getMaximumRecordAgeInSeconds() == null ^ this.getMaximumRecordAgeInSeconds() == null)
+            return false;
+        if (other.getMaximumRecordAgeInSeconds() != null && other.getMaximumRecordAgeInSeconds().equals(this.getMaximumRecordAgeInSeconds()) == false)
+            return false;
+        if (other.getBisectBatchOnFunctionError() == null ^ this.getBisectBatchOnFunctionError() == null)
+            return false;
+        if (other.getBisectBatchOnFunctionError() != null && other.getBisectBatchOnFunctionError().equals(this.getBisectBatchOnFunctionError()) == false)
+            return false;
+        if (other.getMaximumRetryAttempts() == null ^ this.getMaximumRetryAttempts() == null)
+            return false;
+        if (other.getMaximumRetryAttempts() != null && other.getMaximumRetryAttempts().equals(this.getMaximumRetryAttempts()) == false)
             return false;
         return true;
     }
@@ -902,8 +1192,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
         hashCode = prime * hashCode + ((getMaximumBatchingWindowInSeconds() == null) ? 0 : getMaximumBatchingWindowInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getParallelizationFactor() == null) ? 0 : getParallelizationFactor().hashCode());
         hashCode = prime * hashCode + ((getStartingPosition() == null) ? 0 : getStartingPosition().hashCode());
         hashCode = prime * hashCode + ((getStartingPositionTimestamp() == null) ? 0 : getStartingPositionTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getDestinationConfig() == null) ? 0 : getDestinationConfig().hashCode());
+        hashCode = prime * hashCode + ((getMaximumRecordAgeInSeconds() == null) ? 0 : getMaximumRecordAgeInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getBisectBatchOnFunctionError() == null) ? 0 : getBisectBatchOnFunctionError().hashCode());
+        hashCode = prime * hashCode + ((getMaximumRetryAttempts() == null) ? 0 : getMaximumRetryAttempts().hashCode());
         return hashCode;
     }
 

@@ -171,7 +171,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -315,6 +315,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<ExportedEnvironmentVariable> exportedEnvironmentVariables;
+    /**
+     * <p>
+     * An array of the ARNs associated with this build's reports.
+     * </p>
+     */
+    private java.util.List<String> reportArns;
 
     /**
      * <p>
@@ -1406,7 +1412,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -1437,7 +1443,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         For AWS CodeCommit: the commit ID to use.
+     *         For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *         </p>
      *         </li>
      *         <li>
@@ -1474,7 +1480,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -1506,7 +1512,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID to use.
+     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -1548,7 +1554,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -1585,7 +1591,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID to use.
+     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -1629,7 +1635,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -1661,7 +1667,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID to use.
+     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -2518,6 +2524,76 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An array of the ARNs associated with this build's reports.
+     * </p>
+     * 
+     * @return An array of the ARNs associated with this build's reports.
+     */
+
+    public java.util.List<String> getReportArns() {
+        return reportArns;
+    }
+
+    /**
+     * <p>
+     * An array of the ARNs associated with this build's reports.
+     * </p>
+     * 
+     * @param reportArns
+     *        An array of the ARNs associated with this build's reports.
+     */
+
+    public void setReportArns(java.util.Collection<String> reportArns) {
+        if (reportArns == null) {
+            this.reportArns = null;
+            return;
+        }
+
+        this.reportArns = new java.util.ArrayList<String>(reportArns);
+    }
+
+    /**
+     * <p>
+     * An array of the ARNs associated with this build's reports.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReportArns(java.util.Collection)} or {@link #withReportArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param reportArns
+     *        An array of the ARNs associated with this build's reports.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withReportArns(String... reportArns) {
+        if (this.reportArns == null) {
+            setReportArns(new java.util.ArrayList<String>(reportArns.length));
+        }
+        for (String ele : reportArns) {
+            this.reportArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of the ARNs associated with this build's reports.
+     * </p>
+     * 
+     * @param reportArns
+     *        An array of the ARNs associated with this build's reports.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withReportArns(java.util.Collection<String> reportArns) {
+        setReportArns(reportArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2584,7 +2660,9 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (getEncryptionKey() != null)
             sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
         if (getExportedEnvironmentVariables() != null)
-            sb.append("ExportedEnvironmentVariables: ").append(getExportedEnvironmentVariables());
+            sb.append("ExportedEnvironmentVariables: ").append(getExportedEnvironmentVariables()).append(",");
+        if (getReportArns() != null)
+            sb.append("ReportArns: ").append(getReportArns());
         sb.append("}");
         return sb.toString();
     }
@@ -2711,6 +2789,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExportedEnvironmentVariables() != null && other.getExportedEnvironmentVariables().equals(this.getExportedEnvironmentVariables()) == false)
             return false;
+        if (other.getReportArns() == null ^ this.getReportArns() == null)
+            return false;
+        if (other.getReportArns() != null && other.getReportArns().equals(this.getReportArns()) == false)
+            return false;
         return true;
     }
 
@@ -2747,6 +2829,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNetworkInterface() == null) ? 0 : getNetworkInterface().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getExportedEnvironmentVariables() == null) ? 0 : getExportedEnvironmentVariables().hashCode());
+        hashCode = prime * hashCode + ((getReportArns() == null) ? 0 : getReportArns().hashCode());
         return hashCode;
     }
 

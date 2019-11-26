@@ -33,18 +33,55 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
      * </p>
+     * <note>
+     * <p>
+     * If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set
+     * to other values using APIs or application code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CheckpointingEnabled:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CheckpointInterval:</b> 60000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      */
     private String configurationType;
     /**
      * <p>
      * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using
+     * this API or in application code.
+     * </p>
+     * </note>
      */
     private Boolean checkpointingEnabled;
     /**
      * <p>
      * Describes the interval in milliseconds between checkpoint operations.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * application code.
+     * </p>
+     * </note>
      */
     private Long checkpointInterval;
     /**
@@ -52,6 +89,13 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
      * can start.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application
+     * code.
+     * </p>
+     * </note>
      */
     private Long minPauseBetweenCheckpoints;
 
@@ -59,9 +103,54 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
      * </p>
+     * <note>
+     * <p>
+     * If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set
+     * to other values using APIs or application code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CheckpointingEnabled:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CheckpointInterval:</b> 60000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
+     *        <note>
+     *        <p>
+     *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
+     *        are set to other values using APIs or application code:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>CheckpointingEnabled:</b> true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CheckpointInterval:</b> 60000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MinPauseBetweenCheckpoints:</b> 5000
+     *        </p>
+     *        </li>
+     *        </ul>
      * @see ConfigurationType
      */
 
@@ -73,8 +162,53 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
      * </p>
+     * <note>
+     * <p>
+     * If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set
+     * to other values using APIs or application code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CheckpointingEnabled:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CheckpointInterval:</b> 60000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
-     * @return Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     * @return Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
+     *         <note>
+     *         <p>
+     *         If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
+     *         are set to other values using APIs or application code:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>CheckpointingEnabled:</b> true
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>CheckpointInterval:</b> 60000
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>MinPauseBetweenCheckpoints:</b> 5000
+     *         </p>
+     *         </li>
+     *         </ul>
      * @see ConfigurationType
      */
 
@@ -86,9 +220,54 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
      * </p>
+     * <note>
+     * <p>
+     * If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set
+     * to other values using APIs or application code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CheckpointingEnabled:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CheckpointInterval:</b> 60000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
+     *        <note>
+     *        <p>
+     *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
+     *        are set to other values using APIs or application code:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>CheckpointingEnabled:</b> true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CheckpointInterval:</b> 60000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MinPauseBetweenCheckpoints:</b> 5000
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationType
      */
@@ -102,9 +281,54 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
      * </p>
+     * <note>
+     * <p>
+     * If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set
+     * to other values using APIs or application code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CheckpointingEnabled:</b> true
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CheckpointInterval:</b> 60000
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
+     *        <note>
+     *        <p>
+     *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
+     *        are set to other values using APIs or application code:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>CheckpointingEnabled:</b> true
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CheckpointInterval:</b> 60000
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MinPauseBetweenCheckpoints:</b> 5000
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationType
      */
@@ -118,9 +342,21 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using
+     * this API or in application code.
+     * </p>
+     * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p> <note>
+     *        <p>
+     *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
+     *        value using this API or in application code.
+     *        </p>
      */
 
     public void setCheckpointingEnabled(Boolean checkpointingEnabled) {
@@ -131,8 +367,21 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using
+     * this API or in application code.
+     * </p>
+     * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p>
+     *         <note>
+     *         <p>
+     *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *         use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
+     *         value using this API or in application code.
+     *         </p>
      */
 
     public Boolean getCheckpointingEnabled() {
@@ -143,9 +392,21 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using
+     * this API or in application code.
+     * </p>
+     * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p> <note>
+     *        <p>
+     *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
+     *        value using this API or in application code.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,8 +419,21 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using
+     * this API or in application code.
+     * </p>
+     * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p>
+     *         <note>
+     *         <p>
+     *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *         use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
+     *         value using this API or in application code.
+     *         </p>
      */
 
     public Boolean isCheckpointingEnabled() {
@@ -170,9 +444,21 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes the interval in milliseconds between checkpoint operations.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * application code.
+     * </p>
+     * </note>
      * 
      * @param checkpointInterval
-     *        Describes the interval in milliseconds between checkpoint operations.
+     *        Describes the interval in milliseconds between checkpoint operations. </p> <note>
+     *        <p>
+     *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *        use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this
+     *        API or in application code.
+     *        </p>
      */
 
     public void setCheckpointInterval(Long checkpointInterval) {
@@ -183,8 +469,20 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes the interval in milliseconds between checkpoint operations.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * application code.
+     * </p>
+     * </note>
      * 
-     * @return Describes the interval in milliseconds between checkpoint operations.
+     * @return Describes the interval in milliseconds between checkpoint operations. </p> <note>
+     *         <p>
+     *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *         use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using
+     *         this API or in application code.
+     *         </p>
      */
 
     public Long getCheckpointInterval() {
@@ -195,9 +493,21 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <p>
      * Describes the interval in milliseconds between checkpoint operations.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * application code.
+     * </p>
+     * </note>
      * 
      * @param checkpointInterval
-     *        Describes the interval in milliseconds between checkpoint operations.
+     *        Describes the interval in milliseconds between checkpoint operations. </p> <note>
+     *        <p>
+     *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *        use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this
+     *        API or in application code.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,10 +521,22 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
      * can start.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application
+     * code.
+     * </p>
+     * </note>
      * 
      * @param minPauseBetweenCheckpoints
      *        Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint
-     *        operation can start.
+     *        operation can start. </p> <note>
+     *        <p>
+     *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *        use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or
+     *        in application code.
+     *        </p>
      */
 
     public void setMinPauseBetweenCheckpoints(Long minPauseBetweenCheckpoints) {
@@ -226,9 +548,21 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
      * can start.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application
+     * code.
+     * </p>
+     * </note>
      * 
      * @return Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint
-     *         operation can start.
+     *         operation can start. </p> <note>
+     *         <p>
+     *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *         use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or
+     *         in application code.
+     *         </p>
      */
 
     public Long getMinPauseBetweenCheckpoints() {
@@ -240,10 +574,22 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
      * can start.
      * </p>
+     * <note>
+     * <p>
+     * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
+     * <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application
+     * code.
+     * </p>
+     * </note>
      * 
      * @param minPauseBetweenCheckpoints
      *        Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint
-     *        operation can start.
+     *        operation can start. </p> <note>
+     *        <p>
+     *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
+     *        use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or
+     *        in application code.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

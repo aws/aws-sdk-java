@@ -16,7 +16,28 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because the specified <code>KeySpec</code> value is not valid.
+ * The request was rejected for one of the following reasons:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * The <code>KeyUsage</code> value of the CMK is incompatible with the API operation.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key
+ * material in the CMK <code>(CustomerMasterKeySpec</code>).
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be
+ * <code>ENCRYPT_DECRYPT</code>. For signing and verifying, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>.
+ * To find the <code>KeyUsage</code> of a CMK, use the <a>DescribeKey</a> operation.
+ * </p>
+ * <p>
+ * To find the encryption or signing algorithms supported for a particular CMK, use the <a>DescribeKey</a> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

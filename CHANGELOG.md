@@ -1,3 +1,120 @@
+# __1.11.682__ __2019-11-25__
+## __AWS CodeBuild__
+  - ### Features
+    - CodeBuild adds support for test reporting
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This launch provides customers with access to Cost Category Public Beta APIs.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for 8K outputs and support for QuickTime Animation Codec (RLE) inputs.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports the ability to create a multiple program transport stream (MPTS).
+
+## __AWS Elemental MediaPackage VOD__
+  - ### Features
+    - Adds a domain name to PackagingGroups, representing the fully qualified domain name for Assets created in the group.
+
+## __AWS Greengrass__
+  - ### Features
+    - IoT Greengrass supports machine learning resources in 'No container' mode.
+
+## __AWS IoT__
+  - ### Features
+    - This release adds: 1) APIs for fleet provisioning claim and template, 2) endpoint configuration and custom domains, 3) support for enhanced custom authentication, d) support for 4 additional audit checks: Device and CA certificate key quality checks, IoT role alias over-permissive check and IoT role alias access to unused services check, 5) extended capability of AWS IoT Rules Engine to support IoT SiteWise rule action. The IoT SiteWise rule action lets you send messages from IoT sensors and applications to IoT SiteWise asset properties
+
+## __AWS IoT Secure Tunneling__
+  - ### Features
+    - This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.
+
+## __AWS Key Management Service__
+  - ### Features
+    - AWS Key Management Service (KMS) now enables creation and use of asymmetric Customer Master Keys (CMKs) and the generation of asymmetric data key pairs.
+
+## __AWS Lambda__
+  - ### Features
+    - Added the function state and update status to the output of GetFunctionConfiguration and other actions. Check the state information to ensure that a function is ready before you perform operations on it. Functions take time to become ready when you connect them to a VPC.Added the EventInvokeConfig type and operations to configure error handling options for asynchronous invocation. Use PutFunctionEventInvokeConfig to configure the number of retries and the maximum age of events when you invoke the function asynchronously.Added on-failure and on-success destination settings for asynchronous invocation. Configure destinations to send an invocation record to an SNS topic, an SQS queue, an EventBridge event bus, or a Lambda function.Added error handling options to event source mappings. This enables you to configure the number of retries, configure the maximum age of records, or retry with smaller batches when an error occurs when a function processes a Kinesis or DynamoDB stream.Added the on-failure destination setting to event source mappings. This enables you to send discarded events to an SNS topic or SQS queue when all retries fail or when the maximum record age is exceeded when a function processes a Kinesis or DynamoDB stream.Added the ParallelizationFactor option to event source mappings to increase concurrency per shard when a function processes a Kinesis or DynamoDB stream.
+
+## __AWS Resource Access Manager__
+  - ### Features
+    - AWS RAM provides new APIs to view the permissions granted to principals in a resource share. This release also creates corresponding resource shares for supported services that use resource policies, as well as an API to promote them to standard shares that can be managed in RAM.
+
+## __AWS WAFV2__
+  - ### Features
+    - This release introduces new set of APIs ("wafv2") for AWS WAF. Major changes include single set of APIs for creating/updating resources in global and regional scope, and rules are configured directly into web ACL instead of being referenced. The previous APIs ("waf" and "waf-regional") are now referred as AWS WAF Classic. For more information visit: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+
+## __Alexa For Business__
+  - ### Features
+    - API update for Alexa for Business: This update enables the use of meeting room configuration that can be applied to a room profile. These settings help improve and measure utilization on Alexa for Business enabled rooms. New features include end meeting reminders, intelligent room release and room utilization analytics report.
+
+## __Amazon AppConfig__
+  - ### Features
+    - Introducing AWS AppConfig, a new service that enables customers to quickly deploy validated configurations to applications of any size in a controlled and monitored fashion.
+
+## __Amazon Athena__
+  - ### Features
+    - This release adds additional query lifecycle metrics to the QueryExecutionStatistics object in GetQueryExecution response.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - This release adds a new feature called "Contributor Insights". "Contributor Insights" supports the following 6 new APIs (PutInsightRule, DeleteInsightRules, EnableInsightRules, DisableInsightRules, DescribeInsightRules and GetInsightRuleReport). 
+
+## __Amazon CloudWatch Application Insights__
+  - ### Features
+    - CloudWatch Application Insights for .NET and SQL Server includes the follwing features: -Tagging Create and manage tags for your applications.-Custom log pattern matching. Define custom log patterns to be detected and monitored.-Resource-level permissions. Specify applications users can access.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Amazon Cognito Userpools now supports Sign in with Apple as an Identity Provider.
+
+## __Amazon Comprehend__
+  - ### Features
+    - Amazon Comprehend now supports real-time analysis with Custom Classification
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - You can now set time based retention policies on Data Lifecycle Manager. With this launch, DLM allows you to set snapshot retention period in the following interval units: days, weeks, months and years.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds two new APIs: 1. ModifyDefaultCreditSpecification, which allows you to set default credit specification at the account level per AWS Region, per burstable performance instance family, so that all new burstable performance instances in the account launch using the new default credit specification. 2. GetDefaultCreditSpecification, which allows you to get current default credit specification per AWS Region, per burstable performance instance family. This release also adds new client exceptions for StartInstances and StopInstances.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Kinesis Data Analytics service adds support to configure Java applications to access resources in a VPC. Also releasing support to configure Java applications to set allowNonRestoreState flag through the service APIs.
+
+## __Amazon Lex Runtime Service__
+  - ### Features
+    - Amazon Lex adds "sessionId" attribute to the PostText and PostContent response.
+
+## __Amazon Redshift__
+  - ### Features
+    - This release contains changes for 1. Redshift Scheduler 2. Update to the DescribeNodeConfigurationOptions to include a new action type recommend-node-config
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Cluster Endpoints can now be tagged by using --tags in the create-db-cluster-endpoint API
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - This release includes support for automatically suppressing email addresses that result in hard bounce or complaint events at the account level, and for managing addresses on this account-level suppression list.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager Documents now supports more Document Types: ApplicationConfiguration, ApplicationConfigurationSchema and DeploymentStrategy. This release also extends Document Permissions capabilities and introduces a new Force flag for DeleteDocument API.
+
+## __Application Auto Scaling__
+  - ### Features
+    - This release supports auto scaling of document classifier endpoints for Comprehend; and supports target tracking based on the average capacity utilization metric for AppStream 2.0 fleets. 
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release of Elastic Load Balancing V2 adds new subnet features for Network Load Balancers and a new routing algorithm for Application Load Balancers. 
+
 # __1.11.681__ __2019-11-22__
 ## __AWS Auto Scaling Plans__
   - ### Features

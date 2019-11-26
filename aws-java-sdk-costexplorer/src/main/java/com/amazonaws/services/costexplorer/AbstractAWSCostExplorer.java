@@ -28,6 +28,21 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
     }
 
     @Override
+    public CreateCostCategoryDefinitionResult createCostCategoryDefinition(CreateCostCategoryDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCostCategoryDefinitionResult deleteCostCategoryDefinition(DeleteCostCategoryDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCostCategoryDefinitionResult describeCostCategoryDefinition(DescribeCostCategoryDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCostAndUsageResult getCostAndUsage(GetCostAndUsageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +109,16 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
 
     @Override
     public GetUsageForecastResult getUsageForecast(GetUsageForecastRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCostCategoryDefinitionsResult listCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCostCategoryDefinitionResult updateCostCategoryDefinition(UpdateCostCategoryDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RunConfigurationUpdateMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> FLINKRUNCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlinkRunConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> APPLICATIONRESTORECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationRestoreConfiguration").build();
 
@@ -46,6 +48,7 @@ public class RunConfigurationUpdateMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(runConfigurationUpdate.getFlinkRunConfiguration(), FLINKRUNCONFIGURATION_BINDING);
             protocolMarshaller.marshall(runConfigurationUpdate.getApplicationRestoreConfiguration(), APPLICATIONRESTORECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

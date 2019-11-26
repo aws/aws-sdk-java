@@ -57,8 +57,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * that CloudWatch receives the request.
      * </p>
      * <p>
-     * The value specified is inclusive; results include data points with the specified time stamp. The time stamp must
-     * be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+     * The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query,
+     * the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
      * </p>
      * <p>
      * CloudWatch rounds the specified time stamp as follows:
@@ -97,8 +97,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * The time stamp that determines the last data point to return.
      * </p>
      * <p>
-     * The value specified is exclusive; results include data points up to the specified time stamp. The time stamp must
-     * be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+     * The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP
+     * query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
      * </p>
      */
     private java.util.Date endTime;
@@ -383,8 +383,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * that CloudWatch receives the request.
      * </p>
      * <p>
-     * The value specified is inclusive; results include data points with the specified time stamp. The time stamp must
-     * be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+     * The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query,
+     * the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
      * </p>
      * <p>
      * CloudWatch rounds the specified time stamp as follows:
@@ -421,8 +421,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      *        The time stamp that determines the first data point to return. Start times are evaluated relative to the
      *        time that CloudWatch receives the request.</p>
      *        <p>
-     *        The value specified is inclusive; results include data points with the specified time stamp. The time
-     *        stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+     *        The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP
+     *        query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
      *        </p>
      *        <p>
      *        CloudWatch rounds the specified time stamp as follows:
@@ -466,8 +466,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * that CloudWatch receives the request.
      * </p>
      * <p>
-     * The value specified is inclusive; results include data points with the specified time stamp. The time stamp must
-     * be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+     * The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query,
+     * the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
      * </p>
      * <p>
      * CloudWatch rounds the specified time stamp as follows:
@@ -503,8 +503,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * @return The time stamp that determines the first data point to return. Start times are evaluated relative to the
      *         time that CloudWatch receives the request.</p>
      *         <p>
-     *         The value specified is inclusive; results include data points with the specified time stamp. The time
-     *         stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+     *         The value specified is inclusive; results include data points with the specified time stamp. In a raw
+     *         HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
      *         </p>
      *         <p>
      *         CloudWatch rounds the specified time stamp as follows:
@@ -548,8 +548,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * that CloudWatch receives the request.
      * </p>
      * <p>
-     * The value specified is inclusive; results include data points with the specified time stamp. The time stamp must
-     * be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+     * The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query,
+     * the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
      * </p>
      * <p>
      * CloudWatch rounds the specified time stamp as follows:
@@ -586,8 +586,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      *        The time stamp that determines the first data point to return. Start times are evaluated relative to the
      *        time that CloudWatch receives the request.</p>
      *        <p>
-     *        The value specified is inclusive; results include data points with the specified time stamp. The time
-     *        stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
+     *        The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP
+     *        query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).
      *        </p>
      *        <p>
      *        CloudWatch rounds the specified time stamp as follows:
@@ -632,15 +632,15 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * The time stamp that determines the last data point to return.
      * </p>
      * <p>
-     * The value specified is exclusive; results include data points up to the specified time stamp. The time stamp must
-     * be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+     * The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP
+     * query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
      * </p>
      * 
      * @param endTime
      *        The time stamp that determines the last data point to return.</p>
      *        <p>
-     *        The value specified is exclusive; results include data points up to the specified time stamp. The time
-     *        stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+     *        The value specified is exclusive; results include data points up to the specified time stamp. In a raw
+     *        HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -652,14 +652,14 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * The time stamp that determines the last data point to return.
      * </p>
      * <p>
-     * The value specified is exclusive; results include data points up to the specified time stamp. The time stamp must
-     * be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+     * The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP
+     * query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
      * </p>
      * 
      * @return The time stamp that determines the last data point to return.</p>
      *         <p>
-     *         The value specified is exclusive; results include data points up to the specified time stamp. The time
-     *         stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+     *         The value specified is exclusive; results include data points up to the specified time stamp. In a raw
+     *         HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
      */
 
     public java.util.Date getEndTime() {
@@ -671,15 +671,15 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * The time stamp that determines the last data point to return.
      * </p>
      * <p>
-     * The value specified is exclusive; results include data points up to the specified time stamp. The time stamp must
-     * be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+     * The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP
+     * query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
      * </p>
      * 
      * @param endTime
      *        The time stamp that determines the last data point to return.</p>
      *        <p>
-     *        The value specified is exclusive; results include data points up to the specified time stamp. The time
-     *        stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
+     *        The value specified is exclusive; results include data points up to the specified time stamp. In a raw
+     *        HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

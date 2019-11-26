@@ -53,7 +53,17 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public ClassifyDocumentResult classifyDocument(ClassifyDocumentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDocumentClassifierResult createDocumentClassifier(CreateDocumentClassifierRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateEndpointResult createEndpoint(CreateEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,6 +74,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public DeleteDocumentClassifierResult deleteDocumentClassifier(DeleteDocumentClassifierRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +99,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public DescribeDominantLanguageDetectionJobResult describeDominantLanguageDetectionJob(DescribeDominantLanguageDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEndpointResult describeEndpoint(DescribeEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +169,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public ListDominantLanguageDetectionJobsResult listDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListEndpointsResult listEndpoints(ListEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -249,6 +274,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateEndpointResult updateEndpoint(UpdateEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

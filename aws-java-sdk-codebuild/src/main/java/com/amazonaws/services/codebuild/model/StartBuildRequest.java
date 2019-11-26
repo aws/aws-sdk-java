@@ -52,7 +52,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -463,7 +463,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -504,7 +504,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID to use.
+     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -551,7 +551,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -591,7 +591,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         For AWS CodeCommit: the commit ID to use.
+     *         For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *         </p>
      *         </li>
      *         <li>
@@ -638,7 +638,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * For AWS CodeCommit: the commit ID to use.
+     * For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      * </p>
      * </li>
      * <li>
@@ -679,7 +679,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        For AWS CodeCommit: the commit ID to use.
+     *        For AWS CodeCommit: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>

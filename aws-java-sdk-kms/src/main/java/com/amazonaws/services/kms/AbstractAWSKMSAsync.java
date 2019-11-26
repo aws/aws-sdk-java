@@ -296,6 +296,34 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateDataKeyPairResult> generateDataKeyPairAsync(GenerateDataKeyPairRequest request) {
+
+        return generateDataKeyPairAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateDataKeyPairResult> generateDataKeyPairAsync(GenerateDataKeyPairRequest request,
+            com.amazonaws.handlers.AsyncHandler<GenerateDataKeyPairRequest, GenerateDataKeyPairResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateDataKeyPairWithoutPlaintextResult> generateDataKeyPairWithoutPlaintextAsync(
+            GenerateDataKeyPairWithoutPlaintextRequest request) {
+
+        return generateDataKeyPairWithoutPlaintextAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateDataKeyPairWithoutPlaintextResult> generateDataKeyPairWithoutPlaintextAsync(
+            GenerateDataKeyPairWithoutPlaintextRequest request,
+            com.amazonaws.handlers.AsyncHandler<GenerateDataKeyPairWithoutPlaintextRequest, GenerateDataKeyPairWithoutPlaintextResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateDataKeyWithoutPlaintextResult> generateDataKeyWithoutPlaintextAsync(
             GenerateDataKeyWithoutPlaintextRequest request) {
 
@@ -381,6 +409,19 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<GetParametersForImportResult> getParametersForImportAsync(GetParametersForImportRequest request,
             com.amazonaws.handlers.AsyncHandler<GetParametersForImportRequest, GetParametersForImportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest request) {
+
+        return getPublicKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPublicKeyRequest, GetPublicKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -610,6 +651,18 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SignResult> signAsync(SignRequest request) {
+
+        return signAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SignResult> signAsync(SignRequest request, com.amazonaws.handlers.AsyncHandler<SignRequest, SignResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -670,6 +723,19 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<UpdateKeyDescriptionResult> updateKeyDescriptionAsync(UpdateKeyDescriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResult> verifyAsync(VerifyRequest request) {
+
+        return verifyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResult> verifyAsync(VerifyRequest request,
+            com.amazonaws.handlers.AsyncHandler<VerifyRequest, VerifyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

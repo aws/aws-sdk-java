@@ -45,6 +45,8 @@ public class AuthorizerDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> SIGNINGDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signingDisabled").build();
 
     private static final AuthorizerDescriptionMarshaller instance = new AuthorizerDescriptionMarshaller();
 
@@ -70,6 +72,7 @@ public class AuthorizerDescriptionMarshaller {
             protocolMarshaller.marshall(authorizerDescription.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(authorizerDescription.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(authorizerDescription.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
+            protocolMarshaller.marshall(authorizerDescription.getSigningDisabled(), SIGNINGDISABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

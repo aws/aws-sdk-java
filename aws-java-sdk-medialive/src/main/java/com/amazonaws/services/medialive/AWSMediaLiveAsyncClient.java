@@ -192,6 +192,72 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMultiplexResult> createMultiplexAsync(CreateMultiplexRequest request) {
+
+        return createMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultiplexResult> createMultiplexAsync(final CreateMultiplexRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMultiplexRequest, CreateMultiplexResult> asyncHandler) {
+        final CreateMultiplexRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMultiplexResult>() {
+            @Override
+            public CreateMultiplexResult call() throws Exception {
+                CreateMultiplexResult result = null;
+
+                try {
+                    result = executeCreateMultiplex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultiplexProgramResult> createMultiplexProgramAsync(CreateMultiplexProgramRequest request) {
+
+        return createMultiplexProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMultiplexProgramResult> createMultiplexProgramAsync(final CreateMultiplexProgramRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMultiplexProgramRequest, CreateMultiplexProgramResult> asyncHandler) {
+        final CreateMultiplexProgramRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMultiplexProgramResult>() {
+            @Override
+            public CreateMultiplexProgramResult call() throws Exception {
+                CreateMultiplexProgramResult result = null;
+
+                try {
+                    result = executeCreateMultiplexProgram(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
@@ -308,6 +374,72 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeDeleteInputSecurityGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMultiplexResult> deleteMultiplexAsync(DeleteMultiplexRequest request) {
+
+        return deleteMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMultiplexResult> deleteMultiplexAsync(final DeleteMultiplexRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMultiplexRequest, DeleteMultiplexResult> asyncHandler) {
+        final DeleteMultiplexRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMultiplexResult>() {
+            @Override
+            public DeleteMultiplexResult call() throws Exception {
+                DeleteMultiplexResult result = null;
+
+                try {
+                    result = executeDeleteMultiplex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMultiplexProgramResult> deleteMultiplexProgramAsync(DeleteMultiplexProgramRequest request) {
+
+        return deleteMultiplexProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMultiplexProgramResult> deleteMultiplexProgramAsync(final DeleteMultiplexProgramRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMultiplexProgramRequest, DeleteMultiplexProgramResult> asyncHandler) {
+        final DeleteMultiplexProgramRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMultiplexProgramResult>() {
+            @Override
+            public DeleteMultiplexProgramResult call() throws Exception {
+                DeleteMultiplexProgramResult result = null;
+
+                try {
+                    result = executeDeleteMultiplexProgram(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -522,6 +654,72 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeMultiplexResult> describeMultiplexAsync(DescribeMultiplexRequest request) {
+
+        return describeMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMultiplexResult> describeMultiplexAsync(final DescribeMultiplexRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMultiplexRequest, DescribeMultiplexResult> asyncHandler) {
+        final DescribeMultiplexRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMultiplexResult>() {
+            @Override
+            public DescribeMultiplexResult call() throws Exception {
+                DescribeMultiplexResult result = null;
+
+                try {
+                    result = executeDescribeMultiplex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMultiplexProgramResult> describeMultiplexProgramAsync(DescribeMultiplexProgramRequest request) {
+
+        return describeMultiplexProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMultiplexProgramResult> describeMultiplexProgramAsync(final DescribeMultiplexProgramRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMultiplexProgramRequest, DescribeMultiplexProgramResult> asyncHandler) {
+        final DescribeMultiplexProgramRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMultiplexProgramResult>() {
+            @Override
+            public DescribeMultiplexProgramResult call() throws Exception {
+                DescribeMultiplexProgramResult result = null;
+
+                try {
+                    result = executeDescribeMultiplexProgram(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOfferingResult> describeOfferingAsync(DescribeOfferingRequest request) {
 
         return describeOfferingAsync(request, null);
@@ -720,6 +918,72 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<ListMultiplexProgramsResult> listMultiplexProgramsAsync(ListMultiplexProgramsRequest request) {
+
+        return listMultiplexProgramsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultiplexProgramsResult> listMultiplexProgramsAsync(final ListMultiplexProgramsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMultiplexProgramsRequest, ListMultiplexProgramsResult> asyncHandler) {
+        final ListMultiplexProgramsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMultiplexProgramsResult>() {
+            @Override
+            public ListMultiplexProgramsResult call() throws Exception {
+                ListMultiplexProgramsResult result = null;
+
+                try {
+                    result = executeListMultiplexPrograms(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultiplexesResult> listMultiplexesAsync(ListMultiplexesRequest request) {
+
+        return listMultiplexesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMultiplexesResult> listMultiplexesAsync(final ListMultiplexesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMultiplexesRequest, ListMultiplexesResult> asyncHandler) {
+        final ListMultiplexesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMultiplexesResult>() {
+            @Override
+            public ListMultiplexesResult call() throws Exception {
+                ListMultiplexesResult result = null;
+
+                try {
+                    result = executeListMultiplexes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(ListOfferingsRequest request) {
 
         return listOfferingsAsync(request, null);
@@ -885,6 +1149,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<StartMultiplexResult> startMultiplexAsync(StartMultiplexRequest request) {
+
+        return startMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMultiplexResult> startMultiplexAsync(final StartMultiplexRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMultiplexRequest, StartMultiplexResult> asyncHandler) {
+        final StartMultiplexRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMultiplexResult>() {
+            @Override
+            public StartMultiplexResult call() throws Exception {
+                StartMultiplexResult result = null;
+
+                try {
+                    result = executeStartMultiplex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopChannelResult> stopChannelAsync(StopChannelRequest request) {
 
         return stopChannelAsync(request, null);
@@ -902,6 +1199,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeStopChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMultiplexResult> stopMultiplexAsync(StopMultiplexRequest request) {
+
+        return stopMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMultiplexResult> stopMultiplexAsync(final StopMultiplexRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopMultiplexRequest, StopMultiplexResult> asyncHandler) {
+        final StopMultiplexRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopMultiplexResult>() {
+            @Override
+            public StopMultiplexResult call() throws Exception {
+                StopMultiplexResult result = null;
+
+                try {
+                    result = executeStopMultiplex(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1034,6 +1364,72 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeUpdateInputSecurityGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMultiplexResult> updateMultiplexAsync(UpdateMultiplexRequest request) {
+
+        return updateMultiplexAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMultiplexResult> updateMultiplexAsync(final UpdateMultiplexRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMultiplexRequest, UpdateMultiplexResult> asyncHandler) {
+        final UpdateMultiplexRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMultiplexResult>() {
+            @Override
+            public UpdateMultiplexResult call() throws Exception {
+                UpdateMultiplexResult result = null;
+
+                try {
+                    result = executeUpdateMultiplex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMultiplexProgramResult> updateMultiplexProgramAsync(UpdateMultiplexProgramRequest request) {
+
+        return updateMultiplexProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMultiplexProgramResult> updateMultiplexProgramAsync(final UpdateMultiplexProgramRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMultiplexProgramRequest, UpdateMultiplexProgramResult> asyncHandler) {
+        final UpdateMultiplexProgramRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMultiplexProgramResult>() {
+            @Override
+            public UpdateMultiplexProgramResult call() throws Exception {
+                UpdateMultiplexProgramResult result = null;
+
+                try {
+                    result = executeUpdateMultiplexProgram(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

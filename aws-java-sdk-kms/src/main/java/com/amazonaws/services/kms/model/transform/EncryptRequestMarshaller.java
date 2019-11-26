@@ -37,6 +37,8 @@ public class EncryptRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionContext").build();
     private static final MarshallingInfo<List> GRANTTOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GrantTokens").build();
+    private static final MarshallingInfo<String> ENCRYPTIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAlgorithm").build();
 
     private static final EncryptRequestMarshaller instance = new EncryptRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class EncryptRequestMarshaller {
             protocolMarshaller.marshall(encryptRequest.getPlaintext(), PLAINTEXT_BINDING);
             protocolMarshaller.marshall(encryptRequest.getEncryptionContext(), ENCRYPTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(encryptRequest.getGrantTokens(), GRANTTOKENS_BINDING);
+            protocolMarshaller.marshall(encryptRequest.getEncryptionAlgorithm(), ENCRYPTIONALGORITHM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

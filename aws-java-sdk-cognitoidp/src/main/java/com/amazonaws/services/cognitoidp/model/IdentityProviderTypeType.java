@@ -24,6 +24,7 @@ public enum IdentityProviderTypeType {
     Facebook("Facebook"),
     Google("Google"),
     LoginWithAmazon("LoginWithAmazon"),
+    SignInWithApple("SignInWithApple"),
     OIDC("OIDC");
 
     private String value;

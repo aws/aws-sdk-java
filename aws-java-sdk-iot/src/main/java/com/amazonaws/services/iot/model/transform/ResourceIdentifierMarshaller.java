@@ -39,6 +39,10 @@ public class ResourceIdentifierMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("policyVersionIdentifier").build();
     private static final MarshallingInfo<String> ACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("account").build();
+    private static final MarshallingInfo<String> IAMROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iamRoleArn").build();
+    private static final MarshallingInfo<String> ROLEALIASARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("roleAliasArn").build();
 
     private static final ResourceIdentifierMarshaller instance = new ResourceIdentifierMarshaller();
 
@@ -62,6 +66,8 @@ public class ResourceIdentifierMarshaller {
             protocolMarshaller.marshall(resourceIdentifier.getClientId(), CLIENTID_BINDING);
             protocolMarshaller.marshall(resourceIdentifier.getPolicyVersionIdentifier(), POLICYVERSIONIDENTIFIER_BINDING);
             protocolMarshaller.marshall(resourceIdentifier.getAccount(), ACCOUNT_BINDING);
+            protocolMarshaller.marshall(resourceIdentifier.getIamRoleArn(), IAMROLEARN_BINDING);
+            protocolMarshaller.marshall(resourceIdentifier.getRoleAliasArn(), ROLEALIASARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

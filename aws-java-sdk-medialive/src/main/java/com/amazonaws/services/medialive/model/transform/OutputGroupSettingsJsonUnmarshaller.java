@@ -68,6 +68,10 @@ public class OutputGroupSettingsJsonUnmarshaller implements Unmarshaller<OutputG
                     context.nextToken();
                     outputGroupSettings.setMsSmoothGroupSettings(MsSmoothGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("multiplexGroupSettings", targetDepth)) {
+                    context.nextToken();
+                    outputGroupSettings.setMultiplexGroupSettings(MultiplexGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("rtmpGroupSettings", targetDepth)) {
                     context.nextToken();
                     outputGroupSettings.setRtmpGroupSettings(RtmpGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));

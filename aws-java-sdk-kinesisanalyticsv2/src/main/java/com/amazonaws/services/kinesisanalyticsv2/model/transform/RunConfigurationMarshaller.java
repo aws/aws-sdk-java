@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RunConfigurationMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> FLINKRUNCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlinkRunConfiguration").build();
     private static final MarshallingInfo<List> SQLRUNCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SqlRunConfigurations").build();
     private static final MarshallingInfo<StructuredPojo> APPLICATIONRESTORECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -49,6 +51,7 @@ public class RunConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(runConfiguration.getFlinkRunConfiguration(), FLINKRUNCONFIGURATION_BINDING);
             protocolMarshaller.marshall(runConfiguration.getSqlRunConfigurations(), SQLRUNCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(runConfiguration.getApplicationRestoreConfiguration(), APPLICATIONRESTORECONFIGURATION_BINDING);
         } catch (Exception e) {
