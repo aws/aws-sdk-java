@@ -108,6 +108,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
+    public DescribeEffectivePolicyResult describeEffectivePolicy(DescribeEffectivePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeHandshakeResult describeHandshake(DescribeHandshakeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

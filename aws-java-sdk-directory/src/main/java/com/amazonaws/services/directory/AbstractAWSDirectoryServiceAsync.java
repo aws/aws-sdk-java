@@ -262,6 +262,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterCertificateResult> deregisterCertificateAsync(DeregisterCertificateRequest request) {
+
+        return deregisterCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterCertificateResult> deregisterCertificateAsync(DeregisterCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterCertificateRequest, DeregisterCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(DeregisterEventTopicRequest request) {
 
         return deregisterEventTopicAsync(request, null);
@@ -270,6 +283,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     @Override
     public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(DeregisterEventTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest request) {
+
+        return describeCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -350,6 +376,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLDAPSSettingsResult> describeLDAPSSettingsAsync(DescribeLDAPSSettingsRequest request) {
+
+        return describeLDAPSSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLDAPSSettingsResult> describeLDAPSSettingsAsync(DescribeLDAPSSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLDAPSSettingsRequest, DescribeLDAPSSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSharedDirectoriesResult> describeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request) {
 
         return describeSharedDirectoriesAsync(request, null);
@@ -412,6 +451,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<DisableLDAPSResult> disableLDAPSAsync(DisableLDAPSRequest request) {
+
+        return disableLDAPSAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableLDAPSResult> disableLDAPSAsync(DisableLDAPSRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableLDAPSRequest, DisableLDAPSResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableRadiusResult> disableRadiusAsync(DisableRadiusRequest request) {
 
         return disableRadiusAsync(request, null);
@@ -433,6 +485,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     @Override
     public java.util.concurrent.Future<DisableSsoResult> disableSsoAsync(DisableSsoRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableSsoRequest, DisableSsoResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableLDAPSResult> enableLDAPSAsync(EnableLDAPSRequest request) {
+
+        return enableLDAPSAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableLDAPSResult> enableLDAPSAsync(EnableLDAPSRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableLDAPSRequest, EnableLDAPSResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -513,6 +578,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest request) {
+
+        return listCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(ListIpRoutesRequest request) {
 
         return listIpRoutesAsync(request, null);
@@ -560,6 +638,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(RegisterCertificateRequest request) {
+
+        return registerCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(RegisterCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterCertificateRequest, RegisterCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

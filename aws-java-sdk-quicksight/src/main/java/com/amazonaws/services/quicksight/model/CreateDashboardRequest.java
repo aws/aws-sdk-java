@@ -60,10 +60,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<ResourcePermission> permissions;
     /**
      * <p>
-     * Source entity from which the dashboard is created. The souce entity accepts the ARN of the source template or
-     * analysis and also references the replacement datasets for the placeholders set when creating the template. The
-     * replacement datasets need to follow the same schema as the datasets for which placeholders were created when
-     * creating the template.
+     * Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN) of the
+     * source template or analysis and also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the datasets for which placeholders were
+     * created when creating the template.
      * </p>
      * <p>
      * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
@@ -108,12 +108,6 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Shorthand Syntax:
-     * </p>
-     * <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
      */
     private DashboardPublishOptions dashboardPublishOptions;
 
@@ -369,10 +363,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Source entity from which the dashboard is created. The souce entity accepts the ARN of the source template or
-     * analysis and also references the replacement datasets for the placeholders set when creating the template. The
-     * replacement datasets need to follow the same schema as the datasets for which placeholders were created when
-     * creating the template.
+     * Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN) of the
+     * source template or analysis and also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the datasets for which placeholders were
+     * created when creating the template.
      * </p>
      * <p>
      * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
@@ -380,10 +374,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param sourceEntity
-     *        Source entity from which the dashboard is created. The souce entity accepts the ARN of the source template
-     *        or analysis and also references the replacement datasets for the placeholders set when creating the
-     *        template. The replacement datasets need to follow the same schema as the datasets for which placeholders
-     *        were created when creating the template. </p>
+     *        Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN)
+     *        of the source template or analysis and also references the replacement datasets for the placeholders set
+     *        when creating the template. The replacement datasets need to follow the same schema as the datasets for
+     *        which placeholders were created when creating the template. </p>
      *        <p>
      *        If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
      *        template.
@@ -395,20 +389,20 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Source entity from which the dashboard is created. The souce entity accepts the ARN of the source template or
-     * analysis and also references the replacement datasets for the placeholders set when creating the template. The
-     * replacement datasets need to follow the same schema as the datasets for which placeholders were created when
-     * creating the template.
+     * Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN) of the
+     * source template or analysis and also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the datasets for which placeholders were
+     * created when creating the template.
      * </p>
      * <p>
      * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
      * template.
      * </p>
      * 
-     * @return Source entity from which the dashboard is created. The souce entity accepts the ARN of the source
-     *         template or analysis and also references the replacement datasets for the placeholders set when creating
-     *         the template. The replacement datasets need to follow the same schema as the datasets for which
-     *         placeholders were created when creating the template. </p>
+     * @return Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name
+     *         (ARN) of the source template or analysis and also references the replacement datasets for the
+     *         placeholders set when creating the template. The replacement datasets need to follow the same schema as
+     *         the datasets for which placeholders were created when creating the template. </p>
      *         <p>
      *         If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the
      *         source template.
@@ -420,10 +414,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Source entity from which the dashboard is created. The souce entity accepts the ARN of the source template or
-     * analysis and also references the replacement datasets for the placeholders set when creating the template. The
-     * replacement datasets need to follow the same schema as the datasets for which placeholders were created when
-     * creating the template.
+     * Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN) of the
+     * source template or analysis and also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the datasets for which placeholders were
+     * created when creating the template.
      * </p>
      * <p>
      * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
@@ -431,10 +425,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param sourceEntity
-     *        Source entity from which the dashboard is created. The souce entity accepts the ARN of the source template
-     *        or analysis and also references the replacement datasets for the placeholders set when creating the
-     *        template. The replacement datasets need to follow the same schema as the datasets for which placeholders
-     *        were created when creating the template. </p>
+     *        Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN)
+     *        of the source template or analysis and also references the replacement datasets for the placeholders set
+     *        when creating the template. The replacement datasets need to follow the same schema as the datasets for
+     *        which placeholders were created when creating the template. </p>
      *        <p>
      *        If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
      *        template.
@@ -581,12 +575,6 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Shorthand Syntax:
-     * </p>
-     * <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
      * 
      * @param dashboardPublishOptions
      *        Publishing options when creating dashboard.</p>
@@ -612,12 +600,6 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        default.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Shorthand Syntax:
-     *        </p>
-     *        <p>
-     *        <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
      */
 
     public void setDashboardPublishOptions(DashboardPublishOptions dashboardPublishOptions) {
@@ -649,12 +631,6 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Shorthand Syntax:
-     * </p>
-     * <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
      * 
      * @return Publishing options when creating dashboard.</p>
      *         <ul>
@@ -679,12 +655,6 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *         default.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         Shorthand Syntax:
-     *         </p>
-     *         <p>
-     *         <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
      */
 
     public DashboardPublishOptions getDashboardPublishOptions() {
@@ -716,12 +686,6 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Shorthand Syntax:
-     * </p>
-     * <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
      * 
      * @param dashboardPublishOptions
      *        Publishing options when creating dashboard.</p>
@@ -747,12 +711,6 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        default.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Shorthand Syntax:
-     *        </p>
-     *        <p>
-     *        <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,7 +48,7 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
     private String password;
     /**
      * <p>
-     * A textual description for the directory.
+     * A description for the directory.
      * </p>
      */
     private String description;
@@ -193,11 +193,11 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A textual description for the directory.
+     * A description for the directory.
      * </p>
      * 
      * @param description
-     *        A textual description for the directory.
+     *        A description for the directory.
      */
 
     public void setDescription(String description) {
@@ -206,10 +206,10 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A textual description for the directory.
+     * A description for the directory.
      * </p>
      * 
-     * @return A textual description for the directory.
+     * @return A description for the directory.
      */
 
     public String getDescription() {
@@ -218,11 +218,11 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A textual description for the directory.
+     * A description for the directory.
      * </p>
      * 
      * @param description
-     *        A textual description for the directory.
+     *        A description for the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

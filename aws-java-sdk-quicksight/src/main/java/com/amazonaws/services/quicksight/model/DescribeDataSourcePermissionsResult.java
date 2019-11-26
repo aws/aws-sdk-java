@@ -26,13 +26,13 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      */
     private String dataSourceArn;
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSourceId;
@@ -50,18 +50,18 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
     private String requestId;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        The ARN of the data source.
+     *        The Amazon Resource Name (ARN) of the data source.
      */
 
     public void setDataSourceArn(String dataSourceArn) {
@@ -70,10 +70,10 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
-     * @return The ARN of the data source.
+     * @return The Amazon Resource Name (ARN) of the data source.
      */
 
     public String getDataSourceArn() {
@@ -82,11 +82,11 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        The ARN of the data source.
+     *        The Amazon Resource Name (ARN) of the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSourceId(String dataSourceId) {
@@ -110,10 +110,10 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID of the data source. This is unique per AWS Region per AWS account.
+     * @return The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSourceId() {
@@ -122,11 +122,11 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +247,11 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -260,10 +260,10 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -272,11 +272,11 @@ public class DescribeDataSourcePermissionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

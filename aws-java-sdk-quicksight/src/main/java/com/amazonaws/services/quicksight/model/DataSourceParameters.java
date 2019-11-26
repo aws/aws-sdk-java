@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parameters QuickSight uses to connect to your underlying source. This is a variant type structure. At most one of
- * the attributes should be non-null for this structure to be valid.
+ * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At most
+ * one of the attributes should be non-null for this structure to be valid.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceParameters" target="_top">AWS

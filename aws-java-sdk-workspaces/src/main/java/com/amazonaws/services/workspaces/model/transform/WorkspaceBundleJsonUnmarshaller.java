@@ -64,6 +64,10 @@ public class WorkspaceBundleJsonUnmarshaller implements Unmarshaller<WorkspaceBu
                     context.nextToken();
                     workspaceBundle.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageId", targetDepth)) {
+                    context.nextToken();
+                    workspaceBundle.setImageId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RootStorage", targetDepth)) {
                     context.nextToken();
                     workspaceBundle.setRootStorage(RootStorageJsonUnmarshaller.getInstance().unmarshall(context));
@@ -75,6 +79,10 @@ public class WorkspaceBundleJsonUnmarshaller implements Unmarshaller<WorkspaceBu
                 if (context.testExpression("ComputeType", targetDepth)) {
                     context.nextToken();
                     workspaceBundle.setComputeType(ComputeTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    context.nextToken();
+                    workspaceBundle.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -46,9 +46,9 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     private TemplateSourceEntity sourceEntity;
     /**
      * <p>
-     * A description of the current template version being created. This API created the first version of the template.
-     * Every time UpdateTemplate is called a new version is created. Each version of the template maintains a
-     * description of the version in the VersionDescription field.
+     * A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code> you
+     * create a new version. Each version of the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.
      * </p>
      */
     private String versionDescription;
@@ -187,15 +187,15 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being created. This API created the first version of the template.
-     * Every time UpdateTemplate is called a new version is created. Each version of the template maintains a
-     * description of the version in the VersionDescription field.
+     * A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code> you
+     * create a new version. Each version of the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.
      * </p>
      * 
      * @param versionDescription
-     *        A description of the current template version being created. This API created the first version of the
-     *        template. Every time UpdateTemplate is called a new version is created. Each version of the template
-     *        maintains a description of the version in the VersionDescription field.
+     *        A description of the current template version being updated. Every time you cal
+     *        <code>UpdateTemplate</code> you create a new version. Each version of the template maintains a description
+     *        of the version in the <code>VersionDescription</code> field.
      */
 
     public void setVersionDescription(String versionDescription) {
@@ -204,14 +204,14 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being created. This API created the first version of the template.
-     * Every time UpdateTemplate is called a new version is created. Each version of the template maintains a
-     * description of the version in the VersionDescription field.
+     * A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code> you
+     * create a new version. Each version of the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.
      * </p>
      * 
-     * @return A description of the current template version being created. This API created the first version of the
-     *         template. Every time UpdateTemplate is called a new version is created. Each version of the template
-     *         maintains a description of the version in the VersionDescription field.
+     * @return A description of the current template version being updated. Every time you cal
+     *         <code>UpdateTemplate</code> you create a new version. Each version of the template maintains a
+     *         description of the version in the <code>VersionDescription</code> field.
      */
 
     public String getVersionDescription() {
@@ -220,15 +220,15 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being created. This API created the first version of the template.
-     * Every time UpdateTemplate is called a new version is created. Each version of the template maintains a
-     * description of the version in the VersionDescription field.
+     * A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code> you
+     * create a new version. Each version of the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.
      * </p>
      * 
      * @param versionDescription
-     *        A description of the current template version being created. This API created the first version of the
-     *        template. Every time UpdateTemplate is called a new version is created. Each version of the template
-     *        maintains a description of the version in the VersionDescription field.
+     *        A description of the current template version being updated. Every time you cal
+     *        <code>UpdateTemplate</code> you create a new version. Each version of the template maintains a description
+     *        of the version in the <code>VersionDescription</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,18 +27,18 @@ public class DeleteLogSubscriptionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier (ID) of the directory whose log subscription you want to delete.
+     * Identifier of the directory whose log subscription you want to delete.
      * </p>
      */
     private String directoryId;
 
     /**
      * <p>
-     * Identifier (ID) of the directory whose log subscription you want to delete.
+     * Identifier of the directory whose log subscription you want to delete.
      * </p>
      * 
      * @param directoryId
-     *        Identifier (ID) of the directory whose log subscription you want to delete.
+     *        Identifier of the directory whose log subscription you want to delete.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -47,10 +47,10 @@ public class DeleteLogSubscriptionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier (ID) of the directory whose log subscription you want to delete.
+     * Identifier of the directory whose log subscription you want to delete.
      * </p>
      * 
-     * @return Identifier (ID) of the directory whose log subscription you want to delete.
+     * @return Identifier of the directory whose log subscription you want to delete.
      */
 
     public String getDirectoryId() {
@@ -59,11 +59,11 @@ public class DeleteLogSubscriptionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier (ID) of the directory whose log subscription you want to delete.
+     * Identifier of the directory whose log subscription you want to delete.
      * </p>
      * 
      * @param directoryId
-     *        Identifier (ID) of the directory whose log subscription you want to delete.
+     *        Identifier of the directory whose log subscription you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -87,6 +87,8 @@ public class UserPoolTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolAddOns").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<StructuredPojo> ACCOUNTRECOVERYSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountRecoverySetting").build();
 
     private static final UserPoolTypeMarshaller instance = new UserPoolTypeMarshaller();
 
@@ -133,6 +135,7 @@ public class UserPoolTypeMarshaller {
             protocolMarshaller.marshall(userPoolType.getAdminCreateUserConfig(), ADMINCREATEUSERCONFIG_BINDING);
             protocolMarshaller.marshall(userPoolType.getUserPoolAddOns(), USERPOOLADDONS_BINDING);
             protocolMarshaller.marshall(userPoolType.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(userPoolType.getAccountRecoverySetting(), ACCOUNTRECOVERYSETTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

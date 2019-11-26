@@ -32,8 +32,8 @@ public class UpdateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root that contains the OU) followed by
-     * a second "-" dash and from 8 to 32 additional lower-case letters or digits.
+     * "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string
+     * is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.
      * </p>
      */
     private String organizationalUnitId;
@@ -55,8 +55,8 @@ public class UpdateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root that contains the OU) followed by
-     * a second "-" dash and from 8 to 32 additional lower-case letters or digits.
+     * "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string
+     * is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.
      * </p>
      * 
      * @param organizationalUnitId
@@ -64,8 +64,8 @@ public class UpdateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *        <a>ListOrganizationalUnitsForParent</a> operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string
-     *        requires "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root that contains the
-     *        OU) followed by a second "-" dash and from 8 to 32 additional lower-case letters or digits.
+     *        requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
+     *        OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.
      */
 
     public void setOrganizationalUnitId(String organizationalUnitId) {
@@ -79,16 +79,17 @@ public class UpdateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root that contains the OU) followed by
-     * a second "-" dash and from 8 to 32 additional lower-case letters or digits.
+     * "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string
+     * is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) of the OU that you want to rename. You can get the ID from the
      *         <a>ListOrganizationalUnitsForParent</a> operation.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string
-     *         requires "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root that contains
-     *         the OU) followed by a second "-" dash and from 8 to 32 additional lower-case letters or digits.
+     *         requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
+     *         OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     *         digits.
      */
 
     public String getOrganizationalUnitId() {
@@ -102,8 +103,8 @@ public class UpdateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root that contains the OU) followed by
-     * a second "-" dash and from 8 to 32 additional lower-case letters or digits.
+     * "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string
+     * is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.
      * </p>
      * 
      * @param organizationalUnitId
@@ -111,8 +112,8 @@ public class UpdateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *        <a>ListOrganizationalUnitsForParent</a> operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string
-     *        requires "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root that contains the
-     *        OU) followed by a second "-" dash and from 8 to 32 additional lower-case letters or digits.
+     *        requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
+     *        OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

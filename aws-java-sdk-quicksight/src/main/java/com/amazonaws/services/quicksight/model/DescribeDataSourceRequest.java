@@ -33,7 +33,7 @@ public class DescribeDataSourceRequest extends com.amazonaws.AmazonWebServiceReq
     private String awsAccountId;
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSourceId;
@@ -80,11 +80,11 @@ public class DescribeDataSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSourceId(String dataSourceId) {
@@ -93,10 +93,10 @@ public class DescribeDataSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID of the data source. This is unique per AWS Region per AWS account.
+     * @return The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSourceId() {
@@ -105,11 +105,11 @@ public class DescribeDataSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

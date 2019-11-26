@@ -128,6 +128,8 @@ public interface AWSRDSData {
      * @return Result of the CommitTransaction operation returned by the service.
      * @throws BadRequestException
      *         There is an error in the call or in a SQL statement.
+     * @throws StatementTimeoutException
+     *         The execution of the SQL statement timed out.
      * @throws InternalServerErrorException
      *         An internal error occurred.
      * @throws ForbiddenException
@@ -215,6 +217,8 @@ public interface AWSRDSData {
      * @return Result of the RollbackTransaction operation returned by the service.
      * @throws BadRequestException
      *         There is an error in the call or in a SQL statement.
+     * @throws StatementTimeoutException
+     *         The execution of the SQL statement timed out.
      * @throws InternalServerErrorException
      *         An internal error occurred.
      * @throws ForbiddenException

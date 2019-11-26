@@ -30,8 +30,9 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of a QuickSight user or group, or an IAM ARN. If you are using cross-account resource sharing, this is
-     * the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group. .
+     * The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using cross-account
+     * resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group.
+     * .
      * </p>
      */
     private String principal;
@@ -44,13 +45,15 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of a QuickSight user or group, or an IAM ARN. If you are using cross-account resource sharing, this is
-     * the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group. .
+     * The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using cross-account
+     * resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group.
+     * .
      * </p>
      * 
      * @param principal
-     *        The ARN of a QuickSight user or group, or an IAM ARN. If you are using cross-account resource sharing,
-     *        this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group. .
+     *        The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using
+     *        cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
+     *        QuickSight user or group. .
      */
 
     public void setPrincipal(String principal) {
@@ -59,12 +62,14 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of a QuickSight user or group, or an IAM ARN. If you are using cross-account resource sharing, this is
-     * the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group. .
+     * The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using cross-account
+     * resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group.
+     * .
      * </p>
      * 
-     * @return The ARN of a QuickSight user or group, or an IAM ARN. If you are using cross-account resource sharing,
-     *         this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group. .
+     * @return The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using
+     *         cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
+     *         QuickSight user or group. .
      */
 
     public String getPrincipal() {
@@ -73,13 +78,15 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of a QuickSight user or group, or an IAM ARN. If you are using cross-account resource sharing, this is
-     * the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group. .
+     * The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using cross-account
+     * resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group.
+     * .
      * </p>
      * 
      * @param principal
-     *        The ARN of a QuickSight user or group, or an IAM ARN. If you are using cross-account resource sharing,
-     *        this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group. .
+     *        The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using
+     *        cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
+     *        QuickSight user or group. .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

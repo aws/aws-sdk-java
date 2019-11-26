@@ -68,6 +68,10 @@ public class GetApplicationResultJsonUnmarshaller implements Unmarshaller<GetApp
                     context.nextToken();
                     getApplicationResult.setHomePageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("isVerifiedAuthor", targetDepth)) {
+                    context.nextToken();
+                    getApplicationResult.setIsVerifiedAuthor(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("labels", targetDepth)) {
                     context.nextToken();
                     getApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
@@ -87,6 +91,10 @@ public class GetApplicationResultJsonUnmarshaller implements Unmarshaller<GetApp
                 if (context.testExpression("spdxLicenseId", targetDepth)) {
                     context.nextToken();
                     getApplicationResult.setSpdxLicenseId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("verifiedAuthorUrl", targetDepth)) {
+                    context.nextToken();
+                    getApplicationResult.setVerifiedAuthorUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

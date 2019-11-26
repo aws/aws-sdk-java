@@ -801,6 +801,24 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
+     * Returns information about contributor insights, for a given table or global secondary index.
+     * </p>
+     * 
+     * @param describeContributorInsightsRequest
+     * @return Result of the DescribeContributorInsights operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeContributorInsightsResult describeContributorInsights(DescribeContributorInsightsRequest describeContributorInsightsRequest);
+
+    /**
+     * <p>
      * Returns the regional endpoint information.
      * </p>
      * 
@@ -1114,6 +1132,24 @@ public interface AmazonDynamoDB {
      *      Documentation</a>
      */
     ListBackupsResult listBackups(ListBackupsRequest listBackupsRequest);
+
+    /**
+     * <p>
+     * Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.
+     * </p>
+     * 
+     * @param listContributorInsightsRequest
+     * @return Result of the ListContributorInsights operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListContributorInsightsResult listContributorInsights(ListContributorInsightsRequest listContributorInsightsRequest);
 
     /**
      * <p>
@@ -2572,6 +2608,24 @@ public interface AmazonDynamoDB {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateContinuousBackupsResult updateContinuousBackups(UpdateContinuousBackupsRequest updateContinuousBackupsRequest);
+
+    /**
+     * <p>
+     * Updates the status for contributor insights for a specific table or index.
+     * </p>
+     * 
+     * @param updateContributorInsightsRequest
+     * @return Result of the UpdateContributorInsights operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateContributorInsightsResult updateContributorInsights(UpdateContributorInsightsRequest updateContributorInsightsRequest);
 
     /**
      * <p>

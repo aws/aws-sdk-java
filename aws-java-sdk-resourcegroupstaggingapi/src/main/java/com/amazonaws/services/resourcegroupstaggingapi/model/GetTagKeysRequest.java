@@ -28,7 +28,8 @@ public class GetTagKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a PaginationToken, use that string for this value to request an additional page of data.
+     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
+     * page of data.
      * </p>
      */
     private String paginationToken;
@@ -36,13 +37,14 @@ public class GetTagKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a PaginationToken, use that string for this value to request an additional page of data.
+     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
+     * page of data.
      * </p>
      * 
      * @param paginationToken
      *        A string that indicates that additional data is available. Leave this value empty for your initial
-     *        request. If the response includes a PaginationToken, use that string for this value to request an
-     *        additional page of data.
+     *        request. If the response includes a <code>PaginationToken</code>, use that string for this value to
+     *        request an additional page of data.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -52,12 +54,13 @@ public class GetTagKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a PaginationToken, use that string for this value to request an additional page of data.
+     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
+     * page of data.
      * </p>
      * 
      * @return A string that indicates that additional data is available. Leave this value empty for your initial
-     *         request. If the response includes a PaginationToken, use that string for this value to request an
-     *         additional page of data.
+     *         request. If the response includes a <code>PaginationToken</code>, use that string for this value to
+     *         request an additional page of data.
      */
 
     public String getPaginationToken() {
@@ -67,13 +70,14 @@ public class GetTagKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a PaginationToken, use that string for this value to request an additional page of data.
+     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
+     * page of data.
      * </p>
      * 
      * @param paginationToken
      *        A string that indicates that additional data is available. Leave this value empty for your initial
-     *        request. If the response includes a PaginationToken, use that string for this value to request an
-     *        additional page of data.
+     *        request. If the response includes a <code>PaginationToken</code>, use that string for this value to
+     *        request an additional page of data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

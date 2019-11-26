@@ -113,6 +113,9 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Integer resourcesPerPage;
     /**
      * <p>
+     * AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.
+     * </p>
+     * <p>
      * A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A
      * resource with no tags is counted as having one tag (one key and value pair).
      * </p>
@@ -121,9 +124,9 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the
      * affected resource and its tags. Use that token in another request to get the remaining data. For example, if you
      * specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each
-     * (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page
-     * displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each
-     * with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.
+     * (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page
+     * displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with
+     * its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.
      * </p>
      * <p>
      * You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
@@ -169,6 +172,24 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<String> resourceTypeFilters;
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     */
+    private Boolean includeComplianceDetails;
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     */
+    private Boolean excludeCompliantResources;
 
     /**
      * <p>
@@ -856,6 +877,9 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.
+     * </p>
+     * <p>
      * A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A
      * resource with no tags is counted as having one tag (one key and value pair).
      * </p>
@@ -864,26 +888,29 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the
      * affected resource and its tags. Use that token in another request to get the remaining data. For example, if you
      * specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each
-     * (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page
-     * displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each
-     * with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.
+     * (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page
+     * displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with
+     * its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.
      * </p>
      * <p>
      * You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      * </p>
      * 
      * @param tagsPerPage
+     *        AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+     *        <p>
      *        A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated
-     *        output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+     *        output. A resource with no tags is counted as having one tag (one key and value pair).
+     *        </p>
      *        <p>
      *        <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified
      *        <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of
      *        the affected resource and its tags. Use that token in another request to get the remaining data. For
      *        example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources
-     *        with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3
-     *        pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page
-     *        displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2
-     *        resources, each with its 10 tags.
+     *        with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of
+     *        three pages. The first page displays the first 10 resources, each with its 10 tags. The second page
+     *        displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources,
+     *        each with its 10 tags.
      *        </p>
      *        <p>
      *        You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
@@ -895,6 +922,9 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.
+     * </p>
+     * <p>
      * A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A
      * resource with no tags is counted as having one tag (one key and value pair).
      * </p>
@@ -903,25 +933,28 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the
      * affected resource and its tags. Use that token in another request to get the remaining data. For example, if you
      * specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each
-     * (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page
-     * displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each
-     * with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.
+     * (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page
+     * displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with
+     * its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.
      * </p>
      * <p>
      * You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      * </p>
      * 
-     * @return A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated
-     *         output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+     * @return AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+     *         <p>
+     *         A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated
+     *         output. A resource with no tags is counted as having one tag (one key and value pair).
+     *         </p>
      *         <p>
      *         <code>GetResources</code> does not split a resource and its associated tags across pages. If the
      *         specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned
      *         in place of the affected resource and its tags. Use that token in another request to get the remaining
      *         data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22
      *         resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will
-     *         consist of 3 pages, with the first page displaying the first 10 resources, each with its 10 tags, the
-     *         second page displaying the next 10 resources each with its 10 tags, and the third page displaying the
-     *         remaining 2 resources, each with its 10 tags.
+     *         consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second
+     *         page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2
+     *         resources, each with its 10 tags.
      *         </p>
      *         <p>
      *         You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
@@ -933,6 +966,9 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.
+     * </p>
+     * <p>
      * A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A
      * resource with no tags is counted as having one tag (one key and value pair).
      * </p>
@@ -941,26 +977,29 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the
      * affected resource and its tags. Use that token in another request to get the remaining data. For example, if you
      * specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each
-     * (meaning that each resource has 10 key and value pairs), the output will consist of 3 pages, with the first page
-     * displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each
-     * with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.
+     * (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page
+     * displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with
+     * its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.
      * </p>
      * <p>
      * You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      * </p>
      * 
      * @param tagsPerPage
+     *        AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+     *        <p>
      *        A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated
-     *        output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+     *        output. A resource with no tags is counted as having one tag (one key and value pair).
+     *        </p>
      *        <p>
      *        <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified
      *        <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of
      *        the affected resource and its tags. Use that token in another request to get the remaining data. For
      *        example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources
-     *        with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of 3
-     *        pages, with the first page displaying the first 10 resources, each with its 10 tags, the second page
-     *        displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2
-     *        resources, each with its 10 tags.
+     *        with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of
+     *        three pages. The first page displays the first 10 resources, each with its 10 tags. The second page
+     *        displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources,
+     *        each with its 10 tags.
      *        </p>
      *        <p>
      *        You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
@@ -1307,6 +1346,154 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     * 
+     * @param includeComplianceDetails
+     *        Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     *        <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     */
+
+    public void setIncludeComplianceDetails(Boolean includeComplianceDetails) {
+        this.includeComplianceDetails = includeComplianceDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     * 
+     * @return Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     *         <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     */
+
+    public Boolean getIncludeComplianceDetails() {
+        return this.includeComplianceDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     * 
+     * @param includeComplianceDetails
+     *        Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     *        <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcesRequest withIncludeComplianceDetails(Boolean includeComplianceDetails) {
+        setIncludeComplianceDetails(includeComplianceDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     * 
+     * @return Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     *         <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     */
+
+    public Boolean isIncludeComplianceDetails() {
+        return this.includeComplianceDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param excludeCompliantResources
+     *        Specifies whether to exclude resources that are compliant with the tag policy. Set this to
+     *        <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+     *        <p>
+     *        You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *        <code>true</code>.
+     */
+
+    public void setExcludeCompliantResources(Boolean excludeCompliantResources) {
+        this.excludeCompliantResources = excludeCompliantResources;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies whether to exclude resources that are compliant with the tag policy. Set this to
+     *         <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+     *         <p>
+     *         You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *         <code>true</code>.
+     */
+
+    public Boolean getExcludeCompliantResources() {
+        return this.excludeCompliantResources;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param excludeCompliantResources
+     *        Specifies whether to exclude resources that are compliant with the tag policy. Set this to
+     *        <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+     *        <p>
+     *        You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcesRequest withExcludeCompliantResources(Boolean excludeCompliantResources) {
+        setExcludeCompliantResources(excludeCompliantResources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies whether to exclude resources that are compliant with the tag policy. Set this to
+     *         <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+     *         <p>
+     *         You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *         <code>true</code>.
+     */
+
+    public Boolean isExcludeCompliantResources() {
+        return this.excludeCompliantResources;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1327,7 +1514,11 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTagsPerPage() != null)
             sb.append("TagsPerPage: ").append(getTagsPerPage()).append(",");
         if (getResourceTypeFilters() != null)
-            sb.append("ResourceTypeFilters: ").append(getResourceTypeFilters());
+            sb.append("ResourceTypeFilters: ").append(getResourceTypeFilters()).append(",");
+        if (getIncludeComplianceDetails() != null)
+            sb.append("IncludeComplianceDetails: ").append(getIncludeComplianceDetails()).append(",");
+        if (getExcludeCompliantResources() != null)
+            sb.append("ExcludeCompliantResources: ").append(getExcludeCompliantResources());
         sb.append("}");
         return sb.toString();
     }
@@ -1362,6 +1553,14 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getResourceTypeFilters() != null && other.getResourceTypeFilters().equals(this.getResourceTypeFilters()) == false)
             return false;
+        if (other.getIncludeComplianceDetails() == null ^ this.getIncludeComplianceDetails() == null)
+            return false;
+        if (other.getIncludeComplianceDetails() != null && other.getIncludeComplianceDetails().equals(this.getIncludeComplianceDetails()) == false)
+            return false;
+        if (other.getExcludeCompliantResources() == null ^ this.getExcludeCompliantResources() == null)
+            return false;
+        if (other.getExcludeCompliantResources() != null && other.getExcludeCompliantResources().equals(this.getExcludeCompliantResources()) == false)
+            return false;
         return true;
     }
 
@@ -1375,6 +1574,8 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getResourcesPerPage() == null) ? 0 : getResourcesPerPage().hashCode());
         hashCode = prime * hashCode + ((getTagsPerPage() == null) ? 0 : getTagsPerPage().hashCode());
         hashCode = prime * hashCode + ((getResourceTypeFilters() == null) ? 0 : getResourceTypeFilters().hashCode());
+        hashCode = prime * hashCode + ((getIncludeComplianceDetails() == null) ? 0 : getIncludeComplianceDetails().hashCode());
+        hashCode = prime * hashCode + ((getExcludeCompliantResources() == null) ? 0 : getExcludeCompliantResources().hashCode());
         return hashCode;
     }
 

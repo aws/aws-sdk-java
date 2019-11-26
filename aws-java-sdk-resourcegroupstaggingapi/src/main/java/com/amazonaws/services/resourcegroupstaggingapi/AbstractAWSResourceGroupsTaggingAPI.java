@@ -28,6 +28,16 @@ public class AbstractAWSResourceGroupsTaggingAPI implements AWSResourceGroupsTag
     }
 
     @Override
+    public DescribeReportCreationResult describeReportCreation(DescribeReportCreationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetComplianceSummaryResult getComplianceSummary(GetComplianceSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetResourcesResult getResources(GetResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,6 +49,11 @@ public class AbstractAWSResourceGroupsTaggingAPI implements AWSResourceGroupsTag
 
     @Override
     public GetTagValuesResult getTagValues(GetTagValuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartReportCreationResult startReportCreation(StartReportCreationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

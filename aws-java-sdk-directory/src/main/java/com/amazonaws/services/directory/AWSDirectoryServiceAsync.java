@@ -368,7 +368,9 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a Simple AD directory.
+     * Creates a Simple AD directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple Active
+     * Directory</a> in the <i>AWS Directory Service Admin Guide</i>.
      * </p>
      * <p>
      * Before you call <code>CreateDirectory</code>, ensure that all of the required permissions have been explicitly
@@ -389,7 +391,9 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a Simple AD directory.
+     * Creates a Simple AD directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple Active
+     * Directory</a> in the <i>AWS Directory Service Admin Guide</i>.
      * </p>
      * <p>
      * Before you call <code>CreateDirectory</code>, ensure that all of the required permissions have been explicitly
@@ -415,8 +419,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
-     * CloudWatch log group in your AWS account.
+     * Creates a subscription to forward real-time Directory Service domain controller security logs to the specified
+     * Amazon CloudWatch log group in your AWS account.
      * </p>
      * 
      * @param createLogSubscriptionRequest
@@ -429,8 +433,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
-     * CloudWatch log group in your AWS account.
+     * Creates a subscription to forward real-time Directory Service domain controller security logs to the specified
+     * Amazon CloudWatch log group in your AWS account.
      * </p>
      * 
      * @param createLogSubscriptionRequest
@@ -448,7 +452,9 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates an AWS Managed Microsoft AD directory.
+     * Creates a Microsoft AD directory in the AWS Cloud. For more information, see <a
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Managed
+     * Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -469,7 +475,9 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates an AWS Managed Microsoft AD directory.
+     * Creates a Microsoft AD directory in the AWS Cloud. For more information, see <a
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Managed
+     * Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -778,6 +786,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param deregisterCertificateRequest
+     * @return A Java Future containing the result of the DeregisterCertificate operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DeregisterCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterCertificateResult> deregisterCertificateAsync(DeregisterCertificateRequest deregisterCertificateRequest);
+
+    /**
+     * <p>
+     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param deregisterCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterCertificate operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DeregisterCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterCertificateResult> deregisterCertificateAsync(DeregisterCertificateRequest deregisterCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterCertificateRequest, DeregisterCertificateResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the specified directory as a publisher to the specified SNS topic.
      * </p>
      * 
@@ -808,6 +847,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(DeregisterEventTopicRequest deregisterEventTopicRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays information about the certificate registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param describeCertificateRequest
+     * @return A Java Future containing the result of the DescribeCertificate operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DescribeCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest describeCertificateRequest);
+
+    /**
+     * <p>
+     * Displays information about the certificate registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param describeCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCertificate operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DescribeCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest describeCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -1002,6 +1072,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Describes the status of LDAP security for the specified directory.
+     * </p>
+     * 
+     * @param describeLDAPSSettingsRequest
+     * @return A Java Future containing the result of the DescribeLDAPSSettings operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DescribeLDAPSSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeLDAPSSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLDAPSSettingsResult> describeLDAPSSettingsAsync(DescribeLDAPSSettingsRequest describeLDAPSSettingsRequest);
+
+    /**
+     * <p>
+     * Describes the status of LDAP security for the specified directory.
+     * </p>
+     * 
+     * @param describeLDAPSSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLDAPSSettings operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DescribeLDAPSSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeLDAPSSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLDAPSSettingsResult> describeLDAPSSettingsAsync(DescribeLDAPSSettingsRequest describeLDAPSSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLDAPSSettingsRequest, DescribeLDAPSSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -1144,6 +1245,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Deactivates LDAP secure calls for the specified directory.
+     * </p>
+     * 
+     * @param disableLDAPSRequest
+     * @return A Java Future containing the result of the DisableLDAPS operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DisableLDAPS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableLDAPS" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableLDAPSResult> disableLDAPSAsync(DisableLDAPSRequest disableLDAPSRequest);
+
+    /**
+     * <p>
+     * Deactivates LDAP secure calls for the specified directory.
+     * </p>
+     * 
+     * @param disableLDAPSRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableLDAPS operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DisableLDAPS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableLDAPS" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableLDAPSResult> disableLDAPSAsync(DisableLDAPSRequest disableLDAPSRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableLDAPSRequest, DisableLDAPSResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server
      * for an AD Connector or Microsoft AD directory.
      * </p>
@@ -1212,6 +1344,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Activates the switch for the specific directory to always use LDAP secure calls.
+     * </p>
+     * 
+     * @param enableLDAPSRequest
+     * @return A Java Future containing the result of the EnableLDAPS operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.EnableLDAPS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableLDAPS" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableLDAPSResult> enableLDAPSAsync(EnableLDAPSRequest enableLDAPSRequest);
+
+    /**
+     * <p>
+     * Activates the switch for the specific directory to always use LDAP secure calls.
+     * </p>
+     * 
+     * @param enableLDAPSRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableLDAPS operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.EnableLDAPS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableLDAPS" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableLDAPSResult> enableLDAPSAsync(EnableLDAPSRequest enableLDAPSRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableLDAPSRequest, EnableLDAPSResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for
      * an AD Connector or Microsoft AD directory.
      * </p>
@@ -1247,7 +1410,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Enables single sign-on for a directory.
+     * Enables single sign-on for a directory. Single sign-on allows users in your directory to access certain AWS
+     * services from a computer joined to the directory without having to enter their credentials separately.
      * </p>
      * 
      * @param enableSsoRequest
@@ -1261,7 +1425,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Enables single sign-on for a directory.
+     * Enables single sign-on for a directory. Single sign-on allows users in your directory to access certain AWS
+     * services from a computer joined to the directory without having to enter their credentials separately.
      * </p>
      * 
      * @param enableSsoRequest
@@ -1280,7 +1445,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Obtains directory limit information for the current region.
+     * Obtains directory limit information for the current Region.
      * </p>
      * 
      * @param getDirectoryLimitsRequest
@@ -1294,7 +1459,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Obtains directory limit information for the current region.
+     * Obtains directory limit information for the current Region.
      * </p>
      * 
      * @param getDirectoryLimitsRequest
@@ -1358,6 +1523,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<GetSnapshotLimitsResult> getSnapshotLimitsAsync(GetSnapshotLimitsRequest getSnapshotLimitsRequest,
             com.amazonaws.handlers.AsyncHandler<GetSnapshotLimitsRequest, GetSnapshotLimitsResult> asyncHandler);
+
+    /**
+     * <p>
+     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param listCertificatesRequest
+     * @return A Java Future containing the result of the ListCertificates operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.ListCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest listCertificatesRequest);
+
+    /**
+     * <p>
+     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param listCertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCertificates operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.ListCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest listCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler);
 
     /**
      * <p>
@@ -1482,6 +1678,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers a certificate for secured LDAP connection.
+     * </p>
+     * 
+     * @param registerCertificateRequest
+     * @return A Java Future containing the result of the RegisterCertificate operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.RegisterCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(RegisterCertificateRequest registerCertificateRequest);
+
+    /**
+     * <p>
+     * Registers a certificate for secured LDAP connection.
+     * </p>
+     * 
+     * @param registerCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterCertificate operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.RegisterCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(RegisterCertificateRequest registerCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterCertificateRequest, RegisterCertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -1619,6 +1846,27 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
      * </p>
+     * <p>
+     * You can reset the password for any user in your directory with the following exceptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Simple AD, you cannot reset the password for any user that is a member of either the <b>Domain Admins</b> or
+     * <b>Enterprise Admins</b> group except for the administrator user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For AWS Managed Microsoft AD, you can only reset the password for a user that is in an OU based off of the
+     * NetBIOS name that you typed when you created your directory. For example, you cannot reset the password for a
+     * user in the <b>AWS Reserved</b> OU. For more information about the OU structure for an AWS Managed Microsoft AD
+     * directory, see <a href=
+     * "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html"
+     * >What Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resetUserPasswordRequest
      * @return A Java Future containing the result of the ResetUserPassword operation returned by the service.
@@ -1632,6 +1880,27 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
      * </p>
+     * <p>
+     * You can reset the password for any user in your directory with the following exceptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Simple AD, you cannot reset the password for any user that is a member of either the <b>Domain Admins</b> or
+     * <b>Enterprise Admins</b> group except for the administrator user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For AWS Managed Microsoft AD, you can only reset the password for a user that is in an OU based off of the
+     * NetBIOS name that you typed when you created your directory. For example, you cannot reset the password for a
+     * user in the <b>AWS Reserved</b> OU. For more information about the OU structure for an AWS Managed Microsoft AD
+     * directory, see <a href=
+     * "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html"
+     * >What Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resetUserPasswordRequest
      * @param asyncHandler

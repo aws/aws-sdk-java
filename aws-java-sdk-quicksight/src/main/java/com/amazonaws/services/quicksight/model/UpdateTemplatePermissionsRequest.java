@@ -39,17 +39,13 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
     private String templateId;
     /**
      * <p>
-     * A list of resource permissions to be granted on the template. The following example shows the shorthand syntax:
-     * </p>
-     * <p>
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be granted on the template.
      * </p>
      */
     private java.util.List<ResourcePermission> grantPermissions;
     /**
      * <p>
-     * A list of resource permissions to be revoked from the template. Shorthand syntax:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be revoked from the template.
      * </p>
      */
     private java.util.List<ResourcePermission> revokePermissions;
@@ -136,16 +132,10 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource permissions to be granted on the template. The following example shows the shorthand syntax:
-     * </p>
-     * <p>
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be granted on the template.
      * </p>
      * 
-     * @return A list of resource permissions to be granted on the template. The following example shows the shorthand
-     *         syntax: </p>
-     *         <p>
-     *         <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * @return A list of resource permissions to be granted on the template.
      */
 
     public java.util.List<ResourcePermission> getGrantPermissions() {
@@ -154,17 +144,11 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource permissions to be granted on the template. The following example shows the shorthand syntax:
-     * </p>
-     * <p>
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be granted on the template.
      * </p>
      * 
      * @param grantPermissions
-     *        A list of resource permissions to be granted on the template. The following example shows the shorthand
-     *        syntax: </p>
-     *        <p>
-     *        <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be granted on the template.
      */
 
     public void setGrantPermissions(java.util.Collection<ResourcePermission> grantPermissions) {
@@ -178,10 +162,7 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource permissions to be granted on the template. The following example shows the shorthand syntax:
-     * </p>
-     * <p>
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be granted on the template.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -190,10 +171,7 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param grantPermissions
-     *        A list of resource permissions to be granted on the template. The following example shows the shorthand
-     *        syntax: </p>
-     *        <p>
-     *        <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be granted on the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,17 +187,11 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource permissions to be granted on the template. The following example shows the shorthand syntax:
-     * </p>
-     * <p>
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be granted on the template.
      * </p>
      * 
      * @param grantPermissions
-     *        A list of resource permissions to be granted on the template. The following example shows the shorthand
-     *        syntax: </p>
-     *        <p>
-     *        <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be granted on the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,12 +202,10 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource permissions to be revoked from the template. Shorthand syntax:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be revoked from the template.
      * </p>
      * 
-     * @return A list of resource permissions to be revoked from the template. Shorthand syntax:
-     *         <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * @return A list of resource permissions to be revoked from the template.
      */
 
     public java.util.List<ResourcePermission> getRevokePermissions() {
@@ -244,13 +214,11 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource permissions to be revoked from the template. Shorthand syntax:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be revoked from the template.
      * </p>
      * 
      * @param revokePermissions
-     *        A list of resource permissions to be revoked from the template. Shorthand syntax:
-     *        <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be revoked from the template.
      */
 
     public void setRevokePermissions(java.util.Collection<ResourcePermission> revokePermissions) {
@@ -264,8 +232,7 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource permissions to be revoked from the template. Shorthand syntax:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be revoked from the template.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -274,8 +241,7 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param revokePermissions
-     *        A list of resource permissions to be revoked from the template. Shorthand syntax:
-     *        <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be revoked from the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,13 +257,11 @@ public class UpdateTemplatePermissionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of resource permissions to be revoked from the template. Shorthand syntax:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be revoked from the template.
      * </p>
      * 
      * @param revokePermissions
-     *        A list of resource permissions to be revoked from the template. Shorthand syntax:
-     *        <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be revoked from the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

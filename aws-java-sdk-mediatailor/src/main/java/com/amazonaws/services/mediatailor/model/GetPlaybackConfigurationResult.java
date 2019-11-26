@@ -53,6 +53,12 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private HlsConfiguration hlsConfiguration;
     /**
      * <p>
+     * The configuration for pre-roll ad insertion.
+     * </p>
+     */
+    private LivePreRollConfiguration livePreRollConfiguration;
+    /**
+     * <p>
      * The identifier for the playback configuration.
      * </p>
      */
@@ -287,6 +293,46 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     public GetPlaybackConfigurationResult withHlsConfiguration(HlsConfiguration hlsConfiguration) {
         setHlsConfiguration(hlsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for pre-roll ad insertion.
+     * </p>
+     * 
+     * @param livePreRollConfiguration
+     *        The configuration for pre-roll ad insertion.
+     */
+
+    public void setLivePreRollConfiguration(LivePreRollConfiguration livePreRollConfiguration) {
+        this.livePreRollConfiguration = livePreRollConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for pre-roll ad insertion.
+     * </p>
+     * 
+     * @return The configuration for pre-roll ad insertion.
+     */
+
+    public LivePreRollConfiguration getLivePreRollConfiguration() {
+        return this.livePreRollConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for pre-roll ad insertion.
+     * </p>
+     * 
+     * @param livePreRollConfiguration
+     *        The configuration for pre-roll ad insertion.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlaybackConfigurationResult withLivePreRollConfiguration(LivePreRollConfiguration livePreRollConfiguration) {
+        setLivePreRollConfiguration(livePreRollConfiguration);
         return this;
     }
 
@@ -693,6 +739,8 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             sb.append("DashConfiguration: ").append(getDashConfiguration()).append(",");
         if (getHlsConfiguration() != null)
             sb.append("HlsConfiguration: ").append(getHlsConfiguration()).append(",");
+        if (getLivePreRollConfiguration() != null)
+            sb.append("LivePreRollConfiguration: ").append(getLivePreRollConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPlaybackConfigurationArn() != null)
@@ -739,6 +787,10 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getHlsConfiguration() != null && other.getHlsConfiguration().equals(this.getHlsConfiguration()) == false)
             return false;
+        if (other.getLivePreRollConfiguration() == null ^ this.getLivePreRollConfiguration() == null)
+            return false;
+        if (other.getLivePreRollConfiguration() != null && other.getLivePreRollConfiguration().equals(this.getLivePreRollConfiguration()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -784,6 +836,7 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPlaybackConfigurationArn() == null) ? 0 : getPlaybackConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getPlaybackEndpointPrefix() == null) ? 0 : getPlaybackEndpointPrefix().hashCode());

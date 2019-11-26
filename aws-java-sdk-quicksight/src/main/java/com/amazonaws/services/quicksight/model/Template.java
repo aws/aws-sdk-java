@@ -37,7 +37,7 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the template.
+     * The Amazon Resource Name (ARN) of the template.
      * </p>
      */
     private String arn;
@@ -55,7 +55,7 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
     private TemplateVersion version;
     /**
      * <p>
-     * The ID for the template. This is unique per region per AWS account.
+     * The ID for the template. This is unique per AWS Region for each AWS account.
      * </p>
      */
     private String templateId;
@@ -74,11 +74,11 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the template.
+     * The Amazon Resource Name (ARN) of the template.
      * </p>
      * 
      * @param arn
-     *        The ARN of the template.
+     *        The Amazon Resource Name (ARN) of the template.
      */
 
     public void setArn(String arn) {
@@ -87,10 +87,10 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the template.
+     * The Amazon Resource Name (ARN) of the template.
      * </p>
      * 
-     * @return The ARN of the template.
+     * @return The Amazon Resource Name (ARN) of the template.
      */
 
     public String getArn() {
@@ -99,11 +99,11 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the template.
+     * The Amazon Resource Name (ARN) of the template.
      * </p>
      * 
      * @param arn
-     *        The ARN of the template.
+     *        The Amazon Resource Name (ARN) of the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +194,11 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the template. This is unique per region per AWS account.
+     * The ID for the template. This is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param templateId
-     *        The ID for the template. This is unique per region per AWS account.
+     *        The ID for the template. This is unique per AWS Region for each AWS account.
      */
 
     public void setTemplateId(String templateId) {
@@ -207,10 +207,10 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the template. This is unique per region per AWS account.
+     * The ID for the template. This is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID for the template. This is unique per region per AWS account.
+     * @return The ID for the template. This is unique per AWS Region for each AWS account.
      */
 
     public String getTemplateId() {
@@ -219,11 +219,11 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the template. This is unique per region per AWS account.
+     * The ID for the template. This is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param templateId
-     *        The ID for the template. This is unique per region per AWS account.
+     *        The ID for the template. This is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

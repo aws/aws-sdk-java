@@ -32,7 +32,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
-     * "car-" followed by from 8 to 32 lower-case letters or digits.
+     * "car-" followed by from 8 to 32 lowercase letters or digits.
      * </p>
      */
     private String createAccountRequestId;
@@ -44,7 +44,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
-     * "car-" followed by from 8 to 32 lower-case letters or digits.
+     * "car-" followed by from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param createAccountRequestId
@@ -53,7 +53,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      *        operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-     *        requires "car-" followed by from 8 to 32 lower-case letters or digits.
+     *        requires "car-" followed by from 8 to 32 lowercase letters or digits.
      */
 
     public void setCreateAccountRequestId(String createAccountRequestId) {
@@ -67,7 +67,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
-     * "car-" followed by from 8 to 32 lower-case letters or digits.
+     * "car-" followed by from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return Specifies the <code>operationId</code> that uniquely identifies the request. You can get the ID from the
@@ -75,7 +75,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      *         operation.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-     *         requires "car-" followed by from 8 to 32 lower-case letters or digits.
+     *         requires "car-" followed by from 8 to 32 lowercase letters or digits.
      */
 
     public String getCreateAccountRequestId() {
@@ -89,7 +89,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
-     * "car-" followed by from 8 to 32 lower-case letters or digits.
+     * "car-" followed by from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param createAccountRequestId
@@ -98,7 +98,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      *        operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
-     *        requires "car-" followed by from 8 to 32 lower-case letters or digits.
+     *        requires "car-" followed by from 8 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

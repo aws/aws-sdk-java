@@ -25,13 +25,13 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A structure containing the list of template aliases.
+     * A structure containing the list of the template's aliases.
      * </p>
      */
     private java.util.List<TemplateAlias> templateAliasList;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
@@ -50,10 +50,10 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A structure containing the list of template aliases.
+     * A structure containing the list of the template's aliases.
      * </p>
      * 
-     * @return A structure containing the list of template aliases.
+     * @return A structure containing the list of the template's aliases.
      */
 
     public java.util.List<TemplateAlias> getTemplateAliasList() {
@@ -62,11 +62,11 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A structure containing the list of template aliases.
+     * A structure containing the list of the template's aliases.
      * </p>
      * 
      * @param templateAliasList
-     *        A structure containing the list of template aliases.
+     *        A structure containing the list of the template's aliases.
      */
 
     public void setTemplateAliasList(java.util.Collection<TemplateAlias> templateAliasList) {
@@ -80,7 +80,7 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A structure containing the list of template aliases.
+     * A structure containing the list of the template's aliases.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +89,7 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param templateAliasList
-     *        A structure containing the list of template aliases.
+     *        A structure containing the list of the template's aliases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A structure containing the list of template aliases.
+     * A structure containing the list of the template's aliases.
      * </p>
      * 
      * @param templateAliasList
-     *        A structure containing the list of template aliases.
+     *        A structure containing the list of the template's aliases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +120,11 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -133,10 +133,10 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -145,11 +145,11 @@ public class ListTemplateAliasesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

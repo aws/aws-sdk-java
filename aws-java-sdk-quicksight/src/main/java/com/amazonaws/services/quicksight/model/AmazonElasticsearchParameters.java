@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Amazon Elasticsearch parameters.
+ * Amazon Elasticsearch Service parameters.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AmazonElasticsearchParameters"
@@ -30,18 +30,18 @@ public class AmazonElasticsearchParameters implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Elasticsearch domain.
+     * The Amazon Elasticsearch Service domain.
      * </p>
      */
     private String domain;
 
     /**
      * <p>
-     * The Amazon Elasticsearch domain.
+     * The Amazon Elasticsearch Service domain.
      * </p>
      * 
      * @param domain
-     *        The Amazon Elasticsearch domain.
+     *        The Amazon Elasticsearch Service domain.
      */
 
     public void setDomain(String domain) {
@@ -50,10 +50,10 @@ public class AmazonElasticsearchParameters implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Elasticsearch domain.
+     * The Amazon Elasticsearch Service domain.
      * </p>
      * 
-     * @return The Amazon Elasticsearch domain.
+     * @return The Amazon Elasticsearch Service domain.
      */
 
     public String getDomain() {
@@ -62,11 +62,11 @@ public class AmazonElasticsearchParameters implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Elasticsearch domain.
+     * The Amazon Elasticsearch Service domain.
      * </p>
      * 
      * @param domain
-     *        The Amazon Elasticsearch domain.
+     *        The Amazon Elasticsearch Service domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

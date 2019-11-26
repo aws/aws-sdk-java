@@ -55,6 +55,12 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
     private String description;
     /**
      * <p>
+     * The image identifier of the bundle.
+     * </p>
+     */
+    private String imageId;
+    /**
+     * <p>
      * The size of the root volume.
      * </p>
      */
@@ -72,6 +78,12 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private ComputeType computeType;
+    /**
+     * <p>
+     * The last time that the bundle was updated.
+     * </p>
+     */
+    private java.util.Date lastUpdatedTime;
 
     /**
      * <p>
@@ -241,6 +253,46 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The image identifier of the bundle.
+     * </p>
+     * 
+     * @param imageId
+     *        The image identifier of the bundle.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The image identifier of the bundle.
+     * </p>
+     * 
+     * @return The image identifier of the bundle.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The image identifier of the bundle.
+     * </p>
+     * 
+     * @param imageId
+     *        The image identifier of the bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceBundle withImageId(String imageId) {
+        setImageId(imageId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The size of the root volume.
      * </p>
      * 
@@ -366,6 +418,46 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The last time that the bundle was updated.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        The last time that the bundle was updated.
+     */
+
+    public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        this.lastUpdatedTime = lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The last time that the bundle was updated.
+     * </p>
+     * 
+     * @return The last time that the bundle was updated.
+     */
+
+    public java.util.Date getLastUpdatedTime() {
+        return this.lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The last time that the bundle was updated.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        The last time that the bundle was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceBundle withLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        setLastUpdatedTime(lastUpdatedTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -385,12 +477,16 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getRootStorage() != null)
             sb.append("RootStorage: ").append(getRootStorage()).append(",");
         if (getUserStorage() != null)
             sb.append("UserStorage: ").append(getUserStorage()).append(",");
         if (getComputeType() != null)
-            sb.append("ComputeType: ").append(getComputeType());
+            sb.append("ComputeType: ").append(getComputeType()).append(",");
+        if (getLastUpdatedTime() != null)
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -421,6 +517,10 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
         if (other.getRootStorage() == null ^ this.getRootStorage() == null)
             return false;
         if (other.getRootStorage() != null && other.getRootStorage().equals(this.getRootStorage()) == false)
@@ -432,6 +532,10 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
         if (other.getComputeType() == null ^ this.getComputeType() == null)
             return false;
         if (other.getComputeType() != null && other.getComputeType().equals(this.getComputeType()) == false)
+            return false;
+        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
+            return false;
+        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
         return true;
     }
@@ -445,9 +549,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getRootStorage() == null) ? 0 : getRootStorage().hashCode());
         hashCode = prime * hashCode + ((getUserStorage() == null) ? 0 : getUserStorage().hashCode());
         hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         return hashCode;
     }
 

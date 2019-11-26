@@ -36,7 +36,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     private String name;
     /**
      * <p>
-     * The short name of the directory, such as <code>CORP</code>.
+     * The NetBIOS name of the directory, such as <code>CORP</code>.
      * </p>
      */
     private String shortName;
@@ -45,11 +45,15 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * The password for the directory administrator. The directory creation process creates a directory administrator
      * account with the user name <code>Administrator</code> and this password.
      * </p>
+     * <p>
+     * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
+     * call.
+     * </p>
      */
     private String password;
     /**
      * <p>
-     * A textual description for the directory.
+     * A description for the directory.
      * </p>
      */
     private String description;
@@ -114,11 +118,11 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The short name of the directory, such as <code>CORP</code>.
+     * The NetBIOS name of the directory, such as <code>CORP</code>.
      * </p>
      * 
      * @param shortName
-     *        The short name of the directory, such as <code>CORP</code>.
+     *        The NetBIOS name of the directory, such as <code>CORP</code>.
      */
 
     public void setShortName(String shortName) {
@@ -127,10 +131,10 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The short name of the directory, such as <code>CORP</code>.
+     * The NetBIOS name of the directory, such as <code>CORP</code>.
      * </p>
      * 
-     * @return The short name of the directory, such as <code>CORP</code>.
+     * @return The NetBIOS name of the directory, such as <code>CORP</code>.
      */
 
     public String getShortName() {
@@ -139,11 +143,11 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The short name of the directory, such as <code>CORP</code>.
+     * The NetBIOS name of the directory, such as <code>CORP</code>.
      * </p>
      * 
      * @param shortName
-     *        The short name of the directory, such as <code>CORP</code>.
+     *        The NetBIOS name of the directory, such as <code>CORP</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,10 +161,17 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * The password for the directory administrator. The directory creation process creates a directory administrator
      * account with the user name <code>Administrator</code> and this password.
      * </p>
+     * <p>
+     * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
+     * call.
+     * </p>
      * 
      * @param password
      *        The password for the directory administrator. The directory creation process creates a directory
-     *        administrator account with the user name <code>Administrator</code> and this password.
+     *        administrator account with the user name <code>Administrator</code> and this password.</p>
+     *        <p>
+     *        If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a>
+     *        API call.
      */
 
     public void setPassword(String password) {
@@ -172,9 +183,16 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * The password for the directory administrator. The directory creation process creates a directory administrator
      * account with the user name <code>Administrator</code> and this password.
      * </p>
+     * <p>
+     * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
+     * call.
+     * </p>
      * 
      * @return The password for the directory administrator. The directory creation process creates a directory
-     *         administrator account with the user name <code>Administrator</code> and this password.
+     *         administrator account with the user name <code>Administrator</code> and this password.</p>
+     *         <p>
+     *         If you need to change the password for the administrator account, you can use the
+     *         <a>ResetUserPassword</a> API call.
      */
 
     public String getPassword() {
@@ -186,10 +204,17 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * The password for the directory administrator. The directory creation process creates a directory administrator
      * account with the user name <code>Administrator</code> and this password.
      * </p>
+     * <p>
+     * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
+     * call.
+     * </p>
      * 
      * @param password
      *        The password for the directory administrator. The directory creation process creates a directory
-     *        administrator account with the user name <code>Administrator</code> and this password.
+     *        administrator account with the user name <code>Administrator</code> and this password.</p>
+     *        <p>
+     *        If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a>
+     *        API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +225,11 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A textual description for the directory.
+     * A description for the directory.
      * </p>
      * 
      * @param description
-     *        A textual description for the directory.
+     *        A description for the directory.
      */
 
     public void setDescription(String description) {
@@ -213,10 +238,10 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A textual description for the directory.
+     * A description for the directory.
      * </p>
      * 
-     * @return A textual description for the directory.
+     * @return A description for the directory.
      */
 
     public String getDescription() {
@@ -225,11 +250,11 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A textual description for the directory.
+     * A description for the directory.
      * </p>
      * 
      * @param description
-     *        A textual description for the directory.
+     *        A description for the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

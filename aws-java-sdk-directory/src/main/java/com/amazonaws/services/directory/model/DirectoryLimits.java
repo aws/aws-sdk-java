@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains directory limit information for a region.
+ * Contains directory limit information for a Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryLimits" target="_top">AWS API
@@ -30,13 +30,13 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of cloud directories allowed in the region.
+     * The maximum number of cloud directories allowed in the Region.
      * </p>
      */
     private Integer cloudOnlyDirectoriesLimit;
     /**
      * <p>
-     * The current number of cloud directories in the region.
+     * The current number of cloud directories in the Region.
      * </p>
      */
     private Integer cloudOnlyDirectoriesCurrentCount;
@@ -66,13 +66,13 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
     private Boolean cloudOnlyMicrosoftADLimitReached;
     /**
      * <p>
-     * The maximum number of connected directories allowed in the region.
+     * The maximum number of connected directories allowed in the Region.
      * </p>
      */
     private Integer connectedDirectoriesLimit;
     /**
      * <p>
-     * The current number of connected directories in the region.
+     * The current number of connected directories in the Region.
      * </p>
      */
     private Integer connectedDirectoriesCurrentCount;
@@ -85,11 +85,11 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of cloud directories allowed in the region.
+     * The maximum number of cloud directories allowed in the Region.
      * </p>
      * 
      * @param cloudOnlyDirectoriesLimit
-     *        The maximum number of cloud directories allowed in the region.
+     *        The maximum number of cloud directories allowed in the Region.
      */
 
     public void setCloudOnlyDirectoriesLimit(Integer cloudOnlyDirectoriesLimit) {
@@ -98,10 +98,10 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of cloud directories allowed in the region.
+     * The maximum number of cloud directories allowed in the Region.
      * </p>
      * 
-     * @return The maximum number of cloud directories allowed in the region.
+     * @return The maximum number of cloud directories allowed in the Region.
      */
 
     public Integer getCloudOnlyDirectoriesLimit() {
@@ -110,11 +110,11 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of cloud directories allowed in the region.
+     * The maximum number of cloud directories allowed in the Region.
      * </p>
      * 
      * @param cloudOnlyDirectoriesLimit
-     *        The maximum number of cloud directories allowed in the region.
+     *        The maximum number of cloud directories allowed in the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,11 +125,11 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The current number of cloud directories in the region.
+     * The current number of cloud directories in the Region.
      * </p>
      * 
      * @param cloudOnlyDirectoriesCurrentCount
-     *        The current number of cloud directories in the region.
+     *        The current number of cloud directories in the Region.
      */
 
     public void setCloudOnlyDirectoriesCurrentCount(Integer cloudOnlyDirectoriesCurrentCount) {
@@ -138,10 +138,10 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The current number of cloud directories in the region.
+     * The current number of cloud directories in the Region.
      * </p>
      * 
-     * @return The current number of cloud directories in the region.
+     * @return The current number of cloud directories in the Region.
      */
 
     public Integer getCloudOnlyDirectoriesCurrentCount() {
@@ -150,11 +150,11 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The current number of cloud directories in the region.
+     * The current number of cloud directories in the Region.
      * </p>
      * 
      * @param cloudOnlyDirectoriesCurrentCount
-     *        The current number of cloud directories in the region.
+     *        The current number of cloud directories in the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,11 +349,11 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of connected directories allowed in the region.
+     * The maximum number of connected directories allowed in the Region.
      * </p>
      * 
      * @param connectedDirectoriesLimit
-     *        The maximum number of connected directories allowed in the region.
+     *        The maximum number of connected directories allowed in the Region.
      */
 
     public void setConnectedDirectoriesLimit(Integer connectedDirectoriesLimit) {
@@ -362,10 +362,10 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of connected directories allowed in the region.
+     * The maximum number of connected directories allowed in the Region.
      * </p>
      * 
-     * @return The maximum number of connected directories allowed in the region.
+     * @return The maximum number of connected directories allowed in the Region.
      */
 
     public Integer getConnectedDirectoriesLimit() {
@@ -374,11 +374,11 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of connected directories allowed in the region.
+     * The maximum number of connected directories allowed in the Region.
      * </p>
      * 
      * @param connectedDirectoriesLimit
-     *        The maximum number of connected directories allowed in the region.
+     *        The maximum number of connected directories allowed in the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +389,11 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The current number of connected directories in the region.
+     * The current number of connected directories in the Region.
      * </p>
      * 
      * @param connectedDirectoriesCurrentCount
-     *        The current number of connected directories in the region.
+     *        The current number of connected directories in the Region.
      */
 
     public void setConnectedDirectoriesCurrentCount(Integer connectedDirectoriesCurrentCount) {
@@ -402,10 +402,10 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The current number of connected directories in the region.
+     * The current number of connected directories in the Region.
      * </p>
      * 
-     * @return The current number of connected directories in the region.
+     * @return The current number of connected directories in the Region.
      */
 
     public Integer getConnectedDirectoriesCurrentCount() {
@@ -414,11 +414,11 @@ public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The current number of connected directories in the region.
+     * The current number of connected directories in the Region.
      * </p>
      * 
      * @param connectedDirectoriesCurrentCount
-     *        The current number of connected directories in the region.
+     *        The current number of connected directories in the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

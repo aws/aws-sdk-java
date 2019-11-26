@@ -127,6 +127,23 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <code>ACTIVE</code> - The table is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in inaccessible.
+     * Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
+     * </p>
+     * </li>
      * </ul>
      */
     private String tableStatus;
@@ -440,6 +457,12 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private SSEDescription sSEDescription;
+    /**
+     * <p>
+     * Contains information about the table archive.
+     * </p>
+     */
+    private ArchivalSummary archivalSummary;
 
     /**
      * <p>
@@ -1086,6 +1109,23 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <code>ACTIVE</code> - The table is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in inaccessible.
+     * Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param tableStatus
@@ -1109,6 +1149,24 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>ACTIVE</code> - The table is ready for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in
+     *        inaccessible. Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the
+     *        table archival process when a table's AWS KMS key remains inaccessible for more than seven days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is
+     *        complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
      *        </p>
      *        </li>
      * @see TableStatus
@@ -1143,6 +1201,23 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <code>ACTIVE</code> - The table is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in inaccessible.
+     * Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The current state of the table:</p>
@@ -1165,6 +1240,24 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *         <li>
      *         <p>
      *         <code>ACTIVE</code> - The table is ready for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in
+     *         inaccessible. Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the
+     *         table archival process when a table's AWS KMS key remains inaccessible for more than seven days.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is
+     *         complete.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
      *         </p>
      *         </li>
      * @see TableStatus
@@ -1199,6 +1292,23 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <code>ACTIVE</code> - The table is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in inaccessible.
+     * Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param tableStatus
@@ -1222,6 +1332,24 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>ACTIVE</code> - The table is ready for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in
+     *        inaccessible. Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the
+     *        table archival process when a table's AWS KMS key remains inaccessible for more than seven days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is
+     *        complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1258,6 +1386,23 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <code>ACTIVE</code> - The table is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in inaccessible.
+     * Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param tableStatus
@@ -1281,6 +1426,24 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>ACTIVE</code> - The table is ready for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in
+     *        inaccessible. Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the
+     *        table archival process when a table's AWS KMS key remains inaccessible for more than seven days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is
+     *        complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
      *        </p>
      *        </li>
      * @see TableStatus
@@ -1315,6 +1478,23 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * <code>ACTIVE</code> - The table is ready for use.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in inaccessible.
+     * Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param tableStatus
@@ -1338,6 +1518,24 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        <li>
      *        <p>
      *        <code>ACTIVE</code> - The table is ready for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt the table in
+     *        inaccessible. Table operations may fail due to failure to use the AWS KMS key. DynamoDB will initiate the
+     *        table archival process when a table's AWS KMS key remains inaccessible for more than seven days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVING</code> - The table is being archived. Operations are not allowed until archival is
+     *        complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3738,6 +3936,46 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Contains information about the table archive.
+     * </p>
+     * 
+     * @param archivalSummary
+     *        Contains information about the table archive.
+     */
+
+    public void setArchivalSummary(ArchivalSummary archivalSummary) {
+        this.archivalSummary = archivalSummary;
+    }
+
+    /**
+     * <p>
+     * Contains information about the table archive.
+     * </p>
+     * 
+     * @return Contains information about the table archive.
+     */
+
+    public ArchivalSummary getArchivalSummary() {
+        return this.archivalSummary;
+    }
+
+    /**
+     * <p>
+     * Contains information about the table archive.
+     * </p>
+     * 
+     * @param archivalSummary
+     *        Contains information about the table archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withArchivalSummary(ArchivalSummary archivalSummary) {
+        setArchivalSummary(archivalSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3788,7 +4026,9 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         if (getRestoreSummary() != null)
             sb.append("RestoreSummary: ").append(getRestoreSummary()).append(",");
         if (getSSEDescription() != null)
-            sb.append("SSEDescription: ").append(getSSEDescription());
+            sb.append("SSEDescription: ").append(getSSEDescription()).append(",");
+        if (getArchivalSummary() != null)
+            sb.append("ArchivalSummary: ").append(getArchivalSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -3883,6 +4123,10 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSSEDescription() != null && other.getSSEDescription().equals(this.getSSEDescription()) == false)
             return false;
+        if (other.getArchivalSummary() == null ^ this.getArchivalSummary() == null)
+            return false;
+        if (other.getArchivalSummary() != null && other.getArchivalSummary().equals(this.getArchivalSummary()) == false)
+            return false;
         return true;
     }
 
@@ -3911,6 +4155,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getReplicas() == null) ? 0 : getReplicas().hashCode());
         hashCode = prime * hashCode + ((getRestoreSummary() == null) ? 0 : getRestoreSummary().hashCode());
         hashCode = prime * hashCode + ((getSSEDescription() == null) ? 0 : getSSEDescription().hashCode());
+        hashCode = prime * hashCode + ((getArchivalSummary() == null) ? 0 : getArchivalSummary().hashCode());
         return hashCode;
     }
 

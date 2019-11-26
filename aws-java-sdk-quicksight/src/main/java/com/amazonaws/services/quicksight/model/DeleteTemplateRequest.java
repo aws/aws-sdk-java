@@ -39,7 +39,8 @@ public class DeleteTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     private String templateId;
     /**
      * <p>
-     * The version number
+     * Specifies the version of the template that you want to delete. If you don't provide a version number,
+     * <code>DeleteTemplate</code> deletes all versions of the template.
      * </p>
      */
     private Long versionNumber;
@@ -126,11 +127,13 @@ public class DeleteTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version number
+     * Specifies the version of the template that you want to delete. If you don't provide a version number,
+     * <code>DeleteTemplate</code> deletes all versions of the template.
      * </p>
      * 
      * @param versionNumber
-     *        The version number
+     *        Specifies the version of the template that you want to delete. If you don't provide a version number,
+     *        <code>DeleteTemplate</code> deletes all versions of the template.
      */
 
     public void setVersionNumber(Long versionNumber) {
@@ -139,10 +142,12 @@ public class DeleteTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version number
+     * Specifies the version of the template that you want to delete. If you don't provide a version number,
+     * <code>DeleteTemplate</code> deletes all versions of the template.
      * </p>
      * 
-     * @return The version number
+     * @return Specifies the version of the template that you want to delete. If you don't provide a version number,
+     *         <code>DeleteTemplate</code> deletes all versions of the template.
      */
 
     public Long getVersionNumber() {
@@ -151,11 +156,13 @@ public class DeleteTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version number
+     * Specifies the version of the template that you want to delete. If you don't provide a version number,
+     * <code>DeleteTemplate</code> deletes all versions of the template.
      * </p>
      * 
      * @param versionNumber
-     *        The version number
+     *        Specifies the version of the template that you want to delete. If you don't provide a version number,
+     *        <code>DeleteTemplate</code> deletes all versions of the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

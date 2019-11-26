@@ -36,7 +36,7 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
     private String vpcId;
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD connector is in.
+     * A list of subnet identifiers in the VPC that the AD Connector is in.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
@@ -107,10 +107,10 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD connector is in.
+     * A list of subnet identifiers in the VPC that the AD Connector is in.
      * </p>
      * 
-     * @return A list of subnet identifiers in the VPC that the AD connector is in.
+     * @return A list of subnet identifiers in the VPC that the AD Connector is in.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -122,11 +122,11 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD connector is in.
+     * A list of subnet identifiers in the VPC that the AD Connector is in.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD connector is in.
+     *        A list of subnet identifiers in the VPC that the AD Connector is in.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -140,7 +140,7 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD connector is in.
+     * A list of subnet identifiers in the VPC that the AD Connector is in.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -149,7 +149,7 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD connector is in.
+     *        A list of subnet identifiers in the VPC that the AD Connector is in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +165,11 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * A list of subnet identifiers in the VPC that the AD connector is in.
+     * A list of subnet identifiers in the VPC that the AD Connector is in.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet identifiers in the VPC that the AD connector is in.
+     *        A list of subnet identifiers in the VPC that the AD Connector is in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

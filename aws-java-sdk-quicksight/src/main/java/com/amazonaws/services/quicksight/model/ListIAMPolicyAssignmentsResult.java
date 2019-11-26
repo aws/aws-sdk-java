@@ -43,7 +43,7 @@ public class ListIAMPolicyAssignmentsResult extends com.amazonaws.AmazonWebServi
     private String requestId;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
@@ -200,11 +200,11 @@ public class ListIAMPolicyAssignmentsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -213,10 +213,10 @@ public class ListIAMPolicyAssignmentsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -225,11 +225,11 @@ public class ListIAMPolicyAssignmentsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

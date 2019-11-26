@@ -704,6 +704,39 @@ public class AWSOrganizationsAsyncClient extends AWSOrganizationsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEffectivePolicyResult> describeEffectivePolicyAsync(DescribeEffectivePolicyRequest request) {
+
+        return describeEffectivePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEffectivePolicyResult> describeEffectivePolicyAsync(final DescribeEffectivePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEffectivePolicyRequest, DescribeEffectivePolicyResult> asyncHandler) {
+        final DescribeEffectivePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEffectivePolicyResult>() {
+            @Override
+            public DescribeEffectivePolicyResult call() throws Exception {
+                DescribeEffectivePolicyResult result = null;
+
+                try {
+                    result = executeDescribeEffectivePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeHandshakeResult> describeHandshakeAsync(DescribeHandshakeRequest request) {
 
         return describeHandshakeAsync(request, null);

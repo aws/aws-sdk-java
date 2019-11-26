@@ -33,7 +33,7 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String awsAccountId;
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSourceId;
@@ -45,27 +45,27 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String name;
     /**
      * <p>
-     * The parameters QuickSight uses to connect to your underlying source.
+     * The parameters that QuickSight uses to connect to your underlying source.
      * </p>
      */
     private DataSourceParameters dataSourceParameters;
     /**
      * <p>
-     * The credentials QuickSight uses to connect to your underlying source. Currently only username/password based
-     * credentials are supported.
+     * The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based
+     * on user name and password are supported.
      * </p>
      */
     private DataSourceCredentials credentials;
     /**
      * <p>
-     * You need to use this parameter only when you want QuickSight to use a VPC connection when connecting to your
-     * underlying source.
+     * Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying
+     * source.
      * </p>
      */
     private VpcConnectionProperties vpcConnectionProperties;
     /**
      * <p>
-     * SSL properties that apply when QuickSight connects to your underlying source.
+     * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * </p>
      */
     private SslProperties sslProperties;
@@ -112,11 +112,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSourceId(String dataSourceId) {
@@ -125,10 +125,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID of the data source. This is unique per AWS Region per AWS account.
+     * @return The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSourceId() {
@@ -137,11 +137,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The parameters QuickSight uses to connect to your underlying source.
+     * The parameters that QuickSight uses to connect to your underlying source.
      * </p>
      * 
      * @param dataSourceParameters
-     *        The parameters QuickSight uses to connect to your underlying source.
+     *        The parameters that QuickSight uses to connect to your underlying source.
      */
 
     public void setDataSourceParameters(DataSourceParameters dataSourceParameters) {
@@ -205,10 +205,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The parameters QuickSight uses to connect to your underlying source.
+     * The parameters that QuickSight uses to connect to your underlying source.
      * </p>
      * 
-     * @return The parameters QuickSight uses to connect to your underlying source.
+     * @return The parameters that QuickSight uses to connect to your underlying source.
      */
 
     public DataSourceParameters getDataSourceParameters() {
@@ -217,11 +217,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The parameters QuickSight uses to connect to your underlying source.
+     * The parameters that QuickSight uses to connect to your underlying source.
      * </p>
      * 
      * @param dataSourceParameters
-     *        The parameters QuickSight uses to connect to your underlying source.
+     *        The parameters that QuickSight uses to connect to your underlying source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,13 +232,13 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The credentials QuickSight uses to connect to your underlying source. Currently only username/password based
-     * credentials are supported.
+     * The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based
+     * on user name and password are supported.
      * </p>
      * 
      * @param credentials
-     *        The credentials QuickSight uses to connect to your underlying source. Currently only username/password
-     *        based credentials are supported.
+     *        The credentials that QuickSight that uses to connect to your underlying source. Currently, only
+     *        credentials based on user name and password are supported.
      */
 
     public void setCredentials(DataSourceCredentials credentials) {
@@ -247,12 +247,12 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The credentials QuickSight uses to connect to your underlying source. Currently only username/password based
-     * credentials are supported.
+     * The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based
+     * on user name and password are supported.
      * </p>
      * 
-     * @return The credentials QuickSight uses to connect to your underlying source. Currently only username/password
-     *         based credentials are supported.
+     * @return The credentials that QuickSight that uses to connect to your underlying source. Currently, only
+     *         credentials based on user name and password are supported.
      */
 
     public DataSourceCredentials getCredentials() {
@@ -261,13 +261,13 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The credentials QuickSight uses to connect to your underlying source. Currently only username/password based
-     * credentials are supported.
+     * The credentials that QuickSight that uses to connect to your underlying source. Currently, only credentials based
+     * on user name and password are supported.
      * </p>
      * 
      * @param credentials
-     *        The credentials QuickSight uses to connect to your underlying source. Currently only username/password
-     *        based credentials are supported.
+     *        The credentials that QuickSight that uses to connect to your underlying source. Currently, only
+     *        credentials based on user name and password are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,13 +278,13 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * You need to use this parameter only when you want QuickSight to use a VPC connection when connecting to your
-     * underlying source.
+     * Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying
+     * source.
      * </p>
      * 
      * @param vpcConnectionProperties
-     *        You need to use this parameter only when you want QuickSight to use a VPC connection when connecting to
-     *        your underlying source.
+     *        Use this parameter only when you want QuickSight to use a VPC connection when connecting to your
+     *        underlying source.
      */
 
     public void setVpcConnectionProperties(VpcConnectionProperties vpcConnectionProperties) {
@@ -293,12 +293,12 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * You need to use this parameter only when you want QuickSight to use a VPC connection when connecting to your
-     * underlying source.
+     * Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying
+     * source.
      * </p>
      * 
-     * @return You need to use this parameter only when you want QuickSight to use a VPC connection when connecting to
-     *         your underlying source.
+     * @return Use this parameter only when you want QuickSight to use a VPC connection when connecting to your
+     *         underlying source.
      */
 
     public VpcConnectionProperties getVpcConnectionProperties() {
@@ -307,13 +307,13 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * You need to use this parameter only when you want QuickSight to use a VPC connection when connecting to your
-     * underlying source.
+     * Use this parameter only when you want QuickSight to use a VPC connection when connecting to your underlying
+     * source.
      * </p>
      * 
      * @param vpcConnectionProperties
-     *        You need to use this parameter only when you want QuickSight to use a VPC connection when connecting to
-     *        your underlying source.
+     *        Use this parameter only when you want QuickSight to use a VPC connection when connecting to your
+     *        underlying source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,11 +324,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * SSL properties that apply when QuickSight connects to your underlying source.
+     * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * </p>
      * 
      * @param sslProperties
-     *        SSL properties that apply when QuickSight connects to your underlying source.
+     *        Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      */
 
     public void setSslProperties(SslProperties sslProperties) {
@@ -337,10 +337,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * SSL properties that apply when QuickSight connects to your underlying source.
+     * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * </p>
      * 
-     * @return SSL properties that apply when QuickSight connects to your underlying source.
+     * @return Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      */
 
     public SslProperties getSslProperties() {
@@ -349,11 +349,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * SSL properties that apply when QuickSight connects to your underlying source.
+     * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * </p>
      * 
      * @param sslProperties
-     *        SSL properties that apply when QuickSight connects to your underlying source.
+     *        Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

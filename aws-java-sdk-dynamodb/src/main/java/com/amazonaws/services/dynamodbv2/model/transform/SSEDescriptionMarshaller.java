@@ -33,6 +33,8 @@ public class SSEDescriptionMarshaller {
             .marshallLocationName("SSEType").build();
     private static final MarshallingInfo<String> KMSMASTERKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSMasterKeyArn").build();
+    private static final MarshallingInfo<java.util.Date> INACCESSIBLEENCRYPTIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InaccessibleEncryptionDateTime").timestampFormat("unixTimestamp").build();
 
     private static final SSEDescriptionMarshaller instance = new SSEDescriptionMarshaller();
 
@@ -53,6 +55,7 @@ public class SSEDescriptionMarshaller {
             protocolMarshaller.marshall(sSEDescription.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(sSEDescription.getSSEType(), SSETYPE_BINDING);
             protocolMarshaller.marshall(sSEDescription.getKMSMasterKeyArn(), KMSMASTERKEYARN_BINDING);
+            protocolMarshaller.marshall(sSEDescription.getInaccessibleEncryptionDateTime(), INACCESSIBLEENCRYPTIONDATETIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

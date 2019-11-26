@@ -53,6 +53,8 @@ public enum OrganizationsActions implements Action {
     DescribeAccount("organizations:DescribeAccount"),
     /** Action for the DescribeCreateAccountStatus operation. */
     DescribeCreateAccountStatus("organizations:DescribeCreateAccountStatus"),
+    /** Action for the DescribeEffectivePolicy operation. */
+    DescribeEffectivePolicy("organizations:DescribeEffectivePolicy"),
     /** Action for the DescribeHandshake operation. */
     DescribeHandshake("organizations:DescribeHandshake"),
     /** Action for the DescribeOrganization operation. */

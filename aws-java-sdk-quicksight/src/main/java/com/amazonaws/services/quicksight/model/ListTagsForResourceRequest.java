@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource you want a list of tags for.
+     * The Amazon Resource Name (ARN) of the resource that you want a list of tags for.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The ARN of the resource you want a list of tags for.
+     * The Amazon Resource Name (ARN) of the resource that you want a list of tags for.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource you want a list of tags for.
+     *        The Amazon Resource Name (ARN) of the resource that you want a list of tags for.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource you want a list of tags for.
+     * The Amazon Resource Name (ARN) of the resource that you want a list of tags for.
      * </p>
      * 
-     * @return The ARN of the resource you want a list of tags for.
+     * @return The Amazon Resource Name (ARN) of the resource that you want a list of tags for.
      */
 
     public String getResourceArn() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource you want a list of tags for.
+     * The Amazon Resource Name (ARN) of the resource that you want a list of tags for.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource you want a list of tags for.
+     *        The Amazon Resource Name (ARN) of the resource that you want a list of tags for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

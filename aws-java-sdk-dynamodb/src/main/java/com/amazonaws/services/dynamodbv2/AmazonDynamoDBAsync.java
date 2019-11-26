@@ -1138,6 +1138,39 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Returns information about contributor insights, for a given table or global secondary index.
+     * </p>
+     * 
+     * @param describeContributorInsightsRequest
+     * @return A Java Future containing the result of the DescribeContributorInsights operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeContributorInsightsResult> describeContributorInsightsAsync(
+            DescribeContributorInsightsRequest describeContributorInsightsRequest);
+
+    /**
+     * <p>
+     * Returns information about contributor insights, for a given table or global secondary index.
+     * </p>
+     * 
+     * @param describeContributorInsightsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeContributorInsights operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeContributorInsightsResult> describeContributorInsightsAsync(
+            DescribeContributorInsightsRequest describeContributorInsightsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeContributorInsightsRequest, DescribeContributorInsightsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the regional endpoint information.
      * </p>
      * 
@@ -1739,6 +1772,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<ListBackupsResult> listBackupsAsync(ListBackupsRequest listBackupsRequest,
             com.amazonaws.handlers.AsyncHandler<ListBackupsRequest, ListBackupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.
+     * </p>
+     * 
+     * @param listContributorInsightsRequest
+     * @return A Java Future containing the result of the ListContributorInsights operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ListContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(ListContributorInsightsRequest listContributorInsightsRequest);
+
+    /**
+     * <p>
+     * Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.
+     * </p>
+     * 
+     * @param listContributorInsightsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListContributorInsights operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ListContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(ListContributorInsightsRequest listContributorInsightsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListContributorInsightsRequest, ListContributorInsightsResult> asyncHandler);
 
     /**
      * <p>
@@ -3142,6 +3206,39 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<UpdateContinuousBackupsResult> updateContinuousBackupsAsync(UpdateContinuousBackupsRequest updateContinuousBackupsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the status for contributor insights for a specific table or index.
+     * </p>
+     * 
+     * @param updateContributorInsightsRequest
+     * @return A Java Future containing the result of the UpdateContributorInsights operation returned by the service.
+     * @sample AmazonDynamoDBAsync.UpdateContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContributorInsightsResult> updateContributorInsightsAsync(
+            UpdateContributorInsightsRequest updateContributorInsightsRequest);
+
+    /**
+     * <p>
+     * Updates the status for contributor insights for a specific table or index.
+     * </p>
+     * 
+     * @param updateContributorInsightsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateContributorInsights operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.UpdateContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateContributorInsightsResult> updateContributorInsightsAsync(
+            UpdateContributorInsightsRequest updateContributorInsightsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateContributorInsightsRequest, UpdateContributorInsightsResult> asyncHandler);
 
     /**
      * <p>

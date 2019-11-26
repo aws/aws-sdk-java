@@ -337,7 +337,9 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a Simple AD directory.
+     * Creates a Simple AD directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple Active
+     * Directory</a> in the <i>AWS Directory Service Admin Guide</i>.
      * </p>
      * <p>
      * Before you call <code>CreateDirectory</code>, ensure that all of the required permissions have been explicitly
@@ -367,8 +369,8 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
-     * CloudWatch log group in your AWS account.
+     * Creates a subscription to forward real-time Directory Service domain controller security logs to the specified
+     * Amazon CloudWatch log group in your AWS account.
      * </p>
      * 
      * @param createLogSubscriptionRequest
@@ -393,7 +395,9 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Creates an AWS Managed Microsoft AD directory.
+     * Creates a Microsoft AD directory in the AWS Cloud. For more information, see <a
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Managed
+     * Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -615,6 +619,36 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param deregisterCertificateRequest
+     * @return Result of the DeregisterCertificate operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws CertificateDoesNotExistException
+     *         The certificate is not present in the system for describe or deregister activities.
+     * @throws CertificateInUseException
+     *         The certificate is being used for the LDAP security connection and cannot be removed without disabling
+     *         LDAP security.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeregisterCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeregisterCertificateResult deregisterCertificate(DeregisterCertificateRequest deregisterCertificateRequest);
+
+    /**
+     * <p>
      * Removes the specified directory as a publisher to the specified SNS topic.
      * </p>
      * 
@@ -634,6 +668,31 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     DeregisterEventTopicResult deregisterEventTopic(DeregisterEventTopicRequest deregisterEventTopicRequest);
+
+    /**
+     * <p>
+     * Displays information about the certificate registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param describeCertificateRequest
+     * @return Result of the DescribeCertificate operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws CertificateDoesNotExistException
+     *         The certificate is not present in the system for describe or deregister activities.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeCertificateResult describeCertificate(DescribeCertificateRequest describeCertificateRequest);
 
     /**
      * <p>
@@ -761,6 +820,31 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Describes the status of LDAP security for the specified directory.
+     * </p>
+     * 
+     * @param describeLDAPSSettingsRequest
+     * @return Result of the DescribeLDAPSSettings operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeLDAPSSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeLDAPSSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeLDAPSSettingsResult describeLDAPSSettings(DescribeLDAPSSettingsRequest describeLDAPSSettingsRequest);
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -857,6 +941,33 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Deactivates LDAP secure calls for the specified directory.
+     * </p>
+     * 
+     * @param disableLDAPSRequest
+     * @return Result of the DisableLDAPS operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws InvalidLDAPSStatusException
+     *         The LDAP activities could not be performed because they are limited by the LDAPS status.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableLDAPS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableLDAPS" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DisableLDAPSResult disableLDAPS(DisableLDAPSRequest disableLDAPSRequest);
+
+    /**
+     * <p>
      * Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server
      * for an AD Connector or Microsoft AD directory.
      * </p>
@@ -902,6 +1013,36 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Activates the switch for the specific directory to always use LDAP secure calls.
+     * </p>
+     * 
+     * @param enableLDAPSRequest
+     * @return Result of the EnableLDAPS operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws NoAvailableCertificateException
+     *         The LDAP activities could not be performed because at least one valid certificate must be registered with
+     *         the system.
+     * @throws InvalidLDAPSStatusException
+     *         The LDAP activities could not be performed because they are limited by the LDAPS status.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableLDAPS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableLDAPS" target="_top">AWS API
+     *      Documentation</a>
+     */
+    EnableLDAPSResult enableLDAPS(EnableLDAPSRequest enableLDAPSRequest);
+
+    /**
+     * <p>
      * Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for
      * an AD Connector or Microsoft AD directory.
      * </p>
@@ -927,7 +1068,8 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Enables single sign-on for a directory.
+     * Enables single sign-on for a directory. Single sign-on allows users in your directory to access certain AWS
+     * services from a computer joined to the directory without having to enter their credentials separately.
      * </p>
      * 
      * @param enableSsoRequest
@@ -951,7 +1093,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Obtains directory limit information for the current region.
+     * Obtains directory limit information for the current Region.
      * </p>
      * 
      * @param getDirectoryLimitsRequest
@@ -995,6 +1137,31 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     GetSnapshotLimitsResult getSnapshotLimits(GetSnapshotLimitsRequest getSnapshotLimitsRequest);
+
+    /**
+     * <p>
+     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param listCertificatesRequest
+     * @return Result of the ListCertificates operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListCertificatesResult listCertificates(ListCertificatesRequest listCertificatesRequest);
 
     /**
      * <p>
@@ -1083,6 +1250,37 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Registers a certificate for secured LDAP connection.
+     * </p>
+     * 
+     * @param registerCertificateRequest
+     * @return Result of the RegisterCertificate operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws InvalidCertificateException
+     *         The certificate PEM that was provided has incorrect encoding.
+     * @throws CertificateLimitExceededException
+     *         The certificate could not be added because the certificate limit has been reached.
+     * @throws CertificateAlreadyExistsException
+     *         The certificate has already been registered into the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RegisterCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RegisterCertificateResult registerCertificate(RegisterCertificateRequest registerCertificateRequest);
 
     /**
      * <p>
@@ -1180,6 +1378,27 @@ public interface AWSDirectoryService {
      * <p>
      * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
      * </p>
+     * <p>
+     * You can reset the password for any user in your directory with the following exceptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Simple AD, you cannot reset the password for any user that is a member of either the <b>Domain Admins</b> or
+     * <b>Enterprise Admins</b> group except for the administrator user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For AWS Managed Microsoft AD, you can only reset the password for a user that is in an OU based off of the
+     * NetBIOS name that you typed when you created your directory. For example, you cannot reset the password for a
+     * user in the <b>AWS Reserved</b> OU. For more information about the OU structure for an AWS Managed Microsoft AD
+     * directory, see <a href=
+     * "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html"
+     * >What Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resetUserPasswordRequest
      * @return Result of the ResetUserPassword operation returned by the service.

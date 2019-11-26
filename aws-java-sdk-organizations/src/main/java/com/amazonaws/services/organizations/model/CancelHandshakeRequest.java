@@ -32,7 +32,7 @@ public class CancelHandshakeRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      */
     private String handshakeId;
@@ -44,7 +44,7 @@ public class CancelHandshakeRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param handshakeId
@@ -52,7 +52,7 @@ public class CancelHandshakeRequest extends com.amazonaws.AmazonWebServiceReques
      *        <a>ListHandshakesForOrganization</a> operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *        followed by from 8 to 32 lower-case letters or digits.
+     *        followed by from 8 to 32 lowercase letters or digits.
      */
 
     public void setHandshakeId(String handshakeId) {
@@ -66,14 +66,14 @@ public class CancelHandshakeRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the
      *         <a>ListHandshakesForOrganization</a> operation.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *         followed by from 8 to 32 lower-case letters or digits.
+     *         followed by from 8 to 32 lowercase letters or digits.
      */
 
     public String getHandshakeId() {
@@ -87,7 +87,7 @@ public class CancelHandshakeRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param handshakeId
@@ -95,7 +95,7 @@ public class CancelHandshakeRequest extends com.amazonaws.AmazonWebServiceReques
      *        <a>ListHandshakesForOrganization</a> operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *        followed by from 8 to 32 lower-case letters or digits.
+     *        followed by from 8 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

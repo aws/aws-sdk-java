@@ -30,16 +30,16 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The fully qualified domain name for the directory, such as <code>corp.example.com</code>. This name will resolve
-     * inside your VPC only. It does not need to be publicly resolvable.
+     * The fully qualified domain name for the AWS Managed Microsoft AD directory, such as <code>corp.example.com</code>
+     * . This name will resolve inside your VPC only. It does not need to be publicly resolvable.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The NetBIOS name for your domain. A short identifier for your domain, such as <code>CORP</code>. If you don't
-     * specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code>
-     * for the directory DNS <code>corp.example.com</code>.
+     * The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default
+     * to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS
+     * <code>corp.example.com</code>.
      * </p>
      */
     private String shortName;
@@ -47,12 +47,16 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The password for the default administrative user named <code>Admin</code>.
      * </p>
+     * <p>
+     * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
+     * call.
+     * </p>
      */
     private String password;
     /**
      * <p>
-     * A textual description for the directory. This label will appear on the AWS console <code>Directory Details</code>
-     * page after the directory is created.
+     * A description for the directory. This label will appear on the AWS console <code>Directory Details</code> page
+     * after the directory is created.
      * </p>
      */
     private String description;
@@ -64,7 +68,8 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     private DirectoryVpcSettings vpcSettings;
     /**
      * <p>
-     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     * <code>Enterprise</code> is the default.
      * </p>
      */
     private String edition;
@@ -77,13 +82,14 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The fully qualified domain name for the directory, such as <code>corp.example.com</code>. This name will resolve
-     * inside your VPC only. It does not need to be publicly resolvable.
+     * The fully qualified domain name for the AWS Managed Microsoft AD directory, such as <code>corp.example.com</code>
+     * . This name will resolve inside your VPC only. It does not need to be publicly resolvable.
      * </p>
      * 
      * @param name
-     *        The fully qualified domain name for the directory, such as <code>corp.example.com</code>. This name will
-     *        resolve inside your VPC only. It does not need to be publicly resolvable.
+     *        The fully qualified domain name for the AWS Managed Microsoft AD directory, such as
+     *        <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be
+     *        publicly resolvable.
      */
 
     public void setName(String name) {
@@ -92,12 +98,13 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The fully qualified domain name for the directory, such as <code>corp.example.com</code>. This name will resolve
-     * inside your VPC only. It does not need to be publicly resolvable.
+     * The fully qualified domain name for the AWS Managed Microsoft AD directory, such as <code>corp.example.com</code>
+     * . This name will resolve inside your VPC only. It does not need to be publicly resolvable.
      * </p>
      * 
-     * @return The fully qualified domain name for the directory, such as <code>corp.example.com</code>. This name will
-     *         resolve inside your VPC only. It does not need to be publicly resolvable.
+     * @return The fully qualified domain name for the AWS Managed Microsoft AD directory, such as
+     *         <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be
+     *         publicly resolvable.
      */
 
     public String getName() {
@@ -106,13 +113,14 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The fully qualified domain name for the directory, such as <code>corp.example.com</code>. This name will resolve
-     * inside your VPC only. It does not need to be publicly resolvable.
+     * The fully qualified domain name for the AWS Managed Microsoft AD directory, such as <code>corp.example.com</code>
+     * . This name will resolve inside your VPC only. It does not need to be publicly resolvable.
      * </p>
      * 
      * @param name
-     *        The fully qualified domain name for the directory, such as <code>corp.example.com</code>. This name will
-     *        resolve inside your VPC only. It does not need to be publicly resolvable.
+     *        The fully qualified domain name for the AWS Managed Microsoft AD directory, such as
+     *        <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be
+     *        publicly resolvable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,15 +131,15 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The NetBIOS name for your domain. A short identifier for your domain, such as <code>CORP</code>. If you don't
-     * specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code>
-     * for the directory DNS <code>corp.example.com</code>.
+     * The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default
+     * to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS
+     * <code>corp.example.com</code>.
      * </p>
      * 
      * @param shortName
-     *        The NetBIOS name for your domain. A short identifier for your domain, such as <code>CORP</code>. If you
-     *        don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example,
-     *        <code>CORP</code> for the directory DNS <code>corp.example.com</code>.
+     *        The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will
+     *        default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS
+     *        <code>corp.example.com</code>.
      */
 
     public void setShortName(String shortName) {
@@ -140,14 +148,14 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The NetBIOS name for your domain. A short identifier for your domain, such as <code>CORP</code>. If you don't
-     * specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code>
-     * for the directory DNS <code>corp.example.com</code>.
+     * The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default
+     * to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS
+     * <code>corp.example.com</code>.
      * </p>
      * 
-     * @return The NetBIOS name for your domain. A short identifier for your domain, such as <code>CORP</code>. If you
-     *         don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example,
-     *         <code>CORP</code> for the directory DNS <code>corp.example.com</code>.
+     * @return The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will
+     *         default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS
+     *         <code>corp.example.com</code>.
      */
 
     public String getShortName() {
@@ -156,15 +164,15 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The NetBIOS name for your domain. A short identifier for your domain, such as <code>CORP</code>. If you don't
-     * specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code>
-     * for the directory DNS <code>corp.example.com</code>.
+     * The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default
+     * to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS
+     * <code>corp.example.com</code>.
      * </p>
      * 
      * @param shortName
-     *        The NetBIOS name for your domain. A short identifier for your domain, such as <code>CORP</code>. If you
-     *        don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example,
-     *        <code>CORP</code> for the directory DNS <code>corp.example.com</code>.
+     *        The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will
+     *        default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS
+     *        <code>corp.example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,9 +185,16 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The password for the default administrative user named <code>Admin</code>.
      * </p>
+     * <p>
+     * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
+     * call.
+     * </p>
      * 
      * @param password
-     *        The password for the default administrative user named <code>Admin</code>.
+     *        The password for the default administrative user named <code>Admin</code>.</p>
+     *        <p>
+     *        If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a>
+     *        API call.
      */
 
     public void setPassword(String password) {
@@ -190,8 +205,15 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The password for the default administrative user named <code>Admin</code>.
      * </p>
+     * <p>
+     * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
+     * call.
+     * </p>
      * 
-     * @return The password for the default administrative user named <code>Admin</code>.
+     * @return The password for the default administrative user named <code>Admin</code>.</p>
+     *         <p>
+     *         If you need to change the password for the administrator account, you can use the
+     *         <a>ResetUserPassword</a> API call.
      */
 
     public String getPassword() {
@@ -202,9 +224,16 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The password for the default administrative user named <code>Admin</code>.
      * </p>
+     * <p>
+     * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
+     * call.
+     * </p>
      * 
      * @param password
-     *        The password for the default administrative user named <code>Admin</code>.
+     *        The password for the default administrative user named <code>Admin</code>.</p>
+     *        <p>
+     *        If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a>
+     *        API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,13 +244,13 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A textual description for the directory. This label will appear on the AWS console <code>Directory Details</code>
-     * page after the directory is created.
+     * A description for the directory. This label will appear on the AWS console <code>Directory Details</code> page
+     * after the directory is created.
      * </p>
      * 
      * @param description
-     *        A textual description for the directory. This label will appear on the AWS console
-     *        <code>Directory Details</code> page after the directory is created.
+     *        A description for the directory. This label will appear on the AWS console <code>Directory Details</code>
+     *        page after the directory is created.
      */
 
     public void setDescription(String description) {
@@ -230,12 +259,12 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A textual description for the directory. This label will appear on the AWS console <code>Directory Details</code>
-     * page after the directory is created.
+     * A description for the directory. This label will appear on the AWS console <code>Directory Details</code> page
+     * after the directory is created.
      * </p>
      * 
-     * @return A textual description for the directory. This label will appear on the AWS console
-     *         <code>Directory Details</code> page after the directory is created.
+     * @return A description for the directory. This label will appear on the AWS console <code>Directory Details</code>
+     *         page after the directory is created.
      */
 
     public String getDescription() {
@@ -244,13 +273,13 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A textual description for the directory. This label will appear on the AWS console <code>Directory Details</code>
-     * page after the directory is created.
+     * A description for the directory. This label will appear on the AWS console <code>Directory Details</code> page
+     * after the directory is created.
      * </p>
      * 
      * @param description
-     *        A textual description for the directory. This label will appear on the AWS console
-     *        <code>Directory Details</code> page after the directory is created.
+     *        A description for the directory. This label will appear on the AWS console <code>Directory Details</code>
+     *        page after the directory is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,11 +330,13 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     * <code>Enterprise</code> is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     *        <code>Enterprise</code> is the default.
      * @see DirectoryEdition
      */
 
@@ -315,11 +346,12 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     * <code>Enterprise</code> is the default.
      * </p>
      * 
-     * @return AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the
-     *         default.
+     * @return AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     *         <code>Enterprise</code> is the default.
      * @see DirectoryEdition
      */
 
@@ -329,11 +361,13 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     * <code>Enterprise</code> is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     *        <code>Enterprise</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryEdition
      */
@@ -345,11 +379,13 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     * <code>Enterprise</code> is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>.
+     *        <code>Enterprise</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryEdition
      */

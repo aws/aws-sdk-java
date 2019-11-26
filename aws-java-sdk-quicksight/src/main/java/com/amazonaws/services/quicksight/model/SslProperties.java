@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * SSL properties that apply when QuickSight connects to your underlying data source.
+ * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SslProperties" target="_top">AWS API

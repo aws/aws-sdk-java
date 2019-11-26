@@ -324,6 +324,19 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeContributorInsightsResult> describeContributorInsightsAsync(DescribeContributorInsightsRequest request) {
+
+        return describeContributorInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContributorInsightsResult> describeContributorInsightsAsync(DescribeContributorInsightsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeContributorInsightsRequest, DescribeContributorInsightsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest request) {
 
         return describeEndpointsAsync(request, null);
@@ -507,6 +520,19 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     @Override
     public java.util.concurrent.Future<ListBackupsResult> listBackupsAsync(ListBackupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBackupsRequest, ListBackupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(ListContributorInsightsRequest request) {
+
+        return listContributorInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(ListContributorInsightsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListContributorInsightsRequest, ListContributorInsightsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -881,6 +907,19 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     @Override
     public java.util.concurrent.Future<UpdateContinuousBackupsResult> updateContinuousBackupsAsync(UpdateContinuousBackupsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContributorInsightsResult> updateContributorInsightsAsync(UpdateContributorInsightsRequest request) {
+
+        return updateContributorInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContributorInsightsResult> updateContributorInsightsAsync(UpdateContributorInsightsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContributorInsightsRequest, UpdateContributorInsightsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

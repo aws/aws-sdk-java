@@ -55,7 +55,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * represents a standard Internet email address.
+     * represents a standard internet email address.
      * </p>
      */
     private String email;
@@ -222,14 +222,14 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * represents a standard Internet email address.
+     * represents a standard internet email address.
      * </p>
      * 
      * @param email
      *        The email address associated with the AWS account.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
-     *        characters that represents a standard Internet email address.
+     *        characters that represents a standard internet email address.
      */
 
     public void setEmail(String email) {
@@ -242,13 +242,13 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * represents a standard Internet email address.
+     * represents a standard internet email address.
      * </p>
      * 
      * @return The email address associated with the AWS account.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
-     *         characters that represents a standard Internet email address.
+     *         characters that represents a standard internet email address.
      */
 
     public String getEmail() {
@@ -261,14 +261,14 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * represents a standard Internet email address.
+     * represents a standard internet email address.
      * </p>
      * 
      * @param email
      *        The email address associated with the AWS account.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
-     *        characters that represents a standard Internet email address.
+     *        characters that represents a standard internet email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

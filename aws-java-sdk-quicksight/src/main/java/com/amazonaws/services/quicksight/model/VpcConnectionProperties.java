@@ -30,18 +30,18 @@ public class VpcConnectionProperties implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * VPC connection ARN.
+     * The Amazon Resource Name (ARN) for the VPC connection.
      * </p>
      */
     private String vpcConnectionArn;
 
     /**
      * <p>
-     * VPC connection ARN.
+     * The Amazon Resource Name (ARN) for the VPC connection.
      * </p>
      * 
      * @param vpcConnectionArn
-     *        VPC connection ARN.
+     *        The Amazon Resource Name (ARN) for the VPC connection.
      */
 
     public void setVpcConnectionArn(String vpcConnectionArn) {
@@ -50,10 +50,10 @@ public class VpcConnectionProperties implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * VPC connection ARN.
+     * The Amazon Resource Name (ARN) for the VPC connection.
      * </p>
      * 
-     * @return VPC connection ARN.
+     * @return The Amazon Resource Name (ARN) for the VPC connection.
      */
 
     public String getVpcConnectionArn() {
@@ -62,11 +62,11 @@ public class VpcConnectionProperties implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * VPC connection ARN.
+     * The Amazon Resource Name (ARN) for the VPC connection.
      * </p>
      * 
      * @param vpcConnectionArn
-     *        VPC connection ARN.
+     *        The Amazon Resource Name (ARN) for the VPC connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

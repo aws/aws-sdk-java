@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Athena parameters.
+ * Amazon Athena parameters.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AthenaParameters" target="_top">AWS API
@@ -30,18 +30,18 @@ public class AthenaParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The workgroup that Athena uses.
+     * The workgroup that Amazon Athena uses.
      * </p>
      */
     private String workGroup;
 
     /**
      * <p>
-     * The workgroup that Athena uses.
+     * The workgroup that Amazon Athena uses.
      * </p>
      * 
      * @param workGroup
-     *        The workgroup that Athena uses.
+     *        The workgroup that Amazon Athena uses.
      */
 
     public void setWorkGroup(String workGroup) {
@@ -50,10 +50,10 @@ public class AthenaParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The workgroup that Athena uses.
+     * The workgroup that Amazon Athena uses.
      * </p>
      * 
-     * @return The workgroup that Athena uses.
+     * @return The workgroup that Amazon Athena uses.
      */
 
     public String getWorkGroup() {
@@ -62,11 +62,11 @@ public class AthenaParameters implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The workgroup that Athena uses.
+     * The workgroup that Amazon Athena uses.
      * </p>
      * 
      * @param workGroup
-     *        The workgroup that Athena uses.
+     *        The workgroup that Amazon Athena uses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

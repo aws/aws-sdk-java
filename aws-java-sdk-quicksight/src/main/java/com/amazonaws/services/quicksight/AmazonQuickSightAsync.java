@@ -27,8 +27,8 @@ import com.amazonaws.services.quicksight.model.*;
  * <p>
  * <fullname>Amazon QuickSight API Reference</fullname>
  * <p>
- * Amazon QuickSight is a fully managed, serverless, cloud business intelligence service that makes it easy to extend
- * data and insights to every user in your organization. This API interface reference contains documentation for a
+ * Amazon QuickSight is a fully managed, serverless business intelligence service for the AWS Cloud that makes it easy
+ * to extend data and insights to every user in your organization. This API reference contains documentation for a
  * programming interface that you can use to manage Amazon QuickSight.
  * </p>
  */
@@ -37,7 +37,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Cancels an on-going ingestion of data into SPICE.
+     * Cancels an ongoing ingestion of data into SPICE.
      * </p>
      * 
      * @param cancelIngestionRequest
@@ -50,7 +50,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Cancels an on-going ingestion of data into SPICE.
+     * Cancels an ongoing ingestion of data into SPICE.
      * </p>
      * 
      * @param cancelIngestionRequest
@@ -77,12 +77,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * the dashboard entity. If you have the correct permissions, you can create a dashboard from a template that exists
      * in a different AWS account.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-dashboard --cli-input-json file://create-dashboard.json</code>
-     * </p>
      * 
      * @param createDashboardRequest
      * @return A Java Future containing the result of the CreateDashboard operation returned by the service.
@@ -103,12 +97,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * the dashboard entity. If you have the correct permissions, you can create a dashboard from a template that exists
      * in a different AWS account.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-dashboard --cli-input-json file://create-dashboard.json</code>
-     * </p>
      * 
      * @param createDashboardRequest
      * @param asyncHandler
@@ -127,63 +115,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Creates a dataset.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-data-set \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My dataset' \</code>
-     * </p>
-     * <p>
-     * <code>--import-mode=SPICE \</code>
-     * </p>
-     * <p>
-     * <code>--physical-table-map='{</code>
-     * </p>
-     * <p>
-     * <code> "physical-table-id": {</code>
-     * </p>
-     * <p>
-     * <code> "RelationalTable": {</code>
-     * </p>
-     * <p>
-     * <code> "DataSourceArn": "arn:aws:quicksight:us-west-2:111111111111:datasource/data-source-id",</code>
-     * </p>
-     * <p>
-     * <code> "Name": "table1",</code>
-     * </p>
-     * <p>
-     * <code> "InputColumns": [</code>
-     * </p>
-     * <p>
-     * <code> {</code>
-     * </p>
-     * <p>
-     * <code> "Name": "column1",</code>
-     * </p>
-     * <p>
-     * <code> "Type": "STRING"</code>
-     * </p>
-     * <p>
-     * <code> }</code>
-     * </p>
-     * <p>
-     * <code> ]</code>
-     * </p>
-     * <p>
-     * <code> }</code>
-     * </p>
-     * <p>
-     * <code> }'</code>
-     * </p>
      * 
      * @param createDataSetRequest
      * @return A Java Future containing the result of the CreateDataSet operation returned by the service.
@@ -196,63 +127,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Creates a dataset.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-data-set \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My dataset' \</code>
-     * </p>
-     * <p>
-     * <code>--import-mode=SPICE \</code>
-     * </p>
-     * <p>
-     * <code>--physical-table-map='{</code>
-     * </p>
-     * <p>
-     * <code> "physical-table-id": {</code>
-     * </p>
-     * <p>
-     * <code> "RelationalTable": {</code>
-     * </p>
-     * <p>
-     * <code> "DataSourceArn": "arn:aws:quicksight:us-west-2:111111111111:datasource/data-source-id",</code>
-     * </p>
-     * <p>
-     * <code> "Name": "table1",</code>
-     * </p>
-     * <p>
-     * <code> "InputColumns": [</code>
-     * </p>
-     * <p>
-     * <code> {</code>
-     * </p>
-     * <p>
-     * <code> "Name": "column1",</code>
-     * </p>
-     * <p>
-     * <code> "Type": "STRING"</code>
-     * </p>
-     * <p>
-     * <code> }</code>
-     * </p>
-     * <p>
-     * <code> ]</code>
-     * </p>
-     * <p>
-     * <code> }</code>
-     * </p>
-     * <p>
-     * <code> }'</code>
      * </p>
      * 
      * @param createDataSetRequest
@@ -272,48 +146,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Creates a data source.
      * </p>
-     * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-data-source \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-id=unique-data-source-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My Data Source' \</code>
-     * </p>
-     * <p>
-     * <code>--type=POSTGRESQL \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-parameters='{ "PostgreSqlParameters": {</code>
-     * </p>
-     * <p>
-     * <code> "Host": "my-db-host.example.com",</code>
-     * </p>
-     * <p>
-     * <code> "Port": 1234,</code>
-     * </p>
-     * <p>
-     * <code> "Database": "my-db" } }' \</code>
-     * </p>
-     * <p>
-     * <code>--credentials='{ "CredentialPair": {</code>
-     * </p>
-     * <p>
-     * <code> "Username": "username",</code>
-     * </p>
-     * <p>
-     * <code> "Password": "password" } }'</code>
-     * </p>
      * 
      * @param createDataSourceRequest
      * @return A Java Future containing the result of the CreateDataSource operation returned by the service.
@@ -326,48 +158,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Creates a data source.
-     * </p>
-     * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-data-source \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-id=unique-data-source-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My Data Source' \</code>
-     * </p>
-     * <p>
-     * <code>--type=POSTGRESQL \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-parameters='{ "PostgreSqlParameters": {</code>
-     * </p>
-     * <p>
-     * <code> "Host": "my-db-host.example.com",</code>
-     * </p>
-     * <p>
-     * <code> "Port": 1234,</code>
-     * </p>
-     * <p>
-     * <code> "Database": "my-db" } }' \</code>
-     * </p>
-     * <p>
-     * <code>--credentials='{ "CredentialPair": {</code>
-     * </p>
-     * <p>
-     * <code> "Username": "username",</code>
-     * </p>
-     * <p>
-     * <code> "Password": "password" } }'</code>
      * </p>
      * 
      * @param createDataSourceRequest
@@ -395,12 +185,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is a group object.
      * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight create-group --aws-account-id=111122223333 --namespace=default --group-name="Sales-Management" --description="Sales Management - Forecasting" </code>
-     * </p>
      * 
      * @param createGroupRequest
      *        The request object for this operation.
@@ -423,12 +207,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is a group object.
      * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight create-group --aws-account-id=111122223333 --namespace=default --group-name="Sales-Management" --description="Sales Management - Forecasting" </code>
-     * </p>
      * 
      * @param createGroupRequest
      *        The request object for this operation.
@@ -448,25 +226,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Adds an Amazon QuickSight user to an Amazon QuickSight group.
      * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * The condition resource is the user name.
-     * </p>
-     * <p>
-     * The condition key is <code>quicksight:UserName</code>.
-     * </p>
-     * <p>
-     * The response is the group member object.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales --member-name=Pat </code>
-     * </p>
      * 
      * @param createGroupMembershipRequest
      * @return A Java Future containing the result of the CreateGroupMembership operation returned by the service.
@@ -479,25 +238,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Adds an Amazon QuickSight user to an Amazon QuickSight group.
-     * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * The condition resource is the user name.
-     * </p>
-     * <p>
-     * The condition key is <code>quicksight:UserName</code>.
-     * </p>
-     * <p>
-     * The response is the group member object.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales --member-name=Pat </code>
      * </p>
      * 
      * @param createGroupMembershipRequest
@@ -515,14 +255,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an assignment with one specified IAM policy ARN and will assigned to specified groups or users of
-     * QuickSight. Users and groups need to be in the same namespace.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=helpAssignment --policy-arn=arn:aws:iam::aws:policy/AdministratorAccess --identities="user=user5,engineer123,group=QS-Admin" --namespace=default --region=us-west-2</code>
+     * Creates an assignment with one specified IAM policy Amazon Resource Name (ARN) and will assigned to specified
+     * groups or users of QuickSight. Users and groups need to be in the same namespace.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -536,14 +270,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an assignment with one specified IAM policy ARN and will assigned to specified groups or users of
-     * QuickSight. Users and groups need to be in the same namespace.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=helpAssignment --policy-arn=arn:aws:iam::aws:policy/AdministratorAccess --identities="user=user5,engineer123,group=QS-Admin" --namespace=default --region=us-west-2</code>
+     * Creates an assignment with one specified IAM policy Amazon Resource Name (ARN) and will assigned to specified
+     * groups or users of QuickSight. Users and groups need to be in the same namespace.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -565,10 +293,10 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Creates and starts a new SPICE ingestion on a dataset
      * </p>
      * <p>
-     * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access-control. For an
+     * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
      * example, see <a href="https://aws.example.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
-     * create an IAM policy to control access to Amazon EC2 resources using tags?</a>. Tags will be visible on the
-     * tagged dataset, but not on the ingestion resource.
+     * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
+     * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
      * 
      * @param createIngestionRequest
@@ -584,10 +312,10 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Creates and starts a new SPICE ingestion on a dataset
      * </p>
      * <p>
-     * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access-control. For an
+     * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
      * example, see <a href="https://aws.example.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
-     * create an IAM policy to control access to Amazon EC2 resources using tags?</a>. Tags will be visible on the
-     * tagged dataset, but not on the ingestion resource.
+     * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
+     * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
      * 
      * @param createIngestionRequest
@@ -614,29 +342,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets
      * which follow the same schema that was used to create the source analysis and template.
      * </p>
-     * <p>
-     * To create a template from an existing analysis, use the analysis's ARN, <code>aws-account-id</code>,
-     * <code>template-id</code>, <code>source-entity</code>, and <code>data-set-references</code>.
-     * </p>
-     * <p>
-     * CLI syntax to create a template:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-template —cli-input-json file://create-template.json</code>
-     * </p>
-     * <p>
-     * CLI syntax to create a template from another template in the same AWS account:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-template --aws-account-id 111122223333 --template-id reports_test_template --data-set-references DataSetPlaceholder=reports,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/0dfc789c-81f6-4f4f-b9ac-7db2453eefc8 DataSetPlaceholder=Elblogs,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/f60da323-af68-45db-9016-08e0d1d7ded5 --source-entity SourceAnalysis='{Arn=arn:aws:quicksight:us-west-2:111122223333:analysis/7fb74527-c36d-4be8-8139-ac1be4c97365}'</code>
-     * </p>
-     * <p>
-     * To create template from another account’s template, you need to grant cross account resource permission for
-     * DescribeTemplate the account that contains the template.
-     * </p>
-     * <p>
-     * You can use a file to pass JSON to the function if you prefer.
-     * </p>
      * 
      * @param createTemplateRequest
      * @return A Java Future containing the result of the CreateTemplate operation returned by the service.
@@ -657,29 +362,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets
      * which follow the same schema that was used to create the source analysis and template.
      * </p>
-     * <p>
-     * To create a template from an existing analysis, use the analysis's ARN, <code>aws-account-id</code>,
-     * <code>template-id</code>, <code>source-entity</code>, and <code>data-set-references</code>.
-     * </p>
-     * <p>
-     * CLI syntax to create a template:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-template —cli-input-json file://create-template.json</code>
-     * </p>
-     * <p>
-     * CLI syntax to create a template from another template in the same AWS account:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-template --aws-account-id 111122223333 --template-id reports_test_template --data-set-references DataSetPlaceholder=reports,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/0dfc789c-81f6-4f4f-b9ac-7db2453eefc8 DataSetPlaceholder=Elblogs,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/f60da323-af68-45db-9016-08e0d1d7ded5 --source-entity SourceAnalysis='{Arn=arn:aws:quicksight:us-west-2:111122223333:analysis/7fb74527-c36d-4be8-8139-ac1be4c97365}'</code>
-     * </p>
-     * <p>
-     * To create template from another account’s template, you need to grant cross account resource permission for
-     * DescribeTemplate the account that contains the template.
-     * </p>
-     * <p>
-     * You can use a file to pass JSON to the function if you prefer.
-     * </p>
      * 
      * @param createTemplateRequest
      * @param asyncHandler
@@ -698,12 +380,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Creates a template alias for a template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-template-alias --aws-account-id 111122223333 --template-id 'reports_test_template' --alias-name PROD —version-number 1</code>
-     * </p>
      * 
      * @param createTemplateAliasRequest
      * @return A Java Future containing the result of the CreateTemplateAlias operation returned by the service.
@@ -716,12 +392,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Creates a template alias for a template.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight create-template-alias --aws-account-id 111122223333 --template-id 'reports_test_template' --alias-name PROD —version-number 1</code>
      * </p>
      * 
      * @param createTemplateAliasRequest
@@ -741,15 +411,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes a dashboard.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-dashboard --aws-account-id 111122223333 —dashboard-id 123123123</code>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-dashboard --aws-account-id 111122223333 —dashboard-id 123123123 —version-number 3</code>
-     * </p>
      * 
      * @param deleteDashboardRequest
      * @return A Java Future containing the result of the DeleteDashboard operation returned by the service.
@@ -762,15 +423,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Deletes a dashboard.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-dashboard --aws-account-id 111122223333 —dashboard-id 123123123</code>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-dashboard --aws-account-id 111122223333 —dashboard-id 123123123 —version-number 3</code>
      * </p>
      * 
      * @param deleteDashboardRequest
@@ -790,18 +442,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes a dataset.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-data-set \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111111111111 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id</code>
-     * </p>
      * 
      * @param deleteDataSetRequest
      * @return A Java Future containing the result of the DeleteDataSet operation returned by the service.
@@ -814,18 +454,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Deletes a dataset.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-data-set \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111111111111 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id</code>
      * </p>
      * 
      * @param deleteDataSetRequest
@@ -845,18 +473,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes the data source permanently. This action breaks all the datasets that reference the deleted data source.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-data-source \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-id=unique-data-source-id </code>
-     * </p>
      * 
      * @param deleteDataSourceRequest
      * @return A Java Future containing the result of the DeleteDataSource operation returned by the service.
@@ -869,18 +485,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Deletes the data source permanently. This action breaks all the datasets that reference the deleted data source.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-data-source \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-id=unique-data-source-id </code>
      * </p>
      * 
      * @param deleteDataSourceRequest
@@ -900,16 +504,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Removes a user group from Amazon QuickSight.
      * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-group -\-aws-account-id=111122223333 -\-namespace=default -\-group-name=Sales-Management </code>
-     * </p>
      * 
      * @param deleteGroupRequest
      * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
@@ -922,16 +516,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Removes a user group from Amazon QuickSight.
-     * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-group -\-aws-account-id=111122223333 -\-namespace=default -\-group-name=Sales-Management </code>
      * </p>
      * 
      * @param deleteGroupRequest
@@ -951,22 +535,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Removes a user from a group so that the user is no longer a member of the group.
      * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * The condition resource is the user name.
-     * </p>
-     * <p>
-     * The condition key is <code>quicksight:UserName</code>.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales-Management --member-name=Charlie </code>
-     * </p>
      * 
      * @param deleteGroupMembershipRequest
      * @return A Java Future containing the result of the DeleteGroupMembership operation returned by the service.
@@ -979,22 +547,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Removes a user from a group so that the user is no longer a member of the group.
-     * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * The condition resource is the user name.
-     * </p>
-     * <p>
-     * The condition key is <code>quicksight:UserName</code>.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales-Management --member-name=Charlie </code>
      * </p>
      * 
      * @param deleteGroupMembershipRequest
@@ -1014,12 +566,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes an existing assignment.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=testtest --region=us-east-1 --namespace=default</code>
-     * </p>
      * 
      * @param deleteIAMPolicyAssignmentRequest
      * @return A Java Future containing the result of the DeleteIAMPolicyAssignment operation returned by the service.
@@ -1033,12 +579,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Deletes an existing assignment.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=testtest --region=us-east-1 --namespace=default</code>
      * </p>
      * 
      * @param deleteIAMPolicyAssignmentRequest
@@ -1059,40 +599,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes a template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight delete-template --aws-account-id 111122223333 —-template-id reports_test_template --version-number 2 </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aws quicksight delete-template —aws-account-id 111122223333 —template-id reports_test_template —alias-name STAGING </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aws quicksight delete-template —aws-account-id 111122223333 —template-id reports_test_template —alias-name ‘\$LATEST’ </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aws quicksight delete-template --aws-account-id 111122223333 —-template-id reports_test_template</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If version number which is an optional field is not passed the template (including all the versions) is deleted
-     * by the API, if version number is provided, the specific template version is deleted by the API.
-     * </p>
-     * <p>
-     * Users can explicitly describe the latest version of the template by passing <code>$LATEST</code> to the
-     * <code>alias-name</code> parameter. <code>$LATEST</code> is an internally supported alias, which points to the
-     * latest version of the template.
-     * </p>
      * 
      * @param deleteTemplateRequest
      * @return A Java Future containing the result of the DeleteTemplate operation returned by the service.
@@ -1105,40 +611,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Deletes a template.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight delete-template --aws-account-id 111122223333 —-template-id reports_test_template --version-number 2 </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aws quicksight delete-template —aws-account-id 111122223333 —template-id reports_test_template —alias-name STAGING </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aws quicksight delete-template —aws-account-id 111122223333 —template-id reports_test_template —alias-name ‘\$LATEST’ </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aws quicksight delete-template --aws-account-id 111122223333 —-template-id reports_test_template</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If version number which is an optional field is not passed the template (including all the versions) is deleted
-     * by the API, if version number is provided, the specific template version is deleted by the API.
-     * </p>
-     * <p>
-     * Users can explicitly describe the latest version of the template by passing <code>$LATEST</code> to the
-     * <code>alias-name</code> parameter. <code>$LATEST</code> is an internally supported alias, which points to the
-     * latest version of the template.
      * </p>
      * 
      * @param deleteTemplateRequest
@@ -1158,12 +630,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Update template alias of given template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-template-alias --aws-account-id 111122223333 --template-id 'reports_test_template' --alias-name 'STAGING'</code>
-     * </p>
      * 
      * @param deleteTemplateAliasRequest
      * @return A Java Future containing the result of the DeleteTemplateAlias operation returned by the service.
@@ -1176,12 +642,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Update template alias of given template.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-template-alias --aws-account-id 111122223333 --template-id 'reports_test_template' --alias-name 'STAGING'</code>
      * </p>
      * 
      * @param deleteTemplateAliasRequest
@@ -1202,12 +662,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Deletes the Amazon QuickSight user that is associated with the identity of the AWS Identity and Access Management
      * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
      * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
-     * </p>
      * 
      * @param deleteUserRequest
      * @return A Java Future containing the result of the DeleteUser operation returned by the service.
@@ -1221,12 +675,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes the Amazon QuickSight user that is associated with the identity of the AWS Identity and Access Management
      * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
      * </p>
      * 
      * @param deleteUserRequest
@@ -1246,12 +694,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes a user identified by its principal ID.
      * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-user-by-principal-id --aws-account-id=111122223333 --namespace=default --principal-id=ABCDEFJA26JLI7EUUOEHS </code>
-     * </p>
      * 
      * @param deleteUserByPrincipalIdRequest
      * @return A Java Future containing the result of the DeleteUserByPrincipalId operation returned by the service.
@@ -1264,12 +706,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Deletes a user identified by its principal ID.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight delete-user-by-principal-id --aws-account-id=111122223333 --namespace=default --principal-id=ABCDEFJA26JLI7EUUOEHS </code>
      * </p>
      * 
      * @param deleteUserByPrincipalIdRequest
@@ -1289,22 +725,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Provides a summary for a dashboard.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight describe-dashboard --aws-account-id 111122223333 —dashboard-id reports_test_report -version-number 2</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code> aws quicksight describe-dashboard --aws-account-id 111122223333 —dashboard-id reports_test_report -alias-name ‘$PUBLISHED’ </code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p/>
      * 
      * @param describeDashboardRequest
      * @return A Java Future containing the result of the DescribeDashboard operation returned by the service.
@@ -1318,22 +738,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Provides a summary for a dashboard.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight describe-dashboard --aws-account-id 111122223333 —dashboard-id reports_test_report -version-number 2</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code> aws quicksight describe-dashboard --aws-account-id 111122223333 —dashboard-id reports_test_report -alias-name ‘$PUBLISHED’ </code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p/>
      * 
      * @param describeDashboardRequest
      * @param asyncHandler
@@ -1352,12 +756,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Describes read and write permissions on a dashboard.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-dashboard-permissions --aws-account-id 735340738645 —dashboard-id reports_test_bob_report</code>
-     * </p>
      * 
      * @param describeDashboardPermissionsRequest
      * @return A Java Future containing the result of the DescribeDashboardPermissions operation returned by the
@@ -1372,12 +770,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Describes read and write permissions on a dashboard.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-dashboard-permissions --aws-account-id 735340738645 —dashboard-id reports_test_bob_report</code>
      * </p>
      * 
      * @param describeDashboardPermissionsRequest
@@ -1399,18 +791,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Describes a dataset.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-data-set \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111111111111 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id</code>
-     * </p>
      * 
      * @param describeDataSetRequest
      * @return A Java Future containing the result of the DescribeDataSet operation returned by the service.
@@ -1423,18 +803,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Describes a dataset.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-data-set \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111111111111 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id</code>
      * </p>
      * 
      * @param describeDataSetRequest
@@ -1455,19 +823,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Describes the permissions on a dataset.
      * </p>
      * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-data-set-permissions \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id \</code>
+     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
      * </p>
      * 
      * @param describeDataSetPermissionsRequest
@@ -1484,19 +840,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Describes the permissions on a dataset.
      * </p>
      * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-data-set-permissions \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id \</code>
+     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
      * </p>
      * 
      * @param describeDataSetPermissionsRequest
@@ -1517,9 +861,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Describes a data source.
      * </p>
-     * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-     * </p>
      * 
      * @param describeDataSourceRequest
      * @return A Java Future containing the result of the DescribeDataSource operation returned by the service.
@@ -1532,9 +873,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Describes a data source.
-     * </p>
-     * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
      * </p>
      * 
      * @param describeDataSourceRequest
@@ -1554,9 +892,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Describes the resource permissions for a data source.
      * </p>
-     * <p>
-     * The permissions resource is <code>aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-     * </p>
      * 
      * @param describeDataSourcePermissionsRequest
      * @return A Java Future containing the result of the DescribeDataSourcePermissions operation returned by the
@@ -1571,9 +906,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Describes the resource permissions for a data source.
-     * </p>
-     * <p>
-     * The permissions resource is <code>aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
      * </p>
      * 
      * @param describeDataSourcePermissionsRequest
@@ -1595,20 +927,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
      * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>
-     * .
-     * </p>
-     * <p>
-     * The response is the group object.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default -\-group-name=Sales </code>
-     * </p>
      * 
      * @param describeGroupRequest
      * @return A Java Future containing the result of the DescribeGroup operation returned by the service.
@@ -1621,20 +939,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
-     * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>
-     * .
-     * </p>
-     * <p>
-     * The response is the group object.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default -\-group-name=Sales </code>
      * </p>
      * 
      * @param describeGroupRequest
@@ -1654,12 +958,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Describes an existing IAMPolicy Assignment by specified assignment name.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=testtest --namespace=default --region=us-east-1 </code>
-     * </p>
      * 
      * @param describeIAMPolicyAssignmentRequest
      * @return A Java Future containing the result of the DescribeIAMPolicyAssignment operation returned by the service.
@@ -1673,12 +971,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Describes an existing IAMPolicy Assignment by specified assignment name.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=testtest --namespace=default --region=us-east-1 </code>
      * </p>
      * 
      * @param describeIAMPolicyAssignmentRequest
@@ -1730,23 +1022,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Describes a template's metadata.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id reports_test_template </code>
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id reports_test_template --version-number-2</code>
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id reports_test_template --alias-name '\$LATEST' </code>
-     * </p>
-     * <p>
-     * Users can explicitly describe the latest version of the dashboard by passing <code>$LATEST</code> to the
-     * <code>alias-name</code> parameter. <code>$LATEST</code> is an internally supported alias, which points to the
-     * latest version of the dashboard.
-     * </p>
      * 
      * @param describeTemplateRequest
      * @return A Java Future containing the result of the DescribeTemplate operation returned by the service.
@@ -1759,23 +1034,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Describes a template's metadata.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id reports_test_template </code>
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id reports_test_template --version-number-2</code>
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template --aws-account-id 111122223333 --template-id reports_test_template --alias-name '\$LATEST' </code>
-     * </p>
-     * <p>
-     * Users can explicitly describe the latest version of the dashboard by passing <code>$LATEST</code> to the
-     * <code>alias-name</code> parameter. <code>$LATEST</code> is an internally supported alias, which points to the
-     * latest version of the dashboard.
      * </p>
      * 
      * @param describeTemplateRequest
@@ -1795,12 +1053,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Describes the template aliases of a template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template-alias --aws-account-id 111122223333 --template-id 'reports_test_template' --alias-name 'STAGING'</code>
-     * </p>
      * 
      * @param describeTemplateAliasRequest
      * @return A Java Future containing the result of the DescribeTemplateAlias operation returned by the service.
@@ -1813,12 +1065,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Describes the template aliases of a template.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template-alias --aws-account-id 111122223333 --template-id 'reports_test_template' --alias-name 'STAGING'</code>
      * </p>
      * 
      * @param describeTemplateAliasRequest
@@ -1838,12 +1084,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Describes read and write permissions on a template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template-permissions —aws-account-id 735340738645 —template-id reports_test_template</code>
-     * </p>
      * 
      * @param describeTemplatePermissionsRequest
      * @return A Java Future containing the result of the DescribeTemplatePermissions operation returned by the service.
@@ -1857,12 +1097,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Describes read and write permissions on a template.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-template-permissions —aws-account-id 735340738645 —template-id reports_test_template</code>
      * </p>
      * 
      * @param describeTemplatePermissionsRequest
@@ -1883,16 +1117,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Returns information about a user, given the user name.
      * </p>
-     * <p>
-     * The response is a user object that contains the user's Amazon Resource Name (ARN), AWS Identity and Access
-     * Management (IAM) role, and email address.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
-     * </p>
      * 
      * @param describeUserRequest
      * @return A Java Future containing the result of the DescribeUser operation returned by the service.
@@ -1905,16 +1129,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Returns information about a user, given the user name.
-     * </p>
-     * <p>
-     * The response is a user object that contains the user's Amazon Resource Name (ARN), AWS Identity and Access
-     * Management (IAM) role, and email address.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
      * </p>
      * 
      * @param describeUserRequest
@@ -1933,41 +1147,14 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Generates a server-side embeddable URL and authorization code. Before this can work properly, first you need to
-     * configure the dashboards and user permissions. For more information, see <a
-     * href="https://docs.aws.example.com/en_us/quicksight/latest/user/embedding.html"> Embedding Amazon QuickSight
-     * Dashboards</a>.
+     * configure the dashboards and user permissions. For more information, see the Amazon QuickSight User Guide section
+     * on <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon
+     * QuickSight Dashboards</a> or see the Amazon QuickSight API Reference section on <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
+     * Amazon QuickSight Dashboards</a> .
      * </p>
      * <p>
      * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * Assume the role with permissions enabled for actions: <code>quickSight:RegisterUser</code> and
-     * <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role, assume-role-with-web-identity, or
-     * assume-role-with-saml.
-     * </p>
-     * <p>
-     * <code>aws sts assume-role --role-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --role-session-name embeddingsession</code>
-     * </p>
-     * <p>
-     * If the user does not exist in QuickSight, register the user:
-     * </p>
-     * <p>
-     * <code>aws quicksight register-user --aws-account-id 111122223333 --namespace default --identity-type IAM --iam-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --user-role READER --session-name "embeddingsession" --email user123@example.com --region us-east-1</code>
-     * </p>
-     * <p>
-     * Get the URL for the embedded dashboard (<code>IAM</code> identity authentication):
-     * </p>
-     * <p>
-     * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code>
-     * </p>
-     * <p>
-     * Get the URL for the embedded dashboard (<code>QUICKSIGHT</code> identity authentication):
-     * </p>
-     * <p>
-     * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type QUICKSIGHT --user-arn arn:aws:quicksight:us-east-1:111122223333:user/default/embedding_quicksight_dashboard_role/embeddingsession</code>
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -1981,41 +1168,14 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Generates a server-side embeddable URL and authorization code. Before this can work properly, first you need to
-     * configure the dashboards and user permissions. For more information, see <a
-     * href="https://docs.aws.example.com/en_us/quicksight/latest/user/embedding.html"> Embedding Amazon QuickSight
-     * Dashboards</a>.
+     * configure the dashboards and user permissions. For more information, see the Amazon QuickSight User Guide section
+     * on <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon
+     * QuickSight Dashboards</a> or see the Amazon QuickSight API Reference section on <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
+     * Amazon QuickSight Dashboards</a> .
      * </p>
      * <p>
      * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * Assume the role with permissions enabled for actions: <code>quickSight:RegisterUser</code> and
-     * <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role, assume-role-with-web-identity, or
-     * assume-role-with-saml.
-     * </p>
-     * <p>
-     * <code>aws sts assume-role --role-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --role-session-name embeddingsession</code>
-     * </p>
-     * <p>
-     * If the user does not exist in QuickSight, register the user:
-     * </p>
-     * <p>
-     * <code>aws quicksight register-user --aws-account-id 111122223333 --namespace default --identity-type IAM --iam-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --user-role READER --session-name "embeddingsession" --email user123@example.com --region us-east-1</code>
-     * </p>
-     * <p>
-     * Get the URL for the embedded dashboard (<code>IAM</code> identity authentication):
-     * </p>
-     * <p>
-     * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code>
-     * </p>
-     * <p>
-     * Get the URL for the embedded dashboard (<code>QUICKSIGHT</code> identity authentication):
-     * </p>
-     * <p>
-     * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type QUICKSIGHT --user-arn arn:aws:quicksight:us-east-1:111122223333:user/default/embedding_quicksight_dashboard_role/embeddingsession</code>
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -2035,12 +1195,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists all the versions of the dashboards in the Quicksight subscription.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * aws quicksight list-template-versions —aws-account-id 111122223333 —template-id reports-test-template
-     * </p>
      * 
      * @param listDashboardVersionsRequest
      * @return A Java Future containing the result of the ListDashboardVersions operation returned by the service.
@@ -2053,12 +1207,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists all the versions of the dashboards in the Quicksight subscription.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * aws quicksight list-template-versions —aws-account-id 111122223333 —template-id reports-test-template
      * </p>
      * 
      * @param listDashboardVersionsRequest
@@ -2078,12 +1226,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists dashboards in the AWS account.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-dashboards --aws-account-id 111122223333 --max-results 5 —next-token 'next-10'</code>
-     * </p>
      * 
      * @param listDashboardsRequest
      * @return A Java Future containing the result of the ListDashboards operation returned by the service.
@@ -2096,12 +1238,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists dashboards in the AWS account.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-dashboards --aws-account-id 111122223333 --max-results 5 —next-token 'next-10'</code>
      * </p>
      * 
      * @param listDashboardsRequest
@@ -2122,10 +1258,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Lists all of the datasets belonging to this account in an AWS region.
      * </p>
      * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>
-     * </p>
-     * <p>
-     * CLI syntax: <code>aws quicksight list-data-sets --aws-account-id=111111111111</code>
+     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
      * </p>
      * 
      * @param listDataSetsRequest
@@ -2141,10 +1274,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Lists all of the datasets belonging to this account in an AWS region.
      * </p>
      * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>
-     * </p>
-     * <p>
-     * CLI syntax: <code>aws quicksight list-data-sets --aws-account-id=111111111111</code>
+     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
      * </p>
      * 
      * @param listDataSetsRequest
@@ -2162,13 +1292,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists data sources in current AWS region that belong to this AWS account.
-     * </p>
-     * <p>
-     * The permissions resource is: <code>arn:aws:quicksight:region:aws-account-id:datasource/*</code>
-     * </p>
-     * <p>
-     * CLI syntax: <code>aws quicksight list-data-sources --aws-account-id=111122223333</code>
+     * Lists data sources in current AWS Region that belong to this AWS account.
      * </p>
      * 
      * @param listDataSourcesRequest
@@ -2181,13 +1305,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists data sources in current AWS region that belong to this AWS account.
-     * </p>
-     * <p>
-     * The permissions resource is: <code>arn:aws:quicksight:region:aws-account-id:datasource/*</code>
-     * </p>
-     * <p>
-     * CLI syntax: <code>aws quicksight list-data-sources --aws-account-id=111122223333</code>
+     * Lists data sources in current AWS Region that belong to this AWS account.
      * </p>
      * 
      * @param listDataSourcesRequest
@@ -2207,19 +1325,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists member users in a group.
      * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * The response is a list of group member objects.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight list-group-memberships -\-aws-account-id=111122223333 -\-namespace=default </code>
-     * </p>
      * 
      * @param listGroupMembershipsRequest
      * @return A Java Future containing the result of the ListGroupMemberships operation returned by the service.
@@ -2232,19 +1337,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists member users in a group.
-     * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * The response is a list of group member objects.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight list-group-memberships -\-aws-account-id=111122223333 -\-namespace=default </code>
      * </p>
      * 
      * @param listGroupMembershipsRequest
@@ -2264,19 +1356,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists all user groups in Amazon QuickSight.
      * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/*</code>.
-     * </p>
-     * <p>
-     * The response is a list of group objects.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default </code>
-     * </p>
      * 
      * @param listGroupsRequest
      * @return A Java Future containing the result of the ListGroups operation returned by the service.
@@ -2289,19 +1368,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists all user groups in Amazon QuickSight.
-     * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/*</code>.
-     * </p>
-     * <p>
-     * The response is a list of group objects.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default </code>
      * </p>
      * 
      * @param listGroupsRequest
@@ -2321,12 +1387,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists assignments in current QuickSight account.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-iam-policy-assignments --aws-account-id=111122223333 --max-result=5 --assignment-status=ENABLED --namespace=default --region=us-east-1 --next-token=3 </code>
-     * </p>
      * 
      * @param listIAMPolicyAssignmentsRequest
      * @return A Java Future containing the result of the ListIAMPolicyAssignments operation returned by the service.
@@ -2339,12 +1399,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists assignments in current QuickSight account.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-iam-policy-assignments --aws-account-id=111122223333 --max-result=5 --assignment-status=ENABLED --namespace=default --region=us-east-1 --next-token=3 </code>
      * </p>
      * 
      * @param listIAMPolicyAssignmentsRequest
@@ -2362,14 +1416,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the assignments and the ARNs for the associated IAM policies assigned to the specified user and the
-     * group or groups that the user belongs to.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-iam-policy-assignments-for-user --aws-account-id=111122223333 --user-name=user5 --namespace=default --max-result=6 --region=us-east-1 </code>
+     * Lists all the assignments and the Amazon Resource Names (ARNs) for the associated IAM policies assigned to the
+     * specified user and the group or groups that the user belongs to.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsForUserRequest
@@ -2384,14 +1432,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the assignments and the ARNs for the associated IAM policies assigned to the specified user and the
-     * group or groups that the user belongs to.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-iam-policy-assignments-for-user --aws-account-id=111122223333 --user-name=user5 --namespace=default --max-result=6 --region=us-east-1 </code>
+     * Lists all the assignments and the Amazon Resource Names (ARNs) for the associated IAM policies assigned to the
+     * specified user and the group or groups that the user belongs to.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsForUserRequest
@@ -2444,16 +1486,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists the tags assigned to a resource.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight list-tags-for-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1 --region us-east-1</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
@@ -2467,16 +1499,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists the tags assigned to a resource.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight list-tags-for-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1 --region us-east-1</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
@@ -2495,12 +1517,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists all the aliases of a template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-template-aliases --aws-account-id 111122223333 —template-id 'reports_test_template'</code>
-     * </p>
      * 
      * @param listTemplateAliasesRequest
      * @return A Java Future containing the result of the ListTemplateAliases operation returned by the service.
@@ -2513,12 +1529,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists all the aliases of a template.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-template-aliases --aws-account-id 111122223333 —template-id 'reports_test_template'</code>
      * </p>
      * 
      * @param listTemplateAliasesRequest
@@ -2538,13 +1548,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists all the versions of the templates in the Quicksight account.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * aws quicksight list-template-versions --aws-account-id 111122223333 --aws-account-id 196359894473 --template-id
-     * reports-test-template
-     * </p>
      * 
      * @param listTemplateVersionsRequest
      * @return A Java Future containing the result of the ListTemplateVersions operation returned by the service.
@@ -2557,13 +1560,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists all the versions of the templates in the Quicksight account.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * aws quicksight list-template-versions --aws-account-id 111122223333 --aws-account-id 196359894473 --template-id
-     * reports-test-template
      * </p>
      * 
      * @param listTemplateVersionsRequest
@@ -2583,12 +1579,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists all the templates in the QuickSight account.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-templates --aws-account-id 111122223333 --max-results 1 —next-token AYADeJuxwOypAndSoOn</code>
-     * </p>
      * 
      * @param listTemplatesRequest
      * @return A Java Future containing the result of the ListTemplates operation returned by the service.
@@ -2601,12 +1591,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists all the templates in the QuickSight account.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight list-templates --aws-account-id 111122223333 --max-results 1 —next-token AYADeJuxwOypAndSoOn</code>
      * </p>
      * 
      * @param listTemplatesRequest
@@ -2626,15 +1610,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
      * </p>
-     * <p>
-     * The response is a one or more group objects.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight list-user-groups -\-user-name=Pat -\-aws-account-id=111122223333 -\-namespace=default -\-region=us-east-1 </code>
-     * </p>
      * 
      * @param listUserGroupsRequest
      * @return A Java Future containing the result of the ListUserGroups operation returned by the service.
@@ -2647,15 +1622,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
-     * </p>
-     * <p>
-     * The response is a one or more group objects.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight list-user-groups -\-user-name=Pat -\-aws-account-id=111122223333 -\-namespace=default -\-region=us-east-1 </code>
      * </p>
      * 
      * @param listUserGroupsRequest
@@ -2675,16 +1641,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Returns a list of all of the Amazon QuickSight users belonging to this account.
      * </p>
-     * <p>
-     * The response is a list of user objects, containing each user's Amazon Resource Name (ARN), AWS Identity and
-     * Access Management (IAM) role, and email address.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default </code>
-     * </p>
      * 
      * @param listUsersRequest
      * @return A Java Future containing the result of the ListUsers operation returned by the service.
@@ -2697,16 +1653,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Returns a list of all of the Amazon QuickSight users belonging to this account.
-     * </p>
-     * <p>
-     * The response is a list of user objects, containing each user's Amazon Resource Name (ARN), AWS Identity and
-     * Access Management (IAM) role, and email address.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default </code>
      * </p>
      * 
      * @param listUsersRequest
@@ -2727,12 +1673,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Creates an Amazon QuickSight user, whose identity is associated with the AWS Identity and Access Management (IAM)
      * identity or role specified in the request.
      * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat </code>
-     * </p>
      * 
      * @param registerUserRequest
      * @return A Java Future containing the result of the RegisterUser operation returned by the service.
@@ -2746,12 +1686,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Creates an Amazon QuickSight user, whose identity is associated with the AWS Identity and Access Management (IAM)
      * identity or role specified in the request.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat </code>
      * </p>
      * 
      * @param registerUserRequest
@@ -2769,43 +1703,33 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Assigns a tag or tags to a resource.
+     * Assigns one or more tags (key-value pairs) to the specified QuickSight resource.
      * </p>
      * <p>
-     * Assigns one or more tags (key-value pairs) to the specified QuickSight resource. Tags can help you organize and
-     * categorize your resources. You can also use them to scope user permissions, by granting a user permission to
-     * access or change only resources with certain tag values. You can use the TagResource action with a resource that
-     * already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags
-     * associated with the resource. If you specify a tag key that is already associated with the resource, the new tag
-     * value that you specify replaces the previous value for that tag.
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only resources with certain tag values. You can use the
+     * <code>TagResource</code> operation with a resource that already has tags. If you specify a new tag key for the
+     * resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is
+     * already associated with the resource, the new tag value that you specify replaces the previous value for that
+     * tag.
      * </p>
      * <p>
-     * You can associate as many as 50 tags with a resource. QuickSight supports tagging on data-set, data-source,
-     * dashboard, template.
+     * You can associate as many as 50 tags with a resource. QuickSight supports tagging on data set, data source,
+     * dashboard, and template.
      * </p>
      * <p>
-     * Tagging for QuickSight works in a similar was to tagging for other AWS services, except for the following:
+     * Tagging for QuickSight works in a similar way to tagging for other AWS services, except for the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can't use tags to track AWS costs for QuickSight, because QuickSight costs are based on users and SPICE
-     * capacity, which aren't taggable resources.
+     * You can't use tags to track AWS costs for QuickSight. This restriction is because QuickSight costs are based on
+     * users and SPICE capacity, which aren't taggable resources.
      * </p>
      * </li>
      * <li>
      * <p>
      * QuickSight doesn't currently support the Tag Editor for AWS Resource Groups.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * CLI syntax to tag a resource:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight tag-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1 --tags Key=K1,Value=V1 Key=K2,Value=V2 --region us-east-1</code>
      * </p>
      * </li>
      * </ul>
@@ -2820,43 +1744,33 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Assigns a tag or tags to a resource.
+     * Assigns one or more tags (key-value pairs) to the specified QuickSight resource.
      * </p>
      * <p>
-     * Assigns one or more tags (key-value pairs) to the specified QuickSight resource. Tags can help you organize and
-     * categorize your resources. You can also use them to scope user permissions, by granting a user permission to
-     * access or change only resources with certain tag values. You can use the TagResource action with a resource that
-     * already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags
-     * associated with the resource. If you specify a tag key that is already associated with the resource, the new tag
-     * value that you specify replaces the previous value for that tag.
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only resources with certain tag values. You can use the
+     * <code>TagResource</code> operation with a resource that already has tags. If you specify a new tag key for the
+     * resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is
+     * already associated with the resource, the new tag value that you specify replaces the previous value for that
+     * tag.
      * </p>
      * <p>
-     * You can associate as many as 50 tags with a resource. QuickSight supports tagging on data-set, data-source,
-     * dashboard, template.
+     * You can associate as many as 50 tags with a resource. QuickSight supports tagging on data set, data source,
+     * dashboard, and template.
      * </p>
      * <p>
-     * Tagging for QuickSight works in a similar was to tagging for other AWS services, except for the following:
+     * Tagging for QuickSight works in a similar way to tagging for other AWS services, except for the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can't use tags to track AWS costs for QuickSight, because QuickSight costs are based on users and SPICE
-     * capacity, which aren't taggable resources.
+     * You can't use tags to track AWS costs for QuickSight. This restriction is because QuickSight costs are based on
+     * users and SPICE capacity, which aren't taggable resources.
      * </p>
      * </li>
      * <li>
      * <p>
      * QuickSight doesn't currently support the Tag Editor for AWS Resource Groups.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * CLI syntax to tag a resource:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight tag-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1 --tags Key=K1,Value=V1 Key=K2,Value=V2 --region us-east-1</code>
      * </p>
      * </li>
      * </ul>
@@ -2878,16 +1792,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Removes a tag or tags from a resource.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight untag-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1 --tag-keys K1 K2 --region us-east-1</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
@@ -2901,16 +1805,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Removes a tag or tags from a resource.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight untag-resource --resource-arn arn:aws:quicksight:us-east-1:111111111111:dataset/dataset1 --tag-keys K1 K2 --region us-east-1</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param untagResourceRequest
      * @param asyncHandler
@@ -2929,15 +1823,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates a dashboard in the AWS account.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-dashboard --aws-account-id 111122223333 --dashboard-id 123123123 --dashboard-name "test-update102" --source-entity SourceTemplate={Arn=arn:aws:quicksight:us-west-2:111122223333:template/sales-report-template2} --data-set-references DataSetPlaceholder=SalesDataSet,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/0e251aef-9ebf-46e1-b852-eb4fa33c1d3a</code>
-     * </p>
-     * <p>
-     * <code>aws quicksight update-dashboard --cli-input-json file://update-dashboard.json </code>
-     * </p>
      * 
      * @param updateDashboardRequest
      * @return A Java Future containing the result of the UpdateDashboard operation returned by the service.
@@ -2950,15 +1835,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates a dashboard in the AWS account.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-dashboard --aws-account-id 111122223333 --dashboard-id 123123123 --dashboard-name "test-update102" --source-entity SourceTemplate={Arn=arn:aws:quicksight:us-west-2:111122223333:template/sales-report-template2} --data-set-references DataSetPlaceholder=SalesDataSet,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/0e251aef-9ebf-46e1-b852-eb4fa33c1d3a</code>
-     * </p>
-     * <p>
-     * <code>aws quicksight update-dashboard --cli-input-json file://update-dashboard.json </code>
      * </p>
      * 
      * @param updateDashboardRequest
@@ -2978,43 +1854,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates read and write permissions on a dashboard.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-dashboard-permissions —cli-input-json file://update-permission.json</code>
-     * </p>
-     * <p>
-     * A sample update-permissions.json for granting read only permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "GrantPermissions": [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions": [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion", "quicksight:QueryDashboard" ] } ] }</code>
-     * </p>
-     * <p>
-     * A sample update-permissions.json for granting read and write permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "GrantPermissions": [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions": [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion", "quicksight:QueryDashboard", "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions", "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard", "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code>
-     * </p>
-     * <p>
-     * A sample update-permissions.json for revoking write permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "RevokePermissions": [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions": [ "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions", "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard", "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code>
-     * </p>
-     * <p>
-     * A sample update-permissions.json for revoking read and write permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "RevokePermissions": [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions": [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion", "quicksight:QueryDashboard", "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions", "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard", "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code>
-     * </p>
-     * <p>
-     * To obtain the principal name of a QuickSight user or group, you can use describe-group or describe-user. For
-     * example:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-user --aws-account-id 111122223333 --namespace default --user-name user2 --region us-east-1 { "User": { "Arn": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Active": true, "Email": "user2@example.com", "Role": "ADMIN", "UserName": "user2", "PrincipalId": "federated/iam/abcd2abcdabcdeabc5ab5" }, "RequestId": "8f74bb31-6291-448a-a71c-a765a44bae31", "Status": 200 }</code>
-     * </p>
      * 
      * @param updateDashboardPermissionsRequest
      * @return A Java Future containing the result of the UpdateDashboardPermissions operation returned by the service.
@@ -3028,43 +1867,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates read and write permissions on a dashboard.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-dashboard-permissions —cli-input-json file://update-permission.json</code>
-     * </p>
-     * <p>
-     * A sample update-permissions.json for granting read only permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "GrantPermissions": [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions": [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion", "quicksight:QueryDashboard" ] } ] }</code>
-     * </p>
-     * <p>
-     * A sample update-permissions.json for granting read and write permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "GrantPermissions": [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions": [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion", "quicksight:QueryDashboard", "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions", "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard", "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code>
-     * </p>
-     * <p>
-     * A sample update-permissions.json for revoking write permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "RevokePermissions": [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions": [ "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions", "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard", "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code>
-     * </p>
-     * <p>
-     * A sample update-permissions.json for revoking read and write permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333", "DashboardId": "reports_test_report", "RevokePermissions": [ { "Principal": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Actions": [ "quicksight:DescribeDashboard", "quicksight:ListDashboardVersions", "quicksight:DescribeDashboardVersion", "quicksight:QueryDashboard", "quicksight:DescribeDashboardPermissions", "quicksight:UpdateDashboardPermissions", "quicksight:DeleteDashboardVersion", "quicksight:DeleteDashboard", "quicksight:UpdateDashboard", "quicksight:UpdateDashboardPublishedVersion", ] } ] }</code>
-     * </p>
-     * <p>
-     * To obtain the principal name of a QuickSight user or group, you can use describe-group or describe-user. For
-     * example:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-user --aws-account-id 111122223333 --namespace default --user-name user2 --region us-east-1 { "User": { "Arn": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2", "Active": true, "Email": "user2@example.com", "Role": "ADMIN", "UserName": "user2", "PrincipalId": "federated/iam/abcd2abcdabcdeabc5ab5" }, "RequestId": "8f74bb31-6291-448a-a71c-a765a44bae31", "Status": 200 }</code>
      * </p>
      * 
      * @param updateDashboardPermissionsRequest
@@ -3085,12 +1887,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates the published version of a dashboard.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-dashboard-published-version --aws-account-id 111122223333 --dashboard-id dashboard-w1 ---version-number 2</code>
-     * </p>
      * 
      * @param updateDashboardPublishedVersionRequest
      * @return A Java Future containing the result of the UpdateDashboardPublishedVersion operation returned by the
@@ -3105,12 +1901,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates the published version of a dashboard.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-dashboard-published-version --aws-account-id 111122223333 --dashboard-id dashboard-w1 ---version-number 2</code>
      * </p>
      * 
      * @param updateDashboardPublishedVersionRequest
@@ -3132,63 +1922,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates a dataset.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-data-set \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My dataset' \</code>
-     * </p>
-     * <p>
-     * <code>--import-mode=SPICE \</code>
-     * </p>
-     * <p>
-     * <code>--physical-table-map='{</code>
-     * </p>
-     * <p>
-     * <code> "physical-table-id": {</code>
-     * </p>
-     * <p>
-     * <code> "RelationalTable": {</code>
-     * </p>
-     * <p>
-     * <code> "DataSourceArn": "arn:aws:quicksight:us-west-2:111111111111:datasource/data-source-id",</code>
-     * </p>
-     * <p>
-     * <code> "Name": "table1",</code>
-     * </p>
-     * <p>
-     * <code> "InputColumns": [</code>
-     * </p>
-     * <p>
-     * <code> {</code>
-     * </p>
-     * <p>
-     * <code> "Name": "column1",</code>
-     * </p>
-     * <p>
-     * <code> "Type": "STRING"</code>
-     * </p>
-     * <p>
-     * <code> }</code>
-     * </p>
-     * <p>
-     * <code> ]</code>
-     * </p>
-     * <p>
-     * <code> }</code>
-     * </p>
-     * <p>
-     * <code> }'</code>
-     * </p>
      * 
      * @param updateDataSetRequest
      * @return A Java Future containing the result of the UpdateDataSet operation returned by the service.
@@ -3201,63 +1934,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates a dataset.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-data-set \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My dataset' \</code>
-     * </p>
-     * <p>
-     * <code>--import-mode=SPICE \</code>
-     * </p>
-     * <p>
-     * <code>--physical-table-map='{</code>
-     * </p>
-     * <p>
-     * <code> "physical-table-id": {</code>
-     * </p>
-     * <p>
-     * <code> "RelationalTable": {</code>
-     * </p>
-     * <p>
-     * <code> "DataSourceArn": "arn:aws:quicksight:us-west-2:111111111111:datasource/data-source-id",</code>
-     * </p>
-     * <p>
-     * <code> "Name": "table1",</code>
-     * </p>
-     * <p>
-     * <code> "InputColumns": [</code>
-     * </p>
-     * <p>
-     * <code> {</code>
-     * </p>
-     * <p>
-     * <code> "Name": "column1",</code>
-     * </p>
-     * <p>
-     * <code> "Type": "STRING"</code>
-     * </p>
-     * <p>
-     * <code> }</code>
-     * </p>
-     * <p>
-     * <code> ]</code>
-     * </p>
-     * <p>
-     * <code> }</code>
-     * </p>
-     * <p>
-     * <code> }'</code>
      * </p>
      * 
      * @param updateDataSetRequest
@@ -3278,25 +1954,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Updates the permissions on a dataset.
      * </p>
      * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-data-set-permissions \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id \</code>
-     * </p>
-     * <p>
-     * <code>--grant-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user1","Actions":["quicksight:DescribeDataSet","quicksight:DescribeDataSetPermissions","quicksight:PassDataSet","quicksight:ListIngestions","quicksight:DescribeIngestion"]}]' \</code>
-     * </p>
-     * <p>
-     * <code>--revoke-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user2","Actions":["quicksight:UpdateDataSet","quicksight:DeleteDataSet","quicksight:UpdateDataSetPermissions","quicksight:CreateIngestion","quicksight:CancelIngestion"]}]'</code>
+     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
      * </p>
      * 
      * @param updateDataSetPermissionsRequest
@@ -3312,25 +1970,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Updates the permissions on a dataset.
      * </p>
      * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-data-set-permissions \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-set-id=unique-data-set-id \</code>
-     * </p>
-     * <p>
-     * <code>--grant-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user1","Actions":["quicksight:DescribeDataSet","quicksight:DescribeDataSetPermissions","quicksight:PassDataSet","quicksight:ListIngestions","quicksight:DescribeIngestion"]}]' \</code>
-     * </p>
-     * <p>
-     * <code>--revoke-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user2","Actions":["quicksight:UpdateDataSet","quicksight:DeleteDataSet","quicksight:UpdateDataSetPermissions","quicksight:CreateIngestion","quicksight:CancelIngestion"]}]'</code>
+     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
      * </p>
      * 
      * @param updateDataSetPermissionsRequest
@@ -3350,30 +1990,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates a data source.
      * </p>
-     * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-data-source \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-id=unique-data-source-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My Data Source' \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-parameters='{"PostgreSqlParameters":{"Host":"my-db-host.example.com","Port":1234,"Database":"my-db"}}' \</code>
-     * </p>
-     * <p>
-     * <code>--credentials='{"CredentialPair":{"Username":"username","Password":"password"}}</code>
-     * </p>
      * 
      * @param updateDataSourceRequest
      * @return A Java Future containing the result of the UpdateDataSource operation returned by the service.
@@ -3386,30 +2002,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates a data source.
-     * </p>
-     * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-data-source \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-id=unique-data-source-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My Data Source' \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-parameters='{"PostgreSqlParameters":{"Host":"my-db-host.example.com","Port":1234,"Database":"my-db"}}' \</code>
-     * </p>
-     * <p>
-     * <code>--credentials='{"CredentialPair":{"Username":"username","Password":"password"}}</code>
      * </p>
      * 
      * @param updateDataSourceRequest
@@ -3429,30 +2021,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates the permissions to a data source.
      * </p>
-     * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-data-source-permissions \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-id=unique-data-source-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My Data Source' \</code>
-     * </p>
-     * <p>
-     * <code>--grant-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user1","Actions":["quicksight:DescribeDataSource","quicksight:DescribeDataSourcePermissions","quicksight:PassDataSource"]}]' \</code>
-     * </p>
-     * <p>
-     * <code>--revoke-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user2","Actions":["quicksight:UpdateDataSource","quicksight:DeleteDataSource","quicksight:UpdateDataSourcePermissions"]}]'</code>
-     * </p>
      * 
      * @param updateDataSourcePermissionsRequest
      * @return A Java Future containing the result of the UpdateDataSourcePermissions operation returned by the service.
@@ -3466,30 +2034,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates the permissions to a data source.
-     * </p>
-     * <p>
-     * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:datasource/data-source-id</code>
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-data-source-permissions \</code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id=111122223333 \</code>
-     * </p>
-     * <p>
-     * <code>--data-source-id=unique-data-source-id \</code>
-     * </p>
-     * <p>
-     * <code>--name='My Data Source' \</code>
-     * </p>
-     * <p>
-     * <code>--grant-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user1","Actions":["quicksight:DescribeDataSource","quicksight:DescribeDataSourcePermissions","quicksight:PassDataSource"]}]' \</code>
-     * </p>
-     * <p>
-     * <code>--revoke-permissions='[{"Principal":"arn:aws:quicksight:us-east-1:111122223333:user/default/user2","Actions":["quicksight:UpdateDataSource","quicksight:DeleteDataSource","quicksight:UpdateDataSourcePermissions"]}]'</code>
      * </p>
      * 
      * @param updateDataSourcePermissionsRequest
@@ -3510,19 +2054,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Changes a group description.
      * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * The response is a group object.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default --group-name=Sales --description="Sales BI Dashboards" </code>
-     * </p>
      * 
      * @param updateGroupRequest
      * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
@@ -3535,19 +2066,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Changes a group description.
-     * </p>
-     * <p>
-     * The permissions resource is
-     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
-     * </p>
-     * <p>
-     * The response is a group object.
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default --group-name=Sales --description="Sales BI Dashboards" </code>
      * </p>
      * 
      * @param updateGroupRequest
@@ -3568,12 +2086,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Updates an existing assignment. This operation updates only the optional parameter or parameters that are
      * specified in the request.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code/>aws quicksight update-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=FullAccessAssignment --assignment-status=DRAFT --policy-arns=arn:aws:iam::aws:policy/AdministratorAccess --identities="user=user-1,user-2,group=admin" --namespace=default --region=us-east-1
-     * </p>
      * 
      * @param updateIAMPolicyAssignmentRequest
      * @return A Java Future containing the result of the UpdateIAMPolicyAssignment operation returned by the service.
@@ -3588,12 +2100,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates an existing assignment. This operation updates only the optional parameter or parameters that are
      * specified in the request.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code/>aws quicksight update-iam-policy-assignment --aws-account-id=111122223333 --assignment-name=FullAccessAssignment --assignment-status=DRAFT --policy-arns=arn:aws:iam::aws:policy/AdministratorAccess --identities="user=user-1,user-2,group=admin" --namespace=default --region=us-east-1
      * </p>
      * 
      * @param updateIAMPolicyAssignmentRequest
@@ -3614,16 +2120,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates a template from an existing QuickSight analysis.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-template --aws-account-id 111122223333 --template-id reports_test_template --data-set-references DataSetPlaceholder=reports,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/c684a204-d134-4c53-a63c-451f72c60c28 DataSetPlaceholder=Elblogs,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/15840b7d-b542-4491-937b-602416b367b3 —source-entity SourceAnalysis=’{Arn=arn:aws:quicksight:us-west-2:111122223333:analysis/c5731fe9-4708-4598-8f6d-cf2a70875b6d}</code>
-     * </p>
-     * <p>
-     * You can also pass in a json file:
-     * <code>aws quicksight update-template —cli-input-json file://create-template.json</code>
-     * </p>
      * 
      * @param updateTemplateRequest
      * @return A Java Future containing the result of the UpdateTemplate operation returned by the service.
@@ -3636,16 +2132,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates a template from an existing QuickSight analysis.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-template --aws-account-id 111122223333 --template-id reports_test_template --data-set-references DataSetPlaceholder=reports,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/c684a204-d134-4c53-a63c-451f72c60c28 DataSetPlaceholder=Elblogs,DataSetArn=arn:aws:quicksight:us-west-2:111122223333:dataset/15840b7d-b542-4491-937b-602416b367b3 —source-entity SourceAnalysis=’{Arn=arn:aws:quicksight:us-west-2:111122223333:analysis/c5731fe9-4708-4598-8f6d-cf2a70875b6d}</code>
-     * </p>
-     * <p>
-     * You can also pass in a json file:
-     * <code>aws quicksight update-template —cli-input-json file://create-template.json</code>
      * </p>
      * 
      * @param updateTemplateRequest
@@ -3665,12 +2151,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates the template alias of a template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-template-alias --aws-account-id 111122223333 --template-id 'reports_test_template' --alias-name STAGING —template-version-number 2 </code>
-     * </p>
      * 
      * @param updateTemplateAliasRequest
      * @return A Java Future containing the result of the UpdateTemplateAlias operation returned by the service.
@@ -3683,12 +2163,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates the template alias of a template.
-     * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <p>
-     * <code>aws quicksight update-template-alias --aws-account-id 111122223333 --template-id 'reports_test_template' --alias-name STAGING —template-version-number 2 </code>
      * </p>
      * 
      * @param updateTemplateAliasRequest
@@ -3708,132 +2182,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates the permissions on a template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight describe-template-permissions —aws-account-id 111122223333 —template-id reports_test_template</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aws quicksight update-template-permissions —cli-input-json file://update-permission.json </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The structure of <code>update-permissions.json</code> to add permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333",</code>
-     * </p>
-     * <p>
-     * <code> "DashboardId": "reports_test_template",</code>
-     * </p>
-     * <p>
-     * <code> "GrantPermissions": [</code>
-     * </p>
-     * <p>
-     * <code> { "Principal": "arn:aws:quicksight:us-east-1:196359894473:user/default/user3",</code>
-     * </p>
-     * <p>
-     * <code> "Actions": [</code>
-     * </p>
-     * <p>
-     * <code> "quicksight:DescribeTemplate",</code>
-     * </p>
-     * <p>
-     * <code> "quicksight:ListTemplateVersions"</code>
-     * </p>
-     * <p>
-     * <code> ] } ] }</code>
-     * </p>
-     * <p>
-     * The structure of <code>update-permissions.json</code> to add permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333",</code>
-     * </p>
-     * <p>
-     * <code> "DashboardId": "reports_test_template",</code>
-     * </p>
-     * <p>
-     * <code> "RevokePermissions": [</code>
-     * </p>
-     * <p>
-     * <code> { "Principal": "arn:aws:quicksight:us-east-1:196359894473:user/default/user3",</code>
-     * </p>
-     * <p>
-     * <code> "Actions": [</code>
-     * </p>
-     * <p>
-     * <code> "quicksight:DescribeTemplate",</code>
-     * </p>
-     * <p>
-     * <code> "quicksight:ListTemplateVersions"</code>
-     * </p>
-     * <p>
-     * <code> ] } ] }</code>
-     * </p>
-     * <p>
-     * To obtain the principal name of a QuickSight group or user, use user describe-group or describe-user. For
-     * example:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-user </code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id 111122223333</code>
-     * </p>
-     * <p>
-     * <code>--namespace default</code>
-     * </p>
-     * <p>
-     * <code>--user-name user2 </code>
-     * </p>
-     * <p>
-     * <code>--region us-east-1</code>
-     * </p>
-     * <p>
-     * <code>{</code>
-     * </p>
-     * <p>
-     * <code> "User": {</code>
-     * </p>
-     * <p>
-     * <code> "Arn": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2",</code>
-     * </p>
-     * <p>
-     * <code> "Active": true,</code>
-     * </p>
-     * <p>
-     * <code> "Email": "user2@example.com",</code>
-     * </p>
-     * <p>
-     * <code> "Role": "ADMIN",</code>
-     * </p>
-     * <p>
-     * <code> "UserName": "user2",</code>
-     * </p>
-     * <p>
-     * <code> "PrincipalId": "federated/iam/abcd2abcdabcdeabc5ab5"</code>
-     * </p>
-     * <p>
-     * <code> },</code>
-     * </p>
-     * <p>
-     * <code> "RequestId": "8f74bb31-6291-448a-a71c-a765a44bae31",</code>
-     * </p>
-     * <p>
-     * <code> "Status": 200</code>
-     * </p>
-     * <p>
-     * <code>}</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param updateTemplatePermissionsRequest
      * @return A Java Future containing the result of the UpdateTemplatePermissions operation returned by the service.
@@ -3848,132 +2196,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates the permissions on a template.
      * </p>
-     * <p>
-     * CLI syntax:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>aws quicksight describe-template-permissions —aws-account-id 111122223333 —template-id reports_test_template</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aws quicksight update-template-permissions —cli-input-json file://update-permission.json </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The structure of <code>update-permissions.json</code> to add permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333",</code>
-     * </p>
-     * <p>
-     * <code> "DashboardId": "reports_test_template",</code>
-     * </p>
-     * <p>
-     * <code> "GrantPermissions": [</code>
-     * </p>
-     * <p>
-     * <code> { "Principal": "arn:aws:quicksight:us-east-1:196359894473:user/default/user3",</code>
-     * </p>
-     * <p>
-     * <code> "Actions": [</code>
-     * </p>
-     * <p>
-     * <code> "quicksight:DescribeTemplate",</code>
-     * </p>
-     * <p>
-     * <code> "quicksight:ListTemplateVersions"</code>
-     * </p>
-     * <p>
-     * <code> ] } ] }</code>
-     * </p>
-     * <p>
-     * The structure of <code>update-permissions.json</code> to add permissions:
-     * </p>
-     * <p>
-     * <code>{ "AwsAccountId": "111122223333",</code>
-     * </p>
-     * <p>
-     * <code> "DashboardId": "reports_test_template",</code>
-     * </p>
-     * <p>
-     * <code> "RevokePermissions": [</code>
-     * </p>
-     * <p>
-     * <code> { "Principal": "arn:aws:quicksight:us-east-1:196359894473:user/default/user3",</code>
-     * </p>
-     * <p>
-     * <code> "Actions": [</code>
-     * </p>
-     * <p>
-     * <code> "quicksight:DescribeTemplate",</code>
-     * </p>
-     * <p>
-     * <code> "quicksight:ListTemplateVersions"</code>
-     * </p>
-     * <p>
-     * <code> ] } ] }</code>
-     * </p>
-     * <p>
-     * To obtain the principal name of a QuickSight group or user, use user describe-group or describe-user. For
-     * example:
-     * </p>
-     * <p>
-     * <code>aws quicksight describe-user </code>
-     * </p>
-     * <p>
-     * <code>--aws-account-id 111122223333</code>
-     * </p>
-     * <p>
-     * <code>--namespace default</code>
-     * </p>
-     * <p>
-     * <code>--user-name user2 </code>
-     * </p>
-     * <p>
-     * <code>--region us-east-1</code>
-     * </p>
-     * <p>
-     * <code>{</code>
-     * </p>
-     * <p>
-     * <code> "User": {</code>
-     * </p>
-     * <p>
-     * <code> "Arn": "arn:aws:quicksight:us-east-1:111122223333:user/default/user2",</code>
-     * </p>
-     * <p>
-     * <code> "Active": true,</code>
-     * </p>
-     * <p>
-     * <code> "Email": "user2@example.com",</code>
-     * </p>
-     * <p>
-     * <code> "Role": "ADMIN",</code>
-     * </p>
-     * <p>
-     * <code> "UserName": "user2",</code>
-     * </p>
-     * <p>
-     * <code> "PrincipalId": "federated/iam/abcd2abcdabcdeabc5ab5"</code>
-     * </p>
-     * <p>
-     * <code> },</code>
-     * </p>
-     * <p>
-     * <code> "RequestId": "8f74bb31-6291-448a-a71c-a765a44bae31",</code>
-     * </p>
-     * <p>
-     * <code> "Status": 200</code>
-     * </p>
-     * <p>
-     * <code>}</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param updateTemplatePermissionsRequest
      * @param asyncHandler
@@ -3993,16 +2215,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates an Amazon QuickSight user.
      * </p>
-     * <p>
-     * The response is a user object that contains the user's Amazon QuickSight user name, email address, active or
-     * inactive status in Amazon QuickSight, Amazon QuickSight role, and Amazon Resource Name (ARN).
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight update-user --user-name=Pat --role=ADMIN --email=new_address@example.com --aws-account-id=111122223333 --namespace=default --region=us-east-1 </code>
-     * </p>
      * 
      * @param updateUserRequest
      * @return A Java Future containing the result of the UpdateUser operation returned by the service.
@@ -4015,16 +2227,6 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates an Amazon QuickSight user.
-     * </p>
-     * <p>
-     * The response is a user object that contains the user's Amazon QuickSight user name, email address, active or
-     * inactive status in Amazon QuickSight, Amazon QuickSight role, and Amazon Resource Name (ARN).
-     * </p>
-     * <p>
-     * <b>CLI Sample:</b>
-     * </p>
-     * <p>
-     * <code>aws quicksight update-user --user-name=Pat --role=ADMIN --email=new_address@example.com --aws-account-id=111122223333 --namespace=default --region=us-east-1 </code>
      * </p>
      * 
      * @param updateUserRequest

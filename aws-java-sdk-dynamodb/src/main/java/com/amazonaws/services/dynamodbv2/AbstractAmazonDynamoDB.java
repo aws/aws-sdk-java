@@ -126,6 +126,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeContributorInsightsResult describeContributorInsights(DescribeContributorInsightsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -182,6 +187,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
 
     @Override
     public ListBackupsResult listBackups(ListBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListContributorInsightsResult listContributorInsights(ListContributorInsightsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -292,6 +302,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
 
     @Override
     public UpdateContinuousBackupsResult updateContinuousBackups(UpdateContinuousBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContributorInsightsResult updateContributorInsights(UpdateContributorInsightsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

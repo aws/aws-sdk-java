@@ -28,6 +28,32 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReportCreationResult> describeReportCreationAsync(DescribeReportCreationRequest request) {
+
+        return describeReportCreationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReportCreationResult> describeReportCreationAsync(DescribeReportCreationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReportCreationRequest, DescribeReportCreationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComplianceSummaryResult> getComplianceSummaryAsync(GetComplianceSummaryRequest request) {
+
+        return getComplianceSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComplianceSummaryResult> getComplianceSummaryAsync(GetComplianceSummaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryRequest, GetComplianceSummaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest request) {
 
         return getResourcesAsync(request, null);
@@ -62,6 +88,19 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     @Override
     public java.util.concurrent.Future<GetTagValuesResult> getTagValuesAsync(GetTagValuesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTagValuesRequest, GetTagValuesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReportCreationResult> startReportCreationAsync(StartReportCreationRequest request) {
+
+        return startReportCreationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReportCreationResult> startReportCreationAsync(StartReportCreationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartReportCreationRequest, StartReportCreationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

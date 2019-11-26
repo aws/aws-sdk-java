@@ -32,7 +32,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-     * from 4 to 32 lower-case letters or digits.
+     * from 4 to 32 lowercase letters or digits.
      * </p>
      */
     private String rootId;
@@ -50,7 +50,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-     * from 4 to 32 lower-case letters or digits.
+     * from 4 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param rootId
@@ -58,7 +58,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      *        the <a>ListRoots</a> operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
-     *        followed by from 4 to 32 lower-case letters or digits.
+     *        followed by from 4 to 32 lowercase letters or digits.
      */
 
     public void setRootId(String rootId) {
@@ -72,14 +72,14 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-     * from 4 to 32 lower-case letters or digits.
+     * from 4 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) of the root in which you want to enable a policy type. You can get the ID from
      *         the <a>ListRoots</a> operation.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
-     *         followed by from 4 to 32 lower-case letters or digits.
+     *         followed by from 4 to 32 lowercase letters or digits.
      */
 
     public String getRootId() {
@@ -93,7 +93,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-     * from 4 to 32 lower-case letters or digits.
+     * from 4 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param rootId
@@ -101,7 +101,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      *        the <a>ListRoots</a> operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
-     *        followed by from 4 to 32 lower-case letters or digits.
+     *        followed by from 4 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

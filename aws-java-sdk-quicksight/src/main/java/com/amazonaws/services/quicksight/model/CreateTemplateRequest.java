@@ -46,15 +46,15 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     private String name;
     /**
      * <p>
-     * A list of resource permissions to be set on the template. The shorthand syntax should look similar to this:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be set on the template.
      * </p>
      */
     private java.util.List<ResourcePermission> permissions;
     /**
      * <p>
-     * The ARN of the source entity from which this template is being created. Templates can be currently created from
-     * an analysis or another template. If the ARN is for an analysis, you must include its dataset references.
+     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates can be
+     * currently created from an analysis or another template. If the ARN is for an analysis, you must include its
+     * dataset references.
      * </p>
      */
     private TemplateSourceEntity sourceEntity;
@@ -201,12 +201,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of resource permissions to be set on the template. The shorthand syntax should look similar to this:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be set on the template.
      * </p>
      * 
-     * @return A list of resource permissions to be set on the template. The shorthand syntax should look similar to
-     *         this: <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * @return A list of resource permissions to be set on the template.
      */
 
     public java.util.List<ResourcePermission> getPermissions() {
@@ -215,13 +213,11 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of resource permissions to be set on the template. The shorthand syntax should look similar to this:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be set on the template.
      * </p>
      * 
      * @param permissions
-     *        A list of resource permissions to be set on the template. The shorthand syntax should look similar to
-     *        this: <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be set on the template.
      */
 
     public void setPermissions(java.util.Collection<ResourcePermission> permissions) {
@@ -235,8 +231,7 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of resource permissions to be set on the template. The shorthand syntax should look similar to this:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be set on the template.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -245,8 +240,7 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param permissions
-     *        A list of resource permissions to be set on the template. The shorthand syntax should look similar to
-     *        this: <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be set on the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,13 +256,11 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of resource permissions to be set on the template. The shorthand syntax should look similar to this:
-     * <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     * A list of resource permissions to be set on the template.
      * </p>
      * 
      * @param permissions
-     *        A list of resource permissions to be set on the template. The shorthand syntax should look similar to
-     *        this: <code>Shorthand Syntax: Principal=string,Actions=string,string ... </code>
+     *        A list of resource permissions to be set on the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,14 +271,15 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the source entity from which this template is being created. Templates can be currently created from
-     * an analysis or another template. If the ARN is for an analysis, you must include its dataset references.
+     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates can be
+     * currently created from an analysis or another template. If the ARN is for an analysis, you must include its
+     * dataset references.
      * </p>
      * 
      * @param sourceEntity
-     *        The ARN of the source entity from which this template is being created. Templates can be currently created
-     *        from an analysis or another template. If the ARN is for an analysis, you must include its dataset
-     *        references.
+     *        The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates
+     *        can be currently created from an analysis or another template. If the ARN is for an analysis, you must
+     *        include its dataset references.
      */
 
     public void setSourceEntity(TemplateSourceEntity sourceEntity) {
@@ -295,13 +288,14 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the source entity from which this template is being created. Templates can be currently created from
-     * an analysis or another template. If the ARN is for an analysis, you must include its dataset references.
+     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates can be
+     * currently created from an analysis or another template. If the ARN is for an analysis, you must include its
+     * dataset references.
      * </p>
      * 
-     * @return The ARN of the source entity from which this template is being created. Templates can be currently
-     *         created from an analysis or another template. If the ARN is for an analysis, you must include its dataset
-     *         references.
+     * @return The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates
+     *         can be currently created from an analysis or another template. If the ARN is for an analysis, you must
+     *         include its dataset references.
      */
 
     public TemplateSourceEntity getSourceEntity() {
@@ -310,14 +304,15 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the source entity from which this template is being created. Templates can be currently created from
-     * an analysis or another template. If the ARN is for an analysis, you must include its dataset references.
+     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates can be
+     * currently created from an analysis or another template. If the ARN is for an analysis, you must include its
+     * dataset references.
      * </p>
      * 
      * @param sourceEntity
-     *        The ARN of the source entity from which this template is being created. Templates can be currently created
-     *        from an analysis or another template. If the ARN is for an analysis, you must include its dataset
-     *        references.
+     *        The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates
+     *        can be currently created from an analysis or another template. If the ARN is for an analysis, you must
+     *        include its dataset references.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

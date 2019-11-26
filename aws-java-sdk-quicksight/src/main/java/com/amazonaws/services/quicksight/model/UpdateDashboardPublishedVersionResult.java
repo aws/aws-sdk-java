@@ -32,13 +32,13 @@ public class UpdateDashboardPublishedVersionResult extends com.amazonaws.AmazonW
     private String dashboardId;
     /**
      * <p>
-     * The ARN of the dashboard.
+     * The Amazon Resource Name (ARN) of the dashboard.
      * </p>
      */
     private String dashboardArn;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
@@ -91,11 +91,11 @@ public class UpdateDashboardPublishedVersionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the dashboard.
+     * The Amazon Resource Name (ARN) of the dashboard.
      * </p>
      * 
      * @param dashboardArn
-     *        The ARN of the dashboard.
+     *        The Amazon Resource Name (ARN) of the dashboard.
      */
 
     public void setDashboardArn(String dashboardArn) {
@@ -104,10 +104,10 @@ public class UpdateDashboardPublishedVersionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the dashboard.
+     * The Amazon Resource Name (ARN) of the dashboard.
      * </p>
      * 
-     * @return The ARN of the dashboard.
+     * @return The Amazon Resource Name (ARN) of the dashboard.
      */
 
     public String getDashboardArn() {
@@ -116,11 +116,11 @@ public class UpdateDashboardPublishedVersionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the dashboard.
+     * The Amazon Resource Name (ARN) of the dashboard.
      * </p>
      * 
      * @param dashboardArn
-     *        The ARN of the dashboard.
+     *        The Amazon Resource Name (ARN) of the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +131,11 @@ public class UpdateDashboardPublishedVersionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -144,10 +144,10 @@ public class UpdateDashboardPublishedVersionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -156,11 +156,11 @@ public class UpdateDashboardPublishedVersionResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

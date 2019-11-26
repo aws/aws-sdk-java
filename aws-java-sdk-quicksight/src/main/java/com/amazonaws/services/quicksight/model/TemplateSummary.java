@@ -36,7 +36,7 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
     private String arn;
     /**
      * <p>
-     * The ID of the template. This is unique per region per AWS account.
+     * The ID of the template. This is unique per AWS Region for each AWS account.
      * </p>
      */
     private String templateId;
@@ -107,11 +107,11 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the template. This is unique per region per AWS account.
+     * The ID of the template. This is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param templateId
-     *        The ID of the template. This is unique per region per AWS account.
+     *        The ID of the template. This is unique per AWS Region for each AWS account.
      */
 
     public void setTemplateId(String templateId) {
@@ -120,10 +120,10 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the template. This is unique per region per AWS account.
+     * The ID of the template. This is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID of the template. This is unique per region per AWS account.
+     * @return The ID of the template. This is unique per AWS Region for each AWS account.
      */
 
     public String getTemplateId() {
@@ -132,11 +132,11 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the template. This is unique per region per AWS account.
+     * The ID of the template. This is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param templateId
-     *        The ID of the template. This is unique per region per AWS account.
+     *        The ID of the template. This is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

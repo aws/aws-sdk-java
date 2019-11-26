@@ -42,6 +42,11 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
  * </p>
  * </li>

@@ -39,8 +39,9 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
     private String templateId;
     /**
      * <p>
-     * The alias of the template. If alias-name is provided, the version that the alias-name points to is deleted. Alias
-     * names that start with <code>$</code> are reserved by QuickSight and can't be deleted.”
+     * The alias of the template that you want to delete. If you provide a specific alias, you delete the version that
+     * the alias points to. You can specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * </p>
      */
     private String aliasName;
@@ -127,13 +128,15 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template. If alias-name is provided, the version that the alias-name points to is deleted. Alias
-     * names that start with <code>$</code> are reserved by QuickSight and can't be deleted.”
+     * The alias of the template that you want to delete. If you provide a specific alias, you delete the version that
+     * the alias points to. You can specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template. If alias-name is provided, the version that the alias-name points to is
-     *        deleted. Alias names that start with <code>$</code> are reserved by QuickSight and can't be deleted.”
+     *        The alias of the template that you want to delete. If you provide a specific alias, you delete the version
+     *        that the alias points to. You can specify the latest version of the template by providing the keyword
+     *        <code>$LATEST</code> in the <code>AliasName</code> parameter.
      */
 
     public void setAliasName(String aliasName) {
@@ -142,12 +145,14 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template. If alias-name is provided, the version that the alias-name points to is deleted. Alias
-     * names that start with <code>$</code> are reserved by QuickSight and can't be deleted.”
+     * The alias of the template that you want to delete. If you provide a specific alias, you delete the version that
+     * the alias points to. You can specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * </p>
      * 
-     * @return The alias of the template. If alias-name is provided, the version that the alias-name points to is
-     *         deleted. Alias names that start with <code>$</code> are reserved by QuickSight and can't be deleted.”
+     * @return The alias of the template that you want to delete. If you provide a specific alias, you delete the
+     *         version that the alias points to. You can specify the latest version of the template by providing the
+     *         keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
      */
 
     public String getAliasName() {
@@ -156,13 +161,15 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template. If alias-name is provided, the version that the alias-name points to is deleted. Alias
-     * names that start with <code>$</code> are reserved by QuickSight and can't be deleted.”
+     * The alias of the template that you want to delete. If you provide a specific alias, you delete the version that
+     * the alias points to. You can specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template. If alias-name is provided, the version that the alias-name points to is
-     *        deleted. Alias names that start with <code>$</code> are reserved by QuickSight and can't be deleted.”
+     *        The alias of the template that you want to delete. If you provide a specific alias, you delete the version
+     *        that the alias points to. You can specify the latest version of the template by providing the keyword
+     *        <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

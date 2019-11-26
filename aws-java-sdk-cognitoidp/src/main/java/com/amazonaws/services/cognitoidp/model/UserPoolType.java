@@ -227,6 +227,16 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * Use this setting to define which verified available method a user can use to recover their password when they
+     * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
+     * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
+     * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred over email.
+     * </p>
+     */
+    private AccountRecoverySettingType accountRecoverySetting;
 
     /**
      * <p>
@@ -1897,6 +1907,70 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Use this setting to define which verified available method a user can use to recover their password when they
+     * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
+     * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
+     * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred over email.
+     * </p>
+     * 
+     * @param accountRecoverySetting
+     *        Use this setting to define which verified available method a user can use to recover their password when
+     *        they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
+     *        than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism
+     *        if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to
+     *        determine the recovery method where SMS is preferred over email.
+     */
+
+    public void setAccountRecoverySetting(AccountRecoverySettingType accountRecoverySetting) {
+        this.accountRecoverySetting = accountRecoverySetting;
+    }
+
+    /**
+     * <p>
+     * Use this setting to define which verified available method a user can use to recover their password when they
+     * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
+     * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
+     * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred over email.
+     * </p>
+     * 
+     * @return Use this setting to define which verified available method a user can use to recover their password when
+     *         they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
+     *         than one method available. With this setting, SMS does not qualify for a valid password recovery
+     *         mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy
+     *         behavior to determine the recovery method where SMS is preferred over email.
+     */
+
+    public AccountRecoverySettingType getAccountRecoverySetting() {
+        return this.accountRecoverySetting;
+    }
+
+    /**
+     * <p>
+     * Use this setting to define which verified available method a user can use to recover their password when they
+     * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
+     * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
+     * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
+     * method where SMS is preferred over email.
+     * </p>
+     * 
+     * @param accountRecoverySetting
+     *        Use this setting to define which verified available method a user can use to recover their password when
+     *        they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
+     *        than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism
+     *        if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to
+     *        determine the recovery method where SMS is preferred over email.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withAccountRecoverySetting(AccountRecoverySettingType accountRecoverySetting) {
+        setAccountRecoverySetting(accountRecoverySetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1965,7 +2039,9 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         if (getUserPoolAddOns() != null)
             sb.append("UserPoolAddOns: ").append(getUserPoolAddOns()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getAccountRecoverySetting() != null)
+            sb.append("AccountRecoverySetting: ").append(getAccountRecoverySetting());
         sb.append("}");
         return sb.toString();
     }
@@ -2096,6 +2172,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getAccountRecoverySetting() == null ^ this.getAccountRecoverySetting() == null)
+            return false;
+        if (other.getAccountRecoverySetting() != null && other.getAccountRecoverySetting().equals(this.getAccountRecoverySetting()) == false)
+            return false;
         return true;
     }
 
@@ -2133,6 +2213,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAccountRecoverySetting() == null) ? 0 : getAccountRecoverySetting().hashCode());
         return hashCode;
     }
 

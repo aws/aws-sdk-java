@@ -33,7 +33,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String awsAccountId;
     /**
      * <p>
-     * An ID for the dataset you want to create. This is unique per region per AWS account.
+     * An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSetId;
@@ -63,7 +63,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String importMode;
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      */
@@ -129,11 +129,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An ID for the dataset you want to create. This is unique per region per AWS account.
+     * An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSetId
-     *        An ID for the dataset you want to create. This is unique per region per AWS account.
+     *        An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSetId(String dataSetId) {
@@ -142,10 +142,10 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An ID for the dataset you want to create. This is unique per region per AWS account.
+     * An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return An ID for the dataset you want to create. This is unique per region per AWS account.
+     * @return An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSetId() {
@@ -154,11 +154,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An ID for the dataset you want to create. This is unique per region per AWS account.
+     * An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSetId
-     *        An ID for the dataset you want to create. This is unique per region per AWS account.
+     *        An ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,11 +390,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      * 
-     * @return Groupings of columns that work together in certain QuickSight features. Currently only geospatial
+     * @return Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
      *         hierarchy is supported.
      */
 
@@ -404,12 +404,12 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently only geospatial
+     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      */
 
@@ -424,7 +424,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      * <p>
@@ -434,7 +434,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently only geospatial
+     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -451,12 +451,12 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently only geospatial
+     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

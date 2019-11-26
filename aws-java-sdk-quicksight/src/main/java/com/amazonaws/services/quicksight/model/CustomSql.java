@@ -30,7 +30,7 @@ public class CustomSql implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      */
     private String dataSourceArn;
@@ -55,11 +55,11 @@ public class CustomSql implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        The ARN of the data source.
+     *        The Amazon Resource Name (ARN) of the data source.
      */
 
     public void setDataSourceArn(String dataSourceArn) {
@@ -68,10 +68,10 @@ public class CustomSql implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
-     * @return The ARN of the data source.
+     * @return The Amazon Resource Name (ARN) of the data source.
      */
 
     public String getDataSourceArn() {
@@ -80,11 +80,11 @@ public class CustomSql implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        The ARN of the data source.
+     *        The Amazon Resource Name (ARN) of the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

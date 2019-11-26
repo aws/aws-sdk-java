@@ -30,7 +30,7 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Data source ARN.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      */
     private String dataSourceArn;
@@ -55,11 +55,11 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Data source ARN.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        Data source ARN.
+     *        The Amazon Resource Name (ARN) for the data source.
      */
 
     public void setDataSourceArn(String dataSourceArn) {
@@ -68,10 +68,10 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Data source ARN.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
-     * @return Data source ARN.
+     * @return The Amazon Resource Name (ARN) for the data source.
      */
 
     public String getDataSourceArn() {
@@ -80,11 +80,11 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Data source ARN.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        Data source ARN.
+     *        The Amazon Resource Name (ARN) for the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -90,7 +90,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
     private Long consumedSpiceCapacityInBytes;
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      */
@@ -599,11 +599,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      * 
-     * @return Groupings of columns that work together in certain QuickSight features. Currently only geospatial
+     * @return Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
      *         hierarchy is supported.
      */
 
@@ -613,12 +613,12 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently only geospatial
+     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      */
 
@@ -633,7 +633,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      * <p>
@@ -643,7 +643,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently only geospatial
+     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -660,12 +660,12 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently only geospatial hierarchy is
+     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
      * supported.
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently only geospatial
+     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

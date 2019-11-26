@@ -32,7 +32,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
-     * from 8 to 128 lower-case letters or digits.
+     * from 8 to 128 lowercase letters or digits.
      * </p>
      */
     private String policyId;
@@ -48,7 +48,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      * </p>
      * </li>
      * <li>
@@ -58,9 +58,9 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case letters or
-     * digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.
+     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or
+     * digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32
+     * additional lowercase letters or digits.
      * </p>
      * </li>
      * </ul>
@@ -74,7 +74,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
-     * from 8 to 128 lower-case letters or digits.
+     * from 8 to 128 lowercase letters or digits.
      * </p>
      * 
      * @param policyId
@@ -82,7 +82,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
-     *        followed by from 8 to 128 lower-case letters or digits.
+     *        followed by from 8 to 128 lowercase letters or digits.
      */
 
     public void setPolicyId(String policyId) {
@@ -96,14 +96,14 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
-     * from 8 to 128 lower-case letters or digits.
+     * from 8 to 128 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) of the policy you want to detach. You can get the ID from the
      *         <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
-     *         followed by from 8 to 128 lower-case letters or digits.
+     *         followed by from 8 to 128 lowercase letters or digits.
      */
 
     public String getPolicyId() {
@@ -117,7 +117,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
-     * from 8 to 128 lower-case letters or digits.
+     * from 8 to 128 lowercase letters or digits.
      * </p>
      * 
      * @param policyId
@@ -125,7 +125,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
-     *        followed by from 8 to 128 lower-case letters or digits.
+     *        followed by from 8 to 128 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,7 +146,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      * </p>
      * </li>
      * <li>
@@ -156,9 +156,9 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case letters or
-     * digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.
+     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or
+     * digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32
+     * additional lowercase letters or digits.
      * </p>
      * </li>
      * </ul>
@@ -174,7 +174,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     *        <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      *        </p>
      *        </li>
      *        <li>
@@ -184,9 +184,9 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     *        letters or digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32
-     *        additional lower-case letters or digits.
+     *        <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     *        letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and
+     *        from 8 to 32 additional lowercase letters or digits.
      *        </p>
      *        </li>
      */
@@ -207,7 +207,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      * </p>
      * </li>
      * <li>
@@ -217,9 +217,9 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case letters or
-     * digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.
+     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or
+     * digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32
+     * additional lowercase letters or digits.
      * </p>
      * </li>
      * </ul>
@@ -234,7 +234,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     *         <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      *         </p>
      *         </li>
      *         <li>
@@ -244,9 +244,9 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     *         letters or digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32
-     *         additional lower-case letters or digits.
+     *         <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     *         letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash
+     *         and from 8 to 32 additional lowercase letters or digits.
      *         </p>
      *         </li>
      */
@@ -267,7 +267,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      * </p>
      * </li>
      * <li>
@@ -277,9 +277,9 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case letters or
-     * digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.
+     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or
+     * digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32
+     * additional lowercase letters or digits.
      * </p>
      * </li>
      * </ul>
@@ -295,7 +295,7 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     *        <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      *        </p>
      *        </li>
      *        <li>
@@ -305,9 +305,9 @@ public class DetachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     *        letters or digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32
-     *        additional lower-case letters or digits.
+     *        <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     *        letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and
+     *        from 8 to 32 additional lowercase letters or digits.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -33,7 +33,7 @@ public class UpdateDataSetPermissionsRequest extends com.amazonaws.AmazonWebServ
     private String awsAccountId;
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSetId;
@@ -92,11 +92,11 @@ public class UpdateDataSetPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset you want to create. This is unique per region per AWS account.
+     *        The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSetId(String dataSetId) {
@@ -105,10 +105,10 @@ public class UpdateDataSetPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID for the dataset you want to create. This is unique per region per AWS account.
+     * @return The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSetId() {
@@ -117,11 +117,11 @@ public class UpdateDataSetPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset you want to create. This is unique per region per AWS account.
+     *        The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

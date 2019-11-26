@@ -27,7 +27,7 @@ public class CreateLogSubscriptionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified
+     * Identifier of the directory to which you want to subscribe and receive real-time logs to your specified
      * CloudWatch log group.
      * </p>
      */
@@ -41,13 +41,13 @@ public class CreateLogSubscriptionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified
+     * Identifier of the directory to which you want to subscribe and receive real-time logs to your specified
      * CloudWatch log group.
      * </p>
      * 
      * @param directoryId
-     *        Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your
-     *        specified CloudWatch log group.
+     *        Identifier of the directory to which you want to subscribe and receive real-time logs to your specified
+     *        CloudWatch log group.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -56,12 +56,12 @@ public class CreateLogSubscriptionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified
+     * Identifier of the directory to which you want to subscribe and receive real-time logs to your specified
      * CloudWatch log group.
      * </p>
      * 
-     * @return Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your
-     *         specified CloudWatch log group.
+     * @return Identifier of the directory to which you want to subscribe and receive real-time logs to your specified
+     *         CloudWatch log group.
      */
 
     public String getDirectoryId() {
@@ -70,13 +70,13 @@ public class CreateLogSubscriptionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified
+     * Identifier of the directory to which you want to subscribe and receive real-time logs to your specified
      * CloudWatch log group.
      * </p>
      * 
      * @param directoryId
-     *        Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your
-     *        specified CloudWatch log group.
+     *        Identifier of the directory to which you want to subscribe and receive real-time logs to your specified
+     *        CloudWatch log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

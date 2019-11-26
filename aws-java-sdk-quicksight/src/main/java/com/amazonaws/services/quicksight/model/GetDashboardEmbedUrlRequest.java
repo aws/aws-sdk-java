@@ -39,7 +39,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     private String dashboardId;
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM only).
+     * The authentication method the user uses to sign in.
      * </p>
      */
     private String identityType;
@@ -63,8 +63,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean resetDisabled;
     /**
      * <p>
-     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any
-     * Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:
+     * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
+     * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
+     * of the following:
      * </p>
      * <ul>
      * <li>
@@ -169,11 +170,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM only).
+     * The authentication method the user uses to sign in.
      * </p>
      * 
      * @param identityType
-     *        The authentication method the user uses to sign in (IAM only).
+     *        The authentication method the user uses to sign in.
      * @see IdentityType
      */
 
@@ -183,10 +184,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM only).
+     * The authentication method the user uses to sign in.
      * </p>
      * 
-     * @return The authentication method the user uses to sign in (IAM only).
+     * @return The authentication method the user uses to sign in.
      * @see IdentityType
      */
 
@@ -196,11 +197,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM only).
+     * The authentication method the user uses to sign in.
      * </p>
      * 
      * @param identityType
-     *        The authentication method the user uses to sign in (IAM only).
+     *        The authentication method the user uses to sign in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -212,11 +213,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM only).
+     * The authentication method the user uses to sign in.
      * </p>
      * 
      * @param identityType
-     *        The authentication method the user uses to sign in (IAM only).
+     *        The authentication method the user uses to sign in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -376,8 +377,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any
-     * Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:
+     * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
+     * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
+     * of the following:
      * </p>
      * <ul>
      * <li>
@@ -399,9 +401,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @param userArn
-     *        The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for
-     *        any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the
-     *        following:</p>
+     *        The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
+     *        type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins)
+     *        authenticated as one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -427,8 +429,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any
-     * Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:
+     * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
+     * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
+     * of the following:
      * </p>
      * <ul>
      * <li>
@@ -449,9 +452,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * 
-     * @return The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this
-     *         for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the
-     *         following:</p>
+     * @return The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
+     *         type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins)
+     *         authenticated as one of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -477,8 +480,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for any
-     * Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:
+     * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
+     * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
+     * of the following:
      * </p>
      * <ul>
      * <li>
@@ -500,9 +504,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @param userArn
-     *        The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code> identity type. You can use this for
-     *        any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the
-     *        following:</p>
+     *        The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
+     *        type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins)
+     *        authenticated as one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>

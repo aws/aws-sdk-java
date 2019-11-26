@@ -60,7 +60,8 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
     private String assignmentStatus;
     /**
      * <p>
-     * An IAM policy ARN that is applied to the QuickSight users and groups specified in this assignment.
+     * An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and groups specified in this
+     * assignment.
      * </p>
      */
     private String policyArn;
@@ -78,7 +79,7 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
     private String requestId;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
@@ -356,11 +357,13 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An IAM policy ARN that is applied to the QuickSight users and groups specified in this assignment.
+     * An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and groups specified in this
+     * assignment.
      * </p>
      * 
      * @param policyArn
-     *        An IAM policy ARN that is applied to the QuickSight users and groups specified in this assignment.
+     *        An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and groups specified in
+     *        this assignment.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -369,10 +372,12 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An IAM policy ARN that is applied to the QuickSight users and groups specified in this assignment.
+     * An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and groups specified in this
+     * assignment.
      * </p>
      * 
-     * @return An IAM policy ARN that is applied to the QuickSight users and groups specified in this assignment.
+     * @return An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and groups specified in
+     *         this assignment.
      */
 
     public String getPolicyArn() {
@@ -381,11 +386,13 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An IAM policy ARN that is applied to the QuickSight users and groups specified in this assignment.
+     * An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and groups specified in this
+     * assignment.
      * </p>
      * 
      * @param policyArn
-     *        An IAM policy ARN that is applied to the QuickSight users and groups specified in this assignment.
+     *        An IAM policy Amazon Resource Name (ARN) that is applied to the QuickSight users and groups specified in
+     *        this assignment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,11 +504,11 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -510,10 +517,10 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -522,11 +529,11 @@ public class CreateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

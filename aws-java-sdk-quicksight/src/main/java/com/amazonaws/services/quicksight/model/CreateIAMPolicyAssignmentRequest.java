@@ -62,7 +62,8 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
     private String assignmentStatus;
     /**
      * <p>
-     * An IAM policy ARN that you want to apply to the QuickSight users and groups specified in this assignment.
+     * An IAM policy Amazon Resource Name (ARN) that you want to apply to the QuickSight users and groups specified in
+     * this assignment.
      * </p>
      */
     private String policyArn;
@@ -352,11 +353,13 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An IAM policy ARN that you want to apply to the QuickSight users and groups specified in this assignment.
+     * An IAM policy Amazon Resource Name (ARN) that you want to apply to the QuickSight users and groups specified in
+     * this assignment.
      * </p>
      * 
      * @param policyArn
-     *        An IAM policy ARN that you want to apply to the QuickSight users and groups specified in this assignment.
+     *        An IAM policy Amazon Resource Name (ARN) that you want to apply to the QuickSight users and groups
+     *        specified in this assignment.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -365,10 +368,12 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An IAM policy ARN that you want to apply to the QuickSight users and groups specified in this assignment.
+     * An IAM policy Amazon Resource Name (ARN) that you want to apply to the QuickSight users and groups specified in
+     * this assignment.
      * </p>
      * 
-     * @return An IAM policy ARN that you want to apply to the QuickSight users and groups specified in this assignment.
+     * @return An IAM policy Amazon Resource Name (ARN) that you want to apply to the QuickSight users and groups
+     *         specified in this assignment.
      */
 
     public String getPolicyArn() {
@@ -377,11 +382,13 @@ public class CreateIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An IAM policy ARN that you want to apply to the QuickSight users and groups specified in this assignment.
+     * An IAM policy Amazon Resource Name (ARN) that you want to apply to the QuickSight users and groups specified in
+     * this assignment.
      * </p>
      * 
      * @param policyArn
-     *        An IAM policy ARN that you want to apply to the QuickSight users and groups specified in this assignment.
+     *        An IAM policy Amazon Resource Name (ARN) that you want to apply to the QuickSight users and groups
+     *        specified in this assignment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

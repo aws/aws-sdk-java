@@ -16,10 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Performing this operation violates a minimum or maximum value limit. For example, attempting to remove the last
- * service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or
- * attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional
- * information about the violated limit.
+ * Performing this operation violates a minimum or maximum value limit. Examples include attempting to remove the last
+ * service control policy (SCP) from an OU or root, or attaching too many policies to an account, OU, or root. This
+ * exception includes a reason that contains additional information about the violated limit.
  * </p>
  * <p>
  * Some of the reasons in the following list might not be applicable to this specific API or operation:
@@ -129,8 +128,8 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the
- * entity to have fewer than the minimum number of policies of a certain type required.
+ * MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity, which would cause the
+ * entity to have fewer than the minimum number of policies of the required type.
  * </p>
  * </li>
  * <li>

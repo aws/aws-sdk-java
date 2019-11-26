@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PolicyType {
 
-    SERVICE_CONTROL_POLICY("SERVICE_CONTROL_POLICY");
+    SERVICE_CONTROL_POLICY("SERVICE_CONTROL_POLICY"),
+    TAG_POLICY("TAG_POLICY");
 
     private String value;
 

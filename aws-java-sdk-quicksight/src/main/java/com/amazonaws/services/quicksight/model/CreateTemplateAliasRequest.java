@@ -39,8 +39,8 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
     private String templateId;
     /**
      * <p>
-     * The name you want to give the template's alias. Alias names can't begin with a <code>$</code>, which is reserved
-     * by QuickSight. Alias names that start with ‘$’ sign are QuickSight reserved naming and can't be deleted.
+     * The name that you want to give to the template alias that you're creating. Aliases that start with <code>$</code>
+     * are reserved by QuickSight.
      * </p>
      */
     private String aliasName;
@@ -133,14 +133,13 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name you want to give the template's alias. Alias names can't begin with a <code>$</code>, which is reserved
-     * by QuickSight. Alias names that start with ‘$’ sign are QuickSight reserved naming and can't be deleted.
+     * The name that you want to give to the template alias that you're creating. Aliases that start with <code>$</code>
+     * are reserved by QuickSight.
      * </p>
      * 
      * @param aliasName
-     *        The name you want to give the template's alias. Alias names can't begin with a <code>$</code>, which is
-     *        reserved by QuickSight. Alias names that start with ‘$’ sign are QuickSight reserved naming and can't be
-     *        deleted.
+     *        The name that you want to give to the template alias that you're creating. Aliases that start with
+     *        <code>$</code> are reserved by QuickSight.
      */
 
     public void setAliasName(String aliasName) {
@@ -149,13 +148,12 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name you want to give the template's alias. Alias names can't begin with a <code>$</code>, which is reserved
-     * by QuickSight. Alias names that start with ‘$’ sign are QuickSight reserved naming and can't be deleted.
+     * The name that you want to give to the template alias that you're creating. Aliases that start with <code>$</code>
+     * are reserved by QuickSight.
      * </p>
      * 
-     * @return The name you want to give the template's alias. Alias names can't begin with a <code>$</code>, which is
-     *         reserved by QuickSight. Alias names that start with ‘$’ sign are QuickSight reserved naming and can't be
-     *         deleted.
+     * @return The name that you want to give to the template alias that you're creating. Aliases that start with
+     *         <code>$</code> are reserved by QuickSight.
      */
 
     public String getAliasName() {
@@ -164,14 +162,13 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name you want to give the template's alias. Alias names can't begin with a <code>$</code>, which is reserved
-     * by QuickSight. Alias names that start with ‘$’ sign are QuickSight reserved naming and can't be deleted.
+     * The name that you want to give to the template alias that you're creating. Aliases that start with <code>$</code>
+     * are reserved by QuickSight.
      * </p>
      * 
      * @param aliasName
-     *        The name you want to give the template's alias. Alias names can't begin with a <code>$</code>, which is
-     *        reserved by QuickSight. Alias names that start with ‘$’ sign are QuickSight reserved naming and can't be
-     *        deleted.
+     *        The name that you want to give to the template alias that you're creating. Aliases that start with
+     *        <code>$</code> are reserved by QuickSight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

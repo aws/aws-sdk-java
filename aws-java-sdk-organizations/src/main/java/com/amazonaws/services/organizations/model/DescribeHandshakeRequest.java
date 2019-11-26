@@ -33,7 +33,7 @@ public class DescribeHandshakeRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      */
     private String handshakeId;
@@ -46,7 +46,7 @@ public class DescribeHandshakeRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param handshakeId
@@ -55,7 +55,7 @@ public class DescribeHandshakeRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <a>ListHandshakesForOrganization</a>.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *        followed by from 8 to 32 lower-case letters or digits.
+     *        followed by from 8 to 32 lowercase letters or digits.
      */
 
     public void setHandshakeId(String handshakeId) {
@@ -70,7 +70,7 @@ public class DescribeHandshakeRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) of the handshake that you want information about. You can get the ID from the
@@ -78,7 +78,7 @@ public class DescribeHandshakeRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <a>ListHandshakesForOrganization</a>.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *         followed by from 8 to 32 lower-case letters or digits.
+     *         followed by from 8 to 32 lowercase letters or digits.
      */
 
     public String getHandshakeId() {
@@ -93,7 +93,7 @@ public class DescribeHandshakeRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param handshakeId
@@ -102,7 +102,7 @@ public class DescribeHandshakeRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <a>ListHandshakesForOrganization</a>.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *        followed by from 8 to 32 lower-case letters or digits.
+     *        followed by from 8 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

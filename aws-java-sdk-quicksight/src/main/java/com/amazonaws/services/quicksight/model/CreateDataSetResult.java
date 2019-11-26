@@ -25,20 +25,19 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the dataset.
+     * The Amazon Resource Name (ARN) of the dataset.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSetId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the ingestion, which is triggered as a result of dataset creation if the
-     * import mode is SPICE
+     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
      * </p>
      */
     private String ingestionArn;
@@ -56,18 +55,18 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
     private String requestId;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
 
     /**
      * <p>
-     * The ARN of the dataset.
+     * The Amazon Resource Name (ARN) of the dataset.
      * </p>
      * 
      * @param arn
-     *        The ARN of the dataset.
+     *        The Amazon Resource Name (ARN) of the dataset.
      */
 
     public void setArn(String arn) {
@@ -76,10 +75,10 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the dataset.
+     * The Amazon Resource Name (ARN) of the dataset.
      * </p>
      * 
-     * @return The ARN of the dataset.
+     * @return The Amazon Resource Name (ARN) of the dataset.
      */
 
     public String getArn() {
@@ -88,11 +87,11 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the dataset.
+     * The Amazon Resource Name (ARN) of the dataset.
      * </p>
      * 
      * @param arn
-     *        The ARN of the dataset.
+     *        The Amazon Resource Name (ARN) of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +102,11 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset you want to create. This is unique per region per AWS account.
+     *        The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSetId(String dataSetId) {
@@ -116,10 +115,10 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID for the dataset you want to create. This is unique per region per AWS account.
+     * @return The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSetId() {
@@ -128,11 +127,11 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset you want to create. This is unique per region per AWS account.
+     *        The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,13 +142,11 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the ingestion, which is triggered as a result of dataset creation if the
-     * import mode is SPICE
+     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
      * </p>
      * 
      * @param ingestionArn
-     *        The Amazon Resource Name (ARN) for the ingestion, which is triggered as a result of dataset creation if
-     *        the import mode is SPICE
+     *        The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
      */
 
     public void setIngestionArn(String ingestionArn) {
@@ -158,12 +155,10 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the ingestion, which is triggered as a result of dataset creation if the
-     * import mode is SPICE
+     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the ingestion, which is triggered as a result of dataset creation if
-     *         the import mode is SPICE
+     * @return The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
      */
 
     public String getIngestionArn() {
@@ -172,13 +167,11 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the ingestion, which is triggered as a result of dataset creation if the
-     * import mode is SPICE
+     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
      * </p>
      * 
      * @param ingestionArn
-     *        The Amazon Resource Name (ARN) for the ingestion, which is triggered as a result of dataset creation if
-     *        the import mode is SPICE
+     *        The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,11 +262,11 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -282,10 +275,10 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -294,11 +287,11 @@ public class CreateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

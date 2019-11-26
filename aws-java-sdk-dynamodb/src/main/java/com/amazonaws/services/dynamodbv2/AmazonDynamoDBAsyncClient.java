@@ -755,6 +755,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeContributorInsightsResult> describeContributorInsightsAsync(DescribeContributorInsightsRequest request) {
+
+        return describeContributorInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContributorInsightsResult> describeContributorInsightsAsync(final DescribeContributorInsightsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeContributorInsightsRequest, DescribeContributorInsightsResult> asyncHandler) {
+        final DescribeContributorInsightsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeContributorInsightsResult>() {
+            @Override
+            public DescribeContributorInsightsResult call() throws Exception {
+                DescribeContributorInsightsResult result = null;
+
+                try {
+                    result = executeDescribeContributorInsights(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest request) {
 
         return describeEndpointsAsync(request, null);
@@ -1107,6 +1140,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
 
                 try {
                     result = executeListBackups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(ListContributorInsightsRequest request) {
+
+        return listContributorInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(final ListContributorInsightsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListContributorInsightsRequest, ListContributorInsightsResult> asyncHandler) {
+        final ListContributorInsightsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListContributorInsightsResult>() {
+            @Override
+            public ListContributorInsightsResult call() throws Exception {
+                ListContributorInsightsResult result = null;
+
+                try {
+                    result = executeListContributorInsights(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1743,6 +1809,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
 
                 try {
                     result = executeUpdateContinuousBackups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContributorInsightsResult> updateContributorInsightsAsync(UpdateContributorInsightsRequest request) {
+
+        return updateContributorInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContributorInsightsResult> updateContributorInsightsAsync(final UpdateContributorInsightsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContributorInsightsRequest, UpdateContributorInsightsResult> asyncHandler) {
+        final UpdateContributorInsightsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContributorInsightsResult>() {
+            @Override
+            public UpdateContributorInsightsResult call() throws Exception {
+                UpdateContributorInsightsResult result = null;
+
+                try {
+                    result = executeUpdateContributorInsights(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

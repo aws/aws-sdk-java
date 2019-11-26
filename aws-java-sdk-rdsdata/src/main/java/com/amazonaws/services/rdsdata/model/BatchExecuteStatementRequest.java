@@ -38,6 +38,9 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The parameter set for the batch operation.
      * </p>
+     * <p>
+     * The maximum number of parameters in a parameter set is 1,000.
+     * </p>
      */
     private java.util.List<java.util.List<SqlParameter>> parameterSets;
     /**
@@ -119,8 +122,13 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The parameter set for the batch operation.
      * </p>
+     * <p>
+     * The maximum number of parameters in a parameter set is 1,000.
+     * </p>
      * 
-     * @return The parameter set for the batch operation.
+     * @return The parameter set for the batch operation.</p>
+     *         <p>
+     *         The maximum number of parameters in a parameter set is 1,000.
      */
 
     public java.util.List<java.util.List<SqlParameter>> getParameterSets() {
@@ -131,9 +139,14 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The parameter set for the batch operation.
      * </p>
+     * <p>
+     * The maximum number of parameters in a parameter set is 1,000.
+     * </p>
      * 
      * @param parameterSets
-     *        The parameter set for the batch operation.
+     *        The parameter set for the batch operation.</p>
+     *        <p>
+     *        The maximum number of parameters in a parameter set is 1,000.
      */
 
     public void setParameterSets(java.util.Collection<java.util.List<SqlParameter>> parameterSets) {
@@ -150,13 +163,18 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * The parameter set for the batch operation.
      * </p>
      * <p>
+     * The maximum number of parameters in a parameter set is 1,000.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParameterSets(java.util.Collection)} or {@link #withParameterSets(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param parameterSets
-     *        The parameter set for the batch operation.
+     *        The parameter set for the batch operation.</p>
+     *        <p>
+     *        The maximum number of parameters in a parameter set is 1,000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,9 +192,14 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The parameter set for the batch operation.
      * </p>
+     * <p>
+     * The maximum number of parameters in a parameter set is 1,000.
+     * </p>
      * 
      * @param parameterSets
-     *        The parameter set for the batch operation.
+     *        The parameter set for the batch operation.</p>
+     *        <p>
+     *        The maximum number of parameters in a parameter set is 1,000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

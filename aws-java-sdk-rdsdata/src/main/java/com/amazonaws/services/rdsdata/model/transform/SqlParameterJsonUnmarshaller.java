@@ -52,6 +52,10 @@ public class SqlParameterJsonUnmarshaller implements Unmarshaller<SqlParameter, 
                     context.nextToken();
                     sqlParameter.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("typeHint", targetDepth)) {
+                    context.nextToken();
+                    sqlParameter.setTypeHint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
                     sqlParameter.setValue(FieldJsonUnmarshaller.getInstance().unmarshall(context));

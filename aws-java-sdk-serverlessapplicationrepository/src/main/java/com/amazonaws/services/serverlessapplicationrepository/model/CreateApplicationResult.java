@@ -65,6 +65,14 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
     private String homePageUrl;
     /**
      * <p>
+     * Whether the author of this application has been verified. This means means that AWS has made a good faith review,
+     * as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that
+     * the requester's identity is as claimed.
+     * </p>
+     */
+    private Boolean isVerifiedAuthor;
+    /**
+     * <p>
      * Labels to improve discovery of apps in search results.
      * </p>
      * <p>
@@ -112,6 +120,12 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String spdxLicenseId;
+    /**
+     * <p>
+     * The URL to the public profile of a verified author. This URL is submitted by the author.
+     * </p>
+     */
+    private String verifiedAuthorUrl;
     /**
      * <p>
      * Version information about the application.
@@ -371,6 +385,74 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
     public CreateApplicationResult withHomePageUrl(String homePageUrl) {
         setHomePageUrl(homePageUrl);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether the author of this application has been verified. This means means that AWS has made a good faith review,
+     * as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that
+     * the requester's identity is as claimed.
+     * </p>
+     * 
+     * @param isVerifiedAuthor
+     *        Whether the author of this application has been verified. This means means that AWS has made a good faith
+     *        review, as a reasonable and prudent service provider, of the information provided by the requester and has
+     *        confirmed that the requester's identity is as claimed.
+     */
+
+    public void setIsVerifiedAuthor(Boolean isVerifiedAuthor) {
+        this.isVerifiedAuthor = isVerifiedAuthor;
+    }
+
+    /**
+     * <p>
+     * Whether the author of this application has been verified. This means means that AWS has made a good faith review,
+     * as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that
+     * the requester's identity is as claimed.
+     * </p>
+     * 
+     * @return Whether the author of this application has been verified. This means means that AWS has made a good faith
+     *         review, as a reasonable and prudent service provider, of the information provided by the requester and
+     *         has confirmed that the requester's identity is as claimed.
+     */
+
+    public Boolean getIsVerifiedAuthor() {
+        return this.isVerifiedAuthor;
+    }
+
+    /**
+     * <p>
+     * Whether the author of this application has been verified. This means means that AWS has made a good faith review,
+     * as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that
+     * the requester's identity is as claimed.
+     * </p>
+     * 
+     * @param isVerifiedAuthor
+     *        Whether the author of this application has been verified. This means means that AWS has made a good faith
+     *        review, as a reasonable and prudent service provider, of the information provided by the requester and has
+     *        confirmed that the requester's identity is as claimed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationResult withIsVerifiedAuthor(Boolean isVerifiedAuthor) {
+        setIsVerifiedAuthor(isVerifiedAuthor);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the author of this application has been verified. This means means that AWS has made a good faith review,
+     * as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that
+     * the requester's identity is as claimed.
+     * </p>
+     * 
+     * @return Whether the author of this application has been verified. This means means that AWS has made a good faith
+     *         review, as a reasonable and prudent service provider, of the information provided by the requester and
+     *         has confirmed that the requester's identity is as claimed.
+     */
+
+    public Boolean isVerifiedAuthor() {
+        return this.isVerifiedAuthor;
     }
 
     /**
@@ -718,6 +800,46 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The URL to the public profile of a verified author. This URL is submitted by the author.
+     * </p>
+     * 
+     * @param verifiedAuthorUrl
+     *        The URL to the public profile of a verified author. This URL is submitted by the author.
+     */
+
+    public void setVerifiedAuthorUrl(String verifiedAuthorUrl) {
+        this.verifiedAuthorUrl = verifiedAuthorUrl;
+    }
+
+    /**
+     * <p>
+     * The URL to the public profile of a verified author. This URL is submitted by the author.
+     * </p>
+     * 
+     * @return The URL to the public profile of a verified author. This URL is submitted by the author.
+     */
+
+    public String getVerifiedAuthorUrl() {
+        return this.verifiedAuthorUrl;
+    }
+
+    /**
+     * <p>
+     * The URL to the public profile of a verified author. This URL is submitted by the author.
+     * </p>
+     * 
+     * @param verifiedAuthorUrl
+     *        The URL to the public profile of a verified author. This URL is submitted by the author.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationResult withVerifiedAuthorUrl(String verifiedAuthorUrl) {
+        setVerifiedAuthorUrl(verifiedAuthorUrl);
+        return this;
+    }
+
+    /**
+     * <p>
      * Version information about the application.
      * </p>
      * 
@@ -778,6 +900,8 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("Description: ").append(getDescription()).append(",");
         if (getHomePageUrl() != null)
             sb.append("HomePageUrl: ").append(getHomePageUrl()).append(",");
+        if (getIsVerifiedAuthor() != null)
+            sb.append("IsVerifiedAuthor: ").append(getIsVerifiedAuthor()).append(",");
         if (getLabels() != null)
             sb.append("Labels: ").append(getLabels()).append(",");
         if (getLicenseUrl() != null)
@@ -788,6 +912,8 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("ReadmeUrl: ").append(getReadmeUrl()).append(",");
         if (getSpdxLicenseId() != null)
             sb.append("SpdxLicenseId: ").append(getSpdxLicenseId()).append(",");
+        if (getVerifiedAuthorUrl() != null)
+            sb.append("VerifiedAuthorUrl: ").append(getVerifiedAuthorUrl()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion());
         sb.append("}");
@@ -824,6 +950,10 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getHomePageUrl() != null && other.getHomePageUrl().equals(this.getHomePageUrl()) == false)
             return false;
+        if (other.getIsVerifiedAuthor() == null ^ this.getIsVerifiedAuthor() == null)
+            return false;
+        if (other.getIsVerifiedAuthor() != null && other.getIsVerifiedAuthor().equals(this.getIsVerifiedAuthor()) == false)
+            return false;
         if (other.getLabels() == null ^ this.getLabels() == null)
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
@@ -844,6 +974,10 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getSpdxLicenseId() != null && other.getSpdxLicenseId().equals(this.getSpdxLicenseId()) == false)
             return false;
+        if (other.getVerifiedAuthorUrl() == null ^ this.getVerifiedAuthorUrl() == null)
+            return false;
+        if (other.getVerifiedAuthorUrl() != null && other.getVerifiedAuthorUrl().equals(this.getVerifiedAuthorUrl()) == false)
+            return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
@@ -861,11 +995,13 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHomePageUrl() == null) ? 0 : getHomePageUrl().hashCode());
+        hashCode = prime * hashCode + ((getIsVerifiedAuthor() == null) ? 0 : getIsVerifiedAuthor().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
         hashCode = prime * hashCode + ((getLicenseUrl() == null) ? 0 : getLicenseUrl().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReadmeUrl() == null) ? 0 : getReadmeUrl().hashCode());
         hashCode = prime * hashCode + ((getSpdxLicenseId() == null) ? 0 : getSpdxLicenseId().hashCode());
+        hashCode = prime * hashCode + ((getVerifiedAuthorUrl() == null) ? 0 : getVerifiedAuthorUrl().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }

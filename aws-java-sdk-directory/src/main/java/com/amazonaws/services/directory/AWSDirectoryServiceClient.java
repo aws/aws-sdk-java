@@ -97,20 +97,14 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("DirectoryUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.DirectoryUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.directory.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLDAPSStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.InvalidLDAPSStatusExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCertificateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.InvalidCertificateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DirectoryNotSharedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.DirectoryNotSharedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.directory.model.transform.ServiceExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SnapshotLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.directory.model.transform.SnapshotLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyExistsException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.directory.model.transform.EntityAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EntityDoesNotExistException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.EntityDoesNotExistExceptionUnmarshaller.getInstance()))
@@ -118,11 +112,14 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("DirectoryLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.DirectoryLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.DirectoryDoesNotExistExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.directory.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.CertificateAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DomainControllerLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.DomainControllerLimitExceededExceptionUnmarshaller.getInstance()))
@@ -136,14 +133,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.directory.model.transform.InvalidTargetExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.ClientExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IpRouteLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.directory.model.transform.IpRouteLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AuthenticationFailedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.AuthenticationFailedExceptionUnmarshaller.getInstance()))
@@ -151,14 +142,47 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.InsufficientPermissionsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.CertificateLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.OrganizationsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.CertificateDoesNotExistExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.ServiceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SnapshotLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.SnapshotLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.EntityAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableCertificateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.NoAvailableCertificateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.InvalidTargetExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IpRouteLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.IpRouteLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.TagLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ShareLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.ShareLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationsException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.directory.model.transform.OrganizationsExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.CertificateInUseExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.directory.model.AWSDirectoryServiceException.class));
 
     /**
@@ -915,7 +939,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a Simple AD directory.
+     * Creates a Simple AD directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple Active
+     * Directory</a> in the <i>AWS Directory Service Admin Guide</i>.
      * </p>
      * <p>
      * Before you call <code>CreateDirectory</code>, ensure that all of the required permissions have been explicitly
@@ -985,8 +1011,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
-     * CloudWatch log group in your AWS account.
+     * Creates a subscription to forward real-time Directory Service domain controller security logs to the specified
+     * Amazon CloudWatch log group in your AWS account.
      * </p>
      * 
      * @param createLogSubscriptionRequest
@@ -1052,7 +1078,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates an AWS Managed Microsoft AD directory.
+     * Creates a Microsoft AD directory in the AWS Cloud. For more information, see <a
+     * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Managed
+     * Microsoft AD</a> in the <i>AWS Directory Service Admin Guide</i>.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -1597,6 +1625,77 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param deregisterCertificateRequest
+     * @return Result of the DeregisterCertificate operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws CertificateDoesNotExistException
+     *         The certificate is not present in the system for describe or deregister activities.
+     * @throws CertificateInUseException
+     *         The certificate is being used for the LDAP security connection and cannot be removed without disabling
+     *         LDAP security.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeregisterCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeregisterCertificateResult deregisterCertificate(DeregisterCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterCertificateResult executeDeregisterCertificate(DeregisterCertificateRequest deregisterCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterCertificateRequest> request = null;
+        Response<DeregisterCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeregisterCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes the specified directory as a publisher to the specified SNS topic.
      * </p>
      * 
@@ -1647,6 +1746,71 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterEventTopicResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeregisterEventTopicResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Displays information about the certificate registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param describeCertificateRequest
+     * @return Result of the DescribeCertificate operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws CertificateDoesNotExistException
+     *         The certificate is not present in the system for describe or deregister activities.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeCertificateResult describeCertificate(DescribeCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCertificateResult executeDescribeCertificate(DescribeCertificateRequest describeCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCertificateRequest> request = null;
+        Response<DescribeCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1945,6 +2109,72 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Describes the status of LDAP security for the specified directory.
+     * </p>
+     * 
+     * @param describeLDAPSSettingsRequest
+     * @return Result of the DescribeLDAPSSettings operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeLDAPSSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeLDAPSSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeLDAPSSettingsResult describeLDAPSSettings(DescribeLDAPSSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLDAPSSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLDAPSSettingsResult executeDescribeLDAPSSettings(DescribeLDAPSSettingsRequest describeLDAPSSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeLDAPSSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLDAPSSettingsRequest> request = null;
+        Response<DescribeLDAPSSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLDAPSSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLDAPSSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLDAPSSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLDAPSSettingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeLDAPSSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -2161,6 +2391,73 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deactivates LDAP secure calls for the specified directory.
+     * </p>
+     * 
+     * @param disableLDAPSRequest
+     * @return Result of the DisableLDAPS operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws InvalidLDAPSStatusException
+     *         The LDAP activities could not be performed because they are limited by the LDAPS status.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableLDAPS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableLDAPS" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DisableLDAPSResult disableLDAPS(DisableLDAPSRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableLDAPS(request);
+    }
+
+    @SdkInternalApi
+    final DisableLDAPSResult executeDisableLDAPS(DisableLDAPSRequest disableLDAPSRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableLDAPSRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableLDAPSRequest> request = null;
+        Response<DisableLDAPSResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableLDAPSRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableLDAPSRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableLDAPS");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisableLDAPSResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisableLDAPSResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server
      * for an AD Connector or Microsoft AD directory.
      * </p>
@@ -2286,6 +2583,76 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Activates the switch for the specific directory to always use LDAP secure calls.
+     * </p>
+     * 
+     * @param enableLDAPSRequest
+     * @return Result of the EnableLDAPS operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws NoAvailableCertificateException
+     *         The LDAP activities could not be performed because at least one valid certificate must be registered with
+     *         the system.
+     * @throws InvalidLDAPSStatusException
+     *         The LDAP activities could not be performed because they are limited by the LDAPS status.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableLDAPS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableLDAPS" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public EnableLDAPSResult enableLDAPS(EnableLDAPSRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableLDAPS(request);
+    }
+
+    @SdkInternalApi
+    final EnableLDAPSResult executeEnableLDAPS(EnableLDAPSRequest enableLDAPSRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableLDAPSRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableLDAPSRequest> request = null;
+        Response<EnableLDAPSResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableLDAPSRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableLDAPSRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableLDAPS");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<EnableLDAPSResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableLDAPSResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for
      * an AD Connector or Microsoft AD directory.
      * </p>
@@ -2351,7 +2718,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Enables single sign-on for a directory.
+     * Enables single sign-on for a directory. Single sign-on allows users in your directory to access certain AWS
+     * services from a computer joined to the directory without having to enter their credentials separately.
      * </p>
      * 
      * @param enableSsoRequest
@@ -2415,7 +2783,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Obtains directory limit information for the current region.
+     * Obtains directory limit information for the current Region.
      * </p>
      * 
      * @param getDirectoryLimitsRequest
@@ -2528,6 +2896,71 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSnapshotLimitsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSnapshotLimitsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * </p>
+     * 
+     * @param listCertificatesRequest
+     * @return Result of the ListCertificates operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListCertificatesResult listCertificates(ListCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCertificates(request);
+    }
+
+    @SdkInternalApi
+    final ListCertificatesResult executeListCertificates(ListCertificatesRequest listCertificatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCertificatesRequest> request = null;
+        Response<ListCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCertificatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCertificatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2776,6 +3209,77 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers a certificate for secured LDAP connection.
+     * </p>
+     * 
+     * @param registerCertificateRequest
+     * @return Result of the RegisterCertificate operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws InvalidCertificateException
+     *         The certificate PEM that was provided has incorrect encoding.
+     * @throws CertificateLimitExceededException
+     *         The certificate could not be added because the certificate limit has been reached.
+     * @throws CertificateAlreadyExistsException
+     *         The certificate has already been registered into the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RegisterCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RegisterCertificateResult registerCertificate(RegisterCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterCertificate(request);
+    }
+
+    @SdkInternalApi
+    final RegisterCertificateResult executeRegisterCertificate(RegisterCertificateRequest registerCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterCertificateRequest> request = null;
+        Response<RegisterCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3044,6 +3548,27 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * <p>
      * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
      * </p>
+     * <p>
+     * You can reset the password for any user in your directory with the following exceptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Simple AD, you cannot reset the password for any user that is a member of either the <b>Domain Admins</b> or
+     * <b>Enterprise Admins</b> group except for the administrator user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For AWS Managed Microsoft AD, you can only reset the password for a user that is in an OU based off of the
+     * NetBIOS name that you typed when you created your directory. For example, you cannot reset the password for a
+     * user in the <b>AWS Reserved</b> OU. For more information about the OU structure for an AWS Managed Microsoft AD
+     * directory, see <a href=
+     * "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html"
+     * >What Gets Created</a> in the <i>AWS Directory Service Administration Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resetUserPasswordRequest
      * @return Result of the ResetUserPassword operation returned by the service.

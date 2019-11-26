@@ -1515,6 +1515,66 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Returns information about contributor insights, for a given table or global secondary index.
+     * </p>
+     * 
+     * @param describeContributorInsightsRequest
+     * @return Result of the DescribeContributorInsights operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeContributorInsightsResult describeContributorInsights(DescribeContributorInsightsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeContributorInsights(request);
+    }
+
+    @SdkInternalApi
+    final DescribeContributorInsightsResult executeDescribeContributorInsights(DescribeContributorInsightsRequest describeContributorInsightsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeContributorInsightsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeContributorInsightsRequest> request = null;
+        Response<DescribeContributorInsightsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeContributorInsightsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeContributorInsightsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContributorInsights");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeContributorInsightsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeContributorInsightsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the regional endpoint information.
      * </p>
      * 
@@ -2214,6 +2274,66 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<ListBackupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBackupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.
+     * </p>
+     * 
+     * @param listContributorInsightsRequest
+     * @return Result of the ListContributorInsights operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListContributorInsightsResult listContributorInsights(ListContributorInsightsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListContributorInsights(request);
+    }
+
+    @SdkInternalApi
+    final ListContributorInsightsResult executeListContributorInsights(ListContributorInsightsRequest listContributorInsightsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listContributorInsightsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListContributorInsightsRequest> request = null;
+        Response<ListContributorInsightsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListContributorInsightsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listContributorInsightsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContributorInsights");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListContributorInsightsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListContributorInsightsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -4244,6 +4364,66 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateContinuousBackupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the status for contributor insights for a specific table or index.
+     * </p>
+     * 
+     * @param updateContributorInsightsRequest
+     * @return Result of the UpdateContributorInsights operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateContributorInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateContributorInsightsResult updateContributorInsights(UpdateContributorInsightsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContributorInsights(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContributorInsightsResult executeUpdateContributorInsights(UpdateContributorInsightsRequest updateContributorInsightsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContributorInsightsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContributorInsightsRequest> request = null;
+        Response<UpdateContributorInsightsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContributorInsightsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateContributorInsightsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContributorInsights");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContributorInsightsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateContributorInsightsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 

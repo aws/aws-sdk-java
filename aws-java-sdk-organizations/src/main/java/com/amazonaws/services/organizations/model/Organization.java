@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Contains details about an organization. An organization is a collection of accounts that are centrally managed
  * together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with
- * policies .
+ * policies.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Organization" target="_top">AWS API

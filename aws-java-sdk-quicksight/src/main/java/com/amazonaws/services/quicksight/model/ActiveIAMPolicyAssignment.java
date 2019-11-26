@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The active IAM policy assignment.
+ * The active AWS Identity and Access Management (IAM) policy assignment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ActiveIAMPolicyAssignment"
@@ -36,7 +36,7 @@ public class ActiveIAMPolicyAssignment implements Serializable, Cloneable, Struc
     private String assignmentName;
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String policyArn;
@@ -83,11 +83,11 @@ public class ActiveIAMPolicyAssignment implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param policyArn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -96,10 +96,10 @@ public class ActiveIAMPolicyAssignment implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getPolicyArn() {
@@ -108,11 +108,11 @@ public class ActiveIAMPolicyAssignment implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param policyArn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

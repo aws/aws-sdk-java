@@ -48,7 +48,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
     private Long versionNumber;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private String status;
@@ -223,11 +223,11 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @see ResourceStatus
      */
 
@@ -237,10 +237,10 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      * @see ResourceStatus
      */
 
@@ -250,11 +250,11 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */
@@ -266,11 +266,11 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */

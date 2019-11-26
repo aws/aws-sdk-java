@@ -36,14 +36,14 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case letters or
-     * digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.
+     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or
+     * digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32
+     * additional lowercase letters or digits.
      * </p>
      * </li>
      * </ul>
@@ -67,14 +67,14 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case letters or
-     * digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.
+     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or
+     * digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32
+     * additional lowercase letters or digits.
      * </p>
      * </li>
      * </ul>
@@ -88,14 +88,14 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     *        <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     *        letters or digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32
-     *        additional lower-case letters or digits.
+     *        <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     *        letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and
+     *        from 8 to 32 additional lowercase letters or digits.
      *        </p>
      *        </li>
      */
@@ -115,14 +115,14 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case letters or
-     * digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.
+     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or
+     * digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32
+     * additional lowercase letters or digits.
      * </p>
      * </li>
      * </ul>
@@ -135,14 +135,14 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     *         <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     *         letters or digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32
-     *         additional lower-case letters or digits.
+     *         <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     *         letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash
+     *         and from 8 to 32 additional lowercase letters or digits.
      *         </p>
      *         </li>
      */
@@ -162,14 +162,14 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case letters or
-     * digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.
+     * <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or
+     * digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32
+     * additional lowercase letters or digits.
      * </p>
      * </li>
      * </ul>
@@ -183,14 +183,14 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case letters or digits.
+     *        <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     *        letters or digits (the ID of the root that the OU is in) followed by a second "-" dash and from 8 to 32
-     *        additional lower-case letters or digits.
+     *        <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     *        letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and
+     *        from 8 to 32 additional lowercase letters or digits.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

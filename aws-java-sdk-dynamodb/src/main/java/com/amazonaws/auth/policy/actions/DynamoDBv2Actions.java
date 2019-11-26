@@ -45,6 +45,8 @@ public enum DynamoDBv2Actions implements Action {
     DescribeBackup("dynamodb:DescribeBackup"),
     /** Action for the DescribeContinuousBackups operation. */
     DescribeContinuousBackups("dynamodb:DescribeContinuousBackups"),
+    /** Action for the DescribeContributorInsights operation. */
+    DescribeContributorInsights("dynamodb:DescribeContributorInsights"),
     /** Action for the DescribeEndpoints operation. */
     DescribeEndpoints("dynamodb:DescribeEndpoints"),
     /** Action for the DescribeGlobalTable operation. */
@@ -63,6 +65,8 @@ public enum DynamoDBv2Actions implements Action {
     GetItem("dynamodb:GetItem"),
     /** Action for the ListBackups operation. */
     ListBackups("dynamodb:ListBackups"),
+    /** Action for the ListContributorInsights operation. */
+    ListContributorInsights("dynamodb:ListContributorInsights"),
     /** Action for the ListGlobalTables operation. */
     ListGlobalTables("dynamodb:ListGlobalTables"),
     /** Action for the ListTables operation. */
@@ -89,6 +93,8 @@ public enum DynamoDBv2Actions implements Action {
     UntagResource("dynamodb:UntagResource"),
     /** Action for the UpdateContinuousBackups operation. */
     UpdateContinuousBackups("dynamodb:UpdateContinuousBackups"),
+    /** Action for the UpdateContributorInsights operation. */
+    UpdateContributorInsights("dynamodb:UpdateContributorInsights"),
     /** Action for the UpdateGlobalTable operation. */
     UpdateGlobalTable("dynamodb:UpdateGlobalTable"),
     /** Action for the UpdateGlobalTableSettings operation. */

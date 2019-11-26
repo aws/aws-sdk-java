@@ -31,7 +31,7 @@ public class DeleteTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
     private String requestId;
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String arn;
@@ -43,7 +43,7 @@ public class DeleteTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
     private String templateId;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
@@ -90,11 +90,11 @@ public class DeleteTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setArn(String arn) {
@@ -103,10 +103,10 @@ public class DeleteTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getArn() {
@@ -115,11 +115,11 @@ public class DeleteTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class DeleteTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -183,10 +183,10 @@ public class DeleteTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -195,11 +195,11 @@ public class DeleteTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -166,6 +166,10 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AccountRecoverySetting", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setAccountRecoverySetting(AccountRecoverySettingTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

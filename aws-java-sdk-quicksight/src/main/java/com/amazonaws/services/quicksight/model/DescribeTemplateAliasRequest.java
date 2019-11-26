@@ -39,7 +39,10 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
     private String templateId;
     /**
      * <p>
-     * The alias name. <code>$PUBLISHED</code> is not supported for template.
+     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
+     * that the alias points to. You can specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
+     * to templates.
      * </p>
      */
     private String aliasName;
@@ -126,11 +129,17 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The alias name. <code>$PUBLISHED</code> is not supported for template.
+     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
+     * that the alias points to. You can specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
+     * to templates.
      * </p>
      * 
      * @param aliasName
-     *        The alias name. <code>$PUBLISHED</code> is not supported for template.
+     *        The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     *        version that the alias points to. You can specify the latest version of the template by providing the
+     *        keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
+     *        doesn't apply to templates.
      */
 
     public void setAliasName(String aliasName) {
@@ -139,10 +148,16 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The alias name. <code>$PUBLISHED</code> is not supported for template.
+     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
+     * that the alias points to. You can specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
+     * to templates.
      * </p>
      * 
-     * @return The alias name. <code>$PUBLISHED</code> is not supported for template.
+     * @return The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     *         version that the alias points to. You can specify the latest version of the template by providing the
+     *         keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
+     *         doesn't apply to templates.
      */
 
     public String getAliasName() {
@@ -151,11 +166,17 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The alias name. <code>$PUBLISHED</code> is not supported for template.
+     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
+     * that the alias points to. You can specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
+     * to templates.
      * </p>
      * 
      * @param aliasName
-     *        The alias name. <code>$PUBLISHED</code> is not supported for template.
+     *        The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     *        version that the alias points to. You can specify the latest version of the template by providing the
+     *        keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
+     *        doesn't apply to templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

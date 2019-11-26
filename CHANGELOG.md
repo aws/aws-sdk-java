@@ -1,3 +1,48 @@
+# __1.11.683__ __2019-11-26__
+## __AWS Directory Service__
+  - ### Features
+    - This release will introduce optional encryption over LDAP network traffic using SSL certificates between customer's self-managed AD and AWS Directory Services instances. The release also provides APIs for Certificate management.
+
+## __AWS MediaTailor__
+  - ### Features
+    - AWS Elemental MediaTailor SDK now allows configuration of the Live Pre-Roll feature for HLS and DASH streams.
+
+## __AWS Organizations__
+  - ### Features
+    - Introduces the DescribeEffectivePolicy action, which returns the contents of the policy that's in effect for the account.
+
+## __AWS RDS DataService__
+  - ### Features
+    - Type hints to improve handling of some specific parameter types (date/time, decimal etc) for ExecuteStatement and BatchExecuteStatement APIs
+
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - You can use tag policies to help standardize on tags across your organization's resources.
+
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - AWS Serverless Application Repository now supports verified authors. Verified means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - This release adds a new setting for a user pool to configure which recovery methods a user can use to recover their account via the forgot password operation.
+
+## __Amazon DynamoDB__
+  - ### Features
+    - 1) Amazon Contributor Insights for Amazon DynamoDB is a diagnostic tool for identifying frequently accessed keys and understanding database traffic trends. 2) Support for displaying new fields when a table's encryption state is Inaccessible or the table have been Archived.
+
+## __Amazon Elastic  Inference__
+  - ### Features
+    - Amazon Elastic Inference allows customers to attach Elastic Inference Accelerators to Amazon EC2 and Amazon ECS tasks, thus providing low-cost GPU-powered acceleration and reducing the cost of running deep learning inference. This release allows customers to add or remove tags for their Elastic Inference Accelerators.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Documentation updates for QuickSight
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - For the WorkspaceBundle API, added the image identifier and the time of the last update.
+
 # __1.11.682__ __2019-11-25__
 ## __AWS CodeBuild__
   - ### Features

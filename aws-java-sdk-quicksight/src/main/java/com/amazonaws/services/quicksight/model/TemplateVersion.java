@@ -48,7 +48,7 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
     private Long versionNumber;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private String status;
@@ -67,7 +67,7 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
     private String description;
     /**
      * <p>
-     * The ARN of the analysis or template which was used to create this template.
+     * The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
      * </p>
      */
     private String sourceEntityArn;
@@ -224,11 +224,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @see ResourceStatus
      */
 
@@ -238,10 +238,10 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      * @see ResourceStatus
      */
 
@@ -251,11 +251,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */
@@ -267,11 +267,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */
@@ -401,11 +401,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the analysis or template which was used to create this template.
+     * The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
      * </p>
      * 
      * @param sourceEntityArn
-     *        The ARN of the analysis or template which was used to create this template.
+     *        The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
      */
 
     public void setSourceEntityArn(String sourceEntityArn) {
@@ -414,10 +414,10 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the analysis or template which was used to create this template.
+     * The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
      * </p>
      * 
-     * @return The ARN of the analysis or template which was used to create this template.
+     * @return The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
      */
 
     public String getSourceEntityArn() {
@@ -426,11 +426,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the analysis or template which was used to create this template.
+     * The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
      * </p>
      * 
      * @param sourceEntityArn
-     *        The ARN of the analysis or template which was used to create this template.
+     *        The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

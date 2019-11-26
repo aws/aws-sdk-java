@@ -36,7 +36,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSourceId;
@@ -54,7 +54,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private String status;
@@ -72,8 +72,8 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * The parameters QuickSight uses to connect to your underlying source. This is a variant type structure. At most
-     * one of the attributes should be non-null for this structure to be valid.
+     * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At
+     * most one of the attributes should be non-null for this structure to be valid.
      * </p>
      */
     private DataSourceParameters dataSourceParameters;
@@ -86,7 +86,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     private VpcConnectionProperties vpcConnectionProperties;
     /**
      * <p>
-     * SSL properties that apply when QuickSight connects to your underlying source.
+     * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * </p>
      */
     private SslProperties sslProperties;
@@ -139,11 +139,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSourceId(String dataSourceId) {
@@ -152,10 +152,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID of the data source. This is unique per AWS Region per AWS account.
+     * @return The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSourceId() {
@@ -164,11 +164,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,11 +278,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @see ResourceStatus
      */
 
@@ -292,10 +292,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      * @see ResourceStatus
      */
 
@@ -305,11 +305,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */
@@ -321,11 +321,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */
@@ -417,13 +417,13 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters QuickSight uses to connect to your underlying source. This is a variant type structure. At most
-     * one of the attributes should be non-null for this structure to be valid.
+     * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At
+     * most one of the attributes should be non-null for this structure to be valid.
      * </p>
      * 
      * @param dataSourceParameters
-     *        The parameters QuickSight uses to connect to your underlying source. This is a variant type structure. At
-     *        most one of the attributes should be non-null for this structure to be valid.
+     *        The parameters that QuickSight uses to connect to your underlying source. This is a variant type
+     *        structure. At most one of the attributes should be non-null for this structure to be valid.
      */
 
     public void setDataSourceParameters(DataSourceParameters dataSourceParameters) {
@@ -432,12 +432,12 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters QuickSight uses to connect to your underlying source. This is a variant type structure. At most
-     * one of the attributes should be non-null for this structure to be valid.
+     * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At
+     * most one of the attributes should be non-null for this structure to be valid.
      * </p>
      * 
-     * @return The parameters QuickSight uses to connect to your underlying source. This is a variant type structure. At
-     *         most one of the attributes should be non-null for this structure to be valid.
+     * @return The parameters that QuickSight uses to connect to your underlying source. This is a variant type
+     *         structure. At most one of the attributes should be non-null for this structure to be valid.
      */
 
     public DataSourceParameters getDataSourceParameters() {
@@ -446,13 +446,13 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters QuickSight uses to connect to your underlying source. This is a variant type structure. At most
-     * one of the attributes should be non-null for this structure to be valid.
+     * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At
+     * most one of the attributes should be non-null for this structure to be valid.
      * </p>
      * 
      * @param dataSourceParameters
-     *        The parameters QuickSight uses to connect to your underlying source. This is a variant type structure. At
-     *        most one of the attributes should be non-null for this structure to be valid.
+     *        The parameters that QuickSight uses to connect to your underlying source. This is a variant type
+     *        structure. At most one of the attributes should be non-null for this structure to be valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,11 +509,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * SSL properties that apply when QuickSight connects to your underlying source.
+     * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * </p>
      * 
      * @param sslProperties
-     *        SSL properties that apply when QuickSight connects to your underlying source.
+     *        Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      */
 
     public void setSslProperties(SslProperties sslProperties) {
@@ -522,10 +522,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * SSL properties that apply when QuickSight connects to your underlying source.
+     * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * </p>
      * 
-     * @return SSL properties that apply when QuickSight connects to your underlying source.
+     * @return Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      */
 
     public SslProperties getSslProperties() {
@@ -534,11 +534,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * SSL properties that apply when QuickSight connects to your underlying source.
+     * Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * </p>
      * 
      * @param sslProperties
-     *        SSL properties that apply when QuickSight connects to your underlying source.
+     *        Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

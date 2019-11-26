@@ -60,6 +60,10 @@ public class SSEDescriptionJsonUnmarshaller implements Unmarshaller<SSEDescripti
                     context.nextToken();
                     sSEDescription.setKMSMasterKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InaccessibleEncryptionDateTime", targetDepth)) {
+                    context.nextToken();
+                    sSEDescription.setInaccessibleEncryptionDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

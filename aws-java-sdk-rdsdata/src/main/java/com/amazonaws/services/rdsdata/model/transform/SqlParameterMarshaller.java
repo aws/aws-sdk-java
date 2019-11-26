@@ -29,6 +29,8 @@ public class SqlParameterMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> TYPEHINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("typeHint").build();
     private static final MarshallingInfo<StructuredPojo> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("value").build();
 
@@ -49,6 +51,7 @@ public class SqlParameterMarshaller {
 
         try {
             protocolMarshaller.marshall(sqlParameter.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(sqlParameter.getTypeHint(), TYPEHINT_BINDING);
             protocolMarshaller.marshall(sqlParameter.getValue(), VALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

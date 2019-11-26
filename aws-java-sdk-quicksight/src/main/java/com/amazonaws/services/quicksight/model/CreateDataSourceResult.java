@@ -25,13 +25,13 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSourceId;
@@ -49,18 +49,18 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
     private String requestId;
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      */
     private Integer status;
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
      * @param arn
-     *        The ARN of the data source.
+     *        The Amazon Resource Name (ARN) of the data source.
      */
 
     public void setArn(String arn) {
@@ -69,10 +69,10 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
-     * @return The ARN of the data source.
+     * @return The Amazon Resource Name (ARN) of the data source.
      */
 
     public String getArn() {
@@ -81,11 +81,11 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
      * @param arn
-     *        The ARN of the data source.
+     *        The Amazon Resource Name (ARN) of the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSourceId(String dataSourceId) {
@@ -109,10 +109,10 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID of the data source. This is unique per AWS Region per AWS account.
+     * @return The ID of the data source. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSourceId() {
@@ -121,11 +121,11 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the data source. This is unique per AWS Region per AWS account.
+     * The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSourceId
-     *        The ID of the data source. This is unique per AWS Region per AWS account.
+     *        The ID of the data source. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +235,11 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      */
 
     public void setStatus(Integer status) {
@@ -248,10 +248,10 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
-     * @return The http status of the request.
+     * @return The HTTP status of the request.
      */
 
     public Integer getStatus() {
@@ -260,11 +260,11 @@ public class CreateDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The http status of the request.
+     * The HTTP status of the request.
      * </p>
      * 
      * @param status
-     *        The http status of the request.
+     *        The HTTP status of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

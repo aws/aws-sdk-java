@@ -27,24 +27,24 @@ public class DeleteDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String dataSetId;
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The AWS account ID.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -53,10 +53,10 @@ public class DeleteDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
-     * @return The AWS Account ID.
+     * @return The AWS account ID.
      */
 
     public String getAwsAccountId() {
@@ -65,11 +65,11 @@ public class DeleteDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset you want to create. This is unique per region per AWS account.
+     *        The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setDataSetId(String dataSetId) {
@@ -93,10 +93,10 @@ public class DeleteDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID for the dataset you want to create. This is unique per region per AWS account.
+     * @return The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getDataSetId() {
@@ -105,11 +105,11 @@ public class DeleteDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the dataset you want to create. This is unique per region per AWS account.
+     * The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param dataSetId
-     *        The ID for the dataset you want to create. This is unique per region per AWS account.
+     *        The ID for the dataset that you want to create. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
