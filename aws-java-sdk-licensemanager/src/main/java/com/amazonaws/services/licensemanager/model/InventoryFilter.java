@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An inventory filter object.
+ * An inventory filter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/InventoryFilter" target="_top">AWS
@@ -30,13 +30,13 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the filter.
+     * Name of the filter.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The condition of the filter.
+     * Condition of the filter.
      * </p>
      */
     private String condition;
@@ -49,11 +49,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the filter.
+     * Name of the filter.
      * </p>
      * 
      * @param name
-     *        The name of the filter.
+     *        Name of the filter.
      */
 
     public void setName(String name) {
@@ -62,10 +62,10 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the filter.
+     * Name of the filter.
      * </p>
      * 
-     * @return The name of the filter.
+     * @return Name of the filter.
      */
 
     public String getName() {
@@ -74,11 +74,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the filter.
+     * Name of the filter.
      * </p>
      * 
      * @param name
-     *        The name of the filter.
+     *        Name of the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The condition of the filter.
+     * Condition of the filter.
      * </p>
      * 
      * @param condition
-     *        The condition of the filter.
+     *        Condition of the filter.
      * @see InventoryFilterCondition
      */
 
@@ -103,10 +103,10 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The condition of the filter.
+     * Condition of the filter.
      * </p>
      * 
-     * @return The condition of the filter.
+     * @return Condition of the filter.
      * @see InventoryFilterCondition
      */
 
@@ -116,11 +116,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The condition of the filter.
+     * Condition of the filter.
      * </p>
      * 
      * @param condition
-     *        The condition of the filter.
+     *        Condition of the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InventoryFilterCondition
      */
@@ -132,11 +132,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The condition of the filter.
+     * Condition of the filter.
      * </p>
      * 
      * @param condition
-     *        The condition of the filter.
+     *        Condition of the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InventoryFilterCondition
      */

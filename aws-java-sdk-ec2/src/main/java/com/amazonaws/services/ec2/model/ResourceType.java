@@ -39,6 +39,7 @@ public enum ResourceType {
     RouteTable("route-table"),
     SecurityGroup("security-group"),
     Snapshot("snapshot"),
+    SpotFleetRequest("spot-fleet-request"),
     SpotInstancesRequest("spot-instances-request"),
     Subnet("subnet"),
     TrafficMirrorFilter("traffic-mirror-filter"),

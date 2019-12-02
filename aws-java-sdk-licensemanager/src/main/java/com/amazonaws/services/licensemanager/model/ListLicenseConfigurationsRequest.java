@@ -27,14 +27,13 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of ARNs for the calling account’s license configurations.
+     * Amazon Resource Names (ARN) of the license configurations.
      * </p>
      */
     private java.util.List<String> licenseConfigurationArns;
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      */
     private Integer maxResults;
@@ -46,17 +45,37 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
     private String nextToken;
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     * exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<Filter> filters;
 
     /**
      * <p>
-     * An array of ARNs for the calling account’s license configurations.
+     * Amazon Resource Names (ARN) of the license configurations.
      * </p>
      * 
-     * @return An array of ARNs for the calling account’s license configurations.
+     * @return Amazon Resource Names (ARN) of the license configurations.
      */
 
     public java.util.List<String> getLicenseConfigurationArns() {
@@ -65,11 +84,11 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of ARNs for the calling account’s license configurations.
+     * Amazon Resource Names (ARN) of the license configurations.
      * </p>
      * 
      * @param licenseConfigurationArns
-     *        An array of ARNs for the calling account’s license configurations.
+     *        Amazon Resource Names (ARN) of the license configurations.
      */
 
     public void setLicenseConfigurationArns(java.util.Collection<String> licenseConfigurationArns) {
@@ -83,7 +102,7 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of ARNs for the calling account’s license configurations.
+     * Amazon Resource Names (ARN) of the license configurations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,7 +111,7 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param licenseConfigurationArns
-     *        An array of ARNs for the calling account’s license configurations.
+     *        Amazon Resource Names (ARN) of the license configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +127,11 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An array of ARNs for the calling account’s license configurations.
+     * Amazon Resource Names (ARN) of the license configurations.
      * </p>
      * 
      * @param licenseConfigurationArns
-     *        An array of ARNs for the calling account’s license configurations.
+     *        Amazon Resource Names (ARN) of the license configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,13 +142,11 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -138,12 +155,10 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
-     * @return Maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value.
+     * @return Maximum number of results to return in a single call.
      */
 
     public Integer getMaxResults() {
@@ -152,13 +167,11 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,10 +222,49 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     * exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters.
+     * @return Filters to scope the results. The following filters and logical operators are supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators
+     *         are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is
+     *         used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     *         exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -221,11 +273,50 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     * exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators
+     *        are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is
+     *        used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     *        exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -239,8 +330,28 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     * exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -248,7 +359,26 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators
+     *        are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is
+     *        used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     *        exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +394,50 @@ public class ListLicenseConfigurationsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
+     * Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     * exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>licenseCountingType</code> - The dimension on which licenses are counted (vCPU). Logical operators
+     *        are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is
+     *        used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been
+     *        exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

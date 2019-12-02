@@ -205,6 +205,11 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                                 request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
                                         + ".Placement.SpreadDomain", StringUtils.fromString(placement.getSpreadDomain()));
                             }
+
+                            if (placement.getHostResourceGroupArn() != null) {
+                                request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.HostResourceGroupArn", StringUtils.fromString(placement.getHostResourceGroupArn()));
+                            }
                         }
                         overridesListIndex++;
                     }

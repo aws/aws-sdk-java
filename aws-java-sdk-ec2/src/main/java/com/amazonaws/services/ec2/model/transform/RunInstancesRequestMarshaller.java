@@ -179,6 +179,10 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             if (placement.getSpreadDomain() != null) {
                 request.addParameter("Placement.SpreadDomain", StringUtils.fromString(placement.getSpreadDomain()));
             }
+
+            if (placement.getHostResourceGroupArn() != null) {
+                request.addParameter("Placement.HostResourceGroupArn", StringUtils.fromString(placement.getHostResourceGroupArn()));
+            }
         }
 
         if (runInstancesRequest.getRamdiskId() != null) {

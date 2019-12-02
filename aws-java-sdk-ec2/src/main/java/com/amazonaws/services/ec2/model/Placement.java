@@ -77,6 +77,13 @@ public class Placement implements Serializable, Cloneable {
      * </p>
      */
     private String spreadDomain;
+    /**
+     * <p>
+     * The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN,
+     * omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
+     * </p>
+     */
+    private String hostResourceGroupArn;
 
     /**
      * Default constructor for Placement object. Callers should use the setter or fluent setter (with...) methods to
@@ -472,6 +479,52 @@ public class Placement implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN,
+     * omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
+     * </p>
+     * 
+     * @param hostResourceGroupArn
+     *        The ARN of the host resource group in which to launch the instances. If you specify a host resource group
+     *        ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
+     */
+
+    public void setHostResourceGroupArn(String hostResourceGroupArn) {
+        this.hostResourceGroupArn = hostResourceGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN,
+     * omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
+     * </p>
+     * 
+     * @return The ARN of the host resource group in which to launch the instances. If you specify a host resource group
+     *         ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
+     */
+
+    public String getHostResourceGroupArn() {
+        return this.hostResourceGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN,
+     * omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
+     * </p>
+     * 
+     * @param hostResourceGroupArn
+     *        The ARN of the host resource group in which to launch the instances. If you specify a host resource group
+     *        ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Placement withHostResourceGroupArn(String hostResourceGroupArn) {
+        setHostResourceGroupArn(hostResourceGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -496,7 +549,9 @@ public class Placement implements Serializable, Cloneable {
         if (getTenancy() != null)
             sb.append("Tenancy: ").append(getTenancy()).append(",");
         if (getSpreadDomain() != null)
-            sb.append("SpreadDomain: ").append(getSpreadDomain());
+            sb.append("SpreadDomain: ").append(getSpreadDomain()).append(",");
+        if (getHostResourceGroupArn() != null)
+            sb.append("HostResourceGroupArn: ").append(getHostResourceGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -539,6 +594,10 @@ public class Placement implements Serializable, Cloneable {
             return false;
         if (other.getSpreadDomain() != null && other.getSpreadDomain().equals(this.getSpreadDomain()) == false)
             return false;
+        if (other.getHostResourceGroupArn() == null ^ this.getHostResourceGroupArn() == null)
+            return false;
+        if (other.getHostResourceGroupArn() != null && other.getHostResourceGroupArn().equals(this.getHostResourceGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -554,6 +613,7 @@ public class Placement implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
         hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         hashCode = prime * hashCode + ((getSpreadDomain() == null) ? 0 : getSpreadDomain().hashCode());
+        hashCode = prime * hashCode + ((getHostResourceGroupArn() == null) ? 0 : getHostResourceGroupArn().hashCode());
         return hashCode;
     }
 

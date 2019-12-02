@@ -27,14 +27,13 @@ public class ListLicenseSpecificationsForResourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
+     * Amazon Resource Name (ARN) of a resource that has an associated license configuration.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      */
     private Integer maxResults;
@@ -47,11 +46,11 @@ public class ListLicenseSpecificationsForResourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
+     * Amazon Resource Name (ARN) of a resource that has an associated license configuration.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
+     *        Amazon Resource Name (ARN) of a resource that has an associated license configuration.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -60,10 +59,10 @@ public class ListLicenseSpecificationsForResourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
+     * Amazon Resource Name (ARN) of a resource that has an associated license configuration.
      * </p>
      * 
-     * @return ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
+     * @return Amazon Resource Name (ARN) of a resource that has an associated license configuration.
      */
 
     public String getResourceArn() {
@@ -72,11 +71,11 @@ public class ListLicenseSpecificationsForResourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
+     * Amazon Resource Name (ARN) of a resource that has an associated license configuration.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of an AMI or Amazon EC2 instance that has an associated license configuration.
+     *        Amazon Resource Name (ARN) of a resource that has an associated license configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,13 +86,11 @@ public class ListLicenseSpecificationsForResourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -102,12 +99,10 @@ public class ListLicenseSpecificationsForResourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
-     * @return Maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value.
+     * @return Maximum number of results to return in a single call.
      */
 
     public Integer getMaxResults() {
@@ -116,13 +111,11 @@ public class ListLicenseSpecificationsForResourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

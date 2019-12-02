@@ -53,6 +53,12 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
     }
 
     @Override
+    public ListFailuresForLicenseConfigurationOperationsResult listFailuresForLicenseConfigurationOperations(
+            ListFailuresForLicenseConfigurationOperationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListLicenseConfigurationsResult listLicenseConfigurations(ListLicenseConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -28,14 +28,13 @@ public class ListAssociationsForLicenseConfigurationRequest extends com.amazonaw
 
     /**
      * <p>
-     * ARN of a <code>LicenseConfiguration</code> object.
+     * Amazon Resource Name (ARN) of a license configuration.
      * </p>
      */
     private String licenseConfigurationArn;
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      */
     private Integer maxResults;
@@ -48,11 +47,11 @@ public class ListAssociationsForLicenseConfigurationRequest extends com.amazonaw
 
     /**
      * <p>
-     * ARN of a <code>LicenseConfiguration</code> object.
+     * Amazon Resource Name (ARN) of a license configuration.
      * </p>
      * 
      * @param licenseConfigurationArn
-     *        ARN of a <code>LicenseConfiguration</code> object.
+     *        Amazon Resource Name (ARN) of a license configuration.
      */
 
     public void setLicenseConfigurationArn(String licenseConfigurationArn) {
@@ -61,10 +60,10 @@ public class ListAssociationsForLicenseConfigurationRequest extends com.amazonaw
 
     /**
      * <p>
-     * ARN of a <code>LicenseConfiguration</code> object.
+     * Amazon Resource Name (ARN) of a license configuration.
      * </p>
      * 
-     * @return ARN of a <code>LicenseConfiguration</code> object.
+     * @return Amazon Resource Name (ARN) of a license configuration.
      */
 
     public String getLicenseConfigurationArn() {
@@ -73,11 +72,11 @@ public class ListAssociationsForLicenseConfigurationRequest extends com.amazonaw
 
     /**
      * <p>
-     * ARN of a <code>LicenseConfiguration</code> object.
+     * Amazon Resource Name (ARN) of a license configuration.
      * </p>
      * 
      * @param licenseConfigurationArn
-     *        ARN of a <code>LicenseConfiguration</code> object.
+     *        Amazon Resource Name (ARN) of a license configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +87,11 @@ public class ListAssociationsForLicenseConfigurationRequest extends com.amazonaw
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -103,12 +100,10 @@ public class ListAssociationsForLicenseConfigurationRequest extends com.amazonaw
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
-     * @return Maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value.
+     * @return Maximum number of results to return in a single call.
      */
 
     public Integer getMaxResults() {
@@ -117,13 +112,11 @@ public class ListAssociationsForLicenseConfigurationRequest extends com.amazonaw
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

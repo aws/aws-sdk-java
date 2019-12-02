@@ -185,20 +185,20 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
-     * possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
-     * <code>disabled</code>)
+     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     * <code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -699,20 +699,20 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
-     * possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
-     * <code>disabled</code>)
+     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     * <code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -1186,19 +1186,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
-     *         <code>required</code>)
+     *         <code>metadata-options.http-tokens</code> - The metadata request authorization state (
+     *         <code>optional</code> | <code>required</code>)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     *         (integer, possible values <code>1</code> to <code>64</code>)
+     *         <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop
+     *         limit (integer, possible values <code>1</code> to <code>64</code>)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     *         <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
      *         <code>enabled</code> | <code>disabled</code>)
      *         </p>
      *         </li>
@@ -1688,20 +1688,20 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
-     * possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
-     * <code>disabled</code>)
+     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     * <code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -2176,19 +2176,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
-     *        <code>required</code>)
+     *        <code>metadata-options.http-tokens</code> - The metadata request authorization state (
+     *        <code>optional</code> | <code>required</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     *        (integer, possible values <code>1</code> to <code>64</code>)
+     *        <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop
+     *        limit (integer, possible values <code>1</code> to <code>64</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     *        <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
      *        <code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>
@@ -2679,20 +2679,20 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
-     * possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
-     * <code>disabled</code>)
+     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     * <code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -3172,19 +3172,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
-     *        <code>required</code>)
+     *        <code>metadata-options.http-tokens</code> - The metadata request authorization state (
+     *        <code>optional</code> | <code>required</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     *        (integer, possible values <code>1</code> to <code>64</code>)
+     *        <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop
+     *        limit (integer, possible values <code>1</code> to <code>64</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     *        <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
      *        <code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>
@@ -3677,20 +3677,20 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
+     * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit (integer,
-     * possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (<code>enabled</code> |
-     * <code>disabled</code>)
+     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     * <code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
@@ -4165,19 +4165,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-tokens</code> - The metadata request authorization state (<code>optional</code> |
-     *        <code>required</code>)
+     *        <code>metadata-options.http-tokens</code> - The metadata request authorization state (
+     *        <code>optional</code> | <code>required</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     *        (integer, possible values <code>1</code> to <code>64</code>)
+     *        <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop
+     *        limit (integer, possible values <code>1</code> to <code>64</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-http-endpoint</code> - Enable or disable metadata access on http endpoint (
+     *        <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
      *        <code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains details of the usage of each resource from the license pool.
+ * Details about the usage of a resource associated with a license configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConfigurationUsage"
@@ -30,48 +30,48 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ARN of the resource associated with a license configuration.
+     * Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * Type of resource associated with athe license configuration.
+     * Type of resource.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * Status of a resource associated with the license configuration.
+     * Status of the resource.
      * </p>
      */
     private String resourceStatus;
     /**
      * <p>
-     * ID of the account that owns a resource that is associated with the license configuration.
+     * ID of the account that owns the resource.
      * </p>
      */
     private String resourceOwnerId;
     /**
      * <p>
-     * Time when the license configuration was initially associated with a resource.
+     * Time when the license configuration was initially associated with the resource.
      * </p>
      */
     private java.util.Date associationTime;
     /**
      * <p>
-     * Number of licenses consumed out of the total provisioned in the license configuration.
+     * Number of licenses consumed by the resource.
      * </p>
      */
     private Long consumedLicenses;
 
     /**
      * <p>
-     * ARN of the resource associated with a license configuration.
+     * Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource associated with a license configuration.
+     *        Amazon Resource Name (ARN) of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -80,10 +80,10 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ARN of the resource associated with a license configuration.
+     * Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return ARN of the resource associated with a license configuration.
+     * @return Amazon Resource Name (ARN) of the resource.
      */
 
     public String getResourceArn() {
@@ -92,11 +92,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ARN of the resource associated with a license configuration.
+     * Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource associated with a license configuration.
+     *        Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Type of resource associated with athe license configuration.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        Type of resource associated with athe license configuration.
+     *        Type of resource.
      * @see ResourceType
      */
 
@@ -121,10 +121,10 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Type of resource associated with athe license configuration.
+     * Type of resource.
      * </p>
      * 
-     * @return Type of resource associated with athe license configuration.
+     * @return Type of resource.
      * @see ResourceType
      */
 
@@ -134,11 +134,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Type of resource associated with athe license configuration.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        Type of resource associated with athe license configuration.
+     *        Type of resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -150,11 +150,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Type of resource associated with athe license configuration.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        Type of resource associated with athe license configuration.
+     *        Type of resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -166,11 +166,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Status of a resource associated with the license configuration.
+     * Status of the resource.
      * </p>
      * 
      * @param resourceStatus
-     *        Status of a resource associated with the license configuration.
+     *        Status of the resource.
      */
 
     public void setResourceStatus(String resourceStatus) {
@@ -179,10 +179,10 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Status of a resource associated with the license configuration.
+     * Status of the resource.
      * </p>
      * 
-     * @return Status of a resource associated with the license configuration.
+     * @return Status of the resource.
      */
 
     public String getResourceStatus() {
@@ -191,11 +191,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Status of a resource associated with the license configuration.
+     * Status of the resource.
      * </p>
      * 
      * @param resourceStatus
-     *        Status of a resource associated with the license configuration.
+     *        Status of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,11 +206,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ID of the account that owns a resource that is associated with the license configuration.
+     * ID of the account that owns the resource.
      * </p>
      * 
      * @param resourceOwnerId
-     *        ID of the account that owns a resource that is associated with the license configuration.
+     *        ID of the account that owns the resource.
      */
 
     public void setResourceOwnerId(String resourceOwnerId) {
@@ -219,10 +219,10 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ID of the account that owns a resource that is associated with the license configuration.
+     * ID of the account that owns the resource.
      * </p>
      * 
-     * @return ID of the account that owns a resource that is associated with the license configuration.
+     * @return ID of the account that owns the resource.
      */
 
     public String getResourceOwnerId() {
@@ -231,11 +231,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * ID of the account that owns a resource that is associated with the license configuration.
+     * ID of the account that owns the resource.
      * </p>
      * 
      * @param resourceOwnerId
-     *        ID of the account that owns a resource that is associated with the license configuration.
+     *        ID of the account that owns the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,11 +246,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Time when the license configuration was initially associated with a resource.
+     * Time when the license configuration was initially associated with the resource.
      * </p>
      * 
      * @param associationTime
-     *        Time when the license configuration was initially associated with a resource.
+     *        Time when the license configuration was initially associated with the resource.
      */
 
     public void setAssociationTime(java.util.Date associationTime) {
@@ -259,10 +259,10 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Time when the license configuration was initially associated with a resource.
+     * Time when the license configuration was initially associated with the resource.
      * </p>
      * 
-     * @return Time when the license configuration was initially associated with a resource.
+     * @return Time when the license configuration was initially associated with the resource.
      */
 
     public java.util.Date getAssociationTime() {
@@ -271,11 +271,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Time when the license configuration was initially associated with a resource.
+     * Time when the license configuration was initially associated with the resource.
      * </p>
      * 
      * @param associationTime
-     *        Time when the license configuration was initially associated with a resource.
+     *        Time when the license configuration was initially associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,11 +286,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Number of licenses consumed out of the total provisioned in the license configuration.
+     * Number of licenses consumed by the resource.
      * </p>
      * 
      * @param consumedLicenses
-     *        Number of licenses consumed out of the total provisioned in the license configuration.
+     *        Number of licenses consumed by the resource.
      */
 
     public void setConsumedLicenses(Long consumedLicenses) {
@@ -299,10 +299,10 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Number of licenses consumed out of the total provisioned in the license configuration.
+     * Number of licenses consumed by the resource.
      * </p>
      * 
-     * @return Number of licenses consumed out of the total provisioned in the license configuration.
+     * @return Number of licenses consumed by the resource.
      */
 
     public Long getConsumedLicenses() {
@@ -311,11 +311,11 @@ public class LicenseConfigurationUsage implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Number of licenses consumed out of the total provisioned in the license configuration.
+     * Number of licenses consumed by the resource.
      * </p>
      * 
      * @param consumedLicenses
-     *        Number of licenses consumed out of the total provisioned in the license configuration.
+     *        Number of licenses consumed by the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

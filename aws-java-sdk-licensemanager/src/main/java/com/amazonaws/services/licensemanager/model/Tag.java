@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Tag for a resource in a key-value format.
+ * Details about a tag for a license configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Tag" target="_top">AWS API
@@ -30,24 +30,24 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key for the resource tag.
+     * Tag key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * Value for the resource tag.
+     * Tag value.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Key for the resource tag.
+     * Tag key.
      * </p>
      * 
      * @param key
-     *        Key for the resource tag.
+     *        Tag key.
      */
 
     public void setKey(String key) {
@@ -56,10 +56,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key for the resource tag.
+     * Tag key.
      * </p>
      * 
-     * @return Key for the resource tag.
+     * @return Tag key.
      */
 
     public String getKey() {
@@ -68,11 +68,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key for the resource tag.
+     * Tag key.
      * </p>
      * 
      * @param key
-     *        Key for the resource tag.
+     *        Tag key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value for the resource tag.
+     * Tag value.
      * </p>
      * 
      * @param value
-     *        Value for the resource tag.
+     *        Tag value.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value for the resource tag.
+     * Tag value.
      * </p>
      * 
-     * @return Value for the resource tag.
+     * @return Tag value.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value for the resource tag.
+     * Tag value.
      * </p>
      * 
      * @param value
-     *        Value for the resource tag.
+     *        Tag value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

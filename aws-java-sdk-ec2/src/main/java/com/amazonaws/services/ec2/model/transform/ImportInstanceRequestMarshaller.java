@@ -166,6 +166,10 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                 if (placement.getSpreadDomain() != null) {
                     request.addParameter("LaunchSpecification.Placement.SpreadDomain", StringUtils.fromString(placement.getSpreadDomain()));
                 }
+
+                if (placement.getHostResourceGroupArn() != null) {
+                    request.addParameter("LaunchSpecification.Placement.HostResourceGroupArn", StringUtils.fromString(placement.getHostResourceGroupArn()));
+                }
             }
 
             if (launchSpecification.getPrivateIpAddress() != null) {

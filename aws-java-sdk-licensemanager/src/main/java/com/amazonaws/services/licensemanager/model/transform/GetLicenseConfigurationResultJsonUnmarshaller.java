@@ -106,6 +106,16 @@ public class GetLicenseConfigurationResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     getLicenseConfigurationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ProductInformationList", targetDepth)) {
+                    context.nextToken();
+                    getLicenseConfigurationResult.setProductInformationList(new ListUnmarshaller<ProductInformation>(ProductInformationJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("AutomatedDiscoveryInformation", targetDepth)) {
+                    context.nextToken();
+                    getLicenseConfigurationResult.setAutomatedDiscoveryInformation(AutomatedDiscoveryInformationJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

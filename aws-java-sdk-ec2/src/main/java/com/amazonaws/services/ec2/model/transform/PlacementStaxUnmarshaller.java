@@ -77,6 +77,11 @@ public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUn
                     placement.setSpreadDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("hostResourceGroupArn", targetDepth)) {
+                    placement.setHostResourceGroupArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return placement;

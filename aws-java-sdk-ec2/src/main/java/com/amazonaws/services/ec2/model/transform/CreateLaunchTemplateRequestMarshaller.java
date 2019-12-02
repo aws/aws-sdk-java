@@ -301,6 +301,10 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                 if (placement.getSpreadDomain() != null) {
                     request.addParameter("LaunchTemplateData.Placement.SpreadDomain", StringUtils.fromString(placement.getSpreadDomain()));
                 }
+
+                if (placement.getHostResourceGroupArn() != null) {
+                    request.addParameter("LaunchTemplateData.Placement.HostResourceGroupArn", StringUtils.fromString(placement.getHostResourceGroupArn()));
+                }
             }
 
             if (launchTemplateData.getRamDiskId() != null) {

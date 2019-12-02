@@ -72,6 +72,11 @@ public class LaunchTemplatePlacementRequestStaxUnmarshaller implements Unmarshal
                     launchTemplatePlacementRequest.setSpreadDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("HostResourceGroupArn", targetDepth)) {
+                    launchTemplatePlacementRequest.setHostResourceGroupArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchTemplatePlacementRequest;

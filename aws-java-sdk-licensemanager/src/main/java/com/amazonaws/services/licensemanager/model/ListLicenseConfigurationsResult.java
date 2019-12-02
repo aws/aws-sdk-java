@@ -25,7 +25,7 @@ public class ListLicenseConfigurationsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Array of license configuration objects.
+     * Information about the license configurations.
      * </p>
      */
     private java.util.List<LicenseConfiguration> licenseConfigurations;
@@ -38,10 +38,10 @@ public class ListLicenseConfigurationsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Array of license configuration objects.
+     * Information about the license configurations.
      * </p>
      * 
-     * @return Array of license configuration objects.
+     * @return Information about the license configurations.
      */
 
     public java.util.List<LicenseConfiguration> getLicenseConfigurations() {
@@ -50,11 +50,11 @@ public class ListLicenseConfigurationsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Array of license configuration objects.
+     * Information about the license configurations.
      * </p>
      * 
      * @param licenseConfigurations
-     *        Array of license configuration objects.
+     *        Information about the license configurations.
      */
 
     public void setLicenseConfigurations(java.util.Collection<LicenseConfiguration> licenseConfigurations) {
@@ -68,7 +68,7 @@ public class ListLicenseConfigurationsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Array of license configuration objects.
+     * Information about the license configurations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListLicenseConfigurationsResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param licenseConfigurations
-     *        Array of license configuration objects.
+     *        Information about the license configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListLicenseConfigurationsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Array of license configuration objects.
+     * Information about the license configurations.
      * </p>
      * 
      * @param licenseConfigurations
-     *        Array of license configuration objects.
+     *        Information about the license configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

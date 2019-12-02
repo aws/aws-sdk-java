@@ -95,6 +95,21 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     }
 
     @Override
+    public java.util.concurrent.Future<ListFailuresForLicenseConfigurationOperationsResult> listFailuresForLicenseConfigurationOperationsAsync(
+            ListFailuresForLicenseConfigurationOperationsRequest request) {
+
+        return listFailuresForLicenseConfigurationOperationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFailuresForLicenseConfigurationOperationsResult> listFailuresForLicenseConfigurationOperationsAsync(
+            ListFailuresForLicenseConfigurationOperationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFailuresForLicenseConfigurationOperationsRequest, ListFailuresForLicenseConfigurationOperationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLicenseConfigurationsResult> listLicenseConfigurationsAsync(ListLicenseConfigurationsRequest request) {
 
         return listLicenseConfigurationsAsync(request, null);

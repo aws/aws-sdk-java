@@ -27,8 +27,7 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      */
     private Integer maxResults;
@@ -40,20 +39,51 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
     private String nextToken;
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<InventoryFilter> filters;
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -62,12 +92,10 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
-     * @return Maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value.
+     * @return Maximum number of results to return in a single call.
      */
 
     public Integer getMaxResults() {
@@ -76,13 +104,11 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +159,75 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters.
+     * @return Filters to scope the results. The following filters and logical operators are supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     *         <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     *         <code>BEGINS_WITH</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     *         <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     *         <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     *         <code>BEGINS_WITH</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     *         <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<InventoryFilter> getFilters() {
@@ -145,11 +236,76 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     *        <code>BEGINS_WITH</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     *        <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     *        <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     *        <code>BEGINS_WITH</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     *        <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<InventoryFilter> filters) {
@@ -163,8 +319,41 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -172,7 +361,39 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     *        <code>BEGINS_WITH</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     *        <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     *        <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     *        <code>BEGINS_WITH</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     *        <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,11 +409,76 @@ public class ListResourceInventoryRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more filters.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>account_id</code> - The ID of the AWS account that owns the resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> |
+     *        <code>BEGINS_WITH</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> |
+     *        <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     *        <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     *        <code>BEGINS_WITH</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> |
+     *        <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

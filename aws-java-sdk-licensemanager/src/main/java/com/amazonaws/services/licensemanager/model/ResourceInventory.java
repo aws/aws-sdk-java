@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A set of attributes that describe a resource.
+ * Details about a resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ResourceInventory" target="_top">AWS
@@ -30,25 +30,25 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique ID of the resource.
+     * ID of the resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The ARN of the resource.
+     * Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The platform of the resource.
+     * Platform of the resource.
      * </p>
      */
     private String platform;
@@ -60,18 +60,18 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
     private String platformVersion;
     /**
      * <p>
-     * Unique ID of the account that owns the resource.
+     * ID of the account that owns the resource.
      * </p>
      */
     private String resourceOwningAccountId;
 
     /**
      * <p>
-     * Unique ID of the resource.
+     * ID of the resource.
      * </p>
      * 
      * @param resourceId
-     *        Unique ID of the resource.
+     *        ID of the resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -80,10 +80,10 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique ID of the resource.
+     * ID of the resource.
      * </p>
      * 
-     * @return Unique ID of the resource.
+     * @return ID of the resource.
      */
 
     public String getResourceId() {
@@ -92,11 +92,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique ID of the resource.
+     * ID of the resource.
      * </p>
      * 
      * @param resourceId
-     *        Unique ID of the resource.
+     *        ID of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      * @see ResourceType
      */
 
@@ -121,10 +121,10 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
-     * @return The type of resource.
+     * @return Type of resource.
      * @see ResourceType
      */
 
@@ -134,11 +134,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -150,11 +150,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -166,11 +166,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the resource.
+     * Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource.
+     *        Amazon Resource Name (ARN) of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -179,10 +179,10 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the resource.
+     * Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return Amazon Resource Name (ARN) of the resource.
      */
 
     public String getResourceArn() {
@@ -191,11 +191,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the resource.
+     * Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource.
+     *        Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,11 +206,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The platform of the resource.
+     * Platform of the resource.
      * </p>
      * 
      * @param platform
-     *        The platform of the resource.
+     *        Platform of the resource.
      */
 
     public void setPlatform(String platform) {
@@ -219,10 +219,10 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The platform of the resource.
+     * Platform of the resource.
      * </p>
      * 
-     * @return The platform of the resource.
+     * @return Platform of the resource.
      */
 
     public String getPlatform() {
@@ -231,11 +231,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The platform of the resource.
+     * Platform of the resource.
      * </p>
      * 
      * @param platform
-     *        The platform of the resource.
+     *        Platform of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,11 +286,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique ID of the account that owns the resource.
+     * ID of the account that owns the resource.
      * </p>
      * 
      * @param resourceOwningAccountId
-     *        Unique ID of the account that owns the resource.
+     *        ID of the account that owns the resource.
      */
 
     public void setResourceOwningAccountId(String resourceOwningAccountId) {
@@ -299,10 +299,10 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique ID of the account that owns the resource.
+     * ID of the account that owns the resource.
      * </p>
      * 
-     * @return Unique ID of the account that owns the resource.
+     * @return ID of the account that owns the resource.
      */
 
     public String getResourceOwningAccountId() {
@@ -311,11 +311,11 @@ public class ResourceInventory implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique ID of the account that owns the resource.
+     * ID of the account that owns the resource.
      * </p>
      * 
      * @param resourceOwningAccountId
-     *        Unique ID of the account that owns the resource.
+     *        ID of the account that owns the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

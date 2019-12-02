@@ -25,7 +25,7 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Regional S3 bucket path for storing reports, license trail event data, discovery data, etc.
+     * Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.
      * </p>
      */
     private String s3BucketArn;
@@ -47,14 +47,21 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private Boolean enableCrossAccountsDiscovery;
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide member
+     * accounts with access to this share.
+     * </p>
+     */
+    private String licenseManagerResourceShareArn;
 
     /**
      * <p>
-     * Regional S3 bucket path for storing reports, license trail event data, discovery data, etc.
+     * Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.
      * </p>
      * 
      * @param s3BucketArn
-     *        Regional S3 bucket path for storing reports, license trail event data, discovery data, etc.
+     *        Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.
      */
 
     public void setS3BucketArn(String s3BucketArn) {
@@ -63,10 +70,10 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Regional S3 bucket path for storing reports, license trail event data, discovery data, etc.
+     * Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.
      * </p>
      * 
-     * @return Regional S3 bucket path for storing reports, license trail event data, discovery data, etc.
+     * @return Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.
      */
 
     public String getS3BucketArn() {
@@ -75,11 +82,11 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Regional S3 bucket path for storing reports, license trail event data, discovery data, etc.
+     * Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.
      * </p>
      * 
      * @param s3BucketArn
-     *        Regional S3 bucket path for storing reports, license trail event data, discovery data, etc.
+     *        Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,6 +228,52 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide member
+     * accounts with access to this share.
+     * </p>
+     * 
+     * @param licenseManagerResourceShareArn
+     *        Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide
+     *        member accounts with access to this share.
+     */
+
+    public void setLicenseManagerResourceShareArn(String licenseManagerResourceShareArn) {
+        this.licenseManagerResourceShareArn = licenseManagerResourceShareArn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide member
+     * accounts with access to this share.
+     * </p>
+     * 
+     * @return Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide
+     *         member accounts with access to this share.
+     */
+
+    public String getLicenseManagerResourceShareArn() {
+        return this.licenseManagerResourceShareArn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide member
+     * accounts with access to this share.
+     * </p>
+     * 
+     * @param licenseManagerResourceShareArn
+     *        Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide
+     *        member accounts with access to this share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetServiceSettingsResult withLicenseManagerResourceShareArn(String licenseManagerResourceShareArn) {
+        setLicenseManagerResourceShareArn(licenseManagerResourceShareArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -239,7 +292,9 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
         if (getOrganizationConfiguration() != null)
             sb.append("OrganizationConfiguration: ").append(getOrganizationConfiguration()).append(",");
         if (getEnableCrossAccountsDiscovery() != null)
-            sb.append("EnableCrossAccountsDiscovery: ").append(getEnableCrossAccountsDiscovery());
+            sb.append("EnableCrossAccountsDiscovery: ").append(getEnableCrossAccountsDiscovery()).append(",");
+        if (getLicenseManagerResourceShareArn() != null)
+            sb.append("LicenseManagerResourceShareArn: ").append(getLicenseManagerResourceShareArn());
         sb.append("}");
         return sb.toString();
     }
@@ -270,6 +325,11 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getEnableCrossAccountsDiscovery() != null && other.getEnableCrossAccountsDiscovery().equals(this.getEnableCrossAccountsDiscovery()) == false)
             return false;
+        if (other.getLicenseManagerResourceShareArn() == null ^ this.getLicenseManagerResourceShareArn() == null)
+            return false;
+        if (other.getLicenseManagerResourceShareArn() != null
+                && other.getLicenseManagerResourceShareArn().equals(this.getLicenseManagerResourceShareArn()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +342,7 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
         hashCode = prime * hashCode + ((getOrganizationConfiguration() == null) ? 0 : getOrganizationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEnableCrossAccountsDiscovery() == null) ? 0 : getEnableCrossAccountsDiscovery().hashCode());
+        hashCode = prime * hashCode + ((getLicenseManagerResourceShareArn() == null) ? 0 : getLicenseManagerResourceShareArn().hashCode());
         return hashCode;
     }
 

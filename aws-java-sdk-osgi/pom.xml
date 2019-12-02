@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.684-SNAPSHOT</version>
+    <version>1.11.684</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,18 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-schemas</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-imagebuilder</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-elasticinference</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1352,6 +1364,14 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Schemas</title>
+                                  <packages>com.amazonaws.services.schemas*</packages>
+                              </group>
+                              <group>
+                                  <title>EC2 Image Builder</title>
+                                  <packages>com.amazonaws.services.imagebuilder*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Elastic  Inference</title>
                                   <packages>com.amazonaws.services.elasticinference*</packages>

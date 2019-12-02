@@ -30,24 +30,24 @@ public class ConsumedLicenseSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Resource type of the resource consuming a license (instance, host, or AMI).
+     * Resource type of the resource consuming a license.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * Number of licenses consumed by a resource.
+     * Number of licenses consumed by the resource.
      * </p>
      */
     private Long consumedLicenses;
 
     /**
      * <p>
-     * Resource type of the resource consuming a license (instance, host, or AMI).
+     * Resource type of the resource consuming a license.
      * </p>
      * 
      * @param resourceType
-     *        Resource type of the resource consuming a license (instance, host, or AMI).
+     *        Resource type of the resource consuming a license.
      * @see ResourceType
      */
 
@@ -57,10 +57,10 @@ public class ConsumedLicenseSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Resource type of the resource consuming a license (instance, host, or AMI).
+     * Resource type of the resource consuming a license.
      * </p>
      * 
-     * @return Resource type of the resource consuming a license (instance, host, or AMI).
+     * @return Resource type of the resource consuming a license.
      * @see ResourceType
      */
 
@@ -70,11 +70,11 @@ public class ConsumedLicenseSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Resource type of the resource consuming a license (instance, host, or AMI).
+     * Resource type of the resource consuming a license.
      * </p>
      * 
      * @param resourceType
-     *        Resource type of the resource consuming a license (instance, host, or AMI).
+     *        Resource type of the resource consuming a license.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -86,11 +86,11 @@ public class ConsumedLicenseSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Resource type of the resource consuming a license (instance, host, or AMI).
+     * Resource type of the resource consuming a license.
      * </p>
      * 
      * @param resourceType
-     *        Resource type of the resource consuming a license (instance, host, or AMI).
+     *        Resource type of the resource consuming a license.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -102,11 +102,11 @@ public class ConsumedLicenseSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Number of licenses consumed by a resource.
+     * Number of licenses consumed by the resource.
      * </p>
      * 
      * @param consumedLicenses
-     *        Number of licenses consumed by a resource.
+     *        Number of licenses consumed by the resource.
      */
 
     public void setConsumedLicenses(Long consumedLicenses) {
@@ -115,10 +115,10 @@ public class ConsumedLicenseSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Number of licenses consumed by a resource.
+     * Number of licenses consumed by the resource.
      * </p>
      * 
-     * @return Number of licenses consumed by a resource.
+     * @return Number of licenses consumed by the resource.
      */
 
     public Long getConsumedLicenses() {
@@ -127,11 +127,11 @@ public class ConsumedLicenseSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Number of licenses consumed by a resource.
+     * Number of licenses consumed by the resource.
      * </p>
      * 
      * @param consumedLicenses
-     *        Number of licenses consumed by a resource.
+     *        Number of licenses consumed by the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

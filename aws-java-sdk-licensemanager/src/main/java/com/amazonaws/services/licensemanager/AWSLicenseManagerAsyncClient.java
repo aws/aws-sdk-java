@@ -27,13 +27,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <fullname> AWS License Manager </fullname>
  * <p>
- * <i>This is the AWS License Manager API Reference.</i> It provides descriptions, syntax, and usage examples for each
- * of the actions and data types for License Manager. The topic for each action shows the Query API request parameters
- * and the XML response. You can also view the XML request elements in the WSDL.
- * </p>
- * <p>
- * Alternatively, you can use one of the AWS SDKs to access an API that's tailored to the programming language or
- * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+ * AWS License Manager makes it easier to manage licenses from software vendors across multiple AWS accounts and
+ * on-premises servers.
  * </p>
  */
 @ThreadSafe
@@ -221,6 +216,41 @@ public class AWSLicenseManagerAsyncClient extends AWSLicenseManagerClient implem
 
                 try {
                     result = executeListAssociationsForLicenseConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFailuresForLicenseConfigurationOperationsResult> listFailuresForLicenseConfigurationOperationsAsync(
+            ListFailuresForLicenseConfigurationOperationsRequest request) {
+
+        return listFailuresForLicenseConfigurationOperationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFailuresForLicenseConfigurationOperationsResult> listFailuresForLicenseConfigurationOperationsAsync(
+            final ListFailuresForLicenseConfigurationOperationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFailuresForLicenseConfigurationOperationsRequest, ListFailuresForLicenseConfigurationOperationsResult> asyncHandler) {
+        final ListFailuresForLicenseConfigurationOperationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFailuresForLicenseConfigurationOperationsResult>() {
+            @Override
+            public ListFailuresForLicenseConfigurationOperationsResult call() throws Exception {
+                ListFailuresForLicenseConfigurationOperationsResult result = null;
+
+                try {
+                    result = executeListFailuresForLicenseConfigurationOperations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

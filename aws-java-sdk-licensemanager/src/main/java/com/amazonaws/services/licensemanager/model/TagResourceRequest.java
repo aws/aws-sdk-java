@@ -27,24 +27,24 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Resource of the ARN to be tagged.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * Names of the tags to attach to the resource.
+     * One or more tags.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Resource of the ARN to be tagged.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
      * @param resourceArn
-     *        Resource of the ARN to be tagged.
+     *        Amazon Resource Name (ARN) of the license configuration.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Resource of the ARN to be tagged.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
-     * @return Resource of the ARN to be tagged.
+     * @return Amazon Resource Name (ARN) of the license configuration.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Resource of the ARN to be tagged.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
      * @param resourceArn
-     *        Resource of the ARN to be tagged.
+     *        Amazon Resource Name (ARN) of the license configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of the tags to attach to the resource.
+     * One or more tags.
      * </p>
      * 
-     * @return Names of the tags to attach to the resource.
+     * @return One or more tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -92,11 +92,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of the tags to attach to the resource.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        Names of the tags to attach to the resource.
+     *        One or more tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -110,7 +110,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of the tags to attach to the resource.
+     * One or more tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        Names of the tags to attach to the resource.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of the tags to attach to the resource.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        Names of the tags to attach to the resource.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A filter name and value pair that is used to return a more specific list of results from a describe operation.
- * Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters
- * supported by a <code>Describe</code> operation are documented with the <code>Describe</code> operation.
+ * A filter name and value pair that is used to return more specific results from a describe operation. Filters can be
+ * used to match a set of resources by specific criteria, such as tags, attributes, or IDs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Filter" target="_top">AWS API
@@ -38,7 +37,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * Filter values. Filter values are case-sensitive.
      * </p>
      */
     private java.util.List<String> values;
@@ -85,10 +84,10 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * Filter values. Filter values are case-sensitive.
      * </p>
      * 
-     * @return One or more filter values. Filter values are case-sensitive.
+     * @return Filter values. Filter values are case-sensitive.
      */
 
     public java.util.List<String> getValues() {
@@ -97,11 +96,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * Filter values. Filter values are case-sensitive.
      * </p>
      * 
      * @param values
-     *        One or more filter values. Filter values are case-sensitive.
+     *        Filter values. Filter values are case-sensitive.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -115,7 +114,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * Filter values. Filter values are case-sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +123,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        One or more filter values. Filter values are case-sensitive.
+     *        Filter values. Filter values are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +139,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * Filter values. Filter values are case-sensitive.
      * </p>
      * 
      * @param values
-     *        One or more filter values. Filter values are case-sensitive.
+     *        Filter values. Filter values are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

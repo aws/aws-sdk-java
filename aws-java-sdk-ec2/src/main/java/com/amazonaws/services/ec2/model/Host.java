@@ -127,6 +127,13 @@ public class Host implements Serializable, Cloneable {
      * </p>
      */
     private String availabilityZoneId;
+    /**
+     * <p>
+     * Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b> is
+     * <code>true</code>, the host is in a host resource group; otherwise, it is not.
+     * </p>
+     */
+    private Boolean memberOfServiceLinkedResourceGroup;
 
     /**
      * <p>
@@ -1016,6 +1023,70 @@ public class Host implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b> is
+     * <code>true</code>, the host is in a host resource group; otherwise, it is not.
+     * </p>
+     * 
+     * @param memberOfServiceLinkedResourceGroup
+     *        Indicates whether the Dedicated Host is in a host resource group. If
+     *        <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a host resource group;
+     *        otherwise, it is not.
+     */
+
+    public void setMemberOfServiceLinkedResourceGroup(Boolean memberOfServiceLinkedResourceGroup) {
+        this.memberOfServiceLinkedResourceGroup = memberOfServiceLinkedResourceGroup;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b> is
+     * <code>true</code>, the host is in a host resource group; otherwise, it is not.
+     * </p>
+     * 
+     * @return Indicates whether the Dedicated Host is in a host resource group. If
+     *         <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a host resource group;
+     *         otherwise, it is not.
+     */
+
+    public Boolean getMemberOfServiceLinkedResourceGroup() {
+        return this.memberOfServiceLinkedResourceGroup;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b> is
+     * <code>true</code>, the host is in a host resource group; otherwise, it is not.
+     * </p>
+     * 
+     * @param memberOfServiceLinkedResourceGroup
+     *        Indicates whether the Dedicated Host is in a host resource group. If
+     *        <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a host resource group;
+     *        otherwise, it is not.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Host withMemberOfServiceLinkedResourceGroup(Boolean memberOfServiceLinkedResourceGroup) {
+        setMemberOfServiceLinkedResourceGroup(memberOfServiceLinkedResourceGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b> is
+     * <code>true</code>, the host is in a host resource group; otherwise, it is not.
+     * </p>
+     * 
+     * @return Indicates whether the Dedicated Host is in a host resource group. If
+     *         <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a host resource group;
+     *         otherwise, it is not.
+     */
+
+    public Boolean isMemberOfServiceLinkedResourceGroup() {
+        return this.memberOfServiceLinkedResourceGroup;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1058,7 +1129,9 @@ public class Host implements Serializable, Cloneable {
         if (getOwnerId() != null)
             sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getAvailabilityZoneId() != null)
-            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId());
+            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
+        if (getMemberOfServiceLinkedResourceGroup() != null)
+            sb.append("MemberOfServiceLinkedResourceGroup: ").append(getMemberOfServiceLinkedResourceGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -1137,6 +1210,11 @@ public class Host implements Serializable, Cloneable {
             return false;
         if (other.getAvailabilityZoneId() != null && other.getAvailabilityZoneId().equals(this.getAvailabilityZoneId()) == false)
             return false;
+        if (other.getMemberOfServiceLinkedResourceGroup() == null ^ this.getMemberOfServiceLinkedResourceGroup() == null)
+            return false;
+        if (other.getMemberOfServiceLinkedResourceGroup() != null
+                && other.getMemberOfServiceLinkedResourceGroup().equals(this.getMemberOfServiceLinkedResourceGroup()) == false)
+            return false;
         return true;
     }
 
@@ -1161,6 +1239,7 @@ public class Host implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAllowsMultipleInstanceTypes() == null) ? 0 : getAllowsMultipleInstanceTypes().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
+        hashCode = prime * hashCode + ((getMemberOfServiceLinkedResourceGroup() == null) ? 0 : getMemberOfServiceLinkedResourceGroup().hashCode());
         return hashCode;
     }
 

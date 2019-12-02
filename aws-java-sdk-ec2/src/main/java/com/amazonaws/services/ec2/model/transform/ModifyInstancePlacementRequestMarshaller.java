@@ -64,6 +64,10 @@ public class ModifyInstancePlacementRequestMarshaller implements Marshaller<Requ
             request.addParameter("PartitionNumber", StringUtils.fromInteger(modifyInstancePlacementRequest.getPartitionNumber()));
         }
 
+        if (modifyInstancePlacementRequest.getHostResourceGroupArn() != null) {
+            request.addParameter("HostResourceGroupArn", StringUtils.fromString(modifyInstancePlacementRequest.getHostResourceGroupArn()));
+        }
+
         return request;
     }
 

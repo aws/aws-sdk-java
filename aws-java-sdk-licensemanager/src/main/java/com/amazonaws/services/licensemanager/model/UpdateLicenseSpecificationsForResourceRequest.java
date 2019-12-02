@@ -28,30 +28,30 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * ARN for an AWS server resource.
+     * Amazon Resource Name (ARN) of the AWS resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * License configuration ARNs to be added to a resource.
+     * ARNs of the license configurations to add.
      * </p>
      */
     private java.util.List<LicenseSpecification> addLicenseSpecifications;
     /**
      * <p>
-     * License configuration ARNs to be removed from a resource.
+     * ARNs of the license configurations to remove.
      * </p>
      */
     private java.util.List<LicenseSpecification> removeLicenseSpecifications;
 
     /**
      * <p>
-     * ARN for an AWS server resource.
+     * Amazon Resource Name (ARN) of the AWS resource.
      * </p>
      * 
      * @param resourceArn
-     *        ARN for an AWS server resource.
+     *        Amazon Resource Name (ARN) of the AWS resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -60,10 +60,10 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * ARN for an AWS server resource.
+     * Amazon Resource Name (ARN) of the AWS resource.
      * </p>
      * 
-     * @return ARN for an AWS server resource.
+     * @return Amazon Resource Name (ARN) of the AWS resource.
      */
 
     public String getResourceArn() {
@@ -72,11 +72,11 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * ARN for an AWS server resource.
+     * Amazon Resource Name (ARN) of the AWS resource.
      * </p>
      * 
      * @param resourceArn
-     *        ARN for an AWS server resource.
+     *        Amazon Resource Name (ARN) of the AWS resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +87,10 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * License configuration ARNs to be added to a resource.
+     * ARNs of the license configurations to add.
      * </p>
      * 
-     * @return License configuration ARNs to be added to a resource.
+     * @return ARNs of the license configurations to add.
      */
 
     public java.util.List<LicenseSpecification> getAddLicenseSpecifications() {
@@ -99,11 +99,11 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * License configuration ARNs to be added to a resource.
+     * ARNs of the license configurations to add.
      * </p>
      * 
      * @param addLicenseSpecifications
-     *        License configuration ARNs to be added to a resource.
+     *        ARNs of the license configurations to add.
      */
 
     public void setAddLicenseSpecifications(java.util.Collection<LicenseSpecification> addLicenseSpecifications) {
@@ -117,7 +117,7 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * License configuration ARNs to be added to a resource.
+     * ARNs of the license configurations to add.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,7 +126,7 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
      * </p>
      * 
      * @param addLicenseSpecifications
-     *        License configuration ARNs to be added to a resource.
+     *        ARNs of the license configurations to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * License configuration ARNs to be added to a resource.
+     * ARNs of the license configurations to add.
      * </p>
      * 
      * @param addLicenseSpecifications
-     *        License configuration ARNs to be added to a resource.
+     *        ARNs of the license configurations to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,10 +157,10 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * License configuration ARNs to be removed from a resource.
+     * ARNs of the license configurations to remove.
      * </p>
      * 
-     * @return License configuration ARNs to be removed from a resource.
+     * @return ARNs of the license configurations to remove.
      */
 
     public java.util.List<LicenseSpecification> getRemoveLicenseSpecifications() {
@@ -169,11 +169,11 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * License configuration ARNs to be removed from a resource.
+     * ARNs of the license configurations to remove.
      * </p>
      * 
      * @param removeLicenseSpecifications
-     *        License configuration ARNs to be removed from a resource.
+     *        ARNs of the license configurations to remove.
      */
 
     public void setRemoveLicenseSpecifications(java.util.Collection<LicenseSpecification> removeLicenseSpecifications) {
@@ -187,7 +187,7 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * License configuration ARNs to be removed from a resource.
+     * ARNs of the license configurations to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -196,7 +196,7 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
      * </p>
      * 
      * @param removeLicenseSpecifications
-     *        License configuration ARNs to be removed from a resource.
+     *        ARNs of the license configurations to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +212,11 @@ public class UpdateLicenseSpecificationsForResourceRequest extends com.amazonaws
 
     /**
      * <p>
-     * License configuration ARNs to be removed from a resource.
+     * ARNs of the license configurations to remove.
      * </p>
      * 
      * @param removeLicenseSpecifications
-     *        License configuration ARNs to be removed from a resource.
+     *        ARNs of the license configurations to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

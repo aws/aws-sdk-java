@@ -27,14 +27,13 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * ARN of the targeted <code>LicenseConfiguration</code> object.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      */
     private String licenseConfigurationArn;
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      */
     private Integer maxResults;
@@ -46,18 +45,38 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
     private String nextToken;
     /**
      * <p>
-     * List of filters to apply.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<Filter> filters;
 
     /**
      * <p>
-     * ARN of the targeted <code>LicenseConfiguration</code> object.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
      * @param licenseConfigurationArn
-     *        ARN of the targeted <code>LicenseConfiguration</code> object.
+     *        Amazon Resource Name (ARN) of the license configuration.
      */
 
     public void setLicenseConfigurationArn(String licenseConfigurationArn) {
@@ -66,10 +85,10 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * ARN of the targeted <code>LicenseConfiguration</code> object.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
-     * @return ARN of the targeted <code>LicenseConfiguration</code> object.
+     * @return Amazon Resource Name (ARN) of the license configuration.
      */
 
     public String getLicenseConfigurationArn() {
@@ -78,11 +97,11 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * ARN of the targeted <code>LicenseConfiguration</code> object.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
      * @param licenseConfigurationArn
-     *        ARN of the targeted <code>LicenseConfiguration</code> object.
+     *        Amazon Resource Name (ARN) of the license configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,13 +112,11 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -108,12 +125,10 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
-     * @return Maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value.
+     * @return Maximum number of results to return in a single call.
      */
 
     public Integer getMaxResults() {
@@ -122,13 +137,11 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Maximum number of results to return in a single call. To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.
+     * Maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     *        with the returned <code>NextToken</code> value.
+     *        Maximum number of results to return in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,10 +192,49 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * List of filters to apply.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return List of filters to apply.
+     * @return Filters to scope the results. The following filters and logical operators are supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     *         <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     *         SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     *         <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -191,11 +243,50 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * List of filters to apply.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        List of filters to apply.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     *        SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -209,8 +300,28 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * List of filters to apply.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -218,7 +329,26 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param filters
-     *        List of filters to apply.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     *        SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +364,50 @@ public class ListUsageForLicenseConfigurationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * List of filters to apply.
+     * Filters to scope the results. The following filters and logical operators are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     * SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     * <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        List of filters to apply.
+     *        Filters to scope the results. The following filters and logical operators are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resourceType</code> - The resource type (EC2_INSTANCE | EC2_HOST | EC2_AMI |
+     *        SYSTEMS_MANAGER_MANAGED_INSTANCE). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are
+     *        <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

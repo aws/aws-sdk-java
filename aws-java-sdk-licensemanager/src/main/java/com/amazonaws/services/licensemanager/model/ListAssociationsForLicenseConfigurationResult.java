@@ -27,8 +27,7 @@ public class ListAssociationsForLicenseConfigurationResult extends com.amazonaws
 
     /**
      * <p>
-     * Lists association objects for the license configuration, each containing the association time, number of consumed
-     * licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and resource type.
+     * Information about the associations for the license configuration.
      * </p>
      */
     private java.util.List<LicenseConfigurationAssociation> licenseConfigurationAssociations;
@@ -41,13 +40,10 @@ public class ListAssociationsForLicenseConfigurationResult extends com.amazonaws
 
     /**
      * <p>
-     * Lists association objects for the license configuration, each containing the association time, number of consumed
-     * licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and resource type.
+     * Information about the associations for the license configuration.
      * </p>
      * 
-     * @return Lists association objects for the license configuration, each containing the association time, number of
-     *         consumed licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and
-     *         resource type.
+     * @return Information about the associations for the license configuration.
      */
 
     public java.util.List<LicenseConfigurationAssociation> getLicenseConfigurationAssociations() {
@@ -56,14 +52,11 @@ public class ListAssociationsForLicenseConfigurationResult extends com.amazonaws
 
     /**
      * <p>
-     * Lists association objects for the license configuration, each containing the association time, number of consumed
-     * licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and resource type.
+     * Information about the associations for the license configuration.
      * </p>
      * 
      * @param licenseConfigurationAssociations
-     *        Lists association objects for the license configuration, each containing the association time, number of
-     *        consumed licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and
-     *        resource type.
+     *        Information about the associations for the license configuration.
      */
 
     public void setLicenseConfigurationAssociations(java.util.Collection<LicenseConfigurationAssociation> licenseConfigurationAssociations) {
@@ -77,8 +70,7 @@ public class ListAssociationsForLicenseConfigurationResult extends com.amazonaws
 
     /**
      * <p>
-     * Lists association objects for the license configuration, each containing the association time, number of consumed
-     * licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and resource type.
+     * Information about the associations for the license configuration.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,9 +79,7 @@ public class ListAssociationsForLicenseConfigurationResult extends com.amazonaws
      * </p>
      * 
      * @param licenseConfigurationAssociations
-     *        Lists association objects for the license configuration, each containing the association time, number of
-     *        consumed licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and
-     *        resource type.
+     *        Information about the associations for the license configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,14 +96,11 @@ public class ListAssociationsForLicenseConfigurationResult extends com.amazonaws
 
     /**
      * <p>
-     * Lists association objects for the license configuration, each containing the association time, number of consumed
-     * licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and resource type.
+     * Information about the associations for the license configuration.
      * </p>
      * 
      * @param licenseConfigurationAssociations
-     *        Lists association objects for the license configuration, each containing the association time, number of
-     *        consumed licenses, resource ARN, resource ID, account ID that owns the resource, resource size, and
-     *        resource type.
+     *        Information about the associations for the license configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

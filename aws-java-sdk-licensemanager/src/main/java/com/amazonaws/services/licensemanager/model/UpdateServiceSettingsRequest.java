@@ -27,19 +27,19 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the Amazon S3 bucket where License Manager information is stored.
+     * Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.
      * </p>
      */
     private String s3BucketArn;
     /**
      * <p>
-     * ARN of the Amazon SNS topic used for License Manager alerts.
+     * Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
      * </p>
      */
     private String snsTopicArn;
     /**
      * <p>
-     * Integrates AWS Organizations with License Manager for cross-account discovery.
+     * Enables integration with AWS Organizations for cross-account discovery.
      * </p>
      */
     private OrganizationConfiguration organizationConfiguration;
@@ -52,11 +52,11 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the Amazon S3 bucket where License Manager information is stored.
+     * Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.
      * </p>
      * 
      * @param s3BucketArn
-     *        ARN of the Amazon S3 bucket where License Manager information is stored.
+     *        Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.
      */
 
     public void setS3BucketArn(String s3BucketArn) {
@@ -65,10 +65,10 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the Amazon S3 bucket where License Manager information is stored.
+     * Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.
      * </p>
      * 
-     * @return ARN of the Amazon S3 bucket where License Manager information is stored.
+     * @return Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.
      */
 
     public String getS3BucketArn() {
@@ -77,11 +77,11 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the Amazon S3 bucket where License Manager information is stored.
+     * Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.
      * </p>
      * 
      * @param s3BucketArn
-     *        ARN of the Amazon S3 bucket where License Manager information is stored.
+     *        Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the Amazon SNS topic used for License Manager alerts.
+     * Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
      * </p>
      * 
      * @param snsTopicArn
-     *        ARN of the Amazon SNS topic used for License Manager alerts.
+     *        Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -105,10 +105,10 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the Amazon SNS topic used for License Manager alerts.
+     * Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
      * </p>
      * 
-     * @return ARN of the Amazon SNS topic used for License Manager alerts.
+     * @return Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
      */
 
     public String getSnsTopicArn() {
@@ -117,11 +117,11 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ARN of the Amazon SNS topic used for License Manager alerts.
+     * Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
      * </p>
      * 
      * @param snsTopicArn
-     *        ARN of the Amazon SNS topic used for License Manager alerts.
+     *        Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Integrates AWS Organizations with License Manager for cross-account discovery.
+     * Enables integration with AWS Organizations for cross-account discovery.
      * </p>
      * 
      * @param organizationConfiguration
-     *        Integrates AWS Organizations with License Manager for cross-account discovery.
+     *        Enables integration with AWS Organizations for cross-account discovery.
      */
 
     public void setOrganizationConfiguration(OrganizationConfiguration organizationConfiguration) {
@@ -145,10 +145,10 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Integrates AWS Organizations with License Manager for cross-account discovery.
+     * Enables integration with AWS Organizations for cross-account discovery.
      * </p>
      * 
-     * @return Integrates AWS Organizations with License Manager for cross-account discovery.
+     * @return Enables integration with AWS Organizations for cross-account discovery.
      */
 
     public OrganizationConfiguration getOrganizationConfiguration() {
@@ -157,11 +157,11 @@ public class UpdateServiceSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Integrates AWS Organizations with License Manager for cross-account discovery.
+     * Enables integration with AWS Organizations for cross-account discovery.
      * </p>
      * 
      * @param organizationConfiguration
-     *        Integrates AWS Organizations with License Manager for cross-account discovery.
+     *        Enables integration with AWS Organizations for cross-account discovery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

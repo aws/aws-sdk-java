@@ -42,6 +42,8 @@ public class CreateLicenseConfigurationRequestMarshaller {
             .marshallLocationName("LicenseRules").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> PRODUCTINFORMATIONLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductInformationList").build();
 
     private static final CreateLicenseConfigurationRequestMarshaller instance = new CreateLicenseConfigurationRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateLicenseConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createLicenseConfigurationRequest.getLicenseCountHardLimit(), LICENSECOUNTHARDLIMIT_BINDING);
             protocolMarshaller.marshall(createLicenseConfigurationRequest.getLicenseRules(), LICENSERULES_BINDING);
             protocolMarshaller.marshall(createLicenseConfigurationRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createLicenseConfigurationRequest.getProductInformationList(), PRODUCTINFORMATIONLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

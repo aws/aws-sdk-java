@@ -26,7 +26,7 @@ public class ListUsageForLicenseConfigurationResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An array of <code>LicenseConfigurationUsage</code> objects.
+     * Information about the license configurations.
      * </p>
      */
     private java.util.List<LicenseConfigurationUsage> licenseConfigurationUsageList;
@@ -39,10 +39,10 @@ public class ListUsageForLicenseConfigurationResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An array of <code>LicenseConfigurationUsage</code> objects.
+     * Information about the license configurations.
      * </p>
      * 
-     * @return An array of <code>LicenseConfigurationUsage</code> objects.
+     * @return Information about the license configurations.
      */
 
     public java.util.List<LicenseConfigurationUsage> getLicenseConfigurationUsageList() {
@@ -51,11 +51,11 @@ public class ListUsageForLicenseConfigurationResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An array of <code>LicenseConfigurationUsage</code> objects.
+     * Information about the license configurations.
      * </p>
      * 
      * @param licenseConfigurationUsageList
-     *        An array of <code>LicenseConfigurationUsage</code> objects.
+     *        Information about the license configurations.
      */
 
     public void setLicenseConfigurationUsageList(java.util.Collection<LicenseConfigurationUsage> licenseConfigurationUsageList) {
@@ -69,7 +69,7 @@ public class ListUsageForLicenseConfigurationResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An array of <code>LicenseConfigurationUsage</code> objects.
+     * Information about the license configurations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListUsageForLicenseConfigurationResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param licenseConfigurationUsageList
-     *        An array of <code>LicenseConfigurationUsage</code> objects.
+     *        Information about the license configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListUsageForLicenseConfigurationResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An array of <code>LicenseConfigurationUsage</code> objects.
+     * Information about the license configurations.
      * </p>
      * 
      * @param licenseConfigurationUsageList
-     *        An array of <code>LicenseConfigurationUsage</code> objects.
+     *        Information about the license configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

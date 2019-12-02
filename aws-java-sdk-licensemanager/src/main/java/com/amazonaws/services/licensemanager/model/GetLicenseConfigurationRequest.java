@@ -27,18 +27,18 @@ public class GetLicenseConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * ARN of the license configuration being requested.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      */
     private String licenseConfigurationArn;
 
     /**
      * <p>
-     * ARN of the license configuration being requested.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
      * @param licenseConfigurationArn
-     *        ARN of the license configuration being requested.
+     *        Amazon Resource Name (ARN) of the license configuration.
      */
 
     public void setLicenseConfigurationArn(String licenseConfigurationArn) {
@@ -47,10 +47,10 @@ public class GetLicenseConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * ARN of the license configuration being requested.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
-     * @return ARN of the license configuration being requested.
+     * @return Amazon Resource Name (ARN) of the license configuration.
      */
 
     public String getLicenseConfigurationArn() {
@@ -59,11 +59,11 @@ public class GetLicenseConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * ARN of the license configuration being requested.
+     * Amazon Resource Name (ARN) of the license configuration.
      * </p>
      * 
      * @param licenseConfigurationArn
-     *        ARN of the license configuration being requested.
+     *        Amazon Resource Name (ARN) of the license configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

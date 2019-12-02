@@ -102,6 +102,15 @@ public class LicenseConfigurationJsonUnmarshaller implements Unmarshaller<Licens
                     licenseConfiguration.setManagedResourceSummaryList(new ListUnmarshaller<ManagedResourceSummary>(ManagedResourceSummaryJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ProductInformationList", targetDepth)) {
+                    context.nextToken();
+                    licenseConfiguration.setProductInformationList(new ListUnmarshaller<ProductInformation>(ProductInformationJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("AutomatedDiscoveryInformation", targetDepth)) {
+                    context.nextToken();
+                    licenseConfiguration.setAutomatedDiscoveryInformation(AutomatedDiscoveryInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

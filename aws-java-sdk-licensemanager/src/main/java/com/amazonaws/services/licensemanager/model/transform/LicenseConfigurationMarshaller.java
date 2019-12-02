@@ -54,6 +54,10 @@ public class LicenseConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumedLicenseSummaryList").build();
     private static final MarshallingInfo<List> MANAGEDRESOURCESUMMARYLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedResourceSummaryList").build();
+    private static final MarshallingInfo<List> PRODUCTINFORMATIONLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductInformationList").build();
+    private static final MarshallingInfo<StructuredPojo> AUTOMATEDDISCOVERYINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomatedDiscoveryInformation").build();
 
     private static final LicenseConfigurationMarshaller instance = new LicenseConfigurationMarshaller();
 
@@ -84,6 +88,8 @@ public class LicenseConfigurationMarshaller {
             protocolMarshaller.marshall(licenseConfiguration.getOwnerAccountId(), OWNERACCOUNTID_BINDING);
             protocolMarshaller.marshall(licenseConfiguration.getConsumedLicenseSummaryList(), CONSUMEDLICENSESUMMARYLIST_BINDING);
             protocolMarshaller.marshall(licenseConfiguration.getManagedResourceSummaryList(), MANAGEDRESOURCESUMMARYLIST_BINDING);
+            protocolMarshaller.marshall(licenseConfiguration.getProductInformationList(), PRODUCTINFORMATIONLIST_BINDING);
+            protocolMarshaller.marshall(licenseConfiguration.getAutomatedDiscoveryInformation(), AUTOMATEDDISCOVERYINFORMATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
